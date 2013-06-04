@@ -1,0 +1,10 @@
+{
+  "nicknames": {
+    "github": "putaindecode",
+    "githubbot": "putaindebot",
+    "twitter": "putaindecode",
+    "twitterbot": "putaindebot"
+  },
+  "mail": "{{ accountKey }}@putaindecode.{{ tld }}",
+  "password": "Hahanonmaistyacruboulet?Demandez"
+}
