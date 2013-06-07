@@ -21,7 +21,9 @@
       "mail": "twitter-bot@putaindecode.fr",
       "passwd-salt": "twb"
     },
-    "gravatar": "wordpress",
+    "gravatar": {
+      "mail": "gravatar@putaindecode.fr"
+    },
     "wordpress": {
       "user": "putaindecode",
       "mail": "wordpress@putaindecode.fr",
