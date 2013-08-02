@@ -11,8 +11,7 @@ Les articles seront postés ici sous forme de PR une fois qu'on est OK dans une 
 ### Logo & Avatar
 
 All credits go to all the people involve in [this discussion](https://github.com/putaindecode/discussions/issues/4).
-
-Special thanks to:
-
-* [@mlbli](https://github.com/mlbli) for the [HD logos](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png)
-* [@lionelB](https://github.com/lionelB) for the [avatar](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-avatar.png)
+Special thanks to
+[@mlbli](https://github.com/mlbli)
+for the [HD logos](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png)
+and the [avatar](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-avatar.png)
