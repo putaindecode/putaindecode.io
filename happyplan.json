@@ -1,0 +1,13 @@
+{
+  "assets": {
+    "styles": [{
+      "dest": "<%= happyplan.dist.assets.styles %>/putaindecode.css"
+    }],
+    "scripts": [{
+      "src": [
+        "<%= happyplan.theme.local.assets.scripts %>/putaindecode.js"
+      ],
+      "dest": "<%= happyplan.dist.assets.scripts %>/putaindecode.js"
+    }]
+  }
+}

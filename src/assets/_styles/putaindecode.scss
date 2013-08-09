@@ -1,0 +1,14 @@
+* { box-sizing: border-box; }
+
+$pu-TempPage--backgroundColor:  #eee;
+$pu-TempPage--opacity: .2;
+
+html {
+  background: $pu-TempPage--backgroundColor;
+}
+
+.pu-Logo {
+  display: block;
+  opacity: $pu-TempPage--opacity;
+  margin: 10em auto;
+}
