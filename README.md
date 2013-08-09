@@ -30,6 +30,17 @@ The following command will build the website & publish `dist` folder to `gh-page
 
 ---
 
+## Memo
+
+### Generating favicons
+
+Using [icoutils](http://www.nongnu.org/icoutils/)
+
+	brew install icoutils
+	icotool -c src/assets/_images/p\!-favicon-16.png src/assets/_images/p\!-favicon-32.png -o src/favicon.ico
+
+---
+
 ## Credits
 
 ### Authors
