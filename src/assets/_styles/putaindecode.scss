@@ -5,10 +5,19 @@ $pu-TempPage--opacity: .2;
 
 html {
   background: $pu-TempPage--backgroundColor;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  padding: 10em 0;
 }
 
 .pu-Logo {
   display: block;
+  margin: auto;
   opacity: $pu-TempPage--opacity;
-  margin: 10em auto;
 }
+
+.pu-Links {
+  text-align: center;
+  opacity: $pu-TempPage--opacity;
+  a { color: #333 }
+}
+
