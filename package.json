@@ -17,6 +17,6 @@
     "url": "https://github.com/putaindecode/website/issues"
   },
   "dependencies": {
-    "happyplan": "~0.3.0-beta.2"
+    "happyplan": "~0.3.0-beta.3"
   }
 }
