@@ -34,7 +34,6 @@ if (window.addEventListener) {
     // esc key => cancel: remove dom element
     if (kkeys.toString().indexOf(konami_cancel) >= 0 && el_konami) {
       document.body.removeChild(el_konami);
-      delete el_konami;
       el_konami = null;
     }
   }, true);
