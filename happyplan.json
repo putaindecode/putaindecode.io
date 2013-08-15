@@ -1,4 +1,7 @@
 {
+  "localhost": {
+    "port": 4242
+  },
   "assets": {
     "styles": [{
       "dest": "<%= happyplan.dist.assets.styles %>/putaindecode.css"
