@@ -5,6 +5,7 @@
     }],
     "scripts": [{
       "src": [
+        "<%= happyplan.theme.local.assets.scripts %>/konami.js",
         "<%= happyplan.theme.local.assets.scripts %>/putaindecode.js"
       ],
       "dest": "<%= happyplan.dist.assets.scripts %>/putaindecode.js"

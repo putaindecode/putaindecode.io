@@ -1,0 +1,41 @@
+$pu-Konami--background-opacity: .6;
+
+.pu-Konami {
+  // strech
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  background: rgba(#000, .1);
+  // RAINBOW
+  background: linear-gradient(135deg,
+    rgba(#ff0000, $pu-Konami--background-opacity),
+    rgba(#ffa500, $pu-Konami--background-opacity) 16.66667%,
+    rgba(#ffff00, $pu-Konami--background-opacity) 33.33333%,
+    rgba(#008000, $pu-Konami--background-opacity) 50%,
+    rgba(#0000ff, $pu-Konami--background-opacity) 66.66667%,
+    rgba(#4b0082, $pu-Konami--background-opacity) 83.33333%,
+    rgba(#ee82ee, $pu-Konami--background-opacity)
+  );
+}
+
+.pu-Konami-content {
+  //center
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%); // remove me when autoprefixer is here kthxbye
+  transform: translate(-50%, -50%);
+  
+  width: 200px;
+  height: 200px;
+  
+  background: rgba(#fff, .8);
+}
+
+  .pu-Konami-content-hiddenPart {
+    // trololo
+    visibility: hidden;
+  }
