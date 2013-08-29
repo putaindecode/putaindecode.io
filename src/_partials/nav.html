@@ -1,0 +1,11 @@
+<nav class="pu-Nav">
+	<a class="pu-Logo" href="{{ site.baseurl }}">{{ site.happyplan.name }}</a>
+	
+	<span class="pu-Baseline">{{ site.happyplan.description }}</span>
+
+	<ul class="pu-Nav-list">
+		<li class=""><a class="{% if page.nav == 'wat' %}active{% endif %}" href="c-est-quoi-putaindecode">wat ?</a>
+		<li class=""><a class="{% if page.nav == 'posts' %}active{% endif %}" href="#">Articles</a>
+		<li class=""><a class="{% if page.nav == 'about' %}active{% endif %}" href="#">A propos</a>
+	</ul>
+</nav>

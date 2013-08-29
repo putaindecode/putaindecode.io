@@ -1,24 +1,36 @@
-* { box-sizing: border-box; }
+$pu-Color-red: #c33;
 
-$pu-TempPage--backgroundColor:  #eee;
-$pu-TempPage--opacity: .2;
+@import "normalize-css/normalize";
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 html {
-  background: $pu-TempPage--backgroundColor;
   font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  padding: 10em 0;
+  line-height: 1.5rem;
 }
 
-.pu-Logo {
-  display: block;
+body {
+  max-width: 60rem;
   margin: auto;
-  opacity: $pu-TempPage--opacity;
+  padding: 0 1rem;
 }
 
-.pu-Links {
-  text-align: center;
-  opacity: $pu-TempPage--opacity;
-  a { color: #333 }
+a {
+  color: $pu-Color-red;
+  &:hover { color: darken($pu-Color-red, 5%); }
+  &:visited { color: lighten($pu-Color-red, 2%); }
+}
+
+@import "landing";
+
+@import "nav";
+
+.pu-Content {
+  max-width: 40rem;
+  margin: 2rem auto;
 }
 
 @import "konami";

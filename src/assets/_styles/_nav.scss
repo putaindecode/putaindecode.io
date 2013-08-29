@@ -1,0 +1,54 @@
+$pu-Logo-size: 128px;
+
+.pu-Nav {
+  position: relative;
+  line-height: 10rem;
+}
+
+  .pu-Logo {
+    display: inline-block;
+    
+    
+    font-size: 2rem;
+    font-weight: bold;
+    
+    text-decoration: none;
+    
+    // logo img
+    &:before {
+      // dont use url() here because you wont' be able to resize depending on viewport. kthxbye
+      content: "";
+      
+      position: absolute;
+      
+      display: block;
+      width: $pu-Logo-size;
+      height: $pu-Logo-size;
+      right: 100%;
+      margin: 1rem;
+      
+      background: url("../img/p!-logo-128.png") no-repeat 50% 50%;
+    }
+  }
+    
+    .pu-Baseline {
+      position: absolute;
+      top: 6.5rem;
+      left: 0;
+      
+      font-size: .8rem;
+      line-height: 1;
+      
+      opacity: .4;
+    }
+
+  .pu-Nav-list {
+    float: right;
+    margin: 0;
+    padding: 0;
+    
+    &,
+    li { display: inline-block; }
+    
+    li { padding: 0 .5rem; }
+  }

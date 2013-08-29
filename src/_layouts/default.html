@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% if site.happyplan.repository.url %}<!--
+	HEY YOU, STOP LOOKING AT MY SOURCE CODE
+	Just check it out directly on Github :
+	
+	{{ site.happyplan.repository.url }}
+-->{% endif %}
+<html lang="en" class="no-js no-touch {{ page.class }}">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<script>(function(docEl) {
+	docEl.className = docEl.className.replace(/\bno-js\b/, 'js');
+	if ('ontouchstart' in docEl) { docEl.className = docEl.className.replace(/\bno-touch\b/, 'touch'); }
+})(document.documentElement);</script>
+{% include head.html %}
+</head>
+<body>
+{{ site.happyplan.html.hooks.body_open }}
+<div class="{% if page.class %}{ page.class }}{% endif %}">
+	{% if page.dontIncludeNav != true %}{% include nav.html %} {% endif %}
+	<div class="pu-Content">
+	{{ content }}
+	</div>
+</div>
+{{ site.happyplan.html.hooks.body_close }}
+</body>
+</html>

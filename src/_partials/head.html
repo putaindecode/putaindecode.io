@@ -1,0 +1,11 @@
+{{ site.happyplan.html.hooks.head_open }}
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+<meta name="description" content="">
+<base href="{% if site.happyplan.env == 'dist' %}{{ site.happyplan.url }}{% else %}http://{{ site.happyplan.localhost.hostname }}:{{ site.happyplan.localhost.port }}{% endif %}{{ site.happyplan.baseUrl }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="feed.xml" rel="alternate" type="application/rss+xml">
+{{ site.happyplan.html.hooks.head_before_stylesheets }}
+{{ site.happyplan.html.hooks.head_stylesheets }}
+{{ site.happyplan.html.hooks.head_after_stylesheets }}
+{{ site.happyplan.html.hooks.head_close }}

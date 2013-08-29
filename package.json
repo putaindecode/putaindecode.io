@@ -1,7 +1,7 @@
 {
-  "name": "putaindecode",
-  "version": "0.0.0",
-  "description": "putaindecode website",
+  "name": "Putain de code !",
+  "version": "0.0.1",
+  "description": "PRs are welcome",
   "main": "index.js",
   "scripts": {
     "test": "happyplan test"
@@ -17,6 +17,6 @@
     "url": "https://github.com/putaindecode/website/issues"
   },
   "dependencies": {
-    "happyplan": "~0.3.0-beta.3"
+    "happyplan": "~0.3.0-beta.5"
   }
 }
