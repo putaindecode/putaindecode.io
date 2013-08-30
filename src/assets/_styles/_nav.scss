@@ -15,12 +15,12 @@ $pu-Logo-size: 128px;
     text-decoration: none;
   }
   
-  .pu-Logo {
-    @include pu-Logo(8rem);
-    position: absolute;
-    right: 100%;
-    margin: 2rem;
-  }
+    .pu-Logo {
+      @include pu-Logo(8rem);
+      position: absolute;
+      right: 100%;
+      margin: 2rem;
+    }
     
     .pu-Baseline {
       position: absolute;
