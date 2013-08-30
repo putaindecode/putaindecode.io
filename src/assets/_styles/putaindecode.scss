@@ -24,8 +24,8 @@ a {
   &:visited { color: lighten($pu-Color-red, 2%); }
 }
 
+@import "logo";
 @import "landing";
-
 @import "nav";
 
 .pu-Content {

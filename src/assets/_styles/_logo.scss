@@ -1,0 +1,85 @@
+$pu-Logo--font: "Helvetica Neue", Arial, Helvetica, sans-serif !default;
+$pu-Logo--width: 10rem !default;
+$pu-Logo--color: #444 !default;
+$pu-Logo-stroke--color: darken($pu-Logo--color, 20%) !default;
+$pu-Logo-brace--color: #c33 !default;
+$pu-Logo-brace-stroke--color: darken($pu-Logo-brace--color, 10%) !default;
+
+@mixin pu-Logo(
+  $width: $pu-Logo--width,
+  $font-size: $width*.4,
+  $border--width: $width*.085,
+  $font: $pu-Logo--font,
+  $color: $pu-Logo--color,
+  $stroke--color: $pu-Logo-stroke--color,
+  $brace--color: $pu-Logo-brace--color,
+  $brace-stroke--color: $pu-Logo-brace-stroke--color
+) {
+  display: block;
+  font: 700 $font-size $font;
+  line-height: $width;
+  position: relative;
+  height: $width;
+  width: $width;
+  margin: 1em auto;
+  
+  text-align: center;
+  color: $color;
+  text-shadow:
+    // stroke
+    -1px -1px 0 $stroke--color,  
+    1px -1px 0 $stroke--color,
+    -1px  1px 0 $stroke--color,
+    1px  1px 0 $stroke--color;
+  
+  border-radius: 100%;
+  background-color: #fafafa;
+  background-image: -webkit-linear-gradient(top, #fff, #f0f0f0);
+  background-image: linear-gradient(#fff, #f0f0f0);
+  box-shadow:
+      0 0 0 $border--width rgba(#000, .25),
+      // inside border
+      0 0 0 2px rgba(#000, .3),
+      // drop shadow
+      0 .1em .2em rgba(#000, .3);
+  
+  &:before {
+    display: block;
+    content: "{ }";
+    
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    
+    font-size: 1.3em;
+    line-height: inherit;
+    word-spacing: .5em;
+    // adjust brace alignement
+    margin-top: -.1em;
+    
+    color: $brace--color;
+    text-shadow:
+      0 0 2px $brace-stroke--color,
+      // stroke
+      -1px -1px 0 $brace-stroke--color,  
+       1px -1px 0 $brace-stroke--color,
+      -1px  1px 0 $brace-stroke--color,
+       1px  1px 0 $brace-stroke--color;
+  }
+  
+  // for fun, border that can be done using 
+  // box shadow trick on the root element
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    // enlarge according to the border (box-shadow is not in box-model)
+    top: -$border--width;
+    right: -$border--width;
+    bottom: -$border--width;
+    left: -$border--width;
+    
+    border-radius: 100%;
+    border: 1px solid rgba(#000, .3);
+    box-shadow: inset 0 0 4px rgba(#000, .3);
+  }
+}
