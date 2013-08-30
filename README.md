@@ -59,3 +59,6 @@ the [avatar](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a41
 [16](https://github.com/putaindecode/website/blob/320d8c4ee55d36ee7f74fbfad899712aa7a742ef/src/assets/_images/p!-favicon-16.png)
 [32](https://github.com/putaindecode/website/blob/320d8c4ee55d36ee7f74fbfad899712aa7a742ef/src/assets/_images/p!-favicon-32.png)
 
+HD Logo is available as a Sass (scss) mixin.
+Look ma! No images !
+

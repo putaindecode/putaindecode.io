@@ -1,7 +1,7 @@
 {
-  "name": "Putain de code !",
+  "name": "putaindecode",
   "version": "0.0.1",
-  "description": "PRs are welcome",
+  "description": "putaindecode website",
   "main": "index.js",
   "scripts": {
     "test": "happyplan test"
