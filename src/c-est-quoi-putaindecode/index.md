@@ -13,9 +13,9 @@ Par contre, on t'a pas encore expliqué le concept.
 
 Putain de code, c'est un regroupement de développeurs vraiment passionnés par leur boulot.
 
-Et c’est à force de voir du code qui piquent les yeux qu’on s’est dit qu’il fallait qu’on fasse quelque chose pour toi ou tes semblables.
+Et c’est à force de voir du code qui pique les yeux qu’on s’est dit qu’il fallait qu’on fasse quelque chose pour toi ou tes semblables.
 
-Notre idée est simple: partager du code et des méthodes de travail de qualité, qu'on puisse tous s'améliorer ensemble. 
+Notre idée est simple: partager du code et des méthodes de travail de qualité, pour qu'on puisse tous s'améliorer ensemble. 
 
 ## Mais pourquoi encore un autre site ?
 
@@ -32,7 +32,7 @@ C'est un peu le fondement de notre démarche d’ailleurs.
 > PRs are welcome
 
 On ne prétend pas avoir la science infuse.
-On accepte donc volontiers les contributions sur les articles quelqu’en soit leur forme.
+On accepte donc volontiers les contributions sur les articles quelle que soit leur forme.
 
 Dans les faits :
 
