@@ -15,5 +15,6 @@
       ],
       "dest": "<%= happyplan.dist.assets.scripts %>/putaindecode.js"
     }]
-  }
+  },
+  "google_analytics_tracking_id": "UA-43771806-1"
 }
