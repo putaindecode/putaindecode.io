@@ -11,6 +11,10 @@
       "mail": "github-bot@putaindecode.fr",
       "passwd-salt": "ghb"
     },
+    "google": {
+      "mail": "google@putaindecode.fr",
+      "passwd-salt": "gg"
+    },
     "twitter": {
       "user": "putaindecode",
       "mail": "twitter@putaindecode.fr",
