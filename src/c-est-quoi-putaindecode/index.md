@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Putain de code
+title: Hello world !
 ---
 
-## Putain de WAT ?
+## Putain de ... WAT ?
 
 _Putain de code._
 Déjà, le nom commence bien.

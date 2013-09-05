@@ -1,0 +1,10 @@
+@import "griddle/griddle";
+
+$grid-gutter: 2em;
+
+$pu-Grid--media-s: 2 3 !default;
+$pu-Grid--media-m: 2 3 4 !default;
+
+@include griddle-build($pu-Grid--media-s);
+@include pu-Media-s { @include griddle-build($pu-Grid--media-s, '--s'); }
+@include pu-Media-m { @include griddle-build($pu-Grid--media-m, '--m'); }

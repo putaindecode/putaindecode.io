@@ -1,0 +1,27 @@
+.pu-Sidebar {
+  padding: .5rem 2rem;
+}
+  .pu-Sidebar-block {
+    font-size: .8rem;
+    margin: 0 0 2rem;
+  }
+  
+    .pu-Sidebar-block-title {
+      font-size: 1rem;
+      opacity: .3;
+      font-weight: 400;
+    }
+    
+    .pu-Sidebar-block-list {
+      list-style: inside;
+      padding: 0 0 0 .2rem;
+      a {
+        text-decoration: none;
+      }
+    }
+    
+      .pu-Sidebar-block-list--nobullet {
+        @extend .pu-Sidebar-block-list;
+        list-style: none;
+      }
+      

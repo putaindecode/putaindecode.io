@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- The icon can be used freely in both personal and commercial projects with no attribution required, but always appreciated. 
+You may NOT sub-license, resell, rent, redistribute or otherwise transfer the icon without express written permission from iconmonstr.com -->
+
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+
+<path id="eye-3-icon" d="M256.25,141.666c-129.917,0-206.25,107-206.25,107s83,121.668,206.25,121.668
+
+	C389,370.334,462,248.666,462,248.666S388.334,141.666,256.25,141.666z M258,336c-44.184,0-80-35.816-80-80
+
+	c0-44.183,35.816-80,80-80c44.183,0,80,35.817,80,80C338,300.184,302.183,336,258,336z M303,256c0,24.854-20.147,45-45,45
+
+	c-24.854,0-45-20.146-45-45c0-2.979,0.297-5.889,0.85-8.706c22.112,8.115,43.895-13.234,36.069-35.556
+
+	c2.623-0.477,5.32-0.738,8.081-0.738C282.853,211,303,231.147,303,256z"/>
+
+</svg>
+

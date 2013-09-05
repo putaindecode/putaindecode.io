@@ -1,14 +1,19 @@
 <nav class="pu-Nav">
-	<a class="pu-SiteTitle" href="{{ site.baseurl }}">
-		<div class="pu-Logo">P!</div>
-		{{ site.happyplan.name }}
-	</a>
-	
-	<span class="pu-Baseline">{{ site.happyplan.description }}</span>
+	<div class="grid">
+		<div class="grid__cell">
+			<a class="pu-SiteTitle" href="{{ site.baseurl }}">
+				<div class="pu-Logo">P!</div>
+				{{ site.happyplan.name }}
+			</a>
+			
+			<span class="pu-Baseline">{{ site.happyplan.description }}</span>
 
-	<ul class="pu-Nav-list">
-		<li class=""><a class="{% if page.nav == 'wat' %}active{% endif %}" href="c-est-quoi-putaindecode">wat ?</a>
-		<li class=""><a class="{% if page.nav == 'posts' %}active{% endif %}" href="#">Articles</a>
-		<li class=""><a class="{% if page.nav == 'about' %}active{% endif %}" href="#">A propos</a>
-	</ul>
+			<ul class="pu-Nav-list">
+				<li class=""><a class="{% if page.nav == 'home' %}active{% endif %}" href="{{ site.baseurl }}">Home</a>
+				<li class=""><a class="{% if page.nav == 'wat' %}active{% endif %}" href="c-est-quoi-putaindecode">WAT ?</a>
+				<li class=""><a class="{% if page.nav == 'posts' %}active{% endif %}" href="#">Posts</a>
+				<li class=""><a class="{% if page.nav == 'about' %}active{% endif %}" href="#">Qui est-ce ?™</a>
+			</ul>
+		</div>
+	</div>
 </nav>

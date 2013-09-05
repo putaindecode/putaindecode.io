@@ -1,6 +1,23 @@
 $pu-Color-red: #c33;
+$pu-Color-text: #333;
+$pu-Color-background: #eee;
+$pu-Page-max-width: 60rem;
+
+$pu-MediaSize-s: 30em !default;
+$pu-MediaSize-m: 50em !default;
+$pu-MediaSize-l: 65em !default;
+$pu-MediaSize-xl: 80em !default;
+
+@mixin pu-Media-s() { @media (min-width: $pu-MediaSize-s) { @content; } }
+@mixin pu-Media-m() { @media (min-width: $pu-MediaSize-m) { @content; } }
+@mixin pu-Media-l() { @media (min-width: $pu-MediaSize-l) { @content; } }
+@mixin pu-Media-xl() { @media (min-width: $pu-MediaSize-xl) { @content; } }
 
 @import "normalize-css/normalize";
+
+@import "./typography";
+
+@import "./grid";
 
 * {
   -moz-box-sizing: border-box;
@@ -8,14 +25,12 @@ $pu-Color-red: #c33;
 }
 
 html {
-  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  line-height: 1.5rem;
+  background: $pu-Color-background;
+  background: linear-gradient(45deg, $pu-Color-background, lighten($pu-Color-background, 10%));
 }
 
 body {
-  max-width: 60rem;
-  margin: auto;
-  padding: 0 1rem;
+  
 }
 
 a {
@@ -24,13 +39,35 @@ a {
   &:visited { color: lighten($pu-Color-red, 2%); }
 }
 
-@import "logo";
-@import "landing";
-@import "nav";
+@import "./icons";
 
-.pu-Content {
-  max-width: 40rem;
-  margin: 2rem auto;
+@import "./logo";
+@import "./landing";
+@import "./nav";
+
+.pu-Page {
+  max-width: $pu-Page-max-width;
+  margin: auto;
+  padding: 0 1rem;
 }
 
-@import "konami";
+  .pu-Page-title {
+    font-size: 2rem;
+    line-height: 2;
+    font-weight: bold;
+    color: $pu-Color-red;
+  }
+    
+  .pu-Page-content {
+    //max-width: 40rem;
+    margin: auto;
+    padding: .5rem 2rem;
+    background: linear-gradient(rgba(#eee, .6) 20rem, rgba(#fff, 0));
+    border-radius: .4rem;
+    box-shadow: inset 0 0 2px 1px rgba(#000, .05);
+  }
+
+@import "./sidebar";
+
+// fun
+@import "./konami";

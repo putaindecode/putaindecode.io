@@ -16,7 +16,8 @@ $pu-Logo-brace-stroke--color: darken($pu-Logo-brace--color, 10%) !default;
   $brace-stroke--color: $pu-Logo-brace-stroke--color
 ) {
   display: block;
-  font: 700 $font-size $font;
+  font: 500 $font-size $font;
+  // @todo change font-weight depending on the logo width
   line-height: $width;
   position: relative;
   height: $width;

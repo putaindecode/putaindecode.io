@@ -2,14 +2,29 @@ $pu-Logo-size: 128px;
 
 .pu-Nav {
   position: relative;
-  line-height: 10rem;
+  line-height: 2rem;
+  margin: 0 0 2rem;
+  background: $pu-Color-red;
+  
+  a {
+    color: #fff !important;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .grid {
+    position: relative;
+    max-width: $pu-Page-max-width;
+    margin: auto;
+  }
 }
 
   .pu-SiteTitle {
     display: inline-block;
     
-    
-    font-size: 2rem;
+    //font-size: 2rem;
     font-weight: bold;
     
     text-decoration: none;
@@ -18,25 +33,22 @@ $pu-Logo-size: 128px;
     .pu-Logo {
       @include pu-Logo(8rem);
       position: absolute;
+      top: 2rem;
       right: 100%;
       margin: 2rem;
     }
     
     .pu-Baseline {
-      position: absolute;
-      top: 6.5rem;
-      left: 0;
-      
       font-size: .8rem;
       line-height: 1;
-      
-      opacity: .4;
+      color: rgba(#fff, .4);
     }
 
   .pu-Nav-list {
     float: right;
     margin: 0;
     padding: 0;
+    font-size: .8rem;
     
     &,
     li { display: inline-block; }
