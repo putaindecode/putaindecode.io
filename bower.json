@@ -1,0 +1,9 @@
+{
+  "name": "putaindecode",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "normalize-css": "~2.1.3"
+  }
+}
