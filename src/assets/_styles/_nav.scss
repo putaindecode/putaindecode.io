@@ -1,10 +1,10 @@
-$pu-Logo-size: 128px;
+$putainde-Logo-size: 128px;
 
-.pu-Nav {
+.putainde-Nav {
   position: relative;
   line-height: 2rem;
   margin: 0 0 2rem;
-  background: $pu-Color-red;
+  background: $putainde-Color-red;
   
   a {
     color: #fff !important;
@@ -16,12 +16,12 @@ $pu-Logo-size: 128px;
   
   .grid {
     position: relative;
-    max-width: $pu-Page-max-width;
+    max-width: $putainde-Page-max-width;
     margin: auto;
   }
 }
 
-  .pu-SiteTitle {
+  .putainde-SiteTitle {
     display: inline-block;
     
     //font-size: 2rem;
@@ -30,21 +30,21 @@ $pu-Logo-size: 128px;
     text-decoration: none;
   }
   
-    .pu-Logo {
-      @include pu-Logo(8rem);
+    .putainde-Logo {
+      @include putainde-Logo(8rem);
       position: absolute;
       top: 2rem;
       right: 100%;
       margin: 2rem;
     }
     
-    .pu-Baseline {
+    .putainde-Baseline {
       font-size: .8rem;
       line-height: 1;
       color: rgba(#fff, .4);
     }
 
-  .pu-Nav-list {
+  .putainde-Nav-list {
     float: right;
     margin: 0;
     padding: 0;

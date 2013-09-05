@@ -18,13 +18,13 @@
 {{ site.happyplan.html.hooks.body_open }}
 <div class="{% if page.class %}{ page.class }}{% endif %}">
 	{% if page.dontIncludeNav != true %}{% include nav.html %} {% endif %}
-	<div class="pu-Page grid">
-		<div class="pu-Page-title grid__cell unit-1-1">{{ page.title }}</div>
-		<div class="pu-Page-content grid__cell {% if page.dontIncludeNav != true %}unit-3-4--m{% endif %}">
+	<div class="putainde-Page grid">
+		<div class="putainde-Page-title grid__cell unit-1-1">{{ page.title }}</div>
+		<div class="putainde-Page-content grid__cell {% if page.dontIncludeNav != true %}unit-3-4--m{% endif %}">
 		{{ content }}
 		</div>
 		{% if page.dontIncludeNav != true %}
-		<div class="pu-Sidebar grid__cell unit-1-4--m">
+		<div class="putainde-Sidebar grid__cell unit-1-4--m">
 		{% include sidebar.html %}
 		</div>
 		{% endif %}

@@ -1,6 +1,6 @@
-$pu-Konami--background-opacity: .6;
+$putainde-Konami--background-opacity: .6;
 
-.pu-Konami {
+.putainde-Konami {
   // strech
   position: absolute;
   top: 0;
@@ -11,17 +11,17 @@ $pu-Konami--background-opacity: .6;
   background: rgba(#000, .1);
   // RAINBOW
   background: linear-gradient(135deg,
-    rgba(#ff0000, $pu-Konami--background-opacity),
-    rgba(#ffa500, $pu-Konami--background-opacity) 16.66667%,
-    rgba(#ffff00, $pu-Konami--background-opacity) 33.33333%,
-    rgba(#008000, $pu-Konami--background-opacity) 50%,
-    rgba(#0000ff, $pu-Konami--background-opacity) 66.66667%,
-    rgba(#4b0082, $pu-Konami--background-opacity) 83.33333%,
-    rgba(#ee82ee, $pu-Konami--background-opacity)
+    rgba(#ff0000, $putainde-Konami--background-opacity),
+    rgba(#ffa500, $putainde-Konami--background-opacity) 16.66667%,
+    rgba(#ffff00, $putainde-Konami--background-opacity) 33.33333%,
+    rgba(#008000, $putainde-Konami--background-opacity) 50%,
+    rgba(#0000ff, $putainde-Konami--background-opacity) 66.66667%,
+    rgba(#4b0082, $putainde-Konami--background-opacity) 83.33333%,
+    rgba(#ee82ee, $putainde-Konami--background-opacity)
   );
 }
 
-.pu-Konami-content {
+.putainde-Konami-content {
   //center
   position: absolute;
   top: 50%;
@@ -35,7 +35,7 @@ $pu-Konami--background-opacity: .6;
   background: rgba(#fff, .8);
 }
 
-  .pu-Konami-content-hiddenPart {
+  .putainde-Konami-content-hiddenPart {
     // trololo
     visibility: hidden;
   }

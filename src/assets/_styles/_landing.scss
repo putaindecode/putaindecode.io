@@ -1,20 +1,20 @@
-$pu-Landing--backgroundColor:  #eee;
-$pu-Landing--opacity: .2;
+$putainde-Landing--backgroundColor:  #eee;
+$putainde-Landing--opacity: .2;
 
-.pu-Landing {
+.putainde-Landing {
   width: auto;
-  background: $pu-Landing--backgroundColor;
+  background: $putainde-Landing--backgroundColor;
   padding: 10em 0;
 }
 
-  .pu-Landing-logo {
+  .putainde-Landing-logo {
     display: block;
     margin: auto;
-    opacity: $pu-Landing--opacity;
+    opacity: $putainde-Landing--opacity;
   }
 
-  .pu-Landing-links {
+  .putainde-Landing-links {
     text-align: center;
-    opacity: $pu-Landing--opacity;
+    opacity: $putainde-Landing--opacity;
     a { color: #333 }
   }

@@ -1,19 +1,19 @@
-$pu-Logo--font: "Helvetica Neue", Arial, Helvetica, sans-serif !default;
-$pu-Logo--width: 10rem !default;
-$pu-Logo--color: #444 !default;
-$pu-Logo-stroke--color: darken($pu-Logo--color, 20%) !default;
-$pu-Logo-brace--color: #c33 !default;
-$pu-Logo-brace-stroke--color: darken($pu-Logo-brace--color, 10%) !default;
+$putainde-Logo--font: "Helvetica Neue", Arial, Helvetica, sans-serif !default;
+$putainde-Logo--width: 10rem !default;
+$putainde-Logo--color: #444 !default;
+$putainde-Logo-stroke--color: darken($putainde-Logo--color, 20%) !default;
+$putainde-Logo-brace--color: #c33 !default;
+$putainde-Logo-brace-stroke--color: darken($putainde-Logo-brace--color, 10%) !default;
 
-@mixin pu-Logo(
-  $width: $pu-Logo--width,
+@mixin putainde-Logo(
+  $width: $putainde-Logo--width,
   $font-size: $width*.4,
   $border--width: $width*.085,
-  $font: $pu-Logo--font,
-  $color: $pu-Logo--color,
-  $stroke--color: $pu-Logo-stroke--color,
-  $brace--color: $pu-Logo-brace--color,
-  $brace-stroke--color: $pu-Logo-brace-stroke--color
+  $font: $putainde-Logo--font,
+  $color: $putainde-Logo--color,
+  $stroke--color: $putainde-Logo-stroke--color,
+  $brace--color: $putainde-Logo-brace--color,
+  $brace-stroke--color: $putainde-Logo-brace-stroke--color
 ) {
   display: block;
   font: 500 $font-size $font;

@@ -1,17 +1,17 @@
-$pu-Color-red: #c33;
-$pu-Color-text: #333;
-$pu-Color-background: #eee;
-$pu-Page-max-width: 60rem;
+$putainde-Color-red: #c33;
+$putainde-Color-text: #333;
+$putainde-Color-background: #eee;
+$putainde-Page-max-width: 60rem;
 
-$pu-MediaSize-s: 30em !default;
-$pu-MediaSize-m: 50em !default;
-$pu-MediaSize-l: 65em !default;
-$pu-MediaSize-xl: 80em !default;
+$putainde-MediaSize-s: 30em !default;
+$putainde-MediaSize-m: 50em !default;
+$putainde-MediaSize-l: 65em !default;
+$putainde-MediaSize-xl: 80em !default;
 
-@mixin pu-Media-s() { @media (min-width: $pu-MediaSize-s) { @content; } }
-@mixin pu-Media-m() { @media (min-width: $pu-MediaSize-m) { @content; } }
-@mixin pu-Media-l() { @media (min-width: $pu-MediaSize-l) { @content; } }
-@mixin pu-Media-xl() { @media (min-width: $pu-MediaSize-xl) { @content; } }
+@mixin putainde-Media-s() { @media (min-width: $putainde-MediaSize-s) { @content; } }
+@mixin putainde-Media-m() { @media (min-width: $putainde-MediaSize-m) { @content; } }
+@mixin putainde-Media-l() { @media (min-width: $putainde-MediaSize-l) { @content; } }
+@mixin putainde-Media-xl() { @media (min-width: $putainde-MediaSize-xl) { @content; } }
 
 @import "normalize-css/normalize";
 
@@ -25,8 +25,8 @@ $pu-MediaSize-xl: 80em !default;
 }
 
 html {
-  background: $pu-Color-background;
-  background: linear-gradient(45deg, $pu-Color-background, lighten($pu-Color-background, 10%));
+  background: $putainde-Color-background;
+  background: linear-gradient(45deg, $putainde-Color-background, lighten($putainde-Color-background, 10%));
 }
 
 body {
@@ -34,9 +34,9 @@ body {
 }
 
 a {
-  color: $pu-Color-red;
-  &:hover { color: darken($pu-Color-red, 5%); }
-  &:visited { color: lighten($pu-Color-red, 2%); }
+  color: $putainde-Color-red;
+  &:hover { color: darken($putainde-Color-red, 5%); }
+  &:visited { color: lighten($putainde-Color-red, 2%); }
 }
 
 @import "./icons";
@@ -45,20 +45,20 @@ a {
 @import "./landing";
 @import "./nav";
 
-.pu-Page {
-  max-width: $pu-Page-max-width;
+.putainde-Page {
+  max-width: $putainde-Page-max-width;
   margin: auto;
   padding: 0 1rem;
 }
 
-  .pu-Page-title {
+  .putainde-Page-title {
     font-size: 2rem;
     line-height: 2;
     font-weight: bold;
-    color: $pu-Color-red;
+    color: $putainde-Color-red;
   }
     
-  .pu-Page-content {
+  .putainde-Page-content {
     //max-width: 40rem;
     margin: auto;
     padding: .5rem 2rem;

@@ -2,9 +2,9 @@
 
 $grid-gutter: 2em;
 
-$pu-Grid--media-s: 2 3 !default;
-$pu-Grid--media-m: 2 3 4 !default;
+$putainde-Grid--media-s: 2 3 !default;
+$putainde-Grid--media-m: 2 3 4 !default;
 
-@include griddle-build($pu-Grid--media-s);
-@include pu-Media-s { @include griddle-build($pu-Grid--media-s, '--s'); }
-@include pu-Media-m { @include griddle-build($pu-Grid--media-m, '--m'); }
+@include griddle-build($putainde-Grid--media-s);
+@include putainde-Media-s { @include griddle-build($putainde-Grid--media-s, '--s'); }
+@include putainde-Media-m { @include griddle-build($putainde-Grid--media-m, '--m'); }

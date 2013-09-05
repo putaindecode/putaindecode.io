@@ -11,7 +11,7 @@ if (window.addEventListener) {
       kkeys = [];
       
       el_konami = document.createElement('div');
-      el_konami.className = 'pu-Konami';
+      el_konami.className = 'putainde-Konami';
       document.body.appendChild(el_konami);
       
       // fun stuff here
@@ -20,8 +20,8 @@ if (window.addEventListener) {
         document.createElement('div')
       ];
       
-      el_konamiChild[0].className = 'pu-Konami-content';
-      el_konamiChild[1].className = 'pu-Konami-content-hiddenPart';
+      el_konamiChild[0].className = 'putainde-Konami-content';
+      el_konamiChild[1].className = 'putainde-Konami-content-hiddenPart';
       
       // add a qr code here  instead of this stupid phrase?
       el_konamiChild[1].appendChild(document.createTextNode("We've got you !"));
