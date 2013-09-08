@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "0.8"
+  - "0.10"
+before_install:
+  - gem --version
+  - gem update --system
+# jekyll stuff
+  - gem install jekyll
+# compass & compass extensions
+  - gem install compass
+# grunt-webfont requirements
+  - sudo apt-get install fontforge
+# grunt
+  - npm install -g grunt-cli
+  - npm install
+# bower
+  - export PATH=$PATH:`npm bin` # add local bower
+  - bower --version
+  - bower install
+# for some test with dates
+  - sudo cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
