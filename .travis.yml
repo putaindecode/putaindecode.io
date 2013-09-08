@@ -1,7 +1,4 @@
 language: node_js
-node_js:
-  - "0.8"
-  - "0.10"
 before_install:
   - gem --version
   - gem update --system
@@ -12,7 +9,7 @@ before_install:
 # grunt-webfont requirements
   - sudo apt-get install fontforge
 # grunt
-  - npm install -g grunt-cli
+  - npm install -g happyplan-cli
   - npm install
 # bower
   - export PATH=$PATH:`npm bin` # add local bower
