@@ -9,7 +9,7 @@ before_install:
 # grunt-webfont requirements
   - sudo apt-get install fontforge
 # grunt
-  - npm install -g happyplan-cli
+  - npm install -g grunt-cli happyplan-cli
   - npm install
 # bower
   - export PATH=$PATH:`npm bin` # add local bower
