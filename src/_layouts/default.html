@@ -2,7 +2,7 @@
 {% if site.happyplan.repository.url %}<!--
 	HEY YOU, STOP LOOKING AT MY SOURCE CODE
 	Just check it out directly on Github :
-	
+
 	{{ site.happyplan.repository.url }}
 -->{% endif %}
 <html lang="en" class="no-js no-touch {{ page.class }}">
@@ -16,7 +16,7 @@
 </head>
 <body>
 {{ site.happyplan.html.hooks.body_open }}
-<div class="{% if page.class %}{ page.class }}{% endif %}">
+<div class="{% if page.class %}{{ page.class }}{% endif %}">
 	{% if page.dontIncludeNav != true %}{% include nav.html %} {% endif %}
 	<div class="putainde-Page grid">
 		{% if page.title %}<div class="putainde-Page-title grid__cell unit-1-1">{{ page.title }}</div>{% endif %}
