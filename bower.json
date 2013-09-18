@@ -5,6 +5,8 @@
   "private": true,
   "dependencies": {
     "normalize-css": "~2.1.3",
-    "griddle": "~0.3.0"
+    "griddle": "~0.3.0",
+    "css-recipe-media": "*",
+    "css-recipe-font-smoothing": "~0.1.0"
   }
 }

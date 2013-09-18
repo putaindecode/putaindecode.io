@@ -37,7 +37,7 @@ The following command will build the website & publish `dist` folder to `gh-page
 Using [icoutils](http://www.nongnu.org/icoutils/)
 
 	brew install icoutils
-	icotool -c src/assets/_images/p\!-favicon-16.png src/assets/_images/p\!-favicon-32.png -o src/favicon.ico
+	icotool -c src/assets/_images/p\!-logo--no-bubble-16.png src/assets/_images/p\!-logo--no-bubble-32.png -o src/favicon.ico
 
 ---
 
@@ -51,14 +51,4 @@ Using [icoutils](http://www.nongnu.org/icoutils/)
 ### Logo & Avatar
 
 All credits go to all the people involve in [this discussion](https://github.com/putaindecode/discussions/issues/4).
-Special thanks to
-[@mlbli](https://github.com/mlbli)
-for the [HD logos](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png),
-the [avatar](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-avatar.png),
-& the favicons
-[16](https://github.com/putaindecode/website/blob/320d8c4ee55d36ee7f74fbfad899712aa7a742ef/src/assets/_images/p!-favicon-16.png)
-[32](https://github.com/putaindecode/website/blob/320d8c4ee55d36ee7f74fbfad899712aa7a742ef/src/assets/_images/p!-favicon-32.png)
-
-HD Logo is available as a Sass (scss) mixin.
-Look ma! No images !
-
+Special thanks to [@mlbli](https://github.com/mlbli) for the [initial logo](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).

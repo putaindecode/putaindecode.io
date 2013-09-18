@@ -1,5 +1,5 @@
 .putainde-Sidebar {
-  padding: .5rem 2rem;
+  padding: .5rem 0 0 2rem;
 }
   .putainde-Sidebar-block {
     font-size: .8rem;
@@ -15,8 +15,11 @@
     .putainde-Sidebar-block-list {
       list-style: inside;
       padding: 0 0 0 .2rem;
-      a {
-        text-decoration: none;
+      
+      a { text-decoration: none; }
+      .icon {
+        font-size: 1rem;
+        vertical-align: middle;
       }
     }
     

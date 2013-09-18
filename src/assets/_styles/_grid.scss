@@ -6,5 +6,5 @@ $putainde-Grid--media-s: 2 3 !default;
 $putainde-Grid--media-m: 2 3 4 !default;
 
 @include griddle-build($putainde-Grid--media-s);
-@include putainde-Media-s { @include griddle-build($putainde-Grid--media-s, '--s'); }
-@include putainde-Media-m { @include griddle-build($putainde-Grid--media-m, '--m'); }
+@include crp-Media-s { @include griddle-build($putainde-Grid--media-s, '--s'); }
+@include crp-Media-m { @include griddle-build($putainde-Grid--media-m, '--m'); }

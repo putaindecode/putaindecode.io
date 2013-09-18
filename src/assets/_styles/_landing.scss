@@ -1,20 +1,16 @@
-$putainde-Landing--backgroundColor:  #eee;
-$putainde-Landing--opacity: .2;
 
 .putainde-Landing {
   width: auto;
-  background: $putainde-Landing--backgroundColor;
+  height: 100%;
   padding: 10em 0;
 }
 
   .putainde-Landing-logo {
     display: block;
     margin: auto;
-    opacity: $putainde-Landing--opacity;
   }
 
   .putainde-Landing-links {
     text-align: center;
-    opacity: $putainde-Landing--opacity;
     a { color: #333 }
   }

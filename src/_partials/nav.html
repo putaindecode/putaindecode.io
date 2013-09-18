@@ -2,17 +2,18 @@
 	<div class="grid">
 		<div class="grid__cell">
 			<a class="putainde-SiteTitle" href="{{ site.baseurl }}">
-				<div class="putainde-Logo">P!</div>
+				<img class="putainde-Logo" alt="Putain de code !" src="{{ site.happyplan.baseUrls.images }}/p!-logo.svg" />
+
 				{{ site.happyplan.name }}
 			</a>
-			
+
 			<span class="putainde-Baseline">{{ site.happyplan.description }}</span>
 
 			<ul class="putainde-Nav-list">
 				<li class=""><a class="{% if page.nav == 'home' %}active{% endif %}" href="{{ site.baseurl }}">Home</a>
-				<li class=""><a class="{% if page.nav == 'wat' %}active{% endif %}" href="c-est-quoi-putaindecode">WAT ?</a>
-				<li class=""><a class="{% if page.nav == 'posts' %}active{% endif %}" href="#">Posts</a>
-				<li class=""><a class="{% if page.nav == 'about' %}active{% endif %}" href="#">Qui est-ce ?™</a>
+				<li class=""><a class="{% if page.nav == 'wat' %}active{% endif %}" href="c-est-quoi-putaindecode">Putain de ... ?</a>
+				<li class=""><a class="{% if page.nav == 'posts' %}active{% endif %}" href="#">Les Posts</a>
+				<li class=""><a class="{% if page.nav == 'about' %}active{% endif %}" href="le-crew">Le Crew</a>
 			</ul>
 		</div>
 	</div>

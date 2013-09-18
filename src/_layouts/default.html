@@ -19,7 +19,7 @@
 <div class="{% if page.class %}{ page.class }}{% endif %}">
 	{% if page.dontIncludeNav != true %}{% include nav.html %} {% endif %}
 	<div class="putainde-Page grid">
-		<div class="putainde-Page-title grid__cell unit-1-1">{{ page.title }}</div>
+		{% if page.title %}<div class="putainde-Page-title grid__cell unit-1-1">{{ page.title }}</div>{% endif %}
 		<div class="putainde-Page-content grid__cell {% if page.dontIncludeNav != true %}unit-3-4--m{% endif %}">
 		{{ content }}
 		</div>
@@ -29,6 +29,9 @@
 		</div>
 		{% endif %}
 	</div>
+	{% if page.dontIncludeNav != true %}
+	{% include footer.html %}
+	{% endif %}
 </div>
 {{ site.happyplan.html.hooks.body_close }}
 {% include google-analytics.html %}
