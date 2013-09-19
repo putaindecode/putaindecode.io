@@ -46,3 +46,11 @@
       .putainde-Footer-logo {
         width: 3rem;
       }
+
+      .putainde-Footer-colophon-item {
+        padding: 0 1rem;
+
+        .putainde-Footer-colophon-right &:last-child {
+          padding-right: 0;
+        }
+      }
