@@ -1,6 +1,6 @@
 # putaindecode, le site
 
-Dépôt contenant le code du site web. 
+Dépôt contenant le code du site web.
 
 Les articles seront postés ici sous forme de PR une fois qu'on est OK dans une issue du repo de [proposition de posts](https://github.com/putaindecode/propositions-de-posts) (afin de pas polluer les issues techniques du site)
 
@@ -15,8 +15,8 @@ When you are ready (dependencies are installed & blah blah), clone the repo
 
     git clone https://github.com/putaindecode/website.git
     cd website
-    npm install
-    bower install
+    make install
+    make update
 
 & launch the website locally
 

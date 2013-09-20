@@ -5,6 +5,8 @@
 # packages
 node_modules
 bower_components
+Gemfile.lock
+.bundle
 
 # build
 dist
