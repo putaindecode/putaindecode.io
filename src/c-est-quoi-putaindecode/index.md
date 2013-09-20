@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Hello world !
 ---
 
@@ -9,13 +9,13 @@ _Putain de code._
 Déjà, le nom commence bien.
 
 Un nom qui claque bien, on s'est dit que ce serait pas trop mal : c'est SEO-friendly, et puis tu l'as déjà dans la tête.
-Par contre, on t'a pas encore expliqué le concept. 
+Par contre, on t'a pas encore expliqué le concept.
 
 Putain de code, c'est un regroupement de développeurs vraiment passionnés par leur boulot.
 
 Et c’est à force de voir du code qui piquent les yeux qu’on s’est dit qu’il fallait qu’on fasse quelque chose pour toi ou tes semblables.
 
-Notre idée est simple: partager du code et des méthodes de travail de qualité, qu'on puisse tous s'améliorer ensemble. 
+Notre idée est simple: partager du code et des méthodes de travail de qualité, qu'on puisse tous s'améliorer ensemble.
 
 ## Mais pourquoi encore un autre site ?
 

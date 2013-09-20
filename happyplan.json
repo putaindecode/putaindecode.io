@@ -1,8 +1,13 @@
 {
-  "name": "Putain de code !",
-  "description": "PRs are welcome",
+  "name": "Putain de code !",
+  "description": "On voulait mettre une baseline mais on a pas été foutu d'en trouver une",
   "localhost": {
     "port": 4242
+  },
+  "jekyll": {
+    "nav": true,
+    "sidebar": true,
+    "footer": true
   },
   "assets": {
     "styles": [{

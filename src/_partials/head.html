@@ -1,6 +1,6 @@
 {{ site.happyplan.html.hooks.head_open }}
 <meta charset="utf-8">
-<title>{{ page.title }}</title>
+<title>{% if page.title != false %}{{ page.title }}{% else %}{{ site.happyplan.name }}{% endif %}</title>
 <meta name="description" content="">
 <base href="{% if site.happyplan.env == 'dist' %}{{ site.happyplan.url }}{% else %}http://{{ site.happyplan.localhost.hostname }}:{{ site.happyplan.localhost.port }}{% endif %}{{ site.happyplan.baseUrl }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

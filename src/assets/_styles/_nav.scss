@@ -1,4 +1,4 @@
-$putainde-Logo-size: 128px;
+$putainde-Nav-logo-width: 5rem;
 
 .putainde-Nav {
   position: relative;
@@ -22,6 +22,7 @@ $putainde-Logo-size: 128px;
   }
 }
 
+
   .putainde-SiteTitle {
     display: inline-block;
 
@@ -29,13 +30,30 @@ $putainde-Logo-size: 128px;
     font-weight: bold;
 
     text-decoration: none;
+
+    // add a padding for the logo when it's not outside the container
+    margin-left: $putainde-Nav-logo-width/2;
+    @include crp-Media-s { margin-left: $putainde-Nav-logo-width; }
+    @include crp-Media-l { margin: 0; } // & remove it when logo is placed outside
   }
 
     .putainde-Logo {
       position: absolute;
-      top: -1rem;
-      right: 100%;
-      width: 5rem;
+      left: 0;
+
+      // move outside when screen is large enough
+      @include crp-Media-l {
+        left: auto;
+        right: 100%;
+      }
+      // tiny icon on xs screen
+      width: $putainde-Nav-logo-width/2;
+      @include crp-Media-s { width: $putainde-Nav-logo-width; }
+
+      // move to top when icon is big enough
+      top: .4rem;
+      @include crp-Media-s { top: -1rem; }
+
       transition: all .2s;
 
       .putainde-SiteTitle:hover & {
@@ -45,9 +63,12 @@ $putainde-Logo-size: 128px;
     }
 
     .putainde-Baseline {
-      font-size: .8rem;
+      font-size: .75rem;
       line-height: 1;
       color: rgba(#fff, .4);
+      // show only when there is enough place since it's kindof useless
+      display: none;
+      @include crp-Media-m { display: inline; }
     }
 
   .putainde-Nav-list {

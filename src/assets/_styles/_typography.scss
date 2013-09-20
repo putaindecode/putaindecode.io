@@ -1,8 +1,8 @@
 html {
-  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: $putainde-Color-text;
   line-height: 1.6rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 h1,
@@ -13,4 +13,5 @@ h5,
 h6 {
   //color: lighten($putainde-Color-text, 50%);
   //font-weight: 400;
+  text-shadow: 0 1px 0 #fff;
 }

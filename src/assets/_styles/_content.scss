@@ -1,0 +1,14 @@
+.putainde-Content {
+  max-width: $putainde-Page-max-width;
+  margin: auto;
+}
+
+  .putainde-Content-title {
+    //padding: 0 2rem;
+
+    font-size: 2rem;
+    line-height: 6rem;
+    font-weight: bold;
+
+    color: $putainde-Color-red;
+  }

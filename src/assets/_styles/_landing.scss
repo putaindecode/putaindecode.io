@@ -2,12 +2,17 @@
 .putainde-Landing {
   width: auto;
   height: 100%;
-  padding: 10em 0;
+  padding: 2rem;
+  @include crp-Media-s { padding: 4rem 0; }
+  @include crp-Media-m { padding: 6rem 0; }
+  @include crp-Media-l { padding: 8rem 0; }
+  @include crp-Media-xl { padding: 10rem 0; }
 }
 
   .putainde-Landing-logo {
     display: block;
     margin: auto;
+    max-width: 100%;
   }
 
   .putainde-Landing-links {

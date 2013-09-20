@@ -37,32 +37,14 @@ a {
 @import "./landing";
 @import "./nav";
 
-.putainde-Page {
-  max-width: $putainde-Page-max-width;
-  margin: auto;
-}
-
-  .putainde-Page-title {
-    //padding: 0 2rem;
-
-    font-size: 2rem;
-    line-height: 6rem;
-    font-weight: bold;
-
-    color: $putainde-Color-red;
-  }
-
-  .putainde-Page-content {
-    //max-width: 40rem;
-    margin: auto;
-    padding: .5rem 2rem;
-    background: linear-gradient(rgba(#eee, .6) 20rem, rgba(#fff, 0));
-    border-radius: .4rem;
-    box-shadow: inset 0 0px 2px 1px rgba(#000, .1);
-  }
-
+@import "./content";
+@import "./post";
 @import "./sidebar";
+
 @import "./footer";
+
+// pages
+@import "./members/team";
 
 // fun
 @import "./konami";

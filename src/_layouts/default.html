@@ -1,39 +1,43 @@
+---
+pageClass: putainde-Page
+---
 <!DOCTYPE html>
 {% if site.happyplan.repository.url %}<!--
-	HEY YOU, STOP LOOKING AT MY SOURCE CODE
-	Just check it out directly on Github :
+  HEY YOU, STOP LOOKING AT MY SOURCE CODE
+  Just check it out directly on Github :
 
-	{{ site.happyplan.repository.url }}
+  {{ site.happyplan.repository.url }}
 -->{% endif %}
-<html lang="en" class="no-js no-touch {{ page.class }}">
+<html lang="fr" class="no-js no-touch {{ page.class }}">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <script>(function(docEl) {
-	docEl.className = docEl.className.replace(/\bno-js\b/, 'js');
-	if ('ontouchstart' in docEl) { docEl.className = docEl.className.replace(/\bno-touch\b/, 'touch'); }
+  docEl.className = docEl.className.replace(/\bno-js\b/, 'js');
+  if ('ontouchstart' in docEl) { docEl.className = docEl.className.replace(/\bno-touch\b/, 'touch'); }
 })(document.documentElement);</script>
 {% include head.html %}
 </head>
 <body>
 {{ site.happyplan.html.hooks.body_open }}
 <div class="{% if page.class %}{{ page.class }}{% endif %}">
-	{% if page.dontIncludeNav != true %}{% include nav.html %} {% endif %}
-	<div class="putainde-Page grid">
-		{% if page.title %}<div class="putainde-Page-title grid__cell unit-1-1">{{ page.title }}</div>{% endif %}
-		<div class="putainde-Page-content grid__cell {% if page.dontIncludeNav != true %}unit-3-4--m{% endif %}">
-		{{ content }}
-		</div>
-		{% if page.dontIncludeNav != true %}
-		<div class="putainde-Sidebar grid__cell unit-1-4--m">
-		{% include sidebar.html %}
-		</div>
-		{% endif %}
-	</div>
-	{% if page.dontIncludeNav != true %}
-	{% include footer.html %}
-	{% endif %}
+  {% if page.nav != false %}{% include nav.html %} {% endif %}
+  <article class="putainde-Content grid {{ page.pageClass }}">
+    {% if page.title != false %}<h1 class="putainde-Content-title grid__cell unit-1-1">{{ page.title }}</h1>{% endif %}
+    <div class="putainde-Content-body grid__cell {% if page.sidebar != false %}unit-3-4--m{% endif %}">
+    {{ content }}
+    </div>
+    {% if page.sidebar != false %}
+    <aside class="putainde-Sidebar grid__cell unit-1-4--m">
+    {% include sidebar.html %}
+    </aside>
+    {% endif %}
+  </article>
+  {% if page.footer != false %}
+  {% include footer.html %}
+  {% endif %}
 </div>
 {{ site.happyplan.html.hooks.body_close }}
 {% include google-analytics.html %}
 </body>
 </html>
+
