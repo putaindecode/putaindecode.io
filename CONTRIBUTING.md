@@ -1,4 +1,4 @@
-# Comment contribuer ?
+ Comment contribuer ?
 
 Ici, chez Putain de Code, dans notre building 8 étages vitres teintées avec
 masseuses et coke à volonté et à n'importe quelle heure de la journée, on sait
@@ -12,44 +12,44 @@ avancer le bouzin, que t'apportes ta pierre à l'édifice quoi (oui on t'apprend
 des expressions aussi), ou ta PR au repo comme on dit dans le monde des
 développeurs des internets.
 
-## github
+## GitHub
 
-* Déjà, si t'en as pas, crée toi un compte github (avant qu'on te caillasse),
+* Déjà, si t'en as pas, crée toi un compte GitHub (avant qu'on te caillasse),
   et vu que tu commences à lire des ressources sur notre site, crois-moi que tu
   vas commencer à le faire chauffer plus vite que prévu.
 
 * Ensuite il faut que tu installes tout le nécessaire pour bosser sur un *repo*
-  github (oui on va commencer à utiliser des anglicismes dès maintenant donc
+  GitHub (oui on va commencer à utiliser des anglicismes dès maintenant donc
   habitues-y toi, *repo* = dépôt de code, comme tu peux le constater, la
   francisation, c'est moche), on va te faire un post qui va regrouper tout ce
-  qu'il te faut pour installer et configurer git pour bosser sur github
+  qu'il te faut pour installer et configurer git pour bosser sur GitHub
 
 * Après, il faut que tu crées ce qu'on appelle un *fork* du repo. Un fork c'est
   juste ta propre copie du repo. Bah ouais, tu vas pas directement travailler
   sur notre repo et nous le crader sans qu'on puisse pas bouger l'orteil. Non
-  monsieur, sur github on est des gens civilisés et on créé sa propre copie
+  monsieur, sur GitHub on est des gens civilisés et on créé sa propre copie
   dans son coin avant de demande à papa si on a le droit d'apporter les modifs
   sur le repo principal.
 
 * Pour ça, clique sur l'icone en haut à droite du repo, sur le bouton *Fork*.
-  Github va créer une copie du repo sur ton propre compte github, où tu pourras
+  GitHub va créer une copie du repo sur ton propre compte GitHub, où tu pourras
   travailler tranquillement.
 
 * Maintenant que t'as enfin notre magnifique repo dans ton compte, tu devrais
   te sentir honoré. Une fois que t'as appelé toute ta famille et les 3
   pèquenauds qui te servent d'amis, tu dois pouvoir y coder dessus sur ton pc.
   On va partir du principe que tu t'appelles Clint. Et que ton nom c'est
-  Horris. T'as donc choisi comme pseudo github `clinthorris` (oui t'aurais du
+  Horris. T'as donc choisi comme pseudo GitHub `clinthorris` (oui t'aurais du
   réfléchir toi aussi). Donc tu te débrouilles pour aller dans un dossier vide
   et tu vas cloner notre repo. Cloner = faire une copie d'un repo distant (sur
-  les serveurs de github par exemple) en local (ton vieux pentium2 sous xp dans
+  les serveurs de GitHub par exemple) en local (ton vieux pentium2 sous xp dans
   notre cas). Ensuite il faut que tu te rendes dans ce dossier en ligne de
   commande (sous windows tu y vas avec l'invite de commande mais on te prévient
   qu'on va pas être copains longtemps, trouve un os décent putain, sous mac osx
   tu utilises le terminal, et sous linux je pense qu'on a pas à t'expliquer).
 
     ```
-    git clone https://github.com/xxx/website.git putaindecode
+    git clone https://GitHub.com/xxx/website.git putaindecode
     ```
 
 * Ensuite tu dois ajouter ce qu'on appelle une remote. Une remote c'est une
@@ -61,7 +61,7 @@ développeurs des internets.
 
     ```
     cd putaindecode
-    git remote add upstream https://github.com/putaindecode/website.git
+    git remote add upstream https://GitHub.com/putaindecode/website.git
     git fetch upstream
     ```
 
