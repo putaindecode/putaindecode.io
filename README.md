@@ -1,4 +1,6 @@
-# putaindecode, le site
+# Putain de Code !, le site
+
+<img align="right" alt="" src="https://raw.github.com/putaindecode/website/master/src/assets/_images/p!-logo--no-bubble-512--no-background.png" width="128" />
 
 Dépôt contenant le code du site web.
 
