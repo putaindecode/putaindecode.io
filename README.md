@@ -1,6 +1,6 @@
-# Putain de Code !, le site
+# Putain de Code ! [![Build Status](https://travis-ci.org/putaindecode/website.png?branch=master)](https://travis-ci.org/putaindecode/website)
 
-<img align="right" alt="" src="https://raw.github.com/putaindecode/website/master/src/assets/_images/p!-logo--no-bubble-512--no-background.png" width="128" />
+<img align="right" alt="" src="https://raw.github.com/putaindecode/website/master/src/assets/_images/p!-logo--no-bubble-512--trim.png" width="128">
 
 Dépôt contenant le code du site web.
 
@@ -38,8 +38,8 @@ The following command will build the website & publish `dist` folder to `gh-page
 
 Using [icoutils](http://www.nongnu.org/icoutils/)
 
-	brew install icoutils
-	icotool -c src/assets/_images/p\!-logo--no-bubble-16.png src/assets/_images/p\!-logo--no-bubble-32.png -o src/favicon.ico
+    brew install icoutils
+    icotool -c src/assets/_images/p\!-logo--no-bubble-16.png src/assets/_images/p\!-logo--no-bubble-32.png -o src/favicon.ico
 
 ---
 
