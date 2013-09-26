@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "bower": "~1.2.3",
-    "happyplan": "~0.3.0-beta.6"
+    "happyplan": "~0.3.0-beta.10"
   },
   "scripts": {
     "test": "happyplan dist --verbose"
