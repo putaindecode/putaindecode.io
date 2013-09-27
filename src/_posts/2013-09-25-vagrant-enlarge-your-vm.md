@@ -18,7 +18,7 @@ Vagrant s’adresse principalement à toi, mais aussi à un public
 de **développeurs** qui souhaitent pouvoir mettre en place rapidement
 un environnement de dev avec une machine virtuelle (genre apache-php-*sql)
 sans y passer trop de temps.
-Vagrant, c’est aussi pour des **devops** qui voudrait testé la mise en
+Vagrant, c’est aussi pour des **devops** qui voudrait tester la mise en
 place et le provisionning de leur infra.
 Dans la doc, ils disent même que ça s’adresse aux designer
 (pour dire si c’est simple) mais faut pas déconner non plus,
@@ -41,17 +41,17 @@ Bon, je suppose que c’est encore un peu flou. Alors voilà comme ça se prése
 Une fois installé ( http://downloads.vagrantup.com/ ), tu devrais avoir
 une nouvelle commande de dispo.
 Alors dégaines ton terminal et envoie un `vagrant init`. Ça devrait créer
-un fichier  `Vagrantfile` (n’est pas peur, c’est en Ruby) qui va décrire
+un fichier `Vagrantfile` (n’est pas peur, c’est en Ruby) qui va décrire
 ta machine virtuelle. En gros de quelle box de base tu pars, comment tu la
 configures (réseaux, dossier partagé entre la VM et le Host, ta machine réelle)
 et comment tu l’approvisionnes (via un shell, avec un script Puppet...)
 
 Et si t’as une box déjà prête tu peux directement faire
 `vagrant init http://maboite.com/ma.box`
-Et si t’as déjà téléchargé la VM et qu’elle est associé à vagrant,
+Et si t’as déjà téléchargé la VM et qu’elle est associée à vagrant,
 tu peux faire `vagrant init maboite`
 
-Ensuite voila les quelques points à paramétrer.
+Ensuite voilà les quelques points à paramétrer.
 - `config.vm.box = "base"`pour spécifier le nom d’une box préalablement
 téléchargée.
 - `config.vm.box_url = "http://domain.com/path/to/above.box"` Tu remplaces
@@ -70,11 +70,13 @@ depuis `/home/vagrant` dans la VM.
 La suite du fichier contient des exemples de type d’approvisionnement
 (Puppet, Chef solo ou Chef server)
 Et si jamais tu souhaites lancer un script d’approvisionnement :
+
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "provision.sh"
 end
 ```
+
 > Vagrant te permet aussi de créer test propres box déjà approvisionnées via
 la commande vagrant package. C’est assez pratique quand tu dois
 télécharger-compiler-installer tout l’internet
@@ -84,16 +86,16 @@ Bon, la première fois risque de prendre du temps, parce que vagrant
 va télécharger ta box, puis lancer l’approvisionnement. Profites en pour faire
 un tour sur http://vim-adventures.com/ et jouer un peu en attendant.
 
-Une fois terminer, tu as maintenant une box dispo avec laquelle travailler.
+Une fois terminé, tu as maintenant une box dispo avec laquelle travailler.
 
 # Etape 3 - Joie \o/.
 Je pensais faire une troisième partie sur comment arreter la VM mais
 ça présente pas vraiment d’intérêt car ca tiens en un ligne de commande.
 
-Bref, le point important de tout ça, c’est que les autres relou de ton équipe
+Bref, le point important de tout ça, c’est que les autres relous de ton équipe
 ne pourront plus dire que pourtant ça marche bien chez eux, et qu’ils
 comprennent pas, c’est vraiment étrange... enfin sauf si ils sont
-de mauvaises foi :)
+de mauvaise foi :)
 - L’intégrateur n’aura plus à se taper 14 installations de trucs en
 ligne de commande qu’il ne retien jamais, pour rajouter un bout de css ou de js.
 (Protip: là, ça tiens sur un post-it !)
