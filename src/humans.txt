@@ -1,0 +1,27 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+# Please update if needed the team page (src/le-crew/) when you update this page
+
+# TEAM
+
+    Maxime Thirouin (MoOx) -- Developer -- http://moox.io/ - https://twitter.com/MoOx - https://github.com/MoOx
+    Nyalab -- Developer --
+    Shahor -- Developer --
+    dguyon -- Developer --
+    justinmarsan -- Developer --
+    kud -- Developer --
+    lionelB -- Developer --
+    madx -- Developer --
+    mlbli -- Developer --
+    rhannequin -- Developer --
+
+# THANKS
+
+    w3school, commentcamarche & developpez.net for their shitty content which give us hope.
+
+# TECHNOLOGY COLOPHON
+
+    SublimeText 3 / Vim
+    HTML5, CSS3
+    HappyPlan (Jekyll, Grunt, Bower, Sass)
+    Normalize.css, Griddle, CSS Recipes
