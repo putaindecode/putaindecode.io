@@ -15,3 +15,29 @@ h6 {
   //font-weight: 400;
   text-shadow: 0 1px 0 #fff;
 }
+
+
+blockquote {
+  margin: 0;
+  padding: 0 1rem;
+  border-left: .2rem solid rgba($putainde-Color-text, .3);
+
+  color: rgba($putainde-Color-text, .7);
+
+  // blockquoteception
+  & & {
+    font-style: italic;
+    border-left-color: rgba($putainde-Color-text, .15);
+  }
+}
+
+figure {
+  text-align: center;
+  margin: auto;
+}
+
+  figcaption {
+    font-size: .9rem;
+    font-style: italic;
+    opacity: .8;
+  }
