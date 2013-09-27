@@ -1,7 +1,3 @@
----
-permalink: /posts/git-reparer-un-push-foireux
----
-
 ## Résolution d'un push foireux
 
 ### DISCLAIMER
