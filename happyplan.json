@@ -7,7 +7,9 @@
   "jekyll": {
     "nav": true,
     "sidebar": true,
-    "footer": true
+    "footer": true,
+
+    "markdown": "redcarpet"
   },
   "assets": {
     "styles": [{
