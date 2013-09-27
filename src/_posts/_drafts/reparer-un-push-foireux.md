@@ -1,4 +1,12 @@
-## Résolution d'un push foireux
+---
+layout: post
+comments: true
+title: Résolution d'un push foireux
+permalink: post/reparer-un-push-foireux
+author: madx
+tags:
+  - git
+---
 
 ### DISCLAIMER
 
@@ -17,7 +25,7 @@ Ici il n'y a pas eu de commit sur `master` depuis, et tout le monde dort, donc j
 
 ### Résolution
 
-``` console
+```bash
 # 1. Publication de la branche
 
 # On se place sur le commit du post
