@@ -7,4 +7,5 @@ permalink: post/putain-de-post-exemple
 author: PseudoGitHub
 tags:
   - bla bla
+readingTime: Xmin
 ---

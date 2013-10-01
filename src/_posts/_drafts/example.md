@@ -7,4 +7,5 @@ permalink: en/post/fucking-example-post
 author: GitHubNick
 tags:
   - blah blah
+readingTime: Xmin
 ---
