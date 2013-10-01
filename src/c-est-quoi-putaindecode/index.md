@@ -10,6 +10,8 @@ Déjà, le nom commence bien.
 
 On a cherché un nom qui claque bien et on s'est dit que celui là serait pas trop mal : c'est SEO-friendly et puis tu l'as déjà dans la tête.
 
+Mais qui est on ? Que veux-t-on ? <del>Quel est notre réseau ?</del>
+
 On va commencer simple avec notre définition de ce qu'est du putain de code:
 
 > Putain de code - /py.tɛ̃ də kɔd/ orthographe invariable, forme de locution nominale
@@ -19,24 +21,24 @@ On va commencer simple avec notre définition de ce qu'est du putain de code:
 > 2. (Très familier) (Injurieux) (Mélioartif) Code source exaltant.
 > > Et gro’ mate moi ce putain de code ! Comment je t’ai refactorisé ces 1337 lignes là. 42 lignes mec. Et ça va carrément plus vite !
 
-Maintenant que tu commences à te faire ton idée, on va prendre le temps de t'expliquer ça un peu plus en détail manière qu'on gagne tous un peu de temps en évitant les questions auxquelles on a déjà prévu les réponses.
+Maintenant que tu commences à te faire ton idée, on va prendre le temps de t'expliquer ça un peu plus en détail manière qu'on gagne tous un peu de temps en évitant les questions de noob auxquelles on a déjà prévu les réponses.
 
 ## Le concept
 
-Putain de code, c'est un regroupement de développeurs vraiment passionnés par leur boulot.
+_Putain de Code !_, c'est un regroupement de développeurs vraiment passionnés par leur boulot.
 
-Et c’est à force de voir du code qui piquent les yeux qu’on s’est dit qu’il fallait qu’on fasse quelque chose pour toi et tes semblables.
+Et c’est à force de voir du code qui pique les yeux qu’on s’est dit qu’il fallait qu’on fasse quelque chose pour toi et tes semblables.
 
 <figure>
   <img alt="WAAAT" src="{{ site.happyplan.baseUrls.images}}/memes/WAAAT.gif">
-  <figcaption>On a tous eu ce genre de réactions.</figcaption>
+  <figcaption>On a tous eu ce genre de spasmes devant du code</figcaption>
 </figure>
 
 Notre idée est simple : partager du code et des méthodes de travail de qualité, afin qu'on puisse tous s'améliorer ensemble.
 
 ## Mais pourquoi encore un autre site ?
 
-On est parti d’un constat simple : les internets regorgent pas vraiment de sites de ressources de qualité, en français s’il vous plaît.
+On est parti d’un constat simple : les internets ne regorgent pas vraiment de sites de ressources de qualité en français (s’il vous plaît).
 
 Faut bien avouer qu'on a en tous un peu plein le c** de trouver du résultat de _commentcamarche.net_ et autres _developpez.net_ en tête de gondole quand tu fais des recherches. D'ailleurs on se demande pourquoi l'extension c'est .net alors que souvent le contenu ne l'est pas vraiment...
 Serait-ce <del>grâce</del> à cause de la technologie qu'il utilise derrière ?
@@ -56,7 +58,7 @@ C'est un peu le fondement de notre démarche d’ailleurs.
 > PRs are welcome
 
 On ne prétend pas avoir la science infuse.
-On accepte donc volontiers les contributions sur les articles quel qu'en soit leur forme.
+On accepte donc volontiers les contributions sur les articles quelles qu'en soient leur forme.
 
 Dans les faits :
 
