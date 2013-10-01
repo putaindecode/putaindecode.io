@@ -6,6 +6,8 @@ title: La team de winners
 Order has been taken from https://github.com/putaindecode?tab=members for now
 We plan to use something with more sense
 https://github.com/putaindecode/website/issues/4#issuecomment-24651125
+
+Please update if needed the humans.txt file when you update this page
 {% endcomment %}
 
 {% include members/MoOx.html %}{% include member_team.html %}
