@@ -19,7 +19,7 @@ de **développeurs** qui souhaitent pouvoir mettre en place rapidement
 un environnement de dev avec une machine virtuelle (genre apache-php-*sql)
 sans y passer trop de temps.
 Vagrant, c’est aussi pour des **devops** qui voudrait tester la mise en
-place et le provisionning de leur infra.
+place et le provisioning de leur infra.
 Dans la doc, ils disent même que ça s’adresse aux designers
 (pour dire si c’est simple) mais faut pas déconner non plus,
 on a jamais vu un designer dégainer une console :)
@@ -45,7 +45,7 @@ un fichier `Vagrantfile`  qui va décrire ta machine virtuelle
 (ne t’inquiète pas, c’est juste écrit en Ruby).
 En gros de quelle box de base tu pars, comment tu la configures (réseaux,
 dossier partagé entre la VM et le Host, ta machine réelle) et comment tu
-l’approvisionnes (via un shell, avec un script Puppet...)
+la provisionnes (via un shell, avec un script Puppet...)
 
 ## La config de la box
 Ensuite voilà les quelques points à paramétrer.
@@ -65,7 +65,7 @@ avec ta machine virtuelle.
 Par défaut, Vagrant te permet d’accéder au répertoire courant
 depuis `/home/vagrant` dans la VM.
 
-## le provisionning de box
+## le provisioning de box
 Alors attention, c'est un des trucs cools avec vagrant. Avant, quand tu
 voulais te monter une VM pour travailler, il fallait aussi la configurer,
 installer les bonnes versions de chaque brique que le projet utilisé. Ça‎
@@ -77,9 +77,9 @@ toujours packager la box que t'as configuré avec amour pour pouvoir la
 réutiliser dès que l'occasion se présente. Sinon tu peux déjà trouver pas mal
 de box déjà prêtes à l'emploi, avec ou sans support pour puppet, chef...
 
-La suite du fichier contient des exemples de type de provisionning
+La suite du fichier contient des exemples de type de provisioning
 (Puppet, Chef solo ou Chef server)
-Et si jamais tu souhaites lancer un script d’approvisionnement :
+Et si jamais tu souhaites lancer un script de provisioning :
 
 ```ruby
 Vagrant.configure("2") do |config|
@@ -87,13 +87,13 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-> Vagrant te permet aussi de créer tes propres box déjà approvisionnées via
+> Vagrant te permet aussi de créer tes propres box déjà provisionnées via
 la commande vagrant package. C’est assez pratique quand tu dois
 télécharger-compiler-installer tout l’internet
 
 # Etape 2 - vagrant up
 Bon, la première fois risque de prendre du temps, parce que vagrant
-va télécharger ta box, puis lancer l’approvisionnement. Profites en pour faire
+va télécharger ta box, puis lancer le provisioning. Profites en pour faire
 un tour sur http://vim-adventures.com/ et jouer un peu en attendant.
 
 Une fois terminé, tu as maintenant une box dispo avec laquelle travailler.
@@ -114,7 +114,7 @@ ou de js.
 dans une projet vieux de 2 ans avec que des versions de php / ruby ou mysql
 dépassées qui vont casser la superbe config qu’il a mis 1 semaine à fignoler
 avec les dernières techno à la mode.
-- l’admin sys pourra packager les box de chaque projets, approvisionnées
+- l’admin sys pourra packager les box de chaque projets, provisionnées
 et configurées et pour éviter d’avoir à configurer les postes des autres
 dev à chaque changement de projet.
 
