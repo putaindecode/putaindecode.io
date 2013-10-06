@@ -28,8 +28,9 @@
     justinmarsan
     Developer
 
-    kud
+    Erwann Mest (_kud)
     Developer
+    http://kud.io -  https://twitter.com/_kud - https://github.com/kud
 
     lionelB
     Developer
