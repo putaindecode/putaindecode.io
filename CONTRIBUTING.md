@@ -1,10 +1,10 @@
- Comment contribuer ?
+# Comment contribuer ?
 
 Ici, chez Putain de Code, dans notre building 8 étages vitres teintées avec
 masseuses et coke à volonté et à n'importe quelle heure de la journée, on sait
 qu'on va forcément t'aider à comprendre pas mal de trucs, mais on sait aussi
 qu'on peut faire des fois des erreurs dans les articles (à cause de la coke) ou
-tout simplement qu'il existe des types encore plus hipster
+tout simplement qu'il existe des types encore plus hipsters
 qu'[_mlb](http://putaindecode.fr/le-crew/#mlbli) et qui voudront profiter de
 notre renomée inter~~nationale~~galactique pour se faire un peu de visibilité
 en proposant un post. Du coup, on s'attend vraiment à ce que tu aides à faire
@@ -15,7 +15,7 @@ développeurs des internets.
 ## GitHub
 
 * Déjà, si t'en as pas, crée toi un compte GitHub (avant qu'on te caillasse),
-  et vu que tu commences à lire des ressources sur notre site, crois moi que tu
+  et vu que tu commences à lire des ressources sur notre site, crois-moi que tu
   vas commencer à le faire chauffer plus vite que prévu.
 
 * Ensuite il faut que tu installes tout le nécessaire pour bosser sur un *repo*
@@ -26,7 +26,7 @@ développeurs des internets.
 
 * Après, il faut que tu crées ce qu'on appelle un *fork* du repo. Un fork c'est
   juste ta propre copie du repo. Bah ouais, tu vas pas directement travailler
-  sur notre repo et nous le crader sans qu'on puisse pas bouger l'orteil. Non
+  sur notre repo et nous le dégueulasser sans qu'on ne bouge l'orteil. Non
   monsieur, sur GitHub on est des gens civilisés et on créé sa propre copie
   dans son coin avant de demander à papa si on a le droit d'apporter les modifs
   sur le repo principal.
@@ -36,10 +36,10 @@ développeurs des internets.
   travailler tranquillement.
 
 * Maintenant que t'as enfin notre magnifique repo dans ton compte, tu devrais
-  te sentir honoré. Une fois que t'as appelé toute ta famille et les 3
+  te sentir honoré(e). Une fois que t'as appelé toute ta famille et les 3
   pèquenauds qui te servent d'amis, tu dois pouvoir y coder dessus sur ton PC.
   On va partir du principe que tu t'appelles Clint. Et que ton nom c'est
-  Horris. T'as donc choisi comme pseudo GitHub `clinthorris` (oui t'aurais du
+  Horris. T'as donc choisi comme pseudo GitHub `clinthorris` (oui t'aurais dû
   réfléchir toi aussi). Donc tu te débrouilles pour aller dans un dossier vide
   et tu vas cloner notre repo. Cloner = faire une copie d'un repo distant (sur
   les serveurs de GitHub par exemple) en local (ton vieux Pentium II sous XP
@@ -58,7 +58,7 @@ développeurs des internets.
   servir que si tu fais une modification ou une contribution sur notre site
   aujourd'hui, et que dans un mois tu veuilles encore en faire, tu pourras
   facilement rattraper tout ce qu'on aura fait entre temps. La remote en
-  rapport avec le repo principal, on l'appelle souvent *upstream*
+  rapport avec le repo principal, on l'appelle souvent *upstream*.
 
     ```
     cd putaindecode
@@ -89,21 +89,21 @@ développeurs des internets.
 
 ## Correction d'un post existant
 
-Bon ok, on a compris, t'es timide, tu te sens pas encore prêt à nous écrire un
+Bon ok, on a compris, t'es timide, tu te sens pas encore prêt(e) à nous écrire un
 magnifique post sur ton tout dernier projet, tu préfères juste nous aider à
 améliorer notre contenu. Bah on te remercie quand même tu vois, parce qu'on est
 des types sympas.
 
 * Alors déjà, on aime pas juste donner une liste d'ordres sans expliquer pour
   que tu puisses comprendre ce que tu fais. Donc notre site, il a été fait
-  grâce à HappyPlan (un générateur de site statique bien pimpé, parce que oui,
+  grâce à happyplan (un générateur de sites statiques bien pimpé, parce que oui,
   y'a pas que Wordpress pour faire un site) qui lui même est basé sur Jekyll
-  (un générateur de site statique), grunt (un exécuteur de scripts JavaScript)
+  (un générateur de sites statiques), grunt (un exécuteur de scripts JavaScript)
   et plein d'autres truc cools. Donc, faudrait que tu jettes un coup d'œil à
   ces projets, histoire de savoir de quoi on cause, même si on va essayer de
   t'expliquer au mieux.
 
-* Donc, comme on est basé sur Jekyll, tous nos posts sont contenus dans
+* Donc, comme on est basés sur Jekyll, tous nos posts sont contenus dans
   `src/_posts/`. Si jamais c'est sur autre chose qu'un post, farfouille un peu
   et tu trouveras, le nom des dossiers est assez explicite et de toute façon
   les URLs sur notre site ressemblent bizarrement (en vrai c'est pas bizarre
