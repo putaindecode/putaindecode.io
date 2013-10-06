@@ -10,14 +10,14 @@ Déjà, le nom commence bien.
 
 On a cherché un nom qui claque bien et on s'est dit que celui là serait pas trop mal : c'est SEO-friendly et puis tu l'as déjà dans la tête.
 
-Mais qui est on ? Que veux-t-on ? <del>Quel est notre réseau ?</del>
+Mais qui est-on ? Que veut-on ? <del>Quel est notre réseau ?</del>
 
 On va commencer simple avec notre définition de ce qu'est du putain de code:
 
 > Putain de code - /py.tɛ̃ də kɔd/ orthographe invariable, forme de locution nominale
 >
 > 1. (Vulgaire) (Injurieux) (Péjoratif) Code source méprisable.
-> > Mais vas’y, c’est quoi ce putain de code là ? Qui a pondu cette grosse merde qui rame autant ?
+> > Mais vas-y, c’est quoi ce putain de code là ? Qui a pondu cette grosse merde qui rame autant ?
 > 2. (Très familier) (Injurieux) (Mélioartif) Code source exaltant.
 > > Et gro’ mate moi ce putain de code ! Comment je t’ai refactorisé ces 1337 lignes là. 42 lignes mec. Et ça va carrément plus vite !
 
@@ -38,7 +38,7 @@ Notre idée est simple : partager du code et des méthodes de travail de qualit�
 
 ## Mais pourquoi encore un autre site ?
 
-On est parti d’un constat simple : les internets ne regorgent pas vraiment de sites de ressources de qualité en français (s’il vous plaît).
+On est partis d’un constat simple : les internets ne regorgent pas vraiment de sites de ressources de qualité en français (s’il vous plaît).
 
 Faut bien avouer qu'on a en tous un peu plein le c** de trouver du résultat de _commentcamarche.net_ et autres _developpez.net_ en tête de gondole quand tu fais des recherches. D'ailleurs on se demande pourquoi l'extension c'est .net alors que souvent le contenu ne l'est pas vraiment...
 Serait-ce <del>grâce</del> à cause de la technologie qu'il utilise derrière ?
