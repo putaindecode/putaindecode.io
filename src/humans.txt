@@ -19,6 +19,10 @@
     Developer
     https://twitter.com/Nyalab - https://github.com/Nyalab - ¯\_(ツ)_/¯
 
+    Erwann Mest (_kud)
+    Developer
+    http://kud.io -  https://twitter.com/_kud - https://github.com/kud
+
     Shahor
     Developer
 
@@ -27,10 +31,6 @@
 
     justinmarsan
     Developer
-
-    Erwann Mest (_kud)
-    Developer
-    http://kud.io -  https://twitter.com/_kud - https://github.com/kud
 
     lionelB
     Developer
