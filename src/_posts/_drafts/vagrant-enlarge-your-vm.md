@@ -1,7 +1,16 @@
 ---
+lang: fr
 layout: post
 title: Vagrant, enlarge your VM
 tags: ['virtualbox', ' tools', ' vagrant']
+comments: true
+permalink: fr/post/vagrant-enlarge-your-vm
+author: lionelB
+tags:
+  - virtualbox
+  - tools
+  - vagrant
+readingTime: 4min
 ---
 
 # Vagrant, enlarge your VM
