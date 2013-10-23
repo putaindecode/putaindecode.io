@@ -5,8 +5,6 @@
 # packages
 node_modules
 bower_components
-Gemfile.lock
-.bundle
 
 # build
 dist
@@ -15,5 +13,3 @@ build
 # gh-page
 .grunt
 
-# generated sass
-./src/assets/_styles/_icons.scss

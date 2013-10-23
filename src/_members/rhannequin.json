@@ -1,0 +1,29 @@
+{
+  "name": "rhannequin",
+  "url": null,
+  "github": null,
+  "twitter": null,
+  "avatar_url": "https://gravatar.com/avatar/a2b9398e4753f15d628c8d928600d90e",
+  "fr": {
+    "bio": {
+      "short": "Développeur Web, Ruby et JavaScript funky, joueur de handball, amoureux d'espace et de science &amp; matteur de séries.",
+      "long": [
+        "Développeur frontend/backend spécialement intéressé par JavaScript et Ruby.",
+        "Curieux des hacks sur les technologies web, conscient des standards de performance, de tests, et du web tout court.",
+        "Joueur de handball depuis l'enfance, amoureux et l'espace et de la science, matteur de séries.",
+        "Baigné dans de la musique et un mode de vie funkys."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Funky web developer Ruby, JavaScript, handball player, Space/Science lover &amp; tv-shows watcher.",
+      "long": [
+        "Frontend/backend developer particularly interested in JavaScript and Ruby.",
+        "Curious about hacks around web technologies, aware of performance, testing et web standards.",
+        "Handball player since childhood, Sciences and Space lover, tv-shows watcher.",
+        "Surrounded by funky music and way of living."
+      ]
+    }
+  }
+}

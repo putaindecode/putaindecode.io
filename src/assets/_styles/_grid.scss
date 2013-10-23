@@ -1,5 +1,14 @@
 @import "griddle/griddle";
 
+// libsass incompatibility workaround
+// @todo report to libsass repo
+@function contains($list, $value) {
+    // real source
+    // @if type-of($list) == list { @return not not index($list, $value); }
+    // @else { @return $list == $value; }
+    @return false;
+}
+
 $grid-gutter: 2em;
 
 $putainde-Grid--media-s: 2 3 !default;

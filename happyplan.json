@@ -1,27 +1,26 @@
 {
   "name": "Putain de code !",
   "description": "On voulait mettre une baseline mais on a pas été foutu d'en trouver une",
-  "localhost": {
+  "server": {
     "port": 4242
   },
-  "jekyll": {
-    "nav": true,
-    "sidebar": true,
-    "footer": true,
 
-    "markdown": "redcarpet"
-  },
   "assets": {
     "styles": [{
-      "dest": "<%= happyplan.dist.assets.styles %>/putaindecode.css"
+      "src": "<%= happyplan.path.assets.styles %>/putaindecode.scss",
+      "dest": "<%= happyplan.path.dist.assets.styles %>/putaindecode.css"
     }],
     "scripts": [{
       "src": [
-        "<%= happyplan.theme.local.assets.scripts %>/konami.js",
-        "<%= happyplan.theme.local.assets.scripts %>/putaindecode.js"
+        "<%= happyplan.path.assets.scripts %>/konami.js",
+        "<%= happyplan.path.assets.scripts %>/putaindecode.js"
       ],
-      "dest": "<%= happyplan.dist.assets.scripts %>/putaindecode.js"
+      "dest": "<%= happyplan.path.dist.assets.scripts %>/putaindecode.js"
     }]
   },
+
+  "nav": true,
+  "sidebar": true,
+  "footer": true,
   "google_analytics_tracking_id": "UA-43771806-1"
 }
