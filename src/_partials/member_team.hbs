@@ -1,0 +1,21 @@
+<div class="putainde-TeamMember" id="{{ this.name}}">
+<div class="putainde-TeamMember-wrapper">
+  {{#if this.avatar_url }}
+    {{#if this.url }}
+    <a class="putainde-TeamMember-img" href="{{ this.url }}">
+      <img src="{{ this.avatar_url }}?s=300&amp;d=https%3A%2F%2Fidenticons.github.com%2Fc0863a4414cba6aa95014df9e3d9f6a5.png" />
+    </a>
+    {{else}}
+    <span class="putainde-TeamMember-img">
+      <img src="{{ this.avatar_url }}?s=300&amp;d=https%3A%2F%2Fidenticons.github.com%2Fc0863a4414cba6aa95014df9e3d9f6a5.png" />
+    </span>
+    {{/if}}
+  {{/if}}
+  <span class="putainde-TeamMember-info">
+    <strong class="putainde-TeamMember-info-name">{{ this.name }}</strong>
+    {{#if this.twitter }}<a class="putainde-TeamMember-info-twitter" href="https://twitter.com/{{ this.twitter }}"><i class="icon icon_twitter"> </i></a>{{/if}}
+    {{#if this.github }}<a class="putainde-TeamMember-info-github" href="https://github.com/{{ this.github }}"><i class="icon icon_github"> </i></a>{{/if}}
+  </span>
+  {{#if this.fr.bio.short }}<p class="putainde-TeamMember-shortbio">{{ this.fr.bio.short }}</p>{{/if}}
+</div>
+</div>

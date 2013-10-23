@@ -1,6 +1,6 @@
 {
   "name": "putaindecode",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha.0",
   "description": "putaindecode website",
   "main": "index.js",
   "repository": {
@@ -14,10 +14,12 @@
     "url": "https://github.com/putaindecode/website/issues"
   },
   "dependencies": {
-    "bower": "~1.2.3",
-    "happyplan": "~0.3.0-beta.10"
+    "happyplan": "~0.4.0-alpha.5"
   },
   "scripts": {
     "test": "happyplan dist --verbose"
+  },
+  "devDependencies": {
+    "lodash": "~2.2.1"
   }
 }

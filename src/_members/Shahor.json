@@ -1,0 +1,27 @@
+{
+  "name": "Shahor",
+  "url": null,
+  "github": null,
+  "twitter": null,
+  "avatar_url": "https://gravatar.com/avatar/f7f0f11f39a31d9770ae207bf98bf4c6",
+  "fr": {
+    "bio": {
+      "short": "Ansi font font font li p title Mar I/O .NET.",
+      "long": [
+        "Full stack developer (focused on the front-end though) that loves building cools things.",
+        "Currently working for netvibes.",
+        "Ruby and Ruby on Rails are part of his toolbelt."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Ansi font font font li p title Mar I/O .NET.",
+      "long": [
+        "Full stack developer (focused on the front-end though) that loves building cools things.",
+        "Currently working for netvibes.",
+        "Ruby and Ruby on Rails are part of his toolbelt."
+      ]
+    }
+  }
+}

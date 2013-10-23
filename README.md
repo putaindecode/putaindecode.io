@@ -13,7 +13,6 @@ Les articles seront postés ici sous forme de PR une fois qu'on est OK dans une 
 __Notice: please be aware that we are using a `.editorconfig`. Be sure to respect it ([tip](http://editorconfig.org/)). Thanks__
 
 This website is build on top of [happyplan](https://github.com/happyplan/happyplan), so please checkout [happyplan README](https://github.com/happyplan/happyplan#readme) before trying to do anything.
-When you are ready (dependencies are installed & blah blah), clone the repo
 
     git clone https://github.com/putaindecode/website.git
     cd website

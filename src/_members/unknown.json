@@ -1,0 +1,26 @@
+{
+  "name": "?!",
+  "url": "http://lemeilleurdevdefrance.com",
+  "github": null,
+  "twitter": null,
+  "avatar_url": "https://gravatar.com/avatar/unknown",
+  "fr": {
+    "bio": {
+      "short": "C'est toi le prochain ?",
+      "long": [
+        "",
+        ""
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Are you the next one ?",
+      "long": [
+        "",
+        ""
+      ]
+    }
+  }
+}
+
