@@ -1,0 +1,32 @@
+.putainde-PostsListing {
+  //@extend %crp-Clearfix;
+  overflow: hidden; // poor clearfix
+
+  display: block;
+  padding: 0;
+}
+
+  .putainde-PostsListing-post {
+    display: block;
+    float: left;
+    margin: 0 0 2em;
+    border-bottom: 1px solid #ccc;
+
+    $margin: 2%;
+    width: 50%-$margin;
+    &:nth-child(odd) { margin-right: $margin}
+    &:nth-child(even)  { margin-left: $margin}
+  }
+
+    .putainde-PostsListing-post-datetime {
+      color: #999;
+    }
+
+    .putainde-PostsListing-post-link {
+      display: block;
+      font-size: 1.4em;
+    }
+
+    .putainde-PostsListing-post-metas {
+
+    }

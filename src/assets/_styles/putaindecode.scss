@@ -38,12 +38,14 @@ a {
 @import "./nav";
 
 @import "./content";
+@import "./posts";
 @import "./post";
 @import "./sidebar";
 
 @import "./footer";
 
 // pages
+@import "./members/author";
 @import "./members/team";
 
 // fun
