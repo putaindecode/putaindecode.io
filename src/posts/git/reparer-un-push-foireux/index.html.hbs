@@ -1,13 +1,17 @@
 ---
-layout: post
+lang: fr
+layout: post.hbs
+type: post
+draft: true
 comments: true
-title: Résolution d'un push foireux
-permalink: post/reparer-un-push-foireux
 author: madx
+title: Résolution d'un push foireux
 tags:
   - git
+readingTime: Xmin
 ---
 
+{{#markdown}}
 ### DISCLAIMER
 
 Cette manip n'est pas DU TOUT recommandé pour annuler une modification ancienne, depuis laquelle des branches/commits ont été faits. Préférez `revert` pour ça (un simple `git revert SHA_DU_COMMIT` suffit)
@@ -63,3 +67,4 @@ To git@github.com:putaindecode/website.git
 ### État du dépôt, après
 
 ![État du dépôt après](http://drop.madx.me/k1zritao83g6lvg4jmmb4ifkve79ewx.png)
+{{/markdown}}
