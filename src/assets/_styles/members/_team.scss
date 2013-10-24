@@ -1,27 +1,36 @@
 $putainde-TeamMember-borderRadius: .2rem;
 .putainde-TeamMember {
+  position: relative;
   margin: auto;
   max-width: 18rem;
   $width: 100%;
+  padding-bottom: $width; // flex embed technic
   @include crp-Media-s {
     float: left;
     $nb-member: 2;
     width: $width/$nb-member;
+    padding-bottom: $width/$nb-member;
   }
   @include crp-Media-m {
     $nb-member: 3;
     width: $width/$nb-member;
+    padding-bottom: $width/$nb-member;
   }
   @include crp-Media-l {
     $nb-member: 4;
     width: $width/$nb-member;
+    padding-bottom: $width/$nb-member;
   }
   overflow: hidden;
   border-radius: $putainde-TeamMember-borderRadius;
 }
 
 .putainde-TeamMember-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   margin: .2rem;
 
   // fancy style
@@ -51,6 +60,7 @@ $putainde-TeamMember-borderRadius: .2rem;
     img {
       display: block;
       max-width: 100%;
+      height: 100%;
       border-radius: $putainde-TeamMember-borderRadius;
     }
   }
