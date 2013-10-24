@@ -1,7 +1,7 @@
 <nav class="putainde-Nav">
 	<div class="grid">
 		<div class="grid__cell">
-			<a class="putainde-SiteTitle" href="{{ baseurl }}">
+			<a class="putainde-SiteTitle" href="{{ happyplan.baseUrl }}">
 				<img class="putainde-Logo" alt="Putain de code !" src="{{ happyplan.baseUrls.images }}/p!-logo.svg" />
 				{{ happyplan.name }}
 			</a>
@@ -9,10 +9,10 @@
 			<span class="putainde-Baseline">{{ happyplan.description }}</span>
 
 			<ul class="putainde-Nav-list">
-				<li class=""><a class="{{#is this.nav 'home' }}active{{/is}}" href="{{ baseurl }}">Home</a>
-				<li class=""><a class="{{#is this.nav 'wat' }}active{{/is}}" href="c-est-quoi-putaindecode">Putain de ... ?</a>
-				<li class=""><a class="{{#is this.nav 'posts' }}active{{/is}}" href="posts">Les Posts</a>
-				<li class=""><a class="{{#is this.nav 'about' }}active{{/is}}" href="le-crew">Le Crew</a>
+				<li class=""><a class="putainde-Nav-list-item {{#is this.nav 'home' }}putainde-Nav-list-item--active{{/is}}" href="{{ happyplan.baseUrl }}">Home</a>
+				<li class=""><a class="putainde-Nav-list-item {{#is this.nav 'wat' }}putainde-Nav-list-item--active{{/is}}" href="c-est-quoi-putaindecode">Putain de ... ?</a>
+				<li class=""><a class="putainde-Nav-list-item {{#is this.nav 'posts' }}putainde-Nav-list-item--active{{/is}}" href="posts">Les Posts</a>
+				<li class=""><a class="putainde-Nav-list-item {{#is this.nav 'about' }}putainde-Nav-list-item--active{{/is}}" href="le-crew">Le Crew</a>
 			</ul>
 		</div>
 	</div>

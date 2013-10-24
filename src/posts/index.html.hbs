@@ -7,7 +7,7 @@ title: "Articles"
 {{#each pages}}{{#is data.type "post"}}{{#is data.lang ../../page.lang}}
   <li class="putainde-PostsListing-post">
     <time class="putainde-PostsListing-post-datetime" datetime="{{ data.date }}">{{moment data.date format="ddd, DD MMMM YYYY" }}</time>
-    <a class="putainde-PostsListing-post-link" href="{{relative ../../page.dest this.dest}}">{{ data.title }}</a>
+    <a class="putainde-PostsListing-post-link" href="{{url this.dest}}">{{ data.title }}</a>
     <small class="putainde-PostsListing-post-metas">commit initial par <span class="putainde-Author">{{ data.author }}</span></small>
 {{/is}}{{/is}}{{/each}}
 </ul>

@@ -8,17 +8,17 @@
      * Usage: {{ include [partial] }}
      */
     Handlebars.registerHelper("include", function(template, datafile) {
-      var partial = Handlebars.partials[template];
+      var partial = Handlebars.partials[template]
       if (typeof partial === "string") {
-        partial = Handlebars.compile(partial);
-        Handlebars.partials[template] = partial;
+        partial = Handlebars.compile(partial)
+        Handlebars.partials[template] = partial
       }
       if (!partial) {
-        return new Handlebars.SafeString('Partial **' + template + '** not found.');
+        return new Handlebars.SafeString('Partial **' + template + '** not found.')
       }
 
-      var context = _.extend({}, this, JSON.parse(fs.readFileSync(datafile, 'utf8')));
-      return new Handlebars.SafeString(partial(context));
-    });
-  };
-}).call(this);
+      var context = _.extend({}, this, JSON.parse(fs.readFileSync(datafile, 'utf8')))
+      return new Handlebars.SafeString(partial(context))
+    })
+  }
+}).call(this)
