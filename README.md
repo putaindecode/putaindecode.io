@@ -1,4 +1,8 @@
-# Putain de Code ! [![Build Status](https://travis-ci.org/putaindecode/website.png?branch=master)](https://travis-ci.org/putaindecode/website)
+# Putain de Code !
+
+
+[![Build Status](https://travis-ci.org/putaindecode/website.png?branch=master)](https://travis-ci.org/putaindecode/website)
+[![Code Climate](https://codeclimate.com/github/putaindecode/website.png)](https://codeclimate.com/github/putaindecode/website)
 
 <img align="right" alt="" src="https://raw.github.com/putaindecode/website/master/src/assets/_images/p!-logo--no-bubble-512--trim.png" width="128">
 
