@@ -57,3 +57,7 @@ Using [icoutils](http://www.nongnu.org/icoutils/)
 
 All credits go to all the people involve in [this discussion](https://github.com/putaindecode/discussions/issues/4).
 Special thanks to [@mlbli](https://github.com/mlbli) for the [initial logo](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/putaindecode/website/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
