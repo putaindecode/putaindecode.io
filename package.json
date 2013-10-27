@@ -14,7 +14,7 @@
     "url": "https://github.com/putaindecode/website/issues"
   },
   "dependencies": {
-    "happyplan": "~0.4.0-alpha.6"
+    "happyplan": "~0.4.0-alpha.7"
   },
   "scripts": {
     "test": "happyplan dist --verbose"
