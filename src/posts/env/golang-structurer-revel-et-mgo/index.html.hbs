@@ -39,7 +39,15 @@ revel new github.com/OwlyCode/PutainDeProjet
 
 Là théoriquement, tu te retrouves avec la structure par défaut du boilerplate revel, quelque chose comme ça:
 
-// @TODO Screen app skeleton
+// @TODO Remplacer ça par un screen ?
+
+- app
+  - controllers
+  - views
+- conf
+- messages
+- public
+- tests
 
 C’est là qu’on se met au boulot. On a de quoi faire un site complet avec ça mais aucune trace de gestion de base de données là dedans. On commence donc par créer un dossier `app/modules` et un sous dossier `app/modules/mongo`. C’est dans ce dossier que va se trouver notre gestionnaire de connexion à mongoDB. En fait ce n’est rien de plus qu’un binding entre Revel et Mgo :
 
@@ -139,13 +147,36 @@ func DoStuff(user *models.User) {
 **C'est bien beau de copier coller mais ...**  
 ... tu te demandes certainement pourquoi on a créé un dossier `app/modules`, si c’est pour n’y mettre qu’un sous dossier mongo dedans. Et c’est une très bonne question. En fait, notre dossier mongo représente un module du projet bien délimité. A l’avenir, si tu veux aussi brancher du mysql, et bien y a juste à créer `app/modules/mysql`. Rien ne change pour l’existant et tu ne pollues pas la racine de ton projet. L’autre avantage c’est qu’en un coup d’oeil dans ce dossier tu as un aperçu direct des features de l’application.
 
+Enfin, l'approche module, c'est aussi un gage de MVC. Admettons qu'on veuille coder une application de facturation, il nous suffit de créer un dossier `app/modules/invoicing` et de travailler dans ce dossier sur toute la partie métier. Comme par exemple le calcul des totaux, le calcul de la TVA etc... Grâce à cette approche, on garde des contrôleurs très fins et restreints à ce que doit être leur rôle premier : faire communiquer le modèle et la vue.
+
 #Modèles globaux, modèles locaux
-J’ai évoqué plus haut dans la liste des technos une feature hyper sexy de mgo : le mapping sur les types struct. Ce qui veut dire qu’avec mgo, on peut créer des modèles structurés. Certains seront communs à toute l’application, par exemple un utilisateur, mais d’autres seront spécifiques à un module, comme par exemple une facture.
+J’ai évoqué plus haut dans la liste des technos une feature hyper sexy de mgo : le mapping des documents mongodb en json sur les types struct. Ce qui veut dire qu’avec mgo, on peut définir des modèles bien structurés. Certains seront communs à toute l’application, par exemple un utilisateur, mais d’autres seront spécifiques à un module, comme par exemple une facture.
 
 Une bonne pratique est d’approcher le rangement des modèles selon cette structure:
 
-// @TODO screen archi locale/globale
+// @TODO Remplacer ça par un screen ?
 
-// @TODO La suite ...
+- app
+  - controllers
+  - __models__
+  - modules
+    - invoicing
+      - engine
+      - __models__
+    - mongo
+  - views
+- conf
+- messages
+- public
+- tests
+
+Le but du jeu évidemment c'est d'avoir le moins de modèles globaux possibles. Idéalement, si le dossier `app/models` n'existe pas ce n'est pas plus mal. Mais attention à ne pas chercher à l'éliminer au prix de la modularité du code. Il vaut mieux avoir un modèle explicitement déclaré comme global plutot que de l'isoler dans un module et de rendre tous les autres modules du projet dépendants de ce dernier.
+
+Pourquoi c'est important ? C'est surtout parce que ça pose les bonnes questions et amène les bonnes remarques. "Vais-je avoir besoin de ce modèle réellement PARTOUT ?", "C'est étrange j'ai créé deux modules mais au final je passe mon temps à faire des va-et-vient de l'un à l'autre... Peut être que je devrais les fusionner." ou encore "90% de mon projet se trouve dans un seul module, il y a peut être un problème.". Mais au delà de ça, ça te permets d'isoler des modules quasi autonomes (deux ou trois coups d'abstraction avec des interfaces et ça roule). Tu pourras plus tard les sortir de ton projet si par exemple tu veux les réutiliser sur un autre (svn include pour les ancêtres, git submodules pour les autres).
+
+#Pour aller plus loin
+Isoler distinctement le gestionnaire de connexion, la logique métier et les modèles dans des modules est une première étape vers une architecture propre et évolutive. Tu peux même pousser ça plus loin en utilisant des interfaces comme je l'ai brièvement mentionné un peu plus tôt, c'est même d'ailleurs ce que je te conseille. Si tu veux creuser ce sujet là tu trouveras pas mal de monde qui s'y intéresse en fouinant sur le [groupe de discussion des utilisateurs golang](https://groups.google.com/forum/#!forum/Golang-Nuts). Tu as par exemple [ce gars là qui a remplacé sa dépendance à la librairie mgo par des interfaces](https://groups.google.com/forum/#!searchin/Golang-Nuts/interface/golang-nuts/Q0WhF7vhw5Q/T1tSJHT4aCoJ) pour éviter d'inclure le package a chaque fois et faciliter ses tests. Tu peux envisager de faire la même chose pour découpler tes modèles et la logique métier.
+
+En attendant il ne me reste qu'à te souhaiter une bonne coding night, tu as toutes les armes nécessaires pour gérer mongo dans ton projet revel. ;-)
 
 {{/markdown}}
