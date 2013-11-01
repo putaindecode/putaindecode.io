@@ -12,7 +12,7 @@
 $grid-gutter: 2em;
 
 $putainde-Grid--media-s: 2 3 !default;
-$putainde-Grid--media-m: 2 3 4 !default;
+$putainde-Grid--media-m: 2 3 4 12 !default;
 
 @include griddle-build($putainde-Grid--media-s);
 @include crp-Media-s { @include griddle-build($putainde-Grid--media-s, '--s'); }
