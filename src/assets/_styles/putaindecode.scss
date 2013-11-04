@@ -32,6 +32,10 @@ a {
   color: $putainde-Color-red;
   &:hover { color: darken($putainde-Color-red, 5%); }
   &:visited { color: lighten($putainde-Color-red, 2%); }
+
+  .icon {
+    text-decoration: none;
+  }
 }
 
 @import "./icons";

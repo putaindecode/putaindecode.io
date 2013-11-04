@@ -93,7 +93,7 @@ $putainde-TeamMember-borderRadius: .2rem;
       float: right;
     }
 
-  .putainde-TeamMember-shortbio {
+  .putainde-TeamMember-bio--short {
     position: absolute;
     left: 0;
     right: 0;
@@ -111,7 +111,7 @@ $putainde-TeamMember-borderRadius: .2rem;
     background: rgba($putainde-Color-red, .95);
   }
 
-  .putainde-TeamMember-shortbio {
+  .putainde-TeamMember-bio--short {
     display: block;
   }
 }

@@ -5,8 +5,12 @@ nav: true
 title: true
 sidebar: true
 footer: true
+author: false
 ---
 {{> body }}
+
+{{ author this.author }}
+
 {{#and happyplan.disqus_short_name page.comments }}
 <section>
   <h1>Comments</h1>
