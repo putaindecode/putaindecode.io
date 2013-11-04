@@ -158,6 +158,11 @@ est des types sympas.
   nous, y'a des types qui sont pas du tout copains avec jQuery et qui sont pas
   tendres du tout.
 
+* Il faut aussi que tu fasses attention à ne pas bosser sur le même post que
+  quelqu'un d'autre et pour ça tu dois aller jeter un coup d'oeil du côté des
+  issues en cours avec le label `post`. Allez, on est sympa, t'as [le
+  lien](https://github.com/putaindecode/website/issues?labels=post&page=1&state=open).
+
 * Bref, une fois ton idée trouvée, il faut que tu crées le post pour pouvoir
   commencer à écrire dans le fichier. Tout d'abord tu vas devoir créer une
   nouvelle branche. C'est une pratique qu'on demande à tout le monde, même
@@ -230,8 +235,11 @@ est des types sympas.
   branches / etc.
 
 * Sélectionnes les bonnes branches et ajoutes nous un beau titre et une belle
-  description de Pull Request en essayant au moins de commencer par "NEWPOST :
-  Titre du post" ou "FIX : Titre du post"
+  description de Pull Request en essayant au moins de commencer par `Post:
+  Titre du post` ou `Fix: Titre du post
 
-* Et voila ! Tu n'as qu'à attendre de nos nouvelles maintenant
+* Et voila ! Tu n'as qu'à attendre de nos nouvelles maintenant. D'ailleurs au
+  passage, si tu veux, tu peux en profiter pour nous suivre [sur
+  twitter](http://twitter.com/putaindecode), et tu pourras nous lacher un
+  message avec ta PR ou ton issue en lien, histoire de nous mettre la pression.
 

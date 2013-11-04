@@ -36,7 +36,7 @@ points peuvent être plus détaillés, libre à toi de nous proposer tes correct
 * Crée une branche `fix.<nom du post>` (genre `fix.contribuer-a-p`)
 * Fais tes modifications sans nous pourrir l'article
 * Fais une Pull-Request comme pour un nouveau post MAIS avec en titre
-  `Correctif: Le titre du post corrigé` (là aussi, remplace en conséquence)
+  `Fix: Le titre du post corrigé` (là aussi, remplace en conséquence)
 * De notre côté on va passer en revue la modification, puis éventuellement on
   l'acceptera
 
