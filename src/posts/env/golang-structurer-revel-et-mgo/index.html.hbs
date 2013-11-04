@@ -11,7 +11,7 @@ tags:
   - mongo
   - revel
   - mgo
-readingTime: 15min
+readingTime: 5min
 ---
 
 {{#markdown}}
@@ -24,13 +24,16 @@ le but de cet article. Si tu ne connais pas, je t’invite à aller sur la
 [celui en français](http://goo.gl/XMwsIY), c'est un showcase complet du langage.
 
 ##Les technos utilisées
-Golang / http://golang.org/  
+
+###[Golang](http://golang.org)
+
 Langage compilé, communément considéré comme “désorienté objet”, c’est une 
 alternative solide au C/C++ qui prône un découpage modulaire (par “package”) des
 applications. Il est prédisposé à une utilisation en développement web grâce à 
 un package natif de gestion des réseaux et du protocole http.
 
-Revel / http://robfig.github.io/revel/  
+###[Revel](http://robfig.github.io/revel/)
+
 Framework développé en Go et pour Go. Il intègre tout ce qu’il faut pour 
 développer une application web : rechargement du code à chaud, gestion des urls 
 par routing, parsing des paramètres GET et POST, mécanisme de validation des 
@@ -39,12 +42,14 @@ moteur de tâches planifiées cron-likes. Il a pour particularité d’être
 complètement agnostique à l’heure actuelle sur la partie modèle et ne fourni 
 aucun ORM, ODM, ni même l’ombre d’un driver pour Mysql.
 
-Mgo / http://labix.org/mgo  
+###[Mgo](http://labix.org/mgo)
+
 Driver Go complet pour MongoDB, permettant d’établir la connexion et d’envoyer 
 des requêtes. Il dispose d’un mécanisme de mapping des documents mongodb sur les
 type struct de Go.
 
-MongoDB / http://www.mongodb.org/  
+###[MongoDB](http://www.mongodb.org/)
+
 Base de données NoSql agile et scalable, les documents sont stockés au format 
 json dans des collections. Le requêtage se fait en manipulant des objets et des 
 fonctions javascript.
@@ -90,8 +95,6 @@ revel new github.com/OwlyCode/PutainDeProjet
 
 Là théoriquement, tu te retrouves avec la structure par défaut du boilerplate 
 revel, quelque chose comme ça:
-
-// @TODO Remplacer ça par un screen ?
 
 - app
   - controllers
