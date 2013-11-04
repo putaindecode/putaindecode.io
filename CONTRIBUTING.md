@@ -28,23 +28,23 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
 
 ## Apporter un correctif
 
-Si tu remarques qu'il y a une grosse fôte dans un article, ou que certains
+Si tu remarques qu'il y a une grosse *fôte* dans un article, ou que certains
 points peuvent être plus détaillés, libre à toi de nous proposer tes corrections
 !
 
 * Il faut que tu aies un fork comme on a expliqué plus haut
 * Crée une branche `fix.<nom du post>` (genre `fix.contribuer-a-p`)
 * Fais tes modifications sans nous pourrir l'article
-* Fais une Pull-Request comme pour un nouveau post MAIS avec en titre
+* Fais une *Pull Request* comme pour un nouveau post MAIS avec en titre
   `Fix: Le titre du post corrigé` (là aussi, remplace en conséquence)
 * De notre côté on va passer en revue la modification, puis éventuellement on
   l'acceptera
 
 ## Pull-Requests
 
-N'oublie pas de bien détailler et d'expliquer le contenu de tes Pull-Request,
-y'a un champ exprès pour ça autant t'en servir !
+N'oublie pas de bien détailler et d'expliquer le contenu de tes *Pull Request*,
+y'a un champ exprès pour ça, autant t'en servir !
 
 Si jamais on trouve qu'une PR n'est pas complète, on va te la tagguer `[WIP]`
-jusqu'à ce que tout soit bon, à ce moment là on enlèvera le tag et on mergera
-dans notre `master`.
+jusqu'à ce que tout soit bon. À ce moment là, on enlèvera le tag et on *mergera*
+dans notre branche `master`.
