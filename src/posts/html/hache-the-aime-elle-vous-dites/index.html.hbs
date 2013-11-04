@@ -29,7 +29,7 @@ faut sur [tout](http://docs.webplatform.org/wiki/html/elements)
 [sites](http://www.vectorskin.com/referentiels-standards-w3c/balises-html5/).
 
 Ce que je vais faire par contre, c'est tenter de partager un document sérieux
-(dans le fond hein) avec tous pleins de conseils super pertinent pour que vous
+(dans le fond hein) avec tous pleins de conseils super pertinents pour que vous
 écriviez de l'HTML comme personne.  
 Non je déconne. En fait, ça va être la grosse marrade avec les trucs
 les plus nazes que je peux vous raconter. C'est partie mon jQuéri.
@@ -45,14 +45,14 @@ qui ressemble à ça:
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 ```
 
-Vous pourrez remarquez dans ce ~~petit~~ gros bout de code bien relou qu'il y'a
+Vous pourrez remarquer dans ce ~~petit~~ gros bout de code bien relou qu'il y'a
 une [url](http://fr.wikipedia.org/wiki/Uniform_Resource_Locator):
 c'est tout simplement la DTD (doctype) du langage en question.
 Avec les spécifications pour la validation, toussa toussa...
-Si vous avez 2 minutes, aller jeter un coup d'oeil.
+Si vous avez 2 minutes, allez jeter un coup d'oeil.
 
 Je ne vais pas vous le cacher, et même si en théorie, par héritage de SGML/XML
-ça par d'une bonne intention, dans la pratique ça sert juste à se toucher la
+ça part d'une bonne intention, dans la pratique ça sert juste à se toucher la
 nouille sur la validation.  
 Car aujourd'hui HTML (5) n'est clairement plus du XML.
 
@@ -64,7 +64,7 @@ partout dans mes footers:
     <img src="http://www.w3.org/Icons/valid-xhtml10"
         alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
   </a>
-  <figcaption>Ça pête la classe hein ?</figcaption>
+  <figcaption>Ça pète la classe hein ?</figcaption>
 </figure>
 
 Mais bon les conneries, ça va un moment.  
@@ -98,7 +98,7 @@ Il faut savoir qu'un simple document _valide_, peut se résumer à ça.
 Oui oui mes cocos, ce document est parfaitement valide. Voilà j'voulais vous le
 dire. Arrêtez d'utiliser des doctypes dans tous les sens, ça ne sert à rien.
 Sachant la qualité du code qu'on trouve sur les internets, les navigateurs
-s'arrêtent au parsing lorsqu'il voit ça `<!doctype html`
+s'arrêtent au parsing lorsqu'ils voient ça `<!doctype html`
 (C'est [Paul Rouget](http://paulrouget.com/) qui me l'a dit, je le crois donc
 sur parole).
 Et après ma petite parenthèse ci dessous, je vais vous expliquer
@@ -109,12 +109,12 @@ Car je sais ce que certains vont me rétorquer.
 > Oui mais moi monsieur, je valide en **XHTML 1.1 Strict Turbo X Prime Ultra**  
 > Puis ton document valide là, il sera valide quand HTML5 sera finalisé...
 
-Dans un sens ils n'auraient pas tord. Mais dans la pratique, les navigateurs
+Dans un sens ils n'auraient pas tort. Mais dans la pratique, les navigateurs
 s'en contre branlent de savoir quel type d'HTML vous utilisez
 <small>(à moins que vous aimiez jouer avec la mort et que vous utilisez le
 prologue XML lorsque vous servez de l'XHTML...)</small>.
 Car quand bien même vous utilisez un doctype à rallonge, il est tout à fait
-possible que vous vous chiez, et que vous laissiez des erreurs.
+possible que vous vous chiiez, et que vous laissiez des erreurs.
 Oui, l'erreur est humaine...
 Puis HTML 5 est déjà bien implémenté dans les grandes lignes.
 Et ça car il est presque rétrocompatible.
@@ -133,7 +133,7 @@ Prenons le code suivant:
 ```
 
 Certains d'entre vous ont du remarquer la coquille.
-Celle-là, mes élèves qui découvrent le HTML me la fond à chaque fois lorsqu'ils
+Celle-là, mes élèves qui découvrent le HTML me la font à chaque fois lorsqu'ils
 codent leur super CV
 (super exercice tavu, ils apprécient particulièrement le titre).
 
@@ -152,8 +152,8 @@ Regarde plutôt le rendu:
 
 Le rapport avec la validation me direz-vous ? Et bien plutôt que de perdre du
 temps à comprendre le pourquoi du comment, en validant le code si dessus,
-l'erreur vous est implicitement expliqué
-(oui ce code n'a qu'une seul erreur à la validation).
+l'erreur vous est implicitement expliquée
+(oui ce code n'a qu'une seule erreur à la validation).
 
 > Line 17, Column 4: **No p element in scope but a p end tag seen.**
 
@@ -184,14 +184,14 @@ Ce que j'essaye de vous montrer par là, ce qu'il faut toujours faire attention
 entre ce qu'on écrit et ce qu'on pense avoir comme résultat, même avec du 
 _simple_ HTML.
 
-**Bon après j'espère qu'en 2013, vous avez tous le reflex d'inspecter
+**Bon après j'espère qu'en 2013, vous avez tous le réflexe d'inspecter
 l'HTML dès que vous avez un truc bizarre en CSS ou en JavaScript... Si
 c'est pas encore le cas, prenez l'habitude.**
 
 ## Mais du coup le navigateur il fait n'importe quoi ?
 
 Le navigateur essaye clairement de faire au mieux.
-Si vous inspecter l'exemple précédent, vous vous apercevrez aussi que je n'ai
+Si vous inspectez l'exemple précédent, vous vous apercevrez aussi que je n'ai
  mis aucune balise `<html>`, `<head>` et `<body>`.  
 Pourquoi ? Ben car le parseur le fait à ma place.
 Mais pourquoi il fait ça ?
@@ -202,9 +202,9 @@ La balise [`<tbody>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/tbo
 est un bon exemple.
 Si vous inspectez vos tableaux HTML, vous verrez vite fait que cette balise, que
 quasiment personne ne connait/utilise, est pourtant nécessaire/utile.
-Mais du coup, si je met fais une petite requête JavaScript
+Mais du coup, si je me fais une petite requête JavaScript
 `document.querySelectorAll('table > tr')`,
-il est fort possible que je n'ai pas ce que je souhaites.  
+il est fort possible que je n'aie pas ce que je souhaite.  
 [La preuve](http://codepen.io/MoOx/pen/esFjx).
 
 Voyons une autre exemple: mettons nous à la place d'un navigateur si,
