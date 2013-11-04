@@ -22,7 +22,14 @@ pageClass: putainde-Page
 <div class="{{#if this.class }}{{ this.class }}{{/if}}">
   {{#if this.nav }}{{> nav }} {{/if}}
   <article class="putainde-Content grid {{ this.pageClass }}">
-    {{#if this.title }}<h1 class="putainde-Content-title grid__cell unit-1-1">{{ this.title }}</h1>{{/if}}
+    <header class="putainde-Content-header grid__cell unit-1-1">
+      {{#if this.title }}<h1 class="putainde-Content-title">{{ this.title }}</h1>{{/if}}
+      <div class="putainde-Content-metas">
+        {{#if this.page.author }}<span class="putainde-Content-author">Par <span class="putainde-Author">{{ this.page.author }}</span></span>{{/if}}
+        {{#if this.page.readingTime }}<span class="putainde-Content-readingTime">Temps de lecture: environ {{ this.page.readingTime }}</span>{{/if}}
+        {{#if this.page.tags }}<span class="putainde-Content-tags">Tags: {{ this.page.tags }}</span>{{/if}}
+      </div>
+    </header>
     <div class="putainde-Content-body grid__cell {{#if this.sidebar }}unit-3-4--m{{/if}}">
     {{> body }}
     </div>

@@ -3,12 +3,24 @@
   margin: auto;
 }
 
-  .putainde-Content-title {
-    //padding: 0 2rem;
-
-    font-size: 2rem;
-    line-height: 6rem;
-    font-weight: bold;
-
-    color: $putainde-Color-red;
+  .putainde-Content-header {
+    margin: 2rem 0 1rem;
   }
+
+    .putainde-Content-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $putainde-Color-red;
+    }
+
+    .putainde-Content-metas {
+      padding: 0 1.2rem;
+      font-size: .9em;
+      opacity: .6;
+    }
+
+    .putainde-Content-author + .putainde-Content-readingTime,
+    .putainde-Content-readingTime + .putainde-Content-tags {
+      padding-left: .8rem;
+    }
+
