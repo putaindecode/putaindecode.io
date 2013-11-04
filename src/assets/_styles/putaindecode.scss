@@ -21,6 +21,7 @@ $putainde-Page-max-width: 60rem;
 html {
   background: $putainde-Color-background;
   background: linear-gradient(45deg, $putainde-Color-background, lighten($putainde-Color-background, 10%));
+  min-height: 100%; // stretch background
 }
 
 body {
