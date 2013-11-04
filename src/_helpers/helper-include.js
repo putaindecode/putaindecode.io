@@ -14,7 +14,10 @@
         Handlebars.partials[template] = partial
       }
       if (!partial) {
-        return new Handlebars.SafeString('Partial **' + template + '** not found.')
+        if (fs.existsSync(template)) {
+          return new Handlebars.SafeString(fs.readFileSync(template))
+        }
+        return new Handlebars.SafeString('**' + template + '** is not a partial nor a readable file.')
       }
 
       var context = _.extend({}, this, JSON.parse(fs.readFileSync(datafile, 'utf8')))
