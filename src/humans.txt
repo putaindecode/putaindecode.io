@@ -23,8 +23,9 @@
     Developer
     http://kud.io -  https://twitter.com/_kud - https://github.com/kud
 
-    Shahor
+    Tristan Maindron (OwlyCode)
     Developer
+    http://www.owly-code.com -  https://twitter.com/OwlyCode - https://github.com/OwlyCode
 
     dguyon
     Developer

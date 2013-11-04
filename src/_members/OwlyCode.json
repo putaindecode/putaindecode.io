@@ -1,0 +1,27 @@
+{
+  "name": "OwlyCode",
+  "url": "http://www.owly-code.com",
+  "github": "OwlyCode",
+  "twitter": "OwlyCode",
+  "avatar_url": "http://www.gravatar.com/avatar/5cef4bfad2fde665d04d9fdb29d29d4a.png",
+  "fr": {
+    "bio": {
+      "short": "Développeur Full stack, entretient un culte pour Golang et une liaison secrète avec AngularJS",
+      "long": [
+        "Full stack developer, 100% Debian/Ubuntu, code en PHP le jour et en Go la nuit.",
+        "Entretient une liaison secrète avec AngularJS.",
+        "Amateur de science fiction, d'insectes et reste sur Windows pour Starcraft 2."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Full stack developer, engaged in a Golang cult and secretly dating Angular.js",
+      "long": [
+        "Full stack developer, 100% Debian/Ubuntu, do PHP at day and Go at night.",
+        "Secretly dating AngularJS.",
+        "Sci-fi addict, keen on insects and stays on Windows to play Starcraft 2"
+      ]
+    }
+  }
+}
