@@ -17,6 +17,7 @@
     {{#if this.twitter }}<a class="putainde-AboutTheAuthor-twitter" href="https://twitter.com/{{ this.twitter }}"><i class="icon icon_twitter"> </i></a>{{/if}}
     {{#if this.github }}<a class="putainde-AboutTheAuthor-github" href="https://github.com/{{ this.github }}"><i class="icon icon_github"> </i></a>{{/if}}
   </h1>
-  {{#if this.fr.bio.long }}<p class="putainde-AboutTheAuthor-bio--long">{{ this.fr.bio.long }}</p>{{/if}}
-
+  {{#if this.fr.bio.long }}
+    <p class="putainde-AboutTheAuthor-bio--long">{{#each this.fr.bio.long}}{{ this }}<br />{{/each}}</p>
+  {{/if}}
 </section>
