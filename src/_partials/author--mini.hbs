@@ -17,6 +17,8 @@
     {{#if this.github }}<a class="putainde-AboutTheAuthor-github" href="https://github.com/{{ this.github }}"><i class="icon icon_github"> </i></a>{{/if}}
   </h1>
   {{#if this.fr.bio.long }}
-    <p class="putainde-AboutTheAuthor-bio--long">{{#each this.fr.bio.long}}{{ this }}<br />{{/each}}</p>
+    {{!# keep \n to allow native markdown br}}
+    <div class="putainde-AboutTheAuthor-bio--long">{{#markdown}}{{#each this.fr.bio.long}}{{ this }}
+{{/each}}{{/markdown}}</div>
   {{/if}}
 </section>
