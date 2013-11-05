@@ -1,7 +1,9 @@
+$putainde-lineHeight: 1.6rem;
+
 html {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: $putainde-Color-text;
-  line-height: 1.6rem;
+  line-height: $putainde-lineHeight;
   font-weight: 300;
 }
 

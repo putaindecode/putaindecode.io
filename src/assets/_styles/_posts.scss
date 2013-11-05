@@ -1,3 +1,15 @@
+.putainde-EmptyPostsListing {
+  text-align: center;
+  margin: 4rem;
+
+  h2 {
+    opacity: .2;
+    font-size: 4rem;
+    line-height: $putainde-lineHeight*4;
+    text-shadow: 0 -1px 1px #fff;
+  }
+}
+
 .putainde-PostsListing {
   //@extend %crp-Clearfix;
   overflow: hidden; // poor clearfix
