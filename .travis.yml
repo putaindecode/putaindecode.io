@@ -10,3 +10,6 @@ before_install:
   - sudo apt-get install fontforge
 # for some test with dates
   - sudo cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+
+notifications:
+  irc: "irc.freenode.org#p!"
