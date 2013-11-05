@@ -24,7 +24,6 @@ $putainde-AboutTheAuthor-avatar-size: 128px;
 
   .putainde-AboutTheAuthor-avatar {
     float: left;
-    margin-top: .6rem;
     margin-right: 1rem;
     max-width: $putainde-AboutTheAuthor-avatar-size;
     max-height: $putainde-AboutTheAuthor-avatar-size;
@@ -44,4 +43,5 @@ $putainde-AboutTheAuthor-avatar-size: 128px;
 
   .putainde-AboutTheAuthor-bio--long {
     font-size: .9em;
+    margin-left: 9rem;
   }
