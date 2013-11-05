@@ -12,10 +12,8 @@ readingTime: 10min
 ---
 
 {{#markdown}}
-# Versionner avec Git
-
 Chez Putain de Code, on aime se servir de [Git][git:website] (et de GitHub, mais
-c'est une autre histoire), même si certaines d'entre nous (comme Lionel) ne s'en
+c'est une autre histoire), même si certains d'entre nous (comme Lionel) ne s'en
 servent pas forcément bien.
 
 Pour éviter ce genre de mésaventures, on s'est dit qu'on allait consacrer une
@@ -36,21 +34,21 @@ gestionnaire de versions pour suivre l'évolution de votre code. Non,
 Git, c'est un gestionnaire de versions décentralisé, aussi connu sous le terme
 de DVCS (pour Distributed Version Control System) pour les amateurs.
 
-Le terme *Distribué* est très important car c'est ce qui le différencie d'autres
+Le terme *distribué* est très important car c'est ce qui le différencie d'autres
 gestionnaires historiquement plus connus comme Subversion (SVN) ou le vénérable
 CVS.
 
-Ça veut dire que chaque développeur possède sa propre copie du dépôt,
-contraîrement à un gestionnaire centralisé ou tout est… centralisé sur un même
-serveur (merci Captain Obvious).
+Ça veut dire que chaque développeur possède sa propre copie du dépôt, chez lui,
+localement, contraîrement à un gestionnaire centralisé ou tout est… centralisé
+sur un même serveur (merci Captain Obvious).
 
 Git est principalement utilisable en ligne de commande, mais il existe des
 interfaces graphiques sous les principaux OS du marché (OS X, Linux, Windows).
 Ici on va traiter de la ligne de commande, car c'est l'arme de base du bon
 développeur.
 
-Je vous passe l'installation, référez vous à la doc officielle pour cette
-partie. (Ça se résume souvent à un `nom-du-package-manager install git`)
+Je vous passe l'installation, référez-vous à la documentation officielle pour
+cette partie. (Ça se résume souvent à un `nom-du-package-manager install git`)
 
 ## Comment ça marche ?
 
@@ -243,6 +241,10 @@ base de la base de la praticité. Je vous fait pas l'insulte de vous expliquer l
 détails, vous êtes sans doute assez malins pour comprendre ce que git raconte
 sur la sortie de ces deux commandes.
 
+Remarquez que `git show` affiche en bonus les différences introduites par un
+fichier. Ces différences on peut aussi les voir avant de commiter avec `git
+diff`, ce qui est bien pratique.
+
 Entraînez vous maintenant à faire des commits, à inspecter et à farfouiller les
 pages de `man`, c'est la meilleure façon d'apprendre. Après on va attaquer le
 gros morceau, celui qui fait la force de Git.
@@ -269,7 +271,7 @@ checkout` qui permet de naviguer de branche en branche tel Tarzan sur ses
 lianes.
 
 Comme c'est super chiant à écrire, il existe un raccourci bien pratique : `git
-checkout -b`.
+checkout -b`, auquel on passe un nom de branche comme pour `git branch`.
 
 Une fois qu'on est bien sur la branche, tous les commits suivants seront liés à
 cette branche.
