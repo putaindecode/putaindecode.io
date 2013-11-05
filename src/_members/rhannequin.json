@@ -6,7 +6,7 @@
   "avatar_url": "https://gravatar.com/avatar/a2b9398e4753f15d628c8d928600d90e",
   "fr": {
     "bio": {
-      "short": "Développeur Web, Ruby et JavaScript funky, joueur de handball, amoureux d'espace et de science &amp; matteur de séries.",
+      "short": "Développeur Web, Ruby et JavaScript funky, joueur de handball, amoureux d'espace et de science & matteur de séries.",
       "long": [
         "Développeur frontend/backend spécialement intéressé par JavaScript et Ruby.",
         "Curieux des hacks sur les technologies web, conscient des standards de performance, de tests, et du web tout court.",
@@ -17,7 +17,7 @@
   },
   "en": {
     "bio": {
-      "short": "Funky web developer Ruby, JavaScript, handball player, Space/Science lover &amp; tv-shows watcher.",
+      "short": "Funky web developer Ruby, JavaScript, handball player, Space/Science lover & tv-shows watcher.",
       "long": [
         "Frontend/backend developer particularly interested in JavaScript and Ruby.",
         "Curious about hacks around web technologies, aware of performance, testing et web standards.",
