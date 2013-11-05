@@ -1,9 +1,17 @@
 ---
-layout: post title: Comment contribuer ? tags: ['putaindecode', ' contribuer']
+lang: fr
+layout: post.hbs
+type: post
+draft: true
+comments: true
+layout: post.hbs
+title: Comment contribuer ?
+tags:
+  - putaindecode
+  - contribuer
 ---
 
-# Comment contribuer ?
-
+{{#markdown}}
 Ici, chez Putain de Code, dans notre building 8 étages vitres teintées avec
 masseuses et coke à volonté et à n'importe quelle heure de la journée, on sait
 qu'on va forcément t'aider à comprendre pas mal de trucs, mais on sait aussi
@@ -53,9 +61,9 @@ développeurs des internets.
   sous Mac OS X tu utilises le terminal, et sous Linux je pense qu'on a pas à
   t'expliquer).
 
-    ```
-    $ git clone https://github.com/clinthorris/website.git putaindecode
-    ```
+  ```
+  $ git clone https://github.com/clinthorris/website.git putaindecode
+  ```
 
 * Ensuite tu dois ajouter ce qu'on appelle une remote. Une remote c'est une
   référence du repo principal, le beau, le grand, le nôtre. En gros, ça va te
@@ -65,8 +73,9 @@ développeurs des internets.
   rapport avec le repo principal, on l'appelle souvent *upstream*
 
     ```
-    $ cd putaindecode $ git remote add upstream
-    https://github.com/putaindecode/website.git $ git fetch upstream
+    $ cd putaindecode
+    $ git remote add upstream https://github.com/putaindecode/website.git
+    $ git fetch upstream
     ```
 
 * Alors là, normalement, t'as le dossier propre et frais, pêché du matin. Vu
@@ -91,7 +100,7 @@ développeurs des internets.
   plugins, de la conf à n'en plus finir... ah qu'est-ce que tu pouvais être
   niais. Ca a quand même bien plus la classe notre solution, non ?
 
-* Maintenant que t'as tout, t'as plus qu'à lancer ~~notepad++~ ton éditeur
+* Maintenant que t'as tout, t'as plus qu'à lancer ~~notepad++~~ ton éditeur
   favori et te préparer à modifier ou proposer les fichiers que tu veux. Ce
   que t'as à retenir, c'est que tu vas surtout bosser dans le dossier `/src`
 
@@ -111,7 +120,7 @@ est des types sympas.
   ces projets, histoire de savoir de quoi on cause, même si on va essayer de
   t'expliquer au mieux.
 
-* Donc, tous nos posts sont contenus dans `src/_posts/`. Si jamais c'est sur
+* Donc, tous nos posts sont contenus dans `src/posts/`. Si jamais c'est sur
   autre chose qu'un post, farfouille un peu et tu trouveras, le nom des
   dossiers est assez explicite et de toute façon les URLs sur notre site
   ressemblent bizarrement (en vrai c'est pas bizarre hein, t'avais compris)
@@ -177,26 +186,36 @@ est des types sympas.
 
   ```
   $ happyplan newpost --name="Nom du post" --tags="tags, separes, virgules"
+  $ mkdir src/posts/nom-du-post
+  $ mv src/posts/nom-du-post.html.hbs src/posts/nom-du-post/index.html.hbs
   ```
 
-  Ca va te créer un fichier dans /src/_posts/_drafts avec le nom qui va bien.
-  Si tout se passe bien, tu auras un fichier avec pour nom `annee-mois-date-
-  titre.md`
+  Ça va te créer un fichier dans `/src/posts/` avec le nom qui va bien.
+  Tu remarqueras qu'on la déplacé dans un dossier, histoire d'avoir des urls
+  simples et sympa. Puis si t'as de la merde à fourrer pour ton article, tu sais
+  où la mettre du coup.
 
-* Tu peux maintenant éditer ton fichier en Markdown, tout en faisant attention
-  à ne pas toucher l'entête créé automatiquement (celui où il y a layout,
-  title et tags). Amuse toi, créé ton contenu, rédige bien tout comme tu veux.
-  Techniquement, dans ce dossier `_drafts` tu peux faire autant de brouillons
-  que tu veux.
+* Tu peux maintenant éditer ton fichier en Markdown dans la partie dédié,
+  tout en faisant attention si tu te mets à toucher l'entête créé
+  automatiquement (celui où il y a layout, title et tags).
+  Laisse bien la clé `draft: true` bien entendu.
+  Amuse toi, créé ton contenu, rédige bien tout comme tu veux.
+  Techniquement, dans ce dossier `posts` tu peux faire autant de brouillons
+  que tu veux pour peut que tu spécifies bien une clé `draft` pour chaque post.
 
-* Une fois que tu as assez fignolé ton post, tu peux le passer dans le dossier
-  `_posts`. Avec la tâche `$ happyplan` lancée, normalement tout se
-  rafraichira automatiquement. Si ce n'est pas le cas, lance la tâche `$
-  happyplan`.
+* Tu devrais pouvoir te balader sur le site est trouver ton article sur la page
+  des brouillons: http://localhost:4242/posts/drafts.html .
+  Avec la tâche `$ happyplan` lancée normalement tout se rafraichira
+  automatiquement.
+  Si ce n'est pas le cas, lance la tâche `$ happyplan`.
+  Si là tu as une erreur qui t'échappes, on t'invite à
+  [ouvrir une issue](https://github.com/putaindecode/website/issues/new).
 
-* Tu pourras ainsi voir sur le site lancé localement ton post, voir s'il sort
-  correctement et s'il est présentable à ton goût. Tu pourras le consulter sur
-  une URL du type `http://localhost:4242/titre-du-post/`
+* En l'état tu devrais pouvoir consulter sur le site lancé localement ton post,
+  voir s'il sort correctement et s'il est présentable à ton goût.
+  Tu pourras le consulter sur une URL du type
+  `http://localhost:4242/post/nom-du-post/`. Mais tu le sais déjà puisque t'as
+  bien suivi et que t'es passé par la page des brouillons.
 
 * Une fois que tout est bon, tu peux passer à l'étape de validation de tes
   modifications (étape commune pour la modification d'un post existant ou la
@@ -209,7 +228,15 @@ est des types sympas.
   commit. Tu peux faire ça tout simplement avec un :
 
   ```
-  $ git add src/_posts/titre-du-post.md
+  $ git add -A src/posts/nom-du-post
+  ```
+  
+  Cette commande ajoute tous les fichiers dans le dossier que tu as créé.
+  Si tu as ajouter des fichiers à l'exterieur de ce dossier, tu devras les
+  ajouter. Exemple:
+
+  ```
+  $ git add src/media/memes/trollface.jpg
   ```
 
   Ensuite on va dire à git de valider ces modifications de code :
@@ -222,12 +249,12 @@ est des types sympas.
   situé sur GitHub :
 
   ```
-  $ git push origin master
+  $ git push -u
   ```
 
 * Voila ! Si tu vas voir ton `fork` sur GitHub tu verras ton commit et les
   modifications que tu as apportées normalement. Il ne te reste plus qu'à nous
-  soumettre ces modifications. Pour ça on va faire ce qu'on appelle une Pull
+  soumettre ces modifications. Pour ça tu vas faire ce qu'on appelle une Pull
   Request (PR)
 
 * Il te suffit de cliquer sur le bouton vert qui représente 2 flêches en sens
@@ -236,10 +263,10 @@ est des types sympas.
 
 * Sélectionnes les bonnes branches et ajoutes nous un beau titre et une belle
   description de Pull Request en essayant au moins de commencer par `Post:
-  Titre du post` ou `Fix: Titre du post
+  Nom du post` ou `Fix: Nom du post
 
 * Et voila ! Tu n'as qu'à attendre de nos nouvelles maintenant. D'ailleurs au
   passage, si tu veux, tu peux en profiter pour nous suivre [sur
-  twitter](http://twitter.com/putaindecode), et tu pourras nous lacher un
+  twitter](http://twitter.com/putaindecode), et tu pourras nous lâcher un
   message avec ta PR ou ton issue en lien, histoire de nous mettre la pression.
-
+{{/markdown}}
