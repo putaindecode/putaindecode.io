@@ -16,15 +16,16 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
 
 * Crée une branche avec un nom de la forme `post.<nom du post>` (ex.
   `post.contribuer-a-p`)
-* Écris ton post dans `src/_posts/_drafts/` en respectant bien la convention du
-  nom de fichier `titre.md` (genre `contribuer-a-p.md`)
+* Écris ton post dans `src/posts/` en respectant bien la convention du
+  nom de fichier `titre/index.html.hbs` (genre `contribuer-a-p/index.html.hbs`)
+  en t'inspirant de l'exemple que tu devrais trouver sans mal.
 * Une fois que tout est prêt, fais une demande de pull-request de ta branche
   vers notre branche `master` en mettant en titre `Post: Le titre de ton post`
   (évidemment tu remplaces ce qu'il y a après `Post:` par le vrai titre hein)
 * On va passer ton post en revue, éventuellement te demander de corriger deux
   trois trucs, et au bout d'un moment l'accepter (sauf s'il est nul, évidemment)
 * De notre côté on va lui mettre une date de publication et le passer dans
-  `src/_posts/` pour le publier
+  `src/posts/` pour le publier.
 
 ## Apporter un correctif
 
