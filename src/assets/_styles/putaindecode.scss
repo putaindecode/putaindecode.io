@@ -39,18 +39,23 @@ a {
 }
 
 @import "./icons";
-@import "./landing";
 @import "./nav";
 
 @import "./content";
-@import "./posts";
-@import "./post";
 @import "./sidebar";
 
 @import "./footer";
 
-// pages
+// layout
+@import "./homepage";
+@import "./landing";
+@import "./posts";
+@import "./post";
+
+// part
 @import "./members/author";
+
+// pages
 @import "./members/team";
 
 // fun

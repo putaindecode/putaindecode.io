@@ -1,10 +1,11 @@
 (function() {
   module.exports.register = function(Handlebars, options) {
     var fs = require('fs')
-    Handlebars.registerHelper("author", function(name) {
+    Handlebars.registerHelper("author", function(name, template) {
       var dataFile = "src/_members/" + name + ".json"
         , content = "<!-- no author -->"
-        , template = "author"
+
+      template = typeof template === "string" ? template : "author"
 
       partial = Handlebars.partials[template]
       if (typeof partial === "string") {

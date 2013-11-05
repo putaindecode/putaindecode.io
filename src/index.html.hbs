@@ -1,10 +1,63 @@
 ---
-layout: empty.hbs
-class: putainde-Landing
+layout: default.hbs
+class: putainde-Homepage
+title: "Putain De Code, c'est quoi ?"
 ---
-<img class="putainde-Landing-logo" src="{{ happyplan.baseUrls.images }}/p!-logo.svg" alt="Putain de code !" />
-<div class="putainde-Landing-links">
-	<a href="https://github.com/putaindecode">Github</a>
-	|
-	<a href="https://twitter.com/putaindecode">Twitter</a>
+
+<div class="putainde-Homepage-edito">
+{{#markdown}}
+Pour faire court, Putain de Code, c'est une communauté de développeurs pas
+vraiment notoires, mais par contre vraiment passionnés par ce qu'ils font:
+chier du code (de qualité).
+
+Mais attention on fait ça sans en mettre partout sur la cuvette si tu vois ce
+qu'on veut dire. On aime quand y'a pas d'éclaboussure, quand c'est propre et sans
+bavures.
+
+Le code n'étant pas tout, il faut s'avoir s'organiser et s'équiper (avec autre 
+chose qu'un pied de biche). Pour ça aussi on est plutôt du genre à porter la 
+ceinture de Batman.
+Et du coup ce qu'on va faire c'est partager notre façon de faire,
+de manière décontracté.  
+Mais pas trop quand même, sinon ça laisse des traces hein.
+
+Du coup, on compte de sortir des posts régulièrement sur des technos,
+outils et compagnie. Genre toutes les semaines.
+Enfin, ça dépend.
+Par exemple, si on est en congés ou un peu crevé,
+bah ça sortira peut être que la semaine d'après.
+
+Notre petit mouvement a été créé en début d'année super à l'arrache.
+On a mis un peu de temps à sortir quelques choses,
+mais là on est chaud, et du coup on a lancé ce modeste site qu'on espère que
+vous allez nous aidez à en faire un truc tiptop.
+{{/markdown}}
+
+  <div class="putainde-Homepage-readMore">
+    <a href="/c-est-quoi-putaindecode">
+    Lire plus de détails sur le pourquoi et le comment.
+    <a>
+  </div>
+</div>
+
+<div class="putainde-Homepage-links">
+  Ailleurs sur les internets
+  <a href="https://github.com/putaindecode"><i class="icon icon_github"></i></a>
+  <a href="https://twitter.com/putaindecode"><i class="icon icon_twitter"></i></a>
+</div>
+
+<div class="putainde-Homepage-team">
+  <h2>Le Crew</h2>
+  <ul>
+    <li>{{ author "MoOx" "author--mini" }}</li>
+    <li>{{ author "Nyalab" "author--mini" }}</li>
+    <li>{{ author "dguyon" "author--mini" }}</li>
+    <li>{{ author "justinmarsan" "author--mini" }}</li>
+    <li>{{ author "kud" "author--mini" }}</li>
+    <li>{{ author "lionelB" "author--mini" }}</li>
+    <li>{{ author "madx" "author--mini" }}</li>
+    <li>{{ author "mlbli" "author--mini" }}</li>
+    <li>{{ author "rhannequin" "author--mini" }}</li>
+    <li>{{ author "OwlyCode" "author--mini" }}</li>
+  </ul>
 </div>
