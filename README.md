@@ -18,6 +18,8 @@ __Notice: please be aware that we are using a `.editorconfig`. Be sure to respec
 
 This website is build on top of [happyplan](https://github.com/happyplan/happyplan), so please checkout [happyplan README](https://github.com/happyplan/happyplan#readme) before trying to do anything.
 
+**Require node >=0.10.21**
+
     git clone https://github.com/putaindecode/website.git
     cd website
     make install
