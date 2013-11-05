@@ -10,7 +10,7 @@ Tu trouveras ici un condensé des bonnes pratiques pour pouvoir participer.
 
 C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
 
-![github-fork](https://f.cloud.github.com/assets/5723/1225077/ed6532e4-275c-11e3-9bd3-191eafa29d60.png)
+![github-fork](src/media/github/fork-button.jpg)
 
 ## Soumettre un post
 
