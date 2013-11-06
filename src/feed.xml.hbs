@@ -9,7 +9,7 @@
 {{#each pages}}{{#is data.lang "fr"}}{{#is data.type "post"}}{{#compare data.draft "!==" true}}
           <item>
               <title>{{ data.title }}</title>
-              <description>{{ page }}</description>
+              <description><![CDATA[{{#handlebarsception}}{{{ page }}}{{/handlebarsception}}]]></description>
               <pubDate>{{moment data.date format="ddd, DD MMMM YYYY HH:mm:ss ZZ" }}</pubDate>
               <link>{{ ../../../happyplan.url }}/{{ relative ../../../page.dest this.dest }}</link>
               <guid isPermaLink="true">{{ ../../../happyplan.url }}/{{ relative ../../../page.dest this.dest }}</guid>
