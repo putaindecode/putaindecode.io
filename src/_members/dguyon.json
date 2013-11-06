@@ -1,14 +1,14 @@
 {
   "name": "dguyon",
-  "url": null,
+  "url": "http://davidguyon.com",
   "github": "dguyon",
   "twitter": "DavidGuyon",
   "avatar_url": "https://gravatar.com/avatar/0fef7ada66fa27ea422fdbc45849d913",
   "fr": {
     "bio": {
-      "short": "Chief Architect. Basketteur. Epicurien. #YOLO",
+      "short": "Développeur polyglotte. Basketteur. Epicurien. Utilise #YOLO à outrance.",
       "long": [
-        "Développeur autodidacte et passioné par des langages tels que PHP, JavaScript, Python.",
+        "Développeur autodidacte et passionné par des langages tels que PHP, JavaScript, Python.",
         "Fan d'Open Source et du Web en général.",
         "Très intéressé par la programmation fonctionnelle."
       ]
@@ -16,7 +16,7 @@
   },
   "en": {
     "bio": {
-      "short": "Chief Architect. Baller. Epicurian. #YOLO",
+      "short": "Engineer. Baller. Epicurian. Abusing #YOLO as a motto.",
       "long": [
         "Self-made and passionate developer on a wide range of languages such as PHP, JavaScript, Python.",
         "Loves Open Source and Web related stuff.",
