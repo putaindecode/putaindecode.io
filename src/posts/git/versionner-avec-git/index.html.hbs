@@ -132,24 +132,19 @@ mammouth qui change tout le programme d'un coup et qui est un enfer pour le
 futur développeur qui revient sur le code et qui cherche à comprendre la logique
 de sa construction. Ce développeur, c'est vous dans 1 ou 2 semaines.
 
-Pour info, vous verrez parfois *l'Index* appellé *Staging Area*.
+Pour info, vous verrez parfois *l'Index* appellé *Staging Area*, ou encore
+*Cache*.
 
 Git fournit des commandes pour passer les fichiers d'un état à l'autre. Elles
 sont certes parfois un peu obscures, mais dans l'ensemble c'est pas si
 difficile.
 
 Dans notre cas, notre fichier n'est même pas encore suivi par Git ! Vous pouvez
-vérifier ça en utilisant `git status`,dont vous ne pourrez bientôt plus vous
+vérifier ça en utilisant `git status`, dont vous ne pourrez bientôt plus vous
 passer :
 
-Pour pallier celà, on utilise `git add` pour l'ajouter direct à l'index.
-
-Dans notre cas, ça donne `git add putain_de_hello_world.rb`
-
-On peut utilise `git add` pour ajouter des dossiers entiers, des motifs, … Mais
-soyez vigilants, c'est une bonne source d'erreurs souvent chiantes.
-
 ``` console
+$ git status
 # Sur la branche master
 #
 # Validation initiale.
@@ -160,6 +155,13 @@ soyez vigilants, c'est une bonne source d'erreurs souvent chiantes.
 #	putain_de_hello_world.rb
 Aucune modification indexée mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
 ```
+
+Pour pallier celà, on utilise `git add` pour l'ajouter direct à l'index.
+
+Dans notre cas, ça donne `git add putain_de_hello_world.rb`
+
+On peut utilise `git add` pour ajouter des dossiers entiers, des motifs, … Mais
+soyez vigilants, c'est une bonne source d'erreurs souvent chiantes.
 
 Vous pouvez vérifier que `git add` a bien marché avec la commande `git status`,
 
@@ -284,9 +286,9 @@ Essayons ça avec notre petit dépôt :
 ``` console
 $ git branch
 * master
-prout (master:8120de7) $ git checkout -b add-shebang
+$ git checkout -b add-shebang
 Basculement sur la nouvelle branche 'add-shebang'
-$ vi putain_de_hello_world.rb
+$ vim putain_de_hello_world.rb
 $ git status
 # Sur la branche add-shebang
 # Modifications qui ne seront pas validées :
