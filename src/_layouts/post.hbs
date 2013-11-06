@@ -11,6 +11,15 @@ author: false
 
 {{ author this.author }}
 
+{{#if this.contributors}}
+  <h2>Contributeurs</h2>
+  <ul>
+  {{#each this.contributors}}
+    <li><a href="http://github.com/{{this}}">@{{this}}</a></li>
+  {{/each}}
+  </ul>
+{{/if}}
+
 {{#and happyplan.disqus_short_name page.comments }}
 <section class="putainde-Comments">
   <h1 class="putainde-Comments-title">Comments</h1>
