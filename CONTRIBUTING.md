@@ -6,6 +6,11 @@ site](http://putaindecode.fr/posts/comment-contribuer/).
 
 Tu trouveras ici un condensé des bonnes pratiques pour pouvoir participer.
 
+Avant tout, on te précise que comme le site et le public du site sont
+francophones, tu peux te permettre (et on préfère même) que les issues et les
+messages de commit soient en français. Voilà c'est dit merci tu peux lire la
+suite !
+
 ## Crée ton fork
 
 C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
