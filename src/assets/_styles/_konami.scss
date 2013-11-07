@@ -2,12 +2,12 @@ $putainde-Konami--background-opacity: .6;
 
 .putainde-Konami {
   // strech
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  
+
   background: rgba(#000, .1);
   // RAINBOW
   background: linear-gradient(135deg,
@@ -28,10 +28,11 @@ $putainde-Konami--background-opacity: .6;
   left: 50%;
   -webkit-transform: translate(-50%, -50%); // remove me when autoprefixer is here kthxbye
   transform: translate(-50%, -50%);
-  
-  width: 200px;
-  height: 200px;
-  
+
+  font-size: .8rem;
+  width: 700px;
+  //height: 200px;
+
   background: rgba(#fff, .8);
 }
 
