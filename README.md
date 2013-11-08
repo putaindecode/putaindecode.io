@@ -17,7 +17,7 @@ issue du repo de [proposition de posts](https://github.com/putaindecode/proposit
 (afin de pas polluer les issues techniques du site).
 Si vous souhaitez voir un post écrit, ou même en écrire un, faites un tour sur là bas ;)
 
-Pour contribuez au site, n'hésitez pas, en plus de lire la partie technique ci-dessous
+Pour contribuer au site, n'hésitez pas, en plus de lire la partie technique ci-dessous,
 à lire le fichier spécifique [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
@@ -48,13 +48,13 @@ nécessaires (Bower, et les lanceurs Grunt et happyplan).__
 ## Mettre à jour les sources
 
 Lorsque vous n'avez pas travaillé sur le site depuis un petit moment, on vous conseille
-d'executer les commandes suivantes:
+d'exécuter les commandes suivantes :
 
     git pull
     make update
 
-Si vous rencontrez des erreurs lors du `git pull` (ex pour une histoire de
-fichiers modifiés non commité (font d'icones?)), vous pouvez juste avant faire
+Si vous rencontrez des erreurs lors du `git pull` (par ex. pour une histoire de
+fichiers modifiés non commités (fontes d'icones ?)), vous pouvez juste avant faire
 un petit
 
     git reset --hard
