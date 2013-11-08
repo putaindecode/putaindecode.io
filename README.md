@@ -17,6 +17,9 @@ issue du repo de [proposition de posts](https://github.com/putaindecode/proposit
 (afin de pas polluer les issues techniques du site).
 Si vous souhaitez voir un post écrit, ou même en écrire un, faites un tour sur là bas ;)
 
+Pour contribuez au site, n'hésitez pas, en plus de lire la partie technique ci-dessous
+à lire le fichier spécifique [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ---
 
 ## Développement
@@ -41,6 +44,23 @@ avant d'intervenir sur le projet ;).
 
 __Les commandes `make init` et `make update` installerons les dépendances Node
 nécessaires (Bower, et les lanceurs Grunt et happyplan).__
+
+## Mettre à jour les sources
+
+Lorsque vous n'avez pas travaillé sur le site depuis un petit moment, on vous conseille
+d'executer les commandes suivantes:
+
+    git pull
+    make update
+
+Si vous rencontrez des erreurs lors du `git pull` (ex pour une histoire de
+fichiers modifiés non commité (font d'icones?)), vous pouvez juste avant faire
+un petit
+
+    git reset --hard
+
+__Note: cela supprimera toutes vos modifications locales sans avertissement, à
+faire avec précaution__.
 
 ## Lancer le site web localement
 
