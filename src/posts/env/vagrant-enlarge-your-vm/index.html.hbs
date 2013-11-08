@@ -14,9 +14,9 @@ date: 2013-11-08
 ---
 
 {{#markdown}}
-Vagrant, au cas ou tu ne connaîtrais pas encore, permet de fournir des
+Vagrant, au cas où tu ne connaîtrais pas encore, permet de fournir des
 environnements de développements reproductibles, facilement configurables et
-qui se partagent entre les membres de l’équipe. En gros tu vas pouvoir décrire
+qui se partagent entre les membres de l’équipe. En gros, tu vas pouvoir décrire
 et configurer des machines virtuelles (VM) depuis un seul fichier texte,
 le `Vagrantfile`.  Plutôt pratique pour avoir un environnement de dev
 équivalent à celui de la prod. Et tout cela avec un processus simplifié
@@ -27,7 +27,7 @@ Vagrant s’adresse principalement à toi, mais aussi à un public
 de **développeurs** qui souhaitent pouvoir mettre en place rapidement
 un environnement de dev avec une machine virtuelle (genre apache-php-*sql)
 sans y passer trop de temps.
-Vagrant, c’est aussi pour des **devops** qui voudrait tester la mise en
+Vagrant, c’est aussi pour des **devops** qui voudraient tester la mise en
 place et le provisioning de leur infra.
 Dans la doc, ils disent même que ça s’adresse aux designers
 (pour dire si c’est simple) mais faut pas déconner non plus,
@@ -65,8 +65,8 @@ par l’url de la box de tes rêves. Tu peux trouver une liste assez complètes
 de box plus ou moins configurées sur le site http://www.vagrantbox.es/
 ( ProTip™: Choisis bien le provider correspondant à ton gestionnaire de VM)
 - `config.vm.network :forwarded_port, guest: 80, host: 8080` Pratique
-pour accéder au serveur qui tourne sur la VM. Après tu retrouve un peu
-les même options de config réseaux qu’avec virtualbox
+pour accéder au serveur qui tourne sur la VM. Après tu retrouves un peu
+les mêmes options de config réseaux qu’avec virtualbox
 (réseaux privés, connexion par pont...)
 - `# config.vm.synced_folder "../data", "/vagrant_data"` Avec ça,
 tu vas pouvoir ajouter un répertoire qui sera partagé
@@ -102,7 +102,7 @@ télécharger-compiler-installer tout l’internet
 
 # Etape 2 - vagrant up
 Bon, la première fois risque de prendre du temps, parce que vagrant
-va télécharger ta box, puis lancer le provisioning. Profites en pour faire
+va télécharger ta box, puis lancer le provisioning. Profites-en pour faire
 un tour sur http://vim-adventures.com/ et jouer un peu en attendant.
 
 Une fois terminé, tu as maintenant une box dispo avec laquelle travailler.
@@ -113,7 +113,7 @@ Je pensais faire une troisième partie sur comment arrêter la VM mais
 
 Bref, le point important de tout ça, c’est que les autres relous de ton équipe
 ne pourront plus dire que pourtant ça marche bien chez eux, et qu’ils
-comprennent pas, c’est vraiment étrange... enfin sauf si ils sont
+comprennent pas, c’est vraiment étrange... enfin sauf s'ils sont
 de mauvaise foi :)
 - L’intégrateur n’aura plus à se taper 14 installations de trucs en
 ligne de commande qu’il ne retient jamais, pour rajouter un bout de css
