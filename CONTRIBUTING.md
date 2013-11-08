@@ -1,7 +1,7 @@
 # Contribuez !
 
 Chez Putain de Code, on te laisse l'opportunité d'apporter ta pierre à
-l'édifice, comme on te l'explique [sur notre
+l'édifice, comme on te l'explique en détails [sur un article dédié sur le
 site](http://putaindecode.fr/posts/comment-contribuer/).
 
 Tu trouveras ici un condensé des bonnes pratiques pour pouvoir participer.
