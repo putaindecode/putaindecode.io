@@ -6,63 +6,110 @@
 
 <img align="right" alt="" src="https://raw.github.com/putaindecode/website/master/src/assets/_images/p!-logo--no-bubble-512--trim.png" width="128">
 
-Dépôt contenant le code du site web.
+Code source du site [Putain de Code](http://putaindecode.fr/).
+Contient tout le nécessaire pour faire fonctionner le site.
+Pas de base de données à installer, pas de serveurs à configurer.
 
-Les articles seront postés ici sous forme de PR une fois qu'on est OK dans une issue du repo de [proposition de posts](https://github.com/putaindecode/propositions-de-posts) (afin de pas polluer les issues techniques du site)
+## Contributions
+
+Les articles peuvent être postés ici sous forme de PR une fois qu'on est OK dans une
+issue du repo de [proposition de posts](https://github.com/putaindecode/propositions-de-posts)
+(afin de pas polluer les issues techniques du site).
+Si vous souhaitez voir un post écrit, ou même en écrire un, faites un tour sur là bas ;)
 
 ---
 
-## Development
+## Développement
 
-__Notice: please be aware that we are using a `.editorconfig`. Be sure to respect it ([tip](http://editorconfig.org/)). Thanks__
+__Notice: merci de faire attention à la configuration de vos éditeurs de texte et IDE.  
+Nous utilisons [`.editorconfig`](.editorconfig) pour garder une cohérence.
+Merci de respecter cela (il vous suffit d'aller sur le site [editorconfig.org/](http://editorconfig.org/) 
+pour télécharger le plugin adéquat.__
 
-This website is build on top of [happyplan](https://github.com/happyplan/happyplan), so please checkout [happyplan README](https://github.com/happyplan/happyplan#readme) before trying to do anything.
+Ce site utilise [happyplan](https://github.com/happyplan/happyplan),
+il vous est donc conseillé de jeter un coup d'oeil au [README d'happyplan](https://github.com/happyplan/happyplan#readme) 
+avant d'intervenir sur le projet ;).
 
-**Require node >=0.10.21**
+**Nécessite [Node.js](http://nodejs.org/) >=0.10.21**
+
+## Récupérer les sources du site
 
     git clone https://github.com/putaindecode/website.git
     cd website
+    make init
     make install
-    make update
 
-& launch the website locally
+__Les commandes `make init` et `make update` installerons les dépendances Node
+nécessaires (Bower, et les lanceurs Grunt et happyplan).__
+
+## Lancer le site web localement
 
     happyplan
 
-## Distribution
+Oui oui, c'est tout, vous devrier avoir le site web qui s'ouvre tous seul dans votre navigateur.
+Si ce n'est pas le cas, et que vous n'avez pas d'erreurs dans votre console,
+rendez vous à l'adresse suivante: [http://localhost:4242](http://localhost:4242).
 
-The following command will build the website & publish `dist` folder to `gh-pages` branch.
+
+## Mise en production
+
+La commande suivante (lorsque vous avez les droits nécessaires) va construire le site
+en version optimisé, et le publié (mise à jour de la branche  `gh-pages`, qui,
+grâce à GitHub, suffit à mettre en ligne le site.
 
     happyplan publish
 
 ---
 
-## Specific updates
+## Mise à jour spécifiques
 
-### Generating favicon
+### Mettre à jour les icones
 
-Install [icoutils](http://www.nongnu.org/icoutils/)
+Le site utilise des icones SVG (scalables) et donc les converties en une police d'icones
+grâce à une tache Grunt, incluse dans happyplan.
+Cependant pour l'instant, il vous faut avoir sur votre machine la dépendance _fontforge_:
+
+#### OS X
+
+    brew install fontforge ttfautohint
+
+#### Linux
+    
+    sudo apt-get install fontforge ttfautohint
+
+Une fois cette dépendance installé, vous n'avez rien à faire de plus que de modifier/ajouter
+des icones svg avec les autres.
+La police devrait se générer et se mettre à jour grâce à happyplan.
+
+**Attention: une fois que vous avez cette dépendance, vous devriez faire pour l'instant
+attention à ne pas commit à chaque fois les polices d'icones, seul une date change dans les fichiers**
+[Nous sommes en réflexion pour changer ce processus](https://github.com/putaindecode/website/issues/69)
+
+### Générer le favicon
+
+Installez [icoutils](http://www.nongnu.org/icoutils/). Par exemple sur OS X:
 
     brew install icoutils
 
-Then generate using command
+Ensuite utilisez la commande suivante
 
     make favicon
 
 ---
 
-## Credits
+## Crédits
 
-### Authors
+### Auteurs et contributeurs
 
 * [Organization members](https://github.com/putaindecode?tab=members)
 * [Contributors list](https://github.com/putaindecode/website/graphs/contributors)
 
 ### Logo & Avatar
 
-All credits go to all the people involve in [this discussion](https://github.com/putaindecode/discussions/issues/4).
-Special thanks to [@mlbli](https://github.com/mlbli) for the [initial logo](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
+Remerciements à toutes les personnes impliqués dans cette discussion [putaindecode/organisation/issues/4](https://github.com/putaindecode/organisation/issues/4).
+Remerciement spécial à [@mlbli](https://github.com/mlbli) pour le [logo initial](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
 
+--- 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/putaindecode/website/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
