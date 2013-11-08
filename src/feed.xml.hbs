@@ -6,7 +6,7 @@
         <link>{{ happyplan.url }}/</link>
         <generator>{{ happyplan.pkg.name }} {{ happyplan.pkg.version }}</generator>
         <lastBuildDate>{{moment happyplan.buildDate format="ddd, DD MMMM YYYY HH:mm:ss ZZ" }}</lastBuildDate>
-{{#each pages}}{{#is data.lang "fr"}}{{#is data.type "post"}}{{#compare data.draft "!==" true}}
+{{#each_dateSorted pages}}{{#is data.lang "fr"}}{{#is data.type "post"}}{{#compare data.draft "!==" true}}
           <item>
               <title>{{ data.title }}</title>
               <description><![CDATA[{{#handlebarsception}}{{{ page }}}{{/handlebarsception}}]]></description>
@@ -14,6 +14,6 @@
               <link>{{ ../../../happyplan.url }}/{{ relative ../../../page.dest this.dest }}</link>
               <guid isPermaLink="true">{{ ../../../happyplan.url }}/{{ relative ../../../page.dest this.dest }}</guid>
           </item>
-{{/compare}}{{/is}}{{/is}}{{/each}}
+{{/compare}}{{/is}}{{/is}}{{/each_dateSorted}}
     </channel>
 </rss>
