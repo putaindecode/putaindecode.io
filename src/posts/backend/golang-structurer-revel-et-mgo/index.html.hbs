@@ -16,21 +16,29 @@ readingTime: 5min
 
 {{#markdown}}
 Tu te sens l’âme d’un rebelle ? Tu veux tester de la techno atypique ? Ça tombe
-bien, aujourd’hui on est là pour ça.  Je t’apprends sûrement pas ce qu’est le
-langage Go, apparu fin 2009 comme un véritable ovni, de toutes façons c’est pas
-le but de cet article. Si tu ne connais pas, je t’invite à aller sur la
-[homepage du projet](http://goo.gl/EF1rIa) et à parcourir le
-[go-tour anglais](http://goo.gl/7z0uzx) ou
-[celui en français](http://goo.gl/XMwsIY), c'est un showcase complet du langage.
+bien, aujourd’hui on est là pour ça. On va toucher à un sujet pas forcément 
+majoritaire : le langage Go. Si tu ne connais pas les bases, je t’invite à aller
+sur la [homepage du projet](http://goo.gl/EF1rIa) et à parcourir le 
+[go-tour anglais](http://goo.gl/7z0uzx) ou 
+[celui en français](http://goo.gl/XMwsIY), c'est un showcase complet du langage 
+(et très bien fichu).
+Mais si t'es juste curieux et que comprendre chaque pixel de l'article n'est pas
+une obsession pour toi, tu devrais pouvoir voir de quoi on parle. Même 
+[Nyalab](/le-crew/) y est arrivé.
+
+Dans cet article on va voir **comment brancher un projet go+revel à une base de 
+données mongodb** et obtenir ainsi une base de travail sympa pour explorer le
+développement web avec Go.
 
 ##Les technos utilisées
 
 ###[Golang](http://golang.org)
 
-Langage compilé, communément considéré comme “désorienté objet”, c’est une
-alternative solide au C/C++ qui prône un découpage modulaire (par “package”) des
-applications. Il est prédisposé à une utilisation en développement web grâce à
-un package natif de gestion des réseaux et du protocole http.
+Langage compilé, publié en 2009, communément considéré comme “désorienté objet”, 
+c’est une alternative solide au C/C++ qui prône un découpage modulaire (par 
+“package”) des applications. Il est prédisposé à une utilisation en 
+développement web grâce à un package natif de gestion des réseaux et du 
+protocole http.
 
 ###[Revel](http://robfig.github.io/revel/)
 
@@ -108,7 +116,9 @@ C’est là qu’on se met au boulot. On a de quoi faire un site complet avec ç
  aucune trace de gestion de base de données là dedans. On commence donc par
  créer un dossier `app/modules` et un sous dossier `app/modules/mongo`. C’est
  dans ce dossier que va se trouver notre gestionnaire de connexion à mongoDB.
- En fait ce n’est rien de plus qu’un binding entre Revel et Mgo :
+ En fait ce n’est rien de plus qu’un binding entre Revel et Mgo. La technique 
+ utilisée pour brancher ce binding côté Revel est celle des 
+ [interceptors](http://robfig.github.io/revel/manual/interceptors.html).
 
 ```go
 package mongo
@@ -150,13 +160,23 @@ func GetSession() *mgo.Session {
     return session
 }
 
-// Alimente les propriétés affectées au controlleur
+// Alimente les propriétés affectées au controlleur en clonant la session mongo.
 func (c *Mongo) Bind() revel.Result {
     // Oublie pas de mettre mongo.database dans le app.conf, genre "localhost"
     databaseName, _ := revel.Config.String("mongo.database")
 
-    c.MongoSession = GetSession()
+    c.MongoSession = GetSession().Clone()
     c.MongoDatabase = c.MongoSession.DB(databaseName)
+
+    return nil
+}
+
+// Ferme un clone
+func (c *Mongo) Close() revel.Result {
+
+    if c.MongoSession != nil {
+        c.MongoSession.Close()
+    }
 
     return nil
 }
@@ -166,6 +186,9 @@ func (c *Mongo) Bind() revel.Result {
 // chaque execution du controlleur.
 func init() {
     revel.InterceptMethod((*Mongo).Bind, revel.BEFORE)
+    revel.InterceptMethod((*Mongo).Close, revel.AFTER)
+    // On veut aussi fermer le clone si le controlleur plante.
+    revel.InterceptMethod((*Mongo).Close, revel.PANIC)
 }
 ```
 
@@ -180,7 +203,7 @@ import (
 
 type AppController struct {
     *revel.Controller
-    mongo.Mongo
+    mongo.Mongo // Le controlleur doit étendre notre type Mongo.
 }
 
 func (c *AppController) Index() revel.Result {
@@ -200,6 +223,8 @@ import (
 
 func DoStuff(user *models.User) {
     session := mongo.GetSession()
+    defer session.Close() // Oublie pas de fermer le robinet à la fin!
+
     // tu peux maintenant manipuler ta mgo.Session.
     // [ ... ]
 }
