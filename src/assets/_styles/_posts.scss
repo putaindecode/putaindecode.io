@@ -26,8 +26,13 @@
 
     $margin: 2%;
     width: 50%-$margin;
-    &:nth-child(odd) { margin-right: $margin}
-    &:nth-child(even)  { margin-left: $margin}
+    &:nth-child(odd) {
+      margin-right: $margin;
+      clear: left;
+    }
+    &:nth-child(even) {
+      margin-left: $margin
+    }
   }
 
     .putainde-PostsListing-post-datetime {
