@@ -11,7 +11,11 @@
       }]
     , "scripts": [{
         "src": [
-            "<%= happyplan.path.assets.scripts %>/konami.js"
+            "<%= happyplan.bower_components %>/prism/prism.js"
+          , "<%= happyplan.bower_components %>/prism/components/prism-bash.js"
+          , "<%= happyplan.bower_components %>/prism/components/prism-scss.js"
+          , "<%= happyplan.bower_components %>/prism/components/prism-ruby.js"
+          , "<%= happyplan.path.assets.scripts %>/konami.js"
           , "<%= happyplan.path.assets.scripts %>/putaindecode.js"
         ]
         , "dest": "<%= happyplan.path.dist.assets.scripts %>/putaindecode.js"
