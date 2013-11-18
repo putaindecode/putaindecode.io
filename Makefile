@@ -7,6 +7,7 @@ install:
 
 update:
 	npm install
+	bower prune
 	bower update
 
 favicon:

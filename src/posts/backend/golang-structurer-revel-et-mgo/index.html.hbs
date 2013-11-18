@@ -120,7 +120,7 @@ C’est là qu’on se met au boulot. On a de quoi faire un site complet avec ç
  utilisée pour brancher ce binding côté Revel est celle des 
  [interceptors](http://robfig.github.io/revel/manual/interceptors.html).
 
-```go
+```
 package mongo
 
 import (
@@ -195,7 +195,7 @@ func init() {
 On a créé notre connexion à mongo, mais maintenant on va aussi l’utiliser. Dans
 le contrôleur, rien de plus simple :
 
-```go
+```
 import (
     "github.com/robfig/revel"
     "github.com/OwlyCode/PutainDeProjet/app/modules/mongo"
@@ -216,7 +216,7 @@ func (c *AppController) Index() revel.Result {
 Mais tu peux aussi l’appeler ailleurs dans le projet, par exemple dans un autre
 module :
 
-```go
+```
 import (
     "github.com/OwlyCode/PutainDeProjet/app/modules/mongo"
 )
