@@ -8,15 +8,21 @@ author: madx
 title: Résolution d'un push foireux
 tags:
   - git
-readingTime: Xmin
+readingTime: 5min
 ---
 
 {{#markdown}}
+Si comme nous tu as la chance de travailler avec [Lionel][/le-crew/],
+il peut t'arriver assez fréquemment que ce dernier défonce le repo
+
+
 ### DISCLAIMER
+Cette manip n'est pas DU TOUT recommandé pour annuler une modification
+ancienne, depuis laquelle des branches/commits ont été faits. Préférez `revert`
+pour ça (un simple `git revert SHA_DU_COMMIT` suffit)
 
-Cette manip n'est pas DU TOUT recommandé pour annuler une modification ancienne, depuis laquelle des branches/commits ont été faits. Préférez `revert` pour ça (un simple `git revert SHA_DU_COMMIT` suffit)
-
-Ici il n'y a pas eu de commit sur `master` depuis, et tout le monde dort, donc je peux y aller comme un bourrin.
+Ici il n'y a pas eu de commit sur `master` depuis, et tout le monde dort, donc
+je peux y aller comme un bourrin.
 
 ### État du dépôt
 
