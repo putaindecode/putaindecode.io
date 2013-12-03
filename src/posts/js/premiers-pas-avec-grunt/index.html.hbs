@@ -33,7 +33,11 @@ Voyons maintenant comment l'on peut mettre en place ceci via **Grunt**.
 
 ## Installation
 
-Tout d'abord, installons **Grunt**. Notez que **Grunt** est en _nodejs_ et que je considère que vous avez déjà _nodejs_ d'installé.
+Tout d'abord, installons **Grunt**. Notez que **Grunt** est en _nodejs_ et que je considère que vous avez déjà _nodejs_ d'installé. D'autre part, nous allons créer un nouveau projet **npm** afin d'enregistrer tous les packages que vous allez installer. Je vous explique par la suite pourquoi nous faisons ça.
+
+```bash
+$ npm init // puis plusieurs fois entrée
+```
 
 En premier lieu, il faut installer le *package* qui permet de gérer **Grunt** en ligne de commande. C'est le _commander_ de **Grunt** en gros.
 
@@ -63,9 +67,7 @@ Fait ? Voici maintenant à quoi doit ressembler la base d'une configuration **Gr
 module.exports = function(grunt) {
 
   // Configuration de Grunt
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json')
-  })
+  grunt.initConfig({})
 
   // Définition des tâches Grunt
   grunt.registerTask('default', '')
@@ -155,7 +157,7 @@ Comme pour la majorité des tâches que vous aurez besoin avec **Grunt**, un _pa
 
 -> [`grunt-contrib-concat`](https://github.com/gruntjs/grunt-contrib-concat)
 
-Installation : `npm install grunt-contrib-concat --save-dev` (`--save-dev` permet de sauvegarder le package dans `package.json` pour pouvoir à tut moment le réinstaller en faisant `npm install`)
+Installation : `npm install grunt-contrib-concat --save-dev` (`--save-dev` permet de sauvegarder le package dans `package.json` pour pouvoir à tout moment le réinstaller en faisant `npm install`)
 
 On ajoute alors à notre configuration **Grunt** l'importation de `grunt-contrib-concat` :
 
