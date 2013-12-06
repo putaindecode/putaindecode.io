@@ -124,15 +124,53 @@ Pourquoi est-ce que l'on appelle ça encore Ajax, d'ailleurs ? Bref.
 Simple comme bonjour :
 
 ```javascript
-var xhr = new XMLHTTPRequest()
-xhr.open("POST", "url", true)
-xhr.onreadystatechange = function(){
-  if(this.readyState == 4) {
-    // check this.status and do your stuff
-  }
+function isSuccessStatus(status){
+  return status >= 200 && status < 300 || status == 304
 }
-xhr.setRequestHeader("foo", "bar")
-xhr.send("postData")
+
+function ajax(options){
+  var xhr = new XMLHttpRequest()
+    , done = false
+
+  xhr.open(options.method || "GET", options.url, options.async)
+  
+  xhr.onreadystatechange = function(){
+    if(done) return
+    if(this.readyState != 4) return
+    done = true
+    
+    if(isSuccessStatus(this.status)) {
+      if(options.success) {
+        options.success.call(this)
+      }
+      return
+    }
+    
+    if(options.error) {
+      options.error.call(this)
+    }
+  }
+  Object.keys(options.headers || {})
+    .forEach(function(key){
+      xhr.setRequestHeader(key, options.headers[key])
+    })
+  xhr.send(options.data || null)
+  return xhr
+}
+```
+
+Cette fonction offre un support basique de XHR :
+
+```javascript
+var myXHR = ajax({
+    url : "api/users"
+  , success : function(){
+      doStuff(this.responseText)
+    }
+  , error : function(){
+      showError(this.status)
+    }
+})
 ```
 
 ### ES5 magic
@@ -162,6 +200,41 @@ Object.keys(myObject)
 ```
 
 De même, on bénéficie de méthodes s'avérant très utiles, comme [`Array.prototype.map`, `Array.prototype.reduce`, `Array.prototype.filter`](http://developer.mozilla.org/en-US/docs/[Web/JavaScript/Reference/Global_Objects/Array/prototype), [`Object.create`, `Object.getPrototypeOf`, `Object.getOwnPropertyNames`, `Object.defineProperty`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) dont je t'invite, si cela t'intéresse, à te renseigner sur ces méthodes. Et si tu veux avoir plus de détails, read the fucking manual : [http://es5.github.io](http://es5.github.io).
+
+
+### Des petits détails cools du côté des events
+
+Avec `addEventListener`, on peut aussi passer un objet comme listener, avec `handleEvent` pour interface :
+
+```javascript
+var myElementClickEvents = {
+    element : myElement
+  , callbacks : []
+  , handleEvent : function(evt){
+      var self = this
+      this.callbacks.forEach(function(item){
+        item.call(self.element, evt)
+      })
+    }
+}
+myElement.addEventListener("click", myElementClickEvents)
+
+myElementClickEvents.callbacks.push(function(evt){
+  console.log(evt)
+})
+```
+
+Avec ça, on peut facilement garder une trace de ce qu'on passé comme listeners.
+
+### Du type checking ?
+
+```javascript
+var getClass = function(o){ return Object.prototype.toString.call(o) }
+  , someString = new String("foo")
+
+typeof someString // "object"
+getClass(someString) // "[object String]", sounds more reasonable
+```
 
 ### Petit bonus
 
