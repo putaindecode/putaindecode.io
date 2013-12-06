@@ -293,21 +293,24 @@ function create(){
   }
   return self
 }
+
+var klass = {
+    create : create
+  , extend : extend
+}
 ```
 
 Tu peux faire ça :
 
 ```javascript
-var animal = {
-    create : create
-  , extend : extend
-  , constructor : function(name){
+var animal = klass.extend({
+    constructor : function(name){
       this.name = name
     }
   , getName : function(){
       return this.name
     }
-}
+})
 
 var cat = animal.extend({
     constructor : function(name){
