@@ -24,9 +24,9 @@ Pour contribuer au site, n'hésitez pas, en plus de lire la partie technique ci-
 
 ## Développement
 
-__Notice: merci de faire attention à la configuration de vos éditeurs de texte et IDE.  
+__Notice: Faites attention à la configuration de vos éditeurs de texte et IDE.  
 Nous utilisons [`.editorconfig`](.editorconfig) pour garder une cohérence.
-Merci de respecter cela (il vous suffit d'aller sur le site [editorconfig.org/](http://editorconfig.org/) 
+Respectez alors cela (il vous suffit d'aller sur le site [editorconfig.org/](http://editorconfig.org/) 
 pour télécharger le plugin adéquat pour votre éditeur.__
 
 Ce site utilise [happyplan](https://github.com/happyplan/happyplan),
