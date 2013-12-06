@@ -41,8 +41,9 @@
     Developer
     http://madx.me - https://twitter.com/madx - https://github.com/madx
 
-    mlbli
+    bloodyowl
     Developer
+    http://bloodyowl.github.io - https://twitter.com/bloodyowl - https://github.com/bloodyowl
 
     rhannequin
     Developer

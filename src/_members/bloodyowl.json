@@ -1,0 +1,23 @@
+{
+  "name": "bloodyowl",
+  "url": "http://bloodyowl.github.io",
+  "github": "bloodyowl",
+  "twitter": "bloodyowl",
+  "avatar_url": "https://gravatar.com/avatar/37500337ba5d2aebc962959ed83928e5",
+  "fr": {
+    "bio": {
+      "short": "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens",
+      "long": [
+        "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens"
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people.",
+      "long": [
+        "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people"
+      ]
+    }
+  }
+}
