@@ -131,8 +131,9 @@ function isSuccessStatus(status){
 function ajax(options){
   var xhr = new XMLHttpRequest()
     , done = false
+    , async = options.hasOwnProperty("async") ? options.async : true
 
-  xhr.open(options.method || "GET", options.url, options.async)
+  xhr.open(options.method || "GET", options.url, async)
   
   xhr.onreadystatechange = function(){
     if(done) return
