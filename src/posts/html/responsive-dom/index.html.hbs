@@ -76,14 +76,17 @@ grâce à une `media query`. Voilà un exemple rudimentaire :
 
 ```css
 .img-desktop {
+  // Par défaut, l'image desktop est cachée
   display: none;
 }
 
 @media screen and (min-width: 768px) {
+  // Si on est sur "grand" écran, on affiche l'image desktop...
   .img-desktop {
     display: block;
   }
 
+  // ...et on masque l'image mobile
   .img-mobile {
     display: none;
   }
@@ -101,6 +104,7 @@ avec JavaScript :
 <article>
   <h1>Mon super article</h1>
 
+  <!-- Ces images ne seront pas chargées car elles n'ont pas d'attribut src -->
   <img data-src="/mon/image/desktop.jpg" class="img-desktop" />
 
   <p>Lâche tes comm' !</p>
@@ -108,6 +112,7 @@ avec JavaScript :
   <img data-src="/mon/image/mobile.jpg" class="img-mobile" />
 
   <noscript>
+    <!-- Cette image ne sera chargée que si le visiteur n'a pas activé le JS -->
     <img src="/mon/image/mobile.jpg" class="img-mobile img-noscript" />
   </noscript>
 </article>
@@ -129,6 +134,9 @@ avec JavaScript :
 }
 
 .img-noscript {
+  // On surcharge le style desktop pour s'assurer
+  // que cette image s'affiche quelle que soit la taille de l'écran
+
   display: block;
 }
 ```
