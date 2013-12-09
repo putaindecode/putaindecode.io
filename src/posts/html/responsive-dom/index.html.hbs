@@ -236,6 +236,92 @@ fait bien son boulot au chargement aussi, dans tous les cas (les callbacks
 handler, l'image n'arrive donc jamais si on charge la page avec un écran d'une
 largeur inférieure à 768px).
 
+## That's all you've got, bitch?
+
+On peut également, puisque tu y tiens tant, évoquer d'autres solutions plus
+marginales mais qui méritent d'être citées.
+
+### Foundation
+
+[Foundation](http://foundation.zurb.com/) propose, dans sa version 5 (et
+peut-être même avant, j'ai pas vérifié) un peu de sucre syntaxique HTML
+permettant de switcher (via JS, œuf corse) simplement entre différents contenus
+pour l'élément sur lequel on l'utilise.
+
+C'est pas mal. Ça donne ça (tiré de [la doc](http://foundation.zurb.com/docs/components/interchange.html)) :
+
+> We use the data-interchange attribute on a markup container (probably a div)
+> to do this. Here's an example which loads up a small, static map on mobile, a
+> larger static map for medium-sized devices, and a full interactive Google map
+> on large display devices.
+
+```markup
+<div data-interchange="[../examples/interchange/default.html, (small)], [../examples/interchange/medium.html, (medium)], [../examples/interchange/large.html, (large)]">
+  <div data-alert class="alert-box secondary radius">
+    This is the default content.
+    <a href="#" class="close">&times;</a>
+  </div>
+</div>
+```
+
+`small`, `medium` et `large` étant des raccourcis pour des media queries données
+(c'est dans [la doc](http://foundation.zurb.com/docs/components/interchange.html),
+toujours. J'insiste.)
+
+### Flexbox (pas toi, David)
+
+On peut également, comme l'a très justement souligné [lionelB](/le-crew/), se
+pencher (mais pas trop) sur le cas de Flexbox, qui est un nouveau type de
+positionnement introduit en CSS3. Pour ceux qui ont dormi, en gros, tu définis
+un conteneur :
+
+```css
+.flex-container {
+  display: flex;
+
+  // ou bien
+
+  display: inline-flex;
+}
+```
+
+...et tu donnes des numéros à ses enfants, comme à Bangkok :
+
+```css
+.title {
+  order: 1;
+}
+
+.content {
+  order: 2;
+}
+
+.image {
+  order: 3;
+}
+
+// Bien sûr, tu as été assez malin pour mettre ton image en dernier dans le DOM...
+// ...n'est-ce pas ?
+
+@media screen and (min-width: 768px) {
+  .content {
+    order: 3;
+  }
+
+  .image {
+    order: 2;
+  }
+}
+```
+
+Et voilà, pas besoin d'avoir fait Pollypocket pour percevoir à quel point la
+flexibilité et la propreté du code que cette technique nous permet d'écrire
+résolvent notre problème en deux secondes douze. Ce n'est évidemment ici que la
+partie émergée du flexberg ;il y a des tas de bonnes ressources qui vous
+expliqueront ça en long, en large et en travers bien mieux que moi, notamment
+[cet article](http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html)
+sur lequel j'ai honteusement pompé les snippets de cette partie.
+
 ## Conclusion
 
 Comme tu l'as vu, rien de ce que je t'ai montré n'est réellement satisfaisant :
