@@ -76,17 +76,17 @@ grâce à une `media query`. Voilà un exemple rudimentaire :
 
 ```css
 .img-desktop {
-  // Par défaut, l'image desktop est cachée
+  /* Par défaut, l'image desktop est cachée */
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  // Si on est sur "grand" écran, on affiche l'image desktop...
+  /* Si on est sur "grand" écran, on affiche l'image desktop... */
   .img-desktop {
     display: block;
   }
 
-  // ...et on masque l'image mobile
+  /* ...et on masque l'image mobile */
   .img-mobile {
     display: none;
   }
@@ -134,8 +134,8 @@ avec JavaScript :
 }
 
 .img-noscript {
-  // On surcharge le style desktop pour s'assurer
-  // que cette image s'affiche quelle que soit la taille de l'écran
+  /* On surcharge le style desktop pour s'assurer
+     que cette image s'affiche quelle que soit la taille de l'écran */
 
   display: block;
 }
@@ -256,7 +256,9 @@ C'est pas mal. Ça donne ça (tiré de [la doc](http://foundation.zurb.com/docs/
 > on large display devices.
 
 ```markup
-<div data-interchange="[../examples/interchange/default.html, (small)], [../examples/interchange/medium.html, (medium)], [../examples/interchange/large.html, (large)]">
+<div data-interchange="[../examples/interchange/default.html, (small)],
+                       [../examples/interchange/medium.html, (medium)],
+                       [../examples/interchange/large.html, (large)]">
   <div data-alert class="alert-box secondary radius">
     This is the default content.
     <a href="#" class="close">&times;</a>
