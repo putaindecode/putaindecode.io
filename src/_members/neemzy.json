@@ -1,0 +1,29 @@
+{
+  "name": "neemzy",
+  "url": "http://www.zaibatsu.fr",
+  "github": "neemzy",
+  "twitter": "_neemzy",
+  "avatar_url": "http://www.gravatar.com/avatar/259cfb842be0d236e68340b1c330cc88.png",
+  "fr": {
+    "bio": {
+      "short": "Développeur web full-stack en agence, tripote surtout PHP et JS",
+      "long": [
+        "Développeur full-stack tombé dans le web quand il était petit.",
+        "Fait surtout du PHP, mais aussi de plus en plus de JavaScript.",
+        "A une peur irraisonnée des utilisateurs de Mac / Ruby / Sass.",
+        "Atteint du syndrome de Patrick Modiano qui l'empêche parfois de finir ses"
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Full-stack web developer in an agency, mainly dabbles in PHP and JS",
+      "long": [
+        "Full-stack developer who fell into web stuff as a boy.",
+        "Mainly writes PHP, but also more and more JavaScript.",
+        "Has an irrational fear of Mac / Ruby / Sass users.",
+        "Suffering from Patrick Modiano's syndrome which sometimes prevents him from finishing his"
+      ]
+    }
+  }
+}
