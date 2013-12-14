@@ -1,0 +1,31 @@
+{
+    "name": "Erwyn",
+    "url": "http://erwyn.piwany.com",
+    "github": "erwyn",
+    "twitter": "Erwyn",
+    "avatar_url": "http://www.gravatar.com/avatar/73af1b4a749651d146a756e7830f10da.png",
+    "fr": {
+        "bio": {
+            "short": "Développeur Agile, aventurier à ses heures perdues",
+            "long": [
+            "Développeur tombé dans le web par inadvertance.",
+            "Amoureux de l'agilité, l'amélioration continue, et l'auto-organisation.",
+            "Passionné par les entreprises et les individus qui les composent.",
+            "Producteur d'humour bas de gamme.",
+            "Rêve d'aventures."
+                ]
+        }
+    },
+    "en": {
+        "bio": {
+            "short": "Agile developer, kind adventurer",
+            "long": [
+            "Developer who fell inadvertandly into the web.",
+            "In love with Agile methodologies, continuous improvement and self-organization.",
+            "Passionate about comagnies and people in.",
+            "Low-end humor producer.",
+            "Dream of adventures."
+                ]
+        }
+    }
+}
