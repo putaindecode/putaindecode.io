@@ -14,3 +14,8 @@ before_install:
 
 notifications:
   irc: "irc.freenode.org#p!"
+
+cache:
+  directories:
+    - bower_components
+    - node_modules
