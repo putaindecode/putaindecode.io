@@ -35,7 +35,7 @@ App.FlashManager.Events = {}
 _.extend(App.FlashManager.Events, Backbone.Events)
 ```
 
-En soi, pas de souci, tout se passe bien à ce moment, nous avons un [objet d'évènement façon Backbone](http://backbonejs.org/#Events). Il pourra alors s'écouter lui même, écouter un autre objet, mais aussi déclencher des évènements.
+En soi, pas de souci, tout se passe bien à ce moment, nous avons un [objet d'évènement façon Backbone](http://backbonejs.org/#Events). Il pourra alors s'écouter lui-même, écouter un autre objet, mais aussi déclencher des évènements.
 
 ## Côté Flash
 
@@ -50,28 +50,9 @@ Et là, bug.
 
 ## Pourquoi bug ?
 
-Parce que `ExtercalInterface.call()` ne s'attend pas à recevoir ce que **Backbone.js** lui propose. Lorsque vous faites `.trigger()`, **Backbone.js** renvoie l'[objet en cours](https://github.com/jashkenas/backbone/blob/master/backbone.js#L144-L153), ce qui provoque un énooooorme bug dans le plugin Flash de votre navigateur faisant tout bonnement une boucle infinie d'appel à la méthode interne de Flash `__flash__toXML` :
+Pour le moment, je ne sais pas vraiment. Je me pencherai plus sur le sujet dès que j'ai un peu de temps, mais ce que je sais, c'est que `ExtercalInterface.call()` ne s'attend pas à recevoir ce que **Backbone.js** lui propose. Lorsque vous faites `.trigger()`, **Backbone.js** renvoie l'[objet en cours](https://github.com/jashkenas/backbone/blob/master/backbone.js#L144-L153), ce qui provoque un énooooorme bug dans le plugin Flash de votre navigateur.
 
-```javascript
-__flash__toXML
-  __flash__toXML
-    __flash__toXML
-      __flash__toXML
-        __flash__toXML
-          __flash__toXML
-           __flash__toXML
-            __flash__toXML
-              __flash__toXML
-                __flash__toXML
-                  __flash__toXML
-                    __flash__toXML
-```
-
-Peut-être que vous allez vous empresser de regarder si une autre méthode qu'`ExtercalInterface.call()` existe pour faire un appel à JavaScript (vous vous trompez) ou encore d'aller insulter Adobe sur son bugtracker en leur disant "c'est quoi c'bordel ?!" (vous n'auriez pas forcément tort, quand bien même ce n'est pas vraiment de leur faute dans le cas présent). Nope, c'est du côté JavaScript qu'il faut régler ça.
-
-## Côté JavaScript
-
-Comme je vous disais, **Backbone.js** renvoie lorsqu'on utilise `.trigger()` l'instance en cours de l'objet, provoquant un bug dû à une [référence circulaire](https://developer.mozilla.org/fr/docs/Web/JavaScript/Une_r%C3%A9introduction_%C3%A0_JavaScript#Fuites_de_m.C3.A9moire). En gros, ici nous sommes en train de retourner l'élément Flash (`<object|embed>`).
+## La solution côté JavaScript
 
 Pour contrer cela, je vous propose la solution suivante qui est de ne pas utiliser directement l'objet `Backbone.Events|View` mais plutôt de passer par une interface, un objet proxy.
 
@@ -101,28 +82,11 @@ App.FlashManager.Events.trigger = function(name, opts) {
 }
 ```
 
-## A creuser
-
-Note de [@b_lionel](https://twitter.com/b_lionel) : Pour le problème de référence circulaire, il est possible que ce soit dû au fait de renvoyer un objet ayant une référence vers un object qui lui même à une référence sur le premier objet :
-
-```javascript
-var obj1 = {label: 'objet1'}
-  ,  obj2 = {label: 'objet2'}
-obj1.child = obj2
-obj2.child = obj1
-
-return obj1
-```
-
-...ce qui fait que le sérialiseur se prend probablement les pieds dans le tapis.
-
 ## Oh et...
 
-...il existe une version similaire de cet article en anglais disponible là : [ExternalInterface#call in a deadly loop (__flash__toXML)](https://coderwall.com/p/e-8niw).
+...il existe une version ayant plus ou moins le même souci que moi disponible là : [ExternalInterface#call in a deadly loop (__flash__toXML)](https://coderwall.com/p/e-8niw).
 
 ## Conclusion
 
-De manière générale (hors **Backbone.js**), lorsque vous utilisez `ExtercalInterface.call()`, faites en sorte que votre JavaScript ne retourne pas l'élément Flash lui-même (`<object|embed>`).
-
-Merci à [@zr0z](https://twitter.com/zr0z) et à [@alexmex_](https://twitter.com/alexmex_) pour la relecture.
+De manière générale (hors **Backbone.js**), lorsque vous utilisez `ExtercalInterface.call()`, faites en sorte que votre JavaScript retourne quelque chose de simple (un objet ayant que des atributs, pas de fonctions, ou encore un bouléen ou un _integer_).
 {{/markdown}}
