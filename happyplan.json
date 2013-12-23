@@ -1,31 +1,27 @@
 {
-    "name": "Putain de Code !"
-  , "description": "On voulait mettre une baseline mais on a pas été foutu d'en trouver une"
-  , "server": {
-      "port": 4242
+  "name": "Putain de Code !"
+, "description": "On voulait mettre une baseline mais on a pas été foutu d'en trouver une"
+, "server": {
+    "port": 4242
   }
-  , "assets": {
-      "styles": [{
-          "src": "<%= happyplan.path.assets.styles %>/putaindecode.scss"
-        , "dest": "<%= happyplan.path.dist.assets.styles %>/putaindecode.css"
-      }]
-    , "scripts": [{
-        "src": [
-            "<%= happyplan.bower_components %>/prism/prism.js"
-          , "<%= happyplan.bower_components %>/prism/components/prism-bash.js"
-          , "<%= happyplan.bower_components %>/prism/components/prism-scss.js"
-          , "<%= happyplan.bower_components %>/prism/components/prism-ruby.js"
-          , "<%= happyplan.path.assets.scripts %>/konami.js"
-          , "<%= happyplan.path.assets.scripts %>/putaindecode.js"
-        ]
-        , "dest": "<%= happyplan.path.dist.assets.scripts %>/putaindecode.js"
-      }]
+, "assets": {
+    "styles": [{
+        "src": "<%= happyplan.path.assets.styles %>/putaindecode.scss"
+      , "dest": "<%= happyplan.path.dist.assets.styles %>/putaindecode.css"
+    }]
+  , "scripts": [{
+      "src": [
+        "<%= happyplan.path.assets.scripts %>/konami.js"
+      , "<%= happyplan.path.assets.scripts %>/putaindecode.js"
+      ]
+    , "dest": "<%= happyplan.path.dist.assets.scripts %>/putaindecode.js"
+    }]
   }
 
-  , "nav": true
-  , "sidebar": true
-  , "footer": true
-  , "google_analytics_tracking_id": "UA-43771806-1"
-  , "disqus_short_name": "putaindecode"
-  , "disqus_developer": false
+, "nav": true
+, "sidebar": true
+, "footer": true
+, "google_analytics_tracking_id": "UA-43771806-1"
+, "disqus_short_name": "putaindecode"
+, "disqus_developer": false
 }
