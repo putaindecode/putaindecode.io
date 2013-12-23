@@ -67,7 +67,7 @@ développeurs des internets.
   sous Mac OS X tu utilises le terminal, et sous Linux je pense qu'on a pas à
   t'expliquer).
 
-  ```
+  ```shell
   $ git clone https://github.com/clinthorris/website.git putaindecode
   ```
 
@@ -78,7 +78,7 @@ développeurs des internets.
   facilement rattraper tout ce qu'on aura fait entre temps. La remote en
   rapport avec le repo principal, on l'appelle souvent *upstream*
 
-    ```
+    ```shell
     $ cd putaindecode
     $ git remote add upstream https://github.com/putaindecode/website.git
     $ git fetch upstream
@@ -144,7 +144,7 @@ est des types sympas.
   exactement ce que t'auras modifié, c'est beaucoup plus simple. Du coup tu
   fais simplement un :
 
-  ```
+  ```shell
   $ git checkout -b fix.nom-du-post
   ```
 
@@ -181,15 +181,15 @@ est des types sympas.
   nouvelle branche. C'est une pratique qu'on demande à tout le monde, même
   nous en interne on bosse sur des branches. Donc tout d'abord :
 
-  ```
+  ```shell
   $ git checkout -b post.titre-court-du-post
   ```
 
   Ensuite il va falloir que tu crées le fichier nécessaire pour le brouillon
   du post.
 
-  ```
-  $ happyplan newpost --name="Nom du post" --tags="tags, separes, virgules"
+  ```shell
+  $ happyplan newpost --name="Nom du post" --tags="tags,separes,virgules"
   $ mkdir src/posts/nom-du-post
   $ mv src/posts/nom-du-post.html.hbs src/posts/nom-du-post/index.html.hbs
   ```
@@ -231,7 +231,7 @@ est des types sympas.
   d'abord ajouter les fichier que tu as modifié à l'index de fichiers à
   commit. Tu peux faire ça tout simplement avec un :
 
-  ```
+  ```shell
   $ git add -A src/posts/nom-du-post
   ```
 
@@ -239,20 +239,20 @@ est des types sympas.
   Si tu as ajouter des fichiers à l'exterieur de ce dossier, tu devras les
   ajouter. Exemple:
 
-  ```
+  ```shell
   $ git add src/media/memes/trollface.jpg
   ```
 
   Ensuite on va dire à git de valider ces modifications de code :
 
-  ```
+  ```shell
   $ git commit -m "Un petit message sympa expliquant le correctif/post"
   ```
 
   Et on va finir en disant qu'on veut envoyer tout ça sur ton fork qui est
   situé sur GitHub :
 
-  ```
+  ```shell
   $ git push -u
   ```
 
@@ -271,8 +271,8 @@ est des types sympas.
   </figure>
 
 * Sélectionnes les bonnes branches et ajoute nous un beau titre et une belle
-  description de Pull Request en essayant au moins de commencer par `Post:
-  Nom du post` ou `Fix: Nom du post
+  description de Pull Request en essayant au moins de commencer par `Post: Nom du post`
+  ou `Fix: Nom du post`
 
 * Et voila ! Tu n'as qu'à attendre de nos nouvelles maintenant. D'ailleurs au
   passage, si tu veux, tu peux en profiter pour nous suivre [sur

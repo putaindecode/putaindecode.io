@@ -9,8 +9,6 @@ $putainde-Page-max-width: 60rem;
 
 @import "normalize-css/normalize";
 
-@import "prism/themes/prism-okaidia";
-
 @import "./typography";
 
 @import "./grid";
@@ -53,6 +51,8 @@ a {
 @import "./landing";
 @import "./posts";
 @import "./post";
+
+@import "./highlight";
 
 // part
 @import "./members/author";

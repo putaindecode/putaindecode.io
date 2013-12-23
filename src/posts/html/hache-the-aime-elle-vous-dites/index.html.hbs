@@ -40,7 +40,7 @@ Si vous avez ouvert ne serait-ce que quelques documents HTML dans votre vie,
 vous avez du croiser ce qu'on appelle un [doctype](http://fr.wikipedia.org/wiki/Doctype)
 qui ressemble à ça:
 
-```markup
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 ```
@@ -70,7 +70,7 @@ partout dans mes footers:
 Mais bon les conneries, ça va un moment.
 Pour info, j'ai du valider le code suivant pour obtenir ce logo:
 
-```markup
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
  <html xmlns="http://www.w3.org/1999/xhtml">
@@ -89,7 +89,7 @@ Mais attendez en 2013, on peut pas faire mieux ? Oh si !
 
 ## Le nouveau testament
 
-```markup
+```html
 <!doctype html>
 <title> </title>
 ```
@@ -127,8 +127,8 @@ On va voir ça par un exemple digne des plus grands diplômes.
 
 Prenons le code suivant:
 
-```markup
-{{include "src/posts/html/hache-the-aime-elle-vous-dites/notvalid.html.hbs" }}
+```html
+{{include "src/posts/html/hache-the-aime-elle-vous-dites/notvalid.html.hbs"}}
 ```
 
 Certains d'entre vous ont du remarquer la coquille.
@@ -167,7 +167,7 @@ Mais attend qu'est-ce que c'est que cette histoire ?!
 Si vous prenez 10 secondes pour inspecter ce code, vous allez vite vous
 aperçevoir qu'il est parsé ainsi:
 
-```markup
+```html
 <p>…</p>
 <ul>…</ul>
 <p></p>

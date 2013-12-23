@@ -1,23 +1,21 @@
 {
   "name": "putaindecode",
-  "version": "0.1.0-alpha.0",
-  "description": "putaindecode website",
-  "main": "index.js",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/putaindecode/website.git"
   },
-  "author": "https://github.com/putaindecode/website/graphs/contributors",
+  "authors": "https://github.com/putaindecode/website/graphs/contributors",
   "license": "MIT",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/putaindecode/website/issues"
   },
-  "dependencies": {
-    "happyplan": "~0.4.0-alpha.10"
-  },
   "scripts": {
     "test": "happyplan dist --verbose"
+  },
+  "dependencies": {
+    "happyplan": "~0.4.0-alpha.13"
   },
   "devDependencies": {
     "lodash": "~2.2.1"

@@ -8,8 +8,5 @@
     "griddle": "~0.3.0",
     "css-recipe-media": "~0.1.2",
     "css-recipe-font-smoothing": "~0.1.0"
-  },
-  "devDependencies": {
-    "prism": "git@github.com:LeaVerou/prism.git#gh-pages"
   }
 }
