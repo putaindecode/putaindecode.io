@@ -2,9 +2,23 @@
 lang: fr
 layout: no-sidebar.hbs
 class: putainde-Homepage
-title: "Putain de Code, c'est quoi ?"
+title: false
 ---
 
+<h2>Les derniers posts</h2>
+<ul class="putainde-PostsListing">
+{{#posts pages limit=6}}{{#is data.lang ../page.lang}}
+  <li class="putainde-PostsListing-post">
+    <time class="putainde-PostsListing-post-datetime" datetime="{{ data.date }}">{{moment data.date format="ddd, DD MMMM YYYY" }}</time>
+    <a class="putainde-PostsListing-post-link" href="{{url this.dest}}">{{ data.title }}</a>
+    <small class="putainde-PostsListing-post-metas">commit initial par <span class="putainde-Author">{{ data.author }}</span></small>
+{{/is}}{{/posts}}
+</ul>
+<div class="putainde-Homepage-readMore">
+  <a href="/posts/">Accéder à tous les posts</a>
+</div>
+
+<h2>Putain de Code, c'est quoi ?</h2>
 <div class="putainde-Homepage-edito">
 {{#markdown}}
 C'est une communauté de développeurs carrément amoureux du code.
@@ -42,19 +56,6 @@ _On compte vraiment sur vous pour nous aider à faire de Putain de Code un truc 
     <a href="/c-est-quoi-putaindecode">Lire le pourquoi du comment</a>
   </div>
 </div>
-
-<h2>Les derniers posts</h2>
-<ul class="putainde-PostsListing">
-{{#each_dateSorted pages}}{{#is data.lang ../page.lang}}{{#is data.type "post"}}{{#compare data.draft "!==" true}}
-  <li class="putainde-PostsListing-post">
-    <time class="putainde-PostsListing-post-datetime" datetime="{{ data.date }}">{{moment data.date format="ddd, DD MMMM YYYY" }}</time>
-    <a class="putainde-PostsListing-post-link" href="{{url this.dest}}">{{ data.title }}</a>
-    <small class="putainde-PostsListing-post-metas">commit initial par <span class="putainde-Author">{{ data.author }}</span></small>
-{{/compare}}{{/is}}{{/is}}{{/each_dateSorted}}
-</ul>
-  <div class="putainde-Homepage-readMore">
-    <a href="/posts/">Tous les posts</a>
-  </div>
 
 <div class="putainde-Homepage-links">
   <a href="https://github.com/putaindecode"><i class="icon icon_github"></i></a>
