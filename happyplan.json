@@ -1,6 +1,7 @@
 {
   "name": "Putain de Code !"
 , "description": "On voulait mettre une baseline mais on a pas été foutu d'en trouver une"
+, "url": "http://putaindecode.fr"
 , "server": {
     "port": 4242
   }

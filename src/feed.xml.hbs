@@ -5,15 +5,16 @@
         <description>{{ happyplan.description }}</description>
         <link>{{ happyplan.url }}/</link>
         <generator>{{ happyplan.pkg.name }} {{ happyplan.pkg.version }}</generator>
-        <lastBuildDate>{{moment happyplan.buildDate format="ddd, DD MMMM YYYY HH:mm:ss ZZ" }}</lastBuildDate>
-{{#each_dateSorted pages}}{{#is data.lang "fr"}}{{#is data.type "post"}}{{#compare data.draft "!==" true}}
+        <lastBuildDate>{{moment happyplan.buildDate format="ddd, DD MMM YYYY HH:mm:ss ZZ" }}</lastBuildDate>
+        <atom:link href="{{ happyplan.url }}/feed.xml" rel="self" type="application/rss+xml" />
+{{#posts pages limit=20}}{{#is data.lang "fr"}}
           <item>
               <title>{{ data.title }}</title>
               <description><![CDATA[{{#handlebarsception}}{{{ page }}}{{/handlebarsception}}]]></description>
-              <pubDate>{{moment data.date format="ddd, DD MMMM YYYY HH:mm:ss ZZ" }}</pubDate>
-              <link>{{ ../../../happyplan.url }}/{{ relative ../../../page.dest this.dest }}</link>
-              <guid isPermaLink="true">{{ ../../../happyplan.url }}/{{ relative ../../../page.dest this.dest }}</guid>
+              <pubDate>{{moment data.date format="ddd, DD MMM YYYY HH:mm:ss ZZ" }}</pubDate>
+              <link>{{ ../../happyplan.url }}/{{url this.dest }}</link>
+              <guid isPermaLink="true">{{ ../../happyplan.url }}/{{url this.dest }}</guid>
           </item>
-{{/compare}}{{/is}}{{/is}}{{/each_dateSorted}}
+{{/is}}{{/posts}}
     </channel>
 </rss>
