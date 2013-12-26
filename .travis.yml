@@ -1,7 +1,5 @@
 language: node_js
 before_install:
-  - gem --version
-  - gem update --system
 # global requirements
   - make init
   - make install
