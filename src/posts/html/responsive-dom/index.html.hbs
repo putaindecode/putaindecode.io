@@ -2,7 +2,6 @@
 lang: fr
 layout: post.hbs
 type: post
-draft: true
 comments: true
 author: neemzy
 title: Responsive webdesign et structure du DOM
@@ -11,6 +10,7 @@ tags:
   - html
   - javascript
 readingTime: 15min
+date: 2013-12-26
 ---
 
 {{#markdown}}
@@ -62,7 +62,7 @@ Dans un tel cas, la meilleure solution peut encore être de dupliquer ta balise
 `img`, et de masquer l'une ou l'autre avec CSS en fonction de la taille d'écran,
 grâce à une `media query`. Voilà un exemple rudimentaire :
 
-```markup
+```html
 <article>
   <h1>Mon super article</h1>
 
@@ -100,7 +100,7 @@ volontairement pris l'exemple le moins adapté : une image, qu'il ne faut
 absolument pas faire charger deux fois à nos visiteurs. On va tricher un peu
 avec JavaScript :
 
-```markup
+```html
 <article>
   <h1>Mon super article</h1>
 
@@ -190,7 +190,7 @@ enquire.register('screen and (min-width: 768px)', {
 Plutôt sympa, non ? Pour reprendre notre exemple de tout à l'heure (le CSS n'est
 plus nécessaire) :
 
-```markup
+```html
 <article>
   <h1>Mon super article</h1>
 
@@ -255,7 +255,7 @@ C'est pas mal. Ça donne ça (tiré de [la doc](http://foundation.zurb.com/docs/
 > larger static map for medium-sized devices, and a full interactive Google map
 > on large display devices.
 
-```markup
+```html
 <div data-interchange="[../examples/interchange/default.html, (small)],
                        [../examples/interchange/medium.html, (medium)],
                        [../examples/interchange/large.html, (large)]">
@@ -282,7 +282,7 @@ prêts ! Pour ceux qui ont dormi, en gros, tu définis un conteneur :
 .flex-container {
   display: flex;
 
-  // ou bien
+  /* ou bien */
 
   display: inline-flex;
 }
@@ -303,8 +303,10 @@ prêts ! Pour ceux qui ont dormi, en gros, tu définis un conteneur :
   order: 3;
 }
 
-// Bien sûr, tu as été assez malin pour mettre ton image en dernier dans le DOM...
-// ...n'est-ce pas ?
+/*
+Bien sûr, tu as été assez malin pour mettre ton image en dernier dans le DOM...
+...n'est-ce pas ?
+*/
 
 @media screen and (min-width: 768px) {
   .content {

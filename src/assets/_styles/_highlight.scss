@@ -30,6 +30,7 @@ $code-color-property:         null !default;
 //$code-color-punctuation:      $code-color-fade !default;
 $code-color-selector:         null !default;
 $code-color-string:           $code-Color-yellow !default;
+$code-color-string-2:         $code-Color-yellow !default;
 $code-color-string-property:  $code-Color-yellow !default;
 $code-color-tag:              $code-Color-fushia !default;
 $code-color-value:            null !default;
@@ -115,6 +116,7 @@ $code-color-number:           null !default;
 $code-color-property:         null !default;
 $code-color-selector:         null !default;
 $code-color-string:           null !default;
+$code-color-string-2:         null !default;
 $code-color-string-property:  null !default;
 $code-color-value:            null !default;
 $code-color-variable:         null !default;
@@ -137,6 +139,7 @@ $code-color-link:             null !default;
 @if $code-color-number != null { .cm-number { color: $code-color-number; } }
 @if $code-color-property != null { .cm-property { color: $code-color-property; } }
 @if $code-color-string != null { .cm-string { color: $code-color-string; } }
+@if $code-color-string-2 != null { .cm-string-2 { color: $code-color-string-2; } }
 @if $code-color-string-property != null { .cm-stringcm-property { color: $code-color-string-property; } }
 @if $code-color-tag != null { .cm-tag { color: $code-color-tag; } }
 @if $code-color-variable != null { .cm-variable { color: $code-color-variable; } }
