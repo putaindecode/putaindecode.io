@@ -102,6 +102,8 @@ $code-box-shadow:     1px 1px .3em -.1em #000 inset !default;
 @if $code-selector-inline != null {
   #{$code-selector-inline} {
     @extend %code-background;
+    // to avoid code to be separate on multiple lines
+    display: inline-block;
     padding: $code-inline-padding;
   }
 }
