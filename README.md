@@ -128,8 +128,3 @@ Ensuite utilisez la commande suivante
 
 Remerciements à toutes les personnes impliquées dans cette discussion [putaindecode/organisation/issues/4](https://github.com/putaindecode/organisation/issues/4).
 Remerciement spécial à [@mlbli](https://github.com/mlbli) pour le [logo initial](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
-
---- 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/putaindecode/website/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
