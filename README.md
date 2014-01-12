@@ -54,7 +54,7 @@ d'exécuter les commandes suivantes :
     make update
 
 Si vous rencontrez des erreurs lors du `git pull` (par ex. pour une histoire de
-fichiers modifiés non commités (fontes d'icônes ?)), vous pouvez juste avant faire
+fichiers modifiés non commités), vous pouvez juste avant faire
 un petit
 
     git reset --hard
@@ -82,28 +82,6 @@ grâce à GitHub, suffit à mettre en ligne le site).
 ---
 
 ## Mise à jour spécifiques
-
-### Mettre à jour les icônes
-
-Le site utilise des icônes SVG (scalables) et donc les convertit en une police d'icônes
-grâce à une tache Grunt, incluse dans happyplan.
-Cependant pour l'instant, il vous faut avoir sur votre machine la dépendance _fontforge_:
-
-#### OS X
-
-    brew install fontforge ttfautohint
-
-#### Linux
-    
-    sudo apt-get install fontforge ttfautohint
-
-Une fois cette dépendance installé, vous n'avez rien à faire de plus que de modifier/ajouter
-des icônes SVG avec les autres.
-La police devrait se générer et se mettre à jour grâce à happyplan.
-
-**Attention: une fois que vous avez cette dépendance, vous devriez faire pour l'instant
-attention à ne pas commit à chaque fois les polices d'icônes, seule une date change dans les fichiers**
-[Nous sommes en réflexion pour changer ce processus](https://github.com/putaindecode/website/issues/69)
 
 ### Générer le favicon
 
