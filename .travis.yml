@@ -5,8 +5,6 @@ before_install:
   - make install
 # local requirements
   - make update
-# grunt-webfont requirements
-  - sudo apt-get install fontforge
 # for some test with dates
   - sudo cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
