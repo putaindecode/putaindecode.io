@@ -31,7 +31,7 @@ ou encore mon [plugin qui ouvre les liens externes avec du target blank automati
 
 Alors oui, utiliser jQuery à peut être du bon. Mais s'en passer aussi.
 <a href="/posts/js/de-jquery-a-vanillajs/">Ç'est faisable pour pleins de petites choses</a>.
-<a href="/posts/js/comment-se-passer-de-libraries-frameworks-javascript/">Et ç'est par forcément difficile</a>.
+<a href="/posts/js/comment-se-passer-de-libraries-frameworks-javascript/">Et ç'est pas forcément difficile</a>.
 
 Car si je veux utiliser mon petit script qui ajoute des targets blank automatiquement,
  devoir inclure jQuery pour si peu, ça fait mal à mes kilobites.
@@ -65,11 +65,11 @@ pour un résultat similaire.
 
 RequireJS implémente l'API AMD  (Asynchronous Module Definition), 
 différent de l'API CommonJS.
-Cette API, dérivé de CommonJS, se veut adapté au navigateur. Son principal atout 
-étant le chargements des modules de manière asynchrone.
+Cette API, dérivée de CommonJS, se veut adaptée au navigateur. Son principal atout 
+étant le chargement des modules de manière asynchrone.
 En théorie, c'est super.
 
-Sauf que dans la pratique (du moins quelques choses de simple et classique,
+Sauf que dans la pratique (du moins quelque chose de simple et classique,
 disons pour l'exemple du petit JavaScript pour améliorer une page web, ou encore
 une simple <em>single page webapp</em> (SPA)) ce n'est pas forcément pertinent.
 
@@ -111,10 +111,10 @@ var $ = require('jquery');
 exports.myExample = function () {};
 ```
 
-AMD et CommonJS utilise tout les deux une identification par chaine de caractères.
-Il faut bien que ces chaines soient déclarés quelque part.
+AMD et CommonJS utilisent tout les deux une identification par chaine de caractères.
+Il faut bien que ces chaines soient déclarées quelque part.
 
-Côté RequireJS (AMD), on doit éventuellement mapper tous ces chaines à la main,
+Côté RequireJS (AMD), on doit éventuellement mapper toutes ces chaines à la main,
 dans le fichier configuration.
 De plus la déclaration des dépendances se faisant dans l'entête du module, ça peut
 devenir lourd :
@@ -140,12 +140,12 @@ Côté Browserify (CommonJS like), les dépendances externes proviennent (à la 
 de NPM.
 On a donc rien à mapper nul part. Puis pour avoir un module local, il suffit de 
 faire un `require('./mon/module')`, et Browserify se chargera de régler la 
-dépendance  (et je vous montre encore mieux après).
+dépendance (et je vous montre encore mieux après).
 
 RequireJS propose un "optimizer", qui au final ne fait que supprimer son point fort: 
 le côté asynchrone du téléchargement des modules.
 Du coup on se retrouve avec tout RequireJS dans la source ET toutes les dépendances 
-avec le mapping. Ça optimise  pas tant que ça comparer à Browserify.
+avec le mapping. Ça optimise  pas tant que ça comparé à Browserify.
 Il existe bien [Almond.js](https://github.com/jrburke/almond) qui se veut être plus léger, mais du coup, utiliser
 RequireJS pour "optimizer" avec Almond, je ne trouve pas ça cohérent.
 
@@ -320,7 +320,7 @@ Il existe bien sur [plusieurs façons de faire](https://github.com/umdjs/umd#var
 selon vos critères. À vous de choisir.
 
 Maintenant vous aller pouvoir consommer et écrire des modules facilement, et 
-sans se prendre la tête.
+sans vous prendre la tête.
 
 Bisous.
 
