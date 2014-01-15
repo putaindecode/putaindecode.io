@@ -18,9 +18,9 @@ date: 2014-01-15
 Alors que je prends goût à me passer de frameworks (principalement à cause des
 courbes d'apprentissage et des éventuelles lourdeurs et/ou restrictions que cela
 impose, mais c'est une autre histoire),
-je cherchais la meilleur façon d'écrire des micro composants réutilisables.
+je cherchais la meilleure façon d'écrire des micro composants réutilisables.
 
-Pour le JavaScript, j'ai commencé il y'a bien longtemps par des extensions/plugins
+Pour le JavaScript, j'ai commencé il y a bien longtemps par des extensions/plugins
 [Prototype](http://prototypejs.org/), puis peu de temps après, du plugins
 [jQuery](http://plugins.jquery.com/) à la pelle.
 Souvent à tord puisque j'utilisais peut être 1% de la librairie en dépendance - 
@@ -29,14 +29,14 @@ ou encore mon [plugin qui ouvre les liens externes avec du target blank automati
 
 <b>Je ne ferais plus jamais ça pour la simple raison du ratio "poids / % d'utilisation" de la dépendance.</b>
 
-Alors oui, utiliser jQuery à peut être du bon. Mais s'en passer aussi.
-<a href="/posts/js/de-jquery-a-vanillajs/">Ç'est faisable pour pleins de petites choses</a>.
-<a href="/posts/js/comment-se-passer-de-libraries-frameworks-javascript/">Et ç'est pas forcément difficile</a>.
+Alors oui, utiliser jQuery a peut-être du bon. Mais s'en passer aussi.
+<a href="/posts/js/de-jquery-a-vanillajs/">C'est faisable pour pleins de petites choses</a>.
+<a href="/posts/js/comment-se-passer-de-libraries-frameworks-javascript/">Et c'est pas forcément difficile</a>.
 
 Car si je veux utiliser mon petit script qui ajoute des targets blank automatiquement,
  devoir inclure jQuery pour si peu, ça fait mal à mes kilobites.
 
-En attendant les <a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules">
+En attendant <a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules">
 la gestion de modules via ES6</a>, il nous faut gérer aujourd'hui nos composants 
 et dépendances à la main.
 Encore qu'on pourrait faire un transpiler pour utiliser cette syntaxe (ça existe 
@@ -48,9 +48,9 @@ Côté back-end, on a déjà ce qu'il faut en JavaScript avec la gestion
 Un simple `require('module')` va tenter de récupérer un module avec ce nom.
 Un module n'est rien d'autre qu'un fichier JavaScript. Node va essayer de loader 
 un `.js`, puis `.json` et enfin `.node` si besoin), qui lui même peut 
-éventuellement charger d'autres dépendances (les dépendances sont gérés localement) 
-tout en prennant en compte les packages NPM.
-Même si [Node](http://nodejs.org/) d'implémente pas totalement
+éventuellement charger d'autres dépendances (les dépendances sont gérées localement) 
+tout en prenant en compte les packages NPM.
+Même si [Node](http://nodejs.org/) n'implémente pas totalement
 [CommonJS](http://wiki.commonjs.org/), un projet de développement d'une API pour 
 écrire des programmes en JavaScript ailleurs que dans le navigateur, 
 la façon de faire est assez proche.
@@ -84,7 +84,7 @@ En plus de cela, je trouve personnellement dégueulasse  la façon de déclarer 
 modules AMD, mais ça ce n'est qu'un détail.
 
 Comparons les différentes méthodes comme on nous les montre sur le site de 
-[RequireJS](http://requirejs.org/docs/whyamd.html) :
+[RequireJS](http://requirejs.org/docs/whyamd.html) :
 
 Le web aujourd'hui:
 
@@ -111,10 +111,10 @@ var $ = require('jquery');
 exports.myExample = function () {};
 ```
 
-AMD et CommonJS utilisent tout les deux une identification par chaine de caractères.
-Il faut bien que ces chaines soient déclarées quelque part.
+AMD et CommonJS utilisent tout les deux une identification par chaîne de caractères.
+Il faut bien que ces chaînes soient déclarées quelque part.
 
-Côté RequireJS (AMD), on doit éventuellement mapper toutes ces chaines à la main,
+Côté RequireJS (AMD), on doit éventuellement mapper toutes ces chaînes à la main,
 dans le fichier configuration.
 De plus la déclaration des dépendances se faisant dans l'entête du module, ça peut
 devenir lourd :
@@ -133,8 +133,8 @@ function (require,   $,        object,         fn,         rdapi,
 });
 ```
 
-Bon vous me direz que si un module a autant de dépendances, il y'a peut être un 
-problème en amont, et vous n'aurez pas tort.
+Bon vous me direz que si un module a autant de dépendances, il y a peut être un 
+problème en amont et vous n'aurez pas tort.
 
 Côté Browserify (CommonJS like), les dépendances externes proviennent (à la base) 
 de NPM.
@@ -144,10 +144,13 @@ dépendance (et je vous montre encore mieux après).
 
 RequireJS propose un "optimizer", qui au final ne fait que supprimer son point fort: 
 le côté asynchrone du téléchargement des modules.
-Du coup on se retrouve avec tout RequireJS dans la source ET toutes les dépendances 
-avec le mapping. Ça optimise  pas tant que ça comparé à Browserify.
-Il existe bien [Almond.js](https://github.com/jrburke/almond) qui se veut être plus léger, mais du coup, utiliser
-RequireJS pour "optimizer" avec Almond, je ne trouve pas ça cohérent.
+Du coup on se retrouve avec tout RequireJS dans la source ET toutes les dépendances avec le mapping.
+Il y a bien une façon de vraiment optimiser par bundle quand on cherche un peu 
+dans la doc, mais 
+[ça n'est pas vraiment mis en avant](http://requirejs.org/docs/optimization.html#wholemultipage).
+Il existe aussi [Almond.js](https://github.com/jrburke/almond) qui se veut être 
+plus léger, mais du coup, utiliser RequireJS pour optimiser avec Almond, je ne 
+trouve pas ça cohérent.
 
 Si jusque là, Browserify vous intéresse (plus car les autres solutions ne vous 
 intéressent pas), attaquons le corps du sujet.
@@ -194,7 +197,7 @@ alert('Hello world !');
 },{}]},{},[1])
 ```
 
-On reconnaît notre ligne en plein milieu. Avec un ajout conséquent. Ca peut paraitre 
+On reconnaît notre ligne en plein milieu. Avec un ajout conséquent. Ça peut paraître 
 beaucoup, mais c'est rien comparé à la 
 [source de RequireJS](http://requirejs.org/docs/release/2.1.10/minified/require.js)
 
@@ -228,7 +231,7 @@ Avec la même commande que précédement (et donc le même ajout), Browserify va
 l'arbre syntaxique abstrait (AST) des appels à `require()` et va créer un graph 
 des dépendances du projet.  
 Un fois ceci fait, il va simplement ajuster les chemins et déclarer les fonctions 
-mappé dans un object par leur identifiant. Lorsqu'une fonction appel `require`, 
+mappées dans un object par leur identifiant. Lorsqu'une fonction appelle `require`, 
 le petit bout de script ajouté va se charger de retourner la dépendance.
 
 Notez qu'on peut aussi simplement utiliser une redirection de sortie de commande 
@@ -259,7 +262,7 @@ pas forcément être le mieux.
 Cela dit, si mon paquet est prévu pour Bower par exemple, il existe une <i>transformation</i>
 prévue pour aider Browserify à résoudre les références aux paquets pour les 
 consommer depuis Bower: `debowerify`.
-Dans le même esprit, on va retrouver tout plein de transformation tel que:
+Dans le même esprit, on va retrouver de nombreuses transformations telles que :
 
 - `decomponentify`: pour consommer des [component](https://github.com/component/component)s,
 - `deamdify`:  pour consommer des modules AMD,
@@ -270,9 +273,9 @@ Dans le même esprit, on va retrouver tout plein de transformation tel que:
 - `uglifyify`: appliquer uglify.
 
 Il existe plein [d'autres transformations](https://npmjs.org/browse/keyword/browserify) 
-qui s'adapteront surement à vos besoin.
+qui s'adapteront sûrement à vos besoins.
 
-Du coup la ligne ultime pour consommer à peut prêt n'importe quel module:
+Du coup la ligne ultime pour consommer a peu près n'importe quel module :
 
 ```bash
 browserify -t debowerify -t decomponentify -t deamdify -t deglobalify -t es6ify main.js > bundle.js
@@ -291,7 +294,7 @@ Consommer c'est bien, mais faire c'est <del>mieux</del> bien aussi.
 
 <img class="putainde-Img" alt="" src="{{ happyplan.baseUrls.media }}/browserify-potter.png" />
 
-Tout droit sortie de [UMD](https://github.com/umdjs/umd) (Universal Module Definition),
+Tout droit sorti de [UMD](https://github.com/umdjs/umd) (Universal Module Definition),
 voici un wrapper qui vous permettra de créer votre module compatible avec CommonJS, 
 AMD et pour les projets old school !
 
