@@ -13,10 +13,7 @@ $putainde-Page-max-width: 60rem;
 
 @import "./grid";
 
-* {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+* { box-sizing: border-box }
 
 html {
   background: $putainde-Color-background;
