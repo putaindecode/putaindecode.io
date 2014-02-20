@@ -1,6 +1,9 @@
 init:
 	npm install -g bower grunt-cli happyplan-cli
 
+init-osx:
+	brew install icoutils
+
 install:
 	npm install
 	bower install
