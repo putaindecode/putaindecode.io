@@ -26,7 +26,7 @@ pageClass: putainde-Page
       {{#if this.title }}<h1 class="putainde-Content-title">{{ this.title }}</h1>{{/if}}
       <div class="putainde-Content-metas">
         {{#if this.page.author }}<span class="putainde-Content-meta putainde-Content-author">Par <span class="putainde-Author">{{ this.page.author }}</span></span>{{/if}}
-        {{#if this.page.date }}<span class="putainde-Content-meta putainde-Content-date">Publié le: {{moment this.page.date lang="fr" format="ddd DD MMM YYYY"}}</span>{{/if}}
+        {{#if this.page.date }}<span class="putainde-Content-meta putainde-Content-date">Publié le: <span class="putainde-Date">{{moment this.page.date lang=this.page.lang format="ddd DD MMM YYYY"}}</span></span>{{/if}}
         {{#if this.page.readingTime }}<span class="putainde-Content-meta putainde-Content-readingTime">Temps de lecture: environ {{ this.page.readingTime }}</span>{{/if}}
         {{#if this.page.tags }}<span class="putainde-Content-meta putainde-Content-tags">Tags: {{ this.page.tags }}</span>{{/if}}
       </div>
