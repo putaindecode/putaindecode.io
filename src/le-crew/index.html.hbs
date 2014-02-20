@@ -3,22 +3,30 @@ layout: no-sidebar.hbs
 title: La team de winners
 ---
 {{!
-Order has been taken from https://github.com/putaindecode?tab=members for now
+Order has been taken from https://github.com/putaindecode/website/graphs/contributors
 We plan to use something with more sense
 https://github.com/putaindecode/website/issues/4#issuecomment-24651125
 
 Please update if needed the humans.txt file when you update this page
 }}
-
+<div class="putainde-TeamMembers">
 {{include "member_team" "src/_members/MoOx.json" }}
+{{include "member_team" "src/_members/kud.json" }}
+{{include "member_team" "src/_members/madx.json" }}
 {{include "member_team" "src/_members/Nyalab.json" }}
+{{include "member_team" "src/_members/OwlyCode.json" }}
+{{include "member_team" "src/_members/bloodyowl.json" }}
+{{include "member_team" "src/_members/lionelB.json" }}
 {{include "member_team" "src/_members/dguyon.json" }}
 {{include "member_team" "src/_members/justinmarsan.json" }}
-{{include "member_team" "src/_members/kud.json" }}
-{{include "member_team" "src/_members/lionelB.json" }}
-{{include "member_team" "src/_members/madx.json" }}
-{{include "member_team" "src/_members/bloodyowl.json" }}
 {{include "member_team" "src/_members/rhannequin.json" }}
-{{include "member_team" "src/_members/OwlyCode.json" }}
-{{include "member_team" "src/_members/unknown.json" }}
+</div>
 
+<strong class="putainde-Contributors">
+  N'oublions pas tous les 
+  <a href="https://github.com/orgs/putaindecode/teams/authors">auteurs</a>
+  et autres 
+  <a href="https://github.com/putaindecode/website/graphs/contributors">contributeurs</a> !
+</strong>
+
+<small>PS: N'hésites pas à <a href="posts/comment-contribuer/">contribuer</a></small>
