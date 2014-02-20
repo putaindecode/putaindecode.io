@@ -19,8 +19,7 @@
       opacity: .6;
     }
 
-    .putainde-Content-author + .putainde-Content-readingTime,
-    .putainde-Content-readingTime + .putainde-Content-tags {
-      padding-left: .8rem;
-    }
+      .putainde-Content-meta + .putainde-Content-meta::before {
+        content: " - ";
+      }
 
