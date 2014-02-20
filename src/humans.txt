@@ -15,35 +15,35 @@
     Developer
     http://moox.io/ - https://twitter.com/MoOx - https://github.com/MoOx
 
-    Nyalab
-    Developer
-    https://twitter.com/Nyalab - https://github.com/Nyalab - ¯\_(ツ)_/¯
-
     Erwann Mest (_kud)
     Developer
     http://kud.io -  https://twitter.com/_kud - https://github.com/kud
 
+    François Vaux (madx)
+    Developer
+    http://madx.me - https://twitter.com/madx - https://github.com/madx
+
+    Nyalab
+    Developer
+    https://twitter.com/Nyalab - https://github.com/Nyalab - ¯\_(ツ)_/¯
+
     Tristan Maindron (OwlyCode)
     Developer
     http://www.owly-code.com -  https://twitter.com/OwlyCode - https://github.com/OwlyCode
+
+    bloodyowl
+    Developer
+    http://bloodyowl.github.io - https://twitter.com/bloodyowl - https://github.com/bloodyowl
+
+    lionelB
+    Developer
+    http://lumographe.fr  - https://twitter.com/b_lionel
 
     dguyon
     Developer
 
     justinmarsan
     Developer
-
-    lionelB
-    Developer
-    http://lumographe.fr  - https://twitter.com/b_lionel
-
-    François Vaux (madx)
-    Developer
-    http://madx.me - https://twitter.com/madx - https://github.com/madx
-
-    bloodyowl
-    Developer
-    http://bloodyowl.github.io - https://twitter.com/bloodyowl - https://github.com/bloodyowl
 
     rhannequin
     Developer
@@ -55,6 +55,4 @@
 /* TECHNOLOGY COLOPHON */
 
     SublimeText 3 / Vim
-    HTML5, CSS3
-    HappyPlan (Jekyll, Grunt, Bower, Sass)
-    Normalize.css, Griddle, CSS Recipes
+    HTML5, CSS 3, JavaScript
