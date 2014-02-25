@@ -1,0 +1,28 @@
+---
+lang: fr
+layout: no-sidebar.hbs
+title: "Articles"
+notReady: false
+---
+{{#if notReady}}
+  <div class="putainde-EmptyPostsListing">
+    <h2>
+      Bah y'a rien là ?<br />
+      Repassez demain !
+    </h2>
+    <a href="c-est-quoi-putaindecode">En attendant, lisez notre manifesto.</a>
+  </div>
+{{else}}
+<ul class="putainde-PostsListing">
+{{#each_dateSorted pages}}{{#is data.lang ../page.lang}}{{#is data.type "post"}}{{#compare data.draft "!==" true}}
+  <li class="putainde-PostsListing-post">
+    <time class="putainde-PostsListing-post-datetime putainde-Date" datetime="{{ data.date }}">{{moment data.date lang=../../../../page.lang format="ddd DD MMMM YYYY" }}</time>
+    <a class="putainde-PostsListing-post-link" href="{{url this.dest}}">{{ data.title }}</a>
+    <small class="putainde-PostsListing-post-metas">commit initial par <span class="putainde-Author">{{ data.author }}</span></small>
+{{/compare}}{{/is}}{{/is}}{{/each_dateSorted}}
+</ul>
+{{/if}}
+
+{{#is happyplan.env "dev"}}
+<center><small><a href="posts/drafts.html">Brouillons</a></small></center>
+{{/is}}
