@@ -2,14 +2,13 @@
 lang: fr
 layout: post.hbs
 type: post
-author: Erwyn
-draft: true
 comments: true
-title: Git, boutez les bugs, domptez votre historique!
-date: 2014-02-27
+title: "Git, boutez les bugs, domptez votre historique!"
+author: Erwyn
 tags:
   - git
-readingTime: 20min
+readingTime: 10min
+date: 2014-02-27
 ---
 
 {{#markdown}}
@@ -25,7 +24,7 @@ Allez, je ne vous fais pas plus attendre, voici ma liste des fonctionnalités Gi
 saurais plus me passer:
 
 
-# git lg, l'alias qui vous parle d'Histoire
+## git lg, l'alias qui vous parle d'Histoire
 
 À l'aide, à l'aide je ne comprends plus rien à l'historique de mon dépôt Git!
 J'ai créé un monstre… Pas de panique! J'ai pour vous l'alias qu'il vous faut,
@@ -47,7 +46,7 @@ maintenant (dans un dépôt Git bien entendu banane). Pour l'exemple, je l'ai r�
 de Putain De Code:
 
 <figure>
-  ![capture historique]({{url page.dest}}/omagad-history.png)
+  ![capture historique](/posts/git/boutez-les-bugs-domptez-votre-historique/omagad-history.png)
   <figcaption>Le pouvoir de l'arc en ciel</figcaption>
 </figure>
 
@@ -55,9 +54,7 @@ Eh oui, sous vos yeux ébahis se dessine maintenant l'historique de votre dépô
 Tout y est: créations de branches, commits, merges, les miaouOnes… Voilà, vous ne pourrez plus
 dire que vous n'y comprenez rien, vous seriez un fieffé menteur.
 
----
-
-# git bisect, trouver et punir
+## git bisect, trouver et punir
 
 S'il y a bien quelque chose d'agaçant dans l'activité de développement, c'est que bien
 souvent on est amené à travailler en équipe, et évidemment, il y en a toujours
@@ -99,7 +96,7 @@ comportant le bug, celui dont le changement a révélé le disfonctionnement.
 $ git bisect bad
 1082351d9157e98aed1bbee8b9ad6deedca1288f is the first bad commit
 commit 1082351d9157e98aed1bbee8b9ad6deedca1288f
-Author: Maxime Thirouin <m@moox.io>
+Author: Maxime Thirouin <m@***.io>
 Date:   Fri Jan 17 08:19:46 2014 +0100
 
     ¯\_(ツ)_/¯ Fix shit bring in 34a44c98048f2b74fc2dd20f0be807c1e23e8b58
@@ -121,9 +118,8 @@ connaissez déjà un bon et un mauvais commit, vous pouvez tout simplement lance
 unitaires (oui non je sais faut pas déconner), `git bisect run <votre_script>` vous permettra de la lancer et la
 recherche du premier commit défectueux se fera alors toute seule!
 
----
 
-# git rebase, du pur story-telling
+## git rebase, du pur story-telling
 
 Je ne sais pas s'il vous est déjà arrivé de naviguer dans les dépôts Git de projets libres, mais souvent on y trouve que très
 peu de commits poubelles, ces commits avec comme message "step" ou autre "stuff". Chaque commit correspond à une fonctionnalité,
@@ -132,25 +128,25 @@ un bug fix, une unité logique cohérente. Je ne sais pas pour vous, mais person
 
 ```
 commit e739e7c0248b841b0250eb85d99a1b4ba149149d
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:39:50 2014 +0100
 
     Now my new functionality finally works
 
 commit 551b243525d826afcfece3e2c4c471ebd1e91779
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:39:23 2014 +0100
 
     misc
 
 commit 9db49a39fdb05a54adcfc2b46832818ef05b9c72
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:38:43 2014 +0100
 
     stuff
 
 commit ca4ff952310d6246216e83f49309b32b2d2fa010
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:38:35 2014 +0100
 
     first commit
@@ -280,7 +276,7 @@ L'opération va continuer puis Git va vous rendre la main. Il vous suffit alors 
 
 ```
 commit 481b4dccf4fedf4ed9d7f4e83ae5c19a07f7e12e
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:39:23 2014 +0100
 
     Story #34 - Poker cards now have a real back picture
@@ -295,9 +291,8 @@ que vous aussi, vous êtes une rockstar :).
 Pour ceux qui désirent aller encore plus loin dans l'automatisation de ce processus de rebase, je vous conseille d'aller jeter un œil à l'utilisation
 de l'option [--autosquash](!http://madx.me/articles/git_rebase_autosquash.html).
 
----
 
-# git reflog, la commande de celui qui a fait n'importe quoi
+## git reflog, la commande de celui qui a fait n'importe quoi
 
 Voici venu le temps ~~des rires et des chants~~ de la denière commande que je souhaitais vous présenter, j'ai nommé `git reflog`. Cette commande
 c'est votre *joker*, elle assure votre survie, notamment si vous avez été assez zinzins pour suivre les exemples donnés dans cet article, parce
@@ -341,25 +336,25 @@ il me suffira ici de faire un `git checkout e739e7c` (dans votre cas la ligne se
 
 ```
 commit e739e7c0248b841b0250eb85d99a1b4ba149149d
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:39:50 2014 +0100
 
     Now my new functionality finally works
 
 commit 551b243525d826afcfece3e2c4c471ebd1e91779
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:39:23 2014 +0100
 
     misc
 
 commit 9db49a39fdb05a54adcfc2b46832818ef05b9c72
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:38:43 2014 +0100
 
     stuff
 
 commit ca4ff952310d6246216e83f49309b32b2d2fa010
-Author: Martin GOYOT (Erwyn/Martinus) <martin@piwany.com>
+Author: Martin GOYOT (Erwyn/Martinus) <martin@***.com>
 Date:   Tue Feb 18 21:38:35 2014 +0100
 
     first commit
@@ -376,4 +371,3 @@ Voilà, on arrive au bout de notre aventure, j'espère que vous avez appris quel
 
 Amike,
 {{/markdown}}
-
