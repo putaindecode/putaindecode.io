@@ -134,19 +134,19 @@ function ajax(options){
     , async = options.hasOwnProperty("async") ? options.async : true
 
   xhr.open(options.method || "GET", options.url, async)
-  
+
   xhr.onreadystatechange = function(){
     if(done) return
     if(this.readyState != 4) return
     done = true
-    
+
     if(isSuccessStatus(this.status)) {
       if(options.success) {
         options.success.call(this)
       }
       return
     }
-    
+
     if(options.error) {
       options.error.call(this)
     }
@@ -200,7 +200,12 @@ Object.keys(myObject)
   })
 ```
 
-De même, on bénéficie de méthodes s'avérant très utiles, comme [`Array.prototype.map`, `Array.prototype.reduce`, `Array.prototype.filter`](http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype), [`Object.create`, `Object.getPrototypeOf`, `Object.getOwnPropertyNames`, `Object.defineProperty`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) dont je t'invite, si cela t'intéresse, à te renseigner sur ces méthodes. Et si tu veux avoir plus de détails, read the fucking manual : [http://es5.github.io](http://es5.github.io).
+De même, on bénéficie de méthodes s'avérant très utiles, comme
+[`Array.prototype.map`, `Array.prototype.reduce`, `Array.prototype.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype),
+[`Object.create`, `Object.getPrototypeOf`, `Object.getOwnPropertyNames`, `Object.defineProperty`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+dont je t'invite, si cela t'intéresse, à te renseigner sur ces méthodes.
+Et si tu veux avoir plus de détails, read the fucking manual :
+[http://es5.github.io](http://es5.github.io).
 
 
 ### Des petits détails cools du côté des events

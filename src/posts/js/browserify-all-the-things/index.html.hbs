@@ -51,8 +51,8 @@ un `.js`, puis `.json` et enfin `.node` si besoin), qui lui même peut
 éventuellement charger d'autres dépendances (les dépendances sont gérées localement) 
 tout en prenant en compte les packages NPM.
 Même si [Node](http://nodejs.org/) n'implémente pas totalement
-[CommonJS](http://wiki.commonjs.org/), un projet de développement d'une API pour 
-écrire des programmes en JavaScript ailleurs que dans le navigateur, 
+[CommonJS](http://wiki.commonjs.org/wiki/CommonJS), un projet de développement d'une API pour
+écrire des programmes en JavaScript ailleurs que dans le navigateur,
 la façon de faire est assez proche.
 
 <img class="putainde-Img" alt="" src="{{ happyplan.baseUrls.media }}/browserify.png" />
@@ -166,9 +166,9 @@ $ npm install -g browserify
 
 Si vous ne l'installez pas en global (sans l'option `-g`, vous aurez la commande 
 accessible dans `./node_modules/.bin/browserify`).
-Mais selon votre workflow, vous pouvez l'utiliser via une tâche 
-[grunt-browserify](https://npmjs.org/package/grunt-browserify) 
-ou [gulp-browserify](https://npmjs.org/package/gulp-browserify).
+Mais selon votre workflow, vous pouvez l'utiliser via une tâche
+[grunt-browserify](https://www.npmjs.org/package/grunt-browserify)
+ou [gulp-browserify](https://www.npmjs.org/package/gulp-browserify).
 
 <h2>Utilisation de Browserify</h2>
 
@@ -272,7 +272,7 @@ Dans le même esprit, on va retrouver de nombreuses transformations telles que 
 - `es6ify`: pour écrire du JavaScript ES6 (compilé en ES5),
 - `uglifyify`: appliquer uglify.
 
-Il existe plein [d'autres transformations](https://npmjs.org/browse/keyword/browserify) 
+Il existe plein [d'autres transformations](https://www.npmjs.org/browse/keyword/browserify)
 qui s'adapteront sûrement à vos besoins.
 
 Du coup la ligne ultime pour consommer a peu près n'importe quel module :
