@@ -306,9 +306,9 @@ module.exports = function(grunt) {
     }
   })
 
-  grunt.registerTasks("styles", ["sass", "autoprefixer"])
-  grunt.registerTasks("styles:production", ["sass", "autoprefixer", "csso"])
-  grunt.registerTasks("dev", ["sass", "watch"])
+  grunt.registerTask("styles", ["sass", "autoprefixer"])
+  grunt.registerTask("styles:production", ["sass", "autoprefixer", "csso"])
+  grunt.registerTask("dev", ["sass", "watch"])
 }
 
 // Tâches disponibles :
