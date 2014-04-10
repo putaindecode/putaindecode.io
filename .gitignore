@@ -1,14 +1,8 @@
 # cache
 .DS_Store
-.sass-cache
 
 # packages
 node_modules
-bower_components
 
 # build
 dist
-.tmp
-
-# gh-page
-.grunt

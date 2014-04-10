@@ -1,12 +1,4 @@
 language: node_js
-before_install:
-# global requirements
-  - make init
-  - make install
-# local requirements
-  - make update
-# for some test with dates
-  - sudo cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
 notifications:
   irc: "irc.freenode.org#p!"
