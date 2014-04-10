@@ -5,15 +5,19 @@ var gulp = require("gulp")
   , lang = require("./cache/lang")
   , paths = require("./paths")
   , path = require("path")
+  , lodash = require("lodash")
   , jadeExtenstionRE = /\.jade$/
 
 module.exports = function(){
   var options = {
-        pretty: true,
         basedir : path.resolve(__dirname, "../"),
         locals : {
           pages : exports.value,
-          lang : lang.value
+          lang : lang.value,
+          path : path,
+          getPages : function(object){
+            return lodash.where(exports.value, object)
+          }
         }
       }
     , stream = gulp.src(paths.sources.pages)

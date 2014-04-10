@@ -1,0 +1,8 @@
+mixin Navigation(list, currentPage)
+  nav.putainde-Nav
+    each item in list
+      a.putainde-Nav-item(
+        class="#{currentPage == item ? 'putainde-Nav-item--current' : ''}"
+        href="#{path.relative(path.join(currentPage, '..'), item.url)}"
+      )
+        | #{item.name}

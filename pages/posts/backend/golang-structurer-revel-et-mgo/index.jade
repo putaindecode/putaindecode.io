@@ -1,0 +1,14 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "OwlyCode"
+  -exports.title = "Structurer son projet avec Revel et Mgo"
+  -exports.tags = ["golang", "mongo", "revel", "mgo"]
+  -exports.readingTime = "5min"
+  -exports.date = "2013-11-11"
+
+block main
+  +Post(exports.title)
+    include:md index.md

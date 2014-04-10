@@ -1,0 +1,26 @@
+-var exports=pages[page]
+include /mixins/index
+
+doctype html
+html(lang="fr")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    title #{exports.title}
+    block head
+    link(
+      rel="stylesheet"
+      href="#{path.relative(page, 'stylesheets/index.css')}"
+    )
+  body
+    .putainde-Header
+      .Grid
+        .Grid-col.Grid-col--7
+          include /partials/header
+        .Grid-col.Grid-col--5
+          +Navigation(lang.navigation, page)
+    .putainde-Main
+      block main
+    .putainde-Footer
+      block footer
+    script(src="#{path.relative(page, 'scripts/index.js')}")
