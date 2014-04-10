@@ -5,7 +5,7 @@ module.exports = cornea.extend({
   element : document.documentElement,
   initialize : function(){
     var images = this.element.querySelectorAll(".js-AnimateLoad")
-    ;[].forEach.call(images, curry(this.addLoadedClass, null))
+    ;[].forEach.call(images, curry(this.addLoadedClass)(null))
   },
   events : [
     {
