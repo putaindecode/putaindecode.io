@@ -18,10 +18,8 @@ module.exports = cornea.extend({
     value : ""
   },
   show : function(coords, content, delay){
-    var size, thisValue = this
-    if(this.timeout) {
-      clearTimeout(this.timeout)
-    }
+    var size
+      , thisValue = this
     this.timeout = setTimeout(function(){
       thisValue.timeout = null
       thisValue.data.value = content
@@ -41,13 +39,10 @@ module.exports = cornea.extend({
     span.appendChild(document.createTextNode(String(data.value)))
     return span
   },
-  hide : function(delay){
-    var classList = this.element.classList
+  hide : function(){
     if(this.timeout) {
-      return
+      clearTimeout(this.timeout)
     }
-    this.timeout = setTimeout(function(){
-      classList.remove("putainde-Tooltip--visible")
-    }, delay || 0)
+    this.element.classList.remove("putainde-Tooltip--visible")
   }
 })
