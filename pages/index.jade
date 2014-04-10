@@ -1,0 +1,15 @@
+extends /layouts/main.jade
+
+block main
+  .Grid.putainde-List
+    .Grid-col.Grid-col--8.putainde-List-contents
+      -var posts = getPages({type:"post"})
+      each post in posts
+        -var author = lang.members[post.author]
+        .putainde-List-item
+          img.putainde-List-authorPicture.js-AnimateLoad(
+            src="#{author.avatar_url}"
+            alt=""
+          )
+          a.putainde-List-title(href="#{post.slug}.html")
+            | #{post.title}

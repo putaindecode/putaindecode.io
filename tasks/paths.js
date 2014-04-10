@@ -1,6 +1,6 @@
 module.exports = {
   sources : {
-    pages : "pages/**/*.jade",
+    pages : "pages/**/**/**.jade",
     pagesRoot : "pages/",
     partials : "partials/**/*.jade",
     mixins : "mixins/**/*.jade",

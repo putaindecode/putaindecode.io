@@ -1,0 +1,27 @@
+.putainde-Header
+  background: MAIN_COLOR
+  background: linear-gradient(to bottom, MAIN_COLOR, MAIN_COLOR - 10%)
+
+.putainde-SiteTitle
+  position: relative
+  display: inline-block
+  padding: .9em 0 .9em 5em
+  text-decoration: none
+  span
+    display: inline-block
+    font-size: 1.2em
+    color: MAIN_TEXT
+    padding: .75em 0
+    font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif
+
+.putainde-Logo
+  LOGO_SIZE=4
+  position: absolute
+  left: 0
+  top: 50%
+  width: unit(LOGO_SIZE,em)
+  height: unit(LOGO_SIZE,em)
+  margin-top: unit(-(LOGO_SIZE/2),em)
+  transition: .3s ease-in-out transform
+  &:hover
+    transform: rotate(-15deg) scale(1.4)

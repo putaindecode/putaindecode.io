@@ -1,0 +1,8 @@
+extends /layouts/post.jade
+
+block exports
+  -exports.title = "C'est quoi putain de code ?"
+
+block main
+  +Post()
+    include:md index.md
