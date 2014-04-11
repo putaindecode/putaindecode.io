@@ -1,0 +1,14 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "MoOx"
+  -exports.title = "HTML ? Hâche-Thé-Aime-Elle vous dites ?"
+  -exports.tags = ["html"]
+  -exports.readingTime = "7min"
+  -exports.date = "2013-11-07"
+
+block main
+  +Post(exports.title)
+    include:md index.md

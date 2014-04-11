@@ -1,19 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: De jQuery à Vanilla JS
-author: kud
-tags:
-  - javascript
-  - jquery
-  - vanillajs
-readingTime: 5min
-date: 2013-12-05
----
-
-{{#markdown}}
 <img class="putainde-Img putainde-Img--left" alt="" src="{{ happyplan.baseUrls.media }}/jquery-die.jpg">
 
 Oui alors jQuery, c'est sûrement très bien, ça simplifie pas mal de choses et le _chaining_ est intéressant mais eeeest-ce que vous connaissez l'équivalent en _pur_ JavaScript ? Pas sûr hein.
@@ -220,5 +204,3 @@ Un grand merci à [@deaxon](http://playground.deaxon.com/js/vanilla-js/) qui est
 ## A creuser
 
 Il existe une version minimaliste de jQuery basée sur la même API mais beaucoup plus légère s'appelant [Zepto](http://zeptojs.com/). Il est actuellement utilisé en production sur le site mobile de ma boite.
-
-{{/markdown}}

@@ -1,18 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: Sublime Text en tant qu'éditeur Markdown
-author: kud
-tags:
-  - sublime-text
-  - markdown
-readingTime: 15min
-date: 2014-02-20
----
-
-{{#markdown}}
 La vie de développeur n'est jamais facile. Tu souhaites faire quelque chose de précis et tu te retrouves à faire totalement autre chose, _patchant_ ci ou tu as découvert ça.
 
 Typiquement, j'étais tranquillement en train d'écrire un article pour **p!** qui n'avait rien à voir avec celui actuel, et je me retrouve à personnaliser mon Sublime Text pour Markdown car ne souhaitant plus utiliser autre chose que celui-ci pour l'écriture.
@@ -108,4 +93,3 @@ Oh et j'oubliais, voici quelques documentations sur Markdown histoire de bien l'
 - [Documentation officielle](http://daringfireball.net/projects/markdown/syntax)
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - [Another Markdown Cheatsheet](http://warpedvisions.org/projects/markdown-cheat-sheet.md)
-{{/markdown}}

@@ -1,19 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-author: neemzy
-title: Responsive webdesign et structure du DOM
-tags:
-  - responsive
-  - html
-  - javascript
-readingTime: 15min
-date: 2013-12-26
----
-
-{{#markdown}}
 Bien, commençons par le commencement, si tu veux bien. Le **responsive
 webdesign**, ça te dit quelque chose ? Oui ? Bon. Dans ce cas, tu as peut-être
 comme moi déjà été confronté à un cas de figure plutôt ennuyeux. Que tu sois
@@ -38,10 +22,10 @@ tard pour faire machine arrière.
 Au train où va l'innovation dans notre branche, surtout pour tout ce qui touche
 au mobile en général et à la conception web en particulier, il n'est pas exclu
 que les bouts de ficelle que je vais t'exposer ici soient obsolètes dans six
-mois, et que cet article fasse un comeback incroyable sur Twitter, les RT 
+mois, et que cet article fasse un comeback incroyable sur Twitter, les RT
 moquant gentiment les techniques précolombiennes auxquelles nous étions réduits
 il n'y a encore pas si longtemps. Va savoir, je pourrais bien faire l'objet
-d'une célébrité paradoxalement décadente à la Rick Astley. En attendant, il 
+d'une célébrité paradoxalement décadente à la Rick Astley. En attendant, il
 s'agit des seules solutions que je connais pour ce type de cas. Si tu as mieux à
 proposer, je te recommande chaudement de l'ouvrir dans les commentaires pour
 qu'on en bénéficie tous. C'est bon, on y va ? Je t'attends, moi !
@@ -50,7 +34,7 @@ qu'on en bénéficie tous. C'est bon, on y va ? Je t'attends, moi !
 
 Imagine une page de blog, où apparaissent consécutivement le titre de l'article,
 la photo l'illustrant, et enfin le texte. Comme une photo, selon la qualité de
-ta connexion, ça peut être un peu galère à charger sur mobile (et que la 
+ta connexion, ça peut être un peu galère à charger sur mobile (et que la
 question des images en responsive design
 [est encore un sacré bordel](http://css-tricks.com/responsive-images-hard/)), tu
 prends la décision de passer la photo en dessous du contenu textuel pour que tes
@@ -338,4 +322,3 @@ passer le temps, et toi tu feras quelque chose de constructif !
 
 Il est temps pour moi de te laisser reprendre le cours de ta vie. Peut-être nos
 routes se croiseront-elles de nouveau. Dans l'intervalle, va, vis, et code !
-{{/markdown}}

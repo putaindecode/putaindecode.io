@@ -1,19 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-layout: post.hbs
-title: Comment se passer de libraries/frameworks JavaScript
-author: bloodyowl
-tags:
-  - javascript
-  - frameworks
-  - libraries
-date: 2013-12-06
----
-
-{{#markdown}}
 ** Petite note préalable ** : Évidemment que ça ne marche pas sous les vieux navigateurs, cet article s'adresse principalement à toi pour te faire comprendre comment les choses marchent.
 
 De plus en plus, le besoin de légèreté se fait sentir sur les pages. En dépit d'un web plus rapide sur desktop, on a maintenant beaucoup de devices connectés via 3G ou Edge (un petit coucou au métro parisien). Du coup, tu te rendras vite compte qu'embarquer jQuery + jQuery Mobile + jQuery UI et un tas d'autres plug-ins grapillés sur le web, ça commence à peser.
@@ -333,4 +317,3 @@ animal.isPrototypeOf(myCat) // true
 ```
 
 Voilà, j'espère que cela a pu attiser ta curiosité d'en apprendre plus sur le langage lui-même et le DOM.
-{{/markdown}}

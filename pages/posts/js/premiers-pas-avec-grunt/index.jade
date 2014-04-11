@@ -1,0 +1,14 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "kud"
+  -exports.title = "Premiers pas avec Grunt"
+  -exports.tags = ["javascript", "tools", "grunt"]
+  -exports.readingTime = "30min"
+  -exports.date = "2013-11-16"
+
+block main
+  +Post(exports.title)
+    include:md index.md

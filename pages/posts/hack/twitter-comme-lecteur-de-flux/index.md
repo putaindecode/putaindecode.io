@@ -1,19 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: Twitter comme lecteur de flux
-author: kud
-tags:
-  - twitter
-  - rss
-  - atom
-readingTime: 30min
-date: 2014-02-26
----
-
-{{#markdown}}
 _(Note : dans cet article, j'ai volontairement pris comme exemple la version Web afin que tout le monde puisse profiter de l'expérience mais il est évident que vous puissiez le faire avec votre application twitter favorite)._
 
 Bien avant la fin de Google Reader, je me posais déjà la question de l'intérêt d'un lecteur de flux {rss|atom}. En effet, il m'était pénible d'organiser les flux que je souhaitais lire : les ranger par catégorie, supprimer les sites morts ou ceux qui ne m'intéressaient plus; de plus, je n'ai jamais réellement utilisé les fonctionnalités d'un lecteur de flux comme le système de marquage, savoir si le flux a été lu ou non, lire l'article dans le lecteur (je le lis toujours sur le site, jamais dans l'application). Et puis c'est parfois pénible de trouver un lecteur de flux simple, multi-OS et gratuit.
@@ -112,4 +96,3 @@ Et voilà, nous avons maintenant une belle liste Twitter qui représentre votre 
 Vous pouvez même pousser le vice en créant plusieurs listes par catégorie mais ça sous-entend aussi de créer des _bots_ et donc des comptes IFTTT par catégorie. Heureusement que j'en ai qu'une. ;)
 
 Enjoy!
-{{/markdown}}

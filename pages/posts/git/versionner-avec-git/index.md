@@ -1,20 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-author: madx
-title: Versionner avec Git
-tags:
-  - git
-readingTime: 10min
-date: 2013-11-06
-contributors:
-  - MoOx
-  - Dridi
----
-
-{{#markdown}}
 Chez Putain de Code, on aime se servir de [Git][git:website] (et de GitHub, mais
 c'est une autre histoire), même si certains d'entre nous (comme Lionel) ne s'en
 servent pas forcément bien.
@@ -366,4 +349,3 @@ Pas de problème, on a écrit un post exprès :
 [cpold]: http://roland.entierement.nu/blog/2008/01/22/cpold-la-poudre-verte-du-suivi-de-versions.html
 [gitx]: http://gitx.frim.nl/
 [gitg]: https://wiki.gnome.org/Apps/Gitg
-{{/markdown}}

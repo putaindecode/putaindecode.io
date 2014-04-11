@@ -1,19 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-author: lionelB
-title: Vagrant, enlarge your VM
-tags:
-  - virtualbox
-  - tools
-  - vagrant
-readingTime: 4min
-date: 2013-11-08
----
-
-{{#markdown}}
 Vagrant, au cas où tu ne connaîtrais pas encore, permet de fournir des
 environnements de développements reproductibles, facilement configurables et
 qui se partagent entre les membres de l’équipe. En gros, tu vas pouvoir décrire
@@ -135,4 +119,3 @@ dev à chaque changement de projet.
 * [la documentation officielle de ~~viagra~~ vagrant](http://docs.vagrantup.com/v2/)
 * [Virtualisation sur OSx et accès à localhost](https://github.com/putaindecode/propositions-de-posts/issues/4)
 * [Cuisinez vos serveurs comme un Chef – Première partie](http://jolicode.com/blog/cuisinez-vos-serveurs-comme-un-chef-premiere-partie)
-{{/markdown}}

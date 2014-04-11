@@ -1,17 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-author: MoOx
-title: HTML ? Hâche-Thé-Aime-Elle vous dites ?
-tags:
-  - html
-readingTime: 7min
-date: 2013-11-07
----
-
-{{#markdown}}
 Ahh, le HTML. LE [H.T.M.L](http://fr.wikipedia.org/wiki/HTML). Sacré langage hein ?
 
 On le connait tous ce fameux truc qu'on retrouve dans pas mal d'URLs : `.html`.
@@ -257,5 +243,3 @@ règle CSS qui marche pas, ou votre morceau de JavaScript buggé.
 * Validation automatique dans un workflow Grunt:
   * [praveenvijayan/grunt-html-validation](https://github.com/praveenvijayan/grunt-html-validation)
   * [jzaefferer/grunt-html](https://github.com/jzaefferer/grunt-html) (basé sur validator.nu)
-
-{{/markdown}}

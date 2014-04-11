@@ -1,18 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: "Git, boutez les bugs, domptez votre historique!"
-author: Erwyn
-tags:
-  - git
-readingTime: 10min
-date: 2014-02-27
----
-
-{{#markdown}}
-
 Vous viendez de lire l'[article de madx](/posts/git/versionner-avec-git/) sur le gestionnaire
 de version Git et vous vous dites que vous aimeriez en découvrir plus! Vous l'utilisez déjà mais êtes
 en quête de quelques nouvelles (ou pas) astuces à vous mettre sous la dent! Bienvenue!
@@ -370,4 +355,3 @@ pour vous.
 Voilà, on arrive au bout de notre aventure, j'espère que vous avez appris quelque chose et que Git vous fait maintenant moins peur.
 
 Amike,
-{{/markdown}}
