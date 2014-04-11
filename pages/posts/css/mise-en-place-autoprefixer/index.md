@@ -1,18 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: Mise en place d’autoprefixer
-author: MoOx
-tags:
-  - css
-  - préfixe
-readingTime: 5min
-date: 2014-03-04
----
-
-{{#markdown}}
 Suite à mon précédent article [Comment en finir avec les préfixes CSS](/posts/css/comment-en-finir-avec-les-prefixes/),
 certains sont restés sur leur faim.
 Voici donc de rapides exemples de mise en place de cette solution.
@@ -357,5 +342,3 @@ Vous pouvez donc utiliser _autoprefixer_ normalement, après l’appel du pré-p
 
 
 Voilà j’espère que cette fois-ci vous êtes rassasié(e) afin de ne plus avoir envie de manger des préfixes CSS !
-
-{{/markdown}}

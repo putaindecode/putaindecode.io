@@ -1,20 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: BROWSERIFY ALL THE THINGS
-author: MoOx
-tags:
-  - javascript
-  - amd
-  - commonjs
-  - browserify
-readingTime: 10min
-date: 2014-01-15
----
-
-{{#markdown}}
 Alors que je prends goût à me passer de frameworks (principalement à cause des
 courbes d'apprentissage et des éventuelles lourdeurs et/ou restrictions que cela
 impose, mais c'est une autre histoire),
@@ -23,7 +6,7 @@ je cherchais la meilleure façon d'écrire des micro composants réutilisables.
 Pour le JavaScript, j'ai commencé il y a bien longtemps par des extensions/plugins
 [Prototype](http://prototypejs.org/), puis peu de temps après, du plugins
 [jQuery](http://plugins.jquery.com/) à la pelle.
-Souvent à tord puisque j'utilisais peut être 1% de la librairie en dépendance - 
+Souvent à tord puisque j'utilisais peut être 1% de la librairie en dépendance -
 exemple avec mon [indicateur de chargement avec sémaphore](https://github.com/MoOx/jQuery.Loading-Indicator/)
 ou encore mon [plugin qui ouvre les liens externes avec du target blank automatique](https://github.com/MoOx/jQuery.External-Links/).
 
@@ -37,18 +20,18 @@ Car si je veux utiliser mon petit script qui ajoute des targets blank automatiqu
  devoir inclure jQuery pour si peu, ça fait mal à mes kilobites.
 
 En attendant <a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules">
-la gestion de modules via ES6</a>, il nous faut gérer aujourd'hui nos composants 
+la gestion de modules via ES6</a>, il nous faut gérer aujourd'hui nos composants
 et dépendances à la main.
-Encore qu'on pourrait faire un transpiler pour utiliser cette syntaxe (ça existe 
+Encore qu'on pourrait faire un transpiler pour utiliser cette syntaxe (ça existe
 déjà, il n'y a qu'à voir sur GitHub), mais là on ne ferait que créer une nouvelle
 définition de module.
 
 Côté back-end, on a déjà ce qu'il faut en JavaScript avec la gestion
 [des modules en Node](http://nodejs.org/api/modules.html).
 Un simple `require('module')` va tenter de récupérer un module avec ce nom.
-Un module n'est rien d'autre qu'un fichier JavaScript. Node va essayer de loader 
-un `.js`, puis `.json` et enfin `.node` si besoin), qui lui même peut 
-éventuellement charger d'autres dépendances (les dépendances sont gérées localement) 
+Un module n'est rien d'autre qu'un fichier JavaScript. Node va essayer de loader
+un `.js`, puis `.json` et enfin `.node` si besoin), qui lui même peut
+éventuellement charger d'autres dépendances (les dépendances sont gérées localement)
 tout en prenant en compte les packages NPM.
 Même si [Node](http://nodejs.org/) n'implémente pas totalement
 [CommonJS](http://wiki.commonjs.org/wiki/CommonJS), un projet de développement d'une API pour
@@ -57,15 +40,15 @@ la façon de faire est assez proche.
 
 <img class="putainde-Img" alt="" src="{{ happyplan.baseUrls.media }}/browserify.png" />
 
-L'idée de [Browserify](http://browserify.org/) est d'amener cette façon de faire 
+L'idée de [Browserify](http://browserify.org/) est d'amener cette façon de faire
 dans le navigateur.
 
 À côté de ça, vous me direz qu'on a déjà [RequireJS](http://requirejs.org/)
 pour un résultat similaire.
 
-RequireJS implémente l'API AMD  (Asynchronous Module Definition), 
+RequireJS implémente l'API AMD  (Asynchronous Module Definition),
 différent de l'API CommonJS.
-Cette API, dérivée de CommonJS, se veut adaptée au navigateur. Son principal atout 
+Cette API, dérivée de CommonJS, se veut adaptée au navigateur. Son principal atout
 étant le chargement des modules de manière asynchrone.
 En théorie, c'est super.
 
@@ -80,10 +63,10 @@ au réseau (Edge, faible 3G...) et donc nombre de requêtes HTTP qui peuvent nou
 faire souffrir de gros ralentissement pour se rendre compte que cela peut poser
 problème.
 
-En plus de cela, je trouve personnellement dégueulasse  la façon de déclarer les 
+En plus de cela, je trouve personnellement dégueulasse  la façon de déclarer les
 modules AMD, mais ça ce n'est qu'un détail.
 
-Comparons les différentes méthodes comme on nous les montre sur le site de 
+Comparons les différentes méthodes comme on nous les montre sur le site de
 [RequireJS](http://requirejs.org/docs/whyamd.html) :
 
 Le web aujourd'hui:
@@ -133,38 +116,38 @@ function (require,   $,        object,         fn,         rdapi,
 });
 ```
 
-Bon vous me direz que si un module a autant de dépendances, il y a peut être un 
+Bon vous me direz que si un module a autant de dépendances, il y a peut être un
 problème en amont et vous n'aurez pas tort.
 
-Côté Browserify (CommonJS like), les dépendances externes proviennent (à la base) 
+Côté Browserify (CommonJS like), les dépendances externes proviennent (à la base)
 de NPM.
-On a donc rien à mapper nul part. Puis pour avoir un module local, il suffit de 
-faire un `require('./mon/module')`, et Browserify se chargera de régler la 
+On a donc rien à mapper nul part. Puis pour avoir un module local, il suffit de
+faire un `require('./mon/module')`, et Browserify se chargera de régler la
 dépendance (et je vous montre encore mieux après).
 
-RequireJS propose un "optimizer", qui au final ne fait que supprimer son point fort: 
+RequireJS propose un "optimizer", qui au final ne fait que supprimer son point fort:
 le côté asynchrone du téléchargement des modules.
 Du coup on se retrouve avec tout RequireJS dans la source ET toutes les dépendances avec le mapping.
-Il y a bien une façon de vraiment optimiser par bundle quand on cherche un peu 
-dans la doc, mais 
+Il y a bien une façon de vraiment optimiser par bundle quand on cherche un peu
+dans la doc, mais
 [ça n'est pas vraiment mis en avant](http://requirejs.org/docs/optimization.html#wholemultipage).
-Il existe aussi [Almond.js](https://github.com/jrburke/almond) qui se veut être 
-plus léger, mais du coup, utiliser RequireJS pour optimiser avec Almond, je ne 
+Il existe aussi [Almond.js](https://github.com/jrburke/almond) qui se veut être
+plus léger, mais du coup, utiliser RequireJS pour optimiser avec Almond, je ne
 trouve pas ça cohérent.
 
-Si jusque là, Browserify vous intéresse (plus car les autres solutions ne vous 
+Si jusque là, Browserify vous intéresse (plus car les autres solutions ne vous
 intéressent pas), attaquons le corps du sujet.
 
 <h2>Installation de Browserify</h2>
 
-Si vous souhaitez accéder à la commande via le terminal, la chose la plus simple 
+Si vous souhaitez accéder à la commande via le terminal, la chose la plus simple
 à faire est d'installer le paquet en global.
 
 ```bash
 $ npm install -g browserify
 ```
 
-Si vous ne l'installez pas en global (sans l'option `-g`, vous aurez la commande 
+Si vous ne l'installez pas en global (sans l'option `-g`, vous aurez la commande
 accessible dans `./node_modules/.bin/browserify`).
 Mais selon votre workflow, vous pouvez l'utiliser via une tâche
 [grunt-browserify](https://www.npmjs.org/package/grunt-browserify)
@@ -178,7 +161,7 @@ Partons d'un simple fichier `main.js`:
 alert('Hello world !');
 ```
 
-Sans aucune dépendance, ça n'a que peu de sens, mais c'est plus pour montrer un 
+Sans aucune dépendance, ça n'a que peu de sens, mais c'est plus pour montrer un
 dernier point intéressant.
 
 Je le compile avec la commande suivante:
@@ -197,8 +180,8 @@ alert('Hello world !');
 },{}]},{},[1])
 ```
 
-On reconnaît notre ligne en plein milieu. Avec un ajout conséquent. Ça peut paraître 
-beaucoup, mais c'est rien comparé à la 
+On reconnaît notre ligne en plein milieu. Avec un ajout conséquent. Ça peut paraître
+beaucoup, mais c'est rien comparé à la
 [source de RequireJS](http://requirejs.org/docs/release/2.1.10/minified/require.js)
 
 Bon du coup partons avec un exemple peut être plus représentatif qu'on peut voir
@@ -228,20 +211,20 @@ $ npm i gamma
 <small><i>`i` est l'alias de `install`.</i></small>
 
 Avec la même commande que précédement (et donc le même ajout), Browserify va parser
-l'arbre syntaxique abstrait (AST) des appels à `require()` et va créer un graph 
+l'arbre syntaxique abstrait (AST) des appels à `require()` et va créer un graph
 des dépendances du projet.  
-Un fois ceci fait, il va simplement ajuster les chemins et déclarer les fonctions 
-mappées dans un object par leur identifiant. Lorsqu'une fonction appelle `require`, 
+Un fois ceci fait, il va simplement ajuster les chemins et déclarer les fonctions
+mappées dans un object par leur identifiant. Lorsqu'une fonction appelle `require`,
 le petit bout de script ajouté va se charger de retourner la dépendance.
 
-Notez qu'on peut aussi simplement utiliser une redirection de sortie de commande 
+Notez qu'on peut aussi simplement utiliser une redirection de sortie de commande
 pour gérer le fichier final:
 
 ```bash
 $ browserify main.js > bundle.js
 ```
 
-Du coup on a plus qu'à utiliser une simple balise `<script>` pour incorporer ça 
+Du coup on a plus qu'à utiliser une simple balise `<script>` pour incorporer ça
 dans nos pages web.
 
 ```html
@@ -250,17 +233,17 @@ dans nos pages web.
 
 <h2>Les transformations avec Browserify</h2>
 
-Tant qu'à utiliser un outil, autant l'exploiter jusqu'au bout. Car pour l'instant 
+Tant qu'à utiliser un outil, autant l'exploiter jusqu'au bout. Car pour l'instant
 je n'ai parlé que de NPM.
 Que faire si mon module n'est pas sur NPM ?
-Bon déjà je double check, car maintenant la plupart des librairies y sont 
+Bon déjà je double check, car maintenant la plupart des librairies y sont
 (jQuery, Backbone et Jean passe).
-Si ce n'est pas le cas, je pourrais toujours faire `npm i https//adresse.git` 
+Si ce n'est pas le cas, je pourrais toujours faire `npm i https//adresse.git`
 mais si le paquet n'a pas de `package.json` avec le `main` bien rempli, ça ne va
 pas forcément être le mieux.
 
 Cela dit, si mon paquet est prévu pour Bower par exemple, il existe une <i>transformation</i>
-prévue pour aider Browserify à résoudre les références aux paquets pour les 
+prévue pour aider Browserify à résoudre les références aux paquets pour les
 consommer depuis Bower: `debowerify`.
 Dans le même esprit, on va retrouver de nombreuses transformations telles que :
 
@@ -295,7 +278,7 @@ Consommer c'est bien, mais faire c'est <del>mieux</del> bien aussi.
 <img class="putainde-Img" alt="" src="{{ happyplan.baseUrls.media }}/browserify-potter.png" />
 
 Tout droit sorti de [UMD](https://github.com/umdjs/umd) (Universal Module Definition),
-voici un wrapper qui vous permettra de créer votre module compatible avec CommonJS, 
+voici un wrapper qui vous permettra de créer votre module compatible avec CommonJS,
 AMD et pour les projets old school !
 
 ```js
@@ -319,12 +302,10 @@ AMD et pour les projets old school !
 }));
 ```
 
-Il existe bien sur [plusieurs façons de faire](https://github.com/umdjs/umd#variations) 
+Il existe bien sur [plusieurs façons de faire](https://github.com/umdjs/umd#variations)
 selon vos critères. À vous de choisir.
 
-Maintenant vous aller pouvoir consommer et écrire des modules facilement, et 
+Maintenant vous aller pouvoir consommer et écrire des modules facilement, et
 sans vous prendre la tête.
 
 Bisous.
-
-{{/markdown}}

@@ -1,20 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: ExternalInterface.call() de Flash (et Backbone), toute une histoire
-author: kud
-tags:
-  - javascript
-  - backbone
-  - flash
-readingTime: 10min
-date: 2013-12-05
----
-
-{{#markdown}}
-
 <img class="putainde-Img putainde-Img--left" alt="" src="{{ happyplan.baseUrls.media }}/occupyflash.png" />
 
 Je voulais vous parler d'un bug qui m'a bien emmerdé récemment et comme j'aimerais que vous ne perdiez pas de temps avec cela, un article s'imposait.
@@ -89,4 +72,3 @@ App.FlashManager.Events.trigger = function(name, opts) {
 ## Conclusion
 
 De manière générale (hors **Backbone.js**), lorsque vous utilisez `ExtercalInterface.call()`, faites en sorte que votre JavaScript retourne quelque chose de simple (un objet ayant que des atributs, pas de fonctions, ou encore un bouléen ou un _integer_).
-{{/markdown}}

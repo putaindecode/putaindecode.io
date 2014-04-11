@@ -1,0 +1,14 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "kud"
+  -exports.title = "ExternalInterface.call() de Flash (et Backbone), toute une histoire"
+  -exports.tags = ["javascript", "backbone", "flash"]
+  -exports.readingTime = "10min"
+  -exports.date = "2013-12-05"
+
+block main
+  +Post(exports.title)
+    include:md index.md

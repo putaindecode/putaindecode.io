@@ -1,0 +1,14 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "MoOx"
+  -exports.title = "BROWSERIFY ALL THE THINGS"
+  -exports.tags = ["javascript", "amd", "commonjs", "browserify"]
+  -exports.readingTime = "10min"
+  -exports.date = "2014-01-15"
+
+block main
+  +Post(exports.title)
+    include:md index.md

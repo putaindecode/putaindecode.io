@@ -1,25 +1,8 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: Comment en finir avec les préfixes CSS
-author: MoOx
-tags:
-  - css
-  - préfixe
-  - pré-processeur
-  - post-processeur
-readingTime: 6min
-date: 2014-02-25
----
-
-{{#markdown}}
 En mettant de côté le débat trollesque _faut-il ou pas des préfixes CSS ?_
-(car avouons-le, ils sont là, il faut faire avec), on ne va pas se le cacher, 
+(car avouons-le, ils sont là, il faut faire avec), on ne va pas se le cacher,
 les préfixes CSS ça nous brise tous les... touches du clavier.
 Eh bien oui, sans automatisation on est obligé de se taper des caractères en plus.
-Même avec un IDE correct, on peut faire ça rapidement, mais ça nécessite 
+Même avec un IDE correct, on peut faire ça rapidement, mais ça nécessite
 presque à chaque fois une action de notre part.
 
 ## Préfixer via des outils en ligne
@@ -27,10 +10,10 @@ presque à chaque fois une action de notre part.
 Les élèves au fond de la classe me montreront de suite des solutions comme
 [prefixmycss.com](http://prefixmycss.com/) ou l'ancien prefixr.
 Inopinément, un moche "Mourrez moi sile vou pler" sort de mon corps.
-Non, sérieusement, ce n’est pas une façon de faire ça. Aller sur une web app à 
+Non, sérieusement, ce n’est pas une façon de faire ça. Aller sur une web app à
 chaque fois que je veux préfixer mes CSS ? Sérieusement ?
 Vous avez qu’à aussi faire un service postal où j’envoie mes fichiers CSS dans
-une clé USB et qu’on me renvoie sous 48h avec les préfixes ajoutés. 
+une clé USB et qu’on me renvoie sous 48h avec les préfixes ajoutés.
 Super pratique.
 
 ## Préfixer via JavaScript
@@ -49,26 +32,26 @@ Alors là, j’en entends déjà qui parle à voix haute au milieu de la classe�
 
 > Bah lui c’est clair il’connait pas les pré-processeurs CSS le noube
 
-Sans rentrer dans un débat trollesque (encore un), à part peut-être avec _Stylus_ et ces 
+Sans rentrer dans un débat trollesque (encore un), à part peut-être avec _Stylus_ et ces
 mixins transparent (coucou _[Nib](http://visionmedia.github.io/nib/)_),
 on est obligé de rajouter du code.
 Avec _Sass_ il faudra (en scss) rajouter `@include` et un couple de parenthèse (et
 au passage avoir _Compass_ si on ne veut pas coder les mixins à la main).
-Avec _Less_ il faudra aussi une librairie _Less Hat_ si on n’a pas envie de se taper 
-du mixin qui donne de la nausée comme on peut voir sur la 
+Avec _Less_ il faudra aussi une librairie _Less Hat_ si on n’a pas envie de se taper
+du mixin qui donne de la nausée comme on peut voir sur la
 [page d’accueil](http://lesscss.org/).
 
 ## Les préfixes, c’est comme le lait, ça tourne
 
-D’ailleurs, parlons en vite fait de cette page d’accueil qui au jour où j’écris 
+D’ailleurs, parlons en vite fait de cette page d’accueil qui au jour où j’écris
 se post, comporte <b>en premier exemple</b> un mixin pour `box-shadow`
 (hashtag ohlol).
 
-Certaines propriétés comme `box-shadow`, ou encore `border-radius`, sont 
-aujourd’hui préfixées à tort, car comme on peut le voir sur le site de 
-[CanIUse.com](http://caniuse.com/), elles n’ont plus vraiment besoin d’être préfixées, à 
+Certaines propriétés comme `box-shadow`, ou encore `border-radius`, sont
+aujourd’hui préfixées à tort, car comme on peut le voir sur le site de
+[CanIUse.com](http://caniuse.com/), elles n’ont plus vraiment besoin d’être préfixées, à
 moins que vous supportiez encore Firefox 3.6, Safari iOS 3 ou Android 2...
-Je vous renvoie rapidement sur ce (vieil) article de Chris Coyier 
+Je vous renvoie rapidement sur ce (vieil) article de Chris Coyier
 [Do we need box-shadow or border-radius prefixes anymore?](http://css-tricks.com/do-we-need-box-shadow-prefixes/)
 en guise de mémo :)
 
@@ -91,7 +74,7 @@ Bon allons à l’essentiel, assez trollé.
 
 Ce magnifique outil, basé sur une solide base de données (au hasard, CanIUse.com),
 permet de préfixer automatiquement vos CSS, et ce, de manière intelligente.
-Vous pouvez en effet configurer autoprefixer, afin de lui préciser quel 
+Vous pouvez en effet configurer autoprefixer, afin de lui préciser quel
 navigateur vous voulez utiliser.
 Vous pouvez au choix lui demander de supporter X versions en arrière, les versions
 qui ont un usage global > à Y% de trafic, ou encore une version minimale donnée.
@@ -106,7 +89,7 @@ autoprefixer("last 1 version", "> 1%", "Explorer 7").process(css).css;
 autoprefixer("last 2 version", "BlackBerry 10", "Android 4").process(css).css;
 ```
 
-Dans ces lignes de code JavaScript... Quoi attendez c’est en JavaScript ? Oh le 
+Dans ces lignes de code JavaScript... Quoi attendez c’est en JavaScript ? Oh le
 fourbe, il nous recale sa techno de front-end de mes deux.
 Bon faites pas les relous, que vous soyez front-end ou back-end, vous avez Node.js hein ?
 
@@ -126,7 +109,7 @@ Là bon de suite, réflexe, vous me sautez dessus à la gorge en me criant:
 
 > NON MAIS T’AS CRU QUE J’ALLAIS TAPER LA COMMANDE À CHAQUE FOIS TOCARD ?
 
-No problem, comme tout outil bien foutu, il y’a une multitudes de façon de 
+No problem, comme tout outil bien foutu, il y’a une multitudes de façon de
 l’utiliser :
 
 - via [Node.js](https://github.com/ai/autoprefixer#nodejs) directement,
@@ -154,7 +137,7 @@ vous avez aussi à dispo des plugins pour
 Cet outil est maintenant basé sur [PostCSS](https://github.com/ai/postcss),
 un post-processeur CSS. Vous pouvez donc l’utiliser en plugin pour ce post-procésseur.
 
-Attends attends, un WAT ? Un **POST**-processeur ? Oui tu as bien lu car les 
+Attends attends, un WAT ? Un **POST**-processeur ? Oui tu as bien lu car les
 pré-processeurs c’est so 2000.
 Mais ça, je vous en parle la prochaine fois ;)
 
@@ -165,4 +148,3 @@ Tout plein de -moz-bisous.
 PS: Convaincu par cette solution ? Tant mieux, elle est simple à mettre en place.
 Tout ça est décrit dans la [mise en place d'autoprefixer](/posts/css/mise-en-place-autoprefixer/)
 avec des exemples concrets pour ajouter ça dans un workflow existant.
-{{/markdown}}

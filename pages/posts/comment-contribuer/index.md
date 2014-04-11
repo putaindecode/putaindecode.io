@@ -1,18 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-layout: post.hbs
-title: Comment contribuer ?
-author: Nyalab
-tags:
-  - putaindecode
-  - contribuer
-date: 2013-11-05
----
-
-{{#markdown}}
 Ici, chez Putain de Code, dans notre building 8 étages vitres teintées avec
 masseuses et coke à volonté et à n'importe quelle heure de la journée, on sait
 qu'on va forcément t'aider à comprendre pas mal de trucs, mais on sait aussi
@@ -278,9 +263,8 @@ est des types sympas.
   passage, si tu veux, tu peux en profiter pour nous suivre [sur
   twitter](https://twitter.com/putaindecode), et tu pourras nous lâcher un
   message avec ta PR ou ton issue en lien, histoire de nous mettre la pression.
-  
+
 ## Hey ! Tu veux mieux comprendre Git ?
 
 Pour découvrir Git plus en détails, on t'invite à lire notre article
 [Versionner avec Git](posts/git/versionner-avec-git/)
-{{/markdown}}

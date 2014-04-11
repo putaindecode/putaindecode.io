@@ -1,20 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: Le point sur les pré-processeurs CSS
-author: MoOx
-tags:
-  - css
-  - pré-processeur
-  - post-processeur
-readingTime: 8min
-date: 2014-03-11
----
-
-{{#markdown}}
-
 ## Pourquoi les pré-processeurs
 
 Voilà ce que j'ai écrit en 2011 dans
@@ -259,5 +242,3 @@ vous pourrez continuer la lecture au prochain épisode qui sera consacré aux po
 <small>(Mamam, t'as vu ce cliffhanger digne des séries US !)</small>
 
 Bon promis la prochain fois je vous en parle des post-processeurs. Pour de vrai.
-
-{{/markdown}}

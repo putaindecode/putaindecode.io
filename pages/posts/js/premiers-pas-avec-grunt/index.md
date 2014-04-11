@@ -1,19 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: Premiers pas avec Grunt
-author: kud
-tags:
-  - javascript
-  - tools
-  - grunt
-readingTime: 30min
-date: 2013-11-16
----
-
-{{#markdown}}
 <img class="putainde-Img putainde-Img--left" alt="" src="{{ happyplan.baseUrls.media }}/gruntjs.png" />
 
 Vous avez sûrement déjà entendu parler de **Grunt** à droite à gauche, en conférence, voire votre boite l'utilise déjà mais vous ne savez toujours pas trop ce qui se cache derrière ce terme saugrenu digne d'un personnage de Warcraft. Soit, ce n'est pas bien grave. **Grunt** est simplement un *JavaScript Task Runner*, un outil vous permettant de créer des tâches automatisées en JavaScript. Forcément ce n'est pas très parlant mais c'est tout l'intérêt de cet article, vous expliquer ce qu'est **Grunt** et pourquoi il peut vous être utile dans un _workflow_ de front-end dev.
@@ -632,4 +616,3 @@ Avec ça, je pense qu'on est pas trop mal. Il reste des optimisations éventuell
 J'espère que vous y voyez maintenant un peu plus clair dans **Grunt** ainsi que dans la compilation côté front-end. **Grunt** est un excellent produit, avec une communauté réactive et il est rare qu'une tâche que vous souhaitiez mettre en place n'existe pas.
 
 Bon workflow !
-{{/markdown}}

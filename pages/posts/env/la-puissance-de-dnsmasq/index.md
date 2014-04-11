@@ -1,21 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: La puissance de dnsmasq
-author: kud
-tags:
-  - dnsmasq
-  - macosx
-  - test
-  - dns
-  - serveur
-readingTime: 25min
-date: 2014-02-20
----
-
-{{#markdown}}
 Dernièrement, j'ai voulu accéder avec mon Smartphone à ma machine virtuelle (_VM_) de développement qui se trouve sur mon poste de travail (_machine ou poste hôte_). Ma machine virtuelle me permet de reproduire à l'identique la production afin d'avoir le moins de marge d'erreur possible entre la phase de développement et la phase de mise en production.
 
 A ce moment là, j'accédais à ma machine virtuelle à partir de mon poste via le fichier _hosts_ comprenant ceci :
@@ -205,4 +187,3 @@ Ce que je vous propose dans ces cas là, c'est de couper votre partage de connex
 Autre point, évitez, mais vraiment, de nommer vos noms de domaines personnels en `.local`. En effet, ceux-ci sont plutôt réservés à l'environnement Mac OS X. Ils sont d'ailleurs en rapport avec **_mdnsresponder**. Les `.local` permettent à n'importe quel produit Apple sur le réseau de se connecter à d'autres postes Apple via `nom-de-l-appareil.local`. Votre connexion pourrait alors s'emméler entre le serveur dns de **Bonjour** et votre propre serveur dns.
 
 Happy coding !
-{{/markdown}}

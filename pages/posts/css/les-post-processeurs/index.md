@@ -1,20 +1,3 @@
----
-lang: fr
-layout: post.hbs
-type: post
-comments: true
-title: Les post-processeurs CSS
-author: MoOx
-tags:
-  - css
-  - pré-processeur
-  - post-processeur
-readingTime: 6min
-date: 2014-04-08
----
-
-{{#markdown}}
-
 Vous avez surement entendu parler des [_post-processeurs CSS_](http://iamvdo.me/blog/les-postprocesseurs-css).
 J'ai personnellement pas mal fait référence à ~~ce concept~~ cette expression ces derniers temps.
 Que ce soit lorsque je vous racontais
@@ -225,5 +208,3 @@ J'aime conserver la syntaxe CSS et avoir un process ultra-rapide et transparent.
 
 Rework ayant un bon petit paquet de plugins déjà existants, c'est assez simple de réaliser son propre pré-processeur via quelques lignes de code seulement.
 La mise en place et l'automatisation feront l'objet d'un prochain article !
-
-{{/markdown}}
