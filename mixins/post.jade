@@ -1,0 +1,12 @@
+mixin Post(title)
+  .Grid.putainde-Post
+    .Grid-col.Grid-col--8.Grid.putainde-Post-contents
+      -var author = lang.members[exports.author]
+      if title
+        .putainde-Title
+          img.putainde-Title-authorPicture.js-AnimateLoad(
+            src="#{author.avatar_url}"
+            alt=""
+          )
+          h1.putainde-Title-text #{title}
+      block

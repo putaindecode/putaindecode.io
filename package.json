@@ -32,6 +32,7 @@
     "gulp-iconfont": "0.0.10",
     "bloody-grid": "0.0.1",
     "marked": "^0.3.2",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "highlight.js": "^8.0.0"
   }
 }
