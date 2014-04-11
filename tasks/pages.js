@@ -21,7 +21,12 @@ module.exports = function(){
         locals : {
           pages : exports.value,
           lang : lang.value,
-          path : path,
+          path : {
+            relative : function(from, to){
+              return path.relative(from.replace(/index$/, ""), to)
+            },
+            join : path.join
+          },
           getPages : function(object){
             return lodash.where(exports.value, object)
           }
