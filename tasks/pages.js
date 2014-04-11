@@ -7,6 +7,13 @@ var gulp = require("gulp")
   , path = require("path")
   , lodash = require("lodash")
   , jadeExtenstionRE = /\.jade$/
+  , marked = require("marked")
+
+marked.setOptions({
+  highlight: function (code) {
+    return require("highlight.js").highlightAuto(code).value;
+  }
+})
 
 module.exports = function(){
   var options = {
