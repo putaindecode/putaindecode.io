@@ -2,6 +2,9 @@
   "title" : "Putain de code !",
   "baseline" : "On voulait mettre une baseline mais on a pas été foutu d'en trouver une",
   "lastPosts" : "Les derniers posts",
+  "manifesto" : "Putain de Code, c'est quoi ?",
+  "initialCommit" : "commit initial par",
+  "crew" : "Le crew",
   "navigation" : [
     {
       "url" : "putain-de",
@@ -18,6 +21,7 @@
   ],
   "members" : {
     "Erwyn" : {
+      "crew" : false,
       "url": "http://erwyn.piwany.com",
       "github": "erwyn",
       "twitter": "Erwyn",
@@ -49,6 +53,7 @@
     },
     "MoOx" : {
       "url": "http://moox.io",
+      "crew" : true,
       "github": "MoOx",
       "twitter": "MoOx",
       "avatar_url": "https://gravatar.com/avatar/2f6c2dcd4ba8fc44f1e7f0b2ed3d587d",
@@ -74,6 +79,7 @@
     "Nyalab" : {
       "url": null,
       "github": "Nyalab",
+      "crew" : true,
       "twitter": "Nyalab",
       "avatar_url": "https://gravatar.com/avatar/0024021f51ce1fdc50564298e72fbf7c",
       "fr": {
@@ -99,6 +105,7 @@
     },
     "OwlyCode" : {
       "url": "http://owly-code.com/",
+      "crew" : true,
       "github": "OwlyCode",
       "twitter": "OwlyCode",
       "avatar_url": "http://www.gravatar.com/avatar/5cef4bfad2fde665d04d9fdb29d29d4a.png",
@@ -125,6 +132,7 @@
     },
     "bloodyowl" : {
       "url": "http://bloodyowl.github.io",
+      "crew" : true,
       "github": "bloodyowl",
       "twitter": "bloodyowl",
       "avatar_url": "https://gravatar.com/avatar/37500337ba5d2aebc962959ed83928e5",
@@ -147,6 +155,7 @@
     },
     "dguyon" : {
       "url": "http://davidguyon.com",
+      "crew" : true,
       "github": "dguyon",
       "twitter": "DavidGuyon",
       "avatar_url": "https://gravatar.com/avatar/0fef7ada66fa27ea422fdbc45849d913",
@@ -173,6 +182,7 @@
     },
     "justinmarsan" : {
       "url": null,
+      "crew" : true,
       "github": null,
       "twitter": null,
       "avatar_url": "https://gravatar.com/avatar/c1b2afa3f4c034170bd21991e9e81d60",
@@ -198,6 +208,7 @@
     "kud" : {
       "url": "http://kud.io",
       "github": "kud",
+      "crew" : true,
       "twitter": "_kud",
       "avatar_url": "https://gravatar.com/avatar/7c72a078c8819fd10f1d11c24d4aa64b",
       "fr": {
@@ -221,6 +232,7 @@
       "url": null,
       "github": null,
       "twitter": null,
+      "crew" : true,
       "avatar_url": "https://gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff",
       "fr": {
         "bio": {
@@ -245,6 +257,7 @@
       "url": "http://madx.me/",
       "github": "madx",
       "twitter": "madx",
+      "crew" : true,
       "avatar_url": "https://gravatar.com/avatar/96006f57ca92ec95713532129b039d9c",
       "fr": {
         "bio": {
@@ -273,6 +286,7 @@
       "url": "http://www.zaibatsu.fr",
       "github": "neemzy",
       "twitter": "_neemzy",
+      "crew" : false,
       "avatar_url": "http://www.gravatar.com/avatar/259cfb842be0d236e68340b1c330cc88.png",
       "fr": {
         "bio": {
@@ -298,10 +312,10 @@
       }
     },
     "rhannequin" : {
-      "name": "rhannequin",
       "url": null,
       "github": null,
       "twitter": null,
+      "crew" : true,
       "avatar_url": "https://gravatar.com/avatar/a2b9398e4753f15d628c8d928600d90e",
       "fr": {
         "bio": {
