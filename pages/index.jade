@@ -3,8 +3,8 @@ extends /layouts/main.jade
 block main
   .Grid.putainde-List
     .Grid-col.Grid-col--8.putainde-List-contents
-      h1.putainde-Title.putainde-Title--home
-        | #{lang.lastPosts}
+      .putainde-Title.putainde-Title--home
+        h2.putainde-Title-text #{lang.lastPosts}
       -var posts = getPages({type:"post"}).slice(0, 6)
       each post in posts
         -var author = lang.members[post.author]
@@ -15,3 +15,35 @@ block main
           )
           a.putainde-List-title(href="#{post.slug}.html")
             | #{post.title}
+          if post.tags
+            ul.putainde-Tags
+              each tag in post.tags
+                li.putainde-Tag #{tag}
+          .putainde-List-author
+            | #{lang.initialCommit}
+            =" "
+            a(href="http://github.com/#{author.github}")
+              | #{post.author}
+  .Grid.putainde-Manifesto.putainde-Post-contents
+    .Grid-col.Grid-col--8.putainde-Manifesto-contents
+      .putainde-Title.putainde-Title--home
+        h2.putainde-Title-text #{lang.manifesto}
+      include:md home/manifesto.md
+  .Grid.putainde-Crew
+    .Grid-col.Grid-col--8.putainde-Crew-contents
+      .putainde-Title.putainde-Title--home
+        h2.putainde-Title-text #{lang.crew}
+      -var crew = Object.keys(lang.members)
+      -crew = crew.filter(function(key){ return lang.members[key].crew })
+      -crew = crew.map(function(key){ var val = lang.members[key]; val.name = key; return val })
+      each member in crew
+        .putainde-Crew-member.putainde-Member
+          img.putainde-Member-picture.js-AnimateLoad(
+            src="#{member.avatar_url}"
+            alt=""
+          )
+          .putainde-Member-description
+            h3.putainde-Member-name
+              | #{member.name}
+            each paragraph in member.fr.bio.long
+              p #{paragraph}
