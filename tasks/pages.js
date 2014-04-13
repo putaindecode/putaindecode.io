@@ -40,6 +40,9 @@ module.exports = function(){
       lang : lang.value,
       path : {
         relative : function(from, to){
+          if(to.indexOf("http") == 0) {
+            return to
+          }
           return path.relative(from.replace(/index$/, ""), to)
         },
         join : path.join

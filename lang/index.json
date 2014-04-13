@@ -9,6 +9,7 @@
   "writtenBy" : "Écrit par",
   "noPosts" : ":( pas de post",
   "close" : "&times;",
+  "copyright" : "© 1970 - 2013 Putain de Code !",
   "tags" : "Tags",
   "crew" : "Le crew",
   "filters" : "(filtres)",
@@ -31,6 +32,21 @@
       "name" : "Contribuer"
     }
   ],
+  "footerNavigation" : [
+    {
+      "url" : "projets",
+      "name" : "Projets"
+    },
+    {
+      "url" : "https://github.com/putaindecode",
+      "name" : "Contact"
+    }
+  ],
+  "madeWithHeart" : "Made with ♥︎ by ",
+  "crewLink" : {
+    "url" : "#crew",
+    "name" : "le crew"
+  },
   "members" : {
     "Erwyn" : {
       "crew" : false,
