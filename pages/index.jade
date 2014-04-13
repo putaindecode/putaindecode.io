@@ -1,8 +1,8 @@
 extends /layouts/main.jade
 
 block main
-  .Grid.putainde-List
-    .Grid-col.Grid-col--8.putainde-List-contents
+  .Grid.putainde-Section
+    .Grid-col.Grid-col--8.putainde-Section-contents
       .putainde-Title.putainde-Title--home
         h2.putainde-Title-text #{lang.lastPosts}
       -var posts = getPages({type:"post"}).slice(0, 6)
@@ -24,13 +24,13 @@ block main
             =" "
             a(href="http://github.com/#{author.github}")
               | #{post.author}
-  .Grid.putainde-Manifesto.putainde-Post-contents
-    .Grid-col.Grid-col--8.putainde-Manifesto-contents
+  .Grid.putainde-Section
+    .Grid-col.Grid-col--8.putainde-Section-contents.putainde-Post-contents
       .putainde-Title.putainde-Title--home
         h2.putainde-Title-text #{lang.manifesto}
       include:md home/manifesto.md
-  .Grid.putainde-Crew
-    .Grid-col.Grid-col--8.putainde-Crew-contents
+  .Grid.putainde-Section
+    .Grid-col.Grid-col--8.putainde-Section-contents
       .putainde-Title.putainde-Title--home
         h2.putainde-Title-text #{lang.crew}
       -var crew = Object.keys(lang.members)

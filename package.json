@@ -33,6 +33,7 @@
     "bloody-grid": "0.0.1",
     "marked": "^0.3.2",
     "lodash": "^2.4.1",
-    "highlight.js": "^8.0.0"
+    "highlight.js": "^8.0.0",
+    "bloody-observable": "0.0.0"
   }
 }
