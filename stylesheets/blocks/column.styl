@@ -21,3 +21,60 @@
 .putainde-Label-text
   font-size: .875em
   color: #444
+
+.putainde-TagFilters-toggle
+  display: none
+  background: none
+  border:none
+  font-family: inherit
+  font-size: .85em
+  vertical-align: middle
+  color: MAIN_COLOR
+  cursor: pointer
+  @media (max-width:54em)
+    display: inline-block
+
+.putainde-TagFilters-close
+  display: none
+  background: none
+  border:none
+  font-family: inherit
+  font-size: 2em
+  color: #666
+  cursor: pointer
+  position: absolute
+  top: 0
+  right: 0
+  line-height: 1
+  @media (max-width:54em)
+    display: block
+
+.putainde-TagFilters
+  @media (max-width:54em)
+    background: #fff
+    box-shadow: .2em 0 .4em rgba(#000, .1), 1px 0 rgba(#000, .1)
+    z-index: 4
+    position: fixed
+    top: 0
+    bottom: 0
+    left: unit(-(GRID_COL_GUTTER),em)
+    width: 11em
+    display: none
+    overflow: scroll
+    animation: .2s ease-in-out TagFilters
+
+@keyframes TagFilters
+  from
+    display: block
+    opacity: 0
+  to
+    opacity: 1
+
+body
+  transition: .2s ease-in-out left
+
+.putainde-Body--tagFiltersOpened
+  @media (max-width:54em)
+    left: 11em
+    .putainde-TagFilters
+      display: block

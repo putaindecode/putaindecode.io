@@ -1,0 +1,18 @@
+mixin Tags(tags)
+  .putainde-Column.js-Column
+    h2.putainde-Column-title
+      | #{lang.tags}
+      button.putainde-TagFilters-close.js-CloseFilters
+        | !{lang.close}
+    -var tagList = []
+    each tag, key in tags
+      -tagList.push({tag:tag, key:key, toString:function(){return this.key}})
+    -tagList.sort()
+    each tag in tagList
+      label.putainde-Label
+        input(
+          type="checkbox"
+          value="#{tag.tag}"
+        ).js-ToggleTag
+        span.putainde-Label-text
+          | #{tag.key}

@@ -8,8 +8,10 @@
   "morePosts" : "Plus de posts",
   "writtenBy" : "Écrit par",
   "noPosts" : ":( pas de post",
+  "close" : "&times;",
   "tags" : "Tags",
   "crew" : "Le crew",
+  "filters" : "(filtres)",
   "baseURL" : "http://putaindecode.fr",
   "disqus" : {
       "id": "putaindecode",
