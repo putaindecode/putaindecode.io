@@ -7,23 +7,12 @@ block main
   .Grid.putainde-Section
     .Grid-col.Grid-col--8.putainde-Section-contents.js-Posts
       .putainde-Title.putainde-Title--home
-        h2.putainde-Title-text #{lang.posts}
+        h2.putainde-Title-text
+          | #{lang.posts}
+          button.putainde-TagFilters-toggle.js-ToggleFilters
+            | #{lang.filters}
       +Posts(null, tags)
 
 
-    .Grid-col.Grid-col--4
-      .putainde-Column.js-Column
-        h2.putainde-Column-title
-          | #{lang.tags}
-        -var tagList = []
-        each tag, key in tags
-          -tagList.push({tag:tag, key:key, toString:function(){return this.key}})
-        -tagList.sort()
-        each tag in tagList
-          label.putainde-Label
-            input(
-              type="checkbox"
-              value="#{tag.tag}"
-            ).js-ToggleTag
-            span.putainde-Label-text
-              | #{tag.key}
+    .Grid-col.Grid-col--4.putainde-TagFilters
+      +Tags(tags)

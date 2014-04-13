@@ -1,0 +1,17 @@
+GRID_COLS = 12
+
+@media (max-width:60em)
+  html
+    font-size: .9em
+
+@media (min-width:67.5em)
+  html
+    font-size: 1.0625em
+
+@media (max-width:54em)
+  .Grid
+    width: auto
+  for index in (1 ... GRID_COLS + 1)
+    .Grid-col--{index}
+      width: auto
+      display: block
