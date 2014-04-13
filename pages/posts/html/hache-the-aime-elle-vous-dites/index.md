@@ -207,7 +207,7 @@ Puis bon faut avouer que c'est super pratique cette balise hein ?
 Comme `<blink>` et `<marquee>` quoi. ❤
 
 <figure>
-  ![Can't handle my swag]({{happyplan.baseUrls.media}}/memes/canthandlemyswag.gif)
+  ![Can't handle my swag](memes/canthandlemyswag.gif)
   <figcaption><marquee>Marquee for the win.</marquee></figcaption>
 </figure>
 

@@ -8,31 +8,47 @@ var gulp = require("gulp")
   , lodash = require("lodash")
   , jadeExtenstionRE = /\.jade$/
   , marked = require("marked")
+  , renderer = new marked.Renderer()
+  , options
 
 marked.setOptions({
   highlight: function (code) {
     return require("highlight.js").highlightAuto(code).value;
-  }
+  },
+  renderer : renderer
 })
 
+renderer.image = function (href, title, text) {
+  if(href.indexOf("http") != 0) {
+    href = options.locals.path.relative(options.locals.page, "images/posts/" + href)
+  }
+  var output = "<img src=\"" + href + "\" alt=\"" + text + "\""
+  if (title) {
+    output += " title=\"" + title + "\""
+  }
+  output += this.options.xhtml ? "/>" : ">"
+  return output
+}
+
 module.exports = function(){
-  var options = {
-        basedir : path.resolve(__dirname, "../"),
-        locals : {
-          pages : exports.value,
-          lang : lang.value,
-          path : {
-            relative : function(from, to){
-              return path.relative(from.replace(/index$/, ""), to)
-            },
-            join : path.join
-          },
-          getPages : function(object){
-            return lodash.where(exports.value, object)
-          }
-        }
+  var stream = gulp.src(paths.sources.pages)
+
+  options = {
+    basedir : path.resolve(__dirname, "../"),
+    locals : {
+      pages : exports.value,
+      lang : lang.value,
+      path : {
+        relative : function(from, to){
+          return path.relative(from.replace(/index$/, ""), to)
+        },
+        join : path.join
+      },
+      getPages : function(object){
+        return lodash.where(exports.value, object)
       }
-    , stream = gulp.src(paths.sources.pages)
+    }
+  }
 
   stream.on("data", function(file){
     options.locals.page = path.relative(

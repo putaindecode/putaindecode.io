@@ -6,7 +6,8 @@ mixin Post(title)
       if title
         .putainde-Title
           h1.putainde-Title-text #{title}
-      block
+      .putainde-Post-md
+        block
       if author
         +Member(author, true).putainde-Member--author
       #disqus_thread(aria-live="polite")

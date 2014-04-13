@@ -13,11 +13,11 @@ Pour cela, quittez totalement vos éditeurs Markdown et installez les plugins Su
 
 Premièrement, [MarkdownEditing](http://ttscoff.github.io/MarkdownEditing/), ce petit plugin est votre parfait compagnon qui vous permettra d'avoir la bonne coloration syntaxique de votre Markdown. Il vous permettra de mettre en évidence les liens, le code, et tout le reste. Du bonheur donc.
 
-<img alt="" class="putainde-Img" src="{{ happyplan.baseUrls.media }}/preview-markdownediting.png">
+![](preview-markdownediting.png)
 
 Oui alors, j'ai fait quelques configurations car à la base, ca ressemble plutôt à ça :
 
-<img alt="" class="putainde-Img" src="{{ happyplan.baseUrls.media }}/preview-markdownediting-light.png">
+![](preview-markdownediting-light.png)
 
 Si vous souhaitez modifier Sublime Text mais uniquement pour le format Markdown, faites : `Preferences > Browse Packages...` puis aller dans `User` et créez un fichier `Markdown.sublime-settings`. Celui-ci sera lu et appliqué à chaque fois que vous éditerez un fichier Markdown.
 
@@ -59,7 +59,7 @@ Je vous parlerai éventuellement un jour de [pandoc](http://johnmacfarlane.net/p
 
 [Petit plugin](https://github.com/demon386/SmartMarkdown) intéressant qui vous permettra de cacher des parties de votre texte en le repliant. Par exemple, vous vous mettez devant un titre du style `##` et vous appuyez sur `tab`, cela repliera votre texte. Plutôt pratique pour se focaliser.
 
-<img alt="" class="putainde-Img" src="{{ happyplan.baseUrls.media }}/preview-smartmarkdown.png">
+![](preview-smartmarkdown.png)
 
 ## SublimeTableEditor
 
@@ -81,11 +81,11 @@ Il est possible que vous n'aimiez pas forcément MarkdownEditing, et dans ce cas
 
 #### Avant
 
-<img alt="" class="putainde-Img" src="{{ happyplan.baseUrls.media }}/preview-markdownextended-before.png">
+![](preview-markdownextended-before.png)
 
 #### Après
 
-<img alt="" class="putainde-Img" src="{{ happyplan.baseUrls.media }}/preview-markdownextended-after.png">
+![](preview-markdownextended-after.png)
 
 
 Oh et j'oubliais, voici quelques documentations sur Markdown histoire de bien l'utiliser :
