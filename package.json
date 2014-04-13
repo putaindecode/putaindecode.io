@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "happyplan": "~0.4.0-beta.7",
-    "cornea": "^0.2.1",
     "bloody-curry": "^0.1.1",
-    "bloody-events": "^0.1.1"
+    "bloody-events": "^0.1.1",
+    "cornea": "^0.3.3"
   },
   "devDependencies": {
     "gulp": "^3.6.0",
