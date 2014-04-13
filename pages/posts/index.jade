@@ -18,7 +18,7 @@ block main
             src="#{author.avatar_url}"
             alt=""
           )
-          a.putainde-List-title(href="#{post.slug}.html")
+          a.putainde-List-title(href="#{path.relative(page, post.slug)}.html")
             | #{post.title}
           if post.tags
             ul.putainde-Tags
