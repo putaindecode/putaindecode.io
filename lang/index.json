@@ -6,12 +6,18 @@
   "manifesto" : "Putain de Code, c'est quoi ?",
   "initialCommit" : "commit initial par",
   "morePosts" : "Plus de posts",
+  "writtenBy" : "Écrit par",
   "noPosts" : ":( pas de post",
   "tags" : "Tags",
   "crew" : "Le crew",
+  "baseURL" : "http://putaindecode.fr",
+  "disqus" : {
+      "id": "putaindecode",
+      "developer": false
+  },
   "navigation" : [
     {
-      "url" : "putain-de",
+      "url" : "c-est-quoi-putaindecode",
       "name" : "Putain de ?"
     },
     {
@@ -19,7 +25,7 @@
       "name" : "Les posts"
     },
     {
-      "url" : "contribuer",
+      "url" : "posts/comment-contribuer",
       "name" : "Contribuer"
     }
   ],

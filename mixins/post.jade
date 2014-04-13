@@ -1,12 +1,15 @@
 mixin Post(title)
   .Grid.putainde-Post
     .Grid-col.Grid-col--8.Grid.putainde-Post-contents
-      -var author = lang.members[exports.author]
+      if(exports.author)
+        -var author = lang.members[exports.author]
       if title
         .putainde-Title
-          img.putainde-Title-authorPicture.js-AnimateLoad(
-            src="#{author.avatar_url}"
-            alt=""
-          )
           h1.putainde-Title-text #{title}
       block
+      if author
+        +Member(author, true).putainde-Member--author
+      #disqus_thread(aria-live="polite")
+        noscript.
+          | Please enable JavaScript to view the
+          a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.

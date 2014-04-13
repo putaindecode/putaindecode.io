@@ -1,2 +1,14 @@
-mixin Member()
-  .putainde-Member
+mixin Member(member, isPost)
+  .putainde-Member(class=attributes.class)
+    img.putainde-Member-picture.js-AnimateLoad(
+      src="#{member.avatar_url}"
+      alt=""
+    )
+    .putainde-Member-description
+      h3.putainde-Member-name
+        if isPost
+          | #{lang.writtenBy}
+          = " "
+        | #{member.name}
+      each paragraph in member.fr.bio.long
+        p #{paragraph}
