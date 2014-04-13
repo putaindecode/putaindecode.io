@@ -5,45 +5,14 @@ block main
     .Grid-col.Grid-col--8.putainde-Section-contents
       .putainde-Title.putainde-Title--home
         h2.putainde-Title-text #{lang.lastPosts}
-      -var posts = getPages({type:"post"}).slice(0, 6)
-      each post in posts
-        -var author = lang.members[post.author]
-        .putainde-List-item
-          img.putainde-List-authorPicture.js-AnimateLoad(
-            src="#{author.avatar_url}"
-            alt=""
-          )
-          a.putainde-List-title(href="#{post.slug}.html")
-            | #{post.title}
-          if post.tags
-            ul.putainde-Tags
-              each tag in post.tags
-                li.putainde-Tag #{tag}
-          .putainde-List-author
-            | #{lang.initialCommit}
-            =" "
-            a(href="http://github.com/#{author.github}")
-              | #{post.author}
-  .Grid.putainde-Section
-    .Grid-col.Grid-col--8.putainde-Section-contents.putainde-Post-contents
-      .putainde-Title.putainde-Title--home
-        h2.putainde-Title-text #{lang.manifesto}
-      include:md home/manifesto.md
+      +Posts(6)
+      .putainde-List-item.putainde-List-item--link
+        a(href="#{path.relative(page, 'posts')}")
+          | #{lang.morePosts}
+  .putainde-Section.putainde-Section--manifesto
+    .Grid
+      .Grid-col.Grid-col--8.putainde-Section-contents.putainde-Post-contents
+        include /partials/manifesto
   .Grid.putainde-Section
     .Grid-col.Grid-col--8.putainde-Section-contents
-      .putainde-Title.putainde-Title--home
-        h2.putainde-Title-text #{lang.crew}
-      -var crew = Object.keys(lang.members)
-      -crew = crew.filter(function(key){ return lang.members[key].crew })
-      -crew = crew.map(function(key){ var val = lang.members[key]; val.name = key; return val })
-      each member in crew
-        .putainde-Crew-member.putainde-Member
-          img.putainde-Member-picture.js-AnimateLoad(
-            src="#{member.avatar_url}"
-            alt=""
-          )
-          .putainde-Member-description
-            h3.putainde-Member-name
-              | #{member.name}
-            each paragraph in member.fr.bio.long
-              p #{paragraph}
+      include /partials/crew
