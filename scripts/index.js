@@ -1,3 +1,5 @@
 var imagesLoader = require("./images").create()
   , tooltip = require("./tooltip").create()
   , links = require("./links").create()
+  , column = require("./column").create()
+  , posts = require("./posts").create()

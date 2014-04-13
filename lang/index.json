@@ -2,8 +2,11 @@
   "title" : "Putain de code !",
   "baseline" : "On voulait mettre une baseline mais on a pas été foutu d'en trouver une",
   "lastPosts" : "Les derniers posts",
+  "posts" : "Les posts",
   "manifesto" : "Putain de Code, c'est quoi ?",
   "initialCommit" : "commit initial par",
+  "noPosts" : ":( pas de post",
+  "tags" : "Tags",
   "crew" : "Le crew",
   "navigation" : [
     {

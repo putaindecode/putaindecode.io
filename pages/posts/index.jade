@@ -1,0 +1,53 @@
+extends /layouts/main.jade
+
+block main
+
+  -var tags = {}
+  -var flag = -1
+
+  .Grid.putainde-Section
+    .Grid-col.Grid-col--8.putainde-Section-contents.js-Posts
+      .putainde-Title.putainde-Title--home
+        h2.putainde-Title-text #{lang.posts}
+      -var posts = getPages({type:"post"})
+      -posts.sort(function(prev, next){return prev.date > next.date ? -1 : 1})
+      each post in posts
+        -var author = lang.members[post.author]
+        .putainde-List-item.js-Post
+          img.putainde-List-authorPicture.js-AnimateLoad(
+            src="#{author.avatar_url}"
+            alt=""
+          )
+          a.putainde-List-title(href="#{post.slug}.html")
+            | #{post.title}
+          if post.tags
+            ul.putainde-Tags
+              each tag in post.tags
+                -if(!tags.hasOwnProperty(tag))
+                  - tags[tag] = ++flag
+                li.putainde-Tag.js-Tag(data-tag="#{tags[tag]}") #{tag}
+          .putainde-List-author
+            | #{lang.initialCommit}
+            =" "
+            a(href="http://github.com/#{author.github}")
+              | #{post.author}
+      .putainde-Message.putainde-Message--hidden.js-NoPosts
+        | #{lang.noPosts}
+
+
+    .Grid-col.Grid-col--4
+      .putainde-Column.js-Column
+        h2.putainde-Column-title
+          | #{lang.tags}
+        -var tagList = []
+        each tag, key in tags
+          -tagList.push({tag:tag, key:key, toString:function(){return this.key}})
+        -tagList.sort()
+        each tag in tagList
+          label.putainde-Label
+            input(
+              type="checkbox"
+              value="#{tag.tag}"
+            ).js-ToggleTag
+            span.putainde-Label-text
+              | #{tag.key}
