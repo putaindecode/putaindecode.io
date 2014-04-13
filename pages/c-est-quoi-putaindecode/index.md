@@ -1,5 +1,3 @@
-## Putain de ... WAT ?
-
 _Putain de Code !_
 Déjà, le nom commence bien.
 
