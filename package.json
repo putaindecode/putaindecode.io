@@ -35,6 +35,7 @@
     "marked": "^0.3.2",
     "lodash": "^2.4.1",
     "highlight.js": "^8.0.0",
-    "bloody-observable": "0.0.0"
+    "bloody-observable": "0.0.0",
+    "gulp-jshint": "^1.5.3"
   }
 }

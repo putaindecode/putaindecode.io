@@ -2,7 +2,7 @@ var cornea = require("cornea")
   , app = require("../app")
 
 module.exports = cornea.extend({
-  element : document.querySelector(".putainde-Post"),
+  element : ".putainde-Post",
   events : [
     {
       type : "mouseover",

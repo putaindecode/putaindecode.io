@@ -1,4 +1,13 @@
 {
+  "laxcomma": true,
   "asi": true,
-  "laxcomma": true
+  "boss": true,
+  "eqeqeq": false,
+  "eqnull": true,
+  "quotmark": "double",
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+  "node": true,
+  "browser": true
 }
