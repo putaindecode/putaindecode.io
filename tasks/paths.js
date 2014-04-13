@@ -13,7 +13,7 @@ module.exports = {
     scripts : "scripts/**/*.js",
     mainScript : "scripts/index.js",
     fonts : "fonts/**/*",
-    images : "images/**",
+    images : "images/**/*",
     modules : "node_modules/",
     public : ["public/.**", "public/**"]
   },

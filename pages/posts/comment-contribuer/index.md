@@ -34,7 +34,7 @@ développeurs des internets.
   travailler tranquillement.
 
   <figure>
-    ![Bouton Fork]({{ happyplan.baseUrls.media }}/github/fork-button.jpg)
+    ![Bouton Fork](github/fork-button.jpg)
     <figcaption>Clique au fond à droite</figcaption>
   </figure>
 
@@ -251,7 +251,7 @@ est des types sympas.
   branches / etc.
 
   <figure>
-    ![Bouton Pull Request]({{ happyplan.baseUrls.media }}/github/pull-request-button.jpg)
+    ![Bouton Pull Request](github/pull-request-button.jpg)
     <figcaption>C'est bon tu le vois là le bouton ?</figcaption>
   </figure>
 
