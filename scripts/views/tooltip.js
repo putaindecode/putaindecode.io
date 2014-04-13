@@ -1,5 +1,5 @@
 var cornea = require("cornea")
-  , main = require("./main")
+  , app = require("../app")
 
 function toPx(number){
   return String(parseInt(number, 10)) + "px"
@@ -10,8 +10,8 @@ module.exports = cornea.extend({
   initialize : function(){
     this.element.classList.add("putainde-Tooltip")
     document.body.appendChild(this.element)
-    main.listen("tooltip:show", this.show.bind(this))
-    main.listen("tooltip:hide", this.hide.bind(this))
+    app.listen("tooltip:show", this.show.bind(this))
+    app.listen("tooltip:hide", this.hide.bind(this))
   },
   timeout: null,
   data: {
