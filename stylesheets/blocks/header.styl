@@ -1,6 +1,9 @@
 .putainde-Header
   background: MAIN_COLOR
   background: linear-gradient(to bottom, MAIN_COLOR, MAIN_COLOR - 10%)
+  @media (max-width:54em)
+    .Grid-col
+      text-align: center
 
 .putainde-SiteTitle
   position: relative
@@ -13,6 +16,9 @@
     color: MAIN_TEXT
     padding: .75em 0
     font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif
+  @media (max-width:54em)
+    font-size: .8em
+    margin: .25em 0
 
 .putainde-Logo
   LOGO_SIZE=4
