@@ -1,0 +1,19 @@
+.Grid
+  .Grid-col.Grid-col--12
+    p.putainde-Footer-text
+      | #{lang.copyright}
+    if lang.footerNavigation
+      ul.putainde-Footer-list
+        each item in lang.footerNavigation
+          li
+            a(href="#{path.relative(page, item.url)}")
+              | #{item.name}
+    p.putainde-Footer-text.putainde-Footer-text--small
+      | #{lang.madeWithHeart}
+      -var crewPath = path.relative(page, lang.crewLink.url)
+      -var isSamePage = crewPath.indexOf("/") == -1
+      a(
+        href="#{crewPath}"
+        class=isSamePage ? "js-ScrollTo" : null
+      )
+        | #{lang.crewLink.name}

@@ -18,7 +18,8 @@
     "happyplan": "~0.4.0-beta.7",
     "bloody-curry": "^0.1.1",
     "bloody-events": "^0.1.1",
-    "cornea": "^0.3.3"
+    "cornea": "^0.3.3",
+    "bloody-scroll": "^0.2.1"
   },
   "devDependencies": {
     "gulp": "^3.6.0",
