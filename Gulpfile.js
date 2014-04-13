@@ -8,6 +8,7 @@ gulp.task("fonts", require("./tasks/fonts"))
 gulp.task("public", require("./tasks/public"))
 gulp.task("images", require("./tasks/images"))
 gulp.task("stylesheets", require("./tasks/stylesheets"))
+gulp.task("stylesheets:prod", ["icons"], require("./tasks/stylesheets"))
 gulp.task("scripts", require("./tasks/scripts"))
 
 gulp.task("watch", require("./tasks/watch"))
@@ -19,5 +20,5 @@ gulp.task("default", [
   "fonts",
   "pages",
   "scripts",
-  "stylesheets"
+  "stylesheets:prod"
 ])
