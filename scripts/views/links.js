@@ -1,5 +1,5 @@
 var cornea = require("cornea")
-  , main = require("./main")
+  , app = require("../app")
 
 module.exports = cornea.extend({
   element : document.querySelector(".putainde-Post"),
@@ -16,12 +16,12 @@ module.exports = cornea.extend({
     }
   ],
   showTooltip : function(eventObject, target){
-    main.fire("tooltip:show", {
+    app.fire("tooltip:show", {
       x : eventObject.clientX,
       y : eventObject.clientY - 16
     }, target.href, 1000)
   },
   hideTooltip : function(eventObject, target){
-    main.fire("tooltip:hide")
+    app.fire("tooltip:hide")
   }
 })
