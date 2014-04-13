@@ -1,6 +1,8 @@
 .putainde-Column
   text-align: left
   padding: 1em 2em
+  @media (max-width:54em)
+    padding: .5em
 
 .putainde-Column-title
   font-size: 1.275em
@@ -40,14 +42,16 @@
   border:none
   font-family: inherit
   font-size: 2em
+  margin: 0
+  padding: 0
   color: #666
   cursor: pointer
   position: absolute
   top: 0
-  right: 0
+  right: .1em
   line-height: 1
   @media (max-width:54em)
-    display: block
+    display: inline-block
 
 .putainde-TagFilters
   @media (max-width:54em)
@@ -62,6 +66,7 @@
     display: none
     overflow: scroll
     animation: .2s ease-in-out TagFilters
+    -webkit-overflow-scrolling: touch
 
 @keyframes TagFilters
   from
