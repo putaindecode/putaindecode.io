@@ -5,7 +5,7 @@
 .putainde-SiteTitle
   position: relative
   display: inline-block
-  padding: .9em 0 .9em 5em
+  padding: .2em 0 .2em 5em
   text-decoration: none
   span
     display: inline-block
@@ -18,10 +18,9 @@
   LOGO_SIZE=4
   position: absolute
   left: 0
-  top: 50%
+  top: 0
   width: unit(LOGO_SIZE,em)
   height: unit(LOGO_SIZE,em)
-  margin-top: unit(-(LOGO_SIZE/2),em)
   transition: .3s ease-in-out transform
   &:hover
-    transform: rotate(-15deg) scale(1.4)
+    transform: translateY(1em) rotate(-15deg) scale(1.4)

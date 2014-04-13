@@ -1,0 +1,16 @@
+.putainde-Title.putainde-Title--home
+  h2.putainde-Title-text #{lang.crew}
+-var crew = Object.keys(lang.members)
+-crew = crew.filter(function(key){ return lang.members[key].crew })
+-crew = crew.map(function(key){ var val = lang.members[key]; val.name = key; return val })
+each member in crew
+  .putainde-Crew-member.putainde-Member
+    img.putainde-Member-picture.js-AnimateLoad(
+      src="#{member.avatar_url}"
+      alt=""
+    )
+    .putainde-Member-description
+      h3.putainde-Member-name
+        | #{member.name}
+      each paragraph in member.fr.bio.long
+        p #{paragraph}
