@@ -11,7 +11,7 @@ module.exports = function(){
       path: paths.templates.fontStylesheet,
       targetPath: path.join(
         path.relative(paths.dist.icons, __dirname),
-        "..",
+        "../..",
         paths.sources.fontStylesheet
       ),
       fontPath: path.relative(
