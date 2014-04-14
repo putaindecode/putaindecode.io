@@ -1,5 +1,6 @@
 var gulp = require("gulp")
 
+gulp.task("server", require("./tasks/server").start)
 gulp.task("lang", require("./tasks/lang"))
 gulp.task("exports", require("./tasks/exports"))
 gulp.task("pages", ["lang", "exports"], require("./tasks/pages"))
@@ -13,7 +14,9 @@ gulp.task("scripts", require("./tasks/scripts"))
 
 gulp.task("watch", require("./tasks/watch"))
 
-gulp.task("default", [
+// aliases
+
+gulp.task("dist", [
   "public",
   "images",
   "icons",
@@ -21,4 +24,10 @@ gulp.task("default", [
   "pages",
   "scripts",
   "stylesheets:prod"
+])
+
+gulp.task("default", [
+  "dist",
+  "server",
+  "watch"
 ])

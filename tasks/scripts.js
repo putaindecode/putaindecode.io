@@ -3,6 +3,7 @@ var gulp = require("gulp")
   , browserify = require("gulp-browserify")
   , jshint = require("gulp-jshint")
   , paths = require("./paths")
+  , server = require("./server")
 
 module.exports = function(){
   return gulp.src(paths.sources.mainScript)
@@ -11,4 +12,5 @@ module.exports = function(){
     .pipe(jshint.reporter("default"))
     .pipe(browserify())
     .pipe(gulp.dest(paths.dist.scripts))
+    .pipe(server.livereload())
 }

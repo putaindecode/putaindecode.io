@@ -12,30 +12,29 @@
     "url": "https://github.com/putaindecode/website/issues"
   },
   "scripts": {
-    "test": "gulp"
-  },
-  "dependencies": {
-    "happyplan": "~0.4.0-beta.7",
-    "bloody-curry": "^0.1.1",
-    "bloody-events": "^0.1.1",
-    "cornea": "^0.3.3",
-    "bloody-scroll": "^0.2.1"
+    "test": "gulp dist"
   },
   "devDependencies": {
-    "gulp": "^3.6.0",
-    "gulp-plumber": "^0.6.0",
-    "gulp-iconfont-css": "0.0.9",
-    "gulp-autoprefixer": "0.0.7",
-    "gulp-stylus": "^0.1.0",
-    "gulp-jade-exports": "^0.3.0",
-    "gulp-jade": "^0.5.0",
-    "gulp-browserify": "^0.5.0",
-    "gulp-iconfont": "0.0.10",
+    "bloody-curry": "^0.1.1",
+    "bloody-events": "^0.1.1",
     "bloody-grid": "0.0.1",
-    "marked": "^0.3.2",
-    "lodash": "^2.4.1",
-    "highlight.js": "^8.0.0",
     "bloody-observable": "0.0.0",
-    "gulp-jshint": "^1.5.3"
+    "bloody-scroll": "^0.2.1",
+    "cornea": "^0.3.3",
+    "gulp": "^3.6.0",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-browserify": "^0.5.0",
+    "gulp-connect": "^2.0.5",
+    "gulp-iconfont": "0.0.10",
+    "gulp-iconfont-css": "0.0.9",
+    "gulp-jade": "^0.5.0",
+    "gulp-jade-exports": "^0.3.0",
+    "gulp-jshint": "^1.5.3",
+    "gulp-open": "^0.2.8",
+    "gulp-plumber": "^0.6.0",
+    "gulp-stylus": "^0.1.0",
+    "highlight.js": "^8.0.0",
+    "lodash": "^2.4.1",
+    "marked": "^0.3.2"
   }
 }

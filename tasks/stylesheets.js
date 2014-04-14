@@ -4,6 +4,7 @@ var gulp = require("gulp")
   , autoprefixer = require("gulp-autoprefixer")
   , paths = require("./paths")
   , path = require("path")
+  , server = require("./server")
 
 module.exports = function(){
   return gulp.src(paths.sources.mainStylesheet)
@@ -24,4 +25,5 @@ module.exports = function(){
     }))
     .pipe(autoprefixer())
     .pipe(gulp.dest(paths.dist.stylesheets))
+    .pipe(server.livereload())
 }
