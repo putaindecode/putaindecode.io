@@ -1,5 +1,5 @@
 var cornea = require("cornea")
-  , scroll = require("bloody-scroll")
+  , smoothScroll = require("bloody-scroll")
 
 module.exports = cornea.extend({
   element : document.body,
@@ -29,7 +29,7 @@ module.exports = cornea.extend({
     }
     setTimeout(function(){
       var clientRect = element.getBoundingClientRect()
-      scroll(clientRect.top + window.pageYOffset, 500)
+      smoothScroll(clientRect.top + window.pageYOffset, 500)
     }, 300)
   }
 })

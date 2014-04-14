@@ -10,7 +10,8 @@ gulp.task("public", require("./tasks/public"))
 gulp.task("images", require("./tasks/images"))
 gulp.task("stylesheets", require("./tasks/stylesheets"))
 gulp.task("stylesheets:prod", ["icons"], require("./tasks/stylesheets"))
-gulp.task("scripts", require("./tasks/scripts"))
+gulp.task("scripts", ["linting"], require("./tasks/scripts"))
+gulp.task("linting", require("./tasks/linting"))
 
 gulp.task("watch", require("./tasks/watch"))
 
