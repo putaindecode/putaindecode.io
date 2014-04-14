@@ -10,6 +10,7 @@ var gulp = require("gulp")
   , marked = require("marked")
   , renderer = new marked.Renderer()
   , options
+  , server = require("./server")
 
 marked.setOptions({
   highlight: function (code) {
@@ -63,4 +64,5 @@ module.exports = function(){
     .pipe(plumber())
     .pipe(jade(options))
     .pipe(gulp.dest(paths.dist.pages))
+    .pipe(server.livereload())
 }
