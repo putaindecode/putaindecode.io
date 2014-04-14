@@ -21,7 +21,7 @@ module.exports = cornea.extend({
       y : eventObject.clientY - 16
     }, target.href, 1000)
   },
-  hideTooltip : function(eventObject, target){
+  hideTooltip : function(){
     app.fire("tooltip:hide")
   }
 })
