@@ -1,6 +1,8 @@
 var tape = require("tape")
   , posts = require("../../scripts/views/posts")
 
+require("./lib/classList")
+
 tape("posts", function(test){
   var element = document.createElement("div")
     , postView = posts.extend({element:element})
