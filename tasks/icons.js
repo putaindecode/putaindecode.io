@@ -22,6 +22,6 @@ module.exports = function(){
     .pipe(iconfont({
       fontName: "icons",
       fixedWidth: true
-     }))
-     .pipe(gulp.dest(paths.dist.fonts))
+    }))
+    .pipe(gulp.dest(paths.dist.fonts))
 }
