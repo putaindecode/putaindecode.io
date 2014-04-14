@@ -4,11 +4,11 @@ var gulp = require("gulp")
   , paths = require("./paths")
 
 module.exports = {
-  start: function(){
+  start : function(){
     connect.server({
-      root: paths.dist.public
-    , port: 4242
-    , livereload: { port: 4243 }
+      root : paths.dist.public,
+      port : 4242,
+      livereload : { port: 4243 }
     })
 
     // A file must be specified as the src when running options.url or gulp will overlook the task.
@@ -16,6 +16,6 @@ module.exports = {
       .pipe(gopen("", {
         url: "http://localhost:4242"
       }))
-  }
-, livereload: connect.reload
+  },
+  livereload : connect.reload
 }
