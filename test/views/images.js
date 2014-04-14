@@ -1,6 +1,8 @@
 var tape = require("tape")
   , images = require("../../scripts/views/images")
 
+require("./lib/classList")
+
 tape("images view", function(test){
 
   var img = document.createElement("img")

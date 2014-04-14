@@ -1,6 +1,8 @@
 var tape = require("tape")
   , tagFilters = require("../../scripts/views/tagfilters")
 
+require("./lib/classList")
+
 tape("tagfilters", function(test){
 
   var tag = tagFilters.create()

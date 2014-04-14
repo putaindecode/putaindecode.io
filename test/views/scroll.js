@@ -1,6 +1,8 @@
 var tape = require("tape")
   , scroll = require("../../scripts/views/scroll")
 
+require("./lib/classList")
+
 tape("scroll", function(test){
 
   var div = document.createElement("div")
