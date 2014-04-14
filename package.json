@@ -15,12 +15,7 @@
     "test": "gulp dist"
   },
   "devDependencies": {
-    "bloody-curry": "^0.1.1",
-    "bloody-events": "^0.1.1",
     "bloody-grid": "0.0.1",
-    "bloody-observable": "0.0.0",
-    "bloody-scroll": "^0.2.1",
-    "cornea": "^0.3.3",
     "gulp": "^3.6.0",
     "gulp-autoprefixer": "0.0.7",
     "gulp-browserify": "^0.5.0",
@@ -35,6 +30,29 @@
     "gulp-stylus": "^0.1.0",
     "highlight.js": "^8.0.0",
     "lodash": "^2.4.1",
-    "marked": "^0.3.2"
+    "marked": "^0.3.2",
+    "tape": "^2.12.3",
+    "gulp-uglify": "^0.2.1"
+  },
+  "testling": {
+    "files": "test/**/*.js",
+    "browsers": [
+      "ie/11..latest",
+      "chrome/22..latest",
+      "firefox/16..latest",
+      "safari/6..latest",
+      "opera/11.0..latest",
+      "iphone/6..latest",
+      "ipad/6..latest",
+      "android-browser/latest"
+    ]
+  },
+  "dependencies": {
+    "bloody-curry": "^0.1.1",
+    "bloody-domready": "^0.1.1",
+    "bloody-events": "^0.1.1",
+    "bloody-observable": "0.0.0",
+    "bloody-scroll": "^0.2.1",
+    "cornea": "^0.3.3"
   }
 }

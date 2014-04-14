@@ -1,7 +1,11 @@
-require("./views/images").create()
-require("./views/tooltip").create()
-require("./views/links").create()
-require("./views/column").create()
-require("./views/posts").create()
-require("./views/tagfilters").create()
-require("./views/scroll").create()
+var domReady = require("bloody-domready")
+
+require("./lib/classList")
+
+domReady(function(){
+  require("./views/images").create()
+  require("./views/column").create()
+  require("./views/posts").create()
+  require("./views/tagfilters").create()
+  require("./views/scroll").create()
+})

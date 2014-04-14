@@ -1,7 +1,7 @@
 .Grid
   .Grid-col.Grid-col--12
     p.putainde-Footer-text
-      | #{lang.copyright}
+      | #{lang.copyright.replace('{*}', new Date().getFullYear())}
     if lang.footerNavigation
       ul.putainde-Footer-list
         each item in lang.footerNavigation
