@@ -29,8 +29,4 @@ html(lang="fr")
       include /partials/footer
     block end
     script(src="#{path.relative(page, 'scripts/index.js')}")
-    script
-      | var _gaq=[['_setAccount','UA-43771806-1'],['_trackPageview']];
-      | (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      | g.src='//www.google-analytics.com/ga.js';
-      | s.parentNode.insertBefore(g,s)}(document,'script'));
+    include /partials/analytics
