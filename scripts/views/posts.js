@@ -21,11 +21,12 @@ module.exports = cornea.extend({
       var tags = item.querySelectorAll(".js-Tag")
         , index = -1
         , length = tags.length
-      item.id = "cornea-Post--" + (++id)
-      this.map[item.id] = {}
-      this.map[item.id].element = item
+        , mapItem
+      ++id
+      mapItem = this.map[id] = {}
+      mapItem.element = item
       while(++index < length) {
-        this.map[item.id][tags[index].getAttribute("data-tag")] = true
+        mapItem[tags[index].getAttribute("data-tag")] = true
       }
     }
   },
