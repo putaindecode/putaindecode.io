@@ -13,18 +13,18 @@ var gulp = require("gulp")
   , server = require("./server")
 
 marked.setOptions({
-  highlight: function (code) {
+  highlight : function(code){
     return require("highlight.js").highlightAuto(code).value;
   },
   renderer : renderer
 })
 
-renderer.image = function (href, title, text) {
-  if(href.indexOf("http") != 0) {
+renderer.image = function(href, title, text){
+  if(href.indexOf("http") !== 0) {
     href = options.locals.path.relative(options.locals.page, "images/posts/" + href)
   }
   var output = "<img src=\"" + href + "\" alt=\"" + text + "\""
-  if (title) {
+  if(title) {
     output += " title=\"" + title + "\""
   }
   output += this.options.xhtml ? "/>" : ">"
@@ -41,7 +41,7 @@ module.exports = function(){
       lang : lang.value,
       path : {
         relative : function(from, to){
-          if(to.indexOf("http") == 0) {
+          if(to.indexOf("http") === 0) {
             return to
           }
           return path.relative(from.replace(/index$/, ""), to)

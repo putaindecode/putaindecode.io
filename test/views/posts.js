@@ -5,7 +5,7 @@ require("./lib/classList")
 
 tape("posts", function(test){
   var element = document.createElement("div")
-    , postView = posts.extend({element:element})
+    , postView = posts.extend({element : element})
   element.innerHTML = [
     "<div class='js-Post'>",
       "<i class='js-Tag' data-tag='1'></i>",
@@ -34,13 +34,13 @@ tape("posts", function(test){
     3 : true
   }, "parses posts 2/2")
 
-  postView.updatePosts({1:true})
+  postView.updatePosts({1 : true})
 
   test.equal(element.children[0].classList.contains("putainde-List-item--hidden"), false)
   test.equal(element.children[1].classList.contains("putainde-List-item--hidden"), true)
   test.equal(element.children[2].classList.contains("putainde-Message--hidden"), true)
 
-  postView.updatePosts({4:true})
+  postView.updatePosts({4 : true})
 
   test.equal(element.children[0].classList.contains("putainde-List-item--hidden"), true)
   test.equal(element.children[1].classList.contains("putainde-List-item--hidden"), true)

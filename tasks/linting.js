@@ -1,13 +1,18 @@
 var gulp = require("gulp")
   , plumber = require("gulp-plumber")
-  , browserify = require("gulp-browserify")
+  , jscs = require("gulp-jscs")
   , jshint = require("gulp-jshint")
   , paths = require("./paths")
-  , server = require("./server")
 
 module.exports = function(){
-  return gulp.src(paths.sources.scripts)
+  return gulp.src([
+      paths.sources.scripts,
+      "!" + paths.sources.libScripts,
+      paths.sources.tasks,
+      paths.sources.tests
+    ])
     .pipe(plumber())
+    .pipe(jscs())
     .pipe(jshint())
     .pipe(jshint.reporter("default"))
 }
