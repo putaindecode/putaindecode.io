@@ -31,6 +31,7 @@
     "gulp-stylus": "^0.1.0",
     "gulp-uglify": "^0.2.1",
     "highlight.js": "^8.0.0",
+    "jshint-stylish": "^0.1.5",
     "lodash": "^2.4.1",
     "marked": "^0.3.2",
     "tape": "^2.12.3"
