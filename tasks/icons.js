@@ -7,21 +7,21 @@ var gulp = require("gulp")
 module.exports = function(){
   return gulp.src(paths.sources.icons)
     .pipe(iconfontCSS({
-      fontName: "icons",
-      path: paths.templates.fontStylesheet,
-      targetPath: path.join(
+      fontName : "icons",
+      path : paths.templates.fontStylesheet,
+      targetPath : path.join(
         path.relative(paths.dist.icons, __dirname),
         "../..",
         paths.sources.fontStylesheet
       ),
-      fontPath: path.relative(
+      fontPath : path.relative(
         paths.dist.stylesheets,
         paths.dist.fonts
       ) + "/"
     }))
     .pipe(iconfont({
-      fontName: "icons",
-      fixedWidth: true
+      fontName : "icons",
+      fixedWidth : true
     }))
     .pipe(gulp.dest(paths.dist.fonts))
 }

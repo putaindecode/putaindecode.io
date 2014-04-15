@@ -1,5 +1,5 @@
 var tape = require("tape")
-  , scroll = require("../../scripts/views/scroll")
+  , scroller = require("../../scripts/views/scroll")
 
 require("./lib/classList")
 
@@ -12,12 +12,12 @@ tape("scroll", function(test){
   ].join("")
   document.body.appendChild(div)
   window.location.hash = "#foo"
-  scroll.scrollTo()
+  scroller.scrollTo()
   setTimeout(function(){
     var element = document.getElementById("foo")
     test.equal(element.scrollTop, 0)
 
-    scroll.scrollTo(
+    scroller.scrollTo(
       {
         preventDefault : function(){
           test.ok(1, "prevents default")
@@ -30,7 +30,7 @@ tape("scroll", function(test){
 
     setTimeout(function(){
       var element = document.getElementById("bar")
-      test.equal(bar.scrollTop, 0)
+      test.equal(element.scrollTop, 0)
       test.end()
     }, 1000)
 

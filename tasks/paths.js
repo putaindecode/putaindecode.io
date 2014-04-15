@@ -11,10 +11,13 @@ module.exports = {
     mainStylesheet : "stylesheets/index.styl",
     fontStylesheet : "stylesheets/icons/index.styl",
     scripts : "scripts/**/*.js",
+    libScripts : "scripts/lib/**/*.js",
     mainScript : "scripts/index.js",
     fonts : "fonts/**/*",
     images : "images/**/*",
     modules : "node_modules/",
+    tasks : "tasks/**/*.js",
+    tests : "test/**/*.js",
     public : ["public/.**", "public/**"]
   },
 
