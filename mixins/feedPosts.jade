@@ -10,5 +10,5 @@ mixin FeedPosts()
         | !{getFeedDescription(post.slug)}
         | ]]>
       pubDate #{(new Date(post.date)).toUTCString()}
-      <link>#{lang.baseURL}/#{page}.html</link>
-      guid(isPermaLink="true") link #{lang.baseURL}/#{page}.html
+      <link>#{lang.baseURL}/#{post.slug}.html</link>
+      guid(isPermaLink="true") #{lang.baseURL}/#{post.slug}.html
