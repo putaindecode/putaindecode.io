@@ -40,6 +40,10 @@
     {
       "url" : "https://github.com/putaindecode",
       "name" : "Contact"
+    },
+    {
+      "url" : "feed.xml",
+      "name" : "Flux RSS"
     }
   ],
   "madeWithHeart" : "Made with ♥︎ by ",
