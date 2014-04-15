@@ -1,6 +1,7 @@
 module.exports = {
   sources : {
     pages : "pages/**/**/**.jade",
+    feed : "feed/feed.jade",
     pagesRoot : "pages/",
     partials : "partials/**/*.jade",
     mixins : "mixins/**/*.jade",
@@ -23,6 +24,7 @@ module.exports = {
 
   dist : {
     pages : "dist/",
+    feed : "feed.xml",
     public : "dist/",
     icons : "fonts/",
     fonts : "dist/fonts/",
