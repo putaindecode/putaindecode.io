@@ -14,5 +14,5 @@ module.exports = function(){
     .pipe(plumber())
     .pipe(jscs())
     .pipe(jshint())
-    .pipe(jshint.reporter("default"))
+    .pipe(jshint.reporter("jshint-stylish"))
 }
