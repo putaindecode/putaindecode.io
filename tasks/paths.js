@@ -2,6 +2,7 @@ module.exports = {
   sources : {
     pages : "pages/**/**/**.jade",
     feed : "feed/feed.jade",
+    sitemap : "layouts/sitemap.jade",
     pagesRoot : "pages/",
     partials : "partials/**/*.jade",
     mixins : "mixins/**/*.jade",
@@ -28,6 +29,7 @@ module.exports = {
     public : "dist/",
     icons : "fonts/",
     fonts : "dist/fonts/",
+    sitemap : "sitemap.xml",
     images : "dist/images/",
     stylesheets : "dist/stylesheets/",
     scripts : "dist/scripts"
