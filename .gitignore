@@ -6,4 +6,5 @@ node_modules
 
 # build
 dist
+.publish
 stylesheets/icons
