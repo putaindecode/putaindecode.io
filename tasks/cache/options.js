@@ -36,7 +36,7 @@ module.exports = {
         )
       },
       formatDate : function(date){
-        var date = new Date(date)
+        date = new Date(date)
         function pad(number){
           var string = String(number)
           return Array(3 - string.length).join("0") + string
