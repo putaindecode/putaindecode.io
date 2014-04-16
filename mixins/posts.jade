@@ -30,6 +30,10 @@ mixin Posts(limit, tags)
         =" "
         a(href="http://github.com/#{author.github}")
           | #{post.author}
+        if post.date
+          br
+          | #{lang.the} #{formatDate(post.date)}
+
   if tags
     .putainde-Message.putainde-Message--hidden.js-NoPosts
       | #{lang.noPosts}

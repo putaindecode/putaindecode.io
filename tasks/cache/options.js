@@ -34,6 +34,18 @@ module.exports = {
             "utf-8"
           )
         )
+      },
+      formatDate : function(date){
+        var date = new Date(date)
+        function pad(number){
+          var string = String(number)
+          return Array(3 - string.length).join("0") + string
+        }
+        return [
+          pad(date.getDate()),
+          pad(date.getMonth() + 1),
+          date.getFullYear()
+        ].join("/")
       }
     }
   }

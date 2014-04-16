@@ -1,3 +1,15 @@
 .putainde-Title.putainde-Title--home
   h2.putainde-Title-text #{lang.manifesto}
 include:md /pages/home/manifesto.md
+.putainde-Networks
+  | #{lang.elsewhere}
+  a.putainde-Network(
+    href="#{lang.github}"
+    title="#{lang.githubLabel}"
+  )
+    i.putainde-Icon.putainde-Icon--github
+  a.putainde-Network(
+    href="#{lang.twitter}"
+    title="#{lang.twitterLabel}"
+  )
+    i.putainde-Icon.putainde-Icon--twitter
