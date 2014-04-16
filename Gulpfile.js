@@ -19,6 +19,7 @@ gulp.task("scripts", ["linting"], require("./tasks/scripts"))
 gulp.task("linting", require("./tasks/linting"))
 
 gulp.task("watch", require("./tasks/watch"))
+gulp.task("publish", ["dist"], require("./tasks/publish"))
 
 // aliases
 

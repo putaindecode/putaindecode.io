@@ -20,6 +20,7 @@
     "gulp-autoprefixer": "0.0.7",
     "gulp-browserify": "^0.5.0",
     "gulp-connect": "^2.0.5",
+    "gulp-gh-pages": "git://github.com/MoOx/gulp-gh-pages.git#new-options",
     "gulp-iconfont": "0.0.10",
     "gulp-iconfont-css": "0.0.9",
     "gulp-jade": "^0.5.0",
