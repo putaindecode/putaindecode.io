@@ -6,6 +6,19 @@ mixin Post(title)
       if title
         .putainde-Title
           h1.putainde-Title-text #{title}
+      -if(exports.author || exports.date)
+        .putainde-Date
+          if exports.author
+            | #{lang.writtenBy} #{exports.author}
+          if exports.date
+            =" "
+            | #{lang.the} #{formatDate(exports.date)}
+      if exports.tags
+        ul.putainde-Tags
+          each tag in exports.tags
+            li.putainde-Tag
+              | #{tag}
+
       .putainde-Post-md
         block
       if author

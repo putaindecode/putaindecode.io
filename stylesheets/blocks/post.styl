@@ -35,14 +35,17 @@
   color: #444
   padding: 1em 0
   font-size: .9375em
-  p
-    line-height: 1.6
   a
     color: MAIN_COLOR
     text-decoration: none
     &:hover
     &:focus
       text-decoration: underline
+
+.putainde-Post-md
+  padding: 1em 0
+  p
+    line-height: 1.6
   ul
   ol
     margin: 0
@@ -55,7 +58,7 @@
     font-family: Consolas, "Liberation Mono", Courier, monospace
   pre
     overflow: scroll
-    font-size: unit(.8125/@font-size,em)
+    font-size: unit(.8125/.9375,em)
     background: #fafafa
     -webkit-font-smoothing: subpixel-antialiased
     padding: 1em
@@ -95,12 +98,11 @@
     color: #49629a
   .hljs-value
     color: #2e4f89
-  .putainde-Post-md
-    img
-      max-width: 100%
-      height: auto
-    p img:only-child
-      margin: 1em 0
+  img
+    max-width: 100%
+    height: auto
+  p img:only-child
+    margin: 1em 0
   figure
     padding: 0
     margin: 0
@@ -125,3 +127,23 @@
     margin: 0 0 0 1em
     padding: 0 2em 0 1em
     border-left: .25em solid #888
+  hr
+    border: none
+    border-top: .225em solid #eee
+
+.putainde-Networks
+  text-align: center
+  border-top: 1px solid #eee
+  padding: 1em 0
+  font-family: Georgia, Times, "Times New Roman", serif
+  font-style: italic
+
+.putainde-Network
+  font-size: 2em
+
+.putainde-Date
+  display: inline-block
+  font-size: .825em
+  vertical-align: middle
+  padding: .5em 1em .5em 0
+  color: #999

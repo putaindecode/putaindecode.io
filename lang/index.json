@@ -11,9 +11,15 @@
   "close" : "&times;",
   "copyright" : "© 1970 - {*} Putain de Code !",
   "tags" : "Tags",
+  "the" : "le",
   "crew" : "Le crew",
   "filters" : "(filtres)",
   "baseURL" : "http://putaindecode.fr",
+  "twitter" : "https://twitter.com/putaindecode/",
+  "twitterLabel" : "Twitter",
+  "github" : "https://github.com/putaindecode/",
+  "githubLabel" : "GitHub",
+  "elsewhere" : "BTW, on est aussi là sur les internettes : ",
   "disqus" : {
       "id": "putaindecode",
       "developer": false
