@@ -31,10 +31,12 @@
     "gulp-plumber": "^0.6.0",
     "gulp-rename": "^1.2.0",
     "gulp-stylus": "^0.1.0",
+    "gulp-util": "^2.2.14",
     "highlight.js": "^8.0.0",
     "jshint-stylish": "^0.1.5",
     "lodash": "^2.4.1",
     "marked": "^0.3.2",
+    "minimist": "0.0.8",
     "tape": "^2.12.3",
     "uglifyify": "^2.1.1"
   },

@@ -1,4 +1,6 @@
 var gulp = require("gulp")
+  , opts = require("./options")
+  , util = require("gulp-util")
   , plumber = require("gulp-plumber")
   , jade = require("gulp-jade")
   , rename = require("gulp-rename")
@@ -11,7 +13,7 @@ module.exports = function(){
   options.update()
 
   return stream
-    .pipe(plumber())
+    .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(jade(options.value))
     .pipe(rename(paths.dist.feed))
     .pipe(gulp.dest(paths.dist.pages))
