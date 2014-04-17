@@ -3,7 +3,7 @@ var options = require("minimist")(process.argv.slice(2))
       plumber : true
     }
 // set some defaults options depending on some flags
-if (options.production) {
+if(options.production) {
   defaults.plumber = false
 }
 
