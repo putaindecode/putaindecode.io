@@ -6,11 +6,11 @@
       ul.putainde-Footer-list
         each item in lang.footerNavigation
           li
-            a(href="#{path.relative(page, item.url)}")
+            a(href="#{path.relative(page, item.url).replace(/\\/g,'/')}")
               | #{item.name}
     p.putainde-Footer-text.putainde-Footer-text--small
       | #{lang.madeWithHeart}
-      -var crewPath = path.relative(page, lang.crewLink.url)
+      -var crewPath = path.relative(page, lang.crewLink.url).replace(/\\/g,'/')
       -var isSamePage = crewPath.indexOf("/") == -1
       a(
         href="#{crewPath}"

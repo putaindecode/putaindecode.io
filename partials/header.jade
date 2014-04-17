@@ -1,4 +1,4 @@
-a.putainde-SiteTitle(href="#{path.relative(page, '')}")
+a.putainde-SiteTitle(href="#{path.relative(page, '').replace(/\\/g,'/')}")
   img.putainde-Logo(
     alt="#{lang.title}"
     src="#{path.relative(page, 'images')}/p!-logo.svg"
