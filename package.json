@@ -12,7 +12,7 @@
     "url": "https://github.com/putaindecode/website/issues"
   },
   "scripts": {
-    "test": "gulp dist"
+    "test": "gulp dist --production"
   },
   "devDependencies": {
     "bloody-grid": "0.0.1",
