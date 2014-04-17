@@ -12,6 +12,12 @@
     "url": "https://github.com/putaindecode/website/issues"
   },
   "scripts": {
+    "init": "npm i -g gulp",
+    "init-osx": "brew install icoutils",
+    "favicon": "icotool -c images/p!-logo--no-bubble-16.png images/p!-logo--no-bubble-32.png -o public/favicon.ico",
+    "start": "gulp",
+    "production": "gulp --production",
+    "publish": "gulp publish --production",
     "test": "gulp dist --production"
   },
   "devDependencies": {
