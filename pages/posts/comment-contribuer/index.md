@@ -70,18 +70,16 @@ développeurs des internets.
     ```
 
 * Alors là, normalement, t'as le dossier propre et frais, pêché du matin. Vu
-  que notre site pète la classe, et qu'on l'a fait en utilisant quand même des
-  technos ultra cool genre [HappyPlan](https://github.com/happyplan/happyplan)
-  (un truc fait par @_kud et @MoOx, t'en profiteras pour aller jeter un oeil,
-  fais pas ton rat, t'es pas pressé), node, bower, toussa.
+  que notre site pète la classe, et qu'on l'a fait en utilisant
+  [Gulp](https://github.com/gulpjs/gulp).
   Pour faire ça, c'est finalement pas si compliqué, tu vas lire le
   README.md à la racine du repo. On fait exprès de pas te le dire ici parce
   que c'est un peu une convention pour tous les projets Open Source, et que ça
   te fait pas de mal de commencer à apprendre à bien bosser.
 
 * Une fois ton site tout installé, t'as plus qu'à aller dans ton dossier grâce
-  à la ligne de commande, et à taper `$ happyplan`, tu verras tout un tas de
-  trucs grunt s'exécuter, ne t'inquiètes pas. À la fin du processus, ça
+  à la ligne de commande, et à taper `$ npm start`, tu verras quelques
+  trucs s'exécuter, ne t'inquiètes pas. À la fin du processus, ça
   devrait te lancer le site en local dans le browser. Là j'espère que tu te
   rends compte qu'avec une seule ligne de commande on t'a fait tourner un site
   complet. Et là on te voit déjà en train de baver et te rappeler tes longues
@@ -102,14 +100,14 @@ est des types sympas.
 
 * Alors déjà, on aime pas juste donner une liste d'ordres sans expliquer pour
   que tu puisses comprendre ce que tu fais. Donc notre site, il a été fait
-  grâce à HappyPlan (un générateur de site statique bien pimpé, parce que oui,
-  y'a pas que Wordpress pour faire un site) qui lui même est basé sur grunt
+  à la main (on a pondu un générateur de site statique bien pimpé, parce que oui,
+  y'a pas que Wordpress pour faire un site) en se basant sur gulp
   (un esclave qui te permet d'éxécuter des tâches répétitives en JavaScript)
-  et plein d'autres truc cools. Donc, faudrait que tu jettes un coup d'œil à
-  ces projets, histoire de savoir de quoi on cause, même si on va essayer de
-  t'expliquer au mieux.
+  et quelques autres truc cools. Tu pourrais éventuellement jeter un coup d'œil
+  [aux dépendances du projet](https://github.com/putaindecode/website/blob/master/package.json),
+  histoire de savoir de quoi on cause.
 
-* Donc, tous nos posts sont contenus dans `src/posts/`. Si jamais c'est sur
+* Tous nos posts sont contenus dans `pages/posts/`. Si jamais c'est sur
   autre chose qu'un post, farfouille un peu et tu trouveras, les noms des
   dossiers sont assez explicites et de toute façon les URLs sur notre site
   ressemblent bizarrement (en vrai c'est pas bizarre hein, t'avais compris)
@@ -136,7 +134,7 @@ est des types sympas.
 * Fais les modifications que tu veux dans le fichier, là on peut pas t'aider,
   c'est à toi de jouer.
 
-* Normalement si t'avais bien lancé le `happyplan` tout à l'heure, y'a un
+* Normalement si t'avais bien lancé le `npm start` tout à l'heure, y'a un
   processus *watch* (en gros un truc qui surveilles ton projet) qui est lancé
   et qui détecte que t'as changé un fichier, du coup, grâce au watch couplé à
   un processus appelé *livereload* ton navigateur va rafraichir les fichiers
@@ -170,33 +168,20 @@ est des types sympas.
   $ git checkout -b post.titre-court-du-post
   ```
 
-  Ensuite il va falloir que tu crées le fichier nécessaire pour le brouillon
+  Ensuite il va falloir que tu crées les fichiers nécessaires pour le brouillon
   du post.
+  Pour ça, tu vas dans `/pages/posts/` et tu regardes comment ça se passe.
+  C'est plutôt simple. Tu créés un dossier avec le nom qui va bien avec un fichier
+  `.jade` pour les metas de l'article, et un `.md` pour le contenu.
 
-  ```shell
-  $ happyplan newpost --name="Nom du post" --tags="tags,separes,virgules"
-  $ mkdir src/posts/nom-du-post
-  $ mv src/posts/nom-du-post.html.hbs src/posts/nom-du-post/index.html.hbs
-  ```
-
-  Ça va te créer un fichier dans `/src/posts/` avec le nom qui va bien.
-  Tu remarqueras qu'on la déplacé dans un dossier, histoire d'avoir des URLs
-  simples et sympa. Puis si t'as de la merde à fourrer pour ton article, tu sais
-  où la mettre du coup.
-
-* Tu peux maintenant éditer ton fichier en MarkDown dans la partie dédié,
-  tout en faisant attention si tu te mets à toucher l'entête créé
-  automatiquement (celui où il y a layout, title et tags).
-  Laisse bien la clé `draft: true` bien entendu.
+* Tu peux maintenant éditer ton fichier (en MarkDown) dans le fichier .md,
   Amuse toi, créé ton contenu, rédige bien tout comme tu veux.
-  Techniquement, dans ce dossier `posts` tu peux faire autant de brouillons
-  que tu veux pour peut que tu spécifies bien une clé `draft` pour chaque post.
 
-* Tu devrais pouvoir te balader sur le site est trouver ton article sur la page
-  des brouillons: http://localhost:4242/posts/drafts.html .
-  Avec la tâche `$ happyplan` lancée normalement tout se rafraichira
+* Tu devrais pouvoir te balader sur le site et trouver ton article sur la page
+  des posts: http://localhost:4242/posts/ .
+  Avec la tâche `$ npm start` lancée normalement tout (ou presque) se rafraichira
   automatiquement.
-  Si ce n'est pas le cas, lance la tâche `$ happyplan`.
+  Si ce n'est pas le cas, relance la tâche `$ npm start`.
   Si là tu as une erreur qui t'échappes, on t'invite à
   [ouvrir une issue](https://github.com/putaindecode/website/issues/new).
 
@@ -217,7 +202,7 @@ est des types sympas.
   commit. Tu peux faire ça tout simplement avec un :
 
   ```shell
-  $ git add -A src/posts/nom-du-post
+  $ git add -A pages/posts/nom-du-post
   ```
 
   Cette commande ajoute tous les fichiers dans le dossier que tu as créé.
@@ -225,7 +210,7 @@ est des types sympas.
   ajouter. Exemple:
 
   ```shell
-  $ git add src/media/memes/trollface.jpg
+  $ git add images/memes/trollface.jpg
   ```
 
   Ensuite on va dire à git de valider ces modifications de code :
