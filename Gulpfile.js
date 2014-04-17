@@ -6,7 +6,7 @@ require("./tasks/fixes/marked")
 gulp.task("lang", require("./tasks/lang"))
 gulp.task("exports", require("./tasks/exports"))
 gulp.task("pages", ["lang", "exports"], require("./tasks/pages"))
-gulp.task("feed", ["lang", "exports"], require("./tasks/feed"))
+gulp.task("feed", ["pages", "lang", "exports"], require("./tasks/feed"))
 gulp.task("sitemap", ["lang", "exports"], require("./tasks/sitemap"))
 
 // static assets
