@@ -1,4 +1,6 @@
 var gulp = require("gulp")
+  , opts = require("./options")
+  , util = require("gulp-util")
   , plumber = require("gulp-plumber")
   , jade = require("gulp-jade")
   , paths = require("./paths")
@@ -19,7 +21,7 @@ module.exports = function(){
   })
 
   return stream
-    .pipe(plumber())
+    .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(jade(options.value))
     .pipe(gulp.dest(paths.dist.pages))
     .pipe(server.livereload())

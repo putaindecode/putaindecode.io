@@ -1,4 +1,6 @@
 var gulp = require("gulp")
+  , opts = require("./options")
+  , util = require("gulp-util")
   , plumber = require("gulp-plumber")
   , jscs = require("gulp-jscs")
   , jshint = require("gulp-jshint")
@@ -11,7 +13,7 @@ module.exports = function(){
       paths.sources.tasks,
       paths.sources.tests
     ])
-    .pipe(plumber())
+    .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(jscs())
     .pipe(jshint())
     .pipe(jshint.reporter("jshint-stylish"))

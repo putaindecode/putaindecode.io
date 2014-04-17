@@ -1,4 +1,6 @@
 var gulp = require("gulp")
+  , opts = require("./options")
+  , util = require("gulp-util")
   , plumber = require("gulp-plumber")
   , stylus = require("gulp-stylus")
   , autoprefixer = require("gulp-autoprefixer")
@@ -8,7 +10,7 @@ var gulp = require("gulp")
 
 module.exports = function(){
   return gulp.src(paths.sources.mainStylesheet)
-    .pipe(plumber())
+    .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(stylus({
       set : [
         "include css"
