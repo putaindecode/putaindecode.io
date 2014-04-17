@@ -1,4 +1,6 @@
 // from https://github.com/remy/polyfills
+(function () {
+
 if (typeof window.Element === "undefined" || "classList" in document.documentElement) {
   return
 }
@@ -73,3 +75,5 @@ function defineElementGetter (obj, prop, getter) {
 defineElementGetter(Element.prototype, "classList", function () {
   return new DOMTokenList(this)
 })
+
+})();
