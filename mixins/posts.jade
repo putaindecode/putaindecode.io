@@ -12,7 +12,7 @@ mixin Posts(limit, tags)
         src="#{author.avatar_url}"
         alt=""
       )
-      a.putainde-List-title(href="#{path.relative(page, post.slug).replace(/\\/g,'/')}.html")
+      a.putainde-List-title(href="#{path.relative(page, post.slug)}.html")
         | #{post.title}
       if post.tags
         ul.putainde-Tags

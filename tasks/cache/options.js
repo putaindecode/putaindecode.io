@@ -20,7 +20,7 @@ module.exports = {
           if(to.indexOf("http") === 0) {
             return to
           }
-          return path.relative(from.replace(/index$/, ""), to)
+          return path.relative(from.replace(/index$/, ""), to).replace(/\\/g, "/")
         },
         join : path.join
       },
