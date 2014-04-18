@@ -14,7 +14,7 @@ html(lang="fr")
     block head
     link(
       rel="stylesheet"
-      href="#{path.relative(page, 'stylesheets/index.css').replace(/\\/g,'/')}"
+      href="#{path.relative(page, 'stylesheets/index.css')}"
     )
   body
     .putainde-Header
@@ -28,5 +28,5 @@ html(lang="fr")
     .putainde-Footer
       include /partials/footer
     block end
-    script(src="#{path.relative(page, 'scripts/index.js').replace(/\\/g,'/')}")
+    script(src="#{path.relative(page, 'scripts/index.js')}")
     include /partials/analytics
