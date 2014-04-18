@@ -3,6 +3,11 @@ var gulp = require("gulp")
   , util = require("gulp-util")
   , plumber = require("gulp-plumber")
   , stylus = require("gulp-stylus")
+  , rework = require("gulp-rework")
+  , reworkPlugins = {
+      vars : require("rework-vars"),
+      calc : require("rework-calc")
+  }
   , autoprefixer = require("gulp-autoprefixer")
   , paths = require("./paths")
   , path = require("path")
@@ -25,6 +30,11 @@ module.exports = function(){
         }
       }
     }))
+    .pipe(
+      rework(
+        reworkPlugins.vars(),
+        reworkPlugins.calc
+      ))
     .pipe(autoprefixer())
     .pipe(gulp.dest(paths.dist.stylesheets))
     .pipe(server.livereload())

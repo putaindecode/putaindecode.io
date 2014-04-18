@@ -5,7 +5,7 @@ block exports
 
 block main
   .Grid.putainde-Section
-    .Grid-col.Grid-col--8.putainde-Section-contents
+    .Grid-cell.u-size8of12.putainde-Section-contents
       .putainde-Title.putainde-Title--home
         h2.putainde-Title-text #{lang.lastPosts}
       +Posts(6)
@@ -13,9 +13,9 @@ block main
         a(href="#{path.relative(page, 'posts')}")
           | #{lang.morePosts}
   .putainde-Section.putainde-Section--manifesto
-    .Grid
-      .Grid-col.Grid-col--8.putainde-Section-contents.putainde-Post-contents
+    .Grid.Grid--alignCenter
+      .Grid-cell.u-size8of12.putainde-Section-contents.putainde-Post-contents
         include /partials/manifesto
   .Grid.putainde-Section#crew
-    .Grid-col.Grid-col--8.putainde-Section-contents
+    .Grid-cell.u-size8of12.putainde-Section-contents
       include /partials/crew
