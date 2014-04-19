@@ -23,6 +23,11 @@ module.exports = function(){
   )
 
   gulp.watch(
+    paths.sources.tasks,
+    ["scripts:linting"]
+  )
+
+  gulp.watch(
     [
       paths.dist.public + "/**/*"
     ]
