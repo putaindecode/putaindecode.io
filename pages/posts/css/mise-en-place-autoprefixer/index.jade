@@ -1,0 +1,14 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "MoOx"
+  -exports.title = "Mise en place d’autoprefixer"
+  -exports.tags = ["css", "préfixe"]
+  -exports.readingTime = "5min"
+  -exports.date = "2014-03-04"
+
+block main
+  +Post(exports.title)
+    include:md index.md

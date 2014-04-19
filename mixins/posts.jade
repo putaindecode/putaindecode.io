@@ -1,0 +1,39 @@
+mixin Posts(limit, tags)
+  -var posts = getPages({type:"post"})
+  -posts.sort(function(prev, next){return prev.date > next.date ? -1 : 1})
+  if limit
+    -posts = posts.slice(0, limit)
+  if tags
+    -var flag = -1
+  each post in posts
+    -var author = lang.members[post.author]
+    .putainde-List-item.js-Post
+      img.putainde-List-authorPicture.js-AnimateLoad(
+        src="#{author.avatar_url}"
+        alt=""
+      )
+      a.putainde-List-title(href="#{path.relative(page, post.slug)}.html")
+        | #{post.title}
+      if post.tags
+        ul.putainde-Tags
+          each tag in post.tags
+            if tags
+              -if(!tags.hasOwnProperty(tag))
+                - tags[tag] = ++flag
+            li.putainde-Tag(
+              class=tags ? "js-Tag" : null
+              data-tag=tags ? "#{tags[tag]}" : null
+            )
+              | #{tag}
+      .putainde-List-author
+        | #{lang.initialCommit}
+        =" "
+        a(href="http://github.com/#{author.github}")
+          | #{post.author}
+        if post.date
+          br
+          | #{lang.the} #{formatDate(post.date)}
+
+  if tags
+    .putainde-Message.putainde-Message--hidden.js-NoPosts
+      | #{lang.noPosts}

@@ -1,0 +1,149 @@
+.putainde-Post
+  text-align: center
+
+.putainde-Title
+  color: #222
+  font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif
+  top: 0
+  position: relative
+  position: -webkit-sticky
+  z-index: 3
+  background: #fff
+  background: linear-gradient(to bottom, #fff 60%, rgba(#fff, 0))
+
+.putainde-Title--home
+  text-align: center
+
+.putainde-Title-authorPicture
+  position: absolute
+  border-radius: 100%
+  width: 3em
+  left: -(@width + 1.5)
+  top: 50%
+  margin-top: unit(@width/-2, em)
+
+.putainde-Title-text
+  font-size: 1.9em
+  margin: .25em 0
+  padding: .25em 0
+  font-weight: 400
+  @media (max-width:28em)
+    font-size: 1.325em
+
+.putainde-Post-contents
+  text-align: left
+  color: #444
+  padding: 1em 0
+  //font-size: .9375em
+  a
+    color: MAIN_COLOR
+    text-decoration: none
+    &:hover
+    &:focus
+      text-decoration: underline
+
+.putainde-Post-md
+  padding: 1em 0
+  p
+    line-height: 1.6
+  ul
+  ol
+    margin: 0
+    padding: 0 0 0 1.75em
+    li
+      padding: .275em 0
+  tt
+  code
+  pre
+    font-family: Consolas, "Liberation Mono", Courier, monospace
+  pre
+    overflow: scroll
+    font-size: unit(.8125/.9375,em)
+    background: #fafafa
+    -webkit-font-smoothing: subpixel-antialiased
+    padding: 1em
+    border: 1px solid #ddd
+    border-radius: .3em
+    color: #444
+    margin: 1.5em 0
+    font-weight: 400
+    box-shadow: inset 0 0 0 .25em rgba(#000, .02)
+    line-height: 1.5
+    code
+      background: transparent
+      border: none
+      padding: 0
+  code
+    font-weight: 400
+    background: #fafafa
+    border: 1px solid #ddd
+    padding: .125em .5em
+    font-size: .925em
+    border-radius: .25em
+    vertical-align: middle
+  .hljs-string
+  .hljs-number
+  .hljs-tag .hljs-value
+    color: #cf1d58
+  .hljs-keyword
+    color: #000
+  .hljs-comment
+  .hljs-doctype
+  .hljs-preprocessor
+    color: #999
+  .hljs-class
+  .hljs-title
+    color: #2c4379
+  .hljs-attribute
+    color: #49629a
+  .hljs-value
+    color: #2e4f89
+  img
+    max-width: 100%
+    height: auto
+  p img:only-child
+    margin: 1em 0
+  figure
+    padding: 0
+    margin: 0
+    border: 1px solid #eee
+    overflow: hidden
+    border-radius: .3em
+    display: block
+    line-height: .8
+    text-align: center
+  figcaption
+    font-style: italic
+    font-family: Georgia, Times, "Times New Roman", serif
+    text-align: center
+    padding: .6em 0
+    margin: 0
+    display: block
+    background: #fafafa
+    line-height: 1.6
+    border-top: 1px solid #eee
+  blockquote
+    color: #888
+    margin: 0 0 0 1em
+    padding: 0 2em 0 1em
+    border-left: .25em solid #888
+  hr
+    border: none
+    border-top: .225em solid #eee
+
+.putainde-Networks
+  text-align: center
+  border-top: 1px solid #eee
+  padding: 1em 0
+  font-family: Georgia, Times, "Times New Roman", serif
+  font-style: italic
+
+.putainde-Network
+  font-size: 2em
+
+.putainde-Date
+  display: inline-block
+  font-size: .825em
+  vertical-align: middle
+  padding: .5em 1em .5em 0
+  color: #999

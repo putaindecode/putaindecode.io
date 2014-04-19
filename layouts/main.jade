@@ -1,0 +1,32 @@
+-var exports=pages[page]
+include /mixins/index
+
+doctype html
+html(lang="fr")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    meta(
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    )
+    title #{exports.title}
+    block head
+    link(
+      rel="stylesheet"
+      href="#{path.relative(page, 'stylesheets/index.css')}"
+    )
+  body
+    .putainde-Header
+      .Grid
+        .Grid-cell.u-size7of12
+          include /partials/header
+        .Grid-cell.u-size5of12
+          +Navigation(lang.navigation, page)
+    .putainde-Main
+      block main
+    .putainde-Footer
+      include /partials/footer
+    block end
+    script(src="#{path.relative(page, 'scripts/index.js')}")
+    include /partials/analytics

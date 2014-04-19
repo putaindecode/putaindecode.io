@@ -15,22 +15,21 @@ suite !
 
 C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
 
-![github-fork](src/media/github/fork-button.jpg)
+![github-fork](images/posts/github/fork-button.jpg)
 
 ## Soumettre un post
 
 * Crée une branche avec un nom de la forme `post.<nom du post>` (ex.
   `post.contribuer-a-p`)
-* Écris ton post dans `src/posts/` en respectant bien la convention du
-  nom de fichier `titre/index.html.hbs` (genre `contribuer-a-p/index.html.hbs`)
-  en t'inspirant de l'exemple que tu devrais trouver sans mal.
+* Écris ton post dans `pages/posts/` en respectant bien la convention du
+  nom de fichier `titre/index.jade|md` (genre `contribuer-a-p/index.jade` et `contribuer-a-p/index.md`)
+  en t'inspirant des autres posts que tu devrais trouver sans mal.
 * Une fois que tout est prêt, fais une demande de pull-request de ta branche
   vers notre branche `master` en mettant en titre `Post: Le titre de ton post`
   (évidemment tu remplaces ce qu'il y a après `Post:` par le vrai titre hein)
 * On va passer ton post en revue, éventuellement te demander de corriger deux
   trois trucs, et au bout d'un moment l'accepter (sauf s'il est nul, évidemment)
-* De notre côté on va lui mettre une date de publication et le passer dans
-  `src/posts/` pour le publier.
+* De notre côté on va lui mettre une date de publication pour le publier.
 
 ## Apporter un correctif
 
@@ -45,6 +44,9 @@ points peuvent être plus détaillés, libre à toi de nous proposer tes correct
   `Fix: Le titre du post corrigé` (là aussi, remplace en conséquence)
 * De notre côté on va passer en revue la modification, puis éventuellement on
   l'acceptera
+
+**Tu peux aussi faire beaucoup plus simple en utilisant l'interface de
+GitHub pour éditer un fichier (qui reproduira les étapes précédentes).**
 
 ## Pull-Requests
 

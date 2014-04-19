@@ -1,0 +1,38 @@
+.putainde-Tooltip
+  color #fff
+  background: #000
+  background: rgba(#000, .9)
+  position: absolute
+  top: -4em
+  visibility: hidden
+  transform: translateX(-50%)
+  padding: .7em
+  border-radius: .3em
+  span
+    font-size: .8em
+  .putainde-Icon
+    padding: 0 .25em
+    font-size: 1.2em
+  &:after
+    font-size: .8em
+    position: absolute
+    content: ""
+    border: .5em solid transparent
+    border-top-color: #000
+    border-top-color: rgba(#000, .9)
+    border-bottom-width: 0
+    left: 50%
+    margin-left: -.5em
+    bottom: -.5em
+
+.putainde-Tooltip--visible
+  visibility: visible
+  animation: .3s ease-in-out Tooltip
+
+@keyframes Tooltip
+  from
+    opacity: 0
+    transform: translateX(-50%) translateY(-2em)
+  to
+    opacity: 1
+    transform: translateX(-50%) translateY(0)

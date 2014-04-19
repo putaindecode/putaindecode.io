@@ -1,0 +1,63 @@
+.putainde-Member
+  position: relative
+  padding: 0 0 1em 7em
+  margin-top: 1em
+  @media (max-width:28em)
+    padding-left: 4em
+
+.putainde-Member--author
+  padding: 2em 0 2em 8em
+  @media (max-width:28em)
+    padding-left: 4em
+
+.putainde-Member-picture
+  position: absolute
+  top: 0
+  left: 1em
+  height: 5em
+  border-radius: 100%
+  @media (max-width:28em)
+    height:2.5em
+    top: 1em
+  /.putainde-Member--author &
+    top: 4em
+
+.putainde-Member-title
+  border-bottom: 1px solid #f0f0f0
+  position: relative
+
+.putainde-Member-name
+  color: #222
+  font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif
+  font-weight: 400
+  font-size: 1.325em
+  margin: 0
+  padding: .5em 0
+
+.putainde-Member-social
+  position: absolute
+  top: .5em
+  right: 0
+  background: #fafafa
+  border-radius: 2em
+  overflow: hidden
+  a
+    color: #444
+    display: inline-block
+    padding: .4em 1em
+    @media (max-width:28em)
+      font-size: 1.2em
+    &:hover
+    &:focus
+      background: #eee
+
+.putainde-Member-description
+  font-size: .925em
+  color: #444
+  p
+    padding: .425em 0
+    margin: 0
+
+.putainde-Member--author
+  .putainde-Member-description
+      font-size: .825em

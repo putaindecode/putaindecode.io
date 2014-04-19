@@ -1,0 +1,31 @@
+.putainde-Nav
+  display: table
+  table-layout: fixed
+  width: 100%
+
+.putainde-Nav-item
+  display: table-cell
+  vertical-align: middle
+  position: relative
+  font-size: .9em
+  padding: unit(1.4/@font-size,em) 0
+  font-weight: 700
+  text-align: center
+  color: MAIN_TEXT
+  text-decoration: none
+  &:hover
+  &:focus
+    background: rgba(#000, .1)
+
+.putainde-Nav-item--current
+  &:after
+    content: ""
+    position: absolute
+    bottom: .3em
+    height: .3em
+    width: .3em
+    background: #fff
+    box-shadow: 0 0 .3em #fff
+    border-radius: .3em
+    left: 50%
+    margin-left: -.15em

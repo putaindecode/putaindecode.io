@@ -1,0 +1,9 @@
+mixin Navigation(list, currentPage)
+  nav.putainde-Nav
+    each item in list
+      -var isActivePage = currentPage == item.url || currentPage == item.url + "/index"
+      a.putainde-Nav-item(
+        class="#{isActivePage ? 'putainde-Nav-item--current' : ''}"
+        href="#{path.relative(path.join(currentPage, '..'), item.url)}"
+      )
+        | #{item.name}
