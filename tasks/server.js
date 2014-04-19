@@ -1,21 +1,29 @@
-var gulp = require("gulp")
-  , connect = require("gulp-connect")
-  , gopen = require("gulp-open")
+var gulpUtil = require("gulp-util")
+  , ports = {
+    web : 4242,
+    livereload : 4243
+  }
+  , connect = require("connect")
+  , connectLivereload = require("connect-livereload")
+  , livereloadServer = require("gulp-livereload")(ports.livereload)
+  , opn = require("opn")
   , paths = require("./paths")
 
 module.exports = {
   start : function(){
-    connect.server({
-      root : paths.dist.public,
-      port : 4242,
-      livereload : {port : 4243}
-    })
+    var app = connect()
+      .use(connectLivereload({port : ports.livereload}))
+      .use(connect.static(paths.dist.public))
 
-    // A file must be specified as the src when running options.url or gulp will overlook the task.
-    return gulp.src(paths.dist.public + "/index.html")
-      .pipe(gopen("", {
-        url : "http://localhost:4242"
-      }))
+    require("http").createServer(app)
+      .listen(ports.web)
+      .on("listening", function(){
+        gulpUtil.log("Started connect web server on http://localhost:" + ports.web + " and livereload server on http://localhost:" + ports.livereload)
+      })
+
+    opn("http://localhost:" + ports.web)
   },
-  livereload : connect.reload
+  livereload : function(file){
+    livereloadServer.changed(file.path)
+  }
 }

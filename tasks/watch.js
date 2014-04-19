@@ -1,4 +1,5 @@
 var gulp = require("gulp")
+  , server = require("./server")
   , paths = require("./paths")
 
 module.exports = function(){
@@ -20,4 +21,11 @@ module.exports = function(){
     ],
     ["pages"]
   )
+
+  gulp.watch(
+    [
+      paths.dist.public + "/**/*"
+    ]
+  )
+    .on("change", server.livereload)
 }

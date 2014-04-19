@@ -7,7 +7,6 @@ var gulp = require("gulp")
   , path = require("path")
   , jadeExtenstionRE = /\.jade$/
   , options = require("./cache/options")
-  , server = require("./server")
 
 module.exports = function(){
   var stream = gulp.src(paths.sources.pages)
@@ -24,5 +23,4 @@ module.exports = function(){
     .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(jade(options.value))
     .pipe(gulp.dest(paths.dist.pages))
-    .pipe(server.livereload())
 }
