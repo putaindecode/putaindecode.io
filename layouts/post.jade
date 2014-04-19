@@ -1,0 +1,19 @@
+extends /layouts/main
+
+block end
+  script
+    -var disqus = lang.disqus
+    -var pageName = page.replace(/index$/,'')
+    | var disqus_shortname = "#{disqus.id}";
+    if(disqus.developer)
+      | var disqus_developer = 1;
+    if(exports.comments)
+      | var disqus_identifier = "#{lang.baseURL}/#{pageName}";
+      | var disqus_url = "#{lang.baseURL}/#{pageName}";
+      | var disqus_script = "embed.js";
+    else
+      | var disqus_script = "count.js";
+    | ;(function(d,s) {
+    | s = d.createElement('script');s.async=1;s.src = '//' + disqus_shortname + '.disqus.com/'+disqus_script;
+    | (d.getElementsByTagName('head')[0]).appendChild(s)
+    |})(document)

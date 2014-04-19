@@ -1,0 +1,98 @@
+.putainde-List-item
+  position: relative
+  padding: 1em .5em 1em 5em
+  border-bottom: 1px solid #eee
+  min-height: 4em
+  @media (max-width:28em)
+    padding-left: 3em
+
+.putainde-List-item--link
+  border: none
+  min-height: 0
+  text-align: center
+  padding: 1em 0
+  a
+    color: MAIN_COLOR
+    padding: .5em 0
+    display: block
+    text-decoration: none
+    border: 1px solid transparent
+    border-radius: .2em
+    &:hover
+    &:focus
+      background: linear-gradient(to bottom, #fff, #fafafa)
+      border-color: #ddd
+    &:active
+      border-color: #ddd
+      background: linear-gradient(to bottom, #f0f0f0, #fff)
+
+.putainde-List-item--hidden
+  height: 0
+  padding: 0
+  border: none
+  min-height: 0
+  overflow: hidden
+
+.putainde-List-authorPicture
+  position: absolute
+  top: 1.25em
+  left: 1em
+  width: 3em
+  border-radius: 100%
+  @media (max-width:28em)
+    width: 2em
+    left: .5em
+
+.putainde-Message
+  font-size: 3em
+  color: #ccc
+  text-align: center
+  font-weight: 700
+  font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif
+
+.putainde-Message--hidden
+  display: none
+
+.putainde-List-title
+  font-size: 1.475em
+  font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif
+  font-weight: 400
+  color: #444
+  text-decoration: none
+  display: block
+  padding: 0 0 .4em
+  @media (max-width:28em)
+    font-size: 1.25em
+
+.putainde-Tags
+  display: inline-block
+  vertical-align: middle
+  list-style-type: none
+  padding: 0
+  margin: 0
+
+.putainde-Tag
+  display: inline-block
+  background: #fdfdfd
+  box-shadow: inset 0 0 0 1px rgba(#000, .03)
+  padding: 0 1em
+  font-size: .825em
+  margin-right: .2em
+  line-height: 1.7
+  border-radius: 1em
+  @media (max-width:28em)
+    margin-bottom: .2em
+
+.putainde-List-author
+  position: absolute
+  font-size: .825em
+  color: #888
+  bottom: .5em
+  right: 0
+  text-align: right
+  @media (max-width:34em)
+    position: static
+  a
+    font-weight: 700
+    text-decoration: none
+    color: #666

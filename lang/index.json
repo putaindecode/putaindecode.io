@@ -1,0 +1,383 @@
+{
+  "title" : "Putain de code !",
+  "baseline" : "On voulait mettre une baseline mais on a pas été foutu d'en trouver une",
+  "lastPosts" : "Les derniers posts",
+  "posts" : "Les posts",
+  "manifesto" : "Putain de Code, c'est quoi ?",
+  "initialCommit" : "commit initial par",
+  "morePosts" : "Plus de posts",
+  "writtenBy" : "Écrit par",
+  "noPosts" : ":( pas de post",
+  "close" : "&times;",
+  "copyright" : "© 1970 - {*} Putain de Code !",
+  "tags" : "Tags",
+  "the" : "le",
+  "404" : "eh merde … 404",
+  "crew" : "Le crew",
+  "filters" : "(filtres)",
+  "baseURL" : "http://putaindecode.fr",
+  "twitter" : "https://twitter.com/putaindecode/",
+  "twitterLabel" : "Twitter",
+  "github" : "https://github.com/putaindecode/",
+  "githubLabel" : "GitHub",
+  "elsewhere" : "BTW, on est aussi là sur les internettes : ",
+  "disqus" : {
+      "id": "putaindecode",
+      "developer": false
+  },
+  "navigation" : [
+    {
+      "url" : "c-est-quoi-putaindecode",
+      "name" : "Putain de ?"
+    },
+    {
+      "url" : "posts",
+      "name" : "Les posts"
+    },
+    {
+      "url" : "posts/comment-contribuer",
+      "name" : "Contribuer"
+    }
+  ],
+  "footerNavigation" : [
+    {
+      "url" : "projets",
+      "name" : "Projets"
+    },
+    {
+      "url" : "https://github.com/putaindecode",
+      "name" : "Contact"
+    },
+    {
+      "url" : "feed.xml",
+      "name" : "Flux RSS"
+    }
+  ],
+  "madeWithHeart" : "Made with ♥︎ by ",
+  "crewLink" : {
+    "url" : "#crew",
+    "name" : "le crew"
+  },
+  "members" : {
+    "Erwyn" : {
+      "crew" : false,
+      "url": "http://erwyn.piwany.com",
+      "github": "erwyn",
+      "twitter": "Erwyn",
+      "avatar_url": "http://www.gravatar.com/avatar/73af1b4a749651d146a756e7830f10da.png",
+      "fr": {
+        "bio": {
+          "short": "Développeur Agile, aventurier à ses heures perdues",
+          "long": [
+            "Développeur tombé dans le web par inadvertance.",
+            "Amoureux de l'agilité, l'amélioration continue, et l'auto-organisation.",
+            "Passionné par les entreprises et les individus qui les composent.",
+            "Producteur d'humour bas de gamme.",
+            "Rêve d'aventures."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Agile developer, kind adventurer",
+          "long": [
+            "Developer who fell inadvertandly into the web.",
+            "In love with Agile methodologies, continuous improvement and self-organization.",
+            "Passionate about comagnies and people in.",
+            "Low-end humor producer.",
+            "Dream of adventures."
+          ]
+        }
+      }
+    },
+    "MoOx" : {
+      "url": "http://moox.io",
+      "crew" : true,
+      "github": "MoOx",
+      "twitter": "MoOx",
+      "avatar_url": "https://gravatar.com/avatar/2f6c2dcd4ba8fc44f1e7f0b2ed3d587d",
+      "fr": {
+        "bio": {
+          "short": "Développeur web front-end 100% bio. Disponible en Freelance.",
+          "long": [
+            "Open source addict vivant dans la campagne près de Toulouse, Maxime est développeur web front-end le jour, et justicier du code la nuit.  ",
+            "Il aime faire des calins à HTML, CSS et JavaScript en tant que Freelance (_ et il est d'ailleurs, il est actuellement disponible_)."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "100% Organic Front-end Web Developer. Available for Freelance.",
+          "long": [
+            "Open source addict living in the country near Toulouse, France, Maxime is a front-end web developer by day & a code vigilante by night.  ",
+            "He likes to play with HTML, CSS & JavaScript, as a freelancer _(by the way, he is currently available)_."
+          ]
+        }
+      }
+    },
+    "Nyalab" : {
+      "url": null,
+      "github": "Nyalab",
+      "crew" : true,
+      "twitter": "Nyalab",
+      "avatar_url": "https://gravatar.com/avatar/0024021f51ce1fdc50564298e72fbf7c",
+      "fr": {
+        "bio": {
+          "short": "Développeur full stack, troll à temps plein, gamer, whovian, porte un k-way rouge et sexy.",
+          "long": [
+            "Développeur full stack étant donné qu'il travaille en web agency qui aime tout ce qui se rapporte au code.",
+            "Il passe ses journées à écrire du putain de bon code, à vanner sur les messages de commit, à troller tout le monde sur tout et n'importe quoi, à regarder Doctor Who et à jouer à des bons jeux, et à en apprendre chaque jour sur le monde qui l'entoure.",
+            "Et il porte toujours un k-way rouge et sexy."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Full stack developer, full-time troll, gamer, whovian, wears a sexy red raincoat.",
+          "long": [
+            "Full stack developer since he works in a web agency, who likes everything that relates to the code.",
+            "He spends his days by writing some putain de good code, writing jokes on commit messages, trolling everyone on everything, watching Doctor Who and playing good games, learning more every day about the world that surrounds him.",
+            "And he always wears a sexy red raincoat."
+          ]
+        }
+      }
+    },
+    "OwlyCode" : {
+      "url": "http://owly-code.com/",
+      "crew" : true,
+      "github": "OwlyCode",
+      "twitter": "OwlyCode",
+      "avatar_url": "http://www.gravatar.com/avatar/5cef4bfad2fde665d04d9fdb29d29d4a.png",
+      "fr": {
+        "bio": {
+          "short": "Développeur Full stack, entretient un culte pour Golang et une liaison secrète avec AngularJS",
+          "long": [
+            "Développeur Full Stack 100% Ubuntu, code en PHP le jour et en Go la nuit.",
+            "Entretient une liaison secrète avec AngularJS.",
+            "Amateur de science fiction, d'insectes et reste sur Windows pour Starcraft 2."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Full stack developer, engaged in a Golang cult and secretly dating Angular.js",
+          "long": [
+            "Full stack developer, 100% Debian/Ubuntu, do PHP at day and Go at night.",
+            "Secretly dating AngularJS.",
+            "Sci-fi addict, keen on insects and stays on Windows to play Starcraft 2"
+          ]
+        }
+      }
+    },
+    "bloodyowl" : {
+      "url": "http://bloodyowl.github.io",
+      "crew" : true,
+      "github": "bloodyowl",
+      "twitter": "bloodyowl",
+      "avatar_url": "https://gravatar.com/avatar/37500337ba5d2aebc962959ed83928e5",
+      "fr": {
+        "bio": {
+          "short": "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens",
+          "long": [
+            "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens"
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people.",
+          "long": [
+            "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people"
+          ]
+        }
+      }
+    },
+    "dguyon" : {
+      "url": "http://davidguyon.com",
+      "crew" : true,
+      "github": "dguyon",
+      "twitter": "DavidGuyon",
+      "avatar_url": "https://gravatar.com/avatar/0fef7ada66fa27ea422fdbc45849d913",
+      "fr": {
+        "bio": {
+          "short": "Développeur polyglotte. Basketteur. Epicurien. Utilise #YOLO à outrance.",
+          "long": [
+            "Développeur autodidacte et passionné par des langages tels que PHP, JavaScript, Python.",
+            "Fan d'Open Source et du Web en général.",
+            "Très intéressé par la programmation fonctionnelle."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Engineer. Baller. Epicurian. Abusing #YOLO as a motto.",
+          "long": [
+            "Self-made and passionate developer on a wide range of languages such as PHP, JavaScript, Python.",
+            "Loves Open Source and Web related stuff.",
+            "Strong eagerness to learn FP."
+          ]
+        }
+      }
+    },
+    "justinmarsan" : {
+      "url": null,
+      "crew" : true,
+      "github": null,
+      "twitter": null,
+      "avatar_url": "https://gravatar.com/avatar/c1b2afa3f4c034170bd21991e9e81d60",
+      "fr": {
+        "bio": {
+          "short": "Développeur Front-End, apprend à IE à bien se comporter depuis 2010 tout en découpant de jolis PSDs.",
+          "long": [
+            "Développeur Front-End et Web Designer, intéréssé par les stats et les analytics, la performance web et la cohérence cross-browser.",
+            "Ancien afro, avec de beaux cheveux courts maintenant, escaladeur de pentes en intérieur et en extérieur, porte un tshirt rose."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Frontend Developer, Teaching IE to behave since 2010 while slicing pretty PSDs.",
+          "long": [
+            "Frontend Dev and Web Designer, interested in stats and analytics, web performance and cross-browser consistency.",
+            "Former afro, now rocking short hair, climbing in and outdoor, wearing a pink shirt."
+          ]
+        }
+      }
+    },
+    "kud" : {
+      "url": "http://kud.io",
+      "github": "kud",
+      "crew" : true,
+      "twitter": "_kud",
+      "avatar_url": "https://gravatar.com/avatar/7c72a078c8819fd10f1d11c24d4aa64b",
+      "fr": {
+        "bio": {
+          "short": "Viking application designer, aime emmerder les gens, nivèle par le haut.",
+          "long": [
+            "Viking application designer (aka JavaScript engineer), batteur, photographe, amoureux de cinéma, n'aime pas les longues descriptions."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Viking application designer, likes pissing people off, leveling up.",
+          "long": [
+            "Viking application designer (aka JavaScript engineer), drummer, photographer, cinema lover, and dislikes long description."
+          ]
+        }
+      }
+    },
+    "lionelB" : {
+      "url": null,
+      "github": null,
+      "twitter": null,
+      "crew" : true,
+      "avatar_url": "https://gravatar.com/avatar/03edc8b4edc19d91202e69c65c5baeff",
+      "fr": {
+        "bio": {
+          "short": "Développeur front-end indépendant, un peu bricoleur et voyageur à vélo.",
+          "long": [
+            "Développeur front-end indépendant et un peu bricoleur, les mains blanches, dans le plâtre dès la maternelle, les mains noires, dans le cambouis du vélo très vite après, les mains propres depuis, dans le code informatique…",
+            "Et quand il code pas, il rêve à son prochain voyage en vélo."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Développeur front-end indépendant, un peu bricoleur et voyageur à vélo.",
+          "long": [
+            "Développeur front-end indépendant et un peu bricoleur, les mains blanches, dans le plâtre dès la maternelle, les mains noires, dans le cambouis du vélo très vite après, les mains propres depuis, dans le code informatique…",
+            "Et quand il code pas, il rêve à son prochain voyage en vélo."
+          ]
+        }
+      }
+    },
+    "madx" : {
+      "url": "http://madx.me/",
+      "github": "madx",
+      "twitter": "madx",
+      "crew" : true,
+      "avatar_url": "https://gravatar.com/avatar/96006f57ca92ec95713532129b039d9c",
+      "fr": {
+        "bio": {
+          "short": "Développeur Ruby & JavaScript. Troll niveau 100.",
+          "long": [
+            "Développeur Ruby et JavaScript, avec un goût prononcé pour la simplicité, le soleil, le pastis.",
+            "Il n'aime pas OS X car, objectivement, c'est nul.",
+            "Quand il n'est pas devant son ordi, il y a de grandes chances qu'il compense avec son téléphone.",
+            "Spécialiste en développement d'applications inutiles."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Développeur Ruby & JavaScript. Level 100 Troll.",
+          "long": [
+            "Ruby and JavaScript developer with a taste for simplicity, sun and pastis.",
+            "He does not like OS X because it sucks (objectively).",
+            "When he's not in front of his computers, chances are he's geeking on his phone.",
+            "Specialist in developing useless applications."
+          ]
+        }
+      }
+    },
+    "neemzy" : {
+      "url": "http://www.zaibatsu.fr",
+      "github": "neemzy",
+      "twitter": "_neemzy",
+      "crew" : false,
+      "avatar_url": "http://www.gravatar.com/avatar/259cfb842be0d236e68340b1c330cc88.png",
+      "fr": {
+        "bio": {
+          "short": "Développeur web full-stack en agence, tripote surtout PHP et JS",
+          "long": [
+            "Développeur full-stack tombé dans le web quand il était petit.",
+            "Fait surtout du PHP, mais aussi de plus en plus de JavaScript.",
+            "A une peur irraisonnée des utilisateurs de Mac / Ruby / Sass.",
+            "Atteint du syndrome de Patrick Modiano qui l'empêche parfois de finir ses"
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Full-stack web developer in an agency, mainly dabbles in PHP and JS",
+          "long": [
+            "Full-stack developer who fell into web stuff as a boy.",
+            "Mainly writes PHP, but also more and more JavaScript.",
+            "Has an irrational fear of Mac / Ruby / Sass users.",
+            "Suffering from Patrick Modiano's syndrome which sometimes prevents him from finishing his"
+          ]
+        }
+      }
+    },
+    "rhannequin" : {
+      "url": null,
+      "github": null,
+      "twitter": null,
+      "crew" : true,
+      "avatar_url": "https://gravatar.com/avatar/a2b9398e4753f15d628c8d928600d90e",
+      "fr": {
+        "bio": {
+          "short": "Développeur Web, Ruby et JavaScript funky, joueur de handball, amoureux d'espace et de science & matteur de séries.",
+          "long": [
+            "Développeur frontend/backend spécialement intéressé par JavaScript et Ruby.",
+            "Curieux des hacks sur les technologies web, conscient des standards de performance, de tests, et du web tout court.",
+            "Joueur de handball depuis l'enfance, amoureux de l'espace et de la science, matteur de séries.",
+            "Baigné dans de la musique et un mode de vie funkys."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Funky web developer Ruby, JavaScript, handball player, Space/Science lover & tv-shows watcher.",
+          "long": [
+            "Frontend/backend developer particularly interested in JavaScript and Ruby.",
+            "Curious about hacks around web technologies, aware of performance, testing et web standards.",
+            "Handball player since childhood, Sciences and Space lover, tv-shows watcher.",
+            "Surrounded by funky music and way of living."
+          ]
+        }
+      }
+    }
+  }
+}

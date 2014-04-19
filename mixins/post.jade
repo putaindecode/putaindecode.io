@@ -1,0 +1,29 @@
+mixin Post(title)
+  .Grid.putainde-Post
+    .Grid-cell.u-size8of12.Grid.putainde-Post-contents
+      if(exports.author)
+        -var author = lang.members[exports.author]
+      if title
+        .putainde-Title
+          h1.putainde-Title-text #{title}
+      -if(exports.author || exports.date)
+        .putainde-Date
+          if exports.author
+            | #{lang.writtenBy} #{exports.author}
+          if exports.date
+            =" "
+            | #{lang.the} #{formatDate(exports.date)}
+      if exports.tags
+        ul.putainde-Tags
+          each tag in exports.tags
+            li.putainde-Tag
+              | #{tag}
+
+      .putainde-Post-md
+        block
+      if author
+        +Member(author, true).putainde-Member--author
+      #disqus_thread(aria-live="polite")
+        noscript.
+          | Please enable JavaScript to view the
+          a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
