@@ -9,6 +9,14 @@ Code source du site [Putain de Code](http://putaindecode.fr/).
 Contient tout le nécessaire pour faire fonctionner le site.
 Pas de base de données à installer, pas de serveurs à configurer.
 
+## tl;dr;
+
+    git clone https://github.com/putaindecode/website.git
+    cd website
+    npm run init
+    npm i
+    npm start
+
 ## Contributions
 
 Les articles peuvent être postés ici sous forme de PR une fois qu'on est OK dans une
