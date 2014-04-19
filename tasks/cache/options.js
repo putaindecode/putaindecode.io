@@ -4,6 +4,7 @@ var path = require("path")
   , marked = require("marked")
   , fs = require("fs")
   , lodash = require("lodash")
+  , monthNames = ["jan.", "fév.", "mars", "avril", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
 
 module.exports = {
   update : function(){
@@ -37,15 +38,12 @@ module.exports = {
       },
       formatDate : function(date){
         date = new Date(date)
-        function pad(number){
-          var string = String(number)
-          return Array(3 - string.length).join("0") + string
-        }
+
         return [
-          pad(date.getDate()),
-          pad(date.getMonth() + 1),
+          date.getDate(),
+          monthNames[date.getMonth()],
           date.getFullYear()
-        ].join("/")
+        ].join(" ")
       }
     }
   }
