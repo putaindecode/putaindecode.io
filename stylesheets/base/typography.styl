@@ -1,0 +1,63 @@
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+/**
+ * Vertical rhythm
+ *
+ * http://type-scale.com/?size=20&scale=1.200&text=A%20Visual%20Type%20Scale&webfont=&font-family=sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=#333
+ */
+--font-size= 1rem;
+--line-height= 1.5625rem;
+// double declaration until stylus is gone
+// old css var spec syntax (waiting for SUIT to upgrade to --)
+:root {
+  var-font-size: 1rem;
+  var-line-height: 1.5625rem;
+}
+
+
+body {
+  font-size: --font-size;
+  line-height: --line-height;
+}
+
+
+p, ul {
+  margin: --line-height 0;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  margin: 0 0 --line-height;
+  line-height: --line-height*2;
+}
+
+/* scale: 1.200 (minor third) */
+h1, .h1 {
+  font-size: 2.074rem;
+}
+h2, .h2 {
+  font-size: 1.728rem;
+}
+h3, .h3 {
+  font-size: 1.44rem;
+}
+h4, .h4 {
+  font-size: 1.2rem;
+}
+small, .small {
+  font-size: 0.833em; /* not rem so you can use .small in .small */
+}
+
+/* ... and now just use $line-height when you need some vertical spacing ! */

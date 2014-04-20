@@ -23,18 +23,12 @@
   margin-top: unit(@width/-2, em)
 
 .putainde-Title-text
-  font-size: 1.9em
-  margin: .25em 0
-  padding: .25em 0
   font-weight: 400
-  @media (max-width:28em)
-    font-size: 1.325em
 
 .putainde-Post-contents
-  text-align: left
-  color: #444
-  padding: 1em 0
-  //font-size: .9375em
+  text-align: left;
+  color: #444;
+
   a
     color: MAIN_COLOR
     text-decoration: none
@@ -134,16 +128,23 @@
 .putainde-Networks
   text-align: center
   border-top: 1px solid #eee
-  padding: 1em 0
+  margin-top: -1px;
+  padding: --line-height 0;
+  line-height: --line-height*2;
   font-family: Georgia, Times, "Times New Roman", serif
   font-style: italic
 
+  * {
+    vertical-align: top;
+  }
+
 .putainde-Network
-  font-size: 2em
+  display: inline-block;
+  font-size: 2.074em
 
 .putainde-Date
   display: inline-block
-  font-size: .825em
+  font-size: .833em
   vertical-align: middle
   padding: .5em 1em .5em 0
   color: #999
