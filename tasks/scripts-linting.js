@@ -6,6 +6,11 @@ var gulp = require("gulp")
   , jshint = require("gulp-jshint")
   , paths = require("./paths")
 
+/**
+ * task scripts:linting
+ *
+ * jshint + jscs
+ */
 module.exports = function(){
   return gulp.src([
       paths.sources.scripts,

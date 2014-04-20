@@ -12,6 +12,11 @@ var gulp = require("gulp")
   , paths = require("./paths")
   , path = require("path")
 
+/**
+ * task stylesheets
+ *
+ * stylus -> rework -> css
+ */
 module.exports = function(){
   return gulp.src(paths.sources.mainStylesheet)
     .pipe(opts.plumber ? plumber() : util.noop())

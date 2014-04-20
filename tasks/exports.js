@@ -6,6 +6,12 @@ var gulp = require("gulp")
   , cache = require("./cache/exports")
   , paths = require("./paths")
 
+/**
+ * task exports
+ *
+ * reads all pages' exports blocks and make and stores them
+ * in `tasks/cache/exports`
+ */
 module.exports = function(){
   var exportsPipe = exports()
   exportsPipe.on("end", function(){

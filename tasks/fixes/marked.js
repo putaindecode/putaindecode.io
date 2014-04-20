@@ -9,6 +9,9 @@ marked.setOptions({
   renderer : renderer
 })
 
+/**
+ * adjust image path to have by default path from images/posts
+ */
 renderer.image = function(href, title, text){
   if(href.indexOf("http") !== 0) {
     href = options.value.locals.path.relative(options.value.locals.page, "images/posts/" + href)

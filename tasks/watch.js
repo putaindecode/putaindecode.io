@@ -2,6 +2,12 @@ var gulp = require("gulp")
   , server = require("./server")
   , paths = require("./paths")
 
+/**
+ * watch task
+ *
+ * watch sources to dynamically build files whenever it's needed
+ * used for development
+ */
 module.exports = function(){
   gulp.watch(
     paths.sources.stylesheets,

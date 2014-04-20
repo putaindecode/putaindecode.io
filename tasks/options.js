@@ -1,3 +1,6 @@
+/**
+ * parses cli arguments as options
+ */
 var options = require("minimist")(process.argv.slice(2))
   , defaults = {
       plumber : true

@@ -7,6 +7,11 @@ var gulp = require("gulp")
   , paths = require("./paths")
   , options = require("./cache/options")
 
+/**
+ * task feed
+ *
+ * creates xml feed
+ */
 module.exports = function(){
   var stream = gulp.src(paths.sources.feed)
 

@@ -4,6 +4,12 @@ var gulp = require("gulp")
   , paths = require("./paths")
   , path = require("path")
 
+/**
+ * task icons
+ *
+ * creates iconfont from `icons` svgs and generates a
+ * css from `stylesheets/template/icons`
+ */
 module.exports = function(){
   return gulp.src(paths.sources.icons)
     .pipe(iconfontCSS({
