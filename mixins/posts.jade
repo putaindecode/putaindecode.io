@@ -12,10 +12,10 @@ mixin Posts(limit, tags)
         src="#{author.avatar_url}"
         alt=""
       )
-      a.putainde-List-title(href="#{path.relative(page, post.slug)}.html")
+      a.h3.putainde-List-title(href="#{path.relative(page, post.slug)}.html")
         | #{post.title}
       if post.tags
-        ul.putainde-Tags
+        ul.putainde-Tags.small
           each tag in post.tags
             if tags
               -if(!tags.hasOwnProperty(tag))
@@ -25,14 +25,14 @@ mixin Posts(limit, tags)
               data-tag=tags ? "#{tags[tag]}" : null
             )
               | #{tag}
-      .putainde-List-author
+      .putainde-List-author.small
         | #{lang.initialCommit}
         =" "
         a(href="http://github.com/#{author.github}")
           | #{post.author}
         if post.date
           br
-          | #{lang.the} #{formatDate(post.date)}
+          time.small #{lang.the} #{formatDate(post.date)}
 
   if tags
     .putainde-Message.putainde-Message--hidden.js-NoPosts

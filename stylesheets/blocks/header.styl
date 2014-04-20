@@ -1,6 +1,7 @@
 .putainde-Header
   background: MAIN_COLOR
   background: linear-gradient(to bottom, MAIN_COLOR, MAIN_COLOR - 10%)
+  line-height: --line-height*2;
   @media (max-width:54em)
     .Grid-cell
       text-align: center
@@ -8,25 +9,29 @@
 .putainde-SiteTitle
   position: relative
   display: inline-block
-  padding: .2em 0 .2em 5em
+  padding: 0 0 0 5em
   text-decoration: none
+
   span
     display: inline-block
     font-size: 1.2em
     color: MAIN_TEXT
-    padding: .75em 0
     font-family: Avenir, "Helvetica Neue", Helvetica, sans-serif
   @media (max-width:54em)
     font-size: .8em
     margin: .25em 0
 
-.putainde-Logo
-  LOGO_SIZE=4
-  position: absolute
-  left: 0
-  top: 0
-  width: unit(LOGO_SIZE,em)
-  height: unit(LOGO_SIZE,em)
-  transition: .3s ease-in-out transform
-  &:hover
-    transform: translateY(1em) rotate(-15deg) scale(1.4)
+.putainde-Logo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: --line-height*3;
+  height: @width;
+  transition: .2s;
+  transform: translateY(-50%);
+}
+
+.putainde-SiteTitle:hover .putainde-Logo {
+  transform: translateY(-50%) rotate(-2deg) scale(1.2);
+  transform-origin: 100% 0;
+}
