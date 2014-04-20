@@ -5,12 +5,15 @@ var gulpUtil = require("gulp-util")
   }
   , connect = require("connect")
   , connectLivereload = require("connect-livereload")
-  , livereloadServer = require("gulp-livereload")(ports.livereload)
+  , livereload = require("gulp-livereload")
+  , livereloadServer
   , opn = require("opn")
   , paths = require("./paths")
 
 module.exports = {
   start : function(){
+    livereloadServer = livereload(ports.livereload)
+
     var app = connect()
       .use(connectLivereload({port : ports.livereload}))
       .use(connect.static(paths.dist.public))
