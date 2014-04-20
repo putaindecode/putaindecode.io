@@ -1,15 +1,13 @@
 language: node_js
 
 notifications:
-  irc: "irc.freenode.org#p!"
+  irc:
+    - "irc.freenode.org#putaindecode"
   webhooks:
     urls:
       - https://webhooks.gitter.im/e/1963aded18e129703057
-    #on_success: always  # options: [always|never|change] default: always
-    #on_failure: always  # options: [always|never|change] default: always
-    on_start: true     # default: false
+    on_start: true
 
 cache:
   directories:
-    - bower_components
     - node_modules
