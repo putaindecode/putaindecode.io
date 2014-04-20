@@ -11,7 +11,7 @@ module.exports = function(){
   return gulp.src(paths.dist.public + "**/*")
     .pipe(ghPages({
       remoteUrl : "git@github.com:putaindecode/website.git",
-      branch : "gh-pages-test",
+      branch : "gh-pages",
       cacheDir : __dirname + "/../.publish"
     }))
 }
