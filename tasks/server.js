@@ -10,6 +10,11 @@ var gulpUtil = require("gulp-util")
   , opn = require("opn")
   , paths = require("./paths")
 
+/**
+ * task that generate a static web server with livereload
+ *
+ * used for local development only
+ */
 module.exports = {
   start : function(){
     livereloadServer = livereload(ports.livereload)

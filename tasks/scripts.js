@@ -5,6 +5,11 @@ var gulp = require("gulp")
   , browserify = require("gulp-browserify")
   , paths = require("./paths")
 
+/**
+ * task scripts
+ *
+ * creates a browserify bundle from `scripts/index`
+ */
 module.exports = function(){
   return gulp.src(paths.sources.mainScript)
     .pipe(opts.plumber ? plumber() : util.noop())

@@ -8,6 +8,12 @@ var gulp = require("gulp")
   , jadeExtenstionRE = /\.jade$/
   , options = require("./cache/options")
 
+/**
+ * task pages
+ *
+ * compiles jade to html with `exports`, `lang` and `tasks/cache/options`
+ * available
+ */
 module.exports = function(){
   var stream = gulp.src(paths.sources.pages)
 

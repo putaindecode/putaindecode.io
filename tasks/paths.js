@@ -1,3 +1,6 @@
+/**
+ * paths configuration
+ */
 module.exports = {
   sources : {
     pages : "pages/**/**/**.jade",
