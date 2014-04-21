@@ -32,7 +32,7 @@ mixin Posts(limit, tags)
           | #{post.author}
         if post.date
           br
-          | #{lang.the} #{formatDate(post.date)}
+          time #{lang.the} #{formatDate(post.date)}
 
   if tags
     .putainde-Message.putainde-Message--hidden.js-NoPosts
