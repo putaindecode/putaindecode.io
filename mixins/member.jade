@@ -8,7 +8,7 @@ mixin Member(member, isPost)
       .putainde-Member-title
         h3.putainde-Member-name
           if isPost
-            | #{lang.writtenBy}
+            span.putainde-WrittenBy #{lang.writtenBy}
             = " "
           | #{member.name}
         .putainde-Member-social
