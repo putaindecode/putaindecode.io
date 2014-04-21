@@ -72,8 +72,8 @@ soient leurs formes.
 
 Dans les faits :
 
-- Tu peux corriger nos conneries directement dans l'article, en faisant une
-PR {{!([Une Pull Request c'est quoi?](#todo))}},
+- Tu peux corriger nos conneries directement dans l'article, en faisant [une
+PR](/posts/comment-contribuer/#correction-d-un-post-existant),
 - Tout naturellement, tu peux commenter les articles,
 - Tu peux aussi [soumettre des articles](https://github.com/putaindecode/propositions-de-posts),
 on se fera un plaisir de les prendre en compte (sauf si c’est une review
