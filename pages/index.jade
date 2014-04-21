@@ -9,9 +9,13 @@ block main
       .putainde-Title.putainde-Title--home
         h2.putainde-Title-text #{lang.lastPosts}
       +Posts(6)
+
+  .Grid.Grid--alignCenter
+    .Grid-cell.u-size8of12
       .putainde-List-item.putainde-List-item--link
         a(href="#{path.relative(page, 'posts')}")
           | #{lang.morePosts}
+
   .putainde-Section.putainde-Section--manifesto
     .Grid.Grid--alignCenter
       .Grid-cell.u-size8of12.putainde-Section-contents.putainde-Post-contents

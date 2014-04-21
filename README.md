@@ -1,7 +1,7 @@
 # Putain de Code !
 
-[![Build Status](https://travis-ci.org/putaindecode/website.png?branch=master)](https://travis-ci.org/putaindecode/website)
-[![Code Climate](https://codeclimate.com/github/putaindecode/website.png)](https://codeclimate.com/github/putaindecode/website)
+[![Build Status](http://img.shields.io/travis/putaindecode/website.svg)](https://travis-ci.org/putaindecode/website)
+[![Code Climate](http://img.shields.io/codeclimate/github/putaindecode/website.svg)](https://codeclimate.com/github/putaindecode/website)
 
 <img align="right" alt="" src="https://raw.github.com/putaindecode/website/master/images/p!-logo--no-bubble-512--trim.png" width="128">
 
