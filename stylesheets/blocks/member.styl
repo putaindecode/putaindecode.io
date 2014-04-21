@@ -1,3 +1,7 @@
+:root {
+  var-putainde-Member-picture-size: calc(var(line-height) * 3)
+}
+
 .putainde-Member
   position: relative
   padding: 0 0 0 7em
@@ -6,7 +10,7 @@
     padding-left: 4em
 
 .putainde-Member--author
-  padding: var(line-height) 0 var(line-height) 8em
+  padding: var(line-height) 0 var(line-height) calc(var(putainde-Member-picture-size) + 1rem)
   @media (max-width:28em)
     padding-left: 4em
 
@@ -14,7 +18,7 @@
   position: absolute
   top: 0
   left: 0
-  height: calc(var(line-height) * 3)
+  height: var(putainde-Member-picture-size)
   border-radius: 100%
   @media (max-width:28em)
     height: calc(var(line-height) * 2)
@@ -37,6 +41,9 @@
   background: #fafafa
   border-radius: 2em
   overflow: hidden
+  @media (max-width:28em)
+    position: static;
+    display: inline-block;
   a
     color: #444
     display: inline-block
