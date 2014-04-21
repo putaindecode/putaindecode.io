@@ -20,6 +20,7 @@ module.exports = function(){
   gulp.watch(
     [
       paths.sources.pages,
+      paths.sources.pagesMd,
       paths.sources.partials,
       paths.sources.mixins,
       paths.sources.layouts,
