@@ -1,7 +1,7 @@
 .putainde-Member
   position: relative
   padding: 0 0 0 7em
-  margin: --line-height 0
+  margin: var(line-height) 0 var(double-line-height)
   @media (max-width:28em)
     padding-left: 4em
 
@@ -14,10 +14,10 @@
   position: absolute
   top: 0
   left: 1em
-  height: --line-height*3
+  height: calc(var(line-height) * 3)
   border-radius: 100%
   @media (max-width:28em)
-    height: --line-height*2
+    height: calc(var(line-height) * 2)
     top: 1em
   /.putainde-Member--author &
     top: 4em
