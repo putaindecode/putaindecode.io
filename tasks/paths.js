@@ -4,6 +4,7 @@
 module.exports = {
   sources : {
     pages : "pages/**/**/**.jade",
+    pagesMd : "pages/**/**/**.md",
     feed : "feed/feed.jade",
     sitemap : "layouts/sitemap.jade",
     pagesRoot : "pages/",
