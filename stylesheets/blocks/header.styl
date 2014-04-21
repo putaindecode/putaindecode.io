@@ -1,7 +1,12 @@
+:root {
+  var-putainde-Header-height: calc(var(line-height) * 3);
+  var-putainde-Logo-size: calc(var(putainde-Header-height) * .8);
+}
+
 .putainde-Header
   background: MAIN_COLOR
   background: linear-gradient(to bottom, MAIN_COLOR, MAIN_COLOR - 10%)
-  line-height: --line-height*2;
+  line-height: var(putainde-Header-height);
   @media (max-width:54em)
     .Grid-cell
       text-align: center
@@ -9,7 +14,7 @@
 .putainde-SiteTitle
   position: relative
   display: inline-block
-  padding: 0 0 0 5em
+  padding: 0 0 0 calc(var(putainde-Logo-size) + 1rem)
   text-decoration: none
 
   span
@@ -25,7 +30,7 @@
   position: absolute;
   top: 50%;
   left: 0;
-  width: --line-height*3;
+  width: var(putainde-Logo-size);
   height: @width;
   transition: .2s;
   transform: translateY(-50%);
