@@ -1,4 +1,4 @@
-<img class="putainde-Img putainde-Img--left" alt="" src="{{ happyplan.baseUrls.media }}/jquery-die.jpg">
+<figure class="putainde-Media putainde-Media--left">![](jquery-die.jpg)</figure>
 
 Oui alors jQuery, c'est sûrement très bien, ça simplifie pas mal de choses et le _chaining_ est intéressant mais eeeest-ce que vous connaissez l'équivalent en _pur_ JavaScript ? Pas sûr hein.
 
