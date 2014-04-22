@@ -3,7 +3,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   each page, url in pages
     url
       loc
-        | #{lang.baseURL}/posts/#{url}.html
+        | #{lang.baseURL}/posts/#{uri(url + '.html')}
       priority
         -if(url == "index")
           | 1

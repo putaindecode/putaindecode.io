@@ -17,13 +17,24 @@ module.exports = {
       pages : exports.value,
       lang : lang.value,
       path : {
-        relative : function(from, to){
-          if(to.indexOf("http") === 0) {
-            return to
-          }
-          return path.relative(from.replace(/index$/, ""), to).replace(/\\/g, "/")
-        },
+        relative : path.relative,
         join : path.join
+      },
+      uri : function(to, from){
+        if(to.indexOf("http") === 0) {
+          return to
+        }
+
+        if(from) {
+          console.log(from, to)
+          to = path.relative(from.replace(/index$/, ""), to)
+        }
+
+        return to
+          // windows OS fix
+          .replace(/\\/g, "/")
+          // remove useless & ugly trailing index.html
+          .replace(/index\.html$/, "")
       },
       getPages : function(object){
         return lodash.where(exports.value, object)
