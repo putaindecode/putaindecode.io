@@ -26,7 +26,6 @@ module.exports = {
         }
 
         if(from) {
-          console.log(from, to)
           to = path.relative(from.replace(/index$/, ""), to)
         }
 
