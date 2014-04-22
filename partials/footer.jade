@@ -1,13 +1,15 @@
 .Grid
-  .Grid-cell
+  .Grid-cell.u-size4of12
     p.putainde-Footer-text
       | #{lang.copyright.replace('{*}', new Date().getFullYear())}
+  .Grid-cell.u-size4of12
     if lang.footerNavigation
       ul.putainde-Footer-list
         each item in lang.footerNavigation
           li
             a(href="#{path.relative(page, item.url)}")
               | #{item.name}
+  .Grid-cell.u-size4of12
     p.putainde-Footer-text.putainde-Footer-text--small
       | #{lang.madeWithHeart}
       -var crewPath = path.relative(page, lang.crewLink.url)
