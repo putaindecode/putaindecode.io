@@ -14,7 +14,7 @@ html(lang="fr")
     block head
     link(
       rel="stylesheet"
-      href="#{path.relative(page, 'stylesheets/index.css')}"
+      href="#{uri('stylesheets/index.css', page)}"
     )
     //- link(
     //-   rel="stylesheet"
@@ -32,5 +32,5 @@ html(lang="fr")
     .putainde-Footer
       include /partials/footer
     block end
-    script(src="#{path.relative(page, 'scripts/index.js')}")
+    script(src="#{uri('scripts/index.js', page)}")
     include /partials/analytics

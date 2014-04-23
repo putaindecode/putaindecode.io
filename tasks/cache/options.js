@@ -16,11 +16,14 @@ module.exports = {
     locals : {
       pages : exports.value,
       lang : lang.value,
-      path : {
-        relative : path.relative,
-        join : path.join
-      },
       uri : function(to, from){
+        if(lodash.isArray(to)){
+          to = path.join.apply(path, to)
+        }
+        if(lodash.isArray(from)){
+          from = path.join.apply(path, from)
+        }
+
         if(to.indexOf("http") === 0) {
           return to
         }
