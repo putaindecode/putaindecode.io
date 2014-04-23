@@ -6,6 +6,7 @@ var gulp = require("gulp")
   , paths = require("./paths")
   , path = require("path")
   , jadeExtenstionRE = /\.jade$/
+  , windowsRE = /\\/g
   , options = require("./cache/options")
 
 /**
@@ -22,7 +23,9 @@ module.exports = function(){
   stream.on("data", function(file){
     options.value.locals.page = path.relative(
       path.resolve(paths.sources.pagesRoot), file.path
-    ).replace(jadeExtenstionRE, "")
+    )
+    .replace(jadeExtenstionRE, "")
+    .replace(windowsRE, "/")
   })
 
   return stream
