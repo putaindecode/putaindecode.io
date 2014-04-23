@@ -113,7 +113,7 @@ Puis si c'est juste pour ajouter des variables, il existe d'autres solutions...
 
 _Note: si vous avez d'autres pré-processeurs intéressants, je me ferais un plaisir
 de les ajouter ici. Mais bon [vous pouvez aussi le faire tout seul comme un
-grand](https://github.com/putaindecode/website/blob/master/src/posts/css/le-point-sur-les-preprocesseurs/index.html.hbs)._
+grand](https://github.com/putaindecode/website/blob/master/pages/posts/css/le-point-sur-les-preprocesseurs/index.md)._
 
 ## Les pré-processeurs sont-ils vraiment nécessaire ?
 

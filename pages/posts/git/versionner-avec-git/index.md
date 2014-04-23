@@ -341,7 +341,7 @@ Guide][git-guide] de Roger Dudler est une bonne manière d'apprendre.
 ## Hey ! Tu veux appliquer ça pour contribuer à Putain de Code ?
 
 Pas de problème, on a écrit un post exprès :
-[Comment contribuer](posts/comment-contribuer/) !
+[Comment contribuer](/posts/comment-contribuer/) !
 
 [git:website]: http://git-scm.com/
 [git:doc]: http://git-scm.com/documentation

@@ -252,4 +252,4 @@ est des types sympas.
 ## Hey ! Tu veux mieux comprendre Git ?
 
 Pour découvrir Git plus en détails, on t'invite à lire notre article
-[Versionner avec Git](posts/git/versionner-avec-git/)
+[Versionner avec Git](/posts/git/versionner-avec-git/)
