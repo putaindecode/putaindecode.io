@@ -1,6 +1,6 @@
 /* humanstxt.org/ */
 /* The humans responsible & technology colophon */
-/* Please update if needed the team page (src/le-crew/) when you update this page */
+/* Please update if needed the team page when you update this page */
 
     ____        __        _              __        ______          __
    / __ \__  __/ /_____ _(_)___     ____/ /__     / ____/___  ____/ /__
