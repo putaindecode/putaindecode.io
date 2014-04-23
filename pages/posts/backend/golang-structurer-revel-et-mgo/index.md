@@ -7,7 +7,7 @@ sur la [homepage du projet](http://golang.org/) et à parcourir le
 (et très bien fichu).
 Mais si t'es juste curieux et que comprendre chaque pixel de l'article n'est pas
 une obsession pour toi, tu devrais pouvoir voir de quoi on parle. Même
-[Nyalab](/le-crew/) y est arrivé.
+[Nyalab](/#crew) y est arrivé.
 
 Dans cet article on va voir **comment brancher un projet go+revel à une base de
 données mongodb** et obtenir ainsi une base de travail sympa pour explorer le
