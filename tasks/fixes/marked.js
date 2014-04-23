@@ -14,7 +14,7 @@ marked.setOptions({
  */
 renderer.image = function(href, title, text){
   if(href.indexOf("http") !== 0) {
-    href = options.value.locals.path.relative(options.value.locals.page, "images/posts/" + href)
+    href = options.value.locals.uri("images/posts/" + href, options.value.locals.page)
   }
   var output = "<img src=\"" + href + "\" alt=\"" + text + "\""
   if(title) {
