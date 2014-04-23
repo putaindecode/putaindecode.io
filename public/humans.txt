@@ -54,5 +54,5 @@
 
 /* TECHNOLOGY COLOPHON */
 
-    SublimeText 3 / Vim
+    Atom / SublimeText 3 / Vim
     HTML5, CSS 3, JavaScript
