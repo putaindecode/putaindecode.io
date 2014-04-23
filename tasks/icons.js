@@ -3,6 +3,7 @@ var gulp = require("gulp")
   , iconfont = require("gulp-iconfont")
   , paths = require("./paths")
   , path = require("path")
+  , uri = require("./cache/options.js").value.locals.uri
 
 /**
  * task icons
@@ -20,9 +21,9 @@ module.exports = function(){
         "../..",
         paths.sources.fontStylesheet
       ),
-      fontPath : path.relative(
-        paths.dist.stylesheets,
-        paths.dist.fonts
+      fontPath : uri(
+        paths.dist.fonts,
+        paths.dist.stylesheets
       ) + "/"
     }))
     .pipe(iconfont({
