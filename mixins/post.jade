@@ -21,8 +21,20 @@ mixin Post(title)
 
       .putainde-Post-md
         block
+
+      footer.putainde-Post-footer
+        .putainde-Post-footer-title #{lang.pageActions}
+        .Grid
+          .Grid-cell.u-size1of3
+            a.putainde-Post-footer-action(href="https://github.com/putaindecode/website/edit/master/pages/#{page}.md") #{lang.pageEdit}
+          .Grid-cell.u-size1of3
+            a.putainde-Post-footer-action(href="https://github.com/putaindecode/website/blame/master/pages/#{page}.md") #{lang.pageBlame}
+          .Grid-cell.u-size1of3
+            a.putainde-Post-footer-action(href="https://github.com/putaindecode/website/commits/master/pages/#{page}.md") #{lang.pageHistory}
+
       if author
         +Member(author, true).putainde-Member--author
+
       #disqus_thread(aria-live="polite")
         noscript.
           | Please enable JavaScript to view the
