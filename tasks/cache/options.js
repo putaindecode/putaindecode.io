@@ -12,6 +12,7 @@ module.exports = {
     this.value.locals.lang = lang.value
   },
   value : {
+    pretty : true,
     basedir : path.resolve(__dirname, "../../"),
     locals : {
       pages : exports.value,
