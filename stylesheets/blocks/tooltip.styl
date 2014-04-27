@@ -1,38 +1,191 @@
-.putainde-Tooltip
-  color #fff
-  background: #000
-  background: rgba(#000, .9)
-  position: absolute
-  top: -4em
-  visibility: hidden
-  transform: translateX(-50%)
-  padding: .7em
-  border-radius: .3em
-  span
-    font-size: .8em
-  .putainde-Icon
-    padding: 0 .25em
-    font-size: 1.2em
-  &:after
-    font-size: .8em
-    position: absolute
-    content: ""
-    border: .5em solid transparent
-    border-top-color: #000
-    border-top-color: rgba(#000, .9)
-    border-bottom-width: 0
-    left: 50%
-    margin-left: -.5em
-    bottom: -.5em
+/**
+ * @name AttrTip
+ * @description Tooltip base on data-tip attribute
+ * @markup
+ * <br><br>
+ * <div class="AttrTip" data-tip="Tooltip">Hover me</div>
+ * <div class="AttrTip AttrTip--top" data-tip="Tooltip">Hover me (top)</div>
+ * <div class="AttrTip AttrTip--top AttrTip--always" data-tip="Tooltip">Always on top</div>
+ * <div class="AttrTip AttrTip--right" data-tip="Tooltip">Hover me (right)</div>
+ * <div class="AttrTip AttrTip--right AttrTip--always" data-tip="Tooltip">Always on right</div>
+ * <div class="AttrTip AttrTip--bottom" data-tip="Tooltip">Hover me (bottom)</div>
+ * <div class="AttrTip AttrTip--bottom AttrTip--always" data-tip="Tooltip">Always on bottom</div>
+ * <div class="AttrTip AttrTip--left" data-tip="Tooltip">Hover me (left)</div>
+ * <div class="AttrTip AttrTip--left AttrTip--always" data-tip="Tooltip">Always on left</div>
+ */
+.AttrTip {
+position: relative;
+display: inline-block;
+}
 
-.putainde-Tooltip--visible
-  visibility: visible
-  animation: .3s ease-in-out Tooltip
+.AttrTip::before,
+.AttrTip::after {
+  z-index: 1000;
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  transition: .3s ease;
+  transform: translate3d(0, 0, 0);
+}
 
-@keyframes Tooltip
-  from
-    opacity: 0
-    transform: translateX(-50%) translateY(-2em)
-  to
-    opacity: 1
-    transform: translateX(-50%) translateY(0)
+.AttrTip:hover::before,
+.AttrTip:hover::after,
+.AttrTip:focus::before,
+.AttrTip:focus::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.AttrTip::before {
+  z-index: 10001;
+  content: "";
+  position: absolute;
+  border: 6px solid transparent;
+  background: transparent;
+}
+
+.AttrTip::after {
+  content: attr(data-tip);
+  font-size: 12px;
+  line-height: 12px;
+  padding: 8px 10px;
+
+  white-space: nowrap;
+
+  color: #fff;
+  background: #383838;
+  text-shadow: 0 -1px 0 #000;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+
+  border-radius: 2px;
+}
+
+.AttrTip--top::before { border-top-color: #383838 }
+.AttrTip--bottom::before { border-bottom-color: #383838 }
+.AttrTip--left::before { border-left-color: #383838 }
+.AttrTip--right::before { border-right-color: #383838 }
+
+
+.AttrTip--top::before { margin-bottom: -12px }
+.AttrTip--top::before,
+.AttrTip--top::after {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.AttrTip--top:hover::after,
+.AttrTip--top:hover::before,
+.AttrTip--top:focus::after,
+.AttrTip--top:focus::before {
+  transform: translateX(-50%) translateY(-8px);
+}
+
+.AttrTip--bottom::before { margin-top: -12px }
+.AttrTip--bottom::before,
+.AttrTip--bottom::after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.AttrTip--bottom:hover::after,
+.AttrTip--bottom:hover::before,
+.AttrTip--bottom:focus::after,
+.AttrTip--bottom:focus::before {
+  transform: translateX(-50%) translateY(8px);
+}
+
+.AttrTip--right::before {
+  margin-left: -12px;
+  margin-bottom: -6px;
+}
+.AttrTip--right::before,
+.AttrTip--right::after {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.AttrTip--right:hover::after,
+.AttrTip--right:hover::before,
+.AttrTip--right:focus::after,
+.AttrTip--right:focus::before {
+  transform: translateX(8px) translateY(-50%);
+}
+
+.AttrTip--left::before {
+  margin-right: -12px;
+  margin-bottom: -6px;
+}
+.AttrTip--left::before,
+.AttrTip--left::after {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.AttrTip--left:hover::after,
+.AttrTip--left:hover::before,
+.AttrTip--left:focus::after,
+.AttrTip--left:focus::before {
+  transform: translateX(-8px) translateY(-50%);
+}
+
+.AttrTip--error::after {
+  background-color: #b34e4d;
+  text-shadow: 0 -1px 0 #592726;
+}
+.AttrTip--error.AttrTip--top::before { border-top-color: #b34e4d }
+.AttrTip--error.AttrTip--bottom::before { border-bottom-color: #b34e4d }
+.AttrTip--error.AttrTip--left::before { border-left-color: #b34e4d }
+.AttrTip--error.AttrTip--right::before { border-right-color: #b34e4d }
+
+.AttrTip--warning::after {
+  background-color: #c09854;
+  text-shadow: 0 -1px 0 #6c5328;
+}
+.AttrTip--warning.AttrTip--top::before { border-top-color: #c09854 }
+.AttrTip--warning.AttrTip--bottom::before { border-bottom-color: #c09854 }
+.AttrTip--warning.AttrTip--left::before { border-left-color: #c09854 }
+.AttrTip--warning.AttrTip--right::before { border-right-color: #c09854 }
+
+
+.AttrTip--info::after {
+  background-color: #3986ac;
+  text-shadow: 0 -1px 0 #193b4d;
+}
+.AttrTip--info.AttrTip--top::before { border-top-color: #3986ac }
+.AttrTip--info.AttrTip--bottom::before { border-bottom-color: #3986ac }
+.AttrTip--info.AttrTip--left::before { border-left-color: #3986ac }
+.AttrTip--info.AttrTip--right::before { border-right-color: #3986ac }
+
+.AttrTip--success::after {
+  background-color: #458746;
+  text-shadow: 0 -1px 0 #1a321a;
+}
+.AttrTip--success.AttrTip--top::before { border-top-color: #458746 }
+.AttrTip--success.AttrTip--bottom::before { border-bottom-color: #458746 }
+.AttrTip--success.AttrTip--left::before { border-left-color: #458746 }
+.AttrTip--success.AttrTip--right::before { border-right-color: #458746 }
+
+
+.AttrTip--always::before,
+.AttrTip--always::after {
+  visibility: visible;
+  opacity: 1;
+}
+.AttrTip--always.AttrTip--top::before,
+.AttrTip--always.AttrTip--top::after {
+  transform: translateX(-50%) translateY(-8px);
+}
+.AttrTip--always.AttrTip--bottom::before,
+.AttrTip--always.AttrTip--bottom::after {
+  transform: translateX(-50%) translateY(8px);
+}
+.AttrTip--always.AttrTip--left::before,
+.AttrTip--always.AttrTip--left::after {
+  transform: translateX(-8px) translateY(-50%);
+}
+.AttrTip--always.AttrTip--right::before,
+.AttrTip--always.AttrTip--right::after {
+  transform: translateX(8px) translateY(-50%);
+}

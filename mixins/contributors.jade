@@ -1,0 +1,11 @@
+mixin Contributors(page)
+  -var fileContributors = contributors.files["pages/" + page + ".md"]
+  -var nbFileContributors = Object.keys(fileContributors).length
+  -if (fileContributors && nbFileContributors > 1)
+    .putainde-Contributors
+      strong.putainde-Contributors-label #{nbFileContributors} #{lang.contributors}
+      each contributions, login in fileContributors
+        a.putainde-Contributor(href="https://github.com/#{login}", data-tip="#{login}").AttrTip.AttrTip--bottom
+          +Avatar(contributors.map[login]).putainde-Contributor-avatar
+  //- -else
+  //-   -console.log("page", page, "didnt have filesContributor")

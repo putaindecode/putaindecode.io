@@ -1,0 +1,20 @@
+{
+  "crew" : true,
+  "twitter": "bloodyowl",
+  "fr": {
+    "bio": {
+      "short": "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens",
+      "long": [
+        "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens"
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people.",
+      "long": [
+        "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people"
+      ]
+    }
+  }
+}

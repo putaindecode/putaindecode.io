@@ -2,7 +2,7 @@ mixin Post(title)
   .Grid.putainde-Post
     .Grid-cell.u-size8of12.Grid.putainde-Post-contents
       if(exports.author)
-        -var author = lang.members[exports.author]
+        -var author = contributors.map[exports.author]
       if title
         .putainde-Title
           h1.putainde-Title-text #{title}
@@ -33,7 +33,9 @@ mixin Post(title)
             a.putainde-Post-footer-action(href="https://github.com/putaindecode/website/commits/master/pages/#{page}.md") #{lang.pageHistory}
 
       if author
-        +Member(author, true).putainde-Member--author
+        +Author(author, true).putainde-Author--author
+
+      +Contributors(page)
 
       #disqus_thread(aria-live="polite")
         noscript.

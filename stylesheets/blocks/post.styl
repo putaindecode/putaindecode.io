@@ -16,7 +16,6 @@
 
 .putainde-Title-authorPicture
   position: absolute
-  border-radius: 100%
   width: 3em
   left: -(@width + 1.5)
   top: 50%
@@ -168,7 +167,7 @@
 
 .putainde-Post-footer {
   margin: var(double-line-height) 0;
-  box-shadow: inset 0 1px 0 0 #ddd;
+  box-shadow: inset 0 1px 0 0 var(putainde-Color-lightGrey);
 }
 
 .putainde-Post-footer-title {
@@ -188,4 +187,8 @@
   .putainde-Post-footer .u-size1of3 + .u-size1of3 + .u-size1of3 {
     text-align: right;
   }
+}
+
+#disqus_thread {
+  margin: var(double-line-height) 0 var(line-height);
 }
