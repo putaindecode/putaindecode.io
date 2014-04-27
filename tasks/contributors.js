@@ -129,14 +129,12 @@ var cache = require("./cache/contributors")
           })
 
           async.parallel(parallelsUser, function(){
-            console.log("transform map")
             // map by login, not email
             cache.value.map = lodash.transform(cache.value.mapByEmail, function(result, author){
               if (!result[author.login]){
                 result[author.login] = author
               }
             })
-            console.log("resolve")
             resolve()
           })
         })
