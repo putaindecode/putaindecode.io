@@ -30,8 +30,7 @@ var cache = require("./cache/contributors")
         return readFile("tasks/cache/contributors.cache", {encoding : "utf8"})
       })
       .then(function(contributors){
-        // grab mailmapcache (base64ified just to do not have unserialized
-        // email at the root of the repo)
+        // grab contributors cache (base64ified just to do not have unserialized public emails)
         if(bs64){
           contributors = convertString.UTF8.bytesToString(bs64.decode(contributors))
         }
