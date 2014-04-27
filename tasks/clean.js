@@ -3,5 +3,5 @@ var gulp = require("gulp")
   , paths = require("./paths")
 
 module.exports = function(){
-  gulp.src(paths.dist.pages, {read : false}).pipe(clean())
+  gulp.src(paths.dist.pages + "**/*", {read : false}).pipe(clean())
 }
