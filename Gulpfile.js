@@ -2,6 +2,8 @@ var gulp = require("gulp")
 
 require("./tasks/fixes/marked")
 
+gulp.task("clean", require("./tasks/clean"))
+
 // html
 gulp.task("lang", require("./tasks/lang"))
 gulp.task("exports", require("./tasks/exports"))
@@ -41,10 +43,14 @@ gulp.task("dist", [
 gulp.task("server", require("./tasks/server").start)
 gulp.task("watch", require("./tasks/watch"))
 gulp.task("default", [
+  "clean",
   "dist",
   "server",
   "watch"
 ])
 
 // publish
-gulp.task("publish", ["dist"], require("./tasks/publish"))
+gulp.task("publish", [
+  "clean",
+  "dist"
+], require("./tasks/publish"))
