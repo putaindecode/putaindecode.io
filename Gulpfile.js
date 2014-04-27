@@ -22,9 +22,6 @@ gulp.task("scripts:linting", require("./tasks/scripts-linting"))
 gulp.task("stylesheets", require("./tasks/stylesheets"))
 gulp.task("stylesheets:all", ["icons"], require("./tasks/stylesheets")) // for first run, to ensure icon css is fresh & ready
 
-// p! tasks
-gulp.task("contributors", require("./tasks/contributors"))
-
 // build
 gulp.task("dist", [
   "pages",
