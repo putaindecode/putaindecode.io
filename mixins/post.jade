@@ -10,11 +10,13 @@ mixin Post(title)
         .putainde-Date
           if exports.author
             | #{lang.writtenBy} #{exports.author}
+          if exports.author && exports.date
+            =","
           if exports.date
             =" "
             | #{lang.the} #{formatDate(exports.date)}
       if exports.tags
-        ul.putainde-Tags
+        ul.putainde-Tags.putainde-Post-tags
           each tag in exports.tags
             li.putainde-Tag
               | #{tag}
