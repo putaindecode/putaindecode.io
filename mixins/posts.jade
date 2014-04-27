@@ -6,14 +6,14 @@ mixin Posts(limit, tags)
   if tags
     -var flag = -1
   each post in posts
-    -var author = lang.members[post.author]
+    -var author = contributors.map[post.author]
     .putainde-List-item.js-Post
-      img.putainde-List-authorPicture.js-AnimateLoad(
-        src="#{author.avatar_url}"
-        alt=""
-      )
+
+      +Avatar(author).putainde-List-authorPicture
+
       a.putainde-List-title(href="#{uri(post.slug + '.html', page)}")
         | #{post.title}
+
       if post.tags
         ul.putainde-Tags
           each tag in post.tags
@@ -25,6 +25,7 @@ mixin Posts(limit, tags)
               data-tag=tags ? "#{tags[tag]}" : null
             )
               | #{tag}
+
       .putainde-List-author
         | #{lang.initialCommit}
         =" "

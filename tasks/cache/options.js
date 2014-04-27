@@ -1,6 +1,7 @@
 var path = require("path")
   , exports = require("./exports")
   , lang = require("./lang")
+  , contributors = require("./contributors")
   , marked = require("marked")
   , fs = require("fs")
   , lodash = require("lodash")
@@ -10,12 +11,14 @@ module.exports = {
   update : function(){
     this.value.locals.pages = exports.value
     this.value.locals.lang = lang.value
+    this.value.locals.contributors = contributors.value
   },
   value : {
     basedir : path.resolve(__dirname, "../../"),
     locals : {
       pages : exports.value,
       lang : lang.value,
+      contributors : contributors.value,
       uri : function(to, from){
         if(lodash.isArray(to)){
           to = path.join.apply(path, to)

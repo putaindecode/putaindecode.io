@@ -1,0 +1,21 @@
+mixin Author(author, isPost)
+  .putainde-Author(class=attributes.class)
+    +Avatar(author).putainde-Author-picture
+    .putainde-Author-description
+      .putainde-Author-title
+        h3.putainde-Author-name
+          if isPost
+            span.putainde-WrittenBy #{lang.writtenBy}
+            = " "
+          | #{author.login}
+        .putainde-Author-social
+          if author.url
+            a(href="#{author.url}")
+              i.putainde-Icon.putainde-Icon--world
+          if author.twitter
+            a(href="https://twitter.com/#{author.twitter}")
+              i.putainde-Icon.putainde-Icon--twitter
+          a(href="https://github.com/#{author.login}")
+            i.putainde-Icon.putainde-Icon--github
+      -if(author.fr && author.fr.bio && author.fr.bio.long)
+        p!= author.fr.bio.long.join(' <br> ')

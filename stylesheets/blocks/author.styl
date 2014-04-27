@@ -1,36 +1,38 @@
 :root {
-  var-putainde-Member-picture-size: calc(var(line-height) * 3)
+  var-putainde-Author-picture-size: calc(var(line-height) * 3)
 }
 
-.putainde-Member
+.putainde-Avatar {
+  border-radius: 100%;
+  box-shadow: 0 0 0 1px var(putainde-Color-lightGrey);
+}
+
+.putainde-Author
   position: relative
   padding: 0 0 0 7em
-  margin: var(line-height) 0 var(double-line-height)
+  margin: var(line-height) 0
   @media (max-width:28em)
     padding-left: 4em
 
-.putainde-Member--author
-  padding: var(line-height) 0 var(line-height) calc(var(putainde-Member-picture-size) + 1rem)
+.putainde-Author--author
+  padding: 0 0 0 calc(var(putainde-Author-picture-size) + 1rem)
   @media (max-width:28em)
     padding-left: 4em
 
-.putainde-Member-picture
+.putainde-Author-picture
   position: absolute
   top: 0
   left: 0
-  height: var(putainde-Member-picture-size)
-  border-radius: 100%
+  height: var(putainde-Author-picture-size)
   @media (max-width:28em)
     height: calc(var(line-height) * 2)
-  /.putainde-Member--author &
-    top: var(line-height)
 
-.putainde-Member-title
+.putainde-Author-title
   border-bottom: 1px solid #f0f0f0
   margin-bottom: -1px;
   position: relative
 
-.putainde-Member-name
+.putainde-Author-name
   color: #222
   margin: 0
 
@@ -38,7 +40,7 @@
   color: rgba(68, 68, 68, .6);
 }
 
-.putainde-Member-social
+.putainde-Author-social
   position: absolute
   top: .5em
   right: 0
@@ -58,10 +60,10 @@
     &:focus
       background: #eee
 
-.putainde-Member-description
+.putainde-Author-description
   font-size: .925em
   color: #444
 
-.putainde-Member--author
-  .putainde-Member-description
+.putainde-Author--author
+  .putainde-Author-description
       font-size: .833rem

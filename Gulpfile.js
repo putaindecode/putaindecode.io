@@ -5,7 +5,8 @@ require("./tasks/fixes/marked")
 // html
 gulp.task("lang", require("./tasks/lang"))
 gulp.task("exports", require("./tasks/exports"))
-gulp.task("pages", ["lang", "exports"], require("./tasks/pages"))
+gulp.task("contributors", require("./tasks/contributors"))
+gulp.task("pages", ["lang", "exports", "contributors"], require("./tasks/pages"))
 gulp.task("feed", ["pages", "lang", "exports"], require("./tasks/feed"))
 gulp.task("sitemap", ["lang", "exports"], require("./tasks/sitemap"))
 
@@ -20,6 +21,9 @@ gulp.task("scripts", ["scripts:linting"], require("./tasks/scripts"))
 gulp.task("scripts:linting", require("./tasks/scripts-linting"))
 gulp.task("stylesheets", require("./tasks/stylesheets"))
 gulp.task("stylesheets:all", ["icons"], require("./tasks/stylesheets")) // for first run, to ensure icon css is fresh & ready
+
+// p! tasks
+gulp.task("contributors", require("./tasks/contributors"))
 
 // build
 gulp.task("dist", [

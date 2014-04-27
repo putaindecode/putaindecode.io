@@ -1,0 +1,20 @@
+{
+  "crew" : true,
+  "twitter": "_kud",
+  "fr": {
+    "bio": {
+      "short": "Viking application designer, aime emmerder les gens, nivèle par le haut.",
+      "long": [
+        "Viking application designer (aka JavaScript engineer), batteur, photographe, amoureux de cinéma, n'aime pas les longues descriptions."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Viking application designer, likes pissing people off, leveling up.",
+      "long": [
+        "Viking application designer (aka JavaScript engineer), drummer, photographer, cinema lover, and dislikes long description."
+      ]
+    }
+  }
+}
