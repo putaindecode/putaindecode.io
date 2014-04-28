@@ -115,7 +115,7 @@ _(Sous Android)_
 
 `Wifi > Press on the current connnection > Modify network > Show advanced options`
 
-<figure>![](android-network-advanced.png)</figure>
+<figure>![](android-network-advanced.jpg)</figure>
 
 Mais quel intérêt car vous devrez faire cela sur tous vos appareils connectés
 
