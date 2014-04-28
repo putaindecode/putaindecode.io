@@ -1,25 +1,38 @@
 mixin Post(title)
-  .Grid.putainde-Post
+  article.Grid.putainde-Post
     .Grid-cell.u-size8of12.Grid.putainde-Post-contents
-      if(exports.author)
-        -var author = contributors.map[exports.author]
-      if title
-        .putainde-Title
-          h1.putainde-Title-text #{title}
-      -if(exports.author || exports.date)
-        .putainde-Date
-          if exports.author
-            | #{lang.writtenBy} #{exports.author}
-          if exports.author && exports.date
-            =","
-          if exports.date
-            =" "
-            | #{lang.the} #{formatDate(exports.date)}
-      if exports.tags
-        ul.putainde-Tags.putainde-Post-tags
-          each tag in exports.tags
-            li.putainde-Tag
-              | #{tag}
+      header.putainde-Post-header
+        if(exports.author)
+          -var author = contributors.map[exports.author]
+        if title
+          .putainde-Title
+            h1.putainde-Title-text #{title}
+
+        -if(exports.author || exports.date)
+          .putainde-Post-metas
+            if exports.author
+              | #{lang.writtenBy} #{exports.author}
+            if exports.author && exports.date
+              =","
+            if exports.date
+              span.putainde-Date
+                =" "
+                | #{lang.the} #{formatDate(exports.date)}
+            =". "
+            span.putainde-Post-readingTime.putainde-Post-readingTime--hidden.AttrTip.AttrTip--top(
+              data-tip="#{lang.readingTimeComment}",
+              data-readingTime-wpm="250"
+            )
+              | #{lang.readingTime}
+              =" "
+              span.putainde-Post-readingTime-value
+              =" "
+              | #{lang.minutes}
+        if exports.tags
+          ul.putainde-Tags.putainde-Post-tags
+            each tag in exports.tags
+              li.putainde-Tag
+                | #{tag}
 
       .putainde-Post-md
         block
