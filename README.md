@@ -11,11 +11,11 @@ Pas de base de données à installer, pas de serveurs à configurer.
 
 ## tl;dr;
 
-    git clone https://github.com/putaindecode/website.git
-    cd website
-    npm run init
-    npm i
-    npm start
+    $ git clone https://github.com/putaindecode/website.git
+    $ cd website
+    $ npm run init
+    $ npm install
+    $ npm start
 
 ## Contributions
 
@@ -42,27 +42,24 @@ avant d'intervenir sur le projet ;).
 
 ## Récupérer les sources du site
 
-    git clone https://github.com/putaindecode/website.git
-    cd website
-    npm run init
-    npm i
-
-__Les commandes `make init` et `make install` installeront les dépendances Node
-nécessaires (gulp en global et les dépendances locales).__
+    $ git clone https://github.com/putaindecode/website.git
+    $ cd website
+    $ npm run init
+    $ npm install
 
 ## Mettre à jour les sources
 
 Lorsque vous n'avez pas travaillé sur le site depuis un petit moment, on vous conseille
 d'exécuter les commandes suivantes :
 
-    git pull
-    npm i
+    $ git pull
+    $ npm install
 
 Si vous rencontrez des erreurs lors du `git pull` (par ex. pour une histoire de
 fichiers modifiés non commités), vous pouvez juste avant faire
 un petit
 
-    git reset --hard
+    $ git reset --hard
 
 __Note: cela supprimera toutes vos modifications locales sans avertissement, à
 faire avec précaution.
@@ -70,11 +67,11 @@ Préférez `git stash` si vous souhaitez conserver vos modifications__.
 
 ## Lancer le site web localement
 
-    npm start
+    $ npm start
 
-Oui oui, c'est tout, vous devrier avoir le site web qui s'ouvre tout seul dans votre navigateur.
+Oui oui, c'est tout, vous devriez avoir le site web qui s'ouvre tout seul dans votre navigateur.
 Si ce n'est pas le cas, et que vous n'avez pas d'erreurs dans votre console,
-rendez vous à l'adresse suivante: [http://localhost:4242](http://localhost:4242).
+rendez-vous à l'adresse suivante: [http://localhost:4242](http://localhost:4242).
 
 
 ## Mise en production
@@ -83,7 +80,7 @@ La commande suivante (lorsque vous avez les droits nécessaires) va construire l
 en version optimisée, et le publier (mise à jour de la branche  `gh-pages`, qui,
 grâce à GitHub, suffit à mettre en ligne le site).
 
-    npm run publish
+    $ npm run publish
 
 ---
 
@@ -91,17 +88,17 @@ grâce à GitHub, suffit à mettre en ligne le site).
 
 ### Générer le favicon
 
-Installez [icoutils](http://www.nongnu.org/icoutils/). Par exemple sur OS X:
+Installez [icoutils](http://www.nongnu.org/icoutils/). Par exemple sur OS X :
 
-    brew install icoutils
+    $ brew install icoutils
 
 ou
 
-    npm run init-osx
+    $ npm run init-osx
 
 Ensuite utilisez la commande suivante
 
-    npm run favicon
+    $ npm run favicon
 
 ---
 
