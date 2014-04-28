@@ -26,6 +26,8 @@ gulp.task("stylesheets:all", ["icons"], require("./tasks/stylesheets")) // for f
 
 // build
 gulp.task("dist", [
+  "clean",
+
   "pages",
   "feed",
   "sitemap",
@@ -43,7 +45,6 @@ gulp.task("dist", [
 gulp.task("server", require("./tasks/server").start)
 gulp.task("watch", require("./tasks/watch"))
 gulp.task("default", [
-  "clean",
   "dist",
   "server",
   "watch"
@@ -51,6 +52,5 @@ gulp.task("default", [
 
 // publish
 gulp.task("publish", [
-  "clean",
   "dist"
 ], require("./tasks/publish"))
