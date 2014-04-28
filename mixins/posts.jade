@@ -1,39 +1,40 @@
 mixin Posts(limit, tags)
-  -var posts = getPages({type:"post"})
-  -posts.sort(function(prev, next){return prev.date > next.date ? -1 : 1})
-  if limit
-    -posts = posts.slice(0, limit)
-  if tags
-    -var flag = -1
-  each post in posts
-    -var author = contributors.map[post.author]
-    .putainde-List-item.js-Post
+  .putainde-List
+    -var posts = getPages({type:"post"})
+    -posts.sort(function(prev, next){return prev.date > next.date ? -1 : 1})
+    if limit
+      -posts = posts.slice(0, limit)
+    if tags
+      -var flag = -1
+    each post in posts
+      -var author = contributors.map[post.author]
+      .putainde-List-item.js-Post
 
-      +Avatar(author).putainde-List-authorPicture
+        +Avatar(author).putainde-List-authorPicture
 
-      a.putainde-List-title(href="#{uri(post.slug + '.html', page)}")
-        | #{post.title}
+        a.putainde-List-title(href="#{uri(post.slug + '.html', page)}")
+          | #{post.title}
 
-      if post.tags
-        ul.putainde-Tags
-          each tag in post.tags
-            if tags
-              -if(!tags.hasOwnProperty(tag))
-                - tags[tag] = ++flag
-            li.putainde-Tag(
-              class=tags ? "js-Tag" : null
-              data-tag=tags ? "#{tags[tag]}" : null
-            )
-              | #{tag}
+        if post.tags
+          ul.putainde-Tags
+            each tag in post.tags
+              if tags
+                -if(!tags.hasOwnProperty(tag))
+                  - tags[tag] = ++flag
+              li.putainde-Tag(
+                class=tags ? "js-Tag" : null
+                data-tag=tags ? "#{tags[tag]}" : null
+              )
+                | #{tag}
 
-      .putainde-List-author
-        | #{lang.initialCommit}
-        =" "
-        a(href="http://github.com/#{author.github}")
-          | #{post.author}
-        if post.date
-          br
-          time #{lang.the} #{formatDate(post.date)}
+        .putainde-List-author
+          | #{lang.initialCommit}
+          =" "
+          a(href="http://github.com/#{author.github}")
+            | #{post.author}
+          if post.date
+            br
+            time #{lang.the} #{formatDate(post.date)}
 
   if tags
     .putainde-Message.putainde-Message--hidden.js-NoPosts
