@@ -1,8 +1,6 @@
-var gulp = require("gulp")
-  , clean = require("gulp-clean")
+var rimraf = require("rimraf")
   , paths = require("./paths")
 
 module.exports = function(){
-  return gulp.src(paths.dist.pages + "**/*", {read : false})
-    .pipe(clean())
+  rimraf.sync(paths.dist.pages)
 }
