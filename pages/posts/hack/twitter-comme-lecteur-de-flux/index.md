@@ -22,7 +22,7 @@ Vous vous sentez chaud(e) pour commencer ? Très bien, c'est parti !
 
 Pour créer une liste, aucun problème, vous allez dans "Me" dans le _header_ puis "List" dans la colonne de gauche pour vous retrouver ici :
 
-![](twitter/twitter-list.png)
+![](twitter/twitter-list.jpg)
 
 Puis vous cliquez sur `Create list` et vous rentrez les informations que vous souhaitez :
 
@@ -32,7 +32,7 @@ Nous voilà avec notre belle liste. Il n'y a plus qu'à la remplir de jolis _fol
 
 Prenons par exemple `@nodenpm`, un beau _bot_ tweetant les nouveaux packages node.js ou/et les updates de ces packages.
 
-![](twitter/nodenpm.png)
+![](twitter/nodenpm.jpg)
 
 Ajoutons-le à notre liste.
 
@@ -40,7 +40,7 @@ Ajoutons-le à notre liste.
 
 Nous voilà maintenant avec notre liste comprenant un _following_. Ce qui en ayant ajouté quelques comptes donnera quelque chose comme ceci :
 
-![](twitter/twitter-list-read.png)
+![](twitter/twitter-list-read.jpg)
 
 Vous pouvez maintenant apprécier votre lecteur de flux.
 
