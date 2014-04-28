@@ -14,7 +14,7 @@ module.exports = function(){
   return gulp.src(paths.sources.mainScript)
     .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(browserify(
-      {transform : ["uglifyify"]}
+      opts.minify ? {transform : ["uglifyify"]} : {}
     ))
     .pipe(gulp.dest(paths.dist.scripts))
 }
