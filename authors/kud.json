@@ -3,17 +3,17 @@
   "twitter": "_kud",
   "fr": {
     "bio": {
-      "short": "Viking application designer, aime emmerder les gens, nivèle par le haut.",
+      "short": "Viking UI engineer, nivèle par le haut.",
       "long": [
-        "Viking application designer (aka JavaScript engineer), batteur, photographe, amoureux de cinéma, n'aime pas les longues descriptions."
+        "Viking UI engineer (ouais frontend dev avec du node.js quoi), batteur, photographe, amoureux de cinéma, n'aime pas les longues descriptions."
       ]
     }
   },
   "en": {
     "bio": {
-      "short": "Viking application designer, likes pissing people off, leveling up.",
+      "short": "Viking UI engineer, leveling up.",
       "long": [
-        "Viking application designer (aka JavaScript engineer), drummer, photographer, cinema lover, and dislikes long description."
+        "Viking UI engineer (aka frontend dev with node.js), drummer, photographer, cinema lover, dislikes long description."
       ]
     }
   }
