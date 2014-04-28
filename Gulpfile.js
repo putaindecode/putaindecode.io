@@ -42,8 +42,8 @@ gulp.task("dist", [
 ])
 
 // dev tasks
-gulp.task("server", require("./tasks/server").start)
-gulp.task("watch", require("./tasks/watch"))
+gulp.task("server", ["dist"], require("./tasks/server").start)
+gulp.task("watch", ["dist"], require("./tasks/watch"))
 gulp.task("default", [
   "dist",
   "server",
