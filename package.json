@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "async": "^0.7.0",
-    "bloody-grid": "0.0.1",
     "bs64": "^0.1.0",
     "connect": "^2.14.4",
     "connect-livereload": "^0.3.2",
