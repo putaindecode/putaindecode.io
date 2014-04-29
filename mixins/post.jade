@@ -1,12 +1,13 @@
 mixin Post(title)
   article.Grid.putainde-Post
     .Grid-cell.u-size8of12.Grid.putainde-Post-contents
+      if title
+        .putainde-Title
+          h1.putainde-Title-text #{title}
+
       header.putainde-Post-header
         if(exports.author)
           -var author = contributors.map[exports.author]
-        if title
-          .putainde-Title
-            h1.putainde-Title-text #{title}
 
         -if(exports.author || exports.date)
           .putainde-Post-metas
