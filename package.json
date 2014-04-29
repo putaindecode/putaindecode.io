@@ -18,6 +18,7 @@
     "start": "gulp",
     "production": "gulp --production",
     "publish": "gulp publish --production",
+    "deploy": "npm run publish",
     "test": "gulp dist --production"
   },
   "devDependencies": {
