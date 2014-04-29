@@ -188,14 +188,16 @@ var cache = require("./cache/contributors")
             parallelFiles.push(function(cb){
               return exec("git log --pretty=short --follow " + file + " | git shortlog --summary --numbered --no-merges --email")
               .then(function(stdout){
-                cache.value.files[file] = {}
-                stdout
-                  .trim("\n")
-                  .split("\n")
-                  .forEach(function(line){
-                    line = line.trim()
-                    cache.value.files[file][cache.value.mapByEmail[line.match(emailRE)[1]].login] = line.match(commitsRE)[1]
-                  })
+                if (stdout) {
+                  cache.value.files[file] = {}
+                  stdout
+                    .trim("\n")
+                    .split("\n")
+                    .forEach(function(line){
+                      line = line.trim()
+                      cache.value.files[file][cache.value.mapByEmail[line.match(emailRE)[1]].login] = line.match(commitsRE)[1]
+                    })
+                }
               })
               .then(cb)
             })
