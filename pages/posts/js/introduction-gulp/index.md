@@ -2,14 +2,14 @@ Vous commencez tous à connaitre les _tasks runners_, ces outils qui permettent
 d'automatiser les tâches de développement récurrentes.
 Personnellement
  [je n'ai](http://moox.io/slides/2013/grunt-before-after/)
- [pas arrêter](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/)
+ [pas arrêté](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/)
  [d'en parler](http://moox.io/slides/2014/introduction-gulp/)
  depuis que
  [Grunt](/posts/js/premiers-pas-avec-grunt/)
- à déterré  cette vielle problématique, assez récente pour le développement web côté front end.
+ à déterré cette vielle problématique, assez récente pour le développement Web côté front end.
 
-Il faut avouer que de part l'évolution du développement web, côté front end,
-on voit beaucoup de personnes qui n'ont pas de vrai base de développeur.
+Il faut avouer que de par l'évolution du développement Web, côté front end,
+on voit beaucoup de personnes qui n'ont pas de vraies bases de développeur.
 Je veux dire par là non pas que ces personnes sont incompétentes, mais plutôt
 qu'il manque parfois la bonne flemme du développeur, celle qui le pousse à **développer**
 des solutions techniques pour mieux développer des produits.
@@ -18,10 +18,10 @@ dans les veines, de curiosité et d'amour du risque.
 Ce n'est pas en restant dans sa zone de confort qu'on va de l'avant. Enfin si vous
 avez des exemples contraires, je suis preneur.
 Mais tout cela doit provenir du fait que pas mal de métiers dans le web sont nouveaux,
-dont celui de "développeur web front end" et que du coup, peu de personnes ont
+dont celui de « développeur Web front end » et que du coup, peu de personnes ont
 initialement suivi des formations appropriés (pour ma part je proviens d'une
 formation _d'analyste-programmeur_, conception et développement software quoi).
-Je remarque que niveau back-end il y a beaucoup moins de lacunes, du fait que
+Je remarque que niveau back end il y a beaucoup moins de lacunes, du fait que
 les problématiques gérées de ce côté sont (il me semble) moins nouvelles.
 
 Bref. Je ne vais pas m'éterniser sur une intro du pourquoi on met en place un task
@@ -37,7 +37,7 @@ et qu'il limite au maximum l'utilisation de fichiers.
 Au point qu'il existe une [police Gulp](https://github.com/godaddy/gulp-header/issues/4#issuecomment-32111457)
 pour vous dire.
 Si vous voulez en savoir plus sur les streams, n'hésitez pas à lire l'article de
-Nicolas Froidure [Gulp remplacera-t-il Grunt ?](http://www.insertafter.com/articles-gulp_vs_grunt.html)
+Nicolas Froidure [Gulp remplacera-t-il Grunt ?](http://www.insertafter.com/articles-gulp_vs_grunt.html)
 qui contient une partie explicative sur les streams.
 
 Dans la pratique cela évite d'avoir un gruntfile qui, si on imagine une task
@@ -116,19 +116,19 @@ Bon, on se refait l'exemple commenté :
 // bah là ok, on est obligé d'y passer pour avoir l'API Gulp
 var gulp = require("gulp")
 
-// Ça c'est optionnel, c'est pour avoir (entre autres la méthode noop())
-// je reviens dessus après
-// https://github.com/gulpjs/gulp-util
+  // Ça c'est optionnel, c'est pour avoir (entre autres la méthode noop())
+  // je reviens dessus après
+  // https://github.com/gulpjs/gulp-util
   , gutil = require("gulp-util")
 
-// Là on a Mario le plombier qui fixe la tuyauterie foireuse.
-// Ce plugin patch le problème de stream avec node.js qui fait que tout le process
-// explose à la moindre erreur (pas pratique en cas de watch par exemple)
-// en gros, il remplace la méthode pipe et attrape les erreurs pour les ressortir gentiment
-// https://gist.github.com/floatdrop/8269868
+  // Là on a Mario le plombier qui fixe la tuyauterie foireuse.
+  // Ce plugin patch le problème de stream avec node.js qui fait que tout le process
+  // explose à la moindre erreur (pas pratique en cas de watch par exemple)
+  // en gros, il remplace la méthode pipe et attrape les erreurs pour les ressortir gentiment
+  // https://gist.github.com/floatdrop/8269868
   , plumber = require("gulp-plumber")
 
-// Ici, rien de magique, du plugin en veux-tu en voilà
+  // Ici, rien de magique, du plugin en veux-tu en voilà
   , myth = require("gulp-myth")
   , csso = require("gulp-csso")
 
@@ -145,11 +145,11 @@ var gulp = require("gulp")
 gulp.task("styles", function() {
 
   // Ici on attrape les fichiers (glob classique)
-  // à la racine (on va considérer que nos fichiers finaux seront pas dans
+  // à la racine (on va considérer que nos fichiers finaux ne seront pas dans
   // des sous dossiers, réservés aux partials & co)
   gulp.src("./src/css/*.css")
 
-    // On utilise plumber que si on build en dev, sinon faut que ça pête qu'on
+    // On utilise plumber que si on build en dev, sinon faut que ça pête, qu'on
     // soit prévenu lors d'un build pour la prod
     .pipe(options.production ? plumber() : gutil.noop())
 
@@ -174,7 +174,7 @@ gulp.task("default", ["styles"], function() {
 // Comme grunt, `gulp` sans argument lancera la tâche `default`.
 ```
 
-Bien entendu, vous avez déjà compris que si vous voulez remplacer myth par Sass,
+Bien entendu, vous avez déjà compris que si vous voulez remplacer Myth par Sass,
 c'est l'histoire de 4 secondes.
 
 ## Putain de Code approuve Gulp.
@@ -182,7 +182,7 @@ c'est l'histoire de 4 secondes.
 Ici on est carrément fan de Gulp. Il faut bien avouer que
 [ça va vite](https://twitter.com/putaindecode/status/460868992396460032)
 (encore plus appréciable lorsque l'on n'a pas de SSD) et que c'est plaisant à écrire.
-Pas de configurations pas spécialement verbeuse et trop espacé.
+Pas de configurations pas spécialement verbeuse et trop espacée.
 Avec Gulp on se sent plus libre, moins contraint.
 Du coup, **on a carrément fait notre site avec Gulp**
 (puis au passage un petit refresh graphique tant qu'à faire).
@@ -192,40 +192,40 @@ et regarder nos [tasks](https://github.com/putaindecode/website/tree/master/task
 qui vont de [la plus simple](https://github.com/putaindecode/website/blob/master/tasks/clean.js)
 à [la plus compliqué](https://github.com/putaindecode/website/blob/master/tasks/contributors.js).
 
-Pour voir des tâches plus "real world example" je vous invite à regarder les tasks suivantes :
+Pour voir des tâches plus « real world example » je vous invite à regarder les tasks suivantes :
 
 - [server](https://github.com/putaindecode/website/blob/master/tasks/server.js),
-le server de dév local avec livereload dedans;
+le server de dev local avec livereload dedans ;
 - [watch](https://github.com/putaindecode/website/blob/master/tasks/watch.js),
-le classique et si simple watcher;
+le classique et si simple watcher ;
 - [publish](https://github.com/putaindecode/website/blob/master/tasks/publish.js),
-la tâche pour publier le dossier `dist/` sur les [gh-pages](https://pages.github.com/)
+la tâche pour publier le dossier `dist/` sur les [gh-pages](https://pages.github.com/) ;
 - [icons](https://github.com/putaindecode/website/blob/master/tasks/icons.js),
-qui transforme des svg en font d'icones avec le bout de CSS qui va bien;
+qui transforme des SVG en fontes d'icones avec le bout de CSS qui va bien ;
 - [scripts-linting](https://github.com/putaindecode/website/blob/master/tasks/scripts-linting.js),
-qui vérifie la qualité du code;
+qui vérifie la qualité du code ;
 - [scripts](https://github.com/putaindecode/website/blob/master/tasks/scripts.js),
-du [browserify](/posts/js/browserify-all-the-things/) pour nos js côté client;
+du [browserify](/posts/js/browserify-all-the-things/) pour nos JS côté client ;
 - [stylesheets](https://github.com/putaindecode/website/blob/master/tasks/stylesheets.js),
-notre tâche qui mélange (pour l'instant) stylus et rework (suite à une rixe à la récré, on n'a pas réussi à se mettre d'accord, donc chacun à rajouté son morceau);
+notre tâche qui mélange (pour l'instant) Stylus et Rework (suite à une rixe à la récré, on n'a pas réussi à se mettre d'accord, donc chacun à rajouté son morceau) ;
 
 Bien entendu, si vous ne comprenez pas certaines parties, n'hésitez pas à
 [ouvrir une issue](https://github.com/putaindecode/website/issues/new)
 pour demander des explications.
 
 
-## Vous reprendrez bien un peu de... Gulp* ! Pardon.
+## Vous reprendrez bien un peu de… Gulp* ! Pardon.
 
-Si vous avez encore envie de détails je vous renvois sur l'article anglais
+Si vous avez encore envie de détails je vous renvoie sur l'article anglais
 [Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp/)
 qui détaille tellement bien chaque point que même un anglophobe comprendrait.
 
 Vous avez aussi
 [une documentation](https://github.com/gulpjs/gulp/blob/master/docs/README.md)
 très bien faite, qui comporte carrément
-[des exemples _officiels_ tout prêt](https://github.com/gulpjs/gulp/tree/master/docs/recipes).
+[des exemples _officiels_ tout prêts](https://github.com/gulpjs/gulp/tree/master/docs/recipes).
 
-Comme je vous disais plus tôt, les auteurs de Gulp sont assez carrés et "valident"
+Comme je vous disais plus tôt, les auteurs de Gulp sont assez carrés et valident
 (ou plutôt _invalident_) [les plugins](https://npmjs.org/search?q=gulpplugin) qui
 ne respectent pas les
 [règles](https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md).
