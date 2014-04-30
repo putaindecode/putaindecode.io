@@ -127,7 +127,7 @@ var cache = require("./cache/contributors")
             })
           })
 
-          async.parallel(parallelsUser, function(){
+          async.parallelLimit(parallelsUser, 50, function(){
             // map by login, not email
             cache.value.map = lodash.transform(cache.value.mapByEmail, function(result, author){
               if (!result[author.login]){
@@ -198,11 +198,14 @@ var cache = require("./cache/contributors")
                       cache.value.files[file][cache.value.mapByEmail[line.match(emailRE)[1]].login] = line.match(commitsRE)[1]
                     })
                 }
+              }, function(stderr){
+                console.error(stderr)
+                throw stderr
               })
-              .then(cb)
+              .done(cb)
             })
           })
-          async.parallel(parallelFiles, function(){
+          async.parallelLimit(parallelFiles, 50, function(){
             // console.log(cache.value.files)
             gutil.log("Contributions map for files done")
             resolve()
