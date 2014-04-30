@@ -1,0 +1,26 @@
+{
+  "twitter": "madx",
+  "crew" : true,
+  "fr": {
+    "bio": {
+      "short": "Développeur Ruby & JavaScript. Troll niveau 100.",
+      "long": [
+        "Développeur Ruby et JavaScript, avec un goût prononcé pour la simplicité, le soleil, le pastis.",
+        "Il n'aime pas OS X car, objectivement, c'est nul.",
+        "Quand il n'est pas devant son ordi, il y a de grandes chances qu'il compense avec son téléphone.",
+        "Spécialiste en développement d'applications inutiles."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Développeur Ruby & JavaScript. Level 100 Troll.",
+      "long": [
+        "Ruby and JavaScript developer with a taste for simplicity, sun and pastis.",
+        "He does not like OS X because it sucks (objectively).",
+        "When he's not in front of his computers, chances are he's geeking on his phone.",
+        "Specialist in developing useless applications."
+      ]
+    }
+  }
+}
