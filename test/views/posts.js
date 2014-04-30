@@ -1,7 +1,7 @@
 var tape = require("tape")
   , posts = require("../../scripts/views/posts")
 
-require("./lib/classList")
+require("../../scripts/lib/classList")
 
 tape("posts", function(test){
   var element = document.createElement("div")

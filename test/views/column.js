@@ -2,7 +2,7 @@ var tape = require("tape")
   , column = require("../../scripts/views/column")
   , tags = require("../../scripts/models/tags")
 
-require("./lib/classList")
+require("../../scripts/lib/classList")
 
 tape("column view", function(test){
 
