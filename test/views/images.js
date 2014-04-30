@@ -1,7 +1,7 @@
 var tape = require("tape")
   , images = require("../../scripts/views/images")
 
-require("./lib/classList")
+require("../../scripts/lib/classList")
 
 tape("images view", function(test){
 

@@ -1,7 +1,7 @@
 var tape = require("tape")
   , scroller = require("../../scripts/views/scroll")
 
-require("./lib/classList")
+require("../../scripts/lib/classList")
 
 tape("scroll", function(test){
 
