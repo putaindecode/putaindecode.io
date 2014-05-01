@@ -117,7 +117,7 @@ En quelques termes, BEM redéfinit la cascade en ne plus l'utilisant comme par e
 
 Pour ma part, j'utilise la convention de nommage qui se rapproche très fortément du framework JavaScript "Montage.js" : `.org-(js-)-MyBlock-myElement--myModifier`.
 
-Je ne souhaite volontairement pas m'étendre sur le sujet car j'ai déjà prévu de faire un article dessus.
+Je ne souhaite volontairement pas m'étendre sur le sujet car je vous invite à lire [mon article à ce sujet](/posts/css/petite-definition-bem/).
 
 Je vous laisse tout de même deux articles à ce sujet qui présentent plutôt bien le principe (ils sont en anglais).
 
