@@ -12,7 +12,9 @@ mixin Post(title)
         -if(exports.author || exports.date)
           .putainde-Post-metas
             if exports.author
-              | #{lang.writtenBy} #{exports.author}
+              | #{lang.writtenBy} 
+              a(href="http://github.com/#{author.login}")
+                | #{exports.author}
             if exports.author && exports.date
               =","
             if exports.date
