@@ -31,8 +31,20 @@
   color: #999;
 }
 
+.putainde-Post-readingTime
+  animation: ReadingTimeAppear .3s ease-in-out
+
+@keyframes ReadingTimeAppear
+  from
+    opacity: 0
+    visibility: visible
+  to
+    opacity: 1
+
 .putainde-Post-readingTime--hidden {
-  display: none
+  visibility: hidden;
+  opacity: 0;
+  animation: none;
 }
 
 .putainde-Post-contents
