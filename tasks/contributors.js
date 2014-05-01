@@ -222,6 +222,11 @@ var cache = require("./cache/contributors")
  * in `tasks/cache/contributors`
  */
 module.exports = function(cb){
+  if(cache.value !== null){
+    cb()
+    return
+  }
+
   cache.value = {}
 
   contributorsMap()
