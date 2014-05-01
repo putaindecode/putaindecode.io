@@ -27,9 +27,10 @@ module.exports = {
           from = path.join.apply(path, from)
         }
 
-        if(to.indexOf("http") === 0) {
+        if(to.indexOf("://") !== -1) {
           return to
         }
+
 
         if(from) {
           to = path.relative(from.replace(/index$/, ""), to)

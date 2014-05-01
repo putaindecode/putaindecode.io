@@ -38,16 +38,16 @@
   },
   "navigation" : [
     {
-      "url" : "c-est-quoi-putaindecode",
-      "name" : "Putain de ?"
-    },
-    {
       "url" : "posts",
       "name" : "Les posts"
     },
     {
       "url" : "posts/comment-contribuer",
       "name" : "Contribuer"
+    },
+    {
+      "url" : "irc://irc.freenode.net/putaindecode",
+      "name" : "IRC"
     }
   ],
   "footerNavigation" : [
@@ -62,6 +62,14 @@
     {
       "url" : "feed.xml",
       "name" : "Flux RSS"
+    },
+    {
+      "url" : "c-est-quoi-putaindecode",
+      "name" : "Putain de ?"
+    },
+    {
+      "url" : "https://github.com/putaindecode/forum/issues",
+      "name" : "Forum"
     }
   ],
   "madeWithHeart" : "Made with ♥︎ by ",
