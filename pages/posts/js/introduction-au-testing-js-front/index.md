@@ -1,5 +1,3 @@
-# introduction au testing js front
-
 Les tests automatisés en front-end ont longtemps été ignorés,
 et le sont encore trop.
 
@@ -87,8 +85,8 @@ déclanchera bien `updateCart` :
 // à votre goût en quelques lignes de code
 var view = require("../lib/view")
 
-// eventbus est l'event bus de l'application, il orchestre 
-// la communication entre les différents modules 
+// eventbus est l'event bus de l'application, il orchestre
+// la communication entre les différents modules
 var eventbus = require("../eventbus")
 
 var $ = require("jquery")
