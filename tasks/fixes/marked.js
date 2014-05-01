@@ -6,7 +6,8 @@ marked.setOptions({
   highlight : function(code){
     return require("highlight.js").highlightAuto(code).value;
   },
-  renderer : renderer
+  renderer : renderer,
+  smartypants : true
 })
 
 /**
