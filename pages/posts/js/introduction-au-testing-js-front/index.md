@@ -4,7 +4,7 @@ et le sont encore trop.
 Écrire des tests peut paraître chiant, mais le temps qu'ils rapportent
 compense largement celui que l'on passe à les écrire.
 
-## écrire du js testable
+## Écrire du js testable
 
 Prenons un exemple simple et moche :
 
@@ -34,7 +34,7 @@ Tester ce code est particulièrement lourd, pour plusieurs raisons :
 - on doit créer un element et modifier sont `data-id` à chaque cas souhaité.
 - pour tester `addToCart` on doit aller regarder dans le DOM.
 
-### 1. rendez accessibles vos méthodes au test runner
+### 1. Rendez accessibles vos méthodes au test runner
 
 Vous pouvez utiliser un namespace adéquat.
 
@@ -65,7 +65,7 @@ module.exports = {
 
 Vous pourrez ainsi séparer proprement votre application en modules et les tester individuellement.
 
-### 2. oui, mais les modules interdépendants alors ?
+### 2. Oui, mais les modules interdépendants alors ?
 
 Là, ça devient un peu plus tricky.
 Ce que je conseille à titre personnel c'est d'utiliser des events
@@ -177,7 +177,7 @@ tape("cart", function(test){
 })
 ```
 
-## tester tous les cas possibles
+## Tester tous les cas possibles
 
 Ce sont souvent les edge-cases qui nous font nous arracher les cheveux.
 Pour pallier ces soucis, tester en profondeur est essentiel.
@@ -227,7 +227,7 @@ vous familiariserez à tous ces edge-cases.
 
 À chaque correctif de bug, ajoutez des tests (mais ça, vous le saviez déjà).
 
-## cross-browser testing
+## Cross-browser testing
 
 À l'heure actuelle, où l'on se trouve notamment très souvent avec du
 feature testing.
