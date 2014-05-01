@@ -130,7 +130,7 @@ var cache = require("./cache/contributors")
           async.parallelLimit(parallelsUser, 50, function(){
             // map by login, not email
             cache.value.map = lodash.transform(cache.value.mapByEmail, function(result, author){
-              if (!result[author.login]){
+              if(!result[author.login]){
                 result[author.login] = author
               }
             })
@@ -188,7 +188,7 @@ var cache = require("./cache/contributors")
             parallelFiles.push(function(cb){
               return exec("git log --pretty=short --follow " + file + " | git shortlog --summary --numbered --no-merges --email")
               .then(function(stdout){
-                if (stdout) {
+                if(stdout){
                   cache.value.files[file] = {}
                   stdout
                     .trim("\n")
