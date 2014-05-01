@@ -11,6 +11,7 @@ compense largement celui que l'on passe à les écrire.
 Prenons un exemple simple et moche :
 
 ```javascript
+//app.js
 ;(function(){
 
   var cart = $("#cart")
@@ -64,29 +65,32 @@ module.exports = {
 }
 ```
 
-Vous pourrez ainsi séparer proprement votre app en modules et les tester
-individuellement.
+Vous pourrez ainsi séparer proprement votre application en modules et les tester individuellement.
 
 ### 2. oui, mais les modules interdépendants alors ?
 
 Là, ça devient un peu plus tricky.
 Ce que je conseille à titre personnel c'est d'utiliser des events
-pour faire communiquer les différentes parties de l'app.
+pour faire communiquer les différentes parties de l'application.
 
-Cela permet d'éviter d'utiliser des mocks d'autres parties de l'app partout.
+Cela permet d'éviter d'utiliser des mocks d'autres parties de l'application partout.
 
 Par exemple, si je souhaite tester le fait qu'un click sur `.js-updateCart`
 déclanchera bien `updateCart` :
 
 ```javascript
+//view.js
+
 // view est une petite class qui route les events
 // en rendant les listeners accessibles aux tests
 // vous pouvez très facilement en concevoir une
 // à votre goût en quelques lignes de code
 var view = require("../lib/view")
-// app est mon `router` principal d'events, tout y passe
-// c'est le point de communication central
-var app = require("../app")
+
+// eventbus est l'event bus de l'application, il orchestre 
+// la communication entre les différents modules 
+var eventbus = require("../eventbus")
+
 var $ = require("jquery")
 
 module.exports = view.extend({
@@ -101,7 +105,7 @@ module.exports = view.extend({
   addToCart : function(eventObject){
     var target = eventObject.currentTarget
     var id = $(target).data("id")
-    app.fire("addToCart", {
+    eventbus.fire("addToCart", {
       id : id
     })
   }
@@ -111,16 +115,17 @@ module.exports = view.extend({
 et je n'aurais qu'à écouter cet event depuis `cart` :
 
 ```javascript
-var app = require("../app")
+// cart.js
+var eventbus = require("../eventbus")
 var catalog = require("../catalog")
 
 module.exports = {
   initialize : function(){
     this._addToCart = this.addToCart.bind(this)
-    app.listen("addToCart", this._addToCart)
+    eventbus.listen("addToCart", this._addToCart)
   },
   release : function(){
-    app.stopListening("addToCart", this._addToCart)
+    eventbus.stopListening("addToCart", this._addToCart)
   },
   addToCart : function(eventObject){
     // et on a eventObject.id
@@ -133,9 +138,11 @@ Grâce à cette architecture, je vais pouvoir tester individuellement
 les deux modules.
 
 ```javascript
+// view.test.js
+
 var tape = require("tape")
 var view = require("../app/view")
-var app = require("../app")
+var eventbus = require("../eventbus")
 var $ = require("jquery")
 
 tape("view", function(test){
@@ -143,7 +150,7 @@ tape("view", function(test){
   var element = $("<div></div>")
   element.data("id", 1)
   // on teste facilement l'envoi
-  app.listen("addToCart", function(eventObject){
+  eventbus.listen("addToCart", function(eventObject){
     test.equal(eventObject.id, 1)
   })
   view.addToCart({
@@ -153,14 +160,16 @@ tape("view", function(test){
 ```
 
 ```javascript
+// cart.test.js
+
 var tape = require("tape")
 var cart = require("../app/cart")
-var app = require("../app")
+var eventbus = require("../eventbus")
 var catalog = require("../catalog")
 
 tape("cart", function(test){
   cart.initialize()
-  app.fireSync("addToCart", {id:1})
+  eventbus.fireSync("addToCart", {id:1})
   test.deepEqual(
     cart[0],
     catalog[1],
