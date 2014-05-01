@@ -1,0 +1,13 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "bloodyowl"
+  -exports.title = "Introduction au testing js front"
+  -exports.tags = ["javascript", "tape", "unit-test", "browserify"]
+  -exports.date = "2014-05-01"
+
+block main
+  +Post(exports.title)
+    include:md index.md

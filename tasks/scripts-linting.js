@@ -19,7 +19,7 @@ module.exports = function(){
       paths.sources.tests
     ])
     .pipe(opts.plumber ? plumber() : util.noop())
-    .pipe(jscs())
+    .pipe(jscs(paths.sources.jscs))
     .pipe(jshint())
     .pipe(jshint.reporter("jshint-stylish"))
 }
