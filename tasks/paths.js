@@ -24,6 +24,7 @@ module.exports = {
     modules : "node_modules/",
     tasks : "tasks/**/*.js",
     tests : "test/**/*.js",
+    jscs : "./.jscsrc",
     public : ["public/.**", "public/**"]
   },
 
