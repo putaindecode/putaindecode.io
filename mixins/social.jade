@@ -7,7 +7,6 @@ mixin Social(post)
   -var gravatar = contributors.map[author.login].gravatar_id || "default"
   meta(name="twitter:image" content="http://www.gravatar.com/avatar/#{gravatar}.png?s=200")
 
-  <!-- Open Graph data -->
   meta(property="og:title" content="#{post.title}")
   meta(property="og:type" content="article")
   meta(property="og:image" content="http://www.gravatar.com/avatar/#{gravatar}.png?s=200")
