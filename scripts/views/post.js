@@ -1,25 +1,45 @@
 var cornea = require("cornea")
 
 module.exports = cornea.extend({
-  element : document.querySelector(".putainde-Post"),
+  element : ".putainde-Post-readingTime-value",
   initialize : function(){
-    this.readingTime()
+    this.parseWordsPerMinute()
+    this.setTooltipWording()
+    this.render()
+    this.show()
   },
-  readingTime : function(){
-    this.elReadingTime = document.querySelector(".putainde-Post-readingTime")
-    if(this.elReadingTime){
-      // http://www.slate.fr/lien/57193/adulte-300-mots-minute
-      // http://www.combiendemots.com/mot-par-minute
-      // 250 seems cool
-      this.readingTimeWpm = this.elReadingTime.getAttribute("data-readingTime-wpm") || 250
-      this.elReadingTime.setAttribute("data-tip", this.elReadingTime.getAttribute("data-tip").replace("{{wpm}}", this.readingTimeWpm))
-      this.elReadingTime.classList.remove("putainde-Post-readingTime--hidden")
-      this.elReadingTimeValue = document.querySelector(".putainde-Post-readingTime-value")
-      this.elReadingTimeReference = document.querySelector(".putainde-Post-md")
-      var duration = Math.round((this.elReadingTimeReference.textContent || this.elReadingTimeReference.innerText).split(" ").length / this.readingTimeWpm)
-      if(duration > 1){
-        this.elReadingTimeValue.innerHTML = duration
-      }
+  setTooltipWording : function(){
+    var element = this.element.parentNode
+    var tipContents = element.getAttribute("data-tip")
+    element.setAttribute(
+      "data-tip",
+      tipContents.replace("{{wpm}}", this.wordsPerMinute)
+    )
+  },
+  // http://www.slate.fr/lien/57193/adulte-300-mots-minute
+  // http://www.combiendemots.com/mot-par-minute
+  // 250 seems cool
+  wordsPerMinute : 250,
+  parseWordsPerMinute : function(){
+    var dataAttribute = "data-readingTime-wpm"
+    var element = this.element.parentNode
+    if(element.hasAttribute(dataAttribute)) {
+      this.wordsPerMinute = parseInt(
+        element.getAttribute(dataAttribute),
+        10
+      )
     }
+  },
+  getDuration : function(){
+    var post = document.querySelector(".putainde-Post-md")
+    var text = post.textContent || post.innerText
+    return Math.round(text.split(/\s+|\s*\.\s*/).length / this.wordsPerMinute)
+  },
+  template : function(){
+    return document.createTextNode(this.getDuration())
+  },
+  show : function(){
+    var element = this.element.parentNode
+    element.classList.remove("putainde-Post-readingTime--hidden")
   }
 })
