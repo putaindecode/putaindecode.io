@@ -1,0 +1,14 @@
+mixin Social(post)
+  -var author = contributors.map[post.author]
+  meta(name="twitter:card" content="summary")
+  meta(name="twitter:site" content="@#{lang.twitterUsername}")
+  meta(name="twitter:title" content="#{post.title}")
+  meta(name="twitter:creator" content="@#{author.twitter}")
+  -var gravatar = contributors.map[author.login].gravatar_id || "default"
+  meta(name="twitter:image" content="http://www.gravatar.com/avatar/#{gravatar}.png?s=200")
+
+  <!-- Open Graph data -->
+  meta(property="og:title" content="#{post.title}")
+  meta(property="og:type" content="article")
+  meta(property="og:image" content="http://www.gravatar.com/avatar/#{gravatar}.png?s=200")
+  meta(property="og:site_name" content="#{lang.title}")

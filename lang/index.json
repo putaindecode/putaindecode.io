@@ -27,6 +27,7 @@
   "crew" : "Le crew",
   "filters" : "(filtres)",
   "baseURL" : "http://putaindecode.fr",
+  "twitterUsername" : "putaindecode",
   "twitter" : "https://twitter.com/putaindecode/",
   "twitterLabel" : "Twitter",
   "github" : "https://github.com/putaindecode/",

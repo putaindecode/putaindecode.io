@@ -1,5 +1,9 @@
 extends /layouts/main
 
+block head
+  -if(exports && exports.author)
+    +Social(exports)
+
 block end
   script
     -var disqus = lang.disqus
