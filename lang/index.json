@@ -1,11 +1,11 @@
 {
   "title" : "Putain de code !",
   "baseline" : "On voulait mettre une baseline mais on a pas été foutu d'en trouver une",
-  "lastPosts" : "Les derniers posts",
-  "posts" : "Les posts",
+  "lastPosts" : "Les derniers articles",
+  "posts" : "Les articles",
   "manifesto" : "Putain de Code, c'est quoi ?",
   "initialCommit" : "commit initial par",
-  "morePosts" : "Plus de posts",
+  "morePosts" : "Plus d'articles",
   "writtenBy" : "Écrit par",
   "readingTime" : "Temps de lecture : environ ",
   "readingTimeComment" : "Temps de lecture approximatif, sur une base de {{wpm}} mots par minute",
@@ -14,7 +14,7 @@
   "contributors" : "contributeurs",
   "contribution" : "contribution",
   "contributions" : "contributions",
-  "noPosts" : ":( pas de post",
+  "noPosts" : ":( pas d'article",
   "pageActions" : "Action sur cette page",
   "pageEdit" : "Modifier",
   "pageBlame" : "Tracer les changements",
@@ -23,7 +23,7 @@
   "copyright" : "© 1970 - {*} Putain de Code !",
   "tags" : "Tags",
   "the" : "le",
-  "404" : "eh merde … 404",
+  "404" : "Et merde… [404]",
   "crew" : "Le crew",
   "filters" : "(filtres)",
   "baseURL" : "http://putaindecode.fr",
@@ -40,7 +40,7 @@
   "navigation" : [
     {
       "url" : "posts",
-      "name" : "Les posts"
+      "name" : "Les articles"
     },
     {
       "url" : "posts/comment-contribuer",
