@@ -146,7 +146,7 @@ Un navigateur dédié à certains handicaps devrait être détectable d'entée d
 
 C'est exactement comme l'histoire de résolution / bande passante. Le w3c nous propose à l'heure actuelle de détecter la résolution pour faire en conséquence sur notre site, or, ce n'est pas du tout le pivot intéressant, c'est surtout la bande passante qui nous permet d'ajuster notre site web.
 
-Bref, comme souvent, le W3C est à la rue, n'avance pas comme le web avance (vite, très vite) et les outils nous font défaut à l'heure actuelle pour répondre à certains besoins.
+Bref, comme souvent, le W3C est à la rue, n'avance pas comme le web avance (vite, très vite) et les outils nous font défaut à l'heure actuelle pour répondre à certains besoins. (Note : je ne dis pas qu'ils ne font pas un bon boulot ou que ce n'est pas compliqué, je dis simplement qu'il y a un grand écart encore les besoins et les solutions à l'heure actuelle sur plusieurs domaines : l'accessibilité, la video, la capacité de fournir un site en fonction de la bande passante plutôt que la résolution, etc, etc).
 
 ### Les pièges de l'intégration (e.g. display: inline-block)
 
