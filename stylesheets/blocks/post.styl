@@ -114,6 +114,24 @@
     color: #49629a
   .hljs-value
     color: #2e4f89
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+    position: relative
+    &:hover
+      .putainde-Title-anchor
+        opacity: 1
+  .putainde-Title-anchor
+    position: absolute
+    left: -1em
+    width: 1em
+    text-align: center
+    opacity: 0
+    transition: opacity .3s ease-in-out
+    color: #999
   img
     max-width: 100%
     height: auto
