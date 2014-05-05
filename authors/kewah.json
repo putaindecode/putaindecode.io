@@ -1,0 +1,22 @@
+{
+  "crew" : false,
+  "twitter": "kewah",
+  "fr": {
+    "bio": {
+      "short": "Développeur front-end, code à North Kingdom.",
+      "long": [
+        "Développeur front-end, code à North Kingdom.",
+        "Vit là-haut dans le nord à Stockholm."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Front-end developer. Obsessive about quality.",
+      "long": [
+        "Front-end developer with a French accent at North Kingdom. Obsessive about quality.",
+        "Living up north in Stockholm, Sweden."
+      ]
+    }
+  }
+}
