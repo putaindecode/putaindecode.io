@@ -37,16 +37,16 @@ Voici le fil conducteur de la soirée.
 
 Voici les personnes présentes. Si vous avez d'ailleurs le moindre problème avec ce qui est dit dans cet article, c'est à eux que vous devriez vous adresser. 😊
 
-Membres | Statut |
---------|:------:|
-[_kud](https://twitter.com/_kud) | 👮 |
-[bloodyowl](https://twitter.com/bloodyowl) | 🏠 |
-[yannickc](https://twitter.com/yannickc) | |
-[dhoko_](https://twitter.com/dhoko_) | |
-[philippebarbosa](https://twitter.com/philippebarbosa) | |
-[tchak13](https://twitter.com/tchak13) | |
-[remitbri](https://twitter.com/remitbri) | |
-[dizwix](https://twitter.com/dizwix) | |
+Membres | Statut
+--------|:------:
+[_kud](https://twitter.com/_kud) | 👮
+[bloodyowl](https://twitter.com/bloodyowl) | 🏠
+[yannickc](https://twitter.com/yannickc) |
+[dhoko_](https://twitter.com/dhoko_) |
+[philippebarbosa](https://twitter.com/philippebarbosa) |
+[tchak13](https://twitter.com/tchak13) |
+[remitbri](https://twitter.com/remitbri) |
+[dizwix](https://twitter.com/dizwix) |
 
 ## C'est parti
 
