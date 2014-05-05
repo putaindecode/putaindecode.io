@@ -150,7 +150,7 @@ Bref, comme souvent, le W3C est à la rue, n'avance pas comme le web avance (vit
 
 ### Les pièges de l'intégration (e.g. display: inline-block)
 
-Certains cas de l'intégration restent encore du domaine hack plutôt qu'une solution propre et faible. On ne dit pas que les hacks sont difficiles ou laborieux mais qu'ils sont encore nécessaires sur des propriétés css très communes en 2014.
+Certains cas de l'intégration restent encore du domaine hack plutôt qu'une solution propre et faible. On ne dit pas que ces hacks sont difficiles ou laborieux mais qu'ils sont encore nécessaires sur des propriétés css très communes en 2014.
 
 L'inline-block par exemple, il n'y a malheureusement pas le choix de soit coller les balises, soit minifier le html (ou la partie ayant des inline-block), soit de mettre des commentaires.
 
