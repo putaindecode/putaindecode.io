@@ -2,7 +2,7 @@ Mardi 29 avril s'est déroulée la troisième table ronde qui est finalement la 
 
 ## Préambule
 
-Partant du constant qu'il est difficile d'apprendre et d'échanger en conférence du fait du manque du niveau assez élevé (trop de gens avec un niveau différent, il faut forcément s'aligner) et à sens unique (une personne parle, les autres écoutent), nous avons décidé de créer des tables rondes où un fil conducteur est suivi amenant à débattre, échanger, affirmer.
+Partant du constat qu'il est difficile d'apprendre et d'échanger en conférence du fait du manque du niveau assez élevé (trop de gens avec un niveau différent, il faut forcément s'aligner) et à sens unique (une personne parle, les autres écoutent), nous avons décidé de créer des tables rondes où un fil conducteur est suivi amenant à débattre, échanger, affirmer.
 
 Attention, je ne dis pas que les conférences ne servent à rien mais à mon sens elles sont trop magistrales et parfois trop marketing (coucou WebRTC Paris).
 
