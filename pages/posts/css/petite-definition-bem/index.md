@@ -129,7 +129,7 @@ Parlons maintenant du cas des termes multiples dans chaque partie. Voici comment
 
 Les _blocks_ sont en "PascalCase" (ou UpperCamelCase), les _elements_ et _modifiers_ sont en "camelCase" (ou lowerCamelCase). Nous séparons le _block_ de l'élément par "-" et le _block_ ou l' _element_ d'un _modifier_ par "--".
 
-Maintenant, vous savez tout sur **BEM**. Sachez qu'il existe tout de même plusieurs conventions de **BEM**. Celle que je vous ai apprise là est la norme de **montage.js** mais il y en a d'autres par exemple qui n'utilisent pas les majuscules et font ce genre de choses : `.my-block__my-element--my-modifier`. Il s'avère que c'est la [convention pseudo-officile](http://bem.info/method/definitions/#naming-for-independent-css-classes).
+Maintenant, vous savez tout sur **BEM**. Sachez qu'il existe tout de même plusieurs conventions de **BEM**. Celle que je vous ai apprise là est la norme de **montage.js** mais il y en a d'autres par exemple qui n'utilisent pas les majuscules et font ce genre de choses : `.my-block__my-element--my-modifier`. Il s'avère que c'est la [convention pseudo-officielle](http://bem.info/method/definitions/#naming-for-independent-css-classes).
 
 L'inconvénient de ceci est que c'est moins lisible au premier abord qui est quoi, et de plus, les `_` ne permettent pas de sélectionner facilement un terme en _double-cliquant_ dessus.
 
