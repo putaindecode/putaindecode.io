@@ -126,7 +126,7 @@ module.exports = {
   release : function(){
     eventbus.stopListening("addToCart", this._addToCart)
   },
-  addToCart : function(eventObject){
+  _addToCart : function(eventObject){
     // et on a eventObject.id
     this.products.push(catalog[eventObject.currentTarget.data("id")])
   }
