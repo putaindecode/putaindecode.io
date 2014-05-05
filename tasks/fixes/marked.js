@@ -1,6 +1,15 @@
 var marked = require("marked")
-  , renderer = new marked.Renderer()
-  , options = require("../cache/options")
+var renderer = new marked.Renderer()
+var options = require("../cache/options")
+var accents = {
+  "é" : "e",
+  "è" : "e",
+  "ê" : "e",
+  "à" : "a",
+  "ù" : "u",
+  "ô" : "o"
+}
+var accentsRE = RegExp("(" + Object.keys(accents).join("|") + ")", "g")
 
 marked.setOptions({
   highlight : function(code){
@@ -23,6 +32,18 @@ renderer.image = function(href, title, text){
   }
   output += this.options.xhtml ? "/>" : ">"
   return output
+}
+
+renderer.heading = function(text, level){
+  var escaped = text.toLowerCase()
+    .replace(accentsRE, function(i){
+      return accents[i]
+    })
+    .replace(/\W+/g, "-")
+
+  return "<h" + level + " id=\"" + escaped + "\">" +
+    "<a class=\"putainde-Title-anchor\" href=\"#" + escaped + "\">#</a>" +
+    text + "</h" + level + ">"
 }
 
 module.exports = marked
