@@ -40,15 +40,18 @@
   "navigation" : [
     {
       "url" : "posts",
-      "name" : "Articles"
+      "name" : "Articles",
+      "icon" : "bookmark"
     },
     {
       "url" : "c-est-quoi-putaindecode",
-      "name" : "Readme"
+      "name" : "Readme",
+      "icon" : "text-file"
     },
     {
       "url" : "posts/comment-contribuer",
-      "name" : "Participer"
+      "name" : "Participer",
+      "icon" : "pencil"
     },
     {
       "url" : "https://github.com/putaindecode/",
