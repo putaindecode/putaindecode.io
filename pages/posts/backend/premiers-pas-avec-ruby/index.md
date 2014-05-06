@@ -28,7 +28,7 @@ Et ça va en rester ainsi pour le moment, car au lieu de voir la théorie sur Ô
 
 Il existe de nombreuses façons d'installer Ruby, un petit peu comme Node.js en passant par Github, par les packages officiels, brew, etc. *rbenv* reste d'après moi la façon la plus simple, propre et légère. Beaucoup pourront préférer *RVM* disant qu'il fait la même chose en mieux, d'autres diront qu'au contraire il en fait trop en écrasant par exemple la méthode `cd`. J'ai utilisé les deux, il fallait faire un choix, ce sera *rbenv*.
 
-Pour utiliser *rbenv*, il faut avoir Git. Si vous ne l'avez pas, vous deviez. Et ça tombe bien, [madx](https://github.com/madx) et [Erwyn](https://github.com/Erwyn) ont fait deux super articles pour l'[utiliser](/posts/git/versionner-avec-git/) et le [dompter](/posts/git/boutez-les-bugs-domptez-votre-historique/). On commence donc par installer *rbenv* :
+Pour utiliser *rbenv*, il faut avoir Git. Si vous ne l'avez pas, vous devriez. Et ça tombe bien, [madx](https://github.com/madx) et [Erwyn](https://github.com/Erwyn) ont fait deux super articles pour l'[utiliser](/posts/git/versionner-avec-git/) et le [dompter](/posts/git/boutez-les-bugs-domptez-votre-historique/). On commence donc par installer *rbenv* :
 
 ```sh
 $ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
