@@ -39,19 +39,16 @@
   },
   "navigation" : [
     {
-      "url" : "c-est-quoi-putaindecode",
-      "name" : "Readme",
-      "icon" : "script-code"
+      "url" : "posts",
+      "name" : "Articles"
     },
     {
-      "url" : "posts",
-      "name" : "Articles",
-      "icon" : "bookmark"
+      "url" : "c-est-quoi-putaindecode",
+      "name" : "Readme"
     },
     {
       "url" : "posts/comment-contribuer",
-      "name" : "Participer",
-      "icon" : "pencil"
+      "name" : "Participer"
     },
     {
       "url" : "https://github.com/putaindecode/",
