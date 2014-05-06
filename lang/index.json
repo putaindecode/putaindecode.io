@@ -39,14 +39,14 @@
   },
   "navigation" : [
     {
-      "url" : "c-est-quoi-putaindecode",
-      "name" : "Readme",
-      "icon" : "script-code"
-    },
-    {
       "url" : "posts",
       "name" : "Articles",
       "icon" : "bookmark"
+    },
+    {
+      "url" : "c-est-quoi-putaindecode",
+      "name" : "Readme",
+      "icon" : "text-file"
     },
     {
       "url" : "posts/comment-contribuer",
