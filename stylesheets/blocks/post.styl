@@ -62,9 +62,23 @@
     padding: 0 0 0 1.75em
 
   tt
+
   code
   pre
     font-family: Consolas, "Liberation Mono", Courier, monospace
+
+  code
+    display: inline-block
+    vertical-align: middle
+    border: 1px solid #ddd
+    margin: -1px 0;
+    padding: .25em
+    font-size: var(font-size-small)
+    font-weight: 400
+    background: #fafafa
+    border-radius: .25em
+    line-height: 1;
+
   pre
     -webkit-font-smoothing: subpixel-antialiased
     -moz-osx-font-smoothing: auto
@@ -87,16 +101,8 @@
       padding: 0
       font-size: inherit;
       vertical-align: baseline
-  code
-    display: inline-block
-    vertical-align: top
-    border: 1px solid #ddd
-    margin: -1px 0;
-    padding: 0 .5em
-    font-size: var(font-size-small)
-    font-weight: 400
-    background: #fafafa
-    border-radius: .25em
+      line-height: inherit;
+
   .hljs-string
   .hljs-number
   .hljs-tag .hljs-value
