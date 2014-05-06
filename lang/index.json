@@ -39,38 +39,47 @@
   },
   "navigation" : [
     {
+      "url" : "c-est-quoi-putaindecode",
+      "name" : "Readme",
+      "icon" : "script-code"
+    },
+    {
       "url" : "posts",
-      "name" : "Les articles"
+      "name" : "Articles",
+      "icon" : "bookmark"
     },
     {
       "url" : "posts/comment-contribuer",
-      "name" : "Contribuer"
+      "name" : "Participer",
+      "icon" : "pencil"
     },
     {
-      "url" : "irc://irc.freenode.net/putaindecode",
-      "name" : "IRC"
+      "url" : "https://github.com/putaindecode/",
+      "title" : "GitHub",
+      "icon" : "github"
+    },
+    {
+      "url" : "https://twitter.com/putaindecode/",
+      "title" : "Twitter",
+      "icon" : "twitter"
     }
   ],
   "footerNavigation" : [
-    {
-      "url" : "projets",
-      "name" : "Projets"
-    },
-    {
-      "url" : "https://github.com/putaindecode",
-      "name" : "Contact"
-    },
     {
       "url" : "feed.xml",
       "name" : "Flux RSS"
     },
     {
-      "url" : "c-est-quoi-putaindecode",
-      "name" : "Putain de ?"
+      "url" : "projets",
+      "name" : "Projets"
     },
     {
       "url" : "https://github.com/putaindecode/forum/issues",
       "name" : "Forum"
+    },
+    {
+      "url" : "irc://irc.freenode.net/putaindecode",
+      "name" : "IRC"
     }
   ],
   "madeWithHeart" : "Made with ♥︎ by ",

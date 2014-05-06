@@ -6,6 +6,13 @@
     border-top: 1px solid #ddd;
     margin-top: -1px;
 
+    > .Grid-cell {
+      @media (max-width:54em) {
+        padding: var(half-line-height) 0;
+        text-align: center;
+      }
+    }
+
   a
     color: var(putainde-Color-red)
     text-decoration: none
@@ -18,14 +25,20 @@
   color: #666
   margin: 0
 
-.putainde-Footer-text--small
-  font-size: .833em
+.putainde-Footer-text--small {
+  font-size: var(font-size-small);
+}
 
-.putainde-Footer-text--right
-  text-align: right
+@media (min-width:54em) {
+  .putainde-Footer-text--right {
+    text-align: right;
+  }
+}
 
 .putainde-Footer-list
-  text-align: center
+  @media (min-width:54em) {
+    text-align: center
+  }
   display: block
   list-style-type: none
   margin: 0
