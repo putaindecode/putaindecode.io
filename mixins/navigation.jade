@@ -3,7 +3,12 @@ mixin Navigation(list, currentPage)
     each item in list
       -var isActivePage = currentPage == item.url || currentPage == item.url + "/index"
       a.putainde-Nav-item(
-        class="#{isActivePage ? 'putainde-Nav-item--current' : ''}"
+        class="#{isActivePage ? 'putainde-Nav-item--current' : ''} #{item.title ? 'AttrTip AttrTip--bottom' : ''}"
         href="#{uri(item.url, [currentPage, '..'])}"
+        data-tip="#{item.title ? item.title : ''}"
       )
-        | #{item.name}
+        if item.icon
+          i(class="putainde-Icon putainde-Icon--#{item.icon}")
+        if item.name
+          =" "
+          | #{item.name}

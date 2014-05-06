@@ -1,30 +1,51 @@
-.putainde-Nav
-  display: table
-  table-layout: fixed
-  width: 100%
+.putainde-Nav {
+  @media (min-width:54em) {
+    text-align: right;
+  }
+}
 
-.putainde-Nav-item
-  display: table-cell
-  vertical-align: middle
-  position: relative
-  font-size: .9em
-  font-weight: 700
-  text-align: center
-  color: MAIN_TEXT
-  text-decoration: none
-  &:hover
-  &:focus
-    background: rgba(#000, .1)
+.putainde-Nav-item {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-size: var(font-size-small);
+  font-weight: 700;
+  text-align: center;
+  color: MAIN_TEXT;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    background: rgba(#000, .1);
+  }
 
-.putainde-Nav-item--current
-  &:after
-    content: ""
-    position: absolute
-    bottom: .8em
-    height: .3em
-    width: .3em
-    background: #fff
-    box-shadow: 0 0 .3em #fff
-    border-radius: .3em
-    left: 50%
-    margin-left: -.15em
+  padding: 0 .4rem;
+  @media (min-width:29em) {
+    padding: 0 1rem;
+  }
+}
+
+.putainde-Nav-item--current {
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: .8em;
+    height: .3em;
+    width: .3em;
+    background: #fff;
+    box-shadow: 0 0 .3em #fff;
+    border-radius: .3em;
+    left: 50%;
+    margin-left: -.15em;
+  }
+}
+
+.putainde-Nav .putainde-Icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width:29em) {
+  /* hide icons for Nav-item that have a label on small screen */
+  .putainde-Nav :not(.AttrTip) .putainde-Icon {
+    display: none;
+  }
+}
