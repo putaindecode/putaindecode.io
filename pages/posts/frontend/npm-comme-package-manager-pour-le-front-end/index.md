@@ -24,7 +24,7 @@ votre module.
 ```
 
 Dans un article précédent, il vous a été présenté le développement d'une application
-autour de [modules JavaScript avec Browserify](http://putaindecode.fr/posts/js/browserify-all-the-things/).
+autour de [modules JavaScript avec Browserify](/posts/js/browserify-all-the-things/).
 
 ## Module pour tout type de fichier
 
@@ -58,7 +58,7 @@ HTML. (Ou l'`@import`er dans votre fichier Sass/Less principal.)
 - Pas besoin d'installer un nouvel outil, NPM étant installé avec Node.js, ce qui
 évite un lot de bugs et de fichiers de configuration supplémentaires (un simple `package.json` suffit).
 - Et surtout, toutes les dépendances de votre projet peuvent être gérées via NPM:
-votre tasks runner et ses plugins ([Gulp](http://putaindecode.fr/posts/js/introduction-gulp/), [Grunt](http://putaindecode.fr/posts/js/premiers-pas-avec-grunt/) & co), vos [modules JavaScript](http://putaindecode.fr/posts/js/browserify-all-the-things/), vos [tests](http://putaindecode.fr/posts/js/introduction-au-testing-js-front/)
+votre tasks runner et ses plugins ([Gulp](/posts/js/introduction-gulp/), [Grunt](/posts/js/premiers-pas-avec-grunt/) & co), vos [modules JavaScript](/posts/js/browserify-all-the-things/), vos [tests](/posts/js/introduction-au-testing-js-front/)
 et comme on vient de le voir, vos fichiers de style.
 
 Dans le cas où vous n'avez pas envie de passer par l'étape de publication
