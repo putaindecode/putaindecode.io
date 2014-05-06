@@ -9,7 +9,7 @@ modules front-end, qui peuvent aussi être CSS, HTML, fonts, etc.
 
 ## Module JavaScript
 
-Si vous n'êtes pas familier avec la création d'un module JavaScript, je vous
+Si vous n'êtes pas familier(e) avec la création d'un module JavaScript, je vous
 conseille d'exécuter la commande `npm init` qui va vous aider à générer votre
 `package.json` (fichier de configuration utilisé par NPM). Le champ
 "[main](https://www.npmjs.org/doc/json.html#main)" définit le point d'entrée de
