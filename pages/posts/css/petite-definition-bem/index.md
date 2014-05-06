@@ -10,7 +10,7 @@ Lorsque l'on nomme un objet, une méthode, une fonction, une classe, on se doit 
 
 Bref, **BEM** est le sigle pour _Block_, _Element_, _Modifier_. Qu'est-ce que cela veut dire.
 
-Prenons par exemple site web. Nous avons un ensemble avec dedans deux onglets et en dessous le contenu de chaque onglet.
+Prenons par exemple un site web. Nous avons un ensemble avec dedans deux onglets et en dessous le contenu de chaque onglet.
 
 Nous allons définir ce que sont le _block_, le ou les _elements_ et les _modifiers_.
 
