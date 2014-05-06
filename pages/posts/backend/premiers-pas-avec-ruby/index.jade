@@ -1,0 +1,13 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "rhannequin"
+  -exports.title = "Premiers pas avec Ruby"
+  -exports.tags = ["ruby"]
+  -exports.date = "2014-05-06"
+
+block main
+  +Post(exports.title)
+    include:md index.md
