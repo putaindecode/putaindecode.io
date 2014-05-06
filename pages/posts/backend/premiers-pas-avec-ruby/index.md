@@ -12,13 +12,15 @@ $ gem install sinatra
 $ rbenv rehash
 ```
 
-Tous les ans depuis des années sort un article : *"[est-ce que Ruby est mort ?](http://www.reddit.com/comments/1oi8wd)"*. Et chaque années les résultats sont les mêmes, *"Ruby perd en intensité"*, *"Node.js prend le dessus"*. Et pourtant il reste chaque année dans l'actualité avec autant d'importance. Pour ma part je me suis renseigné. Il faut être honnête et admettre que [Ruby souffre de certaines difficultés](http://blog.federicocarrone.com/2014/01/18/ruby-dying-or-ruby-hype-dead) comme tous les langages, mais [Ruby n'est pas mort](http://jmoses.co/2013/12/21/is-ruby-dying.html) et il y a encore beaucoup à en tirer, du langage, de ses frameworks et de sa communauté. Sans oublier que de grands sites l'ont utiliser et l'utilisent toujours comme Twitter, Github, Shopify, Hulu.
+Tous les ans, depuis des années, sort un article : *"[Est-ce que Ruby est mort ?](http://www.reddit.com/comments/1oi8wd)"*. Et chaque année les résultats sont les mêmes, *"Ruby perd en intensité"*, *"Node.js prend le dessus"*. Et pourtant Ruby reste chaque année dans l'actualité avec autant d'importance. Il faut être honnête et admettre que [Ruby souffre de certaines difficultés](http://blog.federicocarrone.com/2014/01/18/ruby-dying-or-ruby-hype-dead) comme tous les langages, mais [Ruby n'est pas mort](http://jmoses.co/2013/12/21/is-ruby-dying.html) et il y a encore beaucoup à en tirer, du langage, de ses frameworks et de sa communauté. Sans oublier que de grands sites l'ont utilisé et l'utilisent toujours comme Twitter, Github, Shopify, Hulu.
 
-Nous commençons donc une série d'articles sur Ruby afin de le découvrir et commencer à développer et à devenir productif avec. Et pour ce premier article, nous allons voir commencer l'installer et installer son premier Gem.
+Nous commençons donc une série d'articles sur Ruby afin de le découvrir et commencer à développer et à devenir productif avec. Et pour ce premier article, nous allons voir commencer l'installer et installer. Dans les suivants nous installerons notre premier gem, nous utiliserons Sinatra pour notre premier projet, puis nous n'arriverons plus à nous arrêter.
 
-Tout d'abord il faut savoir qu'il existe plusieurs implémentations de Ruby, c'est à dire différents interpréteurs du langage. L'implémentation principale et originale est *MRB*, pour Matz's Ruby Interpreter, Yukihiro "Matz" Matsumoto étant le créateur de Ruby. On trouve également JRuby, un interpretteur Ruby en Java, permattant de bénéficier de toutes les fonctionnalités de la JVM. Parmis les plus connues également MacRuby qui est une implémentation spécifique à OS X et dont [RubyMotion](http://www.rubymotion.com) dépend. Pour nos articles nous devrions utiliser MRI à moins qu'une envie sur une différente implémentation se fasse ressentir.
+## Un langage, des implémentations
 
-> C'est bien tout ça mais au final j'en sais pas plus sur Ruby
+Tout d'abord il faut savoir qu'il existe plusieurs implémentations de Ruby, c'est à dire différents interpréteurs du langage. L'implémentation principale et originale est *MRI*, pour Matz's Ruby Interpreter, Yukihiro "Matz" Matsumoto étant le créateur de Ruby. On trouve également JRuby, un interpretteur Ruby en Java, permattant de bénéficier de toutes les fonctionnalités de la JVM. Parmis les plus connues également MacRuby qui est une implémentation spécifique à OS X et dont [RubyMotion](http://www.rubymotion.com) dépend. Pour nos articles nous devrions utiliser MRI à moins qu'une envie sur une différente implémentation se fasse ressentir.
+
+> C'est bien tout ça mais au final j'en sais pas plus sur Ruby.
 
 Et ça va en rester ainsi pour le moment, car au lieu de voir la théorie sur Ô combien [Ruby est génial](http://www.slideshare.net/astrails/ruby-is-awesome-16466895), nous allons tout de suite installer Ruby pour nous rapprocher rapidement de notre éditeur de texte.
 
@@ -41,17 +43,17 @@ Désormais *rbenv* est installé et ses commandes sont disponibles dans votre te
 $ git clone git@github.com:sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
-C'est bon, vous pouvez installer Ruby. J'ai constater sur Ubuntu qu'il était nécessaire d'installer au préalable `libssl-dev` et `g++`, simplement avec `sudo apt-get install libssl-dev g++`.
+C'est bon, vous pouvez installer Ruby. J'ai constaté sur Ubuntu qu'il était nécessaire d'installer au préalable `libssl-dev` et `g++`, simplement avec `sudo apt-get install libssl-dev g++`. Lançons-nous :
 
 ```sh
 rbenv install 2.1.1
 rbenv global 2.1.1
 ```
 
-Séquence émotion. Vous êtes désormais maître de l'univers.
+Séquence émotion. Vous êtes désormais maître de l'Univers.
 
 Vous avez Ruby 2.1.1 d'installé. La ligne `rbenv global` permet comme son nom l'indique d'utiliser cette version de Ruby de façon globale à l'utilisateur, si jamais plusieurs versions coexistent.
 
-C'était facile n'est-ce pas ? Et bien c'est encore plus facile d'utiliser une bibliothèque (appelée "Gem") ou un framework Ruby. Comme nous allons utiliser Sinatra dans notre prochain article, autant l'installer tout de suite. Pour installer un gem qui sera exécuté dans la console comme Sass il est nécessaire de l'installer de cette façon : `gem install sass`. Seulement pour Sinatra, nous avons seulement besoin que le framework soit disponible dans nos scripts Ruby. Pour cela nous allons utiliser un gestionnaire de dépendance des Gem Ruby, et nous verrons cela dans le prochain article pour nos premiers pas avec Sinatra.
+C'était facile n'est-ce pas ? Et bien c'est encore plus facile d'utiliser une bibliothèque (appelée "gem") ou un framework Ruby. Comme nous allons utiliser Sinatra dans notre prochain article, autant l'installer tout de suite. Pour installer un gem qui sera exécuté dans la console comme Sass il est nécessaire de l'installer de cette façon : `gem install sass`. Seulement pour Sinatra, nous avons seulement besoin que le framework soit disponible dans nos scripts Ruby. Pour cela nous allons utiliser un gestionnaire de dépendance des gem Ruby, et nous verrons cela dans le prochain article pour nos premiers pas avec Sinatra.
 
 D'ici là vous pouvez commencer à jouer avec Ruby en tapant la commande `irb` dans votre terminal, qui lance l'interpretteur Ruby. Enjoy!
