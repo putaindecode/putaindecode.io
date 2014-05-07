@@ -1,44 +1,50 @@
 var gulp = require("gulp")
-  , opts = require("./options")
-  , util = require("gulp-util")
-  , plumber = require("gulp-plumber")
-  , stylus = require("gulp-stylus")
-  , rework = require("gulp-rework")
-  , reworkPlugins = {
-      vars : require("rework-vars"),
-      calc : require("rework-calc")
-  }
-  , autoprefixer = require("gulp-autoprefixer")
-  , paths = require("./paths")
-  , path = require("path")
+var opts = require("./options")
+var util = require("gulp-util")
+var plumber = require("gulp-plumber")
+var rework = require("gulp-rework")
+var reworkPlugins = {
+  atimport : require("rework-npm"),
+  //  parent : require("rework-parent"),
+  //  breakpoints : require("rework-breakpoints"),
+  vars : require("rework-vars"),
+  calc : require("rework-calc"),
+  // colorFn : require("rework-color-function"), // Tab Atkins's proposal color function in CSS
+  // hexAlpha : require("rework-hex-alpha"), // use 4-digit or 8-digit hex colors with alpha channels
+  // inline : require("rework-plugin-inline"),
+  ieLimits : require("rework-ie-limits"),
+  remFallback : require("rework-rem-fallback"),
+  // clearfix : require("rework-clearfix"),
+}
+var autoprefixer = require("gulp-autoprefixer")
+var paths = require("./paths")
 
 /**
  * task stylesheets
  *
- * stylus -> rework -> css
+ * rework -> css
  */
 module.exports = function(){
-  return gulp.src(paths.sources.mainStylesheet)
+  return gulp.src(paths.sources.stylesheets + "/*.css")
     .pipe(opts.plumber ? plumber() : util.noop())
-    .pipe(stylus({
-      set : [
-        "include css"
-      ],
-      define : {
-        module : function(name){
-          return path.join(
-            "../",
-            paths.sources.modules,
-            name.string
-          )
-        }
-      }
-    }))
-    .pipe(
-      rework(
-        reworkPlugins.vars(),
-        reworkPlugins.calc
-      ))
+    .pipe(rework(
+      reworkPlugins.atimport({dir : paths.sources.stylesheets}),
+      rework.colors(),
+      rework.references(),
+      // reworkPlugins.parent,
+      // reworkPlugins.breakpoints,
+      reworkPlugins.vars(),
+      reworkPlugins.calc,
+      // reworkPlugins.colorFn,
+      // reworkPlugins.hexAlpha,
+      //reworkPlugins.inline,
+      reworkPlugins.ieLimits,
+      reworkPlugins.remFallback,
+      // reworkPlugins.clearfix,
+      rework.ease()
+      // rework.extend(),
+      // {sourcemap : !opts.minify}
+    ))
     .pipe(autoprefixer())
     .pipe(gulp.dest(paths.dist.stylesheets))
 }

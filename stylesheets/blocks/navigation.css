@@ -1,5 +1,5 @@
-.putainde-Nav {
-  @media (min-width:54em) {
+@media (min-width:54em) {
+  .putainde-Nav {
     text-align: right;
   }
 }
@@ -11,32 +11,33 @@
   font-size: var(font-size-small);
   font-weight: 700;
   text-align: center;
-  color: MAIN_TEXT;
+  color: #fff;
   text-decoration: none;
-  &:hover,
-  &:focus {
+  padding: 0 .4rem;
+}
+  @media (min-width:29em) {
+    .putainde-Nav-item {
+      padding: 0 1rem;
+    }
+  }
+
+  .putainde-Nav-item:hover,
+  .putainde-Nav-item:focus {
     background: rgba(#000, .1);
   }
 
-  padding: 0 .4rem;
-  @media (min-width:29em) {
-    padding: 0 1rem;
-  }
-}
 
-.putainde-Nav-item--current {
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: .8em;
-    height: .3em;
-    width: .3em;
-    background: #fff;
-    box-shadow: 0 0 .3em #fff;
-    border-radius: .3em;
-    left: 50%;
-    margin-left: -.15em;
-  }
+.putainde-Nav-item--current::after {
+  content: "";
+  position: absolute;
+  bottom: .8em;
+  height: .3em;
+  width: .3em;
+  background: #fff;
+  box-shadow: 0 0 .3em #fff;
+  border-radius: .3em;
+  left: 50%;
+  margin-left: -.15em;
 }
 
 .putainde-Nav .putainde-Nav-item .putainde-Icon {

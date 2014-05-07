@@ -10,7 +10,7 @@ var gulp = require("gulp")
  */
 module.exports = function(){
   gulp.watch(
-    paths.sources.stylesheets,
+    paths.sources.stylesheets + "/**/*.css",
     ["stylesheets"]
   )
   gulp.watch(
