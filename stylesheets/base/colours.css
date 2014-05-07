@@ -3,8 +3,7 @@
   var-putainde-Color-red: #c33;
 }
 
-MAIN_TEXT= #fff
-
-::selection
-  background: #444
-  color: #fff
+::selection {
+  background: #444;
+  color: #fff;
+}

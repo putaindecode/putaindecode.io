@@ -20,10 +20,7 @@ h4 {
  *
  * http://type-scale.com/?size=20&scale=1.200&text=A%20Visual%20Type%20Scale&webfont=&font-family=sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=#333
  */
---font-size= 1rem;
---line-height= 1.5625rem;
-// double declaration until stylus is gone
-// old css var spec syntax (waiting for SUIT to upgrade to --)
+/*old css var spec syntax (waiting for SUIT to upgrade to --)*/
 :root {
   var-font-size: 1rem;
   var-line-height: 1.5625rem;
@@ -84,4 +81,4 @@ small {
   font-size: var(font-size-small);
 }
 
-/* ... and now just use $line-height when you need some vertical spacing ! */
+/* ... and now just use var(line-height) when you need some vertical spacing ! */

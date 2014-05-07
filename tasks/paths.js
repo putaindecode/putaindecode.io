@@ -13,9 +13,8 @@ module.exports = {
     layouts : "layouts/**/*.jade",
     lang : "lang/index.json",
     icons : "icons/*.svg",
-    stylesheets : "stylesheets/**/*.styl",
-    mainStylesheet : "stylesheets/index.styl",
-    fontStylesheet : "stylesheets/icons/index.styl",
+    stylesheets : "stylesheets/",
+    fontStylesheet : "stylesheets/icons/index.css",
     scripts : "scripts/**/*.js",
     libScripts : "scripts/lib/**/*.js",
     mainScript : "scripts/index.js",
@@ -41,6 +40,6 @@ module.exports = {
   },
 
   templates : {
-    fontStylesheet : "stylesheets/template/icons.styl"
+    fontStylesheet : "stylesheets/template/icons.css"
   }
 }
