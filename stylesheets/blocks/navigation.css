@@ -30,14 +30,14 @@
 .putainde-Nav-item--current::after {
   content: "";
   position: absolute;
-  bottom: .8em;
+  bottom: .6em;
   height: .3em;
   width: .3em;
   background: #fff;
   box-shadow: 0 0 .3em #fff;
   border-radius: .3em;
   left: 50%;
-  margin-left: -.15em;
+  margin-left: .5em;
 }
 
 .putainde-Nav .putainde-Nav-item .putainde-Icon {
