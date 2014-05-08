@@ -6,12 +6,12 @@
     if lang.footerNavigation
       ul.putainde-Footer-list
         li
-        a(href="#{lang.github}", data-tip="GitHub").AttrTip.AttrTip--top
-          i.putainde-Icon.putainde-Icon--github
         each item in lang.footerNavigation
           li
             a(href="#{uri(item.url, page)}")
               | #{item.name}
+        a(href="#{lang.github}", data-tip="GitHub").AttrTip.AttrTip--top
+          i.putainde-Icon.putainde-Icon--github
         a(href="#{lang.twitter}", data-tip="Twitter").AttrTip.AttrTip--top
           i.putainde-Icon.putainde-Icon--twitter
   .Grid-cell.u-size3of12
