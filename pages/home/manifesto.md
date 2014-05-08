@@ -1,6 +1,6 @@
-C'est une communauté de développeurs carrément amoureux du code.
+C'est avant tout une communauté de développeurs passionnés du code. Une communauté qui souhaite écrire, partager, échanger.
 
-Mais à force de lire tous les jours des ressources françaises de qualité
+L'idée est venue à force de lire tous les jours des ressources françaises de qualité
 insuffisante sur le développement web, on a décidé de prendre les choses en main
 et de lancer notre propre bouzin.
 Notre constat c'est que notre métier, c'est de coder.
@@ -10,7 +10,7 @@ on aime quand y'a pas d'éclaboussures, quand c'est propre et qu'à la fin
 on peut le prendre en photo et le *tweeter* car on en est fier.
 Tu auras donc compris que nos valeurs principales sont la qualité et le partage.
 
-Après, pour bien coder, il suffit pas que d'avoir un bon clavier et des doigts,
+Après, pour bien coder, il ne suffit pas que d'avoir un bon clavier et des doigts,
 du coup, on compte sortir des posts sur des technos, mais aussi sur des outils,
 des méthodes de travail ou tout ce qui peut encore toucher à notre précieux code.
 Comme tu as compris qu'une de nos préoccupations est la qualité,
