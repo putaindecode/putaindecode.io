@@ -1,7 +1,8 @@
 mixin Avatar(contributor)
   -var gravatar = contributors.map[contributor.login].gravatar_id || "default"
-  img(
-    class="#{attributes.class} putainde-Avatar js-AnimateLoad"
-    src="http://www.gravatar.com/avatar/#{gravatar}.png"
-    alt=""
-  )
+  a(href="http://github.com/#{contributor.login}")
+    img(
+      class="#{attributes.class} putainde-Avatar js-AnimateLoad"
+      src="http://www.gravatar.com/avatar/#{gravatar}.png"
+      alt=""
+    )
