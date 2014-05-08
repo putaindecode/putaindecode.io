@@ -1,5 +1,5 @@
 .putainde-Footer {
-  border-bottom: var(line-height) solid var(putainde-Color-red);
+  border-bottom: 0.8em solid var(putainde-Color-red);
 }
 
   .putainde-Footer > .Grid {
