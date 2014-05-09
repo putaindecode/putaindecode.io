@@ -8,7 +8,7 @@ Je venais de découvrir cette notion et j'avais donc fait le tour de la question
 fois qu’on intègre une maquette graphique, on doit se taper tout de zéro.
 Il a beau exister des CSS « Reset », des frameworks CSS, tout un tas de
 grilles prête à l’emploi, des composants de CSS réutilisables avec l’approche
-objet, je n’ai jamais réellement était satisfait par ces méthodes, que ce soit
+objet, je n’ai jamais réellement été satisfait par ces méthodes, que ce soit
 à cause des contraintes qu’impose la syntaxe (devoir mettre des classes à tout
 va dans l’HTML ça peut vite devenir chiant dans un CMS), ou par d’éventuelles
 limitations qui obligent à « trop » modifier la source du document (pas assez
@@ -217,9 +217,9 @@ Mais bon comme je dis souvent, quel plaisir de se planter quand ce n'est pas dan
 
 Ce qu'il faut retenir clairement c'est que ce ne sont pas les pré-processeurs qui
 vont vous faire écrire des meilleurs feuilles de styles. C'est plus un travail sur
-une méthodologie et  une organisation adapté à vos besoins qui amélioreront
+une méthodologie et  une organisation adaptées à vos besoins qui amélioreront
 votre quotidien de webdesigner (oui quoi, dès qu'on code du CSS, on peut
-utiliser l'appellation webdesigner sur son CV, ça en jete).
+utiliser l'appellation webdesigner sur son CV, ça en jette).
 
 J'ai donc longtemps apprécié les pré-processeurs CSS, mais aujourd'hui je commence
 à leur tourner le dos du fait que je n'utilise que trop peu de leurs fonctionnalités.
@@ -241,4 +241,4 @@ vous pourrez continuer la lecture au prochain épisode qui sera consacré aux po
 
 <small>(Mamam, t'as vu ce cliffhanger digne des séries US !)</small>
 
-Bon promis la prochain fois je vous en parle des post-processeurs. Pour de vrai.
+Bon promis la prochaine fois je vous en parle des post-processeurs. Pour de vrai.
