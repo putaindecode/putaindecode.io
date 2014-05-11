@@ -1,8 +1,11 @@
-mixin Avatar(contributor)
+mixin Avatar(contributor, tooltip)
   -var gravatar = contributors.map[contributor.login].gravatar_id || "default"
-  a(href="http://github.com/#{contributor.login}")
+  -var className = ""
+  -if (tooltip)
+    -className += "AttrTip AttrTip--bottom"
+  a(href="https://github.com/#{contributor.login}", data-tip="#{contributor.login}", class="#{attributes.class} #{className}")
     img(
-      class="#{attributes.class} putainde-Avatar js-AnimateLoad"
+      class="putainde-Avatar js-AnimateLoad"
       src="http://www.gravatar.com/avatar/#{gravatar}.png"
       alt=""
     )

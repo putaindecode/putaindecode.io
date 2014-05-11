@@ -16,14 +16,6 @@
 .putainde-Contributor {
   margin-left: 1rem;
   display: inline-block;
-}
-
-.putainde-Contributor-login {
-
-}
-
-.putainde-Contributor-avatar {
-  display: inline-block;
   width: 2rem;
   height: @width;
   vertical-align: middle;
