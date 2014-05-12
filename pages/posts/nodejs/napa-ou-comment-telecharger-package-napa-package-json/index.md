@@ -1,12 +1,12 @@
 (Grosse grosse blague ce titre...)
 
-[@kewah](https://twitter.com/kewah) nous a récemment parlé de [**npm** comme front-end packager manager](/posts/frontend/npm-comme-package-manager-pour-le-front-end/), je vais aller encore plus loin. Je vais vous dévoiler comment installer des projets qui n'ont pas de `package.json`. Oui, car c'est bien beau de virer Bower (oh que oui c'est beau) mais comme **npm** requiert constamment un `package.json`, on ne va pas pouvoir télécharger grand chose sauf si on fait des _PR_ afin d'ajouter ce fichier sur les projets que l'on souhaite obtenir.
+[@kewah](https://twitter.com/kewah) nous a récemment parlé de [**npm** comme front-end packager manager](/posts/frontend/npm-comme-package-manager-pour-le-front-end/), je vais aller encore plus loin. Je vais vous dévoiler comment installer des projets qui n'ont pas de `package.json`. Oui, car c'est bien beau de virer Bower (oh que oui c'est beau) mais comme npm requiert constamment un `package.json`, on ne va pas pouvoir télécharger grand chose sauf si on fait des _PR_ afin d'ajouter ce fichier sur les projets que l'on souhaite obtenir.
 
 C'est pourquoi je vais vous parler de [**napa**](https://github.com/shama/napa).
 
-**napa** est un _helper for installing stuff without a package.json with npm_. Pardon, **napa** est un aideur pour installer des trucs sans un package.json avec npm. BON. **napa** vous aide à travers npm à installer des modules qui n'ont pas de package.json. C'est plus clair là ?
+napa est un _helper for installing stuff without a package.json with npm_. Pardon, napa est un aideur pour installer des trucs sans un package.json avec npm. BON. napa vous aide à travers npm à installer des modules qui n'ont pas de package.json. C'est plus clair là ?
 
-**napa** est ce qui manque à **npm** où **bower** avait justement son utilité : télécharger n'importe quel _package_ _front_ n'importe où. Mais plutôt que d'installer un autre _packager_, **napa** s'insère directement dans **npm** afin de ne pas perturber le _workflow_, et ça, j'apprécie grandement.
+napa est ce qui manque à npm où bower avait justement son utilité : télécharger n'importe quel _package_ _front_ n'importe où. Mais plutôt que d'installer un autre _packager_, napa s'insère directement dans npm afin de ne pas perturber le _workflow_, et ça, j'apprécie grandement.
 
 Simple, tout simple. Dans un premier temps, téléchargez-le :
 
@@ -14,7 +14,7 @@ Simple, tout simple. Dans un premier temps, téléchargez-le :
 $ npm install napa --save-dev
 ```
 
-Cela ajoutera **napa** au `package.json`.
+Cela ajoutera napa au `package.json`.
 
 Puis dans `package.json`, ajoutez :
 
@@ -26,9 +26,9 @@ Puis dans `package.json`, ajoutez :
 }
 ```
 
-Cela permettra de lancer **napa** à chaque fois que vous faites `npm install`.
+Cela permettra de lancer napa à chaque fois que vous faites `npm install`.
 
-Afin d'ajouter les projets qui seront téléchargés par **napa** et donc par **npm**, il suffit d'ajouter un objet _napa_ toujours dans `package.json` :
+Afin d'ajouter les projets qui seront téléchargés par napa et donc par npm, il suffit d'ajouter un objet `napa` toujours dans `package.json` :
 
 ```
 {
@@ -88,7 +88,7 @@ On se retrouve alors dans la vraie vie à avoir un `package.json` comme ceci :
 
 Top non ?
 
-Note : **napa** et **npm-shrinkwrap**, c'est pas encore ça, alors n'hésitez pas à supprimer la partie "napa" avant de lancer votre génération de npm shrinkwrap.
+Note : napa et npm-shrinkwrap, c'est pas encore ça, alors n'hésitez pas à supprimer la partie "napa" avant de lancer votre génération de npm-shrinkwrap.
 
 Bon download à vous.
 
