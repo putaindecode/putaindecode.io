@@ -75,7 +75,7 @@ Il est clair que lu comme ça, le plus intéressant est le `^` et c'est justemen
 
 Pour plus d'information sur la définition des versions, [c'est par là](https://github.com/isaacs/node-semver#ranges) (Oh mon dieu, il a fait un lien avec un "cliquez ici").
 
-Bon. C'est bon ? Vous avez tout compris ? Okay, vous pouvez passer à [**napa**](/posts/npm/napa-ou-comment-telecharger-package-napa-package-json/) maintenant qui vous aidera grandement sur le téléchargement de projets n'ayant pas de `package.json`.
+Bon. C'est bon ? Vous avez tout compris ? Okay, vous pouvez passer à [**napa**](/posts/nodejs/napa-ou-comment-telecharger-package-napa-package-json/) maintenant qui vous aidera grandement sur le téléchargement de projets n'ayant pas de `package.json`.
 
 En ce qui concerne npm, je m'arrête là, et vous propose une petite solution afin d'augmenter la vitesse de vos installations de node modules.
 
