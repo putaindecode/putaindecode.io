@@ -1,4 +1,4 @@
-Pas plus tard qu'hier, alors que je travaillais tranquillement, apparu soudainement un bug dans mon _workflow_ de _build_. Il ne m'était plus possible avec [`grunt-contrib-clean`](https://github.com/gruntjs/grunt-contrib-clean) de supprimer des fichiers. Hmmm, ballot, car sans la suppression, mon _workflow_ devenait tout bancal. Bien. Il me fallut remonter la rivière - comme souvent, en tant que développeur - afin de constater où était le bug. Je suis alors tombé sur [`rimraf`](https://github.com/isaacs/rimraf) (bon c'était pas bien loin) qui s'était vu être mis à jour il y a à peine 12 heures, comprenant un bug.
+Pas plus tard qu'hier, alors que je travaillais tranquillement, apparu soudainement un bug dans mon _workflow_ de _build_. Il ne m'était plus possible avec [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean) de supprimer des fichiers. Hmmm, ballot, car sans la suppression, mon _workflow_ devenait tout bancal. Bien. Il me fallut remonter la rivière - comme souvent, en tant que développeur - afin de constater où était le bug. Je suis alors tombé sur [rimraf](https://github.com/isaacs/rimraf) (bon c'était pas bien loin) qui s'était vu être mis à jour il y a à peine 12 heures, comprenant un bug.
 
 ## Contexte
 
@@ -13,21 +13,21 @@ Bon, vous voyez le topo ?
 }
 ```
 
-[`grunt-contrib-clean`](https://github.com/gruntjs/grunt-contrib-clean) qui contient en `dependencies` [`rimraf`](https://github.com/isaacs/rimraf) avec une version bugguée. Oh la belle affaire. Oui car `~2.2.1` veut dire "[Raisonnablement proche de 2.2.1](https://github.com/isaacs/node-semver#ranges)", ce qui se traduit par télécharger la dernière version en `2.2.x`, soit la `2.2.7` (celle bugguée) lorsque je mis à jour le package [`grunt-contrib-clean`](https://github.com/gruntjs/grunt-contrib-clean).
+[grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean) qui contient en _dependencies_ [rimraf](https://github.com/isaacs/rimraf) avec une version bugguée. Oh la belle affaire. Oui car `~2.2.1` veut dire "[Raisonnablement proche de 2.2.1](https://github.com/isaacs/node-semver#ranges)", ce qui se traduit par télécharger la dernière version en `2.2.x`, soit la `2.2.7` (celle bugguée) lorsque je mis à jour le package [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean).
 
 ## Le hic
 
-Une question m'est venue : comment faire en sorte de figer la version de `rimraf` qui est une dépendance de dépendance ?
+Une question m'est venue : comment faire en sorte de figer la version de [rimraf](https://github.com/isaacs/rimraf) qui est une dépendance de dépendance ?
 
 Ha ! Pas évident comme ça.
 
-J'ai d'abord essayé sans trop d'espoir de télécharger [`rimraf`](https://github.com/isaacs/rimraf) lui-même en `2.2.6` mais vu que chaque dépendance à ses propres dépendances et qu'elles ne se les partagent pas... c'était peine perdue.
+J'ai d'abord essayé sans trop d'espoir de télécharger [rimraf](https://github.com/isaacs/rimraf) lui-même en `2.2.6` mais vu que chaque dépendance à ses propres dépendances et qu'elles ne se les partagent pas... c'était peine perdue.
 
-J'ai donc cherché, cherché, et je suis tombé sur [`npm-shrinkwrap`](https://www.npmjs.org/doc/cli/npm-shrinkwrap.html): "Lock down dependency versions". Bingo !
+J'ai donc cherché, cherché, et je suis tombé sur [npm-shrinkwrap](https://www.npmjs.org/doc/cli/npm-shrinkwrap.html): "Lock down dependency versions". Bingo !
 
 ## npm-shrinkwrap, la solution pour figer vos depéndances, toutes vos dépendances
 
-[`npm-shrinkwrap`](https://www.npmjs.org/doc/cli/npm-shrinkwrap.html) va vous permettre de définir avec précision chaque version de chaque dépendance.
+[npm-shrinkwrap](https://www.npmjs.org/doc/cli/npm-shrinkwrap.html) va vous permettre de définir avec précision chaque version de chaque dépendance.
 
 Pour cela, faites d'abord un `npm install` (si vous avez évidemment un `package.json`) afin d'installer vos `node_modules`. Une fois cela fait, lancez `npm shrinkwrap` qui créera le fichier `npm-shrinkwrap.json` qui comprendra toutes les définitions de chaque dépendance.
 
@@ -55,11 +55,11 @@ Simple, regardez :
 }
 ```
 
-J'ai défini la version de [`rimraf`](https://github.com/isaacs/rimraf) dans `dependencies.grunt-contrib-clean.dependencies.rimraf`.
+J'ai défini la version de [rimraf](https://github.com/isaacs/rimraf) dans `dependencies.grunt-contrib-clean.dependencies.rimraf`.
 
-Bon, je ne connais pas tout par coeur non plus, `npm shrinkwrap` vous écrira la totalité du fichier avec toutes les définitions mais j'ai volontairement tout supprimé et gardé uniquement la partie [`grunt-contrib-clean`](https://github.com/gruntjs/grunt-contrib-clean) car seule cette partie est à figer. Quand je dis supprimer, je parle réellement dans le fichier final, pas juste ici dans l'article.
+Bon, je ne connais pas tout par coeur non plus, npm-shrinkwrap vous écrira la totalité du fichier avec toutes les définitions mais j'ai volontairement tout supprimé et gardé uniquement la partie [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean) car seule cette partie est à figer. Quand je dis supprimer, je parle réellement dans le fichier final, pas juste ici dans l'article.
 
-Vous aurez toute l'explication de `npm-shrinkwrap` sur la [documentation officielle [en]](https://www.npmjs.org/doc/cli/npm-shrinkwrap.html).
+Vous aurez toute l'explication de npm-shrinkwrap sur la [documentation officielle [en]](https://www.npmjs.org/doc/cli/npm-shrinkwrap.html).
 
 ## Choisir la bonne stratégie de version
 
@@ -81,7 +81,7 @@ En ce qui concerne npm, je m'arrête là, et vous propose une petite solution af
 
 ## Bonus
 
-Envie d'accélérer vos installations **npm** ? Je vous conseille [npm-pkgr](https://github.com/vvo/npm-pkgr).
+Envie d'accélérer vos installations npm ? Je vous conseille [npm-pkgr](https://github.com/vvo/npm-pkgr).
 
 Il hashera votre `package.json` pour savoir s'il a été modifié ou non, et en fonction de ça, il lancera `npm install` ou non. Sacré gain de temps (surtout si vous faites des `npm install` à chaque _deploy_).
 
