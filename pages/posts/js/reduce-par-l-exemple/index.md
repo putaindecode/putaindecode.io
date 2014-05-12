@@ -1,4 +1,4 @@
-Souvent méconnue, la fonction ``Array.reduce``, se révèle super pratique, dès lors qu'on prenne un peu le temps de faire un peu plus connaissance. Ce n'est que dernièrement, que je me suis rendu compte que reduce pouvait servir à bien plus de chose que ce qui était présenté dans les documentations.
+Souvent méconnue, la fonction ``Array#reduce``, se révèle super pratique, dès lors qu'on prenne un peu le temps de faire un peu plus connaissance. Ce n'est que dernièrement, que je me suis rendu compte que reduce pouvait servir à bien plus de chose que ce qui était présenté dans les documentations.
 
 Voici donc un petit tour d'horizon des cas d'utilisation de cette fonction. Mais avant cela,
 et histoire de faire les présentations, voici l'intro tirée de la documentation de [MDN](https://developer.mozilla.org/fr/docs/JavaScript/Reference/Objets_globaux/Array/reduce).
@@ -9,7 +9,7 @@ et histoire de faire les présentations, voici l'intro tirée de la documentatio
 >vers la droite) de sorte à le réduire à une seule valeur.
 
 ## le classique: Opérer une somme sur un tableau
-C'est souvent l'exemple qui illustre le plus les documentations. Array.reduce va permettre de parcourir le tableau, et pour chaque élément, appeler une fonction avec les paramètres suivants :
+C'est souvent l'exemple qui illustre le plus les documentations. ``Array#reduce`` va permettre de parcourir le tableau, et pour chaque élément, appeler une fonction avec les paramètres suivants :
 - le résultat de la précédente exécution de cette fonction (aussi appelé l'accumulateur).
 - l'élément courant.
 - l'index de l’élément courant.
@@ -21,7 +21,7 @@ var sum = [1,2,3,4,5].reduce( function( memo, val){
 });
 ```
 
-En fait, ``Array.reduce`` accepte un deuxième argument, après la fonction de callback. Cet argument sera utilisé comme accumulateur lors de la première exécution. Et c'est justement cela qui est intéressant et qui rend le reduce plutôt pratique.
+En fait, ``Array#reduce`` accepte un deuxième argument, après la fonction de callback. Cet argument sera utilisé comme accumulateur lors de la première exécution. Et c'est justement cela qui est intéressant et qui rend le reduce plutôt pratique.
 
 ## Chercher/remplacer avec plusieurs motifs
 Imaginons que vous souhaitiez appliquer plusieurs opérations de rechercher/remplacer sur une chaine de caractère. Si vous avez une liste de motifs et leur valeur correspondante, reduce permet de faire cela assez simplement, genre en 3 lignes.
@@ -96,8 +96,8 @@ function compareMozilla(item){
 D'ailleurs, on pourrait assez simplement rendre ``groupBySite`` générique pour la réutiliser avec un ``groupByBrowser``.
 
 ## Manipuler la structure des données
-``Array.reduce`` peut aussi permettre de manipuler la structure de vos données et pouvoir la modifier.
-Par exemple, voici une liste de sites avec, pour chaque site, le pourcentage de visite par navigateur. Imaginons que nous souhaitons changer la structure de l'objet pour grouper ces résultats par type de navigateur plutôt que par site. Là encore Array.reduce s'avère plutôt pratique.
+``Array#reduce`` peut aussi permettre de manipuler la structure de vos données et pouvoir la modifier.
+Par exemple, voici une liste de sites avec, pour chaque site, le pourcentage de visite par navigateur. Imaginons que nous souhaitons changer la structure de l'objet pour grouper ces résultats par type de navigateur plutôt que par site. Là encore ``Array#reduce`` s'avère plutôt pratique.
 
 ```javascript
 var datas = {
@@ -130,5 +130,5 @@ var results = Object.keys(datas).reduce( function (memo, site) {
   return datas[site].reduce(groupByBrowser.bind(null, site), memo)
 }, {});
 ```
-J'espère que vous avez appréciez ces quelques exemples d'utilisation de ``Array.reduce``
+J'espère que vous avez appréciez ces quelques exemples d'utilisation de ``Array#reduce``
 Et n'hésitez pas à partager vos cas d'utilisations en éditant l'article ou via les commentaires !
