@@ -1,4 +1,4 @@
-Souvent méconnue, la fonction ``Array#reduce``, se révèle super pratique, dès lors qu'on prenne un peu le temps de faire un peu plus connaissance. Ce n'est que dernièrement, que je me suis rendu compte que reduce pouvait servir à bien plus de chose que ce qui était présenté dans les documentations.
+Souvent méconnue, la fonction ``Array#reduce`` se révèle super pratique dès lors qu'on prenne un peu le temps de faire un peu plus connaissance. Ce n'est que dernièrement que je me suis rendu compte que reduce pouvait servir à bien plus de chose que ce qui était présenté dans les documentations.
 
 Voici donc un petit tour d'horizon des cas d'utilisation de cette fonction. Mais avant cela,
 et histoire de faire les présentations, voici l'intro tirée de la documentation de [MDN](https://developer.mozilla.org/fr/docs/JavaScript/Reference/Objets_globaux/Array/reduce).
@@ -21,7 +21,7 @@ var sum = [1,2,3,4,5].reduce( function( memo, val){
 });
 ```
 
-En fait, ``Array#reduce`` accepte un deuxième argument, après la fonction de callback. Cet argument sera utilisé comme accumulateur lors de la première exécution. Et c'est justement cela qui est intéressant et qui rend le reduce plutôt pratique.
+En fait, ``Array#reduce`` accepte un deuxième argument après la fonction de callback. Cet argument sera utilisé comme accumulateur lors de la première exécution. Et c'est justement cela qui est intéressant et qui rend le reduce plutôt pratique.
 
 ## Chercher/remplacer avec plusieurs motifs
 Imaginons que vous souhaitiez appliquer plusieurs opérations de rechercher/remplacer sur une chaine de caractère. Si vous avez une liste de motifs et leur valeur correspondante, reduce permet de faire cela assez simplement, genre en 3 lignes.
@@ -34,9 +34,9 @@ var output = datas.reduce( function(memo, item){
 }, input);
 ```
 ## Réaliser un groupBy
-Reduce peut aussi nous permettre d'effectuer des manipulations comme des groupBy sur un tableau (bon avec l'aide de petits helper).
+Reduce peut aussi nous permettre d'effectuer des manipulations comme des groupBy sur un tableau (bon avec l'aide de petits helpers).
 
-Prenons comme point de départ cette liste de stat, représentant un découpage par site et par famille de navigateurs. Nous aimerions pouvoir grouper les résultats par site
+Prenons comme point de départ cette liste de stat représentant un découpage par site et par famille de navigateurs. Nous aimerions pouvoir grouper les résultats par site
 
 ```javascript
 var stats = [
@@ -68,7 +68,7 @@ function groupBySite(memo, item){
 var results = stats.reduce( groupBySite, [] );
 ```
 
-Concernant cet exemple,  on pouvait arriver au même résultat en déclarant une variable qui aurait le rôle d'accumulateur et un Array.forEach
+Concernant cet exemple, on pouvait arriver au même résultat en déclarant une variable qui aurait le rôle d'accumulateur et un Array.forEach
 ```javascript
 var results = {};
 
@@ -83,7 +83,7 @@ function groupBySite( item){
 
 stats.forEach( groupBySite );
 ```
-Mais ici, la fonction ``groupBySite`` devient bien moins ré-utilisable, car elle dépend directement de la variable results, déclarée au dessus.
+Mais ici, la fonction ``groupBySite`` devient bien moins ré-utilisable car elle dépend directement de la variable results, déclarée au dessus.
 
 
 ###À noter
