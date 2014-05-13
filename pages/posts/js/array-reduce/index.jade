@@ -1,0 +1,13 @@
+extends /layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "MoOx"
+  -exports.title = "Array.reduce par l'exemple"
+  -exports.tags = ["javascript", "array"]
+  -exports.date = "2014-05-12"
+
+block main
+  +Post(exports.title)
+    include:md index.md
