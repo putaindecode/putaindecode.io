@@ -41,9 +41,9 @@ sur une chaine de caractère. Si vous avez une liste de motifs et leur valeur co
  
 ```javascript
 var input = "I'm %USER% and I live in %COUNTRY%"
-var datas = [{token:'%USER%', value:'lionel'}, {token:'%COUNTRY%', value: 'France'}]
+var data = [{token:'%USER%', value:'lionel'}, {token:'%COUNTRY%', value: 'France'}]
 
-var output = datas.reduce( function(memo, item){
+var output = data.reduce( function(memo, item){
   return memo.replace(item.token, item.value);
 }, input);
 ```
@@ -128,8 +128,8 @@ Imaginons que nous souhaitons changer la structure de l'objet pour grouper ces
 résultats par type de navigateur plutôt que par site. Là encore `Array#reduce` s'avère plutôt pratique.
 
 ```javascript
-var datas = {
-      "gogle.fr" : [
+var data = {
+      "google.fr" : [
        {name: "Chrome", value: "50%"},
         {name: "FireFox", value: "30%"},
         {name: "Internet Explorer", value: "20%" }
@@ -154,8 +154,8 @@ function groupByOS( site, memo, browser){
   return memo
 }
 
-var results = Object.keys(datas).reduce( function (memo, site) {
-  return datas[site].reduce(groupByBrowser.bind(null, site), memo)
+var results = Object.keys(data).reduce( function (memo, site) {
+  return data[site].reduce(groupByBrowser.bind(null, site), memo)
 }, {});
 ```
 
