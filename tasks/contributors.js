@@ -14,7 +14,7 @@ var emailRE = /<(.+)>$/
 var readFile = Promise.denodeify(fs.readFile)
 var writeFile = Promise.denodeify(fs.writeFile)
 var lodash = require("lodash")
-var githubApi = new (require("github"))({ version : "3.0.0" })
+var githubApi = new (require("github"))({version : "3.0.0"})
 
 var sortObjectByKeys = function(obj){
   var newObj = {}
