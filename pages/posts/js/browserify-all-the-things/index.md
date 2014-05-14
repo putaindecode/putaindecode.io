@@ -309,3 +309,5 @@ Maintenant vous aller pouvoir consommer et écrire des modules facilement, et
 sans vous prendre la tête.
 
 Bisous.
+
+_PS: pour tester browserify en live, c'est sur [requirebin.com](http://requirebin.com/)._
