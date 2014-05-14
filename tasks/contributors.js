@@ -21,7 +21,6 @@ var sortObjectByKeys = function(obj){
   var keys = Object.keys(obj)
   keys.sort()
   keys.forEach(function(key){
-    console.log(key)
     newObj[key] = obj[key]
   })
 
