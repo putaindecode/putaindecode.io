@@ -14,17 +14,17 @@ Tout d'abord, installez **gulp** (évident...) et faites ce que vous avez à fai
 
 Maintenant, vous êtes prêt(e) ? Okay, go.
 
-### Intallez les _packages_ adéquats
+### Installez les _packages_ adéquats
 
 Oui, deux packages, [gulp-iconfont](https://github.com/nfroidure/gulp-iconfont) et [gulp-iconfont-css](https://github.com/backflip/gulp-iconfont-css).
 
-```
+```shell
 $ npm install gulp-iconfont gulp-iconfont-css --save-dev
 ```
 
 ### Importez-les
 
-```
+```js
 // import
 var gulp = require('gulp')
 
@@ -36,7 +36,7 @@ var iconfont = require('gulp-iconfont')
 
 Je préconise d'appeler toute transformation d'une image vers une fonte "glyphicon".
 
-```
+```js
 // glyphicons
 gulp.task('glyphicons', function() {
  return gulp.src('src/glyphicons/**/*') // où sont vos svg
@@ -57,7 +57,7 @@ gulp.task('glyphicons', function() {
 
 Voilà l'écriture entière de la tâche :
 
-```
+```js
 // import
 var gulp = require('gulp')
 
