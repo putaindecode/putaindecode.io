@@ -6,7 +6,7 @@ Un de nos lecteurs nous a récemment envoyé un email avec tout un tas de questi
 
 Salut :)
 
-> Je viens d’être embauché en tant que Product Designer et il est prévu que je fasse du front. Malheureusement, pour diverses raisons, je n’ai plus pratiqué ce métier depuis au moins 1 an. Je continue bien sûr de suivre ce qui se fait mais j’ai comme la sensation de me sentir un peu largué alors que c’était un sujet sur lequel je me sentais vraiment bien. On a un produit SaaS qui tourne sur Rails & Angular, qui demande beaucoup de maintenabilité et une bonne optimisation. Là où j'interviens, c'est sur la définition et la création de la V2. Seulement avant de m’engager sur des sujets que je ne maîtrise plus, je souhaiterais avoir un peu plus d’information.
+> Je viens d’être embauché en tant que Product Designer et il est prévu que je fasse du front. Malheureusement, pour diverses raisons, je n’ai plus pratiqué ce métier depuis au moins 1 an. Je continue bien sûr de suivre ce qui se fait mais j’ai comme la sensation de me sentir un peu largué alors que c’était un sujet sur lequel je me sentais vraiment bien. On a un produit SaaS qui tourne sur Rails & Angular, qui demande beaucoup de maintenabilité et une bonne optimisation. Là où j'interviens, c'est sur la définition et la création de la V2. Seulement avant de m’engager sur des sujets que je ne maîtrise plus, je souhaiterais avoir un peu plus d’informations.
 
 Yes, pas de problème, dis-nous tout.
 
@@ -14,14 +14,14 @@ Yes, pas de problème, dis-nous tout.
 
 Les frameworks comme Bootstrap ne sont pas forcément une mauvaise chose, ils te permettent de mettre les bases d’un site, très pratique pour aller vite et surtout faire des administrations. En revanche ils proposent des structures avec des conventions CSS n’aidant pas forcément à finir avec un front-end maintenable. De plus, cela force à _override_ tout l’aspect visuel dès que ton design est personnalisé. Finalement, tu passes plus de temps à _overrider_ un framework qui ne te convient pas tant que ça que de te créer ton propre ui kit. (sans compter le risque de voir ton site péter lors d’une mise à jour d’un framework).
 
-> Avec une charte un peu custom, n’est-il pas préférable de se baser sur des composants pré-existants pour faciliter la charge et le temps passé à dev ? Il est peut-être possible d’en récupérer des similaires de façon individuel autre part ?
+> Avec une charte un peu custom, n’est-il pas préférable de se baser sur des composants pré-existants pour faciliter la charge et le temps passé à dev ? Il est peut-être possible d’en récupérer des similaires de façon individuelle autre part ?
 
 Si, effectivement, des solutions comme [topcoat](http://topcoat.io/) sont moins _opinionated_ par exemple et permettent vraiment de personnaliser tous les éléments proposés par défaut.
 Il faut vraiment trouver un framework qui fait que le strict nécessaire sans design finalement.
 
 > Et les préprocesseurs (Sass surtout) c’est vraiment une bonne idée sur ce type de projet ou tu vois des contre-indications ?
 
-Les préprocesseurs CSS sont généralement une bonne chose, ils apportent de nombreuses options intéressants telles que les variables, les fonctions, là où le w3c met un certain temps à les sortir. Cependant, tous les préprocesseurs ne se ressemblent pas. Certains ont leur propre écriture comme Stylus ou Sass (Sass, pas scss). Certains sont aussi plus lents à compiler que d’autre (coucou Sass). Nous préconisons un pseudo “post-processor” qui s’appelle [Rework](https://github.com/reworkcss/rework). Avec rework, tu ajoutes juste les processing dont tu as besoin, et tout ça, généralement, sans casser le style d'écriture d’un fichier css (article à prevoir).
+Les préprocesseurs CSS sont généralement une bonne chose, ils apportent de nombreuses options intéressants telles que les variables, les fonctions, là où le w3c met un certain temps à les sortir. Cependant, tous les préprocesseurs ne se ressemblent pas. Certains ont leur propre écriture comme Stylus ou Sass (Sass, pas scss). Certains sont aussi plus lents à compiler que d’autres (coucou Sass). Nous préconisons un pseudo “post-processor” qui s’appelle [Rework](https://github.com/reworkcss/rework). Avec rework, tu ajoutes juste les processing dont tu as besoin, et tout ça, généralement, sans casser le style d'écriture d’un fichier css (article à prevoir).
 
 
 > Quant à mon workflow, j’aimerais tout reprendre depuis le début pour repartir sur des bases saines. Tu pourrais m’indiquer les indispensables sur Sublime Text (Config, Plugins) et autres outils ?
@@ -41,11 +41,11 @@ Tout d’abord lis ceci : [Automatisez votre workflow front-end](http://www.24jo
 
 Pour le reste :
 
-- [NPM](https://www.js.org/npm) : permet de gérer les versions de ce que tu utilises à la fois comme bibliothèque front ou outils de dev. Il sert aussi d’interface de ligne de commande permettant de [lancer des commandes définies dans le package.json](/posts/frontend/npm-comme-package-manager-pour-le-front-end/).
+- [NPM](https://www.npmjs.org/) : NPM’s not a Package Manager, permet de gérer les versions de ce que tu utilises à la fois comme bibliothèque front ou outils de dev. Il sert aussi d’interface de ligne de commande permettant de [lancer des commandes définies dans le package.json](/posts/frontend/npm-comme-package-manager-pour-le-front-end/).
 
 - [Bower](http://bower.io/) ne sert pas à grand chose, c’est une abstraction par dessus NPM. Nous pensons qu’il tend à mourir. [[1](/posts/frontend/npm-comme-package-manager-pour-le-front-end/)] [[2](/posts/nodejs/napa-ou-comment-telecharger-package-napa-package-json/)]
 
-- [Grunt](http://gruntjs.com/) est un _task-runner_, il te permet d’automatiser les actions que tu répètes souvent : concatener des scripts, preprocessing HTML & CSS, copie des assets… Nous te conseillons d’utiliser gulp, beaucoup plus rapide et simple à prendre en main. [[1](/posts/js/introduction-gulp/)] [[2](/posts/js/premiers-pas-avec-grunt/)]
+- [Grunt](http://gruntjs.com/) est un _task-runner_, il te permet d’automatiser les actions que tu répètes souvent : concaténer des scripts, preprocessing HTML & CSS, copie des assets… Nous te conseillons d’utiliser gulp, beaucoup plus rapide et simple à prendre en main. [[1](/posts/js/introduction-gulp/)] [[2](/posts/js/premiers-pas-avec-grunt/)]
 
 > Merci beaucoup !
 
