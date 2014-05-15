@@ -78,7 +78,7 @@ Bon dans mon exemple j'ai mis un peu n'importe quoi, donc on va faire un mini wo
 
 ## Utilisation
 
-On part avec une tâche très simple : pré-processeur CSS [Myth](http://myth.io) et
+On part avec une tâche très simple : pré-processeur CSS [Myth](http://www.myth.io) et
 optimisation avec [CSSO](https://github.com/css/csso).
 
 ```shell
@@ -226,7 +226,7 @@ très bien faite, qui comporte carrément
 [des exemples _officiels_ tout prêts](https://github.com/gulpjs/gulp/tree/master/docs/recipes).
 
 Comme je vous disais plus tôt, les auteurs de Gulp sont assez carrés et valident
-(ou plutôt _invalident_) [les plugins](https://npmjs.org/search?q=gulpplugin) qui
+(ou plutôt _invalident_) [les plugins](https://www.npmjs.org/search?q=gulpplugin) qui
 ne respectent pas les
 [règles](https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md).
 Je trouve que c'est gage de qualité.
