@@ -41,7 +41,7 @@ Tout d’abord lis ceci : [Automatisez votre workflow front-end](http://www.24jo
 
 Pour le reste :
 
-- [NPM](https://www.npmjs.org/) : NPM’s not a Package Manager, permet de gérer les versions de ce que tu utilises à la fois comme bibliothèque front ou outils de dev. Il sert aussi d’interface de ligne de commande permettant de [lancer des commandes définies dans le package.json](/posts/frontend/npm-comme-package-manager-pour-le-front-end/).
+- [NPM](https://www.npmjs.org/) : permet de gérer les versions de ce que tu utilises à la fois comme bibliothèque front ou outils de dev. Il sert aussi d’interface de ligne de commande permettant de [lancer des commandes définies dans le package.json](/posts/frontend/npm-comme-package-manager-pour-le-front-end/).
 
 - [Bower](http://bower.io/) ne sert pas à grand chose, c’est une abstraction par dessus NPM. Nous pensons qu’il tend à mourir. [[1](/posts/frontend/npm-comme-package-manager-pour-le-front-end/)] [[2](/posts/nodejs/napa-ou-comment-telecharger-package-napa-package-json/)]
 
