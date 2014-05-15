@@ -29,7 +29,7 @@ Les préprocesseurs CSS sont généralement une bonne chose, ils apportent de no
 
 Orf, ca dépend de chacun mais en général, voici ce qu’on te préconise :
 - Editeur : [Sublime text](http://www.sublimetext.com/) (avec BracketHighlighter, Color Highlighter, DocBlockr, EditorConfig, Emmet, Emmet CSS, HTML5, INI, JavaScript Console, JsFormat, Markdown Preview, MarkdownEditing, Modific, Placeholders, Theme - Flatland, Unicode Character Highlighter)
-ou [Atom](http://atom.io) (`apm install editorconfig docblockr htmlhint csslint linter linter-jscs linter-jshint css-color-highlighting atom-prettify open-in-github-app gist-it autocomplete-plus`).  
+ou [Atom](http://atom.io) (apm install, editorconfig, docblockr, htmlhint, csslint, linter, linter-jscs, linter-jshint, css-color-highlighting, atom-prettify, open-in-github-app, gist-it, autocomplete-plus).  
 Pour être à jour sur ces éditeurs, n’hésite pas à Suivre [@SublimePackages](https://twitter.com/SublimePackages) et [@Atom_Packages](https://twitter.com/Atom_Packages) sur Twitter.
 - Terminal : [iterm2](http://www.iterm2.com/) sur mac, ou terminal de base
 - Shell : zsh (`brew install zsh`), [prezto (plugin zsh)](https://github.com/sorin-ionescu/prezto) 
