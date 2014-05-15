@@ -88,7 +88,7 @@ sont gérés les mixins conditionnels. Je passe sur ce point gerbant.
 
 Bibliotèques construites sur Less :
 - [LESS Hat](http://lesshat.madebysource.com/),
-- [LESS Elements](http://lesselements.com/).
+- [LESS Elements](http://www.lesselements.com/).
 
 ### [Stylus](http://learnboost.github.io/stylus/)
 
