@@ -33,6 +33,7 @@ module.exports = cornea.extend({
   getDuration : function(){
     var post = document.querySelector(".putainde-Post-md")
     var text = post.textContent || post.innerText
+  console.log(text, text.split(/\s+|\s*\.\s*/))
     return Math.round(text.split(/\s+|\s*\.\s*/).length / this.wordsPerMinute)
   },
   template : function(){
