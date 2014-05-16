@@ -14,7 +14,7 @@ html(lang="fr")
     block head
     link(
       rel="stylesheet"
-      href="#{uri('stylesheets/index.css', page)}"
+      href="#{page == '404' ? '/stylesheets/index.css' : uri('stylesheets/index.css', page)}"
     )
     //- link(
     //-   rel="stylesheet"
@@ -32,5 +32,5 @@ html(lang="fr")
     .putainde-Footer
       include /partials/footer
     block end
-    script(src="#{uri('scripts/index.js', page)}")
+    script(src="#{page == '404' ? '/scripts/index.js' : uri('scripts/index.js', page)}")
     include /partials/analytics

@@ -1,6 +1,6 @@
 a.putainde-SiteTitle(href="#{uri('', page)}")
   img.putainde-Logo(
     alt="#{lang.title}"
-    src="#{uri('images', page)}/p!-logo.svg"
+    src="#{page == '404' ? '/images' : uri('images', page)}/p!-logo.svg"
   )
   span #{lang.title}
