@@ -4,7 +4,7 @@ var util = require("gulp-util")
 var plumber = require("gulp-plumber")
 var rework = require("gulp-rework")
 var reworkPlugins = {
-  atimport : require("rework-npm"),
+  importer : require("rework-importer"),
   //  parent : require("rework-parent"),
   //  breakpoints : require("rework-breakpoints"),
   vars : require("rework-vars"),
@@ -25,10 +25,13 @@ var paths = require("./paths")
  * rework -> css
  */
 module.exports = function(){
-  return gulp.src(paths.sources.stylesheets + "/*.css")
+  return gulp.src(paths.sources.stylesheets + "/index.css")
     .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(rework(
-      reworkPlugins.atimport({dir : paths.sources.stylesheets}),
+      reworkPlugins.importer({
+        path : paths.sources.stylesheets + "/index.css",
+        base : "."
+      }),
       rework.colors(),
       rework.references(),
       // reworkPlugins.parent,

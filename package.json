@@ -54,7 +54,7 @@
     "rework": "^0.20.2",
     "rework-calc": "^0.2.1",
     "rework-ie-limits": "^0.1.1",
-    "rework-npm": "^0.6.1",
+    "rework-importer": "^0.3.1",
     "rework-rem-fallback": "^1.0.0",
     "rework-vars": "^2.0.0",
     "rimraf": "^2.2.6",

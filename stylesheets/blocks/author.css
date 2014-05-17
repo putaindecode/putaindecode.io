@@ -38,6 +38,7 @@
     @media (max-width:28em) {
       .putainde-Author-picture {
         height: calc(var(line-height) * 2);
+        width: calc(var(line-height) * 2);
       }
     }
 
