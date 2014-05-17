@@ -2,10 +2,10 @@
  * parses cli arguments as options
  */
 var options = require("minimist")(process.argv.slice(2))
-  , defaults = {
-      plumber : true,
-      minify : false
-    }
+var defaults = {
+  plumber : true,
+  minify : false
+}
 // set some defaults options depending on some flags
 if(options.production) {
   defaults.plumber = false

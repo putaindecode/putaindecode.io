@@ -1,10 +1,10 @@
 var gulp = require("gulp")
-  , opts = require("./options")
-  , util = require("gulp-util")
-  , plumber = require("gulp-plumber")
-  , exports = require("gulp-jade-exports")
-  , cache = require("./cache/exports")
-  , paths = require("./paths")
+var opts = require("./options")
+var util = require("gulp-util")
+var plumber = require("gulp-plumber")
+var exports = require("gulp-jade-exports")
+var cache = require("./cache/exports")
+var paths = require("./paths")
 
 /**
  * task exports

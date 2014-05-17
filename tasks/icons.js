@@ -1,9 +1,9 @@
 var gulp = require("gulp")
-  , iconfontCSS = require("gulp-iconfont-css")
-  , iconfont = require("gulp-iconfont")
-  , paths = require("./paths")
-  , path = require("path")
-  , uri = require("./cache/options.js").value.locals.uri
+var iconfontCSS = require("gulp-iconfont-css")
+var iconfont = require("gulp-iconfont")
+var paths = require("./paths")
+var path = require("path")
+var uri = require("./cache/options.js").value.locals.uri
 
 /**
  * task icons

@@ -1,5 +1,5 @@
 var gulp = require("gulp")
-  , paths = require("./paths")
+var paths = require("./paths")
 
 /**
  * task images

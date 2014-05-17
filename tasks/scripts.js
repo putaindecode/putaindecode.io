@@ -1,9 +1,9 @@
 var gulp = require("gulp")
-  , opts = require("./options")
-  , util = require("gulp-util")
-  , plumber = require("gulp-plumber")
-  , browserify = require("gulp-browserify")
-  , paths = require("./paths")
+var opts = require("./options")
+var util = require("gulp-util")
+var plumber = require("gulp-plumber")
+var browserify = require("gulp-browserify")
+var paths = require("./paths")
 
 /**
  * task scripts
