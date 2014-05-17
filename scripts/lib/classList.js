@@ -6,9 +6,9 @@ if (typeof window.Element === "undefined" || "classList" in document.documentEle
 }
 
 var prototype = Array.prototype
-  , push = prototype.push
-  , splice = prototype.splice
-  , join = prototype.join
+var push = prototype.push
+var splice = prototype.splice
+var join = prototype.join
 
 function DOMTokenList(el) {
   this.el = el;

@@ -1,5 +1,5 @@
 var cornea = require("cornea")
-  , curry = require("bloody-curry")
+var curry = require("bloody-curry")
 
 module.exports = cornea.extend({
   element : document.documentElement,
