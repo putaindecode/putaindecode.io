@@ -1,6 +1,6 @@
 .putainde-Post {
   text-align: center;
-  padding: 0 var(line-height);
+  padding: 0 var(--line-height);
 }
 
 .putainde-Title {
@@ -28,7 +28,7 @@
 
 .putainde-Post-metas  {
   display: inline-block;
-  font-size: var(font-size-small);
+  font-size: var(--font-size-small);
   color: #999;
 }
 
@@ -57,7 +57,7 @@
   color: #444;
 }
   .putainde-Post-contents a {
-    color: var(putainde-Color-red);
+    color: var(--putainde-Color-red);
     text-decoration: none;
   }
     .putainde-Post-contents a:hover,
@@ -85,7 +85,7 @@
     border: 1px solid #ddd;
     margin: -1px 0;
     padding: .25em;
-    font-size: var(font-size-small);
+    font-size: var(--font-size-small);
     font-weight: 400;
     background: #fafafa;
     border-radius: .25em;
@@ -96,10 +96,10 @@
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
     overflow: auto;
-    margin: var(line-height) 0;
-    padding: var(half-line-height);
-    line-height: calc(var(line-height) * .75);
-    font-size: var(font-size-small);
+    margin: var(--line-height) 0;
+    padding: var(--half-line-height);
+    line-height: calc(var(--line-height) * .75);
+    font-size: var(--font-size-small);
     color: #444;
     font-weight: 400;
     border: 1px solid #ddd;
@@ -156,7 +156,7 @@
     padding: 0;
     margin: 0;
     box-shadow: 0 0 0 1px #eee;
-    margin: 0 auto var(line-height);
+    margin: 0 auto var(--line-height);
     overflow: hidden;
     border-radius: .3em;
     display: block;
@@ -170,7 +170,7 @@
     margin: 0;
     display: block;
     background: #fafafa;
-    line-height: var(double-line-height);
+    line-height: var(--double-line-height);
     border-top: 1px solid #eee;
     margin-top: -1px;
   }
@@ -221,8 +221,8 @@
   text-align: center;
   border-top: 1px solid #eee;
   margin-top: -1px;
-  padding: var(line-height) 0;
-  line-height: var(double-line-height);
+  padding: var(--line-height) 0;
+  line-height: var(--double-line-height);
   font-family: Georgia, Times, "Times New Roman", serif;
   font-style: italic;
 }
@@ -238,8 +238,8 @@
 }
 
 .putainde-Post-footer  {
-  margin: var(double-line-height) 0;
-  box-shadow: inset 0 1px 0 0 var(putainde-Color-lightGrey);
+  margin: var(--double-line-height) 0;
+  box-shadow: inset 0 1px 0 0 var(--putainde-Color-lightGrey);
 }
 
 .putainde-Post-footer-title  {
@@ -248,7 +248,7 @@
 
 .putainde-Post-footer-title,
 .putainde-Post-footer-action {
-  font-size: var(font-size-small);
+  font-size: var(--font-size-small);
 }
 
 @media (min-width: 54em) {
@@ -262,5 +262,5 @@
 }
 
 #disqus_thread {
-  margin: var(double-line-height) 0 var(line-height);
+  margin: var(--double-line-height) 0 var(--line-height);
 }

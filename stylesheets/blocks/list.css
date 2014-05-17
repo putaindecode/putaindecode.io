@@ -1,6 +1,6 @@
 .putainde-List-item {
   position: relative;
-  padding: 0 0 0 calc(var(line-height) * 3);
+  padding: 0 0 0 calc(var(--line-height) * 3);
 }
   @media (max-width:28em) {
     .putainde-List-item {
@@ -18,11 +18,11 @@
   min-height: 0;
   text-align: center;
   padding: 0;
-  margin-bottom: var(line-height);
+  margin-bottom: var(--line-height);
 }
   .putainde-List-item--link a {
-    color: var(putainde-Color-red);
-    line-height: calc(var(line-height)*2);
+    color: var(--putainde-Color-red);
+    line-height: calc(var(--line-height)*2);
     display: block;
     text-decoration: none;
     border: 1px solid transparent;
@@ -50,18 +50,18 @@
 
 .putainde-List-authorPicture {
   position: absolute;
-  top: var(half-line-height);
+  top: var(--half-line-height);
   left: 0;
-  width: var(double-line-height);
+  width: var(--double-line-height);
 }
 
 .putainde-Message {
-  font-size: var(font-size-h1);
+  font-size: var(--font-size-h1);
   line-height: 10rem;
   color: #ccc;
   text-align: center;
   font-weight: 700;
-  font-family: var(font-family-title);
+  font-family: var(--font-family-title);
 }
 
 .putainde-Message--hidden {
@@ -73,17 +73,17 @@
   text-decoration: none;
   display: block;
   margin: 0;
-  font-family: var(font-family-title);
-  font-size: var(font-size-h3);
-  padding-top: calc(var(line-height) * .4);
-  padding-bottom: calc(var(line-height) * .6);
-  line-height: var(line-height);
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-h3);
+  padding-top: calc(var(--line-height) * .4);
+  padding-bottom: calc(var(--line-height) * .6);
+  line-height: var(--line-height);
 }
 
 .putainde-Tags {
   list-style-type: none;
   margin: 0;
-  padding: 0 0 var(line-height);
+  padding: 0 0 var(--line-height);
 }
 
 .putainde-Tag {
@@ -92,7 +92,7 @@
   box-shadow: inset 0 0 0 1px rgba(#000, .03);
   padding: 0 1em;
   margin-right: .2rem;
-  font-size: var(font-size-small);
+  font-size: var(--font-size-small);
   line-height: 1.6;
   border-radius: 1em;
 }
@@ -100,7 +100,7 @@
 .putainde-List-author {
   position: absolute;
   color: #888;
-  font-size: var(font-size-small);
+  font-size: var(--font-size-small);
   line-height: 1rem;
   bottom: 1.2rem;
   right: 0;
@@ -110,7 +110,7 @@
     .putainde-List-author {
       text-align: left;
       position: static;
-      margin: 0 0 var(line-height);
+      margin: 0 0 var(--line-height);
     }
   }
 
@@ -121,5 +121,5 @@
   }
 
   .putainde-List-author time {
-    font-size: var(font-size-small);
+    font-size: var(--font-size-small);
   }

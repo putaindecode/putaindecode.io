@@ -1,10 +1,10 @@
 :root {
-  var-putainde-Author-picture-size: calc(var(line-height) * 3);
+  --putainde-Author-picture-size: calc(var(--line-height) * 3);
 }
 
 .putainde-Avatar {
   border-radius: 100%;
-  box-shadow: 0 0 0 1px var(putainde-Color-lightGrey);
+  box-shadow: 0 0 0 1px var(--putainde-Color-lightGrey);
   width: 100%;
   height: 100%;
 }
@@ -12,7 +12,7 @@
 .putainde-Author {
   position: relative;
   padding: 0 0 0 7em;
-  margin: var(line-height) 0;
+  margin: var(--line-height) 0;
 }
   @media (max-width:28em) {
     .putainde-Author {
@@ -21,7 +21,7 @@
   }
 
   .putainde-Author--author {
-    padding: 0 0 0 calc(var(putainde-Author-picture-size) + 1rem);
+    padding: 0 0 0 calc(var(--putainde-Author-picture-size) + 1rem);
   }
     @media (max-width:28em) {
       .putainde-Author--author {
@@ -33,12 +33,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: var(putainde-Author-picture-size);
+    height: var(--putainde-Author-picture-size);
   }
     @media (max-width:28em) {
       .putainde-Author-picture {
-        height: calc(var(line-height) * 2);
-        width: calc(var(line-height) * 2);
+        height: calc(var(--line-height) * 2);
+        width: calc(var(--line-height) * 2);
       }
     }
 

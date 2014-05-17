@@ -1,6 +1,6 @@
 :root {
-  var-putainde-Color-lightGrey: #ebeef0;
-  var-putainde-Color-red: #c33;
+  --putainde-Color-lightGrey: #ebeef0;
+  --putainde-Color-red: #c33;
 }
 
 ::selection {

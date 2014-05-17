@@ -10,7 +10,7 @@
 
 .putainde-Column-title {
   font-size: 1.275em;
-  font-family: var(font-family-title);
+  font-family: var(--font-family-title);
   font-weight: 400;
   color: #444;
   text-decoration: none;
@@ -21,7 +21,7 @@
 .putainde-Label {
   cursor: pointer;
   display: block;
-  padding: 0 0 calc(var(line-height) * 0.315);
+  padding: 0 0 calc(var(--line-height) * 0.315);
 }
 
 .putainde-Label input {
@@ -40,7 +40,7 @@
   font-family: inherit;
   font-size: .85em;
   vertical-align: middle;
-  color: var(putainde-Color-red);
+  color: var(--putainde-Color-red);
   cursor: pointer;
 }
 
