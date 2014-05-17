@@ -1,5 +1,5 @@
 var cornea = require("cornea")
-  , smoothScroll = require("bloody-scroll")
+var smoothScroll = require("bloody-scroll")
 
 module.exports = cornea.extend({
   element : document.body,
@@ -15,7 +15,7 @@ module.exports = cornea.extend({
   ],
   scrollTo : function(eventObject, target){
     var hash = window.location.hash
-      , element
+    var element
     if(target) {
       hash = target.hash
       eventObject.preventDefault()

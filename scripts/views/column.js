@@ -1,5 +1,5 @@
 var cornea = require("cornea")
-  , tags = require("../models/tags")
+var tags = require("../models/tags")
 
 module.exports = cornea.extend({
   element : ".js-Column",

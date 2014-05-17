@@ -1,5 +1,5 @@
 var cornea = require("cornea")
-  , tags = require("../models/tags")
+var tags = require("../models/tags")
 
 module.exports = cornea.extend({
   element : ".js-Posts",
@@ -31,7 +31,9 @@ module.exports = cornea.extend({
     }
   },
   updatePosts : function(tags){
-    var key, id, element
+    var key
+    var id
+    var element
     this.showAll()
     for(key in tags) {
       for(id in this.map) {
