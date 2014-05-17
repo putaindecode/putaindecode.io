@@ -1,11 +1,11 @@
 var path = require("path")
-  , exports = require("./exports")
-  , lang = require("./lang")
-  , contributors = require("./contributors")
-  , marked = require("marked")
-  , fs = require("fs")
-  , lodash = require("lodash")
-  , monthNames = ["jan.", "fév.", "mars", "avril", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
+var exports = require("./exports")
+var lang = require("./lang")
+var contributors = require("./contributors")
+var marked = require("marked")
+var fs = require("fs")
+var lodash = require("lodash")
+var monthNames = ["jan.", "fév.", "mars", "avril", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
 
 module.exports = {
   update : function(){

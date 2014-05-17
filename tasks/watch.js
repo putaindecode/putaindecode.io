@@ -1,6 +1,6 @@
 var gulp = require("gulp")
-  , server = require("./server")
-  , paths = require("./paths")
+var server = require("./server")
+var paths = require("./paths")
 
 /**
  * watch task

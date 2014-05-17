@@ -1,13 +1,13 @@
 var gulp = require("gulp")
-  , opts = require("./options")
-  , util = require("gulp-util")
-  , plumber = require("gulp-plumber")
-  , jade = require("gulp-jade")
-  , paths = require("./paths")
-  , path = require("path")
-  , jadeExtenstionRE = /\.jade$/
-  , windowsRE = /\\/g
-  , options = require("./cache/options")
+var opts = require("./options")
+var util = require("gulp-util")
+var plumber = require("gulp-plumber")
+var jade = require("gulp-jade")
+var paths = require("./paths")
+var path = require("path")
+var jadeExtenstionRE = /\.jade$/
+var windowsRE = /\\/g
+var options = require("./cache/options")
 
 /**
  * task pages

@@ -1,6 +1,6 @@
 var gulp = require("gulp")
-  , cache = require("./cache/lang")
-  , paths = require("./paths")
+var cache = require("./cache/lang")
+var paths = require("./paths")
 
 /**
  * task lang

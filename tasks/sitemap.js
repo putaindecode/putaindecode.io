@@ -1,11 +1,11 @@
 var gulp = require("gulp")
-  , opts = require("./options")
-  , util = require("gulp-util")
-  , plumber = require("gulp-plumber")
-  , jade = require("gulp-jade")
-  , rename = require("gulp-rename")
-  , paths = require("./paths")
-  , options = require("./cache/options")
+var opts = require("./options")
+var util = require("gulp-util")
+var plumber = require("gulp-plumber")
+var jade = require("gulp-jade")
+var rename = require("gulp-rename")
+var paths = require("./paths")
+var options = require("./cache/options")
 
 /**
  * task sitemap

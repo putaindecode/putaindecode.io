@@ -1,14 +1,14 @@
 var gulpUtil = require("gulp-util")
-  , ports = {
-    web : 4242,
-    livereload : 4243
-  }
-  , connect = require("connect")
-  , connectLivereload = require("connect-livereload")
-  , livereload = require("gulp-livereload")
-  , livereloadServer
-  , opn = require("opn")
-  , paths = require("./paths")
+var ports = {
+  web : 4242,
+  livereload : 4243
+}
+var connect = require("connect")
+var connectLivereload = require("connect-livereload")
+var livereload = require("gulp-livereload")
+var livereloadServer
+var opn = require("opn")
+var paths = require("./paths")
 
 /**
  * task that generate a static web server with livereload

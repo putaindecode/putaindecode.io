@@ -1,10 +1,10 @@
 var gulp = require("gulp")
-  , opts = require("./options")
-  , util = require("gulp-util")
-  , plumber = require("gulp-plumber")
-  , jscs = require("gulp-jscs")
-  , jshint = require("gulp-jshint")
-  , paths = require("./paths")
+var opts = require("./options")
+var util = require("gulp-util")
+var plumber = require("gulp-plumber")
+var jscs = require("gulp-jscs")
+var jshint = require("gulp-jshint")
+var paths = require("./paths")
 
 /**
  * task scripts:linting

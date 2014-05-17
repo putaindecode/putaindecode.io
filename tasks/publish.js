@@ -1,6 +1,6 @@
 var gulp = require("gulp")
-  , ghPages = require("gulp-gh-pages")
-  , paths = require("./paths")
+var ghPages = require("gulp-gh-pages")
+var paths = require("./paths")
 
 /**
  * publish task
