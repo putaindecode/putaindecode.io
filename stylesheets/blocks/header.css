@@ -1,14 +1,14 @@
 :root {
-  var-putainde-Header-height-s: calc(var(line-height) * 1.2);
-  var-putainde-Logo-size-s: calc(var(putainde-Header-height-s) * 1.4);
-  var-putainde-Header-height-l: calc(var(line-height) * 2);
-  var-putainde-Logo-size-l: calc(var(putainde-Header-height-l) * 1.5);
+  --putainde-Header-height-s: calc(var(--line-height) * 1.2);
+  --putainde-Logo-size-s: calc(var(--putainde-Header-height-s) * 1.4);
+  --putainde-Header-height-l: calc(var(--line-height) * 2);
+  --putainde-Logo-size-l: calc(var(--putainde-Header-height-l) * 1.5);
 }
 
 .putainde-Header {
-  background: var(putainde-Color-red);
-  background: linear-gradient(to bottom, var(putainde-Color-red), var(putainde-Color-red) 10%);
-  line-height: var(putainde-Header-height-l);
+  background: var(--putainde-Color-red);
+  background: linear-gradient(to bottom, var(--putainde-Color-red), var(--putainde-Color-red) 10%);
+  line-height: var(--putainde-Header-height-l);
 }
 
   @media (max-width:54em) {
@@ -20,18 +20,18 @@
 .putainde-SiteTitle {
   position: relative;
   display: inline-block;
-  padding: 0 0 0 calc(var(putainde-Logo-size-s) + 1rem);
+  padding: 0 0 0 calc(var(--putainde-Logo-size-s) + 1rem);
   text-decoration: none
 }
 
   @media (min-width: 54em) {
     .putainde-SiteTitle {
-      padding: 0 0 0 calc(var(putainde-Logo-size-l) + 1rem);
+      padding: 0 0 0 calc(var(--putainde-Logo-size-l) + 1rem);
     }
   }
   @media (max-width:54em) {
     .putainde-SiteTitle {
-    font-size: var(font-size-small);
+    font-size: var(--font-size-small);
     }
   }
 
@@ -39,21 +39,21 @@
     display: inline-block;
     font-size: 1.2em;
     color: #fff;
-    font-family: var(font-family-title);
+    font-family: var(--font-family-title);
   }
 
 .putainde-Logo {
   position: absolute;
   top: 50%;
   left: 0;
-  width: var(putainde-Logo-size-s);
+  width: var(--putainde-Logo-size-s);
   height: @width;
   transition: .2s;
   transform: translateY(-50%);
 }
   @media (min-width: 54em) {
     .putainde-Logo {
-      width: var(putainde-Logo-size-l);
+      width: var(--putainde-Logo-size-l);
       height: @width;
     }
   }

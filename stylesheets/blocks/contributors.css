@@ -1,15 +1,15 @@
 :root {
-  var-putainde-Contributor-height: var(double-line-height);
+  --putainde-Contributor-height: var(--double-line-height);
 }
 
 .putainde-Contributors {
-  box-shadow: inset 0 1px 0 0 var(putainde-Color-lightGrey);
-  margin: var(double-line-height) 0;
-  line-height: var(putainde-Contributor-height);
+  box-shadow: inset 0 1px 0 0 var(--putainde-Color-lightGrey);
+  margin: var(--double-line-height) 0;
+  line-height: var(--putainde-Contributor-height);
 }
 
 .putainde-Contributors-label {
-  font-size: var(font-size-small);
+  font-size: var(--font-size-small);
   display: inline-block;
 }
 

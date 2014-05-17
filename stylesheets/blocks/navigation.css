@@ -8,7 +8,7 @@
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  font-size: var(font-size-small);
+  font-size: var(--font-size-small);
   font-weight: 700;
   text-align: center;
   color: #fff;
