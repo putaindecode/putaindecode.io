@@ -31,9 +31,12 @@ module.exports = {
           return to
         }
 
-
         if(from) {
-          to = path.relative(from.replace(/index$/, ""), to)
+          if(from == "404") {
+            to = "/" + to
+          } else {
+            to = path.relative(from.replace(/index$/, ""), to)
+          }
         }
 
         return to

@@ -14,14 +14,6 @@
   text-align: center;
 }
 
-.putainde-Title-authorPicture {
-  position: absolute;
-  width: 3em;
-  left: -(@width + 1.5);
-  top: 50%;
-  margin-top: unit(@width/-2, em);
-}
-
 .putainde-Title-text {
   font-weight: 400;
 }
