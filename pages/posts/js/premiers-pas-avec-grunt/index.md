@@ -116,13 +116,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: { // C'est ici que l'on définit le dossier que l'on souhaite importer
+        files: [{ // C'est ici que l'on définit le dossier que l'on souhaite importer
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     }
   })
@@ -154,13 +154,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     }
   })
@@ -183,13 +183,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     },
     concat: {
@@ -221,13 +221,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     },
     concat: {
@@ -263,13 +263,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     },
     concat: {
@@ -314,13 +314,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     },
     concat: {
@@ -362,13 +362,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     },
     concat: {
@@ -420,13 +420,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     },
     concat: {
@@ -487,13 +487,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       }
     },
     concat: {
@@ -558,13 +558,13 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: {
+        files: [{
           "expand": true,
           "cwd": "src/styles/",
           "src": ["*.scss"],
           "dest": "dist/styles/",
           "ext": ".css"
-        }
+        }]
       },
       dev: {} // A vous de le faire ! vous verrez que certaines options Sass sont plus intéressantes en mode dev que d'autres.
     },
