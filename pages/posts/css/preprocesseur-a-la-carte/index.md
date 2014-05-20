@@ -378,9 +378,12 @@ a {
 
 a:hover {
   color: rgba(204, 0, 0, 0.8);
-  trasnform: rotate(1deg);
+  transform: rotate(1deg);
 }
 ```
+
+Gardez bien en tête qu'avec le code CSS d'origine, vous avez (en majeur partie) un code futureproof.
+D'ici quelques temps on pourra supprimer une grande partie des plugins et les navigateurs prendront le relais 😉.
 
 _Note: J'ai ouvert [un ticket sur rework-vars](https://github.com/reworkcss/rework-vars/issues/28) afin que celui-ci agisse comme un fallback (en rajoutant les valeurs) et non un remplacement. Je mettrais à jour ce post dans ce sens dès que possible._
 
