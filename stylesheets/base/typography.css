@@ -10,7 +10,8 @@ html {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: var(--font-family-title);
   font-weight: 400;
 }
@@ -45,6 +46,11 @@ p, ul {
   margin: var(--line-height) 0;
 }
 
+/*h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr*/
+
 h1,
 h2,
 h3,
@@ -76,6 +82,14 @@ h3 {
 }
 h4 {
   font-size: var(--font-size-h4);
+}
+h5 {
+  font-size: var(--font-size);
+  text-decoration: underline;
+}
+h6 {
+  font-size: var(--font-size-small);
+  text-decoration: underline;
 }
 small {
   font-size: var(--font-size-small);
