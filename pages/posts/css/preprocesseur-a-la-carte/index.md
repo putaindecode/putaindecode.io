@@ -22,7 +22,7 @@ Cela dit il faut bien distinguer les étapes :
 3. Processing par le navigateur
 
 Revenons rapidement sur ces 3 points :
- 
+
 ### Preprocessing via langage dédié
 
 Ici je parle d'un langage, car superset ou pas, on a des éléments nouveaux,
@@ -301,7 +301,7 @@ gulp.task("styles", function() {
       reworkPlugins.vars(), // notez que certains plugins nécessite d'être éxecuté (retourant une fonction dynamique)
       reworkPlugins.calc,
       reworkPlugins.colorFn,
-      reworkPlugins.remFallback,
+      reworkPlugins.remFallback(),
       reworkPlugins.ieLimits
     ))
     .pipe(autoprefixer())
@@ -363,10 +363,12 @@ Et on obtiendra
 html {
   width: 100%;
   height: 100%;
+  font-size: 16px;
   font-size: 1rem;
 }
 
 p {
+  margin: 12px 0;
   margin: 0.75rem 0;
 }
 
