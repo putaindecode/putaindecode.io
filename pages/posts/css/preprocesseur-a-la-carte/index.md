@@ -1,13 +1,13 @@
 Après vous avoir fait un petit [état de l'art des préprocesseurs CSS historiques](/posts/css/le-point-sur-les-preprocesseurs/)
 et vous avoir parlé [des postprocesseurs](/posts/css/le-point-sur-les-preprocesseurs/),
 je me dois de vous montrer le chemin qui me semble le plus pertinent aujourd'hui,
-en 2014, maintenant que [les spécifications CSS sont découpés en modules](http://www.w3.org/standards/techs/css#cr)
+en 2014, maintenant que [les spécifications CSS sont découpées en modules](http://www.w3.org/standards/techs/css#cr)
 qui peuvent du coup avancer (plus rapidement) chacune de leur côté.
 
 Bon après faut avouer que chez {p!} on fait genre on est des hipsters hackers,
 du coup quand on voit que [Sass est le game changer of the year](http://blog.kaelig.fr/post/85546040569/net-awards-sass-game-changer-of-the-year)
  et que tout le monde l'adopte, on se doit de rester hipster.
-Du coup on est obligé de passer à autre chose.
+Du coup on est obligés de passer à autre chose.
 
 ## Pré ou postprocesseurs ?
 
@@ -15,21 +15,21 @@ Je vais ici utiliser le mot préprocesseur, alors que certains trouveront postpr
 car pour moi le préprocessing reste simplement une étape avant le _processing_
 de nos feuilles de styles par les navigateurs.
 
-Cela dit il faut bien distinguer les étapes:
+Cela dit il faut bien distinguer les étapes :
 
-1. Préprocessing d'un langage spécifique (Sass, Stylus*) ou superset du langage CSS (Scss, Less);
-2. Préprocessing d'un fichier respectant la syntaxe CSS;
+1. Preprocessing d'un langage spécifique (Sass, Stylus*) ou superset du langage CSS (Scss, Less);
+2. Preprocessing d'un fichier respectant la syntaxe CSS;
 3. Processing par le navigateur
 
-Revenons rapidement sur ces 3 points:
-
-### Préprocessing via langage dédié
+Revenons rapidement sur ces 3 points :
+ 
+### Preprocessing via langage dédié
 
 Ici je parle d'un langage, car superset ou pas, on a des éléments nouveaux,
-incompréhensible par le navigateur (ex: `@if`, `@foreach`...).
+incompréhensibles par le navigateur (ex: `@if`, `@foreach`...).
 
 Note: Je case Stylus dans le langage spécifique car il n'est pas vraiment compatible,
-ne tolérant pas l'indentation:
+ne tolérant pas l'indentation :
 
 ```css
 .Block { prop: value }
@@ -61,7 +61,7 @@ Ici on a blindé notre feuille de fallback, on est (en théorie) sensé avoir un
 
 ## Créer un préprocesseur CSS
 
-Allons à l'essentiel: pour créer votre préprocesseur on va utiliser une bibliothèque.
+Allons à l'essentiel : pour créer votre préprocesseur on va utiliser une bibliothèque.
 À ce jour nous avons le choix entre [Rework](https://github.com/reworkcss/rework)
  ou [PostCSS](https://github.com/ai/postcss) qui permettent d'inspecter et de manipuler nos CSS.
 Tout deux sont des bibliothèques écritent en JavaScript (NodeJs).
@@ -74,11 +74,11 @@ plus sympa il faut le dire (il faudra voir comment évolue Rework).
 D'un autre côté Rework étant plus ancien, il possède un écosystème plus fourni et répondra
 donc mieux à nos besoins.
 
-Cela étant dit, avec l'approche futureproof nous pourront switcher de Rework à PostCSS
+Cela étant dit, avec l'approche futureproof nous pourrons switcher de Rework à PostCSS
  sans problème et surtout sans toucher à nos feuilles de styles.
 Il suffira de trouver un plugin équivalent (ex: rework-vars et postcss-vars font la même chose).
 
-Pour des raisons d'écosystème, je partirais sur Rework histoire de ne pas réinventer la roue.
+Pour des raisons d'écosystème, je partirai sur Rework histoire de ne pas réinventer la roue.
 
 ## Créer un préprocesseur CSS avec Rework
 
@@ -256,7 +256,7 @@ Ceci pourrait bien entendu être aussi bien fait avec grunt ou même make et [wa
 ```shell
 $ mkdir monrework && cd monrework
 
-# on créé un package.json pour sauvegarder les références des paquets qu'on va utiliser
+# on crée un package.json pour sauvegarder les références des paquets qu'on va utiliser
 $ npm init
 
 # on install gulp, autoprefixer et rework & co en les sauvegardants dans la partie "devDependencies"
@@ -314,7 +314,7 @@ gulp.task("default", ["styles"], function() {
 
 ```
 
-Ensuite il reste plus qu'à lancer Gulp au besoin qui s'occupera d'éxecuter le préprocessing
+Ensuite il reste plus qu'à lancer Gulp au besoin qui s'occupera d'éxecuter le preprocessing
 au démarrage et lors des changements de fichiers.
 Il ne reste plus grand chose à faire si ce n'est ajouter livereload en plus pour avoir le petit process au petit oignon.
 
