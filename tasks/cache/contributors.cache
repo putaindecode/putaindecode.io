@@ -55,7 +55,25 @@
       "gravatar_id": "9713e529bef70eea8965e0dda2000334",
       "url": "http://kud.io",
       "location": "Paris, France",
-      "hireable": false
+      "hireable": false,
+      "crew": true,
+      "twitter": "_kud",
+      "fr": {
+        "bio": {
+          "short": "viking ui engineer.",
+          "long": [
+            "Viking UI engineer (avec une pointe de node.js), batteur, s'essayant à la photographie, aime le cinema."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "viking ui engineer.",
+          "long": [
+            "Viking UI engineer (also node.js dev), drummer, photographer, cinema lover."
+          ]
+        }
+      }
     },
     "erwann.mest@gmail.com": {
       "login": "kud",
@@ -197,7 +215,27 @@
       "gravatar_id": "2f6c2dcd4ba8fc44f1e7f0b2ed3d587d",
       "url": "http://moox.io/",
       "location": "Toulouse, France",
-      "hireable": true
+      "hireable": true,
+      "crew": true,
+      "twitter": "MoOx",
+      "fr": {
+        "bio": {
+          "short": "Développeur web front-end 100% bio. Disponible en Freelance.",
+          "long": [
+            "Open source addict vivant dans la campagne près de Toulouse, Maxime est développeur web front-end le jour, et justicier du code la nuit.  ",
+            "Il aime faire des calins à HTML, CSS et JavaScript en tant que freelance."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "100% Organic Front-end Web Developer. Available for Freelance.",
+          "long": [
+            "Open source addict living in the country near Toulouse, France, Maxime is a front-end web developer by day & a code vigilante by night.  ",
+            "He likes to play with HTML, CSS & JavaScript, as a freelancer."
+          ]
+        }
+      }
     },
     "m@moox.io": {
       "login": "MoOx",
@@ -233,7 +271,31 @@
       "gravatar_id": "96006f57ca92ec95713532129b039d9c",
       "url": "http://madx.me/",
       "location": "France, Marseille",
-      "hireable": false
+      "hireable": false,
+      "twitter": "madx",
+      "crew": true,
+      "fr": {
+        "bio": {
+          "short": "Développeur Ruby & JavaScript. Troll niveau 100.",
+          "long": [
+            "Développeur Ruby et JavaScript, avec un goût prononcé pour la simplicité, le soleil, le pastis.",
+            "Il n'aime pas OS X car, objectivement, c'est nul.",
+            "Quand il n'est pas devant son ordi, il y a de grandes chances qu'il compense avec son téléphone.",
+            "Spécialiste en développement d'applications inutiles."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Développeur Ruby & JavaScript. Level 100 Troll.",
+          "long": [
+            "Ruby and JavaScript developer with a taste for simplicity, sun and pastis.",
+            "He does not like OS X because it sucks (objectively).",
+            "When he's not in front of his computers, chances are he's geeking on his phone.",
+            "Specialist in developing useless applications."
+          ]
+        }
+      }
     },
     "madx@yapok.org": {
       "login": "madx",
@@ -386,6 +448,14 @@
           ]
         }
       }
+    },
+    "sdussaut@gmail.com": {
+      "login": "sdussaut",
+      "name": "sdussaut",
+      "gravatar_id": "abc11ef4df79fd555549e517fdea4f2c",
+      "url": "http://switch-company.com",
+      "location": "Paris",
+      "hireable": false
     },
     "seb@desbenoit.net": {
       "login": "desbenoit",
@@ -960,6 +1030,14 @@
           ]
         }
       }
+    },
+    "sdussaut": {
+      "login": "sdussaut",
+      "name": "sdussaut",
+      "gravatar_id": "abc11ef4df79fd555549e517fdea4f2c",
+      "url": "http://switch-company.com",
+      "location": "Paris",
+      "hireable": false
     },
     "yannickcr": {
       "login": "yannickcr",
