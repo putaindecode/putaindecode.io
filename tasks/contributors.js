@@ -168,12 +168,12 @@ var totalContributions = function(){
   cache.value.contributions = {}
   // Get the first  commit sha
   var cmd1 = "git log --reverse --pretty=format:%H|head -1"
-  // Get all contributor since :FIRST_COMMIT
-  var cmd2 = "git shortlog --summary --numbered --email :FIRST_COMMIT..HEAD"
+  // Get all contributor since ${FIRST_COMMIT}
+  var cmd2 = "git shortlog --summary --numbered --email ${FIRST_COMMIT}..HEAD"
 
   return exec(cmd1)
   .then(function(sha){
-    return exec(cmd2.replace(/:FIRST_COMMIT/, sha))
+    return exec(cmd2.replace(/\${FIRST_COMMIT}/, sha.trim()))
   })
   .then(function(stdout){
     stdout
