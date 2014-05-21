@@ -51,7 +51,7 @@ var contributorsMap = function(){
   })
 
   .then(function(){
-    return exec("git log --pretty=format:'%ae::%an' | sort | uniq")
+    return exec("git log --pretty=format:%ae::%an | sort | uniq")
   })
 
   .then(function(stdout){
@@ -166,9 +166,15 @@ var contributorsMap = function(){
 
 var totalContributions = function(){
   cache.value.contributions = {}
-  // why ? < /dev/tty
-  // git shortlog thinks that it has to read something from stdin, hence the indefinite wait.
-  return exec("git shortlog --summary --numbered --email < /dev/tty")
+  // Get the first  commit sha
+  var cmd1 = "git log --reverse --pretty=format:%H|head -1"
+  // Get all contributor since :FIRST_COMMIT
+  var cmd2 = "git shortlog --summary --numbered --email :FIRST_COMMIT..HEAD"
+
+  return exec(cmd1)
+  .then(function(sha){
+    return exec(cmd2.replace(/:FIRST_COMMIT/, sha))
+  })
   .then(function(stdout){
     stdout
       .trim("\n")
