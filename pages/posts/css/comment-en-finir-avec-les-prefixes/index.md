@@ -138,8 +138,7 @@ Cet outil est maintenant basé sur [PostCSS](https://github.com/ai/postcss),
 un post-processeur CSS. Vous pouvez donc l’utiliser en plugin pour ce post-procésseur.
 
 Attends attends, un WAT ? Un **POST**-processeur ? Oui tu as bien lu car les
-pré-processeurs c’est so 2000.
-Mais ça, je vous en parle la prochaine fois ;)
+pré-processeurs c’est so 2000. Regarde par là [Le point sur les pré-processeurs CSS](/posts/css/le-point-sur-les-preprocesseurs/) ;)
 
 Tout plein de -moz-bisous.
 
