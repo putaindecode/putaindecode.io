@@ -206,5 +206,4 @@ J'aime conserver la syntaxe CSS et avoir un process ultra-rapide et transparent.
 
 ### Prochaine étape: faire son propre pré/post-processeur CSS, c'est simple
 
-Rework ayant un bon petit paquet de plugins déjà existants, c'est assez simple de réaliser son propre pré-processeur via quelques lignes de code seulement.
-La mise en place et l'automatisation feront l'objet d'un prochain article !
+Rework ayant un bon petit paquet de plugins déjà existants, c'est assez simple de [réaliser son propre pré-processeur](/posts/css/preprocesseur-a-la-carte/) via quelques lignes de code seulement.
