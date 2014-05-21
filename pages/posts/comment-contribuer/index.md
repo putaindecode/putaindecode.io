@@ -70,12 +70,26 @@ développeurs des internets.
     ```
 
 * Alors là, normalement, t'as le dossier propre et frais, pêché du matin. Vu
-  que notre site pète la classe, et qu'on l'a fait en utilisant
+  que notre site pète la classe, on l'a fait en utilisant
   [Gulp](https://github.com/gulpjs/gulp).
-  Pour faire ça, c'est finalement pas si compliqué, tu vas lire le
-  README.md à la racine du repo. On fait exprès de pas te le dire ici parce
+  Il te faudra donc installer les dépendances, tu verra c'est simple comme bonjour.
+  Pour faire ça, c'est pas si compliqué, tu vas lire le
+  [README.md](https://github.com/putaindecode/website#readme)
+  à la racine du repo. On fait exprès de pas te le dire ici parce
   que c'est un peu une convention pour tous les projets Open Source, et que ça
   te fait pas de mal de commencer à apprendre à bien bosser.
+
+* Note: Si tu avais déjà récupérer le repo, il te faudra juste récupérer les
+  derniers changements sur une branche propre
+
+  ```shell
+  $ git checkout master
+  $ git fetch upstream
+  $ git merge upstream/master
+  ```
+
+  Regarde quand même le README et fait la manip' de mise à jour au cas où qu'on est
+  changé quels trucs par ci par là.
 
 * Une fois ton site tout installé, t'as plus qu'à aller dans ton dossier grâce
   à la ligne de commande, et à taper `$ npm start`, tu verras quelques
