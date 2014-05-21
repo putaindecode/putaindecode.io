@@ -72,8 +72,8 @@ développeurs des internets.
 * Alors là, normalement, t'as le dossier propre et frais, pêché du matin. Vu
   que notre site pète la classe, on l'a fait en utilisant
   [Gulp](https://github.com/gulpjs/gulp).
-  Il te faudra donc installer les dépendances, tu verra c'est simple comme bonjour.
-  Pour faire ça, c'est pas si compliqué, tu vas lire le
+  Il te faudra donc installer les dépendances, tu verras c'est simple comme bonjour.
+  Pour faire ça, tu vas lire le
   [README.md](https://github.com/putaindecode/website#readme)
   à la racine du repo. On fait exprès de pas te le dire ici parce
   que c'est un peu une convention pour tous les projets Open Source, et que ça
@@ -88,8 +88,8 @@ développeurs des internets.
   $ git merge upstream/master
   ```
 
-  Regarde quand même le README et fait la manip' de mise à jour au cas où qu'on est
-  changé quels trucs par ci par là.
+  Regarde quand même le README et fait la manip' de mise à jour au cas où on aurait
+  changé quelques trucs par ci, par là.
 
 * Une fois ton site tout installé, t'as plus qu'à aller dans ton dossier grâce
   à la ligne de commande, et à taper `$ npm start`, tu verras quelques
