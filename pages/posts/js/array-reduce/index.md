@@ -146,7 +146,7 @@ var data = {
       ]
     };
 
-function groupByOS( site, memo, browser){
+function groupByBrowser( site, memo, browser){
   if (!memo[browser.name]){
     memo[browser.name] = [];
   }
