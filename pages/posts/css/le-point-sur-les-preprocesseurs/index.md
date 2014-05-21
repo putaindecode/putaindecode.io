@@ -241,4 +241,5 @@ vous pourrez continuer la lecture au prochain épisode qui sera consacré aux po
 
 <small>(Mamam, t'as vu ce cliffhanger digne des séries US !)</small>
 
-Bon promis la prochaine fois je vous en parle des post-processeurs. Pour de vrai.
+~~Bon promis la prochaine fois je vous en parle des post-processeurs. Pour de vrai.~~
+Chose promise, chose due : [Les post-processeurs CSS](http://putaindecode.fr/posts/css/les-post-processeurs/)
