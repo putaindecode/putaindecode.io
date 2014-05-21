@@ -571,6 +571,13 @@
         }
       }
     },
+    "welovewebdesign@gmail.com": {
+      "login": "welovewebdesign",
+      "name": "Rémi Couturier",
+      "gravatar_id": "82308d700a1d4f834f2303176276e5d9",
+      "location": null,
+      "hireable": false
+    },
     "yannick.croissant@gmail.com": {
       "login": "yannickcr",
       "name": "Yannick Croissant",
@@ -1037,6 +1044,13 @@
       "gravatar_id": "abc11ef4df79fd555549e517fdea4f2c",
       "url": "http://switch-company.com",
       "location": "Paris",
+      "hireable": false
+    },
+    "welovewebdesign": {
+      "login": "welovewebdesign",
+      "name": "Rémi Couturier",
+      "gravatar_id": "82308d700a1d4f834f2303176276e5d9",
+      "location": null,
       "hireable": false
     },
     "yannickcr": {
