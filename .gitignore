@@ -8,3 +8,6 @@ node_modules
 dist
 .publish
 stylesheets/icons
+
+# log
+npm-debug.log

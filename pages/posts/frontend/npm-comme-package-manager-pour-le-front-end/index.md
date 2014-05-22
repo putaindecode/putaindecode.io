@@ -82,3 +82,5 @@ gestionnaire de dépendances, dans le cas où celui-ci n'intègre pas d'autres
 fonctionnalités que le téléchargement de modules.  
 
 Bye bye Bower!
+
+PS: vous avez besoin d'un module qui n'a pas de package.json ? Pas de problème, [napa est là pour ça](/posts/nodejs/napa-ou-comment-telecharger-package-napa-package-json/)
