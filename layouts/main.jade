@@ -16,6 +16,12 @@ html(lang="fr")
       rel="stylesheet"
       href="#{uri('stylesheets/index.css', page)}"
     )
+    link(
+      rel="alternate"
+      href="#{uri('feed.xml', page)}"
+      title="#{lang.title}"
+      type="application/atom+xml"
+    )
     //- link(
     //-   rel="stylesheet"
     //-   href="http://basehold.it/25/255/42/85/0.1"
