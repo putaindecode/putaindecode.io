@@ -6,7 +6,7 @@ mixin FeedPosts()
     item
       title #{post.title}
       description
-        | <![CDATA[[
+        | <![CDATA[
         | !{getFeedDescription(post.slug)}
         | ]]>
       pubDate #{(new Date(post.date)).toUTCString()}
