@@ -7,7 +7,7 @@
       "passwd-salt": null
     },
     "github-bot": {
-      "user": "putaindebot",
+      "user": "putainde-bot",
       "mail": "github-bot@putaindecode.fr",
       "passwd-salt": "ghb"
     },
