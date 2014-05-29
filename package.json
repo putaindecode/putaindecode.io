@@ -20,7 +20,7 @@
     "publish": "gulp publish --production",
     "deploy": "npm run publish",
     "test": "gulp dist --production",
-    "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else; npm run publish; fi;"
+    "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else npm run publish; fi;"
   },
   "devDependencies": {
     "async": "^0.7.0",
