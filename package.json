@@ -19,8 +19,7 @@
     "production": "gulp --production",
     "publish": "gulp publish --production",
     "deploy": "npm run publish",
-    "test": "gulp dist --production",
-    "travis": "if [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm test; else npm run publish; fi;"
+    "test": "gulp dist --production"
   },
   "devDependencies": {
     "async": "^0.7.0",
