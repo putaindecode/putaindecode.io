@@ -20,7 +20,7 @@
     "publish": "gulp publish --production",
     "deploy": "npm run publish",
     "test": "gulp dist --production",
-    "travis": "if [ \"$(git branch | grep \\* | tail -c +3)\" != \"master\" ]; then npm test; else npm run publish; fi;"
+    "travis": "echo \"$(git branch | grep \\* | tail -c +3)\"; if [ \"$(git branch | grep \\* | tail -c +3)\" != \"master\" ]; then npm test; else npm run publish; fi;"
   },
   "devDependencies": {
     "async": "^0.7.0",
