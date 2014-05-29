@@ -85,6 +85,65 @@ grâce à GitHub, suffit à mettre en ligne le site).
 
     $ npm run publish
 
+Cela dit (toujours si vous avez les droits nécessaires), vous pouvez enregistrer un token
+encrypté par Travis afin d'automatiser le publish de vos commits dans la branch master.
+
+### Ajouter son token
+
+Vous pouvez soit passer par l'interface GitHub pour [ajouter un token](https://github.com/settings/tokens/new),
+soit faire les commandes suivantes (remplacez YOUR_GITHUB_USERNAME)
+
+    $ GH_USERNAME=YOUR_GITHUB_USERNAME
+    $ GH_BRANCH=gh-pages
+
+    $ curl -u $GH_USERNAME -d "{\"scopes\":[\"public_repo\"],\"note\":\"push to $GH_BRANCH from travis\"}" https://api.github.com/authorizations
+
+Votre mot de passe GitHub va vous être demandé.
+Ensuite vous aurez un résultat du genre
+
+    {
+      "id": 123456,
+      "url": "https://api.github.com/authorizations/8955171",
+      "app": {
+        "name": "push to gh-pages from travis (API)",
+        "url": "https://developer.github.com/v3/oauth_authorizations/",
+        "client_id": "00000000000000000000"
+      },
+      "token": "YOUR_AWESOME_TOKEN",
+      "note": "push to gh-pages from travis",
+      "note_url": null,
+      "created_at": "2014-05-29T03:55:28Z",
+      "updated_at": "2014-05-29T03:55:28Z",
+      "scopes": [
+        "public_repo"
+      ]
+    }
+
+Ensuite (remplacez YOUR_AWESOME_TOKEN par celui présent dans le résultat ci-dessus)
+
+    $ GH_REPOSITORY="putaindecode/website"
+    $ GH_TOKEN=YOUR_AWESOME_TOKEN
+
+#### Encryption du token
+
+Maintenant il reste à encrypter ce token. Vous avez 2 possibilités:
+- soit installer la gem ruby `travis` (qui embarque la commande `encrypt`)
+- soit installer le paquet node `travis-encrypt`
+
+##### Via la gem Ruby `travis`
+
+  $ gem install travis
+  $ travis encrypt -r $GH_REPOSITORY GH_TOKEN=$GH_TOKEN
+
+##### Via le paquet Node `travis-encrypt`
+
+  $ npm i -g travis-encrypt
+  $ travis-encrypt -r $GH_REPOSITORY -k GH_TOKEN -v $GH_TOKEN
+
+Vous n'avez plus qu'à incorporer votre token après les autes dans la section
+`env.global` du `.travis.yml` (mettez votre pseudo avant éventuellement,
+  plus pratique si maj du token nécessaire).
+
 ---
 
 ## Mise à jour spécifiques
