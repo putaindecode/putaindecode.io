@@ -88,6 +88,8 @@ grâce à GitHub, suffit à mettre en ligne le site).
 Cela dit (toujours si vous avez les droits nécessaires), vous pouvez enregistrer un token
 encrypté par Travis afin d'automatiser le publish de vos commits dans la branch master.
 
+_Note: pour commiter sans provoquer un publish, il suffit d'ajouter `[ci skip]` dans votre message de commit._
+
 ### Ajouter son token
 
 Vous pouvez soit passer par l'interface GitHub pour [ajouter un token](https://github.com/settings/tokens/new),
@@ -132,13 +134,13 @@ Maintenant il reste à encrypter ce token. Vous avez 2 possibilités:
 
 ##### Via la gem Ruby `travis`
 
-  $ gem install travis
-  $ travis encrypt -r $GH_REPOSITORY GH_TOKEN=$GH_TOKEN
+    $ gem install travis
+    $ travis encrypt -r $GH_REPOSITORY GH_TOKEN=$GH_TOKEN
 
 ##### Via le paquet Node `travis-encrypt`
 
-  $ npm i -g travis-encrypt
-  $ travis-encrypt -r $GH_REPOSITORY -k GH_TOKEN -v $GH_TOKEN
+    $ npm i -g travis-encrypt
+    $ travis-encrypt -r $GH_REPOSITORY -k GH_TOKEN -v $GH_TOKEN
 
 Vous n'avez plus qu'à incorporer votre token après les autes dans la section
 `env.global` du `.travis.yml` (mettez votre pseudo avant éventuellement,
