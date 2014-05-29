@@ -16,6 +16,15 @@ notifications:
       - https://webhooks.gitter.im/e/1963aded18e129703057
     on_start: true
 
+# http://docs.travis-ci.com/user/caching/
 cache:
   directories:
     - node_modules
+
+# http://docs.travis-ci.com/user/build-configuration/
+script: npm run travis
+
+env:
+  global:
+    # MoOx
+    - secure: 4PEqVqjHxXE6qQ3t+YoPyTrxT+3+W4il43NjCCdHrDucv5UQ3ceESoDxAFWO62W+HYGpp71zUxyiU+afgMjskwvAO1AFXvu6MBVuo3DycmD4uNChUGFAeBapM6Kul4Y+A8MXoo21//8yFX3oDvCa/VC3pRKp4utx2JhDDLl1dOM=

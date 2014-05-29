@@ -51,6 +51,4 @@ gulp.task("default", [
 ])
 
 // publish
-gulp.task("publish", [
-  "dist"
-], require("./tasks/publish"))
+gulp.task("publish", ["dist"], require("./tasks/publish"))
