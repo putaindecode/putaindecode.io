@@ -26,7 +26,15 @@ script:
   # we need --global because of how gulp-gh-pages works (with another clone elsewhere)
   - git config --global user.name "Travis-CI"
   - git config --global user.email "mail+travis@putaindecode.fr"
-  - if [ "$TRAVIS_PULL_REQUEST" = "true" ] || [ "$TRAVIS_BRANCH" != "master" ]; then npm test; else npm run publish; fi;
+  - echo "TRAVIS_PULL_REQUEST $TRAVIS_PULL_REQUEST"
+  - echo "TRAVIS_BRANCH $TRAVIS_BRANCH"
+  - if [ "$TRAVIS_PULL_REQUEST" = "true" ] || [ "$TRAVIS_BRANCH" != "master" ]; then
+  #-   npm test
+  - echo "test"
+  - else
+  #-   npm run publish
+  - echo "publish"
+  - fi
 
 env:
   global:
