@@ -5,7 +5,7 @@ C'est l'occasion de présenter le petit dernier de la vague MV*.
 
 ### backbone
 
-Backbone apporte un simplification dans la déclaration d'events,
+Backbone apporte une simplification dans la déclaration d'events,
 il reste cependant très faible dans le rendering.
 Le choix de laisser l'utilisateur décider de tout concernant
 `Backbone.View` est positif pour de nombreux projets, mais rend
