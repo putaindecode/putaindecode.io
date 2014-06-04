@@ -23,7 +23,7 @@ qui va provoquer des jolies horreurs visuelles
 
 En somme, concernant l'UI, Backbone est très sympathique pour structurer
 son code proprement, et convient à de nombreux projets simples, mais
-il ne réduit pas la compléxité.
+il ne réduit pas la complexité.
 
 ### angular
 
