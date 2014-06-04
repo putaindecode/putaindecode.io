@@ -1,0 +1,155 @@
+Cela fait maintenant un an que ReactJS est open-sourced.
+C'est l'occasion de présenter le petit dernier de la vague MV*.
+
+## les différentes approches d'UI
+
+### backbone
+
+Backbone apporte un simplification dans la déclaration d'events,
+il reste cependant très faible dans le rendering.
+Le choix de laisser l'utilisateur décider de tout concernant
+`Backbone.View` est positif pour de nombreux projets, mais rend
+la gestion du DOM pénible.
+
+Pour faire du data-binding, `Backbone` ne propose naturellement rien,
+et l'on doit faire appel à des mixins supplémentaires pour le mettre
+en place sans s'arracher les cheveux.
+
+De plus, la plupart du temps, c'est un moteur de templating comme
+Handlebars ou Jade qui génére la vue originale. On se retrouve donc avec
+un joli `this.$el.html(this.template(data))` dans la méthode `render()`
+qui va provoquer des jolies horreurs visuelles
+(ie. les images se rechargent, les videos sont réinitialisées).
+
+En somme, concernant l'UI, Backbone est très sympathique pour structurer
+son code proprement, et convient à de nombreux projets simples, mais
+il ne réduit pas la compléxité.
+
+### angular
+
+Angular propose une approche beaucoup plus travaillée, en imposant un
+moteur de templating HTML (on peut utiliser du preprocessing) et on déclare
+ses bindings très simplement avec une syntaxe `{{mustache}}`.
+
+On déclare les events dans des attributes `ng-{eventName}`.
+
+Sur le papier, angular est très sympathique
+(je ne prendrais pas parti sur le dirty checking), mais angular a selon moi
+des défauts de conceptions assez problématiques. Par exemple, si vous utilisez
+un système de modules (requirejs ou browserify), vous devez tout de même déclarer
+vos controllers dans `window`. _sorry what?_
+
+### ember
+
+Ember est un framework très bien pensé et très travaillé. Il intègre très bien
+les concepts de `data-binding` à l'aide de DOM Ranges. Il propose des conventions
+fortes, et contrairement à la plupart des _a priori_, est très simple à prendre
+en main. Les subviews sont très simples à utiliser à l'aide d'`{{outlet}}`.
+
+Pour résumer, ember et angular proposent de vraies solutions pour la gestion
+de l'UI. Cependant les deux conservent cette démarche :
+
+- on render une fois
+- on update les bindings
+
+### react
+
+React change complètement d'approche. Il part d'un constat simple :
+le fait que le DOM ait constamment un état différent, c'est chiant à gérer.
+
+Du coup, et si on appelait `.render()` à chaque modification ?
+Ça a l'air stupide, hein ? Pas tant que ça en fait.
+
+React implémente un __DOM virtuel__, une représentation interne du DOM
+extrêmement rapide. Il inclut par ailleurs son propre système d'events,
+ce qui permet à React de faire bénéficier des browsers n'implémentant pas
+`EventTarget` (oui, IE8, c'est toi que je regarde) de la phase de capturing.
+
+La méthode render retourne des objects correspondant à la représentation
+interne du DOM virtuel.
+
+D'autre part, les classes React se définissent par leur `state`.
+Lorsque l'on crée une class, on définit une méthode `getInitialState` qui
+retournera un état initial.
+
+Après cela, le seul moyen de changer l'état est d'indiquer à `this.setState`
+quelles propriétés changer.
+
+Le principal avantage est que l'on est certain, du fait de l'appel systématique
+à `render`, que notre component aura la représentation attendue pour un état
+donné.
+
+Un des autres avantages de React est son algorithme de diff interne.
+Le DOM virtuel va être comparé avec la version visible, et React effectue
+à l'aide d'opérations simples les seuls changements nécessaires.
+
+Cela résoud des problématiques comme la position du caret dans un input
+qui effectue du two-way data-binding; puisque l'algorithme n'y voit pas de
+changement nécessaire, l'input n'est pas modifié.
+
+React est idéalement utilisé avec jsx, un pré-processeur js qui permet
+d'écrire les templates avec une syntaxe xml (voir l'exemple plus bas),
+ce qui permet à des novices de le prendre en main très rapidement.
+
+## créons un component react :
+
+
+```javascript
+var View = React.createClass({
+  getInitialState : function(){
+    // état initial
+    return {
+      label : "hello",
+      checked : false
+    }
+  },
+  toggle : function(){
+    // on crée un nouvel état (les états de react sont immutable)
+    // et on trigger le render
+    this.setState({
+      checked : !this.state.checked
+    })
+  },
+  render : function(){
+    // petit addon pour se simplifier la vie
+    var classes = React.addons.classSet({
+      "list-item" : true,
+      "list-item--valid" : this.state.checked
+    })
+    return (
+      <div className={classes}>
+        {/* notre binding tout simple */}
+        <input checked={this.state.checked} type="checkbox" onChange={this.toggle} />
+        {this.state.label}
+      </div>
+    )
+  }
+})
+
+// on mount le component
+var view = React.renderComponent(View(), document.getElementById("id"))
+// et hop
+view.toggle()
+```
+
+## sum up des avantages de react
+
+React a bien compris ces points :
+
+- le DOM est lent, du moins en écriture, et limiter les interactions avec
+ce dernier est essentiel
+- devoir continuellement penser à l'état du DOM à l'instant `n` n'est pas
+une préoccupation que nous devrions avoir en développant l'UI de nos
+composants
+- les concepts d'immutability et de composition ont de grands intérêts
+trop peu utilisés en front-end.
+
+En bonus, React, même s'il n'impose pas de bibliothèque pour les
+data et la communication des modules, offre une approche nommée
+[flux](http://facebook.github.io/react/docs/flux-overview.html) très
+intéressante et vous offrant des clés pour concevoir une app avec en
+tête les paradigmes pensés pour React.
+
+Last but not least, vous pouvez render vos composants React depuis le serveur
+et la lib sera assez intelligente pour reconnaitre les composants déjà générés
+pour ne pas les render systématiquement, c'est pas beau, ça ?
