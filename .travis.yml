@@ -32,3 +32,5 @@ env:
   global:
     # MoOx
     - secure: 4PEqVqjHxXE6qQ3t+YoPyTrxT+3+W4il43NjCCdHrDucv5UQ3ceESoDxAFWO62W+HYGpp71zUxyiU+afgMjskwvAO1AFXvu6MBVuo3DycmD4uNChUGFAeBapM6Kul4Y+A8MXoo21//8yFX3oDvCa/VC3pRKp4utx2JhDDLl1dOM=
+    # bloodyowl
+    - secure: zOkI7imfGSlOTOzxLl3bCjEvvMb0clcAqEChf+mKY9nqx7cxHsUNY4vR6YbL8fSHNI27HromGpEh8xYolC/UArJ30/GDNSfv/wroQlBuTEYdoqup+f3o18AKG1i6fkc0frowTD9PpeRr56t3TiTrhCpNEDE0QaexDKMfuw5dUXo=
