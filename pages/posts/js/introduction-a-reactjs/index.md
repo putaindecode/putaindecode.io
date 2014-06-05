@@ -1,9 +1,9 @@
 Cela fait maintenant un an que ReactJS est open-sourced.
 C'est l'occasion de présenter le petit dernier de la vague MV*.
 
-## les différentes approches d'UI
+## Les différentes approches d'UI
 
-### backbone
+### Backbone
 
 [Backbone](http://backbonejs.org) apporte une simplification dans la
 déclaration d'évenements,
@@ -26,7 +26,7 @@ En somme, Backbone est très sympathique pour structurer
 son code proprement, mais concernant l'UI, n'aide absolument pas à réduire
 la compléxité liée aux états du DOM.
 
-### angular
+### Angular
 
 [Angular](https://angularjs.org) propose une approche beaucoup plus travaillée,
 en imposant un moteur de templating HTML (on peut utiliser du preprocessing)
@@ -40,7 +40,7 @@ des défauts de conceptions assez problématiques. Par exemple, si vous utilisez
 un système de modules (requirejs ou [browserify](posts/js/browserify-all-the-things/)),
 vous devez tout de même déclarer vos controllers dans `window`. _sorry what?_
 
-### ember
+### Ember
 
 [Ember](http://emberjs.com) est un framework très bien pensé et très travaillé.
 Il intègre très bien les concepts de `data-binding` à l'aide de [DOM Ranges](https://developer.mozilla.org/en-US/docs/Web/API/range).
@@ -54,7 +54,7 @@ de l'UI. Cependant les deux conservent cette démarche :
 - on _render_ (génère et insère le bout de DOM) une fois
 - on update les bindings
 
-### react
+### React
 
 [React](http://facebook.github.io/react/) change complètement d'approche.
 Il part d'un constat simple :
@@ -105,7 +105,7 @@ React est idéalement utilisé avec jsx, un pré-processeur js qui permet
 d'écrire les templates avec une syntaxe xml (voir l'exemple plus bas),
 ce qui permet à des novices de le prendre en main très rapidement.
 
-## créons un component react :
+## Créons un component react :
 
 
 ```javascript
@@ -151,7 +151,7 @@ var view = React.renderComponent(<View label="helloworld" />, document.getElemen
 view.toggle()
 ```
 
-## sum up des avantages de react
+## Sum up des avantages de react
 
 React a bien compris ces points :
 
