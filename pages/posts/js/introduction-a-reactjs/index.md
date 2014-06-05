@@ -5,8 +5,8 @@ C'est l'occasion de présenter le petit dernier de la vague MV*.
 
 ### backbone
 
-Backbone apporte une simplification dans la déclaration d'events,
-il reste cependant très faible dans le rendering.
+Backbone apporte une simplification dans la déclaration d'évenements,
+il reste cependant très peu impliqué dans le rendering.
 Le choix de laisser l'utilisateur décider de tout concernant
 `Backbone.View` est positif pour de nombreux projets, mais rend
 la gestion du DOM pénible.
@@ -31,12 +31,12 @@ Angular propose une approche beaucoup plus travaillée, en imposant un
 moteur de templating HTML (on peut utiliser du preprocessing) et on déclare
 ses bindings très simplement avec une syntaxe `{{mustache}}`.
 
-On déclare les events dans des attributes `ng-{eventName}`.
+On déclare les évenements dans des attributes `ng-{eventName}`.
 
 Sur le papier, angular est très sympathique
 (je ne prendrais pas parti sur le dirty checking), mais angular a selon moi
 des défauts de conceptions assez problématiques. Par exemple, si vous utilisez
-un système de modules (requirejs ou browserify), vous devez tout de même déclarer
+un système de modules (requirejs ou [browserify](posts/js/browserify-all-the-things/)), vous devez tout de même déclarer
 vos controllers dans `window`. _sorry what?_
 
 ### ember
@@ -61,8 +61,8 @@ Du coup, et si on appelait `.render()` à chaque modification ?
 Ça a l'air stupide, hein ? Pas tant que ça en fait.
 
 React implémente un __DOM virtuel__, une représentation interne du DOM
-extrêmement rapide. Il inclut par ailleurs son propre système d'events,
-ce qui permet à React de faire bénéficier des browsers n'implémentant pas
+extrêmement rapide. Il inclut par ailleurs son propre système d'évenements,
+ce qui permet à React de faire bénéficier des navigateurs n'implémentant pas
 `EventTarget` (oui, IE8, c'est toi que je regarde) de la phase de capturing.
 
 La méthode render retourne des objects correspondant à la représentation
