@@ -5,7 +5,8 @@ C'est l'occasion de présenter le petit dernier de la vague MV*.
 
 ### backbone
 
-Backbone apporte une simplification dans la déclaration d'évenements,
+[Backbone](http://backbonejs.org) apporte une simplification dans la
+déclaration d'évenements,
 il reste cependant très peu impliqué dans le rendering.
 Le choix de laisser l'utilisateur décider de tout concernant
 `Backbone.View` est positif pour de nombreux projets, mais rend
@@ -21,40 +22,42 @@ un joli `this.$el.html(this.template(data))` dans la méthode `render()`
 qui va provoquer des jolies horreurs visuelles
 (ie. les images se rechargent, les videos sont réinitialisées).
 
-En somme, concernant l'UI, Backbone est très sympathique pour structurer
-son code proprement, et convient à de nombreux projets simples, mais
-il ne réduit pas la complexité.
+En somme, Backbone est très sympathique pour structurer
+son code proprement, mais concernant l'UI, n'aide absolument pas à réduire
+la compléxité liée aux états du DOM.
 
 ### angular
 
-Angular propose une approche beaucoup plus travaillée, en imposant un
-moteur de templating HTML (on peut utiliser du preprocessing) et on déclare
-ses bindings très simplement avec une syntaxe `{{mustache}}`.
+[Angular](https://angularjs.org) propose une approche beaucoup plus travaillée,
+en imposant un moteur de templating HTML (on peut utiliser du preprocessing)
+et on déclare ses bindings très simplement avec une syntaxe `{{mustache}}`.
 
 On déclare les évenements dans des attributes `ng-{eventName}`.
 
 Sur le papier, angular est très sympathique
-(je ne prendrais pas parti sur le dirty checking), mais angular a selon moi
+(je ne prendrais pas parti sur le dirty checking), mais il a selon moi
 des défauts de conceptions assez problématiques. Par exemple, si vous utilisez
-un système de modules (requirejs ou [browserify](posts/js/browserify-all-the-things/)), vous devez tout de même déclarer
-vos controllers dans `window`. _sorry what?_
+un système de modules (requirejs ou [browserify](posts/js/browserify-all-the-things/)),
+vous devez tout de même déclarer vos controllers dans `window`. _sorry what?_
 
 ### ember
 
-Ember est un framework très bien pensé et très travaillé. Il intègre très bien
-les concepts de `data-binding` à l'aide de DOM Ranges. Il propose des conventions
-fortes, et contrairement à la plupart des _a priori_, est très simple à prendre
-en main. Les subviews sont très simples à utiliser à l'aide d'`{{outlet}}`.
+[Ember](http://emberjs.com) est un framework très bien pensé et très travaillé.
+Il intègre très bien les concepts de `data-binding` à l'aide de [DOM Ranges](https://developer.mozilla.org/en-US/docs/Web/API/range).
+Il propose des conventions fortes, et contrairement à la plupart des _a priori_,
+est très simple à prendre en main.
+Les subviews sont très simples à utiliser à l'aide d'`{{outlet}}`.
 
 Pour résumer, ember et angular proposent de vraies solutions pour la gestion
 de l'UI. Cependant les deux conservent cette démarche :
 
-- on render une fois
+- on _render_ (génère et insère le bout de DOM) une fois
 - on update les bindings
 
 ### react
 
-React change complètement d'approche. Il part d'un constat simple :
+[React](http://facebook.github.io/react/) change complètement d'approche.
+Il part d'un constat simple :
 le fait que le DOM ait constamment un état différent, c'est chiant à gérer.
 
 Du coup, et si on appelait `.render()` à chaque modification ?
@@ -62,18 +65,27 @@ Du coup, et si on appelait `.render()` à chaque modification ?
 
 React implémente un __DOM virtuel__, une représentation interne du DOM
 extrêmement rapide. Il inclut par ailleurs son propre système d'évenements,
-ce qui permet à React de faire bénéficier des navigateurs n'implémentant pas
-`EventTarget` (oui, IE8, c'est toi que je regarde) de la phase de capturing.
+ce qui permet à React de faire bénéficier de la phase de capturing les navigateurs
+n'implémentant pas `EventTarget` (oui, IE8, c'est toi que je regarde).
 
-La méthode render retourne des objects correspondant à la représentation
+La méthode render retourne des objets correspondant à la représentation
 interne du DOM virtuel.
 
-D'autre part, les classes React se définissent par leur `state`.
+Les classes React se définissent par leur `state`.
 Lorsque l'on crée une class, on définit une méthode `getInitialState` qui
 retournera un état initial.
 
 Après cela, le seul moyen de changer l'état est d'indiquer à `this.setState`
-quelles propriétés changer.
+quelles valeurs de l'état ont changé afin de mettre à jour le DOM.
+
+Une class React se voit passer des propriétés au moment d'être instanciée : les
+`props`. À ne pas confondre avec le `state`, son contenu ne doit être
+manipulé que par l'extérieur de la class (bien que celle-ci puisse obtenir
+des valeurs par défaut en définissant une méthode `getDefaultProps` qui les
+retourne).
+
+Le `state`, en revanche, ne doit être modifié qu'au sein des méthodes propres
+à la class.
 
 Le principal avantage est que l'on est certain, du fait de l'appel systématique
 à `render`, que notre component aura la représentation attendue pour un état
@@ -83,9 +95,11 @@ Un des autres avantages de React est son algorithme de diff interne.
 Le DOM virtuel va être comparé avec la version visible, et React effectue
 à l'aide d'opérations simples les seuls changements nécessaires.
 
-Cela résoud des problématiques comme la position du caret dans un input
+Cela résoud des problématiques comme la position du curseur dans un input
 qui effectue du two-way data-binding; puisque l'algorithme n'y voit pas de
-changement nécessaire, l'input n'est pas modifié.
+changement nécessaire, l'input n'est pas modifié et l'on garde donc le focus.
+Du même fait, si vous avez un gif qui boucle, il ne se relancera pas
+inopinément.
 
 React est idéalement utilisé avec jsx, un pré-processeur js qui permet
 d'écrire les templates avec une syntaxe xml (voir l'exemple plus bas),
@@ -99,8 +113,13 @@ var View = React.createClass({
   getInitialState : function(){
     // état initial
     return {
-      label : "hello",
       checked : false
+    }
+  },
+  getDefaultProps : function(){
+    // si `this.props.label` n'est pas présent, ce sera `"?"`
+    return {
+      label : "?"
     }
   },
   toggle : function(){
@@ -120,14 +139,14 @@ var View = React.createClass({
       <div className={classes}>
         {/* notre binding tout simple */}
         <input checked={this.state.checked} type="checkbox" onChange={this.toggle} />
-        {this.state.label}
+        {this.props.label}
       </div>
     )
   }
 })
 
-// on mount le component
-var view = React.renderComponent(View(), document.getElementById("id"))
+// on mount le component, et l'on passe le label
+var view = React.renderComponent(<View label="helloworld" />, document.getElementById("id"))
 // et hop
 view.toggle()
 ```
@@ -141,8 +160,10 @@ ce dernier est essentiel
 - devoir continuellement penser à l'état du DOM à l'instant `n` n'est pas
 une préoccupation que nous devrions avoir en développant l'UI de nos
 composants
-- les concepts d'immutability et de composition ont de grands intérêts
-trop peu utilisés en front-end.
+- les concepts d'immutability (un objet ne change pas, on en crée un nouveau à
+chaque changement) et de composition (composer une class de différentes
+fonctionnalités sans devoir créer des chaînes d'héritage complexes) ont de
+grands intérêts trop peu utilisés en front-end.
 
 En bonus, React, même s'il n'impose pas de bibliothèque pour les
 data et la communication des modules, offre une approche nommée
