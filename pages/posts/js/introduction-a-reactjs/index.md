@@ -16,7 +16,7 @@ Pour faire du data-binding, `Backbone` ne propose naturellement rien,
 et l'on doit faire appel à des mixins supplémentaires pour le mettre
 en place sans s'arracher les cheveux.
 
-De plus, la plupart du temps, c'est un moteur de templating comme
+De plus, c'est souvent un moteur de templating comme
 Handlebars ou Jade qui génére la vue originale. On se retrouve donc avec
 un joli `this.$el.html(this.template(data))` dans la méthode `render()`
 qui va provoquer des jolies horreurs visuelles
@@ -32,7 +32,7 @@ la compléxité liée aux états du DOM.
 en imposant un moteur de templating HTML (on peut utiliser du preprocessing)
 et on déclare ses bindings très simplement avec une syntaxe `{{mustache}}`.
 
-On déclare les évenements dans des attributes `ng-{eventName}`.
+On déclare les évenements à l'aide d'attributs `ng-{eventName}`.
 
 Sur le papier, angular est très sympathique
 (je ne prendrais pas parti sur le dirty checking), mais il a selon moi
@@ -68,36 +68,36 @@ extrêmement rapide. Il inclut par ailleurs son propre système d'évenements,
 ce qui permet à React de faire bénéficier de la phase de capturing les navigateurs
 n'implémentant pas `EventTarget` (oui, IE8, c'est toi que je regarde).
 
-La méthode render retourne des objets correspondant à la représentation
+La méthode `render` retourne des objets correspondant à la représentation
 interne du DOM virtuel.
 
 Les classes React se définissent par leur `state`.
-Lorsque l'on crée une class, on définit une méthode `getInitialState` qui
+Lorsque l'on crée une classe, on définit une méthode `getInitialState` qui
 retournera un état initial.
 
 Après cela, le seul moyen de changer l'état est d'indiquer à `this.setState`
 quelles valeurs de l'état ont changé afin de mettre à jour le DOM.
 
-Une class React se voit passer des propriétés au moment d'être instanciée : les
+Une classe React se voit passer des propriétés au moment d'être instanciée : les
 `props`. À ne pas confondre avec le `state`, son contenu ne doit être
-manipulé que par l'extérieur de la class (bien que celle-ci puisse obtenir
+manipulé que par l'extérieur de la classe (bien que celle-ci puisse obtenir
 des valeurs par défaut en définissant une méthode `getDefaultProps` qui les
 retourne).
 
 Le `state`, en revanche, ne doit être modifié qu'au sein des méthodes propres
-à la class.
+à la classe.
 
 Le principal avantage est que l'on est certain, du fait de l'appel systématique
-à `render`, que notre component aura la représentation attendue pour un état
+à `render`, que notre composant React aura la représentation attendue pour un état
 donné.
 
 Un des autres avantages de React est son algorithme de diff interne.
 Le DOM virtuel va être comparé avec la version visible, et React effectue
 à l'aide d'opérations simples les seuls changements nécessaires.
 
-Cela résoud des problématiques comme la position du curseur dans un input
+Cela résoud des problématiques comme la position du curseur dans un champ texte
 qui effectue du two-way data-binding; puisque l'algorithme n'y voit pas de
-changement nécessaire, l'input n'est pas modifié et l'on garde donc le focus.
+changement nécessaire, le champ texte n'est pas modifié et l'on garde donc le focus.
 Du même fait, si vous avez un gif qui boucle, il ne se relancera pas
 inopinément.
 
@@ -124,7 +124,7 @@ var View = React.createClass({
   },
   toggle : function(){
     // on crée un nouvel état (les états de react sont immutable)
-    // et on trigger le render
+    // et on déclenche le render
     this.setState({
       checked : !this.state.checked
     })
@@ -160,10 +160,10 @@ ce dernier est essentiel
 - devoir continuellement penser à l'état du DOM à l'instant `n` n'est pas
 une préoccupation que nous devrions avoir en développant l'UI de nos
 composants
-- les concepts d'immutability (un objet ne change pas, on en crée un nouveau à
-chaque changement) et de composition (composer une class de différentes
+- les concepts d'immutabilité (un objet ne change pas, on en crée un nouveau à
+chaque changement) et de composition (composer une classe de différentes
 fonctionnalités sans devoir créer des chaînes d'héritage complexes) ont de
-grands intérêts trop peu utilisés en front-end.
+grands intérêts, trop peu utilisés en front-end.
 
 En bonus, React, même s'il n'impose pas de bibliothèque pour les
 data et la communication des modules, offre une approche nommée
