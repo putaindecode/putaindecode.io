@@ -44,7 +44,7 @@ du mixin qui donne de la nausée comme on peut voir sur la
 ## Les préfixes, c’est comme le lait, ça tourne
 
 D’ailleurs, parlons en vite fait de cette page d’accueil qui au jour où j’écris
-se post, comporte <b>en premier exemple</b> un mixin pour `box-shadow`
+ce post, comporte <b>en premier exemple</b> un mixin pour `box-shadow`
 (hashtag ohlol).
 
 Certaines propriétés comme `box-shadow`, ou encore `border-radius`, sont
