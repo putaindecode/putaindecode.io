@@ -36,10 +36,10 @@ On déclare les évenements à l'aide d'attributs `ng-{eventName}`.
 
 Sur le papier, angular est très sympathique
 (je ne prendrais pas parti sur le dirty checking), mais il a selon moi
-des défauts de conceptions assez problématiques. Par exemple, si vous utilisez
+des défauts de conception assez problématiques. ~~Par exemple, si vous utilisez
 un système de modules (requirejs ou [browserify](posts/js/browserify-all-the-things/)),
-vous devez tout de même déclarer vos controllers dans `window`. _sorry what?_
-
+vous devez tout de même déclarer vos controllers dans `window`. _sorry what?_~~ Un exemple d'intégration avec browserify : 
+http://ethanway.com/angular-and-browserify
 ### Ember
 
 [Ember](http://emberjs.com) est un framework très bien pensé et très travaillé.
