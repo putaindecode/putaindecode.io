@@ -34,11 +34,7 @@ et on déclare ses bindings très simplement avec une syntaxe `{{mustache}}`.
 
 On déclare les évenements à l'aide d'attributs `ng-{eventName}`.
 
-Sur le papier, angular est très sympathique
-(je ne prendrais pas parti sur le dirty checking), mais il a selon moi
-des défauts de conceptions assez problématiques. Par exemple, si vous utilisez
-un système de modules (requirejs ou [browserify](posts/js/browserify-all-the-things/)),
-vous devez tout de même déclarer vos controllers dans `window`. _sorry what?_
+Sur le papier, angular est donc très sympathique (je ne prendrais pas parti sur le dirty checking).
 
 ### Ember
 
