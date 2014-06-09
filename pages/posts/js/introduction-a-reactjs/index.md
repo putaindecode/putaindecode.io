@@ -60,8 +60,8 @@ Du coup, et si on appelait `.render()` à chaque modification ?
 Ça a l'air stupide, hein ? Pas tant que ça en fait.
 
 React implémente un __DOM virtuel__, une représentation interne du DOM
-extrêmement rapide. Il inclut par ailleurs son propre système d'évenements,
-ce qui permet à React de faire bénéficier de la phase de capturing les navigateurs
+extrêmement rapide. Il inclut par ailleurs son propre système d'événements,
+ce qui permet à React de faire bénéficier de la phase de capturing aux navigateurs
 n'implémentant pas `EventTarget` (oui, IE8, c'est toi que je regarde).
 
 La méthode `render` retourne des objets correspondant à la représentation
@@ -84,8 +84,7 @@ Le `state`, en revanche, ne doit être modifié qu'au sein des méthodes propres
 à la classe.
 
 Le principal avantage est que l'on est certain, du fait de l'appel systématique
-à `render`, que notre composant React aura la représentation attendue pour un état
-donné.
+à `render`, que notre composant React aura la représentation attendue pour un état donné.
 
 Un des autres avantages de React est son algorithme de diff interne.
 Le DOM virtuel va être comparé avec la version visible, et React effectue
@@ -147,15 +146,15 @@ var view = React.renderComponent(<View label="helloworld" />, document.getElemen
 view.toggle()
 ```
 
-## Sum up des avantages de react
+## Sum up des avantages de React
 
 React a bien compris ces points :
 
 - le DOM est lent, du moins en écriture, et limiter les interactions avec
-ce dernier est essentiel
+ce dernier est essentiel ;
 - devoir continuellement penser à l'état du DOM à l'instant `n` n'est pas
 une préoccupation que nous devrions avoir en développant l'UI de nos
-composants
+composants ;
 - les concepts d'immutabilité (un objet ne change pas, on en crée un nouveau à
 chaque changement) et de composition (composer une classe de différentes
 fonctionnalités sans devoir créer des chaînes d'héritage complexes) ont de
