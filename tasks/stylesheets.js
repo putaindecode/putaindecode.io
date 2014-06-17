@@ -40,7 +40,7 @@ module.exports = function(){
       reworkPlugins.calc,
       // reworkPlugins.colorFn,
       // reworkPlugins.hexAlpha,
-      //reworkPlugins.inline,
+      // reworkPlugins.inline,
       reworkPlugins.ieLimits,
       reworkPlugins.remFallback,
       // reworkPlugins.clearfix,

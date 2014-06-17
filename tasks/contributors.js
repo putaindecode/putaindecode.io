@@ -131,7 +131,7 @@ var contributorsMap = function(){
           })
           .done(function(contributor){
             cache.value.mapByEmail[email] = contributor
-            cb() //async done
+            cb() // async done
           })
         })
       })
