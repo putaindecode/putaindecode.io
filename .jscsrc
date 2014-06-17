@@ -32,6 +32,7 @@
   "disallowSpacesInsideArrayBrackets": true,
   "disallowSpacesInsideParentheses": true,
   "requireSpaceAfterObjectKeys": true,
+  "requireCommaBeforeLineBreak": true,
   "requireOperatorBeforeLineBreak": [
     "?",
     "+",
@@ -88,6 +89,7 @@
     "binary",
     "string"
   ],
+  "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
   "disallowKeywords": [
     "with"
   ],
