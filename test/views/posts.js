@@ -8,12 +8,12 @@ tape("posts", function(test){
   var postView = posts.extend({element : element})
   element.innerHTML = [
     "<div class='js-Post'>",
-      "<i class='js-Tag' data-tag='1'></i>",
-      "<i class='js-Tag' data-tag='2'></i>",
+    "  <i class='js-Tag' data-tag='1'></i>",
+    "  <i class='js-Tag' data-tag='2'></i>",
     "</div>",
     "<div class='js-Post'>",
-      "<i class='js-Tag' data-tag='3'></i>",
-      "<i class='js-Tag' data-tag='2'></i>",
+    "  <i class='js-Tag' data-tag='3'></i>",
+    "  <i class='js-Tag' data-tag='2'></i>",
     "</div>",
     "<div class='js-NoPosts'></div>"
   ].join("")
