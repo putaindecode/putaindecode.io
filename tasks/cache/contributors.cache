@@ -49,6 +49,13 @@
       "location": "Paris",
       "hireable": false
     },
+    "engcolson@gmail.com": {
+      "login": "enguerran",
+      "name": "Enguerran",
+      "gravatar_id": "2e43fe3376aaf887aad755de94942fa0",
+      "location": "",
+      "hireable": false
+    },
     "erwann.mest+github@gmail.com": {
       "login": "kud",
       "name": "Erwänn Mest",
@@ -328,6 +335,10 @@
           ]
         }
       }
+    },
+    "marchenay.felix@gmail.com": {
+      "login": "Felix49",
+      "gravatar_id": "197c24e25a972f4f945257896cb5cbfb"
     },
     "martin@piwany.com": {
       "login": "Erwyn",
@@ -629,6 +640,10 @@
         }
       }
     },
+    "Felix49": {
+      "login": "Felix49",
+      "gravatar_id": "197c24e25a972f4f945257896cb5cbfb"
+    },
     "MattiSG": {
       "login": "MattiSG",
       "name": "Matti Schneider",
@@ -815,6 +830,13 @@
           ]
         }
       }
+    },
+    "enguerran": {
+      "login": "enguerran",
+      "name": "Enguerran",
+      "gravatar_id": "2e43fe3376aaf887aad755de94942fa0",
+      "location": "",
+      "hireable": false
     },
     "justinmarsan": {
       "login": "justinmarsan",
