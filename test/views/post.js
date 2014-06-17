@@ -1,5 +1,5 @@
 var tape = require("tape")
-  , post = require("../../scripts/views/post")
+var post = require("../../scripts/views/post")
 
 require("../../scripts/lib/classList")
 

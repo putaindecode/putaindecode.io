@@ -89,11 +89,11 @@ $ npm i -D gulp gulp-util gulp-plumber gulp-myth gulp-csso minimist
 
 ```js
 var gulp = require("gulp")
-  , gutil = require("gulp-util")
-  , plumber = require("gulp-plumber")
-  , myth = require("gulp-myth")
-  , csso = require("gulp-csso")
-  , options = require("minimist")(process.argv.slice(2))
+var gutil = require("gulp-util")
+var plumber = require("gulp-plumber")
+var myth = require("gulp-myth")
+var csso = require("gulp-csso")
+var options = require("minimist")(process.argv.slice(2))
 
 gulp.task("styles", function() {
   gulp.src("./src/css/*.css")
@@ -119,23 +119,23 @@ var gulp = require("gulp")
   // Ça c'est optionnel, c'est pour avoir (entre autres la méthode noop())
   // je reviens dessus après
   // https://github.com/gulpjs/gulp-util
-  , gutil = require("gulp-util")
+var gutil = require("gulp-util")
 
   // Là on a Mario le plombier qui fixe la tuyauterie foireuse.
   // Ce plugin patch le problème de stream avec node.js qui fait que tout le process
   // explose à la moindre erreur (pas pratique en cas de watch par exemple)
   // en gros, il remplace la méthode pipe et attrape les erreurs pour les ressortir gentiment
   // https://gist.github.com/floatdrop/8269868
-  , plumber = require("gulp-plumber")
+var plumber = require("gulp-plumber")
 
   // Ici, rien de magique, du plugin en veux-tu en voilà
-  , myth = require("gulp-myth")
-  , csso = require("gulp-csso")
+var myth = require("gulp-myth")
+var csso = require("gulp-csso")
 
   // ici on chope les options de la ligne de commande
   // exemple: pour avoir options.production à true,
   // il suffit de faire `gulp --production`
-  , options = require("minimist")(process.argv.slice(2))
+var options = require("minimist")(process.argv.slice(2))
 
 // Définition d'une tâche, un nom et une fonction.
 // Ce qui est pratique c'est le fait de pouvoir mettre ce qu'on veut

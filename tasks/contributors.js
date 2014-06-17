@@ -56,7 +56,7 @@ var contributorsMap = function(){
 
   .then(function(stdout){
       var newUsers = []
-      , loginCache = {}
+    var loginCache = {}
 
     // update contributorsMap
     stdout
@@ -182,7 +182,7 @@ var totalContributions = function(){
       .forEach(function(line){
         line = line.trim()
         var login = cache.value.mapByEmail[line.match(emailRE)[1]].login
-          , contributions = parseInt(line.match(commitsRE)[1], 10)
+        var contributions = parseInt(line.match(commitsRE)[1], 10)
         if(!cache.value.contributions[login]){
           cache.value.contributions[login] = contributions
         }

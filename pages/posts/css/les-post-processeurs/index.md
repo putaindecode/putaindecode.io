@@ -73,16 +73,16 @@ Exemple avec [rework-rem-fallback](https://github.com/ctalkington/rework-rem-fal
 // $ npm i rework rework-rem-fallback
 
 var rework = require('rework') // le moteur rework, je reviens dessus après
-  , remFallback = require('rework-rem-fallback') // le plugin rework
+var remFallback = require('rework-rem-fallback') // le plugin rework
 
   // lecture du fichier css
-  , css = require('fs').readFileSync('dist/index.css', 'utf8').toString()
+var css = require('fs').readFileSync('dist/index.css', 'utf8').toString()
 
   // on traite le CSS en indiquant à rework la source, et le plugin à utiliser
-  , out = rework(css).use(remFallback()).toString()
+var out = rework(css).use(remFallback()).toString()
 
   // ici on fait la même chose, mais comme si la font de base était en 14px
-  , out14 = rework(css).use(remFallback(14)).toString()
+var out14 = rework(css).use(remFallback(14)).toString()
 ```
 
 Avec l'exemple d'avant, et ce bout de CSS:

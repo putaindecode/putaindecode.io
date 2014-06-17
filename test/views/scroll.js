@@ -1,5 +1,5 @@
 var tape = require("tape")
-  , scroller = require("../../scripts/views/scroll")
+var scroller = require("../../scripts/views/scroll")
 
 require("../../scripts/lib/classList")
 

@@ -29,7 +29,7 @@ $ npm install gulp-iconfont gulp-iconfont-css --save-dev
 var gulp = require('gulp')
 
 var iconfont = require('gulp-iconfont')
-  , iconfontCss = require('gulp-iconfont-css')
+var iconfontCss = require('gulp-iconfont-css')
 ```
 
 ### Créez votre propre tâche gulp
@@ -62,7 +62,7 @@ Voilà l'écriture entière de la tâche :
 var gulp = require('gulp')
 
 var iconfont = require('gulp-iconfont')
-  , iconfontCss = require('gulp-iconfont-css')
+var iconfontCss = require('gulp-iconfont-css')
 
 gulp.task('glyphicons', function() {
  return gulp.src('src/glyphicons/**/*')
