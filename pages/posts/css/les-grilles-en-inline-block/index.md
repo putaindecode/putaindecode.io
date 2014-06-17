@@ -7,14 +7,14 @@ Mais en attendant, on bricole. Et une des solutions que j'aime bien consiste à 
 - les éléments en inline-block peuvent utiliser la propriété `vertical-align`.
 - les éléments de la grilles reste dans le flux, ce qui évite l'utilisation de clearfix.
 
-Ce dernier point est aussi une source de problèmes puisque notre `div.Grid` contient non seulement nos éléments de grille `div.Grid-cell` mais aussi quelques caractères espace ça et là entre les noeuds enfants.
+Ce dernier point est aussi une source de problèmes puisque notre `.Grid` contient non seulement nos éléments de grille `.Grid-cell` mais aussi quelques caractères espace ça et là entre les noeuds enfants.
 
 De la même manière qu'un espaces sépare 2 mots, on retrouve ces espaces entre nos blocs. Ces caractères proviennent des espaces et autre sauts de lignes qu'on insère dans le code source pour formater notre document.
 
 Voici donc un aperçu des différents moyens de se débarasser de ces espaces, afin que tout les éléments de notre grille restent à leur place.
 
 
-## Supprimer les espaces entre les tag `div.Grid-cell`
+## Supprimer les espaces entre les tag `.Grid-cell`
 
 ```
 <div class="Grid">
@@ -36,10 +36,10 @@ on peut aussi faire comme ça, même si le formatage en prend un coup.
 Notez que la première technique peut être facilement mise en place de manière automatique, via une traitement de [minification du code html](https://github.com/kangax/html-minifier).
 
 
-##Insérer des commentaires html entre les tags `div.Grid-cell`
+##Insérer des commentaires html entre les tags `.Grid-cell`
 
 La solution est robuste, au prix de quelques caractères supplémentaires. Un surpoids que gzip se fera un plaisir de vous faire oublier !
-
+C'est la méthode choisie dans le framework [inuitCss](https://github.com/csswizardry/inuit.css/blob/master/objects/_grids.scss).
 ```
 <div class="Grid">
    <div class="Grid-cell">...</div><!--
@@ -62,9 +62,10 @@ La solution est robuste, au prix de quelques caractères supplémentaires. Un su
 }
 ```
 
-L'idée est de faire disparaître les caractères _espace_ situés entre les balises enfants en réglant la taille de la police à zéro. Il suffit ensuite de ré-initialiser la taille sur les noeuds enfants `div.Grid-cell`.
+L'idée est de faire disparaître les caractères _espace_ situés entre les balises enfants en réglant la taille de la police à zéro. Il suffit ensuite de ré-initialiser la taille sur les noeuds enfants `.Grid-cell`. Cette méthode est utilisée dans [SUIT Grid](https://github.com/suitcss/components-grid).
 
 *Attention*, si votre scope navigateur va en dessous d'IE9, cette méthode fait perdre le bénéfice d'une intégration à base d'em puisque la taille de la typo sur les blocs enfants est désormais fixe.
+
 
 
 ## Appliquer une marge négative entre les blocs enfants
@@ -80,7 +81,7 @@ Cette méthode n'est à mon sens pas très robuste, surtout sur des intégration
 ## La méthode Kellum
 Ici, la méthode consiste à utiliser une font particulière contenant le caractère espace et dont la particularité est d'avoir une largeur nulle. Cette technique est décrite dans l'article de [Scott Kellum](http://scottkellum.com/2013/10/25/the-new-kellum-method.html)
 
-Comme la technique précédente, il suffit d'appliquer la font au conteneur `div.Grid` puis de remettre la font-family par defaut pour les enfants `div.Grid-cell`. Et ainsi, toutes valeurs relatives en _em_ sont préservées.
+Comme la technique précédente, il suffit d'appliquer la font au conteneur `.Grid` puis de remettre la font-family par defaut pour les enfants `.Grid-cell`. Et ainsi, toutes valeurs relatives en _em_ sont préservées.
 
 
 ```
