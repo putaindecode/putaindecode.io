@@ -98,9 +98,9 @@ var contributorsMap = function(){
           exec("git log --max-count=1 --pretty=format:%H --author=" + email)
           .then(function(stdout){
             return Promise.denodeify(githubApi.repos.getCommit)({
-              "user" : "putaindecode",
-              "repo" : "website",
-              "sha" : stdout
+              user : "putaindecode",
+              repo : "website",
+              sha : stdout
             })
           })
           .then(function(contributor){
@@ -113,7 +113,7 @@ var contributorsMap = function(){
               return Promise.resolve(loginCache[contributor.author.login])
             }
             else{
-              return Promise.denodeify(githubApi.user.getFrom)({"user" : contributor.author.login})
+              return Promise.denodeify(githubApi.user.getFrom)({user : contributor.author.login})
               .then(function(githubUser){
                 loginCache[githubUser.login] = {
                   // see what's available here https://developer.github.com/v3/users/
