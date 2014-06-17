@@ -27,6 +27,7 @@
     "beforeOpeningCurlyBrace": true
   },
   "disallowMultipleVarDecl": true,
+  "disallowPaddingNewlinesInBlocks": true,
   "disallowEmptyBlocks": true,
   "disallowSpacesInsideObjectBrackets": true,
   "disallowSpacesInsideArrayBrackets": true,
