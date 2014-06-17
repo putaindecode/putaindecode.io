@@ -27,6 +27,7 @@
     "beforeOpeningCurlyBrace": true
   },
   "disallowMultipleVarDecl": true,
+  "requireBlocksOnNewline": 1,
   "disallowPaddingNewlinesInBlocks": true,
   "disallowEmptyBlocks": true,
   "disallowSpacesInsideObjectBrackets": true,
@@ -104,9 +105,11 @@
   "requireLineFeedAtFileEnd": true,
   "requireCapitalizedConstructors": true,
   "safeContextKeyword": "thisValue",
+  "requireDotNotation": true,
   "validateJSDoc": {
     "checkParamNames": true,
     "checkRedundantParams": true,
     "requireParamTypes": true
-  }
+  },
+  "requireSpaceAfterLineComment": true
 }
