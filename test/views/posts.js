@@ -53,5 +53,4 @@ tape("posts", function(test){
   test.equal(element.children[2].classList.contains("putainde-Message--hidden"), true)
 
   test.end()
-
 })

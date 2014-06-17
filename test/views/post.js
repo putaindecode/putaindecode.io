@@ -42,5 +42,4 @@ tape("post", function(test){
   postView.setTooltipWording()
   test.equal(element.children[0].getAttribute("data-tip"), "foo 250 bar")
   test.end()
-
 })

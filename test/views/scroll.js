@@ -33,6 +33,5 @@ tape("scroll", function(test){
       test.equal(element.scrollTop, 0)
       test.end()
     }, 1000)
-
   }, 1000)
 })
