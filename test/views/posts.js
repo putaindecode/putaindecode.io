@@ -1,11 +1,11 @@
 var tape = require("tape")
-  , posts = require("../../scripts/views/posts")
+var posts = require("../../scripts/views/posts")
 
 require("../../scripts/lib/classList")
 
 tape("posts", function(test){
   var element = document.createElement("div")
-    , postView = posts.extend({element : element})
+  var postView = posts.extend({element : element})
   element.innerHTML = [
     "<div class='js-Post'>",
       "<i class='js-Tag' data-tag='1'></i>",

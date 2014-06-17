@@ -180,16 +180,16 @@ une seule écriture sur le système de fichier (contrairement à la solution Gru
 ```js
 // gulp stuff
 var gulp = require("gulp")
-  , gutil = require("gulp-util")
+var gutil = require("gulp-util")
   // le plombier ajuste les fuites des tuyaux (erreur de pipe)
   // ceci est conseillé pour éviter que chaque erreur "casse" tout le process
   // dès qu’une erreur est remonté par un plugin
-  , plumber = require("gulp-plumber")
+var plumber = require("gulp-plumber")
 
 // css stuff
 var sass = require("gulp-ruby-sass")
-  , autoprefixer = require("gulp-autoprefixer")
-  , csso = require("gulp-csso")
+var autoprefixer = require("gulp-autoprefixer")
+var csso = require("gulp-csso")
 
 // css task: sass, autoprefixer et csso si --production
 gulp.task("styles", function() {
@@ -250,43 +250,42 @@ module.exports = function(grunt) {
       dist: {
         options: {
           style: "expanded"
-        }
-      , files: [{
-          expand: true
-        , flatten: true
-        , cwd: "./src/css"
-        , src: ["*.scss"]
-        , dest: "./dist/css"
-        , ext: ".css"
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: "./src/css",
+          src: ["*.scss"],
+          dest: "./dist/css",
+          ext: ".css"
         }]
       }
-    }
-  , autoprefixer: {
+    },
+    autoprefixer: {
       options: {
         browsers: ["last 2 versions", "> 1%", "Explorer 7", "Android 2"]
-      }
-    , dist: {
-        expand: true
-      , flatten: true
-      , cwd: "./dist/css"
-      , src: ["*.css"]
-      , dest: "./dist/css/"
-      }
-    }
-  , csso: {
+      },
       dist: {
-        expand: true
-      , flatten: true
-      , cwd: "./dist/css/"
-      , src: ["*.css"]
-      , dest: "./dist/css/"
+        expand: true,
+        flatten: true,
+        cwd: "./dist/css",
+        src: ["*.css"],
+        dest: "./dist/css/"
       }
-    }
-
-  , watch: {
+    },
+    csso: {
+      dist: {
+        expand: true,
+        flatten: true,
+        cwd: "./dist/css/",
+        src: ["*.css"],
+        dest: "./dist/css/"
+      }
+    },
+    watch: {
       styles: {
-        files: ["./src/css/**/*.scss"]
-      , tasks: ["styles"]
+        files: ["./src/css/**/*.scss"],
+        tasks: ["styles"]
       }
     }
   })

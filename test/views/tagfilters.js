@@ -1,12 +1,12 @@
 var tape = require("tape")
-  , tagFilters = require("../../scripts/views/tagfilters")
+var tagFilters = require("../../scripts/views/tagfilters")
 
 require("../../scripts/lib/classList")
 
 tape("tagfilters", function(test){
 
   var tag = tagFilters.create()
-    , body = document.body
+  var body = document.body
 
   tag.toggleFilters()
   test.equal(body.classList.contains("putainde-Body--tagFiltersOpened"), true)

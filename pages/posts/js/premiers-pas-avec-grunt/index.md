@@ -549,7 +549,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch')
 
   var jsSrc = ['src/intro.js', 'src/project.js', 'src/outro.js']
-    , jsDist = 'dist/built.js'
+  var jsDist = 'dist/built.js'
 
   // Configuration de Grunt
   grunt.initConfig({

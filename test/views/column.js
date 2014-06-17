@@ -1,6 +1,6 @@
 var tape = require("tape")
-  , column = require("../../scripts/views/column")
-  , tags = require("../../scripts/models/tags")
+var column = require("../../scripts/views/column")
+var tags = require("../../scripts/models/tags")
 
 require("../../scripts/lib/classList")
 

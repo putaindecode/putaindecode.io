@@ -19,9 +19,9 @@ module.exports = cornea.extend({
     this.posts.forEach(getTags, this)
     function getTags(item){
       var tags = item.querySelectorAll(".js-Tag")
-        , index = -1
-        , length = tags.length
-        , mapItem
+      var index = -1
+      var length = tags.length
+      var mapItem
       ++id
       mapItem = this.map[id] = {}
       mapItem.element = item

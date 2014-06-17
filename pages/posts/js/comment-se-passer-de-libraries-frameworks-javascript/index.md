@@ -55,20 +55,20 @@ Les browsers relativement récents possèdent une méthode : `matchesSelector` (
 ```javascript
 var docEl = document.documentElement
     // si c'est dans docEl, c'est que c'est dispo
-  , nativeMatchesSelector =
+var nativeMatchesSelector =
       docEl.matchesSelector ||
       docEl.webkitMatchesSelector ||
       docEl.mozMatchesSelector ||
       docEl.oMatchesSelector ||
       docEl.msMatchesSelector
-  , matchesSelector = nativeMatchesSelector || matchesPolyfill
+var matchesSelector = nativeMatchesSelector || matchesPolyfill
 
 // le polyfill utilise querySelectorAll
 // et cherche dans le parent de l'élement
 function matchesPolyfill(selector){
   var node = this
-    , parent = node.parentNode
-    , query, index, length
+  var parent = node.parentNode
+  var query, index, length
   if(!parent || parent.nodeType != 1) {
     return false
   }
@@ -114,8 +114,8 @@ function isSuccessStatus(status){
 
 function ajax(options){
   var xhr = new XMLHttpRequest()
-    , done = false
-    , async = options.hasOwnProperty("async") ? options.async : true
+  var done = false
+  var async = options.hasOwnProperty("async") ? options.async : true
 
   xhr.open(options.method || "GET", options.url, async)
 
@@ -148,11 +148,11 @@ Cette fonction offre un support basique de XHR :
 
 ```javascript
 var myXHR = ajax({
-    url : "api/users"
-  , success : function(){
+    url : "api/users",
+    success : function(){
       doStuff(this.responseText)
-    }
-  , error : function(){
+    },
+    error : function(){
       showError(this.status)
     }
 })
@@ -198,9 +198,9 @@ Avec `addEventListener`, on peut aussi passer un objet comme listener, avec `han
 
 ```javascript
 var myElementClickEvents = {
-    element : myElement
-  , callbacks : []
-  , handleEvent : function(evt){
+    element : myElement,
+    callbacks : [],
+    handleEvent : function(evt){
       var self = this
       this.callbacks.forEach(function(item){
         item.call(self.element, evt)
@@ -220,7 +220,7 @@ Avec ça, on peut facilement garder une trace de ce qu'on passé comme listeners
 
 ```javascript
 var getClass = function(o){ return Object.prototype.toString.call(o) }
-  , someString = new String("foo")
+var someString = new String("foo")
 
 typeof someString // "object"
 getClass(someString) // "[object String]", sounds more reasonable
@@ -253,7 +253,7 @@ Cat.prototype.constructor = Cat
 Cat.prototype.type = "cat"
 
 var myAnimal = new Animal("Foo")
-  , myCat = new Cat("Bar")
+var myCat = new Cat("Bar")
 
 myCat instanceof Cat // true
 myCat instanceof Animal // true
@@ -285,8 +285,8 @@ function create(){
 }
 
 var klass = {
-    create : create
-  , extend : extend
+    create : create,
+    extend : extend
 }
 ```
 
@@ -296,8 +296,8 @@ Tu peux faire ça :
 var animal = klass.extend({
     constructor : function(name){
       this.name = name
-    }
-  , getName : function(){
+    },
+    getName : function(){
       return this.name
     }
 })
@@ -305,12 +305,12 @@ var animal = klass.extend({
 var cat = animal.extend({
     constructor : function(name){
       animal.constructor.call(this, name)
-    }
-  , type : "cat"
+    },
+    type : "cat"
 })
 
 var myAnimal = animal.create("Foo")
-  , myCat = cat.create("Bar")
+var myCat = cat.create("Bar")
 
 cat.isPrototypeOf(myCat) // true
 animal.isPrototypeOf(myCat) // true

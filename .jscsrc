@@ -21,6 +21,7 @@
     "beforeOpeningRoundBrace": true,
     "beforeOpeningCurlyBrace": true
   },
+  "disallowMultipleVarDecl": true,
   "disallowEmptyBlocks": true,
   "disallowSpacesInsideObjectBrackets": true,
   "disallowSpacesInsideArrayBrackets": true,
