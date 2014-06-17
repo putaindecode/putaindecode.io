@@ -1,5 +1,10 @@
 {
-  "excludeFiles": [],
+  "excludeFiles": [
+    "node_modules/**"
+  ],
+  "fileExtensions": [
+    ".js"
+  ],
   "requireCurlyBraces": [
     "else",
     "for",
