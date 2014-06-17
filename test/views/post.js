@@ -6,10 +6,10 @@ require("../../scripts/lib/classList")
 tape("post", function(test){
   var element = document.createElement("div")
   element.innerHTML = [
-    "<span data-tip='foo {{wpm}} bar' data-readingtime-wpm='40' class='putainde-Post-readingTime putainde-Post-readingTime--hidden AttrTip AttrTip--top'>" +
-      "Temps de lecture : environ " +
-        "<span class='putainde-Post-readingTime-value'></span>" +
-      "minutes" +
+    "<span data-tip='foo {{wpm}} bar' data-readingtime-wpm='40' class='putainde-Post-readingTime putainde-Post-readingTime--hidden AttrTip AttrTip--top'>",
+    "  Temps de lecture : environ ",
+    "  <span class='putainde-Post-readingTime-value'></span>",
+    "  minutes",
     "</span>"
   ].join("")
   var postView = post.extend({

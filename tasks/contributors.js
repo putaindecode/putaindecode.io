@@ -55,7 +55,7 @@ var contributorsMap = function(){
   })
 
   .then(function(stdout){
-      var newUsers = []
+    var newUsers = []
     var loginCache = {}
 
     // update contributorsMap

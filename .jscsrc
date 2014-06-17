@@ -98,6 +98,7 @@
   ],
   "disallowMultipleLineStrings": true,
   "validateQuoteMarks": "\"",
+  "validateIndentation": 2,
   "disallowMixedSpacesAndTabs": true,
   "disallowTrailingWhitespace": true,
   "requireKeywordsOnNewLine": [
