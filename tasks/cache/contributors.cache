@@ -1,5 +1,13 @@
 {
   "mapByEmail": {
+    "agmagor@agmagor.be": {
+      "login": "Agmagor",
+      "name": "Agmagor",
+      "gravatar_id": "166632516b43cfdcd8ce01a519ea1f04",
+      "url": "http://agmagor.be",
+      "location": "France",
+      "hireable": false
+    },
     "ccoloma@jolicode.com": {
       "login": "clairecoloma",
       "gravatar_id": "63638ee1e60d9ca22adea00962632a6b"
@@ -599,6 +607,14 @@
     }
   },
   "map": {
+    "Agmagor": {
+      "login": "Agmagor",
+      "name": "Agmagor",
+      "gravatar_id": "166632516b43cfdcd8ce01a519ea1f04",
+      "url": "http://agmagor.be",
+      "location": "France",
+      "hireable": false
+    },
     "Dridi": {
       "login": "Dridi",
       "name": "Dridi Boukelmoune",
