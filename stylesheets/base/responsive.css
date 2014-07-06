@@ -1,6 +1,6 @@
 :root {
-  --font-size-Grid: var(--font-size);
-  --gutter-size-Grid: var(--line-height);
+  --Grid-font-size: var(--font-size);
+  --Grid-gutter-size: var(--line-height);
 }
 
 .Grid {

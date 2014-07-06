@@ -89,7 +89,7 @@
 .putainde-Tag {
   display: inline-block;
   background: #fdfdfd;
-  box-shadow: inset 0 0 0 1px rgba(#000, .03);
+  box-shadow: inset 0 0 0 1px color(#000 alpha(5%));
   padding: 0 1em;
   margin-right: .2rem;
   font-size: var(--font-size-small);

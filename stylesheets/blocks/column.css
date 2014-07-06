@@ -75,7 +75,7 @@
 @media (max-width:54em) {
   .putainde-TagFilters {
     background: #fff;
-    box-shadow: .2em 0 .4em rgba(#000, .1), 1px 0 rgba(#000, .1);
+    box-shadow: .2em 0 .4em color(#000 alpha(10%)), 1px 0 color(#000 alpha(10%));
     z-index: 4;
     position: fixed;
     top: 0;
