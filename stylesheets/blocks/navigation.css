@@ -23,7 +23,7 @@
 
   .putainde-Nav-item:hover,
   .putainde-Nav-item:focus {
-    background: rgba(#000, .1);
+    background: color(#000 alpha(10%));
   }
 
 

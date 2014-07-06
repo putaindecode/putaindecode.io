@@ -18,5 +18,5 @@
 
   .putainde-Section--manifesto .putainde-Title {
     background: #fafafa;
-    background: linear-gradient(to bottom, #fafafa 60%, rgba(#fafafa, 0));
+    background: linear-gradient(to bottom, #fafafa 60%, color(#fafafa alpha(0)));
   }

@@ -1,23 +1,24 @@
-@import url("../node_modules/suitcss-components-grid/grid.css");
-@import url("../node_modules/suitcss-utils-size/size.css");
-@import url("./base/typography.css");
-@import url("./base/colours.css");
-@import url("./base/normalise.css");
-@import url("./base/responsive.css");
+@import "../node_modules/suitcss-components-grid/index.css";
+@import "../node_modules/suitcss-utils-size/lib/size.css";
 
-@import url("./icons/index.css");
+@import "./base/typography.css";
+@import "./base/colours.css";
+@import "./base/normalise.css";
+@import "./base/responsive.css";
 
-@import url("./blocks/tooltip.css");
-@import url("./blocks/highlight.css");
+@import "./icons/index.css";
 
-@import url("./blocks/header.css");
-@import url("./blocks/navigation.css");
-@import url("./blocks/list.css");
-@import url("./blocks/post.css");
-@import url("./blocks/author.css");
-@import url("./blocks/contributors.css");
-@import url("./blocks/section.css");
-@import url("./blocks/column.css");
-@import url("./blocks/footer.css");
+@import "./blocks/tooltip.css";
+@import "./blocks/highlight.css";
 
-@import url("./js/images.css");
+@import "./blocks/header.css";
+@import "./blocks/navigation.css";
+@import "./blocks/list.css";
+@import "./blocks/post.css";
+@import "./blocks/author.css";
+@import "./blocks/contributors.css";
+@import "./blocks/section.css";
+@import "./blocks/column.css";
+@import "./blocks/footer.css";
+
+@import "./js/images.css";
