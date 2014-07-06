@@ -14,7 +14,7 @@ var paths = require("./paths")
  */
 module.exports = function(){
   var exportsPipe = exports()
-  exportsPipe.on("end", function(){
+  exportsPipe.on("data", function(){
     cache.value = exports.exports
   })
   return gulp.src(paths.sources.pages)
