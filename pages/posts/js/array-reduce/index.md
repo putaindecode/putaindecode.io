@@ -159,5 +159,5 @@ var results = Object.keys(data).reduce( function (memo, site) {
 }, {});
 ```
 
-J'espère que vous avez appréciez ces quelques exemples d'utilisation de `Array#reduce`.
+J'espère que vous avez apprécié ces quelques exemples d'utilisation de `Array#reduce`.
 Et n'hésitez pas à partager vos cas d'utilisations en éditant l'article ou via les commentaires !
