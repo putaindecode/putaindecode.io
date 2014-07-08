@@ -34,10 +34,5 @@ module.exports = function(){
     ["scripts:linting"]
   )
 
-  gulp.watch(
-    [
-      paths.dist.public + "/**/*"
-    ]
-  )
-    .on("change", server.livereload)
+  gulp.watch([paths.dist.public + "/**/*"], server.livereload)
 }
