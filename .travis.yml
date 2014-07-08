@@ -1,5 +1,10 @@
 language: node_js
 
+# until we cache contributions somewhere
+# https://github.com/putaindecode/website/issues/218
+git:
+  depth: 100000
+
 # http://docs.travis-ci.com/user/notifications/
 notifications:
   irc:
