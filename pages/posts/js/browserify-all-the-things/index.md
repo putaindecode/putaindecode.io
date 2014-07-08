@@ -138,7 +138,7 @@ trouve pas ça cohérent.
 Si jusque là, Browserify vous intéresse (plus car les autres solutions ne vous
 intéressent pas), attaquons le corps du sujet.
 
-<h2>Installation de Browserify</h2>
+## Installation de Browserify
 
 Si vous souhaitez accéder à la commande via le terminal, la chose la plus simple
 à faire est d'installer le paquet en global.
@@ -153,7 +153,7 @@ Mais selon votre workflow, vous pouvez l'utiliser via une tâche
 [grunt-browserify](https://www.npmjs.org/package/grunt-browserify)
 ou [gulp-browserify](https://www.npmjs.org/package/gulp-browserify).
 
-<h2>Utilisation de Browserify</h2>
+## Utilisation de Browserify
 
 Partons d'un simple fichier `main.js`:
 
@@ -231,7 +231,7 @@ dans nos pages web.
 <script src="bundle.js"></script>
 ```
 
-<h2>Les transformations avec Browserify</h2>
+## Les transformations avec Browserify
 
 Tant qu'à utiliser un outil, autant l'exploiter jusqu'au bout. Car pour l'instant
 je n'ai parlé que de NPM.
@@ -271,7 +271,7 @@ Pensez bien à installer ces dépendances avant:
 npm install debowerify decomponentify deamdify deglobalify es6ify --save
 ```
 
-<h2>Ecrire un module pour Browserify (mais pas que)</h2>
+## Ecrire un module pour Browserify (mais pas que)
 
 Consommer c'est bien, mais faire c'est <del>mieux</del> bien aussi.
 
