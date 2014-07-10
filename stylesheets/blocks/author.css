@@ -7,6 +7,7 @@
   box-shadow: 0 0 0 1px var(--putainde-Color-lightGrey);
   width: 100%;
   height: 100%;
+  vertical-align: middle;
 }
 
 .putainde-Author {
