@@ -20,6 +20,6 @@ module.exports = function(){
   return stream
     .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(jade(options.value))
-    .pipe(rename(paths.dist.feed))
+    .pipe(rename("feed.xml"))
     .pipe(gulp.dest(paths.dist.pages))
 }

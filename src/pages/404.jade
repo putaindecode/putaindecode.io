@@ -1,0 +1,15 @@
+extends /src/layouts/main.jade
+
+block exports
+  -exports.title = "OH MY GOOOOD, NOT FOUND!"
+
+block main
+  .Grid.putainde-Section
+    .Grid-cell.u-size8of12.putainde-Section-contents
+      .putainde-Title.putainde-Title--home
+        h2.putainde-Title-text #{lang['404']}
+        .putainde-Post-md
+          img(
+            src="http://i.imgur.com/2X2uM.gif"
+            alt=""
+          )

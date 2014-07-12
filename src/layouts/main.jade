@@ -1,0 +1,42 @@
+-var exports=pages[page]
+include /src/mixins/index
+
+doctype html
+html(lang="fr")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    meta(
+      name="viewport"
+      content="width=device-width, init-scale=1.0, minimal-ui"
+    )
+    title #{exports.title}
+    block head
+    link(
+      rel="stylesheet"
+      href="#{uri('stylesheets/index.css', page)}"
+    )
+    link(
+      rel="alternate"
+      href="#{uri('feed.xml', page)}"
+      title="#{lang.title}"
+      type="application/atom+xml"
+    )
+    //- link(
+    //-   rel="stylesheet"
+    //-   href="http://basehold.it/25/255/42/85/0.1"
+    //- )
+  body
+    .putainde-Header
+      .Grid
+        .Grid-cell.u-size5of12
+          include /src/partials/header
+        .Grid-cell.u-size7of12
+          +Navigation(lang.navigation, page)
+    .putainde-Main
+      block main
+    .putainde-Footer
+      include /src/partials/footer
+    block end
+    script(src="#{uri('scripts/index.js', page)}")
+    include /src/partials/analytics

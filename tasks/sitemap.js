@@ -20,6 +20,6 @@ module.exports = function(){
   return stream
     .pipe(opts.plumber ? plumber() : util.noop())
     .pipe(jade(options.value))
-    .pipe(rename(paths.dist.sitemap))
+    .pipe(rename("sitemap.xml"))
     .pipe(gulp.dest(paths.dist.pages))
 }

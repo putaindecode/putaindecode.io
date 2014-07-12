@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "MoOx"
+  -exports.title = "Les post-processeurs CSS"
+  -exports.tags = ["css", "pré-processeur", "post-processeur"]
+  -exports.date = "2014-04-08"
+
+block main
+  +Post(exports.title)
+    include:md index.md
