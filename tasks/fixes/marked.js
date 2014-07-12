@@ -2,12 +2,34 @@ var marked = require("marked")
 var renderer = new marked.Renderer()
 var options = require("../cache/options")
 var accents = {
-  "é" : "e",
-  "è" : "e",
-  "ê" : "e",
   "à" : "a",
+  "á" : "a",
+  "â" : "a",
+  "ã" : "a",
+  "ä" : "a",
+  "å" : "a",
+  "æ" : "ae",
+  "ç" : "c",
+  "è" : "e",
+  "é" : "e",
+  "ê" : "e",
+  "ë" : "e",
+  "ì" : "i",
+  "í" : "i",
+  "î" : "i",
+  "ï" : "i",
+  "ñ" : "n",
+  "ò" : "o",
+  "ó" : "o",
+  "ô" : "o",
+  "õ" : "o",
+  "ö" : "o",
+  "ø" : "o",
   "ù" : "u",
-  "ô" : "o"
+  "ú" : "u",
+  "û" : "u",
+  "ü" : "u",
+  "ý" : "y"
 }
 var accentsRE = RegExp("(" + Object.keys(accents).join("|") + ")", "g")
 
