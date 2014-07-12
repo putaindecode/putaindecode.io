@@ -1,5 +1,6 @@
 @import "../node_modules/suitcss-components-grid/index.css";
 @import "../node_modules/suitcss-utils-size/lib/size.css";
+@import "../node_modules/cssrecipes-tooltip/index.css";
 
 @import "./base/typography.css";
 @import "./base/colours.css";
@@ -8,7 +9,6 @@
 
 @import "./icons/index.css";
 
-@import "./blocks/tooltip.css";
 @import "./blocks/highlight.css";
 
 @import "./blocks/header.css";

@@ -3,9 +3,9 @@ mixin Navigation(list, currentPage)
     each item in list
       -var isActivePage = currentPage == item.url || currentPage == item.url + "/index"
       a.putainde-Nav-item(
-        class="#{isActivePage ? 'putainde-Nav-item--current' : ''} #{item.title ? 'putainde-Nav-item--icon AttrTip AttrTip--bottom' : ''}"
+        class="#{isActivePage ? 'putainde-Nav-item--current' : ''} #{item.title ? 'putainde-Nav-item--icon rcp-Tooltip rcp-Tooltip--bottom' : ''}"
         href="#{uri(item.url, currentPage)}"
-        data-tip="#{item.title ? item.title : ''}"
+        data-rcp-tooltip="#{item.title ? item.title : ''}"
       )
         if item.icon
           i(class="putainde-Icon putainde-Icon--#{item.icon}")
