@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "bloodyowl"
+  -exports.title = "Introduction à ReactJS"
+  -exports.tags = ["javascript", "reactjs"]
+  -exports.date = "2014-06-04"
+
+block main
+  +Post(exports.title)
+    include:md index.md

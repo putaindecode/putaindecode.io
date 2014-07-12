@@ -1,0 +1,20 @@
+-var exports=pages[page]
+include /src/mixins/index
+
+doctype xml
+rss(
+  version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+)
+  channel
+    title #{lang.title}
+    description #{lang.description}
+    link #{lang.baseURL}
+    // generator putaindecode
+    lastBuildDate #{(new Date()).toUTCString()}
+    atom:link(
+      href="#{lang.baseURL}/feed.xml"
+      rel="self"
+      type="application/rss+xml"
+    )
+    block posts

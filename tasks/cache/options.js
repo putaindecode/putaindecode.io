@@ -51,7 +51,7 @@ module.exports = {
       getFeedDescription : function(post){
         return marked(
           fs.readFileSync(
-            path.resolve(__dirname, "../../pages/", post + ".md"),
+            path.resolve(__dirname, "../../src/pages/", post + ".md"),
             "utf-8"
           )
         )

@@ -3,43 +3,39 @@
  */
 module.exports = {
   sources : {
-    pages : "pages/**/**/**.jade",
-    pagesMd : "pages/**/**/**.md",
-    feed : "feed/feed.jade",
-    sitemap : "layouts/sitemap.jade",
-    pagesRoot : "pages/",
-    partials : "partials/**/*.jade",
-    mixins : "mixins/**/*.jade",
-    layouts : "layouts/**/*.jade",
-    lang : "lang/index.json",
-    icons : "icons/*.svg",
-    stylesheets : "stylesheets/",
-    fontStylesheet : "stylesheets/icons/index.css",
-    scripts : "scripts/**/*.js",
-    libScripts : "scripts/lib/**/*.js",
-    mainScript : "scripts/index.js",
-    fonts : "fonts/**/*",
-    images : "images/**/*",
-    modules : "node_modules/",
+    pages : "src/pages/**/**/**.jade",
+    pagesMd : "src/pages/**/**/**.md",
+    feed : "src/feed/feed.jade",
+    sitemap : "src/layouts/sitemap.jade",
+    pagesRoot : "src/pages/",
+    partials : "src/partials/**/*.jade",
+    mixins : "src/mixins/**/*.jade",
+    layouts : "src/layouts/**/*.jade",
+    lang : "src/lang/index.json",
+    icons : "src/icons/*.svg",
+    stylesheets : "src/stylesheets/",
+    fontStylesheet : "src/stylesheets/icons/index.css",
+    scripts : "src/scripts/**/*.js",
+    libScripts : "src/scripts/lib/**/*.js",
+    mainScript : "src/scripts/index.js",
+    fonts : "src/fonts/**/*",
+    images : "src/images/**/*",
     tasks : "tasks/**/*.js",
     tests : "test/**/*.js",
-    jscs : "./.jscsrc",
-    public : ["public/.**", "public/**"]
+    public : ["src/public/.**", "src/public/**"]
   },
 
   dist : {
     pages : "dist/",
-    feed : "feed.xml",
     public : "dist/",
     icons : "fonts/",
     fonts : "dist/fonts/",
-    sitemap : "sitemap.xml",
     images : "dist/images/",
     stylesheets : "dist/stylesheets/",
     scripts : "dist/scripts"
   },
 
   templates : {
-    fontStylesheet : "stylesheets/template/icons.css"
+    fontStylesheet : "src/stylesheets/template/icons.css"
   }
 }

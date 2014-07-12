@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "madx"
+  -exports.title = "Versionner avec Git"
+  -exports.tags = ["git"]
+  -exports.date = "2013-11-06"
+
+block main
+  +Post(exports.title)
+    include:md index.md
