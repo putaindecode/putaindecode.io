@@ -28,6 +28,7 @@
     "connect": "^3.0.1",
     "connect-livereload": "^0.4.0",
     "convert-string": "^0.1.0",
+    "cssrecipes-tooltip": "^0.2.0",
     "github": "^0.2.0",
     "glob": "^4.0.3",
     "gulp": "^3.8.5",

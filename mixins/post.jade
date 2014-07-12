@@ -22,8 +22,8 @@ mixin Post(title)
                 =" "
                 | #{lang.the} #{formatDate(exports.date)}
             =". "
-            span.putainde-Post-readingTime.putainde-Post-readingTime--hidden.AttrTip.AttrTip--top(
-              data-tip="#{lang.readingTimeComment}",
+            span.putainde-Post-readingTime.putainde-Post-readingTime--hidden.rcp-Tooltip.rcp-Tooltip--top.rcp-Tooltip--nowrap(
+              data-rcp-tooltip="#{lang.readingTimeComment}",
               data-readingTime-wpm="250"
             )
               | #{lang.readingTime}
