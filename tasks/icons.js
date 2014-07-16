@@ -1,8 +1,7 @@
 var gulp = require("gulp")
-var iconfontCSS = require("gulp-iconfont-css")
+var consolidate = require("gulp-consolidate")
 var iconfont = require("gulp-iconfont")
 var paths = require("./paths")
-var path = require("path")
 var uri = require("./cache/options.js").value.locals.uri
 
 /**
@@ -13,22 +12,18 @@ var uri = require("./cache/options.js").value.locals.uri
  */
 module.exports = function(){
   return gulp.src(paths.sources.icons)
-    .pipe(iconfontCSS({
-      fontName : "icons",
-      path : paths.templates.fontStylesheet,
-      targetPath : path.join(
-        path.relative(paths.dist.icons, __dirname),
-        "../..",
-        paths.sources.fontStylesheet
-      ),
-      fontPath : uri(
-        paths.dist.fonts,
-        paths.dist.stylesheets
-      ) + "/"
-    }))
     .pipe(iconfont({
       fontName : "icons",
       fixedWidth : true
     }))
-    .pipe(gulp.dest(paths.dist.fonts))
+    .on("codepoints", function(codepoints){
+      gulp.src(paths.templates.fontStylesheet)
+        .pipe(consolidate("lodash", {
+          glyphs : codepoints,
+          fontName : "icons",
+          fontPath : uri(paths.dist.fonts, paths.dist.stylesheets) + "/"
+        }))
+        .pipe(gulp.dest(paths.sources.iconStylesheets))
+    })
+    .pipe(gulp.dest(paths.dist.icons))
 }

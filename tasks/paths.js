@@ -14,7 +14,7 @@ module.exports = {
     lang : "src/lang/index.json",
     icons : "src/icons/*.svg",
     stylesheets : "src/stylesheets/",
-    fontStylesheet : "src/stylesheets/icons/index.css",
+    iconStylesheets : "src/stylesheets/icons/",
     scripts : "src/scripts/**/*.js",
     libScripts : "src/scripts/lib/**/*.js",
     mainScript : "src/scripts/index.js",
@@ -28,8 +28,8 @@ module.exports = {
   dist : {
     pages : "dist/",
     public : "dist/",
-    icons : "fonts/",
     fonts : "dist/fonts/",
+    icons : "dist/fonts/",
     images : "dist/images/",
     stylesheets : "dist/stylesheets/",
     scripts : "dist/scripts"
