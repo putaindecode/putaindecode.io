@@ -24,7 +24,7 @@
   }
 
 <% _.each(glyphs, function(glyph) { %>
-.putainde-Icon--<%= glyph.fileName %>:before {
-  content: "\<%= glyph.codePoint %>";
-}
+  .putainde-Icon--<%= glyph.name %>:before {
+    content: "\<%= glyph.codepoint %>";
+  }
 <% }) %>
