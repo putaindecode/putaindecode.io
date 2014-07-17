@@ -11,9 +11,9 @@
             a(href="#{uri(item.url, page)}")
               | #{item.name}
         a(href="#{lang.github}", data-rcp-tooltip="GitHub").rcp-Tooltip.rcp-Tooltip--top
-          i.putainde-Icon.putainde-Icon--github
+          +Icon("github")
         a(href="#{lang.twitter}", data-rcp-tooltip="Twitter").rcp-Tooltip.rcp-Tooltip--top
-          i.putainde-Icon.putainde-Icon--twitter
+          +Icon("twitter")
   .Grid-cell.u-size3of12
     p.putainde-Footer-text.putainde-Footer-text--small.putainde-Footer-text--right
       | #{lang.madeWithHeart}

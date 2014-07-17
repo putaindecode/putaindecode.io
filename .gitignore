@@ -6,8 +6,8 @@ node_modules
 
 # build
 dist
+tmp
 .publish
-src/stylesheets/icons
 
 # log
 npm-debug.log

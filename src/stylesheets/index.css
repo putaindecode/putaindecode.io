@@ -6,8 +6,8 @@
 @import "./base/colours.css";
 @import "./base/normalise.css";
 @import "./base/responsive.css";
-
-@import "./icons/index.css";
+@import "./base/icons.css";
+@import "../../tmp/svg-symbols.css";
 
 @import "./blocks/highlight.css";
 

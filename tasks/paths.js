@@ -12,9 +12,8 @@ module.exports = {
     mixins : "src/mixins/**/*.jade",
     layouts : "src/layouts/**/*.jade",
     lang : "src/lang/index.json",
-    icons : "src/icons/*.svg",
+    icons : "src/**/icons/*.svg",
     stylesheets : "src/stylesheets/",
-    fontStylesheet : "src/stylesheets/icons/index.css",
     scripts : "src/scripts/**/*.js",
     libScripts : "src/scripts/lib/**/*.js",
     mainScript : "src/scripts/index.js",
@@ -25,6 +24,8 @@ module.exports = {
     public : ["src/public/.**", "src/public/**"]
   },
 
+  tmp : "tmp/",
+
   dist : {
     pages : "dist/",
     public : "dist/",
@@ -33,9 +34,5 @@ module.exports = {
     images : "dist/images/",
     stylesheets : "dist/stylesheets/",
     scripts : "dist/scripts"
-  },
-
-  templates : {
-    fontStylesheet : "src/stylesheets/template/icons.css"
   }
 }

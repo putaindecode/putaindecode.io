@@ -11,11 +11,11 @@ mixin Author(author, isPost)
         .putainde-Author-social
           if author.url
             a(href="#{author.url}")
-              i.putainde-Icon.putainde-Icon--world
+              +Icon("home")
           if author.twitter
             a(href="https://twitter.com/#{author.twitter}")
-              i.putainde-Icon.putainde-Icon--twitter
+              +Icon("twitter")
           a(href="https://github.com/#{author.login}")
-            i.putainde-Icon.putainde-Icon--github
+            +Icon("github")
       -if(author.fr && author.fr.bio && author.fr.bio.long)
         p!= author.fr.bio.long.join(' <br> ')

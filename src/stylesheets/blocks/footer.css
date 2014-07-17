@@ -17,12 +17,15 @@
 
   .putainde-Footer a {
     color: var(--putainde-Color-red);
+    fill: var(--putainde-Color-red);
     text-decoration: none;
   }
     .putainde-Footer a:hover,
     .putainde-Footer a:active {
       text-decoration: underline
     }
+
+    .putainde-Footer a .putainde-Icon { font-size: 1.4em; }
 
 .putainde-Footer-text {
   font-size: .833rem;
