@@ -13,7 +13,7 @@ Venons en au sujet même de cet article, l'un des éléments essentiels de
 l'utilisation du shell : l'utilisation des redirections d'entrée/sortie de
 base.
 
-Si ça vous paraît barbare, tenez vous bien, on attaque tout de suite !
+Si ça vous paraît barbare, tenez-vous bien, on attaque tout de suite !
 
 ## Une entrée, deux sorties
 
@@ -60,9 +60,9 @@ dans un fichier.
 Pour ça, on utilise la syntaxe `> [fichier]` :
 
 ``` console
-$ echo "Salut" > message
+$ echo "Hello" > message
 $ cat message
-Salut
+Hello
 ```
 
 ### Redirection d'entrée : `<`
@@ -74,7 +74,7 @@ En réutilisant notre fichier `message`, on peut par exemple faire :
 
 ``` console
 $ cat < message
-Salut
+Hello
 ```
 
 Notez qu'on utilise bien `cat` *sans argument*, il utilise donc l'entrée
@@ -92,8 +92,8 @@ Pour montrer ça, introduisons la commande `tr`, qui permet de remplacer des
 caractères dans l'entrée par d'autres.
 
 ``` console
-$ echo "Salut!" | tr "[:lower:]" "[:upper:]"
-SALUT!
+$ echo "Hello!" | tr "[:lower:]" "[:upper:]"
+HELLO!
 ```
 
 ## Descripteurs de fichiers et redirections avancées
@@ -129,14 +129,14 @@ L'exemple suivant montre comment rediriger la sortie standard sur la sortie
 d'erreur (c'est comme ça qu'on écrit sur la sortie d'erreur dans un script).
 
 ``` console
-$ echo "Erreur" 1>&2
+$ echo "Error" 1>&2
 ```
 
 Plus généralement, on peut omettre la partie avant le `>&`, elle prendra la
 valeur 1 par défaut. On aura donc le script suivant :
 
 ``` console
-$ echo "Erreur" >&2
+$ echo "Error" >&2
 ```
 
 ### Ajouter en fin de fichier : `>>`
@@ -147,17 +147,17 @@ de fichier.
 
 ``` console
 # Sans >>
-$ echo "1" > fichier
-$ echo "2" > fichier
-$ cat fichier
+$ echo "1" > file
+$ echo "2" > file
+$ cat file
 2
 ```
 
 ``` console
 # Avec >>
-$ echo "1" > fichier
-$ echo "2" >> fichier
-$ cat fichier
+$ echo "1" > file
+$ echo "2" >> file
+$ cat file
 1
 2
 ```
@@ -173,7 +173,7 @@ n'obtient rien, et si on écrit quelque chose dedans elle disparait.
 On se sert souvent de ce fichier pour supprimer la sortie d'un programme :
 
 ``` console
-$ echo "Salut" >/dev/null
+$ echo "Hello" >/dev/null
 $ cat /dev/null
 $
 ```
@@ -188,7 +188,7 @@ un sur la sortie d'erreur :
 ``` console
 function programme() {
   echo "Message"
-  echo "Erreur" >&2
+  echo "Error" >&2
 }
 ```
 
@@ -206,7 +206,7 @@ On essaie donc naïvement :
 
 ``` console
 $ programme 2>&1 >/dev/null
-Erreur
+Error
 ```
 
 Hmm, pourtant on a tout branché ensemble non ? En fait non, on a redirigé la
@@ -217,7 +217,6 @@ Pour bien faire, il faut écrire les redirections dans l'autre ordre :
 
 ``` console
 $ programme >/dev/null 2>&1
-Erreur
 ```
 
 On lira ceci : Rediriger la sortie standard vers `/dev/null`, puis rediriger la
