@@ -228,7 +228,7 @@ On a en fait que deux redirections de sortie, `>` et `>>`, les symboles qui les
 entourent sont souvent optionnels.
 
 Si on veut spécifier un fichier on donnera son nom, si on veut spécifier un
-descripteur on donnera son identifiant préfixé de `&`
+descripteur on donnera son identifiant préfixé de `&`.
 
 ## Pour aller plus loin
 
@@ -236,7 +236,7 @@ Le manuel de bash contient [une section complète sur les
 redirections][man:bash]. Elle va beaucoup plus loin que cet article et je vous
 invite à la lire pour voir tout ce qu'il est possible de faire.
 
-Il y a aussi une section dédiée à ce sujet dans l'[Advanced Bash-Scripting Guide][tldp:abs]
+Il y a aussi une section dédiée à ce sujet dans l'[Advanced Bash-Scripting Guide][tldp:abs].
 
 [wp:zsh]: http://fr.wikipedia.org/wiki/Z_Shell
 [wp:bash]: http://fr.wikipedia.org/wiki/Bourne-Again_shell
