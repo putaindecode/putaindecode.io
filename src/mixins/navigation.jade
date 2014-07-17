@@ -8,7 +8,7 @@ mixin Navigation(list, currentPage)
         data-rcp-tooltip="#{item.title ? item.title : ''}"
       )
         if item.icon
-          i(class="putainde-Icon putainde-Icon--#{item.icon}")
+          +Icon(item.icon)
         if item.name
           =" "
           | #{item.name}

@@ -12,9 +12,11 @@
   font-weight: 700;
   text-align: center;
   color: #fff;
+  fill: #fff;
   text-decoration: none;
   padding: 0 .4rem;
 }
+
   @media (min-width:29em) {
     .putainde-Nav-item {
       padding: 0 1rem;
@@ -55,9 +57,11 @@
     margin-left: 1rem;
 }
 
-.putainde-Nav .putainde-Icon {
-  font-size: 1.2rem;
-}
+
+.putainde-Nav .putainde-Icon { font-size: 1.6rem; }
+
+  /* icons for item with label can be smaller */
+  .putainde-Nav :not(.rcp-Tooltip) .putainde-Icon { font-size: 1.2rem; }
 
 @media (max-width:29em) {
   /* hide icons for Nav-item that have a label on small screen */

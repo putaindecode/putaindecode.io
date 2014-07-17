@@ -1,0 +1,3 @@
+mixin Icon(key, modifier, color, size)
+  svg(class="putainde-Icon putainde-Icon-" + key + (modifier ? " putainde-Icon--" + modifier : ""), style="#{(color ? 'color: #{color};' : '') + (size ? ' font-size: #{size};' : '')}")
+    use(xlink:href="#putainde-Icon-" + key)

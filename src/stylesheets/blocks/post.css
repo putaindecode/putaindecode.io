@@ -50,6 +50,7 @@
 }
   .putainde-Post-contents a {
     color: var(--putainde-Color-red);
+    fill: var(--putainde-Color-red);
     text-decoration: none;
   }
     .putainde-Post-contents a:hover,

@@ -76,9 +76,12 @@
 
     .putainde-Author-social a {
       color: #444;
+      fill: #444;
       display: inline-block;
       padding: .2em 1em;
     }
+
+      .putainde-Author-social a .putainde-Icon { font-size: 1.2em; }
       @media (max-width:28em) { .putainde-Author-social a { font-size: 1em } }
 
       .putainde-Author-social a:hover,
