@@ -51,7 +51,7 @@
     "lodash": "^2.4.1",
     "marked": "^0.3.2",
     "minimist": "0.2.0",
-    "myth": "git://github.com/segmentio/myth.git",
+    "myth": "^1.1.1",
     "opn": "^0.1.1",
     "promise": "^4.0.0",
     "rimraf": "^2.2.6",
