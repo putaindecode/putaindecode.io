@@ -13,6 +13,6 @@ var paths = require("./paths")
 module.exports = function(){
   return gulp.src(paths.sources.stylesheets + "/index.css")
     .pipe(opts.plumber ? plumber() : util.noop())
-    .pipe(myth())
+    .pipe(myth({sourcemap : opts.debug}))
     .pipe(gulp.dest(paths.dist.stylesheets))
 }
