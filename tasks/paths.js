@@ -30,7 +30,6 @@ module.exports = {
     public : "dist/",
     pages : "dist/",
     icons : "fonts/",
-    fonts : "dist/fonts/",
     assets : "dist/",
     stylesheets : "dist/stylesheets/",
     scripts : "dist/scripts"
