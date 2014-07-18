@@ -94,7 +94,7 @@ Sinon, pour du petit one shot, un plugin dans votre éditeur suffira:
 - [plugin autoprefixer pour Brackets](https://github.com/mikaeljorhult/brackets-autoprefixer)
 
 <figure>
-  ![sublime text autoprefixer preview](sublime-text/autoprefixer.gif)
+  ![sublime text autoprefixer preview](autoprefixer.gif)
   <figcaption>Intégration dans Sublime Text</figcaption>
 </figure>
 

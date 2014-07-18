@@ -14,8 +14,7 @@ gulp.task("sitemap", ["lang", "exports"], require("./tasks/sitemap"))
 
 // static assets
 gulp.task("public", require("./tasks/public"))
-gulp.task("images", require("./tasks/images"))
-gulp.task("fonts", require("./tasks/fonts"))
+gulp.task("assets", require("./tasks/assets"))
 
 // generated assets
 gulp.task("icons", require("./tasks/icons"))
@@ -33,9 +32,8 @@ gulp.task("dist", [
   "sitemap",
 
   "public",
-  "images",
+  "assets",
   "icons",
-  "fonts",
 
   "scripts",
   "stylesheets:all"

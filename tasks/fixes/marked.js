@@ -1,6 +1,5 @@
 var marked = require("marked")
 var renderer = new marked.Renderer()
-var options = require("../cache/options")
 var accents = {
   "à" : "a",
   "á" : "a",
@@ -40,21 +39,6 @@ marked.setOptions({
   renderer : renderer,
   smartypants : true
 })
-
-/**
- * adjust image path to have by default path from images/posts
- */
-renderer.image = function(href, title, text){
-  if(href.indexOf("http") !== 0) {
-    href = options.value.locals.uri("images/posts/" + href, options.value.locals.page)
-  }
-  var output = "<img src=\"" + href + "\" alt=\"" + text + "\""
-  if(title) {
-    output += " title=\"" + title + "\""
-  }
-  output += this.options.xhtml ? "/>" : ">"
-  return output
-}
 
 renderer.heading = function(text, level){
   var escaped = text.toLowerCase()
