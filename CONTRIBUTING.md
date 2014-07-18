@@ -15,7 +15,7 @@ suite !
 
 C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
 
-![github-fork](images/posts/github/fork-button.jpg)
+![github-fork](src/pages/posts/comment-contribuer/fork-button.jpg)
 
 ## Soumettre un post
 

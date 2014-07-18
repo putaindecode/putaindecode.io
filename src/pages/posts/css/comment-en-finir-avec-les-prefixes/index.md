@@ -130,7 +130,7 @@ vous avez aussi à dispo des plugins pour
  afin de ne pas forcément avoir à utiliser les app ou process cités juste avant.
 
 <figure>
-  ![sublime text autoprefixer preview](sublime-text/autoprefixer.gif)
+  ![sublime text autoprefixer preview](autoprefixer.gif)
   <figcaption>Intégration dans Sublime Text</figcaption>
 </figure>
 

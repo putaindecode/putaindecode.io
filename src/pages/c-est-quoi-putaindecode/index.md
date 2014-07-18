@@ -28,7 +28,7 @@ Et c’est à force de voir du code qui pique les yeux qu’on s’est dit qu’
 fallait qu’on fasse quelque chose pour toi et tes semblables.
 
 <figure>
-  ![WAAAT](memes/WAAAT.gif)
+  ![WAAAT](WAAAT.gif)
   <figcaption>On a tous eu ce genre de spasmes devant du code</figcaption>
 </figure>
 

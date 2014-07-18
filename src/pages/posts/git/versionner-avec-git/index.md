@@ -238,7 +238,7 @@ pages de `man`, c'est la meilleure façon d'apprendre. Après on va attaquer le
 gros morceau, celui qui fait la force de Git.
 
 <figure>
-  ![Mind blown](memes/mind_blown.gif)
+  ![Mind blown](mind_blown.gif)
 </figure>
 
 ## Branchement et fusions

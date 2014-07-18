@@ -31,7 +31,7 @@ maintenant (dans un dépôt Git bien entendu banane). Pour l'exemple, je l'ai r�
 de Putain De Code:
 
 <figure>
-  ![capture historique](git/boutez-les-bugs-domptez-votre-historique/omagad-history.png)
+  ![capture historique](omagad-history.png)
   <figcaption>Le pouvoir de l'arc en ciel</figcaption>
 </figure>
 

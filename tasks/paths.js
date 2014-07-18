@@ -18,7 +18,7 @@ module.exports = {
     libScripts : "src/scripts/lib/**/*.js",
     mainScript : "src/scripts/index.js",
     fonts : "src/fonts/**/*",
-    images : "src/images/**/*",
+    assets : ["src/pages/**/*.!(jade|md)"],
     tasks : "tasks/**/*.js",
     tests : "test/**/*.js",
     public : ["src/public/.**", "src/public/**"]
@@ -27,11 +27,11 @@ module.exports = {
   tmp : "tmp/",
 
   dist : {
-    pages : "dist/",
     public : "dist/",
+    pages : "dist/",
     icons : "fonts/",
     fonts : "dist/fonts/",
-    images : "dist/images/",
+    assets : "dist/",
     stylesheets : "dist/stylesheets/",
     scripts : "dist/scripts"
   }
