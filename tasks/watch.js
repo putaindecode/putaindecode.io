@@ -9,14 +9,12 @@ var paths = require("./paths")
  * used for development
  */
 module.exports = function(){
-  gulp.watch(
-    paths.sources.stylesheets + "/**/*.css",
-    ["stylesheets"]
-  )
-  gulp.watch(
-    paths.sources.scripts,
-    ["scripts"]
-  )
+  gulp.watch(paths.sources.tasks, ["scripts:linting"])
+
+  gulp.watch(paths.sources.scripts, ["scripts"])
+
+  gulp.watch(paths.sources.stylesheets + "/**/*.css", ["stylesheets"])
+
   gulp.watch(
     [
       paths.sources.pages,
@@ -29,10 +27,9 @@ module.exports = function(){
     ["pages"]
   )
 
-  gulp.watch(
-    paths.sources.tasks,
-    ["scripts:linting"]
-  )
+  gulp.watch(paths.sources.assets, ["assets"])
+
+  gulp.watch(paths.sources.public, ["public"])
 
   gulp.watch([paths.dist.public + "/**/*"], server.livereload)
 }
