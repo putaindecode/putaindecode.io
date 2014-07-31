@@ -13,7 +13,7 @@ mixin Post(title)
           .putainde-Post-metas
             if exports.author
               | #{lang.writtenBy} 
-              a(href="#{author.url ? author.url : 'https://github.com/' + author.login}")
+              a(href="#{getAuthorUri(author)}")
                 | #{exports.author}
             if exports.author && exports.date
               =","
@@ -44,14 +44,14 @@ mixin Post(title)
         .putainde-Post-footer-title #{lang.pageActions}
         .Grid
           .Grid-cell.u-size1of3
-            a.putainde-Post-footer-action(href="https://github.com/putaindecode/website/edit/master/pages/#{page}.md") #{lang.pageEdit}
+            a.putainde-Post-footer-action(href="#{metas.repositoryHttpUrl}/edit/master/pages/#{page}.md") #{lang.pageEdit}
           .Grid-cell.u-size1of3
-            a.putainde-Post-footer-action(href="https://github.com/putaindecode/website/blame/master/pages/#{page}.md") #{lang.pageBlame}
+            a.putainde-Post-footer-action(href="#{metas.repositoryHttpUrl}/blame/master/pages/#{page}.md") #{lang.pageBlame}
           .Grid-cell.u-size1of3
-            a.putainde-Post-footer-action(href="https://github.com/putaindecode/website/commits/master/pages/#{page}.md") #{lang.pageHistory}
+            a.putainde-Post-footer-action(href="#{metas.repositoryHttpUrl}/commits/master/pages/#{page}.md") #{lang.pageHistory}
 
       if author
-        +Author(author, true).putainde-Author--author
+        +Author(author, true)
 
       +Contributors(page)
 

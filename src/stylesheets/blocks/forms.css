@@ -1,0 +1,24 @@
+.putainde-Button {
+  line-height: calc(var(--line-height)*2);
+  margin: -1px 0 var(--line-height);
+
+  color: var(--putainde-Color-red);
+  border: 1px solid transparent;
+  border-radius: .2em;
+  text-decoration: none;
+}
+
+  .putainde-Button--block {
+    display: block;
+    text-align: center;
+  }
+
+  .putainde-Button:hover,
+  .putainde-Button:focus {
+    border-color: #ddd;
+    background: linear-gradient(#fff, #fafafa);
+  }
+  .putainde-Button:active {
+    border-color: #ddd;
+    background: linear-gradient(#f0f0f0, #fff);
+  }

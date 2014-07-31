@@ -1,8 +1,14 @@
 .putainde-Title.putainde-Title--home
   h2.putainde-Title-text #{lang.topContributors}
--var topContributors = Object.keys(contributors.map)
--topContributors = topContributors.map(function(key){ var val = contributors.map[key]; val.login = key; return val })
--topContributors.sort(function(a, b){ return contributors.contributions[b.login] - contributors.contributions[a.login] })
--topContributors = topContributors.slice(0, 10)
-each author in topContributors
-  +Author(author).putainde-TopContributor
+
+  .Grid.Grid--withGutter
+    -var topContributors = Object.keys(contributors.map)
+    -topContributors = topContributors.map(function(key){ var val = contributors.map[key]; val.login = key; return val })
+    -topContributors.sort(function(a, b){ return contributors.contributions[b.login] - contributors.contributions[a.login] })
+    -topContributors = topContributors.slice(0, 12)
+    each author in topContributors
+      .Grid-cell.u-size1of2
+        +Author(author)
+    .Grid-cell
+      a(href="#{metas.repositoryHttpUrl}/graphs/contributors").putainde-Button.putainde-Button--block
+          | #{lang.allContributors}
