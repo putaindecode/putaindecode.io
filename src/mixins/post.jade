@@ -13,7 +13,7 @@ mixin Post(title)
           .putainde-Post-metas
             if exports.author
               | #{lang.writtenBy} 
-              a(href="#{author.url ? author.url : 'https://github.com/' + author.login}")
+              a(href="#{getAuthorUri(author)}")
                 | #{exports.author}
             if exports.author && exports.date
               =","
@@ -51,7 +51,7 @@ mixin Post(title)
             a.putainde-Post-footer-action(href="https://github.com/putaindecode/website/commits/master/pages/#{page}.md") #{lang.pageHistory}
 
       if author
-        +Author(author, true).putainde-Author--author
+        +Author(author, true)
 
       +Contributors(page)
 

@@ -16,6 +16,7 @@ module.exports = {
   value : {
     basedir : path.resolve(__dirname, "../../"),
     locals : {
+      metas : require("../../package.json"),
       pages : exports.value,
       lang : lang.value,
       contributors : contributors.value,
@@ -64,6 +65,17 @@ module.exports = {
           monthNames[date.getMonth()],
           date.getFullYear()
         ].join(" ")
+      },
+      getAuthorUri : function(author, type){
+        if((!type || type === "homepage") && author.url) {
+          return author.url
+        }
+        else if(type === "twitter") {
+          return "https://twitter.com/" + author.twitter
+        }
+
+        // fallback to github if not url available
+        return "https://github.com/" + author.login
       }
     }
   }

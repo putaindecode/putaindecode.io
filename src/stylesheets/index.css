@@ -11,6 +11,8 @@
 
 @import "./blocks/highlight.css";
 
+@import "./blocks/links.css";
+@import "./blocks/forms.css";
 @import "./blocks/header.css";
 @import "./blocks/navigation.css";
 @import "./blocks/list.css";

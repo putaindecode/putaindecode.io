@@ -1,6 +1,7 @@
 {
   "name": "putaindecode",
   "version": "0.0.0",
+  "repositoryHttpUrl": "http://github.com/putaindecode/website",
   "repository": {
     "type": "git",
     "url": "https://github.com/putaindecode/website.git"

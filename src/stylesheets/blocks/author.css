@@ -12,7 +12,7 @@
 
 .putainde-Author {
   position: relative;
-  padding: 0 0 0 7em;
+  padding: 0 0 0 calc(var(--putainde-Author-picture-size) + 1rem);
   margin: var(--line-height) 0;
 }
   @media (max-width:28em) {
@@ -20,15 +20,6 @@
       padding-left: 4em;
     }
   }
-
-  .putainde-Author--author {
-    padding: 0 0 0 calc(var(--putainde-Author-picture-size) + 1rem);
-  }
-    @media (max-width:28em) {
-      .putainde-Author--author {
-        padding-left: 4em;
-      }
-    }
 
   .putainde-Author-picture {
     position: absolute;
@@ -65,7 +56,6 @@
     right: 0;
     background: #fafafa;
     border-radius: 2em;
-    overflow: hidden;
   }
     @media (max-width:28em) {
       .putainde-Author-social {
@@ -88,12 +78,8 @@
       .putainde-Author-social a:focus { background: #eee }
 
   .putainde-Author-description {
-    font-size: .925em;
+    font-size: var(--font-size-small);
     color: #444;
-  }
-
-  .putainde-Author--author .putainde-Author-description {
-    font-size: .833rem;
   }
 
     .putainde-Author-bio {
