@@ -3,7 +3,7 @@ mixin Avatar(author, tooltip)
   -var className = ""
   -if (tooltip)
     -className += "rcp-Tooltip rcp-Tooltip--bottom"
-  a(href="#{author.url ? author.url : 'https://github.com/' + author.login}", data-rcp-tooltip="#{author.login}", class="#{attributes.class} #{className}")
+  a(href="#{getAuthorUri(author)}", data-rcp-tooltip="#{author.login}", class="#{attributes.class} #{className}")
     img(
       class="putainde-Avatar js-AnimateLoad"
       src="http://www.gravatar.com/avatar/#{gravatar}.png"

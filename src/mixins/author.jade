@@ -7,15 +7,15 @@ mixin Author(author, isPost)
           if isPost
             span.putainde-WrittenBy #{lang.writtenBy}
             = " "
-          | #{author.login}
+          a(href="#{getAuthorUri(author)}").putainde-Link #{author.login}
         .putainde-Author-social
           if author.url
-            a(href="#{author.url}")
+            a(href="#{getAuthorUri(author)}", data-rcp-tooltip="Website").rcp-Tooltip.rcp-Tooltip--top
               +Icon("home")
           if author.twitter
-            a(href="https://twitter.com/#{author.twitter}")
+            a(href="#{getAuthorUri(author, 'twitter')}", data-rcp-tooltip="Twitter").rcp-Tooltip.rcp-Tooltip--top
               +Icon("twitter")
-          a(href="https://github.com/#{author.login}")
+          a(href="{getAuthorUri(author, 'github')}", data-rcp-tooltip="Github").rcp-Tooltip.rcp-Tooltip--top
             +Icon("github")
       p.putainde-Author-bio
         -if(author.fr && author.fr.bio && author.fr.bio.long)
