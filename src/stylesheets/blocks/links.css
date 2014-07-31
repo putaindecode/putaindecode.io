@@ -1,0 +1,18 @@
+.putainde-Link {
+  color: inherit;
+  text-decoration: none;
+}
+  .putainde-Link:hover,
+  .putainde-Link:focus {
+    text-decoration: underline;
+  }
+
+.putainde-Link--emphasis {
+  color: var(--putainde-Color-red);
+  fill: var(--putainde-Color-red);
+}
+  .putainde-Link--emphasis:hover,
+  .putainde-Link--emphasis:focus {
+    color: color(var(--putainde-Color-red) lightness(-10%));
+    fill: color(var(--putainde-Color-red) lightness(-10%));
+  }
