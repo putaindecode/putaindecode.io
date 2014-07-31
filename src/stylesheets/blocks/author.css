@@ -95,3 +95,7 @@
   .putainde-Author--author .putainde-Author-description {
     font-size: .833rem;
   }
+
+    .putainde-Author-bio {
+      min-height: var(--line-height);
+    }

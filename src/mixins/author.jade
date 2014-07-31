@@ -17,5 +17,6 @@ mixin Author(author, isPost)
               +Icon("twitter")
           a(href="https://github.com/#{author.login}")
             +Icon("github")
-      -if(author.fr && author.fr.bio && author.fr.bio.long)
-        p!= author.fr.bio.long.join(' <br> ')
+      p.putainde-Author-bio
+        -if(author.fr && author.fr.bio && author.fr.bio.long)
+          != author.fr.bio.long.join(' <br> ')

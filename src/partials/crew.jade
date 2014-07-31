@@ -1,9 +1,0 @@
-.putainde-Title.putainde-Title--home
-  h2.putainde-Title-text #{lang.crew}
--var crew = Object.keys(contributors.map)
--crew = crew.filter(function(key){ return contributors.map[key].crew })
--crew = crew.map(function(key){ var val = contributors.map[key]; val.login = key; return val })
-// auto sort by total contributions
--crew.sort(function(a, b){ return contributors.contributions[b.login] - contributors.contributions[a.login] })
-each author in crew
-  +Author(author).putainde-Crew-author
