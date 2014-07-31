@@ -15,7 +15,7 @@ mixin Author(author, isPost)
           if author.twitter
             a(href="#{getAuthorUri(author, 'twitter')}", data-rcp-tooltip="Twitter").rcp-Tooltip.rcp-Tooltip--top
               +Icon("twitter")
-          a(href="{getAuthorUri(author, 'github')}", data-rcp-tooltip="Github").rcp-Tooltip.rcp-Tooltip--top
+          a(href="#{getAuthorUri(author, 'github')}", data-rcp-tooltip="Github").rcp-Tooltip.rcp-Tooltip--top
             +Icon("github")
       p.putainde-Author-bio
         -if(author.fr && author.fr.bio && author.fr.bio.long)
