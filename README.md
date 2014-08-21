@@ -100,6 +100,8 @@ soit faire les commandes suivantes (remplacez YOUR_GITHUB_USERNAME)
 
     $ curl -u $GH_USERNAME -d "{\"scopes\":[\"public_repo\"],\"note\":\"push to $GH_BRANCH from travis\"}" https://api.github.com/authorizations
 
+Si la création ne fonctionne pas, vous avez peut-être déjà un token. Si vous ne vous en rappelez pas, regénérez le depuis l'interface GitHub (et cette fois ci, sauvegardez le).
+
 Votre mot de passe GitHub va vous être demandé.
 Ensuite vous aurez un résultat du genre
 
