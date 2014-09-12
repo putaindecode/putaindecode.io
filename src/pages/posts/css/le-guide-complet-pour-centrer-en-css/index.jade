@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "Nyalab"
+  -exports.title = "Le guide complet pour centrer en css"
+  -exports.tags = ["css"]
+  -exports.date = "2014-09-12"
+
+block main
+  +Post(exports.title)
+    include:md index.md
