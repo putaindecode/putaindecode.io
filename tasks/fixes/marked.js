@@ -45,6 +45,7 @@ renderer.heading = function(text, level){
     .replace(accentsRE, function(i){
       return accents[i]
     })
+    .replace(/(<\/?a[^>]*>)/ig, "") // strip html links in anchors
     .replace(/\W+/g, "-")
 
   return "<h" + level + " id=\"" + escaped + "\">" +
