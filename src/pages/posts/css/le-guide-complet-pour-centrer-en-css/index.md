@@ -11,7 +11,7 @@ Cependant, si vous souhaitez juste avoir le code correspondant à votre problèm
   * [Un bloc dans un bloc](#un-bloc-dans-un-bloc)
   * [Des blocs dans un bloc](#des-blocs-dans-un-bloc)
   * [Des éléments inlines dans un bloc](#des-elements-inlines-dans-un-bloc)
-* [Techniques avancées : flexbox(ie11+)](#techniques-avancees-flexbox-a-href-http-caniuse-com-feat-flexbox-ie11-a-)
+* [Techniques avancées : flexbox(ie11+)](#techniques-avancees-flexbox-ie11-)
 
 ## tl;dr - mes techniques préférées
 
