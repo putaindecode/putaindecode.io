@@ -30,6 +30,7 @@ Cependant, si vous souhaitez juste avoir le code correspondant à votre problèm
   transform: translate(-50%, -50%);
 }
 ```
+_Note : le détail de la technique est expliqué plus loin dans le post_
 
 ### Des blocs dans un bloc
 
@@ -43,7 +44,7 @@ Cependant, si vous souhaitez juste avoir le code correspondant à votre problèm
   display: inline-block;
   height: 100%;
   vertical-align: middle;
-  margin-right: -0.25em;
+  margin-right: -0.25em; /* space width */
 }
 
 .child {
@@ -51,6 +52,8 @@ Cependant, si vous souhaitez juste avoir le code correspondant à votre problèm
   vertical-align: middle;
 }
 ```
+_Note : le détail de la technique est expliqué plus loin dans le post_
+
 
 ### Des éléments inline dans un bloc
 
@@ -63,6 +66,7 @@ Cependant, si vous souhaitez juste avoir le code correspondant à votre problèm
   vertical-align: middle;
 }
 ```
+_Note : le détail de la technique est expliqué plus loin dans le post_
 
 ## Techniques traditionnelles
 
@@ -88,10 +92,10 @@ La technique du `left: 50%; + margin négative en unités` est à utiliser sur l
 }
 
 .child {
-  width: XXXem;
+  width: {X}em; /* remplacer {X} par votre valeur */
   position: absolute;
   left: 50%;
-  margin-left: -(@width/2)em;
+  margin-left: -{X/2}em; /* remplacer {X/2} par la moitié de votre width */
 }
 ```
 
@@ -120,10 +124,10 @@ Même principe que la technique `left: 50%; + margin négative en unités`, sauf
 }
 
 .child {
-  height: XXXem;
+  height: {Y}em; /* remplacer {Y} par votre valeur */
   position: absolute;
   top: 50%;
-  margin-top: -(@height/2)em;
+  margin-top: -{Y/2}em; /* remplacer {Y/2} par la moitié de votre height */
 }
 ```
 
@@ -176,13 +180,13 @@ Technique des `position: absolute; + marges négatives` avec tailles connues à 
 }
 
 .child {
-  width: XXXem;
-  height: XXXem;
+  width: {X}em; /* remplacer {X} par votre valeur */
+  height: {Y}em; /* remplacer {Y} par votre valeur */
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -(@width/2)em;
-  margin-top: -(@height/2)em;
+  margin-left: -{X/2}em; /* remplacer {X/2} par la moitié de votre height */
+  margin-top: -{Y/2}em; /* remplacer {Y/2} par la moitié de votre height */
 }
 ```
 
@@ -231,7 +235,7 @@ De la même façon que pour le centrage horizontal, on utilise le côté `inline
 }
 ```
 
-Une autre technique consiste à utiliser les propriétés css de `mise en tableaux`. On est obligés de créer un [pseudo-élément](https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-%C3%A9l%C3%A9ments) pour gérer la mise en page par tableau. On créée tout simplement un tableau, puis une cellule de tableau, qu'on positionne grâce à un `vertical-align: middle;`. Les éléments `.child` s'alignent automatiquement dans leur conteneur.
+Une autre technique consiste à utiliser les propriétés css de `mise en tableaux`. On est obligé de créer un [pseudo-élément](https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-%C3%A9l%C3%A9ments) pour gérer la mise en page par tableau. On créée tout simplement un tableau, puis une cellule de tableau, qu'on positionne grâce à un `vertical-align: middle;`. Les éléments `.child` s'alignent automatiquement dans leur conteneur.
 
 ```css
 .parent:before {
@@ -247,6 +251,7 @@ Une autre technique consiste à utiliser les propriétés css de `mise en tablea
 .child {
   display: inline-block; /* à enlever si vous ne souhaitez pas avoir vos blocs enfants alignés sur la même ligne, mais juste centrés verticalement sur la hauteur */
 }
+```
 
 #### Les deux
 
@@ -283,7 +288,7 @@ On peut aussir réutiliser la méthode à base de `display: table-cell` et l'ada
 }
 ```
 
-On peut réutiliser la technique précédente en étant un peu imaginatif pour fonctionner avec des `display: inline-block;`. Pour détailler, on crée un pseudo-élément, qui aura un `content: '';` pour faire qu'il existe et soit affiché, puis on annule son affichage via un `margin-right négatif`. On lui applique ensuite un `display: inline-block + height: 100% + vertical-align: middle` pour créer le conteneur à la taille souhaitée et on termine en calant l'élément enfant `.child` avec un centrage vertical.
+On peut réutiliser la technique précédente en étant un peu imaginatif pour fonctionner avec des `display: inline-block;`. Pour détailler, on crée un pseudo-élément, qui aura un `content: '';` pour faire qu'il existe et soit affiché, puis on annule son affichage via un `margin-right négatif` qui a pour valeur magique `-0.25em` ce qui correspond à la largeur d'un espace. On lui applique ensuite un `display: inline-block + height: 100% + vertical-align: middle` pour créer le conteneur à la taille souhaitée et on termine en calant l'élément enfant `.child` avec un centrage vertical.
 
 ```css
 .parent {
