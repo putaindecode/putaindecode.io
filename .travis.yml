@@ -45,3 +45,5 @@ env:
     - secure: ZHxXxk/fpog9ZpNba2BK5gLFOx5X+WYaiEdyKQKhawNT+zp1etEfwRS3692WpEkSa+X5KwMUrUq/iQ2wu7vlz55LOkvlePR9s7e2kROiv2s5KTG02T3A9vk6P9HCnkgCQfClPWSjGV7qglUOe6aGJcmEdT5LDxpXEQBi3mcWPrU=
     # madx
     - secure: vf12o5Mj9Hx3A1yEp8+xnfSyXveg1Fwn7QTYkdPoQIm7NxKQH/90bu38XqHZobJEUa6Rg2f+xpyjziQ53oZAcLk1k2BDZiGbXTt7nkO/JlWQsuFB13eDGiF9hDBv2DUyYOm9TOIvjC8gqbmM2fGlQfsX7PKHzAseV4uJ+pgbfiA=
+    # Nyalab
+    - secure: quZg/W3D72BaP82Cb4aJDX2evvwcAwVahzJ1RFPcXLsYNj/PDttNMmPOPYxrHqPxWm5YtcL40kYswXFppiN8MNbEBiuveN+m6Ax1uHAKwGkx6E2NRlmKldXB1BM78JLb818kJvYU1Bqan648HY/Qg8w/AsTDsHn9xpCTJKaMMY0=
