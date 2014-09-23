@@ -21,14 +21,16 @@ Cependant, si vous souhaitez juste avoir le code correspondant à votre problèm
 ```css
 .parent {
   position: relative;
-  transform-style: preserve-3d;
+
+  /* facultatif : résoud un bug non systématique de blur sur IE */
+  transform-style: preserve-3d; 
 }
 
 .child {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* compatibilité : ie9+ */
 }
 ```
 _Note : le détail de la technique est expliqué plus loin dans le post_
@@ -105,6 +107,8 @@ En combinant la technique précédente et des propriétés css modernes, on arri
 ```css
 .parent {
   position: relative;
+
+  /* facultatif : résoud un bug non systématique de blur sur IE */
   transform-style: preserve-3d;
 }
 
@@ -137,6 +141,8 @@ Ici on réutilise le principe expliqué dans la technique `transform: translate;
 ```css
 .parent {
   position: relative;
+
+  /* facultatif : résoud un bug non systématique de blur sur IE */
   transform-style: preserve-3d;
 }
 
