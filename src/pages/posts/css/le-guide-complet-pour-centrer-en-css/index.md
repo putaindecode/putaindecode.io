@@ -11,7 +11,8 @@ Cependant, si vous souhaitez juste avoir le code correspondant à votre problèm
   * [Un bloc dans un bloc](#un-bloc-dans-un-bloc)
   * [Des blocs dans un bloc](#des-blocs-dans-un-bloc)
   * [Des éléments inlines dans un bloc](#des-elements-inlines-dans-un-bloc)
-* [Techniques avancées : flexbox(ie11+)](#techniques-avancees-flexbox-ie11-)
+* [Techniques avancées : flexbox (ie11+)](#techniques-avancees-flexbox-ie11-)
+* [Conclusion](#conclusion)
 
 ## tl;dr - mes techniques préférées
 
@@ -345,7 +346,7 @@ Ces éléments `inline` peuvent être par exemple des liens `<a>` ou des `<span>
 }
 ```
 
-## Techniques avancées : Flexbox ([ie11+](http://caniuse.com/#feat=flexbox))
+## Techniques avancées : flexbox ([ie11+](http://caniuse.com/#feat=flexbox))
 
 Flexbox est un outil très puissant quand il s'agit de gérer le position de blocs flex. Son seul défaut consiste en son faible support navigateur, mais il vous faudra maitriser ces techniques si vous comptez faire du développement web dans les années à venir, d'autant plus qu'elles sont très simples à rédiger et comprendre.
 
@@ -389,3 +390,9 @@ On combine le tout pour un résultat génial et simpliste.
 
 .child {}
 ```
+
+## Conclusion
+
+Essayez de toujours utiliser la solution la plus avancée technique par rapport à votre scope navigateur : si vous devez ne supporter que les IE récents, utilisez flexbox ; si vous devez ne supporter que IE9+, utilisez les transform: translate() ; sinon utilisez des techniques de plus en plus _anciennes_.
+
+Ce guide n'a volontairement pas parlé des préfixes navigateurs, car ce genre de chose doit être pris en charge automatique dans votre workflow par un autoprefixer ([gulp-autoprefixer](https://www.npmjs.org/package/gulp-autoprefixer), [grunt-autoprefixer](https://www.npmjs.org/package/grunt-autoprefixer), [inclus dans myth](http://www.myth.io/), ...). Pour apprendre à l'installer ou à en apprendre plus sur le sujet, je vous renvoie [à l'article de MoOx](http://localhost:4242/posts/css/mise-en-place-autoprefixer/). Si vous souhaitez quand même vous passez d'autoprefixer, vous pourrez vérifier la compatibilité des propriétés sur [caniuse](http://caniuse.com/).
