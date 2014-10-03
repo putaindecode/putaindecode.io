@@ -1,27 +1,23 @@
 {
-  "name": "putaindecode",
+  "name": "putaindecode.fr",
   "version": "0.0.0",
-  "repositoryHttpUrl": "http://github.com/putaindecode/website",
+  "license": "MIT",
+  "authors": "https://github.com/putaindecode/website/graphs/contributors",
+  "homepage": "http://putaindecode.fr",
   "repository": {
     "type": "git",
     "url": "https://github.com/putaindecode/website.git"
   },
-  "authors": "https://github.com/putaindecode/website/graphs/contributors",
-  "license": "MIT",
-  "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/putaindecode/website/issues"
   },
-  "scripts": {
-    "init": "npm i -g gulp",
-    "init-osx": "brew install icoutils",
-    "favicon": "icotool -c images/p!-logo--no-bubble-16.png images/p!-logo--no-bubble-32.png -o public/favicon.ico",
-    "start": "gulp",
-    "production": "gulp --production",
-    "publish": "gulp publish --production",
-    "deploy": "npm run publish",
-    "test": "gulp dist --production",
-    "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else npm run publish; fi;"
+  "dependencies": {
+    "bloody-curry": "~0.1.1",
+    "bloody-domready": "~0.1.1",
+    "bloody-events": "~0.1.1",
+    "bloody-observable": "0.0.0",
+    "bloody-scroll": "~0.2.1",
+    "cornea": "~0.3.3"
   },
   "devDependencies": {
     "async": "~0.9.0",
@@ -74,12 +70,15 @@
       "android-browser/latest"
     ]
   },
-  "dependencies": {
-    "bloody-curry": "~0.1.1",
-    "bloody-domready": "~0.1.1",
-    "bloody-events": "~0.1.1",
-    "bloody-observable": "0.0.0",
-    "bloody-scroll": "~0.2.1",
-    "cornea": "~0.3.3"
+  "scripts": {
+    "init": "npm i -g gulp",
+    "init-osx": "brew install icoutils",
+    "favicon": "icotool -c images/p!-logo--no-bubble-16.png images/p!-logo--no-bubble-32.png -o public/favicon.ico",
+    "start": "gulp",
+    "production": "gulp --production",
+    "publish": "gulp publish --production",
+    "deploy": "npm run publish",
+    "test": "gulp dist --production",
+    "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else npm run publish; fi;"
   }
 }
