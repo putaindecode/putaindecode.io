@@ -98,6 +98,14 @@
       "location": "Paris, France",
       "hireable": false
     },
+    "guillaume.demesy@gmail.com": {
+      "login": "magsout",
+      "name": "Guillaume Demesy",
+      "gravatar_id": "",
+      "url": "http://magsout.github.io/",
+      "location": "Lorraine",
+      "hireable": true
+    },
     "hi@mattischneider.fr": {
       "login": "MattiSG",
       "name": "Matti Schneider",
@@ -440,7 +448,7 @@
       "login": "rhannequin",
       "name": "Rémy Hannequin",
       "gravatar_id": "a2b9398e4753f15d628c8d928600d90e",
-      "url": "http://rhannequin.com",
+      "url": "http://rhannequ.in",
       "location": "Paris",
       "hireable": false,
       "twitter": "rhannequin",
@@ -996,6 +1004,14 @@
         }
       }
     },
+    "magsout": {
+      "login": "magsout",
+      "name": "Guillaume Demesy",
+      "gravatar_id": "",
+      "url": "http://magsout.github.io/",
+      "location": "Lorraine",
+      "hireable": true
+    },
     "msadouni": {
       "login": "msadouni",
       "name": "Matthieu Sadouni",
@@ -1048,7 +1064,7 @@
       "login": "rhannequin",
       "name": "Rémy Hannequin",
       "gravatar_id": "a2b9398e4753f15d628c8d928600d90e",
-      "url": "http://rhannequin.com",
+      "url": "http://rhannequ.in",
       "location": "Paris",
       "hireable": false,
       "twitter": "rhannequin",
