@@ -97,12 +97,12 @@ Donc aucune inquiétude, il existe une commande pour que vous puissiez faire ça
 
 ```bash
 # on install autoprefixer via npm en global
-npm install --global autoprefixer
+$ npm install --global autoprefixer
 # ou pour les fainéants
-npm i -g autoprefixer
+$ npm i -g autoprefixer
 
 # on prefixe !
-autoprefixer *.css
+$ autoprefixer *.css
 ```
 
 Là bon de suite, réflexe, vous me sautez dessus à la gorge en me criant:
