@@ -105,7 +105,7 @@ $ choco install launchy-beta
 
 ### Et enfin, comment ne pas se niquer les yeux toute la journée
 
-On va commencer par f.lux. Ce petit logiciel permettant de gérer la colorimétrie de votre écran en fonction de l'heure. Typiquement, les écrans rendent un blanc digne d'un soleil à midi. Sauf que le soir, on allume la muière et celle-ci n'a pas du coup une couleur blanche mais souvent plutôt rouge. f.lux permet alors d'ajustement votre écran afin que la couleur soit identique à la lumière ambiante afin de réduire les différences de couleurs et éviter de vous abimer les yeux. En plus, ca permet au cerveau de se préparer à aller se coucher. :D
+On va commencer par f.lux. Ce petit logiciel permettant de gérer la colorimétrie de votre écran en fonction de l'heure. Typiquement, les écrans rendent un blanc digne d'un soleil à midi. Sauf que le soir, on allume la lumière et celle-ci n'a pas du coup une couleur blanche mais souvent plutôt rouge. f.lux permet alors d'ajuster votre écran afin que la couleur soit identique à la lumière ambiante afin de réduire les différences de couleurs et éviter de vous abimer les yeux. En plus, ca permet au cerveau de se préparer à aller se coucher. :D
 
 ```shell
 $ choco install f.lux
