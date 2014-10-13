@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.author = "kud"
+  -exports.title = "Comment essayer de coder à peu près comme un chef (raté) sous Windows"
+  -exports.tags = ["windows", "outils"]
+  -exports.date = "2014-10-13"
+
+block main
+  +Post(exports.title)
+    include:md index.md
