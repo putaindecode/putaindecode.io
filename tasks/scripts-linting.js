@@ -22,4 +22,5 @@ module.exports = function(){
   .pipe(jscs())
   .pipe(jshint())
   .pipe(jshint.reporter("jshint-stylish"))
+  .pipe(jshint.reporter("fail"))
 }
