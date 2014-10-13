@@ -80,7 +80,7 @@ On va partir du principe que tu as Go et Revel prêts pour la baston. On attaque
 direct à sec par le classique “revel new” puisqu'on va partir de la structure de
 base.
 
-```shell
+```bash
 $ revel new github.com/OwlyCode/PutainDeProjet
 ```
 

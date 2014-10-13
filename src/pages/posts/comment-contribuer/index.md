@@ -52,7 +52,7 @@ développeurs des internets.
   sous Mac OS X tu utilises le terminal, et sous Linux je pense qu'on a pas à
   t'expliquer).
 
-  ```shell
+  ```bash
   $ git clone https://github.com/clinthorris/website.git putaindecode
   ```
 
@@ -63,7 +63,7 @@ développeurs des internets.
   facilement rattraper tout ce qu'on aura fait entre temps. La remote en
   rapport avec le repo principal, on l'appelle souvent *upstream*
 
-    ```shell
+    ```bash
     $ cd putaindecode
     $ git remote add upstream https://github.com/putaindecode/website.git
     $ git fetch upstream
@@ -82,7 +82,7 @@ développeurs des internets.
 * Note: Si tu avais déjà récupérer le repo, il te faudra juste récupérer les
   derniers changements sur une branche propre
 
-  ```shell
+  ```bash
   $ git checkout master
   $ git fetch upstream
   $ git merge upstream/master
@@ -141,7 +141,7 @@ est des types sympas.
   exactement ce que t'auras modifié, c'est beaucoup plus simple. Du coup tu
   fais simplement un :
 
-  ```shell
+  ```bash
   $ git checkout -b fix.nom-du-post
   ```
 
@@ -178,7 +178,7 @@ est des types sympas.
   nouvelle branche. C'est une pratique qu'on demande à tout le monde, même
   nous en interne on bosse sur des branches. Donc tout d'abord :
 
-  ```shell
+  ```bash
   $ git checkout -b post.titre-court-du-post
   ```
 
@@ -215,7 +215,7 @@ est des types sympas.
   d'abord ajouter les fichier que tu as modifié à l'index de fichiers à
   commit. Tu peux faire ça tout simplement avec un :
 
-  ```shell
+  ```bash
   $ git add -A pages/posts/nom-du-post
   ```
 
@@ -223,20 +223,20 @@ est des types sympas.
   Si tu as ajouter des fichiers à l'exterieur de ce dossier, tu devras les
   ajouter. Exemple:
 
-  ```shell
+  ```bash
   $ git add images/memes/trollface.jpg
   ```
 
   Ensuite on va dire à git de valider ces modifications de code :
 
-  ```shell
+  ```bash
   $ git commit -m "Un petit message sympa expliquant le correctif/post"
   ```
 
   Et on va finir en disant qu'on veut envoyer tout ça sur ton fork qui est
   situé sur GitHub :
 
-  ```shell
+  ```bash
   $ git push -u
   ```
 
