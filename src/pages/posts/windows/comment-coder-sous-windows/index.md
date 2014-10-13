@@ -5,7 +5,7 @@ Oh oui, en voilà une belle question.
 
 Il n'est pas toujours évident d'avoir un Linux, Unix, BSD, whatever else avec un 'tit shell bien sympa sous la main. Et parfois coder sous Windows est une nécessité. (Je ne vous parlerai pas ici de changer de boulot si Windows vous est imposé, ce n'est pas le sujet).
 
-Etant un homme de challenge, j'aime me mettre dans des contextes limités et voir comment je me débrouille pour sortir d'une situation pénible à une situation acceptable voire agréable. Je me suis alors lancé pour vous dans cette aventure.
+Étant un homme de challenge, j'aime me mettre dans des contextes limités et voir comment je me débrouille pour sortir d'une situation pénible à une situation acceptable voire agréable. Je me suis alors lancé pour vous dans cette aventure.
 
 Oh mais pourquoi j'ai dû faire ça à la base ?
 
@@ -16,7 +16,7 @@ Pour cela, plusieurs outils vont être nécessaires. Un chef sans les bons outil
 
 ## Chocolatey : la base
 
-[Chocolatey](http://chocolatey.org/). Ouais, chocolatey, ce petit script qui vous permettra de télécharger tout et n'importe quoi en cli (ligne de commandes). Pour ceux qui ont l'habitude de mac ou linux,c'est le brew / apt-get de Windows.
+[Chocolatey](http://chocolatey.org/). Ouais, chocolatey, ce petit script qui vous permettra de télécharger tout et n'importe quoi en cli (ligne de commandes). Pour ceux qui ont l'habitude de mac ou linux, c'est le brew / apt-get de Windows.
 
 Lancez `cmd.exe` en mode administrateur (touche windows puis "cmd" puis shift+ctrl+enter) et lancez :
 
@@ -34,7 +34,7 @@ Une fois installé, vous pouvez installer n'importe quel logiciel que vous voule
 
 ## Logiciels de développement
 
-Yes, on a donc Chocolatey qui va nous simplifier grandement l'installation de logiciels. Passons maintenant aux logiciels de développements.
+Yes, on a donc Chocolatey qui va nous simplifier grandement l'installation de logiciels. Passons maintenant aux logiciels de développement.
 
 ### Git
 
@@ -97,7 +97,7 @@ $ choco install virtuawin
 
 ### Launchy, le Alfred-like sous Windows
 
-Je sais pas vous mais moi, les raccourcis qui me gâchent mon beau wallpaper choisi avec goût, ca m'énerve. Et puis le clickodrome, c'est lent et chiant. Du coup, lancer ses logiciels à partir d'un moteur de recherche, c'est quand même vachement bien. Voici alors Launchy.
+Je sais pas vous mais moi, les raccourcis qui me gâchent mon beau wallpaper choisi avec goût, ça m'énerve. Et puis le clickodrome, c'est lent et chiant. Du coup, lancer ses logiciels à partir d'un moteur de recherche, c'est quand même vachement bien. Voici alors Launchy.
 
 ```shell
 $ choco install launchy-beta
@@ -105,7 +105,7 @@ $ choco install launchy-beta
 
 ### Et enfin, comment ne pas se niquer les yeux toute la journée
 
-On va commencer par f.lux. Ce petit logiciel permettant de gérer la colorimétrie de votre écran en fonction de l'heure. Typiquement, les écrans rendent un blanc digne d'un soleil à midi. Sauf que le soir, on allume la lumière et celle-ci n'a pas du coup une couleur blanche mais souvent plutôt rouge. f.lux permet alors d'ajuster votre écran afin que la couleur soit identique à la lumière ambiante afin de réduire les différences de couleurs et éviter de vous abimer les yeux. En plus, ca permet au cerveau de se préparer à aller se coucher. :D
+On va commencer par f.lux. Ce petit logiciel permettant de gérer la colorimétrie de votre écran en fonction de l'heure. Typiquement, les écrans rendent un blanc digne d'un soleil à midi. Sauf que le soir, on allume la lumière et celle-ci n'a pas du coup une couleur blanche mais souvent plutôt rouge. f.lux permet alors d'ajuster votre écran afin que la couleur soit identique à la lumière ambiante pour réduire les différences de couleurs et éviter de vous abimer les yeux. En plus, ça permet au cerveau de se préparer à aller se coucher. :D
 
 ```shell
 $ choco install f.lux
@@ -125,6 +125,6 @@ Je vous conseille le profil `XMac.LCD.Default`.
 
 On est bon, on a tous les outils nécessaires pour pouvoir coder correctement sur Windows.
 
-Si vous souhaitez en savoir plus et surtout vous tenir à jour d'éventuels logiciels que je pourrais installer, n'hésitez pas à vous rendre sur mon projet [my-unfortunately](https://github.com/kud/my-unfortunately) qui est le _synchroniser_ dont je vous ai parlés tout à l'heure.
+Si vous souhaitez en savoir plus et surtout vous tenir à jour d'éventuels logiciels que je pourrais installer, n'hésitez pas à vous rendre sur mon projet [my-unfortunately](https://github.com/kud/my-unfortunately) qui est le _synchroniser_ dont je vous ai parlé tout à l'heure.
 
 Bon code !
