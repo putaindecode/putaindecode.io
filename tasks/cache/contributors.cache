@@ -98,6 +98,14 @@
       "location": "Paris, France",
       "hireable": false
     },
+    "guillaume.demesy@gmail.com": {
+      "login": "magsout",
+      "name": "Guillaume Demesy",
+      "gravatar_id": "",
+      "url": "http://magsout.github.io/",
+      "location": "Lorraine",
+      "hireable": true
+    },
     "hi@mattischneider.fr": {
       "login": "MattiSG",
       "name": "Matti Schneider",
@@ -995,6 +1003,14 @@
           ]
         }
       }
+    },
+    "magsout": {
+      "login": "magsout",
+      "name": "Guillaume Demesy",
+      "gravatar_id": "",
+      "url": "http://magsout.github.io/",
+      "location": "Lorraine",
+      "hireable": true
     },
     "msadouni": {
       "login": "msadouni",
