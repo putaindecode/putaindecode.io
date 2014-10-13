@@ -62,13 +62,13 @@ Et du coup au lieu d'avoir un fichier de conf d'une soixantaine de lignes, on ar
 
 Pour avoir la commande globale sur le système (comme grunt-cli) :
 
-```shell
+```bash
 $ npm i -g gulp
 ```
 
 Ensuite dans votre projet :
 
-```shell
+```bash
 $ npm i -D gulp gulp-util gulp-plumber gulp-WHATEVER
 ```
 
@@ -81,7 +81,7 @@ Bon dans mon exemple j'ai mis un peu n'importe quoi, donc on va faire un mini wo
 On part avec une tâche très simple : pré-processeur CSS [Myth](http://www.myth.io) et
 optimisation avec [CSSO](https://github.com/css/csso).
 
-```shell
+```bash
 $ mkdir putaindegulp && cd putaindegulp
 $ npm init
 $ npm i -D gulp gulp-util gulp-plumber gulp-myth gulp-csso minimist
@@ -236,7 +236,7 @@ Pour finir quelques liens pour ceux qui en veulent toujours plus :
 - [Gulp : Retour d'expérience](http://www.insertafter.com/articles-retour_experience_gulp.html)
 - [Grunt vs. Gulp, au-delà des chiffres](http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/) (anglais)
 
-```shell
+```bash
 $ gulp bisous
 ❯ ♡ 😘
 ```

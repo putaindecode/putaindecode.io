@@ -95,7 +95,7 @@ Bon faites pas les relous, que vous soyez front-end ou back-end, vous avez Node.
 
 Donc aucune inquiétude, il existe une commande pour que vous puissiez faire ça rapidement :
 
-```shell
+```bash
 # on install autoprefixer via npm en global
 npm install --global autoprefixer
 # ou pour les fainéants
