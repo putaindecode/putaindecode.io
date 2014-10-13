@@ -3,16 +3,16 @@ var fs = require("fs")
 var path = require("path")
 var gutil = require("gulp-util")
 var async = require("async")
-var Promise = require("promise")
+var PromisePolyfill = require("promise")
 // var bs64 = require("bs64")
 var bs64 = false
 var convertString = require("convert-string")
-var exec = Promise.denodeify(require("child_process").exec)
-var glob = Promise.denodeify(require("glob"))
+var exec = PromisePolyfill.denodeify(require("child_process").exec)
+var glob = PromisePolyfill.denodeify(require("glob"))
 var commitsRE = /^(\d+)/
 var emailRE = /<(.+)>$/
-var readFile = Promise.denodeify(fs.readFile)
-var writeFile = Promise.denodeify(fs.writeFile)
+var readFile = PromisePolyfill.denodeify(fs.readFile)
+var writeFile = PromisePolyfill.denodeify(fs.writeFile)
 var lodash = require("lodash")
 var githubApi = new (require("github"))({version : "3.0.0"})
 
@@ -87,17 +87,17 @@ var contributorsMap = function(){
 
     // all contributors are in cache
     if(newUsers.length === 0){
-      return Promise.resolve()
+      return PromisePolyfill.resolve()
     }
 
-    return new Promise(function(resolve){
+    return new PromisePolyfill(function(resolve){
       var parallelsUser = []
       newUsers.forEach(function(author){
         parallelsUser.push(function(cb){
           var email = author.email
           exec("git log --max-count=1 --pretty=format:%H --author=" + email)
           .then(function(stdout){
-            return Promise.denodeify(githubApi.repos.getCommit)({
+            return PromisePolyfill.denodeify(githubApi.repos.getCommit)({
               user : "putaindecode",
               repo : "website",
               sha : stdout
@@ -110,10 +110,10 @@ var contributorsMap = function(){
 
             if(loginCache[contributor.author.login]){
               gutil.log("contributor cached", contributor.author.login)
-              return Promise.resolve(loginCache[contributor.author.login])
+              return PromisePolyfill.resolve(loginCache[contributor.author.login])
             }
             else{
-              return Promise.denodeify(githubApi.user.getFrom)({user : contributor.author.login})
+              return PromisePolyfill.denodeify(githubApi.user.getFrom)({user : contributor.author.login})
               .then(function(githubUser){
                 loginCache[githubUser.login] = {
                   // see what's available here https://developer.github.com/v3/users/
@@ -202,7 +202,7 @@ var filesContributions = function(){
   cache.value.files = {}
   return glob("pages/**/*")
   .then(function(files){
-    return new Promise(function(resolve){
+    return new PromisePolyfill(function(resolve){
       var parallelFiles = []
       files.forEach(function(file){
         parallelFiles.push(function(cb){
