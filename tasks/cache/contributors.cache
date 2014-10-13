@@ -8,6 +8,14 @@
       "location": "France",
       "hireable": false
     },
+    "andrieu.travail@gmail.com": {
+      "login": "mickaelandrieu",
+      "name": "Mickaël Andrieu",
+      "gravatar_id": "",
+      "url": "http://www.mickael-andrieu.com",
+      "location": "Paris,France",
+      "hireable": false
+    },
     "ccoloma@jolicode.com": {
       "login": "clairecoloma",
       "gravatar_id": "63638ee1e60d9ca22adea00962632a6b"
@@ -19,6 +27,14 @@
       "url": "https://bitdeli.com/free",
       "location": "San Francisco,CA",
       "hireable": false
+    },
+    "cyril.moreau0804@gmail.com": {
+      "login": "Nickdouille",
+      "name": "Cyril Moreau",
+      "gravatar_id": "",
+      "url": "http://sojavascript.com",
+      "location": "Aix-en-Provence",
+      "hireable": true
     },
     "dguyon@gmail.com": {
       "login": "dguyon",
@@ -402,6 +418,13 @@
       "login": "zemax",
       "gravatar_id": "fdf0b5a35dbbeecd7919551475318c13"
     },
+    "maxime10081985@gmail.com": {
+      "login": "Macxim",
+      "name": "Maxime Laforet",
+      "gravatar_id": "",
+      "location": "Brussels, Belgium",
+      "hireable": false
+    },
     "mlbli@me.com": {
       "login": "bloodyowl",
       "name": "Matthias Le Brun",
@@ -668,6 +691,13 @@
       "login": "Felix49",
       "gravatar_id": "197c24e25a972f4f945257896cb5cbfb"
     },
+    "Macxim": {
+      "login": "Macxim",
+      "name": "Maxime Laforet",
+      "gravatar_id": "",
+      "location": "Brussels, Belgium",
+      "hireable": false
+    },
     "MattiSG": {
       "login": "MattiSG",
       "name": "Matti Schneider",
@@ -703,6 +733,14 @@
           ]
         }
       }
+    },
+    "Nickdouille": {
+      "login": "Nickdouille",
+      "name": "Cyril Moreau",
+      "gravatar_id": "",
+      "url": "http://sojavascript.com",
+      "location": "Aix-en-Provence",
+      "hireable": true
     },
     "NotGrm": {
       "login": "NotGrm",
@@ -1011,6 +1049,14 @@
       "url": "http://magsout.github.io/",
       "location": "Lorraine",
       "hireable": true
+    },
+    "mickaelandrieu": {
+      "login": "mickaelandrieu",
+      "name": "Mickaël Andrieu",
+      "gravatar_id": "",
+      "url": "http://www.mickael-andrieu.com",
+      "location": "Paris,France",
+      "hireable": false
     },
     "msadouni": {
       "login": "msadouni",
