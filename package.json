@@ -4,6 +4,7 @@
   "license": "MIT",
   "authors": "https://github.com/putaindecode/website/graphs/contributors",
   "homepage": "http://putaindecode.fr",
+  "repositoryHttpUrl": "http://github.com/putaindecode/website",
   "repository": {
     "type": "git",
     "url": "https://github.com/putaindecode/website.git"
