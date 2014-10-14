@@ -54,7 +54,7 @@ Séquence émotion. Vous êtes désormais maître de l'Univers.
 
 Vous avez Ruby 2.1.1 d'installé. La ligne `rbenv global` permet comme son nom l'indique d'utiliser cette version de Ruby de façon globale à l'utilisateur, si jamais plusieurs versions coexistent.
 
-C'était facile n'est-ce pas ? Et bien c'est encore plus facile d'utiliser une bibliothèque (appelée "gem") ou un framework Ruby. Comme nous allons utiliser Sinatra dans notre prochain article, autant l'installer tout de suite. Pour installer une gem qui sera exécutée dans la console comme Sass il est nécessaire de l'installer de cette façon : `gem install sass`. Seulement pour Sinatra, nous avons seulement besoin que le framework soit disponible dans nos scripts Ruby. Pour cela nous allons utiliser un gestionnaire de dépendance des gem Ruby, et nous verrons cela dans le prochain article pour nos premiers pas avec Sinatra.
+C'était facile n'est-ce pas ? Et bien c'est encore plus facile d'utiliser une bibliothèque (appelée "gem") ou un framework Ruby. Comme nous allons utiliser Sinatra dans notre prochain article, autant l'installer tout de suite. Pour installer une gem qui sera exécutée dans la console comme Sass il est nécessaire de l'installer de cette façon : `gem install sass`. Seulement pour Sinatra, nous avons seulement besoin que le framework soit disponible dans nos scripts Ruby. Pour cela nous allons utiliser un gestionnaire de dépendance des gem Ruby, et nous verrons cela dans [le prochain article pour nos premiers pas avec Sinatra](/posts/backend/ruby-dependances-et-projet).
 
 D'ici là vous pouvez commencer à jouer avec Ruby en tapant la commande `irb` dans votre terminal, qui lance l'interpretteur Ruby. Pourquoi pas essayer un *Hello World!* à la Ruby ?
 
