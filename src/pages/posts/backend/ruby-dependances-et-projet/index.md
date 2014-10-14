@@ -1,4 +1,4 @@
-[tl;dr](#tldr)
+[tl;dr](#tl-dr)
 
 Dans l'[article précédent](/posts/backend/premiers-pas-avec-ruby)
 nous avons installé Ruby. Désormais nous allons aborder les gems,
