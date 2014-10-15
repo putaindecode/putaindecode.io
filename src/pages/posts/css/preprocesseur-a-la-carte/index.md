@@ -64,11 +64,11 @@ Ici on a blindé notre feuille de fallback, on est (en théorie) sensé avoir un
 Allons à l'essentiel : pour créer votre préprocesseur on va utiliser une bibliothèque.
 À ce jour nous avons le choix entre [Rework](https://github.com/reworkcss/rework)
  ou [PostCSS](https://github.com/ai/postcss) qui permettent d'inspecter et de manipuler nos CSS.
-Tout deux sont des bibliothèques écritent en JavaScript (NodeJs).
+Tout deux sont des bibliothèques écrites en JavaScript (NodeJs).
 
 Pour la petite histoire, Autoprefixer est à l'origine de PostCSS. En effet les
 premières versions utilisaient Rework, mais à cause de limitation dues à l'API de Rework,
-l'auteur d'Autoprefixer à décider de créer son propre moteur, qui a une API presque
+l'auteur d'Autoprefixer a décidé de créer son propre moteur, qui a une API presque
 plus sympa il faut le dire (il faudra voir comment évolue Rework).
 
 D'un autre côté Rework étant plus ancien, il possède un écosystème plus fourni et répondra
@@ -173,7 +173,7 @@ Il existe aussi [rework-importer](https://github.com/simme/rework-importer) qui 
 ##### [rework-rem-fallback](https://github.com/ctalkington/rework-rem-fallback)
 
 [rework-rem-fallback](https://github.com/ctalkington/rework-rem-fallback)
-ajout un fallback sur les unités REM. Pratique si vous voulez utiliser REM mais
+ajoute un fallback sur les unités REM. Pratique si vous voulez utiliser REM mais
 que vous devez supporter IE 8.
 
 ##### rework-color-function
@@ -217,34 +217,34 @@ qui peuvent ajouter un peu de beurre dans les épinards :
 [rework-classmap](https://github.com/andreypopp/rework-classmap) permet de renommer des classes via du mapping. Avec ça on pourrait presque avoir un code Bootstrap propre.
 
 ##### rework-palette
-[rework-palette](https://github.com/fgnass/rework-palette) permet d'ajouter une palette de couleur personnalisé (via des noms de couleurs).
+[rework-palette](https://github.com/fgnass/rework-palette) permet d'ajouter une palette de couleur personnalisée (via des noms de couleurs).
 
 ##### rework-deduplicate
-[rework-deduplicate](https://github.com/kristoferjoseph/rework-deduplicate) permet de supprimer les règles dupliqués.
+[rework-deduplicate](https://github.com/kristoferjoseph/rework-deduplicate) permet de supprimer les règles dupliquées.
 
 ##### rework-split-media
-[rework-split-media](https://github.com/reworkcss/split-media) permet de couper les contenu des media queries dans d'autres fichiers
+[rework-split-media](https://github.com/reworkcss/split-media) permet de couper les contenus des media queries dans d'autres fichiers.
 
 ##### rework-move-media
-[rework-move-media](https://github.com/reworkcss/rework-move-media) permet de regrouper les contenu des media queries. Pas très utile car gzip fera aussi bien.
+[rework-move-media](https://github.com/reworkcss/rework-move-media) permet de regrouper les contenus des media queries. Pas très utile car gzip fera aussi bien.
 
 
 #### Au delà du préprocessing
 
-En utilisant le parser Rework, on peut faire plus que des ajustements ou du remplacement. On peut balancer des erreurs.
+En utilisant le parser Rework, on peut faire plus que des ajustements ou du remplacement: on peut balancer des erreurs.
 
 - [rework-ie-limits](https://github.com/reworkcss/rework-ie-limits): prévient si vos CSS dépassent la limite de 4095 selectors (limite pour IE < 10).
 - [rework-suit-conformance](https://github.com/suitcss/rework-suit-conformance): permet de vérifier que votre code suit bien les [conventions SUIT](https://github.com/suitcss/suit/tree/master/doc) (pour peu que vous les suiviez).
 
 En partant dans d'autres directions on pourrait réaliser des statistiques sur
-nos CSS (nombre de sélecteurs, de couleurs utilisés etc) comme le fait [CSS Stats](http://www.cssstats.com/).
+nos CSS (nombre de sélecteurs, de couleurs utilisées etc) comme le fait [CSS Stats](http://www.cssstats.com/).
 
 Retrouvrez en plus de la recherche via npm (qui sera la plus à jour), [une liste des plugins et utilitaires sur le wiki de Rework](https://github.com/reworkcss/rework/wiki/Plugins-and-Utilities).
 
 ## Mise en place de Rework pour faire votre préprocesseur en moins de 5 min
 
 Maintenant que nous avons vu comment utiliser Rework et quels sont les plugins
-les plus sympa, on se faire un petit fichier pour automatiser tout ce process.
+les plus sympas, on se faire un petit fichier pour automatiser tout ce process.
 
 Plutôt que de réinventer la roue comme l'a fait [Pleeease](http://pleeease.io/) (en gérant un watcher et tout le tralala),
 on va plutôt partir comme [Myth.io](http://myth.io/) ou [Styl](https://github.com/visionmedia/styl) (successeur spirituel de Stylus)
@@ -287,8 +287,8 @@ var reworkPlugins = {
 var autoprefixer = require("gulp-autoprefixer")
 
 gulp.task("styles", function() {
-  // ici on prends toutes les CSS à la racine
-  // on considère que celle dans des sous dossiers sont à importer
+  // ici on prend toutes les CSS à la racine
+  // on considère que celles dans des sous dossiers sont à importer
   return gulp.src("./src/styles/*.css")
     .pipe(opts.production ? plumber() : util.noop())
     .pipe(rework(
@@ -298,7 +298,7 @@ gulp.task("styles", function() {
       rework.ease(),
       rework.inline,
       reworkPlugins.parent,
-      reworkPlugins.vars(), // notez que certains plugins nécessite d'être éxecuté (retourant une fonction dynamique)
+      reworkPlugins.vars(), // notez que certains plugins nécessitent d'être éxecutés (retournant une fonction dynamique)
       reworkPlugins.calc,
       reworkPlugins.colorFn,
       reworkPlugins.remFallback(),
@@ -314,9 +314,9 @@ gulp.task("default", ["styles"], function() {
 
 ```
 
-Ensuite il reste plus qu'à lancer Gulp au besoin qui s'occupera d'éxecuter le preprocessing
+Ensuite il ne reste plus qu'à lancer Gulp au besoin qui s'occupera d'éxecuter le preprocessing
 au démarrage et lors des changements de fichiers.
-Il ne reste plus grand chose à faire si ce n'est ajouter livereload en plus pour avoir le petit process au petit oignon.
+Il ne reste plus grand chose à faire si ce n'est ajouter livereload en plus pour avoir le petit process aux petits oignons.
 
 ```bash
 $ gulp
