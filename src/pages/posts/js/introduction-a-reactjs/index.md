@@ -162,7 +162,7 @@ grands intérêts, trop peu utilisés en front-end.
 
 En bonus, React, même s'il n'impose pas de bibliothèque pour les
 data et la communication des modules, offre une approche nommée
-[flux](http://facebook.github.io/react/docs/flux-overview.html) très
+[flux](http://facebook.github.io/flux/docs/overview.html) très
 intéressante et vous offrant des clés pour concevoir une app avec en
 tête les paradigmes pensés pour React.
 
