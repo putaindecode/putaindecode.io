@@ -48,7 +48,7 @@ gulp.task("default", [
   "watch"
 ])
 
-// publish
-gulp.task("publish", [
+// deploy
+gulp.task("deploy", [
   "dist"
-], require("./tasks/publish"))
+], require("./tasks/deploy"))
