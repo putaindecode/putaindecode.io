@@ -77,7 +77,7 @@
     "init-osx": "brew install icoutils",
     "favicon": "icotool -c images/p!-logo--no-bubble-16.png images/p!-logo--no-bubble-32.png -o public/favicon.ico",
     "start": "gulp",
-    "deploy": "gulp publish --production",
+    "deploy": "gulp deploy --production",
     "test": "gulp dist --production",
     "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else npm run deploy; fi;"
   }
