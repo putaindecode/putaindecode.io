@@ -87,7 +87,7 @@ $ choco install HeidiSQL
 
 ou encore MySQL Workbench un excellent soft pour gérer une base de données:
   - Modélisation
-  - Edition
+  - Édition
   - Migration
 Par contre, il est un peu plus complexe à utiliser.
 
@@ -123,7 +123,7 @@ $ choco install putty
 - [lien du package](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
 
 
-Putty vient avec une suite de logiciel:
+Putty vient avec une suite de logiciels :
 
 - [PuTTYgen](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour générer une clé SSH sous Windows
 - [Plink](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour permettre à HeidiSQL de se connecter à une base de données via SSH.
