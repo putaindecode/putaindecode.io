@@ -6,7 +6,7 @@
 .putainde-Title {
   z-index: 3;
 
-  margin: var(--lineHeight) 0;
+  margin: var(--halfLineHeight) 0;
   overflow: auto;
 
   color: #222;
