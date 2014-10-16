@@ -1,10 +1,10 @@
 # Putain de Code !
 
-[![Build Status](http://img.shields.io/travis/putaindecode/website.svg?style=flat)](https://travis-ci.org/putaindecode/website)
+[![Build Status](http://img.shields.io/travis/putaindecode/putaindecode.fr.svg?style=flat)](https://travis-ci.org/putaindecode/putaindecode.fr)
 
-[![Testling](https://ci.testling.com/putaindecode/website.png)](https://ci.testling.com/putaindecode/website)
+[![Testling](https://ci.testling.com/putaindecode/putaindecode.fr.png)](https://ci.testling.com/putaindecode/putaindecode.fr)
 
-<img align="right" alt="" src="https://raw.github.com/putaindecode/website/master/images/p!-logo--no-bubble-512--trim.png" width="128">
+<img align="right" alt="" src="https://raw.github.com/putaindecode/putaindecode.fr/master/images/p!-logo--no-bubble-512--trim.png" width="128">
 
 Code source du site [Putain de Code](http://putaindecode.fr/).
 Contient tout le nécessaire pour faire fonctionner le site.
@@ -12,7 +12,7 @@ Pas de base de données à installer, pas de serveurs à configurer.
 
 ## tl;dr;
 
-    $ git clone https://github.com/putaindecode/website.git
+    $ git clone https://github.com/putaindecode/putaindecode.fr.git
     $ cd website
     $ npm run init
     $ npm install
@@ -43,7 +43,7 @@ avant d'intervenir sur le projet ;).
 
 ## Récupérer les sources du site
 
-    $ git clone https://github.com/putaindecode/website.git
+    $ git clone https://github.com/putaindecode/putaindecode.fr.git
     $ cd website
     $ npm run init
     $ npm install
@@ -83,7 +83,7 @@ grâce à GitHub, suffit à mettre en ligne le site).
 
     $ npm run deploy
 
-**Cela dit, tous les commits dans la branche `master` provoqueront une mise en production automatique via [Travis-CI](https://travis-ci.org/putaindecode/website).**
+**Cela dit, tous les commits dans la branche `master` provoqueront une mise en production automatique via [Travis-CI](https://travis-ci.org/putaindecode/putaindecode.fr).**
 
 ---
 
@@ -110,9 +110,9 @@ Ensuite utilisez la commande suivante
 ### Auteurs et contributeurs
 
 * [Membres de l'organisation](https://github.com/putaindecode?tab=members)
-* [Liste des contributeurs](https://github.com/putaindecode/website/graphs/contributors)
+* [Liste des contributeurs](https://github.com/putaindecode/putaindecode.fr/graphs/contributors)
 
 ### Logo & Avatar
 
 Remerciements à toutes les personnes impliquées dans cette discussion [putaindecode/organisation/issues/4](https://github.com/putaindecode/organisation/issues/4).
-Remerciement spécial à [@bloodyowl](https://github.com/bloodyowl) pour le [logo initial](https://github.com/putaindecode/website/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
+Remerciement spécial à [@bloodyowl](https://github.com/bloodyowl) pour le [logo initial](https://github.com/putaindecode/putaindecode.fr/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
