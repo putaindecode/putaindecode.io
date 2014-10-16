@@ -331,19 +331,19 @@ Le watch est lancé, on peut remplir notre fichier CSS
 
 ```css
 :root {
-	--font-size: 1rem;
-	--line-height: 1.5rem;
+	--fontSize: 1rem;
+	--lineHeight: 1.5rem;
 	--color-highlight: rgba(#f00, .8);
 }
 
 html {
 	width: 100%;
 	height: @width;
-	font-size: var(--font-size)
+	font-size: var(--fontSize)
 }
 
 p {
-	margin: calc(var(--line-height) / 2) 0;
+	margin: calc(var(--lineHeight) / 2) 0;
 }
 
 a {

@@ -6,7 +6,7 @@ Partant du constat qu'il est difficile d'apprendre et d'échanger en conférence
 
 Attention, je ne dis pas que les conférences ne servent à rien mais à mon sens elles sont trop magistrales et parfois trop marketing (coucou WebRTC Paris).
 
-Les premières tables rondes n'étaient pas sous le nom de **p!**, elles étaient plutôt de mon initiative (@_kud) dans le but de rassembler des gens que j'appréciais et dont je connaissais le niveau afin de progresser tous ensembles.
+Les premières tables rondes n'étaient pas sous le nom de **p!**, elles étaient plutôt de mon initiative (@_kud) dans le but de rassembler des gens que j'appréciais et dont je connaissais le niveau afin de progresser tous ensemble.
 
 Je tiens à vous mettre en garde ici que les propos tenus ne sont pas forcément toujours justifiés, c'est un compte rendu qui synthétise des choix que vous devriez sûrement explorer par vous-même ou au travers de d'autres articles **p!**.
 
@@ -111,7 +111,7 @@ Et surtout il n'est plus nécessaire d'utiliser les IDs. Les IDs doivent servir 
 
 Il est clair qu'après des années d'intégration, le constat est là, la cascade, ce n'est vraiment pas l'idéal. Cela reste toujours aussi difficile de faire du css generique et/ou maintenable, et c'est justement en quoi BEM permet de résoudre à la fois les problématiques de cascade mais aussi de nommage.
 
-Il y a de nombreux articles sur BEM, sur ses conventions (oui il peut y avoir plusieurs conventions de nommage, BEM reste plus une méthologie).
+Il y a de nombreux articles sur BEM, sur ses conventions (oui, il peut y avoir plusieurs conventions de nommage, BEM reste plus une méthologie).
 
 En quelques termes, BEM redéfinit la cascade en ne plus l'utilisant comme par exemple : `.header .title.is-active` mais `.header__title--is-active`, BEM venant de Block, Element, Modifier. C'est exactement ce que je viens de découper en une seule classe plutôt que 3.
 
@@ -136,21 +136,21 @@ Pour ma part, trop de fois je me suis pris la tête sur la sémantique au point 
 
 Pour être franc, l'accessibilité a un coût en terme de temps qui n'est jamais négligeable et rentre souvent en conflit avec l'UX d'une personne sans handicap.
 
-Typiquement, imaginons que nous avons un formulaire bancaire, comment faire un boucle uniquement sur ce formulaire (pratique dans le cas d'une personne sans handicap) tout en ne contraignant la navigation "classique" ?
+Typiquement, imaginons que nous avons un formulaire bancaire, comment faire un boucle uniquement sur ce formulaire (pratique dans le cas d'une personne sans handicap) tout en ne contraignant pas la navigation "classique" ?
 
 Le constat est là aussi, nous sommes tous ici sensibilisés par l'accessibilité, nous essayons d'en faire le plus possible (souvent sur notre temps libre ou entre deux tâches) mais personne n'administre du temps à cela.
 
 Une éventuelle solution a émmergé durant les discussions : pourquoi ne pourrait-on pas connaître d'emblée la situation de l'utilisateur lorsqu'il arrive sur le site ?
 
-Un navigateur dédié à certains handicaps devrait être détectable d'entée de jeu et que l'on puisse nous développeurs faire en conséquence dans ce cas là.
+Un navigateur dédié à certains handicaps devrait être détectable d'entée de jeu et que l'on puisse nous développeurs faire en conséquence dans ce cas-là.
 
-C'est exactement comme l'histoire de résolution / bande passante. Le w3c nous propose à l'heure actuelle de détecter la résolution pour faire en conséquence sur notre site, or, ce n'est pas du tout le pivot intéressant, c'est surtout la bande passante qui nous permet d'ajuster notre site web.
+C'est exactement comme l'histoire de résolution / bande passante. Le W3C nous propose à l'heure actuelle de détecter la résolution pour faire en conséquence sur notre site, or, ce n'est pas du tout le pivot intéressant, c'est surtout la bande passante qui nous permet d'ajuster notre site web.
 
-Bref, comme souvent, le W3C est à la rue, n'avance pas comme le web avance (vite, très vite) et les outils nous font défaut à l'heure actuelle pour répondre à certains besoins. (Note : je ne dis pas qu'ils ne font pas un bon boulot ou que ce n'est pas compliqué, je dis simplement qu'il y a un grand écart encore les besoins et les solutions à l'heure actuelle sur plusieurs domaines : l'accessibilité, la video, la capacité de fournir un site en fonction de la bande passante plutôt que la résolution, etc, etc).
+Bref, comme souvent, le W3C est à la rue, n'avance pas comme le web avance (vite, très vite) et les outils nous font défaut à l'heure actuelle pour répondre à certains besoins. (Note : je ne dis pas qu'ils ne font pas un bon boulot ou que ce n'est pas compliqué, je dis simplement qu'il y a un grand écart entre les besoins et les solutions à l'heure actuelle sur plusieurs domaines : l'accessibilité, la video, la capacité de fournir un site en fonction de la bande passante plutôt que la résolution, etc, etc).
 
 ### Les pièges de l'intégration (e.g. display: inline-block)
 
-Certains cas de l'intégration restent encore du domaine hack plutôt qu'une solution propre et faible. On ne dit pas que ces hacks sont difficiles ou laborieux mais qu'ils sont encore nécessaires sur des propriétés css très communes en 2014.
+Certains cas de l'intégration restent encore du domaine hack plutôt qu'une solution propre et fiable. On ne dit pas que ces hacks sont difficiles ou laborieux mais qu'ils sont encore nécessaires sur des propriétés CSS très communes en 2014.
 
 L'inline-block par exemple, il n'y a malheureusement pas le choix de soit coller les balises, soit minifier le html (ou la partie ayant des inline-block), soit de mettre des commentaires.
 
@@ -165,11 +165,11 @@ Enfin, `<input type="number">` est tout buggé sous Firefox. Par exemple, mettre
 
 Pour être clair, personne n'utilise des `pt`, les `px`, faut les oublier de plus en plus, et `rem` est sûrement le plus simple et le mieux mais dépend malheureusement de vos supports navigateurs où dans quels cas il faut souvent se rabattre sur les `em`. Le pourcentage est forcément préconisé.
 
-### CSS Frameworks ? lesquels ? pourquoi ? quand ?
+### CSS Frameworks ? Lesquels ? Pourquoi ? Quand ?
 
 [Foundation](http://foundation.zurb.com/), [Bootstrap](http://getbootstrap.com/), [pure](http://purecss.io/) sont les plus connus (et peut-être les pires). Il ne vous serviront uniquement que dans le cas d'une [PoC](http://fr.wikipedia.org/wiki/Preuve_de_concept) ou une administration de site (_back-office_).
 
-Par contre, [topcoat](http://topcoat.io/) peut se révéler assez intéressant de par sa haute personnalisation et de son _BEM-way_. Eventuellement [inuit.css](http://inuitcss.com/) sinon.
+Par contre, [topcoat](http://topcoat.io/) peut se révéler assez intéressant de par sa haute personnalisation et de son _BEM-way_. Éventuellement [inuit.css](http://inuitcss.com/) sinon.
 
 
 ### Bonus

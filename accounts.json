@@ -20,15 +20,25 @@
       "mail": "twitter@putaindecode.fr",
       "passwd-salt": "tw"
     },
-    "twitter-bot": {
-      "user": "putaindebot",
-      "mail": "twitter-bot@putaindecode.fr",
-      "passwd-salt": "twb"
+    "twitter": {
+      "user": "putaindecode",
+      "mail": "twitter@putaindecode.fr",
+      "passwd-salt": "tw"
+    },
+    "twitter-backbonejsfr": {
+      "user": "backbonejsfr",
+      "mail": "twitter+backbonejsfr@putaindecode.fr",
+      "passwd-salt": "tbb"
     },
     "twitter-fake": {
       "user": "put1dekod",
       "mail": "twitter-fake@putaindecode.fr",
       "passwd-salt": "twf"
+    },
+    "twitter-reactjsfrance": {
+      "user": "backbonejsfr",
+      "mail": "twitter+reactjsfrance@putaindecode.fr",
+      "passwd-salt": "trjfrance"
     },
     "gravatar": {
       "user": null,

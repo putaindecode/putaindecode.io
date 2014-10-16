@@ -1,10 +1,10 @@
 :root {
-  --font-family-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-title: Avenir, "Helvetica Neue", Helvetica, sans-serif;
+  --fontFamily-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fontFamily-title: Avenir, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 html {
-  font-family: var(--font-family-body);
+  font-family: var(--fontFamily-body);
 }
 
 h1,
@@ -12,87 +12,6 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--font-family-title);
+  font-family: var(--fontFamily-title);
   font-weight: 400;
 }
-
-/**
- * Vertical rhythm
- *
- * http://type-scale.com/?size=20&scale=1.200&text=A%20Visual%20Type%20Scale&webfont=&font-family=sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=#333
- */
-/*old css var spec syntax (waiting for SUIT to upgrade to --)*/
-:root {
-  --font-size: 1rem;
-  --line-height: 1.5625rem;
-  --double-line-height: calc(var(--line-height) * 2);
-  --half-line-height: calc(var(--line-height) / 2);
-
-  --font-size-h1: 2.074rem;
-  --font-size-h2: 1.728rem;
-  --font-size-h3: 1.44rem;
-  --font-size-h4: 1.2rem;
-  --font-size-small: 0.833em; /* not rem so you can use .small in .small */
-}
-
-
-body {
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-}
-
-
-p, ul {
-  margin: var(--line-height) 0;
-}
-
-/*h1,h2,h3,h4,h5,h6,hgroup,
-ul,ol,dd,
-p,figure,
-pre,table,fieldset,hr*/
-
-h1,
-h2,
-h3,
-h4 {
-  margin: 0 0 var(--line-height);
-}
-
-h1,
-h2 {
-  line-height: var(--double-line-height);
-}
-
-h3,
-h4 {
-  padding-top: calc(var(--line-height) * .4);
-  padding-bottom: calc(var(--line-height) * .6);
-  line-height: var(--line-height);
-}
-
-/* scale: 1.200 (minor third) */
-h1 {
-  font-size: var(--font-size-h1);
-}
-h2 {
-  font-size: var(--font-size-h2);
-}
-h3 {
-  font-size: var(--font-size-h3);
-}
-h4 {
-  font-size: var(--font-size-h4);
-}
-h5 {
-  font-size: var(--font-size);
-  text-decoration: underline;
-}
-h6 {
-  font-size: var(--font-size-small);
-  text-decoration: underline;
-}
-small {
-  font-size: var(--font-size-small);
-}
-
-/* ... and now just use var(--line-height) when you need some vertical spacing ! */

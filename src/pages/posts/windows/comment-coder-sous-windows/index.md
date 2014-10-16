@@ -76,7 +76,7 @@ Vous pouvez aussi installer [Atom](https://atom.io/) si vous préférez.
 
 ### Gestion d'une base de données
 
-HeidiSQL, un logiciel avec une interface qui se rapproche de PHPmyAdmin.
+HeidiSQL, un logiciel avec une interface qui se rapproche de phpMyAdmin.
 
 ```bash
 $ choco install HeidiSQL
@@ -85,7 +85,7 @@ $ choco install HeidiSQL
 - [site officiel](http://www.heidisql.com//)
 - [lien du package](http://chocolatey.org/packages/HeidiSQL)
 
-ou encore MySQL Workbench un excellent soft pour gérer une base de données:
+Ou encore MySQL Workbench un excellent soft pour gérer une base de données:
   - Modélisation
   - Édition
   - Migration
@@ -204,8 +204,8 @@ $ choco install launchy-beta
 
 ### Pipette et retouche
 
-L'indispensable [Photofiltre](http://photofiltre.free.fr/frames.htm) qui, bien qu'il ne soit plus mis à jour depuis 2012, est très stable et efficace. Il fait peu mais, le fait bien.
-  - Edition rapide d'images
+L'indispensable [PhotoFiltre](http://photofiltre.free.fr/frames.htm) qui, bien qu'il ne soit plus mis à jour depuis 2012, est très stable et efficace. Il fait peu mais, le fait bien.
+  - Édition rapide d'images
   - Pipette
   - etc.
 
