@@ -35,6 +35,11 @@
       "mail": "twitter-fake@putaindecode.fr",
       "passwd-salt": "twf"
     },
+    "twitter-reactjsfrance": {
+      "user": "backbonejsfr",
+      "mail": "twitter+reactjsfrance@putaindecode.fr",
+      "passwd-salt": "trjfrance"
+    },
     "gravatar": {
       "user": null,
       "account": "wordpress",
