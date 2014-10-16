@@ -83,7 +83,7 @@ La commande suivante (lorsque vous avez les droits nécessaires) va construire l
 en version optimisée, et le publier (mise à jour de la branche  `gh-pages`, qui,
 grâce à GitHub, suffit à mettre en ligne le site).
 
-    $ npm run publish
+    $ npm run deploy
 
 Cela dit (toujours si vous avez les droits nécessaires), vous pouvez enregistrer un token
 encrypté par Travis afin d'automatiser le publish de vos commits dans la branch master.
