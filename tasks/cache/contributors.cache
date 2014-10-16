@@ -16,6 +16,14 @@
       "location": "Paris,France",
       "hireable": false
     },
+    "aurelien.garroux@gmail.com": {
+      "login": "dhoko",
+      "name": "dhoko",
+      "gravatar_id": "",
+      "url": "https://github.com/dhoko",
+      "location": "Paris",
+      "hireable": false
+    },
     "ccoloma@jolicode.com": {
       "login": "clairecoloma",
       "gravatar_id": "63638ee1e60d9ca22adea00962632a6b"
@@ -525,11 +533,11 @@
       "twitter": "Nyalab",
       "fr": {
         "bio": {
-          "short": "Développeur full stack, troll à temps plein, gamer, whovian, porte un k-way rouge et sexy.",
+          "short": "Front-end dev @Overblog, whovian, porte un k-way rouge et sexy.",
           "long": [
-            "Développeur full stack étant donné qu'il travaille en web agency qui aime tout ce qui se rapporte au code.",
-            "Il passe ses journées à écrire du putain de bon code, à vanner sur les messages de commit, à troller tout le monde sur tout et n'importe quoi, à regarder Doctor Who et à jouer à des bons jeux, et à en apprendre chaque jour sur le monde qui l'entoure.",
-            "Et il porte toujours un k-way rouge et sexy."
+            "Développeur front-end @Overblog après avoir bossé 7 ans comme full-stack.",
+            "Il passe ses journées à essayer d'écrire du putain de bon code, à flame, blame et troll sur les messages de commit, à regarder Doctor Who, à a-click sur Starcraft2, et parfois il est sobre.",
+            "Et oui, il porte toujours un k-way rouge et sexy."
           ]
         }
       },
@@ -537,9 +545,9 @@
         "bio": {
           "short": "Full stack developer, full-time troll, gamer, whovian, wears a sexy red raincoat.",
           "long": [
-            "Full stack developer since he works in a web agency, who likes everything that relates to the code.",
-            "He spends his days by writing some putain de good code, writing jokes on commit messages, trolling everyone on everything, watching Doctor Who and playing good games, learning more every day about the world that surrounds him.",
-            "And he always wears a sexy red raincoat."
+            "Front-end dev @Overblog after working for 7 years as a full-stack one.",
+            "He spends his days by trying to write some putain de good code, flaming, blaming and trolling on commit messages, watching Doctor Who and a-clicking on Starcraft2, et sometimes he is sober.",
+            "And yes, he always wears a sexy red raincoat."
           ]
         }
       }
@@ -760,11 +768,11 @@
       "twitter": "Nyalab",
       "fr": {
         "bio": {
-          "short": "Développeur full stack, troll à temps plein, gamer, whovian, porte un k-way rouge et sexy.",
+          "short": "Front-end dev @Overblog, whovian, porte un k-way rouge et sexy.",
           "long": [
-            "Développeur full stack étant donné qu'il travaille en web agency qui aime tout ce qui se rapporte au code.",
-            "Il passe ses journées à écrire du putain de bon code, à vanner sur les messages de commit, à troller tout le monde sur tout et n'importe quoi, à regarder Doctor Who et à jouer à des bons jeux, et à en apprendre chaque jour sur le monde qui l'entoure.",
-            "Et il porte toujours un k-way rouge et sexy."
+            "Développeur front-end @Overblog après avoir bossé 7 ans comme full-stack.",
+            "Il passe ses journées à essayer d'écrire du putain de bon code, à flame, blame et troll sur les messages de commit, à regarder Doctor Who, à a-click sur Starcraft2, et parfois il est sobre.",
+            "Et oui, il porte toujours un k-way rouge et sexy."
           ]
         }
       },
@@ -772,9 +780,9 @@
         "bio": {
           "short": "Full stack developer, full-time troll, gamer, whovian, wears a sexy red raincoat.",
           "long": [
-            "Full stack developer since he works in a web agency, who likes everything that relates to the code.",
-            "He spends his days by writing some putain de good code, writing jokes on commit messages, trolling everyone on everything, watching Doctor Who and playing good games, learning more every day about the world that surrounds him.",
-            "And he always wears a sexy red raincoat."
+            "Front-end dev @Overblog after working for 7 years as a full-stack one.",
+            "He spends his days by trying to write some putain de good code, flaming, blaming and trolling on commit messages, watching Doctor Who and a-clicking on Starcraft2, et sometimes he is sober.",
+            "And yes, he always wears a sexy red raincoat."
           ]
         }
       }
@@ -892,6 +900,14 @@
           ]
         }
       }
+    },
+    "dhoko": {
+      "login": "dhoko",
+      "name": "dhoko",
+      "gravatar_id": "",
+      "url": "https://github.com/dhoko",
+      "location": "Paris",
+      "hireable": false
     },
     "enguerran": {
       "login": "enguerran",
