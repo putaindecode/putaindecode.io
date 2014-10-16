@@ -2,7 +2,7 @@
 
 Oh oui, en voilà une belle question.
 
-Il n'est pas toujours évident d'avoir un Linux, Unix, BSD ou autre avec un petit shell bien sympa sous la main. Et parfois coder sous Windows est une nécessité voire un désir. (Ouais, je ne vous parlerai pas ici de changer de boulot si Windows vous est imposé(e) ni de vous expliquer votre déficience mentale d'apprécier cet OS, ce n'est pas le sujet).
+Il n'est pas toujours évident d'avoir un Linux, Unix, BSD ou autre avec un petit shell bien sympa sous la main. Et parfois coder sous Windows est une nécessité voire un désir. (Ouais, je ne vous parlerai pas ici de changer de boulot si Windows vous est imposé(e) ni de vous expliquer votre déficience mentale d'apprécier cet OS pour développer, ce n'est pas le sujet).
 
 Étant un homme de challenge, j'aime me mettre dans des contextes limités et voir comment je me débrouille pour sortir d'une situation pénible à une situation acceptable voire agréable. Je me suis alors lancé pour vous dans cette aventure.
 
