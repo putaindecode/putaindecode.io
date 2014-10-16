@@ -1,7 +1,7 @@
 :root {
-  --putainde-Header-height-s: calc(var(--line-height) * 1.2);
+  --putainde-Header-height-s: calc(var(--lineHeight) * 1.2);
   --putainde-Logo-size-s: calc(var(--putainde-Header-height-s) * 1.4);
-  --putainde-Header-height-l: calc(var(--line-height) * 2);
+  --putainde-Header-height-l: calc(var(--lineHeight) * 2);
   --putainde-Logo-size-l: calc(var(--putainde-Header-height-l) * 1.5);
 }
 
@@ -31,7 +31,7 @@
   }
   @media (max-width:54em) {
     .putainde-SiteTitle {
-    font-size: var(--font-size-small);
+    font-size: var(--small-fontSize);
     }
   }
 
@@ -39,7 +39,7 @@
     display: inline-block;
     font-size: 1.2em;
     color: #fff;
-    font-family: var(--font-family-title);
+    font-family: var(--fontFamily-title);
   }
 
 .putainde-Logo {

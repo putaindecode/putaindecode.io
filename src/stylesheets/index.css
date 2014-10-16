@@ -1,10 +1,19 @@
+/* base */
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/cssrecipes-defaults/index.css";
+
+/* grid */
 @import "../../node_modules/suitcss-components-grid/index.css";
 @import "../../node_modules/suitcss-utils-size/lib/size.css";
+
+@import "../../node_modules/cssrecipes-vertical-rhythm/index.css";
+@import "../../node_modules/cssrecipes-vertical-rhythm/lib/ratio/minor-third.css";
+
 @import "../../node_modules/cssrecipes-tooltip/index.css";
 
 @import "./base/typography.css";
 @import "./base/colours.css";
-@import "./base/normalise.css";
+@import "./base/layout.css";
 @import "./base/responsive.css";
 @import "./base/icons.css";
 @import "../../tmp/svg-symbols.css";
