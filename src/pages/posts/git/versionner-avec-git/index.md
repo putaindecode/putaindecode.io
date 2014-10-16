@@ -82,7 +82,7 @@ Par exemple, si je veux cloner le dépôt du site :
 $ git clone https://github.com/putaindecode/putaindecode.fr.git
 ```
 
-Ça va créer un dossier `website` avec le contenu du dépôt.
+Ça va créer un dossier `putaindecode.fr` avec le contenu du dépôt.
 
 `clone` accepte plusieurs types d'adresse : HTTP(S), SSH, protocole Git dédié et
 même des chemins locaux pour cloner un dépôt situé ailleurs sur le système de
