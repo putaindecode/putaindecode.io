@@ -79,7 +79,7 @@ dossier du nom spécifié en dernier argument.
 Par exemple, si je veux cloner le dépôt du site :
 
 ```bash
-$ git clone https://github.com/putaindecode/website.git
+$ git clone https://github.com/putaindecode/putaindecode.fr.git
 ```
 
 Ça va créer un dossier `website` avec le contenu du dépôt.

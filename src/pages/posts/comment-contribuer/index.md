@@ -65,7 +65,7 @@ développeurs des internets.
 
     ```bash
     $ cd putaindecode
-    $ git remote add upstream https://github.com/putaindecode/website.git
+    $ git remote add upstream https://github.com/putaindecode/putaindecode.fr.git
     $ git fetch upstream
     ```
 
@@ -74,7 +74,7 @@ développeurs des internets.
   [Gulp](https://github.com/gulpjs/gulp).
   Il te faudra donc installer les dépendances, tu verras c'est simple comme bonjour.
   Pour faire ça, tu vas lire le
-  [README.md](https://github.com/putaindecode/website#readme)
+  [README.md](https://github.com/putaindecode/putaindecode.fr#readme)
   à la racine du repo. On fait exprès de pas te le dire ici parce
   que c'est un peu une convention pour tous les projets Open Source, et que ça
   te fait pas de mal de commencer à apprendre à bien bosser.
@@ -118,7 +118,7 @@ est des types sympas.
   y'a pas que Wordpress pour faire un site) en se basant sur gulp
   (un esclave qui te permet d'éxécuter des tâches répétitives en JavaScript)
   et quelques autres truc cools. Tu pourrais éventuellement jeter un coup d'œil
-  [aux dépendances du projet](https://github.com/putaindecode/website/blob/master/package.json),
+  [aux dépendances du projet](https://github.com/putaindecode/putaindecode.fr/blob/master/package.json),
   histoire de savoir de quoi on cause.
 
 * Tous nos posts sont contenus dans `pages/posts/`. Si jamais c'est sur
@@ -171,7 +171,7 @@ est des types sympas.
 * Il faut aussi que tu fasses attention à ne pas bosser sur le même post que
   quelqu'un d'autre et pour ça tu dois aller jeter un coup d'oeil du côté des
   issues en cours avec le label `post`. Allez, on est sympa, t'as [le
-  lien](https://github.com/putaindecode/website/issues?labels=post&page=1&state=open).
+  lien](https://github.com/putaindecode/putaindecode.fr/issues?labels=post&page=1&state=open).
 
 * Bref, une fois ton idée trouvée, il faut que tu crées le post pour pouvoir
   commencer à écrire dans le fichier. Tout d'abord tu vas devoir créer une
@@ -197,7 +197,7 @@ est des types sympas.
   automatiquement.
   Si ce n'est pas le cas, relance la tâche `$ npm start`.
   Si là tu as une erreur qui t'échappes, on t'invite à
-  [ouvrir une issue](https://github.com/putaindecode/website/issues/new).
+  [ouvrir une issue](https://github.com/putaindecode/putaindecode.fr/issues/new).
 
 * En l'état tu devrais pouvoir consulter sur le site lancé localement ton post,
   voir s'il sort correctement et s'il est présentable à ton goût.

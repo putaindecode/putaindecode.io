@@ -187,30 +187,30 @@ Avec Gulp on se sent plus libre, moins contraint.
 Du coup, **on a carrément fait notre site avec Gulp**
 (puis au passage un petit refresh graphique tant qu'à faire).
 
-Pour aller plus loin, vous n'avez qu'à ouvrir notre [Gulpfile](https://github.com/putaindecode/website/blob/master/Gulpfile.js)
-et regarder nos [tasks](https://github.com/putaindecode/website/tree/master/tasks)
-qui vont de [la plus simple](https://github.com/putaindecode/website/blob/master/tasks/clean.js)
-à [la plus compliqué](https://github.com/putaindecode/website/blob/master/tasks/contributors.js).
+Pour aller plus loin, vous n'avez qu'à ouvrir notre [Gulpfile](https://github.com/putaindecode/putaindecode.fr/blob/master/Gulpfile.js)
+et regarder nos [tasks](https://github.com/putaindecode/putaindecode.fr/tree/master/tasks)
+qui vont de [la plus simple](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/clean.js)
+à [la plus compliqué](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/contributors.js).
 
 Pour voir des tâches plus « real world example » je vous invite à regarder les tasks suivantes :
 
-- [server](https://github.com/putaindecode/website/blob/master/tasks/server.js),
+- [server](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/server.js),
 le server de dev local avec livereload dedans ;
-- [watch](https://github.com/putaindecode/website/blob/master/tasks/watch.js),
+- [watch](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/watch.js),
 le classique et si simple watcher ;
-- [publish](https://github.com/putaindecode/website/blob/master/tasks/publish.js),
+- [publish](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/publish.js),
 la tâche pour publier le dossier `dist/` sur les [gh-pages](https://pages.github.com/) ;
-- [icons](https://github.com/putaindecode/website/blob/master/tasks/icons.js),
+- [icons](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/icons.js),
 qui transforme des SVG en fontes d'icones avec le bout de CSS qui va bien ;
-- [scripts-linting](https://github.com/putaindecode/website/blob/master/tasks/scripts-linting.js),
+- [scripts-linting](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/scripts-linting.js),
 qui vérifie la qualité du code ;
-- [scripts](https://github.com/putaindecode/website/blob/master/tasks/scripts.js),
+- [scripts](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/scripts.js),
 du [browserify](/posts/js/browserify-all-the-things/) pour nos JS côté client ;
-- [stylesheets](https://github.com/putaindecode/website/blob/master/tasks/stylesheets.js),
+- [stylesheets](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/stylesheets.js),
 notre tâche qui mélange (pour l'instant) Stylus et Rework (suite à une rixe à la récré, on n'a pas réussi à se mettre d'accord, donc chacun à rajouté son morceau) ;
 
 Bien entendu, si vous ne comprenez pas certaines parties, n'hésitez pas à
-[ouvrir une issue](https://github.com/putaindecode/website/issues/new)
+[ouvrir une issue](https://github.com/putaindecode/putaindecode.fr/issues/new)
 pour demander des explications.
 
 

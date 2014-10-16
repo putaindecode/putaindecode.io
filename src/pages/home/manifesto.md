@@ -22,7 +22,7 @@ Quoi qu'il en soit, on se considère comme une communauté, et même si on lance
 truc à l'arrache après avoir mis un peu de temps à sortir quelque chose tout court,
 on est chauds bouillants, et ce qui fera le succès de cette communauté, c'est vous.
 Vous pouvez déjà participer à l'évolution du site en allant voir
-[sur quoi on travaille](https://github.com/putaindecode/website/issues?labels=post&state=open)
+[sur quoi on travaille](https://github.com/putaindecode/putaindecode.fr/issues?labels=post&state=open)
  et même
 [nous faire vos propositions](https://github.com/putaindecode/propositions-de-posts)
 ou même encore nous poser une question sur [le forum](https://github.com/putaindecode/forum/issues).

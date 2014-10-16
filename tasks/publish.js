@@ -10,7 +10,7 @@ var paths = require("./paths")
 module.exports = function(){
   return gulp.src([paths.dist.public + "**/*"])
     .pipe(ghPages({
-      remoteUrl : "https://" + (process.env.GH_TOKEN ? process.env.GH_TOKEN + "@" : "") + "github.com/putaindecode/website.git",
+      remoteUrl : "https://" + (process.env.GH_TOKEN ? process.env.GH_TOKEN + "@" : "") + "github.com/putaindecode/putaindecode.fr.git",
       branch : "gh-pages",
       cacheDir : __dirname + "/../.publish"
     }))

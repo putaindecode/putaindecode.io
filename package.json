@@ -2,15 +2,15 @@
   "name": "putaindecode.fr",
   "version": "0.0.0",
   "license": "MIT",
-  "authors": "https://github.com/putaindecode/website/graphs/contributors",
+  "authors": "https://github.com/putaindecode/putaindecode.fr/graphs/contributors",
   "homepage": "http://putaindecode.fr",
-  "repositoryHttpUrl": "http://github.com/putaindecode/website",
+  "repositoryHttpUrl": "http://github.com/putaindecode/putaindecode.fr",
   "repository": {
     "type": "git",
-    "url": "https://github.com/putaindecode/website.git"
+    "url": "https://github.com/putaindecode/putaindecode.fr.git"
   },
   "bugs": {
-    "url": "https://github.com/putaindecode/website/issues"
+    "url": "https://github.com/putaindecode/putaindecode.fr/issues"
   },
   "dependencies": {
     "bloody-curry": "^0.1.1",
