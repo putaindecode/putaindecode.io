@@ -53,7 +53,7 @@ développeurs des internets.
   t'expliquer).
 
   ```bash
-  $ git clone https://github.com/clinthorris/website.git putaindecode
+  $ git clone https://github.com/clinthorris/putaindecode.fr.git putaindecode
   ```
 
 * Ensuite tu dois ajouter ce qu'on appelle une remote. Une remote c'est une

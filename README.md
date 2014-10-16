@@ -13,7 +13,7 @@ Pas de base de données à installer, pas de serveurs à configurer.
 ## tl;dr;
 
     $ git clone https://github.com/putaindecode/putaindecode.fr.git
-    $ cd website
+    $ cd putaindecode.fr
     $ npm run init
     $ npm install
     $ npm start

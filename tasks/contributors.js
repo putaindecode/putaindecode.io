@@ -99,7 +99,7 @@ var contributorsMap = function(){
           .then(function(stdout){
             return PromisePolyfill.denodeify(githubApi.repos.getCommit)({
               user : "putaindecode",
-              repo : "website",
+              repo : "putaindecode.fr",
               sha : stdout
             })
           })
