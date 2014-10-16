@@ -1,6 +1,6 @@
 :root {
-  --Grid-font-size: var(--font-size);
-  --Grid-gutter-size: var(--line-height);
+  --Grid-font-size: var(--fontSize);
+  --Grid-gutter-size: var(--lineHeight);
 }
 
 .Grid {
@@ -9,7 +9,7 @@
   margin-right: auto;
 }
 
-@media (max-width:54em) {
+@media (max-width: 54em) {
   .Grid {
     width: auto;
   }
