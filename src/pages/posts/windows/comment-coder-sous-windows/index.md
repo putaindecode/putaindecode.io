@@ -164,6 +164,20 @@ $ choco install sumatrapdf.install
 $ choco install pdfcreator
 ```
 
+### Un machine virtuelle pour tester IE ou même GNU/Linux
+
+On a toujours une intégration à tester sous IE pour ça Microsoft nous donne accès à des machines virtuelles gratuitement sur [ModernIE](https://www.modern.ie/fr-fr). Il nous faut donc Virtualbox pour les lancer.
+
+```bash
+choco install virtualbox
+choco install VirtualBox.ExtensionPack
+```
+
+> l'Extension Pack est utile pour une intégration parfaite avec votre machine si vous installez votre propre VM GNU/Linux ou Windows.
+
+- [site officiel](hhttps://www.virtualbox.org/)
+- [lien du package](http://chocolatey.org/packages/virtualbox)
+
 ### Spaaaaaaaces
 
 Parce qu'avoir plusieurs bureaux / espaces, c'est plus pratique pour gérer ses fenêtres, je vous propose VirtuaWin. Cela vous permettra de garder en plein écran vos logiciels et de zapper d'un logiciel à un autre sans passer par `alt+tab` mais en allant d'un bureau à un autre.
