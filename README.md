@@ -83,7 +83,9 @@ grâce à GitHub, suffit à mettre en ligne le site).
 
     $ npm run deploy
 
-**Cela dit, tous les commits dans la branche `master` provoqueront une mise en production automatique via [Travis-CI](https://travis-ci.org/putaindecode/putaindecode.fr).**
+**Cela dit, tous les commits dans la branche `master` provoqueront une mise en production automatique via [Travis-CI](https://travis-ci.org/).**
+
+_Note: pour commiter sans provoquer un `deploy`, il suffit d'ajouter `[ci skip]` dans votre message de commit._
 
 ---
 
