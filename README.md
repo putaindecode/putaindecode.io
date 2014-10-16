@@ -1,8 +1,6 @@
 # Putain de Code !
 
 [![Build Status](http://img.shields.io/travis/putaindecode/website.svg?style=flat)](https://travis-ci.org/putaindecode/website)
-[![Code Climate](http://img.shields.io/codeclimate/github/putaindecode/website.svg?style=flat)](https://codeclimate.com/github/putaindecode/website)
-[![Gemnasium](http://img.shields.io/gemnasium/putaindecode/website.svg?style=flat)](https://gemnasium.com/putaindecode/website)
 
 [![Testling](https://ci.testling.com/putaindecode/website.png)](https://ci.testling.com/putaindecode/website)
 
