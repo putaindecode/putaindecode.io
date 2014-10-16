@@ -74,6 +74,32 @@ $ choco install sublimetext3
 
 Vous pouvez aussi installer [Atom](https://atom.io/) si vous préférez.
 
+### Gestion d'une base de données
+
+HeidiSQL, un logiciel avec une interface qui se rapproche de PHPmyAdmin.
+
+```bash
+$ choco install HeidiSQL
+```
+
+- [site officiel](http://www.heidisql.com//)
+- [lien du package](http://chocolatey.org/packages/HeidiSQL)
+
+ou encore MySQL Workbench un excellent soft pour gérer une base de données:
+  - Modélisation
+  - Edition
+  - Migration
+Par contre, il est un peu plus complexe à utiliser.
+
+```bash
+$ choco install mysql.workbench
+```
+
+- [site officiel](http://dev.mysql.com/downloads/workbench/)
+- [lien du package](http://chocolatey.org/packages/mysql.workbench)
+
+
+
 ### Un meilleur shell
 
 Clink va vous permettre quelques fonctionnalités intéressantes que le shell de Windows n'a pas de base, comme taper `<tab>` pour l'autocomplétion par exemple.
@@ -167,6 +193,35 @@ Je vous conseille le profil `XMac.LCD.Default`.
 
 - [site officiel](https://code.google.com/p/mactype/)
 - [lien du package](https://chocolatey.org/packages/mactype)
+
+### Si vous avez besoin du SSH
+
+Pour le SSH sous Windows c'est assez complexe, il faut quelques outils dont le principal, putty (un terminal et +).
+
+```bash
+$ choco install putty
+```
+
+- [site officiel](http://chocolatey.org/packages/putty)
+- [lien du package](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
+
+
+Putty vient avec une suite de logiciel:
+
+- [PuTTYgen](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour générer une clé SSH sous Windows
+- [Plink](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour permettre à HeidiSQL de se connecter à une base de données via SSH.
+- [Pageant](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour charger votre clé SSH dans Windows pour éviter qu'il demande sans cesse la clé ou le mot de passe.
+
+> Pour que le ssh soit agréable, je vous recommande pageant et ensuite un terminal comme *Clink* ou encore *git bash* qui s'installe via *git*.
+
+### Sans chocolatey - Pipette et retouche
+
+L'indispensable [Photofiltre](http://photofiltre.free.fr/frames.htm) qui, bien qu'il ne soit plus mis à jour depuis 2012, est très stable et efficace. Il fait peu mais, le fait bien.
+  - Edition rapide d'images
+  - Pipette
+  - etc.
+
+Et surtout, il est ultra léger et démarre en moins d'une seconde.
 
 ## Vous voilà paré(e) !
 
