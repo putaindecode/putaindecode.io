@@ -179,6 +179,17 @@ $ choco install sumatrapdf.install
 $ choco install pdfcreator
 ```
 
+### Mettre des onglets dans l'explorateur de fichiers
+
+Nous sommes en 2014 ça fait des années que Microsoft sait mais, ce n'est toujours pas disponible. C'est là que Clover rentre en jeu.
+
+```bash
+$ choco install Clover
+```
+
+- [site officiel](http://ejie.me/)
+- [lien du package](http://chocolatey.org/packages/Clover)
+
 ### Spaaaaaaaces
 
 Parce qu'avoir plusieurs bureaux / espaces, c'est plus pratique pour gérer ses fenêtres, je vous propose VirtuaWin. Cela vous permettra de garder en plein écran vos logiciels et de zapper d'un logiciel à un autre sans passer par `alt+tab` mais en allant d'un bureau à un autre.
