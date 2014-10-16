@@ -15,7 +15,7 @@ Pour cela, plusieurs outils vont vous être nécessaires. Un chef sans bons outi
 
 ## Chocolatey : la base
 
-[Chocolatey](http://chocolatey.org/). Ouais, chocolatey, ce petit script vous permettra de télécharger tout et n'importe quoi en cli (ligne de commandes). Pour ceux qui ont l'habitude de mac ou linux, c'est le brew / apt-get de Windows.
+[Chocolatey](http://chocolatey.org/). Ouais, chocolatey, ce petit script vous permettra de télécharger tout et n'importe quoi en CLI (ligne de commandes). Pour ceux qui ont l'habitude de Mac ou Linux, c'est le brew / apt-get de Windows.
 
 Comment l'installer ?
 
@@ -120,7 +120,7 @@ $ choco install pdfcreator
 
 ### Spaaaaaaaces
 
-Parce qu'avoir plusieurs bureaux / espaces, c'est plus pratique pour gérer ses fenêtres, je vous propose VirtuaWin. Cela vous permettra de garder en plein écran vos logiciels et de zapper d'un logiciel à un autre sans passer par alt+tab mais en allant d'un bureau à un autre.
+Parce qu'avoir plusieurs bureaux / espaces, c'est plus pratique pour gérer ses fenêtres, je vous propose VirtuaWin. Cela vous permettra de garder en plein écran vos logiciels et de zapper d'un logiciel à un autre sans passer par `alt+tab` mais en allant d'un bureau à un autre.
 
 ```bash
 $ choco install virtuawin
@@ -155,9 +155,9 @@ $ choco install f.lux
 
 #### MacType
 
-Et surtout, MacType. Oh oui MacType. Je pense que seule une personne venant de MacOSX peut comprendre. Dieu sait que le font rendering sous Windows est vraiment pourri et que Steve Jobs depuis le départ de Mac a fait en sorte sur le rendering des fonts sous son OS soit de qualité.
+Et surtout, MacType. Oh oui MacType. Je pense que seule une personne venant de Mac OS X peut comprendre. Dieu sait que le font rendering sous Windows est vraiment pourri et que Steve Jobs depuis le départ de Mac a fait en sorte sur le rendering des fonts sous son OS soit de qualité.
 
-Pour réduire cette différence entre un Windows et un MacOSX, je vous propose MacType qui permet de remplacer le font rendering de Windows et d'apprécier lire à nouveau sur cet OS.
+Pour réduire cette différence entre un Windows et un Mac OS X, je vous propose MacType qui permet de remplacer le font rendering de Windows et d'apprécier lire à nouveau sur cet OS.
 
 ```bash
 $ choco install mactype
