@@ -131,6 +131,22 @@ Putty vient avec une suite de logiciels :
 
 > Pour que le ssh soit agréable, je vous recommande pageant et ensuite un terminal comme *Clink* ou encore *git bash* qui s'installe via *git*.
 
+
+### Une machine virtuelle pour tester IE ou même GNU/Linux
+
+On a toujours une intégration à tester sous IE pour ça Microsoft nous donne accès à des machines virtuelles gratuitement sur [ModernIE](https://www.modern.ie/fr-fr). Il nous faut donc Virtualbox pour les lancer.
+
+```bash
+choco install virtualbox
+choco install VirtualBox.ExtensionPack
+```
+
+> l'Extension Pack est utile pour une intégration parfaite avec votre machine si vous installez votre propre VM GNU/Linux ou Windows.
+
+- [site officiel](hhttps://www.virtualbox.org/)
+- [lien du package](http://chocolatey.org/packages/virtualbox)
+
+
 ### Compresser / décompresser comme vous le voulez
 
 7zip, le logiciel de référence pour ce genre de pratique.
