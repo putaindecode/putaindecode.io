@@ -111,6 +111,26 @@ $ choco install clink.install
 - [site officiel](http://mridgers.github.io/clink/)
 - [lien du package](https://chocolatey.org/packages/clink.install)
 
+### Si vous avez besoin de SSH
+
+Pour le SSH sous Windows c'est assez complexe, il faut quelques outils dont le principal, putty (un terminal et +).
+
+```bash
+$ choco install putty
+```
+
+- [site officiel](http://chocolatey.org/packages/putty)
+- [lien du package](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
+
+
+Putty vient avec une suite de logiciel:
+
+- [PuTTYgen](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour générer une clé SSH sous Windows
+- [Plink](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour permettre à HeidiSQL de se connecter à une base de données via SSH.
+- [Pageant](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour charger votre clé SSH dans Windows pour éviter qu'il demande sans cesse la clé ou le mot de passe.
+
+> Pour que le ssh soit agréable, je vous recommande pageant et ensuite un terminal comme *Clink* ou encore *git bash* qui s'installe via *git*.
+
 ### Compresser / décompresser comme vous le voulez
 
 7zip, le logiciel de référence pour ce genre de pratique.
@@ -166,6 +186,15 @@ $ choco install launchy-beta
 - [site officiel](http://www.launchy.net/)
 - [lien du package](https://chocolatey.org/packages/launchy-beta)
 
+### Pipette et retouche
+
+L'indispensable [Photofiltre](http://photofiltre.free.fr/frames.htm) qui, bien qu'il ne soit plus mis à jour depuis 2012, est très stable et efficace. Il fait peu mais, le fait bien.
+  - Edition rapide d'images
+  - Pipette
+  - etc.
+
+Et surtout, il est ultra léger et démarre en moins d'une seconde.
+
 ### Et enfin, comment ne pas se niquer les yeux toute la journée
 
 #### f.lux
@@ -193,35 +222,6 @@ Je vous conseille le profil `XMac.LCD.Default`.
 
 - [site officiel](https://code.google.com/p/mactype/)
 - [lien du package](https://chocolatey.org/packages/mactype)
-
-### Si vous avez besoin du SSH
-
-Pour le SSH sous Windows c'est assez complexe, il faut quelques outils dont le principal, putty (un terminal et +).
-
-```bash
-$ choco install putty
-```
-
-- [site officiel](http://chocolatey.org/packages/putty)
-- [lien du package](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
-
-
-Putty vient avec une suite de logiciel:
-
-- [PuTTYgen](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour générer une clé SSH sous Windows
-- [Plink](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour permettre à HeidiSQL de se connecter à une base de données via SSH.
-- [Pageant](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour charger votre clé SSH dans Windows pour éviter qu'il demande sans cesse la clé ou le mot de passe.
-
-> Pour que le ssh soit agréable, je vous recommande pageant et ensuite un terminal comme *Clink* ou encore *git bash* qui s'installe via *git*.
-
-### Sans chocolatey - Pipette et retouche
-
-L'indispensable [Photofiltre](http://photofiltre.free.fr/frames.htm) qui, bien qu'il ne soit plus mis à jour depuis 2012, est très stable et efficace. Il fait peu mais, le fait bien.
-  - Edition rapide d'images
-  - Pipette
-  - etc.
-
-Et surtout, il est ultra léger et démarre en moins d'une seconde.
 
 ## Vous voilà paré(e) !
 
