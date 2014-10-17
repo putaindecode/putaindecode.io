@@ -1,4 +1,4 @@
-_Putain de Code !_
+_Putain de code !_
 Déjà, le nom commence bien.
 
 On a cherché un nom qui claque bien et on s'est dit que celui là serait
