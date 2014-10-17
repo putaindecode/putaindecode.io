@@ -1,0 +1,21 @@
+{
+  "crew" : false,
+  "twitter": "bmeurant",
+  "fr": {
+    "bio": {
+      "short": "Software craftsman, full stack developer, technical leader, architect.",
+      "long": [
+        "Développeur full stack. Spécialités en Java & Javascript mais j'essaie de rester polyglotte."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Software craftsman, full stack developer, technical leader, architect.",
+      "long": [
+        "Full stack developer. Special skills and experiences on Java & Javascript but try to be polyglot.",
+        "Passionate about software development, open source enthusiast"
+      ]
+    }
+  }
+}
