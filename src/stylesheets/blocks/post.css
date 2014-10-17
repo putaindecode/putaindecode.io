@@ -28,10 +28,6 @@
   color: #999;
 }
 
-.putainde-Post-readingTime {
-  animation: ReadingTimeAppear .3s ease-in-out;
-}
-
 @keyframes ReadingTimeAppear {
   from {
     opacity: 0;
@@ -42,11 +38,23 @@
   }
 }
 
-.putainde-Post-readingTime--hidden  {
-  visibility: hidden;
-  opacity: 0;
-  animation: none;
+.putainde-Post-readingTime {
+  animation: ReadingTimeAppear .3s ease-in-out;
 }
+
+  .putainde-Post-readingTime--hidden  {
+    visibility: hidden;
+    opacity: 0;
+    animation: none;
+  }
+
+  /* enable nowrap for tooltip only for medium screen, to avoid scrollbar & shit */
+  /* https://github.com/putaindecode/putaindecode.fr/issues/266 */
+  @media (min-width: 54.01em) {
+    .putainde-Post-readingTime::before {
+      white-space: nowrap;
+    }
+  }
 
 .putainde-Post-contents {
   text-align: left;
