@@ -20,10 +20,10 @@
       "mail": "twitter@putaindecode.fr",
       "passwd-salt": "tw"
     },
-    "twitter": {
-      "user": "putaindecode",
-      "mail": "twitter@putaindecode.fr",
-      "passwd-salt": "tw"
+    "twitter-bot": {
+      "user": "putaindebot",
+      "mail": "twitter-bot@putaindecode.fr",
+      "passwd-salt": "twb"
     },
     "twitter-backbonejsfr": {
       "user": "backbonejsfr",
