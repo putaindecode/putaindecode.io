@@ -1,11 +1,14 @@
-mixin Avatar(author, tooltip)
-  -var gravatar = contributors.map[author.login].gravatar_id || "default"
+mixin Avatar(author, tooltip, size)
+  //- -var gravatar = contributors.map[author.login].gravatar_id || "default"
+  -var avatarUrl = contributors.map[author.login].avatar_url
   -var className = ""
+  -size = size || 128
   -if (tooltip)
     -className += "rcp-Tooltip rcp-Tooltip--bottom"
   a(href="#{getAuthorUri(author)}", data-rcp-tooltip="#{author.login}", class="#{attributes.class} #{className}")
+    //- src="http://www.gravatar.com/avatar/#{gravatar}.png"
     img(
       class="putainde-Avatar js-AnimateLoad"
-      src="http://www.gravatar.com/avatar/#{gravatar}.png"
+      src="#{avatarUrl}&s=#{size}"
       alt=""
     )

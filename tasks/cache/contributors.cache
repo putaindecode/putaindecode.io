@@ -3,7 +3,8 @@
     "agmagor@agmagor.be": {
       "login": "Agmagor",
       "name": "Agmagor",
-      "gravatar_id": "166632516b43cfdcd8ce01a519ea1f04",
+      "avatar_url": "https://avatars.githubusercontent.com/u/470997?v=2",
+      "gravatar_id": "",
       "url": "http://agmagor.be",
       "location": "France",
       "hireable": false
@@ -11,6 +12,7 @@
     "andrieu.travail@gmail.com": {
       "login": "mickaelandrieu",
       "name": "Mickaël Andrieu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1247388?v=2",
       "gravatar_id": "",
       "url": "http://www.mickael-andrieu.com",
       "location": "Paris,France",
@@ -19,6 +21,7 @@
     "aurelien.garroux@gmail.com": {
       "login": "dhoko",
       "name": "dhoko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/713283?v=2",
       "gravatar_id": "",
       "url": "https://github.com/dhoko",
       "location": "Paris",
@@ -26,12 +29,14 @@
     },
     "ccoloma@jolicode.com": {
       "login": "clairecoloma",
-      "gravatar_id": "63638ee1e60d9ca22adea00962632a6b"
+      "avatar_url": "https://avatars.githubusercontent.com/u/3041408?v=2",
+      "gravatar_id": ""
     },
     "chef@bitdeli.com": {
       "login": "bitdeli-chef",
       "name": "Bitdeli Chef",
-      "gravatar_id": "b42c651650ec8d3d95829c75e318af2d",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3092978?v=2",
+      "gravatar_id": "",
       "url": "https://bitdeli.com/free",
       "location": "San Francisco,CA",
       "hireable": false
@@ -39,6 +44,7 @@
     "cyril.moreau0804@gmail.com": {
       "login": "Nickdouille",
       "name": "Cyril Moreau",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2188628?v=2",
       "gravatar_id": "",
       "url": "http://sojavascript.com",
       "location": "Aix-en-Provence",
@@ -47,8 +53,9 @@
     "dguyon@gmail.com": {
       "login": "dguyon",
       "name": "David Guyon",
-      "gravatar_id": "0fef7ada66fa27ea422fdbc45849d913",
-      "url": "http://davidguyon.com",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61255?v=2",
+      "gravatar_id": "",
+      "url": "http://davidguyon.com/",
       "location": "Paris, France",
       "hireable": true,
       "crew": true,
@@ -77,21 +84,33 @@
     "dridi.boukelmoune@gmail.com": {
       "login": "Dridi",
       "name": "Dridi Boukelmoune",
-      "gravatar_id": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/891744?v=2",
+      "gravatar_id": "",
       "location": "Paris",
       "hireable": false
     },
     "engcolson@gmail.com": {
       "login": "enguerran",
       "name": "Enguerran",
-      "gravatar_id": "2e43fe3376aaf887aad755de94942fa0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/701648?v=2",
+      "gravatar_id": "",
       "location": "",
       "hireable": false
     },
     "erwann.mest+github@gmail.com": {
       "login": "kud",
       "name": "Erwänn Mest",
-      "gravatar_id": "9713e529bef70eea8965e0dda2000334",
+      "avatar_url": "https://avatars.githubusercontent.com/u/655838?v=2",
+      "gravatar_id": "",
+      "url": "http://kud.io",
+      "location": "Paris, France",
+      "hireable": false
+    },
+    "erwann.mest@gmail.com": {
+      "login": "kud",
+      "name": "Erwänn Mest",
+      "avatar_url": "https://avatars.githubusercontent.com/u/655838?v=2",
+      "gravatar_id": "",
       "url": "http://kud.io",
       "location": "Paris, France",
       "hireable": false,
@@ -114,17 +133,10 @@
         }
       }
     },
-    "erwann.mest@gmail.com": {
-      "login": "kud",
-      "name": "Erwänn Mest",
-      "gravatar_id": "9713e529bef70eea8965e0dda2000334",
-      "url": "http://kud.io",
-      "location": "Paris, France",
-      "hireable": false
-    },
     "guillaume.demesy@gmail.com": {
       "login": "magsout",
       "name": "Guillaume Demesy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1997108?v=2",
       "gravatar_id": "",
       "url": "http://magsout.github.io/",
       "location": "Lorraine",
@@ -133,15 +145,17 @@
     "hi@mattischneider.fr": {
       "login": "MattiSG",
       "name": "Matti Schneider",
-      "gravatar_id": "81ee62724136cc42065a0af37aa0edc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/222463?v=2",
+      "gravatar_id": "",
       "url": "http://mattischneider.fr",
-      "location": "France",
+      "location": "Paris, France",
       "hireable": false
     },
     "justinmarsan@gmail.com": {
       "login": "justinmarsan",
       "name": "Justin Marsan",
-      "gravatar_id": "c1b2afa3f4c034170bd21991e9e81d60",
+      "avatar_url": "https://avatars.githubusercontent.com/u/639365?v=2",
+      "gravatar_id": "",
       "url": "http://www.justinmarsan.com",
       "location": null,
       "hireable": true,
@@ -169,7 +183,8 @@
     "keuwah@gmail.com": {
       "login": "kewah",
       "name": "Antoine Lehurt",
-      "gravatar_id": "a784456bf9c7902bec153445c50f015c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/195442?v=2",
+      "gravatar_id": "",
       "url": "http://www.kewah.com",
       "location": "Stockholm, Sweden",
       "hireable": true,
@@ -197,7 +212,8 @@
     "lionel@lumographe.fr": {
       "login": "lionelB",
       "name": "Lionel",
-      "gravatar_id": "03edc8b4edc19d91202e69c65c5baeff",
+      "avatar_url": "https://avatars.githubusercontent.com/u/160320?v=2",
+      "gravatar_id": "",
       "url": "http://lumographe.fr/",
       "location": "Loriol",
       "hireable": true,
@@ -225,33 +241,17 @@
     "m+github@kud.io": {
       "login": "kud",
       "name": "Erwänn Mest",
-      "gravatar_id": "9713e529bef70eea8965e0dda2000334",
+      "avatar_url": "https://avatars.githubusercontent.com/u/655838?v=2",
+      "gravatar_id": "",
       "url": "http://kud.io",
       "location": "Paris, France",
-      "hireable": false,
-      "crew": true,
-      "twitter": "_kud",
-      "fr": {
-        "bio": {
-          "short": "viking ui engineer.",
-          "long": [
-            "Viking UI engineer (avec une pointe de node.js), batteur, s'essayant à la photographie, aime le cinema."
-          ]
-        }
-      },
-      "en": {
-        "bio": {
-          "short": "viking ui engineer.",
-          "long": [
-            "Viking UI engineer (also node.js dev), drummer, photographer, cinema lover."
-          ]
-        }
-      }
+      "hireable": false
     },
     "m@kud.io": {
       "login": "kud",
       "name": "Erwänn Mest",
-      "gravatar_id": "9713e529bef70eea8965e0dda2000334",
+      "avatar_url": "https://avatars.githubusercontent.com/u/655838?v=2",
+      "gravatar_id": "",
       "url": "http://kud.io",
       "location": "Paris, France",
       "hireable": false
@@ -259,7 +259,8 @@
     "m@moox.fr": {
       "login": "MoOx",
       "name": "Maxime Thirouin",
-      "gravatar_id": "2f6c2dcd4ba8fc44f1e7f0b2ed3d587d",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157534?v=2",
+      "gravatar_id": "",
       "url": "http://moox.io/",
       "location": "Toulouse, France",
       "hireable": true,
@@ -287,67 +288,26 @@
     "m@moox.io": {
       "login": "MoOx",
       "name": "Maxime Thirouin",
-      "gravatar_id": "2f6c2dcd4ba8fc44f1e7f0b2ed3d587d",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157534?v=2",
+      "gravatar_id": "",
       "url": "http://moox.io/",
       "location": "Toulouse, France",
-      "hireable": true,
-      "crew": true,
-      "twitter": "MoOx",
-      "fr": {
-        "bio": {
-          "short": "Développeur web front-end 100% bio. Disponible en Freelance.",
-          "long": [
-            "Open source addict vivant dans la campagne près de Toulouse, Maxime est développeur web front-end le jour, et justicier du code la nuit.  ",
-            "Il aime faire des calins à HTML, CSS et JavaScript en tant que freelance."
-          ]
-        }
-      },
-      "en": {
-        "bio": {
-          "short": "100% Organic Front-end Web Developer. Available for Freelance.",
-          "long": [
-            "Open source addict living in the country near Toulouse, France, Maxime is a front-end web developer by day & a code vigilante by night.  ",
-            "He likes to play with HTML, CSS & JavaScript, as a freelancer."
-          ]
-        }
-      }
+      "hireable": true
     },
     "madx+github@yapok.org": {
       "login": "madx",
       "name": "François Vaux",
-      "gravatar_id": "96006f57ca92ec95713532129b039d9c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5723?v=2",
+      "gravatar_id": "",
       "url": "http://madx.me/",
       "location": "France, Marseille",
-      "hireable": false,
-      "twitter": "madx",
-      "crew": true,
-      "fr": {
-        "bio": {
-          "short": "Développeur Ruby & JavaScript. Troll niveau 100.",
-          "long": [
-            "Développeur Ruby et JavaScript, avec un goût prononcé pour la simplicité, le soleil, le pastis.",
-            "Il n'aime pas OS X car, objectivement, c'est nul.",
-            "Quand il n'est pas devant son ordi, il y a de grandes chances qu'il compense avec son téléphone.",
-            "Spécialiste en développement d'applications inutiles."
-          ]
-        }
-      },
-      "en": {
-        "bio": {
-          "short": "Développeur Ruby & JavaScript. Level 100 Troll.",
-          "long": [
-            "Ruby and JavaScript developer with a taste for simplicity, sun and pastis.",
-            "He does not like OS X because it sucks (objectively).",
-            "When he's not in front of his computers, chances are he's geeking on his phone.",
-            "Specialist in developing useless applications."
-          ]
-        }
-      }
+      "hireable": false
     },
     "madx@yapok.org": {
       "login": "madx",
       "name": "François Vaux",
-      "gravatar_id": "96006f57ca92ec95713532129b039d9c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5723?v=2",
+      "gravatar_id": "",
       "url": "http://madx.me/",
       "location": "France, Marseille",
       "hireable": false,
@@ -378,12 +338,14 @@
     },
     "marchenay.felix@gmail.com": {
       "login": "Felix49",
-      "gravatar_id": "197c24e25a972f4f945257896cb5cbfb"
+      "avatar_url": "https://avatars.githubusercontent.com/u/7084401?v=2",
+      "gravatar_id": ""
     },
     "martin@piwany.com": {
       "login": "Erwyn",
       "name": "Martin Goyot",
-      "gravatar_id": "73af1b4a749651d146a756e7830f10da",
+      "avatar_url": "https://avatars.githubusercontent.com/u/206743?v=2",
+      "gravatar_id": "",
       "url": "http://erwyn.piwany.com",
       "location": "Annecy/Grenoble - France",
       "hireable": false,
@@ -417,18 +379,21 @@
     "matthieusadouni@gmail.com": {
       "login": "msadouni",
       "name": "Matthieu Sadouni",
-      "gravatar_id": "cc1c227599a4b35b9f7ac3d1ea6070da",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38374?v=2",
+      "gravatar_id": "",
       "url": "http://blog.mh-communication.fr",
       "location": "Caen, France",
       "hireable": false
     },
     "maxime.cousinou@zemax.net": {
       "login": "zemax",
-      "gravatar_id": "fdf0b5a35dbbeecd7919551475318c13"
+      "avatar_url": "https://avatars.githubusercontent.com/u/286485?v=2",
+      "gravatar_id": ""
     },
     "maxime10081985@gmail.com": {
       "login": "Macxim",
       "name": "Maxime Laforet",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1909957?v=2",
       "gravatar_id": "",
       "location": "Brussels, Belgium",
       "hireable": false
@@ -436,7 +401,8 @@
     "mlbli@me.com": {
       "login": "bloodyowl",
       "name": "Matthias Le Brun",
-      "gravatar_id": "37500337ba5d2aebc962959ed83928e5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1688645?v=2",
+      "gravatar_id": "",
       "url": "http://bloodyowl.io",
       "location": "Paris",
       "hireable": false,
@@ -462,7 +428,8 @@
     "notgrm@gmail.com": {
       "login": "NotGrm",
       "name": null,
-      "gravatar_id": "ace1273ad23fa8c65664d3e5d64bab4a",
+      "avatar_url": "https://avatars.githubusercontent.com/u/793603?v=2",
+      "gravatar_id": "",
       "url": "http://notgrm.fr",
       "location": null,
       "hireable": false
@@ -470,7 +437,8 @@
     "quentin.t@gmail.com": {
       "login": "quentint",
       "name": "Quentin",
-      "gravatar_id": "794e98e18d210488a1b503b946b6db6a",
+      "avatar_url": "https://avatars.githubusercontent.com/u/349104?v=2",
+      "gravatar_id": "",
       "url": "http://toki-woki.net",
       "location": "Bordeaux, France",
       "hireable": false
@@ -478,7 +446,8 @@
     "remy.hannequin@gmail.com": {
       "login": "rhannequin",
       "name": "Rémy Hannequin",
-      "gravatar_id": "a2b9398e4753f15d628c8d928600d90e",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1019025?v=2",
+      "gravatar_id": "",
       "url": "http://rhannequ.in",
       "location": "Paris",
       "hireable": false,
@@ -510,7 +479,8 @@
     "sdussaut@gmail.com": {
       "login": "sdussaut",
       "name": "sdussaut",
-      "gravatar_id": "abc11ef4df79fd555549e517fdea4f2c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/643853?v=2",
+      "gravatar_id": "",
       "url": "http://switch-company.com",
       "location": "Paris",
       "hireable": false
@@ -518,7 +488,8 @@
     "seb@desbenoit.net": {
       "login": "desbenoit",
       "name": "Sébastien Desbenoit",
-      "gravatar_id": "64fd6dd3cc2195d4ddf407aad48b5d94",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1142531?v=2",
+      "gravatar_id": "",
       "url": "http://desbenoit.net",
       "location": "Lyon, France",
       "hireable": false
@@ -526,7 +497,8 @@
     "sebastien.balayn@gmail.com": {
       "login": "Nyalab",
       "name": "Sébastien Balayn",
-      "gravatar_id": "0024021f51ce1fdc50564298e72fbf7c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/721993?v=2",
+      "gravatar_id": "",
       "location": "Toulouse",
       "hireable": false,
       "crew": true,
@@ -555,14 +527,38 @@
     "sebastien.balayn@ucp.fr": {
       "login": "Nyalab",
       "name": "Sébastien Balayn",
-      "gravatar_id": "0024021f51ce1fdc50564298e72fbf7c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/721993?v=2",
+      "gravatar_id": "",
       "location": "Toulouse",
-      "hireable": false
+      "hireable": false,
+      "crew": true,
+      "twitter": "Nyalab",
+      "fr": {
+        "bio": {
+          "short": "Front-end dev @Overblog, whovian, porte un k-way rouge et sexy.",
+          "long": [
+            "Développeur front-end @Overblog après avoir bossé 7 ans comme full-stack.",
+            "Il passe ses journées à essayer d'écrire du putain de bon code, à flame, blame et troll sur les messages de commit, à regarder Doctor Who, à a-click sur Starcraft2, et parfois il est sobre.",
+            "Et oui, il porte toujours un k-way rouge et sexy."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Full stack developer, full-time troll, gamer, whovian, wears a sexy red raincoat.",
+          "long": [
+            "Front-end dev @Overblog after working for 7 years as a full-stack one.",
+            "He spends his days by trying to write some putain de good code, flaming, blaming and trolling on commit messages, watching Doctor Who and a-clicking on Starcraft2, et sometimes he is sober.",
+            "And yes, he always wears a sexy red raincoat."
+          ]
+        }
+      }
     },
     "shahor@shahor.fr": {
       "login": "Shahor",
       "name": "Alexandre Gaudencio",
-      "gravatar_id": "f7f0f11f39a31d9770ae207bf98bf4c6",
+      "avatar_url": "https://avatars.githubusercontent.com/u/204561?v=2",
+      "gravatar_id": "",
       "url": "http://www.linkedin.com/in/alexandregaudencio",
       "location": "Paris",
       "hireable": true
@@ -570,7 +566,8 @@
     "tmaindron@gmail.com": {
       "login": "OwlyCode",
       "name": "Tristan Maindron",
-      "gravatar_id": "5cef4bfad2fde665d04d9fdb29d29d4a",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1631270?v=2",
+      "gravatar_id": "",
       "url": "http://tristan.maindron.io",
       "location": "Albi, France",
       "hireable": false,
@@ -600,7 +597,8 @@
     "tom.panier@free.fr": {
       "login": "neemzy",
       "name": "Tom Panier",
-      "gravatar_id": "259cfb842be0d236e68340b1c330cc88",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1804389?v=2",
+      "gravatar_id": "",
       "url": "http://www.zaibatsu.fr",
       "location": "Lille, France",
       "hireable": true,
@@ -632,14 +630,16 @@
     "welovewebdesign@gmail.com": {
       "login": "welovewebdesign",
       "name": "Rémi Couturier",
-      "gravatar_id": "82308d700a1d4f834f2303176276e5d9",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1029443?v=2",
+      "gravatar_id": "",
       "location": null,
       "hireable": false
     },
     "yannick.croissant@gmail.com": {
       "login": "yannickcr",
       "name": "Yannick Croissant",
-      "gravatar_id": "1e619ddb2a180222dd3d9f0348e65b9b",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13209?v=2",
+      "gravatar_id": "",
       "url": "https://yannick.cr",
       "location": "Paris, France",
       "hireable": true
@@ -649,7 +649,8 @@
     "Agmagor": {
       "login": "Agmagor",
       "name": "Agmagor",
-      "gravatar_id": "166632516b43cfdcd8ce01a519ea1f04",
+      "avatar_url": "https://avatars.githubusercontent.com/u/470997?v=2",
+      "gravatar_id": "",
       "url": "http://agmagor.be",
       "location": "France",
       "hireable": false
@@ -657,14 +658,16 @@
     "Dridi": {
       "login": "Dridi",
       "name": "Dridi Boukelmoune",
-      "gravatar_id": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/891744?v=2",
+      "gravatar_id": "",
       "location": "Paris",
       "hireable": false
     },
     "Erwyn": {
       "login": "Erwyn",
       "name": "Martin Goyot",
-      "gravatar_id": "73af1b4a749651d146a756e7830f10da",
+      "avatar_url": "https://avatars.githubusercontent.com/u/206743?v=2",
+      "gravatar_id": "",
       "url": "http://erwyn.piwany.com",
       "location": "Annecy/Grenoble - France",
       "hireable": false,
@@ -697,11 +700,13 @@
     },
     "Felix49": {
       "login": "Felix49",
-      "gravatar_id": "197c24e25a972f4f945257896cb5cbfb"
+      "avatar_url": "https://avatars.githubusercontent.com/u/7084401?v=2",
+      "gravatar_id": ""
     },
     "Macxim": {
       "login": "Macxim",
       "name": "Maxime Laforet",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1909957?v=2",
       "gravatar_id": "",
       "location": "Brussels, Belgium",
       "hireable": false
@@ -709,15 +714,17 @@
     "MattiSG": {
       "login": "MattiSG",
       "name": "Matti Schneider",
-      "gravatar_id": "81ee62724136cc42065a0af37aa0edc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/222463?v=2",
+      "gravatar_id": "",
       "url": "http://mattischneider.fr",
-      "location": "France",
+      "location": "Paris, France",
       "hireable": false
     },
     "MoOx": {
       "login": "MoOx",
       "name": "Maxime Thirouin",
-      "gravatar_id": "2f6c2dcd4ba8fc44f1e7f0b2ed3d587d",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157534?v=2",
+      "gravatar_id": "",
       "url": "http://moox.io/",
       "location": "Toulouse, France",
       "hireable": true,
@@ -745,6 +752,7 @@
     "Nickdouille": {
       "login": "Nickdouille",
       "name": "Cyril Moreau",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2188628?v=2",
       "gravatar_id": "",
       "url": "http://sojavascript.com",
       "location": "Aix-en-Provence",
@@ -753,7 +761,8 @@
     "NotGrm": {
       "login": "NotGrm",
       "name": null,
-      "gravatar_id": "ace1273ad23fa8c65664d3e5d64bab4a",
+      "avatar_url": "https://avatars.githubusercontent.com/u/793603?v=2",
+      "gravatar_id": "",
       "url": "http://notgrm.fr",
       "location": null,
       "hireable": false
@@ -761,7 +770,8 @@
     "Nyalab": {
       "login": "Nyalab",
       "name": "Sébastien Balayn",
-      "gravatar_id": "0024021f51ce1fdc50564298e72fbf7c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/721993?v=2",
+      "gravatar_id": "",
       "location": "Toulouse",
       "hireable": false,
       "crew": true,
@@ -790,7 +800,8 @@
     "OwlyCode": {
       "login": "OwlyCode",
       "name": "Tristan Maindron",
-      "gravatar_id": "5cef4bfad2fde665d04d9fdb29d29d4a",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1631270?v=2",
+      "gravatar_id": "",
       "url": "http://tristan.maindron.io",
       "location": "Albi, France",
       "hireable": false,
@@ -820,7 +831,8 @@
     "Shahor": {
       "login": "Shahor",
       "name": "Alexandre Gaudencio",
-      "gravatar_id": "f7f0f11f39a31d9770ae207bf98bf4c6",
+      "avatar_url": "https://avatars.githubusercontent.com/u/204561?v=2",
+      "gravatar_id": "",
       "url": "http://www.linkedin.com/in/alexandregaudencio",
       "location": "Paris",
       "hireable": true
@@ -828,7 +840,8 @@
     "bitdeli-chef": {
       "login": "bitdeli-chef",
       "name": "Bitdeli Chef",
-      "gravatar_id": "b42c651650ec8d3d95829c75e318af2d",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3092978?v=2",
+      "gravatar_id": "",
       "url": "https://bitdeli.com/free",
       "location": "San Francisco,CA",
       "hireable": false
@@ -836,7 +849,8 @@
     "bloodyowl": {
       "login": "bloodyowl",
       "name": "Matthias Le Brun",
-      "gravatar_id": "37500337ba5d2aebc962959ed83928e5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1688645?v=2",
+      "gravatar_id": "",
       "url": "http://bloodyowl.io",
       "location": "Paris",
       "hireable": false,
@@ -861,12 +875,14 @@
     },
     "clairecoloma": {
       "login": "clairecoloma",
-      "gravatar_id": "63638ee1e60d9ca22adea00962632a6b"
+      "avatar_url": "https://avatars.githubusercontent.com/u/3041408?v=2",
+      "gravatar_id": ""
     },
     "desbenoit": {
       "login": "desbenoit",
       "name": "Sébastien Desbenoit",
-      "gravatar_id": "64fd6dd3cc2195d4ddf407aad48b5d94",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1142531?v=2",
+      "gravatar_id": "",
       "url": "http://desbenoit.net",
       "location": "Lyon, France",
       "hireable": false
@@ -874,8 +890,9 @@
     "dguyon": {
       "login": "dguyon",
       "name": "David Guyon",
-      "gravatar_id": "0fef7ada66fa27ea422fdbc45849d913",
-      "url": "http://davidguyon.com",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61255?v=2",
+      "gravatar_id": "",
+      "url": "http://davidguyon.com/",
       "location": "Paris, France",
       "hireable": true,
       "crew": true,
@@ -904,6 +921,7 @@
     "dhoko": {
       "login": "dhoko",
       "name": "dhoko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/713283?v=2",
       "gravatar_id": "",
       "url": "https://github.com/dhoko",
       "location": "Paris",
@@ -912,14 +930,16 @@
     "enguerran": {
       "login": "enguerran",
       "name": "Enguerran",
-      "gravatar_id": "2e43fe3376aaf887aad755de94942fa0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/701648?v=2",
+      "gravatar_id": "",
       "location": "",
       "hireable": false
     },
     "justinmarsan": {
       "login": "justinmarsan",
       "name": "Justin Marsan",
-      "gravatar_id": "c1b2afa3f4c034170bd21991e9e81d60",
+      "avatar_url": "https://avatars.githubusercontent.com/u/639365?v=2",
+      "gravatar_id": "",
       "url": "http://www.justinmarsan.com",
       "location": null,
       "hireable": true,
@@ -947,7 +967,8 @@
     "kewah": {
       "login": "kewah",
       "name": "Antoine Lehurt",
-      "gravatar_id": "a784456bf9c7902bec153445c50f015c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/195442?v=2",
+      "gravatar_id": "",
       "url": "http://www.kewah.com",
       "location": "Stockholm, Sweden",
       "hireable": true,
@@ -975,7 +996,8 @@
     "kud": {
       "login": "kud",
       "name": "Erwänn Mest",
-      "gravatar_id": "9713e529bef70eea8965e0dda2000334",
+      "avatar_url": "https://avatars.githubusercontent.com/u/655838?v=2",
+      "gravatar_id": "",
       "url": "http://kud.io",
       "location": "Paris, France",
       "hireable": false,
@@ -1001,7 +1023,8 @@
     "lionelB": {
       "login": "lionelB",
       "name": "Lionel",
-      "gravatar_id": "03edc8b4edc19d91202e69c65c5baeff",
+      "avatar_url": "https://avatars.githubusercontent.com/u/160320?v=2",
+      "gravatar_id": "",
       "url": "http://lumographe.fr/",
       "location": "Loriol",
       "hireable": true,
@@ -1029,7 +1052,8 @@
     "madx": {
       "login": "madx",
       "name": "François Vaux",
-      "gravatar_id": "96006f57ca92ec95713532129b039d9c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5723?v=2",
+      "gravatar_id": "",
       "url": "http://madx.me/",
       "location": "France, Marseille",
       "hireable": false,
@@ -1061,6 +1085,7 @@
     "magsout": {
       "login": "magsout",
       "name": "Guillaume Demesy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1997108?v=2",
       "gravatar_id": "",
       "url": "http://magsout.github.io/",
       "location": "Lorraine",
@@ -1069,6 +1094,7 @@
     "mickaelandrieu": {
       "login": "mickaelandrieu",
       "name": "Mickaël Andrieu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1247388?v=2",
       "gravatar_id": "",
       "url": "http://www.mickael-andrieu.com",
       "location": "Paris,France",
@@ -1077,7 +1103,8 @@
     "msadouni": {
       "login": "msadouni",
       "name": "Matthieu Sadouni",
-      "gravatar_id": "cc1c227599a4b35b9f7ac3d1ea6070da",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38374?v=2",
+      "gravatar_id": "",
       "url": "http://blog.mh-communication.fr",
       "location": "Caen, France",
       "hireable": false
@@ -1085,7 +1112,8 @@
     "neemzy": {
       "login": "neemzy",
       "name": "Tom Panier",
-      "gravatar_id": "259cfb842be0d236e68340b1c330cc88",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1804389?v=2",
+      "gravatar_id": "",
       "url": "http://www.zaibatsu.fr",
       "location": "Lille, France",
       "hireable": true,
@@ -1117,7 +1145,8 @@
     "quentint": {
       "login": "quentint",
       "name": "Quentin",
-      "gravatar_id": "794e98e18d210488a1b503b946b6db6a",
+      "avatar_url": "https://avatars.githubusercontent.com/u/349104?v=2",
+      "gravatar_id": "",
       "url": "http://toki-woki.net",
       "location": "Bordeaux, France",
       "hireable": false
@@ -1125,7 +1154,8 @@
     "rhannequin": {
       "login": "rhannequin",
       "name": "Rémy Hannequin",
-      "gravatar_id": "a2b9398e4753f15d628c8d928600d90e",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1019025?v=2",
+      "gravatar_id": "",
       "url": "http://rhannequ.in",
       "location": "Paris",
       "hireable": false,
@@ -1157,7 +1187,8 @@
     "sdussaut": {
       "login": "sdussaut",
       "name": "sdussaut",
-      "gravatar_id": "abc11ef4df79fd555549e517fdea4f2c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/643853?v=2",
+      "gravatar_id": "",
       "url": "http://switch-company.com",
       "location": "Paris",
       "hireable": false
@@ -1165,21 +1196,24 @@
     "welovewebdesign": {
       "login": "welovewebdesign",
       "name": "Rémi Couturier",
-      "gravatar_id": "82308d700a1d4f834f2303176276e5d9",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1029443?v=2",
+      "gravatar_id": "",
       "location": null,
       "hireable": false
     },
     "yannickcr": {
       "login": "yannickcr",
       "name": "Yannick Croissant",
-      "gravatar_id": "1e619ddb2a180222dd3d9f0348e65b9b",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13209?v=2",
+      "gravatar_id": "",
       "url": "https://yannick.cr",
       "location": "Paris, France",
       "hireable": true
     },
     "zemax": {
       "login": "zemax",
-      "gravatar_id": "fdf0b5a35dbbeecd7919551475318c13"
+      "avatar_url": "https://avatars.githubusercontent.com/u/286485?v=2",
+      "gravatar_id": ""
     }
   }
 }
