@@ -26,7 +26,7 @@ var sortObjectByKeys = function(obj){
 
 var contributorsMap = function(){
   var authors = {}
-  return glob("authors/*.json")
+  return glob("src/authors/*.json")
   .then(function(files){
     files.forEach(function(authorFile){
       authors[path.basename(authorFile, ".json")] = require("../" + authorFile)
@@ -189,7 +189,7 @@ var totalContributions = function(){
 var filesContributions = function(){
   // files contributions
   cache.value.files = {}
-  return glob("pages/**/*")
+  return glob("src/pages/**/*")
   .then(function(files){
     return new PromisePolyfill(function(resolve){
       var parallelFiles = []
