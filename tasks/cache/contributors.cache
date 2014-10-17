@@ -27,6 +27,34 @@
       "location": "Paris",
       "hireable": false
     },
+    "baptiste.meurant@gmail.com": {
+      "login": "bmeurant",
+      "name": "Baptiste Meurant",
+      "avatar_url": "https://avatars.githubusercontent.com/u/141720?v=2",
+      "gravatar_id": "",
+      "url": "https://twitter.com/bmeurant",
+      "location": "Lyon, France",
+      "hireable": true,
+      "crew": false,
+      "twitter": "bmeurant",
+      "fr": {
+        "bio": {
+          "short": "Software craftsman, full stack developer, technical leader, architect.",
+          "long": [
+            "Développeur full stack. Spécialités en Java & Javascript mais j'essaie de rester polyglotte."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Software craftsman, full stack developer, technical leader, architect.",
+          "long": [
+            "Full stack developer. Special skills and experiences on Java & Javascript but try to be polyglot.",
+            "Passionate about software development, open source enthusiast"
+          ]
+        }
+      }
+    },
     "ccoloma@jolicode.com": {
       "login": "clairecoloma",
       "avatar_url": "https://avatars.githubusercontent.com/u/3041408?v=2",
@@ -104,7 +132,25 @@
       "gravatar_id": "",
       "url": "http://kud.io",
       "location": "Paris, France",
-      "hireable": false
+      "hireable": false,
+      "crew": true,
+      "twitter": "_kud",
+      "fr": {
+        "bio": {
+          "short": "viking ui engineer.",
+          "long": [
+            "Viking UI engineer (avec une pointe de node.js), batteur, s'essayant à la photographie, aime le cinema."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "viking ui engineer.",
+          "long": [
+            "Viking UI engineer (also node.js dev), drummer, photographer, cinema lover."
+          ]
+        }
+      }
     },
     "erwann.mest@gmail.com": {
       "login": "kud",
@@ -301,7 +347,31 @@
       "gravatar_id": "",
       "url": "http://madx.me/",
       "location": "France, Marseille",
-      "hireable": false
+      "hireable": false,
+      "twitter": "madx",
+      "crew": true,
+      "fr": {
+        "bio": {
+          "short": "Développeur Ruby & JavaScript. Troll niveau 100.",
+          "long": [
+            "Développeur Ruby et JavaScript, avec un goût prononcé pour la simplicité, le soleil, le pastis.",
+            "Il n'aime pas OS X car, objectivement, c'est nul.",
+            "Quand il n'est pas devant son ordi, il y a de grandes chances qu'il compense avec son téléphone.",
+            "Spécialiste en développement d'applications inutiles."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Développeur Ruby & JavaScript. Level 100 Troll.",
+          "long": [
+            "Ruby and JavaScript developer with a taste for simplicity, sun and pastis.",
+            "He does not like OS X because it sucks (objectively).",
+            "When he's not in front of his computers, chances are he's geeking on his phone.",
+            "Specialist in developing useless applications."
+          ]
+        }
+      }
     },
     "madx@yapok.org": {
       "login": "madx",
@@ -869,6 +939,34 @@
           "short": "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people.",
           "long": [
             "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people"
+          ]
+        }
+      }
+    },
+    "bmeurant": {
+      "login": "bmeurant",
+      "name": "Baptiste Meurant",
+      "avatar_url": "https://avatars.githubusercontent.com/u/141720?v=2",
+      "gravatar_id": "",
+      "url": "https://twitter.com/bmeurant",
+      "location": "Lyon, France",
+      "hireable": true,
+      "crew": false,
+      "twitter": "bmeurant",
+      "fr": {
+        "bio": {
+          "short": "Software craftsman, full stack developer, technical leader, architect.",
+          "long": [
+            "Développeur full stack. Spécialités en Java & Javascript mais j'essaie de rester polyglotte."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Software craftsman, full stack developer, technical leader, architect.",
+          "long": [
+            "Full stack developer. Special skills and experiences on Java & Javascript but try to be polyglot.",
+            "Passionate about software development, open source enthusiast"
           ]
         }
       }
