@@ -4,9 +4,6 @@ var path = require("path")
 var gutil = require("gulp-util")
 var async = require("async")
 var PromisePolyfill = require("promise")
-// var bs64 = require("bs64")
-var bs64 = false
-var convertString = require("convert-string")
 var exec = PromisePolyfill.denodeify(require("child_process").exec)
 var glob = PromisePolyfill.denodeify(require("glob"))
 var commitsRE = /^(\d+)/
@@ -39,11 +36,6 @@ var contributorsMap = function(){
     return readFile("tasks/cache/contributors.cache", {encoding : "utf8"})
   })
   .then(function(contributors){
-    // grab contributors cache (base64ified just to do not have unserialized public emails)
-    if(bs64){
-      contributors = convertString.UTF8.bytesToString(bs64.decode(contributors))
-    }
-    // console.log(contributors)
     cache.value = JSON.parse(contributors)
   }, function(){
     cache.value.mapByEmail = {}
@@ -156,9 +148,6 @@ var contributorsMap = function(){
     cache.value.mapByEmail = sortObjectByKeys(cache.value.mapByEmail)
 
     var contributors = JSON.stringify(cache.value, true, 2)
-    if(bs64){
-      contributors = bs64.encode(contributors)
-    }
     gutil.log("Contributors cache updated")
     return writeFile("tasks/cache/contributors.cache", contributors)
   })

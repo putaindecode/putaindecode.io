@@ -22,10 +22,8 @@
   },
   "devDependencies": {
     "async": "^0.9.0",
-    "bs64": "^0.1.0",
     "connect": "^3.0.1",
     "connect-livereload": "^0.4.0",
-    "convert-string": "^0.1.0",
     "cssrecipes-defaults": "^0.3.0",
     "cssrecipes-tooltip": "^0.3.0",
     "cssrecipes-vertical-rhythm": "^0.2.0",
