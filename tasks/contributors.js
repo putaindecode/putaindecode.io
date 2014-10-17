@@ -111,6 +111,7 @@ var contributorsMap = function(){
                   // see what's available here https://developer.github.com/v3/users/
                   login : githubUser.login,
                   name : githubUser.name,
+                  avatar_url : githubUser.avatar_url,
                   gravatar_id : githubUser.gravatar_id,
                   url : githubUser.blog ? githubUser.blog.indexOf("http") === 0 ? githubUser.blog : "http://" + githubUser.blog : undefined,
                   location : githubUser.location,
