@@ -13,12 +13,12 @@ développeurs des internets.
 ## GitHub
 
 * Déjà, si t'en as pas, crée toi un compte GitHub (avant qu'on te caillasse),
-  et vu que tu commences à lire des ressources sur notre site, crois moi que
+  et vu que tu commences à lire des ressources sur notre site, crois-moi que
   tu vas commencer à le faire chauffer plus vite que prévu.
 
-* Ensuite il faut que tu installes tout le nécessaire pour bosser sur un
+* Ensuite, il faut que tu installes tout le nécessaire pour bosser sur un
   *repo* GitHub (oui on va commencer à utiliser des anglicismes dès maintenant
-  donc habitues toi y, *repo* = dépôt de code, comme tu peux le constater, la
+  donc habitue-toi y, *repo* = dépôt de code, comme tu peux le constater, la
   francisation, c'est moche), on va te faire un post qui va regrouper tout ce
   qu'il te faut pour installer et configurer Git pour bosser sur GitHub.
 
@@ -40,16 +40,16 @@ développeurs des internets.
 
 * Maintenant que t'as enfin notre magnifique repo dans ton compte, tu devrais
   te sentir honoré. Une fois que t'as appelé toute ta famille et les 3
-  pèquenauds qui te servent d'amis, tu dois pouvoir y coder dessus sur ton PC.
+  péquenauds qui te servent d'amis, tu dois pouvoir y coder dessus sur ton PC.
   On va partir du principe que tu t'appelles Clint. Et que ton nom c'est
-  Horris. T'as donc choisi comme pseudo GitHub `clinthorris` (oui t'aurais du
+  Horris. T'as donc choisi comme pseudo GitHub `clinthorris` (oui t'aurais dû
   réfléchir toi aussi). Donc tu te débrouilles pour aller dans un dossier vide
   et tu vas cloner notre repo. Cloner = faire une copie d'un repo distant (sur
   les serveurs de GitHub par exemple) en local (ton vieux Pentium II sous XP
   dans notre cas). Ensuite il faut que tu te rendes dans ce dossier en ligne
   de commande (sous Windows tu y vas avec l'invite de commande mais on te
   prévient qu'on va pas être copains longtemps, trouve un OS décent putain,
-  sous Mac OS X tu utilises le terminal, et sous Linux je pense qu'on a pas à
+  sous Mac OS X tu utilises le terminal, et sous Linux je pense qu'on n'a pas à
   t'expliquer).
 
   ```bash
@@ -61,7 +61,7 @@ développeurs des internets.
   servir que si tu fais une modification ou une contribution sur notre site
   aujourd'hui, et que dans un mois tu veuilles encore en faire, tu pourras
   facilement rattraper tout ce qu'on aura fait entre temps. La remote en
-  rapport avec le repo principal, on l'appelle souvent *upstream*
+  rapport avec le repo principal, on l'appelle souvent *upstream*.
 
     ```bash
     $ cd putaindecode
@@ -89,12 +89,12 @@ développeurs des internets.
   ```
 
   Regarde quand même le README et fait la manip' de mise à jour au cas où on aurait
-  changé quelques trucs par ci, par là.
+  changé quelques trucs par-ci, par-là.
 
 * Une fois ton site tout installé, t'as plus qu'à aller dans ton dossier grâce
   à la ligne de commande, et à taper `$ npm start`, tu verras quelques
-  trucs s'exécuter, ne t'inquiètes pas. À la fin du processus, ça
-  devrait te lancer le site en local dans le browser. Là j'espère que tu te
+  trucs s'exécuter, ne t'inquiète pas. À la fin du processus, ça
+  devrait te lancer le site en local dans le browser. Là, j'espère que tu te
   rends compte qu'avec une seule ligne de commande on t'a fait tourner un site
   complet. Et là on te voit déjà en train de baver et te rappeler tes longues
   soirées en train d'installer PHP, MySQL, un WordPress, la bonne version des
@@ -112,7 +112,7 @@ magnifique post sur ton tout dernier projet, tu préfères juste nous aider à
 améliorer notre contenu. Bah on te remercie quand même tu vois, parce qu'on
 est des types sympas.
 
-* Alors déjà, on aime pas juste donner une liste d'ordres sans expliquer pour
+* Alors déjà, on n'aime pas juste donner une liste d'ordres sans expliquer pour
   que tu puisses comprendre ce que tu fais. Donc notre site, il a été fait
   à la main (on a pondu un générateur de site statique bien pimpé, parce que oui,
   y'a pas que Wordpress pour faire un site) en se basant sur gulp
@@ -145,15 +145,15 @@ est des types sympas.
   $ git checkout -b fix.nom-du-post
   ```
 
-* Fais les modifications que tu veux dans le fichier, là on peut pas t'aider,
+* Fais les modifications que tu veux dans le fichier, là on ne peut pas t'aider,
   c'est à toi de jouer.
 
 * Normalement si t'avais bien lancé le `npm start` tout à l'heure, y'a un
-  processus *watch* (en gros un truc qui surveilles ton projet) qui est lancé
+  processus *watch* (en gros un truc qui surveille ton projet) qui est lancé
   et qui détecte que t'as changé un fichier, du coup, grâce au watch couplé à
-  un processus appelé *livereload* ton navigateur va rafraichir les fichiers
-  nécessaires en direct. T'as rien à faire c'est magique. Enfin si, tu dois juste
-  retourner dans ton browser ça devrait déjà être à jour.
+  un processus appelé *livereload* ton navigateur va rafraîchir les fichiers
+  nécessaires en direct. T'as rien à faire, c'est magique. Enfin si, tu dois juste
+  retourner dans ton browser, ça devrait déjà être à jour.
 
 * Une fois que tout est bon, tu peux passer à l'étape de validation de tes
   modifications (étape commune pour la modification d'un post existant ou la
@@ -189,17 +189,17 @@ est des types sympas.
   `.jade` pour les metas de l'article, et un `.md` pour le contenu.
 
 * Tu peux maintenant éditer ton fichier (en MarkDown) dans le fichier .md,
-  Amuse toi, créé ton contenu, rédige bien tout comme tu veux.
+  Amuse-toi, créé ton contenu, rédige bien tout comme tu veux.
 
 * Tu devrais pouvoir te balader sur le site et trouver ton article sur la page
   des posts: http://localhost:4242/posts/ .
-  Avec la tâche `$ npm start` lancée normalement tout (ou presque) se rafraichira
+  Avec la tâche `$ npm start` lancée normalement tout (ou presque) se rafraîchira
   automatiquement.
   Si ce n'est pas le cas, relance la tâche `$ npm start`.
   Si là tu as une erreur qui t'échappes, on t'invite à
   [ouvrir une issue](https://github.com/putaindecode/putaindecode.fr/issues/new).
 
-* En l'état tu devrais pouvoir consulter sur le site lancé localement ton post,
+* En l'état, tu devrais pouvoir consulter sur le site lancé localement ton post,
   voir s'il sort correctement et s'il est présentable à ton goût.
   Tu pourras le consulter sur une URL du type
   `http://localhost:4242/post/nom-du-post/`. Mais tu le sais déjà puisque t'as
@@ -220,8 +220,8 @@ est des types sympas.
   ```
 
   Cette commande ajoute tous les fichiers dans le dossier que tu as créé.
-  Si tu as ajouter des fichiers à l'exterieur de ce dossier, tu devras les
-  ajouter. Exemple:
+  Si tu as ajouté des fichiers à l'extérieur de ce dossier, tu devras les
+  ajouter. Exemple :
 
   ```bash
   $ git add images/memes/trollface.jpg
@@ -254,11 +254,11 @@ est des types sympas.
     <figcaption>C'est bon tu le vois là le bouton ?</figcaption>
   </figure>
 
-* Sélectionnes les bonnes branches et ajoute nous un beau titre et une belle
+* Sélectionne les bonnes branches et ajoute-nous un beau titre et une belle
   description de Pull Request en essayant au moins de commencer par `Post: Nom du post`
   ou `Fix: Nom du post`
 
-* Et voila ! Tu n'as qu'à attendre de nos nouvelles maintenant. D'ailleurs au
+* Et voilà ! Tu n'as qu'à attendre de nos nouvelles maintenant. D'ailleurs au
   passage, si tu veux, tu peux en profiter pour nous suivre [sur
   twitter](https://twitter.com/putaindecode), et tu pourras nous lâcher un
   message avec ta PR ou ton issue en lien, histoire de nous mettre la pression.
