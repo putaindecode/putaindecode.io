@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.authors = ["kud", "MoOx"]
+  -exports.title = "L'auto-entrepenariat : de A à Z, retour d'expérience."
+  -exports.tags = ["auto-entrepreneur", "administratif"]
+  -exports.date = "2014-11-04"
+
+block main
+  +Post(exports.title)
+    include:md index.md
