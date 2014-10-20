@@ -284,6 +284,15 @@
         }
       }
     },
+    "ludovic.fernandez@zenika.com": {
+      "login": "ldez",
+      "name": "Fernandez Ludovic",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5674651?v=2",
+      "gravatar_id": "",
+      "url": "https://twitter.com/ludnadez",
+      "location": "Lyon",
+      "hireable": false
+    },
     "m+github@kud.io": {
       "login": "kud",
       "name": "Erwänn Mest",
@@ -1117,6 +1126,15 @@
           ]
         }
       }
+    },
+    "ldez": {
+      "login": "ldez",
+      "name": "Fernandez Ludovic",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5674651?v=2",
+      "gravatar_id": "",
+      "url": "https://twitter.com/ludnadez",
+      "location": "Lyon",
+      "hireable": false
     },
     "lionelB": {
       "login": "lionelB",
