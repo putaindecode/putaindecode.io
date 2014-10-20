@@ -165,20 +165,33 @@
     overflow: hidden;
     border-radius: .3em;
     display: block;
-    line-height: .8;
+    line-height: 1rem;
     text-align: center;
   }
-  .putainde-Post-md figcaption {
-    font-style: italic;
-    font-family: Georgia, Times, "Times New Roman", serif;
-    text-align: center;
-    margin: 0;
-    display: block;
-    background: #fafafa;
-    line-height: var(--doubleLineHeight);
-    border-top: 1px solid #eee;
-    margin-top: -1px;
-  }
+
+    .putainde-Post-md figcaption {
+      font-style: italic;
+      font-family: Georgia, Times, "Times New Roman", serif;
+      text-align: center;
+      margin: 0;
+      display: block;
+      background: #fafafa;
+      line-height: var(--doubleLineHeight);
+      border-top: 1px solid #eee;
+      margin-top: -1px;
+    }
+
+    .putainde-Post-md figure small {
+      display: block;
+      text-align: right;
+      padding: 0 .4rem;
+    }
+
+    .putainde-Post-md figure small a {
+      color: grey;
+      font-size: var(--small-fontSize);
+    }
+
   .putainde-Post-md blockquote {
     color: #888;
     margin: 0 0 0 1em;
