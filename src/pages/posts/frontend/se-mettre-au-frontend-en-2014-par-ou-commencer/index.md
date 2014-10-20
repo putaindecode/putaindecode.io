@@ -2,7 +2,7 @@ Un de nos lecteurs nous a récemment envoyé un email avec tout un tas de questi
 
 ---
 
-> Salut putain de code,
+> Salut _Putain de code !_,
 
 Salut :)
 
@@ -10,7 +10,7 @@ Salut :)
 
 Yes, pas de problème, dis-nous tout.
 
-> Au niveau de mes besoins, il me faudrait, je pense, une solution fiable avec une première base de modules prédéfinis (même une version light) pour une question de rendement et d’optimisation du dev. Mon premier avis serait d’utiliser un Bootstrap avec Sass grâce à tout son système de modals / tableaux / tabs / grid / etc… seulement j’ai lu le contraire donc je me retrouve perdu.  Dans vos articles {P!}, vous dîtes qu’il vaut mieux éviter des Frameworks du type Bootstrap, mais… pourquoi ? 
+> Au niveau de mes besoins, il me faudrait, je pense, une solution fiable avec une première base de modules prédéfinis (même une version light) pour une question de rendement et d’optimisation du dev. Mon premier avis serait d’utiliser un Bootstrap avec Sass grâce à tout son système de modals / tableaux / tabs / grid / etc… seulement j’ai lu le contraire donc je me retrouve perdu.  Dans vos articles {P!}, vous dîtes qu’il vaut mieux éviter des Frameworks du type Bootstrap, mais… pourquoi ?
 
 Les frameworks comme Bootstrap ne sont pas forcément une mauvaise chose, ils te permettent de mettre les bases d’un site, très pratique pour aller vite et surtout faire des administrations. En revanche ils proposent des structures avec des conventions CSS n’aidant pas forcément à finir avec un front-end maintenable. De plus, cela force à _override_ tout l’aspect visuel dès que ton design est personnalisé. Finalement, tu passes plus de temps à _overrider_ un framework qui ne te convient pas tant que ça que de te créer ton propre ui kit. (sans compter le risque de voir ton site péter lors d’une mise à jour d’un framework).
 
@@ -32,7 +32,7 @@ Orf, ca dépend de chacun mais en général, voici ce qu’on te préconise :
 ou [Atom](http://atom.io) (apm install, editorconfig, docblockr, htmlhint, csslint, linter, linter-jscs, linter-jshint, css-color-highlighting, atom-prettify, open-in-github-app, gist-it, autocomplete-plus).  
 Pour être à jour sur ces éditeurs, n’hésite pas à Suivre [@SublimePackages](https://twitter.com/SublimePackages) et [@Atom_Packages](https://twitter.com/Atom_Packages) sur Twitter.
 - Terminal : [iterm2](http://www.iterm2.com/) sur mac, ou terminal de base
-- Shell : zsh (`brew install zsh`), [prezto (plugin zsh)](https://github.com/sorin-ionescu/prezto) 
+- Shell : zsh (`brew install zsh`), [prezto (plugin zsh)](https://github.com/sorin-ionescu/prezto)
 - [Firefox Nightly](http://nightly.mozilla.org/) ou [Chrome Canary](http://www.google.com/intl/fr/chrome/browser/canary.html)
 
 > Je vois souvent passer du NPM / Grunt / Bower / Yo & Co mais jamais vraiment eu le temps de m’y plonger dedans. Il est possible d’avoir un petit résumé et/ou un moyen d’apprendre le plus vite possible ?
@@ -50,4 +50,3 @@ Pour le reste :
 > Merci beaucoup !
 
 Tout le plaisir est pour nous. ;)
-

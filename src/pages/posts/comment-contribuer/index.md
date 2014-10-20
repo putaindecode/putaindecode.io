@@ -1,4 +1,4 @@
-Ici, chez Putain de Code, dans notre building 8 étages vitres teintées avec
+Ici, chez _Putain de code !_, dans notre building 8 étages vitres teintées avec
 masseuses et coke à volonté et à n'importe quelle heure de la journée, on sait
 qu'on va forcément t'aider à comprendre pas mal de trucs, mais on sait aussi
 qu'on peut faire des fois des erreurs dans les articles (à cause de la coke)
