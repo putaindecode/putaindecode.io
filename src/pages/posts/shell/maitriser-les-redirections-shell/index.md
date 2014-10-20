@@ -2,7 +2,7 @@ Le shell (ou ligne de commande) est l'outil de prédilection pour bon nombre
 d'entre nous qui utilisons un OS de la famille UNIX. Nous sommes persuadés que
 bien utilisé, il remplace avantageusement un IDE complexe et gourmand.
 
-Chez Putain de Code, on a une certaine tendance à utiliser [Zsh][wp:zsh], mais
+Chez _Putain de code !_, on a une certaine tendance à utiliser [Zsh][wp:zsh], mais
 pour ma part, j'utilise encore et toujours le vénérable [Bash][wp:bash], non pas
 pour faire mon barbu mais simplement car il me suffit amplement.
 

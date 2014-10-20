@@ -1,4 +1,4 @@
-Chez Putain de Code, on aime se servir de [Git][git:website] (et de GitHub, mais
+Chez _Putain de code !_, on aime se servir de [Git][git:website] (et de GitHub, mais
 c'est une autre histoire), même si certains d'entre nous (comme Lionel) ne s'en
 servent pas forcément bien.
 
@@ -338,7 +338,7 @@ bien foutue.
 Si vous aimez les petites références rapides et illustrées, le [Git
 Guide][git-guide] de Roger Dudler est une bonne manière d'apprendre.
 
-## Hey ! Tu veux appliquer ça pour contribuer à Putain de Code ?
+## Hey ! Tu veux appliquer ça pour contribuer ?
 
 Pas de problème, on a écrit un post exprès :
 [Comment contribuer](/posts/comment-contribuer/) !
