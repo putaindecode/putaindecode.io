@@ -1,4 +1,4 @@
-Chez _Putain de code !_, on aime se servir de [Git][git:website] (et de GitHub, mais
+Chez _Putain de code !_, on aime se servir de [Git][git:website] (et de GitHub, mais
 c'est une autre histoire), même si certains d'entre nous (comme Lionel) ne s'en
 servent pas forcément bien.
 
@@ -25,12 +25,12 @@ gestionnaires historiquement plus connus comme Subversion (SVN) ou le vénérabl
 CVS.
 
 Ça veut dire que chaque développeur possède sa propre copie du dépôt, chez lui,
-localement, contraîrement à un gestionnaire centralisé ou tout est… centralisé
+localement, contrairement à un gestionnaire centralisé ou tout est… centralisé
 sur un même serveur (merci Captain Obvious).
 
 Git est principalement utilisable en ligne de commande, mais il existe des
 interfaces graphiques sous les principaux OS du marché (OS X, Linux, Windows).
-Ici on va traiter de la ligne de commande, car c'est l'arme de base du bon
+Ici, on va traiter de la ligne de commande, car c'est l'arme de base du bon
 développeur.
 
 Je vous passe l'installation, référez-vous à la documentation officielle pour
@@ -38,36 +38,36 @@ cette partie. (Ça se résume souvent à un `nom-du-package-manager install git`
 
 ## Comment ça marche ?
 
-Avant d'attaquer la partie pratique, on va s'attarder un peu à comment Git
+Avant d'attaquer la partie pratique, on va s'attarder un peu sur comment Git
 fonctionne, parce qu'à mon sens c'est essentiel pour comprendre rapidement ce
 qu'il est possible de faire et pour se construire un modèle mental des
 opérations.
 
-Dans Git les commits sont tous reliés avec leur(s) parent(s) comme les maillons
+Dans Git, les commits sont tous reliés avec leur(s) parent(s) comme les maillons
 d'une chaîne qui pourrait avoir des bifurcations. Chaque commit stocke des
 informations sur l'état du dépôt à un instant donné (l'état complet, pas
 uniquement un diff).
 
 On construit cette chaîne et ses bifurcations en créant des commits, en
-branchant et en fusionant une branche dans une autre.
+branchant et en fusionnant une branche dans une autre.
 
 Enfin, une dernière chose que vous devez garder en tête c'est qu'un commit est
 définitif dans le sens ou on ne pourra jamais modifier son contenu (on pourra
 par contre le remplacer par un autre). Comme il est unique, il a un numéro qui
 est un haché `SHA1` de diverses informations.
 
-Ces `SHA1` sont utilisé à foison, habituez-y vous !
+Ces `SHA1` sont utilisés à foison, habituez-y vous !
 
 Voilà, maintenant sortons nous les doigts et regardons comment ça marche
 concrètement.
 
-## Créer ou récupérer un repo
+## Créer ou récupérer un dépôt
 
 Il y a deux manières de créer un dépôt Git : soit on en veut un tout neuf et on
 utilise `git init`, soit on veut cloner un dépôt déjà existant et on utilise le
 bien nommé `git clone`.
 
-Appellé sans argument, `git init` initialise un dépôt dans le dossier courant,
+Appelé sans argument, `git init` initialise un dépôt dans le dossier courant,
 on peut lui passer un nom de dépôt en argument pour le créer dans un
 sous-dossier spécifique du dossier courant.
 
@@ -84,7 +84,7 @@ $ git clone https://github.com/putaindecode/putaindecode.fr.git
 
 Ça va créer un dossier `putaindecode.fr` avec le contenu du dépôt.
 
-`clone` accepte plusieurs types d'adresse : HTTP(S), SSH, protocole Git dédié et
+`clone` accepte plusieurs types d'adresses : HTTP(S), SSH, protocole Git dédié et
 même des chemins locaux pour cloner un dépôt situé ailleurs sur le système de
 fichiers.
 
@@ -142,11 +142,11 @@ $ git status
 Aucune modification indexée mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
 ```
 
-Pour pallier celà, on utilise `git add` pour l'ajouter direct à l'index.
+Pour pallier cela, on utilise `git add` pour l'ajouter direct à l'index.
 
 Dans notre cas, ça donne `git add putain_de_hello_world.rb`
 
-On peut utilise `git add` pour ajouter des dossiers entiers, des motifs, … Mais
+On peut utiliser `git add` pour ajouter des dossiers entiers, des motifs, … Mais
 soyez vigilants, c'est une bonne source d'erreurs souvent chiantes.
 
 Vous pouvez vérifier que `git add` a bien marché avec la commande `git status`,
@@ -182,11 +182,11 @@ rien à valider, la copie de travail est propre
 ## Inspecter
 
 Bon, c'est bien beau de commiter, mais à un moment on arrive sur un projet en
-cours et on aimerait bien savoir où on en est. Pour ça vous pouvez utiliser un
+cours et on aimerait bien savoir où on en est. Pour ça, vous pouvez utiliser un
 outil graphique (il y en a pour [Linux][gitg], [OS X][gitx] et même sûrement
 Windows) ou retrousser vos poils de barbe et sortir le bon vieux `git log`.
 
-C'est un vrai couteau-suisse qui va vous permettre d'inspecter tout l'historique
+C'est un vrai couteau suisse qui va vous permettre d'inspecter tout l'historique
 de votre dépôt, avec des options en veux-tu en voilà pour personnaliser
 l'affichage.
 
@@ -225,16 +225,16 @@ index 0000000..ded37dc
 ```
 
 Dit comme ça, ça a pas l'air de casser trois pattes à un canard, mais c'est la
-base de la base de la praticité. Je vous fait pas l'insulte de vous expliquer le
-détails, vous êtes sans doute assez malins pour comprendre ce que git raconte
+base de la base de la praticité. Je vous fais pas l'insulte de vous expliquer les
+détails, vous êtes sans doute assez malins pour comprendre ce que Git raconte
 sur la sortie de ces deux commandes.
 
 Remarquez que `git show` affiche en bonus les différences introduites par un
 fichier. Ces différences on peut aussi les voir avant de commiter avec `git
 diff`, ce qui est bien pratique.
 
-Entraînez vous maintenant à faire des commits, à inspecter et à farfouiller les
-pages de `man`, c'est la meilleure façon d'apprendre. Après on va attaquer le
+Entraînez-vous maintenant à faire des commits, à inspecter et à farfouiller les
+pages de `man`, c'est la meilleure façon d'apprendre. Après, on va attaquer le
 gros morceau, celui qui fait la force de Git.
 
 <figure>
@@ -300,7 +300,7 @@ base fournie par Git, `master`, reste au commit précédent.
 Dernière étape avant la fin de cette article : le redouté et redoutable
 `merge` !
 
-Pour fusionner nos deux branches on va utiliser cette commande en se plaçant sur
+Pour fusionner nos deux branches, on va utiliser cette commande en se plaçant sur
 la branche dans laquelle on va fusionner et en passant en argument la branche à
 fusionner.
 
