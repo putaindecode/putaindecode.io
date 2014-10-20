@@ -21,7 +21,7 @@ en évitant les questions de *noob* auxquelles on a déjà prévu les réponses.
 
 ## Le concept
 
-_Putain de Code !_, c'est un regroupement de développeurs vraiment passionnés
+_Putain de code !_, c'est un regroupement de développeurs vraiment passionnés
 par leur boulot.
 
 Et c’est à force de voir du code qui pique les yeux qu’on s’est dit qu’il

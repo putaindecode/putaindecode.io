@@ -27,4 +27,4 @@ Vous pouvez déjà participer à l'évolution du site en allant voir
 [nous faire vos propositions](https://github.com/putaindecode/propositions-de-posts)
 ou même encore nous poser une question sur [le forum](https://github.com/putaindecode/forum/issues).
 
-_On compte vraiment sur vous pour nous aider à faire de Putain de Code un truc magnifique._
+_On compte vraiment sur vous pour nous aider à faire de _Putain de code !_ un truc magnifique._
