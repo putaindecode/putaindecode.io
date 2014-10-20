@@ -37,7 +37,7 @@ Curieux ? -> [doc officielle](http://emberjs.com/guides/concepts/naming-conventi
 
 ### Modèles
 
-Un modèle est un objet avec des propriétés contant des données métier. Le modèle est ensuite passé au gabarit pour être rendu par lui
+Un modèle est un objet avec des propriétés contenant des données métier. Le modèle est ensuite passé au gabarit pour être rendu par lui
 en HTML. Typiquement, les modèles peuvent être récupérés d'un backend via une API REST JSON via [Ember Data](https://github.com/emberjs/data)
 mais pas que.
 
