@@ -1,4 +1,4 @@
-# Putain de Code !
+# Putain de code !
 
 [![Build Status](http://img.shields.io/travis/putaindecode/putaindecode.fr.svg?style=flat)](https://travis-ci.org/putaindecode/putaindecode.fr)
 
@@ -6,7 +6,7 @@
 
 <img align="right" alt="" src="https://raw.github.com/putaindecode/putaindecode.fr/master/images/p!-logo--no-bubble-512--trim.png" width="128">
 
-Code source du site [Putain de Code](http://putaindecode.fr/).
+Code source du site [_Putain de code !_](http://putaindecode.fr/).
 Contient tout le nécessaire pour faire fonctionner le site.
 Pas de base de données à installer, pas de serveurs à configurer.
 

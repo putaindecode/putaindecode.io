@@ -1,6 +1,6 @@
 # Contribuez !
 
-Chez Putain de Code, on te laisse l'opportunité d'apporter ta pierre à
+Chez _Putain de code !_, on te laisse l'opportunité d'apporter ta pierre à
 l'édifice, comme on te l'explique en détails [sur un article dédié sur le
 site](http://putaindecode.fr/posts/comment-contribuer/).
 

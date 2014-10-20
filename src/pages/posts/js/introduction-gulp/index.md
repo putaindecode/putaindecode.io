@@ -177,7 +177,7 @@ gulp.task("default", ["styles"], function() {
 Bien entendu, vous avez déjà compris que si vous voulez remplacer Myth par Sass,
 c'est l'histoire de 4 secondes.
 
-## Putain de Code approuve Gulp.
+## _Putain de code !_ approuve Gulp.
 
 Ici on est carrément fan de Gulp. Il faut bien avouer que
 [ça va vite](https://twitter.com/putaindecode/status/460868992396460032)
