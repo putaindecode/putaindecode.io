@@ -1,17 +1,14 @@
 .putainde-List-item {
   position: relative;
   padding: 0 0 0 calc(var(--lineHeight) * 3);
+  margin-top: -1px;
+  border-bottom: 1px solid #eee;
 }
   @media (max-width:28em) {
     .putainde-List-item {
       padding: 0 0 0 4rem;
     }
   }
-
-.putainde-List-item:not(:last-child) {
-  border-bottom: 1px solid #eee;
-  margin-top: -1px;
-}
 
 .putainde-List-item--hidden {
   height: 0;
