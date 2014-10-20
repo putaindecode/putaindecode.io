@@ -1,0 +1,20 @@
+{
+  "crew" : true,
+  "twitter": "magsout",
+  "fr": {
+    "bio": {
+      "short": "Développeur web front-end",
+      "long": [
+        "Développeur web front-end"
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Front-end web developer",
+      "long": [
+        "Front-end web developer"
+      ]
+    }
+  }
+}
