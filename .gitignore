@@ -11,3 +11,6 @@ tmp
 
 # log
 npm-debug.log
+
+# idea files
+.idea/
