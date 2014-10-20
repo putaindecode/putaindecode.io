@@ -85,7 +85,7 @@ HeidiSQL, un logiciel avec une interface qui se rapproche de phpMyAdmin.
 $ choco install HeidiSQL
 ```
 
-- [site officiel](http://www.heidisql.com//)
+- [site officiel](http://www.heidisql.com/)
 - [lien du package](http://chocolatey.org/packages/HeidiSQL)
 
 Ou encore MySQL Workbench un excellent soft pour gérer une base de données:
@@ -102,17 +102,16 @@ $ choco install mysql.workbench
 - [lien du package](http://chocolatey.org/packages/mysql.workbench)
 
 
-
 ### Un meilleur shell
 
-Clink va vous permettre quelques fonctionnalités intéressantes que le shell de Windows n'a pas de base, comme taper `<tab>` pour l'autocomplétion par exemple.
+Cmder va vous permettre quelques fonctionnalités intéressantes que le shell de Windows n'a pas de base, comme taper `<tab>` pour l'autocomplétion, avoir un historique persistant entre 2 sessions, des onglets, le split de console, l'intégration de PuTTY et d'autres choses venu de la banquise. (le lieu de vie des pinguins)
 
 ```bash
-$ choco install clink.install
+$ choco install Cmder
 ```
 
-- [site officiel](http://mridgers.github.io/clink/)
-- [lien du package](https://chocolatey.org/packages/clink.install)
+- [site officiel](https://bliker.github.io/cmder/)
+- [lien du package](http://chocolatey.org/packages/Cmder)
 
 ### Si vous avez besoin de SSH
 
