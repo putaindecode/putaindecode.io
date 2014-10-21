@@ -1205,7 +1205,25 @@
       "gravatar_id": "",
       "url": "http://magsout.github.io/",
       "location": "Lorraine",
-      "hireable": true
+      "hireable": true,
+      "crew": true,
+      "twitter": "magsout",
+      "fr": {
+        "bio": {
+          "short": "Développeur web front-end",
+          "long": [
+            "Développeur web front-end"
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Front-end web developer",
+          "long": [
+            "Front-end web developer"
+          ]
+        }
+      }
     },
     "mickaelandrieu": {
       "login": "mickaelandrieu",
