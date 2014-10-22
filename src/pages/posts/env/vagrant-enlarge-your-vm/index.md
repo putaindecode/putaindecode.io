@@ -24,7 +24,7 @@ Puis
   1. `vagrant halt`pour l’arrêter.
 
 # Etape 1 - vagrant init
-Vagrant fournit un support pour les principales plateformes de virtualisation,
+Vagrant fournit un support pour les principales plates-formes de virtualisation,
 appelées Provider dans la langue de Justin Bieber et avec par défaut celui
 pour virtualbox.  Et  cerise sur le clafoutis, tu as aussi la possibilité
 de configurer / provisionner tes box avec des scripts Chef ou Puppet
