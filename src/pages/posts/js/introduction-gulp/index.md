@@ -187,7 +187,7 @@ Avec Gulp on se sent plus libre, moins contraint.
 Du coup, **on a carrément fait notre site avec Gulp**
 (puis au passage un petit refresh graphique tant qu'à faire).
 
-Pour aller plus loin, vous n'avez qu'à ouvrir notre [Gulpfile](https://github.com/putaindecode/putaindecode.fr/blob/master/Gulpfile.js)
+Pour aller plus loin, vous n'avez qu'à ouvrir notre [Gulpfile](https://github.com/putaindecode/putaindecode.fr/blob/master/gulpfile.js)
 et regarder nos [tasks](https://github.com/putaindecode/putaindecode.fr/tree/master/tasks)
 qui vont de [la plus simple](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/clean.js)
 à [la plus compliqué](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/contributors.js).
