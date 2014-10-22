@@ -186,7 +186,25 @@
       "gravatar_id": "",
       "url": "http://magsout.github.io/",
       "location": "Lorraine",
-      "hireable": true
+      "hireable": true,
+      "crew": true,
+      "twitter": "magsout",
+      "fr": {
+        "bio": {
+          "short": "Développeur web front-end",
+          "long": [
+            "Développeur web front-end pour l'agence web @splitfire. Adore chasser les bugs la nuit, accro aux series-tv."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Front-end web developer",
+          "long": [
+            "Front-end web developer @splitfire. Loves to hunt bugs at night, series-tv addict."
+          ]
+        }
+      }
     },
     "hi@mattischneider.fr": {
       "login": "MattiSG",
@@ -475,7 +493,25 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1909957?v=2",
       "gravatar_id": "",
       "location": "Brussels, Belgium",
-      "hireable": false
+      "hireable": false,
+      "crew": false,
+      "twitter": "Macxim",
+      "fr": {
+        "bio": {
+          "short": "Développeur web front-end",
+          "long": [
+            "Correcteur orthographique et grammatical officiel de Putain de code ! Accessoirement développeur web front-end."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Front-End Web Developer",
+          "long": [
+            "Official spelling and grammar checker for Putain de code ! Incidentally, also a Front-End Web Developer."
+          ]
+        }
+      }
     },
     "mlbli@me.com": {
       "login": "bloodyowl",
@@ -678,14 +714,14 @@
       "name": "Tom Panier",
       "avatar_url": "https://avatars.githubusercontent.com/u/1804389?v=2",
       "gravatar_id": "",
-      "url": "http://www.zaibatsu.fr",
+      "url": "http://neemzy.org",
       "location": "Lille, France",
       "hireable": true,
       "twitter": "_neemzy",
       "crew": false,
       "fr": {
         "bio": {
-          "short": "Développeur web full-stack en agence, tripote surtout PHP et JS",
+          "short": "Développeur web full-stack, tripote surtout PHP et JS",
           "long": [
             "Développeur full-stack tombé dans le web quand il était petit.",
             "Fait surtout du PHP, mais aussi de plus en plus de JavaScript.",
@@ -696,7 +732,7 @@
       },
       "en": {
         "bio": {
-          "short": "Full-stack web developer in an agency, mainly dabbles in PHP and JS",
+          "short": "Full-stack web developer, mainly dabbles in PHP and JS",
           "long": [
             "Full-stack developer who fell into web stuff as a boy.",
             "Mainly writes PHP, but also more and more JavaScript.",
@@ -788,7 +824,25 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1909957?v=2",
       "gravatar_id": "",
       "location": "Brussels, Belgium",
-      "hireable": false
+      "hireable": false,
+      "crew": false,
+      "twitter": "Macxim",
+      "fr": {
+        "bio": {
+          "short": "Développeur web front-end",
+          "long": [
+            "Correcteur orthographique et grammatical officiel de Putain de code ! Accessoirement développeur web front-end."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Front-End Web Developer",
+          "long": [
+            "Official spelling and grammar checker for Putain de code ! Incidentally, also a Front-End Web Developer."
+          ]
+        }
+      }
     },
     "MattiSG": {
       "login": "MattiSG",
@@ -1212,7 +1266,7 @@
         "bio": {
           "short": "Développeur web front-end",
           "long": [
-            "Développeur web front-end"
+            "Développeur web front-end pour l'agence web @splitfire. Adore chasser les bugs la nuit, accro aux series-tv."
           ]
         }
       },
@@ -1220,7 +1274,7 @@
         "bio": {
           "short": "Front-end web developer",
           "long": [
-            "Front-end web developer"
+            "Front-end web developer @splitfire. Loves to hunt bugs at night, series-tv addict."
           ]
         }
       }
@@ -1248,14 +1302,14 @@
       "name": "Tom Panier",
       "avatar_url": "https://avatars.githubusercontent.com/u/1804389?v=2",
       "gravatar_id": "",
-      "url": "http://www.zaibatsu.fr",
+      "url": "http://neemzy.org",
       "location": "Lille, France",
       "hireable": true,
       "twitter": "_neemzy",
       "crew": false,
       "fr": {
         "bio": {
-          "short": "Développeur web full-stack en agence, tripote surtout PHP et JS",
+          "short": "Développeur web full-stack, tripote surtout PHP et JS",
           "long": [
             "Développeur full-stack tombé dans le web quand il était petit.",
             "Fait surtout du PHP, mais aussi de plus en plus de JavaScript.",
@@ -1266,7 +1320,7 @@
       },
       "en": {
         "bio": {
-          "short": "Full-stack web developer in an agency, mainly dabbles in PHP and JS",
+          "short": "Full-stack web developer, mainly dabbles in PHP and JS",
           "long": [
             "Full-stack developer who fell into web stuff as a boy.",
             "Mainly writes PHP, but also more and more JavaScript.",
