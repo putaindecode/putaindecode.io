@@ -15,3 +15,7 @@ h5 {
   font-family: var(--fontFamily-title);
   font-weight: 400;
 }
+
+em em {
+  font-style: normal;
+}
