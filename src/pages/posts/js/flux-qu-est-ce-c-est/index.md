@@ -1,10 +1,10 @@
-Allez, tant pis, on saute l'intro et on entre directement dans le vif du sujet (on n'a pas que ça à foutre, après tout).
+Allez, tant pis, on saute l'intro et on entre directement dans le vif du sujet.
 
 ## La petite histoire
 
-Il était une fois un gros site web *que s'apelorio* Facebook. Qui dit Facebook, dit webapp plus grosse que la plus grosse de tes copines (*no offense*) ; et du coup, propension à se retrouver submergé de bugs plus élevée.
+Il était une fois un gros site web *que s'apelorio* Facebook. Qui dit Facebook, dit une des webapps les plus grosses des internets; et du coup, une propension plus élevée à se retrouver submergée de bugs.
 
-Les ingénieurs front-end de Facebook, confrontés à une codebase de plus en plus bordélique (personne ne voulant toucher certaines parties de celle-ci) ont dû repenser la structure des composants les plus cruciaux.
+Les ingénieurs front-end de Facebook, confrontés à une codebase de plus en plus vielle et complexe (personne ne voulant toucher certaines parties de celle-ci) ont dû repenser la structure des composants les plus cruciaux.
 
 Face à ce besoin, ces développeurs sont donc parvenus à deux solutions :
 
