@@ -32,7 +32,7 @@
       "name": "Baptiste Meurant",
       "avatar_url": "https://avatars.githubusercontent.com/u/141720?v=2",
       "gravatar_id": "",
-      "url": "https://twitter.com/bmeurant",
+      "url": "http://bmeurant.github.io/",
       "location": "Lyon, France",
       "hireable": true,
       "crew": false,
@@ -1011,7 +1011,7 @@
       "name": "Baptiste Meurant",
       "avatar_url": "https://avatars.githubusercontent.com/u/141720?v=2",
       "gravatar_id": "",
-      "url": "https://twitter.com/bmeurant",
+      "url": "http://bmeurant.github.io/",
       "location": "Lyon, France",
       "hireable": true,
       "crew": false,
@@ -1020,7 +1020,7 @@
         "bio": {
           "short": "Software craftsman, full stack developer, technical leader, architect.",
           "long": [
-            "Développeur full stack. Spécialités en Java & Javascript mais j'essaie de rester polyglotte."
+            "Développeur full stack & Architecte. Spécialités en Java & Javascript mais j'essaie de rester polyglotte."
           ]
         }
       },
@@ -1028,7 +1028,7 @@
         "bio": {
           "short": "Software craftsman, full stack developer, technical leader, architect.",
           "long": [
-            "Full stack developer. Special skills and experiences on Java & Javascript but try to be polyglot.",
+            "Full stack developer & Architect. Special skills and experience on Java & Javascript but try to be polyglot.",
             "Passionate about software development, open source enthusiast"
           ]
         }
