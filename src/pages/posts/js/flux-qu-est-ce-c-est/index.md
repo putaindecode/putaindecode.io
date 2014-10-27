@@ -1,35 +1,35 @@
-Allez, tant pis, on saute l'intro et on rentre directement dans le vif du sujet (on a pas que ça à foutre, après tout).
+Allez, tant pis, on saute l'intro et on entre directement dans le vif du sujet (on n'a pas que ça à foutre, après tout).
 
 ## La petite histoire
 
-Il était une fois un gros site web *que s'apelorio* Facebook. Qui dit Facebook dit webapp plus grosse que la plus grosse de tes copines (*no offense*) ; et du coup, propension à se retrouver submergé de bugs plus élevée.
+Il était une fois un gros site web *que s'apelorio* Facebook. Qui dit Facebook, dit webapp plus grosse que la plus grosse de tes copines (*no offense*) ; et du coup, propension à se retrouver submergé de bugs plus élevée.
 
-Les ingénieurs front-end de Facebook, confrontés à une codebase de plus en plus bordélique (personne ne voulant toucher certaines parties de celle-ci) ont du repenser la structure des composants les plus cruciaux.
+Les ingénieurs front-end de Facebook, confrontés à une codebase de plus en plus bordélique (personne ne voulant toucher certaines parties de celle-ci) ont dû repenser la structure des composants les plus cruciaux.
 
-Face à ce besoin, ces développeurs sont donc parvenus à deux solutions :
+Face à ce besoin, ces développeurs sont donc parvenus à deux solutions :
 
 - [ReactJS](http://putaindecode.fr/posts/js/introduction-a-reactjs/)
 - Flux
 
-Flux n'est pas un framework, mais simplement une architecture, une sorte de *guideline* qui résout pas mal de problèmes ayant pu apparaître avec les divers bibliothèques et frameworks MV* apparu lors des dernières années.
+Flux n'est pas un framework, mais simplement une architecture, une sorte de *guideline* qui résout pas mal de problèmes ayant pu apparaître avec les divers bibliothèques et frameworks MV* apparus lors des dernières années.
 
 ## Flux, l'explication claire
 
-Flux comporte 4 concepts :
+Flux comporte 4 concepts :
 
-- les **actions**, qu'elles proviennent du serveur ou d'une interaction utilisateur.
-- le **dispatcher** dans lequel sont envoyées les actions que ce dernier transmet *à qui veut*, un peu comme un `EventEmitter` global.
-- les **stores**, qui sont l'équivalent du model de l'architecture MVC, ils contiennent la donnée, et réagissent aux actions que le dispatcher leur transmet.
-- les **views**, qui s'occupent du rendu de la data dans le DOM, et de lancer des actions lorsque l'utilisateur effectue certaines actions.
+- les **actions**, qu'elles proviennent du serveur ou d'une interaction utilisateur ;
+- le **dispatcher** dans lequel sont envoyées les actions que ce dernier transmet *à qui veut*, un peu comme un `EventEmitter` global ;
+- les **stores**, qui sont l'équivalent du `model` de l'architecture MVC, ils contiennent les données, et réagissent aux actions que le dispatcher leur transmet ;
+- les **views**, qui s'occupent du rendu des données dans le DOM, et de lancer des actions lorsque l'utilisateur effectue certaines actions.
 
-Jusque là, rien de bien fou. C'est dans leur manière d'interagir que la particularité se dessine :
+Jusque-là, rien de bien fou. C'est dans leur manière d'interagir que la particularité se dessine :
 
 <figure>
   ![](http://cl.ly/YENt/flux.png)
-  <figcaption>Oh bah dis-donc, ça va toujours dans le même sens</figcaption>
+  <figcaption>Oh bah dis donc, ça va toujours dans le même sens</figcaption>
 </figure>
 
-En effet, le *flux* en question est unidirectionnel. Pour faire simple, on procède ainsi :
+En effet, le *flux* en question est unidirectionnel. Pour faire simple, on procède ainsi :
 
 On définit une action via un **action creator** (on passera toujours par ces action-creators pour signaler une action) :
 
@@ -37,9 +37,9 @@ On définit une action via un **action creator** (on passera toujours par ces ac
 // actions/BasketActions.js
 var AppDispatcher = require("../AppDispacher")
 /*
-  on garde un dictionnaire des types d'actions
+  On garde un dictionnaire des types d'actions
   afin d'avoir un fichier donnant une vision
-  globale de toutes les interactions de l'app
+  globale de toutes les interactions de l'app.
  */
 var ActionTypes = require("../constants").ActionTypes
 
@@ -99,25 +99,25 @@ var _store = {
 
 var BasketStore = merge(Store, {
   /*
-    ici, on `register` un callback sur l'AppDispatcher,
+    Ici, on `register` un callback sur l'AppDispatcher,
     ce qui signifie qu'on verra passer toutes les actions
-    de l'app
+    de l'app.
    */
   dispatchToken : AppDispatcher.register(function(payload){
     var action = payload.action
     switch(action.type) {
       case ActionTypes.ADD_TO_BASKET:
           /*
-             l'API va ajouter le produit et lancer une
-             action `BASKET_UPDATED` dès que le serveur a répondu
+             L'API va ajouter le produit et lancer une
+             action `BASKET_UPDATED` dès que le serveur a répondu.
           */
         API.addToBasket(action.productId)
         break
       case ActionTypes.BASKET_UPDATED:
           /*
-            l'API a répondu, on peut stocker la réponse
-            et signaler aux vues récupérant ces données
-            du changement
+            L'API a répondu, on peut stocker la réponse
+            et signaler le changement
+            aux vues récupérant ces données.
           */
           _store = action.reponse
           BasketStore.emitChange()
@@ -131,7 +131,7 @@ var BasketStore = merge(Store, {
 module.exports = BasketStore
 ```
 
-La vue, quant à elle, sera notifiée du changement, et effectuera un `render()` :
+La vue, quant à elle, sera notifiée du changement, et effectuera un `render()` :
 
 ```javascript
 // components/Basket.jsx
@@ -149,21 +149,21 @@ var Product = React.createClass({
   },
   _onStoreChange : function(){
     /*
-      à chaque changement du store, on update naïvement
-      le component et on laisse le virtual DOM faire son job
+      À chaque changement du store, on update naïvement
+      le component et on laisse le virtual DOM faire son job.
     */
     this.setState(getState())
   },
   componentDidMount : function(){
     /*
-      on écoute le store uniquement lorsque le
-      component est monté
+      On écoute le store uniquement lorsque le
+      component est monté.
      */
     BasketStore.addChangeListener(this._onStoreChange)
   },
   componentWillUnmount : function(){
     /*
-      et on arrête d'écouter quand il ne l'est plus
+      Et on arrête d'écouter quand il ne l'est plus.
      */
     BasketStore.removeChangeListener(this._onStoreChange)
   },
@@ -182,18 +182,18 @@ var Product = React.createClass({
 module.exports = Product
 ```
 
-Tout cela peut sembler relativement verbeux, mais il faut préciser deux choses :
+Tout cela peut sembler relativement verbeux, mais il faut préciser deux choses :
 
-- les exemples ici le sont volontairement pour la démonstration, et il est aisément faisable d'utiliser un `StoreMixin` simplifier la déclaration des `class` React.
-- pour ce qui est du reste, notamment stocker les noms d'actions dans un objet partagé dans l'app, il s'agit de rendre plus idiomatique et cohérente la façon dont on conçoit (et qu'on l'on refactorise) l'app
+- les exemples ici le sont volontairement pour la démonstration, et il est aisément faisable d'utiliser un `StoreMixin` simplifier la déclaration des `class` React ;
+- pour ce qui est du reste, notamment stocker les noms d'actions dans un objet partagé dans l'app, il s'agit de rendre plus idiomatique et cohérente la façon dont on conçoit (et qu'on l'on refactorise) l'app.
 
 ## Ce qu'il faut savoir sur l'alliance Flux + React
 
-Si React et Flux vont si bien ensemble, c'est le l'approche de rendu "naïf" de React (comprendre "React s'en fout de ce qui change, il appelle `render` à chaque changement") permet de réduire la logique à écrire dans les Stores, et donc de simplifier très fortement la codebase de l'app.
+Si React et Flux vont si bien ensemble, c'est que l'approche de rendu "naïf" de React (comprendre "React s'en fout de ce qui change, il appelle `render` à chaque changement") permet de réduire la logique à écrire dans les Stores, et donc de simplifier très fortement la codebase de l'app.
 
 Lorsque qu'un ou plusieurs stores composent l'état d'un state React, alors à chaque changement de l'un de ces stores, tous les composants React concernés et leurs enfants vont appeler leur méthode `render()`. Afin d'éviter des appels superflus à ces méthodes, React donne la possibilité de tester soi-même s'il est nécessaire de mettre à jour le component en déclarant une méthode `shouldComponentUpdate` retournant un `boolean` qui stipulera si oui ou non il est nécessaire d'appeler `render()`.
 
-## tl;dr;
+## tl;dr
 
 - Flux, c'est comme du MVC en plus simple, et avec moins de bugs
 - L'architecture est unidirectionnelle
