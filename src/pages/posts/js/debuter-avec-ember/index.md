@@ -8,7 +8,7 @@ ne se résume pas à prendre celui qui a le plus joli logo ou qui génère le pl
 ## Les fondamentaux
 
 Parce que l'approche "tête la première" c'est bien mais que comprendre un minimum ce qu'on fait c'est encore mieux, il me paraît sage de commencer
-par expliquer la philosophie et les principaux éléments du framework, sous peine de se prendre un bon vieux [doc officielle](http://en.wikipedia.org/wiki/RTFM) 
+par expliquer la philosophie et les principaux éléments du framework, sous peine de se prendre un bon vieux [RTFM](http://en.wikipedia.org/wiki/RTFM) 
 sur le coin du pif, comme ça, en passant.
 
 [Ember](http://emberjs.com) se définit comme : "A framework for creating **ambitious** web applications" et ça, ça claque !
