@@ -204,3 +204,10 @@ Lorsque qu'un ou plusieurs stores composent l'état d'un state React, alors à c
 Bisous bisous.
 
 ![angulol](http://media.giphy.com/media/lxd2cZ2BkM4IE/giphy.gif)
+
+
+Pour aller un peu plus loin :
+
+- [Les sources des exemples](https://gist.github.com/bloodyowl/b41532cf3627c560b57e) contenant le dispatcher et les constants ;
+- [La doc de Flux](http://facebook.github.io/flux/docs/overview.html#content) ;
+- [Le repository Flux](https://github.com/facebook/flux) et ses différents exemples.
