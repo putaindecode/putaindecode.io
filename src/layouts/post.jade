@@ -1,7 +1,7 @@
 extends /src/layouts/main
 
 block head
-  -if(exports && exports.author)
+  -if(exports && exports.authors && exports.authors.length)
     +Social(exports)
 
 block end

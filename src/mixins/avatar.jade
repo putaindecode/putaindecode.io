@@ -1,14 +1,13 @@
 mixin Avatar(author, tooltip, size)
-  //- -var gravatar = contributors.map[author.login].gravatar_id || "default"
-  -var avatarUrl = contributors.map[author.login].avatar_url
-  -var className = ""
-  -size = size || 128
-  -if (tooltip)
-    -className += "rcp-Tooltip rcp-Tooltip--bottom"
-  a(href="#{getAuthorUri(author)}", data-rcp-tooltip="#{author.login}", class="#{attributes.class} #{className}")
-    //- src="http://www.gravatar.com/avatar/#{gravatar}.png"
+  - author = contributors.map[author]
+  - var avatarUrl = author.avatar_url
+  - var className = ""
+  - size = size || 128
+  - if (tooltip)
+    - className += "rcp-Tooltip rcp-Tooltip--bottom"
+  a(href="#{getAuthorUri(author)}", data-rcp-tooltip="#{author.login}", class="putainde-Avatar #{attributes.class || ''} #{className}")
     img(
-      class="putainde-Avatar js-AnimateLoad"
+      class="js-AnimateLoad"
       src="#{avatarUrl}&s=#{size}"
       alt=""
     )

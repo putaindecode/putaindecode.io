@@ -8,7 +8,8 @@
     -topContributors = topContributors.slice(0, 12)
     each author in topContributors
       .Grid-cell.u-size1of2
-        +Author(author)
+        +Author(author.login)
+
     .Grid-cell
       a(href="#{metas.repositoryHttpUrl}/graphs/contributors").putainde-Button.putainde-Button--block
           | #{lang.allContributors}
