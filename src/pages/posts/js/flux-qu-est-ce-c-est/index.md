@@ -2,7 +2,7 @@ Allez, tant pis, on saute l'intro et on entre directement dans le vif du sujet (
 
 ## La petite histoire
 
-Il était une fois un gros site web *que s'apelorio* Facebook. Qui dit Facebook, dit webapp plus grosse que la plus grosse de tes copines (*no offense*) ; et du coup, propension à se retrouver submergé de bugs plus élevée.
+Il était une fois un gros site web *que s'apelorio* Facebook. Qui dit Facebook, dit webapp plus grosse que la plus grosse de tes copines (*no offense* <sup>[1](#foonote-1)</sup>) ; et du coup, propension à se retrouver submergé de bugs plus élevée.
 
 Les ingénieurs front-end de Facebook, confrontés à une codebase de plus en plus bordélique (personne ne voulant toucher certaines parties de celle-ci) ont dû repenser la structure des composants les plus cruciaux.
 
@@ -211,3 +211,7 @@ Pour aller un peu plus loin :
 - [Les sources des exemples](https://gist.github.com/bloodyowl/b41532cf3627c560b57e) contenant le dispatcher et les constants ;
 - [La doc de Flux](http://facebook.github.io/flux/docs/overview.html#content) ;
 - [Le repository Flux](https://github.com/facebook/flux) et ses différents exemples.
+
+<small>
+  <a id="foonote-1"></a>1: [Référence utile (`ntm install reference`)](https://www.youtube.com/watch?v=jRzv9gep5Ng&t=4m)
+</small>
