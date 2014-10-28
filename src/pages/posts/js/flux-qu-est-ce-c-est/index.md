@@ -2,7 +2,7 @@ Allez, tant pis, on saute l'intro et on entre directement dans le vif du sujet (
 
 ## La petite histoire
 
-Il était une fois un gros site web *que s'apelorio* Facebook. Qui dit Facebook, dit webapp plus grosse que la plus grosse de tes copines <sup>[1](#foonote-1)</sup> ; et du coup, propension à se retrouver submergé de bugs plus élevée.
+Il était une fois un gros site web *que s'apelorio* Facebook. Qui dit Facebook, dit webapp plus grosse que la plus grosse de tes copines (*no offense* <sup>[1](#foonote-1)</sup>) ; et du coup, propension à se retrouver submergé de bugs plus élevée.
 
 Les ingénieurs front-end de Facebook, confrontés à une codebase de plus en plus bordélique (personne ne voulant toucher certaines parties de celle-ci) ont dû repenser la structure des composants les plus cruciaux.
 
@@ -213,5 +213,5 @@ Pour aller un peu plus loin :
 - [Le repository Flux](https://github.com/facebook/flux) et ses différents exemples.
 
 <small>
-  <a id="foonote-1"></a>1: [Référence utile](https://www.youtube.com/watch?v=jRzv9gep5Ng&t=4m)
+  <a id="foonote-1"></a>1: [Référence utile (`ntm install reference`)](https://www.youtube.com/watch?v=jRzv9gep5Ng&t=4m)
 </small>
