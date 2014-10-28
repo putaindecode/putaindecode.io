@@ -460,9 +460,12 @@ Alors oui, il faut avouer que là on est tenté de partir en courant. C'est le p
 c'est ce qui permet à [Ember][ember] de mettre à jour non pas un gabarit mais uniquement ces zones dynamiques de manière performante - j'ai fini par voir ça comme un mal nécessaire.
 Mais surtout, j'ai compris que ces `metamorph` étaient voués à disparaître assez rapidement avec l'utilisation du moteur [HTMLBars][html-bars]. Vous pouvez
 jeter un œil à ce sujet à la [présentation d'Eric Bryn](http://talks.erikbryn.com/htmlbars/) (notamment slide 10). Ouf ! Le support d'[HTMLBars][html-bars] est prévu pour 
-[Ember][ember] 1.9 ou 1.10 (la release actuelle est 1.7)... On est impatients !
+[Ember][ember] 1.9 ou 1.10 (la release actuelle est 1.7) ... On est impatients !
 
 _Bonus: l'élément est un élément `script` et pas un autre car c'est à priori le seul élément qui peut être inséré partout sans rien casser._
+
+_**Edit**: Aujourd'hui (28/10/2014) est sortie la [version 1.8.0 d'Ember](http://emberjs.com/blog/2014/10/26/ember-1-8-0-released.html). Cette release ne contient pas encore
+le support complet d'[HTMLBars][html-bars] mais signe déjà la fin des `metamorph` au profit de l'utilisation d'élements `Text` vides, non intrusifs ! Ça méritait d'être signalé._ 
 
 ### *RunLoop*
 
