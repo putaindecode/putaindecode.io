@@ -7,10 +7,9 @@ mixin Posts(limit, tags)
     if tags
       -var flag = -1
     each post in posts
-      -var author = contributors.map[post.author]
       .putainde-List-item.js-Post
 
-        +Avatar(author).putainde-List-authorPicture
+        +Avatars(post.authors).putainde-List-avatars
 
         a.putainde-Link.putainde-List-title(href="#{uri(post.slug + '.html', page)}")
           | #{post.title}
@@ -30,8 +29,7 @@ mixin Posts(limit, tags)
         .putainde-List-author
           | #{lang.initialCommit}
           =" "
-          a(href="#{getAuthorUri(author)}")
-            | #{post.author}
+          +AuthorsList(post.authors)
           if post.date
             br
             time #{lang.the} #{formatDate(post.date)}

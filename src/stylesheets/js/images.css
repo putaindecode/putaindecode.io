@@ -4,17 +4,15 @@
 
 .js-Loaded {
   visibility: visible;
-  animation: .5s ease-in-out AuthorPicture;
+  animation: .8s ease-in-out Animation--fadeIn;
 }
 
-@keyframes AuthorPicture {
+@keyframes Animation--fadeIn {
   from {
     visibility: visible;
     opacity: 0;
-    transform: translateX(-100%) rotate(-180deg);
   }
   to {
     opacity: 1;
-    transform: translateX(0) rotate(0);
   }
 }
