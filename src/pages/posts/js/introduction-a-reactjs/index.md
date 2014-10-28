@@ -141,7 +141,7 @@ var View = React.createClass({
 })
 
 // on mount le component, et l'on passe le label
-var view = React.renderComponent(<View label="helloworld" />, document.getElementById("id"))
+var view = React.render(<View label="helloworld" />, document.getElementById("id"))
 // et hop
 view.toggle()
 ```
