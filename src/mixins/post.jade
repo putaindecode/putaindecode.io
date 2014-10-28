@@ -6,22 +6,22 @@ mixin Post(title)
           h1.putainde-Title-text #{title}
 
       header.putainde-Post-header
-        if(exports.author)
-          -var author = contributors.map[exports.author]
 
-        -if(exports.author || exports.date)
+        -if(exports.authors || exports.date)
           .putainde-Post-metas
-            if exports.author
+            if exports.authors && exports.authors.length
               | #{lang.writtenBy} 
-              a(href="#{getAuthorUri(author)}")
-                | #{exports.author}
-            if exports.author && exports.date
-              =","
+              +AuthorsList(exports.authors)
+
+            if exports.authors && exports.authors.length && exports.date
+              =", "
+
             if exports.date
               span.putainde-Date
                 =" "
                 | #{lang.the} #{formatDate(exports.date)}
             =". "
+
             span.putainde-Post-readingTime.putainde-Post-readingTime--hidden.rcp-Tooltip.rcp-Tooltip--top(
               data-rcp-tooltip="#{lang.readingTimeComment}",
               data-readingTime-wpm="250"
@@ -31,6 +31,7 @@ mixin Post(title)
               span.putainde-Post-readingTime-value
               =" "
               | #{lang.minutes}
+
         if exports.tags
           ul.putainde-Tags.putainde-Post-tags
             each tag in exports.tags
@@ -50,8 +51,13 @@ mixin Post(title)
           .Grid-cell.u-size1of3
             a.putainde-Post-footer-action(href="#{metas.repositoryHttpUrl}/commits/master/src/pages/#{page}.md") #{lang.pageHistory}
 
-      if author
-        +Author(author, true)
+      if exports.authors
+        if exports.authors.length === 1
+          +Author(exports.authors[0], true)
+        else
+          h3.putainde-WrittenBy #{lang.writtenBy} 
+          each author in exports.authors
+            +Author(author)
 
       +Contributors(page)
 

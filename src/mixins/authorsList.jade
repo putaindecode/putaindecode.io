@@ -1,0 +1,13 @@
+mixin AuthorsList(authors)
+  - var list = []
+  each author in authors
+    if(contributors.map[author])
+      - list.push(contributors.map[author])
+
+  each author, index in list
+    a(href="#{getAuthorUri(author)}") #{author.login}
+    //- 2 authors or more : X, Y and Z
+    if (list.length > 1 && index === list.length - 2)
+      =" et "
+    else if (index !== list.length - 1)
+      =", "

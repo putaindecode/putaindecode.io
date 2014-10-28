@@ -18,18 +18,22 @@
 @import "./base/icons.css";
 @import "../../tmp/svg-symbols.css";
 
-@import "./blocks/highlight.css";
-
-@import "./blocks/links.css";
-@import "./blocks/forms.css";
 @import "./blocks/header.css";
-@import "./blocks/navigation.css";
-@import "./blocks/list.css";
-@import "./blocks/post.css";
-@import "./blocks/author.css";
-@import "./blocks/contributors.css";
-@import "./blocks/section.css";
-@import "./blocks/column.css";
 @import "./blocks/footer.css";
 
+@import "./blocks/navigation.css";
+@import "./blocks/links.css";
+@import "./blocks/forms.css";
+
+@import "./blocks/section.css";
+@import "./blocks/column.css";
+@import "./blocks/post.css";
+
+@import "./blocks/author.css";
+@import "./blocks/contributors.css";
+
+@import "./blocks/list.css";
+
 @import "./js/images.css";
+
+@import "./blocks/highlight.css";

@@ -6,6 +6,6 @@ mixin Contributors(page)
       .putainde-Contributors
         strong.putainde-Contributors-label #{nbFileContributors} #{lang.contributors}
         each contributions, login in fileContributors
-          +Avatar(contributors.map[login], true).putainde-Contributor
+          +Avatar(login, true).putainde-Contributor
   //- -else
   //-   -console.log("page", page, "didnt have filesContributor")

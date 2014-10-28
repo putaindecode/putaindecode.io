@@ -47,14 +47,14 @@
   top: 50%;
   left: 0;
   width: var(--putainde-Logo-size-s);
-  height: @width;
+  height: var(--putainde-Logo-size-s);
   transition: .2s;
   transform: translateY(-50%);
 }
   @media (min-width: 54em) {
     .putainde-Logo {
       width: var(--putainde-Logo-size-l);
-      height: @width;
+      height: var(--putainde-Logo-size-l);
     }
   }
 
