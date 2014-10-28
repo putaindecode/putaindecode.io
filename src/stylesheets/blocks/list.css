@@ -29,6 +29,7 @@
   display: block;
   border-radius: 100%;
   overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(circle, white, black); /* fix webkit overflow/radius bug */
 }
 
   .putainde-List-avatars * { vertical-align: middle }
