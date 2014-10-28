@@ -18,12 +18,44 @@
   overflow: hidden;
 }
 
-.putainde-List-authorPicture {
-  position: absolute;
-  top: var(--halfLineHeight);
-  left: 0;
-  width: var(--doubleLineHeight);
+:root {
+  --putainde-List-avatars-width: calc(var(--lineHeight) * 2);
 }
+
+.putainde-List-avatars {
+  position: absolute;
+  top: calc(var(--putainde-List-avatars-width) / 2);
+  left: 0;
+  display: block;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+  .putainde-List-avatars * { vertical-align: middle }
+
+  .putainde-List-avatars-author {
+    display: inline-block;
+    overflow: hidden
+  }
+
+  .putainde-Avatars--2 .putainde-List-avatars-author { width: calc(var(--putainde-List-avatars-width) / 2) }
+  .putainde-Avatars--3 .putainde-List-avatars-author { width: calc(var(--putainde-List-avatars-width) / 3) }
+  .putainde-Avatars--4 .putainde-List-avatars-author { width: calc(var(--putainde-List-avatars-width) / 4) }
+  .putainde-Avatars--5 .putainde-List-avatars-author { width: calc(var(--putainde-List-avatars-width) / 5) }
+  .putainde-Avatars--6 .putainde-List-avatars-author { width: calc(var(--putainde-List-avatars-width) / 6) }
+
+    .putainde-List-avatars-author-avatar {
+      width: var(--putainde-List-avatars-width);
+      height: var(--putainde-List-avatars-width);
+      border-radius: 0;
+    }
+
+    .putainde-Avatars--1 .putainde-List-avatars-author-avatar { transform: translateX(calc(-0%)) }
+    .putainde-Avatars--2 .putainde-List-avatars-author-avatar { transform: translateX(calc(-25% - 12.5%*(2-2)/2)) }
+    .putainde-Avatars--3 .putainde-List-avatars-author-avatar { transform: translateX(calc(-25% - 12.5%*(3-2)/2)) }
+    .putainde-Avatars--4 .putainde-List-avatars-author-avatar { transform: translateX(calc(-25% - 12.5%*(4-2)/2)) }
+    .putainde-Avatars--5 .putainde-List-avatars-author-avatar { transform: translateX(calc(-25% - 12.5%*(5-2)/2)) }
+    .putainde-Avatars--6 .putainde-List-avatars-author-avatar { transform: translateX(calc(-25% - 12.5%*(6-2)/2)) }
 
 .putainde-Message {
   font-size: var(--h1-fontSize);
