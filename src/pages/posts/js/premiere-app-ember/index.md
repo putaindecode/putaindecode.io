@@ -96,9 +96,9 @@ npm install -g bower
 commande `ember` et voir ensuite une magnifique page de bienvenue sur http://localhost:4200/ :
 
 ```bash
-ember new ember-article
+ember new ember-articles
 
-cd ember-article
+cd ember-articles
 
 ember server
 ```
@@ -110,17 +110,17 @@ Je ne vous fais pas l'affront de détailler ici la structure de l'application, t
 
 Pour que cela ne soit pas trop moche dans le cadre de cet exemple ou va ajouter un peu de CSS et des fonts mais comme c'est pas l'objet de l'article,
 on ne va pas passer de temps là-dessus. Ceci dit, comme il y a  quand même un peu de conf [Ember CLI][ember-cli] qui peut vous intéresser, vous avez les styles 
-et la conf sur [GitHub](https://github.com/bmeurant/ember-article) et l'explication dans ce [gist](https://gist.github.com/bmeurant/1bba49d8a12bf69a4cf0).
+et la conf sur [GitHub](https://github.com/bmeurant/ember-articles) et l'explication dans ce [gist](https://gist.github.com/bmeurant/1bba49d8a12bf69a4cf0).
 
 ## Et maintenant, on code !
 
-_Note: le code de l'exemple est dispo sur [github](https://github.com/bmeurant/ember-article)._
+_Note: le code de l'exemple est dispo sur [github](https://github.com/bmeurant/ember-articles)._
 
 * Modification du gabarit général de l'application `/app/templates/application.hbs` : 
 
 ```html
 <div class="app">
-    <a class="sources" href="https://github.com/bmeurant/ember-article">View source on GitHub</a>
+    <a class="sources" href="https://github.com/bmeurant/ember-articles">View source on GitHub</a>
     <h1>Comic books library</h1>
     <div class="main">
       {{outlet}}
