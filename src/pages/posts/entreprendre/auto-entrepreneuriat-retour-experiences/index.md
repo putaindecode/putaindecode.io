@@ -23,7 +23,7 @@ Et puis bon, cela me permettait aussi d'avoir un petit bonus non désagréable e
 
 ##### **MoOx**
 
-_Travailler plus pour gagner plus_, au départ ça devait être pour cette raison. Je n'avais pas de quoi frimer à la sortie de l'école, et je pouvais encore moins me payer de la blanche. Il me fallait donc une solution (rires). Plus sérieusement, dans le fond, tout comme Erwann, j'avais sûrement envie tester un modèle plus indépendant que le CDI, en attendant que [le revenu de base](http://revenudebase.info/comprendre-le-revenu-de-base/) vienne bien démolir le modèle actuel.
+_Travailler plus pour gagner plus_, au départ ça devait être pour cette raison. Je n'avais pas de quoi frimer à la sortie de l'école, et je pouvais encore moins me payer de la blanche. Il me fallait donc une solution (rires). Plus sérieusement, dans le fond, tout comme Erwann, j'avais sûrement envie de tester un modèle plus indépendant que le CDI, en attendant que [le revenu de base](http://revenudebase.info/comprendre-le-revenu-de-base/) vienne bien démolir le modèle actuel.
 
 ## Comment s'inscrire ?
 
