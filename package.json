@@ -54,6 +54,7 @@
     "suitcss-components-grid": "^2.0.0",
     "suitcss-utils-size": "^0.7.1",
     "tape": "^3.0.0",
+    "testling": "^1.7.1",
     "tiny-lr": "^0.1.4",
     "uglifyify": "^2.1.1"
   },
@@ -75,8 +76,8 @@
     "init-osx": "brew install icoutils",
     "favicon": "icotool -c images/p!-logo--no-bubble-16.png images/p!-logo--no-bubble-32.png -o public/favicon.ico",
     "start": "gulp",
-    "deploy": "gulp deploy --production",
-    "test": "gulp dist --production",
+    "deploy": "testling && gulp deploy --production",
+    "test": "testling && gulp dist --production",
     "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else npm run deploy; fi;"
   }
 }
