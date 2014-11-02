@@ -15,10 +15,6 @@ notifications:
     use_notice: true
     skip_join: true
 
-# http://docs.travis-ci.com/user/caching/
-cache:
-  directories:
-    - node_modules
 
 # http://docs.travis-ci.com/user/build-configuration/
 script:
