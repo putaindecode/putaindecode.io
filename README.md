@@ -20,9 +20,8 @@ Pas de base de données à installer, pas de serveurs à configurer.
 
 ## Contributions
 
-Les articles peuvent être postés ici sous forme de PR une fois qu'on est OK dans une
-issue du repo de [proposition de posts](https://github.com/putaindecode/propositions-de-posts)
-(afin de pas polluer les issues techniques du site).
+Les articles peuvent être postés ici sous forme de PR une fois qu'on est OK dans [une
+issue du repo](https://github.com/putaindecode/putaindecode.fr/issues).
 Si vous souhaitez voir un post écrit, ou même en écrire un, faites un tour là bas ;)
 
 Pour contribuer au site, n'hésitez pas, en plus de lire la partie technique ci-dessous,

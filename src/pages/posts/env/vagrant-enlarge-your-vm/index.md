@@ -117,5 +117,4 @@ dev à chaque changement de projet.
 
 # Quelques liens
 * [La documentation officielle de ~~viagra~~ Vagrant](http://docs.vagrantup.com/v2/)
-* [Virtualisation sur OS X et accès à localhost](https://github.com/putaindecode/propositions-de-posts/issues/4)
 * [Cuisinez vos serveurs comme un Chef – Première partie](http://jolicode.com/blog/cuisinez-vos-serveurs-comme-un-chef-premiere-partie)
