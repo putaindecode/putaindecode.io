@@ -15,6 +15,12 @@ notifications:
     use_notice: true
     skip_join: true
 
+before_script:
+  # testling use headless browser
+  # on travis-ci, firefox is the default one
+  # & it needs a display to works
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 
 # http://docs.travis-ci.com/user/build-configuration/
 script:
