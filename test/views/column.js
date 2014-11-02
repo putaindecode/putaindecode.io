@@ -1,8 +1,8 @@
 var tape = require("tape")
-var column = require("../../scripts/views/column")
-var tags = require("../../scripts/models/tags")
+var column = require("../../src/scripts/views/column")
+var tags = require("../../src/scripts/models/tags")
 
-require("../../scripts/lib/classList")
+require("../../src/scripts/lib/classList")
 
 tape("column view", function(test){
 
