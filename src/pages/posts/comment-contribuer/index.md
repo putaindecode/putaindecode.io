@@ -10,6 +10,57 @@ avancer le bouzin, que t'apportes ta pierre à l'édifice quoi (oui on t'apprend
 des expressions aussi), ou ta PR au repo comme on dit dans le monde des
 développeurs des internets.
 
+## tl;dr
+
+### Corriger du contenu rapidement
+
+Pour corriger un post de manière simple nous te conseillons l'interface GitHub (via le lien "Modifier" en bas des articles).
+
+### Faire des modifications avec aperçu sur ta machine
+
+Forke le projet sur GitHub, puis :
+
+```console
+$ git clone https://github.com/TON_PSEUDO_GITHUB/putaindecode.fr.git
+$ cd putaindecode.fr
+$ npm run init
+$ npm install
+$ npm start
+```
+
+Si tu as un fork en retard sur notre master, tu peux mettre ta master à jour:
+
+```console
+$ git remote add upstream https://github.com/putaindecode/putaindecode.fr.git
+$ git fetch upstream
+$ git checkout master
+$ git merge upstream/master
+```
+
+Ensuite il te faut créer une branche. En préfixe, on recommande les suivants:
+
+- `fix.` pour des patchs
+- `post.` pour proposer un post
+- `feature.` pour proposer une fonctionnalité
+
+Exemple :
+
+```console
+$ git checkout -b fix.nom-pertinent
+```
+
+Ensuite fait ta popote sur les fichiers nécessaires, puis si tu es flemmard:
+
+```console
+$ git add -A .
+$ git commit -m "Correction de XXX dans le post sur YYY"
+$ git push -u
+```
+
+Maintenant tu n'as plus qu'à te rendre sur l'interface de GitHub puis à proposer ta PR.
+
+Cela dit, ci-dessous, nous te conseillons de lire la version beaucoup plus ludique des explications ci-dessus.
+
 ## GitHub
 
 * Déjà, si t'en as pas, crée toi un compte GitHub (avant qu'on te caillasse),
@@ -63,11 +114,11 @@ développeurs des internets.
   facilement rattraper tout ce qu'on aura fait entre temps. La remote en
   rapport avec le repo principal, on l'appelle souvent *upstream*.
 
-    ```console
-    $ cd putaindecode
-    $ git remote add upstream https://github.com/putaindecode/putaindecode.fr.git
-    $ git fetch upstream
-    ```
+  ```console
+  $ cd putaindecode.fr
+  $ git remote add upstream https://github.com/putaindecode/putaindecode.fr.git
+  $ git fetch upstream
+  ```
 
 * Alors là, normalement, t'as le dossier propre et frais, pêché du matin. Vu
   que notre site pète la classe, on l'a fait en utilisant
