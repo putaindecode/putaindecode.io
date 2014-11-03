@@ -143,7 +143,7 @@ intéressent pas), attaquons le corps du sujet.
 Si vous souhaitez accéder à la commande via le terminal, la chose la plus simple
 à faire est d'installer le paquet en global.
 
-```bash
+```console
 $ npm install -g browserify
 ```
 
@@ -166,7 +166,7 @@ dernier point intéressant.
 
 Je le compile avec la commande suivante:
 
-```bash
+```console
 $ browserify main.js -o bundle.js
 ```
 
@@ -204,7 +204,7 @@ module.exports = function (n) { return n * 11 }
 
 Et le module `gamma` qu'on a installé depuis NPM
 
-```bash
+```console
 $ npm i gamma
 ```
 
@@ -220,7 +220,7 @@ le petit bout de script ajouté va se charger de retourner la dépendance.
 Notez qu'on peut aussi simplement utiliser une redirection de sortie de commande
 pour gérer le fichier final:
 
-```bash
+```console
 $ browserify main.js > bundle.js
 ```
 
@@ -260,14 +260,14 @@ qui s'adapteront sûrement à vos besoins.
 
 Du coup la ligne ultime pour consommer a peu près n'importe quel module :
 
-```bash
+```console
 browserify -t debowerify -t decomponentify -t deamdify -t deglobalify -t es6ify main.js > bundle.js
 ```
 
 L'équivalent avec les tâches Grunt ou Gulp sera tout aussi simple via un tableau.
 Pensez bien à installer ces dépendances avant:
 
-```bash
+```console
 npm install debowerify decomponentify deamdify deglobalify es6ify --save
 ```
 
