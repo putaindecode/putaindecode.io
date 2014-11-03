@@ -78,7 +78,7 @@ PR](/posts/comment-contribuer/#correction-d-un-post-existant) ;
 - tu peux aussi [soumettre des articles](https://github.com/putaindecode/putaindecode.fr/issues),
 on se fera un plaisir de les prendre en compte (sauf si c’est une review
   hebdomadaire de plugins jQuery) ;
-- tu peux aussi simplement faire de la [relecture de propositions prêtes à être publiées](https://github.com/putaindecode/putaindecode.fr/issues?labels=review&amp;page=1&amp;state=open).
+- tu peux aussi simplement faire de la [relecture de propositions prêtes à être publiées](https://github.com/putaindecode/putaindecode.fr/pulls?q=is%3Aopen+label%3Apost+is%3Apr).
 
 L'idée générale c'est que tu peux faire un peu ce que tu veux, tant que tu fais ça proprement et que tu suis les
 [quelques règles de contributions](https://github.com/putaindecode/putaindecode.fr/blob/master/CONTRIBUTING.md)
