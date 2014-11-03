@@ -17,10 +17,3 @@
   .Grid-cell.u-size3of12
     p.putainde-Footer-text.putainde-Footer-text--small.putainde-Footer-text--right
       | #{lang.madeWithHeart}
-      -var crewPath = uri(lang.crewLink.url, page)
-      -var isSamePage = crewPath.indexOf("/") == -1
-      a(
-        href="#{crewPath}"
-        class=isSamePage ? "js-ScrollTo" : null
-      )
-        | #{lang.crewLink.name}

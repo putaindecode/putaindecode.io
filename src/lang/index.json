@@ -83,9 +83,5 @@
       "name" : "IRC"
     }
   ],
-  "madeWithHeart" : "Made with ♥︎ by ",
-  "crewLink" : {
-    "url" : "#crew",
-    "name" : "le crew"
-  }
+  "madeWithHeart" : "Made with ♥︎"
 }
