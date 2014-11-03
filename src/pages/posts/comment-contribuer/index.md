@@ -166,7 +166,9 @@ est des types sympas.
   plus en vogue cette semaine, on va te trouver. On va chercher ton IP, on va
   tracer ton adresse, et on va te trouver. Et tu vas comprendre que parmi
   nous, y'a des types qui sont pas du tout copains avec jQuery et qui sont pas
-  tendres du tout.
+  tendres du tout.  
+  Bon du coup quand t'as ton idée, [tu la proposes directement comme issue](https://github.com/putaindecode/putaindecode.fr/issues/new)
+  afin de voir si ça intéresse du monde.
 
 * Il faut aussi que tu fasses attention à ne pas bosser sur le même post que
   quelqu'un d'autre et pour ça tu dois aller jeter un coup d'oeil du côté des
