@@ -172,7 +172,7 @@ get '/' do
 end
 ```
 
-```bash
+```console
 $ gem install bundler
 $ rbenv rehash
 $ bundle install

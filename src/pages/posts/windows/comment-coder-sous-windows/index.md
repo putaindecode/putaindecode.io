@@ -24,13 +24,13 @@ Comment l'installer ?
 
 Lancez `cmd.exe` en mode administrateur (touche windows puis "cmd" puis shift+ctrl+enter) et exécutez ce code :
 
-```bash
+```console
 $ @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 ```
 
 Ou `PowerShell` en mode administrateur (touche windows puis "powershell" puis shift+ctrl+enter) et éxecutez :
 
-```bash
+```console
 $ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
@@ -46,7 +46,7 @@ Yes, on a donc Chocolatey qui va nous simplifier grandement l'installation de lo
 
 Lorsque tu joues à un jeu vidéo, tu sauvegardes régulièrement ton avancement non ? Bah là, c'est pareil mais pour le code.
 
-```bash
+```console
 $ choco install git.install
 ```
 
@@ -57,7 +57,7 @@ $ choco install git.install
 
 Faire du JavaScript côté serveur ou en shell, le pied. Surtout pour faire des scripts Windows, plutôt que de passer par Batch.
 
-```bash
+```console
 $ choco install nodejs.install
 ```
 
@@ -68,7 +68,7 @@ $ choco install nodejs.install
 
 Sublime Text, l'éditeur préféré des Franç... je m'égare. Bref, un bon éditeur.
 
-```bash
+```console
 $ choco install sublimetext3
 ```
 
@@ -81,7 +81,7 @@ Vous pouvez aussi installer [Atom](https://atom.io/) si vous préférez.
 
 HeidiSQL, un logiciel avec une interface qui se rapproche de phpMyAdmin.
 
-```bash
+```console
 $ choco install HeidiSQL
 ```
 
@@ -94,7 +94,7 @@ Ou encore MySQL Workbench un excellent soft pour gérer une base de données:
   - Migration
 Par contre, il est un peu plus complexe à utiliser.
 
-```bash
+```console
 $ choco install mysql.workbench
 ```
 
@@ -106,7 +106,7 @@ $ choco install mysql.workbench
 
 Cmder va vous permettre quelques fonctionnalités intéressantes que le shell de Windows n'a pas de base, comme taper `<tab>` pour l'autocomplétion, avoir un historique persistant entre 2 sessions, des onglets, le split de console, l'intégration de PuTTY et d'autres choses venu de la banquise. (le lieu de vie des pinguins)
 
-```bash
+```console
 $ choco install Cmder
 ```
 
@@ -117,7 +117,7 @@ $ choco install Cmder
 
 Pour le SSH sous Windows c'est assez complexe, il faut quelques outils dont le principal, putty (un terminal et +).
 
-```bash
+```console
 $ choco install putty
 ```
 
@@ -137,7 +137,7 @@ Putty vient avec une suite de logiciels :
 
 On a toujours une intégration à tester sous IE pour ça Microsoft nous donne accès à des machines virtuelles gratuitement sur [ModernIE](https://www.modern.ie/fr-fr). Il nous faut donc Virtualbox pour les lancer.
 
-```bash
+```console
 $ choco install virtualbox
 $ choco install VirtualBox.ExtensionPack
 ```
@@ -152,7 +152,7 @@ $ choco install VirtualBox.ExtensionPack
 
 7zip, le logiciel de référence pour ce genre de pratique.
 
-```bash
+```console
 $ choco install 7zip.install
 ```
 
@@ -168,7 +168,7 @@ Sumatra pour les lire. PDFCreator pour faire une imprimante virtuelle sortant de
 - [site officiel](http://blog.kowalczyk.info/software/sumatrapdf/free-pdf-reader.html)
 - [lien du package](https://chocolatey.org/packages/sumatrapdf.install)
 
-```bash
+```console
 $ choco install sumatrapdf.install
 ```
 
@@ -177,7 +177,7 @@ $ choco install sumatrapdf.install
 - [site officiel](http://www.pdfforge.org/pdfcreator)
 - [lien du package](https://chocolatey.org/packages/pdfcreator)
 
-```bash
+```console
 $ choco install pdfcreator
 ```
 
@@ -185,7 +185,7 @@ $ choco install pdfcreator
 
 Nous sommes en 2014 ça fait des années que Microsoft sait mais, ce n'est toujours pas disponible. C'est là que Clover rentre en jeu.
 
-```bash
+```console
 $ choco install Clover
 ```
 
@@ -196,7 +196,7 @@ $ choco install Clover
 
 Parce qu'avoir plusieurs bureaux / espaces, c'est plus pratique pour gérer ses fenêtres, je vous propose VirtuaWin. Cela vous permettra de garder en plein écran vos logiciels et de zapper d'un logiciel à un autre sans passer par `alt+tab` mais en allant d'un bureau à un autre.
 
-```bash
+```console
 $ choco install virtuawin
 ```
 
@@ -207,7 +207,7 @@ $ choco install virtuawin
 
 Je sais pas vous mais moi, les raccourcis qui me gâchent mon beau wallpaper choisi avec goût, ça m'énerve. Et puis le clickodrome, c'est lent et chiant. Du coup, lancer ses logiciels à partir d'un moteur de recherche, c'est quand même vachement bien. Ca permet aussi de faire des recherches de fichier, des calculs, et tout un tas d'autres choses. Voici alors Launchy.
 
-```bash
+```console
 $ choco install launchy-beta
 ```
 
@@ -229,7 +229,7 @@ Et surtout, il est ultra léger et démarre en moins d'une seconde.
 
 On va commencer par f.lux. Ce petit logiciel permettant de gérer la colorimétrie de votre écran en fonction de l'heure. Typiquement, les écrans rendent un blanc digne d'un soleil à midi. Sauf que le soir, on allume la lumière et celle-ci n'a pas du coup une couleur blanche mais souvent plutôt rouge. f.lux permet alors d'ajuster votre écran afin que la couleur soit identique à la lumière ambiante pour réduire les différences de couleurs et éviter de vous abimer les yeux. En plus, ça permet au cerveau de se préparer à aller se coucher. :D
 
-```bash
+```console
 $ choco install f.lux
 ```
 
@@ -242,7 +242,7 @@ Et surtout, MacType. Oh oui MacType. Je pense que seule une personne venant de M
 
 Pour réduire cette différence entre un Windows et un Mac OS X, je vous propose MacType qui permet de remplacer le font rendering de Windows et d'apprécier lire à nouveau sur cet OS.
 
-```bash
+```console
 $ choco install mactype
 ```
 

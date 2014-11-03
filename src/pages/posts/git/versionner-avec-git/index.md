@@ -78,7 +78,7 @@ dossier du nom spécifié en dernier argument.
 
 Par exemple, si je veux cloner le dépôt du site :
 
-```bash
+```console
 $ git clone https://github.com/putaindecode/putaindecode.fr.git
 ```
 
@@ -96,7 +96,7 @@ bien pour lancer les vraies commandes intéressantes de Git.
 Pour commencer à s'amuser, écrivez un bout de code dans un fichier et
 sauvegardez le :
 
-```bash
+```console
 $ cat > putain_de_hello_world.rb
 puts "Hello, putain de codeur !"
 ^D
@@ -129,7 +129,7 @@ Dans notre cas, notre fichier n'est même pas encore suivi par Git ! Vous pouve
 vérifier ça en utilisant `git status`, dont vous ne pourrez bientôt plus vous
 passer :
 
-```bash
+```console
 $ git status
 # Sur la branche master
 #
@@ -151,7 +151,7 @@ soyez vigilants, c'est une bonne source d'erreurs souvent chiantes.
 
 Vous pouvez vérifier que `git add` a bien marché avec la commande `git status`,
 
-```bash
+```console
 $ git status
 # Sur la branche master
 #
@@ -173,7 +173,7 @@ besoin de détails, sautez une ligne et détaillez les modifications.
 Un petit `git status` nous confirme qu'on s'est pas foiré (la preuve, tout est
 propre) :
 
-```bash
+```console
 $ git status
 # Sur la branche master
 rien à valider, la copie de travail est propre
@@ -192,7 +192,7 @@ l'affichage.
 
 Un `git log` basique ça ressemble à ça :
 
-```bash
+```console
 $ git log
 commit 8120de7b7139e46b9cbc1c3ee89a02962dbc198e
 Author: madx <madx+github@yapok.org>
@@ -207,7 +207,7 @@ objet Git (il n'y a pas que des commits, mais on verra ça une prochaine fois).
 
 `git show` prend en argument le fameux `SHA1` du commit :
 
-```bash
+```console
 $ git show 8120de7b7139e46b9cbc1c3ee89a02962dbc198e
 commit 8120de7b7139e46b9cbc1c3ee89a02962dbc198e
 Author: madx <madx+github@yapok.org>
@@ -269,7 +269,7 @@ un petit asterisque devant c'est la branche courante.
 
 Essayons ça avec notre petit dépôt :
 
-```bash
+```console
 $ git branch
 * master
 $ git checkout -b add-shebang
@@ -306,7 +306,7 @@ fusionner.
 
 Si vous avez bien suivi, on va donc faire les choses suivantes :
 
-```bash
+```console
 $ git checkout master
 Basculement sur la branche 'master'
 $ git merge add-shebang
