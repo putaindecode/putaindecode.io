@@ -41,7 +41,7 @@
         "bio": {
           "short": "Software craftsman, full stack developer, technical leader, architect.",
           "long": [
-            "Développeur full stack. Spécialités en Java & Javascript mais j'essaie de rester polyglotte."
+            "Développeur full stack & Architecte. Spécialités en Java & Javascript mais j'essaie de rester polyglotte."
           ]
         }
       },
@@ -49,7 +49,7 @@
         "bio": {
           "short": "Software craftsman, full stack developer, technical leader, architect.",
           "long": [
-            "Full stack developer. Special skills and experiences on Java & Javascript but try to be polyglot.",
+            "Full stack developer & Architect. Special skills and experience on Java & Javascript but try to be polyglot.",
             "Passionate about software development, open source enthusiast"
           ]
         }
@@ -108,6 +108,15 @@
           ]
         }
       }
+    },
+    "don.dapo+github@gmail.com": {
+      "login": "DaPo",
+      "name": "Cyril Krylatov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1059657?v=2",
+      "gravatar_id": "",
+      "url": "http://blog.c-krylatov.com",
+      "location": "Paris",
+      "hireable": false
     },
     "dridi.boukelmoune@gmail.com": {
       "login": "Dridi",
@@ -768,6 +777,15 @@
       "gravatar_id": "",
       "url": "http://agmagor.be",
       "location": "France",
+      "hireable": false
+    },
+    "DaPo": {
+      "login": "DaPo",
+      "name": "Cyril Krylatov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1059657?v=2",
+      "gravatar_id": "",
+      "url": "http://blog.c-krylatov.com",
+      "location": "Paris",
       "hireable": false
     },
     "Dridi": {
