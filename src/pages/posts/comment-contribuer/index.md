@@ -52,7 +52,7 @@ développeurs des internets.
   sous Mac OS X tu utilises le terminal, et sous Linux je pense qu'on n'a pas à
   t'expliquer).
 
-  ```bash
+  ```console
   $ git clone https://github.com/clinthorris/putaindecode.fr.git putaindecode
   ```
 
@@ -63,7 +63,7 @@ développeurs des internets.
   facilement rattraper tout ce qu'on aura fait entre temps. La remote en
   rapport avec le repo principal, on l'appelle souvent *upstream*.
 
-    ```bash
+    ```console
     $ cd putaindecode
     $ git remote add upstream https://github.com/putaindecode/putaindecode.fr.git
     $ git fetch upstream
@@ -82,7 +82,7 @@ développeurs des internets.
 * Note: Si tu avais déjà récupérer le repo, il te faudra juste récupérer les
   derniers changements sur une branche propre
 
-  ```bash
+  ```console
   $ git checkout master
   $ git fetch upstream
   $ git merge upstream/master
@@ -141,7 +141,7 @@ est des types sympas.
   exactement ce que t'auras modifié, c'est beaucoup plus simple. Du coup tu
   fais simplement un :
 
-  ```bash
+  ```console
   $ git checkout -b fix.nom-du-post
   ```
 
@@ -180,7 +180,7 @@ est des types sympas.
   nouvelle branche. C'est une pratique qu'on demande à tout le monde, même
   nous en interne on bosse sur des branches. Donc tout d'abord :
 
-  ```bash
+  ```console
   $ git checkout -b post.titre-court-du-post
   ```
 
@@ -217,7 +217,7 @@ est des types sympas.
   d'abord ajouter les fichier que tu as modifié à l'index de fichiers à
   commit. Tu peux faire ça tout simplement avec un :
 
-  ```bash
+  ```console
   $ git add -A pages/posts/nom-du-post
   ```
 
@@ -225,20 +225,20 @@ est des types sympas.
   Si tu as ajouté des fichiers à l'extérieur de ce dossier, tu devras les
   ajouter. Exemple :
 
-  ```bash
+  ```console
   $ git add images/memes/trollface.jpg
   ```
 
   Ensuite on va dire à git de valider ces modifications de code :
 
-  ```bash
+  ```console
   $ git commit -m "Un petit message sympa expliquant le correctif/post"
   ```
 
   Et on va finir en disant qu'on veut envoyer tout ça sur ton fork qui est
   situé sur GitHub :
 
-  ```bash
+  ```console
   $ git push -u
   ```
 

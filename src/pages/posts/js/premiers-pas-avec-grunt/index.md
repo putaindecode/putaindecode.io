@@ -19,19 +19,19 @@ Voyons maintenant comment l'on peut mettre en place ceci via **Grunt**.
 
 Tout d'abord, installons **Grunt**. Notez que **Grunt** est en _nodejs_ et que je considère que vous avez déjà _nodejs_ d'installé. D'autre part, nous allons créer un nouveau projet **npm** afin d'enregistrer tous les packages que vous allez installer. Je vous explique par la suite pourquoi nous faisons ça.
 
-```bash
+```console
 $ npm init // puis plusieurs fois entrée
 ```
 
 En premier lieu, il faut installer le *package* qui permet de gérer **Grunt** en ligne de commande. C'est le _commander_ de **Grunt** en gros.
 
-```bash
+```console
 $ npm install -g grunt-cli
 ```
 
 Une fois cela fait, installez **Grunt** en local dans votre projet.
 
-```bash
+```console
 $ npm install grunt --save-dev
 ```
 
@@ -41,7 +41,7 @@ Ni plus ni moins, **Grunt** est enfin installé dans votre projet.
 
 Maintenant, il est nécessaire de créer un fichier de configuration **Grunt**. Pour cela, nous allons créer un fichier nommé `Gruntfile.js` à la racine de votre projet.
 
-```bash
+```console
 $ touch Gruntfile.js
 ```
 
@@ -69,7 +69,7 @@ Toute documentation pour installer une tâche **Grunt** est indiquée sur chaque
 
 D'abord, installons le package pour _Sass_.
 
-```bash
+```console
 $ npm install grunt-contrib-sass --save-dev
 ```
 

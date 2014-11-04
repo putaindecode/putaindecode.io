@@ -86,21 +86,18 @@ Trèves de bavardages, on s'y met sérieusement :
 
 On installe [Node][node], [Ember CLI][ember-cli], [Bower](http://bower.io/) :
 
-```bash
-npm install -g ember-cli
-
-npm install -g bower
+```console
+$ npm install -g ember-cli
+$ npm install -g bower
 ```
 
 Ça y est, on peut maintenant demander gentiment à [Ember CLI][ember-cli] de nous créer notre application grâce à la 
 commande `ember` et voir ensuite une magnifique page de bienvenue sur http://localhost:4200/ :
 
-```bash
-ember new ember-articles
-
-cd ember-articles
-
-ember server
+```console
+$ ember new ember-articles
+$ cd ember-articles
+$ ember server
 ```
 
 Je ne vous fais pas l'affront de détailler ici la structure de l'application, tout est décrit dans la 
@@ -132,8 +129,8 @@ _Note : on en profite pour remarquer le rechargement à chaud via `ember server`
 
 * Création de la première route `/series` via `ember` :
 
-```bash
-ember generate route series
+```console
+$ ember generate route series
 ```
 
 [Ember CLI][ember-cli] met à jour le routeur : 

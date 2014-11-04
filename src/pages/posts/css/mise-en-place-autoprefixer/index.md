@@ -7,7 +7,7 @@ Voici donc de rapides exemples de mise en place de cette solution.
 Il vous faudra [Node.js](http://nodejs.org/) (qui embarque maintenant [Npm](https://www.npmjs.org/)) afin de pouvoir
 installer ce nouveau joujou.
 
-```bash
+```console
 # on install autoprefixer via npm en global
 $ npm install --global autoprefixer
 # ou pour les fainéants
@@ -17,7 +17,7 @@ $ npm i -g autoprefixer
 Une fois ceci fait, vous devriez avoir la commande `autoprefixer` disponible.
 On vérifie de suite avec `autoprefixer -v`.
 
-```bash
+```console
 $ autoprefixer -v
 autoprefixer 1.0.20140203
 ```
@@ -28,7 +28,7 @@ jour de la base de données de _Can I Use_.
 
 ## Utilisation d’autoprefixer
 
-```bash
+```console
 $ autoprefixer *.css
 ```
 
@@ -39,7 +39,7 @@ comme beaucoup de commandes, vous allez avoir la sortie crachée en plein visage
 
 Pour voir les options, comme d’habitude `--help` ou `-h` :
 
-```bash
+```console
 $ autoprefixer -h
 ```
 
@@ -58,13 +58,13 @@ Options:
 
 Du coup si on veut faire un coup de commande bien personnalisée on pourra faire :
 
-```bash
+```console
 $ autoprefixer -b "last 2 versions, > 1%, Explorer 7, Android 2" -o prefixed.css index.css
 ```
 
 Il va par contre nous falloir un fichier css pour tester :
 
-```bash
+```console
 # on met un peu de CSS dans index.css manière de tester le bouzin
 $ echo "* { box-sizing:border-box}" > index.css
 ```
@@ -73,7 +73,7 @@ On peut donc essayer notre commande plus haut qui va remplir le fichier `prefixe
 
 Pour vérifier :
 
-```bash
+```console
 $ cat prefixed.css
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box}
 ```
@@ -130,7 +130,7 @@ c’est que t’es pas développeur, je sais pas trop ce que tu fais ici du coup
 
 On peut tout simplement créer un fichier `Makefile` avec la commande précédente:
 
-```bash
+```console
 # création d’un dossier pour notre popote (puis on va dedans...)
 $ mkdir autoprefixer-test && cd autoprefixer-test
 
@@ -149,7 +149,7 @@ $ cat Makefile
 
 Voilà votre Makefile doit être bien rempli. Pour tester la commande `css`:
 
-```bash
+```console
 $ make css
 ```
 
@@ -322,7 +322,7 @@ Mais voici complètement autre chose: _autoprefixer_ peut s’utiliser en "plugi
 C’est assez simple il suffit d’utiliser l’option `use` (`-u` en cli).
 Voilà ce qu’on aurait en cli :
 
-```bash
+```console
 $ npm install -g stylus autoprefixer-stylus
 $ stylus -u autoprefixer-stylus -o index.css index.styl
 ```
