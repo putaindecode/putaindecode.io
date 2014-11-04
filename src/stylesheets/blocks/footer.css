@@ -3,14 +3,14 @@
 }
 
   .putainde-Footer > .Grid {
-    padding: var(--lineHeight) 0 0;
+    padding: var(--cssr-lineHeight) 0 0;
     border-top: 1px solid #ddd;
     margin-top: -1px;
   }
 
     @media (max-width:54em) {
       .putainde-Footer > .Grid > .Grid-cell {
-        padding: var(--halfLineHeight) 0;
+        padding: calc(var(--cssr-lineHeight) / 2) 0;
         text-align: center;
       }
     }
@@ -34,7 +34,7 @@
 }
 
 .putainde-Footer-text--small {
-  font-size: var(--small-fontSize);
+  font-size: var(--cssr-small-fontSize);
 }
 
 @media (min-width:54em) {

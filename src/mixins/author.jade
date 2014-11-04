@@ -14,12 +14,12 @@ mixin Author(author, isPost)
           a(href="#{getAuthorUri(author)}").putainde-Link #{author.login}
         .putainde-Author-social
           if author.url
-            a(href="#{getAuthorUri(author)}", data-rcp-tooltip="Website").rcp-Tooltip.rcp-Tooltip--top
+            a(href="#{getAuthorUri(author)}", data-cssr-tooltip="Website").cssr-Tooltip.cssr-Tooltip--top
               +Icon("home")
           if author.twitter
-            a(href="#{getAuthorUri(author, 'twitter')}", data-rcp-tooltip="Twitter").rcp-Tooltip.rcp-Tooltip--top
+            a(href="#{getAuthorUri(author, 'twitter')}", data-cssr-tooltip="Twitter").cssr-Tooltip.cssr-Tooltip--top
               +Icon("twitter")
-          a(href="#{getAuthorUri(author, 'github')}", data-rcp-tooltip="Github").rcp-Tooltip.rcp-Tooltip--top
+          a(href="#{getAuthorUri(author, 'github')}", data-cssr-tooltip="Github").cssr-Tooltip.cssr-Tooltip--top
             +Icon("github")
 
       p.putainde-Author-bio

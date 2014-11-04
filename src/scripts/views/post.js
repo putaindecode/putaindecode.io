@@ -10,9 +10,9 @@ module.exports = cornea.extend({
   },
   setTooltipWording : function(){
     var element = this.element.parentNode
-    var tipContents = element.getAttribute("data-rcp-tooltip")
+    var tipContents = element.getAttribute("data-cssr-tooltip")
     element.setAttribute(
-      "data-rcp-tooltip",
+      "data-cssr-tooltip",
       tipContents.replace("{{wpm}}", this.wordsPerMinute)
     )
   },

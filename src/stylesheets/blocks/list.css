@@ -1,6 +1,6 @@
 .putainde-List-item {
   position: relative;
-  padding: 0 0 0 calc(var(--lineHeight) * 3);
+  padding: 0 0 0 calc(var(--cssr-lineHeight) * 3);
   margin-top: -1px;
   border-bottom: 1px solid #eee;
 }
@@ -19,7 +19,7 @@
 }
 
 :root {
-  --putainde-List-avatars-width: calc(var(--lineHeight) * 2);
+  --putainde-List-avatars-width: calc(var(--cssr-lineHeight) * 2);
 }
 
 .putainde-List-avatars {
@@ -59,7 +59,7 @@
     .putainde-Avatars--6 .putainde-List-avatars-author-avatar { transform: translateX(calc(-25% - 12.5%*(6-2)/2)) }
 
 .putainde-Message {
-  font-size: var(--h1-fontSize);
+  font-size: var(--cssr-h1-fontSize);
   line-height: 10rem;
   color: #ccc;
   text-align: center;
@@ -75,10 +75,10 @@
   display: block;
   margin: 0;
   font-family: var(--fontFamily-title);
-  font-size: var(--h3-fontSize);
-  padding-top: calc(var(--lineHeight) * .4);
-  padding-bottom: calc(var(--lineHeight) * .6);
-  line-height: var(--lineHeight);
+  font-size: var(--cssr-h3-fontSize);
+  padding-top: calc(var(--cssr-lineHeight) * .4);
+  padding-bottom: calc(var(--cssr-lineHeight) * .6);
+  line-height: var(--cssr-lineHeight);
 
   color: #444;
 }
@@ -94,7 +94,7 @@
   box-shadow: inset 0 0 0 1px color(#000 alpha(5%));
   padding: 0 1em;
   margin-right: .2rem;
-  font-size: var(--small-fontSize);
+  font-size: var(--cssr-small-fontSize);
   line-height: 1.6;
   border-radius: 1em;
 }
@@ -102,7 +102,7 @@
 .putainde-List-author {
   position: absolute;
   color: #888;
-  font-size: var(--small-fontSize);
+  font-size: var(--cssr-small-fontSize);
   line-height: 1rem;
   bottom: 1.2rem;
   right: 0;
@@ -112,7 +112,7 @@
     .putainde-List-author {
       text-align: left;
       position: static;
-      margin: 0 0 var(--lineHeight);
+      margin: 0 0 var(--cssr-lineHeight);
     }
   }
 
@@ -123,5 +123,5 @@
   }
 
   .putainde-List-author time {
-    font-size: var(--small-fontSize);
+    font-size: var(--cssr-small-fontSize);
   }
