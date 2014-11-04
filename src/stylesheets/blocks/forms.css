@@ -1,6 +1,6 @@
 .putainde-Button {
-  line-height: calc(var(--lineHeight)*2);
-  margin: -1px 0 var(--lineHeight);
+  line-height: calc(var(--cssr-lineHeight)*2);
+  margin: -1px 0 var(--cssr-lineHeight);
 
   color: var(--putainde-Color-red);
   border: 1px solid transparent;
