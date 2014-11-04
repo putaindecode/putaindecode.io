@@ -76,8 +76,7 @@
     "init-osx": "brew install icoutils",
     "favicon": "icotool -c images/p!-logo--no-bubble-16.png images/p!-logo--no-bubble-32.png -o public/favicon.ico",
     "start": "gulp",
-    "local-deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr gulp deploy --production",
-    "deploy": "gulp deploy --production",
+    "deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr gulp deploy --production",
     "test": "testling && gulp dist --production",
     "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else npm run deploy; fi;"
   }
