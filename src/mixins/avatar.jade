@@ -1,11 +1,8 @@
-mixin Avatar(author, tooltip, size)
+mixin Avatar(author, size)
   - author = contributors.map[author]
   - var avatarUrl = author.avatar_url
-  - var className = ""
   - size = size || 128
-  - if (tooltip)
-    - className += "cssr-Tooltip cssr-Tooltip--bottom"
-  a(href="#{getAuthorUri(author)}", data-cssr-tooltip="#{author.login}", class="putainde-Avatar #{attributes.class || ''} #{className}")
+  a(href="#{getAuthorUri(author)}", class="putainde-Avatar #{attributes.class || ''}")
     img(
       class="js-AnimateLoad"
       src="#{avatarUrl}&s=#{size}"

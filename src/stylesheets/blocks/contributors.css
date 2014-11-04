@@ -8,15 +8,18 @@
   line-height: var(--putainde-Contributor-height);
 }
 
-.putainde-Contributors-label {
-  font-size: var(--cssr-small-fontSize);
-  display: inline-block;
-}
+  .putainde-Contributors-label {
+    font-size: var(--cssr-small-fontSize);
+    display: inline-block;
+  }
 
-.putainde-Contributor {
-  margin-left: 1rem;
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  vertical-align: middle;
-}
+  .putainde-Contributor {
+    display: inline-block;
+    margin-left: 1rem;
+    vertical-align: middle;
+  }
+
+    .putainde-Contributor-avatar {
+      width: 2rem;
+      height: 2rem;
+    }

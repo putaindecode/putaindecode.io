@@ -6,6 +6,7 @@ mixin Contributors(page)
       .putainde-Contributors
         strong.putainde-Contributors-label #{nbFileContributors} #{lang.contributors}
         each contributions, login in fileContributors
-          +Avatar(login, true).putainde-Contributor
+          .putainde-Contributor.cssr-Tooltip.cssr-Tooltip--bottom(data-cssr-tooltip="#{login}")
+            +Avatar(login).putainde-Contributor-avatar
   //- -else
   //-   -console.log("page", page, "didnt have filesContributor")
