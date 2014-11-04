@@ -304,7 +304,7 @@ if(typeof {}.__proto__ == "object"){
 
 Happy testing!
 
-```bash
+```console
 $ testling
 
 TAP version 13

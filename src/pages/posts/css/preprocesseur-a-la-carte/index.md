@@ -253,7 +253,7 @@ qui se concentrent sur le rendu et non le workflow pour générer ce rendu.
 Nous allons donc faire simple et efficace avec une task [gulp](/posts/js/introduction-gulp/).
 Ceci pourrait bien entendu être aussi bien fait avec grunt ou même make et [watchman](https://github.com/facebook/watchman).
 
-```bash
+```console
 $ mkdir monrework && cd monrework
 
 # on crée un package.json pour sauvegarder les références des paquets qu'on va utiliser
@@ -318,7 +318,7 @@ Ensuite il ne reste plus qu'à lancer Gulp au besoin qui s'occupera d'éxecuter 
 au démarrage et lors des changements de fichiers.
 Il ne reste plus grand chose à faire si ce n'est ajouter livereload en plus pour avoir le petit process aux petits oignons.
 
-```bash
+```console
 $ gulp
 [gulp] Using gulpfile ~/Development/monrework/Gulpfile.js
 [gulp] Starting 'styles'...

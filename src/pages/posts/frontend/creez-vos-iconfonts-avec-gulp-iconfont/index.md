@@ -18,7 +18,7 @@ Maintenant, vous êtes prêt(e) ? Okay, go.
 
 Oui, deux packages, [gulp-iconfont](https://github.com/nfroidure/gulp-iconfont) et [gulp-iconfont-css](https://github.com/backflip/gulp-iconfont-css).
 
-```bash
+```console
 $ npm install gulp-iconfont gulp-iconfont-css --save-dev
 ```
 

@@ -17,7 +17,7 @@ honteusement pompé de [ce site](https://coderwall.com/p/euwpig), mais
 comme j'ai pas d'honneur… Pour le mettre en place il suffit d'entrer la commande
 suivante dans votre terminal préféré:
 
-```bash
+```console
 $ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
 
@@ -55,7 +55,7 @@ train de baver devant votre écran, mais non, Git ne va pas corriger vos bugs bi
 Pour lancer une *bisection* par Git il suffit d'entrer `git bisect start` dans votre terminal préféré
 et le tour est joué!
 
-```bash
+```console
 $ git bisect start
 $
 ```
@@ -77,7 +77,7 @@ Git va alors se mettre en route et vous déplacer automatiquement de commit en c
 qu'à le déclarer bon ou mauvais comme expliqué au dessus, jusqu'à ce que Git vous fournisse le premier commit
 comportant le bug, celui dont le changement a révélé le disfonctionnement.
 
-```bash
+```console
 $ git bisect bad
 1082351d9157e98aed1bbee8b9ad6deedca1288f is the first bad commit
 commit 1082351d9157e98aed1bbee8b9ad6deedca1288f
