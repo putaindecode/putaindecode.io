@@ -183,8 +183,8 @@ Vous l'aurez compris, `%` est identique dans la cible et dans la dépendance,
 donc avec cette règle si vous faites un `make index.html`, *Make* va tenter de
 construire la dépendance `index.md` avant tout.
 
-Un problème se pose à nous avec cette syntaxe : bah merde, comment je récupère
-les noms de fichiers là ?
+Un problème se pose à nous avec cette syntaxe : « Bah merde, comment je récupère
+les noms de fichiers là ? »
 
 # Variables spéciales
 
@@ -232,7 +232,7 @@ unitairement un fichier *Markdown* vers HTML.
 Vous noterez qu'`addsuffix`/`basename` peut être remplacé par une substitution
 simple comme on a vu précédemment.
 
-Je vous invite à fouiller 
+Je vous invite à fouiller
 [le chapitre sur les fonctions du manuel][man:make:functions].
 
 # La cible `.PHONY`
@@ -291,15 +291,15 @@ potentiellement le créer quand on compile un fichier dedans.
 Il existe bien d'autres fonctionnalités dans *Make* (du moins dans *GNU Make*),
 avec notamment :
 
-- les [*canned recipes*][man:make:canned] (recettes en boîte), permettant de
-  définir un bout de règle réutilisable à plusieurs endroits ;
-- des [expressions conditionnelles][man:make:conditions] pour avoir des tests
+- Les [*canned recipes*][man:make:canned] (recettes en boîte), permettant de
+  définir un bout de règle réutilisable à plusieurs endroits.
+- Des [expressions conditionnelles][man:make:conditions] pour avoir des tests
   dans votre *Makefile* et effectuer des traitements différents selon
-  l'environnement ;
-- les [règles en *order only*][man:make:types] qui permettent d'indiquer une
+  l'environnement.
+- Les [règles en *order only*][man:make:types] qui permettent d'indiquer une
   dépendance dont la date de modification ne doit pas être prise en compte (on
-  peut s'en servir pour éviter le `mkdir` dans l'exemple complet) ;
-- et [plein d'autres fonctions][man:make:functions] bien pratiques !
+  peut s'en servir pour éviter le `mkdir` dans l'exemple complet).
+- Et [plein d'autres fonctions][man:make:functions] bien pratiques !
 
 Je vous invite aussi à jeter un coup d'œil au [*Makefile* de Veil][gh:veil], un outil que
 j'utilise pour générer des sites statiques à partir de fichiers *Markdown*
