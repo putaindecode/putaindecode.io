@@ -6,7 +6,7 @@ require("../../src/scripts/lib/classList")
 tape("post", function(test){
   var element = document.createElement("div")
   element.innerHTML = [
-    "<span data-rcp-tooltip='foo {{wpm}} bar' data-readingtime-wpm='40' class='putainde-Post-readingTime putainde-Post-readingTime--hidden rcp-Tooltip rcp-Tooltip--top rcp-Tooltip--nowrap'>",
+    "<span data-cssr-tooltip='foo {{wpm}} bar' data-readingtime-wpm='40' class='putainde-Post-readingTime putainde-Post-readingTime--hidden cssr-Tooltip cssr-Tooltip--top cssr-Tooltip--nowrap'>",
     "  Temps de lecture : environ ",
     "  <span class='putainde-Post-readingTime-value'></span>",
     "  minutes",
@@ -40,6 +40,6 @@ tape("post", function(test){
   )
   test.equal(postView.wordsPerMinute, 250, "ignores if no data-attribute")
   postView.setTooltipWording()
-  test.equal(element.children[0].getAttribute("data-rcp-tooltip"), "foo 250 bar")
+  test.equal(element.children[0].getAttribute("data-cssr-tooltip"), "foo 250 bar")
   test.end()
 })
