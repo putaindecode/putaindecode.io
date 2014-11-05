@@ -51,7 +51,7 @@ affiche la commande complète avant d'afficher la sortie standard de ladite
 commande. C'est souvent très pratique car toutes les variables (on va revenir là dessus)
 qu'on met dans la commande sont résolues, et on voit clairement ce que _Make_
 exécute. Par contre, dans certains cas on s'en fout un peu, on peut alors
-préfixer la ligne à rendre silencieuse par un `@`, comme ça :
+préfixer la ligne à rendre silencieuse par un `@`, comme ça :
 
 ``` make
 hello-world:
@@ -107,7 +107,7 @@ Facile, non ? Ok alors on peut *vraiment* attaquer les choses sérieuses.
 
 Les pré-requis sont particulièrement pratiques quand on veut construire un
 fichier depuis un autre, ce qui est la principale action d'à peu près tout
-processus de compilation (paraît même que c'est grosso-modo la définition de la
+processus de compilation (paraît même que c'est grosso modo la définition de la
 compilation).
 
 On peut par exemple écrire un _Makefile_ nous permettant de compiler un fichier
@@ -124,7 +124,7 @@ j'ai besoin du fichier `article.md` et que j'utilise la commande
 magique.
 
 Là où ça devient intéressant, c'est que si je lance de nouveau `make
-article.html`, rien ne se passe. Hé oui, _Make_ vérifie les dates de
+article.html`, rien ne se passe. Eh oui, _Make_ vérifie les dates de
 modification des pré-requis et les compare avec la date de modification de la
 cible pour savoir s'il doit où non reconstruire la cible.
 
@@ -140,7 +140,7 @@ contact.html`).
 # Variables et substitutions
 
 La syntaxe des variables dans un *Makefile* ressemblent beaucoup aux variables
-de votre Shell, +mais pas tout à fait+.
+de votre Shell, *mais pas tout à fait*.
 
 ``` make
 SOURCE = index.md
@@ -183,8 +183,8 @@ Vous l'aurez compris, `%` est identique dans la cible et dans la dépendance,
 donc avec cette règle si vous faites un `make index.html`, *Make* va tenter de
 construire la dépendance `index.md` avant tout.
 
-Un problème se pose à nous avec cette syntaxe : Bah merde, comment je récupère
-les noms de fichiers là ?
+Un problème se pose à nous avec cette syntaxe : « Bah merde, comment je récupère
+les noms de fichiers là ? »
 
 # Variables spéciales
 
@@ -212,7 +212,7 @@ base. Appeler ces fonctions rappelle un peu la façon dont on lance une commande
 dans un sous-shell en Bash : `$(fonction argument1 argument2)`.
 
 Voici une petite démonstration de `wildcard`, `addsuffix` et `basename` dont
-vous vous doutez sans-doute les effets :
+vous vous doutez sans doute les effets :
 
 ``` make
 SOURCES = $(wildcard *.md)
@@ -232,15 +232,15 @@ unitairement un fichier *Markdown* vers HTML.
 Vous noterez qu'`addsuffix`/`basename` peut être remplacé par une substitution
 simple comme on a vu précédemment.
 
-Je vous invite à fouiller 
-[le chapitre sur les fonctions du manuel][man:make:functions]
+Je vous invite à fouiller
+[le chapitre sur les fonctions du manuel][man:make:functions].
 
 # La cible `.PHONY`
 
 Dans certains cas la cible d'une règle ne représente pas un fichier (c'était le
 cas de notre cible `website` [un peu plus haut](#ref-phony-target)).
 
-Dans ces cas, on va vouloir exécuter la règle quoi qu'il arrive, comme si la
+Dans ces cas-là, on va vouloir exécuter la règle quoi qu'il arrive, comme si la
 cible était tout le temps périmée.
 
 Une cible particulière existe pour ça : `.PHONY`. Toutes les dépendances de
@@ -283,7 +283,7 @@ build/%.html: src/%.md
 .PHONY: all info clean
 ```
 
-Vous noterez que comme on stocke nos résultats dans le dossier `build` il faut
+Vous noterez que comme on stocke nos résultats dans le dossier `build`, il faut
 potentiellement le créer quand on compile un fichier dedans.
 
 # Pour aller plus loin
@@ -292,13 +292,13 @@ Il existe bien d'autres fonctionnalités dans *Make* (du moins dans *GNU Make*),
 avec notamment :
 
 - Les [*canned recipes*][man:make:canned] (recettes en boîte), permettant de
-  définir un bout de règle réutilisable à plusieurs endroits ;
+  définir un bout de règle réutilisable à plusieurs endroits.
 - Des [expressions conditionnelles][man:make:conditions] pour avoir des tests
   dans votre *Makefile* et effectuer des traitements différents selon
-  l'environnement ;
+  l'environnement.
 - Les [règles en *order only*][man:make:types] qui permettent d'indiquer une
   dépendance dont la date de modification ne doit pas être prise en compte (on
-  peut s'en servir pour éviter le `mkdir` dans l'exemple complet) ;
+  peut s'en servir pour éviter le `mkdir` dans l'exemple complet).
 - Et [plein d'autres fonctions][man:make:functions] bien pratiques !
 
 Je vous invite aussi à jeter un coup d'œil au [*Makefile* de Veil][gh:veil], un outil que
