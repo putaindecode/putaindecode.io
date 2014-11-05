@@ -1,6 +1,6 @@
-Salutations ! Aujourd'hui, je suis venu te parler de PHP (sisi), et notamment du mécanisme d'injection de dépendance avec lequel tu n'es peut-être pas familier. Au menu, des objets, des usines et des conteneurs, alors enfile ton bonnet et tes gants, on va bouger du bordel !
+Salutations ! Aujourd'hui, je suis venu te parler de PHP (sisi), et notamment du mécanisme d'injection de dépendances avec lequel tu n'es peut-être pas familier. Au menu, des objets, des usines et des conteneurs, alors enfile ton bonnet et tes gants, on va bouger du bordel !
 
-## L'injection de dépendance ? C'est quoi ce truc ?
+## L'injection de dépendances ? C'est quoi ce truc ?
 
 Si tu fais de la programmation orientée objet, il est fort probable que ce terme ne te soit pas totalement inconnu. En PHP, on a principalement commencé à nous en rebattre les oreilles avec l'avènement de Symfony, qui est aujourd'hui le framework web majeur pour ce langage. Fabien Potencier, créateur et *lead developer* de Symfony, cite en exemple sur [son blog](http://fabien.potencier.org/article/11/what-is-dependency-injection) cette définition :
 
@@ -83,7 +83,7 @@ class Person
 }
 ```
 
-L'injection de dépendance, c'est précisément ça. Si une classe a besoin d'une instance d'une autre classe, que ce soit dans son constructeur ou dans une autre méthode (un *setter* par exemple), alors elle prend cette instance directement en paramètre et ne s'occupe certainement pas de l'instancier elle-même. Procéder ainsi permet d'écrire du code **découplé**, évitant toute interdépendance entre ses différents composants, ce qui les rend **réutilisables** sans devoir embarquer toute la smala au passage, mais également beaucoup plus **maintenables** puisque chaque classe s'occupe de ses fesses et pas de celles des autres. En PHP, on tire également parti du *type hinting* d'objets, qui permet de s'assurer d'emblée que notre paramètre est une instance de la classe voulue et non pas n'importe quoi.
+L'injection de dépendances, c'est précisément ça. Si une classe a besoin d'une instance d'une autre classe, que ce soit dans son constructeur ou dans une autre méthode (un *setter* par exemple), alors elle prend cette instance directement en paramètre et ne s'occupe certainement pas de l'instancier elle-même. Procéder ainsi permet d'écrire du code **découplé**, évitant toute interdépendance entre ses différents composants, ce qui les rend **réutilisables** sans devoir embarquer toute la smala au passage, mais également beaucoup plus **maintenables** puisque chaque classe s'occupe de ses fesses et pas de celles des autres. En PHP, on tire également parti du *type hinting* d'objets, qui permet de s'assurer d'emblée que notre paramètre est une instance de la classe voulue et non pas n'importe quoi.
 
 Alors oui, je t'entends déjà grommeler :
 
@@ -109,7 +109,7 @@ class PersonFactory
 }
 ```
 
-Pour le coup, tu te dis peut-être que je te prends allègrement pour un idiot : pourquoi se prendre le chou à créer une classe qui fait exactement ce qu'on faisait directement dans `Person` au départ ? Parce que tu n'as pas bien écouté, ~~petit c~~ jeune padawan. L'objectif en utilisant l'injection de dépendance, c'est que nos classes ne soient pas dépendantes (justement) les unes des autres si ce n'est pas justifié. Une personne a beau avoir besoin d'une adresse, on pourrait fort bien imaginer les utiliser l'une sans l'autre (tu comprendras à la partie suivante). Dans le cas de `PersonFactory`, notre objectif est justement de créer une personne à partir des différents composants d'une adresse en une ligne de code, pour conserver la simplicité du code métier qui te tient tant à coeur (et tu as bien raison, au fond). Seulement, `Person` et `Address` restent utilisables avec ou sans `PersonFactory` : l'objectif est atteint, petit navire.
+Pour le coup, tu te dis peut-être que je te prends allègrement pour un idiot : pourquoi se prendre le chou à créer une classe qui fait exactement ce qu'on faisait directement dans `Person` au départ ? Parce que tu n'as pas bien écouté, ~~petit c~~ jeune padawan. L'objectif en utilisant l'injection de dépendances, c'est que nos classes ne soient pas dépendantes (justement) les unes des autres si ce n'est pas justifié. Une personne a beau avoir besoin d'une adresse, on pourrait fort bien imaginer les utiliser l'une sans l'autre (tu comprendras à la partie suivante). Dans le cas de `PersonFactory`, notre objectif est justement de créer une personne à partir des différents composants d'une adresse en une ligne de code, pour conserver la simplicité du code métier qui te tient tant à coeur (et tu as bien raison, au fond). Seulement, `Person` et `Address` restent utilisables avec ou sans `PersonFactory` : l'objectif est atteint, petit navire.
 
 Tant qu'on en est à se simplifier la vie :
 
@@ -204,7 +204,7 @@ Tu vois l'idée ? En demandant une instance de n'importe quelle classe implémen
 
 ## Elle contient ta fiancée, hein Mitch ?
 
-Tu auras peut-être tiqué sur un détail du dernier exemple : le fait de ne pas faire de `PersonFactory` une classe statique (beurk) nous oblige à l'instancier pour pouvoir l'utiliser ; ce qui, à n'en pas douter, t'aura mené à te dire "arf, ça va m'en faire des `new MachinFactory()` pour instancier mes objets". Là encore, l'injection de dépendance peut nous aider, quoique de manière indirecte : en utilisant un conteneur d'injection de dépendance.
+Tu auras peut-être tiqué sur un détail du dernier exemple : le fait de ne pas faire de `PersonFactory` une classe statique (beurk) nous oblige à l'instancier pour pouvoir l'utiliser ; ce qui, à n'en pas douter, t'aura mené à te dire "arf, ça va m'en faire des `new MachinFactory()` pour instancier mes objets". Là encore, l'injection de dépendances peut nous aider, quoique de manière indirecte : en utilisant un conteneur d'injection de dépendances.
 
 Un conteneur (ça sera plus court) peut *grosso modo* être comparé à une grosse *factory* capable d'instancier plusieurs classes. En pratique, afin d'éviter d'écrire et de devoir maintenir une classe monolithique, on en fera plutôt quelque chose qui fait appel aux différentes *factories*. Poursuivons sur notre exemple :
 
@@ -218,7 +218,7 @@ class DependencyInjectionContainer
 }
 ```
 
-Mais ça ne s'arrête évidemment pas là. De par le fait d'utiliser l'injection de dépendance à grande échelle, on a souvent besoin d'instancier nous-même les objets dont on a besoin. Dans certains cas, ce seront toujours les mêmes, ce qui vaut pour les *factories* mais pas que : pense aux différentes librairies qui composent un projet web, par exemple. Ce ne serait pas génial que les différentes instances de ces classes soient accessibles via le conteneur pour pouvoir y accéder à l'envi ?
+Mais ça ne s'arrête évidemment pas là. De par le fait d'utiliser l'injection de dépendances à grande échelle, on a souvent besoin d'instancier nous-même les objets dont on a besoin. Dans certains cas, ce seront toujours les mêmes, ce qui vaut pour les *factories* mais pas que : pense aux différentes librairies qui composent un projet web, par exemple. Ce ne serait pas génial que les différentes instances de ces classes soient accessibles via le conteneur pour pouvoir y accéder à l'envi ?
 
 ```php
 $container = new DependencyInjectionContainer();
@@ -232,10 +232,10 @@ Les objets ainsi gérés par un tel conteneur deviennent dès lors des **service
 
 > Mais ça signifie instancier un service à chaque appel ?
 
-Pas nécessairement ! Il existe des mécanismes permettant de conserver une même instance pour la servir lors des appels suivants. Cela sort un peu du cadre de cet article, mais je t'invite vivement à jeter un oeil à [PHP-DI](http://php-di.org/), qui est un conteneur d'injection de dépendance très bien fichu que tu peux utiliser dans ton projet si tu le souhaites.
+Pas nécessairement ! Il existe des mécanismes permettant de conserver une même instance pour la servir lors des appels suivants. Cela sort un peu du cadre de cet article, mais je t'invite vivement à jeter un oeil à [PHP-DI](http://php-di.org/), qui est un conteneur d'injection de dépendances très bien fichu que tu peux utiliser dans ton projet si tu le souhaites.
 
 ## Épilogue
 
-Si tu développes en PHP, j'espère t'avoir montré qu'il est possible d'écrire du code plus maintenable et plus élégant en utilisant l'injection de dépendance. Dans le cas contraire, sache que ce concept est très répandu dans les langages orientés objet d'une manière générale - après tout, [on en retrouve même dans Angular](https://docs.angularjs.org/guide/di).
+Si tu développes en PHP, j'espère t'avoir montré qu'il est possible d'écrire du code plus maintenable et plus élégant en utilisant l'injection de dépendances. Dans le cas contraire, sache que ce concept est très répandu dans les langages orientés objet d'une manière générale - après tout, [on en retrouve même dans Angular](https://docs.angularjs.org/guide/di).
 
 Bon code, et n'oublie pas, on ne met pas en prod le vendredi, c'est mal. Allez, file !
