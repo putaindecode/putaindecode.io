@@ -18,7 +18,7 @@ Nous commençons donc une série d'articles sur Ruby afin de le découvrir et co
 
 ## Un langage, des implémentations
 
-Tout d'abord il faut savoir qu'il existe plusieurs implémentations de Ruby, c'est à dire différents interpréteurs du langage. L'implémentation principale et originale est *MRI*, pour Matz's Ruby Interpreter, Yukihiro "Matz" Matsumoto étant le créateur de Ruby. On trouve également JRuby, un interpretteur Ruby en Java, permattant de bénéficier de toutes les fonctionnalités de la JVM. Parmis les plus connues également MacRuby qui est une implémentation spécifique à OS X et dont [RubyMotion](http://www.rubymotion.com) dépend. Pour nos articles nous devrions utiliser MRI à moins qu'une envie sur une différente implémentation se fasse ressentir.
+Tout d'abord, il faut savoir qu'il existe plusieurs implémentations de Ruby, c'est-à-dire différents interpréteurs du langage. L'implémentation principale et originale est *MRI*, pour Matz's Ruby Interpreter, Yukihiro "Matz" Matsumoto étant le créateur de Ruby. On trouve également JRuby, un interpretteur Ruby en Java, permettant de bénéficier de toutes les fonctionnalités de la JVM. Parmi les plus connues également MacRuby qui est une implémentation spécifique à OS X et dont [RubyMotion](http://www.rubymotion.com) dépend. Pour nos articles nous devrions utiliser MRI à moins qu'une envie sur une différente implémentation se fasse ressentir.
 
 > C'est bien tout ça mais au final j'en sais pas plus sur Ruby.
 
