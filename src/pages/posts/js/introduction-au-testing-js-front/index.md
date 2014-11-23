@@ -31,7 +31,7 @@ Tester ce code est particulièrement lourd, pour plusieurs raisons :
 
 - les functions à tester ne sont pas accessibles
 - on doit simuler un `click` pour tester un comportement logique.
-- on doit créer un element et modifier sont `data-id` à chaque cas souhaité.
+- on doit créer un element et modifier son `data-id` à chaque cas souhaité.
 - pour tester `addToCart` on doit aller regarder dans le DOM.
 
 ### 1. Rendez accessibles vos méthodes au test runner
