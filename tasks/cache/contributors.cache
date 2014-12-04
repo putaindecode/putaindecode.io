@@ -224,6 +224,11 @@
       "location": "Paris, France",
       "hireable": false
     },
+    "jeremyescolano@gmail.com": {
+      "login": "gostbuster",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1633593?v=3",
+      "gravatar_id": ""
+    },
     "justinmarsan@gmail.com": {
       "login": "justinmarsan",
       "name": "Justin Marsan",
@@ -281,6 +286,14 @@
           ]
         }
       }
+    },
+    "kikikatchou@gmail.com": {
+      "login": "Rorto",
+      "name": "",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1822756?v=3",
+      "gravatar_id": "",
+      "location": null,
+      "hireable": false
     },
     "lionel@lumographe.fr": {
       "login": "lionelB",
@@ -979,6 +992,14 @@
         }
       }
     },
+    "Rorto": {
+      "login": "Rorto",
+      "name": "",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1822756?v=3",
+      "gravatar_id": "",
+      "location": null,
+      "hireable": false
+    },
     "Shahor": {
       "login": "Shahor",
       "name": "Alexandre Gaudencio",
@@ -1113,6 +1134,11 @@
       "gravatar_id": "",
       "location": "",
       "hireable": false
+    },
+    "gostbuster": {
+      "login": "gostbuster",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1633593?v=3",
+      "gravatar_id": ""
     },
     "justinmarsan": {
       "login": "justinmarsan",
