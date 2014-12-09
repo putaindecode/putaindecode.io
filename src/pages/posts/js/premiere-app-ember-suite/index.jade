@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.authors = ["bmeurant"]
+  -exports.title = "Première application Ember. Suite et fin."
+  -exports.tags = ["ember", "javascript", "frameworks"]
+  -exports.date = "2014-11-27"
+
+block main
+  +Post(exports.title)
+    include:md index.md
