@@ -107,11 +107,11 @@ Je ne vous fais pas l'affront de détailler ici la structure de l'application, t
 
 Pour que cela ne soit pas trop moche dans le cadre de cet exemple ou va ajouter un peu de CSS et des fonts mais comme c'est pas l'objet de l'article,
 on ne va pas passer de temps là-dessus. Ceci dit, comme il y a  quand même un peu de conf [Ember CLI][ember-cli] qui peut vous intéresser, vous avez les styles 
-et la conf sur [GitHub](https://github.com/bmeurant/ember-articles) et l'explication dans ce [gist](https://gist.github.com/bmeurant/1bba49d8a12bf69a4cf0).
+et la conf sur [GitHub](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember) et l'explication dans ce [gist](https://gist.github.com/bmeurant/1bba49d8a12bf69a4cf0).
 
 ## Et maintenant, on code !
 
-_Note: le code de l'exemple est dispo sur [github](https://github.com/bmeurant/ember-articles)._
+_Note: le code de l'exemple est dispo sur [github](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember)._
 
 * Modification du gabarit général de l'application `/app/templates/application.hbs` : 
 
@@ -572,7 +572,7 @@ Pour finir, je souhaite remercier l'équipe de *Putain de code !* qui ne partag
 vous piquer les yeux. Désolé :-)
 
 
-_Note: les sources de l'application exemple sont [disponibles sur github](https://github.com/bmeurant/ember-articles)._
+_Note: les sources de l'application exemple sont [disponibles sur github](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember)._
 
 [ember]: http://emberjs.com
 [ember-cli]: http://www.ember-cli.com/
