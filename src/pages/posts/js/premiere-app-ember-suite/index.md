@@ -6,7 +6,7 @@ Tout comme dans l'article précédent, nous détaillerons régulièrement les co
 
 ## Sommaire
 
-* [Edition d'une série](#edition-d-une-serie)
+* [Édition d'une série](#edition-d-une-serie)
   * [Routes imbriquées](#routes-imbriquees)
   * [Outlets](#-code-outlets-code-)
   * [Liens entre routes](#liens-entre-routes)
@@ -17,7 +17,7 @@ Tout comme dans l'article précédent, nous détaillerons régulièrement les co
 * [Création d'une nouvelle série](#creation-d-une-nouvelle-serie)
 * [Conclusion](#conclusion)
 
-## Edition d'une série
+## Édition d'une série
 
 On veut pouvoir basculer depuis la fiche d'une série vers son édition en mode *in place*. C'est-à-dire
 en **remplaçant** la zone de visualisation de cette fiche par sa zone d'édition.
@@ -71,13 +71,13 @@ répertoire `/app/templates/series/series-item/` :
 </form>
 ```  
 
-A ce stade, naviguer sur `/series/{@id}/edit` ne lève pas d'erreur mais n'a aucun effet. En effet, on a
+À ce stade, naviguer sur `/series/{@id}/edit` ne lève pas d'erreur mais n'a aucun effet. En effet, on a
 défini une route imbriquée mais conservé le gabarit `/app/templates/series/series-item.hbs` inchangé. L'activation de la route `series.seriesItem` 
 affiche donc toujours ce gabarit, même dans le cas d'une sous-route telle que `series.seriesItem.edit`. 
 
 ### `outlets`
 
-La solution est à aller chercher du côté du concept d'`{{outlet}}` définit dans l'[article précédent](/posts/js/premiere-app-ember/#-code-outlet-code-et-routes-imbriquees).
+La solution est à aller chercher du côté du concept d'`{{outlet}}` défini dans l'[article précédent](/posts/js/premiere-app-ember/#-code-outlet-code-et-routes-imbriquees).
 Un `{{outlet}}` est nécessaire **à chaque fois qu'on définit un niveau d'imbrication.** Mais comme on veut quand même continuer à afficher la série à 
 l'URL `/series/{@id}/`, on va utiliser la **route implicite** `series.seriesItem.index` (cf. [article précédent](/posts/js/premiere-app-ember/#routes-et-controleurs-implicites)) 
 et son gabarit, dans lequel on va copier l'ancien contenu de `series-item.hbs`.
@@ -187,7 +187,7 @@ Quelques mots sur ces quelques lignes :
 ### Actions sur les transitions
 
 Mais je voudrais encore ajouter une dernière petite cerise sur ce gâteau : annuler automatiquement toutes les modifications effectuées
-sur la série dès que l'on quitte la route. [Ember][ember] pévoit en effet des mécanismes avancés pour travailler sur les transitions entre 
+sur la série dès que l'on quitte la route. [Ember][ember] prévoit en effet des mécanismes avancés pour travailler sur les transitions entre 
 routes (cf. [doc officielle](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/)). En particulier `willTransition` : 
 
 ```js
@@ -397,7 +397,7 @@ Mais j'ai également essayé d'aller plus en profondeur sur certains aspects et 
 Ce dernier article montre qu'il est également possible de fournir à [Ember][ember] 
 des configurations explicites afin d'aller plus loin que les conventions par défaut.
 
-Maintenant, vous n'avez plus d'excuse ... vous ne pourrez pas dire que vous ne connaissiez pas. 
+Maintenant, vous n'avez plus d'excuses... Vous ne pourrez pas dire que vous ne connaissiez pas. 
 
 
 _Note: les sources de l'application exemple sont [disponibles sur github](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember-suite)._
