@@ -9,6 +9,8 @@ du coup quand on voit que [Sass est le game changer of the year](http://blog.kae
  et que tout le monde l'adopte, on se doit de rester hipster.
 Du coup on est obligés de passer à autre chose.
 
+**Mise à jour du 11 décembre 2014:** _depuis le temps où j'ai rédigé cette article, j'ai travaillé sur un transpileur CSS future-proof, basé sur PostCSS. Je vous invite à jeter au project **[cssnext](https://cssnext.github.io/)**._
+
 ## Pré ou postprocesseurs ?
 
 Je vais ici utiliser le mot préprocesseur, alors que certains trouveront postprocesseurs plus pertinent,
@@ -386,7 +388,5 @@ a:hover {
 
 Gardez bien en tête qu'avec le code CSS d'origine, vous avez (en majeur partie) un code futureproof.
 D'ici quelques temps on pourra supprimer une grande partie des plugins et les navigateurs prendront le relais 😉.
-
-_Note: J'ai ouvert [un ticket sur rework-vars](https://github.com/reworkcss/rework-vars/issues/28) afin que celui-ci agisse comme un fallback (en rajoutant les valeurs) et non un remplacement. Je mettrais à jour ce post dans ce sens dès que possible._
 
 **Bon alors, on Less tomber Sass ?**
