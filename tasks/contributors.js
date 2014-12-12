@@ -89,6 +89,7 @@ var contributorsMap = function(){
           var email = author.email
           exec("git log --max-count=1 --pretty=format:%H --author=" + email)
           .then(function(stdout){
+            // @todo get user/repo from git origin
             return PromisePolyfill.denodeify(githubApi.repos.getCommit)({
               user : "putaindecode",
               repo : "putaindecode.fr",
@@ -96,31 +97,35 @@ var contributorsMap = function(){
             })
           })
           .then(function(contributor){
-            if(!contributor || !contributor.author){
-              throw "Missing author key from GitHub API response"
+            if(contributor && contributor.author){
+              if(loginCache[contributor.author.login]){
+                gutil.log("contributor cached", contributor.author.login)
+                return PromisePolyfill.resolve(loginCache[contributor.author.login])
+              }
+              else{
+                return PromisePolyfill.denodeify(githubApi.user.getFrom)({user : contributor.author.login})
+                .then(function(githubUser){
+                  loginCache[githubUser.login] = {
+                    // see what's available here https://developer.github.com/v3/users/
+                    login : githubUser.login,
+                    name : githubUser.name,
+                    avatar_url : githubUser.avatar_url,
+                    gravatar_id : githubUser.gravatar_id,
+                    url : githubUser.blog ? githubUser.blog.indexOf("http") === 0 ? githubUser.blog : "http://" + githubUser.blog : undefined,
+                    location : githubUser.location,
+                    hireable : githubUser.hireable
+                  }
+                  gutil.log("new contributor: ", githubUser.login)
+                  return loginCache[githubUser.login]
+                })
+              }
+            }
+            else {
+              // @todo get user/repo from git origin
+              gutil.log("Unable to get contributor information for " + author.name + " <" + author.email + "> (no commit in putaindecode/putaindecode.fr)")
+              return {}
             }
 
-            if(loginCache[contributor.author.login]){
-              gutil.log("contributor cached", contributor.author.login)
-              return PromisePolyfill.resolve(loginCache[contributor.author.login])
-            }
-            else{
-              return PromisePolyfill.denodeify(githubApi.user.getFrom)({user : contributor.author.login})
-              .then(function(githubUser){
-                loginCache[githubUser.login] = {
-                  // see what's available here https://developer.github.com/v3/users/
-                  login : githubUser.login,
-                  name : githubUser.name,
-                  avatar_url : githubUser.avatar_url,
-                  gravatar_id : githubUser.gravatar_id,
-                  url : githubUser.blog ? githubUser.blog.indexOf("http") === 0 ? githubUser.blog : "http://" + githubUser.blog : undefined,
-                  location : githubUser.location,
-                  hireable : githubUser.hireable
-                }
-                gutil.log("new contributor: ", githubUser.login)
-                return loginCache[githubUser.login]
-              })
-            }
           })
           .done(function(contributor){
             cache.value.mapByEmail[email] = contributor
