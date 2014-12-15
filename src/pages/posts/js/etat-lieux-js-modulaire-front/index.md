@@ -15,7 +15,7 @@ D'abord, il faut faire la distinction entre 3 aspects du problème :
 
 # Format d'écriture des modules
 
-Le module est la brique de base pour décomposer un gros fichier JS en plusieurs fichiers plus petits et focalisés sur une fonctionnalité précise. La plupart du temps un module est un fichier JS qui fournit une fonction, un constructeur ou un objet de valeur. Et comme, pour fournir cette fonctionnalité, un module peut avoir besoin d'autres modules, il existe un mécanisme pour déclarer ces dépendances.
+Le module est la brique de base pour décomposer un gros fichier JS en plusieurs fichiers plus petits et focalisés sur une fonctionnalité précise. La plupart du temps un module est un fichier JS qui fournit une fonction, un constructeur ou un objet de valeur. Et comme, pour fournir cette fonctionnalité, un module peut avoir besoin d'autres modules, il existe un mécanisme pour déclarer ses dépendances.
 
 Actuellement, 2 standards principaux existent pour écrire ces modules : **AMD** et **CommonJS**.
 Il est également possible d'utiliser la [syntaxe retenue par ES6](http://www.2ality.com/2014/09/es6-modules-final.html) (qui j'espère va enfin devenir le standard unique) mais pour l'instant, ça demande encore une étape de "transpilation" en AMD ou CJS.
@@ -51,7 +51,7 @@ Dans les 2 cas, par contre, il y a besoin d'une *résolution des dépendances*, 
 
 # Package management
 
-Parlons maintenant des packages. En effet, pouvoir découper du code en modules, c'est bien; mais ce qui est encore mieux c'est de pouvoir le partager avec d'autres pour qu'il soit facilement réutilisable et arrêter le syndrôme de :
+Parlons maintenant des packages. En effet, pouvoir découper du code en modules, c'est bien ; mais ce qui est encore mieux c'est de pouvoir le partager avec d'autres pour qu'il soit facilement réutilisable et arrêter le syndrôme de :
 
 > "je recode un event emitter dans ma librairie comme ça je n'ai pas de
 > dépendance et c'est plus facile à consommer par mes utilisateurs"
@@ -104,7 +104,7 @@ Cependant, s'il y a une incompatibilité de versions :
 > le package A déclare une dépendance sur X en version 1
 > le package B déclare une dépendance sur X mais en version 2
 
-Avec bower, on est coincé (on ne peut installer que X1 ou X2 mais pas les 2). Il faut alors choisir celle qui gagne : soit A devra utiliser X2, soit B devra utiliser X1.
+Avec bower, on est coincé : on ne peut installer qu'une seule version. Lors du `bower install`, il faudra choisir quelle version on garde : soit A devra utiliser X2, soit B devra utiliser X1.
 
  - mon-app-avec-bower
 	 - bower_components
@@ -113,7 +113,7 @@ Avec bower, on est coincé (on ne peut installer que X1 ou X2 mais pas les 2). I
 		 - package-X
 			 - main.js // v1 ou v2 mais pas les 2
 
-C'est un peu comme si les versions n'étaient là qu'à titre informatif. Mais quand il y a un changement de version majeure, ce n'est pas juste de la déco et, même pour les versions mineures, ça veut dire que ça n'a pas été testé par l'auteur de la librairie donc si vous lui forcez une version incompatible, ça veut dire que vous devenez responsable de vérifier que ça continue de fonctionner.
+Bower appelle cela de la *résolution de conflits*. Mais concrêtement, cela veut dire qu'on force une dépendance qui n'est pas supportée officiellement par le package en question. Donc on se retrouve responsable de vérifier que le package B fonctionne correctement avec X1. Pas cool :-(
 
 Alors qu'avec npm les versions des dépendances sont respectées, il n'y a pas de question à se poser.
 
@@ -133,11 +133,11 @@ Alors qu'avec npm les versions des dépendances sont respectées, il n'y a pas d
 
 La question est alors :
 
-> "Pourquoi des package managers spécifiquement pour le web front-end ?"
+> "Pourquoi existe-t-il des package managers spécifiquement pour le web front-end ?"
 
 Réponse :
 
->  "c'est pour faciliter l'utilisation de modules publiés dans des packages dans le contexte du front-end"
+>  "Pour faciliter l'utilisation de modules publiés dans des packages dans le contexte du front-end"
 
 Super ! Mais concrêtement ?
 
