@@ -19,8 +19,9 @@ mixin Author(author, isPost)
           if author.twitter
             a(href="#{getAuthorUri(author, 'twitter')}", data-cssr-tooltip="Twitter").cssr-Tooltip.cssr-Tooltip--top
               +Icon("twitter")
-          a(href="#{getAuthorUri(author, 'github')}", data-cssr-tooltip="Github").cssr-Tooltip.cssr-Tooltip--top
-            +Icon("github")
+          if author.login
+            a(href="#{getAuthorUri(author, 'github')}", data-cssr-tooltip="Github").cssr-Tooltip.cssr-Tooltip--top
+              +Icon("github")
 
       p.putainde-Author-bio
         -if(author.fr && author.fr.bio && author.fr.bio.long)
