@@ -83,6 +83,10 @@
   color: #444;
 }
 
+.putainde-List-item-tags {
+  max-width: 25rem; /* RANDOM VALUE MOFO */
+}
+
 .putainde-Tags {
   list-style-type: none;
   padding: 0;
