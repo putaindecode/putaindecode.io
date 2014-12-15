@@ -3,7 +3,6 @@
 
   .Grid.Grid--withGutter
     -var topContributors = Object.keys(contributors.map)
-    -topContributors = topContributors.map(function(key){ var val = contributors.map[key]; val.login = key; return val })
     -topContributors.sort(function(a, b){ return contributors.contributions[b.login] - contributors.contributions[a.login] })
     -topContributors = topContributors.slice(0, 12)
     each author in topContributors

@@ -12,6 +12,15 @@ module.exports = {
     this.value.locals.pages = exports.value
     this.value.locals.lang = lang.value
     this.value.locals.contributors = contributors.value
+
+    // fix missing login
+    if(contributors.value.map) {
+      Object.keys(contributors.value.map).map(function(key){
+        if(!contributors.value.map[key].login) {
+          contributors.value.map[key].login = key
+        }
+      })
+    }
   },
   value : {
     basedir : path.resolve(__dirname, "../../"),
