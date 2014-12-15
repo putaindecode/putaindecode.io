@@ -1,10 +1,10 @@
 mixin Avatar(author, size)
   - author = contributors.map[author]
-  - var avatarUrl = author.avatar_url
   - size = size || 128
+  - var avatarUrl = author.avatar_url ? author.avatar_url + "&s=" + size : "http://placekitten.com/" + size + "/" + size
   a(href="#{getAuthorUri(author)}", class="putainde-Avatar #{attributes.class || ''}")
     img(
       class="js-AnimateLoad"
-      src="#{avatarUrl}&s=#{size}"
+      src="#{avatarUrl}"
       alt=""
     )
