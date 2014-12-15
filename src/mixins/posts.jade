@@ -15,7 +15,7 @@ mixin Posts(limit, tags)
           | #{post.title}
 
         if post.tags
-          ul.putainde-Tags
+          ul.putainde-Tags.putainde-List-item-tags
             each tag in post.tags
               if tags
                 -if(!tags.hasOwnProperty(tag))
