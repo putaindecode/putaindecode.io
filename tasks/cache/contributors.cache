@@ -700,6 +700,7 @@
       "location": "Paris",
       "hireable": true
     },
+    "sylvain.vuilliot@kaes.fr": {},
     "tmaindron@gmail.com": {
       "login": "OwlyCode",
       "name": "Tristan Maindron",
@@ -1425,6 +1426,29 @@
       "location": "Paris",
       "hireable": false
     },
+    "syvuilliot": {
+      "crew": false,
+      "twitter": "syvuilliot",
+      "fr": {
+        "bio": {
+          "short": "Développeur web front-end et co-fondateur de kaes.fr",
+          "long": [
+            "Avec mon frère, nous souhaitons rendre accessible le meilleur des technologies du web aux petites organisations.",
+            "Comme avec kadata.in, la solution de gestion pour remplacer Excel"
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Front end web developper and co-founder of kaes.fr",
+          "long": [
+            "With my brother, we aim at providing the best of web technologies to small organisations.",
+            "As with kadata.in, the alternative to Excel for small business management"
+          ]
+        }
+      }
+    },
+    "undefined": {},
     "welovewebdesign": {
       "login": "welovewebdesign",
       "name": "Rémi Couturier",
