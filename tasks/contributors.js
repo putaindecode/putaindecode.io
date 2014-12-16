@@ -65,11 +65,10 @@ var contributorsMap = function(){
       })
 
     // only for dev & testing
-    // var username = "xxx", password = "xxx"
     // githubApi.authenticate({
     //     type : "basic",
-    //     username : username,
-    //     password : password
+    //     username : "xxx",
+    //     password : "xxx"
     // })
 
     // consolidate contributorsMap
