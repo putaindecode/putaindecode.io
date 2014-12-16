@@ -2,12 +2,12 @@
   h2.putainde-Title-text #{lang.topContributors}
 
   .Grid.Grid--withGutter
-    -var topContributors = Object.keys(contributors.map)
-    -topContributors.sort(function(a, b){ return contributors.contributions[b.login] - contributors.contributions[a.login] })
-    -topContributors = topContributors.slice(0, 12)
+    - var topContributors = Object.keys(contributors.map)
+    - topContributors.sort(function(a, b){ return contributors.contributions[b] - contributors.contributions[a] })
+    - topContributors = topContributors.slice(0, 12)
     each author in topContributors
       .Grid-cell.u-size1of2
-        +Author(author.login)
+        +Author(author)
 
     .Grid-cell
       a(href="#{metas.repositoryHttpUrl}/graphs/contributors").putainde-Button.putainde-Button--block
