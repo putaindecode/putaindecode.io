@@ -700,7 +700,34 @@
       "location": "Paris",
       "hireable": true
     },
-    "sylvain.vuilliot@kaes.fr": {},
+    "sylvain.vuilliot@kaes.fr": {
+      "login": "syvuilliot",
+      "name": "Sylvain Vuilliot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1689880?v=3",
+      "gravatar_id": "",
+      "location": "France",
+      "hireable": false,
+      "crew": false,
+      "twitter": "syvuilliot",
+      "fr": {
+        "bio": {
+          "short": "Développeur web front-end et co-fondateur de kaes.fr",
+          "long": [
+            "Avec mon frère, nous souhaitons rendre accessible le meilleur des technologies du web aux petites organisations.",
+            "Comme avec kadata.in, la solution de gestion pour remplacer Excel"
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Front end web developper and co-founder of kaes.fr",
+          "long": [
+            "With my brother, we aim at providing the best of web technologies to small organisations.",
+            "As with kadata.in, the alternative to Excel for small business management"
+          ]
+        }
+      }
+    },
     "tmaindron@gmail.com": {
       "login": "OwlyCode",
       "name": "Tristan Maindron",
@@ -1427,6 +1454,12 @@
       "hireable": false
     },
     "syvuilliot": {
+      "login": "syvuilliot",
+      "name": "Sylvain Vuilliot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1689880?v=3",
+      "gravatar_id": "",
+      "location": "France",
+      "hireable": false,
       "crew": false,
       "twitter": "syvuilliot",
       "fr": {
@@ -1448,7 +1481,6 @@
         }
       }
     },
-    "undefined": {},
     "welovewebdesign": {
       "login": "welovewebdesign",
       "name": "Rémi Couturier",
