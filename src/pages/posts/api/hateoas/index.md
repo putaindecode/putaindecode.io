@@ -1,0 +1,1 @@
+Premier contenu pour HATEOAS

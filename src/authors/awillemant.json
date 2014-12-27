@@ -1,0 +1,20 @@
+{
+  "crew" : false,
+  "twitter": "awillemant",
+  "fr": {
+    "bio": {
+      "short": "Architecte Logiciel, prof de JEE, joueur de ukulélé",
+      "long": [
+        "mabio"
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Software architect, JEE teacher, ukulele player",
+      "long": [
+        "bio"
+      ]
+    }
+  }
+}
