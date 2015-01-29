@@ -87,7 +87,7 @@ La technique du `margin: 0 auto;` consiste à dire au browser que les marges de 
 }
 ```
 
-La technique du `left: 50%; + margin négative en unités` est à utiliser sur les blocs dont vous conaissez la taille à l'avance. Le principe consiste à expliquer au navigateur qu'on place un bloc en `position: absolute;`. Celui-ci va donc chercher à se placer par rapport à son élément parent le plus proche qui est en `position: relative;`. Il faut donc ne pas oublier d'attribuer cette propriété sur le `.parent`. Il suffit ensuite d'indiquer qu'on place le bloc à `left: 50%;`. Le bloc se place donc à 50% vers la gauche par rapport à la taille totale du bloc conteneur. Il ne nous reste plus qu'à décaler vers la droite le bloc `.child` en lui donnant une valeur de margin négative vers la gauche. Celle-ci doit être égale à la moitié de la `width`(en pixels, em, rems, pourcentages, ...).
+La technique du `left: 50%; + margin négative en unités` est à utiliser sur les blocs dont vous connaissez la taille à l'avance. Le principe consiste à expliquer au navigateur qu'on place un bloc en `position: absolute;`. Celui-ci va donc chercher à se placer par rapport à son élément parent le plus proche qui est en `position: relative;`. Il faut donc ne pas oublier d'attribuer cette propriété sur le `.parent`. Il suffit ensuite d'indiquer qu'on place le bloc à `left: 50%;`. Le bloc se place donc à 50% vers la gauche par rapport à la taille totale du bloc conteneur. Il ne nous reste plus qu'à décaler vers la droite le bloc `.child` en lui donnant une valeur de margin négative vers la gauche. Celle-ci doit être égale à la moitié de la `width`(en pixels, em, rems, pourcentages, ...).
 
 ```css
 .parent {
@@ -102,7 +102,7 @@ La technique du `left: 50%; + margin négative en unités` est à utiliser sur l
 }
 ```
 
-En combinant la technique précédente et des propriétés css modernes, on arrive à la technique du `transform: translate; négatif`. Même principe que la technique précédente, sauf qu'à la fin, on indique au bloc enfant d'effectuer une translation sur lui-même, en suivant l'axe X (l'axe horizontal) de -50%, donc 50% vers la droite. Sauf que ce 50% s'applique sur le bloc enfant directement. Vous n'avez donc pas besoin de connaitre la `width`de l'élément enfant à l'avance. Le `transform-style: preserve-3d;` sur le bloc `.parent` est là pour régler des problèmes de flou sur certains navigateurs lors de transitions.
+En combinant la technique précédente et des propriétés css modernes, on arrive à la technique du `transform: translate; négatif`. Même principe que la technique précédente, sauf qu'à la fin, on indique au bloc enfant d'effectuer une translation sur lui-même, en suivant l'axe X (l'axe horizontal) de -50%, donc 50% vers la droite. Sauf que ce 50% s'applique sur le bloc enfant directement. Vous n'avez donc pas besoin de connaitre la `width` de l'élément enfant à l'avance. Le `transform-style: preserve-3d;` sur le bloc `.parent` est là pour régler des problèmes de flou sur certains navigateurs lors de transitions.
 
 ```css
 .parent {
@@ -231,7 +231,7 @@ On utilise la propriété `display: inline-block;` qui permet d'avoir des propri
 
 #### Centrage vertical
 
-De la même façon que pour le centrage horizontal, on utilise le côté `inline` de la propriété `display: inline-block;` pour aligner verticalament les éléments enfants par rapport à leur conteneur parent.
+De la même façon que pour le centrage horizontal, on utilise le côté `inline` de la propriété `display: inline-block;` pour aligner verticalement les éléments enfants par rapport à leur conteneur parent.
 
 ```css
 .parent {}
