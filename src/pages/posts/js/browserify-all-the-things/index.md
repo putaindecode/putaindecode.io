@@ -305,7 +305,7 @@ AMD et pour les projets old school !
 Il existe bien sur [plusieurs façons de faire](https://github.com/umdjs/umd#variations)
 selon vos critères. À vous de choisir.
 
-Maintenant vous aller pouvoir consommer et écrire des modules facilement, et
+Maintenant vous allez pouvoir consommer et écrire des modules facilement, et
 sans vous prendre la tête.
 
 Bisous.
