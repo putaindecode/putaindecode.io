@@ -1,4 +1,4 @@
-Quand on réalise des applications en JS pour les navigateurs web, on ne peut plus se contenter de mettre des tags `script` dans le bon ordre pour charger les librairies tierces que l'on utilise comme pour un site web. C'est pourquoi il existe des outils pour permettre d'écrire du JavaScript modulaire et réutiliser plus facilement les innombrables librairies publiées par la communauté JS.
+Quand on réalise des applications en JS pour les navigateurs web, on ne peut plus se contenter de mettre des tags `script` dans le bon ordre pour charger les bibliothèques tierces que l'on utilise comme pour un site web. C'est pourquoi il existe des outils pour permettre d'écrire du JavaScript modulaire et réutiliser plus facilement les innombrables bibliothèques publiées par la communauté JS.
 
 Cependant, ce principe d'écriture modulaire et de publication de code n'étant pas intégré dans le langage lui-même, de très nombreuses solutions existent plus ou moins compatibles les unes avec les autres et aboutissant à une forte fragmentation de la communauté.
 Donc quand on décide de se mettre au JavaScript modulaire, on trouve tout un tas d'articles (en anglais) parfois trop vieux ("une étape de build n'est pas adaptée au navigateur"), parfois trop subjectifs ("J'aime pas la syntaxe AMD"), parfois confus ("utiliser les modules pour de l'injection de dépendances"), parfois simplistes ("AMD vs CommonJS").
@@ -23,8 +23,8 @@ Il est également possible d'utiliser la [syntaxe retenue par ES6](http://www.2a
 Le format AMD (dans sa forme la plus courante) est :
 ```js
 define(['moduleA', 'moduleB'], function(a, b) {
-	// j'utilise a et b
-	return maFonctionTresUtile;
+  // j'utilise a et b
+  return maFonctionTresUtile;
 });
 ```
 
@@ -41,8 +41,8 @@ La différence principale réside dans le fait que :
 
 * CommonJS prévoit une évaluation en une passe dans laquelle il faut résoudre les dépendances au fur et à mesure
 * alors que AMD prévoit une évaluation en 2 passes :
-	* une première pour récupérer uniquement la liste des dépendances
-	* et une seconde où on exécute le callback (le corps du module) avec les dépendances résolues.
+  * une première pour récupérer uniquement la liste des dépendances
+  * et une seconde où on exécute le callback (le corps du module) avec les dépendances résolues.
 C'est pourquoi on parle de format "synchrone" dans le premier cas et "asynchrone" dans le second car on peut résoudre les dépendances de façon asynchrone en AMD.
 
 
@@ -53,10 +53,10 @@ Dans les 2 cas, par contre, il y a besoin d'une *résolution des dépendances*, 
 
 Parlons maintenant des packages. En effet, pouvoir découper du code en modules, c'est bien ; mais ce qui est encore mieux c'est de pouvoir le partager avec d'autres pour qu'il soit facilement réutilisable et arrêter le syndrôme de :
 
-> "je recode un event emitter dans ma librairie comme ça je n'ai pas de
+> "je recode un event emitter dans ma bibliothèque comme ça je n'ai pas de
 > dépendance et c'est plus facile à consommer par mes utilisateurs"
 
- C'est le problème n°1 des librairies front qui présentent souvent comme un argument de ne pas avoir de dépendances. Sauf que, si on y réfléchit, ça veut dire que : soit c'est une librairie très bas niveau, soit le mec a recodé des trucs qui existent déjà au lieu de s'occuper de son sujet principal.
+ C'est le problème n°1 des bibliothèques front qui présentent souvent comme un argument de ne pas avoir de dépendances. Sauf que, si on y réfléchit, ça veut dire que : soit c'est une bibliothèque très bas niveau, soit le mec a recodé des trucs qui existent déjà au lieu de s'occuper de son sujet principal.
 
 C'est là qu'entre en jeu la notion de *package* (que je ne traduirai pas en français, car ça ne servirait qu'à apporter de la confusion). Un package est un ensemble de fichiers (pas forcément des fichiers JS d'ailleurs) avec des métadonnées associées pour décrire principalement :
 
@@ -75,27 +75,27 @@ Les principaux package managers pour le front-end sont [npm](https://www.npmjs.c
 La grande différence entre les deux est que **npm installe les dépendances de façon relative** : pour chaque package, les dépendances sont installées dans un sous-dossier (node_modules).
 
  - mon-projet-avec-nmp
-	 - app.js
-	 - node_modules
-		 - une-dependance
-			 - main.js
-			 - nodes_modules
-				 - une-dependance-indirecte
-					 - main.js
-		 - une-autre-dependance
-			 - main.js
+   - app.js
+   - node_modules
+     - une-dependance
+       - main.js
+       - nodes_modules
+         - une-dependance-indirecte
+           - main.js
+     - une-autre-dependance
+       - main.js
 
 Alors que **bower prend le parti d'installer les dépendances à plat** : le package et ses dépendances et les dépendances des dépendances sont toutes installées au même niveau dans le même dossier.
 
  - mon-projet-avec-bower
-	 - app.js
-	 - bower_components
-		 - une-dependance
-			 - main.js
-		 - une-autre-dependance
-			 - main.js
-		 - une-dependance-indirecte
-			 - main.js
+   - app.js
+   - bower_components
+     - une-dependance
+       - main.js
+     - une-autre-dependance
+       - main.js
+     - une-dependance-indirecte
+       - main.js
 
 L'approche bower semble être une bonne idée car si 2 packages ont la même dépendance (ou des dépendances compatibles semver), une seule est installée. Alors qu'avec npm chaque package installe sa propre dépendance.
 
@@ -107,26 +107,26 @@ Cependant, s'il y a une incompatibilité de versions :
 Avec bower, on est coincé : on ne peut installer qu'une seule version. Lors du `bower install`, il faudra choisir quelle version on garde : soit A devra utiliser X2, soit B devra utiliser X1.
 
  - mon-app-avec-bower
-	 - bower_components
-		 - package-A
-		 - package-B
-		 - package-X
-			 - main.js // v1 ou v2 mais pas les 2
+   - bower_components
+     - package-A
+     - package-B
+     - package-X
+       - main.js // v1 ou v2 mais pas les 2
 
 Bower appelle cela de la *résolution de conflits*. Mais concrêtement, cela veut dire qu'on force une dépendance qui n'est pas supportée officiellement par le package en question. Donc on se retrouve responsable de vérifier que le package B fonctionne correctement avec X1. Pas cool :-(
 
 Alors qu'avec npm les versions des dépendances sont respectées, il n'y a pas de question à se poser.
 
  - mon-app-avec-npm
-	 - node_modules
-		 - package-A
-			 - node_modules
-				 - package-X
-					 - main.js // v1
-		 - package-B
-			 - node_modules
-				 - package-X
-					 - main.js // v2
+   - node_modules
+     - package-A
+       - node_modules
+         - package-X
+           - main.js // v1
+     - package-B
+       - node_modules
+         - package-X
+           - main.js // v2
 
 
 # Résolution des dépendances de module
@@ -188,7 +188,7 @@ Bien sûr, la recherche du "zéro config" n'est pas une fin et c'est particuliè
 Mais si au moins le cas d'usage le plus fréquent (compiler son appli en un seul fichier qui sera chargé via un tag `script`) est simplifié au maximum, alors on pourra sûrement voir côté front, le même état d'esprit que côté back. Et je suis plutôt optimiste, [contrairement à certains](https://medium.com/@trek/last-week-i-had-a-small-meltdown-on-twitter-about-npms-future-plans-around-front-end-packaging-b424dd8d367a).
 
 Utilisateur de la première heure d'`AMD` et de `Dojo loader`, puis de `bower`, je me suis rendu compte de leurs limites et surtout j'ai été régulièrement gêné par la complexité de la configuration... surtout lorsqu'il fallait passer au build. Cela freine la réutilisation de modules tiers et c'est dommage.
-Ce n'est pas un problème intrinsèque au format de module et toutes les discussions sur "moi j'aime / j'aime pas la syntaxe AMD" sont secondaires (d'ailleurs [browserify peut fonctionner avec des librairies en AMD](https://www.npmjs.com/package/deamdify)).
+Ce n'est pas un problème intrinsèque au format de module et toutes les discussions sur "moi j'aime / j'aime pas la syntaxe AMD" sont secondaires (d'ailleurs [browserify peut fonctionner avec des bibliothèques en AMD](https://www.npmjs.com/package/deamdify)).
 Mais dans la pratique, nous migrons vers la solution `npm + browserify` et c'est vraiment moins compliqué.
 
 J'espère que cet article vous permettra d'y voir plus clair, de dépasser les querelles sur les préférences personnelles de chacun, et de vous aider à faire votre choix.
