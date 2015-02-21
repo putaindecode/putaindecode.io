@@ -1,5 +1,5 @@
-On entend souvent parler d(application javascript isomorphiques, et même si le nom ne [fait](https://news.ycombinator.com/item?id=8237449) [pas](https://twitter.com/wycats/status/566857009836724224) [l' unanimité](https://medium.com/the-thinkmill/making-the-case-for-progressive-javascript-a98dfa82b9d7) ce qu'il y a derrière, le concept de _server side rendered javascript_ est en passe de devenir un sujet plutôt tendance pour 2015 (notamment dû au boom de [Reactjs](http://facebook.github.io/react/) ). 
-Et avec comme promesse, de réconcilier enfin le développeur de *Single Page App* (SPA) avec l’amélioration progressive, l'accessibilité et le SEO quoique Google comme les lecteurs écran ont plutôt bien évolué sur ce point. L'autre avantage non négligeable à mon sens, est qu'on améliore les performances perçues par rapport à une SPA classique puisque&nbsp;:
+On entend souvent parler d'applications JavaScript isomorphiques, et même si le nom ne [fait](https://news.ycombinator.com/item?id=8237449) [pas](https://twitter.com/wycats/status/566857009836724224) [l'unanimité](https://medium.com/the-thinkmill/making-the-case-for-progressive-javascript-a98dfa82b9d7), ce qu'il y a derrière, le concept de _server side rendered JavaScript_ est en passe de devenir un sujet plutôt tendance pour 2015 (notamment dû au boom de [Reactjs](http://facebook.github.io/react/) ). 
+Et avec comme promesse de réconcilier enfin le développeur de *Single Page App* (SPA) avec l’amélioration progressive, l'accessibilité et le SEO ; quoique Google comme les lecteurs d'écran ont plutôt bien évolué sur ce point. L'autre avantage non négligeable à mon sens, est qu'on améliore les performances perçues par rapport à une SPA classique puisque&nbsp;:
 
  - On supprime une requête *ajax* au démarrage pour récupérer le contenu
    initial. 
@@ -8,12 +8,12 @@ Et avec comme promesse, de réconcilier enfin le développeur de *Single Page Ap
 
 Pour plus d'info sur les avantages, il y a [cet article](http://tech.m6web.fr/isomorphic-single-page-app-parfaite-react-flux/) sur le blog de M6Tech
 
-Et afin de me familiariser avec React et son écosystème, rien de mieux que mettre les mains dedans&nbsp;! C'est un peu pour toute ces raisons que j'ai décidé de l'utiliser pour mon site web (un site statique). 
+Et afin de me familiariser avec React et son écosystème, rien de mieux que mettre les mains dedans&nbsp;! C'est un peu pour toutes ces raisons que j'ai décidé de l'utiliser pour mon site web (un site statique). 
 
-**Inutile et donc totalement justifié pour le développeur que je suis**.   Une des premières briques que j'ai mis en place, a été le routeur.
+**Inutile et donc totalement justifié pour le développeur que je suis**. Une des premières briques que j'ai mises en place a été le routeur.
 
 ##react-router
-Pour une fois dans la communauté JavaScript, il y a une bibliothèque de référence et c'est celle là : [react-router](https://github.com/rackt/react-router). Le routeur est fortement inspiré par celui d'Ember au sens où les Url et leurs routes sont au cœur du dispositif. Le routeur se présente sous forme de composant React et ça donne ça.
+Pour une fois dans la communauté JavaScript, il y a une bibliothèque de référence et c'est celle là : [react-router](https://github.com/rackt/react-router). Le routeur est fortement inspiré par celui d'Ember au sens où les URL et leurs routes sont au cœur du dispositif. Le routeur se présente sous forme de composant React et ça donne ça.
 ```jsx
 //routes.js
 
@@ -42,12 +42,12 @@ var routes = (
 module.exports = routes;
 ```
 
-À mon sens, l'aspect déclaratif apporte de la clarté et améliore la compréhension du système. On voit rapidement quel composant est utilisé en fonction de l'Url. L'autre avantage du déclaratif, c'est qu'il permet de manière assez simple, d'imbriquer les routes en imbriquant les nœuds `<Route>`.
+À mon sens, l'aspect déclaratif apporte de la clarté et améliore la compréhension du système. On voit rapidement quel composant est utilisé en fonction de l'URL. L'autre avantage du déclaratif, c'est qu'il permet de manière assez simple, d'imbriquer les routes en imbriquant les nœuds `<Route>`.
 
-En plus des composants, on a aussi à disposition des *mixins* pour naviguer programmatiquement ou accéder aux infos du routeur( chemin, paramètres, ...)
+En plus des composants, on a aussi à disposition des *mixins* pour naviguer programmatiquement ou accéder aux infos du routeur (chemin, paramètres, ...)
 
-Et le gros plus de cette bibliothèque : Elle peut aussi s'utiliser coté serveur, pour la génération des vues et éviter ainsi de dupliquer du code puisqu'on va pouvoir carrément utiliser tel quel le fichier précédent. Plutôt cool !
-Voici un exemple de *middleware* pour faire marcher ça dans Express:
+Et le gros plus de cette bibliothèque : elle peut aussi s'utiliser coté serveur, pour la génération des vues et éviter ainsi de dupliquer du code puisqu'on va pouvoir carrément utiliser tel quel le fichier précédent. Plutôt cool !
+Voici un exemple de *middleware* pour faire marcher ça dans Express :
 
 ```javascript
 var React = require("react");
@@ -66,7 +66,7 @@ function reactView(req, res, next) {
     // on génère la soupe au tag avec nos données dedans
     var markup = React.renderToString(React.createElement(Handler), data);
    
-    // on utilise react comme moteur de template
+    // on utilise React comme moteur de template
     var HtmlElement = React.createElement(Html, {markup: markup});  
     res.send("<!DOCTYPE html>" +  React.renderToStaticMarkup(HtmlElement));
   });
@@ -97,45 +97,44 @@ var Html = React.createClass({
 
 module.exports = Html;
 ```
-Une fois que le code HTML a été généré via`React.renderToString(React.createElement(Handler), data);`, on pourrait utiliser n'importe quel moteur de template (lodash.template, handlerbars, ejs, jade, php...) pour générer le html de la page à renvoyer. Dans un soucis de rationalisation des outils, j'ai préféré utiliser React. 
+Une fois que le code HTML a été généré via`React.renderToString(React.createElement(Handler), data);`, on pourrait utiliser n'importe quel moteur de template (lodash.template, handlebars, ejs, jade, PHP...) pour générer le HTML de la page à renvoyer. Dans un souci de rationalisation des outils, j'ai préféré utiliser React. 
 
-Vous avez dû vous apercevoir qu'on utilise 2 méthodes différentes pour générer du html avec React :
+Vous avez dû vous apercevoir qu'on utilise 2 méthodes différentes pour générer du HTML avec React :
 - `React.renderToString(React.createElement(Handler), data);`
 - `React.renderToStaticMarkup(React.createElement(Handler), data);`
 
-La différence entre les deux méthode est simple. Dans la première, React annote les nœuds HTML avec des `data-reactid` dans le but de pouvoir ensuite reprendre la main lorsque votre l'application s'exécutera dans le navigateur. De cette manière, React sait que vous l'initialisez avec un contenu généré depuis le serveur. Et si il détecte une différence entre le code existant et celui qu'il génère, vous aurez droit à un [petit warning](https://github.com/facebook/react/blob/2aeb8a2a6beb00617a4217f7f8284924fa2ad819/src/browser/ui/__tests__/ReactRenderDocument-test.js#L205-L215). 
+La différence entre les deux méthodes est simple. Dans la première, React annote les nœuds HTML avec des `data-reactid` dans le but de pouvoir ensuite reprendre la main lorsque votre l'application s'exécutera dans le navigateur. De cette manière, React sait que vous l'initialisez avec un contenu généré depuis le serveur. Et si il détecte une différence entre le code existant et celui qu'il génère, vous aurez droit à un [petit warning](https://github.com/facebook/react/blob/2aeb8a2a6beb00617a4217f7f8284924fa2ad819/src/browser/ui/__tests__/ReactRenderDocument-test.js#L205-L215). 
 La deuxième méthode permet de générer du code HTML sans annotations, comme n'importe quel moteur de *template*.
 
-Les plus attentifs auront remarqués qu'on passe les données initiales lors de la création de l'application via des *props* React. Quid de l'utilisation de flux dans tout ça ?
+Les plus attentifs auront remarqué qu'on passe les données initiales lors de la création de l'application via des *props* React. Quid de l'utilisation de flux dans tout ça ?
 
-## Flux et le rendu serveur.
-Avec [Flux](http://facebook.github.io/flux/) ce sont les stores qui maintiennent l'état de notre application. Si l'on ne veut pas afficher notre application sans aucune données, nous allons devoir préalablement peupler nos stores avant d'appeler `React.renderToString()`. 
+## Flux et le rendu serveur
+Avec [Flux](http://facebook.github.io/flux/), ce sont les stores qui maintiennent l'état de notre application. Si l'on ne veut pas afficher notre application sans aucune données, nous allons devoir préalablement peupler nos stores avant d'appeler `React.renderToString()`. 
 
 Là où ça se corse un peu, c'est qu'il va falloir remplir nos stores avant de démarrer notre application sous peine de voir le message d'alerte dont je parlais plus haut. 
 Le plus simple alors est de passer ces données au moteur de template, en plus du markup (par exemple sous la forme d'un nœud `<script type="application/json">JSON DATA</script>`.
 Il ne reste plus qu'a récupérer ces données avant d’appeler `React.render( Application, document.getElementById("react-app"))`
 
-Par exemple :  
+Par exemple :  
 ```javascript
 document.addEventListener("DOMContentLoaded", function(event) {
-  // get data va récuperer et parser le contenu du tag script 
+  // getData() va récuperer et parser le contenu du tag script 
   // qui contient nos données
   var storeData= getData(); 
   
-  // On déclenche une actions
+  // on déclenche une actions
   actions.init( storeData);
   
-  // On lance le rendu
+  // on lance le rendu
   React.render(<App />, document.getElementById("react-app"));
 });
 ```
-A partir de
 
 ## Le mot de la fin
-Pensez son application React pour qu'elle puisse être rendue coté serveur introduit de nouvelles problématiques,  notamment avec l'ajout du *pattern* Flux. En fonction des pages que l'on souhaite afficher, on devra initialiser différents stores. A nous de déterminer, en fonction de l'Url et du composant à afficher, quel store initialiser, et cela, que l'on soit sur le client ou le serveur. 
-De la même manière, il faudra être capable de charger nos données, indépendamment de l'environnement d’exécution ( coucou XHR ).
+Pensez son application React pour qu'elle puisse être rendue coté serveur introduit de nouvelles problématiques, notamment avec l'ajout du *pattern* Flux. En fonction des pages que l'on souhaite afficher, on devra initialiser différents stores. À nous de déterminer, en fonction de l'URL et du composant à afficher, quel store initialiser, et cela, que l'on soit sur le client ou le serveur. 
+De la même manière, il faudra être capable de charger nos données, indépendamment de l'environnement d’exécution (coucou XHR).
 
-Un début de réponse se trouve dans les exemples fournis avec react-router. L'idée est de passer par une propriété statics lors de la création des composants React qui seront associés à une `<Route/>`.
+Un début de réponse se trouve dans les exemples fournis avec react-router. L'idée est de passer par une propriété `statics` lors de la création des composants React qui seront associés à une `<Route/>`.
 ```jsx
 
 var ProjectPage = React.createClass({ 
@@ -149,13 +148,13 @@ var ProjectPage = React.createClass({
  ...
  }); 
 ```
-Dans ce bloc `statics`, on définis une fonction qui servira à récupérer les données pour ce composant mais on pourrait très bien imaginer retourner la liste d'actions à lancer ou encore les stores à initialiser voir même un descripteur des données nécessaire à la vue ([cf Relay / GraphQL](https://www.youtube.com/watch?v=9sc8Pyc51uU)) 
-Ensuite, lorsque le callback fournit à `Router.run()` est appelé, il suffit de parcourir les *Handler*  pour récupérer les informations contenu dans les bloc `statics`, les traiter et enfin faire `React.render()`.
+Dans ce bloc `statics`, on définit une fonction qui servira à récupérer les données pour ce composant mais on pourrait très bien imaginer retourner la liste d'actions à lancer ou encore les stores à initialiser voire même un descripteur des données nécessaires à la vue ([cf Relay / GraphQL](https://www.youtube.com/watch?v=9sc8Pyc51uU)) 
+Ensuite, lorsque le callback fourni à `Router.run()` est appelé, il suffit de parcourir les *Handler* pour récupérer les informations contenues dans les blocs `statics`, les traiter et enfin faire `React.render()`.
 ```Javascript
-// On renvoit une promesse qui sera résolue lorsque que toutes les données démandées via fetchData seront reçues.
+// On renvoie une promesse qui sera résolue lorsque que toutes les données démandées via fetchData seront reçues.
 Router.run(routes, Router.HistoryLocation, function (Handler, state) {
   var p = Promise.all(state.routes
-    .filter(route => route.handler.fetchData)  défini fetchData
+    .filter(route => route.handler.fetchData)  // définit fetchData
     .map(route => {
       return route.handler.fetchData(state.params);
     })
@@ -165,9 +164,8 @@ Router.run(routes, Router.HistoryLocation, function (Handler, state) {
   });
 });
 ```
-Le principe est simple et peut-être facilement encapsulé dans un module pour être partagé entre le client et le serveur.  J'espère que cet article vous a permis d'appréhender un peu mieux le rendu coté serveur d'une application React. N'hésitez pas à laisser des commentaires si vous avez d'autres questions où si vous souhaitez partager vos expérience dans ce domaine. 
+Le principe est simple et peut être facilement encapsulé dans un module pour être partagé entre le client et le serveur.  J'espère que cet article vous a permis d'appréhender un peu mieux le rendu coté serveur d'une application React. N'hésitez pas à laisser des commentaires si vous avez des questions où si vous souhaitez partager vos expériences dans ce domaine. 
 
-Et quelque liens vidéo des sessions de la #reactjsconf
+Et quelques liens vidéo des sessions de la #reactjsconf :
 - [React.js Conf 2015 - react-router increases your productivity ](https://www.youtube.com/watch?v=XZfvW1a8Xac) 
-- [React.js Conf 2015 - Hype!](https://www.youtube.com/watch?v=z5e7kWSHWTg)  un aperçu des possibilités de react-router
-
+- [React.js Conf 2015 - Hype!](https://www.youtube.com/watch?v=z5e7kWSHWTg) : un aperçu des possibilités de react-router
