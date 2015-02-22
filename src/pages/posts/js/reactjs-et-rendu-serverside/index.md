@@ -1,5 +1,5 @@
-On entend souvent parler d'applications JavaScript isomorphiques, et même si le nom ne [fait](https://news.ycombinator.com/item?id=8237449) [pas](https://twitter.com/wycats/status/566857009836724224) [l'unanimité](https://medium.com/the-thinkmill/making-the-case-for-progressive-javascript-a98dfa82b9d7), ce qu'il y a derrière, le concept de _server side rendered JavaScript_ est en passe de devenir un sujet plutôt tendance pour 2015 (notamment dû au boom de [Reactjs](http://facebook.github.io/react/) ). 
-Et avec comme promesse de réconcilier enfin le développeur de *Single Page App* (SPA) avec l’amélioration progressive, l'accessibilité et le SEO ; quoique Google comme les lecteurs d'écran ont plutôt bien évolué sur ce point. L'autre avantage non négligeable à mon sens, est qu'on améliore les performances perçues par rapport à une SPA classique puisque&nbsp;:
+On entend souvent parler d'applications JavaScript isomorphiques, et même si le nom ne [fait](https://news.ycombinator.com/item?id=8237449) [pas](https://twitter.com/wycats/status/566857009836724224) [l'unanimité](https://medium.com/the-thinkmill/making-the-case-for-progressive-javascript-a98dfa82b9d7), ce qu'il y a derrière, le concept de _server side rendered JavaScript_ est en passe de devenir un sujet plutôt tendance pour 2015 grâce à la monté en puissance de  [Reactjs](http://facebook.github.io/react/). 
+Faire du rendu d'application JavaScript coté serveur permet de réconcilier enfin le développeur de *Single Page App* (SPA) avec l’amélioration progressive, l'accessibilité et le SEO ; quoique Google comme les lecteurs d'écran ont plutôt bien évolué sur ce point. L'autre avantage non négligeable à mon sens, est qu'on améliore les performances perçues par rapport à une SPA classique puisque&nbsp;:
 
  - On supprime une requête *ajax* au démarrage pour récupérer le contenu
    initial. 
@@ -8,7 +8,7 @@ Et avec comme promesse de réconcilier enfin le développeur de *Single Page App
 
 Pour plus d'info sur les avantages, il y a [cet article](http://tech.m6web.fr/isomorphic-single-page-app-parfaite-react-flux/) sur le blog de M6Tech
 
-Et afin de me familiariser avec React et son écosystème, rien de mieux que mettre les mains dedans&nbsp;! C'est un peu pour toutes ces raisons que j'ai décidé de l'utiliser pour mon site web (un site statique). 
+Afin de me familiariser avec React et son écosystème, rien de mieux que mettre les mains dedans&nbsp;! C'est un peu pour toutes ces raisons que j'ai décidé de l'utiliser pour mon site web (un site statique). 
 
 **Inutile et donc totalement justifié pour le développeur que je suis**. Une des premières briques que j'ai mises en place a été le routeur.
 
@@ -47,7 +47,7 @@ module.exports = routes;
 En plus des composants, on a aussi à disposition des *mixins* pour naviguer programmatiquement ou accéder aux infos du routeur (chemin, paramètres, ...)
 
 Et le gros plus de cette bibliothèque : elle peut aussi s'utiliser coté serveur, pour la génération des vues et éviter ainsi de dupliquer du code puisqu'on va pouvoir carrément utiliser tel quel le fichier précédent. Plutôt cool !
-Voici un exemple de *middleware* pour faire marcher ça dans Express :
+Voici un exemple de *middleware* pour faire marcher ça dans Express&nbsp;:
 
 ```javascript
 var React = require("react");
