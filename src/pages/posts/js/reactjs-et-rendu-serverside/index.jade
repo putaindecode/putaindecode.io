@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.authors = ["lionelB"]
+  -exports.title = "Quelques retours sur React et le rendu serveur"
+  -exports.tags = ["javascript", "react"]
+  -exports.date = "2015-02-23"
+
+block main
+  +Post(exports.title)
+    include:md index.md
