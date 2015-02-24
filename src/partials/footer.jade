@@ -5,15 +5,15 @@
   .Grid-cell.u-size6of12
     if lang.footerNavigation
       ul.putainde-Footer-list
-        li
         each item in lang.footerNavigation
           li
             a(href="#{uri(item.url, page)}")
               | #{item.name}
-        a(href="#{lang.github}", data-cssr-tooltip="GitHub").cssr-Tooltip.cssr-Tooltip--top
-          +Icon("github")
-        a(href="#{lang.twitter}", data-cssr-tooltip="Twitter").cssr-Tooltip.cssr-Tooltip--top
-          +Icon("twitter")
+        li
+          a(href="#{lang.github}", data-cssr-tooltip="GitHub").cssr-Tooltip.cssr-Tooltip--top
+            +Icon("github")
+          a(href="#{lang.twitter}", data-cssr-tooltip="Twitter").cssr-Tooltip.cssr-Tooltip--top
+            +Icon("twitter")
   .Grid-cell.u-size3of12
     p.putainde-Footer-text.putainde-Footer-text--small.putainde-Footer-text--right
       | #{lang.madeWithHeart}
