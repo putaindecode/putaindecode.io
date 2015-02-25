@@ -1,4 +1,4 @@
-# Putain de Code ! [![Build Status](https://travis-ci.org/putaindecode/putaindecode.fr.svg?branch=post.vim)](https://travis-ci.org/putaindecode/putaindecode.fr)
+# Putain de code ! [![Build Status](https://travis-ci.org/putaindecode/putaindecode.fr.svg?branch=post.vim)](https://travis-ci.org/putaindecode/putaindecode.fr)
 
 <img align="right" alt="" src="https://raw.github.com/putaindecode/putaindecode.fr/master/images/p!-logo--no-bubble-512--trim.png" width="128">
 
