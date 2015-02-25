@@ -1,8 +1,4 @@
-# Putain de code !
-
-[![Build Status](http://img.shields.io/travis/putaindecode/putaindecode.fr.svg?style=flat)](https://travis-ci.org/putaindecode/putaindecode.fr)
-
-[![Testling](https://ci.testling.com/putaindecode/putaindecode.fr.png)](https://ci.testling.com/putaindecode/putaindecode.fr)
+# Putain de Code ! [![Build Status](https://travis-ci.org/putaindecode/putaindecode.fr.svg?branch=post.vim)](https://travis-ci.org/putaindecode/putaindecode.fr)
 
 <img align="right" alt="" src="https://raw.github.com/putaindecode/putaindecode.fr/master/images/p!-logo--no-bubble-512--trim.png" width="128">
 
@@ -12,11 +8,13 @@ Pas de base de données à installer, pas de serveurs à configurer.
 
 ## tl;dr;
 
-    $ git clone https://github.com/putaindecode/putaindecode.fr.git
-    $ cd putaindecode.fr
-    $ npm run init
-    $ npm install
-    $ npm start
+```console
+$ git clone https://github.com/putaindecode/putaindecode.fr.git
+$ cd putaindecode.fr
+$ npm run init
+$ npm install
+$ npm start
+```
 
 ## Contributions
 
@@ -42,24 +40,30 @@ avant d'intervenir sur le projet ;).
 
 ## Récupérer les sources du site
 
-    $ git clone https://github.com/putaindecode/putaindecode.fr.git
-    $ cd website
-    $ npm run init
-    $ npm install
+```console
+$ git clone https://github.com/putaindecode/putaindecode.fr.git
+$ cd website
+$ npm run init
+$ npm install
+```
 
 ## Mettre à jour les sources
 
 Lorsque vous n'avez pas travaillé sur le site depuis un petit moment, on vous conseille
 d'exécuter les commandes suivantes :
 
-    $ git pull
-    $ npm install
+```console
+$ git pull
+$ npm install
+```
 
 Si vous rencontrez des erreurs lors du `git pull` (par ex. pour une histoire de
 fichiers modifiés non commités), vous pouvez juste avant faire
 un petit
 
-    $ git reset --hard
+```console
+$ git reset --hard
+```
 
 __Note: cela supprimera toutes vos modifications locales sans avertissement, à
 faire avec précaution.
@@ -67,7 +71,9 @@ Préférez `git stash` si vous souhaitez conserver vos modifications__.
 
 ## Lancer le site web localement
 
-    $ npm start
+```console
+$ npm start
+```
 
 Oui oui, c'est tout, vous devriez avoir le site web qui s'ouvre tout seul dans votre navigateur.
 Si ce n'est pas le cas, et que vous n'avez pas d'erreurs dans votre console,
@@ -80,7 +86,9 @@ La commande suivante (lorsque vous avez les droits nécessaires) va construire l
 en version optimisée, et le publier (mise à jour de la branche  `gh-pages`, qui,
 grâce à GitHub, suffit à mettre en ligne le site).
 
-    $ npm run deploy
+```console
+$ npm run deploy
+```
 
 **Cela dit, tous les commits dans la branche `master` provoqueront une mise en production automatique via [Travis-CI](https://travis-ci.org/).**
 
@@ -94,15 +102,21 @@ _Note: pour commiter sans provoquer un `deploy`, il suffit d'ajouter `[ci skip]`
 
 Installez [icoutils](http://www.nongnu.org/icoutils/). Par exemple sur OS X :
 
-    $ brew install icoutils
+```console
+$ brew install icoutils
+```
 
 ou
 
-    $ npm run init-osx
+```console
+$ npm run init-osx
+```
 
 Ensuite utilisez la commande suivante
 
-    $ npm run favicon
+```console
+$ npm run favicon
+```
 
 ---
 
