@@ -117,7 +117,7 @@ Tu fais ta petite popote ! tu fais comme tu veux ! &Ccedil;a a du bon aussi !
 
 Tu remontes tes manches et tu te démmerdes !
 
-Il y a quelques frameworks qui vont te donner un coup de main. Dans le monde Java par exmple, il existe [RestEasy-Links](http://docs.jboss.org/resteasy/docs/2.0.0.GA/userguide/html/LinkHeader.html) (avec un exemple d'utilisation [sur mon repo Github](https://github.com/awillemant/hateoas-example)), ou encore [Spring HATEOAS](http://projects.spring.io/spring-hateoas/)
+Il y a quelques frameworks qui vont te donner un coup de main. Dans le monde Java par exemple, il existe [Resteasy-links](http://docs.jboss.org/resteasy/docs/2.0.0.GA/userguide/html/LinkHeader.html) (avec un exemple d'utilisation [sur mon repo Github](https://github.com/awillemant/hateoas-example)), ou encore [Spring HATEOAS](http://projects.spring.io/spring-hateoas/)
 
 Pour les *Nodistes*, une simple recherche sur [npmjs](https://www.npmjs.com/search?q=hateoas) renverra un tas d'outils ! 
 
