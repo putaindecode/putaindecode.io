@@ -44,6 +44,11 @@
       "location": "Paris,France",
       "hireable": false
     },
+    "angelique.jard@gmail.com": {
+      "login": "AngeliqueH",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3634942?v=3",
+      "gravatar_id": ""
+    },
     "aurelien.garroux@gmail.com": {
       "login": "dhoko",
       "name": "dhoko",
@@ -783,6 +788,11 @@
       "url": "http://agmagor.be",
       "location": "France",
       "hireable": false
+    },
+    "AngeliqueH": {
+      "login": "AngeliqueH",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3634942?v=3",
+      "gravatar_id": ""
     },
     "DaPo": {
       "login": "DaPo",

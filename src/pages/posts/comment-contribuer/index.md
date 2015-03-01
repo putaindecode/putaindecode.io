@@ -92,8 +92,8 @@ Cela dit, ci-dessous, nous te conseillons de lire la version beaucoup plus ludiq
 * Maintenant que t'as enfin notre magnifique repo dans ton compte, tu devrais
   te sentir honoré. Une fois que t'as appelé toute ta famille et les 3
   péquenauds qui te servent d'amis, tu dois pouvoir y coder dessus sur ton PC.
-  On va partir du principe que tu t'appelles Clint. Et que ton nom c'est
-  Horris. T'as donc choisi comme pseudo GitHub `clinthorris` (oui t'aurais dû
+  On va partir du principe que tu t'appelles Marc. Et que ton nom c'est
+  Assin. T'as donc choisi comme pseudo GitHub `marcassin` (oui t'aurais dû
   réfléchir toi aussi). Donc tu te débrouilles pour aller dans un dossier vide
   et tu vas cloner notre repo. Cloner = faire une copie d'un repo distant (sur
   les serveurs de GitHub par exemple) en local (ton vieux Pentium II sous XP
@@ -104,7 +104,7 @@ Cela dit, ci-dessous, nous te conseillons de lire la version beaucoup plus ludiq
   t'expliquer).
 
   ```console
-  $ git clone https://github.com/clinthorris/putaindecode.fr.git putaindecode
+  $ git clone https://github.com/marcassin/putaindecode.fr.git putaindecode
   ```
 
 * Ensuite tu dois ajouter ce qu'on appelle une remote. Une remote c'est une
