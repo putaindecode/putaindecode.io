@@ -22,7 +22,8 @@
         "bio": {
           "short": "Architecte Logiciel, prof de JEE, joueur de ukulélé",
           "long": [
-            "mabio"
+            "Je passe mon temps à développer en Java, et comme j'aime ça, et bien je montre à mes étudiants comment développer en Java, espérant que plus tard, ils transmettrons à leur tour et ainsi de suite...",
+            "Je passe aussi de plus en plus de temps sur le JS, ce truc de hippies comme disent les anciens."
           ]
         }
       },
@@ -30,7 +31,8 @@
         "bio": {
           "short": "Software architect, JEE teacher, ukulele player",
           "long": [
-            "bio"
+            "I spend a lot of time with Java, I love it so much that I try to transmit this love to my student, in order to help them transmitting to others, etc...",
+            "I play around with JS, more and more every day"
           ]
         }
       }
@@ -58,6 +60,7 @@
       "location": "Grenoble",
       "hireable": false
     },
+    "awillemant@users.noreply.github.com": {},
     "baptiste.meurant@gmail.com": {
       "login": "bmeurant",
       "name": "Baptiste Meurant",
@@ -1484,6 +1487,7 @@
         }
       }
     },
+    "undefined": {},
     "welovewebdesign": {
       "login": "welovewebdesign",
       "name": "Rémi Couturier",
