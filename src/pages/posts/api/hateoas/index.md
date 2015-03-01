@@ -1,7 +1,7 @@
 *Salut toi, alors comme ça tu fais du web ? et tu fais quoi de beau en ce moment ? Des plugins script.aculo.us ? Intéressant... je te conseille toutefois de jeter un coup d'oeil à cet article si jamais tu veux vraiment te la péter en soirée avec tes réflexions du style *"Je fais du web"* !*
 
 ## Les webservices ##
-La première étape pour devenir un beau gosse du web: comprendre ce que l'on entend par webservice ! Et bien c'est très facile, quand tu te promènes sur le skyblog de ta petite soeur ou encore quand tu likes les duck faces de ton amour de vacances, ce qu'il se passe c'est que ton navigateur discute avec le serveur web distant. Il envoie des requêtes du style *"donne moi la page des posts skyblog de ma petite soeur"* et le serveur renvoie du code HTML, des images et des feuilles de styles. Le tout est interprété par ton navigateur et toi tu peux ainsi jouir de cette page bien girly, pleine de licornes et d'arcs-en-ciel.
+La première étape pour devenir un beau gosse du web: comprendre ce que l'on entend par webservice ! Et bien c'est très facile, quand tu te promènes sur le skyblog de ta petite soeur ou encore quand tu likes les duck faces de ton amour de vacances, ce qui se passe c'est que ton navigateur discute avec le serveur web distant. Il envoie des requêtes du style *"donne moi la page des posts skyblog de ma petite soeur"* et le serveur renvoie du code HTML, des images et des feuilles de styles. Le tout est interprété par ton navigateur et toi tu peux ainsi jouir de cette page bien girly, pleine de licornes et d'arcs-en-ciel.
 
 Pourquoi passer par un navigateur si on veut juste récupérer de l'information brute ? Le web peut être consommé par des machines ! Les serveurs web nous renvoient bien plus de choses que de l'HTML, heureusement !
 
@@ -10,10 +10,10 @@ Imaginons deux programmes  qui veulent discuter en passant par le web. Dans les 
 L'approche est assez logique et ingénieuse. Tout d'abord, les deux partis (le client et le serveur) se partagent une notice d'utilisation : la WSDL (Web Service Description Language), qui est un document XML décrivant toutes les méthodes qui peuvent être appelées par le client sur le serveur, avec les structures de données disponibles pour ces échanges.
 Le client prépare donc sa demande et l'enveloppe dans une grosse structure XML contenant toutes les metadonnées (méthode appelée, signature numérique, etc...). Une fois que le serveur a reçu cette demande, il l'a traite et répond aussi dans une grosse enveloppe XML
 
-C'est donc ce que l'on appelle le SOAP (Service Oriented Application Protocol), aucun rapport avec une quelconque savonnette du coup. Cette méthode a fait ses preuves puisqu'elle fait tourner encore aujourd'hui des milliers de systèmes très complexes et très fiables.
+Tu viens de comprendre le SOAP (Service Oriented Application Protocol), aucun rapport avec une quelconque savonnette du coup. Cette méthode a fait ses preuves puisqu'elle fait tourner encore aujourd'hui des milliers de systèmes très complexes et très fiables.
 
 ### La maison d'en face : ReST ###
-Plusieurs années sont passées et les esprits ont évolué. On a commencé à entendre des grandes déclarations comme *"Le SOAP est vraiment pataud !"*, *"Le protocole HTTP est sous-exploité !"* ou encore *"Les enveloppes XML et les WSDL ? merci bien !"* et c'est à ce moment là qu'on a donné un acronyme bidon pour décrire le protocole HTTP sans vraiment le nommer : ReST (Representational State Transfert). Pour l'anecdote, tout le monde s'accorde à dire que cet acronyme ne veut rien dire ;)
+Plusieurs années sont passées et les esprits ont évolué. On a commencé à entendre des grandes déclarations comme *"Le SOAP c'est vraiment lourdingue !"*, *"Le protocole HTTP est sous-exploité !"* ou encore *"Les enveloppes XML et les WSDL ? merci bien !"* et c'est à ce moment là qu'on a donné un acronyme bidon pour décrire le protocole HTTP sans vraiment le nommer : ReST (Representational State Transfert). Pour l'anecdote, tout le monde s'accorde à dire que cet acronyme ne veut rien dire ;)
 
 Le but du jeu est donc d'utiliser au maximum les possibilités du protocole HTTP, les verbes, les URLs et les codes retours pour décrire des APIs de la manière la plus fidèle possible. On a donc gagné en simplicité et la communication entre machine se veut désormais à la portée de tous. Je reviendrai en détail sur le protocole HTTP un peu plus tard.
 
@@ -21,7 +21,7 @@ Le but du jeu est donc d'utiliser au maximum les possibilités du protocole HTTP
 Je tiens à remettre les choses au clair. On entend beaucoup trop souvent *"Fais du ReST, SOAP c'est nul"*. Il y a en effet clairement un effet de mode ! Les APIs ReST pullulent et sont vraiment très pratiques. Toutefois, dans les gros systèmes nécessitant du RPC ou encore de la signature numérique, pour les échanges de données médicales par exemple, le contrat WSDL et la rigueur du XML sont clairement des alliés ! 
 
 
-## Alors comme ça, HTTP ca fait tout ? ##
+## Alors comme ça, HTTP ça fait tout ? ##
 Il y a un type qui s'appelle Leonard Richardson et qui a mis en place un [modèle de maturité](http://martinfowler.com/articles/richardsonMaturityModel.html) (un peu pompeux non ?) pour qualifier les APIs webservice.
 
 ### Niveau 0 ###
@@ -44,10 +44,10 @@ On profite aussi de la vue hiérarchique que nous proposent les URLs :
 Rien qu'en traçant les URLs appelées sur le serveur, on peut comprendre ce que le client HTTP cherche à faire... pas dégueu non ?
 
 ### Niveau 2 ###
-Le protocole HTTP utilise des verbes pour les requêtes et des codes numériques pour les retours. Ce sont ces deux mécanismes que l'on va utiliser en complément du niveau 1.
+Le protocole HTTP utilise des verbes pour les requêtes et des codes numériques pour les retours. Ce sont ces deux mécanismes qui seront utilisés en complément du niveau 1.
 
 Les principaux verbes HTTP que l'on utilise sont GET, POST, PUT et DELETE. Leur nom est déjà très évocateur.
-* ***GET /customers/42*** on récupère les information du client 42
+* ***GET /customers/42*** pour récupérer les informations du client 42
 * ***PUT /customers*** *(+ corps de la requête)* pour enregistrer un nouveau client
 * ***POST /customers/42*** *(+ corps de la requête)* : pour mettre à jour les informations du client 42
 * ***DELETE /customers/42*** : pour supprimer le client 42.
@@ -67,7 +67,9 @@ Et si les codes HTTP sont ta nouvelle passion, je te suggère de te documenter s
 
 ### Niveau 3 : HATEOAS ###
 
-Alors on a les verbes HTTP et les codes retours. A quoi peut ressembler le Graal des APIs ReST alors ? Si on réfléchit un peu, on peut se dire qu'il faudrait, pour toutes les URLs, donner un code retour HTTP cohérent pour chaque verbe, logique non ? De cette manière, on peut entamer un véritable dialogue avec le serveur HTTP, entièrement basé sur ReST. Voilà une bonne nouvelle pour ceux qui se sentent seuls !
+Alors on a les verbes HTTP et les codes retours. A quoi peut ressembler le Graal des APIs ReST alors ? Si on réfléchit un peu, on peut se dire qu'il faudrait, pour toutes les URLs, donner un code retour HTTP cohérent pour chaque verbe, logique non ? De cette manière, on peut entamer un véritable dialogue avec le serveur HTTP, entièrement basé sur ReST. Voilà une bonne nouvelle pour ceux qui veulent tailler une bavette ailleurs que sur Google Hangouts !
+
+Un petit exemple de dialogue : 
 
 ```
 > GET /customers/42
@@ -83,13 +85,13 @@ Alors on a les verbes HTTP et les codes retours. A quoi peut ressembler le Graal
 404 Not Found
 ```
 
-C'est un bon début, mais ce niveau 3 va encore plus loin ! Toi, lecteur... n'as-tu jamais trouvé génial qu'avec de simples liens dans les pages web, tu pouvais naviguer des heures et des heures ? Et comment on appelle du texte avec des liens ? de l'hypertexte ! 
+C'est un bon début, mais ce niveau 3 va quand même un peu plus loin ! Toi, lecteur... n'as-tu jamais trouvé génial qu'avec de simples liens dans les pages web, tu pouvais naviguer des heures et des heures ? 
 
-Pourquoi ne pas ajouter des liens dans les ressources retournées via ReST ? Nous venons de mettre le doigt sur HATEOAS (*Hypermedia As The Engine Of Application State*). On peut imaginer un tas de chose comme:
+Pourquoi ne pas ajouter des liens dans les ressources retournées via ReST ? Nous venons de mettre le doigt sur HATEOAS (*Hypermedia As The Engine Of Application State*). On peut désormais imaginer un tas de chose comme:
 * Quand on renvoie un tableau json par exemple, dans chaque item, 
   * on peut ajouter les liens qui permettent de le mettre à jour
   * on peut ajouter les liens qui permettent de récupérer des données liées comme l'auteur d'un livre, les mentions d'un tweet, etc...
-  * on peut ajouter l'url de putaindecode.fr :P
+  * on peut ajouter l'url de putaindecode.fr
 
 Voici un exemple de trame JSON avec les informations HATEOAS. Pour information, il s'agit d'un webservices qui permet de lister des conférences.
 
@@ -97,3 +99,33 @@ Voici un exemple de trame JSON avec les informations HATEOAS. Pour information, 
     ![JSON HATEOAS](json_annote.png)
     <figcaption>JSON avec liens Hypermedia</figcaption>
   </figure>
+
+
+## Est-ce que c'est standard ? ##
+
+Et bien non ! Il n'y a pas vraiment de convention pour l'écriture des liens dans les trames renvoyées. Cela dépend du format renvoyé dans un premier temps. Comment formaliser un standard si on renvoie en JSON, XML et YML en fonction des entêtes HTTP du client ?
+
+De la même manière, tu auras remarqué, lecteur, que l'on ne précise pas le verbe HTTP à utiliser sur les URLs. C'est la raison pour laquelle il faut implémenter un retour cohérent pour tous les verbes HTTP courants !
+
+Et pour finir, comment connaître le format du document JSON accepté avec les requêtes POST par exemple ? Il n'y a pas non plus de règle, on peut imaginer par exemple un document "type" qui serait renvoyé après une requête "OPTION" sur l'URL par exemple.
+
+Il y a toutefois quelques expérimentations comme [HAL](http://en.wikipedia.org/wiki/Hypertext_Application_Language) ou encore [JSON API](http://jsonapi.org/) qui tentent de normaliser un peu ce flou artistique.
+
+Tu fais ta petite popote ! tu fais comme tu veux ! &Ccedil;a a du bon aussi !
+
+## "Bon ok, je fais comment pour le mettre en place maintenant ?" ##
+
+Tu remontes tes manches et tu te démmerdes !
+
+Il y a quelques frameworks qui vont te donner un coup de main. Dans le monde Java par exmple, il existe [RestEasy-Links](http://docs.jboss.org/resteasy/docs/2.0.0.GA/userguide/html/LinkHeader.html) (avec un exemple d'utilisation [sur mon repo Github](https://github.com/awillemant/hateoas-example)), ou encore [Spring HATEOAS](http://projects.spring.io/spring-hateoas/)
+
+Pour les *Nodistes*, une simple recherche sur [npmjs](https://www.npmjs.com/search?q=hateoas) renverra un tas d'outils ! 
+
+## Références ##
+
+Oui, parce qu'il y a des gens bien plus brillants que moi pour vous convaincre sur l'Hypermedia !
+
+* [Wikipédia](http://en.wikipedia.org/wiki/HATEOAS)
+* [Blog de Martin Fowler](http://martinfowler.com/articles/richardsonMaturityModel.html)
+* Les travaux de Steve Klabnik, Rubyiste reconnu (ex : [Designing Hypermedia APIs](https://www.youtube.com/watch?v=g4sqydY3hHU))
+* Ori Pekelman : [son talk à la Take Off Conf 2014](https://www.youtube.com/watch?v=ZZxOaCP8vyg)
