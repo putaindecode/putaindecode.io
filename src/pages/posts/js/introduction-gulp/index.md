@@ -37,7 +37,7 @@ et qu'il limite au maximum l'utilisation de fichiers.
 Au point qu'il existe une [police Gulp](https://github.com/godaddy/gulp-header/issues/4#issuecomment-32111457)
 pour vous dire.
 Si vous voulez en savoir plus sur les streams, n'hésitez pas à lire l'article de
-Nicolas Froidure [Gulp remplacera-t-il Grunt ?](http://www.insertafter.com/articles-gulp_vs_grunt.html)
+Nicolas Froidure [Gulp remplacera-t-il Grunt ?](http://insertafter.com/fr/blog/gulp_vs_grunt.html)
 qui contient une partie explicative sur les streams.
 
 Dans la pratique cela évite d'avoir un gruntfile qui, si on imagine une task
@@ -233,7 +233,7 @@ Je trouve que c'est gage de qualité.
 
 Pour finir quelques liens pour ceux qui en veulent toujours plus :
 
-- [Gulp : Retour d'expérience](http://www.insertafter.com/articles-retour_experience_gulp.html)
+- [Gulp : Retour d'expérience](http://insertafter.com/fr/blog/retour_experience_gulp.html)
 - [Grunt vs. Gulp, au-delà des chiffres](http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/) (anglais)
 
 ```console
