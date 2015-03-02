@@ -524,6 +524,15 @@
         }
       }
     },
+    "nicolas.froidure@insertafter.com": {
+      "login": "nfroidure",
+      "name": "Nicolas Froidure",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229633?v=3",
+      "gravatar_id": "",
+      "url": "http://insertafter.com",
+      "location": "Douai - Nord-Pas-de-Calais",
+      "hireable": false
+    },
     "notgrm@gmail.com": {
       "login": "NotGrm",
       "name": null,
@@ -986,6 +995,28 @@
       "location": "Paris",
       "hireable": true
     },
+    "awillemant": {
+      "crew": false,
+      "twitter": "awillemant",
+      "fr": {
+        "bio": {
+          "short": "Architecte Logiciel, prof de JEE, joueur de ukulélé",
+          "long": [
+            "Je passe mon temps à développer en Java, et comme j'aime ça, et bien je montre à mes étudiants comment développer en Java, espérant que plus tard, ils transmettront à leur tour et ainsi de suite...",
+            "Je passe aussi de plus en plus de temps sur le JS, ce truc de hippies comme disent les anciens."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Software architect, JEE teacher, ukulele player",
+          "long": [
+            "I spend a lot of time with Java, I love it so much that I try to transmit this love to my student, in order to help them transmitting to others, etc...",
+            "I play around with JS, more and more every day"
+          ]
+        }
+      }
+    },
     "bitdeli-chef": {
       "login": "bitdeli-chef",
       "name": "Bitdeli Chef",
@@ -1349,6 +1380,15 @@
           ]
         }
       }
+    },
+    "nfroidure": {
+      "login": "nfroidure",
+      "name": "Nicolas Froidure",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229633?v=3",
+      "gravatar_id": "",
+      "url": "http://insertafter.com",
+      "location": "Douai - Nord-Pas-de-Calais",
+      "hireable": false
     },
     "quentint": {
       "login": "quentint",
