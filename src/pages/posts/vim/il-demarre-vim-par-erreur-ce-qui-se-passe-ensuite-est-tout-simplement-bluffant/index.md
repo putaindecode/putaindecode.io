@@ -84,7 +84,7 @@ Pourquoi pas vous ?
 Vous pouvez donc :
 
 - lire l'e-book [Vim pour les humains](http://vimebook.com)
-- lancer la commande `:vimtutor` (dans Vim)
+- lancer la commande `vimtutor`
 - jouer à [Vim Adventures](http://vim-adventures.com/)
 - vous entraîner sur des exemples concrets avec [VimGolf](http://vimgolf.com/)
 
