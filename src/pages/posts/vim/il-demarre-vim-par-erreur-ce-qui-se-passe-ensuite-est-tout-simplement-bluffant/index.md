@@ -106,6 +106,10 @@ Cela dit, on peut rapidement voir la puissance de Vim après quelques heures d'u
 (même si on peut aussi un peu rager en cherchant des commandes simples qu'on arrive pas à faire).
 
 Sachez aussi que beaucoup d'éditeurs ont des modes Vim (Sublime Text, Atom et d'autres). Il doit bien y avoir une raison, non ?
+Notez aussi que Vim est installé par défaut sur beaucoup d'environnement de type Unix.
+
+Vim est configurable à souhait (via le fichier `.vimrc`) et possède même son propre language de scripts (Vim Script ou viml)
+ce qui permet de créer de nouvelles fonctionnalités simplement. Et même du coup d'en faire des "plugins".
 
 Je vous prépare un prochain post pour vous faire un petit mémo condensé de ce qu'on peut faire avec, et surtout comment.
 
