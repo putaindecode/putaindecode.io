@@ -4,7 +4,7 @@ Vous avez sûrement déjà entendu parler de **Grunt** à droite à gauche, en c
 
 # Commençons
 
-Vous est-il déjà arrivé(e) de devoir régulièrement lancer, lancer et relancer des processus tels que _Sass_, _LESS_, _uglify_ - en somme des préprocesseurs ou des minifiers - régulièrement à la main ? N'est-ce pas pénible ? N'est-ce pas aussi pénible de devoir indiquer à tous ses collègues comment ils doivent bosser pour que vous soyez tous cohérents ? Oui ? **Grunt** permet de résoudre ce genre de choses : respecter un putain de _workflow_ en s'assurant que le parcours soit le même pour tout le monde et d'exécuter tout ça en lançant une seule commande. N'est-ce pas fucking aweeeeesome dude ? Bref.
+Vous est-il déjà arrivé de devoir régulièrement lancer, lancer et relancer des processus tels que _Sass_, _LESS_, _uglify_ - en somme des préprocesseurs ou des minifiers - régulièrement à la main ? N'est-ce pas pénible ? N'est-ce pas aussi pénible de devoir indiquer à tous ses collègues comment ils doivent bosser pour que vous soyez tous cohérents ? Oui ? **Grunt** permet de résoudre ce genre de choses : respecter un putain de _workflow_ en s'assurant que le parcours soit le même pour tout le monde et d'exécuter tout ça en lançant une seule commande. N'est-ce pas fucking aweeeeesome dude ? Bref.
 
 Voici un _workflow_ assez classique :
 
@@ -135,9 +135,9 @@ module.exports = function(grunt) {
 
 ## Deuxième tâche : concaténer ses fichiers JavaScript
 
-Passons maintenant à la concaténation des fichiers JavaScripts.
+Passons maintenant à la concaténation des fichiers JavaScript.
 
-Comme pour la majorité des tâches que vous aurez besoin avec **Grunt**, un _package_ **Grunt** existe déjà pour ce travail demandé.
+Comme pour la majorité des tâches dont vous aurez besoin avec **Grunt**, un _package_ **Grunt** existe déjà pour ce travail demandé.
 
 -> [`grunt-contrib-concat`](https://github.com/gruntjs/grunt-contrib-concat)
 
@@ -252,7 +252,7 @@ module.exports = function(grunt) {
 
 Pour finir, compressons nos fichiers JavaScript ! Pour cela : [`grunt-contrib-uglify`](https://github.com/gruntjs/grunt-contrib-uglify) fera l'affaire.
 
-Je vous passe les détails pour l'installer, si vous avez bien suivi cet article, vous ne devriez avoir aucun problème pour l'installer.
+Je vous passe les détails pour l'installer, si vous avez bien suivi cet article, vous ne devriez avoir aucun problème pour cela.
 
 ```javascript
 module.exports = function(grunt) {
@@ -299,7 +299,7 @@ module.exports = function(grunt) {
 }
 ```
 
-Ne constatez vous pas un souci ici ? Oui, nous ne voulons sûrement pas à la fois concaténer nos fichiers et les compresser. Alors comment faire ? Pas d'inquiètude, il suffit de créer des tâches d'environnement ou de contexte. On pourrait par exemple créer une tâche développement et une tâche de production, qu'en pensez-vous ? Pas mal non ? :)
+Ne constatez-vous pas un souci ici ? Oui, nous ne voulons sûrement pas à la fois concaténer nos fichiers et les compresser. Alors comment faire ? Pas d'inquiétude, il suffit de créer des tâches d'environnement ou de contexte. On pourrait par exemple créer une tâche développement et une tâche de production, qu'en pensez-vous ? Pas mal non ? :)
 
 ## Optimisons !
 
@@ -399,7 +399,7 @@ module.exports = function(grunt) {
 }
 ```
 
-Ha ! Nous y voilà ! Nous avons alors deux tâches ```grunt dev``` et ```grunt dist``` qui nous permettent dans tous les cas de générer nos css et dans un cas concaténer nos js, dans l'autre les compresser (la compression fait aussi la concaténation implicitement).
+Ha ! Nous y voilà ! Nous avons alors deux tâches ```grunt dev``` et ```grunt dist``` qui nous permettent dans tous les cas de générer nos CSS et dans un cas concaténer nos JS, et dans l'autre de les compresser (la compression fait aussi la concaténation implicitement).
 
 Sauf que comme tout bon(ne) développeur/euse, vous êtes une grosse feignasse et compiler à chaque fois que vous faites des modifications sur vos fichiers va vite être saoulant.
 
@@ -409,7 +409,7 @@ Pour cela, une tâche existe, elle s'appelle ```watch``` (via le package [`grunt
 
 Très simple, `watch` va vous permettre de "regarder" vos fichiers, savoir lesquels ont changé et donc lancer une action en fonction du type de fichiers.
 
-Imaginons que l'on veut par exemple compiler nos css à chaque fois que l'on change un fichier _Sass_. Ou encore que l'on concatène nos fichiers JavaScript dès que l'on touche à l'un d'entre eux.
+Imaginons que l'on veut par exemple compiler nos CSS à chaque fois que l'on change un fichier _Sass_. Ou encore que l'on concatène nos fichiers JavaScript dès que l'on touche à l'un d'entre eux.
 
 ```javascript
 module.exports = function(grunt) {
@@ -472,7 +472,7 @@ Maintenant, vous êtes capable à tout moment de compiler automatiquement vos fi
 
 Oui, comprenez bien que lorsque vous ajoutez une tâche dans la définition de la configuration de **Grunt**, elle est appelable directement. Typiquement, vous pouvez faire ```$ grunt premier-niveau:deuxieme-niveau``` soit par exemple ```$ grunt sass:dist```. Vous n'êtes pas obligé(e) de (re)définir chaque tâche via `grunt.registerTask()`.
 
-Je ne sais pas si vous vous rappelez mais nous avions crée une tâche de base s'appelant ```default```. Cette tâche se lance dès que vous ne passez aucun paramètre à **Grunt** soit ```$ grunt```. Vous pouvez aussi l'appeler via ```$ grunt default``` mais aucun intérêt.
+Je ne sais pas si vous vous rappelez mais nous avions créé une tâche de base s'appelant ```default```. Cette tâche se lance dès que vous ne passez aucun paramètre à **Grunt** soit ```$ grunt```. Vous pouvez aussi l'appeler via ```$ grunt default``` mais aucun intérêt.
 
 Tout ça pour dire qu'il est serait sûrement intéressant de lancer la tâche `watch` dès qu'on souhaite lancer **Grunt** étant donné que c'est sûrement la tâche la plus récurrente que vous utiliserez.
 
@@ -536,7 +536,7 @@ module.exports = function(grunt) {
 }
 ```
 
-That's it. Nous avons maintenant tout le nécessaire pour compiler des css, du js, l'optimiser, ainsi qu'avoir une commande de développement avec compilation automatique.
+That's it. Nous avons maintenant tout le nécessaire pour compiler des CSS, du JS, l'optimiser, ainsi qu'avoir une commande de développement avec compilation automatique.
 
 Et puisque je suis maniaque, nous allons ranger un peu :
 
@@ -566,13 +566,13 @@ module.exports = function(grunt) {
           "ext": ".css"
         }]
       },
-      dev: {} // A vous de le faire ! vous verrez que certaines options Sass sont plus intéressantes en mode dev que d'autres.
+      dev: {} // À vous de le faire ! vous verrez que certaines options Sass sont plus intéressantes en mode dev que d'autres.
     },
     concat: {
       options: {
         separator: ';'
       },
-      compile: { // On renomme vu qu'on a pas de mode dev/dist. Dist étant une autre tâche : uglify
+      compile: { // On renomme vu qu'on n'a pas de mode dev/dist. Dist étant une autre tâche : uglify
         src: jsSrc, // Vu qu'on doit l'utiliser deux fois, autant en faire une variable.
         dest: jsDist // Il existe des hacks plus intéressants mais ce n'est pas le sujet du post.
       }
@@ -613,6 +613,6 @@ module.exports = function(grunt) {
 
 Avec ça, je pense qu'on est pas trop mal. Il reste des optimisations éventuelles à faire et nombreuses autres tâches intéressantes peuvent être ajoutées comme [jshint](https://github.com/gruntjs/grunt-contrib-jshint/). Cela fera probablement office d'un autre article.
 
-J'espère que vous y voyez maintenant un peu plus clair dans **Grunt** ainsi que dans la compilation côté front-end. **Grunt** est un excellent produit, avec une communauté réactive et il est rare qu'une tâche que vous souhaitiez mettre en place n'existe pas.
+J'espère que vous y voyez maintenant un peu plus clair dans **Grunt** ainsi que dans la compilation côté front-end. **Grunt** est un excellent produit, avec une communauté réactive et il est rare qu'une tâche que vous souhaitiez mettre en place n'existe pas déjà.
 
 Bon workflow !
