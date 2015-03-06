@@ -71,4 +71,4 @@ App.FlashManager.Events.trigger = function(name, opts) {
 
 ## Conclusion
 
-De manière générale (hors **Backbone.js**), lorsque vous utilisez `ExtercalInterface.call()`, faites en sorte que votre JavaScript retourne quelque chose de simple (un objet ayant que des atributs, pas de fonctions, ou encore un bouléen ou un _integer_).
+De manière générale (hors **Backbone.js**), lorsque vous utilisez `ExtercalInterface.call()`, faites en sorte que votre JavaScript retourne quelque chose de simple (un objet ayant que des attributs, pas de fonctions, ou encore un booléen ou un _integer_).
