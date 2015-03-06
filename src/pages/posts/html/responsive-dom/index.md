@@ -8,7 +8,7 @@ forcément arrivé un moment où tu t'es dit cette chose toute bête :
 > non.
 
 Le cas typique est celui d'un menu un minimum complexe, dont on réordonnerait
-volontiers les éléments un chouïa au dessus ou en deçà d'une certaine taille
+volontiers les éléments un chouïa au-dessus ou en deçà d'une certaine taille
 d'écran. Et là, il faut bien avouer qu'il n'existe pas vraiment de solution
 miracle.
 
@@ -25,7 +25,7 @@ que les bouts de ficelle que je vais t'exposer ici soient obsolètes dans six
 mois, et que cet article fasse un comeback incroyable sur Twitter, les RT
 moquant gentiment les techniques précolombiennes auxquelles nous étions réduits
 il n'y a encore pas si longtemps. Va savoir, je pourrais bien faire l'objet
-d'une célébrité paradoxalement décadente à la Rick Astley. En attendant, il
+d'une célébrité paradoxalement décadente, à la Rick Astley. En attendant, il
 s'agit des seules solutions que je connais pour ce type de cas. Si tu as mieux à
 proposer, je te recommande chaudement de l'ouvrir dans les commentaires pour
 qu'on en bénéficie tous. C'est bon, on y va ? Je t'attends, moi !
@@ -303,7 +303,7 @@ Bien sûr, tu as été assez malin pour mettre ton image en dernier dans le DOM.
 }
 ```
 
-Et voilà, pas besoin d'avoir fait Pollypocket pour percevoir à quel point la
+Et voilà, pas besoin d'avoir fait Polly Pocket pour percevoir à quel point la
 flexibilité et la propreté du code que cette technique nous permet d'écrire
 résolvent notre problème en deux secondes douze. Ce n'est évidemment ici que la
 partie émergée du flexberg ; il y a des tas de bonnes ressources qui vous
