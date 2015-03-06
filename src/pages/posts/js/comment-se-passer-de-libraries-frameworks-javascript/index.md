@@ -1,4 +1,4 @@
-** Petite note préalable ** : Évidemment que ça ne marche pas sous les vieux navigateurs, cet article s'adresse principalement à toi pour te faire comprendre comment les choses marchent.
+** Petite note préalable ** : évidemment que ça ne marche pas sous les vieux navigateurs, cet article s'adresse principalement à toi pour te faire comprendre comment les choses marchent.
 
 De plus en plus, le besoin de légèreté se fait sentir sur les pages. En dépit d'un web plus rapide sur desktop, on a maintenant beaucoup de devices connectés via 3G ou Edge (un petit coucou au métro parisien). Du coup, tu te rendras vite compte qu'embarquer jQuery + jQuery Mobile + jQuery UI et un tas d'autres plug-ins grapillés sur le web, ça commence à peser.
 
@@ -42,7 +42,7 @@ elements.forEach(function(element){
 
 ### Pour l'event delegation
 
-L'event delegation, c'est bien, mangez-en. Ça permet entre autres de ne pas attacher 150 listeners uniques à 150 elements différents, mais à attacher un seul listener sur un parent commun, et analyser les sources des évenements à l'intérieur en se basant sur le bubbling (remontée d'évenement de la source au plus haut parent) ou capturing (descente d'évenement du plus haut parent à la source, avant même que la source ne le reçoive).
+L'event delegation, c'est bien, mangez-en. Ça permet, entre autres, de ne pas attacher 150 listeners uniques à 150 éléments différents, mais à attacher un seul listener sur un parent commun, et analyser les sources des évènements à l'intérieur en se basant sur le **bubbling** (remontée d'évènements de la source au plus haut parent) ou **capturing** (descente d'évènements du plus haut parent à la source, avant même que la source ne le reçoive).
 
 Pour faire de la délégation, on va procéder en trois temps :
 
@@ -160,7 +160,7 @@ var myXHR = ajax({
 
 ### ES5 magic
 
-EcmaScript 5 délivre des petites méthodes très intéressantes pour se simplifier la vie, fortement inspirées par ce qu'on a l'habitude de trouver dans les bibliothèques ayant connu l'âge d'or, comme [PrototypeJS](http://prototypejs.org) ou [MooTools](http://mootools.net).
+ECMAScript 5 délivre des petites méthodes très intéressantes pour se simplifier la vie, fortement inspirées par ce qu'on a l'habitude de trouver dans les bibliothèques ayant connu l'âge d'or, comme [PrototypeJS](http://prototypejs.org) ou [MooTools](http://mootools.net).
 
 Dès lors, plutôt qu'un ennuyeux :
 
@@ -186,8 +186,7 @@ Object.keys(myObject)
 
 De même, on bénéficie de méthodes s'avérant très utiles, comme
 [`Array.prototype.map`, `Array.prototype.reduce`, `Array.prototype.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype),
-[`Object.create`, `Object.getPrototypeOf`, `Object.getOwnPropertyNames`, `Object.defineProperty`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-dont je t'invite, si cela t'intéresse, à te renseigner sur ces méthodes.
+[`Object.create`, `Object.getPrototypeOf`, `Object.getOwnPropertyNames`, `Object.defineProperty`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object). Si cela t'intéresse, je t'invite vivement à te renseigner sur ces dernières.
 Et si tu veux avoir plus de détails, read the fucking manual :
 [http://es5.github.io](http://es5.github.io).
 
