@@ -77,7 +77,7 @@
     "favicon": "icotool -c images/p!-logo--no-bubble-16.png images/p!-logo--no-bubble-32.png -o public/favicon.ico",
     "start": "gulp",
     "deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr gulp deploy --production",
-    "test": "testling && gulp dist --production",
+    "test": "echo 'tamère le build'; exit 1",
     "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else npm run deploy; fi;"
   }
 }
