@@ -524,6 +524,15 @@
         }
       }
     },
+    "nicolas.froidure@insertafter.com": {
+      "login": "nfroidure",
+      "name": "Nicolas Froidure",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229633?v=3",
+      "gravatar_id": "",
+      "url": "http://insertafter.com",
+      "location": "Douai - Nord-Pas-de-Calais",
+      "hireable": false
+    },
     "notgrm@gmail.com": {
       "login": "NotGrm",
       "name": null,
@@ -1349,6 +1358,15 @@
           ]
         }
       }
+    },
+    "nfroidure": {
+      "login": "nfroidure",
+      "name": "Nicolas Froidure",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229633?v=3",
+      "gravatar_id": "",
+      "url": "http://insertafter.com",
+      "location": "Douai - Nord-Pas-de-Calais",
+      "hireable": false
     },
     "quentint": {
       "login": "quentint",
