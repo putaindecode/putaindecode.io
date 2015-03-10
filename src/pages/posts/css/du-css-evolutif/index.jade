@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.authors = ["magsout"]
+  -exports.title = "Du CSS évolutif"
+  -exports.tags = ["css","bem"]
+  -exports.date = "2015-03-10"
+
+block main
+  +Post(exports.title)
+    include:md index.md
