@@ -64,6 +64,7 @@ C'est d'ailleur grâce à ce livre que je me suis lancé.
 Je tiens donc à remercier [Vincent Jousse](http://viserlalune.com/) pour avoir pris le temps d'écrire cet ouvrage.
 
 Profitez de cet ouvrage, en plus [le prix est libre](http://ploum.net/le-prix-libre-une-impossible-utopie/).
+Et puis quand on pense au prix des licences de certains IDE...
 
 Ce livre est fait pour n'importe qui, débutant ou pas.
 Vraiment, mangez-en si vous souhaitez essayer Vim (oui je sais, manger un e-book comme ça, ça paraît pas évident).
