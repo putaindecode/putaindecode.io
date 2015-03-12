@@ -56,8 +56,8 @@ Le protocole HTTP utilise des verbes pour les requêtes et des codes numériques
 
 Les principaux verbes HTTP que l'on utilise sont GET, POST, PUT et DELETE. Leur nom est déjà très évocateur.
 * ***GET /customers/42*** pour récupérer les informations du client 42
-* ***PUT /customers*** *(+ corps de la requête)* pour enregistrer un nouveau client
-* ***POST /customers/42*** *(+ corps de la requête)* pour mettre à jour les informations du client 42
+* ***POST /customers*** *(+ corps de la requête)* pour enregistrer un nouveau client
+* ***PUT /customers/42*** *(+ corps de la requête)* pour mettre à jour les informations du client 42
 * ***DELETE /customers/42*** pour supprimer le client 42
 
 Facile, non ? La réponse du serveur devient tout aussi logique grâce aux codes HTTP.
