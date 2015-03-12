@@ -78,6 +78,6 @@
     "start": "gulp",
     "deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr gulp deploy --production",
     "test": "testling && gulp dist --production",
-    "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else echo 'tamère le build' && exit 1; fi;"
+    "travis": "if [ \"$TRAVIS_PULL_REQUEST\" != \"false\" ] || [ \"$TRAVIS_BRANCH\" != \"master\" ]; then npm run test; else npm run test; echo 'npm run deploy disabled (see #328)'; fi;"
   }
 }
