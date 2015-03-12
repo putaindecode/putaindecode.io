@@ -1,0 +1,13 @@
+extends /src/layouts/post
+
+block exports
+  -exports.type = "post"
+  -exports.comments = true
+  -exports.authors = ["awillemant"]
+  -exports.title = "HATEOAS, le Graal des développeurs d'API"
+  -exports.tags = ["api", "rest"]
+  -exports.date = "2015-03-12"
+
+block main
+  +Post(exports.title)
+    include:md index.md
