@@ -222,3 +222,4 @@ Oui, parce qu'il y a des gens bien plus brillants que moi pour vous convaincre s
 * [Blog de Martin Fowler](http://martinfowler.com/articles/richardsonMaturityModel.html)
 * Les travaux de Steve Klabnik, Rubyiste reconnu (ex : [Designing Hypermedia APIs](https://www.youtube.com/watch?v=g4sqydY3hHU))
 * Ori Pekelman : [son talk à la Take Off Conf 2014](https://www.youtube.com/watch?v=ZZxOaCP8vyg)
+* [Un excellent article de Xebia sur la bonne utilisation de POST et PUT](http://blog.xebia.fr/2014/03/17/post-vs-put-la-confusion/)
