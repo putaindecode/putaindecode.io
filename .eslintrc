@@ -1,0 +1,50 @@
+---
+# babel support more syntax stuff than eslint for now
+parser: babel-eslint
+
+ecmaFeatures:
+  modules: true
+  jsx: true
+
+env:
+  es6: true
+  browser: true
+  node: true
+
+globals:
+  __DEV__: true
+  __PROD__: true
+
+plugins:
+  - react
+
+# 0: off, 1: warning, 2: error
+rules:
+  # semicolons are useless
+  semi: [1, "never"]
+
+  quotes: [1, "double"]
+
+  # 2 spaces indentation
+  indent: [1, 2]
+
+  # trailing coma are cool for diff
+  comma-dangle: [1, "always-multiline"]
+
+  # enforce comma at eol (never before)
+  comma-style: [1, "last"]
+  no-underscore-dangle: 0
+
+  camelcase: 0
+
+  # eslint-plugin-react rules
+  react/no-multi-comp: 1
+  # https://github.com/yannickcr/eslint-plugin-react/issues/43
+  # react/prop-types: 1
+  # react/display-name: 1
+  react/wrap-multilines: 1
+  react/self-closing-comp: 1
+  react/no-did-mount-set-state: 1
+  react/no-did-update-set-state: 1
+  react/jsx-uses-react: 1
+  react/jsx-uses-vars: 1
