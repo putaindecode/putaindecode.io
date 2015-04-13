@@ -13,7 +13,8 @@ notifications:
     skip_join: true
 
 before_script:
-  # testling: use headless browser & firefox is the default one on travis-ci & it needs a defined display to works
+  # for headless browsers
+  # http://docs.travis-ci.com/user/gui-and-headless-browsers/
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
@@ -21,8 +22,8 @@ before_script:
   - git config --global user.name "Travis-CI"
   - git config --global user.email "mail+travis@putaindecode.fr"
 
-script:
-  - npm run travis
+after_success:
+  - if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then npm run deploy; fi;
 
 env:
   global:
