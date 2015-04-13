@@ -23,7 +23,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "deploy": "echo '@todo deploy using gh-pages'";
+    "deploy": "echo '@todo deploy using gh-pages'",
     "test": "npm run lint"
   }
 }
