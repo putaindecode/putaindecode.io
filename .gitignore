@@ -1,16 +1,13 @@
-# cache
+# things that should be in your global gitignore
 .DS_Store
+.idea/
 
-# packages
+# npm
 node_modules
+npm-debug.log
 
 # build
 dist
-tmp
-.publish
 
-# log
-npm-debug.log
-
-# idea files
-.idea/
+# todo: remove me
+todo
