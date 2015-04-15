@@ -1,3 +1,7 @@
+---
+template: Homepage
+---
+
 C'est avant tout une communauté de développeurs passionnés du code. Une communauté qui souhaite écrire, partager, échanger.
 
 L'idée est venue à force de lire tous les jours des ressources françaises de qualité

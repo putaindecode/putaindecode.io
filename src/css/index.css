@@ -1,22 +1,23 @@
 /* base */
-@import "../../node_modules/normalize.css/normalize.css";
-@import "../../node_modules/cssrecipes-defaults/index.css";
+@import "normalize.css/normalize.css";
+@import "cssrecipes-defaults";
 
 /* grid */
-@import "../../node_modules/suitcss-components-grid/index.css";
-@import "../../node_modules/suitcss-utils-size/lib/size.css";
+@import "cssrecipes-custom-media-queries";
+@import "cssrecipes-grid";
+@import "cssrecipes-utils";
 
-@import "../../node_modules/cssrecipes-vertical-rhythm/index.css";
-@import "../../node_modules/cssrecipes-vertical-rhythm/lib/ratio/minor-third.css";
+@import "cssrecipes-vertical-rhythm";
+@import "cssrecipes-vertical-rhythm/lib/ratio/minor-third.css";
 
-@import "../../node_modules/cssrecipes-tooltip/index.css";
+@import "cssrecipes-tooltip";
 
 @import "./base/typography.css";
 @import "./base/colours.css";
 @import "./base/layout.css";
 @import "./base/responsive.css";
 @import "./base/icons.css";
-@import "../../tmp/svg-symbols.css";
+/* @import "../../tmp/svg-symbols.css"; */
 
 @import "./blocks/header.css";
 @import "./blocks/footer.css";
@@ -34,6 +35,6 @@
 
 @import "./blocks/list.css";
 
-@import "./js/images.css";
+/* @import "./js/images.css"; */
 
 @import "./blocks/highlight.css";

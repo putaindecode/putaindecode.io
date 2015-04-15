@@ -1,10 +1,10 @@
 .putainde-Main {
-  margin: var(--cssr-lineHeight) 0;
+  margin: var(--r-lineHeight) 0;
 }
 
 .putainde-Section {
   text-align: center;
-  margin: var(--cssr-lineHeight) auto;
+  margin: var(--r-lineHeight) auto;
 }
 
 .putainde-Section-contents {
@@ -13,7 +13,7 @@
 
 .putainde-Section--manifesto {
   background: #fafafa;
-  padding: var(--cssr-lineHeight);
+  padding: var(--r-lineHeight);
 }
 
   .putainde-Section--manifesto .putainde-Title {
