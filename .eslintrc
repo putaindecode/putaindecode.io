@@ -35,6 +35,7 @@ rules:
   comma-style: [1, "last"]
   no-underscore-dangle: 0
 
+  # not useful rules if you are strict enough
   camelcase: 0
 
   # eslint-plugin-react rules
