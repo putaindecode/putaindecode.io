@@ -1,0 +1,106 @@
+import fs from "fs"
+import path from "path"
+
+import cssnext from "cssnext"
+
+import metalsmith from "metalsmith"
+import markdown from "metalsmith-markdown"
+
+import reactTemplates from "./metalsmith/react-templates"
+
+//dev
+import watch from "metalsmith-watch"
+import serve from "metalsmith-serve"
+import opn from "opn"
+
+import i18n from "../src/modules/i18n"
+
+var production = process.argv.indexOf("--production") !== -1
+
+var smith = metalsmith(path.join(__dirname, ".."))
+  .source("./content")
+  .destination("./dist")
+
+  // add default values for md metadata
+  .use(
+    (files, metadata, cb) => {
+      Object.keys(files)
+        .filter((file) => file.match(/\.md$/))
+        .forEach((file) => {
+          const filedata = files[file]
+          files[file] = {
+            ...filedata,
+            template: filedata.template || "Post",
+            collections: filedata.collections || "posts",
+            comments: filedata.comments || true,
+          }
+        })
+      cb()
+    }
+  )
+
+  // first, convert .md to .html
+  .use(
+    markdown({
+      smartypants: true,
+      gfm: true,
+      tables: true,
+    })
+  )
+
+  // wrap .html into react `template:`
+  .use(
+    reactTemplates({
+      directory: "./src/modules",
+      defaultTemplate: "DefaultTemplate",
+      baseFile: `base-${production ? "prod" : "dev"}.html`,
+      pattern: "*.html", // not .md because markdown() plugin rename those already
+      data: {
+        production,
+        i18n,
+      },
+    })
+  )
+
+  // build css
+  .use(
+    (files, metadata, cb) => {
+      files["index.css"] = {
+        contents: new Buffer(
+          cssnext(
+            fs.readFileSync("./src/css/index.css", {encoding: "utf-8"}),
+            {
+              from: "./src/css/index.css",
+              to: "./dist/index.css",
+            }
+          )
+        ),
+      }
+      cb()
+    }
+  )
+
+if (production) {
+  // ignore for prod only
+  // so we can get watch & reload for those files too
+  smith
+    .build((err) => {if (err) {throw err}})
+}
+
+// dev server
+else {
+  smith
+    .use(
+      watch({
+        livereload: 4243,
+      })
+    )
+    .use(
+      serve({
+        port: 4242,
+      })
+    )
+    .build((err) => {if (err) {throw err}})
+
+  setTimeout(() => opn("http://localhost:4242"), 2000)
+}
