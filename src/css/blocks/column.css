@@ -21,7 +21,7 @@
 .putainde-Label {
   cursor: pointer;
   display: block;
-  padding: 0 0 calc(var(--cssr-lineHeight) * 0.315);
+  padding: 0 0 calc(var(--r-lineHeight) * 0.315);
 }
 
 .putainde-Label input {
