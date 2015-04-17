@@ -1,19 +1,24 @@
-var cache = require("./cache/contributors")
 var fs = require("fs")
 var path = require("path")
-var gutil = require("gulp-util")
+
 var async = require("async")
 var PromisePolyfill = require("promise")
 var exec = PromisePolyfill.denodeify(require("child_process").exec)
 var glob = PromisePolyfill.denodeify(require("glob"))
-var commitsRE = /^(\d+)/
-var emailRE = /<(.+)>$/
 var readFile = PromisePolyfill.denodeify(fs.readFile)
 var writeFile = PromisePolyfill.denodeify(fs.writeFile)
 var lodash = require("lodash")
-var githubApi = new (require("github"))({version : "3.0.0"})
+var githubApi = new (require("github"))({version: "3.0.0"})
 
-var sortObjectByKeys = function(obj){
+const commitsRE = /^(\d+)/
+const emailRE = /<(.+)>$/
+
+const authorsFiles = "content/authors/*.json"
+const contributorsFile = "contributors.json"
+
+let results = {}
+
+function sortObjectByKeys(obj){
   var newObj = {}
   var keys = Object.keys(obj)
   keys.sort()
@@ -24,22 +29,24 @@ var sortObjectByKeys = function(obj){
   return newObj
 }
 
-var contributorsMap = function(){
+function contributorsMap(){
   var authors = {}
-  return glob("src/authors/*.json")
+  return glob(authorsFiles)
   .then(function(files){
     files.forEach(function(authorFile){
-      authors[path.basename(authorFile, ".json")] = require("../" + authorFile)
+      authors[path.basename(authorFile, ".json")] = require("../../" + authorFile)
     })
   })
   .then(function(){
-    return readFile("tasks/cache/contributors.cache", {encoding : "utf8"})
+    return readFile(contributorsFile, {encoding: "utf-8"})
   })
   .then(function(contributors){
-    cache.value = JSON.parse(contributors)
-  }, function(){
-    cache.value.mapByEmail = {}
-    cache.value.map = {}
+    results = JSON.parse(contributors)
+  }, function(err) {
+    console.warn("No contributors.json")
+    console.error(err)
+    results.mapByEmail = {}
+    results.map = {}
   })
 
   .then(function(){
@@ -56,19 +63,19 @@ var contributorsMap = function(){
       .split("\n")
       .forEach(function(line){
         var author = line.split("::")
-        if(!cache.value.mapByEmail[author[0]]){
+        if(!results.mapByEmail[author[0]]){
           newUsers.push({
-            email : author[0],
-            name : author[1]
+            email: author[0],
+            name: author[1],
           })
         }
       })
 
     // only for dev & testing
     // githubApi.authenticate({
-    //     type : "basic",
-    //     username : "xxx",
-    //     password : "xxx"
+    //     type: "basic",
+    //     username: "xxx",
+    //     password: "xxx"
     // })
 
     // consolidate contributorsMap
@@ -87,47 +94,53 @@ var contributorsMap = function(){
         parallelsUser.push(function(cb){
           var email = author.email
           exec("git log --max-count=1 --pretty=format:%H --author=" + email)
-          .then(function(stdout){
+          .then(function(out){
             // @todo get user/repo from git origin
             return PromisePolyfill.denodeify(githubApi.repos.getCommit)({
-              user : "putaindecode",
-              repo : "putaindecode.fr",
-              sha : stdout
+              user: "putaindecode",
+              repo: "putaindecode.fr",
+              sha: out,
             })
           })
           .then(function(contributor){
             if(contributor && contributor.author){
               if(loginCache[contributor.author.login]){
-                gutil.log("contributor cached", contributor.author.login)
+                console.log("contributor cached", contributor.author.login)
                 return PromisePolyfill.resolve(loginCache[contributor.author.login])
               }
               else{
-                return PromisePolyfill.denodeify(githubApi.user.getFrom)({user : contributor.author.login})
+                return PromisePolyfill.denodeify(githubApi.user.getFrom)({user: contributor.author.login})
                 .then(function(githubUser){
                   loginCache[githubUser.login] = {
                     // see what's available here https://developer.github.com/v3/users/
-                    login : githubUser.login,
-                    name : githubUser.name,
-                    avatar_url : githubUser.avatar_url,
-                    gravatar_id : githubUser.gravatar_id,
-                    url : githubUser.blog ? githubUser.blog.indexOf("http") === 0 ? githubUser.blog : "http://" + githubUser.blog : undefined,
-                    location : githubUser.location,
-                    hireable : githubUser.hireable
+                    login: githubUser.login,
+                    name: githubUser.name,
+                    avatar_url: githubUser.avatar_url,
+                    gravatar_id: githubUser.gravatar_id,
+                    url: githubUser.blog ? githubUser.blog.indexOf("http") === 0 ? githubUser.blog: "http://" + githubUser.blog: undefined,
+                    location: githubUser.location,
+                    hireable: githubUser.hireable,
                   }
-                  gutil.log("new contributor: ", githubUser.login)
+                  console.log("new contributor: ", githubUser.login)
                   return loginCache[githubUser.login]
                 })
               }
             }
             else {
               // @todo get user/repo from git origin
-              gutil.log("Unable to get contributor information for " + author.name + " <" + author.email + "> (no commit in putaindecode/putaindecode.fr)")
-              return {}
+              console.log("Unable to get contributor information for " + author.name + " <" + author.email + "> (no commit in putaindecode/putaindecode.fr)")
+              return {}
             }
-
+          }, function(err) {
+            if (err.toString().indexOf("ENOTFOUND") > -1) {
+              console.warn("Cannot connect to GitHub for " + email)
+            }
+            return {}
           })
-          .done(function(contributor){
-            cache.value.mapByEmail[email] = contributor
+          .done(function(contributor) {
+            if (contributor) {
+              results.mapByEmail[email] = contributor
+            }
             cb() // async done
           })
         })
@@ -135,7 +148,7 @@ var contributorsMap = function(){
 
       async.parallelLimit(parallelsUser, 20, function(){
         // map by login, not email
-        cache.value.map = lodash.transform(cache.value.mapByEmail, function(result, author){
+        results.map = lodash.transform(results.mapByEmail, function(result, author){
           if(!result[author.login]){
             result[author.login] = author
           }
@@ -146,20 +159,20 @@ var contributorsMap = function(){
   })
   .then(function(){
     // always update map with values
-    cache.value.map = lodash.merge(cache.value.map, authors)
+    results.map = lodash.merge(results.map, authors)
 
     // sort
-    cache.value.map = sortObjectByKeys(cache.value.map)
-    cache.value.mapByEmail = sortObjectByKeys(cache.value.mapByEmail)
+    results.map = sortObjectByKeys(results.map)
+    results.mapByEmail = sortObjectByKeys(results.mapByEmail)
 
-    var contributors = JSON.stringify(cache.value, true, 2)
-    gutil.log("Contributors cache updated")
-    return writeFile("tasks/cache/contributors.cache", contributors)
+    var contributors = JSON.stringify(results, true, 2)
+    console.log("Contributors cache updated")
+    return writeFile(contributorsFile, contributors)
   })
 }
 
 var totalContributions = function(){
-  cache.value.contributions = {}
+  results.contributions = {}
   // Get the first  commit sha
   var cmd1 = "git log --reverse --pretty=format:%H|head -1"
   // Get all contributor since ${FIRST_COMMIT}
@@ -175,26 +188,26 @@ var totalContributions = function(){
       .split("\n")
       .forEach(function(line){
         line = line.trim()
-        var login = cache.value.mapByEmail[line.match(emailRE)[1]].login
+        var login = results.mapByEmail[line.match(emailRE)[1]].login
         var contributions = parseInt(line.match(commitsRE)[1], 10)
-        if(!cache.value.contributions[login]){
-          cache.value.contributions[login] = contributions
+        if(!results.contributions[login]){
+          results.contributions[login] = contributions
         }
         else{
-          cache.value.contributions[login] += contributions
+          results.contributions[login] += contributions
         }
       })
   })
   .then(function(){
-    // console.log(cache.value.top)
-    gutil.log("Total contributions cached")
+    // console.log(results.top)
+    console.log("Total contributions cached")
   })
 }
 
 var filesContributions = function(){
   // files contributions
-  cache.value.files = {}
-  return glob("src/pages/**/*")
+  results.files = {}
+  return glob("content/**/*")
   .then(function(files){
     return new PromisePolyfill(function(resolve){
       var parallelFiles = []
@@ -203,13 +216,13 @@ var filesContributions = function(){
           return exec("git log --pretty=short --follow " + file + " | git shortlog --summary --numbered --no-merges --email")
           .then(function(stdout){
             if(stdout){
-              cache.value.files[file] = {}
+              results.files[file] = {}
               stdout
                 .trim("\n")
                 .split("\n")
                 .forEach(function(line){
                   line = line.trim()
-                  cache.value.files[file][cache.value.mapByEmail[line.match(emailRE)[1]].login] = line.match(commitsRE)[1]
+                  results.files[file][results.mapByEmail[line.match(emailRE)[1]].login] = line.match(commitsRE)[1]
                 })
             }
           }, function(stderr){
@@ -220,8 +233,8 @@ var filesContributions = function(){
         })
       })
       async.parallelLimit(parallelFiles, 20, function(){
-        // console.log(cache.value.files)
-        gutil.log("Contributions map for files done")
+        // console.log(results.files)
+        console.log("Contributions map for files done")
         resolve()
       })
     })
@@ -236,15 +249,15 @@ var filesContributions = function(){
  * in `tasks/cache/contributors`
  */
 module.exports = function(cb){
-  if(cache.value !== null){
+  if(Object.keys(results)>1){
     cb()
     return
   }
 
-  cache.value = {}
+  results = {}
 
   contributorsMap()
   .then(totalContributions)
   .then(filesContributions)
-  .done(function(){ cb() }, function(err){ cb(err) })
+  .done(() => cb(null, results), (err) => cb(err))
 }

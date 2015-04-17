@@ -34,6 +34,9 @@
     "eslint-plugin-react": "^2.1.0",
     "extend": "^2.0.0",
     "gaze": "^0.5.1",
+    "github": "^0.2.3",
+    "glob": "^5.0.5",
+    "lodash": "^3.7.0",
     "lodash.omit": "^3.1.0",
     "metalsmith": "^1.5.0",
     "metalsmith-collections": "^0.7.0",
@@ -47,6 +50,7 @@
     "metalsmith-watch": "^0.2.0",
     "multimatch": "^2.0.0",
     "opn": "^1.0.1",
+    "promise": "^7.0.0",
     "react": "^0.13.1",
     "serve-static": "^1.9.2"
   },
