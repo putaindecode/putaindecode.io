@@ -1,26 +1,27 @@
 import React, {PropTypes, Component} from "react"
 
-class DefaultTemplate extends Component {
+export default class DefaultTemplate extends Component {
 
   static displayName = "DefaultTemplate"
 
-  static contextTypes = {
-    file: PropTypes.object,
-    i18n: PropTypes.object,
+  static propTypes = {
+    contributors: PropTypes.object.isRequired,
+    collections: PropTypes.object.isRequired,
+    file: PropTypes.object.isRequired,
+    i18n: PropTypes.object.isRequired,
   }
 
   static childContextTypes = {
-    file: PropTypes.object,
-    i18n: PropTypes.object,
-  }
-
-  static propTypes = {
-    file: PropTypes.object,
-    i18n: PropTypes.object,
+    contributors: PropTypes.object.isRequired,
+    collections: PropTypes.object.isRequired,
+    file: PropTypes.object.isRequired,
+    i18n: PropTypes.object.isRequired,
   }
 
   getChildContext() {
     return {
+      contributors: this.props.contributors,
+      collections: this.props.collections,
       file: this.props.file,
       i18n: this.props.i18n,
     }
@@ -39,5 +40,3 @@ class DefaultTemplate extends Component {
     )
   }
 }
-
-export default DefaultTemplate

@@ -1,6 +1,8 @@
 import React, {Component, PropTypes} from "react"
 import cx from "classnames"
 
+import Icon from "../Icon"
+
 export default class Navigation extends Component {
 
   static contextTypes = {
@@ -8,7 +10,7 @@ export default class Navigation extends Component {
     i18n: PropTypes.object,
   }
 
-  items = [
+  static items = [
     {
       url: "posts",
       name: "Articles",
@@ -42,7 +44,7 @@ export default class Navigation extends Component {
     return (
       <nav className="putainde-Nav">
         {
-          this.items.map((item) => {
+          Navigation.items.map((item) => {
             const isActivePage = currentPage === item.url || currentPage === item.url + "/index.html"
 
             return (
@@ -59,7 +61,7 @@ export default class Navigation extends Component {
                 {/* @todo handle item.icon */}
                 {
                   item.icon &&
-                  <img className="putainde-Icon" src={`/${item.icon}`} alt="" />
+                  <Icon src={`/${item.icon}`} />
                 }
                 {item.name}
               </a>
