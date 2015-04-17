@@ -57,7 +57,8 @@
   "scripts": {
     "lint": "eslint .",
     "build": "babel-node --stage 0 scripts/build",
-    "deploy": "echo '@todo deploy using gh-pages'",
-    "test": "npm run lint"
+    "start": "npm run build",
+    "test": "npm run build --production && npm run lint",
+    "deploy": "echo '@todo deploy using gh-pages'"
   }
 }
