@@ -13,11 +13,15 @@ import watch from "metalsmith-watch"
 import serve from "metalsmith-serve"
 import opn from "opn"
 
+import contributions from "../scripts/contributors"
 import i18n from "../src/modules/i18n"
 
 var production = process.argv.indexOf("--production") !== -1
 
-var smith = metalsmith(path.join(__dirname, ".."))
+function build(error, contributors) {
+  if (error) {throw error}
+
+  var smith = metalsmith(path.join(__dirname, ".."))
   .source("./content")
   .destination("./dist")
 
@@ -58,6 +62,7 @@ var smith = metalsmith(path.join(__dirname, ".."))
       data: {
         production,
         i18n,
+        contributors,
       },
     })
   )
@@ -80,27 +85,30 @@ var smith = metalsmith(path.join(__dirname, ".."))
     }
   )
 
-if (production) {
-  // ignore for prod only
-  // so we can get watch & reload for those files too
-  smith
-    .build((err) => {if (err) {throw err}})
+  if (production) {
+    // ignore for prod only
+    // so we can get watch & reload for those files too
+    smith
+      .build((err) => {if (err) {throw err}})
+  }
+
+  // dev server
+  else {
+    smith
+      .use(
+        watch({
+          livereload: 4243,
+        })
+      )
+      .use(
+        serve({
+          port: 4242,
+        })
+      )
+      .build((err) => {if (err) {throw err}})
+
+    setTimeout(() => opn("http://localhost:4242"), 2000)
+  }
 }
 
-// dev server
-else {
-  smith
-    .use(
-      watch({
-        livereload: 4243,
-      })
-    )
-    .use(
-      serve({
-        port: 4242,
-      })
-    )
-    .build((err) => {if (err) {throw err}})
-
-  setTimeout(() => opn("http://localhost:4242"), 2000)
-}
+contributions(build)
