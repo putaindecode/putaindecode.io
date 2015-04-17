@@ -6,6 +6,7 @@ import Html from "../Html"
 import Head from "../Head"
 import Body from "../Body"
 import LatestPosts from "../LatestPosts"
+import TopContributors from "../TopContributors"
 import Icon from "../Icon"
 
 export default class Homepage extends DefaultTemplate {
@@ -58,6 +59,8 @@ export default class Homepage extends DefaultTemplate {
               </div>
             </div>
           </div>
+
+          <TopContributors />
         </Body>
       </Html>
     )

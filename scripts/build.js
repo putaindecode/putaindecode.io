@@ -17,6 +17,8 @@ import opn from "opn"
 import contributions from "../scripts/contributors"
 import i18n from "../src/modules/i18n"
 
+import pkg from "../package"
+
 var production = process.argv.indexOf("--production") !== -1
 
 function build(error, contributors) {
@@ -71,6 +73,7 @@ function build(error, contributors) {
       baseFile: `base-${production ? "prod" : "dev"}.html`,
       pattern: "*.html", // not .md because markdown() plugin rename those already
       data: {
+        metas: pkg,
         production,
         i18n,
         contributors,
