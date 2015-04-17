@@ -32,15 +32,15 @@ function sortObjectByKeys(obj){
 function contributorsMap(){
   var authors = {}
   return glob(authorsFiles)
-  .then(function(files){
+  .then((files) => {
     files.forEach(function(authorFile){
       authors[path.basename(authorFile, ".json")] = require("../../" + authorFile)
     })
   })
-  .then(function(){
+  .then(() => {
     return readFile(contributorsFile, {encoding: "utf-8"})
   })
-  .then(function(contributors){
+  .then((contributors) => {
     results = JSON.parse(contributors)
   }, function(err) {
     console.warn("⚠︎ No contributors.json")
@@ -49,11 +49,11 @@ function contributorsMap(){
     results.map = {}
   })
 
-  .then(function(){
+  .then(() => {
     return exec("git log --pretty=format:%ae::%an | sort | uniq")
   })
 
-  .then(function(stdout){
+  .then((stdout) => {
     var newUsers = []
     var loginCache = {}
 
@@ -94,7 +94,7 @@ function contributorsMap(){
         parallelsUser.push(function(cb){
           var email = author.email
           exec("git log --max-count=1 --pretty=format:%H --author=" + email)
-          .then(function(out){
+          .then((out) => {
             // @todo get user/repo from git origin
             return PromisePolyfill.denodeify(githubApi.repos.getCommit)({
               user: "putaindecode",
@@ -102,7 +102,7 @@ function contributorsMap(){
               sha: out,
             })
           })
-          .then(function(contributor){
+          .then((contributor) => {
             if(contributor && contributor.author){
               if(loginCache[contributor.author.login]){
                 console.log("- Contributor cached", contributor.author.login)
@@ -110,7 +110,7 @@ function contributorsMap(){
               }
               else{
                 return PromisePolyfill.denodeify(githubApi.user.getFrom)({user: contributor.author.login})
-                .then(function(githubUser){
+                .then((githubUser) => {
                   loginCache[githubUser.login] = {
                     // see what's available here https://developer.github.com/v3/users/
                     login: githubUser.login,
@@ -157,7 +157,7 @@ function contributorsMap(){
       })
     })
   })
-  .then(function(){
+  .then(() => {
     // always update map with values
     results.map = lodash.merge(results.map, authors)
 
@@ -176,11 +176,11 @@ function totalContributions() {
 
   // Get the first commit sha
   return exec("git log --reverse --pretty=format:%H|head -1")
-  .then(function(sha){
+  .then((sha) => {
     // Get all contributor since first commit
     return exec(`git shortlog --no-merges --summary --numbered --email ${sha.trim()}..HEAD`)
   })
-  .then(function(stdout){
+  .then((stdout) => {
     stdout
       .trim("\n")
       .split("\n")
@@ -196,7 +196,7 @@ function totalContributions() {
         }
       })
   })
-  .then(function(){
+  .then(() => {
     console.log("✓ Top contributions done")
   })
 }
@@ -205,13 +205,13 @@ function filesContributions() {
   // files contributions
   results.files = {}
   return glob("content/**/*")
-  .then(function(files){
+  .then((files) => {
     return new PromisePolyfill(function(resolve){
       var parallelFiles = []
       files.forEach(function(file){
         parallelFiles.push(function(cb){
           return exec("git log --pretty=short --follow " + file + " | git shortlog --summary --numbered --no-merges --email")
-          .then(function(stdout){
+          .then((stdout) => {
             if(stdout){
               results.files[file] = {}
               stdout
