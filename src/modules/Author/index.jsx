@@ -21,6 +21,7 @@ export default class Author extends Component {
   }
 
   render() {
+    const i18n = this.context.i18n
     const author = this.context.contributors.map[this.props.author]
     return (
       <div className={`putainde-Author ${this.props.className}`}>
@@ -61,7 +62,7 @@ export default class Author extends Component {
               {
                 author.twitter &&
                 <a
-                  href={getAuthorUri(author, 'twitter')}
+                  href={getAuthorUri(author, "twitter")}
                   className="r-Tooltip r-Tooltip--top"
                   data-r-tooltip="Twitter"
                 >
@@ -71,7 +72,7 @@ export default class Author extends Component {
               {
                 author.login &&
                 <a
-                  href={getAuthorUri(author, 'github')}
+                  href={getAuthorUri(author, "github")}
                   className="r-Tooltip r-Tooltip--top"
                   data-r-tooltip="Github"
                 >
