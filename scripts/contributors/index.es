@@ -173,14 +173,12 @@ function contributorsMap(){
 
 function totalContributions() {
   results.contributions = {}
-  // Get the first  commit sha
-  var cmd1 = "git log --reverse --pretty=format:%H|head -1"
-  // Get all contributor since ${FIRST_COMMIT}
-  var cmd2 = "git shortlog --summary --numbered --email ${FIRST_COMMIT}..HEAD"
 
-  return exec(cmd1)
+  // Get the first commit sha
+  return exec("git log --reverse --pretty=format:%H|head -1")
   .then(function(sha){
-    return exec(cmd2.replace(/\${FIRST_COMMIT}/, sha.trim()))
+    // Get all contributor since first commit
+    return exec(`git shortlog --no-merges --summary --numbered --email ${sha.trim()}..HEAD`)
   })
   .then(function(stdout){
     stdout
