@@ -11,7 +11,7 @@ export default class AuthorsList extends Component {
     i18n: PropTypes.object,
   }
 
-  static propsTypes = {
+  static propTypes = {
     authors: PropTypes.arrayOf(PropTypes.string).isRequired,
   }
 

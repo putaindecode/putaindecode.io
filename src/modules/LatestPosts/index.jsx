@@ -10,8 +10,8 @@ export default class LatestPosts extends Component {
     i18n: PropTypes.object,
   }
 
-  static propsTypes = {
-    posts: PropTypes.array,
+  static propTypes = {
+    posts: PropTypes.arrayOf(PropTypes.object),
   }
 
   render() {

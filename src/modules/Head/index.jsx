@@ -1,7 +1,13 @@
-import React, {Component} from "react"
+import React, {Component, PropTypes} from "react"
 
-class Head extends Component {
+export default class Head extends Component {
+
   static displayName = "Head"
+
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.array.isRequired,
+  }
 
   render() {
     return (
@@ -28,5 +34,3 @@ class Head extends Component {
     )
   }
 }
-
-export default Head

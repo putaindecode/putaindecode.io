@@ -10,6 +10,17 @@ import Icon from "../Icon"
 
 export default class Homepage extends DefaultTemplate {
 
+  static displayName = "Homepage"
+
+  // should not be declared here too, only in parent class
+  // https://github.com/yannickcr/eslint-plugin-react/issues/68
+  static propTypes = {
+    contributors: PropTypes.object.isRequired,
+    collections: PropTypes.object.isRequired,
+    file: PropTypes.object.isRequired,
+    i18n: PropTypes.object.isRequired,
+  }
+
   render() {
     const i18n = this.props.i18n
     const latestPosts = this.props.collections.posts.slice(0, 6)

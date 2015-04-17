@@ -5,6 +5,8 @@ import Icon from "../Icon"
 
 export default class Navigation extends Component {
 
+  static displayName = "Navigation"
+
   static contextTypes = {
     file: PropTypes.object,
     i18n: PropTypes.object,

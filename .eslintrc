@@ -40,9 +40,8 @@ rules:
 
   # eslint-plugin-react rules
   react/no-multi-comp: 1
-  # https://github.com/yannickcr/eslint-plugin-react/issues/43
-  # react/prop-types: 1
-  # react/display-name: 1
+  react/prop-types: 1
+  react/display-name: 1
   react/wrap-multilines: 1
   react/self-closing-comp: 1
   react/no-did-mount-set-state: 1

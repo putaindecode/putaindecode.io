@@ -11,6 +11,7 @@ export default class Avatar extends Component {
   }
 
   static propTypes = {
+    className: PropTypes.string,
     author: PropTypes.string.isRequired,
   }
 

@@ -1,4 +1,4 @@
-import React, {PropTypes, Component} from "react"
+import React, {Component, PropTypes} from "react"
 
 export default class DefaultTemplate extends Component {
 

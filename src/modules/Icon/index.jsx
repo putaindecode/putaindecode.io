@@ -2,6 +2,8 @@ import React, {Component, PropTypes} from "react"
 
 export default class Icon extends Component {
 
+  static displayName = "Icon"
+
   static propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,

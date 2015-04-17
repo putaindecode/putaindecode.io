@@ -10,7 +10,7 @@ export default class PostsList extends Component {
     i18n: PropTypes.object,
   }
 
-  static propsTypes = {
+  static propTypes = {
     posts: PropTypes.array,
   }
 
