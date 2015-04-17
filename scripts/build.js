@@ -5,6 +5,7 @@ import cssnext from "cssnext"
 
 import metalsmith from "metalsmith"
 import markdown from "metalsmith-markdown"
+import collections from "metalsmith-collections"
 
 import reactTemplates from "./metalsmith/react-templates"
 
@@ -35,7 +36,7 @@ function build(error, contributors) {
           files[file] = {
             ...filedata,
             template: filedata.template || "Post",
-            collections: filedata.collections || "posts",
+            collection: filedata.collections || "posts",
             comments: filedata.comments || true,
           }
         })
@@ -49,6 +50,16 @@ function build(error, contributors) {
       smartypants: true,
       gfm: true,
       tables: true,
+    })
+  )
+
+  // allow looping on post for listing
+  .use(
+    collections({
+      posts: {
+        sortBy: "date",
+        reverse: true,
+      },
     })
   )
 

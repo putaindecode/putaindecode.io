@@ -1,6 +1,0 @@
-mixin Avatars(authors, tooltip, size)
-  - var multi = authors.length > 1 ? "putainde-Avatars--multi" : ""
-  div(class="putainde-Avatars #{multi} putainde-Avatars--#{authors.length} #{attributes.class}")
-    each author in authors
-      .putainde-List-avatars-author
-        +Avatar(author, tooltip, size).putainde-List-avatars-author-avatar

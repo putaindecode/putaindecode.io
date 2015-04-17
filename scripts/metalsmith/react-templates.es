@@ -120,6 +120,7 @@ export default function (opts){
       debug("Starting conversion: %s", file)
 
       var data = {
+        ...metadata,
         ...globalData,
         file: {
           _filename: file,
