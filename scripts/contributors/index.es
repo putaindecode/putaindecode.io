@@ -197,7 +197,6 @@ function totalContributions() {
       })
   })
   .then(function(){
-    console.log(results.contributions)
     console.log("✓ Top contributions done")
   })
 }
