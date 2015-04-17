@@ -43,7 +43,7 @@ function contributorsMap(){
   .then(function(contributors){
     results = JSON.parse(contributors)
   }, function(err) {
-    console.warn("No contributors.json")
+    console.warn("⚠︎ No contributors.json")
     console.error(err)
     results.mapByEmail = {}
     results.map = {}
@@ -105,7 +105,7 @@ function contributorsMap(){
           .then(function(contributor){
             if(contributor && contributor.author){
               if(loginCache[contributor.author.login]){
-                console.log("contributor cached", contributor.author.login)
+                console.log("- Contributor cached", contributor.author.login)
                 return PromisePolyfill.resolve(loginCache[contributor.author.login])
               }
               else{
@@ -121,19 +121,19 @@ function contributorsMap(){
                     location: githubUser.location,
                     hireable: githubUser.hireable,
                   }
-                  console.log("new contributor: ", githubUser.login)
+                  console.log("- New contributor: ", githubUser.login)
                   return loginCache[githubUser.login]
                 })
               }
             }
             else {
               // @todo get user/repo from git origin
-              console.log("Unable to get contributor information for " + author.name + " <" + author.email + "> (no commit in putaindecode/putaindecode.fr)")
+              console.log("✗ Unable to get contributor information for " + author.name + " <" + author.email + "> (no commit in putaindecode/putaindecode.fr)")
               return {}
             }
           }, function(err) {
             if (err.toString().indexOf("ENOTFOUND") > -1) {
-              console.warn("Cannot connect to GitHub for " + email)
+              console.warn("⚠︎ Cannot connect to GitHub for " + email)
             }
             return {}
           })
@@ -166,12 +166,12 @@ function contributorsMap(){
     results.mapByEmail = sortObjectByKeys(results.mapByEmail)
 
     var contributors = JSON.stringify(results, true, 2)
-    console.log("Contributors cache updated")
+    console.log("✓ Contributors cache updated")
     return writeFile(contributorsFile, contributors)
   })
 }
 
-var totalContributions = function(){
+function totalContributions() {
   results.contributions = {}
   // Get the first  commit sha
   var cmd1 = "git log --reverse --pretty=format:%H|head -1"
@@ -199,12 +199,12 @@ var totalContributions = function(){
       })
   })
   .then(function(){
-    // console.log(results.top)
-    console.log("Total contributions cached")
+    console.log(results.contributions)
+    console.log("✓ Top contributions done")
   })
 }
 
-var filesContributions = function(){
+function filesContributions() {
   // files contributions
   results.files = {}
   return glob("content/**/*")
@@ -234,7 +234,7 @@ var filesContributions = function(){
       })
       async.parallelLimit(parallelFiles, 20, function(){
         // console.log(results.files)
-        console.log("Contributions map for files done")
+        console.log("✓ Contributions per files done")
         resolve()
       })
     })
