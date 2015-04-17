@@ -1,8 +1,15 @@
-import React, {Component} from "react"
+import React, {Component, PropTypes} from "react"
 
 import Header from "../Header"
 
-class Body extends Component {
+export default class Body extends Component {
+
+  static displayName = "Body"
+
+  static propTypes = {
+    children: PropTypes.array.isRequired,
+  }
+
   render() {
     return (
       <body>
@@ -14,5 +21,3 @@ class Body extends Component {
     )
   }
 }
-
-export default Body

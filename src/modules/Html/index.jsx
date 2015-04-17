@@ -1,6 +1,13 @@
-import React, {Component} from "react"
+import React, {Component, PropTypes} from "react"
 
-class Html extends Component {
+export default class Html extends Component {
+
+  static displayName = "Html"
+
+  static propTypes = {
+      children: PropTypes.array.isRequired,
+  }
+
   render() {
     return (
       <html lang="fr" className="r-VerticalRhythm">
@@ -9,5 +16,3 @@ class Html extends Component {
     )
   }
 }
-
-export default Html

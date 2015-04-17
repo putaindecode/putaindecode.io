@@ -13,7 +13,7 @@ export default class PostPreview extends Component {
     i18n: PropTypes.object,
   }
 
-  static propsTypes = {
+  static propTypes = {
     post: PropTypes.object,
   }
 

@@ -1,8 +1,10 @@
-import React, {PropTypes, Component} from "react"
+import React, {Component, PropTypes} from "react"
 
 import Navigation from "../Navigation"
 
-export default class extends Component {
+export default class Header extends Component {
+
+  static displayName = "Header"
 
   static contextTypes = {
     i18n: PropTypes.object,
