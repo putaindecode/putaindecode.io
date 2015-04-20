@@ -23,7 +23,7 @@ export default class PostPreview extends Component {
     return (
       <div className="putainde-List-item js-Post">
 
-        <Avatars className="putainde-List-avatars" authors={post.authors} />
+        { post.authors && <Avatars className="putainde-List-avatars" authors={post.authors} /> }
 
         <a
           className="putainde-Link putainde-List-title"
@@ -48,7 +48,7 @@ export default class PostPreview extends Component {
         <div className="putainde-List-author">
           {i18n.initialCommit}
           {" "}
-          <AuthorsList authors={post.authors} />
+          { post.authors && <AuthorsList authors={post.authors} /> }
           {
             post.date &&
             [

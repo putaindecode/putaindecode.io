@@ -2,7 +2,6 @@ import fs from "fs"
 import path from "path"
 
 import {each} from "async"
-import extend from "extend"
 import match from "multimatch"
 import react from "react"
 
@@ -119,7 +118,7 @@ export default function (opts){
 
       debug("Starting conversion: %s", file)
 
-      var data = {
+      const allData = {
         ...metadata,
         ...globalData,
         file: {
@@ -127,7 +126,6 @@ export default function (opts){
           ...files[file],
         },
       }
-      var clone = extend({}, metadata, data)
 
       var filePath = metalsmith.path(dir, files[file].template || def)
 
@@ -137,17 +135,18 @@ export default function (opts){
       }
 
       // Start the process of applying templates
-      renderReactTemplate(filePath, clone, function(err, str){
-        if (err){
+      renderReactTemplate(filePath, allData, function(err, str) {
+        if (err) {
           return done(err)
         }
 
-        data.contents = new Buffer(str)
-        if (baseFile){
+        debug("Mutating file content...")
+        files[file].contents = new Buffer(str)
+        if (baseFile) {
           debug("Applying baseFile to contents: %s", file)
 
           var baseStr = fs.readFileSync(baseFile, "utf8")
-          data = tmpl(baseStr, data)
+          files[file] = tmpl(baseStr, files[file])
         }
 
         if (html){
@@ -157,10 +156,12 @@ export default function (opts){
             fileName = fileDir + "/" + fileName
           }
 
-          debug("Renaming file: %s -> %s", file, fileName)
+          if (file !== fileName) {
+            debug("Renaming file: %s -> %s", file, fileName)
 
-          delete files[file]
-          files[fileName] = data
+            files[fileName] = files[file]
+            delete files[file]
+          }
         }
 
         debug("Saved file: %s", file)

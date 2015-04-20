@@ -1,5 +1,9 @@
 import React, {Component, PropTypes} from "react"
 
+import Html from "../Html"
+import Head from "../Head"
+import Body from "../Body"
+
 export default class DefaultTemplate extends Component {
 
   static displayName = "DefaultTemplate"
@@ -32,14 +36,17 @@ export default class DefaultTemplate extends Component {
 
   render() {
     return (
-      <div>
-        <h1>
-          {this.props.file.title}
-        </h1>
-        <div
-          dangerouslySetInnerHTML={{__html: this.props.file.contents}}
-        />
-      </div>
+      <Html>
+        <Head title={this.props.file.title} />
+        <Body>
+          <h1>
+            {this.props.file.title}
+          </h1>
+          <div
+            dangerouslySetInnerHTML={{__html: this.props.file.contents}}
+          />
+        </Body>
+      </Html>
     )
   }
 }

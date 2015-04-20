@@ -71,7 +71,7 @@ function build(error, contributors) {
       directory: "./src/modules",
       defaultTemplate: "DefaultTemplate",
       baseFile: `base-${production ? "prod" : "dev"}.html`,
-      pattern: "*.html", // not .md because markdown() plugin rename those already
+      pattern: "**/*.html", // not .md because markdown() plugin rename those already
       data: {
         pkg: pkg,
         production,
