@@ -22,16 +22,18 @@ export default class TopContributors extends Component {
     topContributors = topContributors.slice(0, 12)
 
     return (
-      <div className="putainde-Title putainde-Title--home">
-        <h2 className="putainde-Title-text">
-          {i18n.topContributors}
-        </h2>
+      <div>
+        <div className="putainde-Title putainde-Title--home">
+          <h2 className="putainde-Title-text">
+            {i18n.topContributors}
+          </h2>
+        </div>
 
         <div className="r-Grid r-Grid--withGutter">
           {
             topContributors.map(author => {
               return (
-                <div key={author} className="r-Grid-cell">
+                <div key={author} className="r-Grid-cell r-all--1of2">
                   <Author author={author} />
                 </div>
               )
