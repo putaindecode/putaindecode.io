@@ -27,7 +27,7 @@ export default class LatestPosts extends Component {
             <PostsList posts={this.props.posts} />
           </div>
         </div>
-        <div className="r-Grid" style={{"text-align": "center"}}>
+        <div className="r-Grid" style={{textAlign: "center"}}>
           <div className="r-Grid-cell r-all--8of12 ">
             <a href="/posts" className="putainde-Button putainde-Button--block">
             {this.context.i18n.morePosts}

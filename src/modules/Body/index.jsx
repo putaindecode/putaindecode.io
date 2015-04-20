@@ -7,13 +7,12 @@ export default class Body extends Component {
   static displayName = "Body"
 
   static propTypes = {
-    children: PropTypes.array.isRequired,
   }
 
   render() {
     return (
       <body>
-        <Header/>
+        <Header />
         <div className="putainde-Main">
           {this.props.children}
         </div>

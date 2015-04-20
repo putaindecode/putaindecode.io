@@ -73,7 +73,7 @@ function build(error, contributors) {
       baseFile: `base-${production ? "prod" : "dev"}.html`,
       pattern: "*.html", // not .md because markdown() plugin rename those already
       data: {
-        metas: pkg,
+        pkg: pkg,
         production,
         i18n,
         contributors,

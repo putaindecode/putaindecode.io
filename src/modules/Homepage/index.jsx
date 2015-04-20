@@ -28,7 +28,7 @@ export default class Homepage extends DefaultTemplate {
 
     return (
       <Html>
-        <Head />
+        <Head title={this.props.file.title} />
         <Body>
           <LatestPosts posts={latestPosts} />
 

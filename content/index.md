@@ -1,5 +1,6 @@
 ---
 template: Homepage
+title: "Putain de code !"
 ---
 
 C'est avant tout une communauté de développeurs passionnés du code. Une communauté qui souhaite écrire, partager, échanger.

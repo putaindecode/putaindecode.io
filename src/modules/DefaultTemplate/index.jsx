@@ -5,7 +5,7 @@ export default class DefaultTemplate extends Component {
   static displayName = "DefaultTemplate"
 
   static propTypes = {
-    metas: PropTypes.string.isRequired,
+    pkg: PropTypes.object.isRequired,
     contributors: PropTypes.object.isRequired,
     collections: PropTypes.object.isRequired,
     file: PropTypes.object.isRequired,
@@ -13,7 +13,7 @@ export default class DefaultTemplate extends Component {
   }
 
   static childContextTypes = {
-    metas: PropTypes.string.isRequired,
+    pkg: PropTypes.object.isRequired,
     contributors: PropTypes.object.isRequired,
     collections: PropTypes.object.isRequired,
     file: PropTypes.object.isRequired,
@@ -22,7 +22,7 @@ export default class DefaultTemplate extends Component {
 
   getChildContext() {
     return {
-      metas: this.props.metas,
+      pkg: this.props.pkg,
       contributors: this.props.contributors,
       collections: this.props.collections,
       file: this.props.file,
