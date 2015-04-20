@@ -6,7 +6,6 @@ export default class Head extends Component {
 
   static propTypes = {
     title: PropTypes.string.isRequired,
-    children: PropTypes.array.isRequired,
   }
 
   render() {

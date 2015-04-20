@@ -16,8 +16,8 @@ export default class Author extends Component {
 
   static propTypes = {
     className: PropTypes.string,
-    author: PropTypes.object.isRequired,
-    isPost: PropTypes.boolean,
+    author: PropTypes.string.isRequired,
+    isPost: PropTypes.bool,
   }
 
   render() {
