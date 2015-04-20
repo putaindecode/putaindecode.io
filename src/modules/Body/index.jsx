@@ -7,6 +7,10 @@ export default class Body extends Component {
   static displayName = "Body"
 
   static propTypes = {
+    children: PropTypes.oneOfType(
+      PropTypes.array,
+      PropTypes.object
+    ).isRequired,
   }
 
   render() {
