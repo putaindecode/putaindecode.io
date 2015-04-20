@@ -57,7 +57,8 @@
   "scripts": {
     "#lint": "we use others ext than jsx because of metalsmith issue, see scripts/build.js",
     "lint": "eslint --ext .js,.jsx,.es .",
-    "build": "babel-node --stage 0 scripts/build",
+    "#build": "we use React as a template engine only (not in client side) so we enable DEV mode everywhere to get awesome dev messages and errors",
+    "build": "NODE_ENV=development babel-node --stage 0 scripts/build",
     "start": "npm run build",
     "test": "npm run lint && npm run build -- --production",
     "deploy": "echo '@todo deploy using gh-pages'"
