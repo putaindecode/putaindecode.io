@@ -18,9 +18,8 @@ export default class PostsList extends Component {
     return (
       <div className="putainde-List">
       {
-        Object.keys(this.props.posts).map((filename) => {
-          const post = this.props.posts[filename]
-          return <PostPreview key={post.route} post={post} />
+        this.props.posts.map((post) => {
+          return <PostPreview key={post.title} post={post} />
         })
       }
       </div>

@@ -32,10 +32,10 @@ export default class AuthorsList extends Component {
           }
           return (
             [
-              <a href={getAuthorUri(author)}>
+              <a key={author} href={getAuthorUri(author)}>
                 {author.login}
               </a>,
-              glue,
+              <span key={`${author}-glue`}>{glue}</span>,
             ]
           )
         })
