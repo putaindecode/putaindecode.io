@@ -38,7 +38,7 @@ function build(error, contributors) {
           files[file] = {
             ...filedata,
             template: filedata.template || "Post",
-            collection: filedata.collections || "posts",
+            collection: filedata.collection || (file.indexOf("posts") === 0 ? "posts" : undefined),
             comments: filedata.comments || true,
           }
         })
