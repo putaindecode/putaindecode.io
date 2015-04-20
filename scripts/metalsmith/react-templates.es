@@ -38,14 +38,14 @@ function renderReactTemplate(name, options, fn) {
 /**
  *  Simple Micro Templating Function
  */
-function tmpl(str, data){
+function tmpl(str, data) {
   var exp,
       regex
 
   // Iterates through the keys in file object
   // and interpolate / replace {{key}} with it"s value
-  for (var k in data){
-    if (data.hasOwnProperty(k)){
+  for (var k in data) {
+    if (data.hasOwnProperty(k)) {
       exp = "{{"+k+"}}"
       regex = new RegExp(exp, "g")
       str = str.replace(regex, data[k])
@@ -58,7 +58,7 @@ function tmpl(str, data){
 }
 
 
-export default function (opts){
+export default function (opts) {
   opts = opts || {}
 
   var dir = opts.directory || "templates"
@@ -69,20 +69,20 @@ export default function (opts){
   var globalData = opts.data || {}
   var html = (opts.html === undefined) ? true : opts.html
 
-  return function(files, metalsmith, done){
+  return function(files, metalsmith, done) {
     var metadata = metalsmith.metadata()
 
     // Check Parameters
-    function check(file){
+    function check(file) {
       var data = files[file]
       var hasTmpl = data.template || def
 
-      if (pattern !== null && !match(file, pattern)[0]){
-        // console.log(file, "skipped because matching", pattern)
+      if (pattern !== null && !match(file, pattern)[0]) {
+        debug("%s skipped because not matching %s", file, pattern)
         return false
       }
 
-      if (!hasTmpl){
+      if (!hasTmpl) {
         return false
       }
 
@@ -91,8 +91,8 @@ export default function (opts){
 
 
     // Iterating and changing contents to string
-    Object.keys(files).forEach(function(file){
-      if (!check(file)){
+    Object.keys(files).forEach(function(file) {
+      if (!check(file)) {
         return
       }
 
@@ -103,16 +103,16 @@ export default function (opts){
 
       // if opt.preserve is set
       // preserve the raw, not templated content
-      if (preserve !== null){
+      if (preserve !== null) {
         debug("Preserving untouched contents: %s", file)
         data.rawContents = data.contents
       }
     })
 
     // Running all files against the renderer.
-    function convert(file, converted){
+    function convert(file, converted) {
 
-      if (!check(file)){
+      if (!check(file)) {
         return converted()
       }
 
@@ -130,7 +130,7 @@ export default function (opts){
       var filePath = metalsmith.path(dir, files[file].template || def)
 
       // Resolving the baseFile option to path.
-      if(baseFile){
+      if(baseFile) {
         baseFile = metalsmith.path(dir, baseFile)
       }
 
@@ -149,10 +149,10 @@ export default function (opts){
           files[file] = tmpl(baseStr, files[file])
         }
 
-        if (html){
+        if (html) {
           var fileDir = path.dirname(file)
           var fileName = path.basename(file, path.extname(file)) + ".html"
-          if (fileDir !== "."){
+          if (fileDir !== ".") {
             fileName = fileDir + "/" + fileName
           }
 
