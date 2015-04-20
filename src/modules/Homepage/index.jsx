@@ -58,9 +58,9 @@ export default class Homepage extends DefaultTemplate {
                 </div>
               </div>
             </div>
-
-            <TopContributors />
           </div>
+
+          <TopContributors />
         </Body>
       </Html>
     )
