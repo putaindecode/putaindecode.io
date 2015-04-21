@@ -10,7 +10,7 @@ import collections from "metalsmith-collections"
 import reactTemplates from "./metalsmith/react-templates"
 
 //dev
-import watch from "metalsmith-watch"
+import watch from "./metalsmith/server/watcher"
 import serve from "metalsmith-serve"
 import opn from "opn"
 
@@ -112,6 +112,10 @@ function build(error, contributors) {
       .use(
         watch({
           livereload: 4243,
+          paths: {
+            "**/*": true,
+            "src/modules/**/*": "**/*.md",
+          },
         })
       )
       .use(
