@@ -1,14 +1,18 @@
-var fs = require("fs")
-var path = require("path")
+import fs from "fs"
+import path from "path"
 
-var async = require("async")
-var PromisePolyfill = require("promise")
-var exec = PromisePolyfill.denodeify(require("child_process").exec)
-var glob = PromisePolyfill.denodeify(require("glob"))
-var readFile = PromisePolyfill.denodeify(fs.readFile)
-var writeFile = PromisePolyfill.denodeify(fs.writeFile)
-var lodash = require("lodash")
-var githubApi = new (require("github"))({version: "3.0.0"})
+import color from "chalk"
+import async from "async"
+import PromisePolyfill from "promise"
+import lodash from "lodash"
+import GithubApi from "github"
+
+const exec = PromisePolyfill.denodeify(require("child_process").exec)
+const glob = PromisePolyfill.denodeify(require("glob"))
+const readFile = PromisePolyfill.denodeify(fs.readFile)
+const writeFile = PromisePolyfill.denodeify(fs.writeFile)
+
+const githubApi = new GithubApi({version: "3.0.0"})
 
 const commitsRE = /^(\d+)/
 const emailRE = /<(.+)>$/
@@ -17,6 +21,11 @@ const authorsFiles = "content/authors/*.json"
 const contributorsFile = "contributors.json"
 
 let results = {}
+
+const logPrefix = color.gray("[contributors]")
+const log = (...args) => {
+  console.log(logPrefix, ...args)
+}
 
 function sortObjectByKeys(obj){
   var newObj = {}
@@ -43,7 +52,7 @@ function contributorsMap(){
   .then((contributors) => {
     results = JSON.parse(contributors)
   }, function(err) {
-    console.warn("⚠︎ No contributors.json")
+    log(color.red("⚠︎ No contributors.json or malformed content"))
     console.error(err)
     results.mapByEmail = {}
     results.map = {}
@@ -105,7 +114,7 @@ function contributorsMap(){
           .then((contributor) => {
             if(contributor && contributor.author){
               if(loginCache[contributor.author.login]){
-                console.log("- Contributor cached", contributor.author.login)
+                log("Contributor cached", contributor.author.login)
                 return PromisePolyfill.resolve(loginCache[contributor.author.login])
               }
               else{
@@ -121,19 +130,19 @@ function contributorsMap(){
                     location: githubUser.location,
                     hireable: githubUser.hireable,
                   }
-                  console.log("- New contributor: ", githubUser.login)
+                  log("New contributor: ", githubUser.login)
                   return loginCache[githubUser.login]
                 })
               }
             }
             else {
               // @todo get user/repo from git origin
-              console.log("✗ Unable to get contributor information for " + author.name + " <" + author.email + "> (no commit in putaindecode/putaindecode.fr)")
+              log("✗ Unable to get contributor information for " + author.name + " <" + author.email + "> (no commit in putaindecode/putaindecode.fr)")
               return {}
             }
           }, function(err) {
             if (err.toString().indexOf("ENOTFOUND") > -1) {
-              console.warn("⚠︎ Cannot connect to GitHub for " + email)
+              log(color.red("⚠︎ Cannot connect to GitHub for " + email))
             }
             return {}
           })
@@ -166,7 +175,7 @@ function contributorsMap(){
     results.mapByEmail = sortObjectByKeys(results.mapByEmail)
 
     var contributors = JSON.stringify(results, true, 2)
-    console.log("✓ Contributors cache updated")
+    log("✓ Contributors cache updated")
     return writeFile(contributorsFile, contributors)
   })
 }
@@ -197,7 +206,7 @@ function totalContributions() {
       })
   })
   .then(() => {
-    console.log("✓ Top contributions done")
+    log("✓ Top contributions done")
   })
 }
 
@@ -230,8 +239,7 @@ function filesContributions() {
         })
       })
       async.parallelLimit(parallelFiles, 20, function(){
-        // console.log(results.files)
-        console.log("✓ Contributions per files done")
+        log("✓ Contributions per files done")
         resolve()
       })
     })
