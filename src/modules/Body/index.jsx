@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from "react"
 
 import Header from "../Header"
 import Footer from "../Footer"
+import Analytics from "../Analytics"
 
 export default class Body extends Component {
 
@@ -25,6 +26,8 @@ export default class Body extends Component {
         </div>
 
         <Footer />
+
+        <Analytics />
 
       </body>
     )
