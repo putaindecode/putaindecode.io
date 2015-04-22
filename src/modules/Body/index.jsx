@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from "react"
 
 import Header from "../Header"
+import Footer from "../Footer"
 
 export default class Body extends Component {
 
@@ -16,10 +17,15 @@ export default class Body extends Component {
   render() {
     return (
       <body>
+
         <Header />
+
         <div className="putainde-Main">
           {this.props.children}
         </div>
+
+        <Footer />
+
       </body>
     )
   }
