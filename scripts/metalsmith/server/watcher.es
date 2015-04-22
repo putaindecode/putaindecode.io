@@ -1,5 +1,6 @@
 import {resolve} from "path"
 
+import async from "async"
 import chokidar from "chokidar"
 import color from "chalk"
 import match from "multimatch"
@@ -64,18 +65,39 @@ function runAndUpdate(metalsmith, files, livereload, options, previousFiles) {
   })
 }
 
-function buildFile(metalsmith, path, livereload, options, previousFiles) {
-  metalsmith.readFile(path, function(error, file) {
-    if(error) {throw error}
+function buildFiles(metalsmith, paths, livereload, options, previousFiles) {
+  const files = {}
+  async.each(
+    paths,
+    (path, cb) => {
+      metalsmith.readFile(path, function(err, file) {
+        if (err) {
+          console.error(err)
+          return
+        }
 
-    runAndUpdate(metalsmith, {[path]: file}, livereload, options, previousFiles)
-  })
+        files[path] = file
+        cb()
+      })
+    },
+    (err) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+
+      runAndUpdate(metalsmith, files, livereload, options, previousFiles)
+    }
+  )
 }
 
 
 function buildPattern(metalsmith, pattern, livereload, options, previousFiles) {
   unyield(metalsmith.read())((err, files) => {
-    if(err) {throw err}
+    if (err) {
+      console.error(err)
+      return
+    }
 
     const filesToUpdate = {}
     match(Object.keys(files), pattern).forEach((path) => filesToUpdate[path] = files[path])
@@ -127,6 +149,28 @@ export default function(options) {
         cb()
       })
 
+      // Delay watch update to be able to bundle multiples update in the same build
+      // Saving multiples files at the same time create multiples build otherwise
+      let updateDelay = 50
+      let updatePlanned = false
+      let pathsToUpdate = []
+      const update = () => {
+        if (options.invalidateCache) {
+          pathsToUpdate.forEach(path => {
+            invalidateCache(path, rebuildItself ? resolve(source, path) : resolve(path), options)
+          })
+        }
+
+        // update itself
+        if (rebuildItself) {
+          buildFiles(metalsmith, pathsToUpdate, livereload, options, files)
+        }
+        // mapping rebuild
+        else {
+          buildPattern(metalsmith, options.paths[pattern], livereload, options, files)
+        }
+      }
+
       watcher.on("all", (event, path) => {
         if (event === "add") {
           options.log(`✔︎ ${color.cyan(path)} added`)
@@ -138,19 +182,13 @@ export default function(options) {
           options.log(`✔︎ ${color.cyan(path)} removed`)
         }
 
+        // delay
         if (event === "add" || event === "change") {
-          if (options.invalidateCache) {
-            invalidateCache(path, rebuildItself ? resolve(source, path) : resolve(path), options)
+          pathsToUpdate.push(path)
+          if (updatePlanned) {
+            clearTimeout(updatePlanned)
           }
-
-          // update itself
-          if (rebuildItself) {
-            buildFile(metalsmith, path, livereload, options, files)
-          }
-          // mapping rebuild
-          else {
-            buildPattern(metalsmith, options.paths[pattern], livereload, options, files)
-          }
+          updatePlanned = setTimeout(update, updateDelay)
         }
       })
 
