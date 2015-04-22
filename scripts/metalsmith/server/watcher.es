@@ -1,7 +1,7 @@
 import {resolve} from "path"
 
 import chokidar from "chokidar"
-import chalk from "chalk"
+import color from "chalk"
 import match from "multimatch"
 import unyield from "unyield"
 
@@ -19,7 +19,7 @@ function invalidateCache(path, absolutePath, options) {
 function livereloadFiles(livereload, files, options) {
   if(livereload) {
     const keys = Object.keys(files)
-    options.log(`Livereload ${Object.keys(keys).length} files`)
+    options.log(`✔︎ ${Object.keys(keys).length} files reloaded`)
     livereload.changed({body: {files: keys}})
   }
 }
@@ -37,7 +37,6 @@ function runAndUpdate(metalsmith, files, livereload, options, previousFiles) {
         const pathsToTry = [path, path.replace(/\.md$/, ".html")]
         var shouldSkip = pathsToTry.some((testPath) => {
           if (file === previousFiles[testPath]) {
-            options.log(`${path} in collection ${key} will be refreshed`)
             return true
           }
         })
@@ -80,7 +79,7 @@ function buildPattern(metalsmith, pattern, livereload, options, previousFiles) {
 
     const filesToUpdate = {}
     match(Object.keys(files), pattern).forEach((path) => filesToUpdate[path] = files[path])
-    options.log(`Building ${Object.keys(filesToUpdate).length} files...`)
+    options.log(color.gray(`- Updating ${Object.keys(filesToUpdate).length} files...`))
     runAndUpdate(metalsmith, filesToUpdate, livereload, options, previousFiles)
   })
 }
@@ -90,7 +89,9 @@ export default function(options) {
     ...{
       paths: "**/*",
       livereload: false,
-      log: console.log,
+      log: (...args) => {
+        console.log(color.gray("[metalsmith-server]"), ...args)
+      },
       chokidar: {
         ignoreInitial: true,
       },
@@ -122,12 +123,20 @@ export default function(options) {
       const watcher = chokidar.watch(pattern, chokidarOpts)
 
       watcher.on("ready", () => {
-        options.log(chalk.green("Started watching ") + chalk.cyan(pattern))
+        options.log(`✔︎ Watching ${color.cyan(pattern)}`)
         cb()
       })
 
       watcher.on("all", (event, path) => {
-        options.log(`${chalk.green(event)}: ${chalk.cyan(path)}`)
+        if (event === "add") {
+          options.log(`✔︎ ${color.cyan(path)} added`)
+        }
+        else if (event === "change") {
+          options.log(`✔︎ ${color.cyan(path)} updated`)
+        }
+        else if (event === "unlink") {
+          options.log(`✔︎ ${color.cyan(path)} removed`)
+        }
 
         if (event === "add" || event === "change") {
           if (options.invalidateCache) {
