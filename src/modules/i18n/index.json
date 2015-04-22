@@ -1,87 +1,87 @@
 {
-  "title" : "Putain de code !",
-  "baseline" : "On voulait mettre une baseline mais on a pas été foutu d'en trouver une",
-  "latestPosts" : "Les derniers articles",
-  "posts" : "Les articles",
-  "manifesto" : "Putain de code, c'est quoi ?",
+  "title": "Putain de code !",
+  "baseline": "On voulait mettre une baseline mais on a pas été foutu d'en trouver une",
+  "latestPosts": "Les derniers articles",
+  "posts": "Les articles",
+  "manifesto": "Putain de code, c'est quoi ?",
   "topContributors": "Top des contributeurs",
-  "initialCommit" : "commit initial par",
-  "morePosts" : "Plus d'articles",
-  "writtenBy" : "Écrit par",
-  "readingTime" : "Temps de lecture : environ ",
-  "readingTimeComment" : "Temps de lecture approximatif, sur une base de {{wpm}} mots par minute",
-  "minutes" : "minutes",
-  "contributor" : "contributeur",
-  "contributors" : "contributeurs",
-  "allContributors" : "Tous les contributeurs",
-  "contribution" : "contribution",
-  "contributions" : "contributions",
-  "noPosts" : ":( pas d'article",
-  "pageActions" : "Action sur cette page",
-  "pageEdit" : "Modifier",
-  "pageBlame" : "Tracer les changements",
-  "pageHistory" : "Historique",
-  "close" : "&times;",
-  "copyright" : "© 1970 - {*} Putain de code !",
-  "tags" : "Tags",
-  "the" : "le",
-  "404" : "Et merde… [404]",
-  "filters" : "(filtres)",
-  "baseURL" : "http://putaindecode.fr",
-  "twitterUsername" : "putaindecode",
-  "twitter" : "https://twitter.com/putaindecode/",
-  "twitterLabel" : "Twitter",
-  "github" : "https://github.com/putaindecode/",
-  "githubLabel" : "GitHub",
-  "elsewhere" : "BTW, on est aussi là sur les internettes : ",
-  "disqus" : {
+  "initialCommit": "commit initial par",
+  "morePosts": "Plus d'articles",
+  "writtenBy": "Écrit par",
+  "readingTime": "Temps de  : environ ",
+  "readingTimeComment": "Temps de lecture approximatif, sur une base de {{wpm}} mots par minute",
+  "minutes": "minutes",
+  "contributor": "contributeur",
+  "contributors": "contributeurs",
+  "allContributors": "Tous les contributeurs",
+  "contribution": "contribution",
+  "contributions": "contributions",
+  "noPosts": ":( pas d'article",
+  "pageActions": "Action sur cette page",
+  "pageEdit": "Modifier",
+  "pageBlame": "Tracer les changements",
+  "pageHistory": "Historique",
+  "close": "&times;",
+  "copyright": "© 1970 - {*} Putain de code !",
+  "tags": "Tags",
+  "the": "le",
+  "404": "Et merde… [404]",
+  "filters": "(filtres)",
+  "baseURL": "http://putaindecode.fr",
+  "twitterUsername": "putaindecode",
+  "twitter": "https://twitter.com/putaindecode/",
+  "twitterLabel": "Twitter",
+  "github": "https://github.com/putaindecode/",
+  "githubLabel": "GitHub",
+  "elsewhere": "BTW, on est aussi là sur les internettes: ",
+  "disqus": {
       "id": "putaindecode",
       "developer": false
   },
-  "navigation" : [
+  "navigation": [
     {
-      "url" : "posts",
-      "name" : "Articles",
-      "icon" : "bookmark"
+      "url": "/posts",
+      "name": "Articles",
+      "icon": "/icons/bookmark.svg"
     },
     {
-      "url" : "c-est-quoi-putaindecode",
-      "name" : "Readme",
-      "icon" : "text-file"
+      "url": "/c-est-quoi-putaindecode",
+      "name": "Readme",
+      "icon": "/icons/text-file.svg"
     },
     {
-      "url" : "posts/comment-contribuer",
-      "name" : "Participer",
-      "icon" : "pencil"
+      "url": "/posts/comment-contribuer",
+      "name": "Participer",
+      "icon": "/icons/pencil.svg"
     },
     {
-      "url" : "https://github.com/putaindecode/",
-      "title" : "GitHub",
-      "icon" : "github"
+      "url": "https://github.com/putaindecode/",
+      "title": "GitHub",
+      "icon": "/icons/github.svg"
     },
     {
-      "url" : "https://twitter.com/putaindecode/",
-      "title" : "Twitter",
-      "icon" : "twitter"
+      "url": "https://twitter.com/putaindecode/",
+      "title": "Twitter",
+      "icon": "/icons/twitter.svg"
     }
   ],
-  "footerNavigation" : [
+  "footerNavigation": [
     {
-      "url" : "feed.xml",
-      "name" : "Flux RSS"
+      "url": "/feed.xml",
+      "name": "Flux RSS"
     },
     {
-      "url" : "projets",
-      "name" : "Projets"
+      "url": "/projets",
+      "name": "Projets"
     },
     {
-      "url" : "https://github.com/putaindecode/forum/issues",
-      "name" : "Forum"
+      "url": "https://github.com/putaindecode/forum/issues",
+      "name": "Forum"
     },
     {
-      "url" : "irc://irc.freenode.net/putaindecode",
-      "name" : "IRC"
+      "url": "irc://irc.freenode.net/putaindecode",
+      "name": "IRC"
     }
   ],
-  "madeWithHeart" : "Made with ♥︎"
+  "madeWithHeart": "Made with ♥︎"
 }
