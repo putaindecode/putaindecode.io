@@ -151,7 +151,11 @@ function build(error, contributors) {
     // ignore for prod only
     // so we can get watch & reload for those files too
     smith
-      .build((err) => {if (err) {throw err}})
+      .build((err) => {
+        if (err) {throw err}
+        console.log()
+        console.log(colors.green("✓ Build completed"))
+      })
   }
 
   // dev server
