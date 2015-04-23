@@ -137,6 +137,11 @@ function build(error, contributors) {
           paths: {
             "**/*": true,
             "src/modules/**/*": "**/*.md",
+            // css is for now builded for each metalsmith build
+            // we need to improve that
+            // so for now, saving any css files just rebuild the index
+            // in order to get the css too
+            "src/css/**/*": "index.md",
           },
         })
       )
