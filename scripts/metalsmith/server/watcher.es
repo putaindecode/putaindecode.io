@@ -215,6 +215,9 @@ export default function(options) {
         else {
           buildPattern(metalsmith, options.paths[pattern], livereload, options, files)
         }
+
+        // cleanup
+        pathsToUpdate = []
       }
 
       watcher.on("all", (event, path) => {
