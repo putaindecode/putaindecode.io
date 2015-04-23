@@ -64,6 +64,16 @@
     margin: 0;
   }
 
+  .putainde-Author-afterName {
+    font-size: .5em;
+    margin-left: .5em;
+    opacity: .5;
+  }
+
+    .putainde-Author:hover .putainde-Author-afterName {
+      opacity: .8;
+    }
+
   .putainde-WrittenBy {
     color: rgba(68, 68, 68, .6);
   }

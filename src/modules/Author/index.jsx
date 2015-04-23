@@ -17,6 +17,7 @@ export default class Author extends Component {
   static propTypes = {
     className: PropTypes.string,
     author: PropTypes.string.isRequired,
+    afterName: PropTypes.string,
     isPost: PropTypes.bool,
   }
 
@@ -39,13 +40,18 @@ export default class Author extends Component {
                   {`${i18n.writtenBy} `}
                 </span>
               }
-              {" "}
               <a
                 className="putainde-Link"
                 href={getAuthorUri(author)}
               >
                 {author.login}
               </a>
+              {
+                this.props.afterName &&
+                <span className="putainde-Author-afterName">
+                  {` ${this.props.afterName}`}
+                </span>
+              }
             </h3>
 
             <div className="putainde-Author-social">

@@ -34,7 +34,7 @@ export default class TopContributors extends Component {
             topContributors.map(author => {
               return (
                 <div key={author} className="r-Grid-cell r-all--1of2">
-                  <Author author={author} />
+                  <Author author={author} afterName={`(${contributors.contributions[author]} commits)`}/>
                 </div>
               )
             })
