@@ -30,19 +30,19 @@ export default class Footer extends Component {
                 [
                   i18n.footerNavigation.map((item) => {
                     return (
-                      <li>
+                      <li key={item.url}>
                         <a href={item.url}>
                           {item.name}
                         </a>
                       </li>
                     )
                   }),
-                  <li>
+                  <li key={i18n.github}>
                     <a href={i18n.github} data-r-tooltip="GitHub" className="r-Tooltip r-Tooltip--top">
                       <Icon src="/icons/github.svg" />
                     </a>
                   </li>,
-                  <li>
+                  <li key={i18n.twitter}>
                     <a href={i18n.twitter} data-r-tooltip="Twitter" className="r-Tooltip r-Tooltip--top">
                       <Icon src="/icons/twitter.svg" />
                     </a>

@@ -86,7 +86,7 @@ export default class Post extends DefaultTemplate {
                 <ul className="putainde-Tags putainde-Post-tags">
                 {
                   file.tags.map(tag => (
-                    <li className="putainde-Tag">{tag}</li>
+                    <li key={tag} className="putainde-Tag">{tag}</li>
                   ))
                 }
                 </ul>
@@ -124,7 +124,7 @@ export default class Post extends DefaultTemplate {
                     <h3 className="putainde-WrittenBy">{i18n.writtenBy}</h3>
                     {
                       file.authors &&
-                      file.authors.map(author => <Author author={author} />)
+                      file.authors.map(author => <Author key={author} author={author} />)
                     }
                   </div>
                 }
