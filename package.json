@@ -39,6 +39,7 @@
     "lodash": "^3.7.0",
     "metalsmith": "^1.5.0",
     "metalsmith-collections": "^0.7.0",
+    "metalsmith-feed": "0.0.6",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-metallic": "^0.3.1",

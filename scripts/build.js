@@ -6,7 +6,7 @@ import cssnext from "cssnext"
 import metalsmith from "metalsmith"
 import markdown from "metalsmith-markdown"
 import collections from "metalsmith-collections"
-
+import feed from "metalsmith-feed"
 import reactTemplates from "./metalsmith/react-templates"
 
 //dev
@@ -27,6 +27,14 @@ function build(error, contributors) {
   var smith = metalsmith(path.join(__dirname, ".."))
   .source("./content")
   .destination("./dist")
+
+  // for feed
+  .metadata({
+    site: {
+      title: i18n.title,
+      url: pkg.homepage,
+    },
+  })
 
   // add default values for md metadata
   .use(
@@ -62,6 +70,13 @@ function build(error, contributors) {
         sortBy: "date",
         reverse: true,
       },
+    })
+  )
+
+  .use(
+    feed({
+      collection: "posts",
+      destination: "feed.xml",
     })
   )
 
