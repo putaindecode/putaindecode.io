@@ -25,8 +25,9 @@ before_script:
   - git config --global user.email "mail+travis@putaindecode.fr"
 
 after_success:
-  - if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then npm run deploy; fi;
+  - if [ $TRAVIS_PULL_REQUEST = "false" ] && [ $TRAVIS_BRANCH = "master" ]; then npm run deploy --silent; fi;
 
 env:
   global:
+    # GITHUB_TOKEN
     - secure: ghMMp0kKWiZvqhHDROxGPQOARnIYJIeZcu0RVgVHkNNFOeSoJg9X+zBfDn6plQyo59ogKisdyVJgSh7IS+HiF98lhEm3qHd4Cbs136m5Wz0FjhIbFsaFij2OT5ECco+sAkgqniv3rl+5IZMvDlMh8g0+jkhVRvpF3I/ye0ckMXo=

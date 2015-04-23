@@ -62,8 +62,8 @@
     "lint": "eslint --ext .js,.jsx,.es .",
     "#build": "we use React as a template engine only (not in client side) so we enable DEV mode everywhere to get awesome dev messages and errors",
     "build": "NODE_ENV=development babel-node --stage 0 scripts/build",
-    "start": "npm run build",
-    "test": "npm run lint && npm run build -- --production",
-    "deploy": "echo '@todo deploy using gh-pages'"
+    "start": "npm run build --silent",
+    "test": "npm run lint --silent && npm run build --silent -- --production",
+    "deploy": "GITHUB_OWNER=putaindecode GITHUB_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v"
   }
 }
