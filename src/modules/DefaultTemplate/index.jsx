@@ -35,6 +35,9 @@ export default class DefaultTemplate extends Component {
   }
 
   render() {
+    if (!this.props.file.title) {
+      console.log(`${this.props.file._filename} doesn't have a title`)
+    }
     return (
       <Html>
         <Head title={this.props.file.title} />

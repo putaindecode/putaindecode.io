@@ -5,7 +5,6 @@ import DefaultTemplate from "../DefaultTemplate"
 import Html from "../Html"
 import Head from "../Head"
 import Body from "../Body"
-// import Icon from "../Icon"
 
 export default class Page404 extends DefaultTemplate {
 
@@ -21,8 +20,6 @@ export default class Page404 extends DefaultTemplate {
   }
 
   render() {
-    // const i18n = this.props.i18n
-
     return (
       <Html>
         <Head title={this.props.file.title} />

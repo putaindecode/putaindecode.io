@@ -29,7 +29,7 @@ export default class Head extends Component {
         <link
           rel="alternate"
           href="/feed.xml"
-          title="{this.props.title}"
+          title={this.props.title}
           type="application/atom+xml"
         />
         {this.props.children}
