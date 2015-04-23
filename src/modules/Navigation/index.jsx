@@ -12,41 +12,13 @@ export default class Navigation extends Component {
     i18n: PropTypes.object,
   }
 
-  static items = [
-    {
-      url: "posts",
-      name: "Articles",
-      icon: "icons/bookmark.svg",
-    },
-    {
-      url: "c-est-quoi-putaindecode",
-      name: "Readme",
-      icon: "icons/text-file.svg",
-    },
-    {
-      url: "posts/comment-contribuer",
-      name: "Participer",
-      icon: "icons/pencil.svg",
-    },
-    {
-      url: "https://github.com/putaindecode/",
-      title: "GitHub",
-      icon: "icons/github.svg",
-    },
-    {
-      url: "https://twitter.com/putaindecode/",
-      title: "Twitter",
-      icon: "icons/twitter.svg",
-    },
-  ]
-
   render() {
     const currentPage = this.context.file._filename
 
     return (
       <nav className="putainde-Nav">
         {
-          Navigation.items.map((item) => {
+          this.context.i18n.navigation.map((item) => {
             const isActivePage = currentPage === item.url || currentPage === item.url + "/index.html"
 
             return (
@@ -63,7 +35,7 @@ export default class Navigation extends Component {
                 {/* @todo handle item.icon */}
                 {
                   item.icon &&
-                  <Icon src={`/${item.icon}`} />
+                  <Icon src={`${item.icon}`} />
                 }
                 {item.name}
               </a>
