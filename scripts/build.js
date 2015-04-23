@@ -5,6 +5,7 @@ import cssnext from "cssnext"
 
 import metalsmith from "metalsmith"
 import markdown from "metalsmith-markdown"
+import highlight from "metalsmith-metallic"
 import collections from "metalsmith-collections"
 import feed from "metalsmith-feed"
 import reactTemplates from "./metalsmith/react-templates"
@@ -16,7 +17,6 @@ import opn from "opn"
 
 import contributions from "../scripts/contributors"
 import i18n from "../src/modules/i18n"
-
 import pkg from "../package"
 
 var production = process.argv.indexOf("--production") !== -1
@@ -54,7 +54,14 @@ function build(error, contributors) {
     }
   )
 
-  // first, convert .md to .html
+  // convert md code to html code highlighted with highlight.js
+  .use(
+    highlight({
+
+    })
+  )
+
+  // convert .md to .html
   .use(
     markdown({
       smartypants: true,
