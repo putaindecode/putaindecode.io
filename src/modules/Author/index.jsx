@@ -36,7 +36,7 @@ export default class Author extends Component {
               {
                 this.props.isPost &&
                 <span className="putainde-WrittenBy">
-                  {i18n.writtenBy}
+                  {`${i18n.writtenBy} `}
                 </span>
               }
               {" "}
@@ -56,7 +56,7 @@ export default class Author extends Component {
                   className="r-Tooltip r-Tooltip--top"
                   data-r-tooltip="Website"
                 >
-                  <Icon src="icons/home.svg" />
+                  <Icon src="/icons/home.svg" />
                 </a>
               }
               {
@@ -66,7 +66,7 @@ export default class Author extends Component {
                   className="r-Tooltip r-Tooltip--top"
                   data-r-tooltip="Twitter"
                 >
-                  <Icon src="icons/twitter.svg" />
+                  <Icon src="/icons/twitter.svg" />
                 </a>
               }
               {
@@ -76,7 +76,7 @@ export default class Author extends Component {
                   className="r-Tooltip r-Tooltip--top"
                   data-r-tooltip="Github"
                 >
-                  <Icon src="icons/github.svg" />
+                  <Icon src="/icons/github.svg" />
                 </a>
               }
             </div>
@@ -86,6 +86,7 @@ export default class Author extends Component {
             {
               (author.fr && author.fr.bio && author.fr.bio.long) &&
               author.fr.bio.long
+              /* @todo add new lines betwee lines */
             }
           </p>
         </div>
