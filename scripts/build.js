@@ -1,6 +1,7 @@
 import fs from "fs"
 import path from "path"
 
+import colors from "chalk"
 import cssnext from "cssnext"
 
 import metalsmith from "metalsmith"
@@ -21,6 +22,27 @@ import pkg from "../package"
 
 var production = process.argv.indexOf("--production") !== -1
 
+// hack to keep original .html as rawhtml
+// rename raw html as .rawhtml to rename later (after md/react part)
+const rawifyHtml = (files, metadata, cb) => {
+  Object.keys(files)
+    .filter((file) => file.match(/\.html$/))
+    .forEach((file) => {
+      files[file.replace(/\.html$/, ".rawhtml")] = files[file]
+      delete files[file]
+    })
+  cb()
+}
+const unrawifyHtml = (files, metadata, cb) => {
+  Object.keys(files)
+    .filter((file) => file.match(/\.rawhtml$/))
+    .forEach((file) => {
+      files[file.replace(/\.rawhtml$/, ".html")] = files[file]
+      delete files[file]
+    })
+  cb()
+}
+
 function build(error, contributors) {
   if (error) {throw error}
 
@@ -35,6 +57,8 @@ function build(error, contributors) {
       url: pkg.homepage,
     },
   })
+
+  .use(rawifyHtml)
 
   // add default values for md metadata
   .use(
@@ -102,6 +126,8 @@ function build(error, contributors) {
       },
     })
   )
+
+  .use(unrawifyHtml)
 
   // build css
   .use(
