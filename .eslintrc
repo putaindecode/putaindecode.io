@@ -21,30 +21,30 @@ plugins:
 # 0: off, 1: warning, 2: error
 rules:
   # semicolons are useless
-  semi: [1, "never"]
+  semi: [2, "never"]
 
-  quotes: [1, "double"]
+  quotes: [2, "double"]
 
   # 2 spaces indentation
-  indent: [1, 2]
+  indent: [2, 2]
 
   # trailing coma are cool for diff
-  comma-dangle: [1, "always-multiline"]
+  comma-dangle: [2, "always-multiline"]
 
   # enforce comma at eol (never before)
-  comma-style: [1, "last"]
+  comma-style: [2, "last"]
   no-underscore-dangle: 0
 
   # not useful rules if you are strict enough
   camelcase: 0
 
   # eslint-plugin-react rules
-  react/no-multi-comp: 1
-  react/prop-types: 1
-  react/display-name: 1
-  react/wrap-multilines: 1
-  react/self-closing-comp: 1
-  react/no-did-mount-set-state: 1
-  react/no-did-update-set-state: 1
-  react/jsx-uses-react: 1
-  react/jsx-uses-vars: 1
+  react/no-multi-comp: 2
+  react/prop-types: 2
+  react/display-name: 2
+  react/wrap-multilines: 2
+  react/self-closing-comp: 2
+  react/no-did-mount-set-state: 2
+  react/no-did-update-set-state: 2
+  react/jsx-uses-react: 2
+  react/jsx-uses-vars: 2
