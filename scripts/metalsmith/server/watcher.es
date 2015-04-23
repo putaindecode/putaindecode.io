@@ -25,16 +25,49 @@ function livereloadFiles(livereload, files, options) {
   }
 }
 
+// metalsmith-collections fix: collections are mutable
+// fuck mutability
+function backupCollections(collections) {
+  const collectionsBackup = {}
+  Object.keys(collections).forEach((key) => {
+    collectionsBackup[key] = []
+    collections[key].forEach((file) => {
+      collectionsBackup[key].push(collections[key][file])
+    })
+  })
+  return collectionsBackup
+}
+
+// metalsmith-collections fix: collections are in metadata as is + under metadata.collections
+function updateCollections(metalsmith, collections) {
+  const metadata = {
+    ...metalsmith.metadata(),
+    collections,
+  }
+  // copy ref to metadata root since metalsmith-collections use this references
+  // as primary location (*facepalm*)
+  Object.keys(collections).forEach((key) => {
+    metadata[key] = collections[key]
+  })
+  metalsmith.metadata(metadata)
+}
+
 function runAndUpdate(metalsmith, files, livereload, options, previousFiles) {
-  // collection fix: update collections to prevent duplicate issue
+  // metalsmith-collections fix: metalsmith-collections plugin add files to
+  // collection when run() is called which create problem since we use run()
+  // with only new files.
+  // In order to prevent prevent duplicate issue (some contents will be available
+  // in collections with the new and the previous version),
+  // we remove from existing collections files that will be updated
+  // (file already in the collections)
   // we iterate on collections with reference to previous files data
   // and skip old files that match the paths that will be updated
-  const metadata = metalsmith.metadata()
-  const collections = metadata.collections
+  const collectionsBackup = backupCollections(metalsmith.metadata().collections)
+  const intermediateCollections = {}
   Object.keys(files).forEach((path) => {
-    Object.keys(collections).forEach((key) => {
-      const newCollection = []
-      metadata[key].forEach((file) => {
+    Object.keys(collectionsBackup).forEach((key) => {
+      collectionsBackup[key].forEach((file) => {
+        intermediateCollections[key] = []
         const pathsToTry = [path, path.replace(/\.md$/, ".html")]
         var shouldSkip = pathsToTry.some((testPath) => {
           if (file === previousFiles[testPath]) {
@@ -42,17 +75,30 @@ function runAndUpdate(metalsmith, files, livereload, options, previousFiles) {
           }
         })
         if (!shouldSkip) {
-          newCollection.push(file)
+          intermediateCollections[key].push(file)
         }
       })
-      metadata[key] = newCollection
     })
   })
 
-  metalsmith.run(files, function(err, freshFiles) {
-    if(err) {throw err}
+  // metalsmith-collections fix: prepare collections with partials items
+  // run() below will add the new files to the collections
+  updateCollections(metalsmith, intermediateCollections)
 
-    // collection fix: update ref for future tests
+  metalsmith.run(files, function(err, freshFiles) {
+    if (err) {
+      // metalsmith-collections fix: rollback collections
+      updateCollections(metalsmith, collectionsBackup)
+
+      options.log(color.red(`✗ ${err.toString()}`))
+      // babel use that to share information :)
+      if (err.codeFrame) {
+        err.codeFrame.split("\n").forEach(line => options.log(line))
+      }
+      return
+    }
+
+    // metalsmith-collections fix:  update ref for future tests
     Object.keys(freshFiles).forEach((path) => {
       previousFiles[path] = freshFiles[path]
     })
