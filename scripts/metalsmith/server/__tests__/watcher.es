@@ -112,7 +112,7 @@ tape("metalsmith-server/watcher", (test) => {
         paths: {
           "**/*": "**/*",
           [`${sibling}/**/*`]: "**/*",
-        }
+        },
       }
     )
   })
