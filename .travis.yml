@@ -29,5 +29,5 @@ after_success:
 
 env:
   global:
-    # GITHUB_TOKEN
+    # GH_TOKEN
     - secure: ghMMp0kKWiZvqhHDROxGPQOARnIYJIeZcu0RVgVHkNNFOeSoJg9X+zBfDn6plQyo59ogKisdyVJgSh7IS+HiF98lhEm3qHd4Cbs136m5Wz0FjhIbFsaFij2OT5ECco+sAkgqniv3rl+5IZMvDlMh8g0+jkhVRvpF3I/ye0ckMXo=
