@@ -29,7 +29,7 @@ export default class Navigation extends Component {
                   "putainde-Nav-item--current": isActivePage,
                   "putainde-Nav-item--icon r-Tooltip r-Tooltip--bottom": item.title,
                 })}
-                href={`/${item.url}`}
+                href={item.url}
                 data-r-tooltip={item.title ? item.title : ""}
               >
                 {/* @todo handle item.icon */}
