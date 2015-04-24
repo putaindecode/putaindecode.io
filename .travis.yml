@@ -1,6 +1,8 @@
 sudo: false
 
 language: node_js
+node_js:
+  - "0.12"
 
 git:
   # contributors task: need all commits until we cache contributions somewhere else https://github.com/putaindecode/putaindecode.fr/issues/218
