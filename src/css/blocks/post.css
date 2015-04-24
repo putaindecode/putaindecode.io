@@ -272,11 +272,11 @@
 }
 
 @media (min-width: 54em) {
-  .putainde-Post-footer .u-size1of3 + .u-size1of3  {
+  .putainde-Post-footer .r-all--1of3 + .r-all--1of3  {
     text-align: center;
   }
 
-  .putainde-Post-footer .u-size1of3 + .u-size1of3 + .u-size1of3  {
+  .putainde-Post-footer .r-all--1of3 + .r-all--1of3 + .r-all--1of3  {
     text-align: right;
   }
 }
