@@ -33,9 +33,8 @@ export default class Contributors extends Component {
                 return (
                   <div
                     key={login}
-                    className="putainde-Contributor r-Tooltip r-Tooltip--bottom"
+                    className="putainde-Contributor r-Tooltip r-Tooltip--bottom r-Tooltip--allowNewLines"
                     data-r-tooltip={`${login}\n(${fileContributors[login]} commit${fileContributors[login] > 1 ? "s" : ""})`}
-                    style={{whiteSpace: "pre"}/* for the \n in data-r-tooltip */}
                   >
                     <Avatar author={login} className="putainde-Contributor-avatar" />
                   </div>
