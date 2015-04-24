@@ -5,15 +5,15 @@
 # https://github.com/X1011/git-directory-deploy
 #
 ###
-if [ $GITHUB_TOKEN != "" ]
-	if [ $GITHUB_OWNER = "" ] || [ $GITHUB_PROJECT_NAME = "" ]
+if [ $GH_TOKEN != "" ]
+	if [ $GH_OWNER = "" ] || [ $GH_PROJECT_NAME = "" ]
 	then
-	echo "You have defined GITHUB_TOKEN variable"
-		echo "You need to define the following variables: GITHUB_OWNER GITHUB_PROJECT_NAME"
-		echo "(GITHUB_OWNER=$GITHUB_OWNER GITHUB_PROJECT_NAME=$GITHUB_PROJECT_NAME)"
+	echo "You have defined GH_TOKEN variable"
+		echo "You need to define the following variables: GH_OWNER GH_PROJECT_NAME"
+		echo "(GH_OWNER=$GH_OWNER GH_PROJECT_NAME=$GH_PROJECT_NAME)"
 		exit -1
 	fi
-	repo=https://$GITHUB_TOKEN@github.com/$GITHUB_OWNER/$GITHUB_PROJECT_NAME.fr.git
+	repo=https://$GH_TOKEN@github.com/$GH_OWNER/$GH_PROJECT_NAME.fr.git
 else
 	repo=origin
 fi
