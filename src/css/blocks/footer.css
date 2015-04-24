@@ -2,14 +2,14 @@
   border-bottom: 0.8em solid var(--putainde-Color-red);
 }
 
-  .putainde-Footer > .Grid {
+  .putainde-Footer > .r-Grid {
     padding: var(--r-lineHeight) 0 0;
     border-top: 1px solid #ddd;
     margin-top: -1px;
   }
 
     @media (max-width:54em) {
-      .putainde-Footer > .Grid > .Grid-cell {
+      .putainde-Footer > .r-Grid > .r-Grid-cell {
         padding: calc(var(--r-lineHeight) / 2) 0;
         text-align: center;
       }
