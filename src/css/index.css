@@ -11,6 +11,9 @@
 @import "cssrecipes-vertical-rhythm/lib/ratio/minor-third.css";
 
 @import "cssrecipes-tooltip";
+.r-Tooltip--allowNewLines::before {
+  white-space: pre;
+}
 
 @import "./base/typography.css";
 @import "./base/colours.css";
