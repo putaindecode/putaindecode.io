@@ -37,6 +37,7 @@
     "eslint-plugin-react": "^2.1.1",
     "github": "^0.2.3",
     "glob": "^5.0.5",
+    "js-yaml": "^3.2.7",
     "lodash": "^3.7.0",
     "metalsmith": "^1.5.0",
     "metalsmith-collections": "^0.7.0",
