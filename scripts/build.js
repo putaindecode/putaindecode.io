@@ -64,15 +64,11 @@ function build(error, contributors) {
   .use(
     (files, metadata, cb) => {
       Object.keys(files)
-        .filter((file) => file.match(/\.md$/))
+        .filter((file) => file.match(/^posts\/.*\.md$/))
         .forEach((file) => {
-          const filedata = files[file]
-          files[file] = {
-            ...filedata,
-            template: filedata.template || "Post",
-            collection: filedata.collection || (file.indexOf("posts") === 0 ? "posts" : undefined),
-            comments: filedata.comments || true,
-          }
+          if (files[file].template === undefined) {files[file].template = "Post"}
+          if (files[file].collection === undefined) {files[file].collection = "posts"}
+          if (files[file].comments === undefined) {files[file].comments = true}
         })
       cb()
     }
