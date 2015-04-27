@@ -7,10 +7,14 @@ import PromisePolyfill from "promise"
 import lodash from "lodash"
 import GithubApi from "github"
 
+import logger from "../utils/logger"
+
 const exec = PromisePolyfill.denodeify(require("child_process").exec)
 const glob = PromisePolyfill.denodeify(require("glob"))
 const readFile = PromisePolyfill.denodeify(fs.readFile)
 const writeFile = PromisePolyfill.denodeify(fs.writeFile)
+
+const log = logger("contributors")
 
 const githubApi = new GithubApi({version: "3.0.0"})
 
@@ -21,11 +25,6 @@ const authorsFiles = "content/authors/*.json"
 const contributorsFile = "contributors.json"
 
 let results = {}
-
-const logPrefix = color.gray("[contributors]")
-const log = (...args) => {
-  console.log(logPrefix, ...args)
-}
 
 function sortObjectByKeys(obj){
   var newObj = {}
