@@ -20,6 +20,8 @@ import contributions from "../scripts/contributors"
 import i18n from "../src/modules/i18n"
 import pkg from "../package"
 
+import logger from "./utils/logger"
+
 var production = process.argv.indexOf("--production") !== -1
 
 // hack to keep original .html as rawhtml
@@ -159,6 +161,7 @@ function build(error, contributors) {
     smith
       .use(
         watch({
+          log: logger("watcher"),
           livereload: 4243,
           paths: {
             "**/*": true,
