@@ -43,7 +43,6 @@
     "lodash": "^3.7.0",
     "metalsmith": "^1.5.0",
     "metalsmith-collections": "^0.7.0",
-    "metalsmith-feed": "0.0.6",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-metallic": "^0.3.1",
@@ -57,9 +56,11 @@
     "promise": "^7.0.0",
     "react": "^0.13.1",
     "rimraf": "^2.3.2",
+    "rss": "^1.1.1",
     "tape": "^4.0.0",
     "tiny-lr": "^0.1.5",
-    "unyield": "0.0.1"
+    "unyield": "0.0.1",
+    "url": "^0.10.3"
   },
   "scripts": {
     "#lint": "we use others ext than jsx because of metalsmith issue, see scripts/build.js",

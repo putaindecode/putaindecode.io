@@ -6,6 +6,8 @@ import color from "chalk"
 import match from "multimatch"
 import unyield from "unyield"
 
+import filenames from "../filenames"
+
 import livereloadServer from "./livereload"
 
 const ok = color.green("✔︎")
@@ -55,10 +57,7 @@ function updateCollections(metalsmith, collections) {
 
 // metalsmith-collections fix: helps to update fix collections
 function saveFilenameInFilesData(files) {
-  Object.keys(files).forEach(filename => {
-    // reverse hardcoded because of metalsmith-markdown
-    files[filename]._filename = filename.replace(/\.html$/, ".md")
-  })
+  filenames(files)
 }
 
 // metalsmith-collections fix: remove items from collections that will be readded by the partial build
