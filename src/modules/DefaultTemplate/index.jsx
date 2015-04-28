@@ -42,12 +42,24 @@ export default class DefaultTemplate extends Component {
       <Html>
         <Head title={this.props.file.title} />
         <Body>
-          <h1>
-            {this.props.file.title}
-          </h1>
-          <div
-            dangerouslySetInnerHTML={{__html: this.props.file.contents}}
-          />
+          <article className="r-Grid putainde-Post">
+            <div className="r-Grid-cell r-all--8of12 putainde-Post-contents">
+
+              {
+                this.props.file.title &&
+                <div className="putainde-Title">
+                  <h1 className="putainde-Title-text">
+                    {this.props.file.title}
+                  </h1>
+                </div>
+              }
+
+              <div className="putainde-Post-md"
+                dangerouslySetInnerHTML={{__html: this.props.file.contents}}
+              />
+
+            </div>
+          </article>
         </Body>
       </Html>
     )
