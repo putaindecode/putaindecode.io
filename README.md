@@ -11,7 +11,6 @@ Pas de base de données à installer, pas de serveurs à configurer.
 ```console
 $ git clone https://github.com/putaindecode/putaindecode.fr.git
 $ cd putaindecode.fr
-$ npm run init
 $ npm install
 $ npm start
 ```
@@ -34,16 +33,15 @@ Nous utilisons [`.editorconfig`](.editorconfig) pour garder une cohérence.
 Respectez cela (il vous suffit d'aller sur le site [editorconfig.org/](http://editorconfig.org/)
 pour télécharger le plugin adéquat pour votre éditeur.__
 
-Ce site utilise [gulp](https://github.com/gulpjs/gulp),
-il vous est donc conseillé de jeter un coup d'oeil au [README de gulp](https://github.com/gulpjs/gulp#readme)
+Ce site utilise [metalsmith](https://github.com/segmentio/metalsmith),
+il vous est donc conseillé de jeter un coup d'oeil au [README de Metalsmith](https://github.com/segmentio/metalsmith#metalsmith)
 avant d'intervenir sur le projet ;).
 
 ## Récupérer les sources du site
 
 ```console
 $ git clone https://github.com/putaindecode/putaindecode.fr.git
-$ cd website
-$ npm run init
+$ cd putaindecode.fr
 $ npm install
 ```
 
@@ -93,30 +91,6 @@ $ npm run deploy
 **Cela dit, tous les commits dans la branche `master` provoqueront une mise en production automatique via [Travis-CI](https://travis-ci.org/).**
 
 _Note: pour commiter sans provoquer un `deploy`, il suffit d'ajouter `[ci skip]` dans votre message de commit._
-
----
-
-## Mise à jour spécifiques
-
-### Générer le favicon
-
-Installez [icoutils](http://www.nongnu.org/icoutils/). Par exemple sur OS X :
-
-```console
-$ brew install icoutils
-```
-
-ou
-
-```console
-$ npm run init-osx
-```
-
-Ensuite utilisez la commande suivante
-
-```console
-$ npm run favicon
-```
 
 ---
 

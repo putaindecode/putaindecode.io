@@ -1,0 +1,111 @@
+.putainde-Column {
+  text-align: left;
+  padding: 0 2em;
+}
+  @media (max-width:54em) {
+    .putainde-Column {
+      padding: .5em
+    }
+  }
+
+.putainde-Column-title {
+  font-size: 1.275em;
+  font-family: var(--fontFamily-title);
+  font-weight: 400;
+  color: #444;
+  text-decoration: none;
+  display: block;
+  padding: 0;
+}
+
+.putainde-Label {
+  cursor: pointer;
+  display: block;
+  padding: 0 0 calc(var(--r-lineHeight) * 0.315);
+}
+
+.putainde-Label input {
+  margin-right: 1em
+}
+
+.putainde-Label-text {
+  font-size: .875em;
+  color: #444;
+}
+
+.putainde-TagFilters-toggle {
+  display: none;
+  background: none;
+  border:none;
+  font-family: inherit;
+  font-size: .85em;
+  vertical-align: middle;
+  color: var(--putainde-Color-red);
+  cursor: pointer;
+}
+
+  @media (max-width:54em) {
+    .putainde-TagFilters-toggle {
+      display: inline-block
+    }
+  }
+
+.putainde-TagFilters-close {
+  display: none;
+  background: none;
+  border:none;
+  font-family: inherit;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: .1em;
+  line-height: 1;
+}
+
+  @media (max-width:54em) {
+    .putainde-TagFilters-close {
+      display: inline-block
+    }
+  }
+
+@media (max-width:54em) {
+  .putainde-TagFilters {
+    background: #fff;
+    box-shadow: .2em 0 .4em color(#000 alpha(10%)), 1px 0 color(#000 alpha(10%));
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -11em;
+    width: 11em;
+    display: none;
+    overflow: scroll;
+    animation: .2s ease-in-out TagFilters;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@keyframes TagFilters {
+  from {
+    display: block;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  transition: .2s ease-in-out left
+}
+
+  @media (max-width:54em) {
+    .putainde-Body--tagFiltersOpened .putainde-TagFilters {
+      display: block;
+      left: 0em;
+    }
+  }

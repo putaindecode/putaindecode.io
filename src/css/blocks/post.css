@@ -1,0 +1,286 @@
+.putainde-Post {
+  text-align: center;
+  padding: 0 var(--r-lineHeight);
+}
+
+.putainde-Title {
+  z-index: 3;
+
+  margin: calc(var(--r-lineHeight) / 2) 0;
+  overflow: auto;
+
+  color: #222;
+  background: #fff;
+  background: linear-gradient(to bottom, #fff 60%, color(#fff alpha(0)));
+}
+
+.putainde-Title--home {
+  text-align: center;
+}
+
+.putainde-Title-text {
+  font-weight: 400;
+}
+
+.putainde-Post-metas  {
+  display: inline-block;
+  font-size: var(--r-small-fontSize);
+  color: #999;
+}
+
+@keyframes ReadingTimeAppear {
+  from {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.putainde-Post-readingTime {
+  animation: ReadingTimeAppear .3s ease-in-out;
+}
+
+  .putainde-Post-readingTime--hidden  {
+    visibility: hidden;
+    opacity: 0;
+    animation: none;
+  }
+
+  /* enable nowrap for tooltip only for medium screen, to avoid scrollbar & shit */
+  /* https://github.com/putaindecode/putaindecode.fr/issues/266 */
+  @media (min-width: 54.01em) {
+    .putainde-Post-readingTime::before {
+      white-space: nowrap;
+    }
+  }
+
+.putainde-Post-contents {
+  text-align: left;
+  color: #444;
+}
+  .putainde-Post-contents a {
+    color: var(--putainde-Color-red);
+    fill: var(--putainde-Color-red);
+    text-decoration: none;
+  }
+    .putainde-Post-contents a:hover,
+    .putainde-Post-contents a:focus {
+      text-decoration: underline;
+    }
+
+.putainde-Post-md {
+}
+
+  .putainde-Post-md ul,
+  .putainde-Post-md ol {
+    padding: 0 0 0 1.75em;
+  }
+
+  .putainde-Post-md tt,
+  .putainde-Post-md code,
+  .putainde-Post-md pre {
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+  }
+
+  .putainde-Post-md code {
+    display: inline-block;
+    vertical-align: middle;
+    max-width:100%;
+    border: 1px solid #ddd;
+    margin: -1px 0;
+    padding: .25em;
+    font-size: var(--r-small-fontSize);
+    font-weight: 400;
+    background: #fafafa;
+    border-radius: .25em;
+    line-height: 1;
+    word-wrap:break-word;
+  }
+
+  .putainde-Post-md pre {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    overflow: auto;
+    margin: var(--r-lineHeight) 0;
+    padding: calc(var(--r-lineHeight) / 2);
+    line-height: calc(var(--r-lineHeight) * .75);
+    font-size: var(--r-small-fontSize);
+    color: #444;
+    font-weight: 400;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    border-radius: .3em;
+    box-shadow: inset 0 0 0 .25em color(#000 alpha(2%));
+  }
+    .putainde-Post-md pre code {
+      display: block;
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-size: inherit;
+      vertical-align: baseline;
+      line-height: inherit;
+    }
+
+  .putainde-Post-md h1,
+  .putainde-Post-md h2,
+  .putainde-Post-md h3,
+  .putainde-Post-md h4,
+  .putainde-Post-md h5,
+  .putainde-Post-md h6 {
+    position: relative;
+  }
+
+    .putainde-Post-md .putainde-Title-anchor {
+      position: absolute;
+      left: -1em;
+      width: 1em;
+      text-align: center;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      color: #999;
+    }
+
+      .putainde-Post-md h1:hover .putainde-Title-anchor,
+      .putainde-Post-md h2:hover .putainde-Title-anchor,
+      .putainde-Post-md h3:hover .putainde-Title-anchor,
+      .putainde-Post-md h4:hover .putainde-Title-anchor,
+      .putainde-Post-md h5:hover .putainde-Title-anchor,
+      .putainde-Post-md h6:hover .putainde-Title-anchor {
+        opacity: 1;
+      }
+
+  .putainde-Post-md img {
+    max-width: 100%;
+    height: auto;
+  }
+  .putainde-Post-md p img:only-child {
+    margin: 1em 0;
+  }
+  .putainde-Post-md figure {
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 0 1px #eee;
+    margin: 0 auto var(--r-lineHeight);
+    overflow: hidden;
+    border-radius: .3em;
+    display: block;
+    line-height: 1rem;
+    text-align: center;
+  }
+
+    .putainde-Post-md figcaption {
+      font-style: italic;
+      font-family: Georgia, Times, "Times New Roman", serif;
+      text-align: center;
+      margin: 0;
+      display: block;
+      background: #fafafa;
+      line-height: calc(var(--r-lineHeight) * 2);
+      border-top: 1px solid #eee;
+      margin-top: -1px;
+    }
+
+    .putainde-Post-md figure small {
+      display: block;
+      text-align: right;
+      padding: 0 .4rem;
+    }
+
+    .putainde-Post-md figure small a {
+      color: grey;
+      font-size: var(--r-small-fontSize);
+    }
+
+  .putainde-Post-md blockquote {
+    color: #888;
+    margin: 0 0 0 1em;
+    padding: 0 2em 0 1em;
+    border-left: .25em solid #888;
+  }
+  .putainde-Post-md hr {
+    border: none;
+    border-top: .225em solid #eee;
+    margin-top: -.225em;
+  }
+  .putainde-Post-md table {
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-radius: .225em;
+  }
+    .putainde-Post-md thead {
+      background: #fafafa
+    }
+
+    .putainde-Post-md td,
+    .putainde-Post-md th {
+      padding: .5em 1em;
+      border-left: 1px solid #eee;
+    }
+    .putainde-Post-md tr {
+      border-bottom: 1px solid #eee;
+    }
+
+  .putainde-Post-md .putainde-Media  {
+
+  }
+
+    .putainde-Post-md .putainde-Media--left  {
+      float: left;
+      margin-right: 1rem;
+    }
+
+    .putainde-Post-md .putainde-Media--right  {
+      float: right;
+      margin-left: 1rem;
+    }
+
+.putainde-Networks {
+  text-align: center;
+  border-top: 1px solid #eee;
+  margin-top: -1px;
+  padding: var(--r-lineHeight) 0;
+  line-height: calc(var(--r-lineHeight) * 2);
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.putainde-Networks * {
+  vertical-align: top;
+}
+
+.putainde-Network {
+  display: inline-block;
+  font-size: 2.074em;
+  padding: 0 0.2em;
+}
+
+.putainde-Post-footer  {
+  margin: calc(var(--r-lineHeight) * 2) 0;
+  box-shadow: inset 0 1px 0 0 var(--putainde-Color-lightGrey);
+}
+
+.putainde-Post-footer-title  {
+  color: #999;
+}
+
+.putainde-Post-footer-title,
+.putainde-Post-footer-action {
+  font-size: var(--r-small-fontSize);
+}
+
+@media (min-width: 54em) {
+  .putainde-Post-footer .r-all--1of3 + .r-all--1of3  {
+    text-align: center;
+  }
+
+  .putainde-Post-footer .r-all--1of3 + .r-all--1of3 + .r-all--1of3  {
+    text-align: right;
+  }
+}
+
+#disqus_thread {
+  margin: calc(var(--r-lineHeight) * 2) 0 var(--r-lineHeight);
+}
