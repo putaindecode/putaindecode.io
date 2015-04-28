@@ -6,6 +6,7 @@
 #
 ###
 if [ $GH_TOKEN != "" ]
+then
 	if [ $GH_OWNER = "" ] || [ $GH_PROJECT_NAME = "" ]
 	then
 	echo "You have defined GH_TOKEN variable"
