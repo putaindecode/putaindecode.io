@@ -32,9 +32,23 @@ export default class Post extends DefaultTemplate {
     // we want original filename
     const filename = file._filename.replace(/\.html$/, ".md")
 
+    var twitterAuthor = this.props.file.authors && this.props.file.authors.length ?
+      this.props.contributors.map[this.props.file.authors[0]].twitter
+      :
+      this.props.i18n.twitterUsername
+
     return (
       <Html>
-        <Head title={this.props.file.title} />
+        <Head title={this.props.file.title}>
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content={`@${this.props.i18n.twitterUsername}`} />
+          <meta name="twitter:title" content={this.props.file.title} />
+          <meta name="twitter:creator" content={`@${twitterAuthor}`} />
+
+          <meta property="og:title" content={this.props.file.title} />
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content={this.props.i18n.title} />
+        </Head>
         <Body>
           <article className="r-Grid putainde-Post">
             <div className="r-Grid-cell r-all--8of12 putainde-Post-contents">
