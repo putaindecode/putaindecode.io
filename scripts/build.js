@@ -8,7 +8,8 @@ import metalsmith from "metalsmith"
 import markdown from "metalsmith-markdown"
 import highlight from "metalsmith-metallic"
 import collections from "metalsmith-collections"
-import feed from "metalsmith-feed"
+import filenames from "./metalsmith/filenames"
+import rss from "./metalsmith/rss"
 import reactTemplates from "./metalsmith/react-templates"
 
 //dev
@@ -52,13 +53,10 @@ function build(error, contributors) {
   .source("./content")
   .destination("./dist")
 
-  // for feed
-  .metadata({
-    site: {
-      title: i18n.title,
-      url: pkg.homepage,
-    },
-  })
+  // useful for some homemade plugins
+  .use(
+    filenames
+  )
 
   .use(rawifyHtml)
 
@@ -103,8 +101,15 @@ function build(error, contributors) {
   )
 
   .use(
-    feed({
-      collection: "posts",
+    rss({
+      feedOptions: {
+        title: i18n.title,
+        site_url: pkg.homepage,
+        language: "fr",
+        categories: [
+          "code",
+        ],
+      },
       destination: "feed.xml",
     })
   )
