@@ -45,10 +45,9 @@ export default (options = {}) => {
 
     collectionItems.forEach(item => {
       feed.item({
-        // FIXME _filename defined by watcher for now
         url: url.resolve(feedOptions.site_url, item._filename),
+        description: item.contents,
         ...item,
-        description: item.description || item.contents,
       })
     })
 
