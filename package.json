@@ -63,7 +63,7 @@
     "#lint": "we use others ext than jsx because of metalsmith issue, see scripts/build.js",
     "lint": "eslint -f node_modules/eslint-friendly-formatter --ext .js,.jsx,.es .",
     "#build": "we use React as a template engine only (not in client side) so we enable DEV mode everywhere to get awesome dev messages and errors",
-    "build": "NODE_ENV=development babel-node --stage 0 scripts/build",
+    "build": "NODE_ENV=development babel-node scripts/build",
     "start": "npm run build",
     "test": "npm run lint && npm run build -- --production",
     "deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v"
