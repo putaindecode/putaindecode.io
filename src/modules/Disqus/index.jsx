@@ -6,7 +6,7 @@ export default class Disqus extends Component {
 
   static propTypes = {
     baseURL: PropTypes.string.isRequired,
-    pageName: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     comments: PropTypes.bool,
     developer: PropTypes.bool,
@@ -19,8 +19,8 @@ export default class Disqus extends Component {
       html.push("var disqus_developer = 1")
     }
     if (this.props.comments) {
-      html.push(`var disqus_identifier = "${this.props.baseURL}/${this.props.pageName}"`)
-      html.push(`var disqus_url = "${this.props.baseURL}/${this.props.pageName}"`)
+      html.push(`var disqus_identifier = "${this.props.baseURL}/${this.props.url}"`)
+      html.push(`var disqus_url = "${this.props.baseURL}/${this.props.url}"`)
       html.push(`var disqus_script = "embed.js"`)
     }
     else {

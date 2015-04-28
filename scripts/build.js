@@ -4,11 +4,13 @@ import path from "path"
 import colors from "chalk"
 import cssnext from "cssnext"
 
-import metalsmith from "metalsmith"
-import markdown from "metalsmith-markdown"
-import highlight from "metalsmith-metallic"
+import Metalsmith from "metalsmith"
+import defaultMetadata from "./metalsmith/default-metadata"
+import markdown from "./metalsmith/markdown"
 import collections from "metalsmith-collections"
 import addFilenames from "./metalsmith/filenames"
+import url from "./metalsmith/url"
+import rename from "./metalsmith/rename"
 import rss from "./metalsmith/rss"
 import reactTemplates from "./metalsmith/react-templates"
 
@@ -25,69 +27,36 @@ import logger from "./utils/logger"
 
 var production = process.argv.indexOf("--production") !== -1
 
-// hack to keep original .html as rawhtml
-// rename raw html as .rawhtml to rename later (after md/react part)
-const rawifyHtml = (files, metadata, cb) => {
-  Object.keys(files)
-    .filter((file) => file.match(/\.html$/))
-    .forEach((file) => {
-      files[file.replace(/\.html$/, ".rawhtml")] = files[file]
-      delete files[file]
-    })
-  cb()
-}
-const unrawifyHtml = (files, metadata, cb) => {
-  Object.keys(files)
-    .filter((file) => file.match(/\.rawhtml$/))
-    .forEach((file) => {
-      files[file.replace(/\.rawhtml$/, ".html")] = files[file]
-      delete files[file]
-    })
-  cb()
-}
+const mdToHtmlReplacement = [/\.md$/, ".html"]
 
 function build(error, contributors) {
   if (error) {throw error}
 
-  var smith = metalsmith(path.join(__dirname, ".."))
+  const smith = new Metalsmith(path.join(__dirname, ".."))
   .source("./content")
   .destination("./dist")
+
+  // add default values for md metadata
+  .use(
+    defaultMetadata()
+  )
+
+  // convert markdown
+  .use(
+    markdown()
+  )
 
   // useful for some homemade plugins
   .use(
     addFilenames
   )
 
-  .use(rawifyHtml)
-
-  // add default values for md metadata
+  // add url meta data with some replacements
   .use(
-    (files, metadata, cb) => {
-      Object.keys(files)
-        .filter((file) => file.match(/^posts\/.*\.md$/))
-        .forEach((file) => {
-          if (files[file].template === undefined) {files[file].template = "Post"}
-          if (files[file].collection === undefined) {files[file].collection = "posts"}
-          if (files[file].comments === undefined) {files[file].comments = true}
-        })
-      cb()
-    }
-  )
-
-  // convert md code to html code highlighted with highlight.js
-  .use(
-    highlight({
-
-    })
-  )
-
-  // convert .md to .html
-  .use(
-    markdown({
-      smartypants: true,
-      gfm: true,
-      tables: true,
-    })
+    url([
+      mdToHtmlReplacement,
+      [/index\.html?$/, ""],
+    ])
   )
 
   // allow looping on post for listing
@@ -120,7 +89,7 @@ function build(error, contributors) {
       directory: "./src/modules",
       defaultTemplate: "DefaultTemplate",
       baseFile: `base-${production ? "prod" : "dev"}.html`,
-      pattern: "**/*.html", // not .md because markdown() plugin rename those already
+      pattern: "**/*.md",
       data: {
         pkg: pkg,
         production,
@@ -130,7 +99,11 @@ function build(error, contributors) {
     })
   )
 
-  .use(unrawifyHtml)
+  .use(
+    rename([
+      mdToHtmlReplacement,
+    ])
+  )
 
   // build css
   .use(
@@ -184,9 +157,11 @@ function build(error, contributors) {
           port: 4242,
         })
       )
-      .build((err) => {if (err) {throw err}})
+      .build((err) => {
+        if (err) {throw err}
 
-    setTimeout(() => opn("http://localhost:4242"), 2000)
+        opn("http://localhost:4242")
+      })
   }
 }
 
