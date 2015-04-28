@@ -7,13 +7,15 @@ import {sync as mkdirp} from "mkdirp"
 import chalk from "chalk"
 
 import Metalsmith from "metalsmith"
-import watch, {close} from "../watcher"
+import watch from "../watcher"
 
 const noop = () => {}
 
+const closers = {}
+
 function cleanTests(key) {
+  closers[key]()
   rm(`./tmp-${key}`)
-  close()
 }
 
 function prepareTests(key, testCb, assertionCb, options) {
@@ -24,21 +26,38 @@ function prepareTests(key, testCb, assertionCb, options) {
   mkdirp(`${folder}/src`)
   fs.writeFileSync(`${folder}/src/dummy`, "")
 
-  metalsmith
-    .use(watch({
-      log: noop,
-      ...options,
-    }))
-    .build(() => {
+  const watcherOpts = {
+    log: noop,
+    ...options,
+  }
+
+  let done = false
+  // chokidar might still detect dummy file created above
+  // so we delay just a bit the tests...
+  setTimeout(
+    () => {
       metalsmith
-        .use((files) => {
-          if (assertionCb !== noop) {
-            assertionCb(files)
-            cleanTests(key)
-          }
+        .use(watch(watcherOpts))
+        .build(() => {
+          metalsmith
+            .use((files) => {
+              if (done) {
+                throw new Error("This assertion block should not be called twice")
+              }
+              closers[key] = watcherOpts.close
+              if (assertionCb !== noop) {
+                done = true
+                assertionCb(files)
+                // metalsmith write the builded files after this plugin
+                setTimeout(() => cleanTests(key), 1000)
+              }
+            })
+          setTimeout(() => testCb(), 500)
         })
-      testCb()
-    })
+    },
+    500
+  )
+
 
   return folder
 }
@@ -55,15 +74,16 @@ tape("metalsmith-server/watcher", (test) => {
         t.deepEqual(
           logs,
           [
-            "Started watching **/*",
-            "add: test",
+            "✔︎ Watching **/*",
+            "✔︎ test added",
+            "- Updating 1 file...",
           ],
           "should logs things")
         t.end()
       },
       {
         log: (log) => {
-          // console.log("# " + log)¬
+          // console.log("## " + log)
           logs.push(chalk.stripColor(log))
         },
       }
@@ -105,12 +125,13 @@ tape("metalsmith-server/watcher", (test) => {
         fs.writeFile(`${sibling}/test`, "test", noop)
       },
       () => {
+        rm(sibling)
         t.pass("should rebuild if a mapped item get updated")
         t.end()
       },
       {
         paths: {
-          "**/*": "**/*",
+          "**/*": true,
           [`${sibling}/**/*`]: "**/*",
         },
       }
