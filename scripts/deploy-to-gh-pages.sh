@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
+set -o errexit #abort if any command fails
+
 ###
 # ./deploy.sh -v
-# https://github.com/X1011/git-directory-deploy
+# https://github.com/X1011/git-directory-deploy/pull/8
 #
 ###
 if [ $GH_TOKEN != "" ]
 then
 	if [ $GH_OWNER = "" ] || [ $GH_PROJECT_NAME = "" ]
 	then
-	echo "You have defined GH_TOKEN variable"
+		echo "You have defined GH_TOKEN variable"
 		echo "You need to define the following variables: GH_OWNER GH_PROJECT_NAME"
 		echo "(GH_OWNER=$GH_OWNER GH_PROJECT_NAME=$GH_PROJECT_NAME)"
 		exit -1
@@ -18,8 +20,6 @@ then
 else
 	repo=origin
 fi
-
-set -o errexit #abort if any command fails
 
 deploy_directory=dist
 deploy_branch=gh-pages
