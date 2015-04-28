@@ -65,7 +65,7 @@
     "#lint": "we use others ext than jsx because of metalsmith issue, see scripts/build.js",
     "lint": "eslint -f node_modules/eslint-friendly-formatter --ext .js,.jsx,.es .",
     "#build": "we use React as a template engine only (not in client side) so we enable DEV mode everywhere to get awesome dev messages and errors",
-    "build": "NODE_ENV=development babel-node scripts/build",
+    "build": "babel-node scripts/build",
     "start": "npm run build",
     "tape": "babel-tape-runner 'scripts/**/__tests__/*'",
     "test": "npm run lint && npm run tape && npm run build -- --production",
