@@ -8,7 +8,8 @@ import unyield from "unyield"
 
 import livereloadServer from "./livereload"
 
-var watching = {}
+const ok = color.green("✔︎")
+const nok = color.red("✗")
 
 function invalidateCache(path, absolutePath, options) {
   if (require.cache[absolutePath]) {
@@ -20,7 +21,8 @@ function invalidateCache(path, absolutePath, options) {
 function livereloadFiles(livereload, files, options) {
   if(livereload) {
     const keys = Object.keys(files)
-    options.log(`✔︎ ${Object.keys(keys).length} files reloaded`)
+    const nbOfFiles = Object.keys(files).length
+    options.log(`${ok} ${nbOfFiles} file${nbOfFiles > 1 ? "s" : ""} reloaded`)
     livereload.changed({body: {files: keys}})
   }
 }
@@ -29,12 +31,11 @@ function livereloadFiles(livereload, files, options) {
 // fuck mutability
 function backupCollections(collections) {
   const collectionsBackup = {}
-  Object.keys(collections).forEach((key) => {
-    collectionsBackup[key] = []
-    collections[key].forEach((file) => {
-      collectionsBackup[key].push(collections[key][file])
+  if (typeof collections === "object") {
+    Object.keys(collections).forEach(key => {
+      collectionsBackup[key] = [...collections[key]]
     })
-  })
+  }
   return collectionsBackup
 }
 
@@ -46,13 +47,38 @@ function updateCollections(metalsmith, collections) {
   }
   // copy ref to metadata root since metalsmith-collections use this references
   // as primary location (*facepalm*)
-  Object.keys(collections).forEach((key) => {
+  Object.keys(collections).forEach(key => {
     metadata[key] = collections[key]
   })
   metalsmith.metadata(metadata)
 }
 
-function runAndUpdate(metalsmith, files, livereload, options, previousFiles) {
+// metalsmith-collections fix: helps to update fix collections
+function saveFilenameInFilesData(files) {
+  Object.keys(files).forEach(filename => {
+    // reverse hardcoded because of metalsmith-markdown
+    files[filename]._filename = filename.replace(/\.html$/, ".md")
+  })
+}
+
+// metalsmith-collections fix: remove items from collections that will be readded by the partial build
+function removeFilesFromCollection(files, collections) {
+  const filenames = Object.keys(files)
+  Object.keys(collections).forEach(key => {
+
+    for (let i = 0; i < collections[key].length; i++) {
+      if (filenames.indexOf(collections[key][i]._filename) > -1) {
+        collections[key] = [
+          ...collections[key].slice(0, i),
+          ...collections[key].slice(i + 1),
+        ]
+        i--
+      }
+    }
+  })
+}
+
+function runAndUpdate(metalsmith, files, livereload, options, previousFilesMap) {
   // metalsmith-collections fix: metalsmith-collections plugin add files to
   // collection when run() is called which create problem since we use run()
   // with only new files.
@@ -62,35 +88,26 @@ function runAndUpdate(metalsmith, files, livereload, options, previousFiles) {
   // (file already in the collections)
   // we iterate on collections with reference to previous files data
   // and skip old files that match the paths that will be updated
-  const collectionsBackup = backupCollections(metalsmith.metadata().collections)
-  const intermediateCollections = {}
-  Object.keys(files).forEach((path) => {
-    Object.keys(collectionsBackup).forEach((key) => {
-      collectionsBackup[key].forEach((file) => {
-        intermediateCollections[key] = []
-        const pathsToTry = [path, path.replace(/\.md$/, ".html")]
-        var shouldSkip = pathsToTry.some((testPath) => {
-          if (file === previousFiles[testPath]) {
-            return true
-          }
-        })
-        if (!shouldSkip) {
-          intermediateCollections[key].push(file)
-        }
-      })
-    })
-  })
+  saveFilenameInFilesData(files)
+  const collections = metalsmith.metadata().collections
+  const collectionsBackup = backupCollections(collections)
+  if (collections) {
+    // mutability ftl :(
+    removeFilesFromCollection(files, collections)
 
-  // metalsmith-collections fix: prepare collections with partials items
-  // run() below will add the new files to the collections
-  updateCollections(metalsmith, intermediateCollections)
+    // metalsmith-collections fix: prepare collections with partials items
+    // run() below will add the new files to the collections
+    updateCollections(metalsmith, collections)
+  }
 
   metalsmith.run(files, function(err, freshFiles) {
     if (err) {
-      // metalsmith-collections fix: rollback collections
-      updateCollections(metalsmith, collectionsBackup)
+      if (collections) {
+        // metalsmith-collections fix: rollback collections
+        updateCollections(metalsmith, collectionsBackup)
+      }
 
-      options.log(color.red(`✗ ${err.toString()}`))
+      options.log(color.red(`${nok} ${err.toString()}`))
       // babel use that to share information :)
       if (err.codeFrame) {
         err.codeFrame.split("\n").forEach(line => options.log(line))
@@ -99,8 +116,8 @@ function runAndUpdate(metalsmith, files, livereload, options, previousFiles) {
     }
 
     // metalsmith-collections fix:  update ref for future tests
-    Object.keys(freshFiles).forEach((path) => {
-      previousFiles[path] = freshFiles[path]
+    Object.keys(freshFiles).forEach(path => {
+      previousFilesMap[path] = freshFiles[path]
     })
 
     metalsmith.write(freshFiles, function(writeErr) {
@@ -111,14 +128,14 @@ function runAndUpdate(metalsmith, files, livereload, options, previousFiles) {
   })
 }
 
-function buildFiles(metalsmith, paths, livereload, options, previousFiles) {
+function buildFiles(metalsmith, paths, livereload, options, previousFilesMap) {
   const files = {}
   async.each(
     paths,
     (path, cb) => {
       metalsmith.readFile(path, function(err, file) {
         if (err) {
-          console.error(err)
+          options.log(color.red(`${nok} ${err}`))
           return
         }
 
@@ -128,31 +145,37 @@ function buildFiles(metalsmith, paths, livereload, options, previousFiles) {
     },
     (err) => {
       if (err) {
-        console.error(err)
+        options.log(color.red(`${nok} ${err}`))
         return
       }
 
-      runAndUpdate(metalsmith, files, livereload, options, previousFiles)
+      const nbOfFiles = Object.keys(files).length
+      options.log(color.gray(`- Updating ${nbOfFiles} file${nbOfFiles > 1 ? "s" : ""}...`))
+      runAndUpdate(metalsmith, files, livereload, options, previousFilesMap)
     }
   )
 }
 
 
-function buildPattern(metalsmith, pattern, livereload, options, previousFiles) {
+function buildPattern(metalsmith, pattern, livereload, options, previousFilesMap) {
   unyield(metalsmith.read())((err, files) => {
     if (err) {
-      console.error(err)
+      options.log(color.red(`${nok} ${err}`))
       return
     }
 
     const filesToUpdate = {}
-    match(Object.keys(files), pattern).forEach((path) => filesToUpdate[path] = files[path])
-    options.log(color.gray(`- Updating ${Object.keys(filesToUpdate).length} files...`))
-    runAndUpdate(metalsmith, filesToUpdate, livereload, options, previousFiles)
+    match(Object.keys(files), pattern).forEach(path => filesToUpdate[path] = files[path])
+    const nbOfFiles = Object.keys(filesToUpdate).length
+    options.log(color.gray(`- Updating ${nbOfFiles} file${nbOfFiles > 1 ? "s" : ""}...`))
+    runAndUpdate(metalsmith, filesToUpdate, livereload, options, previousFilesMap)
   })
 }
 
 export default function(options) {
+  // just to mutate and pass watcher for testing
+  const originalOptions = options
+
   options = {
     ...{
       paths: "**/*",
@@ -161,6 +184,7 @@ export default function(options) {
         console.log(color.gray("[metalsmith-server]"), ...args)
       },
       chokidar: {
+        ...options.chokidar,
         ignoreInitial: true,
       },
       invalidateCache: true,
@@ -169,7 +193,7 @@ export default function(options) {
   }
 
   if (typeof options.paths === "string") {
-    options.paths = {[options.paths]: options.paths}
+    options.paths = {[options.paths]: true}
   }
 
   let livereload
@@ -177,21 +201,27 @@ export default function(options) {
     livereload = livereloadServer(options.livereload, options.log)
   }
 
+  const watchers = {}
+
   return (files, metalsmith, cb) => {
-    var source = metalsmith.source()
+
+    // metalsmith-collections fix: keep filename as metadata
+    saveFilenameInFilesData(files)
+
+    const source = metalsmith.source()
 
     Object.keys(options.paths).forEach(pattern => {
-      if(watching[pattern] !== undefined) {return}
+      if(watchers[pattern] !== undefined) {return}
 
+      const previousFilesMap = {...files}
       const rebuildItself = options.paths[pattern] === true
       const chokidarOpts = {
         ...options.chokidar,
-        cwd: (options.chokidar.cwd ? options.chokidar.cwd : (rebuildItself ? source : undefined)),
+        ...(options.chokidar.cwd ? {cwd: options.chokidar.cwd} : (rebuildItself ? {cwd: source} : {})),
       }
       const watcher = chokidar.watch(pattern, chokidarOpts)
-
       watcher.on("ready", () => {
-        options.log(`✔︎ Watching ${color.cyan(pattern)}`)
+        options.log(`${ok} Watching ${color.cyan(pattern)}`)
         cb()
       })
 
@@ -209,11 +239,11 @@ export default function(options) {
 
         // update itself
         if (rebuildItself) {
-          buildFiles(metalsmith, pathsToUpdate, livereload, options, files)
+          buildFiles(metalsmith, pathsToUpdate, livereload, options, previousFilesMap)
         }
         // mapping rebuild
         else {
-          buildPattern(metalsmith, options.paths[pattern], livereload, options, files)
+          buildPattern(metalsmith, options.paths[pattern], livereload, options, previousFilesMap)
         }
 
         // cleanup
@@ -222,13 +252,13 @@ export default function(options) {
 
       watcher.on("all", (event, path) => {
         if (event === "add") {
-          options.log(`✔︎ ${color.cyan(path)} added`)
+          options.log(`${ok} ${color.cyan(path)} added`)
         }
         else if (event === "change") {
-          options.log(`✔︎ ${color.cyan(path)} updated`)
+          options.log(`${ok} ${color.cyan(path)} changed`)
         }
         else if (event === "unlink") {
-          options.log(`✔︎ ${color.cyan(path)} removed`)
+          options.log(`${ok} ${color.cyan(path)} removed`)
         }
 
         // delay
@@ -241,18 +271,16 @@ export default function(options) {
         }
       })
 
-      watching[pattern] = watcher
+      watchers[pattern] = watcher
     })
+
+    originalOptions.close = () => {
+      Object.keys(watchers).forEach(key => {
+        watchers[key].close()
+        watchers[key] = undefined
+      })
+    }
 
     cb()
   }
-}
-
-// Expose close method for test-suite.
-export function close() {
-  Object.keys(watching).forEach((key) => {
-    watching[key].close()
-  })
-
-  watching = {}
 }
