@@ -1,13 +1,8 @@
 import fs from "fs"
-import path from "path"
 
 import {each} from "async"
 import match from "multimatch"
 import react from "react"
-
-import deBug from "debug"
-
-const debug = deBug("metalsmith-react-templates")
 
 function renderReactTemplate(name, options, fn) {
   // Option for nonStatic rendering
@@ -67,7 +62,6 @@ export default function (opts) {
   var pattern = opts.pattern || null
   var preserve = opts.preserve || null
   var globalData = opts.data || {}
-  var html = (opts.html === undefined) ? true : opts.html
 
   return function(files, metalsmith, done) {
     var metadata = metalsmith.metadata()
@@ -78,7 +72,6 @@ export default function (opts) {
       var hasTmpl = data.template || def
 
       if (pattern !== null && !match(file, pattern)[0]) {
-        debug("%s skipped because not matching %s", file, pattern)
         return false
       }
 
@@ -96,7 +89,6 @@ export default function (opts) {
         return
       }
 
-      debug("Converting contents to string: %s", file)
 
       var data = files[file]
       data.contents = data.contents.toString()
@@ -104,7 +96,6 @@ export default function (opts) {
       // if opt.preserve is set
       // preserve the raw, not templated content
       if (preserve !== null) {
-        debug("Preserving untouched contents: %s", file)
         data.rawContents = data.contents
       }
     })
@@ -116,7 +107,6 @@ export default function (opts) {
         return converted()
       }
 
-      debug("Starting conversion: %s", file)
 
       const allData = {
         ...metadata,
@@ -140,31 +130,12 @@ export default function (opts) {
           return done(err)
         }
 
-        debug("Mutating file content...")
         files[file].contents = new Buffer(str)
         if (baseFile) {
-          debug("Applying baseFile to contents: %s", file)
-
           var baseStr = fs.readFileSync(baseFile, "utf8")
           files[file] = tmpl(baseStr, files[file])
         }
 
-        if (html) {
-          var fileDir = path.dirname(file)
-          var fileName = path.basename(file, path.extname(file)) + ".html"
-          if (fileDir !== ".") {
-            fileName = fileDir + "/" + fileName
-          }
-
-          if (file !== fileName) {
-            debug("Renaming file: %s -> %s", file, fileName)
-
-            files[fileName] = files[file]
-            delete files[file]
-          }
-        }
-
-        debug("Saved file: %s", file)
         converted()
       })
 

@@ -38,7 +38,7 @@ export default class Body extends Component {
 
         <Disqus
           baseURL={this.context.pkg.homepage}
-          pageName={this.context.file._filename.replace(/index\.html$/, "")}
+          url={this.context.file.url}
           comments={this.context.file.comments}
           {...this.context.i18n.disqus}
         />
