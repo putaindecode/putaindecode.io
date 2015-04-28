@@ -45,7 +45,12 @@ export default (options = {}) => {
 
     collectionItems.forEach(item => {
       feed.item({
-        url: url.resolve(feedOptions.site_url, item._filename),
+        url: url.resolve(
+          feedOptions.site_url,
+          item._filename
+            .replace(".md", ".html")
+            .replace(/index\.html$/, "")
+        ),
         description: item.contents,
         ...item,
       })
