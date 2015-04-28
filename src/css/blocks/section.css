@@ -1,0 +1,22 @@
+.putainde-Main {
+  margin: var(--r-lineHeight) 0;
+}
+
+.putainde-Section {
+  text-align: center;
+  margin: var(--r-lineHeight) auto;
+}
+
+.putainde-Section-contents {
+  text-align: left;
+}
+
+.putainde-Section--manifesto {
+  background: #fafafa;
+  padding: var(--r-lineHeight);
+}
+
+  .putainde-Section--manifesto .putainde-Title {
+    background: #fafafa;
+    background: linear-gradient(to bottom, #fafafa 60%, color(#fafafa alpha(0)));
+  }
