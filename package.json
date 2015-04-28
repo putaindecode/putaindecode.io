@@ -27,6 +27,7 @@
     "babel-core": "^5.1.13",
     "babel-eslint": "^3.0.1",
     "babel-tape-runner": "^1.1.0",
+    "caniuse-api": "git://github.com/nyalab/caniuse-api.git#better-postinstall",
     "chalk": "^1.0.0",
     "chokidar": "^1.0.1",
     "classnames": "^1.2.0",
