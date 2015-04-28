@@ -4,7 +4,7 @@ import marked from "../marked"
 
 export default (options) => {
   options = {
-    test: /\.(txt|md|markdown)$/
+    test: /\.(txt|md|markdown)$/,
   }
   return (files, metalsmith, done) => {
     setImmediate(done)
