@@ -6,7 +6,7 @@ import color from "chalk"
 import match from "multimatch"
 import unyield from "unyield"
 
-import filenames from "../filenames"
+import addFilenames from "../filenames"
 
 import livereloadServer from "./livereload"
 
@@ -57,7 +57,7 @@ function updateCollections(metalsmith, collections) {
 
 // metalsmith-collections fix: helps to update fix collections
 function saveFilenameInFilesData(files) {
-  filenames(files)
+  addFilenames(files)
 }
 
 // metalsmith-collections fix: remove items from collections that will be readded by the partial build

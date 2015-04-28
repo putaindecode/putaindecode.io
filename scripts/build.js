@@ -8,7 +8,7 @@ import metalsmith from "metalsmith"
 import markdown from "metalsmith-markdown"
 import highlight from "metalsmith-metallic"
 import collections from "metalsmith-collections"
-import filenames from "./metalsmith/filenames"
+import addFilenames from "./metalsmith/filenames"
 import rss from "./metalsmith/rss"
 import reactTemplates from "./metalsmith/react-templates"
 
@@ -55,7 +55,7 @@ function build(error, contributors) {
 
   // useful for some homemade plugins
   .use(
-    filenames
+    addFilenames
   )
 
   .use(rawifyHtml)
