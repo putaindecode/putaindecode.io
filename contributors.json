@@ -525,7 +525,14 @@
         }
       }
     },
-    "meriadec.pillet@gmail.com": {},
+    "meriadec.pillet@gmail.com": {
+      "login": "meriadec",
+      "name": "Meriadec Pillet",
+      "avatar_url": "https://avatars.githubusercontent.com/u/315259?v=3",
+      "gravatar_id": "",
+      "location": "Paris, France",
+      "hireable": false
+    },
     "mlbli@me.com": {
       "login": "bloodyowl",
       "name": "Matthias Le Brun",
@@ -1365,6 +1372,14 @@
         }
       }
     },
+    "meriadec": {
+      "login": "meriadec",
+      "name": "Meriadec Pillet",
+      "avatar_url": "https://avatars.githubusercontent.com/u/315259?v=3",
+      "gravatar_id": "",
+      "location": "Paris, France",
+      "hireable": false
+    },
     "mickaelandrieu": {
       "login": "mickaelandrieu",
       "name": "Mickaël Andrieu",
@@ -1505,7 +1520,6 @@
         }
       }
     },
-    "undefined": {},
     "welovewebdesign": {
       "login": "welovewebdesign",
       "name": "Rémi Couturier",

@@ -71,7 +71,10 @@ function contributorsMap(){
       .split("\n")
       .forEach(function(line){
         var author = line.split("::")
-        if(!results.mapByEmail[author[0]]){
+        if(
+          !results.mapByEmail[author[0]] ||
+          !Object.keys(results.mapByEmail[author[0]]).length
+        ) {
           newUsers.push({
             email: author[0],
             name: author[1],
@@ -147,7 +150,12 @@ function contributorsMap(){
           })
           .done(function(contributor) {
             if (contributor) {
-              results.mapByEmail[email] = contributor
+              if (!Object.keys(contributor).length) {
+                log(color.red(`⚠︎ Some contributor data are emtpy for ${email}`))
+              }
+              else {
+                results.mapByEmail[email] = contributor
+              }
             }
             cb() // async done
           })
