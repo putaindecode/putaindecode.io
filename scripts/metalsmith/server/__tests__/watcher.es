@@ -125,9 +125,9 @@ tape("metalsmith-server/watcher", (test) => {
         fs.writeFile(`${sibling}/test`, "test", noop)
       },
       () => {
-        rm(sibling)
         t.pass("should rebuild if a mapped item get updated")
         t.end()
+        setTimeout(() => rm(sibling), 500)
       },
       {
         paths: {
