@@ -52,6 +52,7 @@
     "react": "^0.13.1",
     "rimraf": "^2.3.2",
     "rss": "^1.1.1",
+    "tap-spec": "^3.0.0",
     "tape": "^4.0.0",
     "tiny-lr": "^0.1.5",
     "unyield": "0.0.1",
@@ -63,7 +64,7 @@
     "#build": "we use React as a template engine only (not in client side) so we enable DEV mode everywhere to get awesome dev messages and errors",
     "build": "babel-node scripts/build",
     "start": "npm run build",
-    "tape": "babel-tape-runner 'scripts/**/__tests__/*'",
+    "tape": "babel-tape-runner 'scripts/**/__tests__/*' | tap-spec",
     "test": "npm run lint && npm run tape && npm run build -- --production",
     "deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v"
   }
