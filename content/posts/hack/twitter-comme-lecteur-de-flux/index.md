@@ -1,6 +1,5 @@
 ---
 date: "2014-02-26"
-route: /posts/hack/twitter-comme-lecteur-de-flux/
 title: Twitter comme lecteur de flux
 tags:
   - twitter

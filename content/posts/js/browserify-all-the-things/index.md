@@ -1,6 +1,5 @@
 ---
 date: "2014-01-15"
-route: /posts/js/browserify-all-the-things/
 title: BROWSERIFY ALL THE THINGS
 tags:
   - javascript

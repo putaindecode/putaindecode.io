@@ -1,6 +1,5 @@
 ---
 date: "2014-06-04"
-route: /posts/js/introduction-a-reactjs/
 title: Introduction à ReactJS
 tags:
   - javascript

@@ -1,6 +1,5 @@
 ---
 date: "2015-03-12"
-route: /posts/api/hateoas/
 title: "HATEOAS, le Graal des développeurs d'API"
 tags:
   - api

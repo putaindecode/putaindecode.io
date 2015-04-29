@@ -1,5 +1,4 @@
 ---
-route: /projets/
 title: "Les projets qu'on soutient"
 ---
 

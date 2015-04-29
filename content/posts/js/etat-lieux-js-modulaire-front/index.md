@@ -1,6 +1,5 @@
 ---
 date: "2014-12-15"
-route: /posts/js/etat-lieux-js-modulaire-front/
 title: "JavaScript modulaire pour le front-end : les bases"
 tags:
   - javascript
