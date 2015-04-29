@@ -1,6 +1,5 @@
 ---
 date: "2014-02-20"
-route: /posts/env/la-puissance-de-dnsmasq/
 title: La puissance de dnsmasq
 tags:
   - dnsmasq

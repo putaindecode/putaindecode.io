@@ -1,6 +1,5 @@
 ---
 date: "2014-10-15"
-route: /posts/windows/comment-coder-sous-windows/
 title: Comment essayer de coder à peu près comme un chef (raté) sous Windows
 tags:
   - windows

@@ -1,6 +1,5 @@
 ---
 date: "2014-06-13"
-route: /posts/css/les-grilles-en-inline-block/
 title: Un point sur les grilles CSS en inline-block
 tags:
   - css

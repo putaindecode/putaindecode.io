@@ -1,6 +1,5 @@
 ---
 date: "2014-11-05"
-route: /posts/php/injection-dependances/
 title: "L'injection de dépendances en PHP"
 tags:
   - php

@@ -1,6 +1,5 @@
 ---
 date: "2014-04-08"
-route: /posts/css/les-post-processeurs/
 title: Les post-processeurs CSS
 tags:
   - css

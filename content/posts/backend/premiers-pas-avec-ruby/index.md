@@ -1,6 +1,5 @@
 ---
 date: "2014-05-07"
-route: /posts/backend/premiers-pas-avec-ruby/
 title: Premiers pas avec Ruby
 tags:
   - ruby

@@ -1,6 +1,5 @@
 ---
 date: "2014-05-01"
-route: /posts/js/introduction-au-testing-js-front/
 title: Introduction au testing js front
 tags:
   - javascript

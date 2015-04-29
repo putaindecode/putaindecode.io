@@ -1,6 +1,5 @@
 ---
 date: "2013-12-06"
-route: /posts/js/comment-se-passer-de-libraries-frameworks-javascript/
 title: Comment se passer de libraries/frameworks JavaScript
 tags:
   - javascript

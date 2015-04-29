@@ -1,6 +1,5 @@
 ---
 date: "2014-05-20"
-route: /posts/css/preprocesseur-a-la-carte/
 title: Faire son préprocesseur CSS à la carte
 tags:
   - css

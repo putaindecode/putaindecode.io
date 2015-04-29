@@ -1,6 +1,5 @@
 ---
 date: "2014-02-25"
-route: /posts/css/comment-en-finir-avec-les-prefixes/
 title: Comment en finir avec les préfixes CSS
 tags:
   - css
