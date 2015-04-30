@@ -1,5 +1,7 @@
 # Putain de code ! [![Build Status](https://travis-ci.org/putaindecode/putaindecode.fr.svg?branch=post.vim)](https://travis-ci.org/putaindecode/putaindecode.fr)
 
+[![Join the chat at https://gitter.im/putaindecode/putaindecode.fr](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/putaindecode/putaindecode.fr?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <img align="right" alt="" src="https://raw.github.com/putaindecode/putaindecode.fr/master/images/p!-logo--no-bubble-512--trim.png" width="128">
 
 Code source du site [_Putain de code !_](http://putaindecode.fr/).
