@@ -30,7 +30,7 @@ export default class Post extends DefaultTemplate {
     const file = this.props.file
 
     // we want original filename
-    const filename = file._filename.replace(/\.html$/, ".md")
+    const filename = file.filename.replace(/\.html$/, ".md")
 
     var twitterAuthor = this.props.file.authors && this.props.file.authors.length ?
       this.props.contributors.map[this.props.file.authors[0]].twitter

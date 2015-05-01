@@ -6,18 +6,21 @@ import cssnext from "cssnext"
 
 import Metalsmith from "metalsmith"
 import defaultMetadata from "./metalsmith/default-metadata"
-import markdown from "./metalsmith/markdown"
+import markdown from "metalsmith-md"
 import collections from "metalsmith-collections"
-import addFilenames from "./metalsmith/filenames"
-import url from "./metalsmith/url"
-import rename from "./metalsmith/rename"
-import rss from "./metalsmith/rss"
-import reactTemplates from "./metalsmith/react-templates"
+import addFilenames from "metalsmith-filenames"
+import url from "metalsmith-url"
+import rename from "metalsmith-rename"
+import rss from "metalsmith-rss"
+import react from "metalsmith-react"
 
 //dev
 import watch from "./metalsmith/server/watcher"
 import serve from "metalsmith-serve"
 import opn from "opn"
+
+// customize marked
+import "./marked"
 
 import contributions from "../scripts/contributors"
 import i18n from "../src/modules/i18n"
@@ -25,7 +28,7 @@ import pkg from "../package"
 
 import logger from "./utils/logger"
 
-var production = process.argv.indexOf("--production") !== -1
+const production = process.argv.indexOf("--production") !== -1
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
@@ -48,7 +51,7 @@ function build(error, contributors) {
 
   // useful for some homemade plugins
   .use(
-    addFilenames
+    addFilenames()
   )
 
   // add url meta data with some replacements
@@ -85,11 +88,10 @@ function build(error, contributors) {
 
   // wrap .html into react `template:`
   .use(
-    reactTemplates({
-      directory: "./src/modules",
-      defaultTemplate: "DefaultTemplate",
-      baseFile: `base-${production ? "prod" : "dev"}.html`,
+    react({
       pattern: "**/*.md",
+      templatesPath: "./src/modules",
+      defaultTemplate: "DefaultTemplate",
       data: {
         pkg: pkg,
         production,
