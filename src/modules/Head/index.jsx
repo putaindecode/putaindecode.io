@@ -6,10 +6,10 @@ export default class Head extends Component {
 
   static propTypes = {
     title: PropTypes.string.isRequired,
-    children: PropTypes.oneOfType(
+    children: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.object
-    ),
+    ]),
   }
 
   render() {
