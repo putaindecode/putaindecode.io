@@ -6,9 +6,11 @@ import color from "chalk"
 import match from "multimatch"
 import unyield from "unyield"
 
-import addFilenames from "../filenames"
+import metalsmithFilenames from "metalsmith-filenames"
 
 import livereloadServer from "./livereload"
+
+const addFilenames = metalsmithFilenames()
 
 const ok = color.green("✔︎")
 const nok = color.red("✗")
@@ -66,7 +68,7 @@ function removeFilesFromCollection(files, collections) {
   Object.keys(collections).forEach(key => {
 
     for (let i = 0; i < collections[key].length; i++) {
-      if (filenames.indexOf(collections[key][i]._filename) > -1) {
+      if (filenames.indexOf(collections[key][i].filename) > -1) {
         collections[key] = [
           ...collections[key].slice(0, i),
           ...collections[key].slice(i + 1),

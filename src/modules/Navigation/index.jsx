@@ -13,7 +13,7 @@ export default class Navigation extends Component {
   }
 
   render() {
-    const currentPage = this.context.file._filename
+    const currentPage = this.context.file.filename
 
     return (
       <nav className="putainde-Nav">
