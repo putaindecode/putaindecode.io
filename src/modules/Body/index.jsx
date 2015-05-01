@@ -16,10 +16,10 @@ export default class Body extends Component {
   }
 
   static propTypes = {
-    children: PropTypes.oneOfType(
+    children: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.object
-    ).isRequired,
+    ]).isRequired,
   }
 
   render() {
