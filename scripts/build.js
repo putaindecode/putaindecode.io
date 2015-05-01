@@ -29,6 +29,7 @@ import pkg from "../package"
 import logger from "./utils/logger"
 
 const production = process.argv.indexOf("--production") !== -1
+const open = process.argv.indexOf("--open") !== -1
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
@@ -162,7 +163,9 @@ function build(error, contributors) {
       .build((err) => {
         if (err) {throw err}
 
-        opn("http://localhost:4242")
+        if (open) {
+          opn("http://localhost:4242")
+        }
       })
   }
 }
