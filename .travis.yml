@@ -15,10 +15,8 @@ notifications:
     on_failure: always
     use_notice: true
     skip_join: true
-
   webhooks:
-    urls:
-      - https://webhooks.gitter.im/e/8d9c4fb1248b6633c555
+    - https://webhooks.gitter.im/e/f9058b60ad04e03a490e
 
 install:
   - npm install --loglevel info
