@@ -17,8 +17,8 @@ J'ai récemment eu à développer un utilitaire en `NodeJS`, j'ai donc voulu ave
 et présenter quelques utilitaires très pratiques.
 
 Deux postulats avant de commencer :
-	- Pourquoi NodeJS ? En cohérence avec le workflow que j'utilise.
-	- Cet article n'a pas pour but d'apprendre à écrire du JavaScript en NodeJS.
+- Pourquoi NodeJS ? En cohérence avec le workflow que j'utilise.
+- Cet article n'a pas pour but d'apprendre à écrire du JavaScript en NodeJS.
 
 ## hello world
 
@@ -40,9 +40,8 @@ $ touch package.json
 Le fichier `index.js` va se présenter comme ceci :
 
 ```
-// Cette ligne ou shebang permet de définir l'interpréteur de notre script, à savoir `node`
 #!/usr/bin/env node
-
+// Cette ligne ou shebang permet de définir l'interpréteur de notre script, à savoir `node`
 
 //notre fameux hello world
 console.log("Hello world")
@@ -69,7 +68,7 @@ Pour notre fichier `package.json`, deux méthodes possibles pour l'écrire, soit
   "engines": {
     "node": ">=0.10"
   },
-  "homepage": "https://github.com/putaindecode-cs/putaindecode-cli",
+  "homepage":"https://github.com/putaindecode-cs/putaindecode-cli"
   "bugs": {
     "url": "https://github.com/putaindecode-cs/putaindecode-cli/issues"
   },
@@ -84,12 +83,11 @@ Pour notre fichier `package.json`, deux méthodes possibles pour l'écrire, soit
 }
 
 ```
-
 La ligne importante et surtout à ne pas oublier :
 
 ```console
 "bin": {
-	"putaindecode-cli": "index.js"
+  "putaindecode-cli": "index.js"
 }
 ```
 
@@ -99,17 +97,19 @@ Si on vulgarise un peu le principe, en installant le script, le fichier `index.j
 
 Lorsque la commande `putaindecode-cli` sera executée, le shell va chercher le fichier exécutable en utilisant les répertoires listés dans la variable PATH.
 
+Si on suit ce raisonnement, l'installation d'un script écrasera automatiquement l'ancienne version.
+
 Pour s'assurer qu'il n'existe pas d'autre commande portant le même nom, il est conseiller d'utiliser la commande : `which putaindecode-cli` qui ne retournera rien si la commande est inexistante :
 
 ```console
-// putaindecode-cli ne retourne aucun résultat
+#putaindecode-cli ne retourne aucun résultat
 $ which putaindecode-cli
-// node est installé et accessible dans le path suivant
+#node est installé et accessible dans le path suivant
 $ which node
   /usr/local/bin/node
 ```
 
-## installation du script
+## Installation du script
 
 Afin de vérifier que le script fonctionne correctement, il suffit d'executer  tout simplement dans le répertoire la commande : `./index.js`.
 
@@ -133,7 +133,7 @@ $ putaindecode-cli
 Hello world
 ```
 
-Le script est maintenant accessible partout sur l'OS grace à la commande `putaindecode-cli`. L'installation en globale n'est pas absolument pas nécessaire, il est bien entendu tout à fait possible de l'installer en local dans un projet avec `--save` ou `--save-dev`.
+Le script est maintenant accessible partout sur l'OS grace à la commande `putaindecode-cli`. L'installation en globale n'est pas absolument pas nécessaire, tout dépend de l'interêt de votre script.  Il est d'ailleurs souvent préférable de l'installer en local dans un projet avec `--save` ou `--save-dev`.
 
 ## Installation des scripts de base
 
@@ -145,7 +145,7 @@ Pour gagner du temps et éviter d'avoir à recoder la roue. Le script `putaindec
 - une gestion des couleurs (notice, error, warning)
 - une capacité à stopper proprement notre code.
 
-### commander
+### `commander`
 
 Pour les commandes avec en prime la gestion des arguments et de l'aide, [commander](https://github.com/tj/commander) est tout a fait adapté et répondra pratiquement à tous nos besoins.
 
@@ -153,10 +153,10 @@ Il est simple d'utilisation et très bien maintenu.
 
 Voici un exemple de ce qu'on peut faire :
 
-```console
+```js
 /* Default */
 program
-  .version(pkg.version);
+  .version(pkg.version)
 
 /* deploy */
 program
@@ -167,37 +167,37 @@ program
   .option("-f, --force", "Force installation")
   .action(commandAction)
   .on("--help", function() {
-    console.log("  Example:");
+    console.log("  Example:")
     console.log();
-    console.log("     command does something");
-    console.log("     $ putaindecode-cli command");
-	  console.log("");
+    console.log("     command does something")
+    console.log("     $ putaindecode-cli command")
+	  console.log("")
 	});
 
 /* help */
 program.on("--help", function() {
-	console.log("  Examples:");
+	console.log("  Examples:")
   console.log();
-  console.log("     command do something");
-  console.log("     $ putaindecode-cli command");
-  console.log("");
-  console.log("     Force command does something");
-  console.log("     $ putaindecode-cli command -f");
-  console.log("");
+  console.log("     command do something")
+  console.log("     $ putaindecode-cli command")
+  console.log("")
+  console.log("     Force command does something")
+  console.log("     $ putaindecode-cli command -f")
+  console.log("")
 });
 
-program.parse(process.argv);
+program.parse(process.argv)
 
 /* help by default */
-if (!program.args.length) program.help();
+if (!program.args.length) program.help()
 
 ```
 
-### chalk
+### `chalk`
 
 Null besoin de faire un cour sur les couleurs, mais l'affichage d'une notice est bien plus pertinante avec sa couleur associée. C'est à ce moment qu'entre en jeu [chalk](https://github.com/sindresorhus/chalk). Relativement simple à mettre en place et à utiliser :
 
-```
+```js
 var chalk = require('chalk')
 
 /* var */
@@ -212,17 +212,17 @@ console.log(warn('No command'))
 console.log(notice("file modified !"))
 
 ```
-### exit
+### `exit`
 
-Peu importe comment s'exécute son code, il est important de bien savoir maitriser l'arrêt de son script. Pour ça, [exit](https://github.com/cowboy/node-exit) nous sera bien utile.
+Peu importe comment s'exécute son code, il est important de bien savoir maitriser l'arrêt de son script. Pour ça, `process.exit() nous sera bien utile.
 
 Dans le cas d'une erreur la valeur de `exit` doit systématiquement être supérieur à 0, et donc bien naturellement en cas de succes la valeur est 0.
 
 Voici une [liste des valeurs](http://www.virtsync.com/c-error-codes-include-errno) de `exit` et de leurs correspondances
 
+## Thanks god for our terminal
 
-## thanks god for our terminal
-
-Bien entendu ce ne sont que quelques exemples parmis tant d'autres.
+Voici quelques exemples de projets avec des commandes et des mises en situations intéressantes: -[cssnext](https://github.com/cssnext/cssnext/blob/master/bin/cssnext.js)
+-[trash](https://github.com/sindresorhus/trash/blob/master/cli.js)
 
 À partir de là on a une bonne base pour refaire le monde et accroître la flemme du développeur que l'on est en automatisant tout plein de tâches.
