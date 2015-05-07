@@ -1,6 +1,6 @@
 # Putain de code ! [![Build Status](https://travis-ci.org/putaindecode/putaindecode.fr.svg?branch=post.vim)](https://travis-ci.org/putaindecode/putaindecode.fr)
 
-<img align="right" alt="" src="https://raw.github.com/putaindecode/putaindecode.fr/master/images/p!-logo--no-bubble-512--trim.png" width="128">
+<img align="right" alt="" src="https://github.com/putaindecode/putaindecode.fr/blob/master/content/images/p!-logo--no-bubble-512--trim.png" width="128">
 
 Code source du site [_Putain de code !_](http://putaindecode.fr/).
 Contient tout le nécessaire pour faire fonctionner le site.
