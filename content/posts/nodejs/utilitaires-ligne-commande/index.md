@@ -222,7 +222,10 @@ Voici une [liste des valeurs](http://www.virtsync.com/c-error-codes-include-errn
 
 ## Thanks god for our terminal
 
-Voici quelques exemples de projets avec des commandes et des mises en situations intéressantes: -[cssnext](https://github.com/cssnext/cssnext/blob/master/bin/cssnext.js)
--[trash](https://github.com/sindresorhus/trash/blob/master/cli.js)
+Voici quelques exemples de projets avec des commandes et des mises en situations intéressantes:
+- [cssnext](https://github.com/cssnext/cssnext/blob/master/bin/cssnext.js)
+- [trash](https://github.com/sindresorhus/trash/blob/master/cli.js)
+
+Je vous invite également à visionner la [vidéo](http://blog.clement.delafargue.name/posts/2015-02-25-declarative-cli-parsing-in-js.html) de [Clement Delafargue](https://twitter.com/clementd) qui fait une présentation sur le sujet en début d'année.
 
 À partir de là on a une bonne base pour refaire le monde et accroître la flemme du développeur que l'on est en automatisant tout plein de tâches.
