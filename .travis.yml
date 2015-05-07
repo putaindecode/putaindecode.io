@@ -34,7 +34,7 @@ before_script:
 script:
   - npm test
   # https://github.com/putaindecode/putaindecode.fr/issues/376
-  #- if [ $TRAVIS_PULL_REQUEST = "false" ] && [ $TRAVIS_BRANCH = "master" ]; then npm run deploy; fi
+  #- if [ $TRAVIS_PULL_REQUEST = "false" ] && [ $TRAVIS_BRANCH = "master" ]; then npm run _deploy; fi
 
 env:
   global:
