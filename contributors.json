@@ -110,37 +110,6 @@
       "location": "Aix-en-Provence",
       "hireable": true
     },
-    "dguyon@gmail.com": {
-      "login": "dguyon",
-      "name": "David Guyon",
-      "avatar_url": "https://avatars.githubusercontent.com/u/61255?v=3",
-      "gravatar_id": "",
-      "url": "http://davidguyon.com/",
-      "location": "Paris, France",
-      "hireable": true,
-      "crew": true,
-      "twitter": "DavidGuyon",
-      "fr": {
-        "bio": {
-          "short": "Développeur polyglotte. Basketteur. Epicurien. Utilise #YOLO à outrance.",
-          "long": [
-            "Développeur autodidacte et passionné par des langages tels que PHP, JavaScript, Python.",
-            "Fan d'Open Source et du Web en général.",
-            "Très intéressé par la programmation fonctionnelle."
-          ]
-        }
-      },
-      "en": {
-        "bio": {
-          "short": "Engineer. Baller. Epicurian. Abusing #YOLO as a motto.",
-          "long": [
-            "Self-made and passionate developer on a wide range of languages such as PHP, JavaScript, Python.",
-            "Loves Open Source and Web related stuff.",
-            "Strong eagerness to learn FP."
-          ]
-        }
-      }
-    },
     "don.dapo+github@gmail.com": {
       "login": "DaPo",
       "name": "Cyril Krylatov",
