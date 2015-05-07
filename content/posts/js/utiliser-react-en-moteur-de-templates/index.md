@@ -27,7 +27,7 @@ dans des templates…
 Blague à part, nous cherchions des langages pour refaire une partie de notre site
 puisque nous n'étions pas vraiment satisfaits du processus actuel
 (anciennement Handlebars, puis Jade).
-Mais au final, pourquoi de pas rester avec du JavaScript purement et simplement ?
+Mais au final, pourquoi ne pas rester avec du JavaScript, purement et simplement ?
 
 C'est ce que nous avons fait avec React qui est de plus en plus utilisé.
 Sa syntaxe est plutôt libératrice.
@@ -59,6 +59,8 @@ focalisés sur la finalité (on a prévu des articles à ce propos, en attendant
 
 _Attention, pour ceux qui sont encore sur des plugins jQuery, ça risque de vous
 piquer les yeux._
+
+<a name="es6-class"></a>
 
 ```js
 import React, {Component} from "react"
@@ -97,7 +99,7 @@ pas le nier (dans notre cas, on gère tout ça de manière transparente avec
 Ça ressemble drôlement à de l'HTML et c'est ça qui est appréciable pour nous.
 Vous noterez que l'attribut pour définir une classe HTML est `className` puisque
 React est en JavaScript et que le mot `class` est réservé
-(cf. la définition en ES6 de la classe).
+(cf. [la définition en ES6 de la classe](#es6-class)).
 
 En même temps ce qui est cool, c'est qu'on reste dans du JavaScript
 (rappelez-vous que JSX est transformé en appel de fonctions JavaScript au final).
@@ -133,8 +135,10 @@ export default class Posts extends Component {
           <PostsList
             posts={
               this.props.collections.posts
-                .filter(function() {
-                /* ce que vous voulez pour filtrer votre collection */
+                .filter((item) => {
+                  /*
+                    ce que vous voulez pour filtrer votre collection
+                  */
                 }
               }
           />
