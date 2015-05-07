@@ -14,31 +14,31 @@ En JavaScript nous avons Handlebars, Jade, EJS, Slim...
 Tous ces projets partent de bonnes intentions mais à l'utilisation,
 on peut sentir des limitations et donc de l'insatisfaction.
 
-Utiliser Handlebar par exemple, c'est un peu devoir coder tout un tas de helpers
+Utiliser Handlebars par exemple, c'est un peu devoir coder tout un tas de helpers
 pour gérer une partie de votre affichage, ça peut vite devenir lourd.
 Être restreint à une syntaxe limité par choix est un peu frustrant.
 Quand c'est pas ça, c'est la syntaxe du moteur qui va être lourde.
 
 On peut en regretter PHP. Faut avouer que ce language était plutôt simple
-à utiliser en temps que moteur de template.
-Efficace et pas de restrictions. On trouve même des fois des `mysql_query()`
+à utiliser en tant que moteur de template.
+Efficace et pas de restrictions. On trouve même parfois des `mysql_query()`
 dans des templates…
 
 Blague à part, nous cherchions des langages pour refaire une partie de notre site
-puisque nous n'étions pas vraiment satisfait du processus actuel
+puisque nous n'étions pas vraiment satisfaits du processus actuel
 (anciennement Handlebars, puis Jade).
 Mais au final, pourquoi de pas rester avec du JavaScript purement et simplement ?
 
 C'est ce que nous avons fait avec React qui est de plus en plus utilisé.
 Sa syntaxe est plutôt libératrice.
-Il faut dire que le XML à beau être verbeux, pour définir des
+Il faut dire que le XML a beau être verbeux, pour définir des
 éléments ayant des propriétés et des enfants, on a pas vraiment fait plus
 lisible et clair sur ce point. Le HTML est plutôt simple à prendre en main c'est
-certain. Les méthodes de rendu de React (ce qui va nous intéresser) est très proche
+certain. Les méthodes de rendu de React (ce qui va nous intéresser) sont très proche
 de l'HTML.
 
 Ceux qui ont utilisé JSX (bien qu'ayant pu avoir des nausées au premier contact)
-avouent souvent qu'ils ont fini par aimer cette petite syntaxe créé par Facebook qui
+avouent souvent qu'ils ont fini par aimer cette petite syntaxe créée par Facebook qui
 fonctionne très bien avec React.
 
 Du coup, si on utilisait ça pour faire de simple templates et non pas des composants
@@ -108,9 +108,9 @@ tableau tel que `forEach()` ou `map()` en appelant d'autres composants.
 
 Ci-dessous vous trouverez un exemple plus complexe avec une page pour la liste
 des posts et quelques composants.
-Les balises qui ressemblent à de HTML et qui commence par une majuscule sont liés à des
-composants qui doivent être défini (dans notre cas importés). C'est une particularité
-de React.
+Les balises qui ressemblent à de HTML et qui commencent par une majuscule sont liés à des
+composants qui doivent être définis (dans notre cas importés).
+C'est une particularité de React.
 
 ```js
 import React, {Component} from "react"
@@ -235,14 +235,14 @@ d'un _moteur de template_).
 import react from "react"
 import markdownify from "./markdown-parser"
 // je vous conseille marked pour rendre du markdown
-// c'est ce que nous utilisons pour rentre nos pages à l'heure où j'écris ce post
+// c'est ce que nous utilisons pour rendre nos pages à l'heure où j'écris ce post
 
 const reactClass = require("./template/PostTemplate")
 const component = new (react.createFactory(reactClass))({
   // ici on passe nos "props" react
   pageTitle: "Test",
   pageContent: markdownify("Imaginons du **markdown** parsé"),
-  // vous pouvez bien entendu rajouter d'autres chose
+  // vous pouvez bien entendu rajouter d'autres choses
   collections: {
     posts: [
       //...
@@ -273,7 +273,7 @@ Pour aller plus loin on pourrait décider d'utiliser `renderToString()` plutôt 
 mais là [le niveau de complexité est différent](/posts/js/reactjs-et-rendu-serverside/).
 
 Pour la petit anecdote, notre site utilise actuellement [metalsmith](http://www.metalsmith.io/),
-une petite bibliothèque simple mais qui permet par son API de faire des choses sympa.
+une petite bibliothèque simple mais qui permet par son API de faire des choses sympas.
 
 J'ai donc codé [quelques plugins metalsmith](https://github.com/search?q=user%3AMoOx+metalsmith)
 dont un [metalsmith-react](https://github.com/MoOx/metalsmith-react) à l'occassion.
