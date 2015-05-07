@@ -16,10 +16,10 @@ on peut sentir des limitations et donc de l'insatisfaction.
 
 Utiliser Handlebars par exemple, c'est un peu devoir coder tout un tas de helpers
 pour gérer une partie de votre affichage, ça peut vite devenir lourd.
-Être restreint à une syntaxe limité par choix est un peu frustrant.
+Être restreint à une syntaxe limitée par choix est un peu frustrant.
 Quand c'est pas ça, c'est la syntaxe du moteur qui va être lourde.
 
-On peut en regretter PHP. Faut avouer que ce language était plutôt simple
+On peut en regretter PHP. Faut avouer que ce langage était plutôt simple
 à utiliser en tant que moteur de template.
 Efficace et pas de restrictions. On trouve même parfois des `mysql_query()`
 dans des templates…
@@ -38,7 +38,7 @@ supporte une syntaxe XML transformé en appel de fonctions JavaScript.
 Il faut dire que le XML a beau être verbeux, pour définir des
 éléments ayant des propriétés et des enfants, on a pas vraiment fait plus
 lisible et clair sur ce point. Le HTML est plutôt simple à prendre en main c'est
-certain. Les méthodes de rendu de React (ce qui va nous intéresser) sont très proche
+certain. Les méthodes de rendu de React (ce qui va nous intéresser) sont très proches
 de l'HTML.
 
 Ceux qui ont utilisé JSX (bien qu'ayant pu avoir des nausées au premier contact)
@@ -113,7 +113,7 @@ tableau tel que `forEach()` ou `map()` en appelant d'autres composants.
 
 Ci-dessous vous trouverez un exemple plus complexe avec une page pour la liste
 des posts et quelques composants.
-Les balises qui ressemblent à de HTML et qui commencent par une majuscule sont liés à des
+Les balises qui ressemblent à de HTML et qui commencent par une majuscule sont liées à des
 composants qui doivent être définis (dans notre cas importés).
 C'est une particularité de React.
 
@@ -233,7 +233,7 @@ au final (le parent) ?
 ## Comment utiliser un template React/JSX ?
 
 C'est bien simple. Dans notre cas, pas besoin de React côté client. On doit gérer
-ça côté « serveur » (je met ça entre guillement puisque dans notre cas précis, c'est
+ça côté « serveur » (je mets ça entre guillemets puisque dans notre cas précis, c'est
 pour générer un site statique, et c'est donc sur une machine quelconque que la
 génération se fait).
 
@@ -281,7 +281,7 @@ Pour aller plus loin on pourrait décider d'utiliser `renderToString()` plutôt 
 `renderToStaticMarkup()` afin de pouvoir faire prendre le relais à ReactJS côté client
 mais là [le niveau de complexité est différent](/posts/js/reactjs-et-rendu-serverside/).
 
-Pour la petit anecdote, notre site utilise actuellement [metalsmith](http://www.metalsmith.io/),
+Pour la petite anecdote, notre site utilise actuellement [metalsmith](http://www.metalsmith.io/),
 une petite bibliothèque simple mais qui permet par son API de faire des choses sympas.
 
 J'ai donc codé [quelques plugins metalsmith](https://github.com/search?q=user%3AMoOx+metalsmith)
