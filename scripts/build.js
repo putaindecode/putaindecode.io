@@ -93,6 +93,7 @@ function build(error, contributors) {
       pattern: "**/*.md",
       templatesPath: "./src/modules",
       defaultTemplate: "DefaultTemplate",
+      before: "<!doctype html>",
       data: {
         pkg: pkg,
         production,
