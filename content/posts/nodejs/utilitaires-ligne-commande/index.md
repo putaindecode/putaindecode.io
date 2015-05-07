@@ -20,7 +20,7 @@ Deux postulats avant de commencer :
 - Pourquoi NodeJS ? En cohérence avec le workflow que j'utilise.
 - Cet article n'a pas pour but d'apprendre à écrire du JavaScript en NodeJS.
 
-## hello world
+## Hello world
 
 Avant de commencer à coder, il va tout d'abord falloir créer deux fichiers qui seront nécessaire et obligatoire :
 
@@ -91,20 +91,21 @@ La ligne importante et surtout à ne pas oublier :
 }
 ```
 
-Elle permettra de déterminer le script à exécuter lorsque la commande : `putaindecode-cli` est lancée.
+Elle permettra de déterminer le script à exécuter lorsque la commande : `putaindecode-cli` sera lancée.
 
 Si on vulgarise un peu le principe, en installant le script, le fichier `index.js` sera renommé en `putaindecode-cli.js` et sera copié dans le répertoire adéquat (dépend de  l'OS).
 
 Lorsque la commande `putaindecode-cli` sera executée, le shell va chercher le fichier exécutable en utilisant les répertoires listés dans la variable PATH.
 
-Si on suit ce raisonnement, l'installation d'un script écrasera automatiquement l'ancienne version.
+Si on suit ce raisonnement, l'installation d'un script écrasera automatiquement l'ancienne version ou tout script de même nom.
 
-Pour s'assurer qu'il n'existe pas d'autre commande portant le même nom, il est conseiller d'utiliser la commande : `which putaindecode-cli` qui ne retournera rien si la commande est inexistante :
+Pour s'assurer qu'il n'existe pas d'autre commande portant le même nom, il est conseiller d'utiliser la commande : `which putaindecode-cli` qui ne retournera rien si il n'y a aucun résultat :
 
 ```console
 #putaindecode-cli ne retourne aucun résultat
 $ which putaindecode-cli
-#node est installé et accessible dans le path suivant
+
+#node est installé et accessible au path suivant
 $ which node
   /usr/local/bin/node
 ```
@@ -158,7 +159,7 @@ Voici un exemple de ce qu'on peut faire :
 program
   .version(pkg.version)
 
-/* deploy */
+/* command */
 program
   .command("command")
   .alias('c')
@@ -171,12 +172,12 @@ program
     console.log();
     console.log("     command does something")
     console.log("     $ putaindecode-cli command")
-	  console.log("")
+    console.log("")
 	});
 
 /* help */
 program.on("--help", function() {
-	console.log("  Examples:")
+  console.log("  Examples:")
   console.log();
   console.log("     command do something")
   console.log("     $ putaindecode-cli command")
@@ -207,25 +208,24 @@ var success = chalk.green
 var notice  = chalk.blue
 
 /* code */
-
 console.log(warn('No command'))
 console.log(notice("file modified !"))
 
 ```
 ### `exit`
 
-Peu importe comment s'exécute son code, il est important de bien savoir maitriser l'arrêt de son script. Pour ça, `process.exit() nous sera bien utile.
+Peu importe comment s'exécute son code, il est important de bien savoir maitriser l'arrêt de son script. Pour ça, `process.exit()` nous sera bien utile.
 
 Dans le cas d'une erreur la valeur de `exit` doit systématiquement être supérieur à 0, et donc bien naturellement en cas de succes la valeur est 0.
 
-Voici une [liste des valeurs](http://www.virtsync.com/c-error-codes-include-errno) de `exit` et de leurs correspondances
+Voici une [liste des valeurs](http://www.virtsync.com/c-error-codes-include-errno) de `exit` et de leurs correspondances.
 
 ## Thanks god for our terminal
 
-Voici quelques exemples de projets avec des commandes et des mises en situations intéressantes:
+Si vous souhaitez voir quelques exemples de projets avec des commandes et des mises en situations intéressantes, allez faire un tour sur ces projets : 
 - [cssnext](https://github.com/cssnext/cssnext/blob/master/bin/cssnext.js)
 - [trash](https://github.com/sindresorhus/trash/blob/master/cli.js)
 
-Je vous invite également à visionner la [vidéo](http://blog.clement.delafargue.name/posts/2015-02-25-declarative-cli-parsing-in-js.html) de [Clement Delafargue](https://twitter.com/clementd) qui fait une présentation sur le sujet en début d'année.
+Je vous invite également à visionner la [vidéo](http://blog.clement.delafargue.name/posts/2015-02-25-declarative-cli-parsing-in-js.html) de [Clement Delafargue](https://twitter.com/clementd) qui a fait une présentation sur le sujet en début d'année.
 
-À partir de là on a une bonne base pour refaire le monde et accroître la flemme du développeur que l'on est en automatisant tout plein de tâches.
+À partir de là on dispose d'une bonne base pour refaire le monde et accroître la flemme du développeur que l'on est en automatisant tout plein de tâches.
