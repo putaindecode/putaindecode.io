@@ -1,5 +1,5 @@
 ---
-date: "2015-05-05"
+date: "2015-05-07"
 route: "/posts/js/utiliser-react-en-moteur-de-templates/"
 title: "Utiliser React en moteur de templates"
 tags:
@@ -27,10 +27,14 @@ dans des templates…
 Blague à part, nous cherchions des langages pour refaire une partie de notre site
 puisque nous n'étions pas vraiment satisfaits du processus actuel
 (anciennement Handlebars, puis Jade).
-Mais au final, pourquoi ne pas rester avec du JavaScript, purement et simplement ?
 
-C'est ce que nous avons fait avec React qui est de plus en plus utilisé.
-Sa syntaxe est plutôt libératrice.
+Mais au final, pourquoi ne pas rester avec du JavaScript, purement et simplement ?
+
+C'est ce que nous avons fait avec React et JSX qui sont de plus en plus utilisés.
+La syntaxe est plutôt libératrice.
+
+Pour ceux qui ne connaissent pas JSX, il s'agit d'un superset de JavaScript qui
+supporte une syntaxe XML transformé en appel de fonctions JavaScript.
 Il faut dire que le XML a beau être verbeux, pour définir des
 éléments ayant des propriétés et des enfants, on a pas vraiment fait plus
 lisible et clair sur ce point. Le HTML est plutôt simple à prendre en main c'est
@@ -58,7 +62,7 @@ focalisés sur la finalité (on a prévu des articles à ce propos, en attendant
   [voici de quoi vous occuper avec ES6](http://babeljs.io/docs/learn-es6/)).
 
 _Attention, pour ceux qui sont encore sur des plugins jQuery, ça risque de vous
-piquer les yeux._
+piquer les yeux_ 😭.
 
 <a name="es6-class"></a>
 
@@ -101,8 +105,7 @@ Vous noterez que l'attribut pour définir une classe HTML est `className` puisqu
 React est en JavaScript et que le mot `class` est réservé
 (cf. [la définition en ES6 de la classe](#es6-class)).
 
-En même temps ce qui est cool, c'est qu'on reste dans du JavaScript
-(rappelez-vous que JSX est transformé en appel de fonctions JavaScript au final).
+En même temps ce qui est cool, c'est qu'on reste dans du JavaScript.
 
 On peut donc utiliser toutes nos bibliothèques préférés via _npm_ pour l'affichage
 (exemple : `momentjs`), ou simplement des boucles via les méthodes de parcours de
@@ -138,6 +141,8 @@ export default class Posts extends Component {
                 .filter((item) => {
                   /*
                     ce que vous voulez pour filtrer votre collection
+                    eg:
+                    return !item.draft
                   */
                 }
               }
@@ -284,4 +289,4 @@ dont un [metalsmith-react](https://github.com/MoOx/metalsmith-react) à l'occass
 
 N'hésitez pas à consulter
 [le code source de notre site](https://github.com/putaindecode/putaindecode.fr)
-pour faire des découvertes sympa.
+pour faire des découvertes sympas.
