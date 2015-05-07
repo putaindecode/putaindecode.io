@@ -1,5 +1,5 @@
 ---
-date: "2015-05-08"
+date: "2015-05-12"
 route: /posts/nodejs/utilitaires-ligne-commande/
 title: "Les utilitaires en ligne de commande"
 tags:
@@ -10,8 +10,8 @@ authors:
   - magsout
 ---
 
-Avoir accès à ses utilitaires en ligne de commande ([cli](https://en.wikipedia.org/wiki/Command-line_interface)) est un quotidien dans nos métiers et un avantage indéniable. Ce n'est pas nouveau et cela existe depuis la nuit des temps. Tout utilisateur
-d'unix voue un culte particulier à son terminal.
+Avoir accès à ses utilitaires en ligne de commande ([CLI](https://en.wikipedia.org/wiki/Command-line_interface)) est un quotidien dans nos métiers et un avantage indéniable. Ce n'est pas nouveau et cela existe depuis la nuit des temps. Tout utilisateur
+d'Unix voue un culte particulier à son terminal.
 
 J'ai récemment eu à développer un utilitaire en `NodeJS`, j'ai donc voulu avec cet article déblayer un peu le terrain
 et présenter quelques utilitaires très pratiques.
@@ -22,14 +22,14 @@ Deux postulats avant de commencer :
 
 ## Hello world
 
-Avant de commencer à coder, il va tout d'abord falloir créer deux fichiers qui seront nécessaire et obligatoire :
+Avant de commencer à coder, il va tout d'abord falloir créer deux fichiers qui seront nécessaires et obligatoires :
 
 ```console
 
 // création du dossier
 $ mkdir putaindecode-cli && cd putaindecode-cli
 
-//création de index.js
+// création de index.js
 $ touch index.js
 
 // création de package.json
@@ -43,12 +43,12 @@ Le fichier `index.js` va se présenter comme ceci :
 #!/usr/bin/env node
 // Cette ligne ou shebang permet de définir l'interpréteur de notre script, à savoir `node`
 
-//notre fameux hello world
+// notre fameux hello world
 console.log("Hello world")
 
 ```
 
-Pour notre fichier `package.json`, deux méthodes possibles pour l'écrire, soit en faisant `npm init` puis suivre les instructions ou adapter ce JSON :
+Pour notre fichier `package.json`, deux méthodes possibles pour l'écrire, soit en faisant `npm init` puis suivre les instructions, soit adapter ce JSON :
 
 ```console
 {
@@ -83,7 +83,7 @@ Pour notre fichier `package.json`, deux méthodes possibles pour l'écrire, soit
 }
 
 ```
-La ligne importante et surtout à ne pas oublier :
+La ligne importante à ne surtout pas oublier :
 
 ```console
 "bin": {
@@ -91,15 +91,15 @@ La ligne importante et surtout à ne pas oublier :
 }
 ```
 
-Elle permettra de déterminer le script à exécuter lorsque la commande : `putaindecode-cli` sera lancée.
+Elle permettra de déterminer le script à exécuter lorsque la commande `putaindecode-cli` sera lancée.
 
-Si on vulgarise un peu le principe, en installant le script, le fichier `index.js` sera renommé en `putaindecode-cli.js` et sera copié dans le répertoire adéquat (dépend de  l'OS).
+Si on vulgarise un peu le principe, en installant le script, le fichier `index.js` sera renommé en `putaindecode-cli.js` et sera copié dans le répertoire adéquat (cela dépend de l'OS).
 
-Lorsque la commande `putaindecode-cli` sera executée, le shell va chercher le fichier exécutable en utilisant les répertoires listés dans la variable PATH.
+Lorsque la commande `putaindecode-cli` sera exécutée, le shell va chercher le fichier exécutable en utilisant les répertoires listés dans la variable PATH.
 
 Si on suit ce raisonnement, l'installation d'un script écrasera automatiquement l'ancienne version ou tout script de même nom.
 
-Pour s'assurer qu'il n'existe pas d'autre commande portant le même nom, il est conseiller d'utiliser la commande : `which putaindecode-cli` qui ne retournera rien si il n'y a aucun résultat :
+Pour s'assurer qu'il n'existe pas d'autres commandes portant le même nom, il est conseillé d'utiliser la commande : `which putaindecode-cli` qui ne retournera rien s'il n'y a aucun résultat :
 
 ```console
 #putaindecode-cli ne retourne aucun résultat
@@ -112,15 +112,15 @@ $ which node
 
 ## Installation du script
 
-Afin de vérifier que le script fonctionne correctement, il suffit d'executer  tout simplement dans le répertoire la commande : `./index.js`.
+Afin de vérifier que le script fonctionne correctement, il suffit tout simplement d'exécuter dans le répertoire la commande : `./index.js`.
 
 Une erreur de droit ? Un petit chmod pour arranger ça : `chmod +x index.js`.
 
-A ce stade si tout fonctionne bien, `Hello World` va s'afficher.
+À ce stade, si tout fonctionne bien, `Hello World` va s'afficher.
 
-Par contre, exécuter notre script de la sorte n'est pas très pratique, d'autant plus qu'il sera necessaire de connaitre à chaque fois le chemin vers le fichier.
+Par contre, exécuter notre script de la sorte n'est pas très pratique, d'autant plus qu'il sera nécessaire de connaître à chaque fois le chemin vers le fichier.
 
-Il serait beaucoup plus simple de pouvoir executer le script comme une commande. Comme tout package NodeJS, cela se fait avec `npm install`.
+Il serait beaucoup plus simple de pouvoir exécuter le script comme une commande. Comme pour tout package npm, cela se fait avec `npm install`.
 
 
 ```console
@@ -134,11 +134,11 @@ $ putaindecode-cli
 Hello world
 ```
 
-Le script est maintenant accessible partout sur l'OS grace à la commande `putaindecode-cli`. L'installation en globale n'est pas absolument pas nécessaire, tout dépend de l'interêt de votre script.  Il est d'ailleurs souvent préférable de l'installer en local dans un projet avec `--save` ou `--save-dev`.
+Le script est maintenant accessible partout sur l'OS grâce à la commande `putaindecode-cli`. L'installation en global n'est pas absolument pas nécessaire, tout dépend de l'intérêt de votre script. Il est d'ailleurs souvent préférable de l'installer en local dans un projet avec `--save` ou `--save-dev`.
 
 ## Installation des scripts de base
 
-La puissance de `NPM` provient de son nombre impressionnant de package mis à disposition.
+La puissance de `NPM` provient de son nombre impressionnant de packages mis à disposition.
 
 Pour gagner du temps et éviter d'avoir à recoder la roue. Le script `putaindecode-cli` va avoir besoin de trois choses :
 
@@ -173,7 +173,7 @@ program
     console.log("     command does something")
     console.log("     $ putaindecode-cli command")
     console.log("")
-	});
+  });
 
 /* help */
 program.on("--help", function() {
@@ -196,7 +196,7 @@ if (!program.args.length) program.help()
 
 ### `chalk`
 
-Null besoin de faire un cour sur les couleurs, mais l'affichage d'une notice est bien plus pertinante avec sa couleur associée. C'est à ce moment qu'entre en jeu [chalk](https://github.com/sindresorhus/chalk). Relativement simple à mettre en place et à utiliser :
+_Null_ besoin de faire un cours sur les couleurs, mais l'affichage d'une notice est bien plus pertinent avec sa couleur associée. C'est à ce moment qu'entre en jeu [chalk](https://github.com/sindresorhus/chalk). Relativement simple à mettre en place et à utiliser :
 
 ```js
 var chalk = require('chalk')
@@ -216,13 +216,13 @@ console.log(notice("file modified !"))
 
 Peu importe comment s'exécute son code, il est important de bien savoir maitriser l'arrêt de son script. Pour ça, `process.exit()` nous sera bien utile.
 
-Dans le cas d'une erreur la valeur de `exit` doit systématiquement être supérieur à 0, et donc bien naturellement en cas de succes la valeur est 0.
+Dans le cas d'une erreur, la valeur de `exit` doit systématiquement être supérieure à 0, et donc bien naturellement en cas de succès, elle doit être égale à 0.
 
 Voici une [liste des valeurs](http://www.virtsync.com/c-error-codes-include-errno) de `exit` et de leurs correspondances.
 
 ## Thanks god for our terminal
 
-Si vous souhaitez voir quelques exemples de projets avec des commandes et des mises en situations intéressantes, allez faire un tour sur ces projets : 
+Si vous souhaitez voir quelques exemples de projets avec des commandes et des mises en situations intéressantes, allez faire un tour sur ces projets :
 - [cssnext](https://github.com/cssnext/cssnext/blob/master/bin/cssnext.js)
 - [trash](https://github.com/sindresorhus/trash/blob/master/cli.js)
 
