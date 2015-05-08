@@ -18,7 +18,7 @@ export default class Body extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.array,
-      PropTypes.object
+      PropTypes.object,
     ]).isRequired,
   }
 
