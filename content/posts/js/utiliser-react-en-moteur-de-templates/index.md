@@ -19,7 +19,7 @@ pour gérer une partie de votre affichage, ça peut vite devenir lourd.
 Être restreint à une syntaxe limitée par choix est un peu frustrant.
 Quand c'est pas ça, c'est la syntaxe du moteur qui va être lourde.
 
-On peut en regretter PHP. Faut avouer que ce langage était plutôt simple
+On peut en venir à regretter PHP. Faut avouer que ce langage était plutôt simple
 à utiliser en tant que moteur de template.
 Efficace et pas de restrictions. On trouve même parfois des `mysql_query()`
 dans des templates…
@@ -28,7 +28,7 @@ Blague à part, nous cherchions des langages pour refaire une partie de notre si
 puisque nous n'étions pas vraiment satisfaits du processus actuel
 (anciennement Handlebars, puis Jade).
 
-Mais au final, pourquoi ne pas rester avec du JavaScript, purement et simplement ?
+Mais finalement, pourquoi ne pas rester avec du JavaScript, purement et simplement ?
 
 C'est ce que nous avons fait avec React et JSX qui sont de plus en plus utilisés.
 La syntaxe est plutôt libératrice.
@@ -107,13 +107,13 @@ React est en JavaScript et que le mot `class` est réservé
 
 En même temps ce qui est cool, c'est qu'on reste dans du JavaScript.
 
-On peut donc utiliser toutes nos bibliothèques préférés via _npm_ pour l'affichage
+On peut donc utiliser toutes nos bibliothèques préférées via _npm_ pour l'affichage
 (exemple : `momentjs`), ou simplement des boucles via les méthodes de parcours de
 tableau tel que `forEach()` ou `map()` en appelant d'autres composants.
 
 Ci-dessous vous trouverez un exemple plus complexe avec une page pour la liste
 des posts et quelques composants.
-Les balises qui ressemblent à de HTML et qui commencent par une majuscule sont liées à des
+Les balises qui ressemblent à du HTML et qui commencent par une majuscule sont liées à des
 composants qui doivent être définis (dans notre cas importés).
 C'est une particularité de React.
 
@@ -228,7 +228,7 @@ export default class Body extends Component {
 ```
 
 Bon c'est bien beau mais comment je gère l'affichage du composant initial
-au final (le parent) ?
+finalement (le parent) ?
 
 ## Comment utiliser un template React/JSX ?
 
@@ -285,7 +285,7 @@ Pour la petite anecdote, notre site utilise actuellement [metalsmith](http://www
 une petite bibliothèque simple mais qui permet par son API de faire des choses sympas.
 
 J'ai donc codé [quelques plugins metalsmith](https://github.com/search?q=user%3AMoOx+metalsmith)
-dont un [metalsmith-react](https://github.com/MoOx/metalsmith-react) à l'occassion.
+dont un [metalsmith-react](https://github.com/MoOx/metalsmith-react) à l'occasion.
 
 N'hésitez pas à consulter
 [le code source de notre site](https://github.com/putaindecode/putaindecode.fr)
