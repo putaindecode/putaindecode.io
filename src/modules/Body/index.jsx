@@ -34,6 +34,9 @@ export default class Body extends Component {
 
         <Footer />
 
+        <script src={`/index.${__VERSION__}.js`}></script>
+        { __DEV__ && <script src={`http://${__SERVER_HOSTNAME__}:${__LR_SERVER_PORT__}/livereload.js`}></script> }
+
         <Analytics />
 
         <Disqus
