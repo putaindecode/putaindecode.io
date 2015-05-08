@@ -15,9 +15,9 @@ import rss from "metalsmith-rss"
 import react from "metalsmith-react"
 
 //dev
-import watch from "./metalsmith/server/watcher"
 import serve from "metalsmith-serve"
 import opn from "opn"
+import watch from "metalsmith-watch"
 
 // customize marked
 import "./marked"
@@ -146,7 +146,7 @@ function build(error, contributors) {
           log: logger("watcher"),
           livereload: 4243,
           paths: {
-            "**/*": true,
+            "${source}/**/*": true,
             "src/modules/**/*": "**/*.md",
             // css is for now builded for each metalsmith build
             // we need to improve that
