@@ -26,6 +26,7 @@
     "babel": "^5.1.13",
     "babel-core": "^5.1.13",
     "babel-eslint": "^3.0.1",
+    "babel-loader": "^5.0.0",
     "babel-tape-runner": "^1.1.0",
     "caniuse-api": "git://github.com/nyalab/caniuse-api.git#better-postinstall",
     "chalk": "^1.0.0",
@@ -33,11 +34,13 @@
     "cssnext": "^1.2.3",
     "eslint": "^0.19.0",
     "eslint-friendly-formatter": "^1.0.5",
+    "eslint-loader": "^0.10.0",
     "eslint-plugin-react": "^2.1.1",
     "github": "^0.2.3",
     "glob": "^5.0.5",
     "highlight.js": "^8.5.0",
     "js-yaml": "^3.2.7",
+    "jsdom": "^5.1.0",
     "lodash": "^3.7.0",
     "marked": "^0.3.3",
     "metalsmith": "^1.5.0",
@@ -47,7 +50,6 @@
     "metalsmith-react": "^1.1.0",
     "metalsmith-rename": "^1.0.0",
     "metalsmith-rss": "^1.0.0",
-    "metalsmith-serve": "0.0.3",
     "metalsmith-url": "^1.0.0",
     "metalsmith-watch": "^1.0.0",
     "mkdirp": "^0.5.0",
@@ -60,17 +62,17 @@
     "tape": "^4.0.0",
     "tiny-lr": "^0.1.5",
     "unyield": "0.0.1",
-    "url": "^0.10.3"
+    "webpack": "^1.8.9",
+    "webpack-dev-server": "^1.8.2"
   },
   "scripts": {
     "#lint": "we use others ext than jsx because of metalsmith issue, see scripts/build.js",
     "lint": "eslint -f node_modules/eslint-friendly-formatter --ext .js,.jsx,.es .",
-    "#build": "we use React as a template engine only (not in client side) so we enable DEV mode everywhere to get awesome dev messages and errors",
-    "build": "babel-node scripts/build",
-    "start": "npm run build -- --open",
+    "build": "__VERSION__=$(git log -n 1 --pretty=format:'%h') babel-node scripts/build",
+    "start": "npm run build -- --dev-server --open",
     "tape": "babel-tape-runner 'scripts/**/__tests__/*'",
-    "test": "npm run lint && npm run tape && npm run build -- --production",
+    "test": "npm run lint && npm run tape && npm run build",
     "_deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v",
-    "deploy": "npm test && npm run _deploy"
+    "deploy": "__PROD__=1 npm test && npm run _deploy"
   }
 }
