@@ -15,9 +15,10 @@ import rss from "metalsmith-rss"
 import react from "metalsmith-react"
 
 //dev
-import watch from "./metalsmith/server/watcher"
-import serve from "metalsmith-serve"
-import opn from "opn"
+import watch from "metalsmith-watch"
+import webpack from "webpack"
+import webpackConfig from "../webpack.config"
+import devServer from "./webpack-dev-server"
 
 // customize marked
 import "./marked"
@@ -25,11 +26,11 @@ import "./marked"
 import contributions from "../scripts/contributors"
 import i18n from "../src/modules/i18n"
 import pkg from "../package"
-
 import logger from "./utils/logger"
 
-const production = process.argv.indexOf("--production") !== -1
-const open = process.argv.indexOf("--open") !== -1
+import {defineGlobalVariables} from "../variables"
+defineGlobalVariables()
+const DEV_SERVER = process.argv.indexOf("--dev-server") !== -1
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
@@ -96,7 +97,6 @@ function build(error, contributors) {
       before: "<!doctype html>",
       data: {
         pkg: pkg,
-        production,
         i18n,
         contributors,
       },
@@ -127,15 +127,20 @@ function build(error, contributors) {
     }
   )
 
-  if (production) {
+  if (!DEV_SERVER) {
     // ignore for prod only
     // so we can get watch & reload for those files too
     smith
       .build((err) => {
         if (err) {throw err}
-        console.log()
-        console.log(colors.green("✓ Build completed"))
+
+        console.log(colors.green("\n✓ Static build completed"))
       })
+    webpack(webpackConfig, (err) => {
+      if (err) {throw err}
+
+      console.log(colors.green("\n✓ Assets build completed"))
+    })
   }
 
   // dev server
@@ -144,9 +149,9 @@ function build(error, contributors) {
       .use(
         watch({
           log: logger("watcher"),
-          livereload: 4243,
+          livereload: __LR_SERVER_PORT__,
           paths: {
-            "**/*": true,
+            "${source}/**/*": true,
             "src/modules/**/*": "**/*.md",
             // css is for now builded for each metalsmith build
             // we need to improve that
@@ -156,17 +161,15 @@ function build(error, contributors) {
           },
         })
       )
-      .use(
-        serve({
-          port: 4242,
-        })
-      )
       .build((err) => {
         if (err) {throw err}
 
-        if (open) {
-          opn("http://localhost:4242")
-        }
+        devServer({
+          protocol: __SERVER_PROTOCOL__,
+          host: __SERVER_HOSTNAME__,
+          port: __SERVER_PORT__,
+          open: process.argv.indexOf("--open") !== -1,
+        })
       })
   }
 }
