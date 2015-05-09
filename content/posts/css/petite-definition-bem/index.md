@@ -1,6 +1,5 @@
 ---
 date: "2014-05-05"
-route: /posts/css/petite-definition-bem/
 title: Petite définition de BEM
 tags:
   - css

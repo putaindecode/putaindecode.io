@@ -1,6 +1,5 @@
 ---
 date: "2014-03-04"
-route: /posts/css/mise-en-place-autoprefixer/
 title: Mise en place d’autoprefixer
 tags:
   - css

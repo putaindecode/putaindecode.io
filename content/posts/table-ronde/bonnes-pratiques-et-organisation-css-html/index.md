@@ -1,6 +1,5 @@
 ---
 date: "2014-05-05"
-route: /posts/table-ronde/bonnes-pratiques-et-organisation-css-html/
 title: "Table ronde #3 - Les bonnes pratiques et organisation CSS/HTML"
 tags:
   - table-ronde

@@ -1,6 +1,5 @@
 ---
 date: "2014-07-16"
-route: /posts/shell/maitriser-les-redirections-shell/
 title: Maîtriser les redirections shell
 tags:
   - shell

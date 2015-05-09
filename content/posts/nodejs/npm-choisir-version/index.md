@@ -1,6 +1,5 @@
 ---
 date: "2014-05-12"
-route: /posts/nodejs/npm-choisir-version/
 title: "npm: choisir la bonne version de ses dépendances"
 tags:
   - npm

@@ -1,6 +1,5 @@
 ---
 date: "2014-02-27"
-route: /posts/git/boutez-les-bugs-domptez-votre-historique/
 title: "Git, boutez les bugs, domptez votre historique!"
 tags:
   - git

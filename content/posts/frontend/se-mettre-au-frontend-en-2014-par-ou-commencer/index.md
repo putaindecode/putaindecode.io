@@ -1,6 +1,5 @@
 ---
 date: "2014-05-15"
-route: /posts/frontend/se-mettre-au-frontend-en-2014-par-ou-commencer/
 title: "Se mettre au frontend en 2014, par où commencer ?"
 tags:
   - frontend

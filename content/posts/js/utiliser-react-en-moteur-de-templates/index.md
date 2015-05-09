@@ -1,6 +1,5 @@
 ---
 date: "2015-05-07"
-route: "/posts/js/utiliser-react-en-moteur-de-templates/"
 title: "Utiliser React en moteur de templates"
 tags:
   - javascript

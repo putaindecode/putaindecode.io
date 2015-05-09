@@ -1,6 +1,5 @@
 ---
 date: "2014-05-14"
-route: /posts/frontend/creez-vos-iconfonts-avec-gulp-iconfont/
 title: Créez vos iconfonts avec gulp-iconfont
 tags:
   - gulp

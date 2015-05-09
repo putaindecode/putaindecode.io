@@ -1,6 +1,5 @@
 ---
 date: "2014-10-27"
-route: /posts/js/premiere-app-ember/
 title: Première application Ember
 tags:
   - ember

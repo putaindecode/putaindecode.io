@@ -1,6 +1,5 @@
 ---
 date: "2014-09-23"
-route: /posts/css/le-guide-complet-pour-centrer-en-css/
 title: Le guide complet pour centrer en css
 tags:
   - css

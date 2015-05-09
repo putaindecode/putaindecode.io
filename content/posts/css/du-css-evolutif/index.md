@@ -1,6 +1,5 @@
 ---
 date: "2015-03-10"
-route: /posts/css/du-css-evolutif/
 title: Du CSS évolutif
 tags:
   - css

@@ -1,6 +1,5 @@
 ---
 date: "2014-10-30"
-route: /posts/entreprendre/auto-entrepreneuriat-retour-experiences/
 title: "L'auto-entrepreneuriat : retour d'expériences"
 tags:
   - auto-entrepreneur

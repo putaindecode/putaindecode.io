@@ -1,6 +1,5 @@
 ---
 date: "2014-05-06"
-route: /posts/frontend/npm-comme-package-manager-pour-le-front-end/
 title: NPM comme package manager pour le front-end
 tags:
   - npm

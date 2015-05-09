@@ -1,6 +1,5 @@
 ---
 date: "2015-02-23"
-route: /posts/js/reactjs-et-rendu-serverside/
 title: Quelques retours sur React et le rendu serveur
 tags:
   - javascript
