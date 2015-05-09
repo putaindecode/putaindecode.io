@@ -27,7 +27,7 @@ export default class PostPreview extends Component {
 
         <a
           className="putainde-Link putainde-List-title"
-          href={post.route}
+          href={post.url}
         >
           {post.title}
         </a>
