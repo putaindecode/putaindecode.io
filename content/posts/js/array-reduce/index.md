@@ -1,6 +1,5 @@
 ---
 date: "2014-05-13"
-route: /posts/js/array-reduce/
 title: "Array.reduce par l'exemple"
 tags:
   - javascript

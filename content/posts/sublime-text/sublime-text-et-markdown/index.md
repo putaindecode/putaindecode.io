@@ -1,6 +1,5 @@
 ---
 date: "2014-02-20"
-route: /posts/sublime-text/sublime-text-et-markdown/
 title: "Sublime Text en tant qu'éditeur Markdown"
 tags:
   - sublime-text

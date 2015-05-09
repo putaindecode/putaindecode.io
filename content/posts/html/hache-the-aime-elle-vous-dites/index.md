@@ -1,6 +1,5 @@
 ---
 date: "2013-11-07"
-route: /posts/html/hache-the-aime-elle-vous-dites/
 title: "HTML\_? Hache-Thé-Aime-Elle vous dites\_?"
 tags:
   - html

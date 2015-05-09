@@ -1,6 +1,5 @@
 ---
 date: "2014-03-11"
-route: /posts/css/le-point-sur-les-preprocesseurs/
 title: Le point sur les pré-processeurs CSS
 tags:
   - css

@@ -1,6 +1,5 @@
 ---
 date: "2014-10-20"
-route: /posts/js/debuter-avec-ember/
 title: Débuter avec Ember
 tags:
   - ember

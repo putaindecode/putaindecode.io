@@ -1,5 +1,4 @@
 ---
-route: /c-est-quoi-putaindecode/
 title: "C'est quoi Putain de code ?"
 ---
 

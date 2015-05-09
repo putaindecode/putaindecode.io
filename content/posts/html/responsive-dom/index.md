@@ -1,6 +1,5 @@
 ---
 date: "2013-12-26"
-route: /posts/html/responsive-dom/
 title: Responsive webdesign et structure du DOM
 tags:
   - responsive

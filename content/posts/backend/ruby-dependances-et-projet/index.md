@@ -1,6 +1,5 @@
 ---
 date: "2014-10-14"
-route: /posts/backend/ruby-dependances-et-projet/
 title: Dépendances et premier projet en Ruby
 tags:
   - backend

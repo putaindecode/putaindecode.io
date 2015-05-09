@@ -1,6 +1,5 @@
 ---
 date: "2013-12-05"
-route: /posts/js/externalinterface-call-flash-backbone-toute-une-histoire/
 title: "ExternalInterface.call() de Flash (et Backbone), toute une histoire"
 tags:
   - javascript

@@ -1,6 +1,5 @@
 ---
 date: "2014-10-27"
-route: /posts/js/flux-qu-est-ce-c-est/
 title: "Flux, qu'est-ce que c'est ?"
 tags:
   - javascript

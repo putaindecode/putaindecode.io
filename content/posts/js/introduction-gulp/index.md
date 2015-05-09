@@ -1,6 +1,5 @@
 ---
 date: "2014-04-29"
-route: /posts/js/introduction-gulp/
 title: Introduction à Gulp
 tags:
   - javascript

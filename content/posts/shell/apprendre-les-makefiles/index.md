@@ -1,6 +1,5 @@
 ---
 date: "2014-11-03"
-route: /posts/shell/apprendre-les-makefiles/
 title: "Laissez-vous pousser la barbe, apprenez à écrire des Makefiles"
 tags:
   - shell

@@ -1,6 +1,5 @@
 ---
 date: "2013-11-11"
-route: /posts/backend/golang-structurer-revel-et-mgo/
 title: Structurer son projet avec Revel et Mgo
 tags:
   - golang

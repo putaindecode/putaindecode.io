@@ -1,6 +1,5 @@
 ---
 date: "2013-11-05"
-route: /posts/comment-contribuer/
 title: Comment contribuer ?
 tags:
   - putaindecode

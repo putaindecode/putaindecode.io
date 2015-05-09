@@ -1,6 +1,5 @@
 ---
 date: "2013-11-08"
-route: /posts/env/vagrant-enlarge-your-vm/
 title: "Vagrant, enlarge your VM"
 tags:
   - virtualbox

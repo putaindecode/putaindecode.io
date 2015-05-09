@@ -1,6 +1,5 @@
 ---
 date: "2014-10-21"
-route: /posts/bug-webcompat/
 title: À la conquête des bugs
 tags:
   - bug

@@ -1,6 +1,5 @@
 ---
 date: "2015-03-03"
-route: /posts/vim/il-demarre-vim-par-erreur-ce-qui-se-passe-ensuite-est-tout-simplement-bluffant/
 title: "Il démarre Vim par erreur, ce qui se passe ensuite est tout simplement bluffant"
 tags:
   - éditeur

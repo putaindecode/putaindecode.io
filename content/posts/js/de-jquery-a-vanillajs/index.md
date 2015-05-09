@@ -1,6 +1,5 @@
 ---
 date: "2013-12-05"
-route: /posts/js/de-jquery-a-vanillajs/
 title: De jQuery à Vanilla JS
 tags:
   - javascript

@@ -1,6 +1,5 @@
 ---
 date: "2014-05-12"
-route: /posts/nodejs/napa-ou-comment-telecharger-package-napa-package-json/
 title: napa ou comment télécharger un package qui napa de package.json
 tags:
   - npm

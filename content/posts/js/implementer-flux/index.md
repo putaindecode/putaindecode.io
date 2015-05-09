@@ -1,6 +1,5 @@
 ---
 date: "2015-05-01"
-route: /posts/js/implementer-flux/
 title: "Implémenter Flux"
 tags:
   - javascript

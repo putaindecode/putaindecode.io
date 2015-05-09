@@ -1,6 +1,5 @@
 ---
 date: "2014-12-09"
-route: /posts/js/premiere-app-ember-suite/
 title: Première application Ember. Suite et fin.
 tags:
   - ember

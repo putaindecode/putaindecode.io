@@ -1,6 +1,5 @@
 ---
 date: "2013-11-06"
-route: /posts/git/versionner-avec-git/
 title: Versionner avec Git
 tags:
   - git
