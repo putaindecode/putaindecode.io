@@ -141,6 +141,14 @@
         }
       }
     },
+    "dizwix@gmail.com": {
+      "login": "skinnyfoetusboy",
+      "name": "",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5133452?v=3",
+      "gravatar_id": "",
+      "location": "France",
+      "hireable": false
+    },
     "don.dapo+github@gmail.com": {
       "login": "DaPo",
       "name": "Cyril Krylatov",
@@ -1489,6 +1497,14 @@
       "gravatar_id": "",
       "url": "http://switch-company.com",
       "location": "Paris",
+      "hireable": false
+    },
+    "skinnyfoetusboy": {
+      "login": "skinnyfoetusboy",
+      "name": "",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5133452?v=3",
+      "gravatar_id": "",
+      "location": "France",
       "hireable": false
     },
     "syvuilliot": {

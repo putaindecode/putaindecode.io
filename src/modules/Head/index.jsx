@@ -8,7 +8,7 @@ export default class Head extends Component {
     title: PropTypes.string.isRequired,
     children: PropTypes.oneOfType([
       PropTypes.array,
-      PropTypes.object
+      PropTypes.object,
     ]),
   }
 

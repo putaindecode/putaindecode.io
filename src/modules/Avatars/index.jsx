@@ -14,7 +14,7 @@ export default class Avatars extends Component {
   static propTypes = {
     className: PropTypes.string,
     authors: PropTypes.arrayOf(PropTypes.string).isRequired,
-    size: PropTypes.number
+    size: PropTypes.number,
   }
 
   render() {

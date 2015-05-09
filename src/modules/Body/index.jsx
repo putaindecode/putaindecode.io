@@ -18,7 +18,7 @@ export default class Body extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.array,
-      PropTypes.object
+      PropTypes.object,
     ]).isRequired,
   }
 
@@ -33,6 +33,9 @@ export default class Body extends Component {
         </div>
 
         <Footer />
+
+        <script src={`/index.${__VERSION__}.js`}></script>
+        { __DEV__ && <script src={`http://${__SERVER_HOSTNAME__}:${__LR_SERVER_PORT__}/livereload.js`}></script> }
 
         <Analytics />
 
