@@ -62,6 +62,7 @@
     "rimraf": "^2.3.2",
     "rss": "^1.1.1",
     "tape": "^4.0.0",
+    "testem": "^0.8.3",
     "tiny-lr": "^0.1.5",
     "unyield": "0.0.1",
     "webpack": "^1.8.9",
@@ -73,7 +74,9 @@
     "build": "__VERSION__=$(git log -n 1 --pretty=format:'%h') babel-node scripts/build",
     "start": "npm run build -- --dev-server --open",
     "tape": "babel-tape-runner 'scripts/**/__tests__/*'",
-    "test": "npm run lint && npm run tape && npm run build",
+    "#testem": "run all tests in all available browsers",
+    "testem": "testem ci -f scripts/testem.conf.yml",
+    "test": "npm run lint && npm run tape && npm run build && npm run testem",
     "_deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v",
     "deploy": "__PROD__=1 npm test && npm run _deploy"
   }

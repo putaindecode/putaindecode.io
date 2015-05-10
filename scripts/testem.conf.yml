@@ -1,0 +1,10 @@
+framework: tap
+
+serve_files: dist/tests.js
+
+launch_in_ci:
+  - firefox
+  - safari
+  - chrome
+  - internet explorer
+  - phantomjs
