@@ -140,7 +140,7 @@ Cela dit, ci-dessous, nous te conseillons de lire la version beaucoup plus ludiq
   que c'est un peu une convention pour tous les projets Open Source, et que ça
   te fait pas de mal de commencer à apprendre à bien bosser.
 
-* Note: Si tu avais déjà récupérer le repo, il te faudra juste récupérer les
+* Note: Si tu avais déjà récupéré le repo, il te faudra juste récupérer les
   derniers changements sur une branche propre
 
   ```console
