@@ -5,6 +5,7 @@
 // ./**/__tests__/*.js
 
 import "./tests.html"
+import "./modules/polyfills"
 
 const context = require.context(
   ".",
