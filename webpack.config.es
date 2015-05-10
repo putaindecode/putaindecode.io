@@ -1,9 +1,9 @@
-import webpack from "webpack"
-// import WebpackDevServer from "webpack-dev-server"
-
 import path from "path"
 
+import webpack from "webpack"
+// import WebpackDevServer from "webpack-dev-server"
 import eslintFormatter from "eslint-friendly-formatter"
+
 import variables, {defineGlobalVariables} from "./variables"
 defineGlobalVariables()
 
@@ -40,7 +40,7 @@ var config = {
     // ! \\ note that loaders are executed from bottom to top !
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.(jsx?|es)$/,
         loaders: [
           "babel?" + JSON.stringify({
             stage: 0,
@@ -53,6 +53,12 @@ var config = {
         test: /\.json$/,
         loaders: [
           "json",
+        ],
+      },
+      {
+        test: /\.html$/,
+        loaders: [
+          "file?name=[path][name].[ext]&context=./src",
         ],
       },
     ],
