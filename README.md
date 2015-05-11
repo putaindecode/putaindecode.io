@@ -1,4 +1,4 @@
-# Putain de code ! [![Build Status](https://travis-ci.org/putaindecode/putaindecode.fr.svg?branch=post.vim)](https://travis-ci.org/putaindecode/putaindecode.fr)
+# Putain de code [![Travis Build Status](https://img.shields.io/travis/putaindecode/putaindecode.fr.svg?label=unix build)](https://travis-ci.org/putaindecode/putaindecode.fr) [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/putaindecode.fr.svg?label=windows build)](https://ci.appveyor.com/project/MoOx/putaindecode.fr) [![Join the chat at https://gitter.im/putaindecode/putaindecode.fr](https://img.shields.io/badge/gitter%20-join%20chat%20%E2%9E%9E-1dce73.svg)](https://gitter.im/putaindecode/public)
 
 <img align="right" alt="" src="https://github.com/putaindecode/putaindecode.fr/blob/master/content/images/p!-logo--no-bubble-512--trim.png" width="128">
 
