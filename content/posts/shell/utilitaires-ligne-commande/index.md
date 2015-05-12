@@ -1,11 +1,11 @@
 ---
 date: "2015-05-12"
-route: /posts/nodejs/utilitaires-ligne-commande/
+route: /posts/shell/utilitaires-ligne-commande/
 title: "Les utilitaires en ligne de commande"
 tags:
-  - npm
   - cli
-  - nodejs
+  - npm
+  - iojs/nodejs
 authors:
   - magsout
 ---
@@ -13,12 +13,12 @@ authors:
 Avoir accès à ses utilitaires en ligne de commande ([CLI](https://en.wikipedia.org/wiki/Command-line_interface)) est un quotidien dans nos métiers et un avantage indéniable. Ce n'est pas nouveau et cela existe depuis la nuit des temps. Tout utilisateur
 d'Unix voue un culte particulier à son terminal.
 
-J'ai récemment eu à développer un utilitaire en `NodeJS`, j'ai donc voulu avec cet article déblayer un peu le terrain
+J'ai récemment eu à développer un utilitaire en Node.js/iojs, j'ai donc voulu avec cet article déblayer un peu le terrain
 et présenter quelques utilitaires très pratiques.
 
 Deux postulats avant de commencer :
-- Pourquoi NodeJS ? En cohérence avec le workflow que j'utilise.
-- Cet article n'a pas pour but d'apprendre à écrire du JavaScript en NodeJS.
+- Pourquoi JavaScript ? En cohérence avec le workflow que j'utilise.
+- Cet article n'a pas pour but d'apprendre à écrire du JavaScript avec Node.js/iojs.
 
 ## Hello world
 
