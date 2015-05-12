@@ -50,7 +50,7 @@ tape("ReadingTime", t => {
 
   t.ok(
     tenMinutes.indexOf(">around 10 minutes<") > -1,
-    "should say when you have more than one minute"
+    "should say when you have 10 minutes"
   )
 
   t.end()
