@@ -1,9 +1,5 @@
-import "./modules/polyfills"
-
-import readingTime from "./modules/reading-time"
+// import "./modules/polyfills"
 
 if (console && console.info) {
   console.info("Putain de console !")
 }
-
-readingTime.create()
