@@ -9,6 +9,7 @@ import AuthorsList from "../AuthorsList"
 import Author from "../Author"
 import Contributors from "../Contributors"
 import formatDate from "../formatDate"
+import ReadingTime from "../ReadingTime"
 
 export default class Post extends DefaultTemplate {
 
@@ -84,15 +85,17 @@ export default class Post extends DefaultTemplate {
                     </span>
                   }
                   {". "}
-                  <span
-                    className="putainde-Post-readingTime putainde-Post-readingTime--hidden r-Tooltip r-Tooltip--top"
-                    data-r-tooltip={i18n.readingTimeComment}
-                    data-readingtime-wpm="250"
-                  >
-                    {`${i18n.readingTime} `}
-                    <span className="putainde-Post-readingTime-value">...</span>
-                    {` ${i18n.minutes}`}
-                  </span>
+
+                  <ReadingTime
+                    text={this.props.file.contents.toString()}
+                    before={i18n.readingTime}
+                    templateText={{
+                      1: i18n.readingTime1,
+                      2: i18n.readingTime2,
+                    }}
+                    templateTooltip={i18n.readingTimeComment}
+                    className="putainde-Post-readingTime"
+                  />
                 </div>
               }
               {
