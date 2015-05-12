@@ -110,6 +110,15 @@
       "location": "Aix-en-Provence",
       "hireable": true
     },
+    "dguyon@gmail.com": {
+      "login": "dguyon",
+      "name": "David Guyon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61255?v=3",
+      "gravatar_id": "",
+      "url": "http://davidguyon.com/",
+      "location": "Paris, France",
+      "hireable": true
+    },
     "dizwix@gmail.com": {
       "login": "skinnyfoetusboy",
       "name": "",
@@ -1112,6 +1121,15 @@
       "url": "http://desbenoit.net",
       "location": "Lyon, France",
       "hireable": false
+    },
+    "dguyon": {
+      "login": "dguyon",
+      "name": "David Guyon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61255?v=3",
+      "gravatar_id": "",
+      "url": "http://davidguyon.com/",
+      "location": "Paris, France",
+      "hireable": true
     },
     "dhoko": {
       "login": "dhoko",
