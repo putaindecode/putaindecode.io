@@ -65,7 +65,7 @@ export default (options) => {
   return new WebpackDevServer(
     webpack(devConfig),
     {
-      ...{https: options.protocol === "https://"},
+      https: options.protocol === "https://",
       contentBase: config.output.path,
       hot: true,
       stats: {
