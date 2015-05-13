@@ -9,7 +9,6 @@ import runTestsWithJSDOM from "./webpack_plugins/run-tests-with-jsdom"
 import logger from "./utils/logger"
 const log = logger("webpack-dev-server")
 
-
 export default (options) => {
   options = {
     protocol: "http://",

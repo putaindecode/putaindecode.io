@@ -34,13 +34,13 @@ const accents = {
   "ý": "y",
 }
 const accentsRE = RegExp("(" + Object.keys(accents).join("|") + ")", "g")
-renderer.heading = function(text, level){
+renderer.heading = function(text, level) {
   const escaped = text
       // url in lower case are cool
       .toLowerCase()
 
       // remove accents from title
-      .replace(accentsRE, function(i){
+      .replace(accentsRE, function(i) {
         return accents[i]
       })
 

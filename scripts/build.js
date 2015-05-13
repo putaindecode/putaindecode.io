@@ -14,7 +14,7 @@ import rename from "metalsmith-rename"
 import rss from "metalsmith-rss"
 import react from "metalsmith-react"
 
-//dev
+// dev
 import watch from "metalsmith-watch"
 import webpack from "webpack"
 import webpackConfig from "../webpack.config"

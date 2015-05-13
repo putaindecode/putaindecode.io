@@ -8,7 +8,7 @@ export default function runTestsWithJSDOM(options) {
   return function() {
     let previousWindow = null
     this.plugin("invalid", () => {
-      if(previousWindow) {
+      if (previousWindow) {
         previousWindow.close()
       }
     })
@@ -29,13 +29,13 @@ export default function runTestsWithJSDOM(options) {
           stats.compilation.assets["tests.js"]._cachedSource,
         ],
         done: (errors) => {
-          if(errors) {
+          if (errors) {
             errors.forEach(error => console.error(error))
           }
         },
         created(errors, window) {
           previousWindow = window
-          if(errors) {
+          if (errors) {
             console.error(errors)
           }
         },

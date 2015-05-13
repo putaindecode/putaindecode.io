@@ -26,22 +26,22 @@ const contributorsFile = "contributors.json"
 
 let results = {}
 
-function sortObjectByKeys(obj){
+function sortObjectByKeys(obj) {
   var newObj = {}
   var keys = Object.keys(obj)
   keys.sort()
-  keys.forEach(function(key){
+  keys.forEach(function(key) {
     newObj[key] = obj[key]
   })
 
   return newObj
 }
 
-function contributorsMap(){
+function contributorsMap() {
   var authors = {}
   return glob(authorsFiles)
   .then((files) => {
-    files.forEach(function(jsonAuthorFile){
+    files.forEach(function(jsonAuthorFile) {
       const authorFile = path.basename(jsonAuthorFile, ".json")
       authors[authorFile] = require("../../" + jsonAuthorFile)
     })
@@ -70,9 +70,9 @@ function contributorsMap(){
     stdout
       .trim("\n")
       .split("\n")
-      .forEach(function(line){
+      .forEach(function(line) {
         var author = line.split("::")
-        if(
+        if (
           !results.mapByEmail[author[0]] ||
           !Object.keys(results.mapByEmail[author[0]]).length
         ) {
@@ -97,14 +97,14 @@ function contributorsMap(){
     // (& so found github username)
 
     // all contributors are in cache
-    if(newUsers.length === 0){
+    if (newUsers.length === 0) {
       return PromisePolyfill.resolve()
     }
 
-    return new PromisePolyfill(function(resolve){
+    return new PromisePolyfill(function(resolve) {
       var parallelsUser = []
-      newUsers.forEach(function(author){
-        parallelsUser.push(function(cb){
+      newUsers.forEach(function(author) {
+        parallelsUser.push(function(cb) {
           var email = author.email
           exec("git log --max-count=1 --pretty=format:%H --author=" + email)
           .then((out) => {
@@ -116,14 +116,14 @@ function contributorsMap(){
             })
           })
           .then((contributor) => {
-            if(contributor && contributor.author){
-              if(loginCache[contributor.author.login]){
+            if (contributor && contributor.author) {
+              if (loginCache[contributor.author.login]) {
                 log("Contributor cached", contributor.author.login)
                 return PromisePolyfill.resolve(
                   loginCache[contributor.author.login]
                 )
               }
-              else{
+              else {
                 return PromisePolyfill.denodeify(githubApi.user.getFrom)({
                   user: contributor.author.login,
                 })
@@ -184,12 +184,12 @@ function contributorsMap(){
         })
       })
 
-      async.parallelLimit(parallelsUser, 20, function(){
+      async.parallelLimit(parallelsUser, 20, function() {
         // map by login, not email
         results.map = lodash.transform(
           results.mapByEmail,
           (result, author) => {
-            if(!result[author.login]){
+            if (!result[author.login]) {
               result[author.login] = author
             }
           }
@@ -228,14 +228,14 @@ function totalContributions() {
     stdout
       .trim("\n")
       .split("\n")
-      .forEach(function(line){
+      .forEach(function(line) {
         line = line.trim()
         var login = results.mapByEmail[line.match(emailRE)[1]].login
         var contributions = parseInt(line.match(commitsRE)[1], 10)
-        if(!results.contributions[login]){
+        if (!results.contributions[login]) {
           results.contributions[login] = contributions
         }
-        else{
+        else {
           results.contributions[login] += contributions
         }
       })
@@ -250,35 +250,35 @@ function filesContributions() {
   results.files = {}
   return glob("content/**/*")
   .then((files) => {
-    return new PromisePolyfill(function(resolve){
+    return new PromisePolyfill(function(resolve) {
       var parallelFiles = []
-      files.forEach(function(file){
-        parallelFiles.push(function(cb){
+      files.forEach(function(file) {
+        parallelFiles.push(function(cb) {
           return exec(
             "git log --pretty=short --follow " + file +
             " | git shortlog --summary --numbered --no-merges --email"
           )
           .then((stdout) => {
-            if(stdout){
+            if (stdout) {
               results.files[file] = {}
               stdout
                 .trim("\n")
                 .split("\n")
-                .forEach(function(line){
+                .forEach(function(line) {
                   line = line.trim()
                   results.files[file][
                     results.mapByEmail[line.match(emailRE)[1]
                   ].login] = line.match(commitsRE)[1]
                 })
             }
-          }, function(stderr){
+          }, function(stderr) {
             console.error(stderr)
             throw stderr
           })
           .done(cb)
         })
       })
-      async.parallelLimit(parallelFiles, 20, function(){
+      async.parallelLimit(parallelFiles, 20, function() {
         log("✓ Contributions per files done")
         resolve()
       })
@@ -286,15 +286,14 @@ function filesContributions() {
   })
 }
 
-
 /**
  * contributors tasks
  *
  * reads all pages & create a contributors list
  * in `tasks/cache/contributors`
  */
-module.exports = function(cb){
-  if(Object.keys(results)>1){
+module.exports = function(cb) {
+  if (Object.keys(results)>1) {
     cb()
     return
   }
