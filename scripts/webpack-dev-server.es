@@ -3,8 +3,9 @@ import WebpackDevServer from "webpack-dev-server"
 import opn from "opn"
 
 import config from "../webpack.config"
-
 import miniLogs from "./webpack_plugins/mini-logs"
+import runTestsWithJSDOM from "./webpack_plugins/run-tests-with-jsdom"
+
 import logger from "./utils/logger"
 const log = logger("webpack-dev-server")
 
@@ -36,7 +37,10 @@ export default (options) => {
       ...Object.keys(config.entry)
         .reduce(
           (acc, key) => {
-            acc[key] = [
+            // entries with name that start with "test" do not need extra stuff
+            acc[key] = key.indexOf("test") === 0 ?
+            config.entry[key] :
+            [
               ...devEntries,
               ...config.entry[key],
             ]
@@ -50,6 +54,7 @@ export default (options) => {
       new webpack.NoErrorsPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       miniLogs,
+      runTestsWithJSDOM({url: `${serverUrl}/tests.html`}),
     ],
     eslint: {
       ...config.eslint,
