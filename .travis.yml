@@ -33,10 +33,12 @@ before_script:
 
 script:
   - npm test
-  # https://github.com/putaindecode/putaindecode.fr/issues/376
-  #- if [ $TRAVIS_PULL_REQUEST = "false" ] && [ $TRAVIS_BRANCH = "master" ]; then npm run _deploy; fi
+  # deploy real master only
+  - if [ $TRAVIS_PULL_REQUEST = "false" ] && [ $TRAVIS_BRANCH = "master" ]; then npm run _deploy; fi
 
 env:
   global:
     # GH_TOKEN
-    - secure: ghMMp0kKWiZvqhHDROxGPQOARnIYJIeZcu0RVgVHkNNFOeSoJg9X+zBfDn6plQyo59ogKisdyVJgSh7IS+HiF98lhEm3qHd4Cbs136m5Wz0FjhIbFsaFij2OT5ECco+sAkgqniv3rl+5IZMvDlMh8g0+jkhVRvpF3I/ye0ckMXo=
+    # might be compromised for now :/
+    # https://github.com/putaindecode/putaindecode.fr/issues/376
+    - secure: d1VZ29IbfOn0Re774eOWFpCcSLMd3N49ehmMOF8NiAQBV30NddTr5GVua19sMfCBVryHVu5MaaD+xf8Qr1fANqZveFhjIdTsTRLt7BkfxpmrWwHKn6g1szQq6KMCUECtHToe9qrCwA/UC0p4+rNofd3PnlF51dTPvP8ZG1Yy7U0=
