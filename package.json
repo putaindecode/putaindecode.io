@@ -28,7 +28,6 @@
     "babel-eslint": "^3.0.1",
     "babel-loader": "^5.0.0",
     "babel-tape-runner": "^1.1.0",
-    "caniuse-api": "git://github.com/nyalab/caniuse-api.git#better-postinstall",
     "chalk": "^1.0.0",
     "classnames": "^1.2.0",
     "cssnext": "^1.2.3",
