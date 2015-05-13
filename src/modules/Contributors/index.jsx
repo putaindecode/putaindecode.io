@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from "react"
+import cx from "classnames"
 
 import Avatar from "../Avatar"
 
@@ -16,7 +17,9 @@ export default class Contributors extends Component {
   }
 
   render() {
-    const fileContributors = this.context.contributors.files[`content/${this.props.filename}`]
+    const filename = this.props.filename
+    const contributors = this.context.contributors
+    const fileContributors = contributors.files[`content/${filename}`]
     if (fileContributors) {
       const nbFileContributors = Object.keys(fileContributors).length
       if (nbFileContributors > 1) {
@@ -28,15 +31,27 @@ export default class Contributors extends Component {
             {
               Object.keys(fileContributors).map(login => {
                 if (login === "undefined") {
-                  console.warn(`${this.props.filename} have an undefined contributor.`)
+                  console.warn(`${filename} have an undefined contributor.`)
                 }
                 return (
                   <div
                     key={login}
-                    className="putainde-Contributor r-Tooltip r-Tooltip--bottom r-Tooltip--allowNewLines"
-                    data-r-tooltip={`${login}\n(${fileContributors[login]} commit${fileContributors[login] > 1 ? "s" : ""})`}
+                    className={cx(
+                      "putainde-Contributor",
+                      "r-Tooltip",
+                      "r-Tooltip--bottom",
+                      "r-Tooltip--allowNewLines"
+                    )}
+                    data-r-tooltip={
+                      `${login}\n(${fileContributors[login]} commit${
+                        fileContributors[login] > 1 ? "s" : ""
+                      })`
+                    }
                   >
-                    <Avatar author={login} className="putainde-Contributor-avatar" />
+                    <Avatar
+                      author={login}
+                      className="putainde-Contributor-avatar"
+                    />
                   </div>
                 )
               })
@@ -47,7 +62,13 @@ export default class Contributors extends Component {
     }
 
     return (
-      <div className="putainde-Contributors putainde-Contributors--noAdditionalContributors"></div>
+      <div
+        className={cx(
+          "putainde-Contributors",
+          "putainde-Contributors--noAdditionalContributors"
+        )}
+      >
+      </div>
     )
   }
 }

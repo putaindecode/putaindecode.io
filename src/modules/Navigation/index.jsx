@@ -19,7 +19,10 @@ export default class Navigation extends Component {
       <nav className="putainde-Nav">
         {
           this.context.i18n.navigation.map((item) => {
-            const isActivePage = currentPage === item.url || currentPage === item.url + "/index.html"
+            const isActivePage =
+              currentPage === item.url ||
+              currentPage === item.url + "/index.html"
+            const hasTooltip = item.title
 
             return (
               <a
@@ -27,10 +30,12 @@ export default class Navigation extends Component {
                 className={cx({
                   "putainde-Nav-item": true,
                   "putainde-Nav-item--current": isActivePage,
-                  "putainde-Nav-item--icon r-Tooltip r-Tooltip--bottom": item.title,
+                  "putainde-Nav-item--icon": hasTooltip,
+                  "r-Tooltip": hasTooltip,
+                  "r-Tooltip r-Tooltip--bottom": hasTooltip,
                 })}
                 href={item.url}
-                data-r-tooltip={item.title ? item.title : ""}
+                data-r-tooltip={hasTooltip ? item.title : ""}
               >
                 {/* @todo handle item.icon */}
                 {

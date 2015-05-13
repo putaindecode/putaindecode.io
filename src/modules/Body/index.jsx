@@ -23,6 +23,9 @@ export default class Body extends Component {
   }
 
   render() {
+    const LR_URL =
+      `http://${__SERVER_HOSTNAME__}:${__LR_SERVER_PORT__}/` +
+      `livereload.js`
     return (
       <body>
 
@@ -35,7 +38,7 @@ export default class Body extends Component {
         <Footer />
 
         <script src={`/index.${__VERSION__}.js`}></script>
-        { __DEV__ && <script src={`http://${__SERVER_HOSTNAME__}:${__LR_SERVER_PORT__}/livereload.js`}></script> }
+        { __DEV__ && <script src={LR_URL}></script> }
 
         <Analytics />
 

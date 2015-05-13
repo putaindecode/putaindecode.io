@@ -1,4 +1,5 @@
 import React, {PropTypes} from "react"
+import cx from "classnames"
 
 import DefaultTemplate from "../DefaultTemplate"
 
@@ -34,11 +35,20 @@ export default class Homepage extends DefaultTemplate {
 
           <div className="putainde-Section putainde-Section--manifesto">
             <div className="r-Grid r-Grid--alignCenter">
-              <div className="r-Grid-cell r-all--8of12 putainde-Section-contents putainde-Post-contents">
+              <div
+                className={cx(
+                  "r-Grid-cell",
+                  "r-all--8of12",
+                  "putainde-Section-contents",
+                  "putainde-Post-contents"
+                )}
+              >
                 <div className="putainde-Title putainde-Title--home">
                   <h2 className="putainde-Title-text">{i18n.manifesto}</h2>
                 </div>
-                <div dangerouslySetInnerHTML={{__html: this.props.file.contents}}></div>
+                <div
+                  dangerouslySetInnerHTML={{__html: this.props.file.contents}}
+                />
                 <div className="putainde-Networks">
                   {i18n.elsewhere}
                   <a

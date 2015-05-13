@@ -18,7 +18,9 @@ export default class TopContributors extends Component {
     const pkg = this.context.pkg
 
     let topContributors = Object.keys(contributors.map)
-    topContributors.sort((a, b) => contributors.contributions[b] - contributors.contributions[a])
+    topContributors.sort(
+      (a, b) => contributors.contributions[b] - contributors.contributions[a]
+    )
     topContributors = topContributors.slice(0, 12)
 
     return (
@@ -34,7 +36,12 @@ export default class TopContributors extends Component {
             topContributors.map(author => {
               return (
                 <div key={author} className="r-Grid-cell r-all--1of2">
-                  <Author author={author} afterName={`(${contributors.contributions[author]} commits)`}/>
+                  <Author
+                    author={author}
+                    afterName={
+                      `(${contributors.contributions[author]} commits)`
+                    }
+                  />
                 </div>
               )
             })
