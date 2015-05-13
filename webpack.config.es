@@ -7,7 +7,7 @@ import eslintFormatter from "eslint-friendly-formatter"
 import variables, {defineGlobalVariables} from "./variables"
 defineGlobalVariables()
 
-const production = process.argv.indexOf("--production") !== -1
+const production = process.argv.includes("--production")
 
 const index = `index.${__VERSION__}`
 var config = {
