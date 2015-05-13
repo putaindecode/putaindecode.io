@@ -35,7 +35,9 @@ const DEV_SERVER = process.argv.indexOf("--dev-server") !== -1
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
 function build(error, contributors) {
-  if (error) {throw error}
+  if (error) {
+    throw error
+  }
 
   const smith = new Metalsmith(path.join(__dirname, ".."))
   .source("./content")
@@ -132,12 +134,16 @@ function build(error, contributors) {
     // so we can get watch & reload for those files too
     smith
       .build((err) => {
-        if (err) {throw err}
+        if (err) {
+          throw err
+        }
 
         console.log(colors.green("\n✓ Static build completed"))
       })
     webpack(webpackConfig, (err) => {
-      if (err) {throw err}
+      if (err) {
+        throw err
+      }
 
       console.log(colors.green("\n✓ Assets build completed"))
     })
@@ -162,7 +168,9 @@ function build(error, contributors) {
         })
       )
       .build((err) => {
-        if (err) {throw err}
+        if (err) {
+          throw err
+        }
 
         devServer({
           protocol: __SERVER_PROTOCOL__,
