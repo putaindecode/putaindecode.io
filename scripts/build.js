@@ -30,7 +30,7 @@ import logger from "./utils/logger"
 
 import {defineGlobalVariables} from "../variables"
 defineGlobalVariables()
-const DEV_SERVER = process.argv.indexOf("--dev-server") !== -1
+const DEV_SERVER = process.argv.includes("--dev-server")
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
@@ -176,7 +176,7 @@ function build(error, contributors) {
           protocol: __SERVER_PROTOCOL__,
           host: __SERVER_HOSTNAME__,
           port: __SERVER_PORT__,
-          open: process.argv.indexOf("--open") !== -1,
+          open: process.argv.includes("--open"),
         })
       })
   }
