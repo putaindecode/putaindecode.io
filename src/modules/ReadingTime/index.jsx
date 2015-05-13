@@ -14,7 +14,8 @@ export default class ReadingTime extends Component {
       1: "less than a minute",
       2: "around ${minutes} minutes",
     },
-    templateTooltip: "Approxiate time, based on a speed of ${wordsPerMinute} words per minute",
+    templateTooltip:
+      "Approxiate time, based on a speed of ${wordsPerMinute} words per minute",
     tooltipPosition: "top",
   }
 
@@ -64,8 +65,14 @@ export default class ReadingTime extends Component {
         data-r-tooltip={this.replaceParameters(this.props.templateTooltip)}
       >
         {this.props.before}
-        {this.state.minutes === 1 && this.replaceParameters(this.props.templateText[1])}
-        {this.state.minutes > 1 && this.replaceParameters(this.props.templateText[2])}
+        {
+          this.state.minutes === 1 &&
+          this.replaceParameters(this.props.templateText[1])
+        }
+        {
+          this.state.minutes > 1 &&
+          this.replaceParameters(this.props.templateText[2])
+        }
         {this.props.after}
       </span>
     )

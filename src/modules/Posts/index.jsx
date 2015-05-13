@@ -1,5 +1,5 @@
 import React, {PropTypes} from "react"
-
+import cx from "classnames"
 import DefaultTemplate from "../DefaultTemplate"
 
 import Html from "../Html"
@@ -21,14 +21,23 @@ export default class Posts extends DefaultTemplate {
   }
 
   render() {
-    const posts = this.props.collections.posts.filter((v, i) => typeof i === "number")
+    const posts = this.props.collections.posts.filter(
+      (v, i) => typeof i === "number"
+    )
 
     return (
       <Html>
         <Head title={this.props.file.title} />
         <Body>
           <div className="r-Grid putainde-Section">
-            <div className="r-Grid-cell r-all--8of12 putainde-Section-contents js-Posts">
+            <div
+              className={cx(
+                "r-Grid-cell",
+                "r-all--8of12",
+                "putainde-Section-contents",
+                "js-Posts"
+              )}
+            >
               <div className="putainde-Title putainde-Title--home">
                 <h2 className="putainde-Title-text">
                   {this.props.file.title}

@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from "react"
+import cx from "classnames"
 
 import Icon from "../Icon"
 
@@ -38,12 +39,20 @@ export default class Footer extends Component {
                     )
                   }),
                   <li key={i18n.github}>
-                    <a href={i18n.github} data-r-tooltip="GitHub" className="r-Tooltip r-Tooltip--top">
+                    <a
+                      href={i18n.github}
+                      data-r-tooltip="GitHub"
+                      className="r-Tooltip r-Tooltip--top"
+                    >
                       <Icon src="/icons/github.svg" />
                     </a>
                   </li>,
                   <li key={i18n.twitter}>
-                    <a href={i18n.twitter} data-r-tooltip="Twitter" className="r-Tooltip r-Tooltip--top">
+                    <a
+                      href={i18n.twitter}
+                      data-r-tooltip="Twitter"
+                      className="r-Tooltip r-Tooltip--top"
+                    >
                       <Icon src="/icons/twitter.svg" />
                     </a>
                   </li>,
@@ -54,7 +63,13 @@ export default class Footer extends Component {
           </div>
 
           <div className="r-Grid-cell r-all--3of12">
-            <p className="putainde-Footer-text putainde-Footer-text--small putainde-Footer-text--right">
+            <p
+              className={cx(
+                "putainde-Footer-text",
+                "putainde-Footer-text--small",
+                "putainde-Footer-text--right"
+              )}
+            >
               {i18n.madeWithHeart}
             </p>
           </div>

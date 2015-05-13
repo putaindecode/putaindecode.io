@@ -27,7 +27,10 @@ export default class Page404 extends DefaultTemplate {
 
           <div className="r-Grid putainde-Post">
             <div className="r-Grid-cell r-all--8of12">
-              <div className="putainde-Post-contents" style={{textAlign: "center"}}>
+              <div
+                className="putainde-Post-contents"
+                style={{textAlign: "center"}}
+              >
                 {
                   this.props.file.title &&
                   <div className="putainde-Title">

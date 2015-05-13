@@ -25,6 +25,10 @@ export default class Post extends DefaultTemplate {
     i18n: PropTypes.object.isRequired,
   }
 
+  static getGithubUrl(repo, filename, action) {
+    return `${repo}/${action}/master/content/${filename}`
+  }
+
   render() {
     const pkg = this.props.pkg
     const i18n = this.props.i18n
@@ -33,32 +37,35 @@ export default class Post extends DefaultTemplate {
     // we want original filename
     const filename = file.filename.replace(/\.html$/, ".md")
 
-    var twitterAuthor = this.props.file.authors && this.props.file.authors.length ?
-      this.props.contributors.map[this.props.file.authors[0]].twitter
-      :
-      this.props.i18n.twitterUsername
+    var twitterAuthor =
+      this.props.file.authors &&
+      this.props.file.authors.length
+      ?
+        this.props.contributors.map[this.props.file.authors[0]].twitter
+        :
+        this.props.i18n.twitterUsername
 
     return (
       <Html>
         <Head title={this.props.file.title}>
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content={`@${this.props.i18n.twitterUsername}`} />
+          <meta name="twitter:site" content={`@${i18n.twitterUsername}`} />
           <meta name="twitter:title" content={this.props.file.title} />
           <meta name="twitter:creator" content={`@${twitterAuthor}`} />
 
-          <meta property="og:title" content={this.props.file.title} />
+          <meta property="og:title" content={file.title} />
           <meta property="og:type" content="article" />
-          <meta property="og:site_name" content={this.props.i18n.title} />
+          <meta property="og:site_name" content={i18n.title} />
         </Head>
         <Body>
           <article className="r-Grid putainde-Post">
             <div className="r-Grid-cell r-all--8of12 putainde-Post-contents">
 
               {
-                this.props.file.title &&
+                file.title &&
                 <div className="putainde-Title">
                   <h1 className="putainde-Title-text">
-                    {this.props.file.title}
+                    {file.title}
                   </h1>
                 </div>
               }
@@ -87,7 +94,7 @@ export default class Post extends DefaultTemplate {
                   {". "}
 
                   <ReadingTime
-                    text={this.props.file.contents.toString()}
+                    text={file.contents.toString()}
                     before={i18n.readingTime}
                     templateText={{
                       1: i18n.readingTime1,
@@ -111,21 +118,58 @@ export default class Post extends DefaultTemplate {
               </header>
 
               <div className="putainde-Post-md">
-                <div dangerouslySetInnerHTML={{__html: this.props.file.contents}}></div>
+                <div
+                  dangerouslySetInnerHTML={{__html: file.contents}}
+                />
               </div>
 
               <footer className="putainde-Post-footer">
 
-                <div className="putainde-Post-footer-title">{i18n.pageActions}</div>
+                <div className="putainde-Post-footer-title">
+                  {i18n.pageActions}
+                </div>
                 <div className="r-Grid">
                   <div className="r-Grid-cell r-all--1of3">
-                    <a className="putainde-Post-footer-action" href={`${pkg.repositoryHttpUrl}/edit/master/content/${filename}`}>{i18n.pageEdit}</a>
+                    <a
+                      className="putainde-Post-footer-action"
+                      href={
+                        Post.getGithubUrl(
+                          pkg.repositoryHttpUrl,
+                          "edit",
+                          filename
+                        )
+                      }
+                    >
+                      {i18n.pageEdit}
+                    </a>
                   </div>
                   <div className="r-Grid-cell r-all--1of3">
-                    <a className="putainde-Post-footer-action" href={`${pkg.repositoryHttpUrl}/blame/master/content/${filename}`}>{i18n.pageBlame}</a>
+                    <a
+                      className="putainde-Post-footer-action"
+                      href={
+                        Post.getGithubUrl(
+                          pkg.repositoryHttpUrl,
+                          "blame",
+                          filename
+                        )
+                      }
+                    >
+                      {i18n.pageBlame}
+                    </a>
                   </div>
                   <div className="r-Grid-cell r-all--1of3">
-                    <a className="putainde-Post-footer-action" href={`${pkg.repositoryHttpUrl}/commits/master/content/${filename}`}>{i18n.pageHistory}</a>
+                    <a
+                      className="putainde-Post-footer-action"
+                      href={
+                        Post.getGithubUrl(
+                          pkg.repositoryHttpUrl,
+                          "commits",
+                          filename
+                        )
+                      }
+                    >
+                      {i18n.pageHistory}
+                    </a>
                   </div>
                 </div>
 
@@ -141,7 +185,9 @@ export default class Post extends DefaultTemplate {
                     <h3 className="putainde-WrittenBy">{i18n.writtenBy}</h3>
                     {
                       file.authors &&
-                      file.authors.map(author => <Author key={author} author={author} />)
+                      file.authors.map(
+                        author => <Author key={author} author={author} />
+                      )
                     }
                   </div>
                 }
@@ -151,7 +197,11 @@ export default class Post extends DefaultTemplate {
                 <div id="disqus_thread" aria-live="polite">
                   <noscript>
                     {"Please enable JavaScript to view the "}
-                    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+                    <a
+                      href="http://disqus.com/?ref_noscript"
+                    >
+                      comments powered by Disqus.
+                    </a>
                   </noscript>
                 </div>
 

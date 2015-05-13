@@ -41,8 +41,9 @@ function contributorsMap(){
   var authors = {}
   return glob(authorsFiles)
   .then((files) => {
-    files.forEach(function(authorFile){
-      authors[path.basename(authorFile, ".json")] = require("../../" + authorFile)
+    files.forEach(function(jsonAuthorFile){
+      const authorFile = path.basename(jsonAuthorFile, ".json")
+      authors[authorFile] = require("../../" + jsonAuthorFile)
     })
   })
   .then(() => {
@@ -92,7 +93,8 @@ function contributorsMap(){
     // consolidate contributorsMap
     // => add github username at the end of each line
     // to retrieve a author login, we just grab a commit from the author email
-    // and we use github api to get this commit info (& so found github username)
+    // and we use github api to get this commit info
+    // (& so found github username)
 
     // all contributors are in cache
     if(newUsers.length === 0){
@@ -117,18 +119,32 @@ function contributorsMap(){
             if(contributor && contributor.author){
               if(loginCache[contributor.author.login]){
                 log("Contributor cached", contributor.author.login)
-                return PromisePolyfill.resolve(loginCache[contributor.author.login])
+                return PromisePolyfill.resolve(
+                  loginCache[contributor.author.login]
+                )
               }
               else{
-                return PromisePolyfill.denodeify(githubApi.user.getFrom)({user: contributor.author.login})
+                return PromisePolyfill.denodeify(githubApi.user.getFrom)({
+                  user: contributor.author.login,
+                })
                 .then((githubUser) => {
                   loginCache[githubUser.login] = {
-                    // see what's available here https://developer.github.com/v3/users/
+                    // see what's available here
+                    // https://developer.github.com/v3/users/
                     login: githubUser.login,
                     name: githubUser.name,
                     avatar_url: githubUser.avatar_url,
                     gravatar_id: githubUser.gravatar_id,
-                    url: githubUser.blog ? githubUser.blog.indexOf("http") === 0 ? githubUser.blog: "http://" + githubUser.blog: undefined,
+                    url:
+                      githubUser.blog
+                      ?
+                        githubUser.blog.indexOf("http") === 0
+                        ?
+                          githubUser.blog
+                          :
+                          "http://" + githubUser.blog
+                        :
+                        undefined,
                     location: githubUser.location,
                     hireable: githubUser.hireable,
                   }
@@ -139,7 +155,11 @@ function contributorsMap(){
             }
             else {
               // @todo get user/repo from git origin
-              log("✗ Unable to get contributor information for " + author.name + " <" + author.email + "> (no commit in putaindecode/putaindecode.fr)")
+              log(
+                "✗ Unable to get contributor information for " +
+                author.name + " <" + author.email +
+                "> (no commit in putaindecode/putaindecode.fr)"
+              )
               return {}
             }
           }, function(err) {
@@ -151,7 +171,9 @@ function contributorsMap(){
           .done(function(contributor) {
             if (contributor) {
               if (!Object.keys(contributor).length) {
-                log(color.red(`⚠︎ Some contributor data are emtpy for ${email}`))
+                log(
+                  color.red(`⚠︎ Some contributor data are emtpy for ${email}`)
+                )
               }
               else {
                 results.mapByEmail[email] = contributor
@@ -164,11 +186,14 @@ function contributorsMap(){
 
       async.parallelLimit(parallelsUser, 20, function(){
         // map by login, not email
-        results.map = lodash.transform(results.mapByEmail, function(result, author){
-          if(!result[author.login]){
-            result[author.login] = author
+        results.map = lodash.transform(
+          results.mapByEmail,
+          (result, author) => {
+            if(!result[author.login]){
+              result[author.login] = author
+            }
           }
-        })
+        )
         resolve()
       })
     })
@@ -194,7 +219,10 @@ function totalContributions() {
   return exec("git log --reverse --pretty=format:%H|head -1")
   .then((sha) => {
     // Get all contributor since first commit
-    return exec(`git shortlog --no-merges --summary --numbered --email ${sha.trim()}..HEAD`)
+    return exec(
+      `git shortlog --no-merges --summary --numbered --email ` +
+      `${sha.trim()}..HEAD`
+    )
   })
   .then((stdout) => {
     stdout
@@ -226,7 +254,10 @@ function filesContributions() {
       var parallelFiles = []
       files.forEach(function(file){
         parallelFiles.push(function(cb){
-          return exec("git log --pretty=short --follow " + file + " | git shortlog --summary --numbered --no-merges --email")
+          return exec(
+            "git log --pretty=short --follow " + file +
+            " | git shortlog --summary --numbered --no-merges --email"
+          )
           .then((stdout) => {
             if(stdout){
               results.files[file] = {}
@@ -235,7 +266,9 @@ function filesContributions() {
                 .split("\n")
                 .forEach(function(line){
                   line = line.trim()
-                  results.files[file][results.mapByEmail[line.match(emailRE)[1]].login] = line.match(commitsRE)[1]
+                  results.files[file][
+                    results.mapByEmail[line.match(emailRE)[1]
+                  ].login] = line.match(commitsRE)[1]
                 })
             }
           }, function(stderr){

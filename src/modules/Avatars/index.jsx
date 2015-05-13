@@ -31,7 +31,10 @@ export default class Avatars extends Component {
         authors.map((author) => {
           return (
             <div key={author} className="putainde-List-avatars-author">
-              <Avatar author={author} className="putainde-List-avatars-author-avatar" />
+              <Avatar
+                author={author}
+                className="putainde-List-avatars-author-avatar"
+              />
             </div>
           )
         })

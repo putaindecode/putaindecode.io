@@ -23,7 +23,10 @@ export default class PostPreview extends Component {
     return (
       <div className="putainde-List-item js-Post">
 
-        { post.authors && <Avatars className="putainde-List-avatars" authors={post.authors} /> }
+        {
+          post.authors &&
+          <Avatars className="putainde-List-avatars" authors={post.authors} />
+        }
 
         <a
           className="putainde-Link putainde-List-title"
