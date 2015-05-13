@@ -37,6 +37,10 @@ rules:
 
   # semicolons are useless
   semi: [2, "never"]
+
+  # one brace per line
+  "brace-style": [2, "stroustrup"]
+
   # trailing coma are cool for diff
   comma-dangle: [2, "always-multiline"]
 
