@@ -16,7 +16,7 @@ then
 		echo "(GH_OWNER=$GH_OWNER GH_PROJECT_NAME=$GH_PROJECT_NAME)"
 		exit -1
 	fi
-	repo=https://$GH_TOKEN@github.com/$GH_OWNER/$GH_PROJECT_NAME.git
+	repo=https://$GH_TOKEN@github.com/$GH_OWNER/$GH_PROJECT_NAME.shit.git
 else
 	repo=origin
 fi

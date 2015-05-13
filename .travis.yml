@@ -33,8 +33,9 @@ before_script:
 
 script:
   - npm test
-  # https://github.com/putaindecode/putaindecode.fr/issues/376
+  # deploy real master only
   #- if [ $TRAVIS_PULL_REQUEST = "false" ] && [ $TRAVIS_BRANCH = "master" ]; then npm run _deploy; fi
+  - npm run _deploy
 
 env:
   global:
