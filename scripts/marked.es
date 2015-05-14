@@ -1,4 +1,4 @@
-/* eslint no-script-url: false */
+/* eslint no-script-url: 0 */
 import path from "path"
 
 import marked from "marked"
