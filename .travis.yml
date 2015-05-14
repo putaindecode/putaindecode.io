@@ -18,8 +18,8 @@ notifications:
   webhooks:
     - https://webhooks.gitter.im/e/f9058b60ad04e03a490e
 
-install:
-  - npm install --loglevel info
+#install:
+#  - npm install --loglevel info
 
 before_script:
   # for headless browsers
