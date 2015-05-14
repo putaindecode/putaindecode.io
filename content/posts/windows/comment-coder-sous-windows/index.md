@@ -7,12 +7,11 @@ tags:
   - dev
 authors:
   - kud
+hero:
+  src: index.jpg
+  alt: Keyboard
+  credit: http://www.customity.com/content/wallpaper/windows-key-wallpaper
 ---
-
-<figure>
-  ![Keyboard](index.jpg)
-  <small>[Credit photo](http://www.customity.com/content/wallpaper/windows-key-wallpaper)</small>
-</figure>
 
 Oh oui, en voilà une belle question.
 
