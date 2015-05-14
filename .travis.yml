@@ -38,6 +38,7 @@ script:
 
 env:
   global:
+    - __PROD__: 1
     # GH_TOKEN
     # might be compromised for now :/
     # https://github.com/putaindecode/putaindecode.fr/issues/376
