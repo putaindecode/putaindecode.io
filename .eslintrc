@@ -19,6 +19,7 @@ globals:
   __SERVER_HOSTNAME__: true
   __SERVER_PORT__: true
   __SERVER_HOST__: true
+  __SERVER_URL__: true
   __LR_SERVER_PORT__: true
 
 plugins:

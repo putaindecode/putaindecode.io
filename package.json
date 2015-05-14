@@ -46,7 +46,7 @@
     "metalsmith": "^1.5.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-filenames": "^1.0.0",
-    "metalsmith-md": "^1.0.0",
+    "metalsmith-md": "^1.1.1",
     "metalsmith-react": "^1.1.0",
     "metalsmith-rename": "^1.0.0",
     "metalsmith-rss": "^1.0.0",

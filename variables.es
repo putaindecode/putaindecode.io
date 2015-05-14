@@ -27,6 +27,9 @@ const variables = {
   ),
 }
 
+variables.__SERVER_URL__ =
+  `${variables.__SERVER_PROTOCOL__}${variables.__SERVER_HOST__}`
+
 export default {variables}
 
 // define some global var like __DEV__

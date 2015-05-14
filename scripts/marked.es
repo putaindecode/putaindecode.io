@@ -1,5 +1,44 @@
+/* eslint no-script-url: false */
+import path from "path"
+
 import marked from "marked"
 import hljs from "highlight.js"
+
+// https://github.com/chjj/marked/blob/master/lib/marked.js#L1096
+function unescape(html) {
+  return html.replace(/&([#\w]+);/g, function(_, n) {
+    n = n.toLowerCase()
+    if (n === "colon") {
+      return ":"
+    }
+    if (n.charAt(0) === "#") {
+      return n.charAt(1) === "x"
+        ? String.fromCharCode(parseInt(n.substring(2), 16))
+        : String.fromCharCode(+n.substring(1))
+    }
+    return ""
+  })
+}
+
+function rebaseUrl(baseHref, currentPath, uri) {
+  // don't touch non relative uri
+  if (
+    // skip absolute url
+    uri.indexOf("/") === 0 ||
+    // datauris
+    uri.indexOf("data:") === 0 ||
+    // internal links
+    // uri.indexOf("#") === 0 ||
+    // protocol based
+    /^[a-z]+:\/\//.test(uri)
+  ) {
+    return uri
+  }
+  else {
+    // make it absolute
+    return baseHref + path.normalize(path.join(currentPath, uri))
+  }
+}
 
 const renderer = new marked.Renderer()
 const accents = {
@@ -34,8 +73,8 @@ const accents = {
   "ý": "y",
 }
 const accentsRE = RegExp("(" + Object.keys(accents).join("|") + ")", "g")
-renderer.heading = function(text, level) {
-  const escaped = text
+renderer.heading = function(text, level, raw) {
+  const escaped = raw
       // url in lower case are cool
       .toLowerCase()
 
@@ -44,19 +83,68 @@ renderer.heading = function(text, level) {
         return accents[i]
       })
 
-      // strip html in anchors
-      .replace(/(<\/?[^>]+>)/ig, "")
-
       // dashify
+      // .replace(/[^\w]+/g, "-")
       .replace(/\W+/g, "-")
       .replace(/^-+/, "")
       .replace(/-+$/, "")
 
   return (
     `<h${level} id="${escaped}">
-      <a class="putainde-Title-anchor" href="#${escaped}">#</a>
+      <a class="putainde-Title-anchor" href="${
+        rebaseUrl(
+          this.options.__metalsmith.baseHref,
+          path.dirname(this.options.__metalsmith.__filename),
+          "#" + escaped
+        )
+      }">#</a>
       ${text}
     </h${level}>`
+  )
+}
+
+renderer.link = function(href, title, text) {
+
+  // DON'T PLAY WITH US OK ?
+  // (this came from original marked source code and should remain I think)
+  if (this.options.sanitize) {
+    try {
+      var prot = decodeURIComponent(unescape(href))
+        .replace(/[^\w:]/g, "")
+        .toLowerCase()
+    }
+    catch (e) {
+      return ""
+    }
+
+    if (
+      prot.indexOf("javascript:") === 0 ||
+      prot.indexOf("vbscript:") === 0
+    ) {
+      return ""
+    }
+  }
+
+  return `<a href="${
+    rebaseUrl(
+      this.options.__metalsmith.baseHref,
+      path.dirname(this.options.__metalsmith.__filename),
+      href
+    )
+  }" ${title ? ` title="${title}"` : ``}>${text}</a>`
+}
+
+renderer.image = function(href, title, text) {
+  return (
+    `<img src="${
+      rebaseUrl(
+        this.options.__metalsmith.baseHref,
+        path.dirname(this.options.__metalsmith.__filename),
+        href
+      )
+    }" alt="${text}"` +
+    `${title ? ` title="${title}"` : ``}` +
+    `${this.options.xhtml ? "/>" : ">"}`
   )
 }
 
