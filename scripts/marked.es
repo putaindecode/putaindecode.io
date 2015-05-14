@@ -73,6 +73,7 @@ const accents = {
   "ý": "y",
 }
 const accentsRE = RegExp("(" + Object.keys(accents).join("|") + ")", "g")
+const headingIds = {}
 renderer.heading = function(text, level, raw) {
   const escaped = raw
       // url in lower case are cool
@@ -89,13 +90,21 @@ renderer.heading = function(text, level, raw) {
       .replace(/^-+/, "")
       .replace(/-+$/, "")
 
+  if (!headingIds[escaped]) {
+    headingIds[escaped] = 0
+  }
+  headingIds[escaped]++
+  const id = escaped + (
+    headingIds[escaped] > 1 ? `-${headingIds[escaped]}` : ""
+  )
+
   return (
-    `<h${level} id="${escaped}">
+    `<h${level} id="${id}">
       <a class="putainde-Title-anchor" href="${
         rebaseUrl(
           this.options.__metalsmith.baseHref,
           path.dirname(this.options.__metalsmith.__filename),
-          "#" + escaped
+          "#" + id
         )
       }">#</a>
       ${text}
