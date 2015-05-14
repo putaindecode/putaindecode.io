@@ -28,9 +28,12 @@ import i18n from "../src/modules/i18n"
 import pkg from "../package"
 import logger from "./utils/logger"
 
-import {defineGlobalVariables} from "../variables"
+import variables, {defineGlobalVariables} from "../variables"
 defineGlobalVariables()
 const DEV_SERVER = process.argv.includes("--dev-server")
+
+console.log(colors.cyan("\n- Variables"))
+console.log(variables)
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
