@@ -50,7 +50,9 @@ function build(error, contributors) {
 
   // convert markdown
   .use(
-    markdown()
+    markdown({
+      baseHref: `${__SERVER_URL__}/`,
+    })
   )
 
   // useful for some homemade plugins
@@ -80,7 +82,7 @@ function build(error, contributors) {
     rss({
       feedOptions: {
         title: i18n.title,
-        site_url: pkg.homepage,
+        site_url: __SERVER_URL__,
         language: "fr",
         categories: [
           "code",
