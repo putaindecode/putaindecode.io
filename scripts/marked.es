@@ -90,12 +90,13 @@ renderer.heading = function(text, level, raw) {
       .replace(/^-+/, "")
       .replace(/-+$/, "")
 
-  if (!headingIds[escaped]) {
-    headingIds[escaped] = 0
+  const key = this.options.__metalsmith.__filename + "#" + escaped
+  if (!headingIds[key]) {
+    headingIds[key] = 0
   }
-  headingIds[escaped]++
+  headingIds[key]++
   const id = escaped + (
-    headingIds[escaped] > 1 ? `-${headingIds[escaped]}` : ""
+    headingIds[key] > 1 ? `-${headingIds[key]}` : ""
   )
 
   return (
