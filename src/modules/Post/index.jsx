@@ -118,6 +118,15 @@ export default class Post extends DefaultTemplate {
               </header>
 
               <div className="putainde-Post-md">
+                {
+                  (file.hero) &&
+                  <figure className="putainde-Post-hero">
+                    <img
+                      src={file.hero.src}
+                      alt={file.hero.alt || "Illustration"} />
+                    <small><a href={file.hero.credit}>Credit photo</a></small>
+                  </figure>
+                }
                 <div
                   dangerouslySetInnerHTML={{__html: file.contents}}
                 />

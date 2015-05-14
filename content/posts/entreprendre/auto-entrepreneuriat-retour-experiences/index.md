@@ -8,12 +8,11 @@ tags:
 authors:
   - kud
   - MoOx
+hero:
+  src: index.jpg
+  alt: Desktop
+  credit: http://freebiesxpress.com/gallery/macbook-air-table-direct-stock-photo/
 ---
-
-<figure>
-  ![Desktop](index.jpg)
-  <small>[Credit photo](http://freebiesxpress.com/gallery/macbook-air-table-direct-stock-photo/)</small>
-</figure>
 
 L'auto-entreprenariat, voilà la belle idée. Un statut facile qui permet à n'importe qui de créer sa propre entreprise. Une belle opportunité pour se lancer facilement et sans trop de risque à l'indépendance.
 
