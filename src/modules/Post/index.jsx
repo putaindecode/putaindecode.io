@@ -26,10 +26,6 @@ export default class Post extends DefaultTemplate {
     i18n: PropTypes.object.isRequired,
   }
 
-  static getGithubUrl(repo, filename, action) {
-    return `${repo}/${action}/master/content/${filename}`
-  }
-
   // 2 cts autoprefixer
   static renderCSSBackground(metadata) {
     let image = metadata.image
@@ -228,54 +224,6 @@ export default class Post extends DefaultTemplate {
                 </div>
 
                 <footer className="putainde-Post-footer">
-
-                  <div className="putainde-Post-footer-title">
-                    {i18n.pageActions}
-                  </div>
-                  <div className="r-Grid">
-                    <div className="r-Grid-cell r-all--1of3">
-                      <a
-                        className="putainde-Post-footer-action"
-                        href={
-                          Post.getGithubUrl(
-                            pkg.repositoryHttpUrl,
-                            "edit",
-                            filename
-                          )
-                        }
-                      >
-                        {i18n.pageEdit}
-                      </a>
-                    </div>
-                    <div className="r-Grid-cell r-all--1of3">
-                      <a
-                        className="putainde-Post-footer-action"
-                        href={
-                          Post.getGithubUrl(
-                            pkg.repositoryHttpUrl,
-                            "blame",
-                            filename
-                          )
-                        }
-                      >
-                        {i18n.pageBlame}
-                      </a>
-                    </div>
-                    <div className="r-Grid-cell r-all--1of3">
-                      <a
-                        className="putainde-Post-footer-action"
-                        href={
-                          Post.getGithubUrl(
-                            pkg.repositoryHttpUrl,
-                            "commits",
-                            filename
-                          )
-                        }
-                      >
-                        {i18n.pageHistory}
-                      </a>
-                    </div>
-                  </div>
 
                   {
                     file.authors && file.authors.length === 1 &&

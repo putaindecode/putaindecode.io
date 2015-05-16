@@ -317,18 +317,10 @@
   }
 
 .putainde-Post-footer  {
-  margin: calc(var(--r-lineHeight) * 4) 0;
+  margin: var(--r-lineHeight) 0;
+  padding: var(--r-lineHeight) 0;
   box-shadow: inset 0 1px 0 0 var(--putainde-Color-lightGrey);
 }
-
-  .putainde-Post-footer-title  {
-    color: #999;
-  }
-
-  .putainde-Post-footer-title,
-  .putainde-Post-footer-action {
-    font-size: var(--r-small-fontSize);
-  }
 
 #disqus_thread {
   margin: calc(var(--r-lineHeight) * 2) 0 var(--r-lineHeight);

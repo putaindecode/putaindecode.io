@@ -40,6 +40,10 @@
     }
   }
 
+  .putainde-WrittenBy {
+    color: color(#444 a(.6));
+  }
+
   .putainde-Author-picture {
     position: absolute;
     top: 0;
@@ -74,10 +78,6 @@
     .putainde-Author:hover .putainde-Author-afterName {
       opacity: .8;
     }
-
-  .putainde-WrittenBy {
-    color: rgba(68, 68, 68, .6);
-  }
 
   .putainde-Author-social {
     position: absolute;
