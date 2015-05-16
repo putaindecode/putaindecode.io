@@ -45,10 +45,15 @@
 
     }
 
+    .putainde-Post-header .putainde-Title {
+      padding: 0 1rem;
+    }
+
     @media (--r-minL) {
       .putainde-Post-header .putainde-Title {
         font-size: calc(var(--r-h1-fontSize) * 1.5);
         margin: calc(var(--r-h1-fontSize) * 1.5) 0;
+        padding: 0 4rem;
       }
     }
 
