@@ -2,7 +2,7 @@
   text-align: left;
   padding: 0 2em;
 }
-  @media (max-width:54em) {
+  @media (--r-maxM) {
     .putainde-Column {
       padding: .5em
     }
@@ -44,7 +44,7 @@
   cursor: pointer;
 }
 
-  @media (max-width:54em) {
+  @media (--r-maxM) {
     .putainde-TagFilters-toggle {
       display: inline-block
     }
@@ -66,13 +66,13 @@
   line-height: 1;
 }
 
-  @media (max-width:54em) {
+  @media (--r-maxM) {
     .putainde-TagFilters-close {
       display: inline-block
     }
   }
 
-@media (max-width:54em) {
+@media (--r-maxM) {
   .putainde-TagFilters {
     background: #fff;
     box-shadow: .2em 0 .4em color(#000 alpha(10%)), 1px 0 color(#000 alpha(10%));
@@ -103,7 +103,7 @@ body {
   transition: .2s ease-in-out left
 }
 
-  @media (max-width:54em) {
+  @media (--r-maxM) {
     .putainde-Body--tagFiltersOpened .putainde-TagFilters {
       display: block;
       left: 0em;
