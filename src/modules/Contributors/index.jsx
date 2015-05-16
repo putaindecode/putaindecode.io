@@ -17,7 +17,6 @@ export default class Contributors extends Component {
     filename: PropTypes.string.isRequired,
   }
 
-
   static getGithubUrl(repo, filename, action) {
     return `${repo}/${action}/master/content/${filename}`
   }

@@ -55,13 +55,13 @@ export default class Post extends DefaultTemplate {
         if (metadata.linearGradient) {
           background.push([
             `${prefix}linear-gradient(${metadata.linearGradient})`,
-            "repeat 0% 0%"
+            "repeat 0% 0%",
           ])
         }
         if (metadata.radialGradient) {
           background.push([
             `${prefix}radial-gradient(${metadata.linearGradient})`,
-            "repeat 0% 0%"
+            "repeat 0% 0%",
           ])
         }
         // only need the image if there will be both prefixed and unprefixed
@@ -99,7 +99,6 @@ export default class Post extends DefaultTemplate {
   }
 
   render() {
-    const pkg = this.props.pkg
     const i18n = this.props.i18n
     const file = this.props.file
 
