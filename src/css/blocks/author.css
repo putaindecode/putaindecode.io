@@ -29,6 +29,7 @@
 
 
 .putainde-Author {
+  text-align: left;
   position: relative;
   padding: 0 0 0 calc(var(--putainde-Author-picture-size) + 1rem);
   margin: var(--r-lineHeight) 0;

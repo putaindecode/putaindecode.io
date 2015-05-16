@@ -1,56 +1,135 @@
 .putainde-Post {
+  color: #444;
   text-align: center;
-  padding: 0 var(--r-lineHeight);
+  /*padding: 0 var(--r-lineHeight);*/
 }
 
-.putainde-Title {
-  z-index: 3;
+  /* if a custom header is here, we adjust the post to be near the nav */
+  .putainde-Post--customHeader {
+    margin: calc(var(--r-lineHeight) * -1) 0 0;
+  }
 
-  margin: calc(var(--r-lineHeight) / 2) 0;
-  overflow: auto;
+  .putainde-Post a {
+    color: var(--putainde-Color-red);
+    fill: var(--putainde-Color-red);
+    text-decoration: none;
+  }
+    .putainde-Post a:hover,
+    .putainde-Post a:focus {
+      text-decoration: underline;
+    }
 
-  color: #222;
-  background: #fff;
-  background: linear-gradient(to bottom, #fff 60%, color(#fff alpha(0)));
-}
+  .putainde-Post-header {
+    position: relative;
+    text-align: center;
+    margin: 0 -1rem calc(var(--r-lineHeight) * 1);
+    padding: calc(var(--r-lineHeight) * 2) 0;
 
-.putainde-Title--home {
-  text-align: center;
-}
+    /* for putainde-Post-header--dark.putainde-Post-header--filter */
+    overflow: hidden;
+  }
 
-.putainde-Title-text {
-  font-weight: 400;
-}
+    .putainde-Post-header--custom {
+      padding: 15vh 0;
+      box-shadow:
+        0 0 1rem color(#000 a(.2)) inset,
+        0 .4rem 1rem color(#000 a(.2)) inset
+      ;
+    }
 
-.putainde-Post-metas  {
-  display: inline-block;
-  font-size: var(--r-small-fontSize);
-  color: #999;
-}
+    .putainde-Post-header--dark {
+      color: #fff;
+    }
+
+    .putainde-Post-header--light {
+
+    }
+
+    @media (--r-minL) {
+      .putainde-Post-header .putainde-Title {
+        font-size: calc(var(--r-h1-fontSize) * 1.5);
+        margin: calc(var(--r-h1-fontSize) * 1.5) 0;
+      }
+    }
+
+      .putainde-Post-header--dark .putainde-Title {
+        text-shadow:
+          0 0 6px color(#000 a(-75%)),
+          0 0 5px color(#000 a(-80%)),
+          0 0 4px color(#000 a(-85%)),
+          0 0 3px color(#000 a(-90%)),
+          0 0 2px color(#000 a(-95%))
+        ;
+      }
+
+      .putainde-Post-header--light .putainde-Title {
+        text-shadow:
+          0 0 5px color(#fff a(-80%)),
+          0 0 4px color(#fff a(-85%)),
+          0 0 3px color(#fff a(-90%)),
+          0 0 2px color(#fff a(-95%))
+        ;
+      }
+
+      .putainde-Post-header-picture {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* to avoid shitty rendering for low def background */
+        filter: blur(2px);
+
+        /*
+          to avoid shitty rendering of filter: blur() on edge
+          example of the issue:
+          <div style="background: green">
+            <img src="http://lorempixel.com/400/200/" style="filter: blur(5px)"/>
+          </div>
+         */
+        transform: scale(1.05);
+      }
+
+        .putainde-Post-header-pictureCredit {
+          position: absolute;
+          bottom: .4rem;
+          right: .4rem;
+
+          font-size: calc(var(--r-small-fontSize) * var(--r-small-fontSize));
+
+          opacity: .6;
+          transition: .2s;
+        }
+
+          .putainde-Post-header-pictureCredit:hover {
+            opacity: .8;
+          }
+
+  .putainde-Post-metas  {
+    display: inline-block;
+    font-size: var(--r-small-fontSize);
+    color: #999;
+  }
+
+  .putainde-Post .putainde-Post-tags {
+    margin-bottom: calc(var(--r-lineHeight) * 2);
+  }
 
 /* enable nowrap for tooltip only for medium screen, to avoid scrollbar & shit */
 /* https://github.com/putaindecode/putaindecode.fr/issues/266 */
-@media (min-width: 54.01em) {
+@media (--r-minM) {
   .putainde-Post-readingTime::before {
     white-space: nowrap;
   }
 }
 
 .putainde-Post-contents {
-  text-align: left;
-  color: #444;
+  /*text-align: left;*/
 }
-  .putainde-Post-contents a {
-    color: var(--putainde-Color-red);
-    fill: var(--putainde-Color-red);
-    text-decoration: none;
-  }
-    .putainde-Post-contents a:hover,
-    .putainde-Post-contents a:focus {
-      text-decoration: underline;
-    }
 
 .putainde-Post-md {
+  text-align: left;
 }
 
   .putainde-Post-md ul,
@@ -227,39 +306,29 @@
   font-style: italic;
 }
 
-.putainde-Networks * {
-  vertical-align: top;
-}
+  .putainde-Networks * {
+    vertical-align: top;
+  }
 
-.putainde-Network {
-  display: inline-block;
-  font-size: 2.074em;
-  padding: 0 0.2em;
-}
+  .putainde-Network {
+    display: inline-block;
+    font-size: 2.074em;
+    padding: 0 0.2em;
+  }
 
 .putainde-Post-footer  {
-  margin: calc(var(--r-lineHeight) * 2) 0;
+  margin: calc(var(--r-lineHeight) * 4) 0;
   box-shadow: inset 0 1px 0 0 var(--putainde-Color-lightGrey);
 }
 
-.putainde-Post-footer-title  {
-  color: #999;
-}
-
-.putainde-Post-footer-title,
-.putainde-Post-footer-action {
-  font-size: var(--r-small-fontSize);
-}
-
-@media (min-width: 54em) {
-  .putainde-Post-footer .r-all--1of3 + .r-all--1of3  {
-    text-align: center;
+  .putainde-Post-footer-title  {
+    color: #999;
   }
 
-  .putainde-Post-footer .r-all--1of3 + .r-all--1of3 + .r-all--1of3  {
-    text-align: right;
+  .putainde-Post-footer-title,
+  .putainde-Post-footer-action {
+    font-size: var(--r-small-fontSize);
   }
-}
 
 #disqus_thread {
   margin: calc(var(--r-lineHeight) * 2) 0 var(--r-lineHeight);

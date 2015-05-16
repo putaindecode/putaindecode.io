@@ -7,9 +7,7 @@ tags:
   - dev
 authors:
   - kud
-hero:
-  src: index.jpg
-  alt: Keyboard
+header:
   credit: http://www.customity.com/content/wallpaper/windows-key-wallpaper
 ---
 
