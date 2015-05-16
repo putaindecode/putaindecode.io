@@ -8,9 +8,9 @@ tags:
 authors:
   - kud
   - MoOx
-hero:
-  src: index.jpg
-  alt: Desktop
+header:
+  light: true
+  linearGradient: 160deg, rgb(250, 250, 250), rgba(214, 194, 162, 0.6)
   credit: http://freebiesxpress.com/gallery/macbook-air-table-direct-stock-photo/
 ---
 
