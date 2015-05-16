@@ -1,7 +1,7 @@
 .putainde-Post {
   color: #444;
   text-align: center;
-  /*padding: 0 var(--r-lineHeight);*/
+  padding: 0 1rem;
 }
 
   /* if a custom header is here, we adjust the post to be near the nav */
