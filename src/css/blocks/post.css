@@ -49,6 +49,17 @@
       padding: 0 1rem;
     }
 
+    .putainde-Title {
+      margin: calc(var(--r-lineHeight) / 2) 0;
+      color: #222;
+      overflow: auto;
+    }
+
+    .putainde-Title--home {
+      text-align: center;
+
+    }
+
     @media (--r-minL) {
       .putainde-Post-header .putainde-Title {
         font-size: calc(var(--r-h1-fontSize) * 1.5);
