@@ -1,10 +1,7 @@
-import pkg from "./package.json"
-
 // shell has some limitation :)
 const __PROD__ = JSON.parse(Boolean(process.env.__PROD__))
 
 const variables = {
-  __VERSION__: process.env.__VERSION__ || pkg.version,
   __DEV__: !__PROD__,
   __PROD__,
   __SERVER_PROTOCOL__: "http://",
