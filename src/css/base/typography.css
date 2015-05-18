@@ -1,6 +1,6 @@
 :root {
-  --fontFamily-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --fontFamily-title: Avenir, "Helvetica Neue", Helvetica, sans-serif;
+  --fontFamily-body: "Helvetica Neue", Helvetica, "Liberation Sans", "Droid Sans", Arial, sans-serif;
+  --fontFamily-title: Avenir, "Helvetica Neue", Helvetica, "Liberation Sans", "Droid Sans", sans-serif;
 }
 
 html {
