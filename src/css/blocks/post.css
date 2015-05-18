@@ -37,23 +37,22 @@
       ;
     }
 
-    .putainde-Post-header--dark {
-      color: #fff;
-    }
-
-    .putainde-Post-header--light {
-
-    }
-
     .putainde-Post-header .putainde-Title {
       padding: 0 1rem;
     }
 
     .putainde-Title {
       margin: calc(var(--r-lineHeight) / 2) 0;
-      color: #222;
       overflow: auto;
     }
+
+      .putainde-Post-header--dark .putainde-Title {
+        color: #fff;
+      }
+
+      .putainde-Post-header--light .putainde-Title {
+
+      }
 
     .putainde-Title--home {
       text-align: center;
@@ -63,6 +62,7 @@
     @media (--r-minL) {
       .putainde-Post-header .putainde-Title {
         font-size: calc(var(--r-h1-fontSize) * 1.5);
+        line-height: calc(var(--r-h1-lineHeight) * 1.5);
         margin: calc(var(--r-h1-fontSize) * 1.5) 0;
         padding: 0 4rem;
       }
