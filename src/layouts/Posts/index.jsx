@@ -1,11 +1,11 @@
 import React, {PropTypes} from "react"
 import cx from "classnames"
-import DefaultTemplate from "../DefaultTemplate"
+import DefaultTemplate from "../Default"
 
-import Html from "../Html"
-import Head from "../Head"
-import Body from "../Body"
-import PostsList from "../PostsList"
+import Html from "../../modules/Html"
+import Head from "../../modules/Head"
+import Body from "../../modules/Body"
+import PostsList from "../../modules/PostsList"
 
 export default class Posts extends DefaultTemplate {
 
@@ -14,6 +14,7 @@ export default class Posts extends DefaultTemplate {
   // should not be declared here too, only in parent class
   // https://github.com/yannickcr/eslint-plugin-react/issues/68
   static propTypes = {
+    metadata: PropTypes.object.isRequired,
     contributors: PropTypes.object.isRequired,
     collections: PropTypes.object.isRequired,
     file: PropTypes.object.isRequired,
@@ -27,8 +28,13 @@ export default class Posts extends DefaultTemplate {
 
     return (
       <Html>
-        <Head title={this.props.file.title} />
-        <Body>
+        <Head
+          title={this.props.file.title}
+          stylesheets={this.props.metadata.assets.stylesheets}
+        />
+        <Body
+          scripts={this.props.metadata.assets.scripts}
+        >
           <div className="r-Grid putainde-Section">
             <div
               className={cx(

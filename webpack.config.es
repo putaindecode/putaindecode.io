@@ -1,28 +1,28 @@
 import path from "path"
 
 import webpack from "webpack"
-// import WebpackDevServer from "webpack-dev-server"
-// import eslintFormatter from "eslint-friendly-formatter"
+
+import ExtractTextPlugin from "extract-text-webpack-plugin"
+import eslintFormatter from "eslint-friendly-formatter"
 
 import variables, {defineGlobalVariables} from "./variables"
 defineGlobalVariables()
 
-const production = process.argv.includes("--production")
+const production = __PROD__ || process.argv.includes("--production")
 
-const index = `index.${__VERSION__}`
 var config = {
   entry: {
-    tests: [
-      "./src/tests.js",
+    __tests__: [
+      "./src/__tests__.js",
     ],
-    [index]: [
+    index: [
       "./src/index.js",
     ],
   },
 
   output: {
     path: path.join(__dirname, "dist"),
-    filename: `[name]${production ? ".min" : ""}.js`,
+    filename: "[name].js",
     publicPath: "/",
   },
 
@@ -56,6 +56,13 @@ var config = {
         ],
       },
       {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract(
+          "style-loader",
+          "css-loader!cssnext-loader"
+        ),
+      },
+      {
         test: /\.html$/,
         loaders: [
           "file?name=[path][name].[ext]&context=./src",
@@ -66,6 +73,7 @@ var config = {
 
   plugins: [
     new webpack.DefinePlugin(variables),
+    new ExtractTextPlugin("[name].css", {disable: !production}),
     ...(production ?
         [
           new webpack.optimize.UglifyJsPlugin({
@@ -85,8 +93,7 @@ var config = {
   },
 
   eslint: {
-    // https://github.com/royriojas/eslint-friendly-formatter/issues/3
-    //reporter: eslintFormatter,
+    reporter: eslintFormatter,
   },
 }
 

@@ -37,7 +37,7 @@ export default (options) => {
         .reduce(
           (acc, key) => {
             // entries with name that start with "test" do not need extra stuff
-            acc[key] = key.indexOf("test") === 0 ?
+            acc[key] = key.indexOf("__tests__") === 0 ?
             config.entry[key] :
             [
               ...devEntries,
@@ -53,7 +53,10 @@ export default (options) => {
       new webpack.NoErrorsPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       miniLogs,
-      runTestsWithJSDOM({url: `${serverUrl}/tests.html`}),
+      runTestsWithJSDOM({
+        url: `${serverUrl}/__tests__.html`,
+        compiledAssetsSources: ["__tests__.js"],
+      }),
     ],
     eslint: {
       ...config.eslint,
