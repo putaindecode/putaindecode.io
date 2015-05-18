@@ -8,7 +8,7 @@
     margin-top: -1px;
   }
 
-    @media (max-width:54em) {
+    @media (--r-maxM) {
       .putainde-Footer > .r-Grid > .r-Grid-cell {
         padding: calc(var(--r-lineHeight) / 2) 0;
         text-align: center;
@@ -37,13 +37,13 @@
   font-size: var(--r-small-fontSize);
 }
 
-@media (min-width:54em) {
+@media (--r-minM) {
   .putainde-Footer-text--right {
     text-align: right;
   }
 }
 
-  @media (min-width:54em) {
+  @media (--r-minM) {
     .putainde-Footer-list {
       text-align: center
     }

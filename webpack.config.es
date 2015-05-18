@@ -2,7 +2,7 @@ import path from "path"
 
 import webpack from "webpack"
 // import WebpackDevServer from "webpack-dev-server"
-import eslintFormatter from "eslint-friendly-formatter"
+// import eslintFormatter from "eslint-friendly-formatter"
 
 import variables, {defineGlobalVariables} from "./variables"
 defineGlobalVariables()
@@ -85,7 +85,8 @@ var config = {
   },
 
   eslint: {
-    reporter: eslintFormatter,
+    // https://github.com/royriojas/eslint-friendly-formatter/issues/3
+    //reporter: eslintFormatter,
   },
 }
 

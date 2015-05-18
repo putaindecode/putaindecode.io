@@ -293,7 +293,7 @@ function filesContributions() {
  * in `tasks/cache/contributors`
  */
 module.exports = function(cb) {
-  if (Object.keys(results)>1) {
+  if (Object.keys(results) > 1) {
     cb()
     return
   }

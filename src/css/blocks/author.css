@@ -29,14 +29,19 @@
 
 
 .putainde-Author {
+  text-align: left;
   position: relative;
   padding: 0 0 0 calc(var(--putainde-Author-picture-size) + 1rem);
   margin: var(--r-lineHeight) 0;
 }
-  @media (max-width:28em) {
+  @media (--r-maxS) {
     .putainde-Author {
       padding-left: 4em;
     }
+  }
+
+  .putainde-WrittenBy {
+    color: color(#444 a(.6));
   }
 
   .putainde-Author-picture {
@@ -46,7 +51,7 @@
     height: var(--putainde-Author-picture-size);
     width: var(--putainde-Author-picture-size);
   }
-    @media (max-width:28em) {
+    @media (--r-maxS) {
       .putainde-Author-picture {
         height: calc(var(--r-lineHeight) * 2);
         width: calc(var(--r-lineHeight) * 2);
@@ -74,10 +79,6 @@
       opacity: .8;
     }
 
-  .putainde-WrittenBy {
-    color: rgba(68, 68, 68, .6);
-  }
-
   .putainde-Author-social {
     position: absolute;
     top: .5em;
@@ -85,7 +86,7 @@
     background: #fafafa;
     border-radius: 2em;
   }
-    @media (max-width:28em) {
+    @media (--r-maxS) {
       .putainde-Author-social {
         position: static;
         display: inline-block;
@@ -100,7 +101,7 @@
     }
 
       .putainde-Author-social a .putainde-Icon { font-size: 1.2em; }
-      @media (max-width:28em) { .putainde-Author-social a { font-size: 1em } }
+      @media (--r-maxS) { .putainde-Author-social a { font-size: 1em } }
 
       .putainde-Author-social a:hover,
       .putainde-Author-social a:focus { background: #eee }
