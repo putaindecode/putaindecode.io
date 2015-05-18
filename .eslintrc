@@ -27,6 +27,9 @@ plugins:
 
 # 0: off, 1: warning, 2: error
 rules:
+  # https://github.com/eslint/eslint/issues/2545
+  no-shadow: 0
+
   # max 80 chars per line
   max-len: [2, 80, 4]
 

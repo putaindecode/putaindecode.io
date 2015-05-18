@@ -11,7 +11,7 @@
   line-height: var(--putainde-Header-height-l);
 }
 
-  @media (max-width:54em) {
+  @media (--r-maxM) {
     .putainde-Header .r-Grid-cell {
       text-align: center
     }
@@ -24,12 +24,12 @@
   text-decoration: none
 }
 
-  @media (min-width: 54em) {
+  @media (--r-minM) {
     .putainde-SiteTitle {
       padding: 0 0 0 calc(var(--putainde-Logo-size-l) + 1rem);
     }
   }
-  @media (max-width:54em) {
+  @media (--r-maxM) {
     .putainde-SiteTitle {
     font-size: var(--r-small-fontSize);
     }
@@ -43,6 +43,7 @@
   }
 
 .putainde-Logo {
+  z-index: 1;
   position: absolute;
   top: 50%;
   left: 0;
@@ -51,7 +52,7 @@
   transition: .2s;
   transform: translateY(-50%);
 }
-  @media (min-width: 54em) {
+  @media (--r-minM) {
     .putainde-Logo {
       width: var(--putainde-Logo-size-l);
       height: var(--putainde-Logo-size-l);

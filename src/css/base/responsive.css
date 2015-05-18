@@ -9,7 +9,7 @@
   margin-right: auto;
 }
 
-@media (max-width: 54em) {
+@media (--r-maxM) {
   .r-Grid {
     width: auto;
   }

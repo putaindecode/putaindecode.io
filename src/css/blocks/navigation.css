@@ -1,4 +1,4 @@
-@media (min-width:54em) {
+@media (--r-minM) {
   .putainde-Nav {
     text-align: right;
   }
