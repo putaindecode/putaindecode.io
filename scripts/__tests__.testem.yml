@@ -1,6 +1,6 @@
 framework: tap
 
-serve_files: dist/tests.js
+serve_files: dist/__tests__.js
 
 launch_in_ci:
   - firefox

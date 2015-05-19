@@ -1,8 +1,8 @@
-import fs from "fs"
 import path from "path"
 
+import {sync as rm} from "rimraf"
+import async from "async"
 import colors from "chalk"
-import cssnext from "cssnext"
 
 import Metalsmith from "metalsmith"
 import defaultMetadata from "./metalsmith/default-metadata"
@@ -14,10 +14,14 @@ import rename from "metalsmith-rename"
 import rss from "metalsmith-rss"
 import react from "metalsmith-react"
 
-// dev
-import watch from "metalsmith-watch"
 import webpack from "webpack"
 import webpackConfig from "../webpack.config"
+
+// prod
+import copyWithContentHash from "copy-with-content-hash/hash-file"
+
+// dev
+import watch from "metalsmith-watch"
 import devServer from "./webpack-dev-server"
 
 // customize marked
@@ -42,7 +46,14 @@ function build(error, contributors) {
     throw error
   }
 
+  // We clean ./dist by hand mainly for prod, in order to be able to build
+  // assets with webpack before metalsmith build.
+  // This allows us to get hashes in filename and pass them to the build
+  rm("./dist")
+
   const smith = new Metalsmith(path.join(__dirname, ".."))
+  smith
+  .clean(false)
   .source("./content")
   .destination("./dist")
 
@@ -99,11 +110,12 @@ function build(error, contributors) {
   .use(
     react({
       pattern: "**/*.md",
-      templatesPath: "./src/modules",
-      defaultTemplate: "DefaultTemplate",
+      templatesPath: "./src/layouts",
+      defaultTemplate: "Default",
       before: "<!doctype html>",
       data: {
         pkg: pkg,
+        metadata: smith.metadata(),
         i18n,
         contributors,
       },
@@ -116,46 +128,16 @@ function build(error, contributors) {
     ])
   )
 
-  // build css
-  .use(
-    (files, metadata, cb) => {
-      files["index.css"] = {
-        contents: new Buffer(
-          cssnext(
-            fs.readFileSync("./src/css/index.css", {encoding: "utf-8"}),
-            {
-              from: "./src/css/index.css",
-              to: "./dist/index.css",
-            }
-          )
-        ),
-      }
-      cb()
+  // for development, we build metalsmith first, then we serve via
+  // webpack-dev-server which build assets too (no hashes involved)
+  if (DEV_SERVER) {
+    smith.metadata().assets = {
+      scripts: [
+        "/index.js",
+        `http://${__SERVER_HOSTNAME__}:${__LR_SERVER_PORT__}/livereload.js`,
+      ],
+      // css is handled by the js via webpack style-loader
     }
-  )
-
-  if (!DEV_SERVER) {
-    // ignore for prod only
-    // so we can get watch & reload for those files too
-    smith
-      .build((err) => {
-        if (err) {
-          throw err
-        }
-
-        console.log(colors.green("\n✓ Static build completed"))
-      })
-    webpack(webpackConfig, (err) => {
-      if (err) {
-        throw err
-      }
-
-      console.log(colors.green("\n✓ Assets build completed"))
-    })
-  }
-
-  // dev server
-  else {
     smith
       .use(
         watch({
@@ -163,12 +145,8 @@ function build(error, contributors) {
           livereload: __LR_SERVER_PORT__,
           paths: {
             "${source}/**/*": true,
+            "src/layouts/**/*": "**/*.md",
             "src/modules/**/*": "**/*.md",
-            // css is for now builded for each metalsmith build
-            // we need to improve that
-            // so for now, saving any css files just rebuild the index
-            // in order to get the css too
-            "src/css/**/*": "index.md",
           },
         })
       )
@@ -184,6 +162,44 @@ function build(error, contributors) {
           open: process.argv.includes("--open"),
         })
       })
+  }
+
+  // for production we build assets first to be able to pass some assets hashes
+  // to metalsmith
+  else {
+    webpack(webpackConfig, (err) => {
+      if (err) {
+        throw err
+      }
+
+      console.log(colors.green("\n✓ Assets build completed"))
+
+      async.map(
+        [
+          "index.js",
+          "index.css",
+        ],
+        (file, cb) => copyWithContentHash(`dist/${file}`, false, cb),
+        (asynErr, results) => {
+          if (asynErr) {
+            throw asynErr
+          }
+
+          smith.metadata().assets = {
+            scripts: ["/" + results[0]],
+            stylesheets: ["/" + results[1]],
+          }
+          smith
+            .build(buildErr => {
+              if (buildErr) {
+                throw buildErr
+              }
+
+              console.log(colors.green("\n✓ Static build completed"))
+            })
+        }
+      )
+    })
   }
 }
 

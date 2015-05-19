@@ -4,7 +4,7 @@
 //
 // ./**/__tests__/*.js
 
-import "./tests.html"
+import "./__tests__.html"
 import "./modules/polyfills"
 
 const context = require.context(

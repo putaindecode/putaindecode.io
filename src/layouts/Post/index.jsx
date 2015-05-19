@@ -1,16 +1,16 @@
 import React, {PropTypes} from "react"
 import cx from "classnames"
 
-import DefaultTemplate from "../DefaultTemplate"
+import DefaultTemplate from "../Default"
 
-import Html from "../Html"
-import Head from "../Head"
-import Body from "../Body"
-import AuthorsList from "../AuthorsList"
-import Author from "../Author"
-import Contributors from "../Contributors"
-import formatDate from "../formatDate"
-import ReadingTime from "../ReadingTime"
+import Html from "../../modules/Html"
+import Head from "../../modules/Head"
+import Body from "../../modules/Body"
+import AuthorsList from "../../modules/AuthorsList"
+import Author from "../../modules/Author"
+import Contributors from "../../modules/Contributors"
+import formatDate from "../../modules/formatDate"
+import ReadingTime from "../../modules/ReadingTime"
 
 export default class Post extends DefaultTemplate {
 
@@ -20,6 +20,7 @@ export default class Post extends DefaultTemplate {
   // https://github.com/yannickcr/eslint-plugin-react/issues/68
   static propTypes = {
     pkg: PropTypes.object.isRequired,
+    metadata: PropTypes.object.isRequired,
     contributors: PropTypes.object.isRequired,
     collections: PropTypes.object.isRequired,
     file: PropTypes.object.isRequired,
@@ -114,7 +115,10 @@ export default class Post extends DefaultTemplate {
         this.props.i18n.twitterUsername
     return (
       <Html>
-        <Head title={this.props.file.title}>
+        <Head
+          title={this.props.file.title}
+          stylesheets={this.props.metadata.assets.stylesheets}
+        >
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content={`@${i18n.twitterUsername}`} />
           <meta name="twitter:title" content={this.props.file.title} />
@@ -124,7 +128,9 @@ export default class Post extends DefaultTemplate {
           <meta property="og:type" content="article" />
           <meta property="og:site_name" content={i18n.title} />
         </Head>
-        <Body>
+        <Body
+          scripts={this.props.metadata.assets.scripts}
+        >
           <article
             className={cx({
               "putainde-Post": true,

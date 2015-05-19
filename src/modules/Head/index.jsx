@@ -4,12 +4,17 @@ export default class Head extends Component {
 
   static displayName = "Head"
 
+  static defaultProps = {
+    stylesheets: [],
+  }
+
   static propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.object,
     ]),
+    stylesheets: PropTypes.array,
   }
 
   render() {
@@ -22,10 +27,11 @@ export default class Head extends Component {
           content="width=device-width, initial-scale=1.0, minimal-ui"
         />
         <title>{this.props.title}</title>
-        <link
-          rel="stylesheet"
-          href="/index.css"
-        />
+        {
+          this.props.stylesheets.map(stylesheet => (
+            <link key={stylesheet} rel="stylesheet" href={stylesheet} />
+          ))
+        }
         <link
           rel="alternate"
           href="/feed.xml"
