@@ -1,6 +1,9 @@
 import React, {PropTypes} from "react"
 import cx from "classnames"
 
+import SVGIcon from "../../modules/SVGIcon"
+import requireRaw from "../../modules/requireRaw"
+
 import DefaultTemplate from "../Default"
 
 import Html from "../../modules/Html"
@@ -8,7 +11,7 @@ import Head from "../../modules/Head"
 import Body from "../../modules/Body"
 import LatestPosts from "../../modules/LatestPosts"
 import TopContributors from "../../modules/TopContributors"
-import Icon from "../../modules/Icon"
+
 
 export default class Homepage extends DefaultTemplate {
 
@@ -56,20 +59,28 @@ export default class Homepage extends DefaultTemplate {
                   dangerouslySetInnerHTML={{__html: this.props.file.contents}}
                 />
                 <div className="putainde-Networks">
-                  {i18n.elsewhere}
                   <a
                     className="putainde-Network"
                     href={i18n.github}
                     title={i18n.githubLabel}
                   >
-                    <Icon src="icons/github.svg" />
+                    <SVGIcon
+                      className="putainde-Icon"
+                      svg={requireRaw(`content/icons/github.svg`)}
+                      cleanup
+                    />
                   </a>
+                  {i18n.elsewhere}
                   <a
                     className="putainde-Network"
                     href={i18n.twitter}
                     title={i18n.twitterLabel}
                   >
-                    <Icon src="icons/twitter.svg" />
+                    <SVGIcon
+                      className="putainde-Icon"
+                      svg={requireRaw(`content/icons/twitter.svg`)}
+                      cleanup
+                    />
                   </a>
                 </div>
               </div>

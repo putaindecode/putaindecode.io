@@ -1,9 +1,16 @@
+:root {
+  --putainde-Button-color1: #fff;
+  --putainde-Button-color2: #fafafa;
+}
+
 .putainde-Button {
   line-height: calc(var(--r-lineHeight)*2);
   margin: -1px 0 var(--r-lineHeight);
 
   color: var(--putainde-Color-red);
   border: 1px solid transparent;
+  border-color: #ddd;
+  background: linear-gradient(var(--putainde-Button-color1), var(--putainde-Button-color2));
   border-radius: .2em;
   text-decoration: none;
 }
@@ -16,9 +23,9 @@
   .putainde-Button:hover,
   .putainde-Button:focus {
     border-color: #ddd;
-    background: linear-gradient(#fff, #fafafa);
+    background: linear-gradient(var(--putainde-Button-color1), color(var(--putainde-Button-color2) b(+5%)));
   }
   .putainde-Button:active {
     border-color: #ddd;
-    background: linear-gradient(#f0f0f0, #fff);
+    background: linear-gradient(color(var(--putainde-Button-color2) b(+10%)), var(--putainde-Button-color1));
   }
