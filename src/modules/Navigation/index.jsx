@@ -20,9 +20,9 @@ export default class Navigation extends Component {
       <nav className="putainde-Nav">
         {
           this.context.i18n.navigation.map((item) => {
-            console.log(currentPage, item.url)
             const isActivePage =
               currentPage === item.url ||
+              currentPage === item.url + "/" ||
               currentPage === item.url + "/index.html"
             const hasTooltip = item.title
 

@@ -31,7 +31,7 @@
 .putainde-Nav-item--current::after {
   content: "";
   position: absolute;
-  bottom: .6em;
+  bottom: .2em;
   height: .3em;
   width: .3em;
   background: var(--putainde-Color-red);

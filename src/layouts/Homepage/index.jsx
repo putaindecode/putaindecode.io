@@ -12,7 +12,6 @@ import Body from "../../modules/Body"
 import LatestPosts from "../../modules/LatestPosts"
 import TopContributors from "../../modules/TopContributors"
 
-
 export default class Homepage extends DefaultTemplate {
 
   static displayName = "Homepage"
