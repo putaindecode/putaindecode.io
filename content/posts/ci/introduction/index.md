@@ -1,6 +1,6 @@
 ---
 date: "2015-05-26"
-title: Qu'est ce que l'intégration continue ?
+title: Qu'est-ce que l'intégration continue ?
 tags:
   - ci
   - tests
@@ -8,7 +8,7 @@ authors:
   - MoOx
 ---
 
-Certains risquent d'être déçu puisque nous ne parlerons pas ici des fameux `3x8`,
+Certains risquent d'être déçus puisque nous ne parlerons pas ici des fameux `3x8`,
 technique qui consiste à faire tourner 3 équipes d'intégrateurs HTML en
 continu afin d'avoir du PSD > HTML 24h sur 24.
 
@@ -47,8 +47,8 @@ entendu.
 [Front](/posts/js/introduction-au-testing-js-front/) et back, il en faut de tous
 les côtés.
 
-Ensuite il nous faudra choisir un serveur qui va gérer l'intégration continue.
-Il existe des services tel que:
+Ensuite, il nous faudra choisir un serveur qui va gérer l'intégration continue.
+Il existe des services tels que:
 
 - [Travis](http://travis-ci.org/)
 - [CircleCI](https://circleci.com/)
@@ -69,25 +69,25 @@ d'intégration continue va jouer tous les tests et déployer le tout en producti
 tout a marché sur des roulettes.
 
 Si des problèmes surviennent, rien ne sera déployé et vous serez notifié sur
-les services que vous avez configuré (email, IRC, webhook, etc).
+les services que vous avez configurés (email, IRC, webhook, etc).
 
 Nous pouvons imaginer que votre serveur vienne vous insulter sur
 votre logiciel de chat interne, en vous montrant du doigt.
 On pourrait aussi imaginer une synthèse vocale crier votre nom et préciser à
 toute l'équipe que
 [vous avez merté](https://www.youtube.com/watch?v=mbDcnUH6rOc) :
-_“MoOx, you just fucked up the build by breaking 42 tests !
-Fix that please“_.
+_“MoOx, you just fucked up the build by breaking 42 tests!
+Fix that please”_.
 Pour finir dans les exemples farfelus, nous pourrions avoir une petite tourelle
 type _Nerf_ qui vous met un petit headshot qui va bien.
-Des équipes font vraiment ça, et vous vous en doutez, y'a de la grosse marade au
+Des équipes font vraiment ça, et vous vous en doutez, y'a de la grosse marrade au
 programme.
 
 L'idée est vraiment de pousser le plus souvent possible, les plus petites
 modifications possibles avec la meilleure couverture de tests possible.
 Ceci afin de minimiser les risques. De plus, cela aide à rester focalisé.
 
-Tout ce processus (versionné aussi tant qu'à y être), qui permet de jouer tous
+Tout ce processus (versionné aussi tant qu'à faire), qui permet de jouer tous
 les tests **rapidement** (dans un environnement similaire à la production), doit
 être transparent et accessible localement, afin que les développeurs aient une
 bonne visibilité et une bonne compréhension du système en place.
@@ -96,7 +96,7 @@ bonne visibilité et une bonne compréhension du système en place.
 
 J'ai mis un titre pour ça car c'est important. Vraiment.
 Tout développeur qui n'a pas encore écrit ses premiers tests a peur.
-Puis avec le temps tout développeur se dit que finalement, il ne fallait pas
+Puis avec le temps, il se dit que finalement, il ne fallait pas
 avoir autant d'appréhension et qu'il était très con de ne pas avoir
 testé automatiquement tout ses codes sources plus tôt.
 À tel point qu'une
@@ -115,20 +115,20 @@ On aime bien l'idée du _[move fast & break nothing
 ## Une commande qui éxecute les tests
 
 Un fois qu'on a écrit des tests, ou même souvent avant, on automatise
-l'éxecution des tests. En général c'est rapide, étant donné qu'une simple
+l'exécution des tests. En général c'est rapide, étant donné qu'une simple
 commande ou un simple script suffit.
 Beaucoup de _test runners_ existent et vous n'aurez aucune difficulté à en
 trouver un en adéquation avec votre language favori.
 
-Pour notre site, la command est `npm test`. Simple, efficace.
+Pour notre site, la commande est `npm test`. Simple, efficace.
 
-Elle éxecute tout ce qui est nécessaire à compiler notre application et à jouer
-les tests tout en retourant un résultat lisible et un code d'erreur si besoin.
+Elle exécute tout ce qui est nécessaire à compiler notre application et à jouer
+les tests tout en retournant un résultat lisible et un code d'erreur si besoin.
 
 ## Faire un script qui fait les choses qui vont bien quand les tests vont bien
 
 Une fois qu'on a une commande qui peut jouer tous les tests et dire "y'a bon" ou
-"tatoukassé", il nous faut prévoir les actions à faire quand nos tests sont ok.
+"tatoukassé", il nous faut prévoir les actions à réaliser quand nos tests sont OK.
 
 Un déploiement FTP, un déploiement git, ou plus compliqué via CDN, peu importe.
 **Il faut juste une commande qui marche simplement.**
@@ -140,8 +140,8 @@ branche `gh-pages`
 ## Automatiser le script qui fait les choses qui vont bien quand les tests vont bien
 
 On peut ensuite éventuellement englober les précentes étapes dans une seule
-commande qui va se débrouiller s'il n'y a pas d'erreur. Mais bon si vous n'avez
-que 2 commandes (comme on dans l'exemple de notre site), un simple appel de cette façon devrait
+commande qui va se débrouiller s'il n'y a pas d'erreur. Mais bon, si vous n'avez
+que deux commandes (comme on a dans l'exemple de notre site), un simple appel de cette façon devrait
 faire l'affaire :
 
 
@@ -149,7 +149,7 @@ faire l'affaire :
 $ npm test && npm run deploy
 ```
 
-Si `npm test` retourne une erreur, la 2e commande ne sera pas éxecutée.
+Si `npm test` retourne une erreur, la deuxième commande ne sera pas exécutée.
 
 ## La suite au prochaine épisode
 
