@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from "react"
 import cx from "classnames"
 
-import Icon from "../Icon"
+import SVGIcon from "../SVGIcon"
+import requireRaw from "../requireRaw"
 
 export default class Footer extends Component {
 
@@ -44,7 +45,11 @@ export default class Footer extends Component {
                       data-r-tooltip="GitHub"
                       className="r-Tooltip r-Tooltip--top"
                     >
-                      <Icon src="/icons/github.svg" />
+                      <SVGIcon
+                        className="putainde-Icon"
+                        svg={requireRaw(`content/icons/github.svg`)}
+                        cleanup
+                      />
                     </a>
                   </li>,
                   <li key={i18n.twitter}>
@@ -53,7 +58,11 @@ export default class Footer extends Component {
                       data-r-tooltip="Twitter"
                       className="r-Tooltip r-Tooltip--top"
                     >
-                      <Icon src="/icons/twitter.svg" />
+                      <SVGIcon
+                        className="putainde-Icon"
+                        svg={requireRaw(`content/icons/twitter.svg`)}
+                        cleanup
+                      />
                     </a>
                   </li>,
                 ]

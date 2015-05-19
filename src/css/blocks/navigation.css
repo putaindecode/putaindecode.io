@@ -9,10 +9,9 @@
   vertical-align: middle;
   position: relative;
   font-size: var(--r-small-fontSize);
-  font-weight: 700;
   text-align: center;
-  color: #fff;
-  fill: #fff;
+  color: #333;
+  fill: var(--putainde-Color-red);
   text-decoration: none;
   padding: 0 .4rem;
 }
@@ -32,31 +31,24 @@
 .putainde-Nav-item--current::after {
   content: "";
   position: absolute;
-  bottom: .6em;
+  bottom: .2em;
   height: .3em;
   width: .3em;
-  background: #fff;
-  box-shadow: 0 0 .3em #fff;
+  background: var(--putainde-Color-red);
+  box-shadow: 0 0 .3em var(--putainde-Color-red);
   border-radius: .3em;
   left: 50%;
   margin-left: .5em;
 }
 
-.putainde-Nav .putainde-Nav-item .putainde-Icon {
-  opacity: .6
-}
-
-.putainde-Nav .putainde-Nav-item--icon .putainde-Icon {
-  opacity: .4
-}
-.putainde-Nav .putainde-Nav-item--icon:hover .putainde-Icon {
-  opacity: .6
+.putainde-Nav-item .putainde-Icon {
+  font-weight: normal;
+  fill: var(--putainde-Color-red);
 }
 
 .putainde-Nav .putainde-Nav-item:not(.putainde-Nav-item--icon) + .putainde-Nav-item--icon {
     margin-left: 1rem;
 }
-
 
 .putainde-Nav .putainde-Icon { font-size: 1.6rem; }
 

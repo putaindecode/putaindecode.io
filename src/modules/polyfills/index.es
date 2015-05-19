@@ -1,3 +1,5 @@
+import "babel/polyfill"
+
 // phantomjs
 import "./Function.prototype.bind"
 

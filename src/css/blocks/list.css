@@ -4,6 +4,11 @@
   margin-top: -1px;
   border-bottom: 1px solid #eee;
 }
+
+  .putainde-List-item:last-child {
+    border-color: transparent;
+  }
+
   @media (--r-maxS) {
     .putainde-List-item {
       padding: 0 0 0 4rem;
