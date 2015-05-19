@@ -3,17 +3,17 @@
   "twitter": "magsout",
   "fr": {
     "bio": {
-      "short": "Développeur web front-end",
+      "short": "Développeur web front-end.",
       "long": [
-        "Développeur web front-end pour l'agence web @splitfire. Adore chasser les bugs la nuit, accro aux series-tv."
+        "Développeur web front-end pour l'agence web @splitfire. Adore chasser les bugs la nuit, accro aux séries TV."
       ]
     }
   },
   "en": {
     "bio": {
-      "short": "Front-end web developer",
+      "short": "Front-end web developer.",
       "long": [
-        "Front-end web developer @splitfire. Loves to hunt bugs at night, series-tv addict."
+        "Front-end web developer @splitfire. Loves to hunt bugs at night, TV shows addict."
       ]
     }
   }
