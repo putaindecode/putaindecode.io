@@ -80,7 +80,7 @@ Je pourrais aussi vous parler de la solution du `about:debug` mais c'est chiant 
 
 … est une solution plus trop récente mais qui a le mérite de fonctionner partout, facilement et surtout sur Android browser. Celui-ci va créer une page web avec un webkit-debugger-like, qui lui est connecté via un websocket sur le site que vous êtes en train de déboguer, vous permettant à la fois d'avoir une console mais aussi une inspection du DOM. Et ça, c'est vraiment chouette.
 
-![](weinre-1.png)
+![](weinre-console.png)
 
 Passons à son installation.
 
@@ -106,7 +106,7 @@ Ajoutez le script dans votre page qui communiquera avec votre serveur (exemple)�
 
 Puis ouvrez la page `http://localhost:8080`, vous devriez avoir quelque chose comme ceci :
 
-![](weinre-3.png)
+![](weinre-interface.png)
 
 Plus qu'à cliquer sur `http://localhost:8080/client/#anonymous` et vous arriverez sur l'interface du debugger.
 
