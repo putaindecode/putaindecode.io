@@ -6,9 +6,12 @@
 }
 
 .putainde-Header {
-  background: var(--putainde-Color-red);
-  background: linear-gradient(to bottom, var(--putainde-Color-red), var(--putainde-Color-red) 10%);
+  /*background: var(--putainde-Color-red);
+  background: linear-gradient(to bottom, var(--putainde-Color-red), var(--putainde-Color-red) 10%);*/
   line-height: var(--putainde-Header-height-l);
+  border-top: 3px solid var(--putainde-Color-red);
+  /*border-bottom: 2px solid var(--putainde-Color-red);*/
+  box-shadow: 0 0 .6rem color(#000 a(.2));
 }
 
   @media (--r-maxM) {
@@ -38,7 +41,7 @@
   .putainde-SiteTitle span {
     display: inline-block;
     font-size: 1.2em;
-    color: #fff;
+    color: #333;
     font-family: var(--fontFamily-title);
   }
 

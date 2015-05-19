@@ -12,11 +12,47 @@
 }
 
 .putainde-Section--manifesto {
-  background: #fafafa;
+  background: var(--putainde-Color-red);
+  background: linear-gradient(160deg, var(--putainde-Color-red), color(var(--putainde-Color-red) a(.9)));
   padding: var(--r-lineHeight);
+  color: #fff;
+  /*margin: calc(var(--r-lineHeight) * 2) 0;*/
 }
 
-  .putainde-Section--manifesto .putainde-Title {
-    background: #fafafa;
-    background: linear-gradient(to bottom, #fafafa 60%, color(#fafafa alpha(0)));
+  .putainde-Section--manifesto .putainde-Title,
+  .putainde-Section--manifesto a {
+    color: inherit;
   }
+
+  .putainde-Networks {
+    text-align: center;
+    border-top: 1px solid color(#fff a(.2));
+    margin-top: -1px;
+    padding: var(--r-lineHeight) 0;
+    line-height: calc(var(--r-lineHeight) * 2);
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-style: italic;
+  }
+
+    .putainde-Network * {
+      /*vertical-align: top;*/
+    }
+
+    .putainde-Network {
+      display: inline-block;
+      font-size: 2.074em;
+      padding: 0 0.2em;
+      text-decoration: none;
+    }
+
+    .putainde-Network:first-child::after,
+    .putainde-Network:last-child::before {
+      font-style: normal;
+      font-size: 1.2rem;
+    }
+    .putainde-Network:first-child::after {
+      content: " ❮";
+    }
+    .putainde-Network:last-child::before {
+      content: "❯ ";
+    }

@@ -1,6 +1,8 @@
 import React, {Component, PropTypes} from "react"
 
 import Navigation from "../Navigation"
+import SVGIcon from "../SVGIcon"
+import requireRaw from "../requireRaw"
 
 export default class Header extends Component {
 
@@ -16,10 +18,10 @@ export default class Header extends Component {
         <div className="r-Grid">
           <div className="r-Grid-cell r-all--5of12">
             <a className="putainde-SiteTitle" href="/">
-              <img
+              <SVGIcon
                 className="putainde-Logo"
-                alt={this.context.i18n.title}
-                src="/images/p!-logo.svg"
+                svg={requireRaw("content/images/p!-logo.svg")}
+                cleanupExceptions={["fill"]}
               />
               <span>{this.context.i18n.title}</span>
             </a>

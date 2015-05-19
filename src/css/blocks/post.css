@@ -312,26 +312,6 @@
       margin-left: 1rem;
     }
 
-.putainde-Networks {
-  text-align: center;
-  border-top: 1px solid #eee;
-  margin-top: -1px;
-  padding: var(--r-lineHeight) 0;
-  line-height: calc(var(--r-lineHeight) * 2);
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-style: italic;
-}
-
-  .putainde-Networks * {
-    vertical-align: top;
-  }
-
-  .putainde-Network {
-    display: inline-block;
-    font-size: 2.074em;
-    padding: 0 0.2em;
-  }
-
 .putainde-Post-footer  {
   margin: var(--r-lineHeight) 0;
   padding: var(--r-lineHeight) 0;
@@ -341,3 +321,7 @@
 #disqus_thread {
   margin: calc(var(--r-lineHeight) * 2) 0 var(--r-lineHeight);
 }
+
+  .putainde-WrittenBy {
+    color: color(#444 a(.6));
+  }

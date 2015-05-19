@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from "react"
 
+import SVGIcon from "../SVGIcon"
+import requireRaw from "../requireRaw"
 import Avatar from "../Avatar"
-import Icon from "../Icon"
 
 import getAuthorUri from "../getAuthorUri"
 
@@ -62,7 +63,11 @@ export default class Author extends Component {
                   className="r-Tooltip r-Tooltip--top"
                   data-r-tooltip="Website"
                 >
-                  <Icon src="/icons/home.svg" />
+                  <SVGIcon
+                    className="putainde-Icon"
+                    svg={requireRaw(`content/icons/home.svg`)}
+                    cleanup
+                  />
                 </a>
               }
               {
@@ -72,7 +77,11 @@ export default class Author extends Component {
                   className="r-Tooltip r-Tooltip--top"
                   data-r-tooltip="Twitter"
                 >
-                  <Icon src="/icons/twitter.svg" />
+                  <SVGIcon
+                    className="putainde-Icon"
+                    svg={requireRaw(`content/icons/twitter.svg`)}
+                    cleanup
+                  />
                 </a>
               }
               {
@@ -82,7 +91,11 @@ export default class Author extends Component {
                   className="r-Tooltip r-Tooltip--top"
                   data-r-tooltip="Github"
                 >
-                  <Icon src="/icons/github.svg" />
+                  <SVGIcon
+                    className="putainde-Icon"
+                    svg={requireRaw(`content/icons/github.svg`)}
+                    cleanup
+                  />
                 </a>
               }
             </div>
