@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from "react"
 import cx from "classnames"
 
-import Icon from "../Icon"
+import SVGIcon from "../SVGIcon"
+import requireRaw from "../requireRaw"
 
 export default class Navigation extends Component {
 
@@ -13,12 +14,13 @@ export default class Navigation extends Component {
   }
 
   render() {
-    const currentPage = this.context.file.filename
+    const currentPage = "/" + this.context.file.url
 
     return (
       <nav className="putainde-Nav">
         {
           this.context.i18n.navigation.map((item) => {
+            console.log(currentPage, item.url)
             const isActivePage =
               currentPage === item.url ||
               currentPage === item.url + "/index.html"
@@ -37,10 +39,13 @@ export default class Navigation extends Component {
                 href={item.url}
                 data-r-tooltip={hasTooltip ? item.title : ""}
               >
-                {/* @todo handle item.icon */}
                 {
                   item.icon &&
-                  <Icon src={`${item.icon}`} />
+                  <SVGIcon
+                    className="putainde-Icon"
+                    svg={requireRaw(`content/${item.icon}`)}
+                    cleanup
+                  />
                 }
                 {item.name}
               </a>
