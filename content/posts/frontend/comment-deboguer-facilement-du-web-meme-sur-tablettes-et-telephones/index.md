@@ -1,6 +1,5 @@
 ---
 date: "2015-05-19"
-route: /posts/frontend/comment-déboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones/
 title: Comment déboguer facilement du web y compris sur tablettes et téléphones
 tags:
   - debug
