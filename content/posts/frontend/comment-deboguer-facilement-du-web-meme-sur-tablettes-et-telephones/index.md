@@ -8,7 +8,7 @@ tags:
 authors:
   - kud
 header:
-  credit: http://cdn.business2community.com/wp-content/uploads/2014/04/6153558098_9653fd714b_b.jpg
+  credit: https://www.flickr.com/photos/adactio/6153558098
 ---
 
 Vous souhaitez déboguer votre site ou application web mais vous ne savez pas trop comment faire ? Bon. Je sais que vous savez mais je peux peut-être vous faciliter la tâche.
