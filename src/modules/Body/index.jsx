@@ -9,6 +9,10 @@ export default class Body extends Component {
 
   static displayName = "Body"
 
+  static defaultProps = {
+    scripts: [],
+  }
+
   static contextTypes = {
     pkg: PropTypes.object.isRequired,
     file: PropTypes.object.isRequired,
@@ -20,16 +24,10 @@ export default class Body extends Component {
       PropTypes.array,
       PropTypes.object,
     ]).isRequired,
+    scripts: PropTypes.array,
   }
 
   render() {
-    const LR_URL = __DEV__
-      ?
-        `http://${__SERVER_HOSTNAME__}:${__LR_SERVER_PORT__}/` +
-        `livereload.js`
-      :
-      false
-
     return (
       <body>
 
@@ -41,8 +39,11 @@ export default class Body extends Component {
 
         <Footer />
 
-        <script src={`/index.${__VERSION__}.js`}></script>
-        { LR_URL && <script src={LR_URL}></script> }
+        {
+          this.props.scripts.map(script => (
+            <script key={script} src={script}></script>
+          ))
+        }
 
         <Analytics />
 
