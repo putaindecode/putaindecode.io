@@ -41,6 +41,11 @@
       padding: 0 1rem;
     }
 
+    .putainde-Post-header--custom .putainde-Title {
+      box-shadow: 0 0px 40px 42px rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.25);
+    }
+
     .putainde-Title {
       margin: calc(var(--r-lineHeight) / 2) 0;
       overflow: auto;
@@ -85,6 +90,10 @@
           0 0 3px color(#fff a(-90%)),
           0 0 2px color(#fff a(-95%))
         ;
+      }
+
+      .putainde-Post-header--custom .putainde-Title {
+        text-shadow: none;
       }
 
       .putainde-Post-header-picture {
