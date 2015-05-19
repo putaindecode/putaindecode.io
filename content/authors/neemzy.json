@@ -3,7 +3,7 @@
   "crew" : false,
   "fr": {
     "bio": {
-      "short": "Développeur web full-stack, tripote surtout PHP et JS",
+      "short": "Développeur web full-stack, tripote surtout PHP et JS.",
       "long": [
         "Développeur full-stack tombé dans le web quand il était petit.",
         "Fait surtout du PHP, mais aussi de plus en plus de JavaScript.",
@@ -14,7 +14,7 @@
   },
   "en": {
     "bio": {
-      "short": "Full-stack web developer, mainly dabbles in PHP and JS",
+      "short": "Full-stack web developer, mainly dabbles in PHP and JS.",
       "long": [
         "Full-stack developer who fell into web stuff as a boy.",
         "Mainly writes PHP, but also more and more JavaScript.",
