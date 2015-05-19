@@ -158,5 +158,3 @@ Une petite note rapide. Pour utliser le Simulator iOS (si vous n'avez pas d'iPho
 Avec ça, vous pouvez maintenant masteriser le debug sur tous les appareils sans vous prendre la tête. Il existe aussi une solution s'appelant [BrowserSync](http://www.browsersync.io/) permettant à la fois le debug et la synchro des comportements sur les différents devices mais ça, ce sera peut-être pour un prochain post.
 
 Bon débug.
-
-![](http://i.giphy.com/uVeRAiG1E30SA.gif)
