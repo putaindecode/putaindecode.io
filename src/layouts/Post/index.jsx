@@ -146,8 +146,8 @@ export default class Post extends DefaultTemplate {
                     file.header && file.header.filter,
                   "putainde-Post-header--dark":
                     file.header && !file.header.light,
-                    "putainde-Post-header--light":
-                      file.header && file.header.light,
+                  "putainde-Post-header--light":
+                    file.header && file.header.light,
                 })}
               >
                 {
