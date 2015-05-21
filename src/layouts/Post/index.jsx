@@ -47,6 +47,7 @@ export default class Post extends DefaultTemplate {
         ],
       ],
     }
+    const color = metadata.color || "#c33"
 
     // if there is a modification that need some prefix, we use a trick
     if (metadata.linearGradient || metadata.radialGradient) {
@@ -78,7 +79,7 @@ export default class Post extends DefaultTemplate {
     }
 
     return {
-      backgroundColor: metadata.color || "#c33",
+      backgroundColor: color,
       // we can not handle a css fallback with the same property name
       // since a js object doesn't handle that like css rules set
       // so here is the 2cts trick
@@ -92,7 +93,7 @@ export default class Post extends DefaultTemplate {
         : {}
       ),
       background: (
-        (metadata.color ? metadata.color + " " : "") +
+        color + " " +
         backgrounds[""].map(bg => `${bg[0]} ${bg[1]}`).join(", ")
       ),
       filter: metadata.filter,
