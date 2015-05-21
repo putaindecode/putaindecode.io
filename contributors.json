@@ -828,7 +828,7 @@
       "twitter": "Erwyn",
       "fr": {
         "bio": {
-          "short": "Développeur Agile, aventurier à ses heures perdues",
+          "short": "Développeur Agile, aventurier à ses heures perdues.",
           "long": [
             "Développeur tombé dans le web par inadvertance.",
             "Amoureux de l'agilité, l'amélioration continue, et l'auto-organisation.",
@@ -840,11 +840,11 @@
       },
       "en": {
         "bio": {
-          "short": "Agile developer, kind adventurer",
+          "short": "Agile developer, kind adventurer.",
           "long": [
             "Developer who fell inadvertandly into the web.",
             "In love with Agile methodologies, continuous improvement and self-organization.",
-            "Passionate about comagnies and people in.",
+            "Passionate about companies and people who make them up.",
             "Low-end humor producer.",
             "Dream of adventures."
           ]
@@ -867,7 +867,7 @@
       "twitter": "Macxim",
       "fr": {
         "bio": {
-          "short": "Développeur web front-end",
+          "short": "Développeur web front-end.",
           "long": [
             "Correcteur orthographique et grammatical officiel de Putain de code ! Accessoirement développeur web front-end."
           ]
@@ -875,7 +875,7 @@
       },
       "en": {
         "bio": {
-          "short": "Front-End Web Developer",
+          "short": "Front-End Web Developer.",
           "long": [
             "Official spelling and grammar checker for Putain de code ! Incidentally, also a Front-End Web Developer."
           ]
@@ -981,7 +981,7 @@
       "twitter": "OwlyCode",
       "fr": {
         "bio": {
-          "short": "Développeur Full stack, entretient un culte pour Golang et une liaison secrète avec AngularJS",
+          "short": "Développeur Full stack, entretient un culte pour Golang et une liaison secrète avec AngularJS.",
           "long": [
             "Développeur Full Stack 100% Ubuntu, code en PHP le jour et en Go la nuit.",
             "Entretient une liaison secrète avec AngularJS.",
@@ -991,7 +991,7 @@
       },
       "en": {
         "bio": {
-          "short": "Full stack developer, engaged in a Golang cult and secretly dating Angular.js",
+          "short": "Full stack developer, engaged in a Golang cult and secretly dating Angular.js.",
           "long": [
             "Full stack developer, 100% Debian/Ubuntu, do PHP at day and Go at night.",
             "Secretly dating AngularJS.",
@@ -1028,19 +1028,19 @@
       "twitter": "awillemant",
       "fr": {
         "bio": {
-          "short": "Architecte Logiciel, prof de JEE, joueur de ukulélé",
+          "short": "Architecte Logiciel, prof de JEE, joueur de ukulélé.",
           "long": [
-            "Je passe mon temps à développer en Java, et comme j'aime ça, et bien je montre à mes étudiants comment développer en Java, espérant que plus tard, ils transmettront à leur tour et ainsi de suite...",
-            "Je passe aussi de plus en plus de temps sur le JS, ce truc de hippies comme disent les anciens."
+            "Il passe son temps à développer en Java, et comme il aime ça, et bien il montre à ses étudiants comment développer en Java, espérant que plus tard, ils transmettront à leur tour et ainsi de suite...",
+            "Il passe aussi de plus en plus de temps sur le JS, ce truc de hippies comme disent les anciens."
           ]
         }
       },
       "en": {
         "bio": {
-          "short": "Software architect, JEE teacher, ukulele player",
+          "short": "Software architect, JEE teacher, ukulele player.",
           "long": [
-            "I spend a lot of time with Java, I love it so much that I try to transmit this love to my student, in order to help them transmitting to others, etc...",
-            "I play around with JS, more and more every day"
+            "He spends a lot of time with Java, he loves it so much that he tries to transmit this love to his students, in order to help them transmitting to others, etc.",
+            "He plays around with JS, more and more every day."
           ]
         }
       }
@@ -1066,9 +1066,9 @@
       "twitter": "bloodyowl",
       "fr": {
         "bio": {
-          "short": "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens",
+          "short": "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens.",
           "long": [
-            "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens"
+            "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens."
           ]
         }
       },
@@ -1076,7 +1076,7 @@
         "bio": {
           "short": "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people.",
           "long": [
-            "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people"
+            "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people."
           ]
         }
       }
@@ -1095,7 +1095,7 @@
         "bio": {
           "short": "Software craftsman, full stack developer, technical leader, architect.",
           "long": [
-            "Développeur full stack & Architecte. Spécialités en Java & Javascript mais j'essaie de rester polyglotte."
+            "Développeur full stack & Architecte. Spécialités en Java & JavaScript mais essaie de rester polyglotte."
           ]
         }
       },
@@ -1103,7 +1103,7 @@
         "bio": {
           "short": "Software craftsman, full stack developer, technical leader, architect.",
           "long": [
-            "Full stack developer & Architect. Special skills and experience on Java & Javascript but try to be polyglot."
+            "Full stack developer & Architect. Special skills and experience on Java & JavaScript but tries to be polyglot."
           ]
         }
       }
@@ -1165,7 +1165,7 @@
       "twitter": null,
       "fr": {
         "bio": {
-          "short": "Développeur Front-End, apprend à IE à bien se comporter depuis 2010 tout en découpant de jolis PSDs.",
+          "short": "Développeur Front-End, apprend à IE à bien se comporter depuis 2010 tout en découpant de jolis PSD.",
           "long": [
             "Développeur Front-End et Web Designer, intéréssé par les stats et les analytics, la performance web et la cohérence cross-browser.",
             "Ancien afro, avec de beaux cheveux courts maintenant, escaladeur de pentes en intérieur et en extérieur, porte un tshirt rose."
@@ -1321,17 +1321,17 @@
       "twitter": "magsout",
       "fr": {
         "bio": {
-          "short": "Développeur web front-end",
+          "short": "Développeur web front-end.",
           "long": [
-            "Développeur web front-end pour l'agence web @splitfire. Adore chasser les bugs la nuit, accro aux series-tv."
+            "Développeur web front-end pour l'agence web @splitfire. Adore chasser les bugs la nuit, accro aux séries TV."
           ]
         }
       },
       "en": {
         "bio": {
-          "short": "Front-end web developer",
+          "short": "Front-end web developer.",
           "long": [
-            "Front-end web developer @splitfire. Loves to hunt bugs at night, series-tv addict."
+            "Front-end web developer @splitfire. Loves to hunt bugs at night, TV shows addict."
           ]
         }
       }
@@ -1374,7 +1374,7 @@
       "crew": false,
       "fr": {
         "bio": {
-          "short": "Développeur web full-stack, tripote surtout PHP et JS",
+          "short": "Développeur web full-stack, tripote surtout PHP et JS.",
           "long": [
             "Développeur full-stack tombé dans le web quand il était petit.",
             "Fait surtout du PHP, mais aussi de plus en plus de JavaScript.",
@@ -1385,7 +1385,7 @@
       },
       "en": {
         "bio": {
-          "short": "Full-stack web developer, mainly dabbles in PHP and JS",
+          "short": "Full-stack web developer, mainly dabbles in PHP and JS.",
           "long": [
             "Full-stack developer who fell into web stuff as a boy.",
             "Mainly writes PHP, but also more and more JavaScript.",
@@ -1475,7 +1475,7 @@
       "twitter": "syvuilliot",
       "fr": {
         "bio": {
-          "short": "Développeur web front-end et entrepreneur",
+          "short": "Développeur web front-end et entrepreneur.",
           "long": [
             "Développeur web front-end et co-fondateur de KaeS",
             "Spécialisé dans les applications innovantes à destination des petites entreprises"
@@ -1484,7 +1484,7 @@
       },
       "en": {
         "bio": {
-          "short": "Front end web developper and entrepreneur",
+          "short": "Front end web developper and entrepreneur.",
           "long": [
             "Front end web developper and co-founder of KaeS",
             "Specialized in innovative applications for small business"
