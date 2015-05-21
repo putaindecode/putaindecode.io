@@ -30,10 +30,22 @@ logiciel consistant à vérifier à chaque modification de code source que le
 résultat des modifications ne produit pas de régression dans l'application
 développée.
 
+<small>
 [Source: Wikipédia](https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue)
+</small>
 
 Notez que dans cette définition, il manque un point assez important :
-le déploiement automatisé à la suite des vérifications.
+le déploiement est automatisé à la suite des vérifications.
+
+La première conséquence est que les mises en
+productions ne sont plus stressantes, car très régulières.  
+[Certaines personnes ne recommande pas les mises en production tous les jours
+](http://www.estcequonmetenprodaujourdhui.info/) mais lorsque vous avez mis en
+place l'intégration continue, vous minimisez grandement les risques.
+
+La preuve est que certaines entreprises font des mises en productions plusieurs
+centaines de fois par jour ! (GitHub est un bon exemple).
+
 
 ## Pré-requis pour mettre en place l'intégration continue
 
