@@ -78,7 +78,7 @@ export default class Post extends DefaultTemplate {
     }
 
     return {
-      backgroundColor: metadata.color,
+      backgroundColor: metadata.color || "#c33",
       // we can not handle a css fallback with the same property name
       // since a js object doesn't handle that like css rules set
       // so here is the 2cts trick
