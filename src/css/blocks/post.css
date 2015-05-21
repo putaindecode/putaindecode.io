@@ -37,6 +37,14 @@
       ;
     }
 
+    .putainde-Post-header--dark {
+      color: #fff;
+    }
+
+    .putainde-Post-header--light {
+
+    }
+
     .putainde-Post-header .putainde-Title {
       padding: 0 1rem;
     }
@@ -45,14 +53,6 @@
       margin: calc(var(--r-lineHeight) / 2) 0;
       overflow: auto;
     }
-
-      .putainde-Post-header--dark .putainde-Title {
-        color: #fff;
-      }
-
-      .putainde-Post-header--light .putainde-Title {
-
-      }
 
     .putainde-Title--home {
       text-align: center;
