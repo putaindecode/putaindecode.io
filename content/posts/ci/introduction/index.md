@@ -1,11 +1,13 @@
 ---
-date: "2015-05-26"
+date: "2015-05-21"
 title: Qu'est-ce que l'intégration continue ?
 tags:
   - ci
   - tests
 authors:
   - MoOx
+header:
+  credit: https://www.flickr.com/photos/zunami/3780218641/
 ---
 
 Certains risquent d'être déçus puisque nous ne parlerons pas ici des fameux `3x8`,
