@@ -39,7 +39,7 @@ le déploiement est automatisé à la suite des vérifications.
 
 La première conséquence est que les mises en
 productions ne sont plus stressantes, car très régulières.  
-[Certaines personnes ne recommande pas les mises en production tous les jours
+[Certaines personnes ne recommandent pas les mises en production tous les jours
 ](http://www.estcequonmetenprodaujourdhui.info/) mais lorsque vous avez mis en
 place l'intégration continue, vous minimisez grandement les risques.
 
