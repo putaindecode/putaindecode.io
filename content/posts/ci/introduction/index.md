@@ -16,15 +16,6 @@ continu afin d'avoir du PSD > HTML 24h sur 24.
 
 ## Le principe de l'intégration continue
 
-Nous allons aborder un sujet qui permet d'avoir un site stable en production,
-ceci de manière automatisée et continue.
-
-Il faut comprendre par là sans passer par FTP avec Filezilla.
-Pas de bouton "Upload" ou "Sync" après avoir fait une modification de code.
-Pas de risque de péter tout votre site si vos modifications rentrent en conflit
-avec les modifications de votre collègue, qui lui aussi vient de pousser un
-bon gros patch bien sale.
-
 > L'intégration continue est un ensemble de pratiques utilisées en génie
 logiciel consistant à vérifier à chaque modification de code source que le
 résultat des modifications ne produit pas de régression dans l'application
@@ -33,19 +24,6 @@ développée.
 <small>
 [Source: Wikipédia](https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue)
 </small>
-
-Notez que dans cette définition, il manque un point assez important :
-le déploiement est automatisé à la suite des vérifications.
-
-La première conséquence est que les mises en
-productions ne sont plus stressantes, car très régulières.  
-[Certaines personnes ne recommandent pas les mises en production tous les jours
-](http://www.estcequonmetenprodaujourdhui.info/) mais lorsque vous avez mis en
-place l'intégration continue, vous minimisez grandement les risques.
-
-La preuve est que certaines entreprises font des mises en productions plusieurs
-centaines de fois par jour ! (GitHub est un bon exemple).
-
 
 ## Pré-requis pour mettre en place l'intégration continue
 
@@ -120,12 +98,6 @@ pour se prévenir soi-même ne serait pas de refus.
 Une fois la barrière franchie, on se dit vraiment qu'on était stupide de pas
 avoir essayé avant.
 
-Même chez _Putain de code !_ (en date de cette article), notre couverture de
-tests est loin d'être bonne. Mais ce site étant un petit plaisir un peu risqué,
-nous faisons quand même du déploiement continu.
-On aime bien l'idée du _[move fast & break nothing
-](http://zachholman.com/talk/move-fast-break-nothing)_.
-
 ## Une commande qui éxecute les tests
 
 Un fois qu'on a écrit des tests, ou même souvent avant, on automatise
@@ -139,42 +111,15 @@ Pour notre site, la commande est `npm test`. Simple, efficace.
 Elle exécute tout ce qui est nécessaire à compiler notre application et à jouer
 les tests tout en retournant un résultat lisible et un code d'erreur si besoin.
 
-## Faire un script qui fait les choses qui vont bien quand les tests vont bien
-
-Une fois qu'on a une commande qui peut jouer tous les tests et dire "y'a bon" ou
-"tatoukassé", il nous faut prévoir les actions à réaliser quand nos tests sont OK.
-
-Un déploiement FTP, un déploiement git, ou plus compliqué via CDN, peu importe.
-**Il faut juste une commande qui marche simplement.**
-
-Pour notre site, la command est `npm run deploy`. Cette commande pousse le site généré sur la
-branche `gh-pages`
-(puisqu'on se sert [des pages GitHub](https://pages.github.com/)).
-
-## Automatiser le script qui fait les choses qui vont bien quand les tests vont bien
-
-On peut ensuite éventuellement englober les précentes étapes dans une seule
-commande qui va se débrouiller s'il n'y a pas d'erreur. Mais bon, si vous n'avez
-que deux commandes (comme on a dans l'exemple de notre site), un simple appel de cette façon devrait
-faire l'affaire :
-
-
-```console
-$ npm test && npm run deploy
-```
-
-Si `npm test` retourne une erreur, la deuxième commande ne sera pas exécutée.
-
-## La suite au prochaine épisode
+## Et après ?
 
 Là, si vous avez déjà mis tout ça en place, le bonheur ultime du développeur
 n'est pas loin : vous pouvez rapidement vérifier qu'il n'y a pas de régressions
 et agir en conséquence.
 
-La prochaine étape (dans un prochain article) sera de mettre ça en place sur un
-serveur d'intégration continue, nous y étudirons simplement ce que nous avons
-fait pour notre site.
-
-Si vous êtes trop curieux, vous pouvez déjà [consulter le code source de notre
-site](https://github.com/putaindecode/putaindecode.fr) et fouiller dans le
-`package.json` (section `scripts`) pour deviner la suite...
+Chez _Putain de code !_ (en date de cette article), notre couverture de
+tests est loin d'être bonne. Mais ce site étant un petit plaisir un peu risqué,
+nous faisons quand même du
+[déploiement continu](/posts/ci/le-deploiement-continu), l'étape d'après !  
+On aime bien l'idée du _[move fast & break ~~no~~thing
+](http://zachholman.com/talk/move-fast-break-nothing)_.
