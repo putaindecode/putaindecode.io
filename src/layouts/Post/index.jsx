@@ -37,17 +37,18 @@ export default class Post extends DefaultTemplate {
       image = "index.jpg"
     }
 
+    const color = metadata.color || "#c33"
+
     // default to just the image
     const backgrounds = {
       // "" => no need for prefix, see trick below
       "": [
         [
-          `url("${image}")`,
+          `${color} url("${image}")`,
           "no-repeat 50% 50% / cover",
         ],
       ],
     }
-    const color = metadata.color || "#c33"
 
     // if there is a modification that need some prefix, we use a trick
     if (metadata.linearGradient || metadata.radialGradient) {
@@ -70,7 +71,7 @@ export default class Post extends DefaultTemplate {
         // versions
         if (image) {
           background.push([
-            `url("${image}")`,
+            `${color} url("${image}")`,
             "no-repeat 50% 50% / cover",
           ])
         }
@@ -93,7 +94,6 @@ export default class Post extends DefaultTemplate {
         : {}
       ),
       background: (
-        color + " " +
         backgrounds[""].map(bg => `${bg[0]} ${bg[1]}`).join(", ")
       ),
       filter: metadata.filter,
