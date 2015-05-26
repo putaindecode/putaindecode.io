@@ -117,7 +117,7 @@ Là, si vous avez déjà mis tout ça en place, le bonheur ultime du développeu
 n'est pas loin : vous pouvez rapidement vérifier qu'il n'y a pas de régressions
 et agir en conséquence.
 
-Chez _Putain de code !_ (en date de cette article), notre couverture de
+Chez _Putain de code !_ (en date de cet article), notre couverture de
 tests est loin d'être bonne. Mais ce site étant un petit plaisir un peu risqué,
 nous faisons quand même du
 [déploiement continu](/posts/ci/le-deploiement-continu), l'étape d'après !  
