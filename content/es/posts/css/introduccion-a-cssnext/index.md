@@ -221,39 +221,6 @@ body {
 
 Transforma `rebeccapurple` en `rgb(102, 51, 153)`.
 
-
-### Propiedades font-variant
-
-Para los que, como yo, no tenían ni idea de lo que eran estas propiedades, aquí tenéis el [enlace](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant) hacia la definición y más explicaciones.
-
-```css
-h2 {
-  font-variant-caps: small-caps;
-}
-
-.fractional-Numbers {
-  font-variant-numeric: diagonal-fractions;
-}
-```
-
-Resultado:
-
-```css
-h2 {
-  -webkit-font-feature-settings: "c2sc";
-     -moz-font-feature-settings: "c2sc";
-          font-feature-settings: "c2sc";
-  font-variant-caps: small-caps;
-}
-
-.fractional-Numbers {
-  -webkit-font-feature-settings: "frac";
-     -moz-font-feature-settings: "frac";
-          font-feature-settings: "frac";
-  font-variant-numeric: diagonal-fractions;
-}
-```
-
 ### Propiedades de filtros
 
 ¡Un _nuevo_ mundo de [modificaciones de imágenes](http://www.w3.org/TR/filter-effects/) se abre ante vosotros!
