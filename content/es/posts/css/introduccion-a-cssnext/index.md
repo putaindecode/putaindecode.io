@@ -10,7 +10,7 @@ header:
   credit: https://www.flickr.com/photos/frinky/620935482
 ---
 
-Según la [página oficial](https://cssnext.github.io/):
+Según la [página oficial](http://cssnext.io/):
 > **cssnext** es un _transpiler_ que permite utilizar desde hoy la sintaxis CSS del mañana y transformar las especificaciones CSS que aún no están implementadas en los navegadores más populares en CSS compatible.
 
 ## ¿Qué significa esto exactamente?
@@ -23,7 +23,7 @@ En resumen, se **adelanta al futuro**.
 
 No sé vosotros, pero yo me considero alguien a quien le gusta experimentar con las últimas technologías y me parece que ¡esto mola bastante!
 
-No dejéis de echar un vistazo a la [lista de funciones](https://github.com/cssnext/cssnext/blob/master/README.md#features).
+No dejéis de echar un vistazo a la [lista de funciones](http://cssnext.io/features/).
 
 ### ¿Y qué pasa con el preprocesador CSS que estoy utilizando ahora?
 
@@ -37,7 +37,7 @@ Deberiáis probar **cssnext** y volver al Vanilla CSS de toda la vida. Además, 
 
 Echemos un vistazo a las funciones que **cssnext** nos ofrece por el momento.
 
-Ante todo, es conveniente consultar el [playground en la página oficial](https://cssnext.github.io/cssnext-playground/).
+Ante todo, es conveniente consultar el [playground en la página oficial](http://cssnext.io/cssnext-playground/).
 
 ### Prefijos de navegadores (vendor prefixes) automáticos
 
@@ -366,3 +366,5 @@ Bueno, para concluir, digamos que el propósito principal de **cssnext** es el d
 Mientras tanto, sigue habiendo mucho trabajo. Aquí os dejo una [lista de futuras funciones](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
 
 Ahora os toca jugar a vosotros. No os olvidáis de pasaros por el [repository GitHub](https://github.com/cssnext/cssnext), seguir a [@cssnext](https://twitter.com/cssnext) en Twitter para obtener las últimas noticias al respecto y uniros a la [room cssnext en Gitter](https://gitter.im/cssnext/cssnext) si tenéis cualquier pregunta.
+
+* [Página oficial](http://cssnext.io/)
