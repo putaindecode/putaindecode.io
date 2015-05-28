@@ -20,6 +20,11 @@
       "mail": "twitter@putaindecode.fr",
       "passwd-salt": "tw"
     },
+    "twitter": {
+      "user": "putaindecode_io",
+      "mail": "twitter-en@putaindecode.fr",
+      "passwd-salt": "twe"
+    },
     "twitter-bot": {
       "user": "putaindebot",
       "mail": "twitter-bot@putaindecode.fr",
