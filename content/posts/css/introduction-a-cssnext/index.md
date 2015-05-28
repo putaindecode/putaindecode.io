@@ -219,7 +219,7 @@ body {
 
 #### rebeccapurple
 
-Transforme simplement la couleur `rebeccapurple` en `rgb(102, 51, 153)`.
+Transforme simplement la couleur [`rebeccapurple`](https://github.com/postcss/postcss-color-rebeccapurple#why-this-plugin-) en `rgb(102, 51, 153)`.
 
 ### Propriétés de filtres
 
