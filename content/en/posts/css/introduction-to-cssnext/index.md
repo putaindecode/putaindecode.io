@@ -10,7 +10,7 @@ header:
   credit: https://www.flickr.com/photos/frinky/620935482
 ---
 
-From [the official website](https://cssnext.github.io/):
+From [the official website](http://cssnext.io/):
 > **cssnext** is a CSS transpiler that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not yet implemented in popular browsers into more compatible CSS.
 
 ## What does it mean?
@@ -23,7 +23,7 @@ In short, it makes you **taste the future**.
 
 I don't know about you but speaking as someone who loves to experiment with cutting-edge technologies, I think this is pretty cool!
 
-You should take a look at the [feature list](https://github.com/cssnext/cssnext/blob/master/README.md#features).
+You should take a look at the [feature list](http://cssnext.io/features/).
 
 ### What about my current CSS preprocessor?
 
@@ -37,7 +37,7 @@ You should give **cssnext** a shot and go back to Vanilla CSS. And with a nice a
 
 Let's take a look at the features that **cssnext** offers at the moment.
 
-First of all, be sure to check out the [playground on the official website](https://cssnext.github.io/cssnext-playground/).
+First of all, be sure to check out the [playground on the official website](http://cssnext.io/cssnext-playground/).
 
 ### Automatic vendor prefixes
 
@@ -366,3 +366,5 @@ Well, just to wrap it up here, let's say that the main purpose of **cssnext** is
 Meanwhile, there is still work to do: here you can find a [list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
 
 Now it's your time to play. Be sure to check the [GitHub repository](https://github.com/cssnext/cssnext), follow [@cssnext](https://twitter.com/cssnext) on Twitter to get the latest news and join the [cssnext room on Gitter](https://gitter.im/cssnext/cssnext) if you have any questions.
+
+* [Official website](http://cssnext.io/)

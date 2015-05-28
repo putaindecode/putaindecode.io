@@ -10,7 +10,7 @@ header:
   credit: https://www.flickr.com/photos/frinky/620935482
 ---
 
-D'après le [site officiel](https://cssnext.github.io/):
+D'après le [site officiel](http://cssnext.io/):
 > **cssnext** est un transpiler CSS qui vous permet d'utiliser dès aujourd'hui la syntaxe CSS de demain. Il transforme les spécifications CSS qui ne sont pas encore mises en œuvre sur les navigateurs les plus populaires en CSS compatible.
 
 ## Ça veut dire quoi exactement ?
@@ -23,7 +23,7 @@ En clair, il vous donne un **avant-goût du futur**.
 
 Je ne sais pas vous mais étant quelqu'un qui aime expérimenter avec les dernières technologies de pointe, je trouve ça plutôt cool !
 
-Je vous conseille de jeter un oeil à la [liste des fonctionnalités](https://github.com/cssnext/cssnext/blob/master/README.md#features).
+Je vous conseille de jeter un oeil à la [liste des fonctionnalités](http://cssnext.io/features/).
 
 ### Quid de mon préprocesseur actuel ?
 
@@ -37,7 +37,7 @@ Essayez **cssnext** et retournez à ce bon vieux Vanilla CSS. Et avec un zeste d
 
 Voyons voir quelles sont les fonctionnalités offertes par **cssnext** pour le moment.
 
-Avant toute chose, vous devriez aller faire un tour sur le [playground du site officiel](https://cssnext.github.io/cssnext-playground/).
+Avant toute chose, vous devriez aller faire un tour sur le [playground du site officiel](http://cssnext.io/cssnext-playground/).
 
 ### Préfixes propriétaires automatiques
 
@@ -366,3 +366,5 @@ Bref, pour résumer, disons simplement que le but principal de **cssnext** est d
 En attendant, il y a encore du boulot : voici une [liste des fonctionnalités à venir](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
 
 Maintenant, à vous de jouer. N'oubliez pas d'aller faire un tour sur le [repo GitHub](https://github.com/cssnext/cssnext), n'hésitez pas à suivre [@cssnext](https://twitter.com/cssnext) sur Twitter pour être au courant des dernières news et rejoignez la [room cssnext sur Gitter](https://gitter.im/cssnext/cssnext) si vous avez des questions.
+
+* [Site officiel](http://cssnext.io/)
