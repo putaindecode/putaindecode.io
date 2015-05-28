@@ -339,8 +339,8 @@ Ensuite, dans mon fichier `index.css`, j'ai ceci :
 
 @import "normalize.css"; /* == @import "./node_modules/normalize.css/index.css"; */
 @import "cssrecipes-defaults"; /* == @import "./node_modules/cssrecipes-defaults/index.css"; */
-@import "project-modules/partner"; /* relative to css/ */
-@import "typo"; /* same level as my main index.css located in css/ */
+@import "project-modules/partner"; /* relatif à css/ */
+@import "typo"; /* même niveau que mon index.css principal situé dans css/ */
 @import "highlight" (min-width: 25em);
 
 ```
