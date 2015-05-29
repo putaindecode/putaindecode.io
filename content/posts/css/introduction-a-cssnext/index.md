@@ -88,7 +88,7 @@ body {
 
 ### Media Queries personnalisées
 
-Pour créer des alias sémantiques, clairs et simples ([lisez la doc'](http://dev.w3.org/csswg/mediaqueries/#custom-mq))).
+Pour créer des alias sémantiques, clairs et simples ([lisez la doc'](http://dev.w3.org/csswg/mediaqueries/#custom-mq)).
 
 ```css
 @custom-media --viewport-medium (width <= 40rem);
