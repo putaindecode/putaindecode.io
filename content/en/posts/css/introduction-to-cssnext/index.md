@@ -37,7 +37,7 @@ You should give **cssnext** a shot and go back to Vanilla CSS. And with a nice a
 
 Let's take a look at the features that **cssnext** offers at the moment.
 
-First of all, be sure to check out the [playground on the official website](http://cssnext.io/cssnext-playground/).
+First of all, be sure to check out the [playground on the official website](http://cssnext.io/playground/).
 
 ### Automatic vendor prefixes
 

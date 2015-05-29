@@ -37,7 +37,7 @@ Essayez **cssnext** et retournez à ce bon vieux Vanilla CSS. Et avec un zeste d
 
 Voyons voir quelles sont les fonctionnalités offertes par **cssnext** pour le moment.
 
-Avant toute chose, vous devriez aller faire un tour sur le [playground du site officiel](http://cssnext.io/cssnext-playground/).
+Avant toute chose, vous devriez aller faire un tour sur le [playground du site officiel](http://cssnext.io/playground/).
 
 ### Préfixes propriétaires automatiques
 

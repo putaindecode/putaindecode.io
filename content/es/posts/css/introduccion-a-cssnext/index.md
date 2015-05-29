@@ -37,7 +37,7 @@ Deberiáis probar **cssnext** y volver al Vanilla CSS de toda la vida. Además, 
 
 Echemos un vistazo a las funciones que **cssnext** nos ofrece por el momento.
 
-Ante todo, es conveniente consultar el [playground en la página oficial](http://cssnext.io/cssnext-playground/).
+Ante todo, es conveniente consultar el [playground en la página oficial](http://cssnext.io/playground/).
 
 ### Prefijos de navegadores (vendor prefixes) automáticos
 
