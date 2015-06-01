@@ -295,7 +295,7 @@ The two following features are not really related to CSS specifications. However
 
 ### `import`
 
-What if you could import inline local files and modules (node_modules or web_modules) to output a bundled CSS file? Yes, [I'm looking at you Sass users](https://github.com/sass/sass/issues/193), ahem. Well, with **cssnext**, you can.
+What if you could import inline local files and modules (`node_modules` or `web_modules`) to output a bundled CSS file? Yes, [I'm looking at you Sass users](https://github.com/sass/sass/issues/193), ahem. Well, with **cssnext**, you can.
 
 ### `compress`
 
