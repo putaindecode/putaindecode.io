@@ -284,7 +284,7 @@ Como ya habréis adivinado, se trata solo una opción para comprimir _o no_ vues
 
 ### Uso
 
-Debajo os dejo un ejemplo básico de estas dos funciones. He usado [gulp-cssnext](https://github.com/cssnext/gulp-cssnext), uno de los [numerosos plugins](https://github.com/cssnext/cssnext#usage-with-other-tools) que os puede ayudar a empezar con **cssnext**.
+Debajo os dejo un ejemplo básico de estas dos funciones. He usado [gulp-cssnext](https://github.com/cssnext/gulp-cssnext), uno de los [numerosos plugins](http://cssnext.io/setup/) que os puede ayudar a empezar con **cssnext**.
 
 ```js
 var gulp = require('gulp'),
