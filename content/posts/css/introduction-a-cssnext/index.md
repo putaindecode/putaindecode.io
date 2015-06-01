@@ -343,9 +343,11 @@ Et le rendu final sera :
 }
 ```
 
-Je sais ce que vous ressentez. Maintenant, vous aussi vous en êtes tombés amoureux. :)
+Je sais ce que vous ressentez. Ce n'est peut-être pas le coup de foudre au premier coup d'œil (enfin, pour certains comme moi si, mais bon, passons). Vous ne l'acceptez pas encore mais il va falloir vous rendre à l'évidence, un jour ou l'autre vous coderez comme ça. Mieux vaut vous y mettre tout de suite, non ? :)
 
 Bref, pour résumer, disons simplement que le but principal de **cssnext** est de pouvoir développer selon les spécifications du W3C en gardant bien à l'esprit que, théoriquement, il sera possible de le supprimer plus tard (quand il ne sera plus utile).
+
+En effet, dans un futur proche, les fonctionnalités qu'offre cet outil ne seront plus gérées par **cssnext** lui-même mais directement par les navigateurs. Laissons-les s'adapter, chacun à leur vitesse et préparons-nous. Voilà tout l'intérêt du code _future-proof_.
 
 En attendant, il y a encore du boulot : voici une [liste des fonctionnalités à venir](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
 
