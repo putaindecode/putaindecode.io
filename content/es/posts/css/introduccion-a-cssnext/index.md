@@ -311,7 +311,6 @@ Después, en mi archivo `index.css`, obtendría lo siguiente:
 @import "highlight" (min-width: 25em);
 
 ```
-_**Nota**: Los archivos CSS situados en `node_modules` serán automáticamente encontrados e importados. También podéis ver que se puede omitir la extensión .css._
 
 Y el resultado final es:
 
