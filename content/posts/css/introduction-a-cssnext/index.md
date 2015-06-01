@@ -279,7 +279,7 @@ Et si vous pouviez importer des fichiers locaux et des modules (`node_modules` o
 
 ### `compress`
 
-Comme vous l'avez sûrement deviné, c'est juste une option pour compresser _ou pas_ votre fichier de sortie.
+Comme vous l'avez sûrement deviné, c'est juste une option pour compresser _ou pas_ votre fichier de sortie, et ceci grâce à [cssnano](https://github.com/ben-eb/cssnano).
 
 ### Usage
 

@@ -280,7 +280,7 @@ Las dos siguientes funciones no tienen mucho que ver con las especificaciones CS
 
 ### `compress`
 
-Como ya habréis adivinado, se trata solo una opción para comprimir _o no_ vuestro archivo de salida.
+Como ya habréis adivinado, se trata solo una opción para comprimir _o no_ vuestro archivo de salida. Y esto es gracias a [cssnano](https://github.com/ben-eb/cssnano).
 
 ### Uso
 
