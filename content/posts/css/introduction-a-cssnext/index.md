@@ -283,7 +283,7 @@ Comme vous l'avez sûrement deviné, c'est juste une option pour compresser _ou 
 
 ### Usage
 
-Voici un exemple simple de ces deux fonctionnalités. J'ai ici utilisé [gulp-cssnext](https://github.com/cssnext/gulp-cssnext), un des [nombreux plugins](https://github.com/cssnext/cssnext#usage-with-other-tools) qui vous aident à démarrer avec **cssnext**.
+Voici un exemple simple de ces deux fonctionnalités. J'ai ici utilisé [gulp-cssnext](https://github.com/cssnext/gulp-cssnext), un des [nombreux plugins](http://cssnext.io/setup/) qui vous aident à démarrer avec **cssnext**.
 
 ```js
 var gulp = require('gulp'),

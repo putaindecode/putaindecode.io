@@ -284,7 +284,7 @@ As you may have guessed, this is just an option to compress _or not_ your output
 
 ### Usage
 
-Below is a basic example of these two features. I used [gulp-cssnext](https://github.com/cssnext/gulp-cssnext), one of the [many plugins](https://github.com/cssnext/cssnext#usage-with-other-tools) to help you start with **cssnext**.
+Below is a basic example of these two features. I used [gulp-cssnext](https://github.com/cssnext/gulp-cssnext), one of the [many plugins](http://cssnext.io/setup/) to help you start with **cssnext**.
 
 ```js
 var gulp = require('gulp'),
