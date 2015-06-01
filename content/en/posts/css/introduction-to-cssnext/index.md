@@ -280,7 +280,7 @@ What if you could import inline local files and modules (node_modules or web_mod
 
 ### `compress`
 
-As you may have guessed, this is just an option to compress _or not_ your output file.
+As you may have guessed, this is just an option to compress _or not_ your output file. By the way, this option uses [cssnano](https://github.com/ben-eb/cssnano).
 
 ### Usage
 
