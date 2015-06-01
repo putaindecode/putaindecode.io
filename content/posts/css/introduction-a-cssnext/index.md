@@ -105,6 +105,25 @@ Usage :
 }
 ```
 
+Prenons par exemple :
+
+```css
+:root {
+  --fontSize: 1.2rem;
+}
+```
+
+Le code généré sera alors : 
+
+```css
+@media (max-width: 40rem) {
+  body { font-size: 1.44rem; }
+}
+@media (max-width: 50em) {
+  body { font-size: 1.68rem; }
+}
+```
+
 ### Sélecteurs personnalisés
 
 Encore une fois, un petit tour sur les [specs](http://dev.w3.org/csswg/css-extensions/#custom-selectors) pour commencer. Disons qu'on veuille appliquer des styles à toutes les balises de titre.
