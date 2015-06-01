@@ -81,7 +81,7 @@ You can use them this way:
   color: var(--secondary-Color);
 }
 body {
-  font-size: var(--r-Grid-baseFontSize, var(--r-Grid-baseFontSizeFallback));
+  font-size: var(--r-Grid-baseFontSize);
 }
 ```
 

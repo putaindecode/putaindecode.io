@@ -69,7 +69,6 @@ Aussi connues sous le nom des très attendues [variables CSS](http://www.w3.org/
   --primary-Color:                 #E86100;
   --secondary-Color:               #2c3e50;
   --r-Grid-baseFontSize:           1rem;
-  --r-Grid-baseFontSizeFallback:   16px;
 }
 ```
 À utiliser de cette façon :
@@ -82,7 +81,7 @@ Aussi connues sous le nom des très attendues [variables CSS](http://www.w3.org/
   color: var(--secondary-Color);
 }
 body {
-  font-size: var(--r-Grid-baseFontSize, var(--r-Grid-baseFontSizeFallback));
+  font-size: var(--r-Grid-baseFontSize);
 }
 ```
 
