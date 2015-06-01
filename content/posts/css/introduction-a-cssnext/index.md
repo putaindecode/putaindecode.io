@@ -271,7 +271,7 @@ Ceci sera transformé en :
 
 ### rem units
 
-Rien de bien extraordinaire ici, on génère un **_fallback_ en pixels pour les unités en rem**.
+Rien de bien extraordinaire ici, on génère un **_fallback_ en pixels pour les unités en rem**. Certaines personnes pourraient penser qu'un tel _fallback_ est inutile de nos jours. Cependant, pour des projets bien spécifiques (compatibilité IE 7 et 8 requise), c'est encore une nécessité.
 Non mais vous n'avez quand même pas besoin d'un exemple pour ça ? Si ? Bon... d'accord. Allons-y !
 
 ```css
