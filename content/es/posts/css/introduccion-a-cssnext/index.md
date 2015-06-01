@@ -105,6 +105,25 @@ Uso:
 }
 ```
 
+Por ejemplo, digamos que:
+
+```css
+:root {
+  --fontSize: 1.2rem;
+}
+```
+
+El código generado sera el siguiente: 
+
+```css
+@media (max-width: 40rem) {
+  body { font-size: 1.44rem; }
+}
+@media (max-width: 50em) {
+  body { font-size: 1.68rem; }
+}
+```
+
 ### Selectores personalizados
 
 Primero, podéis echar un ojo a las [especificaciones](http://dev.w3.org/csswg/css-extensions/#custom-selectors).
