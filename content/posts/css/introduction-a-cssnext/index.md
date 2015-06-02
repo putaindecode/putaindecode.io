@@ -1,5 +1,5 @@
 ---
-date: "2015-XX-XX"
+date: "2015-06-02"
 title: Introduction à cssnext
 tags:
   - css
@@ -17,7 +17,7 @@ D'après le [site officiel](http://cssnext.io/):
 
 Depuis CSS3, vous avez savez sans doute que CSS est divisé en plusieurs documents indépendants appelés "modules". Ces modules peuvent avoir différents niveaux de stabilité et différents [statuts](http://www.w3.org/Style/CSS/current-work#legend). La mise en œuvre de ces modules par les navigateurs peut prendre un certain temps et encore plus pour que le W3C les approuve comme [Recommandation](http://www.w3.org/2005/10/Process-20051014/tr#RecsW3C).
 
-Avec **cssnext**, vous pouvez utiliser la syntaxe des [nouveaux modules CSS](http://www.xanthir.com/b4Ko0) tels que les _propriétés personnalisées (custom properties level 1)_ ou les _media queries personnalisées (custom media queries level 1)_. **cssnext** va transformer ces nouvelles et étranges syntaxes en du CSS comprehensible par les navigateurs que vous voulez supporter.
+Avec **cssnext**, vous pouvez utiliser la syntaxe des [nouveaux modules CSS](http://www.xanthir.com/b4Ko0) tels que les _propriétés personnalisées (custom properties level 1)_ ou les _media queries personnalisées (custom media queries level 1)_. **cssnext** va transformer ces nouvelles et étranges syntaxes en du CSS compréhensible par les navigateurs que vous voulez supporter.
 
 En clair, il vous donne un **avant-goût du futur**.
 
@@ -27,7 +27,7 @@ Je vous conseille de jeter un oeil à la [liste des fonctionnalités](http://css
 
 ### Quid de mon préprocesseur actuel ?
 
-Oubliez les riques liés à une abstraction trop élevé des CSS par les pré-processeurs actuels; certes causés par une (sur-|mauvaise) utilisation de ces outils mais quand même.
+Oubliez les risques liés à une abstraction trop élevée des CSS par les pré-processeurs actuels ; certes causés par une (sur-|mauvaise) utilisation de ces outils mais quand même.
 
 Devinez quoi, vous n'en avez pas forcément besoin.
 
@@ -109,7 +109,7 @@ Prenons par exemple :
 }
 ```
 
-Le code généré sera alors : 
+Le code généré sera alors :
 
 ```css
 @media (max-width: 40rem) {
@@ -254,13 +254,13 @@ Résultat :
 }
 ```
 
-## Note important sur les fonctionnalités
+## Note importante sur les fonctionnalités
 
 Vous pouvez manuellement activer ou désactiver certaines fonctionnalités si vous n'en ressentez pas le besoin.
 Cela étant dit, il vous est conseillé d'utiliser l'option [`browsers`](http://cssnext.io/usage/#browsers),
 qui permet de gérer automatiquement la liste des fonctionnalités à activer.
-Par exemple si vous spécifiez un environnement où IE 8 n'est pas supporté, l'option de transformation des rem
-en px ne sera pas activé. Tout comme Autoprefixer ne rajoutera pas les préfixes inutiles.
+Par exemple si vous spécifiez un environnement où IE 8 n'est pas supporté, l'option de transformation des `rem`
+en `px` ne sera pas activé. Tout comme Autoprefixer ne rajoutera pas les préfixes inutiles.
 
 ## Fonctionnalités bonus
 

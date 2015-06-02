@@ -1,5 +1,5 @@
 ---
-date: "2015-XX-XX"
+date: "2015-06-02"
 title: Introducción a cssnext
 tags:
   - css
@@ -113,7 +113,7 @@ Por ejemplo, digamos que:
 }
 ```
 
-El código generado sera el siguiente: 
+El código generado sera el siguiente:
 
 ```css
 @media (max-width: 40rem) {
