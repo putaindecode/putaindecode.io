@@ -171,3 +171,9 @@ Voilà, voilà, c'est certes un peu déroutant au début, et ca parait très ver
 ```
 
 Ciao les kids.
+
+
+Quelques ressources pour la route :
+
+- [50 nuances de BEM](http://blog.kaelig.fr/post/48196348743/fifty-shades-of-bem)
+- [BEM Resources](https://github.com/sturobson/BEM-resources)
