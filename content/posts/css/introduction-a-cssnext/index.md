@@ -323,7 +323,7 @@ Bref, pour résumer, disons simplement que le but principal de **cssnext** est d
 
 En effet, dans un futur proche, les fonctionnalités qu'offre cet outil ne seront plus gérées par **cssnext** lui-même mais directement par les navigateurs. Laissons-les s'adapter, chacun à leur vitesse et préparons-nous. Voilà tout l'intérêt du code _future-proof_, comme le permet [babeljs](http://babeljs.io/) pour le JavaScript.
 
-En attendant, il y a encore du boulot : voici une [liste des fonctionnalités à venir](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
+En attendant, il y a encore du boulot : voici une [liste des fonctionnalités à venir](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+feature+request%22).
 
 Maintenant, à vous de jouer. N'oubliez pas d'aller faire un tour sur le [repo GitHub](https://github.com/cssnext/cssnext), n'hésitez pas à suivre [@cssnext](https://twitter.com/cssnext) sur Twitter pour être au courant des dernières news et rejoignez la [room cssnext sur Gitter](https://gitter.im/cssnext/cssnext) si vous avez des questions.
 
