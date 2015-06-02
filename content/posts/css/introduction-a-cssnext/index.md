@@ -11,13 +11,13 @@ header:
 ---
 
 D'après le [site officiel](http://cssnext.io/):
-> **cssnext** est un transpiler CSS qui vous permet d'utiliser dès aujourd'hui la syntaxe CSS de demain. Il transforme les spécifications CSS qui ne sont pas encore mises en œuvre sur les navigateurs les plus populaires en CSS compatible.
+> **cssnext** est un transpileur CSS qui vous permet d'utiliser dès aujourd'hui la syntaxe CSS de demain. Il transforme les spécifications CSS qui ne sont pas encore mises en œuvre sur les navigateurs les plus populaires en CSS compatible.
 
 ## Ça veut dire quoi exactement ?
 
 Depuis CSS3, vous avez savez sans doute que CSS est divisé en plusieurs documents indépendants appelés "modules". Ces modules peuvent avoir différents niveaux de stabilité et différents [statuts](http://www.w3.org/Style/CSS/current-work#legend). La mise en œuvre de ces modules par les navigateurs peut prendre un certain temps et encore plus pour que le W3C les approuve comme [Recommandation](http://www.w3.org/2005/10/Process-20051014/tr#RecsW3C).
 
-Avec **cssnext**, vous pouvez utiliser la syntaxe des [CSS Module Level 4](http://www.xanthir.com/b4Ko0) tels que les _propriétés personnalisées (custom properties)_ ou les _media queries personnalisées_. **cssnext** va transformer cette nouvelle et étrange syntaxe en quelque chose que le navigateur peut comprendre.
+Avec **cssnext**, vous pouvez utiliser la syntaxe des [nouveaux modules CSS](http://www.xanthir.com/b4Ko0) tels que les _propriétés personnalisées (custom properties level 1)_ ou les _media queries personnalisées (custom media queries level 1)_. **cssnext** va transformer ces nouvelles et étranges syntaxes en du CSS comprehensible par les navigateurs que vous voulez supporter.
 
 En clair, il vous donne un **avant-goût du futur**.
 
@@ -27,11 +27,11 @@ Je vous conseille de jeter un oeil à la [liste des fonctionnalités](http://css
 
 ### Quid de mon préprocesseur actuel ?
 
-Oubliez les dangers des mixins, @extend et autres nesting infinis ; certes causés par une (sur-|mauvaise) utilisation de ces outils mais quand même.
+Oubliez les riques liés à une abstraction trop élevé des CSS par les pré-processeurs actuels; certes causés par une (sur-|mauvaise) utilisation de ces outils mais quand même.
 
-Devinez quoi, vous n'en avez pas vraiment besoin.
+Devinez quoi, vous n'en avez pas forcément besoin.
 
-Essayez **cssnext** et retournez à ce bon vieux Vanilla CSS. Et avec un zeste de [méthodologie BEM](https://github.com/sturobson/BEM-resources), vous vous sentirez revivre.
+Essayez **cssnext** et retournez à ce bon ~~vieux~~ nouveau CSS. Et avec un zeste de [méthodologie BEM](/posts/css/petite-definition-bem/), vous vous sentirez revivre.
 
 ## Exemples
 
@@ -94,22 +94,18 @@ Pour créer des alias sémantiques, clairs et simples ([lisez la doc'](http://de
 @custom-media --viewport-large (max-width: 50em);
 ```
 
-Usage :
-
-```css
-@media (--viewport-medium) {
-  body { font-size: calc(var(--fontSize) * 1.2); }
-}
-@media (--viewport-large) {
-  body { font-size: calc(var(--fontSize) * 1.4); }
-}
-```
-
 Prenons par exemple :
 
 ```css
 :root {
   --fontSize: 1.2rem;
+}
+
+@media (--viewport-medium) {
+  body { font-size: calc(var(--fontSize) * 1.2); }
+}
+@media (--viewport-large) {
+  body { font-size: calc(var(--fontSize) * 1.4); }
 }
 ```
 
@@ -239,36 +235,6 @@ body {
 
 Transforme simplement la couleur [`rebeccapurple`](https://github.com/postcss/postcss-color-rebeccapurple#why-this-plugin-) en `rgb(102, 51, 153)`.
 
-### Propriétés de filtres
-
-Un tout _nouveau_ monde de [modifications d'images](http://www.w3.org/TR/filter-effects/) s'offre à vous !
-
-```css
-.awesome-Image {
-  filter: sepia(.7) hue-rotate(23deg);
-}
-
-.awesome-Picture {
-  filter: blur(8px);
-}
-```
-
-Ceci sera transformé en :
-
-```css
-.awesome-Image {
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.5751000000000001 0.5383 0.1323 0 0 0.24429999999999996 0.7802000000000001 0.11760000000000001 0 0 0.1904 0.3738 0.39170000000000005 0 0 0 0 0 1 0" /><feColorMatrix type="hueRotate" color-interpolation-filters="sRGB" values="23" /></filter></svg>#filter');
-  -webkit-filter: sepia(.7) hue-rotate(23deg);
-          filter: sepia(.7) hue-rotate(23deg);
-}
-
-.awesome-Picture {
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="8" /></filter></svg>#filter');
-  -webkit-filter: blur(8px);
-          filter: blur(8px);
-}
-```
-
 ### rem units
 
 Rien de bien extraordinaire ici, on génère un **_fallback_ en pixels pour les unités en rem**. Certaines personnes pourraient penser qu'un tel _fallback_ est inutile de nos jours. Cependant, pour des projets bien spécifiques (compatibilité IE 7 et 8 requise), c'est encore une nécessité.
@@ -287,6 +253,14 @@ Résultat :
   font-size: 2.5rem;
 }
 ```
+
+## Note important sur les fonctionnalités
+
+Vous pouvez manuellement activer ou désactiver certaines fonctionnalités si vous n'en ressentez pas le besoin.
+Cela étant dit, il vous est conseillé d'utiliser l'option [`browsers`](http://cssnext.io/usage/#browsers),
+qui permet de gérer automatiquement la liste des fonctionnalités à activer.
+Par exemple si vous spécifiez un environnement où IE 8 n'est pas supporté, l'option de transformation des rem
+en px ne sera pas activé. Tout comme Autoprefixer ne rajoutera pas les préfixes inutiles.
 
 ## Fonctionnalités bonus
 
@@ -347,7 +321,7 @@ Je sais ce que vous ressentez. Ce n'est peut-être pas le coup de foudre au prem
 
 Bref, pour résumer, disons simplement que le but principal de **cssnext** est de pouvoir développer selon les spécifications du W3C en gardant bien à l'esprit que, théoriquement, il sera possible de le supprimer plus tard (quand il ne sera plus utile).
 
-En effet, dans un futur proche, les fonctionnalités qu'offre cet outil ne seront plus gérées par **cssnext** lui-même mais directement par les navigateurs. Laissons-les s'adapter, chacun à leur vitesse et préparons-nous. Voilà tout l'intérêt du code _future-proof_.
+En effet, dans un futur proche, les fonctionnalités qu'offre cet outil ne seront plus gérées par **cssnext** lui-même mais directement par les navigateurs. Laissons-les s'adapter, chacun à leur vitesse et préparons-nous. Voilà tout l'intérêt du code _future-proof_, comme le permet [babeljs](http://babeljs.io/) pour le JavaScript.
 
 En attendant, il y a encore du boulot : voici une [liste des fonctionnalités à venir](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
 
