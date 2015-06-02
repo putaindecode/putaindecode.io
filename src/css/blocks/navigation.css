@@ -6,7 +6,7 @@
 
 .putainde-Nav-item {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   position: relative;
   font-size: var(--r-small-fontSize);
   text-align: center;
