@@ -11,8 +11,7 @@ header:
 
 ---
 
-
-Si vous utilisez GitHub pour héberger vos sources et que vous cherchez un moyen très simple (peut-être un peu trop) de mettre en place le déploiement continu _sans serveur d'intégration continue dédié_, alors les webhooks peuvent répondre parfaitement à votre besoin.
+Vous avez pu lire récement une [introduction sur l'intégration continue](http://putaindecode.fr/posts/ci/le-deploiement-continu/) qui mène vers [le déploiement continu](http://putaindecode.fr/posts/ci/introduction/). Si vous utilisez GitHub pour héberger vos sources et que vous cherchez un moyen très simple (peut-être un peu trop) de mettre en place le déploiement continu _sans serveur d'intégration continue dédié_, alors les webhooks peuvent répondre parfaitement à votre besoin.
 
 ## Les quoi ?
 
@@ -36,15 +35,15 @@ Un petit clic sur `Add webhook` et vous obtenez une interface encore une fois tr
 
 Cette interface se compose de trois parties :
 
-- 1) l'URL vers laquelle votre requête sera lancée
-- 2) une secret key pour sécuriser votre requête
-- 3) l'événement qui va déclencher votre requête
+1. l'URL vers laquelle votre requête sera lancée
+2. une secret key pour sécuriser votre requête
+3. l'événement qui va déclencher votre requête
 
 La partie événement est relativement complète et là encore vous disposez de trois possibilités :
 
-- 1) se déclenche au push
-- 2) se déclenche à chaque événement
-- 3) à vous de choisir les événements (un ou plusieurs) qui vous conviennent
+1. se déclenche au push
+2. se déclenche à chaque événement
+3. à vous de choisir les événements (un ou plusieurs) qui vous conviennent
 
 Une fois activé un premier test va se lancer. Il permettra de détecter que votre serveur répond bien à la requête :
 
