@@ -1,6 +1,6 @@
 ---
 date: "2015-06-09"
-title: Les webhooks
+title: Les webhooks Github
 tags:
   - git
   - webhooks
@@ -15,7 +15,7 @@ Vous avez pu lire récement une [introduction sur l'intégration continue](http:
 
 ## Les quoi ?
 
-Les webhooks permettent de lancer une action de façon automatique par l'intermédiaire d'un ou plusieurs événements depuis un dépôt [GitHub](GitHub.com). Concrètement il va être possible de déployer son projet sur un serveur de production, sauvegarder son site Internet, ou même mettre à jour des stats dès qu'un commit sera envoyé ou même une issue ouverte. Il est possible de faire tout ce qu'on veut dans la limite de son imagination comme l'explique GitHub.
+Les webhooks permettent de lancer une action de façon automatique par l'intermédiaire d'un ou plusieurs événements depuis un dépôt [GitHub](http://github.com). Concrètement il va être possible de déployer son projet sur un serveur de production, sauvegarder son site Internet, ou même mettre à jour des stats dès qu'un commit sera envoyé ou même une issue ouverte. Il est possible de faire tout ce qu'on veut dans la limite de son imagination comme l'explique GitHub.
 
 ## Comment ça marche ?
 
@@ -27,11 +27,11 @@ Il faut cependant être conscient que la simplification a un coût, à savoir qu
 
 Seul le propriétaire d'un dépôt dispose des droits nécessaires pour configurer un webhook. Il suffit pour cela de se rendre dans `Settings` puis `Webhooks & Services` :
 
-![](setting_webhook.jpg)
+![Settings Webhooks Github](setting_webhook.jpg)
 
 Un petit clic sur `Add webhook` et vous obtenez une interface encore une fois très simple :
 
-![](configuration_webhook.jpg)
+![Configuration Webhooks Github](configuration_webhook.jpg)
 
 Cette interface se compose de trois parties :
 
@@ -47,7 +47,7 @@ La partie événement est relativement complète et là encore vous disposez de 
 
 Une fois activé un premier test va se lancer. Il permettra de détecter que votre serveur répond bien à la requête :
 
-![](test_webhook.jpg)
+![Test Webhooks request Github](test_webhook.jpg)
 
 La requête envoyée est très basique et embarque un JSON sur les informations de votre dépôt (description, URL) et une liste des API mises à disposition. Le reste du travail doit se faire sur votre serveur par l'intermédiaire de votre API/script, etc.
 
