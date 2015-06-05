@@ -11,7 +11,7 @@ header:
 
 ---
 
-Vous avez pu lire récement une [introduction sur l'intégration continue](http://putaindecode.fr/posts/ci/le-deploiement-continu/) qui mène vers [le déploiement continu](http://putaindecode.fr/posts/ci/introduction/). Si vous utilisez GitHub pour héberger vos sources et que vous cherchez un moyen très simple (peut-être un peu trop) de mettre en place le déploiement continu _sans serveur d'intégration continue dédié_, alors les webhooks peuvent répondre parfaitement à votre besoin.
+Vous avez pu lire récement une [introduction sur l'intégration continue](/posts/ci/le-deploiement-continu/) qui mène vers [le déploiement continu](/posts/ci/introduction/). Si vous utilisez GitHub pour héberger vos sources et que vous cherchez un moyen très simple (peut-être un peu trop) de mettre en place le déploiement continu _sans serveur d'intégration continue dédié_, alors les webhooks peuvent répondre parfaitement à votre besoin.
 
 ## Les quoi ?
 
@@ -45,7 +45,7 @@ La partie événement est relativement complète et là encore vous disposez de 
 2. se déclenche à chaque événement
 3. à vous de choisir les événements (un ou plusieurs) qui vous conviennent
 
-Une fois activé un premier test va se lancer. Il permettra de détecter que votre serveur répond bien à la requête :
+Une fois le _Webhook_ activé un premier test ou plus exactement un `ping` va se lancer. Il permettra de détecter que votre serveur répond bien à la requête :
 
 ![Test Webhooks request GitHub](test_webhook.jpg)
 
