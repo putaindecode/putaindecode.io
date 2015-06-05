@@ -1,6 +1,6 @@
 ---
 date: "2015-06-09"
-title: Les webhooks Github
+title: Les webhooks GitHub
 tags:
   - git
   - webhooks
@@ -47,7 +47,7 @@ La partie événement est relativement complète et là encore vous disposez de 
 
 Une fois activé un premier test va se lancer. Il permettra de détecter que votre serveur répond bien à la requête :
 
-![Test Webhooks request Github](test_webhook.jpg)
+![Test Webhooks request GitHub](test_webhook.jpg)
 
 La requête envoyée est très basique et embarque un JSON sur les informations de votre dépôt (description, URL) et une liste des API mises à disposition. Le reste du travail doit se faire sur votre serveur par l'intermédiaire de votre API/script, etc.
 
@@ -106,7 +106,7 @@ app.post("/webhook", function (req, res) {
 })
 ```
 
-Pour vous donner une idée de ce que peut envoyer Github, voici deux gist:
+Pour vous donner une idée de ce que peut envoyer GitHub, voici deux gists :
 - [Headers](https://gist.github.com/magsout/775fba7a12f50762e279)
 - [Payload](https://gist.github.com/magsout/d5b11551f3f01accfa5c)
 
