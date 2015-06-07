@@ -1,10 +1,12 @@
 ---
 date: "2015-05-29"
-title: Introduction à docker
+title: Introduction à Docker
 tags:
   - docker
 authors:
   - bloodyowl
+header:
+  credit: https://www.flickr.com/photos/28169156@N03/16683055506/
 ---
 
 Avant de vous parler de Docker je vais vous racontez une histoire que tout développeur à vécu au moins une fois.
