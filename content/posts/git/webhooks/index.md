@@ -11,11 +11,11 @@ header:
 
 ---
 
-Vous avez pu lire récement une [introduction sur l'intégration continue](/posts/ci/le-deploiement-continu/) qui mène vers [le déploiement continu](/posts/ci/introduction/). Si vous utilisez GitHub pour héberger vos sources et que vous cherchez un moyen très simple (peut-être un peu trop) de mettre en place le déploiement continu _sans serveur d'intégration continue dédié_, alors les webhooks peuvent répondre parfaitement à votre besoin.
+Vous avez pu lire récemment une [introduction sur l'intégration continue](/posts/ci/le-deploiement-continu/) qui mène vers [le déploiement continu](/posts/ci/introduction/). Si vous utilisez GitHub pour héberger vos sources et que vous cherchez un moyen très simple (peut-être un peu trop) de mettre en place le déploiement continu _sans serveur d'intégration continue dédié_, alors les webhooks peuvent répondre parfaitement à votre besoin.
 
 ## Les quoi ?
 
-Les webhooks permettent de lancer une action de façon automatique par l'intermédiaire d'un ou plusieurs événements depuis un dépôt [GitHub](http://github.com). Concrètement il va être possible de déployer son projet sur un serveur de production, sauvegarder son site Internet, ou même mettre à jour des stats dès qu'un commit sera envoyé ou même une issue ouverte. Il est possible de faire tout ce que l'on veut dans la limite de son imagination comme l'explique GitHub.
+Les webhooks permettent de lancer une action de façon automatique par l'intermédiaire d'un ou plusieurs événements depuis un dépôt [GitHub](http://github.com). Concrètement, il va être possible de déployer son projet sur un serveur de production, sauvegarder son site Internet, ou même mettre à jour des stats dès qu'un commit sera envoyé ou même une issue ouverte. Il est possible de faire tout ce que l'on veut dans la limite de son imagination comme l'explique GitHub.
 
 ## Comment ça marche ?
 
@@ -27,11 +27,11 @@ Il faut cependant être conscient que la simplification a un coût, à savoir qu
 
 Seul le propriétaire d'un dépôt dispose des droits nécessaires pour configurer un webhook. Il suffit pour cela de se rendre dans `Settings` puis `Webhooks & Services` :
 
-![Settings Webhooks Github](setting_webhook.jpg)
+![Settings Webhooks GitHub](setting_webhook.jpg)
 
 Un petit clic sur `Add webhook` et vous obtenez une interface encore une fois très simple :
 
-![Configuration Webhooks Github](configuration_webhook.jpg)
+![Configuration Webhooks GitHub](configuration_webhook.jpg)
 
 Cette interface se compose de trois parties :
 
