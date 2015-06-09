@@ -85,11 +85,6 @@ export default class Footer extends Component {
           </div>
 
           <div className="r-Grid-cell r-minM--1of4 putainde-Footer-text--right">
-            <script
-              async
-              defer
-              src="https://putaindecode-slack.herokuapp.com/slackin.js"
-            />
             <span
               className={cx(
                 "putainde-Footer-text",
