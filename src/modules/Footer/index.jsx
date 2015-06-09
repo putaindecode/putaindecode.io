@@ -18,13 +18,13 @@ export default class Footer extends Component {
       <div className="putainde-Footer">
         <div className="r-Grid">
 
-          <div className="r-Grid-cell r-all--3of12">
+          <div className="r-Grid-cell r-minM--1of4">
             <p className="putainde-Footer-text">
               {i18n.copyright.replace("{*}", new Date().getFullYear())}
             </p>
           </div>
 
-          <div className="r-Grid-cell r-all--6of12">
+          <div className="r-Grid-cell r-minM--2of4">
             {
               i18n.footerNavigation &&
               <ul className="putainde-Footer-list">
@@ -42,7 +42,7 @@ export default class Footer extends Component {
                   <li key={i18n.github}>
                     <a
                       href={i18n.github}
-                      data-r-tooltip="GitHub"
+                      data-r-tooltip={i18n.githubLabel}
                       className="r-Tooltip r-Tooltip--top"
                     >
                       <SVGIcon
@@ -55,12 +55,25 @@ export default class Footer extends Component {
                   <li key={i18n.twitter}>
                     <a
                       href={i18n.twitter}
-                      data-r-tooltip="Twitter"
+                      data-r-tooltip={i18n.twitterLabel}
                       className="r-Tooltip r-Tooltip--top"
                     >
                       <SVGIcon
                         className="putainde-Icon"
                         svg={requireRaw(`content/icons/twitter.svg`)}
+                        cleanup
+                      />
+                    </a>
+                  </li>,
+                  <li key={i18n.slack}>
+                    <a
+                      href={i18n.slack}
+                      data-r-tooltip={i18n.slackLabel}
+                      className="r-Tooltip r-Tooltip--top"
+                    >
+                      <SVGIcon
+                        className="putainde-Icon"
+                        svg={requireRaw(`content/icons/slack.svg`)}
                         cleanup
                       />
                     </a>
@@ -71,16 +84,15 @@ export default class Footer extends Component {
             }
           </div>
 
-          <div className="r-Grid-cell r-all--3of12">
-            <p
+          <div className="r-Grid-cell r-minM--1of4 putainde-Footer-text--right">
+            <span
               className={cx(
                 "putainde-Footer-text",
-                "putainde-Footer-text--small",
-                "putainde-Footer-text--right"
+                "putainde-Footer-text--small"
               )}
             >
               {i18n.madeWithHeart}
-            </p>
+            </span>
           </div>
 
         </div>

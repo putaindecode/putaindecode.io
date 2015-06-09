@@ -33,6 +33,8 @@
   twitterLabel: "Twitter"
   github: "https://github.com/putaindecode/"
   githubLabel: "GitHub"
+  slack: "https://putaindecode-slack.herokuapp.com/"
+  slackLabel: "Slack"
   elsewhere: "Retrouvez-nous sur les internettes"
   disqus:
     id: "putaindecode"
@@ -41,23 +43,27 @@
     -
       url: "/posts"
       name: "Articles"
-      icon: "/icons/bookmark.svg"
+      icon: "icons/bookmark.svg"
     -
       url: "/c-est-quoi-putaindecode"
       name: "Readme"
-      icon: "/icons/text-file.svg"
+      icon: "icons/text-file.svg"
     -
       url: "/posts/comment-contribuer"
       name: "Participer"
-      icon: "/icons/pencil.svg"
+      icon: "icons/pencil.svg"
     -
       url: "https://github.com/putaindecode/"
       title: "GitHub"
-      icon: "/icons/github.svg"
+      icon: "icons/github.svg"
     -
       url: "https://twitter.com/putaindecode/"
       title: "Twitter"
-      icon: "/icons/twitter.svg"
+      icon: "icons/twitter.svg"
+    -
+      url: "https://putaindecode-slack.herokuapp.com/"
+      title: "Slack"
+      icon: "icons/slack.svg"
   footerNavigation:
     -
       url: "/feed.xml"
@@ -68,7 +74,4 @@
     -
       url: "https://github.com/putaindecode/forum/issues"
       name: "Forum"
-    -
-      url: "irc://irc.freenode.net/putaindecode"
-      name: "IRC"
   madeWithHeart: "Made with ♥︎"

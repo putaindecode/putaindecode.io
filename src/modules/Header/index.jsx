@@ -16,7 +16,7 @@ export default class Header extends Component {
     return (
       <div className="putainde-Header">
         <div className="r-Grid">
-          <div className="r-Grid-cell r-all--5of12">
+          <div className="r-Grid-cell r-minM--1of3">
             <a className="putainde-SiteTitle" href="/">
               <SVGIcon
                 className="putainde-Logo"
@@ -26,7 +26,7 @@ export default class Header extends Component {
               <span>{this.context.i18n.title}</span>
             </a>
           </div>
-          <div className="r-Grid-cell r-all--7of12">
+          <div className="r-Grid-cell r-minM--2of3">
             <Navigation />
           </div>
         </div>
