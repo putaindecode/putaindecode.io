@@ -6,7 +6,7 @@ tags:
 authors:
   - Uhsac
 header:
-  credit: https://www.flickr.com/photos/28169156@N03/16683055506/
+  credit: https://www.flickr.com/photos/68359921@N08/16097336663/
 ---
 
 Avant de vous parler de Docker je vais vous raconter une histoire que tout
@@ -30,7 +30,7 @@ bibliothèques manquantes.
 Ici, notre problème se limite à 2 systèmes, mais imaginez une équipe de 10
 personnes avec des ordinateurs sous OS X, Linux ou même Windows, un serveur de
 test sous Ubuntu 12.04, et un serveur de production sous CentOS 7.
-S'assurer que leur application fonctionne bien sur tous ces environnements peut 
+S'assurer que leur application fonctionne bien sur tous ces environnements peut
 s'avérer être un vrai cauchemar !
 
 Mais il existe des solutions et parmi l'une d'entre elles nous avons...
@@ -60,7 +60,7 @@ Docker](https://docs.docker.com/introduction/understanding-docker)
 
 ### Comment l'installer ?
 
-Le client Docker fonctionne sur tous les systèmes d'exploitation. En revanche, 
+Le client Docker fonctionne sur tous les systèmes d'exploitation. En revanche,
 le démon Docker utilise des fonctionnalités du noyau Linux afin de gérer
 les conteneurs. Il ne fonctionne donc que sur Linux. Heureusement la majorité des
 serveurs utilise Linux, et pour vos ordinateurs sous OS X, ou même Windows, il
@@ -122,7 +122,7 @@ Vous pouvez maintenant exécuter les commandes que vous voulez, elle
 s'exécuteront à l'intérieur du conteneur, par exemple :
 
 ```console
-root@2cdceb5ff771:/# 
+root@2cdceb5ff771:/#
 $ apt-get moo
                  (__)
                  (oo)
@@ -227,7 +227,7 @@ sur Mac ou Windows uniquement votre 'home' est partagé).
 - `node:0.12.4` : l'image Docker que vous voulez utiliser.
 - `node /app/server.js` : la commande à exécuter dans le conteneur.
 
-Et maintenant ? Vous pouvez afficher le conteneur en faisant : `docker ps`, l'arrêter 
+Et maintenant ? Vous pouvez afficher le conteneur en faisant : `docker ps`, l'arrêter
 avec : `docker stop node-app` et le supprimer avec `docker rm node-app`.
 
 -----
