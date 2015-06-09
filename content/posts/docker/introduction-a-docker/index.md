@@ -23,17 +23,17 @@ ne fonctionne pas !
 ## Quel est le problème ?
 
 L'application de notre jeune développeur ne fonctionne pas sur l'ordinateur
-manchot de son ami à cause d'un problème d'environnement. Entre deux systèmes il
+manchot de son ami à cause d'un problème d'environnement. Entre deux systèmes, il
 peut y avoir des différences de version sur les dépendances ou encore des
 bibliothèques manquantes.
 
-Ici notre problème se limite à 2 systèmes, mais imaginez une équipe de 10
+Ici, notre problème se limite à 2 systèmes, mais imaginez une équipe de 10
 personnes avec des ordinateurs sous OS X, Linux ou même Windows, un serveur de
 test sous Ubuntu 12.04, et un serveur de production sous CentOS 7.
 S'assurer que leur application fonctionne bien sur tous ces environnements peut 
 s'avérer être un vrai cauchemar !
 
-Mais il existe des solutions et parmis l'un d'entre elles nous avons...
+Mais il existe des solutions et parmi l'une d'entre elles nous avons...
 
 ## Docker
 
@@ -43,10 +43,10 @@ Docker est une plateforme qui va vous permettre d'exécuter votre code à
 l'intérieur d'un conteneur indépendamment de la machine sur laquelle vous êtes !
 Un conteneur ressemble à une machine virtuelle sauf qu'il n'embarque pas tout un
 système d'exploitation avec lui ce qui lui permet de s'exécuter en quelque
-seconde et d'être beaucoup plus léger.
+secondes et d'être beaucoup plus léger.
 
 Docker peut donc résoudre notre problème d'environnement, car quelle que soit la
-machine que nous utiliserons le code s'exécutera de la même manière.
+machine que nous utiliserons, le code s'exécutera de la même manière.
 
 La plateforme Docker est composée de deux éléments :
 - Le démon Docker qui s'exécute en arrière-plan et qui s'occupe de gérer vos
@@ -54,15 +54,15 @@ conteneurs
 - Le client Docker qui vous permet d'interagir avec le démon par l'intermédiaire
 d'un outil en ligne de commande
 
-Si vous voulez plus d'information sur le fonctionnement interne de Docker je
+Si vous voulez plus d'informations sur le fonctionnement interne de Docker je
 vous redirige vers l'article du site officiel : [Understanding
 Docker](https://docs.docker.com/introduction/understanding-docker)
 
 ### Comment l'installer ?
 
-Le client Docker fonctionne sur tous les systèmes d'exploitation, mais par
-contre, le démon Docker utilise des fonctionnalités du noyau Linux afin de gérer
-les conteneurs donc il ne fonctionne que sur Linux, heureusement la majorité des
+Le client Docker fonctionne sur tous les systèmes d'exploitation. En revanche, 
+le démon Docker utilise des fonctionnalités du noyau Linux afin de gérer
+les conteneurs. Il ne fonctionne donc que sur Linux. Heureusement la majorité des
 serveurs utilise Linux, et pour vos ordinateurs sous OS X, ou même Windows, il
 existe une solution.
 
@@ -72,12 +72,12 @@ vous devrez lancer le démon dans une machine virtuelle, mais rassurez-vous,
 c'est très simple !
 
 Pour le guide d'installation de Docker en fonction de votre système je vous
-redirige vers le site officiel : [Guide
+redirige de nouveau vers le site officiel : [Guide
 d'installation](https://docs.docker.com/installation/#installation)
 
 ### Un premier exemple
 
-Avant de commencer, vous allez devoir télécharger une image docker qui servira
+Avant de commencer, vous allez devoir télécharger une image Docker qui servira
 de base à vos prochains conteneurs.
 
 Pour cet exemple, on va partir d'une image Ubuntu :
@@ -97,7 +97,7 @@ Cette commande va télécharger depuis le Docker Hub l'image de la version 14.04
 (trusty) d'Ubuntu. Il existe bien d'autres images que vous pourrez trouver
 [sur le registry Docker](https://registry.hub.docker.com).
 
-Pour voir les images que vous avez téléchargées utilisez cette commande :
+Pour voir les images que vous avez téléchargées, utilisez cette commande :
 
 ```console
 $ docker images
@@ -105,8 +105,8 @@ REPOSITORY    TAG       IMAGE ID        CREATED       VIRTUAL SIZE
 ubuntu        trusty    07f8e8c5e660    4 weeks ago   188.3 MB
 ```
 
-Sur ma machine, l'image d'Ubuntu fais 188.3 MB, je vous avait dit que c'était
-léger en comparaison d'une machine virtuelle !
+Sur ma machine, l'image d'Ubuntu fais 188.3 MB, je vous avais dit que c'était
+léger en comparaison à une machine virtuelle !
 
 Maintenant, nous allons lancer un conteneur et rentrer à l'intérieur :
 
@@ -143,7 +143,7 @@ $ docker ps
 CONTAINER ID    IMAGE   COMMAND   CREATED   STATUS    PORTS   NAMES
 ```
 
-Il n'y a rien ? C'est normal ! En quittant le conteneur ce dernier c'est arrêté
+Il n'y a rien ? C'est normal ! En quittant le conteneur ce dernier s'est arrêté
 aussi. Pour l'afficher quand même, il suffit d'entrer cette commande :
 
 ```console
@@ -159,7 +159,7 @@ $ docker rm 2cdc
 2cdc
 ```
 
-Évidement remplacer '2cdc' par le `CONTAINER ID` approprié.
+Évidemment, remplacez '2cdc' par le `CONTAINER ID` approprié.
 
 Passons maintenant à un deuxième exemple plus concret avec une application web.
 
@@ -186,19 +186,19 @@ Digest: sha256:81fb0812dd5e81f768773a121c8a6daced36893210c5ed50b504c4abcb04e10c
 Status: Downloaded newer image for node:0.12.4
 ```
 
-Puis créer un fichier `server.js` avec comme le contenu suivant :
+Puis créez un fichier `server.js` avec le contenu suivant :
 
 ```js
 var http = require('http')
 
 var server = http.createServer(function(req, res) {
-  res.end('Coucou depuis docker')
+  res.end('Coucou depuis Docker')
 });
 
 server.listen(3000)
 ```
 
-Et maintenant pour lancer notre application à l'intérieur d'un conteneur, vous
+Et maintenant, pour lancer notre application à l'intérieur d'un conteneur, vous
 devez faire :
 
 ```console
@@ -206,32 +206,32 @@ $ docker run -d --name node-app -p 3000:3000 -v $(pwd):/app node:0.12.4 node /ap
 e9ca3cd8f90b8554ca99ec8ba15a039f827005bd8fecbf80d72ce7267006a6df
 ```
 
-Si vous vous rendez sur `localhost:3000` (ou l'ip de la VM si êtes sur Windows
-ou Mac) vous verrez : 'Coucou depuis docker'
+Si vous vous rendez sur `localhost:3000` (ou l'IP de la VM si êtes sur Windows
+ou Mac), vous verrez : 'Coucou depuis Docker'
 
-C'est beau, mais comment ça marche ? Voyons les options une par une :
+C'est beau, mais comment ça marche ? Examinons les options une par une :
 
 - `-d` : cette option permet de lancer le conteneur en mode démon et donc de
-tourner en tache de fond à la différence de `-it` qui lançait le conteneur au
+tourner en tâche de fond à la différence de `-it` qui lançait le conteneur au
 premier plan et nous donnait un accès direct au conteneur.
 - `--name node-app` : cette option permet simplement de nommer notre conteneur,
-ce qui peut servir pour le stop et le relancer plus simplement. (et à d'autre
-chose plus complexe dont je parlerais dans un prochain article)
+ce qui peut servir pour l'arrêter et le relancer plus simplement (et à d'autres
+choses plus complexes dont je parlerai dans un prochain article).
 - `-p 3000:3000` : cette option permet de partager le port de votre machine avec
 le port du conteneur. Le premier nombre est le port de votre machine et le
 deuxième le port dans le conteneur.
 - `-v $(pwd):/app` : cette option permet de partager un dossier avec votre
 conteneur, ici, nous partageons le dossier courant (où se trouve notre fichier
-`server.js`) avec le dossier `/app` dans le conteneur. (attention si vous êtes
+`server.js`) avec le dossier `/app` dans le conteneur (attention si vous êtes
 sur Mac ou Windows uniquement votre 'home' est partagé).
-- `node:0.12.4` : l'image docker que vous voulez utiliser.
+- `node:0.12.4` : l'image Docker que vous voulez utiliser.
 - `node /app/server.js` : la commande à exécuter dans le conteneur.
 
-Et maintenant ? Vous pouvez afficher le conteneur en faisant : `docker ps`, le
-stopper avec : `docker stop node-app` et le supprimer avec `docker rm node-app`.
+Et maintenant ? Vous pouvez afficher le conteneur en faisant : `docker ps`, l'arrêter 
+avec : `docker stop node-app` et le supprimer avec `docker rm node-app`.
 
 -----
 
-Voici la fin de ce premier article sur Docker, pour le prochain article, nous
+Voici la fin de ce premier article sur Docker. Pour le prochain article, nous
 verrons comment créer notre propre image avec un Dockerfile et comment lier des
 conteneurs afin de créer des applications plus complexes.
