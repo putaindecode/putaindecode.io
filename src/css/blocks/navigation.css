@@ -16,7 +16,7 @@
   padding: 0 .4rem;
 }
 
-  @media (min-width:29em) {
+  @media (--r-minS) {
     .putainde-Nav-item {
       padding: 0 1rem;
     }
@@ -47,7 +47,7 @@
 }
 
 .putainde-Nav .putainde-Nav-item:not(.putainde-Nav-item--icon) + .putainde-Nav-item--icon {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .putainde-Nav .putainde-Icon { font-size: 1.6rem; }
@@ -58,7 +58,7 @@
     margin-right: 0.25rem; /* temporary fix for spacing; remove this when SVGs are inline */
   }
 
-@media (max-width:29em) {
+@media (--r-maxM) {
   /* hide icons for Nav-item that have a label on small screen */
   .putainde-Nav :not(.r-Tooltip) .putainde-Icon {
     display: none;

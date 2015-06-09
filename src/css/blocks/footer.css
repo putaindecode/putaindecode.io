@@ -27,6 +27,11 @@
 
     .putainde-Footer a .putainde-Icon { font-size: 1.4em; }
 
+  .putainde-Footer iframe {
+    vertical-align: middle;
+    margin: 0 1rem;
+  }
+
 .putainde-Footer-text {
   font-size: .833rem;
   color: #666;
