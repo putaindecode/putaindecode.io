@@ -1,0 +1,8 @@
+Request URL: http://monserver.fr/webhook
+Request method: POST
+content-type: application/json
+Expect:
+User-Agent: GitHub-Hookshot/213489
+X-GitHub-Delivery: 123456-0ac9-90e5-8e18-1234567
+X-GitHub-Event: release
+X-Hub-Signature: sha1=1234567890123456789123456789012345678912

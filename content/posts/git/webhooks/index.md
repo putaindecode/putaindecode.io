@@ -135,8 +135,9 @@ app.post("/webhook", function (req, res) {
 ```
 
 Pour vous donner une idée de ce que peut envoyer GitHub, voici deux gists :
-- [Headers](https://gist.github.com/magsout/775fba7a12f50762e279)
-- [Payload](https://gist.github.com/magsout/d5b11551f3f01accfa5c)
+
+- [Headers](header.txt)
+- [Payload](payload.json)
 
 ## This is just the beginning
 
