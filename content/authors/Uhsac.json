@@ -1,0 +1,20 @@
+{
+  "crew" : false,
+  "twitter": "Uhsac0",
+  "fr": {
+    "bio": {
+      "short": "Développeur touche à tout fan de JavaScript, Docker, Python et de bière",
+      "long": [
+        "Développeur touche à tout fan de JavaScript, Docker, Python et de bière"
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Multifaceted developer who love JavaScript, Docker, Python and beer",
+      "long": [
+        "Multifaceted developer who love JavaScript, Docker, Python and beer"
+      ]
+    }
+  }
+}
