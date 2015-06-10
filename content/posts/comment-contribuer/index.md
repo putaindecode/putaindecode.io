@@ -223,7 +223,7 @@ est des types sympas.
 ## Proposition d'un nouveau post
 
 * Alors pour proposer un nouveau post déjà, il te faut une idée. Et on te
-  prévient que si tu nous sort un post sur la liste des plugins jQuery les
+  prévient que si tu nous sors un post sur la liste des plugins jQuery les
   plus en vogue cette semaine, on va te trouver. On va chercher ton IP, on va
   tracer ton adresse, et on va te trouver. Et tu vas comprendre que parmi
   nous, y'a des types qui sont pas du tout copains avec jQuery et qui sont pas
