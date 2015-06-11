@@ -21,7 +21,7 @@ export default class AuthorsList extends Component {
       <span>
       {
         authors.map((authorKey, index) => {
-          const author = this.context.contributors.map[authorKey]
+          const author = this.context.contributors.getContributor(authorKey)
           let glue = ""
           // 2 authors or more : X, Y and Z
           if (authors.length > 1 && index === authors.length - 2) {

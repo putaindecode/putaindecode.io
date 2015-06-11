@@ -20,6 +20,7 @@ export default class PostPreview extends Component {
   render() {
     const post = this.props.post
     const i18n = this.context.i18n
+
     return (
       <div className="putainde-List-item js-Post">
 

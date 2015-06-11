@@ -16,7 +16,7 @@ export default class Avatar extends Component {
   }
 
   render() {
-    const author = this.context.contributors.map[this.props.author]
+    const author = this.context.contributors.getContributor(this.props.author)
     const size = size || 128
     const avatarUrl = author.avatar_url
       ?
