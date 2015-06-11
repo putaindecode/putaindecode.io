@@ -45,7 +45,6 @@
     "highlight.js": "^8.5.0",
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
-    "lodash": "^3.7.0",
     "marked": "^0.3.3",
     "metalsmith": "^1.5.0",
     "metalsmith-collections": "^0.7.0",
