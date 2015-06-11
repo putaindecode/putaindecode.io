@@ -18,11 +18,6 @@ export default class Avatar extends Component {
   render() {
     const author = this.context.contributors.getContributor(this.props.author)
     const size = size || 128
-    const avatarUrl = author.avatar_url
-      ?
-        author.avatar_url + "&s=" + size
-        :
-        "http://placekitten.com/" + size + "/" + size
 
     return (
       <a
@@ -31,7 +26,11 @@ export default class Avatar extends Component {
       >
         <img
           className="js-AnimateLoad"
-          src={avatarUrl}
+          src={
+            author && author.avatar_url
+            ? author.avatar_url + "&s=" + size
+            : "/images/defaultAvatar.png"
+          }
           alt=""
         />
       </a>
