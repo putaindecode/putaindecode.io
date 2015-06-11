@@ -20,7 +20,7 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
   nom de fichier `titre/index.md` (genre `contribuer-a-p/index.md`)
   en t'inspirant des autres posts que tu devrais trouver sans mal.  
   Voici quelques points à respecter:
-  - Pour la date choisir le prochaine mardi ou jeudi à venir (à voir avec les
+  - Pour la date choisir le prochain mardi ou jeudi à venir (à voir avec les
   pull requests déjà en cours)
   - Penser à ajouter votre fichier d'auteur dans `content/authors/`
   - Pour les images
@@ -29,13 +29,13 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
     - Prendre le soin de toutes les compresser au préalable (sans perte,
   avec logiciel du type [JPEGMini](http://www.jpegmini.com/) ou 
   [ImageOptim](https://imageoptim.com/)
-    - Indiquer via un lien dans la meta `header.credit` l'url de l'origine
+    - Indiquer via un lien dans la meta `header.credit` l'URL de l'origine
     - Si vos images rendent difficile la lecture du titre, vous pouvez spécifier
     un dégradé ([exemple de dégradé sur un header](https://github.com/putaindecode/putaindecode.fr/blob/master/content/posts/entreprendre/auto-entrepreneuriat-retour-experiences/index.md))
-    - Vous pouvez aussi spécifier la clé `header.light` si votre fond est clair (cf exemple ci dessus)
+    - Vous pouvez aussi spécifier la clé `header.light` si votre fond est clair (cf. exemple ci-dessus)
   - Respecter 80 chars par ligne pour faciliter les diff lors de corrections
-  - Pour le choix de l'url, merci de consulter l'équipe en cas de doute
-  (via une issue/propositionou via le chat)
+  - Pour le choix de l'URL, merci de consulter l'équipe en cas de doute
+  (via une issue/proposition ou via le chat)
 * Une fois que tout est prêt, fais une demande de pull-request de ta branche
   vers notre branche `master` en mettant en titre `Post: Le titre de ton post`
   (évidemment tu remplaces ce qu'il y a après `Post:` par le vrai titre hein)
