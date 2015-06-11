@@ -35,7 +35,9 @@ export default class Homepage extends DefaultTemplate {
         <Head
           title={this.props.file.title}
           stylesheets={this.props.metadata.assets.stylesheets}
-        />
+        >
+          <meta name="description" content={i18n.description} />
+        </Head>
         <Body
           scripts={this.props.metadata.assets.scripts}
         >
