@@ -63,7 +63,7 @@ rules:
   no-multiple-empty-lines: [2, {"max": 1}]
 
   # one brace per line
-  "brace-style": [2, "stroustrup"]
+  brace-style: [2, "stroustrup"]
 
   # trailing coma are cool for diff
   comma-dangle: [2, "always-multiline"]
