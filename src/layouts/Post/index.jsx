@@ -108,12 +108,11 @@ export default class Post extends DefaultTemplate {
     const filename = file.filename
 
     var twitterAuthor =
-      this.props.file.authors &&
-      this.props.file.authors.length
-      ?
-        this.props.contributors.map[this.props.file.authors[0]].twitter
-        :
-        this.props.i18n.twitterUsername
+      this.props.file.authors && this.props.file.authors.length
+      ? this.props.contributors.getContributor(this.props.file.authors[0])
+        .twitter
+      : this.props.i18n.twitterUsername
+
     return (
       <Html>
         <Head
