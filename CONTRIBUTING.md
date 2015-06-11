@@ -4,12 +4,7 @@ Chez _Putain de code !_, on te laisse l'opportunité d'apporter ta pierre à
 l'édifice, comme on te l'explique en détails [sur un article dédié sur le
 site](http://putaindecode.fr/posts/comment-contribuer/).
 
-Tu trouveras ici un condensé des bonnes pratiques pour pouvoir participer.
-
-Avant tout, on te précise que comme le site et le public du site sont
-francophones, tu peux te permettre (et on préfère même) que les issues et les
-messages de commit soient en français. Voilà c'est dit merci tu peux lire la
-suite !
+Tu trouveras ici les bonnes pratiques minimales pour pouvoir participer.
 
 ## Crée ton fork
 
@@ -21,15 +16,31 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
 
 * Crée une branche avec un nom de la forme `post.<nom du post>` (ex.
   `post.contribuer-a-p`)
-* Écris ton post dans `pages/posts/` en respectant bien la convention du
-  nom de fichier `titre/index.jade|md` (genre `contribuer-a-p/index.jade` et `contribuer-a-p/index.md`)
-  en t'inspirant des autres posts que tu devrais trouver sans mal.
+* Écris ton post dans `content/posts/` en respectant bien la convention du
+  nom de fichier `titre/index.md` (genre `contribuer-a-p/index.md`)
+  en t'inspirant des autres posts que tu devrais trouver sans mal.  
+  Voici quelques points à respecter:
+  - Pour la date choisir le prochaine mardi ou jeudi à venir (à voir avec les
+  pull requests déjà en cours)
+  - Penser à ajouter votre fichier d'auteur dans `content/authors/`
+  - Pour les images
+    - S'assurer de prendre des images libres de droit (par exemple
+    [via une recherche spécifique sur flickr](https://www.flickr.com/search/?license=2%2C3%2C4%2C5%2C6%2C9&tags=delorean&advanced=1))
+    - Prendre le soin de toutes les compresser au préalable (sans perte,
+  avec logiciel du type [JPEGMini](http://www.jpegmini.com/) ou 
+  [ImageOptim](https://imageoptim.com/)
+    - Indiquer via un lien dans la meta `header.credit` l'url de l'origine
+    - Si vos images rendent difficile la lecture du titre, vous pouvez spécifier
+    un dégradé ([exemple de dégradé sur un header](https://github.com/putaindecode/putaindecode.fr/blob/master/content/posts/entreprendre/auto-entrepreneuriat-retour-experiences/index.md))
+    - Vous pouvez aussi spécifier la clé `header.light` si votre fond est clair (cf exemple ci dessus)
+  - Respecter 80 chars par ligne pour faciliter les diff lors de corrections
+  - Pour le choix de l'url, merci de consulter l'équipe en cas de doute
+  (via une issue/propositionou via le chat)
 * Une fois que tout est prêt, fais une demande de pull-request de ta branche
   vers notre branche `master` en mettant en titre `Post: Le titre de ton post`
   (évidemment tu remplaces ce qu'il y a après `Post:` par le vrai titre hein)
 * On va passer ton post en revue, éventuellement te demander de corriger deux
   trois trucs, et au bout d'un moment l'accepter (sauf s'il est nul, évidemment)
-* De notre côté on va lui mettre une date de publication pour le publier.
 
 ## Apporter un correctif
 
@@ -39,7 +50,7 @@ points peuvent être plus détaillés, libre à toi de nous proposer tes correct
 
 * Il faut que tu aies un fork comme on a expliqué plus haut
 * Crée une branche `fix.<nom du post>` (genre `fix.contribuer-a-p`)
-* Fais tes modifications sans nous pourrir l'article
+* Fais tes modifications sans pourrir l'article
 * Fais une *Pull Request* comme pour un nouveau post MAIS avec en titre
   `Fix: Le titre du post corrigé` (là aussi, remplace en conséquence)
 * De notre côté on va passer en revue la modification, puis éventuellement on
@@ -53,6 +64,6 @@ GitHub pour éditer un fichier (qui reproduira les étapes précédentes).**
 N'oublie pas de bien détailler et d'expliquer le contenu de tes *Pull Request*,
 y'a un champ exprès pour ça, autant t'en servir !
 
-Si jamais on trouve qu'une PR n'est pas complète, on va te la tagguer `[WIP]`
+Si jamais on trouve qu'une PR n'est pas complète, on va te la tagguer via un label
 jusqu'à ce que tout soit bon. À ce moment là, on enlèvera le tag et on *mergera*
-dans notre branche `master`.
+dans notre branche `master` afin que la ou les modifications soient déployées.
