@@ -4,7 +4,6 @@ import path from "path"
 import color from "chalk"
 import {denodeify as asyncify} from "promise"
 
-import lodash from "lodash"
 import GithubApi from "github"
 
 import logger from "../utils/logger"
@@ -45,7 +44,6 @@ const repoMetas = {
   user: "putaindecode",
   repo: "putaindecode.fr",
 }
-
 
 const commitsRE = /^(\d+)/
 const emailRE = /<(.+)>$/
