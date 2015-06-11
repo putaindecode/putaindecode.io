@@ -1,6 +1,6 @@
 ---
 date: "2014-10-15"
-title: Comment essayer de coder à peu près comme un chef (raté) sous Windows
+title: Comment essayer de coder comme un chef sous Windows
 tags:
   - windows
   - outils
