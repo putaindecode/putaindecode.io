@@ -73,6 +73,7 @@
     "webpack-dev-server": "^1.8.2"
   },
   "scripts": {
+    "#lint": "we use others ext than jsx because of metalsmith issue, see scripts/build.js",
     "lint": "eslint -f node_modules/eslint-friendly-formatter/index.js --ext .js,.jsx,.es .",
     "build": "babel-node scripts/build",
     "start": "npm run build -- --dev-server --open",
