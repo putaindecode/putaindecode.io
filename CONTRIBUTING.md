@@ -27,6 +27,7 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
   - Pour les images
     - S'assurer de prendre des images libres de droit (par exemple
     [via une recherche spécifique sur flickr](https://www.flickr.com/search/?license=2%2C3%2C4%2C5%2C6%2C9&tags=delorean&advanced=1))
+    - Largeur maximum de 2048 pixels
     - Prendre le soin de toutes les compresser au préalable (sans perte,
   avec logiciel du type [JPEGMini](http://www.jpegmini.com/) ou
   [ImageOptim](https://imageoptim.com/)
