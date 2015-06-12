@@ -46,7 +46,7 @@
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
     "marked": "^0.3.3",
-    "metalsmith": "^1.5.0",
+    "metalsmith": "segmentio/metalsmith#wider-node-support",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-filenames": "^1.0.0",
     "metalsmith-md": "^1.1.1",
@@ -72,7 +72,7 @@
     "webpack-dev-server": "^1.8.2"
   },
   "scripts": {
-    "lint": "eslint -f node_modules/eslint-friendly-formatter/index.js --ext .js,.jsx,.es .",
+    "lint": "eslint -f node_modules/eslint-friendly-formatter/index.js .",
     "build": "babel-node scripts/build",
     "start": "npm run build -- --dev-server --open",
     "tape": "babel-tape-runner 'scripts/**/__tests__/*'",
