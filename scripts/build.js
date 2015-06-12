@@ -36,8 +36,8 @@ import variables, {defineGlobalVariables} from "../variables"
 defineGlobalVariables()
 const DEV_SERVER = process.argv.includes("--dev-server")
 
-console.log(colors.cyan("\n- Variables"))
-console.log(variables)
+const log = logger("./build")
+JSON.stringify(variables, null, 2).split("\n").forEach(l => log(l))
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
