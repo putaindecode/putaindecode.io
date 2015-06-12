@@ -22,7 +22,8 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
   Voici quelques points à respecter:
   - Pour la date choisir le prochain mardi ou jeudi à venir (à voir avec les
   pull requests déjà en cours)
-  - Penser à ajouter votre fichier d'auteur dans `content/authors/`
+  - Penser à ajouter votre fichier d'auteur dans `content/authors/`.
+  Utiliser la troisième personne du singulier.
   - Pour les images
     - S'assurer de prendre des images libres de droit (par exemple
     [via une recherche spécifique sur flickr](https://www.flickr.com/search/?license=2%2C3%2C4%2C5%2C6%2C9&tags=delorean&advanced=1))
