@@ -3,8 +3,6 @@ import React, {Component, PropTypes} from "react"
 import getAuthorUri from "../getAuthorUri"
 export default class Avatar extends Component {
 
-  static displayName = "Avatar"
-
   static contextTypes = {
     contributors: PropTypes.object,
     i18n: PropTypes.object,

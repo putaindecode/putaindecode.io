@@ -6,8 +6,6 @@ import requireRaw from "../requireRaw"
 
 export default class Header extends Component {
 
-  static displayName = "Header"
-
   static contextTypes = {
     i18n: PropTypes.object,
   }

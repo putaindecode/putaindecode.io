@@ -14,8 +14,6 @@ import ReadingTime from "../../modules/ReadingTime"
 
 export default class Post extends DefaultTemplate {
 
-  static displayName = "Post"
-
   // should not be declared here too, only in parent class
   // https://github.com/yannickcr/eslint-plugin-react/issues/68
   static propTypes = {

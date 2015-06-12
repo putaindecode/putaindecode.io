@@ -2,8 +2,6 @@ import React, {Component, PropTypes} from "react"
 
 export default class Head extends Component {
 
-  static displayName = "Head"
-
   static defaultProps = {
     stylesheets: [],
   }

@@ -5,8 +5,6 @@ import Avatar from "../Avatar"
 
 export default class Contributors extends Component {
 
-  static displayName = "Contributors"
-
   static contextTypes = {
     pkg: PropTypes.object.isRequired,
     contributors: PropTypes.object.isRequired,

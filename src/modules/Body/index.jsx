@@ -7,8 +7,6 @@ import Disqus from "../Disqus"
 
 export default class Body extends Component {
 
-  static displayName = "Body"
-
   static defaultProps = {
     scripts: [],
   }

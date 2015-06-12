@@ -6,8 +6,6 @@ import requireRaw from "../requireRaw"
 
 export default class Footer extends Component {
 
-  static displayName = "Footer"
-
   static contextTypes = {
     i18n: PropTypes.object,
   }

@@ -4,8 +4,6 @@ import PostPreview from "../PostPreview"
 
 export default class PostsList extends Component {
 
-  static displayName = "PostsList"
-
   static contextTypes = {
     i18n: PropTypes.object,
   }

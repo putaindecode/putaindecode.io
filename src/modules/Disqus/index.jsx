@@ -2,8 +2,6 @@ import React, {Component, PropTypes} from "react"
 
 export default class Disqus extends Component {
 
-  static displayName = "Disqus"
-
   static propTypes = {
     baseURL: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,

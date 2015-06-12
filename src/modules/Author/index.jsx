@@ -8,8 +8,6 @@ import getAuthorUri from "../getAuthorUri"
 
 export default class Author extends Component {
 
-  static displayName = "Author"
-
   static contextTypes = {
     contributors: PropTypes.object,
     i18n: PropTypes.object,

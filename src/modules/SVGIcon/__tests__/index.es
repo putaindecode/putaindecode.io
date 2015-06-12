@@ -27,7 +27,6 @@ tape("SVGIcon", (test) => {
   )
 
   class TestComponent extends Component {
-    static displayName = "TestComponent"
     render() {
       return (
         <div {...this.props} className="foo" />
