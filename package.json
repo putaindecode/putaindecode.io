@@ -45,6 +45,7 @@
     "highlight.js": "^8.5.0",
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
+    "markdownlint": "0.0.5",
     "marked": "^0.3.3",
     "metalsmith": "segmentio/metalsmith#wider-node-support",
     "metalsmith-collections": "^0.7.0",
@@ -74,13 +75,14 @@
     "webpack-nano-logs": "^1.0.0"
   },
   "scripts": {
-    "lint": "eslint -f node_modules/eslint-friendly-formatter/index.js .",
+    "lint:js": "eslint -f node_modules/eslint-friendly-formatter/index.js .",
+    "lint:md": "babel-node scripts/markdownlint",
     "build": "babel-node scripts/build",
     "start": "npm run build -- --dev-server --open",
     "tape": "babel-tape-runner 'scripts/**/__tests__/*'",
     "#testem": "run all tests in all available browsers",
     "testem": "testem ci -f scripts/__tests__.testem.yml",
-    "test": "npm run lint && npm run tape && npm run build -- --production && npm run testem",
+    "test": "npm run lint:md && npm run lint:js && npm run tape && npm run build -- --production && npm run testem",
     "_deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v",
     "deploy": "npm test && npm run _deploy"
   }
