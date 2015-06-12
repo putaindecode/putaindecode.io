@@ -30,7 +30,7 @@ import "./marked"
 import contributions from "../scripts/contributors"
 import i18n from "../src/modules/i18n"
 import pkg from "../package"
-import logger from "./utils/logger"
+import logger from "nano-logger"
 
 import variables, {defineGlobalVariables} from "../variables"
 defineGlobalVariables()

@@ -6,7 +6,7 @@ import {denodeify as asyncify} from "promise"
 
 import GithubApi from "github"
 
-import logger from "../utils/logger"
+import logger from "nano-logger"
 
 const exec = asyncify(require("child_process").exec)
 const glob = asyncify(require("glob"))

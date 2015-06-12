@@ -3,10 +3,10 @@ import WebpackDevServer from "webpack-dev-server"
 import opn from "opn"
 
 import config from "../webpack.config"
-import miniLogs from "./webpack_plugins/mini-logs"
+import nanoLogs from "webpack-nano-logs"
 import runTestsWithJSDOM from "./webpack_plugins/run-tests-with-jsdom"
 
-import logger from "./utils/logger"
+import logger from "nano-logger"
 const log = logger("webpack-dev-server")
 
 export default (options) => {
@@ -52,7 +52,7 @@ export default (options) => {
       ...(config.plugins || []),
       new webpack.NoErrorsPlugin(),
       new webpack.HotModuleReplacementPlugin(),
-      miniLogs,
+      nanoLogs,
       runTestsWithJSDOM({
         url: `${serverUrl}/__tests__.html`,
         compiledAssetsSources: ["__tests__.js"],
