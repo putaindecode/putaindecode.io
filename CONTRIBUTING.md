@@ -27,15 +27,23 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
     - S'assurer de prendre des images libres de droit (par exemple
     [via une recherche spécifique sur flickr](https://www.flickr.com/search/?license=2%2C3%2C4%2C5%2C6%2C9&tags=delorean&advanced=1))
     - Prendre le soin de toutes les compresser au préalable (sans perte,
-  avec logiciel du type [JPEGMini](http://www.jpegmini.com/) ou 
+  avec logiciel du type [JPEGMini](http://www.jpegmini.com/) ou
   [ImageOptim](https://imageoptim.com/)
     - Indiquer via un lien dans la meta `header.credit` l'URL de l'origine
     - Si vos images rendent difficile la lecture du titre, vous pouvez spécifier
     un dégradé ([exemple de dégradé sur un header](https://github.com/putaindecode/putaindecode.fr/blob/master/content/posts/entreprendre/auto-entrepreneuriat-retour-experiences/index.md))
-    - Vous pouvez aussi spécifier la clé `header.light` si votre fond est clair (cf. exemple ci-dessus)
+    - Vous pouvez aussi spécifier la clé `header.light` si votre fond est clair
+    (cf. exemple ci-dessus)
   - Respecter 80 chars par ligne pour faciliter les diff lors de corrections
   - Pour le choix de l'URL, merci de consulter l'équipe en cas de doute
   (via une issue/proposition ou via le chat)
+  - Une fois votre premier commit réalisé, si vous rebuildez le site, vous
+  devriez avoir une modification dans le fichier `contributors.json`. N'hésitez
+  commit via [`--amend`](http://www.git-scm.com/docs/git-commit) sur votre
+  précédent commit.
+  C'est un mal nécessaire pour afficher correctement les contributeurs lorsque
+  le site est généré (l'API GitHub ayant des limites lorsque nous l'utilisons de
+  manière non authentifié).
 * Une fois que tout est prêt, fais une demande de pull-request de ta branche
   vers notre branche `master` en mettant en titre `Post: Le titre de ton post`
   (évidemment tu remplaces ce qu'il y a après `Post:` par le vrai titre hein)
@@ -64,6 +72,7 @@ GitHub pour éditer un fichier (qui reproduira les étapes précédentes).**
 N'oublie pas de bien détailler et d'expliquer le contenu de tes *Pull Request*,
 y'a un champ exprès pour ça, autant t'en servir !
 
-Si jamais on trouve qu'une PR n'est pas complète, on va te la tagguer via un label
-jusqu'à ce que tout soit bon. À ce moment là, on enlèvera le tag et on *mergera*
-dans notre branche `master` afin que la ou les modifications soient déployées.
+Si jamais on trouve qu'une PR n'est pas complète, on va te la tagguer via un
+label jusqu'à ce que tout soit bon. À ce moment là, on enlèvera le tag et on
+*mergera* dans notre branche `master` afin que la ou les modifications soient
+déployées.
