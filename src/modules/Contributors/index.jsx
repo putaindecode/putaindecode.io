@@ -94,7 +94,7 @@ export default class Contributors extends Component {
         {
           nbFileContributors > 1 && fileContributors &&
           Object.keys(fileContributors).map(login => {
-            if (login === "undefined") {
+            if (login === undefined) {
               console.warn(`${filename} have an undefined contributor.`)
             }
             return (
