@@ -1,5 +1,5 @@
 // shell has some limitation :)
-const __PROD__ = JSON.parse(Boolean(process.env.__PROD__))
+const __PROD__ = process.argv.includes("--production")
 
 const variables = {
   __DEV__: !__PROD__,
