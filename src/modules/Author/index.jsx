@@ -24,7 +24,8 @@ export default class Author extends Component {
 
   render() {
     const i18n = this.context.i18n
-    const author = this.context.contributors.map[this.props.author]
+    const author = this.context.contributors.getContributor(this.props.author)
+
     return (
       <div className={`putainde-Author ${this.props.className}`}>
 

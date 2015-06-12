@@ -41,11 +41,7 @@ console.log(variables)
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
-function build(error, contributors) {
-  if (error) {
-    throw error
-  }
-
+function build(contributors) {
   // We clean ./dist by hand mainly for prod, in order to be able to build
   // assets with webpack before metalsmith build.
   // This allows us to get hashes in filename and pass them to the build
@@ -203,4 +199,8 @@ function build(error, contributors) {
   }
 }
 
-contributions(build)
+contributions()
+  .then((contributors) => build(contributors))
+  .catch(err => {
+    throw err
+  })
