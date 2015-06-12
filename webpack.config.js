@@ -30,8 +30,6 @@ var config = {
     extensions: [
       "",
       ".js",
-      ".es",
-      ".jsx",
       ".css",
     ],
   },
