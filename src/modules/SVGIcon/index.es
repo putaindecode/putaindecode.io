@@ -28,8 +28,6 @@ const cleanups = {
 // @styled(styles)
 export default class SVGIcon extends Component {
 
-  static displayName = "SVGIcon"
-
   static defaultProps = {
     component: "span",
     classSuffix: "-svg",

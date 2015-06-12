@@ -2,8 +2,6 @@ import React, {Component} from "react"
 
 export default class Analytics extends Component {
 
-  static displayName = "Analytics"
-
   render() {
     return (
       <script

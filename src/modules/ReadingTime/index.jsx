@@ -3,8 +3,6 @@ import cx from "classnames"
 
 export default class ReadingTime extends Component {
 
-  static displayName = "ReadingTime"
-
   static defaultProps = {
     // http://www.slate.fr/lien/57193/adulte-300-mots-minute
     // http://www.combiendemots.com/mot-par-minute

@@ -8,8 +8,6 @@ import Body from "../../modules/Body"
 
 export default class Page404 extends DefaultTemplate {
 
-  static displayName = "Page404"
-
   // should not be declared here too, only in parent class
   // https://github.com/yannickcr/eslint-plugin-react/issues/68
   static propTypes = {

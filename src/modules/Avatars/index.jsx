@@ -5,8 +5,6 @@ import Avatar from "../Avatar"
 
 export default class Avatars extends Component {
 
-  static displayName = "Avatars"
-
   static contextTypes = {
     i18n: PropTypes.object,
   }

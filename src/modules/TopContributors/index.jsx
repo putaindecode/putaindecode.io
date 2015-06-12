@@ -4,8 +4,6 @@ import Author from "../Author"
 
 export default class TopContributors extends Component {
 
-  static displayName = "TopContributors"
-
   static contextTypes = {
     contributors: PropTypes.object.isRequired,
     i18n: PropTypes.object.isRequired,

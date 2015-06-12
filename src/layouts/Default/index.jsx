@@ -6,8 +6,6 @@ import Body from "../../modules/Body"
 
 export default class Page extends Component {
 
-  static displayName = "Page"
-
   static propTypes = {
     pkg: PropTypes.object.isRequired,
     metadata: PropTypes.object.isRequired,

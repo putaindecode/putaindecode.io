@@ -9,8 +9,6 @@ import PostsList from "../../modules/PostsList"
 
 export default class Posts extends DefaultTemplate {
 
-  static displayName = "Posts"
-
   // should not be declared here too, only in parent class
   // https://github.com/yannickcr/eslint-plugin-react/issues/68
   static propTypes = {

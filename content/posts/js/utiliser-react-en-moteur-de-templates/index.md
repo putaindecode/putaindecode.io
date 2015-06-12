@@ -70,8 +70,6 @@ import React, {Component} from "react"
 
 export default class PostTemplate extends Component {
 
-  static displayName = "PostTemplate"
-
   render() {
     return (
       <html>
@@ -126,8 +124,6 @@ import PostsList from "../PostsList"
 
 export default class Posts extends Component {
 
-  static displayName = "Posts"
-
   render() {
     return (
       <Html>
@@ -161,8 +157,6 @@ Voici deux exemples de composants utilisés ci-dessus :
 import React, {Component} from "react"
 
 export default class Head extends Component {
-
-  static displayName = "Head"
 
   render() {
     return (
@@ -201,8 +195,6 @@ import Footer from "../Footer"
 import GoogleAnalytics from "../Analytics"
 
 export default class Body extends Component {
-
-  static displayName = "Body"
 
   render() {
     return (

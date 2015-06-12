@@ -4,8 +4,6 @@ import PostsList from "../PostsList"
 
 export default class LatestPosts extends Component {
 
-  static displayName = "LatestPosts"
-
   static contextTypes = {
     i18n: PropTypes.object,
   }

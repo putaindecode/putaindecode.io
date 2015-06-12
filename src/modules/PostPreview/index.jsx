@@ -7,8 +7,6 @@ import formatDate from "../formatDate"
 
 export default class PostPreview extends Component {
 
-  static displayName = "PostPreview"
-
   static contextTypes = {
     i18n: PropTypes.object,
   }

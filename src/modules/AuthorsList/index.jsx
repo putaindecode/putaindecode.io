@@ -4,8 +4,6 @@ import getAuthorUri from "../getAuthorUri"
 
 export default class AuthorsList extends Component {
 
-  static displayName = "AuthorsList"
-
   static contextTypes = {
     contributors: PropTypes.object,
     i18n: PropTypes.object,
