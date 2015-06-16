@@ -30,11 +30,22 @@
   }
 
     .putainde-Post-header--custom {
-      padding: 15vh 0;
+      padding: 4rem 0;
       box-shadow:
         0 0 1rem color(#000 a(.2)) inset,
         0 .4rem 1rem color(#000 a(.2)) inset
       ;
+    }
+
+    /*
+      vh only used for large screen, cause of the iOS 7 bug...
+      https://github.com/putaindecode/putaindecode.fr/issues/454
+      I guess no iOS 7 will match --r-minL
+    */
+    @media (--r-minL) {
+      .putainde-Post-header--custom {
+        padding: 15vh 0;
+      }
     }
 
     .putainde-Post-header--dark {
