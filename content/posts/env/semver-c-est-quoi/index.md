@@ -11,7 +11,7 @@ header:
 
 _Ce post a été largement inspiré de la mauvaise expérience que j'ai pu avoir
 avec l'évolution de [Backbone.js](http://backbonejs.org/) qui, ne respectant pas SemVer, m'a posé des
-problèmes lors de mise à jour de versions. Les _node_modules_ (dépendances de
+problèmes lors de mise à jour de versions. Les node_modules (dépendances de
 dépendances) sont aussi en question._
 
 Depuis quelques temps, vous devez entendre le terme **SemVer** par-ci par-là
