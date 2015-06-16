@@ -439,17 +439,17 @@
       "twitter": "_kud",
       "fr": {
         "bio": {
-          "short": "viking ui engineer.",
+          "short": "frontend engineer.",
           "long": [
-            "Viking UI engineer (avec une pointe de node.js), batteur, s'essayant à la photographie, aime le cinema."
+            "Frontend engineer (avec une pointe de back en JavaScript), batteur, s'essayant à la photographie, aime la cuisine et le cinema."
           ]
         }
       },
       "en": {
         "bio": {
-          "short": "viking ui engineer.",
+          "short": "frontend engineer.",
           "long": [
-            "Viking UI engineer (also node.js dev), drummer, photographer, cinema lover."
+            "Frontend engineer (also backend dev with JavaScript), drummer, cinema lover, love to cook, amateur photographer"
           ]
         }
       }
