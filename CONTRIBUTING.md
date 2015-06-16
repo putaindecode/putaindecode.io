@@ -22,26 +22,26 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
   Voici quelques points à respecter:
   - Pour la date choisir le prochain mardi ou jeudi à venir (à voir avec les
   pull requests déjà en cours)
-  - Penser à ajouter votre fichier d'auteur dans `content/authors/`.
+  - Penser à ajouter son fichier d'auteur dans `content/authors/`.
   Utiliser la troisième personne du singulier.
   - Pour les images
-    - S'assurer de prendre des images libres de droit (par exemple
+    - S'assurer de prendre des images libres de droits (par exemple
     [via une recherche spécifique sur flickr](https://www.flickr.com/search/?license=2%2C3%2C4%2C5%2C6%2C9&tags=delorean&advanced=1))
     - Largeur maximum de 2048 pixels
     - Prendre le soin de toutes les compresser au préalable (sans perte,
   avec logiciel du type [JPEGMini](http://www.jpegmini.com/) ou
   [ImageOptim](https://imageoptim.com/)
     - Indiquer via un lien dans la meta `header.credit` l'URL de l'origine
-    - Si vos images rendent difficile la lecture du titre, vous pouvez spécifier
+    - Si tes images rendent difficile la lecture du titre, tu peux spécifier
     un dégradé ([exemple de dégradé sur un header](https://github.com/putaindecode/putaindecode.fr/blob/master/content/posts/entreprendre/auto-entrepreneuriat-retour-experiences/index.md))
-    - Vous pouvez aussi spécifier la clé `header.light` si votre fond est clair
+    - Tu peux aussi spécifier la clé `header.light` si ton fond est clair
     (cf. exemple ci-dessus)
   - Respecter 80 chars par ligne pour faciliter les diff lors de corrections
   - Pour le choix de l'URL, merci de consulter l'équipe en cas de doute
   (via une issue/proposition ou via le chat)
-  - Une fois votre premier commit réalisé, si vous rebuildez le site, vous
-  devriez avoir une modification dans le fichier `contributors.json`. N'hésitez
-  commit via [`--amend`](http://www.git-scm.com/docs/git-commit) sur votre
+  - Une fois ton premier commit réalisé, si tu rebuildes le site, tu
+  devrais avoir une modification dans le fichier `contributors.json`. N'hésite pas à
+  commit via [`--amend`](http://www.git-scm.com/docs/git-commit) sur ton
   précédent commit.
   C'est un mal nécessaire pour afficher correctement les contributeurs lorsque
   le site est généré (l'API GitHub ayant des limites lorsque nous l'utilisons de
