@@ -31,14 +31,10 @@ before_script:
   - git config --global user.name "Travis-CI"
   - git config --global user.email "mail+travis@putaindecode.fr"
 
-script:
-  - npm test
-  # deploy real master only
-  - if [ $TRAVIS_PULL_REQUEST = "false" ] && [ $TRAVIS_BRANCH = "master" ]; then npm run _deploy; fi
+script: ./scripts/travis.sh
 
 env:
   global:
-    - __PROD__: 1
     # GH_TOKEN
     # might be compromised for now :/
     # https://github.com/putaindecode/putaindecode.fr/issues/376

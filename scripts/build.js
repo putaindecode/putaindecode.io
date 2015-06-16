@@ -30,22 +30,18 @@ import "./marked"
 import contributions from "../scripts/contributors"
 import i18n from "../src/modules/i18n"
 import pkg from "../package"
-import logger from "./utils/logger"
+import logger from "nano-logger"
 
 import variables, {defineGlobalVariables} from "../variables"
 defineGlobalVariables()
 const DEV_SERVER = process.argv.includes("--dev-server")
 
-console.log(colors.cyan("\n- Variables"))
-console.log(variables)
+const log = logger("./build")
+JSON.stringify(variables, null, 2).split("\n").forEach(l => log(l))
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
-function build(error, contributors) {
-  if (error) {
-    throw error
-  }
-
+function build(contributors) {
   // We clean ./dist by hand mainly for prod, in order to be able to build
   // assets with webpack before metalsmith build.
   // This allows us to get hashes in filename and pass them to the build
@@ -203,4 +199,8 @@ function build(error, contributors) {
   }
 }
 
-contributions(build)
+contributions()
+  .then((contributors) => build(contributors))
+  .catch(err => {
+    throw err
+  })

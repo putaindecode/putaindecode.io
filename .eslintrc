@@ -63,7 +63,7 @@ rules:
   no-multiple-empty-lines: [2, {"max": 1}]
 
   # one brace per line
-  "brace-style": [2, "stroustrup"]
+  brace-style: [2, "stroustrup"]
 
   # trailing coma are cool for diff
   comma-dangle: [2, "always-multiline"]
@@ -78,7 +78,6 @@ rules:
   # eslint-plugin-react rules
   react/no-multi-comp: 2
   react/prop-types: 2
-  react/display-name: 2
   react/wrap-multilines: 2
   react/self-closing-comp: 2
   react/no-did-mount-set-state: 2

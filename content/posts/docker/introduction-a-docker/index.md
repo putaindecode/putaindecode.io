@@ -13,17 +13,16 @@ Avant de vous parler de Docker je vais vous raconter une histoire que tout
 développeur a vécu au moins une fois.
 
 Il était une fois un jeune développeur qui codait tranquillement sur son
-ordinateur siglé d'une pomme. Il était pressé car comme tout étudiant qui se
+ordinateur. Il était pressé car comme tout étudiant qui se
 respecte il devait présenter son travail le lendemain matin. Après des heures de
 travail, l'application était là, et elle fonctionnait à merveille ! Le
 lendemain, notre codeur arriva tout fier pour sa présentation, avec son projet
-sur une clé usb. Il le transfère sur l'ordinateur manchot de son pote et là, ça
+sur une clé usb. Il le transfère sur l'ordinateur de son pote et là, ça
 ne fonctionne pas !
 
 ## Quel est le problème ?
 
-L'application de notre jeune développeur ne fonctionne pas sur l'ordinateur
-manchot de son ami à cause d'un problème d'environnement. Entre deux systèmes, il
+L'application de notre jeune développeur ne fonctionne pas sur l'ordinateur de son ami à cause d'un problème d'environnement. Entre deux systèmes, il
 peut y avoir des différences de version sur les dépendances ou encore des
 bibliothèques manquantes.
 
@@ -232,6 +231,7 @@ avec : `docker stop node-app` et le supprimer avec `docker rm node-app`.
 
 -----
 
-Voici la fin de ce premier article sur Docker. Pour le prochain article, nous
-verrons comment créer notre propre image avec un Dockerfile et comment lier des
-conteneurs afin de créer des applications plus complexes.
+Dans cet article, nous avons vu comment récupérer des images Docker depuis le
+Docker Hub et comment les instancier afin de créer des conteneurs. Mais pour aller
+plus loin, ce serait bien si nous pouvions créer nos propres images, c'est ce que
+nous apprendrons à faire à l'aide des Dockerfile dans le prochain article.
