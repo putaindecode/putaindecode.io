@@ -362,8 +362,26 @@
       "login": "enguerran",
       "name": "Enguerran",
       "avatar_url": "https://avatars.githubusercontent.com/u/701648?v=3",
-      "location": "",
-      "hireable": false
+      "location": "http://blog.ticabri.com",
+      "hireable": false,
+      "crew": false,
+      "twitter": "ticabri",
+      "fr": {
+        "bio": {
+          "short": "Artisan développeur logiciel",
+          "long": [
+            "Il lit, apprend et code."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Software craftsmanship developer",
+          "long": [
+            "He reads, learns and writes code."
+          ]
+        }
+      }
     },
     "gostbuster": {
       "login": "gostbuster",
