@@ -8,7 +8,7 @@ import eslintFormatter from "eslint-friendly-formatter"
 import variables, {defineGlobalVariables} from "./variables"
 defineGlobalVariables()
 
-const production = __PROD__ || process.argv.includes("--production")
+const production = process.argv.includes("--production")
 
 var config = {
   entry: {
@@ -56,8 +56,8 @@ var config = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
-          "style-loader",
-          "css-loader!cssnext-loader"
+          "style",
+          "css!cssnext"
         ),
       },
       {
