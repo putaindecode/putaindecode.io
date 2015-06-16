@@ -6,6 +6,7 @@ tags:
 authors:
   - kud
 header:
+  linearGradient: rgba(0,0,0, 0.6), rgba(0,0,0, 0.5)
   credit: https://www.flickr.com/photos/stevensnodgrass/5480863464/
 ---
 
