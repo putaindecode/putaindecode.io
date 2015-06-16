@@ -23,7 +23,7 @@ comportement.
 
 ![Settings Webhooks GitHub](heisenberg.png)
 
-__Tout d'abord, une histoire__
+##Tout d'abord, une histoire
 
 Il y a quelques années j'ai travaillé sur un assez large projet en tant que 
 développeur au sein d'une équipe. Nous devions construire un système interne 
@@ -92,7 +92,7 @@ d’ivoire et ne délivraient pas les fonctionnalités. Le PM posait son veto et
 prenait le parti des nouveaux.
 
 Nous étions devenus en quelque sorte démotivés. Après avoir tenté plusieurs fois 
-d’expliquer comment les choses devaient être faites et être bottés en touche, 
+d’expliquer comment les choses devaient être faites et être bottées en touche, 
 vous commencez par n’avoir plus que deux choix : abandonner, ne pas argumenter 
 et attendre la paie, ou partir. Notre meilleur développeur, le mec du DSL, est 
 parti, et ceux d’entre nous qui prônaient pour un bon design perdirent un de 
@@ -113,7 +113,7 @@ semblaient être fixés, même avec un nombre croissant de développeurs.
 L’entreprise dépensait de plus en plus d’argent pour des bénéfices en chute 
 libre.
 
-__Pourquoi est-ce autant parti de travers ?__
+##Pourquoi est-ce autant parti de travers ?
 
 La gestion de projets finement grainée est séduisante pour une entreprise. Toute 
 organisation a besoin de contrôle. Nous voulons savoir ce que peut nous apporter 
@@ -143,8 +143,8 @@ intuitions, d’autres ne sont pas bonnes.
 
 Si vous me demandez combien de temps il faudrait pour développer cette 
 fonctionnalité, ma réponse la plus honnête est que je n’en sais rien du tout. Je 
-pourrai en avoir une idée précise, mais il y a une telle quantité de petites 
-probabilités, que je pourrai me tromper d’un facteur 10. Qu’en est-il de la 
+pourrais en avoir une idée précise, mais il y a une telle quantité de petites 
+probabilités, que je pourrais me tromper d’un facteur 10. Qu’en est-il de la 
 fonctionnalité en elle-même ? Est-ce réellement une bonne idée ? Je ne suis pas 
 seulement celui qui va l'implémenter, j'en suis aussi le garant. Et s’il y avait 
 une meilleure façon de répondre à ce besoin métier ? Que faire si nous 
@@ -172,8 +172,8 @@ possibilité de prendre le temps pour faire ce qui doit être fait.
 
 
 Pour être clair, je ne parle pas pour tout le monde ici. Tous les développeurs 
-ne détestent pas le micro management. Certains sont plus intéressés par la paie 
-que par l’artisanat logiciel. Pour eux, le micro management peut être très 
+ne détestent pas le micro-management. Certains sont plus intéressés par la paie 
+que par l’artisanat logiciel. Pour eux, le micro-management peut être très 
 attractif. Dès que vous avez compris comment ça marche, vous surestimez et 
 faites le minimum nécessaire, puis vous publiez la fonctionnalité. Si les 
 utilisateurs sont mécontents, que le système est buggé et qu’il ralentit, vous 
@@ -189,7 +189,7 @@ gentiment vos instructions, n’argumentera pas sur l’utilité des fonctionnal
 remplira correctement Jira, atteindra ses estimations, et produira un logiciel 
 de très faible qualité.
 
-__Alors comment gérer les développeurs ?__
+##Alors comment gérer les développeurs ?
 
 Simple : filez leur de l’autonomie. Ça semble être la panacée, mais le 
 management granuleux est un poison pour le développement logiciel. C’est 
