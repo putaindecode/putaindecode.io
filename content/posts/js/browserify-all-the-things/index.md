@@ -225,7 +225,7 @@ $ npm i gamma
 Avec la même commande que précédement (et donc le même ajout), Browserify va parser
 l'arbre syntaxique abstrait (AST) des appels à `require()` et va créer un graph
 des dépendances du projet.  
-Un fois ceci fait, il va simplement ajuster les chemins et déclarer les fonctions
+Une fois ceci fait, il va simplement ajuster les chemins et déclarer les fonctions
 mappées dans un object par leur identifiant. Lorsqu'une fonction appelle `require`,
 le petit bout de script ajouté va se charger de retourner la dépendance.
 
