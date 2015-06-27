@@ -694,6 +694,13 @@
         }
       }
     },
+    "vnctaing": {
+      "login": "vnctaing",
+      "name": "Vincent Taing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4825444?v=3",
+      "location": "Paris",
+      "hireable": true
+    },
     "welovewebdesign": {
       "login": "welovewebdesign",
       "name": "Rémi Couturier",
@@ -763,6 +770,7 @@
     "sebastien.balayn@ucp.fr": "Nyalab",
     "shahor@shahor.fr": "Shahor",
     "sylvain.vuilliot@kaes.fr": "syvuilliot",
+    "taing.vincent@gmail.com": "vnctaing",
     "tmaindron@gmail.com": "OwlyCode",
     "tom.panier@free.fr": "neemzy",
     "welovewebdesign@gmail.com": "welovewebdesign",
