@@ -9,6 +9,12 @@ authors:
   - kud
 ---
 
+<div class="putainde-Note">
+Nous vous conseillons aujourd'hui d'utiliser un gestionnaire de tâches qui
+nous paraît être mieux sur bien des points: configuration plus souple, lisible
+et facile et rapidité vous attendent avec [Gulp](/posts/js/introduction-gulp).
+</div>
+
 <figure class="putainde-Media putainde-Media--left">![](gruntjs.png)</figure>
 
 Vous avez sûrement déjà entendu parler de **Grunt** à droite à gauche, en conférence, voire votre boite l'utilise déjà mais vous ne savez toujours pas trop ce qui se cache derrière ce terme saugrenu digne d'un personnage de Warcraft. Soit, ce n'est pas bien grave. **Grunt** est simplement un *JavaScript Task Runner*, un outil vous permettant de créer des tâches automatisées en JavaScript. Forcément ce n'est pas très parlant mais c'est tout l'intérêt de cet article, vous expliquer ce qu'est **Grunt** et pourquoi il peut vous être utile dans un _workflow_ de front-end dev.
