@@ -30,11 +30,6 @@
       "mail": "twitter-bot@putaindecode.fr",
       "passwd-salt": "twb"
     },
-    "twitter-backbonejsfr": {
-      "user": "backbonejsfr",
-      "mail": "twitter+backbonejsfr@putaindecode.fr",
-      "passwd-salt": "tbb"
-    },
     "twitter-fake": {
       "user": "put1dekod",
       "mail": "twitter-fake@putaindecode.fr",
