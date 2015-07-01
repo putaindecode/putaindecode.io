@@ -89,27 +89,26 @@ Bon dans mon exemple j'ai mis un peu n'importe quoi, donc on va faire un mini wo
 
 ## Utilisation
 
-On part avec une tâche très simple : pré-processeur CSS [Myth](http://www.myth.io) et
-optimisation avec [CSSO](https://github.com/css/csso).
+On part avec une tâche très simple : transpiler [cssnext](http://cssnext.io).
 
 ```console
 $ mkdir putaindegulp && cd putaindegulp
 $ npm init
-$ npm i -D gulp gulp-util gulp-plumber gulp-myth gulp-csso minimist
+$ npm i -D gulp gulp-util gulp-plumber gulp-cssnext gulp-csso minimist
 ```
 
 ```js
 var gulp = require("gulp")
 var gutil = require("gulp-util")
 var plumber = require("gulp-plumber")
-var myth = require("gulp-myth")
+var cssnext = require("gulp-cssnext")
 var csso = require("gulp-csso")
 var options = require("minimist")(process.argv.slice(2))
 
 gulp.task("styles", function() {
   gulp.src("./src/css/*.css")
     .pipe(options.production ? plumber() : gutil.noop())
-    .pipe(myth({sourcemap: !options.production}))
+    .pipe(cssnext({sourcemap: !options.production}))
     .pipe(options.production ? csso() : gutil.noop())
     .pipe(gulp.dest("./dist/css/"))
 })
@@ -140,7 +139,7 @@ var gutil = require("gulp-util")
 var plumber = require("gulp-plumber")
 
   // Ici, rien de magique, du plugin en veux-tu en voilà
-var myth = require("gulp-myth")
+var cssnext = require("gulp-cssnext")
 var csso = require("gulp-csso")
 
   // ici on chope les options de la ligne de commande
@@ -166,8 +165,10 @@ gulp.task("styles", function() {
 
     // Et là on pipe nos plugins
     // toujours en jouant avec les options si besoin
-    .pipe(myth({sourcemap: !options.production}))
-    .pipe(options.production ? csso() : gutil.noop())
+    .pipe(cssnext({
+      compress: options.production,
+      sourcemap: !options.production
+    }))
 
     // Super important, on convertit nos streams en fichiers
     .pipe(gulp.dest("./dist/css/"))
@@ -185,45 +186,46 @@ gulp.task("default", ["styles"], function() {
 // Comme grunt, `gulp` sans argument lancera la tâche `default`.
 ```
 
-Bien entendu, vous avez déjà compris que si vous voulez remplacer Myth par Sass,
+Bien entendu, vous avez déjà compris que si vous voulez remplacer cssnext par Sass,
 c'est l'histoire de 4 secondes.
 
-## _Putain de code !_ approuve Gulp.
-
-Ici on est carrément fan de Gulp. Il faut bien avouer que
+Chez _Putain de code !_ on a aimé Gulp. Il faut bien avouer que
 [ça va vite](https://twitter.com/putaindecode/status/460868992396460032)
-(encore plus appréciable lorsque l'on n'a pas de SSD) et que c'est plaisant à écrire.
+(encore plus appréciable lorsque l'on n'a pas de SSD) et que c'est plaisant à
+écrire comparé à Grunt.
 Pas de configurations pas spécialement verbeuse et trop espacée.
 Avec Gulp on se sent plus libre, moins contraint.
-Du coup, **on a carrément fait notre site avec Gulp**
+Du coup, on avait carrément refait notre site avec Gulp
 (puis au passage un petit refresh graphique tant qu'à faire).
 
-Pour aller plus loin, vous n'avez qu'à ouvrir notre [Gulpfile](https://github.com/putaindecode/putaindecode.fr/blob/master/gulpfile.js)
-et regarder nos [tasks](https://github.com/putaindecode/putaindecode.fr/tree/master/tasks)
-qui vont de [la plus simple](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/clean.js)
-à [la plus compliqué](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/contributors.js).
+**Mise à jour: depuis nous avons simplifié encore simplifié notre process et nous
+nous sommes passé de Gulp.**
+
+Pour aller plus loin, vous n'avez qu'à ouvrir notre ancien
+[Gulpfile](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/gulpfile.js)
+et regarder nos
+[tasks](https://github.com/putaindecode/putaindecode.fr/tree/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks)
+de l'époque qui vont de
+[la plus simple](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/clean.js)
+à
+[la plus compliqué](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/contributors.js).
 
 Pour voir des tâches plus « real world example » je vous invite à regarder les tasks suivantes :
 
-- [server](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/server.js),
+- [server](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/server.js),
 le server de dev local avec livereload dedans ;
-- [watch](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/watch.js),
+- [watch](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/watch.js),
 le classique et si simple watcher ;
-- [publish](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/publish.js),
+- [deploy](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/deploy.js),
 la tâche pour publier le dossier `dist/` sur les [gh-pages](https://pages.github.com/) ;
-- [icons](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/icons.js),
+- [icons](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/icons.js),
 qui transforme des SVG en fontes d'icones avec le bout de CSS qui va bien ;
-- [scripts-linting](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/scripts-linting.js),
+- [scripts-linting](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts-linting.js),
 qui vérifie la qualité du code ;
-- [scripts](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/scripts.js),
+- [scripts](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts.js),
 du [browserify](/posts/js/browserify-all-the-things/) pour nos JS côté client ;
-- [stylesheets](https://github.com/putaindecode/putaindecode.fr/blob/master/tasks/stylesheets.js),
-notre tâche qui mélange (pour l'instant) Stylus et Rework (suite à une rixe à la récré, on n'a pas réussi à se mettre d'accord, donc chacun à rajouté son morceau) ;
-
-Bien entendu, si vous ne comprenez pas certaines parties, n'hésitez pas à
-[ouvrir une issue](https://github.com/putaindecode/putaindecode.fr/issues/new)
-pour demander des explications.
-
+- [stylesheets](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/stylesheets.js),
+notre tâche pour coder des css du futur ;
 
 ## Vous reprendrez bien un peu de… Gulp* ! Pardon.
 
