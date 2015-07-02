@@ -1,5 +1,5 @@
 ---
-date: "2015-06-30"
+date: "2015-07-02"
 title: Les Dockerfiles
 tags:
   - docker
