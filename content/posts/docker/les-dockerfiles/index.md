@@ -10,25 +10,25 @@ header:
 ---
 
 Dans [l'article précédent](/posts/docker/introduction-a-docker), je vous ai
-introduit le fonctionnement de base de Docker. Mais cela vous limitait à
+présenté le fonctionnement de base de Docker. Mais cela vous limitait à
 l'usage des images que vous pouviez trouver sur le [Docker
 Hub](https://registry.hub.docker.com/). Afin de vraiment pouvoir utiliser
-Docker au maximum il serait appréciable de pouvoir créer des images adaptées à
+Docker au maximum, il serait appréciable de pouvoir créer des images adaptées à
 nos projets et c'est là l'utilité des Dockerfiles.
 
 # Les Dockerfiles
 
 Les Dockerfiles sont des fichiers qui permettent de construire une image Docker
-adaptée à nos besoins étape par étape. Rentrons dans le vif du sujet en créant
-une image permettant de lancer un projet Javascript.
+adaptée à nos besoins, étape par étape. Rentrons dans le vif du sujet en créant
+une image permettant de lancer un projet JavaScript.
 
-Pour commencer, créer un nouveau fichier `Dockerfile` à la racine de votre
+Pour commencer, créez un nouveau fichier `Dockerfile` à la racine de votre
 projet.
 
 La première chose à faire dans un Dockerfile est de définir de quelle image
-vous héritez, pour cet exemple, je vous propose d'utiliser une image de Debian
+vous héritez. Pour cet exemple, je vous propose d'utiliser une image de Debian
 comme base (ce qui est une bonne pratique, car cette image
-est plutôt légère en comparaison de celle d'Ubuntu par exemple).
+est plutôt légère en comparaison avec celle d'Ubuntu par exemple).
 
 ```
 FROM debian:jessie
@@ -37,7 +37,7 @@ FROM debian:jessie
 `FROM` permet de définir notre image de base, vous pouvez l'utiliser uniquement
 une fois dans un Dockerfile.
 
-Comme nous voulons créer une image pour une application Javascript full-stack,
+Comme nous voulons créer une image pour une application JavaScript full-stack,
 nous devons commencer par installer Node.js. Pour ce faire, on va télécharger
 l'archive Node.js directement depuis le site officiel à l'aide de curl que nous
 allons aussi devoir installer.
@@ -56,14 +56,14 @@ RUN curl -LO "https://nodejs.org/dist/v0.12.5/node-v0.12.5-linux-x64.tar.gz" \
 étiez devant un shell unix. 
 
 La première commande nous permet d'installer curl et de nettoyer ensuite le
-gestionnaire de paquet afin que notre image soit un peu plus légère.
+gestionnaire de paquets afin que notre image soit un peu plus légère.
 
 Avec la deuxième commande, nous téléchargeons le binaire de Node.js que nous
 installons ensuite à ça place, et on n'oublie pas de supprimer l'archive
 ensuite.
 
 Vous pouvez vous demander pourquoi j'exécute plusieurs commandes sur une même
-instruction `RUN` ? Eh bien cela permet simplement de limiter le nombre
+instruction `RUN` ? Eh bien, cela permet simplement de limiter le nombre
 d'instructions dans votre Dockerfile ce qui rendra votre image finale plus
 légère.
 
@@ -85,27 +85,27 @@ image, il est le plus souvent utilisé pour importer les sources de votre projet
 ou des fichiers de configuration.
 
 `WORKDIR` permet de changer le répertoire courant de votre image, toutes les
-commandes qui suivront seront exécuter à partir de ce répertoire.
+commandes qui suivront seront exécutées à partir de ce répertoire.
 
 Avec la dernière instruction, nous ajoutons les sources de notre projet à
 l'intérieur de l'image, mais vous allez vous demander pourquoi nous ne l'avons
-pas fait en même temps que l'ajout des fichiers de dépendances. Eh bien cela
+pas fait en même temps que l'ajout des fichiers de dépendances. Eh bien, cela
 nous permet d'économiser beaucoup de temps ! 
 
-Quand docker crée une nouvelle image à partir d'un Dockerfile il exécute chaque
+Quand Docker crée une nouvelle image à partir d'un Dockerfile, il exécute chaque
 instruction dans un conteneur, et le résultat de cette instruction est
 sauvegardé sous forme de couche. Au final, une image est un assemblage de
-plusieurs couches (une par instruction). Et donc quand vous reconstruisez une
-image pour la seconde fois, les instructions qui n'implique pas de changement
-ne sont pas réexécuté, car la couche est récupéré depuis l'image précédente, par
-contre si l'instruction implique un changement, elle est réexécuté ainsi que
-tout les instructions suivantes.
+plusieurs couches (une par instruction). Et donc, quand vous reconstruisez une
+image pour la seconde fois, les instructions qui n'impliquent pas de changements
+ne sont pas réexécutées, car la couche est récupérée depuis l'image précédente. Par
+contre, si l'instruction implique un changement quelconque, elle est réexécutée
+ainsi que toutes les instructions suivantes.
 
 Dans notre cas, les sources auront tendance à beaucoup changer, et donc ne pas
 retélécharger les dépendances à chaque changement dans le code est un réel gain
 de temps !
 
-Maintenant, nous allons indiquer quel port et dossier, nous souhaitons partager
+Maintenant, nous allons indiquer quel port et dossier nous souhaitons partager
 avec l'extérieur du conteneur.
 
 ```
@@ -163,7 +163,7 @@ CMD node server.js
 
 Avant de transformer ce Dockerfile en une image, vous devez créer un fichier de
 plus, le `.dockerignore`, ce fichier permet comme un `.gitignore` de ne pas
-inclure certain fichier dans votre image docker, et c'est très important afin
+inclure certain fichiers dans votre image Docker, et c'est très important afin
 d'éviter d'inclure les dépendances de votre projet dans votre image
 (`node_modules` dans notre cas) qui sont propres à votre
 système, mais pas au système du conteneur. Voici à quoi votre `.dockerignore`
@@ -174,7 +174,7 @@ node_modules
 .git
 ```
 
-Pour transformer ce Dockerfile en une image docker, vous devez utiliser cette
+Pour transformer ce Dockerfile en une image Docker, vous devez utiliser cette
 commande :
 
 ```console
@@ -223,8 +223,8 @@ Removing intermediate container 9522c6b9bf95
 Successfully built aaf20fb25dac
 ```
 
-L'option `-t` permet de nommer votre image docker ce qui vous servira lorsque
-vous voudrez lancer votre conteneur. Et le `.` est le repertoire ou ce trouve
+L'option `-t` permet de nommer votre image docker, ce qui vous servira lorsque
+vous voudrez lancer votre conteneur. Et le `.` est le repertoire où se trouve
 le Dockerfile, dans notre cas le dossier courant.
 
 Maintenant, vous pouvez lancer votre conteneur de cette manière :
@@ -234,19 +234,19 @@ $ docker run -d -p 3000:3000 -v $(pwd)/log:/app/log fullstack-js
 ```
 
 Cette commande permet de lancer notre image en partageant le port et un dossier
-avec votre ordinateur, si vous voulez plus de détail sur le fonctionnement du
-client docker, je vous invite à lire mon [article
+avec votre ordinateur, si vous voulez plus de détails sur le fonctionnement du
+client Docker, je vous invite à lire mon [article
 précédent](/posts/docker/introduction-a-docker).
 
 ---
 
 Dans cet article, vous avez pu voir comment créer votre propre Dockerfile,
-maintenant vous pouvez créer des images docker parfaitement adaptées à votre
-projet, et même plus. En cherchant sur internet, vous pourrez trouver des images
-docker pour tout et n'importe quoi, comme des images pour lancer chrome dans un
-conteneur par exemple, si vous voulez en savoir plus je vous redirige vers le
+maintenant vous pouvez créer des images Docker parfaitement adaptées à votre
+projet, et même plus. En cherchant sur Internet, vous pourrez trouver des images
+Docker pour tout et n'importe quoi, comme des images pour lancer Chrome dans un
+conteneur par exemple. Pour en savoir plus, je vous redirige vers le
 blog de [Jessie
 Frazelle](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/).
 
-Dans le prochain article, je vous parlerais de docker-compose, un outil qui
+Dans le prochain article, je vous parlerai de docker-compose, un outil qui
 permet de lancer des applications multi-conteneurs facilement.
