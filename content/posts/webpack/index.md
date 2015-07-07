@@ -25,17 +25,17 @@ Il y avait avec ces solutions une grande partie de rafistolage, où l’on se
 devait de faire très attention à la moindre réorganisation de code, sous peine
 de casser une partie du rendu.
 
-Prenons par exemple une image de fond déclaré en CSS. Qui vous préviendra qu'une
+Prenons par exemple une image de fond déclarée en CSS. Qui vous préviendra qu'une
 référence n'est pas bonne (à part peut-être vos logs de serveur web en
 recherchant les pages d'erreurs 404) ?
 
 Vous avez la responsabilité de gérer vos tâches et leurs résultats tout en vous
-assurant du bon fonctionnement car vous êtes la glu entre tous ces morceaux.
+assurant du bon fonctionnement car vous êtes la glue entre tout ces morceaux.
 
 # Webpack: faire un pack prêt pour le web
 
 Pas besoin de s'appeler Enstein pour comprendre les intentions de webpack en
-interprétant le nom: webpack.
+interprétant le nom : webpack.
 
 Nativement, webpack s'occupe uniquement de ressources JavaScript.
 Les *loaders* permettent de transformer tout et n'importe quoi en JavaScript
@@ -56,7 +56,7 @@ Il est assez flexible pour consommer tous types de fichiers et en faire ce que
 vous voulez.
 
 En plus de cela, il a été pensé afin de permettre la séparation de votre pack
-en plusieurs morceaux, selon vos besoins: vous pourrez ainsi ajuster la balance
+en plusieurs morceaux, selon vos besoins : vous pourrez ainsi ajuster la balance
 entre performances et lazy loading.
 
 Avec les solutions existantes, il n'est actuellement pas possible d'arriver
@@ -87,7 +87,7 @@ Pour résumer, Webpack permet:
 
 - d'avoir toutes les ressources statiques en temps que module,
 - d'intégrer des bibliothèques tierces en tant que module,
-- de séparer votre "build" en plusieurs morceaux, chargé à la demande,
+- de séparer votre `build` en plusieurs morceaux, chargé à la demande,
 - de garder un chargement initial rapide si besoin,
 - de personnaliser la plupart des étapes du processus,
 - de s'adapter aux gros projets.
@@ -96,7 +96,7 @@ Pour résumer, Webpack permet:
 assez fournie, mais pas vraiment facile à aborder lorsqu'on découvre le projet.
 
 ---
-Vous trouverez ci dessous les ressources que nous vous proposont pour découvrir
+Vous trouverez ci dessous les ressources que nous vous proposons pour découvrir
 ou approfondir webpack:
 
 - [Premier exemple détaillé de configuration et d'utilisation](/posts/webpack/premier-exemple)
