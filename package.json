@@ -46,7 +46,7 @@
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
     "marked": "^0.3.3",
-    "metalsmith": "segmentio/metalsmith#wider-node-support",
+    "metalsmith": "^2.0.1",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-filenames": "^1.0.0",
     "metalsmith-md": "^1.1.1",
