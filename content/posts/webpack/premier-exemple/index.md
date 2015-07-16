@@ -1,6 +1,6 @@
 ---
-date: "2015-07-07"
-title: Premier exemple d'utilisation de webpack
+date: "2015-07-21"
+title: Premier exemple d'utilisation de Webpack
 tags:
   - javascript
   - task-runner
@@ -12,7 +12,7 @@ header:
 ---
 
 Si vous êtes intéressé par
-[les problématiques que peut résoudre webpack](/posts/webpack),
+[les problématiques que peut résoudre Webpack](/posts/webpack),
 vous serez sûrement intéressé par cette petite configuration détaillée, qui vous
 permettra de faire vos premiers pas avec cet outil.
 
@@ -21,9 +21,18 @@ va permettre :
 
 - d'avoir une partie JavaScript pour votre application/site web,
 - de consommer vos CSS en tant que modules,
-- de consommer les assets de vos CSS en tant que module (images, fonts...).
+- de consommer les assets de vos CSS en tant que module (images, fonts...),
+- d'avoir un fichier JS, un fichier CSS et vos assets à côté.
 
-La configuration de webpack se fait via un fichier JavaScript.
+_Note: si vous êtes sur une application JavaScript, vous ne serez pas obligé
+d'utiliser la partie pour l'extraction de la CSS en fichier.
+En effet, Webpack consomme tout ce qui est possible en JavaScript.
+Les styles peuvent être introduit via des balises `<styles>` dynamiquement
+(via le `style-loader`).
+L'extraction prend du sens si vous avez un rendu serveur et que vous souhaitez
+avoir des styles au plus tôt, via une CSS dediée._
+
+La configuration de Webpack se fait via un fichier JavaScript.
 Par défaut, il doit être nommé `webpack.config.js`.
 Ne tournons pas autour du pot et voyons un fichier de configuration
 correspondant à ce que nous venons de décrire.
@@ -91,12 +100,12 @@ module.exports = {
         // à noter que l'on peut définir les loaders de cette façon
         // loader: "babel!eslint",
 
-        // à noter aussi, webpack va tenter de loader des modules ayant dans
+        // à noter aussi, Webpack va tenter de loader des modules ayant dans
         // leur nom "-loader". Si ce n'était pas le cas, ou que votre loader
         // ne comporte pas -loader, vous pouvez spécifier le nom entier :
         // loader: "babel-loader!eslint-loader",
       },
-      // à l'inverse de node et browserify, webpack ne gère pas les json
+      // à l'inverse de node et browserify, Webpack ne gère pas les json
       // nativement, il faut donc un loader pour que cela soit transparent
       {
         test: /\.json$/,
@@ -126,12 +135,23 @@ module.exports = {
           // en temps que modules: images, font etc)
           "css!cssnext"
         ),
+        // Si vous n'avez pas besoin d'avoir une CSS à part, vous pouvez
+        // simplement supprimer la partie "loader" ci-dessus et utiliser plutôt
+        // loaders: [
+        //  "style",
+        //  "css",
+        //  "cssnext",
+        // ],
+        // À noter que dans ce cas, il vous faudra supprimer le plugin
+        // ExtractTextPlugin dans la liste plus bas
       },
       // pour la suite, on va rester simple :
       // un require() en utilisant le file-loader retournera une string avec
       // le nom du fichier et (le plus important) copiera le fichier suivant
       // le paramètre "name" dans l'output.path que nous avons défini tout
       // au début de notre configuration.
+      // Notez qu'il dégagera la partie context du nom lors du retour en string
+      // et la remplacera par le l'output.path défini pour la copie.
       {
         // on chargera tous les formats d'images qui nous intéressent en tant
         // que fichiers.
@@ -204,7 +224,7 @@ module.exports = {
 _Ce fichier est à peu près ce que nous utilisons pour notre site à l'heure où
 est écrit cet article._
 
-Une fois webpack mis en place, vous aurez bien moins l'impression de bricoler
+Une fois Webpack mis en place, vous aurez bien moins l'impression de bricoler
 surtout quand il s'agit de consommer des assets de modules tiers (par exemple
 Font Awesome).
 
@@ -229,7 +249,23 @@ ligne de commande de 3 km.
 
 Vous devriez avoir ainsi tout le résultat dans `dist/`.
 
-Il y a tout un tas de façon d'utiliser webpack via une tripotée de plugins
+_Note: Si vous rencontrez des erreurs du type
+`Error: Cannot resolve module 'file'`, c'est tout simplement que vous n'avez pas
+installé les loaders nécessaire. En l'occurence il faudrait installer le
+`file-loader`._
+
+Pour avoir tous les loaders nécessaires comme dans l'exemple ci-dessus:
+
+```console
+$ npm i -D babel-loader eslint-loader babel-eslint
+$ npm i -D json-loader
+$ npm i -D style-loader css-loader cssnext-loader
+$ npm i -D file-loader
+```
+_Note à propos de babel et eslint: pour le moment, il vous faudra spécifier dans
+votre configuration eslint: `parser: babel-eslint`._
+
+Il y a tout un tas de façon d'utiliser Webpack via une tripotée de plugins
 (Gulp, Grunt, etc.) mais nous allons voir justement ici comment ne pas avoir
 recours à ces solutions, ce qui nous permettra ainsi de s'alléger.
 
@@ -239,15 +275,15 @@ Webpack CLI possède une option `--watch` qui va surveiller les sources et mettr
 à jour tout le nécessaire à la moindre modification.
 À la différence de browserify, cette fonctionnalité est dans le core et très
 bien intégré.
-De plus, le cache de webpack est plutôt bien foutu. La première compilation peut
+De plus, le cache de Webpack est plutôt bien foutu. La première compilation peut
 paraître un peu lente, mais la suite est vraiment au top.
 
-À côté de cette option, webpack va plus loin.
+À côté de cette option, Webpack va plus loin.
 
 En développement, nous avons besoin de servir toutes les ressources que notre
 processus va gérer.
 Plutôt que d'utiliser le système de fichier classique, abusé par Grunt et tout
-de même utilisé par Gulp & co, webpack fournit un `webpack-dev-server`.
+de même utilisé par Gulp & co, Webpack fournit un `webpack-dev-server`.
 
 Ce petit serveur local permettra de servir tout ce dont nous avons besoin
 (nos JS, CSS, images, etc.) sans avoir recours au système de fichiers.
@@ -266,7 +302,7 @@ Une fois que votre serveur est démarré, pourrez tester que votre point d'entr�
 marche avec `http://localhost:8080/index.js`.
 
 Il existe bien entendu une API, que nous utilisons à l'heure actuelle sur notre
-site, afin d'ajuster notre configuration webpack en développement, pour
+site, afin d'ajuster notre configuration Webpack en développement, pour
 d'ajouter des fonctionnalités comme le "hot loading".
 
 Vous avez à votre disposition
@@ -324,7 +360,7 @@ ou une appplication simple.
 
 Une question se pose alors :
 
-> À la vue de ce que peut gérer webpack et ses loaders, est-il pertinent de
+> À la vue de ce que peut gérer Webpack et ses loaders, est-il pertinent de
 continuer à utiliser des task runners pour nos assets et compagnie ?
 
 **La réponse est non.** 😱
@@ -345,7 +381,7 @@ Il existe encore beaucoup de leviers à toucher dans le cas
 d'applications full JavaScript afin d'améliorer bien des points.
 
 Vous trouverez facilement tout un tas de
-[webpack boilerplates](https://duckduckgo.com/?q=webpack+boilerplate)
+[boilerplates Webpack](https://duckduckgo.com/?q=webpack+boilerplate)
 avec des améliorations diverses et variées selon vos besoins.
 
 Soyez curieux !
