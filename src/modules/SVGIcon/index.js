@@ -127,12 +127,10 @@ export default class SVGIcon extends Component {
               ) +
               (
                 width || height
-                ? (
-                  ` style="` +
+                ? ` style="` +
                     (width ? `width: ${width};` : ``) +
                     (height ? `height: ${height};` : ``) +
                   `"`
-                )
                 : ""
               )
             ),
