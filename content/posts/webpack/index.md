@@ -43,8 +43,6 @@ Peut-être vos logs de serveur web ? En recherchant les erreurs HTTP 404...
 Vous avez la responsabilité de gérer vos tâches et leurs résultats tout en vous
 assurant du bon fonctionnement car vous êtes la glu entre tout ces morceaux.
 
-Webpack va permettre d'automatiser une grande partie de ces tâches et vous aidera à 
-
 # Qu'est-ce que Webpack ?
 
 Pas besoin de s'appeler Einstein pour comprendre les intentions de Webpack en
