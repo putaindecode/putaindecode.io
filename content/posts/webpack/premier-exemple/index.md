@@ -238,6 +238,7 @@ Il y a plusieurs façon d'utiliser maintenant notre configuration, la plus simpl
 étant surement via CLI :
 
 ```console
+$ npm install webpack
 $ webpack
 ```
 
@@ -278,7 +279,13 @@ bien intégré.
 De plus, le cache de Webpack est plutôt bien foutu. La première compilation peut
 paraître un peu lente, mais la suite est vraiment au top.
 
-À côté de cette option, Webpack va plus loin.
+```console
+$ webpack --watch -d
+```
+
+L'option `-d` permet d'activer les source maps.
+
+À côté de ces options, Webpack va plus loin.
 
 En développement, nous avons besoin de servir toutes les ressources que notre
 processus va gérer.
@@ -366,7 +373,8 @@ continuer à utiliser des task runners pour nos assets et compagnie ?
 **La réponse est non.** 😱
 
 Vous verrez assez rapidement que vous devriez pourvoir tout jeter à la poubelle.
-Sans trop de regrets.
+Sans trop de regrets, puisque Webpack va vous permettre de consommer tout ce que
+nous avions l'habitude de bricoler / copier / ajuster...
 
 Nous l'avons fait pour notre site, pourquoi pas vous ?
 
