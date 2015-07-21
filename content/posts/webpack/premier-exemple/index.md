@@ -8,6 +8,7 @@ authors:
   - MoOx
 header:
   image: ../index.jpg
+  credit: http://webpack.github.io/
   linearGradient: 160deg, rgb(204, 51, 51), rgba(204, 51, 51, .6)
 ---
 

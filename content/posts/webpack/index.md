@@ -13,11 +13,15 @@ header:
 
 # Pourquoi Webpack ?
 
-Webpack a pour objectif de vous faciliter la vie, notamment en vous aidant à organiser [votre application JS en modules](/posts/js/etat-lieux-js-modulaire-front/). Le projet est déjà très populaire, notamment dans la communauté React, ce qui parait logique vu qu'il s'agit de développer des composants.
+Webpack a pour objectif de vous faciliter la vie, notamment en vous aidant à
+organiser [votre application JS en modules](/posts/js/etat-lieux-js-modulaire-front/).
+Le projet est déjà très populaire, notamment dans la communauté React, ce qui
+parait logique vu qu'il s'agit de développer des composants.
 
 Webpack apporte à ce niveau des fonctionnalités intéressantes :
 
-- disposer de toutes les ressources statiques (CSS, images, fontes) en tant que module,
+- disposer de toutes les ressources statiques (CSS, images, fontes) en tant que
+  module,
 - intégrer et de consommer des bibliothèques tierces très simplement en tant
   que module,
 - séparer votre `build` en plusieurs morceaux, chargés à la demande,
@@ -26,13 +30,17 @@ Webpack apporte à ce niveau des fonctionnalités intéressantes :
 - adapté pour les gros projets.
 
 Avant Webpack, nous avions beau avoir des super task-runners comme
-[Grunt](/posts/js/premiers-pas-avec-grunt) ou [Gulp](/posts/js/introduction-gulp),
+[Grunt](/posts/js/premiers-pas-avec-grunt)
+ou
+[Gulp](/posts/js/introduction-gulp),
 il faut avouer qu'on bricolait quand même pas mal.
 
-Et vous avez surement mieux à faire que de devoir ajuster des configurations ou des définitions de tâches pour ajuster les copies d'images ou de fontes, ou encore ajuster des URL générées.
+Et vous avez sûrement mieux à faire que de devoir ajuster des configurations ou
+des définitions de tâches pour ajuster les copies d'images ou de fontes, ou
+encore ajuster des URL générées.
 Il y avait avec ces solutions une grande partie de rafistolage, où l’on se
 devait de faire très attention à la moindre réorganisation de code, sous peine
-de casser une partie du rendu. 
+de casser une partie du rendu.
 
 Prenons par exemple une image de fond déclarée en CSS via un
 `background: url(...)`.
@@ -92,7 +100,9 @@ type de fichier pour peu que vous preniez le temps d'écrire un *loader*
 manipulez couramment).
 
 En plus de cela, il a été pensé afin de permettre la séparation de votre pack
-(votre gros fichier JavaScript compilé) en plusieurs morceaux, selon vos besoins : vous pourrez ainsi ajuster la balance entre performance et lazy loading.
+(votre gros fichier JavaScript compilé) en plusieurs morceaux, selon vos
+besoins : vous pourrez ainsi ajuster la balance entre performance et lazy
+loading.
 
 Avec les solutions existantes, il n'est actuellement pas possible d'arriver
 facilement à ce que propose Webpack, pour ne pas dire difficilement.
@@ -121,13 +131,17 @@ autre chose que Webpack.
 
 # Comment intégrer Webpack dans votre workflow ?
 
-Dans un premier temps vous pourrez facilement intégrer Webpack en replacement de [browserify](/posts/js/browserify-all-the-things/) ou d'une éventuelle concaténation via des plugins Gulp, Grunt, etc. 
+Dans un premier temps vous pourrez facilement intégrer Webpack en replacement de
+[browserify](/posts/js/browserify-all-the-things/) ou d'une éventuelle
+concaténation via des plugins Gulp, Grunt, etc.
 
-Dans un second temps, vous pourrez très certainement remplacer une partie de vos autres tâches pour ajuster/copier/déplacer vos assets (CSS, images...) et
+Dans un second temps, vous pourrez très certainement remplacer une partie de vos
+autres tâches pour ajuster/copier/déplacer vos assets (CSS, images...) et
 ainsi réduire le code dédié à votre workflow. Il se pourrait alors que votre
 utilisation d'un task-runner soit maintenant si réduite que vous pourriez vous
-en passez en utilisant simplement [des scripts
- npm](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
+en passez en utilisant simplement
+[des scripts npm](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
+
 Si jamais vous êtes limité, [vous pourrez bien entendu créer votre propre
  commande](/posts/shell/utilitaires-ligne-commande/), qui sera réutilisable dans
 n'importe quel contexte.
@@ -136,7 +150,8 @@ n'importe quel contexte.
 
 Quelques ressources pour vous y mettre :
 
-- Un premier [exemple détaillé de configuration et d'utilisation](/posts/webpack/premier-exemple) basé sur notre retour d'expérience
+- Un premier [exemple détaillé de configuration et d'utilisation](/posts/webpack/premier-exemple)
+basé sur notre retour d'expérience.
 
 En anglais :
 
