@@ -20,6 +20,14 @@
       "location": "Paris",
       "hireable": false
     },
+    "DirtyF": {
+      "login": "DirtyF",
+      "name": "DirtyF",
+      "avatar_url": "https://avatars.githubusercontent.com/u/103008?v=3",
+      "url": "http://frank.taillandier.me",
+      "location": "Toulouse, France",
+      "hireable": true
+    },
     "Dridi": {
       "login": "Dridi",
       "name": "Dridi Boukelmoune",
@@ -619,6 +627,32 @@
       "location": "Bordeaux, France",
       "hireable": false
     },
+    "revolunet": {
+      "login": "revolunet",
+      "name": "Julien Bouquillon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/124937?v=3",
+      "url": "http://revolunet.com",
+      "location": "Paris, France",
+      "hireable": false,
+      "crew": false,
+      "twitter": "revolunet",
+      "fr": {
+        "bio": {
+          "short": "Développeur full-stack polyglotte, entrepreneur, activiste open source, fan de solutions simples et efficaces. Aime la musique, surtout avec des grosses basses, et les gens ouverts.",
+          "long": [
+            "Développeur full-stack polyglotte, entrepreneur, activiste open source, fan de solutions simples et efficaces. Aime la musique, surtout avec des grosses basses, et les gens ouverts."
+          ]
+        }
+      },
+      "en": {
+        "bio": {
+          "short": "Full-stack developer, entrepreneur, open-source activist, promotes simple and effective solutions. Loves electronic music and open-minded people.",
+          "long": [
+            "Full-stack developer, entrepreneur, open-source activist, promotes simple and effective solutions. Loves electronic music and open-minded people."
+          ]
+        }
+      }
+    },
     "rhannequin": {
       "login": "rhannequin",
       "name": "Rémy Hannequin",
@@ -739,9 +773,11 @@
     "engcolson@gmail.com": "enguerran",
     "erwann.mest+github@gmail.com": "kud",
     "erwann.mest@gmail.com": "kud",
+    "frank.taillandier@gmail.com": "DirtyF",
     "guillaume.demesy@gmail.com": "magsout",
     "hi@mattischneider.fr": "MattiSG",
     "jeremyescolano@gmail.com": "gostbuster",
+    "julien@bouquillon.com": "revolunet",
     "justinmarsan@gmail.com": "justinmarsan",
     "keuwah@gmail.com": "kewah",
     "kikikatchou@gmail.com": "Rorto",
