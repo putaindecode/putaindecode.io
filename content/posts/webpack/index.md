@@ -15,14 +15,14 @@ header:
 
 Webpack a pour objectif de vous faciliter la vie, notamment en vous aidant à
 organiser [votre application JS en modules](/posts/js/etat-lieux-js-modulaire-front/).
-Le projet est déjà très populaire, notamment dans la communauté React, ce qui
+Le projet est déjà très populaire, particulièrement dans la communauté React, ce qui
 parait logique vu qu'il s'agit de développer des composants.
 
 Webpack apporte à ce niveau des fonctionnalités intéressantes :
 
 - disposer de toutes les ressources statiques (CSS, images, fontes) en tant que
   module,
-- intégrer et de consommer des bibliothèques tierces très simplement en tant
+- intégrer et consommer des bibliothèques tierces très simplement en tant
   que module,
 - séparer votre `build` en plusieurs morceaux, chargés à la demande,
 - garder un chargement initial très rapide si besoin,
@@ -35,7 +35,7 @@ ou
 [Gulp](/posts/js/introduction-gulp),
 il faut avouer qu'on bricolait quand même pas mal.
 
-Et vous avez sûrement mieux à faire que de devoir ajuster des configurations ou
+Et vous avez sûrement mieux à faire que de devoir modifier des configurations ou
 des définitions de tâches pour ajuster les copies d'images ou de fontes, ou
 encore ajuster des URL générées.
 Il y avait avec ces solutions une grande partie de rafistolage, où l’on se
@@ -61,8 +61,8 @@ Webpack propose un système de *loader* qui permet de transformer tout et
 n'importe quoi en JavaScript (mais pas que).
 Ainsi, tout est consommable en tant que module.
 
-Webpack prend à charge la fonction `require()` (connu et utilisé dans node.js et
-browserify) et permet de définir des nouveaux comportements).
+Webpack prend à charge la fonction `require()` (connue et utilisée dans node.js et
+browserify) et permet de définir des nouveaux comportements.
 
 ```js
 var myModule = require("./my-module.js")
@@ -118,8 +118,8 @@ dans un post
 Il est clair que cela n'est pas aussi simple qu'avec Webpack qui est beaucoup
 plus flexible de par sa conception et ses objectifs initiaux.
 
-Par exemple, browserify ne va pouvoir appliquer d'éventuelles transformations
-qu'au code local et donc pas dans `node_modules/*`.
+Par exemple, browserify pourra appliquer d'éventuelles transformations
+uniquement au code local et donc pas dans `node_modules/*`.
 Cela peut être problématique et nous conduit forcément à finir par du
 bricolage si on veut consommer des assets de modules de manière transparente.
 
@@ -161,4 +161,4 @@ En anglais :
 
 [Webpack possède une documentation](http://webpack.github.io/docs)
 assez fournie, mais pas vraiment facile à aborder lorsqu'on découvre le projet.
-Aussi n'hésitez pas à nous poser vos questions en commentaires.
+Aussi, n'hésitez pas à nous poser vos questions en commentaires.
