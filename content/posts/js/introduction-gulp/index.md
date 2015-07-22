@@ -107,7 +107,7 @@ var options = require("minimist")(process.argv.slice(2))
 
 gulp.task("styles", function() {
   gulp.src("./src/css/*.css")
-    .pipe(options.production ? plumber() : gutil.noop())
+    .pipe(!options.production ? plumber() : gutil.noop())
     .pipe(cssnext({sourcemap: !options.production}))
     .pipe(options.production ? csso() : gutil.noop())
     .pipe(gulp.dest("./dist/css/"))
@@ -161,7 +161,7 @@ gulp.task("styles", function() {
 
     // On utilise plumber que si on build en dev, sinon faut que ça pête, qu'on
     // soit prévenu lors d'un build pour la prod
-    .pipe(options.production ? plumber() : gutil.noop())
+    .pipe(!options.production ? plumber() : gutil.noop())
 
     // Et là on pipe nos plugins
     // toujours en jouant avec les options si besoin
