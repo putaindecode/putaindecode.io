@@ -49,7 +49,7 @@ et que la référence n'est donc plus bonne ?
 Peut-être vos logs de serveur web ? En recherchant les erreurs HTTP 404...
 
 Vous avez la responsabilité de gérer vos tâches et leurs résultats tout en vous
-assurant du bon fonctionnement car vous êtes la glu entre tout ces morceaux.
+assurant du bon fonctionnement car vous êtes la glu entre tous ces morceaux.
 
 # Qu'est-ce que Webpack ?
 
@@ -96,7 +96,7 @@ Webpack va donc pouvoir s'occuper aussi bien de vos modules JavaScript
 mais aussi de [vos modules CSS](https://github.com/css-modules/css-modules),
 de vos fichiers SVG, gif, png, etc. ainsi que potentiellement n'importe quel
 type de fichier pour peu que vous preniez le temps d'écrire un *loader*
-(rassurez vous, il existe déjà un loader pour tous les fichiers que vous
+(rassurez-vous, il existe déjà un loader pour tous les fichiers que vous
 manipulez couramment).
 
 En plus de cela, il a été pensé afin de permettre la séparation de votre pack
@@ -104,12 +104,12 @@ En plus de cela, il a été pensé afin de permettre la séparation de votre pac
 besoins : vous pourrez ainsi ajuster la balance entre performance et lazy
 loading.
 
-Avec les solutions existantes, il n'est actuellement pas possible d'arriver
-facilement à ce que propose Webpack, pour ne pas dire difficilement.
+Avec les solutions existantes, il est actuellement très difficile d'arriver
+facilement à ce que propose Webpack, pour ne pas dire impossible.
 
 Il est possible d'avoir l'équivalent avec
 [browserify](/posts/js/browserify-all-the-things) comme l'a indiqué son auteur
-dans un post
+dans un article
 [browserify for Webpack users](https://gist.github.com/substack/68f8d502be42d5cd4942)
 (qui est une réponse à la ressource
 [Webpack for browserify users](https://github.com/webpack/docs/wiki/webpack-for-browserify-users)
@@ -131,7 +131,7 @@ autre chose que Webpack.
 
 # Comment intégrer Webpack dans votre workflow ?
 
-Dans un premier temps vous pourrez facilement intégrer Webpack en replacement de
+Dans un premier temps vous pourrez facilement intégrer Webpack en remplacement de
 [browserify](/posts/js/browserify-all-the-things/) ou d'une éventuelle
 concaténation via des plugins Gulp, Grunt, etc.
 
