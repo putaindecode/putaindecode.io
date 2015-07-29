@@ -71,7 +71,7 @@ Prenons notre exemple de `NavBar`, voici comment on pourrait commencer ce compos
 
 Notre classe principale étant définie en `rem`, il devient alors très facile de calculer l'ensemble de ces `-item` en `em`.
 On diminue ainsi de nouveau les problèmes de cascade. De plus, on peut très facilement augmenter la taille générale de notre composant, en augmentant la taille de son `font-size` dans sa classe principale.
-On atteint alors un double d'objectif : en plus d'être accessible en supprimant les pixels, on rend notre composant réutilisable sur d'autres projets en s'adaptant très facilement à son contexte.
+On atteint alors un double objectif : en plus d'être accessible en supprimant les pixels, on rend notre composant réutilisable sur d'autres projets en s'adaptant très facilement à son contexte.
 
 
 ## Namespace
