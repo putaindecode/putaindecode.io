@@ -204,20 +204,20 @@ Si vous voulez juste une carte sous forme d'image, générez le code HTML ici :
 
 ### Comment ajouter un système de commentaires ?
 
-Créez un compte sur [disqus.com](disqus.com) et ajoutez le code JavaScript sur
+Créez un compte sur [disqus.com](http://disqus.com) et ajoutez le code JavaScript sur
 votre page.
 
 ### Comment ajouter un formulaire de contact ?
 
-Créez un compte sur [typeform.com](typeform.com), créez votre formulaire et
+Créez un compte sur [typeform.com](http://typeform.com), créez votre formulaire et
 ajoutez le code JavaScript "embed" sur votre page.
 
-Vous pouvez aussi créer un compte sur [mailchimp.com](mailchimp.com), créer un
+Vous pouvez aussi créer un compte sur [mailchimp.com](http://mailchimp.com), créer un
 formulaire et l'ajouter sur votre page grâce au code "embed".
 
 ### Comment recevoir des paiements ?
 
-Créez un compte sur [stripe.com](stripe.com) et ajoutez le code JavaScript sur
+Créez un compte sur [stripe.com](http://stripe.com) et ajoutez le code JavaScript sur
 votre page.
 
 ### Qu'est-ce que gh-pages ?
