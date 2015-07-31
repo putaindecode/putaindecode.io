@@ -1,0 +1,20 @@
+{
+  "crew" : false,
+  "twitter": "revolunet",
+  "fr": {
+    "bio": {
+      "short": "Développeur full-stack polyglotte, entrepreneur, activiste open source, fan de solutions simples et efficaces. Aime la musique, surtout avec des grosses basses, et les gens ouverts.",
+      "long": [
+        "Développeur full-stack polyglotte, entrepreneur, activiste open source, fan de solutions simples et efficaces. Aime la musique, surtout avec des grosses basses, et les gens ouverts."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Full-stack developer, entrepreneur, open-source activist, promotes simple and effective solutions. Loves electronic music and open-minded people.",
+      "long": [
+        "Full-stack developer, entrepreneur, open-source activist, promotes simple and effective solutions. Loves electronic music and open-minded people."
+      ]
+    }
+  }
+}
