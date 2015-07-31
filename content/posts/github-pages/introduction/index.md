@@ -11,8 +11,6 @@ header:
   linearGradient: 160deg, rgb(26, 37, 85), rgba(51, 98, 204, 0.6)
 ---
 
-# Créer et héberger un site web gratuitement avec GitHub Pages
-
 Pour une fois, on ne va pas trop parler de code dans cet article, mais
 simplement de comment créer en quelques minutes un site web basique et
 l'héberger gratuitement sur la plateforme [github.com](http://github.com).
@@ -163,7 +161,10 @@ Téléchargez les sources et placez les fichiers dans votre projet.
 et [le livre d'Eric Elliott](https://ericelliottjs.com/product/programming-javascript-applications-paper-ebook-bundle/)
 - Lisez tous les articles de [Putain de code !](http://putaindecode.fr/)
 
+---
+
 ## FAQ
+
 ### Comment installer un nom de domaine ?
 
  - Achetez un nom de domaine sur [gandi.net](http://gandi.net) ou 
@@ -233,7 +234,7 @@ vos visiteurs. Créez du lien avec des sites et communautés sur le même thème
 Naturellement, d'autres sites parleront alors du vôtre, vous enverront des
 visiteurs et vous feront monter progressivement dans les résultats au fil des mois.
 
-
+---
 
 Voilà pour ce premier pas vers le développement web !
 
