@@ -38,9 +38,9 @@ de sensible/secret.
 ## Qu'est-ce qu'un site web statique ?
 
 Pour la plupart des sites, les solutions de blog (CMS de type WordPress et
-autres) sont largement surdimensionnées. Elles requièrent un hébergement 
-particulier (PHP ou autre), des connaissances techniques pour l'installation, 
-et surtout une maintenance à moyen/long-terme à cause des mises à jour 
+autres) sont largement surdimensionnées. Elles requièrent un hébergement
+particulier (PHP ou autre), des connaissances techniques pour l'installation,
+et surtout une maintenance à moyen/long-terme à cause des mises à jour
 de sécurité surprises et autres correctifs de bugs à appliquer.
 
 Or, il est possible de créer des sites webs modernes et performants qui n'ont
@@ -145,8 +145,8 @@ Si vous voulez des templates différents de ceux proposés par GitHub,
 vous devez simplement remplacer les fichiers présents dans le dossier
 du projet.
 
-Choisissez par exemple un des templates gratuits de haute qualité 
-disponibles sur [html5up.net](http://html5up.net) ou sur 
+Choisissez par exemple un des templates gratuits de haute qualité
+disponibles sur [html5up.net](http://html5up.net) ou sur
 [pixelarity.com](http://pixelarity.com) (payant).
 
 Téléchargez les sources et placez les fichiers dans votre projet.
@@ -167,15 +167,15 @@ et [le livre d'Eric Elliott](https://ericelliottjs.com/product/programming-javas
 
 ### Comment installer un nom de domaine ?
 
- - Achetez un nom de domaine sur [gandi.net](http://gandi.net) ou 
-un autre fournisseur sérieux (surtout pas chez pas 1&1, lws ou 
+ - Achetez un nom de domaine sur [gandi.net](http://gandi.net) ou
+un autre fournisseur sérieux (surtout pas chez pas 1&1, lws ou
 autre discounter douteux)
  - Éditez la "Zone DNS" du domaine et suivez les
  [instructions GitHub pour DNS](https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/)
  - ajoutez un fichier `CNAME` dans votre projet, contenant la ligne
 `www.myproject.com`.
 
-Les changements DNS peuvent mettre jusqu'à 24h pour se propager 
+Les changements DNS peuvent mettre jusqu'à 24h pour se propager
 donc essayez www.myproject.com un peu plus tard.
 
 Ces pages d'aide sur GitHub pourront vous être utiles : [Custom domain](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/), [DNS setup](https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/).
@@ -183,23 +183,22 @@ Ces pages d'aide sur GitHub pourront vous être utiles : [Custom domain](https:/
 ### Comment ajouter une page ?
 
 Pour créer simplement des pages supplémentaires, ajoutez un
-nouveau fichier HTML, par exemple `produits.html`, dans le projet et 
+nouveau fichier HTML, par exemple `produits.html`, dans le projet et
 faites un lien vers cette page depuis l'index, par exemple
 `<a href="produits.html">Consulter les produits</a>`.
 
 ### Comment analyser le trafic de mon site ?
 
-Si vous voulez tracker vos visiteurs, savoir d'où ils viennent, ce qu'ils 
+Si vous voulez tracker vos visiteurs, savoir d'où ils viennent, ce qu'ils
 font et où ils vont, créez un compte sur
-[Google Analytics](http://www.google.com/analytics) et ajoutez le code de 
+[Google Analytics](http://www.google.com/analytics) et ajoutez le code de
 tracking sur vos pages HTML.
 
 ### Comment ajouter une carte ?
 
-Si vous avez besoin d'une carte interactive, suivez les instructions ici :
-[Google Maps instructions](https://developers.google.com/maps/tutorials/fundamentals/adding-a-google-map).
+Suivez les [instructions Leaflet](http://leafletjs.com/examples/quick-start.html), la cartographie open-source et gratuite qui bénéficie d'une communauté active.
 
-Si vous voulez juste une carte sous forme d'image, générez le code HTML ici :
+Si vous avez juste besoin d'une carte sous forme d'image fixe, générez le code HTML ici :
 [staticmapmaker.com](http://staticmapmaker.com) et copiez le code dans votre page.
 
 
