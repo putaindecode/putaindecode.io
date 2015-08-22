@@ -125,7 +125,7 @@ _Markdown_ en _HTML_ :
 
 ``` make
 article.html: article.md
-	marked article.html > article.md
+	marked article.md > article.html
 ```
 
 Cette règle spécifie simplement que pour construire le fichier `article.html`
