@@ -556,6 +556,14 @@
         }
       }
     },
+    "martin-damien": {
+      "login": "martin-damien",
+      "name": "Martin Damien",
+      "avatar_url": "https://avatars.githubusercontent.com/u/295478?v=3",
+      "url": "http://martin-damien.github.io/",
+      "location": "Reims, France",
+      "hireable": null
+    },
     "meriadec": {
       "login": "meriadec",
       "name": "Meriadec Pillet",
@@ -638,17 +646,17 @@
       "twitter": "revolunet",
       "fr": {
         "bio": {
-          "short": "Développeur full-stack polyglotte, entrepreneur, activiste open source, fan de solutions simples et efficaces. Aime la musique, surtout avec des grosses basses, et les gens ouverts.",
+          "short": "Développeur full-stack polyglotte, entrepreneur, activiste open source, fan de solutions simples et efficaces. Aime la musique, surtout avec des grosses basses, et les esprits libres.",
           "long": [
-            "Développeur full-stack polyglotte, entrepreneur, activiste open source, fan de solutions simples et efficaces. Aime la musique, surtout avec des grosses basses, et les gens ouverts."
+            "Développeur full-stack polyglotte, entrepreneur, activiste open source, fan de solutions simples et efficaces. Aime la musique, surtout avec des grosses basses, et les esprits libres."
           ]
         }
       },
       "en": {
         "bio": {
-          "short": "Full-stack developer, entrepreneur, open-source activist, promotes simple and effective solutions. Loves electronic music and open-minded people.",
+          "short": "Full-stack developer, entrepreneur, open-source activist, promotes simple and effective solutions. Loves electronic music and free spirits.",
           "long": [
-            "Full-stack developer, entrepreneur, open-source activist, promotes simple and effective solutions. Loves electronic music and open-minded people."
+            "Full-stack developer, entrepreneur, open-source activist, promotes simple and effective solutions. Loves electronic music and free spirits."
           ]
         }
       }
@@ -699,6 +707,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/5133452?v=3",
       "location": "France",
       "hireable": false
+    },
+    "ssimono": {
+      "login": "ssimono",
+      "name": "Simon Alfassa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2179169?v=3",
+      "location": "Lille, France",
+      "hireable": null
     },
     "syvuilliot": {
       "login": "syvuilliot",
@@ -766,6 +781,7 @@
     "ccoloma@jolicode.com": "clairecoloma",
     "chef@bitdeli.com": "bitdeli-chef",
     "cyril.moreau0804@gmail.com": "Nickdouille",
+    "damvgn@gmail.com": "martin-damien",
     "dguyon@gmail.com": "dguyon",
     "dizwix@gmail.com": "skinnyfoetusboy",
     "don.dapo+github@gmail.com": "DaPo",
@@ -805,6 +821,7 @@
     "sebastien.balayn@gmail.com": "Nyalab",
     "sebastien.balayn@ucp.fr": "Nyalab",
     "shahor@shahor.fr": "Shahor",
+    "simon@sa-web.fr": "ssimono",
     "sylvain.vuilliot@kaes.fr": "syvuilliot",
     "taing.vincent@gmail.com": "vnctaing",
     "tmaindron@gmail.com": "OwlyCode",
