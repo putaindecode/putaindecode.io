@@ -166,7 +166,7 @@ marked.setOptions({
     code = code.trim()
 
     // language is recognized by highlight.js
-    if (hljs.getLanguage(language)) {
+    if (hljs.getLanguage(String(language))) {
       return hljs.highlight(language, code).value
     }
 
