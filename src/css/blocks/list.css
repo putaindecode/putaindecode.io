@@ -108,6 +108,7 @@
   font-size: var(--r-small-fontSize);
   line-height: 1.4;
   border-radius: 6px;
+  vertical-align: middle;
 }
 
 .putainde-List-author {
