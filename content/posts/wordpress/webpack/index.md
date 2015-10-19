@@ -1,6 +1,6 @@
 ---
 date: "2015-10-20"
-title: Gérer son thème Wordpress avec Webpack
+title: Gérer son thème WordPress avec Webpack
 tags:
   - wordpress
   - webpack
@@ -13,36 +13,38 @@ header:
   linearGradient: 160deg, rgb(204, 51, 51), rgba(204, 51, 51, .6)
 ---
 
-# Pourquoi Webpack pour gérer son thème Wordpress?
+# Pourquoi Webpack pour gérer son thème WordPress ?
 
 La réponse est la même qu'à la simple question
-["pourquoi Webpack?"](/posts/webpack/).
-Ce qui pourra nous intéresser principalement sera les rapports d'erreurs liés à
-la gestions des assets (images, fonts etc).
+["pourquoi Webpack ?"](/posts/webpack/).
+L'intérêt principal est d'obtenir des rapports d'erreurs liés à
+la gestion des assets (images, fonts, etc).
 
 Qu'y a-t-il de si particulier à savoir pour utiliser Webpack pour gérer un thème
-Wordpress ? Pas grand chose, mais voici de quoi vous faire gagner (peut-être)
+WordPress ? Pas grand chose, mais voici de quoi vous faire gagner (peut-être)
 un peu de temps.
 
-Il y a bien entendu certainement plusieurs façons de gérer son thème Wordpress
-avec Webpack. En voici une que je vous propose qui va se limiter à des choses
+Il y a certainement plusieurs façons de gérer son thème WordPress
+avec Webpack. Celle que je vous propose va se limiter à des choses
 simples en concentrant le code dans le répertoire du thème pour plus de
 modularité.
 
+Pour commencer, deux choses importantes à savoir :
+
 - Ne mettez pas de CSS dans le fameux `style.css` à la racine de votre thème,
-  laissez juste le cartouche en commentaire (sans lequel Wordpress ne détectera
-  pas votre thème...);
-- créez un dossier `src` dans votre thème, où nous mettrons nos "sources";
-- la partie du thème "compilé" sera dans un dossier `dist` (ce dossier n'aura
-  donc pas besoin d'être versionné).
+laissez juste le cartouche en commentaire (sans lequel WordPress ne détectera
+pas votre thème...) ;
+- créez un dossier `src` dans votre thème, où nous
+mettrons nos "sources", la partie du thème "compilé" sera dans un dossier
+`dist` et n'aura donc pas besoin d'être versionnée.
 
 La seule petite chose à laquelle il faut faire attention finalement, c'est de
 bien configurer le `publicPath` de Webpack afin que les fichiers qu'il génère
-soient bien dans le bon chemin, et que les ressources liées (dans les fichiers
-CSS par exemple) comportent les bon chemins relatifs (à la racine du site).
+soient bien dans le bon chemin, et que les ressources liées (dans les fichiers CSS
+par exemple) comportent les bons chemins relatifs (à la racine du site).
 
-Avec l'arboresence suivante, nous n'aurons pas de difficulté à faire une
-configuration portable:
+Avec l'arborescence suivante, nous n'aurons pas de difficulté à faire une
+configuration portable :
 
 ```
 - htdocs
@@ -61,8 +63,8 @@ configuration portable:
 - package.json
 ```
 
-Nous pouvons rajouter une sorte de raccourci via le `package.json`
-supplémentaire à la racine de notre projet :
+En plus de cela, nous pouvons ajouter une sorte de raccourci via un
+`package.json` supplémentaire à la racine de notre projet :
 
 ```json
 {
@@ -75,8 +77,7 @@ supplémentaire à la racine de notre projet :
 ```
 
 Ce petit raccourci nous évitera de devoir nous taper en CLI tout le chemin du
-thème.
-Nous pourrions même pourquoi pas rajouter un
+thème et nous pourrions même, pourquoi pas, rajouter un
 `"prestart": "open http://yourlocalhost.tld"` afin d'ouvrir automatiquement
 le projet dans le navigateur lorsque nous démarrerons notre développement via
 `$ npm start`.
@@ -115,18 +116,19 @@ Voyons rapidement donc le `package.json` du thème ainsi que la config Webpack.
 }
 ```
 
-Quelques petites notes sur ce contenu:
+Quelques petites notes sur ce contenu :
 
 - `private` sert à éviter la publication de votre "paquet" sur npm, ainsi qu'à
-devoir remplir certains champs tels que `name` et compagnie.
+devoir remplir certains champs tels que `name` et compagnie ;
 - nous mettrons dans `devDependencies` les dépendances pour le développement et
-dans `dependencies` les dépendances qui seront dans le build final. Ici j'ai
+dans `dependencies` les dépendances qui seront dans le build final. Ici, j'ai
 simplement mis `normalize.css` pour exemple, mais vous pourriez très bien avoir
-aussi jQuery (:trollface:) ou React.
+aussi jQuery (:trollface:) ou React ;
 - les scripts utilisent `webpack.config.babel.js` afin de pouvoir définir la
 configuration en es6/7 via _babel_.
 
-Voyons maintenant la config `webpack.config.babel.js`
+Voyons maintenant la config `webpack.config.babel.js` :
+
 
 ```js
 // Note: le code ci-dessous est mal rendu
@@ -215,23 +217,23 @@ export default {
 }
 ```
 
-_Bien entendu, libre à vous d'adapter les loaders webpack à utiliser, ainsi que
+_Bien entendu, libre à vous d'adapter les loaders Webpack à utiliser, ainsi que
 la configuration PostCSS par exemple._ Faites un tour sur notre article de
 [premier exemple de configuration Webpack](/posts/webpack/premier-exemple/) afin
 d'y voir plus clair.
 
-Il nous reste maintenant bien entendu à ajouter dans notre thème Wordpress les
-références à nos points d'entrées CSS et Javascript que sont `index.css` et
+Il nous reste maintenant à ajouter dans notre thème WordPress les
+références à nos points d'entrées CSS et JavaScript que sont `index.css` et
 `index.js`.
 
-Pour faire simplement, dans votre fichier `functions.php` (oui, le fichier qui a
-un nom qui n'indique pas du tout ce pour quoi tout le monde se sert du fichier,
-c'est à dire la configuration du thème au runtime...), on va ajouter une petite
-constante qui servira à adapter votre thème en fonction de environnement :
+Pour faire simplement, dans votre fichier `functions.php` (oui, le fichier qui a un nom
+qui n'indique pas du tout ce pour quoi tout le monde se sert du fichier, c'est à
+dire la configuration du thème au runtime...), on va ajouter une petite constante
+qui servira à adapter votre thème en fonction de l'environnement :
 
 ```php
 // ENV est à définir dans votre configuration Apache par exemple.
-// Si vous ne voulez pas y toucher, vous pouvez pluôt définir d'une autre façon
+// Si vous ne voulez pas y toucher, vous pouvez plutôt définir d'une autre façon
 // en testant le SERVER_NAME par exemple
 define('ENV', getenv('ENV'));
 
@@ -242,8 +244,8 @@ define('ENV', getenv('ENV'));
 `index.css` et `index.js` via les méthodes `wp_(de)register_`, mais nous
 resterons simples pour l'exemple.*
 
-Vu qu'on utilise le `style-loader` de webpack en dévelopement, on ne va ajouter
-notre feuille de style qu'en production (dans le `<head>`)
+Vu qu'on utilise le `style-loader` de Webpack en développement, on ne va ajouter
+notre feuille de style qu'en production (dans le `<head>`).
 
 ```php
 <?php if (ENV != "development"): ?>
@@ -253,7 +255,7 @@ notre feuille de style qu'en production (dans le `<head>`)
 
 Pensez aussi à supprimer la référence à `style.css` dans `header.php`.
 
-Dans la même idée mais en plus simple, on va ajouter dans notre `footer.php`
+Dans la même idée mais en plus simple, on va ajouter dans notre `footer.php`.
 
 ```php
 <script src="<?php echo get_bloginfo('template_directory') ?>/dist/index.js"></script>
@@ -267,7 +269,7 @@ thème parent. Il vous faudra donc ajuster le code 😑.*
 
 ---
 
-Pour le test vous pouvez mettre dans les css et js :
+Pour le test vous pouvez mettre dans les CSS et JS :
 
 `index.css`
 
@@ -278,8 +280,8 @@ body {
 }
 ```
 
-Notez ici que par la façon dont nous avons défini webpack ci-dessus, vous
-devriez placer et référencer vos assets (images & co), depuis `src`. Exemple:
+Notez ici que par la façon dont nous avons défini Webpack ci-dessus, vous
+devriez placer et référencer vos assets (images & co), depuis `src`. Exemple :
 
 ```css
 html {
@@ -296,5 +298,5 @@ console.log("Hey !")
 ```
 
 Libre à vous maintenant d'ajouter vos dépendances favorites et de remplir vos
-`index.css` et `index.js` avec un gestion d'erreurs autre que des requêtes HTTP
-en 404 !
+`index.css` et `index.js` avec une gestion d'erreurs autre que des requêtes HTTP 
+en 404 !
