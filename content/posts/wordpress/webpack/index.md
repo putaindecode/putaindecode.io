@@ -29,7 +29,7 @@ avec Webpack. En voici une que je vous propose qui va se limiter à des choses
 simples en concentrant le code dans le répertoire du thème pour plus de
 modularité.
 
-- Ne ne mettez pas de CSS dans le fameux `style.css` à la racine de votre thème,
+- Ne mettez pas de CSS dans le fameux `style.css` à la racine de votre thème,
   laissez juste le cartouche en commentaire (sans lequel Wordpress ne détectera
   pas votre thème...);
 - créez un dossier `src` dans votre thème, où nous mettrons nos "sources";
@@ -38,8 +38,8 @@ modularité.
 
 La seule petite chose à laquelle il faut faire attention finalement, c'est de
 bien configurer le `publicPath` de Webpack afin que les fichiers qu'il génère
-soient bien dans le bon chemin, et que les ressources liées (dans les fichiers css
-par exemple) comportent les bon chemins relatifs (à la racine du site).
+soient bien dans le bon chemin, et que les ressources liées (dans les fichiers
+CSS par exemple) comportent les bon chemins relatifs (à la racine du site).
 
 Avec l'arboresence suivante, nous n'aurons pas de difficulté à faire une
 configuration portable:
@@ -49,6 +49,7 @@ configuration portable:
   - wp-content
     - themes
       - putaindetheme
+        - node_modules
         - src
           - index.js
           - index.css
@@ -57,22 +58,25 @@ configuration portable:
         - style.css
         - webpack.config.babel.json
         - package.json
+- package.json
 ```
 
-En plus de cela, nous pouvons vous rajouter une sorte de raccourci via un
-`package.json` supplémentaire à la racine de votre projet :
+Nous pouvons rajouter une sorte de raccourci via le `package.json`
+supplémentaire à la racine de notre projet :
 
 ```json
 {
   "private": true,
   "scripts": {
-    "start": "cd wp-content/themes/paute && npm start"
+    "start": "cd htdocs/wp-content/themes/putaindetheme && npm start",
+    "build": "cd htdocs/wp-content/themes/putaindetheme && npm run build"
   }
 }
 ```
 
-Ce petit raccourci vous évitera de devoir vous taper en CLI tout le chemin du
-thème et nous pourrions même pourquoi pas rajouter un
+Ce petit raccourci nous évitera de devoir nous taper en CLI tout le chemin du
+thème.
+Nous pourrions même pourquoi pas rajouter un
 `"prestart": "open http://yourlocalhost.tld"` afin d'ouvrir automatiquement
 le projet dans le navigateur lorsque nous démarrerons notre développement via
 `$ npm start`.
@@ -115,7 +119,7 @@ Quelques petites notes sur ce contenu:
 
 - `private` sert à éviter la publication de votre "paquet" sur npm, ainsi qu'à
 devoir remplir certains champs tels que `name` et compagnie.
-- `nous mettrons dans devDependencies` les dépendances pour le développement et
+- nous mettrons dans `devDependencies` les dépendances pour le développement et
 dans `dependencies` les dépendances qui seront dans le build final. Ici j'ai
 simplement mis `normalize.css` pour exemple, mais vous pourriez très bien avoir
 aussi jQuery (:trollface:) ou React.
@@ -125,31 +129,32 @@ configuration en es6/7 via _babel_.
 Voyons maintenant la config `webpack.config.babel.js`
 
 ```js
+// Note: le code ci-dessous est mal rendu
+// Une issue est ouverte à ce propos
+// https://github.com/isagalaev/highlight.js/issues/958
+
+import "babel/polyfill"
 import path from "path"
-
-// import webpack from "webpack"
 import ExtractTextPlugin from "extract-text-webpack-plugin"
-
 import postcssImport from "postcss-import"
 import postcssUrl from "postcss-url"
 import postcssCssnext from "postcss-cssnext"
 
-const production = process.argv.indexOf("-p") > -1
+const production = process.argv.includes(`-p`)
 
 const theme = path.basename(__dirname)
-const src = path.join(__dirname, "src")
+const src = path.join(__dirname, `src`)
 
-module.exports = {
+export default {
   entry: {
-    index: [ `${ src }/index.js` ],
+    index: [`${ src }/index.js`],
   },
 
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, `dist`),
     filename: `[name].js`,
     publicPath: `wp-content/themes/${ theme }/dist/`,
   },
-
   resolve: {
     extensions: [
       ``,
@@ -219,10 +224,10 @@ Il nous reste maintenant bien entendu à ajouter dans notre thème Wordpress les
 références à nos points d'entrées CSS et Javascript que sont `index.css` et
 `index.js`.
 
-Pour faire simplement, dans votre fichier `functions.php` (oui, le fichier qui a un nom
-qui n'indique pas du tout ce pour quoi tout le monde se sert du fichier, c'est à
-dire la configuration du thème au runtime...), on va ajouter une petit constante
-qui servira à adapter votre thème en fonction de environnement :
+Pour faire simplement, dans votre fichier `functions.php` (oui, le fichier qui a
+un nom qui n'indique pas du tout ce pour quoi tout le monde se sert du fichier,
+c'est à dire la configuration du thème au runtime...), on va ajouter une petite
+constante qui servira à adapter votre thème en fonction de environnement :
 
 ```php
 // ENV est à définir dans votre configuration Apache par exemple.
@@ -233,9 +238,9 @@ define('ENV', getenv('ENV'));
 // en local, on pourrait définir ENV à "development"
 ```
 
-_Nous pourrions dans ce fichier utiliser l'API de Wordpress pour enregister nos
-`index.css` et `index.js` via les méthodes `wp_(de)register_*`, mais nous
-resterons simples pour l'exemple._
+*Nous pourrions dans ce fichier utiliser l'API de Wordpress pour enregister nos
+`index.css` et `index.js` via les méthodes `wp_(de)register_`, mais nous
+resterons simples pour l'exemple.*
 
 Vu qu'on utilise le `style-loader` de webpack en dévelopement, on ne va ajouter
 notre feuille de style qu'en production (dans le `<head>`)
@@ -256,8 +261,9 @@ Dans la même idée mais en plus simple, on va ajouter dans notre `footer.php`
 
 Rien de bien compliqué finalement.
 
-_Attention si votre thème hérite d'un autre `get_bloginfo('template_directory')`
-ne pointera pas vers votre thème mais le thème parent..._
+*Attention si votre thème hérite d'un autre,
+`get_bloginfo('template_directory')` ne pointera pas vers votre thème mais le
+thème parent. Il vous faudra donc ajuster le code 😑.*
 
 ---
 
@@ -268,8 +274,7 @@ Pour le test vous pouvez mettre dans les css et js :
 ```css
 @import "normalize.css";
 body {
-  background: red
-
+  background: red;
 }
 ```
 
@@ -291,4 +296,5 @@ console.log("Hey !")
 ```
 
 Libre à vous maintenant d'ajouter vos dépendances favorites et de remplir vos
-`index.css` et `index.js` !
+`index.css` et `index.js` avec un gestion d'erreurs autre que des requêtes HTTP
+en 404 !
