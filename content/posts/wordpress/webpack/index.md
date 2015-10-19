@@ -21,7 +21,7 @@ Ce qui pourra nous intéresser principalement sera les rapports d'erreurs liés 
 la gestions des assets (images, fonts etc).
 
 Qu'y a-t-il de si particulier à savoir pour utiliser Webpack pour gérer un thème
-Wordpress ? Pas grand chose, mais voici de quoi vous fairez gagner (peut-être)
+Wordpress ? Pas grand chose, mais voici de quoi vous faire gagner (peut-être)
 un peu de temps.
 
 Il y a bien entendu certainement plusieurs façons de gérer son thème Wordpress
@@ -36,10 +36,10 @@ modularité.
 - la partie du thème "compilé" sera dans un dossier `dist` (ce dossier n'aura
   donc pas besoin d'être versionné).
 
-La seul petite chose à laquelle il faut faire attention finalement, c'est de
+La seule petite chose à laquelle il faut faire attention finalement, c'est de
 bien configurer le `publicPath` de Webpack afin que les fichiers qu'il génère
-soit bien dans le bon chemin, et que les ressources liés (dans les fichiers css
-par exemple) comporte les bon chemins relatifs (à la racine du site).
+soient bien dans le bon chemin, et que les ressources liées (dans les fichiers css
+par exemple) comportent les bon chemins relatifs (à la racine du site).
 
 Avec l'arboresence suivante, nous n'aurons pas de difficulté à faire une
 configuration portable:
@@ -59,8 +59,8 @@ configuration portable:
         - package.json
 ```
 
-En plus de cela nous pouvons vous rajouter une sorte de raccourci via un
-`package.json` supplémentaire à la racine de votre project:
+En plus de cela, nous pouvons vous rajouter une sorte de raccourci via un
+`package.json` supplémentaire à la racine de votre projet :
 
 ```json
 {
@@ -114,7 +114,7 @@ Voyons rapidement donc le `package.json` du thème ainsi que la config Webpack.
 Quelques petites notes sur ce contenu:
 
 - `private` sert à éviter la publication de votre "paquet" sur npm, ainsi qu'à
-devoir remplir certains champs tel que `name` et compagnie.
+devoir remplir certains champs tels que `name` et compagnie.
 - `nous mettrons dans devDependencies` les dépendances pour le développement et
 dans `dependencies` les dépendances qui seront dans le build final. Ici j'ai
 simplement mis `normalize.css` pour exemple, mais vous pourriez très bien avoir
@@ -216,13 +216,13 @@ la configuration PostCSS par exemple._ Faites un tour sur notre article de
 d'y voir plus clair.
 
 Il nous reste maintenant bien entendu à ajouter dans notre thème Wordpress les
-références à nos points d'entrée CSS et Javascript que sont `index.css` et
+références à nos points d'entrées CSS et Javascript que sont `index.css` et
 `index.js`.
 
-Pour faire simplement, dans votre `functions.php` (oui, le fichier qui a un nom
+Pour faire simplement, dans votre fichier `functions.php` (oui, le fichier qui a un nom
 qui n'indique pas du tout ce pour quoi tout le monde se sert du fichier, c'est à
 dire la configuration du thème au runtime...), on va ajouter une petit constante
-qui servira à adapter votre thème en fonction de environnement:
+qui servira à adapter votre thème en fonction de environnement :
 
 ```php
 // ENV est à définir dans votre configuration Apache par exemple.
@@ -235,7 +235,7 @@ define('ENV', getenv('ENV'));
 
 _Nous pourrions dans ce fichier utiliser l'API de Wordpress pour enregister nos
 `index.css` et `index.js` via les méthodes `wp_(de)register_*`, mais nous
-resterons simple pour l'exemple._
+resterons simples pour l'exemple._
 
 Vu qu'on utilise le `style-loader` de webpack en dévelopement, on ne va ajouter
 notre feuille de style qu'en production (dans le `<head>`)
@@ -261,7 +261,7 @@ ne pointera pas vers votre thème mais le thème parent..._
 
 ---
 
-Pour le test vous pouvez mettre dans les css et js
+Pour le test vous pouvez mettre dans les css et js :
 
 `index.css`
 
