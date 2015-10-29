@@ -1,0 +1,78 @@
+---
+  title: "Putain de code !"
+  description: "Partager du code et des méthodes de travail de qualité, afin qu’on puisse tous s’améliorer ensemble."
+  baseline: "On voulait mettre une baseline mais on a pas été foutu d'en trouver une"
+  latestPosts: "Les derniers articles"
+  posts: "Les articles"
+  manifesto: "Putain de code, c'est quoi ?"
+  topContributors: "Top des contributeurs"
+  initialCommit: "commit initial par"
+  morePosts: "Plus d'articles"
+  writtenBy: "Écrit par"
+  readingTime: "Temps de lecture : "
+  readingTime1: "moins d'une minute"
+  readingTime2: "environ ${minutes} minutes"
+  readingTimeComment: "Temps de lecture approximatif, sur une base de ${wordsPerMinute} mots par minute"
+  contributor: "contributeur"
+  contributors: "contributeurs"
+  allContributors: "Tous les contributeurs"
+  contribution: "contribution"
+  contributions: "contributions"
+  noPosts: ":( pas d'article"
+  BeTheFirstToContribute: "Soyez le premier à contribuer à cette page"
+  onThisPage: "sur cette page"
+  pageEdit: "Modifier"
+  pageBlame: "Tracer les changements"
+  pageHistory: "Historique"
+  close: "&times;"
+  copyright: "© 1970 - {*} Putain de code !"
+  tags: "Tags"
+  the: "le"
+  filters: "(filtres)"
+  twitterUsername: "putaindecode"
+  twitter: "https://twitter.com/putaindecode/"
+  twitterLabel: "Twitter"
+  github: "https://github.com/putaindecode/"
+  githubLabel: "GitHub"
+  slack: "https://putaindecode-slack.herokuapp.com/"
+  slackLabel: "Slack"
+  elsewhere: "Retrouvez-nous sur les internettes"
+  disqus:
+    id: "putaindecode"
+    developer: false
+  navigation:
+    -
+      url: "/posts"
+      name: "Articles"
+      icon: "bookmark"
+    -
+      url: "/c-est-quoi-putaindecode"
+      name: "Readme"
+      icon: "textFile"
+    -
+      url: "/posts/comment-contribuer"
+      name: "Participer"
+      icon: "pencil"
+    -
+      url: "https://github.com/putaindecode/"
+      title: "GitHub"
+      icon: "github"
+    -
+      url: "https://twitter.com/putaindecode/"
+      title: "Twitter"
+      icon: "twitter"
+    -
+      url: "https://putaindecode-slack.herokuapp.com/"
+      title: "Slack"
+      icon: "slack"
+  footerNavigation:
+    -
+      url: "/feed.xml"
+      name: "Flux RSS"
+    -
+      url: "/projets"
+      name: "Projets"
+    -
+      url: "https://github.com/putaindecode/forum/issues"
+      name: "Forum"
+  madeWithHeart: "Made with ♥︎"

@@ -8,7 +8,7 @@ authors:
   - awillemant
 ---
 
-Nous vivons aujourd'hui dans un monde où tout devient service. Twitter, Facebook, Google Drive, GitHub, tout le monde y va de sa petite API pour que nous, geeks, puissions profiter pleinement des moult fonctionnalités offertes par ces plateformes. Qu'entend-on par service ? Comment les rendre disponibles facilement et intelligemment ? On va essayer d'y répondre ! 
+Nous vivons aujourd'hui dans un monde où tout devient service. Twitter, Facebook, Google Drive, GitHub, tout le monde y va de sa petite API pour que nous, geeks, puissions profiter pleinement des moult fonctionnalités offertes par ces plateformes. Qu'entend-on par service ? Comment les rendre disponibles facilement et intelligemment ? On va essayer d'y répondre !
 
 ## Les webservices
 Rappelons juste, pour mettre tout le monde d'accord, ce qui se passe pendant une simple navigation web.
@@ -36,7 +36,7 @@ Plusieurs années ont passées et les esprits ont évolué. On a commencé à en
 Le but du jeu est donc d'utiliser au maximum les possibilités du protocole HTTP, les verbes, les URL et les codes retours pour décrire des API de la manière la plus fidèle possible. On a donc gagné en simplicité et la communication entre machines se veut désormais à la portée de tous. Je reviendrai en détail sur le protocole HTTP un peu plus tard.
 
 ### Un partout : balle au centre
-Je tiens à remettre les choses au clair. On entend beaucoup trop souvent : *"Fais du REST, SOAP c'est nul"*. Il y a en effet clairement un effet de mode ! Les API REST pullulent et sont vraiment très pratiques. Toutefois, dans les gros systèmes nécessitant du RPC ou encore de la signature numérique, pour les échanges de données médicales par exemple, le contrat WSDL et la rigueur du XML sont clairement des alliés ! 
+Je tiens à remettre les choses au clair. On entend beaucoup trop souvent : *"Fais du REST, SOAP c'est nul"*. Il y a en effet clairement un effet de mode ! Les API REST pullulent et sont vraiment très pratiques. Toutefois, dans les gros systèmes nécessitant du RPC ou encore de la signature numérique, pour les échanges de données médicales par exemple, le contrat WSDL et la rigueur du XML sont clairement des alliés !
 
 
 ## Alors comme ça, HTTP ça fait tout ?
@@ -87,7 +87,7 @@ Et si les codes HTTP sont ta nouvelle passion, je te suggère de te documenter s
 
 Alors on a les verbes HTTP et les codes retours. À quoi peut ressembler le Graal des API REST alors ? Si on réfléchit un peu, on peut se dire qu'il faudrait, pour toutes les URL, donner un code retour HTTP cohérent pour chaque verbe, logique non ? De cette manière, on peut entamer un véritable dialogue avec le serveur HTTP, entièrement basé sur REST. Voilà une bonne nouvelle pour ceux qui veulent tailler une bavette ailleurs que sur Google Hangouts !
 
-Un petit exemple de dialogue : 
+Un petit exemple de dialogue :
 
 ```
 > GET /customers/42
@@ -103,10 +103,10 @@ Un petit exemple de dialogue :
 404 Not Found
 ```
 
-C'est un bon début, mais ce niveau 3 va quand même un peu plus loin ! N'as-tu jamais trouvé génial qu'avec de simples liens dans les pages web, tu pouvais naviguer des heures et des heures ? 
+C'est un bon début, mais ce niveau 3 va quand même un peu plus loin ! N'as-tu jamais trouvé génial qu'avec de simples liens dans les pages web, tu pouvais naviguer des heures et des heures ?
 
 Pourquoi ne pas ajouter des liens dans les ressources retournées via REST ? Nous venons de mettre le doigt sur HATEOAS (*Hypermedia As The Engine Of Application State*). On peut désormais imaginer un tas de choses comme :
-* Quand on renvoie un tableau json par exemple, dans chaque item, 
+* Quand on renvoie un tableau json par exemple, dans chaque item,
   * on peut ajouter les liens qui permettent de le mettre à jour ;
   * on peut ajouter les liens qui permettent de récupérer des données liées comme l'auteur d'un livre, les mentions d'un tweet, etc. ;
   * on peut ajouter l'URL de putaindecode.fr.
@@ -196,7 +196,7 @@ Voici un exemple de trame JSON avec les informations HATEOAS. Pour information, 
     }
   },{
   ...
-  } 
+  }
 ]
 ```
 
@@ -222,7 +222,7 @@ Tu remontes tes manches et tu te démerdes !
 
 Il y a quelques frameworks qui vont te donner un coup de main. Dans le monde Java par exemple, il existe [Resteasy-links](http://docs.jboss.org/resteasy/docs/2.0.0.GA/userguide/html/LinkHeader.html) (avec un exemple d'utilisation [sur mon repo GitHub](https://github.com/awillemant/hateoas-example)), ou encore [Spring HATEOAS](http://projects.spring.io/spring-hateoas/)
 
-Pour les *Nodistes*, une simple recherche sur [npmjs](https://www.npmjs.com/search?q=hateoas) renverra un tas d'outils ! 
+Pour les *Nodistes*, une simple recherche sur [npmjs](https://www.npmjs.com/search?q=hateoas) renverra un tas d'outils !
 
 ## Références
 
