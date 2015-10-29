@@ -1,13 +1,6 @@
-# things that should be in your global gitignore
-.DS_Store
-.idea/
-
 # npm
 node_modules
 npm-debug.log
 
 # build
 dist
-
-# todo: remove me
-todo
