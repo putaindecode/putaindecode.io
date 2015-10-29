@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from "react"
+import { Link } from "react-router"
+
 import cx from "classnames"
 
 import SVGIcon from "../SVGIcon"
@@ -32,12 +34,17 @@ export default class Footer extends Component {
                   i18n.footerNavigation.map((item) => {
                     return (
                       <li key={item.url}>
-                        <a href={item.url}>
+                        <Link to={item.url}>
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     )
                   }),
+                  <li key={i18n.forum}>
+                    <Link to={i18n.forum}>
+                      {i18n.forumLabel}
+                    </Link>
+                  </li>,
                   <li key={i18n.github}>
                     <a
                       href={i18n.github}

@@ -36,6 +36,8 @@
   githubLabel: "GitHub"
   slack: "https://putaindecode-slack.herokuapp.com/"
   slackLabel: "Slack"
+  forum: "https://github.com/putaindecode/forum/issues"
+  forumLabel: "Forum"
   elsewhere: "Retrouvez-nous sur les internettes"
   disqus:
     id: "putaindecode"
@@ -53,6 +55,7 @@
       url: "/posts/comment-contribuer"
       name: "Participer"
       icon: "pencil"
+  navigationSocial:
     -
       url: "https://github.com/putaindecode/"
       title: "GitHub"
@@ -72,7 +75,4 @@
     -
       url: "/projets"
       name: "Projets"
-    -
-      url: "https://github.com/putaindecode/forum/issues"
-      name: "Forum"
   madeWithHeart: "Made with ♥︎"

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from "react"
+import { Link } from "react-router"
 
 import Navigation from "../Navigation"
 import SVGIcon from "../SVGIcon"
@@ -17,14 +18,14 @@ export default class Header extends Component {
       <div className="putainde-Header">
         <div className="r-Grid">
           <div className="r-Grid-cell r-minM--1of3">
-            <a className="putainde-SiteTitle" href="/">
+            <Link className="putainde-SiteTitle" to="/">
               <SVGIcon
                 className="putainde-Logo"
                 svg={require("images/putaindecode-logo.svg")}
                 cleanupExceptions={[ "fill" ]}
               />
               <span>{i18n.title}</span>
-            </a>
+            </Link>
           </div>
           <div className="r-Grid-cell r-minM--2of3">
             <Navigation />

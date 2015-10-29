@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from "react"
+import { Link } from "react-router"
 
 import Avatars from "../Avatars"
 import AuthorsList from "../AuthorsList"
@@ -29,12 +30,12 @@ export default class PostPreview extends Component {
           <Avatars className="putainde-List-avatars" authors={post.authors} />
         }
 
-        <a
+        <Link
           className="putainde-Link putainde-List-title"
-          href={post.__url}
+          to={post.__url}
         >
           {post.title}
-        </a>
+        </Link>
 
         {
           post.tags &&
