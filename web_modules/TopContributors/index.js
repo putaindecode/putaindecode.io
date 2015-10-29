@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from "react"
+import { Link } from "react-router"
 
 import Author from "../Author"
 
@@ -44,12 +45,12 @@ export default class TopContributors extends Component {
             })
           }
           <div className="r-Grid-cell">
-            <a
+            <Link
               className="putainde-Button putainde-Button--block"
-              href={`${pkg.repositoryHttpUrl}/graphs/contributors`}
+              to={`${pkg.repositoryHttpUrl}/graphs/contributors`}
             >
               {i18n.allContributors}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

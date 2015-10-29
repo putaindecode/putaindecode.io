@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from "react"
+import { Link } from "react-router"
 
 import PostsList from "../PostsList"
 
@@ -30,9 +31,9 @@ export default class LatestPosts extends Component {
         </div>
         <div className="r-Grid" style={{ textAlign: "center" }}>
           <div className="r-Grid-cell r-all--8of12 ">
-            <a href="/posts" className="putainde-Button putainde-Button--block">
+            <Link to="/posts" className="putainde-Button putainde-Button--block">
             {i18n.morePosts}
-            </a>
+          </Link>
           </div>
         </div>
       </div>
