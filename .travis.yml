@@ -4,22 +4,9 @@ language: node_js
 node_js:
   - 4
 
+# contributors task: need all commits until we cache contributions somewhere else https://github.com/putaindecode/putaindecode.fr/issues/218
 git:
-  # contributors task: need all commits until we cache contributions somewhere else https://github.com/putaindecode/putaindecode.fr/issues/218
   depth: 100000
-
-notifications:
-  irc:
-    channels: "irc.freenode.org#putaindecode"
-    on_success: always
-    on_failure: always
-    use_notice: true
-    skip_join: true
-  webhooks:
-    - https://webhooks.gitter.im/e/f9058b60ad04e03a490e
-
-#install:
-#  - npm install --loglevel info
 
 before_script:
   # for headless browsers
@@ -36,6 +23,4 @@ script: ./scripts/travis.sh
 env:
   global:
     # GH_TOKEN
-    # might be compromised for now :/
-    # https://github.com/putaindecode/putaindecode.fr/issues/376
     - secure: d1VZ29IbfOn0Re774eOWFpCcSLMd3N49ehmMOF8NiAQBV30NddTr5GVua19sMfCBVryHVu5MaaD+xf8Qr1fANqZveFhjIdTsTRLt7BkfxpmrWwHKn6g1szQq6KMCUECtHToe9qrCwA/UC0p4+rNofd3PnlF51dTPvP8ZG1Yy7U0=
