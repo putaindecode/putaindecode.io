@@ -53,32 +53,28 @@ export default class Navigation extends Component {
       )
     })
 
-    const NavigationSocial = i18n.navigationSocial.map((item) => {
-      const hasTooltip = item.title
-
-      return (
-        <Link to={item.url}
-          key={item.url}
-          className={cx({
-            "putainde-Nav-item": true,
-            "putainde-Nav-item--icon": true,
-            "r-Tooltip": true,
-            "r-Tooltip r-Tooltip--bottom": true,
-          })}
-          data-r-tooltip={item.title}
-        >
-          {
-            item.icon &&
-            <SVGIcon
-              className="putainde-Icon"
-              svg={SVGs[item.icon]}
-              cleanup
-            />
-          }
-          {item.name}
-        </Link>
-      )
-    })
+    const NavigationSocial = i18n.navigationSocial.map((item) => (
+      <a href={item.url}
+        key={item.url}
+        className={cx({
+          "putainde-Nav-item": true,
+          "putainde-Nav-item--icon": true,
+          "r-Tooltip": true,
+          "r-Tooltip r-Tooltip--bottom": true,
+        })}
+        data-r-tooltip={item.title}
+      >
+        {
+          item.icon &&
+          <SVGIcon
+            className="putainde-Icon"
+            svg={SVGs[item.icon]}
+            cleanup
+          />
+        }
+        {item.name}
+      </a>
+    ))
 
     return (
       <nav className="putainde-Nav">
