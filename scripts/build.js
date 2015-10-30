@@ -64,6 +64,20 @@ const webpackConfig = {
               layout: "Post",
               comments: true,
             },
+            feedsOptions: {
+              title: pkg.name,
+              site_url: pkg.homepage,
+            },
+            feeds: {
+              "feed.xml": {
+                collectionOptions: {
+                  filter: { layout: "Post" },
+                  sort: "date",
+                  reverse: true,
+                  limit: 20,
+                },
+              },
+            },
           }) }`
         ,
       },
