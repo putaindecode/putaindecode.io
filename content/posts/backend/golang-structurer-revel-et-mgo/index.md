@@ -25,9 +25,9 @@ Dans cet article on va voir **comment brancher un projet go+revel à une base de
 données mongodb** et obtenir ainsi une base de travail sympa pour explorer le
 développement web avec Go.
 
-##Les technos utilisées
+## Les technos utilisées
 
-###[Golang](http://golang.org)
+### [Golang](http://golang.org)
 
 Langage compilé, publié en 2009, communément considéré comme “désorienté objet”,
 c’est une alternative solide au C/C++ qui prône un découpage modulaire (par
@@ -35,7 +35,7 @@ c’est une alternative solide au C/C++ qui prône un découpage modulaire (par
 développement web grâce à un package natif de gestion des réseaux et du
 protocole http.
 
-###[Revel](http://robfig.github.io/revel/)
+### [Revel](http://robfig.github.io/revel/)
 
 Framework développé en Go et pour Go. Il intègre tout ce qu’il faut pour
 développer une application web : rechargement du code à chaud, gestion des urls
@@ -45,19 +45,19 @@ moteur de tâches planifiées cron-likes. Il a pour particularité d’être
 complètement découplé sur la partie modèle et ne fourni aucun ORM ou ODM,
 juste un petit module pour gérer des transactions sur des bases sql-like.
 
-###[Mgo](http://labix.org/mgo)
+### [Mgo](http://labix.org/mgo)
 
 Driver Go complet pour MongoDB, permettant d’établir la connexion et d’envoyer
 des requêtes. Il dispose d’un mécanisme de mapping des documents mongodb sur les
 type struct de Go.
 
-###[MongoDB](http://www.mongodb.org/)
+### [MongoDB](http://www.mongodb.org/)
 
 Base de données NoSql agile et scalable, les documents sont stockés au format
 json dans des collections. Le requêtage se fait en manipulant des objets et des
 fonctions javascript.
 
-##Attends, attends ... Pourquoi Go ?
+## Attends, attends ... Pourquoi Go ?
 Le premier vrai argument, c'est la **performance**. Sans rentrer dans
 l'explication hyper poussée d'un [benchmark](http://jaxbot.me/articles/benchmarks_nodejs_vs_go_vs_php_3_14_2013), on peut
 affirmer sans trop de risque que Go se hisse au moins au niveau de node.js. On
@@ -71,7 +71,7 @@ permettent à la techno d'échapper aux interminables guerres de conventions :
 
 > De toutes façons le no-newline avant "{" c'est vraiment pour les pourritures
 > responsables de 99% des maux de la Terre.
-> - <cite>Un évangeliste du PSR</cite>
+> - Un évangeliste du PSR
 
 Troisième argument de choix en Go : la **simplicité de parallélisation**.
 Personne ne viendra te dire *"ça c'est synchrone, sry bro."* ou *"ça c'est
@@ -242,7 +242,7 @@ métier. Comme par exemple le calcul des totaux, le calcul de la TVA etc... Grâ
  à cette approche, on garde des contrôleurs très fins et restreints à ce que
  doit être leur rôle premier : faire communiquer le modèle et la vue.
 
-##Modèles globaux, modèles locaux
+## Modèles globaux, modèles locaux
 J’ai évoqué plus haut dans la liste des technos une feature hyper sexy de mgo :
 le mapping des documents mongodb en json sur les types struct. Ce qui veut dire
 qu’avec mgo, on peut définir des modèles bien structurés. Certains seront
@@ -284,7 +284,7 @@ roule). Tu pourras plus tard les sortir de ton projet si par exemple tu veux les
 réutiliser sur un autre (svn include pour les ancêtres, git submodules pour les
 autres).
 
-##Pour aller plus loin
+## Pour aller plus loin
 Isoler distinctement le gestionnaire de connexion, la logique métier et les
 modèles dans des modules est une première étape vers une architecture propre et
 évolutive. Tu peux même pousser ça plus loin en utilisant des interfaces comme
