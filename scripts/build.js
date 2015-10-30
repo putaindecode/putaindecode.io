@@ -56,7 +56,7 @@ const webpackConfig = {
       //
       {
         test: /\.md$/,
-        loader: "statinamic/lib/markdown-as-json-loader" +
+        loader: "statinamic/lib/md-collection-loader" +
           `?${ JSON.stringify({
             context: source,
             basepath: config.baseUrl.path,
