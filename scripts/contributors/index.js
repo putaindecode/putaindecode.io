@@ -31,13 +31,17 @@ if (process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
     token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
   })
 }
-// else {
+else {
+  throw new Error(
+    "You need a GitHub token available as an environement variable." +
+    "Please be sure to get one in GITHUB_TOKEN or GH_TOKEN variables."
+  )
 //   githubApi.authenticate({
 //     type: "basic",
 //     username: "xxx",
 //     password: "xxx",
 //   })
-// }
+}
 
 // @todo get user/repo from git origin
 const repoMetas = {
@@ -190,13 +194,14 @@ async function contributorsMap() {
         }
       }
       catch (err) {
-        if (err.toString().indexOf("ENOTFOUND") > -1) {
+        if (err.toString().indexOf("\Not Found\"") > -1) {
           log(color.red("⚠︎ Cannot connect to GitHub for " + email))
         }
         else {
           // not sure why I need to do this to get exception throw
           // await/async should handle that :(
           setTimeout(() => {
+            console.error("Unhandled error from GitHub API")
             throw err
           }, 1)
         }
@@ -278,9 +283,11 @@ export default async function() {
     log("✓ Contributors list already generated")
   }
   else {
-    const contributors = await readFile(contributorsFile, { encoding: "utf-8" })
-
     try {
+      const contributors = await readFile(
+        contributorsFile,
+        { encoding: "utf-8" }
+      )
       results = JSON.parse(contributors)
       log("✓ contributors.json parsed")
     }
