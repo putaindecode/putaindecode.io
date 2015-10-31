@@ -27,8 +27,7 @@
     "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {
-    "babel": "^5.5.6",
-    "babel-core": "^5.5.6",
+    "babel": "^5.8.3",
     "babel-eslint": "^4.0.6",
     "babel-loader": "^5.0.0",
     "babel-plugin-react-transform": "^1.1.1",
@@ -67,6 +66,7 @@
     "tape": "^4.0.0",
     "tape-catch": "^1.0.4",
     "testem": "^0.8.3",
+    "webpack": "^1.12.2",
     "yaml-loader": "^0.1.0"
   },
   "scripts": {
