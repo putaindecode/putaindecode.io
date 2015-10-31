@@ -1,0 +1,43 @@
+.putainde-NotFound {
+  text-align: center;
+  margin: 1em 0;
+}
+@media (--r-minS) {
+  .putainde-NotFound {
+    margin: 4em 0;
+  }
+}
+
+  .putainde-NotFound-title {
+    font-size: 2rem;
+    color: var(--putainde-Color-red);
+    line-height: normal;
+  }
+  @media (--r-minS) {
+    .putainde-NotFound-title {
+      font-size: 5rem;
+    }
+  }
+
+  .putainde-NotFound-subtitle {
+    margin-top: 3em;
+    line-height: normal;
+  }
+  @media (--r-minS) {
+    .putainde-NotFound-subtitle {
+      font-size: 2rem;
+    }
+  }
+
+  .putainde-NotFound-link {
+    text-decoration: none;
+    color: var(--putainde-Color-red);
+  }
+
+    .putainde-NotFound-link:hover {
+      text-decoration: underline;
+    }
+
+  .putainde-NotFound-media {
+    margin: 2em 0 0;
+  }
