@@ -39,10 +39,11 @@
   forum: "https://github.com/putaindecode/forum/issues"
   forumLabel: "Forum"
   elsewhere: "Retrouvez-nous sur les internettes"
-  error404:
-    title: "404"
-    label: "Le contenu que vous cherchez n’existe pas !"
-    url: "https://github.com/putaindecode/putaindecode.fr/issues/new?title"
+  PageError:
+    title: "Page non trouvé 😱"
+    contentMissing: "Le contenu que vous cherchez n’existe pas !"
+    report: "Si vous pensez que c'est une erreur, n'hésitez pas à "
+    reportLink: "nous le signaler"
   disqus:
     id: "putaindecode"
     developer: false
