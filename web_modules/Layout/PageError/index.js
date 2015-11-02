@@ -52,7 +52,7 @@ export default class PageError extends Component {
                     "Page not found" +
                     "&body=" +
                     (
-                      typeof window !== undefined
+                      typeof window !== "undefined"
                       ? window.location.href
                       : ""
                     )
