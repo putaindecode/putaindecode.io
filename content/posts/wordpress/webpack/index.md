@@ -265,7 +265,7 @@ Rien de bien compliqué finalement.
 
 *Attention si votre thème hérite d'un autre,
 `get_bloginfo('template_directory')` ne pointera pas vers votre thème mais le
-thème parent. Il vous faudra donc ajuster le code 😑.*
+thème parent. Il vous faudra donc ajuster le code* 😑.
 
 ---
 
