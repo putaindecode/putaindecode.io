@@ -21,10 +21,6 @@ export default class Page extends Component {
 
   render() {
     const {
-      pkg,
-    } = this.context.metadata
-
-    const {
       head,
       body,
     } = this.props
