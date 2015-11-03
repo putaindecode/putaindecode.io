@@ -127,12 +127,12 @@ export default class Posts extends Component {
   render() {
     return (
       <Html>
-        <Head title={this.props.file.title} />
+        <Head title={head.title} />
         <Body>
-          <h1>{this.props.file.title}</h1>
+          <h1>{head.title}</h1>
           <PostsList
             posts={
-              this.props.collections.posts
+              this.props.collection
                 .filter((item) => {
                   /*
                     ce que vous voulez pour filtrer votre collection

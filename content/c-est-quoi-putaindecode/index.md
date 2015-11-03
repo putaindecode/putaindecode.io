@@ -31,10 +31,7 @@ par leur boulot.
 Et c’est à force de voir du code qui pique les yeux qu’on s’est dit qu’il
 fallait qu’on fasse quelque chose pour toi et tes semblables.
 
-<figure>
   ![WAAAT](WAAAT.gif)
-  <figcaption>On a tous eu ce genre de spasmes devant du code</figcaption>
-</figure>
 
 Notre idée est simple : partager du code et des méthodes de travail de qualité,
 afin qu'on puisse tous s'améliorer ensemble.

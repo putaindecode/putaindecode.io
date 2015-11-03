@@ -1,17 +1,10 @@
 {
+  "private": true,
   "name": "putaindecode.fr",
-  "version": "0.0.0",
-  "license": "MIT",
-  "authors": "https://github.com/putaindecode/putaindecode.fr/graphs/contributors",
   "homepage": "http://putaindecode.fr",
-  "repositoryHttpUrl": "http://github.com/putaindecode/putaindecode.fr",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/putaindecode/putaindecode.fr.git"
-  },
-  "bugs": {
-    "url": "https://github.com/putaindecode/putaindecode.fr/issues"
-  },
+  "authors": "https://github.com/putaindecode/putaindecode.fr/graphs/contributors",
+  "repository": "https://github.com/putaindecode/putaindecode.fr.git",
+  "license": "MIT",
   "dependencies": {
     "cssrecipes-custom-media-queries": "^0.3.0",
     "cssrecipes-defaults": "^0.5.0",
@@ -19,69 +12,172 @@
     "cssrecipes-tooltip": "^0.5.0",
     "cssrecipes-utils": "^0.5.0",
     "cssrecipes-vertical-rhythm": "^0.6.0",
-    "normalize.css": "^3.0.3"
+    "invariant": "^2.1.1",
+    "normalize.css": "^3.0.3",
+    "react": "^0.14.0",
+    "react-disqus-thread": "^0.3.1",
+    "react-dom": "^0.14.0",
+    "react-google-analytics": "^0.2.0",
+    "react-helmet": "^2.1.1",
+    "react-redux": "^2.1.2",
+    "react-router": "^1.0.0-rc3",
+    "redux": "^2.0.0",
+    "redux-devtools": "^2.1.5",
+    "redux-thunk": "^0.1.0",
+    "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {
-    "async": "^0.9.0",
-    "babel": "^5.5.6",
-    "babel-core": "^5.5.6",
-    "babel-eslint": "^3.1.15",
+    "babel": "^5.8.3",
+    "babel-core": "^5.8.3",
+    "babel-eslint": "^4.0.6",
     "babel-loader": "^5.0.0",
+    "babel-plugin-react-transform": "^1.1.1",
     "babel-tape-runner": "^1.1.0",
     "chalk": "^1.0.0",
     "classnames": "^1.2.0",
-    "copy-with-content-hash": "^1.1.0",
-    "css-loader": "^0.12.1",
-    "cssnext": "^1.2.3",
-    "cssnext-loader": "^1.0.1",
-    "eslint": "^0.21.0",
-    "eslint-friendly-formatter": "^1.0.7",
-    "eslint-loader": "^0.11.2",
-    "eslint-plugin-react": "^2.3.0",
+    "css-loader": "^0.17.0",
+    "eslint": "^1.7.3",
+    "eslint-loader": "^1.1.0",
+    "eslint-plugin-react": "^3.6.3",
     "extract-text-webpack-plugin": "^0.8.0",
-    "file-loader": "^0.8.1",
+    "file-loader": "^0.8.4",
     "github": "^0.2.3",
     "glob": "^5.0.5",
     "highlight.js": "^8.8.0",
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
-    "marked": "^0.3.5",
-    "metalsmith": "^2.0.1",
-    "metalsmith-collections": "^0.7.0",
-    "metalsmith-filenames": "^1.0.0",
-    "metalsmith-md": "^1.1.1",
-    "metalsmith-react": "^1.1.0",
-    "metalsmith-rename": "^1.0.0",
-    "metalsmith-rss": "^1.0.0",
-    "metalsmith-url": "^1.0.0",
-    "metalsmith-watch": "^1.0.0",
+    "json-loader": "^0.5.3",
+    "markdown-it": "^5.0.0",
+    "markdown-it-toc-and-anchor": "^1.0.1",
     "mkdirp": "^0.5.0",
     "multimatch": "^2.0.0",
     "nano-logger": "^1.0.0",
     "opn": "^1.0.1",
+    "postcss-cssnext": "^2.2.0",
+    "postcss-import": "^7.1.0",
+    "postcss-loader": "^0.7.0",
     "promise": "^7.0.0",
-    "react": "^0.13.1",
+    "raw-loader": "^0.5.1",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.1.1",
     "rimraf": "^2.3.2",
-    "rss": "^1.1.1",
+    "statinamic": "^0.4.0",
     "style-loader": "^0.12.2",
     "tape": "^4.0.0",
     "tape-catch": "^1.0.4",
     "testem": "^0.8.3",
-    "tiny-lr": "^0.1.5",
-    "unyield": "0.0.1",
-    "webpack": "^1.8.9",
-    "webpack-dev-server": "^1.8.2",
-    "webpack-nano-logs": "^1.0.0"
+    "webpack": "^1.12.2",
+    "yaml-loader": "^0.1.0"
   },
   "scripts": {
-    "lint": "eslint -f node_modules/eslint-friendly-formatter/index.js .",
-    "build": "babel-node scripts/build",
-    "start": "npm run build -- --dev-server --open",
-    "tape": "babel-tape-runner 'scripts/**/__tests__/*'",
-    "#testem": "run all tests in all available browsers",
-    "testem": "testem ci -f scripts/__tests__.testem.yml",
-    "test": "npm run lint && npm run tape && npm run build -- --production && npm run testem",
+    "lint": "eslint --fix .",
+    "start": "babel-node scripts/putaindebuild --server --open --dev",
+    "build": "NODE_ENV=production babel-node scripts/putaindebuild --static --production",
+    "postbuild": "echo 'putaindecode.fr' > dist/CNAME",
+    "pretest": "npm run lint",
+    "test": "npm run build",
     "_deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v",
     "deploy": "npm test && npm run _deploy"
+  },
+  "browser": {
+    "fs": false
+  },
+  "babel": {
+    "stage": 0,
+    "env": {
+      "development": {
+        "plugins": [ "react-transform" ],
+        "extra": {
+          "react-transform": {
+            "transforms": [
+              {
+                "transform": "react-transform-hmr",
+                "imports": [ "react" ],
+                "locals": [ "module" ]
+              },
+              {
+                "transform": "react-transform-catch-errors",
+                "imports": [ "react", "redbox-react" ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "eslint:recommended",
+    "#parser": "babel-eslint support more syntax stuff than eslint for now",
+    "parser": "babel-eslint",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    },
+
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "no-console": 0,
+      "indent": [ 2, 2 ],
+      "max-len": [ 2, 80, 4 ],
+      "no-multiple-empty-lines": [ 2, { "max": 1 } ],
+      "quotes": [ 2, "double" ],
+      "jsx-quotes": [ 2, "prefer-double" ],
+      "semi": [ 2, "never" ],
+      "comma-dangle": [ 2, "always-multiline" ],
+      "comma-style": [ 2, "last" ],
+      "brace-style": [ 2, "stroustrup" ],
+      "dot-location": [ 2, "property" ],
+      "computed-property-spacing": [ 2, "never" ],
+      "object-curly-spacing": [ 2, "always" ],
+      "array-bracket-spacing": [ 2, "always" ],
+      "space-after-keywords": [ 2, "always" ],
+      "space-before-blocks": [ 2, "always" ],
+      "space-before-function-paren": [ 2, "never" ],
+      "space-in-parens": [ 2, "never" ],
+      "space-unary-ops": [ 2, { "words": true, "nonwords": false } ],
+      "spaced-comment": [ 2, "always" ],
+
+      "one-var": [ 2, "never" ],
+      "no-var": [ 2 ],
+      "no-bitwise": [ 2 ],
+      "prefer-const": [ 2 ],
+
+      "react/jsx-closing-bracket-location": [ 2, "tag-aligned" ],
+      "react/jsx-curly-spacing": [ 0, "always" ],
+      "react/jsx-indent-props": [ 2, 2 ],
+      "react/jsx-no-duplicate-props": 2,
+      "react/jsx-no-literals": 2,
+      "react/jsx-no-undef": 2,
+      "react/jsx-uses-react": 2,
+      "react/jsx-uses-vars": 2,
+      "react/no-did-mount-set-state": 2,
+      "react/no-did-update-set-state": 2,
+      "react/no-direct-mutation-state": 2,
+      "react/no-multi-comp": 2,
+      "react/no-unknown-property": 2,
+      "react/prefer-es6-class": 2,
+      "react/prop-types": 0,
+      "react/react-in-jsx-scope": 2,
+      "react/require-extension": 2,
+      "react/self-closing-comp": 2,
+      "react/sort-comp": 0,
+      "react/wrap-multilines": 2
+    },
+    "globals": {
+      "__BASE_URL__": true,
+      "__DEV__": true,
+      "__PROD__": true,
+      "__DEVTOOLS__": true
+    },
+    "plugins": [
+      "react"
+    ]
   }
 }
