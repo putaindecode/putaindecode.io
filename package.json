@@ -74,6 +74,7 @@
     "lint": "eslint --fix .",
     "start": "babel-node scripts/putaindebuild --server --open --dev",
     "build": "NODE_ENV=production babel-node scripts/putaindebuild --static --production",
+    "postbuild": "echo 'putaindecode.fr' > dist/CNAME",
     "pretest": "npm run lint",
     "test": "npm run build",
     "_deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v",
