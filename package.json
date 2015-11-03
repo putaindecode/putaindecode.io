@@ -64,6 +64,7 @@
     "rimraf": "^2.3.2",
     "statinamic": "^0.4.2",
     "style-loader": "^0.12.2",
+    "svgo-loader": "^1.1.0",
     "tape": "^4.0.0",
     "tape-catch": "^1.0.4",
     "testem": "^0.8.3",
