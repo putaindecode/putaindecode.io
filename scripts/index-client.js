@@ -4,7 +4,9 @@ require.context("../content", true, /\.(md|html|ico|jpe?g|png|gif)$/)
 
 // ---
 
+import "babel-core/polyfill"
 import "whatwg-fetch"
+
 import statinamicClient from "statinamic/lib/client"
 
 import routes from "app/routes"
