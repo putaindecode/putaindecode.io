@@ -31,9 +31,10 @@ if (process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
     token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
   })
 }
-else {
+else if (Object.keys(results.map).length === 0) {
   throw new Error(
-    "You need a GitHub token available as an environement variable." +
+    "In order to generate a new `contributors.json` map," +
+    "you will need a GitHub token available as an environement variable." +
     "Please be sure to get one in GITHUB_TOKEN or GH_TOKEN variables."
   )
 //   githubApi.authenticate({
