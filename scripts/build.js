@@ -1,206 +1,211 @@
 import path from "path"
-
-import {sync as rm} from "rimraf"
-import async from "async"
-import colors from "chalk"
-
-import Metalsmith from "metalsmith"
-import defaultMetadata from "./metalsmith/default-metadata"
-import markdown from "metalsmith-md"
-import collections from "metalsmith-collections"
-import addFilenames from "metalsmith-filenames"
-import url from "metalsmith-url"
-import rename from "metalsmith-rename"
-import rss from "metalsmith-rss"
-import react from "metalsmith-react"
-
 import webpack from "webpack"
-import webpackConfig from "../webpack.config"
+import ExtractTextPlugin from "extract-text-webpack-plugin"
 
-// prod
-import copyWithContentHash from "copy-with-content-hash/hash-file"
+import markdownIt from "markdown-it"
+import markdownItTocAndAnchor from "markdown-it-toc-and-anchor"
+import hljs from "highlight.js"
 
-// dev
-import watch from "metalsmith-watch"
-import devServer from "./webpack-dev-server"
+import pkg from "../package.json"
 
-// customize marked
-import "./marked"
+import builder from "statinamic/lib/builder"
+import configurator from "statinamic/lib/configurator"
+import prepareDefinedValues from "statinamic/lib/prepare-defined-values"
 
-import contributions from "../scripts/contributors"
-import i18n from "../src/modules/i18n"
-import pkg from "../package"
-import logger from "nano-logger"
+const config = configurator(pkg)
 
-import variables, {defineGlobalVariables} from "../variables"
-defineGlobalVariables()
-const DEV_SERVER = process.argv.includes("--dev-server")
+const sourceBase = "content"
+const destBase = "dist"
+const root = path.join(__dirname, "..")
+const source = path.join(root, sourceBase)
+const dest = path.join(root, destBase)
 
-const log = logger("./build")
-JSON.stringify(variables, null, 2).split("\n").forEach(l => log(l))
+const webpackConfig = {
+  devtool: "eval",
 
-const mdToHtmlReplacement = [/\.md$/, ".html"]
+  output: {
+    path: dest,
+    filename: "[name].js",
+    publicPath: config.baseUrl.path,
+  },
 
-function build(contributors) {
-  // We clean ./dist by hand mainly for prod, in order to be able to build
-  // assets with webpack before metalsmith build.
-  // This allows us to get hashes in filename and pass them to the build
-  rm("./dist")
+  resolve: {
+    extensions: [
+      // node default extensions
+      ".js",
+      ".json",
+      // for all other extensions specified directly
+      "",
+    ],
 
-  const smith = new Metalsmith(path.join(__dirname, ".."))
-  smith
-  .clean(false)
-  .source("./content")
-  .destination("./dist")
+    root: [
+      path.join(root, "node_modules"),
+      path.join(root, "web_modules"), // for static (node) build
+    ],
+  },
 
-  // add default values for md metadata
-  .use(
-    defaultMetadata()
-  )
+  resolveLoader: {
+    root: [ path.join(root, "node_modules") ],
+  },
 
-  // convert markdown
-  .use(
-    markdown({
-      baseHref: `${__SERVER_URL__}/`,
-    })
-  )
-
-  // useful for some homemade plugins
-  .use(
-    addFilenames()
-  )
-
-  // add url meta data with some replacements
-  .use(
-    url([
-      mdToHtmlReplacement,
-      [/index\.html?$/, ""],
-    ])
-  )
-
-  // allow looping on post for listing
-  .use(
-    collections({
-      posts: {
-        sortBy: "date",
-        reverse: true,
+  module: {
+    // ! \\ note that loaders are executed from bottom to top !
+    loaders: [
+      //
+      // statinamic requirement
+      //
+      {
+        test: /\.md$/,
+        loader: "statinamic/lib/md-collection-loader" +
+          `?${ JSON.stringify({
+            context: source,
+            basepath: config.baseUrl.path,
+            defaultHead: {
+              layout: "Post",
+              comments: true,
+            },
+            feedsOptions: {
+              title: pkg.name,
+              site_url: pkg.homepage,
+            },
+            feeds: {
+              "feed.xml": {
+                collectionOptions: {
+                  filter: { layout: "Post" },
+                  sort: "date",
+                  reverse: true,
+                  limit: 20,
+                },
+              },
+            },
+          }) }`
+        ,
       },
-    })
-  )
+      {
+        test: /\.json$/,
+        loader: "json-loader",
+      },
 
-  .use(
-    rss({
-      feedOptions: {
-        title: i18n.title,
-        site_url: __SERVER_URL__,
-        language: "fr",
-        categories: [
-          "code",
+      // your loaders
+      {
+        test: /\.js$/,
+        loaders: [
+          "babel-loader",
+          "eslint-loader", // ?fix",
         ],
+        exclude: /(statinamic|node_modules)/,
       },
-      destination: "feed.xml",
-    })
-  )
-
-  // wrap .html into react `template:`
-  .use(
-    react({
-      pattern: "**/*.md",
-      templatesPath: "./src/layouts",
-      defaultTemplate: "Default",
-      before: "<!doctype html>",
-      data: {
-        pkg: pkg,
-        metadata: smith.metadata(),
-        i18n,
-        contributors,
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract(
+          "style-loader",
+          "css-loader" +
+            // "?localIdentName=[path][name]--[local]--[hash:base64:5]" +
+            // "&modules" +
+          "!postcss-loader"
+        ),
       },
-    })
-  )
+      {
+        test: /\.(html|ico|jpe?g|png|gif)$/,
+        loader: "file-loader?name=[path][name].[ext]&context=./content",
+      },
+      {
+        test: /^CNAME$/,
+        loader: "file-loader?name=[path][name].[ext]&context=./content",
+      },
+      {
+        test: /\.(svg)$/,
+        loader: "raw-loader",
+      },
+    ],
+  },
 
-  .use(
-    rename([
-      mdToHtmlReplacement,
-    ])
-  )
+  postcss: () => [
+    require("postcss-import"),
+    require("postcss-cssnext"),
+  ],
 
-  // for development, we build metalsmith first, then we serve via
-  // webpack-dev-server which build assets too (no hashes involved)
-  if (DEV_SERVER) {
-    smith.metadata().assets = {
-      scripts: [
-        "/index.js",
-        `http://${__SERVER_HOSTNAME__}:${__LR_SERVER_PORT__}/livereload.js`,
-      ],
-      // css is handled by the js via webpack style-loader
-    }
-    smith
-      .use(
-        watch({
-          log: logger("watcher"),
-          livereload: __LR_SERVER_PORT__,
-          paths: {
-            "${source}/**/*": true,
-            "src/layouts/**/*": "**/*.md",
-            "src/modules/**/*": "**/*.md",
-          },
-        })
-      )
-      .build((err) => {
-        if (err) {
-          throw err
+  plugins: [
+    new webpack.DefinePlugin(prepareDefinedValues(config.consts)),
+  ],
+
+  markdownIt: (
+    markdownIt({
+      html: true,
+      linkify: true,
+      typographer: true,
+      highlight: (code, lang) => {
+        code = code.trim()
+        // language is recognized by highlight.js
+        if (lang && hljs.getLanguage(lang)) {
+          return hljs.highlight(lang, code).value
         }
-
-        devServer({
-          protocol: __SERVER_PROTOCOL__,
-          host: __SERVER_HOSTNAME__,
-          port: __SERVER_PORT__,
-          open: process.argv.includes("--open"),
-        })
+        // ...or fallback to auto
+        return hljs.highlightAuto(code).value
+      },
+    })
+      .use(markdownItTocAndAnchor, {
+        tocFirstLevel: 2,
       })
-  }
-
-  // for production we build assets first to be able to pass some assets hashes
-  // to metalsmith
-  else {
-    webpack(webpackConfig, (err) => {
-      if (err) {
-        throw err
-      }
-
-      console.log(colors.green("\n✓ Assets build completed"))
-
-      async.map(
-        [
-          "index.js",
-          "index.css",
-        ],
-        (file, cb) => copyWithContentHash(`dist/${file}`, false, cb),
-        (asynErr, results) => {
-          if (asynErr) {
-            throw asynErr
-          }
-
-          smith.metadata().assets = {
-            scripts: ["/" + results[0]],
-            stylesheets: ["/" + results[1]],
-          }
-          smith
-            .build(buildErr => {
-              if (buildErr) {
-                throw buildErr
-              }
-
-              console.log(colors.green("\n✓ Static build completed"))
-            })
-        }
-      )
-    })
-  }
+  ),
 }
 
-contributions()
-  .then((contributors) => build(contributors))
-  .catch(err => {
-    throw err
-  })
+builder({
+  config,
+  source,
+  dest,
+
+  clientWebpackConfig: {
+    ...webpackConfig,
+
+    entry: {
+      "statinamic-client": path.join(__dirname, "index-client"),
+    },
+
+    plugins: [
+      ...webpackConfig.plugins,
+
+      // ! \\ the static build below will extract the exact same thing in the
+      // same file, but here we use extract plugin to REMOVE REDUNDANT CSS
+      // from the build. Since there is a static build that is used for the
+      // first viewed page (which contains all css), we don't need styles in
+      // the JS too.
+      new ExtractTextPlugin(
+        "[name].css",
+        { disable: config.dev }
+      ),
+
+      ...config.prod && [
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false,
+          },
+        }),
+      ],
+    ],
+  },
+  staticWebpackConfig: {
+    ...webpackConfig,
+
+    entry: {
+      "statinamic-static": path.join(__dirname, "index-static"),
+    },
+
+    target: "node",
+
+    output: {
+      ...webpackConfig.output,
+      libraryTarget: "commonjs2",
+      path: __dirname,
+    },
+
+    plugins: [
+      ...webpackConfig.plugins,
+
+      // extract (and overwrite) statinamic client css
+      // poor workaround to avoid having 2 identical files...
+      new ExtractTextPlugin(path.join("..", destBase, "statinamic-client.css")),
+    ],
+  },
+})

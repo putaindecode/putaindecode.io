@@ -1,5 +1,5 @@
 ---
-template: Posts
+layout: Posts
 title: Les articles
 collection: index
 ---

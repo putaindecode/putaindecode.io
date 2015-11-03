@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 
 import color from "chalk"
-import {denodeify as asyncify} from "promise"
+import { denodeify as asyncify } from "promise"
 
 import GithubApi from "github"
 
@@ -13,7 +13,7 @@ const glob = asyncify(require("glob"))
 const readFile = asyncify(fs.readFile)
 const writeFile = asyncify(fs.writeFile)
 
-// //
+//
 
 const authorsFiles = "content/authors/*.json"
 const contributorsFile = "contributors.json"
@@ -31,13 +31,18 @@ if (process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
     token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
   })
 }
-// else {
+else if (Object.keys(results.map).length === 0) {
+  throw new Error(
+    "In order to generate a new `contributors.json` map," +
+    "you will need a GitHub token available as an environement variable." +
+    "Please be sure to get one in GITHUB_TOKEN or GH_TOKEN variables."
+  )
 //   githubApi.authenticate({
 //     type: "basic",
 //     username: "xxx",
 //     password: "xxx",
 //   })
-// }
+}
 
 // @todo get user/repo from git origin
 const repoMetas = {
@@ -64,7 +69,7 @@ function sortObjectByKeys(obj) {
 }
 
 async function getContributorFromGitHub(user) {
-  const githubUser = await asyncify(githubApi.user.getFrom)({user})
+  const githubUser = await asyncify(githubApi.user.getFrom)({ user })
   log("New contributor:", githubUser.login)
   return {
     // see what's available here
@@ -84,19 +89,6 @@ async function getContributorFromGitHub(user) {
 }
 
 async function contributorsMap() {
-  const contributors = await readFile(contributorsFile, {encoding: "utf-8"})
-
-  try {
-    results = JSON.parse(contributors)
-    log("✓ contributors.json parsed")
-  }
-  catch (err) {
-    log(color.red("⚠︎ No contributors.json or malformed content"))
-    console.error(err)
-    results.map = {}
-    results.mapByEmail = {}
-  }
-
   const loginCache = {}
 
   const files = await glob(authorsFiles)
@@ -121,7 +113,7 @@ async function contributorsMap() {
     loginCache[author] = results.map[author]
   })
 
-  let stdout = await exec("git log --pretty=format:%ae::%an | sort | uniq")
+  const stdout = await exec("git log --pretty=format:%ae::%an | sort | uniq")
   log("- Git log done")
 
   const newUsers = []
@@ -203,13 +195,14 @@ async function contributorsMap() {
         }
       }
       catch (err) {
-        if (err.toString().indexOf("ENOTFOUND") > -1) {
+        if (err.toString().indexOf("\Not Found\"") > -1) {
           log(color.red("⚠︎ Cannot connect to GitHub for " + email))
         }
         else {
           // not sure why I need to do this to get exception throw
           // await/async should handle that :(
           setTimeout(() => {
+            console.error("Unhandled error from GitHub API")
             throw err
           }, 1)
         }
@@ -222,8 +215,6 @@ async function contributorsMap() {
   // sort
   results.map = sortObjectByKeys(results.map)
   results.mapByEmail = sortObjectByKeys(results.mapByEmail)
-
-  return await writeFile(contributorsFile, JSON.stringify(results, true, 2))
 }
 
 async function totalContributions() {
@@ -236,6 +227,14 @@ async function totalContributions() {
     `git shortlog --no-merges --summary --numbered --email ` +
     `${sha.trim()}..HEAD`
   )
+
+  // // get contributions for the last 6 months
+  // const since = new Date()
+  // since.setMonth(since.getMonth() - 12)
+  // const stdout = await exec(
+  //   `git shortlog --no-merges --summary --numbered --email ` +
+  //   `--since ${ since.toISOString() }`
+  // )
 
   stdout
     .trim("\n")
@@ -285,7 +284,20 @@ export default async function() {
     log("✓ Contributors list already generated")
   }
   else {
-    results = {}
+    try {
+      const contributors = await readFile(
+        contributorsFile,
+        { encoding: "utf-8" }
+      )
+      results = JSON.parse(contributors)
+      log("✓ contributors.json parsed")
+    }
+    catch (err) {
+      log(color.red("⚠︎ No contributors.json or malformed content"))
+      console.error(err)
+      results.map = {}
+      results.mapByEmail = {}
+    }
 
     await contributorsMap()
     log("✓ Contributors cache updated")
@@ -296,16 +308,7 @@ export default async function() {
     await filesContributions()
     log("✓ Contributions per files done")
 
-    results.getContributor = (contributor) => {
-      return (
-        results.map[contributor]
-        ? results.map[contributor]
-        : {
-          login: contributor,
-          name: contributor,
-        }
-      )
-    }
+    await writeFile(contributorsFile, JSON.stringify(results, true, 2))
   }
 
   return results

@@ -1,13 +1,10 @@
-# things that should be in your global gitignore
-.DS_Store
-.idea/
-
 # npm
 node_modules
 npm-debug.log
 
 # build
+contributors.json
 dist
 
-# todo: remove me
-todo
+# statinamic static script builded with webpack for node
+scripts/statinamic-static.js
