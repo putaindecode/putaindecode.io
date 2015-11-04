@@ -21,8 +21,8 @@ export default class Contributors extends Component {
     const { metadata } = this.context
     const i18n = metadata.i18n
     const contributors = metadata.contributors
-
     const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
+
     const filename = this.props.filename
     const fileContributors = contributors.files[`content/${filename}`]
 

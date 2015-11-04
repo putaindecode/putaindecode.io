@@ -13,7 +13,7 @@ export default class TopContributors extends Component {
     const { metadata } = this.context
     const i18n = metadata.i18n
     const contributors = metadata.contributors
-    const pkg = metadata.pkg
+    const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
 
     let topContributors = Object.keys(contributors.map)
     topContributors.sort(
@@ -47,7 +47,7 @@ export default class TopContributors extends Component {
           <div className="r-Grid-cell">
             <Link
               className="putainde-Button putainde-Button--block"
-              to={`${pkg.repositoryHttpUrl}/graphs/contributors`}
+              to={`${ httpRepository }/graphs/contributors`}
             >
               {i18n.allContributors}
             </Link>
