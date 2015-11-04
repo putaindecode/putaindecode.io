@@ -71,15 +71,15 @@ export default class Footer extends Component {
                       />
                     </a>
                   </li>,
-                  <li key={i18n.slack}>
+                  <li key={i18n.chat}>
                     <a
-                      href={i18n.slack}
-                      data-r-tooltip={i18n.slackLabel}
+                      href={i18n.chat}
+                      data-r-tooltip={i18n.chatLabel}
                       className="r-Tooltip r-Tooltip--top"
                     >
                       <SVGIcon
                         className="putainde-Icon"
-                        svg={require(`icons/slack.svg`)}
+                        svg={require(`icons/chat.svg`)}
                         cleanup
                       />
                     </a>
