@@ -48,7 +48,13 @@ const webpackConfig = {
   resolveLoader: {
     root: [ path.join(root, "node_modules") ],
   },
-
+  svg : {
+      plugins: [
+        {removeTitle: true, removeDesc: true},
+        {convertColors: {shorthex: false}},
+        {convertPathData: false},
+      ],
+  },
   module: {
     // ! \\ note that loaders are executed from bottom to top !
     loaders: [
@@ -116,7 +122,10 @@ const webpackConfig = {
       },
       {
         test: /\.(svg)$/,
-        loader: "raw-loader",
+        loaders : [
+          "raw",
+          "svgo?useConfig=svg",
+        ],
       },
     ],
   },
