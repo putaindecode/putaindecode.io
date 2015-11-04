@@ -11,7 +11,7 @@ const SVGs = {
   pencil: require("icons/pencil.svg"),
   github: require("icons/github.svg"),
   twitter: require("icons/twitter.svg"),
-  slack: require("icons/slack.svg"),
+  chat: require("icons/chat.svg"),
 }
 
 export default class Navigation extends Component {
@@ -46,26 +46,22 @@ export default class Navigation extends Component {
           ))
         }
         {
-          i18n.navigationSocial.map((item) => (
-            <a href={item.url}
-              key={item.url}
+          [ "github", "twitter", "chat" ].map((key) => (
+            <a href={i18n[key]}
+              key={i18n[key]}
               className={cx({
                 "putainde-Nav-item": true,
                 "putainde-Nav-item--icon": true,
                 "r-Tooltip": true,
                 "r-Tooltip r-Tooltip--bottom": true,
               })}
-              data-r-tooltip={item.title}
+              data-r-tooltip={i18n[key + "Label"]}
             >
-              {
-                item.icon &&
-                <SVGIcon
-                  className="putainde-Icon"
-                  svg={SVGs[item.icon]}
-                  cleanup
-                />
-              }
-              {item.name}
+              <SVGIcon
+                className="putainde-Icon"
+                svg={ SVGs[key] }
+                cleanup
+              />
             </a>
           ))
         }
