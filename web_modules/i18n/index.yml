@@ -34,8 +34,8 @@
   twitterLabel: "Twitter"
   github: "https://github.com/putaindecode/putaindecode.fr"
   githubLabel: "GitHub"
-  slack: "https://putaindecode-slack.herokuapp.com/"
-  slackLabel: "Slack"
+  chat: "https://discord.gg/0ZotIeLBQxq2z713"
+  chatLabel: "Discuter"
   forum: "https://github.com/putaindecode/forum/issues"
   forumLabel: "Forum"
   elsewhere: "Retrouvez-nous sur les internettes"
@@ -60,19 +60,6 @@
       url: "/posts/comment-contribuer"
       name: "Participer"
       icon: "pencil"
-  navigationSocial:
-    -
-      url: "https://github.com/putaindecode/"
-      title: "GitHub"
-      icon: "github"
-    -
-      url: "https://twitter.com/putaindecode/"
-      title: "Twitter"
-      icon: "twitter"
-    -
-      url: "https://putaindecode-slack.herokuapp.com/"
-      title: "Slack"
-      icon: "slack"
   footerNavigation:
     -
       url: "/feed.xml"
