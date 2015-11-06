@@ -62,7 +62,7 @@
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.1.1",
     "rimraf": "^2.3.2",
-    "statinamic": "^0.4.3",
+    "statinamic": "^0.5.0",
     "style-loader": "^0.12.2",
     "svgo-loader": "^1.1.0",
     "tape": "^4.0.0",
@@ -74,10 +74,10 @@
   "scripts": {
     "lint": "eslint --fix .",
     "start": "babel-node scripts/putaindebuild --server --open --dev",
-    "build": "NODE_ENV=production babel-node scripts/putaindebuild --static --production",
-    "postbuild": "echo 'putaindecode.fr' > dist/CNAME",
+    "build": "babel-node scripts/putaindebuild --static --production",
     "pretest": "npm run lint",
     "test": "npm run build",
+    "pre_deploy": "echo 'putaindecode.fr' > dist/CNAME",
     "_deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v",
     "deploy": "npm test && npm run _deploy"
   },
