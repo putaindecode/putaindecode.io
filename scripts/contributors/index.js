@@ -275,33 +275,49 @@ export default async function() {
     }
     catch (err) {
       log(color.red("⚠︎ No contributors.json or malformed content"))
-      console.error(err)
+      log(color.red(err.toString()))
       results.map = {}
       results.mapByEmail = {}
     }
 
-    if (process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
+    const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN
+    if (!githubToken && Object.keys(results.map).length === 0) {
+      log(color.yellow(
+        "In order to generate a new `contributors.json` map, " +
+        "you will need a GitHub token available as an environement variable. "
+      ))
+      log(color.yellow(
+        "Please be sure to get one in GITHUB_TOKEN or GH_TOKEN variables. " +
+        "\nThis will be require to get full features of the website that " +
+        "concern contributors."
+      ))
+      log(color.yellow(
+        "Visit https://github.com/settings/tokens/new to generate a token, " +
+        "then you can put it in a file in your home and source it like this: "
+      ))
+      log(color.yellow(
+        "if [[ -f $HOME/.github_token ]]\n" +
+        "then\n" +
+        "  export GITHUB_TOKEN=$(cat $HOME/.github_token)\n" +
+        "fi\n"
+      ))
+    }
+
+    if (githubToken) {
       githubApi.authenticate({
         type: "oauth",
         token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
       })
+
+      await contributorsMap()
+      log("✓ Contributors cache updated")
+
+      await totalContributions()
+      log("✓ Top contributions done")
+
+      await filesContributions()
+      log("✓ Contributions per files done")
     }
-    else if (Object.keys(results.map).length === 0) {
-      throw new Error(
-        "In order to generate a new `contributors.json` map," +
-        "you will need a GitHub token available as an environement variable." +
-        "Please be sure to get one in GITHUB_TOKEN or GH_TOKEN variables."
-      )
-    }
-
-    await contributorsMap()
-    log("✓ Contributors cache updated")
-
-    await totalContributions()
-    log("✓ Top contributions done")
-
-    await filesContributions()
-    log("✓ Contributions per files done")
 
     await writeFile(contributorsFile, JSON.stringify(results, true, 2))
   }
