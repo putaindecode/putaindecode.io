@@ -49,6 +49,11 @@
       "user": "putaindecode",
       "mail": "wordpress@putaindecode.fr",
       "passwd-salt": "wp"
+    },
+    "spreadshirt": {
+      "user": null,
+      "mail": "mail+spreadshirt@putaindecode.io",
+      "passwd-salt": "sp"
     }
   }
 }
