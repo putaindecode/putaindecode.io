@@ -40,7 +40,7 @@
   forumLabel: "Forum"
   elsewhere: "Retrouvez-nous sur les internettes"
   PageError:
-    title: "Page non trouvé 😱"
+    title: "Page non trouvée 😱"
     contentMissing: "Le contenu que vous cherchez n’existe pas !"
     report: "Si vous pensez que c'est une erreur, n'hésitez pas à "
     reportLink: "nous le signaler"
