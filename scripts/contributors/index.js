@@ -209,14 +209,6 @@ async function totalContributions() {
     `${sha.trim()}..HEAD`
   )
 
-  // // get contributions for the last 6 months
-  // const since = new Date()
-  // since.setMonth(since.getMonth() - 12)
-  // const stdout = await exec(
-  //   `git shortlog --no-merges --summary --numbered --email ` +
-  //   `--since ${ since.toISOString() }`
-  // )
-
   stdout
     .trim("\n")
     .split("\n")
@@ -229,6 +221,38 @@ async function totalContributions() {
       }
       else {
         results.contributions[login] += contributions
+      }
+    })
+
+  return true
+}
+
+async function recentContributions() {
+  results.recentContributions = {}
+
+  // get recent contributions for the last X months
+  const since = new Date()
+  since.setMonth(since.getMonth() - 12)
+
+  const command = `git shortlog --no-merges --summary --numbered --email ` +
+    `--since "${ since.toISOString() }"` +
+    // http://stackoverflow.com/questions/15564185/#15566068
+    ` < /dev/tty`
+
+  const stdout = await exec(command)
+
+  stdout
+    .trim("\n")
+    .split("\n")
+    .forEach(function(line) {
+      line = line.trim()
+      const login = results.mapByEmail[line.match(emailRE)[1]]
+      const contributions = parseInt(line.match(commitsRE)[1], 10)
+      if (!results.recentContributions[login]) {
+        results.recentContributions[login] = contributions
+      }
+      else {
+        results.recentContributions[login] += contributions
       }
     })
 
@@ -313,7 +337,10 @@ export default async function() {
       log("✓ Contributors cache updated")
 
       await totalContributions()
-      log("✓ Top contributions done")
+      log("✓ Total contributions done")
+
+      await recentContributions()
+      log("✓ Recent contributions done")
 
       await filesContributions()
       log("✓ Contributions per files done")
