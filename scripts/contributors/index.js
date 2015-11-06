@@ -25,25 +25,6 @@ const githubApi = new GithubApi({
   },
 })
 
-if (process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
-  githubApi.authenticate({
-    type: "oauth",
-    token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
-  })
-}
-else if (Object.keys(results.map).length === 0) {
-  throw new Error(
-    "In order to generate a new `contributors.json` map," +
-    "you will need a GitHub token available as an environement variable." +
-    "Please be sure to get one in GITHUB_TOKEN or GH_TOKEN variables."
-  )
-//   githubApi.authenticate({
-//     type: "basic",
-//     username: "xxx",
-//     password: "xxx",
-//   })
-}
-
 // @todo get user/repo from git origin
 const repoMetas = {
   user: "putaindecode",
@@ -297,6 +278,20 @@ export default async function() {
       console.error(err)
       results.map = {}
       results.mapByEmail = {}
+    }
+
+    if (process.env.GITHUB_TOKEN || process.env.GH_TOKEN) {
+      githubApi.authenticate({
+        type: "oauth",
+        token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
+      })
+    }
+    else if (Object.keys(results.map).length === 0) {
+      throw new Error(
+        "In order to generate a new `contributors.json` map," +
+        "you will need a GitHub token available as an environement variable." +
+        "Please be sure to get one in GITHUB_TOKEN or GH_TOKEN variables."
+      )
     }
 
     await contributorsMap()
