@@ -18,9 +18,15 @@ before_script:
   - git config --global user.name "Travis-CI"
   - git config --global user.email "mail+travis@putaindecode.fr"
 
-script: ./scripts/travis.sh
-
 env:
   global:
     # GH_TOKEN
     - secure: d1VZ29IbfOn0Re774eOWFpCcSLMd3N49ehmMOF8NiAQBV30NddTr5GVua19sMfCBVryHVu5MaaD+xf8Qr1fANqZveFhjIdTsTRLt7BkfxpmrWwHKn6g1szQq6KMCUECtHToe9qrCwA/UC0p4+rNofd3PnlF51dTPvP8ZG1Yy7U0=
+    - GIT_DEPLOY_REPO=https://$GH_TOKEN@github.com/putaindecode/putaindecode.fr.git
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: ./scripts/deploy.sh
+  on:
+    branch: master
