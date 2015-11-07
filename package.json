@@ -75,11 +75,9 @@
     "lint": "eslint --fix .",
     "start": "babel-node scripts/putaindebuild --server --open --dev",
     "build": "babel-node scripts/putaindebuild --static --production",
+    "postbuild": "echo 'putaindecode.fr' > dist/CNAME",
     "pretest": "npm run lint",
-    "test": "npm run build",
-    "pre_deploy": "echo 'putaindecode.fr' > dist/CNAME",
-    "_deploy": "GH_OWNER=putaindecode GH_PROJECT_NAME=putaindecode.fr ./scripts/deploy-to-gh-pages.sh -v",
-    "deploy": "npm test && npm run _deploy"
+    "test": "npm run build"
   },
   "browser": {
     "fs": false
