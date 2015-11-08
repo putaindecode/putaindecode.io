@@ -24,12 +24,22 @@ export default class TopContributors extends Component {
       <div>
         <div className="putainde-Title putainde-Title--home">
           <h2 className="putainde-Title-text">
-            {i18n.topContributors}
+            { i18n.topContributors }
           </h2>
         </div>
 
         <div className="r-Grid r-Grid--withGutter">
           {
+            !topContributors.length &&
+            <p
+              className="r-Grid-cell"
+              style={ { textAlign: "center", opacity: .5 } }
+            >
+              { i18n.topContributorsNoData }
+            </p>
+          }
+          {
+            topContributors.length &&
             topContributors.map(author => {
               return (
                 <div key={author} className="r-Grid-cell r-all--1of2">

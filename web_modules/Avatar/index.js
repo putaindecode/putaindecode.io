@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from "react"
 
 import getAuthorUri from "../getAuthorUri"
+
+import defaultAvatar from "./default.png"
+
 export default class Avatar extends Component {
 
   static contextTypes = {
@@ -27,7 +30,7 @@ export default class Avatar extends Component {
           src={
             author && author.avatar_url
             ? author.avatar_url + "&s=" + size
-            : "/images/defaultAvatar.png"
+            : defaultAvatar
           }
           alt=""
         />
