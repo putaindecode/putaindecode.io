@@ -40,10 +40,10 @@ export default class Footer extends Component {
                       </li>
                     )
                   }),
-                  <li key={i18n.forum}>
-                    <Link to={i18n.forum}>
-                      {i18n.forumLabel}
-                    </Link>
+                  <li key={ i18n.forum }>
+                    <a href={ i18n.forum }>
+                      { i18n.forumLabel }
+                    </a>
                   </li>,
                   <li key={i18n.github}>
                     <a
