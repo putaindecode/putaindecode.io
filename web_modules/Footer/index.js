@@ -33,10 +33,10 @@ export default class Footer extends Component {
                 [
                   i18n.footerNavigation.map((item) => {
                     return (
-                      <li key={item.url}>
-                        <Link to={item.url}>
-                          {item.name}
-                        </Link>
+                      <li key={ item.url }>
+                        <a href={ item.url }>
+                          { item.name }
+                        </a>
                       </li>
                     )
                   }),
