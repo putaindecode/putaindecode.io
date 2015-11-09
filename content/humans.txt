@@ -1,58 +1,17 @@
 /* humanstxt.org/ */
 /* The humans responsible & technology colophon */
-/* Please update if needed the team page when you update this page */
-
-    ____        __        _              __        ______          __
-   / __ \__  __/ /_____ _(_)___     ____/ /__     / ____/___  ____/ /__
-  / /_/ / / / / __/ __ `/ / __ \   / __  / _ \   / /   / __ \/ __  / _ \
- / ____/ /_/ / /_/ /_/ / / / / /  / /_/ /  __/  / /___/ /_/ / /_/ /  __/
-/_/    \__,_/\__/\__,_/_/_/ /_/   \__,_/\___/   \____/\____/\__,_/\___/
+    ____        __        _              __                        __        __
+   / __ \__  __/ /_____ _(_)___     ____/ /__      ____  ___  ____/ /__     / /
+  / /_/ / / / / __/ __ `/ / __ \   / __  / _ \   / ____/ __ \/ __  / _ \   /_/
+ / ____/ /_/ / /_/ /_/ / / / / /  / /_/ /  __/  / /___/ /_/ / /_/ /  __/   _
+/_/    \__,_/\__/\__,_/_/_/ /_/   \__,_/\___/   \____/\____/\__,_/\___/   (_)
 
 
 /* TEAM */
-
-    Maxime Thirouin (MoOx)
-    Developer
-    http://moox.io/ - https://twitter.com/MoOx - https://github.com/MoOx
-
-    Erwann Mest (_kud)
-    Developer
-    http://kud.io -  https://twitter.com/_kud - https://github.com/kud
-
-    François Vaux (madx)
-    Developer
-    http://madx.me - https://twitter.com/madx - https://github.com/madx
-
-    Nyalab
-    Developer
-    https://twitter.com/Nyalab - https://github.com/Nyalab - ¯\_(ツ)_/¯
-
-    Tristan Maindron (OwlyCode)
-    Developer
-    http://www.owly-code.com -  https://twitter.com/OwlyCode - https://github.com/OwlyCode
-
-    bloodyowl
-    Developer
-    http://bloodyowl.github.io - https://twitter.com/bloodyowl - https://github.com/bloodyowl
-
-    lionelB
-    Developer
-    http://lumographe.fr  - https://twitter.com/b_lionel
-
-    dguyon
-    Developer
-
-    justinmarsan
-    Developer
-
-    rhannequin
-    Developer
-
 /* THANKS */
 
-    w3school, commentcamarche & developpez.net for their shitty content which gave us hope.
+https://github.com/putaindecode/putaindecode.fr/graphs/contributors
 
 /* TECHNOLOGY COLOPHON */
 
-    Atom / SublimeText 3 / Vim
-    HTML5, CSS 3, JavaScript
+https://github.com/putaindecode/putaindecode.fr/blob/master/package.json
