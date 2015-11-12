@@ -182,7 +182,7 @@ est des types sympas.
   [aux dépendances du projet](https://github.com/putaindecode/putaindecode.fr/blob/master/package.json),
   histoire de savoir de quoi on cause.
 
-* Tous nos posts sont contenus dans `pages/posts/`. Si jamais c'est sur
+* Tous nos posts sont contenus dans `content/`. Si jamais c'est sur
   autre chose qu'un post, farfouille un peu et tu trouveras, les noms des
   dossiers sont assez explicites et de toute façon les URLs sur notre site
   ressemblent bizarrement (en vrai c'est pas bizarre hein, t'avais compris)
@@ -247,7 +247,7 @@ est des types sympas.
 
   Ensuite il va falloir que tu crées les fichiers nécessaires pour le brouillon
   du post.
-  Pour ça, tu vas dans `/pages/posts/` et tu regardes comment ça se passe.
+  Pour ça, tu vas dans `content/` et tu regardes comment ça se passe.
   C'est plutôt simple. Tu créés un dossier avec le nom qui va bien avec un fichier
   `.jade` pour les metas de l'article, et un `.md` pour le contenu.
 
@@ -255,7 +255,7 @@ est des types sympas.
   Amuse-toi, créé ton contenu, rédige bien tout comme tu veux.
 
 * Tu devrais pouvoir te balader sur le site et trouver ton article sur la page
-  des posts: http://localhost:4242/posts/ .
+  des articles.
   Avec la tâche `$ npm start` lancée normalement tout (ou presque) se rafraîchira
   automatiquement.
   Si ce n'est pas le cas, relance la tâche `$ npm start`.
@@ -264,9 +264,6 @@ est des types sympas.
 
 * En l'état, tu devrais pouvoir consulter sur le site lancé localement ton post,
   voir s'il sort correctement et s'il est présentable à ton goût.
-  Tu pourras le consulter sur une URL du type
-  `http://localhost:4242/post/nom-du-post/`. Mais tu le sais déjà puisque t'as
-  bien suivi et que t'es passé par la page des brouillons.
 
 * Une fois que tout est bon, tu peux passer à l'étape de validation de tes
   modifications (étape commune pour la modification d'un post existant ou la
@@ -279,7 +276,7 @@ est des types sympas.
   commit. Tu peux faire ça tout simplement avec un :
 
   ```console
-  $ git add -A pages/posts/nom-du-post
+  $ git add -A content/fr/articles/nom-du-post
   ```
 
   Cette commande ajoute tous les fichiers dans le dossier que tu as créé.
@@ -329,4 +326,4 @@ est des types sympas.
 ## Hey ! Tu veux mieux comprendre Git ?
 
 Pour découvrir Git plus en détails, on t'invite à lire notre article
-[Versionner avec Git](/posts/git/versionner-avec-git/)
+[Versionner avec Git](/fr/articles/git/)

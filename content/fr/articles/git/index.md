@@ -350,7 +350,7 @@ Guide][git-guide] de Roger Dudler est une bonne manière d'apprendre.
 ## Hey ! Tu veux appliquer ça pour contribuer ?
 
 Pas de problème, on a écrit un post exprès :
-[Comment contribuer](/posts/comment-contribuer/) !
+[Comment contribuer](/fr/contribuer/) !
 
 [git:website]: http://git-scm.com/
 [git:doc]: http://git-scm.com/documentation

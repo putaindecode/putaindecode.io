@@ -10,7 +10,7 @@ authors:
 ---
 
 Si vous n'avez pas encore lu
-[l'introduction à flux](http://putaindecode.fr/posts/js/flux-qu-est-ce-c-est/),
+[l'introduction à flux](/fr/articles/js/flux/),
 n'hésitez pas à jeter un œil avant de lire ce post.
 
 Une des choses importantes avec Flux, et pourtant pas évidentes après lecture

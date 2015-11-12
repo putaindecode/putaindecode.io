@@ -321,8 +321,8 @@ Voilà pour cette premier introduction à *Make*, j'espère que ça vous a plu e
 que vous êtes fin prêts à affronter tous ces bouseux avec leur système de build
 à base de streams, de brocolis et autres râteaux.
 
-[p!gulp]: /posts/js/introduction-gulp/
-[p!grunt]: /posts/js/premiers-pas-avec-grunt/
+[p!gulp]: /fr/articles/js/gulp/
+[p!grunt]: /fr/articles/js/grunt/
 [gem:rake]: https://rubygems.org/gems/rake
 [npm:marked]: https://www.npmjs.org/package/marked
 [man:make]: https://www.gnu.org/software/make/manual/make.html

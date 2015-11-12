@@ -14,7 +14,7 @@ header:
 # Pourquoi Webpack ?
 
 Webpack a pour objectif de vous faciliter la vie, notamment en vous aidant à
-organiser [votre application JS en modules](/posts/js/etat-lieux-js-modulaire-front/).
+organiser [votre application JS en modules](/fr/articles/frontend/2015-etat-lieux-javascript-modulaire/).
 Le projet est déjà très populaire, particulièrement dans la communauté React, ce qui
 parait logique vu qu'il s'agit de développer des composants.
 
@@ -30,9 +30,9 @@ Webpack apporte à ce niveau des fonctionnalités intéressantes :
 - adapté pour les gros projets.
 
 Avant Webpack, nous avions beau avoir des super task-runners comme
-[Grunt](/posts/js/premiers-pas-avec-grunt)
+[Grunt](/fr/articles/js/grunt)
 ou
-[Gulp](/posts/js/introduction-gulp),
+[Gulp](/fr/articles/js/gulp),
 il faut avouer qu'on bricolait quand même pas mal.
 
 Et vous avez sûrement mieux à faire que de devoir modifier des configurations ou
@@ -108,7 +108,7 @@ Avec les solutions existantes, il est actuellement très difficile d'arriver
 facilement à ce que propose Webpack, pour ne pas dire impossible.
 
 Il est possible d'avoir l'équivalent avec
-[browserify](/posts/js/browserify-all-the-things) comme l'a indiqué son auteur
+[browserify](/fr/articles/js/browserify) comme l'a indiqué son auteur
 dans un article
 [browserify for Webpack users](https://gist.github.com/substack/68f8d502be42d5cd4942)
 (qui est une réponse à la ressource
@@ -132,7 +132,7 @@ autre chose que Webpack.
 # Comment intégrer Webpack dans votre workflow ?
 
 Dans un premier temps vous pourrez facilement intégrer Webpack en remplacement de
-[browserify](/posts/js/browserify-all-the-things/) ou d'une éventuelle
+[browserify](/fr/articles/js/browserify/) ou d'une éventuelle
 concaténation via des plugins Gulp, Grunt, etc.
 
 Dans un second temps, vous pourrez très certainement remplacer une partie de vos
@@ -143,14 +143,14 @@ en passez en utilisant simplement
 [des scripts npm](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
 
 Si jamais vous êtes limité, [vous pourrez bien entendu créer votre propre
- commande](/posts/shell/utilitaires-ligne-commande/), qui sera réutilisable dans
+ commande](/fr/articles/npm/utilitaire-cli/), qui sera réutilisable dans
 n'importe quel contexte.
 
 # Webpack en pratique
 
 Quelques ressources pour vous y mettre :
 
-- Un premier [exemple détaillé de configuration et d'utilisation](/posts/webpack/premier-exemple)
+- Un premier [exemple détaillé de configuration et d'utilisation](/fr/articles/js/webpack/premier-exemple)
 basé sur notre retour d'expérience.
 
 En anglais :

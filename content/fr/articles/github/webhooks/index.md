@@ -11,8 +11,8 @@ header:
 ---
 
 Vous avez pu lire récemment une [introduction sur l'intégration
-continue](/posts/ci/le-deploiement-continu/) qui mène vers [le déploiement
-continu](/posts/ci/introduction/). Si vous utilisez GitHub pour héberger vos
+continue](/fr/articles/ci/deploiement-continu/) qui mène vers [le déploiement
+continu](/fr/articles/ci/). Si vous utilisez GitHub pour héberger vos
 sources et que vous cherchez un moyen très simple (peut-être un peu trop) de
 mettre en place le déploiement continu _sans serveur d'intégration continue
 dédié_, alors les webhooks peuvent répondre parfaitement à votre besoin.

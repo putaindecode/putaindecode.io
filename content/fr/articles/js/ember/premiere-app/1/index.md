@@ -9,7 +9,7 @@ authors:
   - bmeurant
 ---
 
-Après l'[article précédent](/posts/js/debuter-avec-ember) qui a détaillé les principaux concepts d'[Ember][ember], il est grand temps de
+Après l'[article précédent](/fr/articles/js/ember) qui a détaillé les principaux concepts d'[Ember][ember], il est grand temps de
 se dégourdir les doigts. Comme on a peur de rien, on va même construire progressivement ensemble une application
 avec [Ember][ember].
 
@@ -18,9 +18,9 @@ Bon, faut pas non plus trop vous emballer, c'est juste une application bateau de
 
 ## Structure d'une application Ember
 
-L'[article précédent](/posts/js/debuter-avec-ember) a insisté sur le fait qu'[Ember][ember] était un framework avec des partis pris forts et un modèle de développement structurant.
+L'[article précédent](/fr/articles/js/ember) a insisté sur le fait qu'[Ember][ember] était un framework avec des partis pris forts et un modèle de développement structurant.
 
-_Note : sur ce sujet, vu que [ça fait réagir](/posts/js/debuter-avec-ember/#comment-1644383934), je précise. Je ne dis pas que c'est bien ou que ce n'est pas bien.
+_Note : sur ce sujet, vu que [ça fait réagir](/fr/articles/js/ember/#comment-1644383934), je précise. Je ne dis pas que c'est bien ou que ce n'est pas bien.
 Je dis juste que c'est une caractéristique importante d'[Ember][ember]. Autant le savoir._
 
 Eh bien, aussi étonnant que cela puisse paraître, [Ember][ember] **nous laisse quand même nous débrouiller tout seul comme des grands pour organiser nos applications**.
@@ -177,8 +177,8 @@ entière.
 
 ### Routes et contrôleurs implicites
 
-Pour rappel, [Ember][ember] définit et utilise différents types d'objets ayant chacun une responsabilité propre (voir [article précédent](/posts/js/debuter-avec-ember)) et, pour ne pas
-nous obliger à fournir nous-même une implémentation par défaut de ces objets, les génère pour nous (voir [article précédent - *Génération d'objets*](/posts/js/debuter-avec-ember/#generation-d-objets)).
+Pour rappel, [Ember][ember] définit et utilise différents types d'objets ayant chacun une responsabilité propre (voir [article précédent](/fr/articles/js/ember)) et, pour ne pas
+nous obliger à fournir nous-même une implémentation par défaut de ces objets, les génère pour nous (voir [article précédent - *Génération d'objets*](/fr/articles/js/ember/#generation-d-objets)).
 
 Si nous n'avons eu ici qu'à fournir le gabarit `application.hbs`, c'est qu'[Ember][ember] a généré pour nous la route implicite `ApplicationRoute` activée au démarrage
 de l'application et le contrôleur `ApplicationController`.

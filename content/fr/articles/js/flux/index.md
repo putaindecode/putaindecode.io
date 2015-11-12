@@ -19,7 +19,7 @@ Les ingénieurs front-end de Facebook, confrontés à une codebase de plus en pl
 
 Face à ce besoin, ces développeurs sont donc parvenus à deux solutions :
 
-- [ReactJS](http://putaindecode.fr/posts/js/introduction-a-reactjs/)
+- [ReactJS](/fr/articles/js/react//)
 - Flux
 
 Flux n'est pas un framework, mais simplement une architecture, une sorte de *guideline* qui résout pas mal de problèmes ayant pu apparaître avec les divers bibliothèques et frameworks MV* apparus lors des dernières années.

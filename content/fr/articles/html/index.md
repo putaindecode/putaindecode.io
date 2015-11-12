@@ -154,7 +154,7 @@ Regarde plutôt le rendu :
 <iframe
   class="putainde-Post-iframe"
   height="350"
-  src="/posts/html/hache-the-aime-elle-vous-dites/notvalid.html">
+  src="/fr/articles/html/notvalid.html">
 </iframe>
 
 > WAT ?

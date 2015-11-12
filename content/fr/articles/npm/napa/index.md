@@ -11,7 +11,7 @@ authors:
 
 (Grosse grosse blague ce titre...)
 
-[@kewah](https://twitter.com/kewah) nous a récemment parlé de [**npm** comme front-end packager manager](/posts/frontend/npm-comme-package-manager-pour-le-front-end/), je vais aller encore plus loin. Je vais vous dévoiler comment installer des projets qui n'ont pas de `package.json`. Oui, car c'est bien beau de virer Bower (oh que oui c'est beau) mais comme npm requiert constamment un `package.json`, on ne va pas pouvoir télécharger grand chose sauf si on fait des _PR_ afin d'ajouter ce fichier sur les projets que l'on souhaite obtenir.
+[@kewah](https://twitter.com/kewah) nous a récemment parlé de [**npm** comme front-end packager manager](/fr/articles/npm/frontend/), je vais aller encore plus loin. Je vais vous dévoiler comment installer des projets qui n'ont pas de `package.json`. Oui, car c'est bien beau de virer Bower (oh que oui c'est beau) mais comme npm requiert constamment un `package.json`, on ne va pas pouvoir télécharger grand chose sauf si on fait des _PR_ afin d'ajouter ce fichier sur les projets que l'on souhaite obtenir.
 
 C'est pourquoi je vais vous parler de [**napa**](https://github.com/shama/napa).
 

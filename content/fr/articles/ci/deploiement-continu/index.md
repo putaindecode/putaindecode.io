@@ -35,7 +35,7 @@ centaines de fois par jour ! (GitHub est un bon exemple).
 
 Vous n'avez qu'une chose à faire avant de vous attaquer à la mise en place du
 déploiement continu : vous devez déjà avoir
-[l'intégration continue](/posts/ci/introduction/) en place.
+[l'intégration continue](/fr/articles/ci/) en place.
 
 Une fois vous êtes bon à ce niveau, vous pouvez passer à l'étape suivante.
 

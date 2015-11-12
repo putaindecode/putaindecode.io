@@ -150,12 +150,12 @@ Cet outil est maintenant basé sur [PostCSS](https://github.com/ai/postcss),
 un post-processeur CSS. Vous pouvez donc l’utiliser en plugin pour ce post-procésseur.
 
 Attends attends, un WAT ? Un **POST**-processeur ? Oui tu as bien lu car les
-pré-processeurs c’est so 2000. Regarde par là [Le point sur les pré-processeurs CSS](/posts/css/le-point-sur-les-preprocesseurs/) ;)
+pré-processeurs c’est so 2000. Regarde par là [Le point sur les pré-processeurs CSS](/fr/articles/css/preprocesseurs/) ;)
 
 Tout plein de -moz-bisous.
 
 <hr />
 
 PS: Convaincu par cette solution ? Tant mieux, elle est simple à mettre en place.
-Tout ça est décrit dans la [mise en place d'autoprefixer](/posts/css/mise-en-place-autoprefixer/)
+Tout ça est décrit dans la [mise en place d'autoprefixer](/fr/articles/css/autoprefixer/mise-en-place/)
 avec des exemples concrets pour ajouter ça dans un workflow existant.

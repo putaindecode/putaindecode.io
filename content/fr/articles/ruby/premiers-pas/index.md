@@ -37,7 +37,7 @@ Et ça va en rester ainsi pour le moment, car au lieu de voir la théorie sur Ô
 
 Il existe de nombreuses façons d'installer Ruby, un petit peu comme Node.js en passant par Github, par les packages officiels, brew, etc. *rbenv* reste d'après moi la façon la plus simple, propre et légère. Beaucoup pourront préférer *RVM* disant qu'il fait la même chose en mieux, d'autres diront qu'au contraire il en fait trop en écrasant par exemple la méthode `cd`. J'ai utilisé les deux, il fallait faire un choix, ce sera *rbenv*.
 
-Pour utiliser *rbenv*, il faut avoir Git. Si vous ne l'avez pas, vous devriez. Et ça tombe bien, [madx](https://github.com/madx) et [Erwyn](https://github.com/Erwyn) ont fait deux super articles pour l'[utiliser](/posts/git/versionner-avec-git/) et le [dompter](/posts/git/boutez-les-bugs-domptez-votre-historique/). On commence donc par installer *rbenv* :
+Pour utiliser *rbenv*, il faut avoir Git. Si vous ne l'avez pas, vous devriez. Et ça tombe bien, [madx](https://github.com/madx) et [Erwyn](https://github.com/Erwyn) ont fait deux super articles pour l'[utiliser](/fr/articles/git/) et le [dompter](/fr/articles/git/log-bisect-rebase-reflog/). On commence donc par installer *rbenv* :
 
 ```console
 $ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
@@ -63,7 +63,7 @@ Séquence émotion. Vous êtes désormais maître de l'Univers.
 
 Vous avez Ruby 2.1.1 d'installé. La ligne `rbenv global` permet comme son nom l'indique d'utiliser cette version de Ruby de façon globale à l'utilisateur, si jamais plusieurs versions coexistent.
 
-C'était facile n'est-ce pas ? Et bien c'est encore plus facile d'utiliser une bibliothèque (appelée "gem") ou un framework Ruby. Comme nous allons utiliser Sinatra dans notre prochain article, autant l'installer tout de suite. Pour installer une gem qui sera exécutée dans la console comme Sass il est nécessaire de l'installer de cette façon : `gem install sass`. Seulement pour Sinatra, nous avons seulement besoin que le framework soit disponible dans nos scripts Ruby. Pour cela nous allons utiliser un gestionnaire de dépendance des gem Ruby, et nous verrons cela dans [le prochain article pour nos premiers pas avec Sinatra](/posts/backend/ruby-dependances-et-projet).
+C'était facile n'est-ce pas ? Et bien c'est encore plus facile d'utiliser une bibliothèque (appelée "gem") ou un framework Ruby. Comme nous allons utiliser Sinatra dans notre prochain article, autant l'installer tout de suite. Pour installer une gem qui sera exécutée dans la console comme Sass il est nécessaire de l'installer de cette façon : `gem install sass`. Seulement pour Sinatra, nous avons seulement besoin que le framework soit disponible dans nos scripts Ruby. Pour cela nous allons utiliser un gestionnaire de dépendance des gem Ruby, et nous verrons cela dans [le prochain article pour nos premiers pas avec Sinatra](/fr/articles/ruby/bundler/).
 
 D'ici là vous pouvez commencer à jouer avec Ruby en tapant la commande `irb` dans votre terminal, qui lance l'interpretteur Ruby. Pourquoi pas essayer un *Hello World!* à la Ruby ?
 

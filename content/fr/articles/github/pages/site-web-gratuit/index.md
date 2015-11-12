@@ -159,7 +159,7 @@ Téléchargez les sources et placez les fichiers dans votre projet.
 - Apprenez Git : [try.github.io](https://try.github.io)
 - Apprenez JavaScript : [jsbooks.revolunet.com](http://jsbooks.revolunet.com)
 et [le livre d'Eric Elliott](https://ericelliottjs.com/product/programming-javascript-applications-paper-ebook-bundle/)
-- Lisez tous les articles de [Putain de code !](http://putaindecode.fr/)
+- Lisez tous les articles de [Putain de code !](/)
 
 ---
 

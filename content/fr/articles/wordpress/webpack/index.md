@@ -16,7 +16,7 @@ header:
 # Pourquoi Webpack pour gérer son thème WordPress ?
 
 La réponse est la même qu'à la simple question
-["pourquoi Webpack ?"](/posts/webpack/).
+["pourquoi Webpack ?"](/fr/articles/js/webpack/).
 L'intérêt principal est d'obtenir des rapports d'erreurs liés à
 la gestion des assets (images, fonts, etc).
 
@@ -219,7 +219,7 @@ export default {
 
 _Bien entendu, libre à vous d'adapter les loaders Webpack à utiliser, ainsi que
 la configuration PostCSS par exemple._ Faites un tour sur notre article de
-[premier exemple de configuration Webpack](/posts/webpack/premier-exemple/) afin
+[premier exemple de configuration Webpack](/fr/articles/js/webpack/premier-exemple/) afin
 d'y voir plus clair.
 
 Il nous reste maintenant à ajouter dans notre thème WordPress les

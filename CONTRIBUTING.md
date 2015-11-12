@@ -2,7 +2,7 @@
 
 Chez _Putain de code !_, on te laisse l'opportunité d'apporter ta pierre à
 l'édifice, comme on te l'explique en détails [sur un article dédié sur le
-site](http://putaindecode.fr/posts/comment-contribuer/).
+site](http://putaindecode.fr/fr/contribuer/).
 
 Tu trouveras ici les bonnes pratiques minimales pour pouvoir participer.
 
@@ -10,7 +10,7 @@ Tu trouveras ici les bonnes pratiques minimales pour pouvoir participer.
 
 C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
 
-![github-fork](src/pages/posts/comment-contribuer/fork-button.jpg)
+![github-fork](content/fr/contribuer/fork-button.jpg)
 
 ## Soumettre un post
 
@@ -33,7 +33,7 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
   [ImageOptim](https://imageoptim.com/)
     - Indiquer via un lien dans la meta `header.credit` l'URL de l'origine
     - Si tes images rendent difficile la lecture du titre, tu peux spécifier
-    un dégradé ([exemple de dégradé sur un header](https://github.com/putaindecode/putaindecode.fr/blob/master/content/posts/entreprendre/auto-entrepreneuriat-retour-experiences/index.md))
+    un dégradé ([exemple de dégradé sur un header](https://github.com/putaindecode/putaindecode.fr/blob/master/content/fr/articles/entreprendre/auto-entrepreneuriat-retour-experiences/index.md))
     - Tu peux aussi spécifier la clé `header.light` si ton fond est clair
     (cf. exemple ci-dessus)
   - Respecter 80 chars par ligne pour faciliter les diff lors de corrections

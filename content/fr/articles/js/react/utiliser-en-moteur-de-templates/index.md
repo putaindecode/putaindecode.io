@@ -51,7 +51,7 @@ fait, des templates, c'est un peu des composants d'interface).
 ## Exemple de template React/JSX
 
 Si vous ne savez pas trop ce qu'est React, nous vous recommandons de lire
-notre [introduction à React](/posts/js/introduction-a-reactjs/).
+notre [introduction à React](/fr/articles/js/react//).
 
 Dans notre cas, on ne va pas spécialement bénéficier de certaines de ses forces,
 mais ça fera très bien le job pour notre besoin.
@@ -270,7 +270,7 @@ va nous générer un HTML qui va bien.
 
 Pour aller plus loin on pourrait décider d'utiliser `renderToString()` plutôt que
 `renderToStaticMarkup()` afin de pouvoir faire prendre le relais à ReactJS côté client
-mais là [le niveau de complexité est différent](/posts/js/reactjs-et-rendu-serverside/).
+mais là [le niveau de complexité est différent](/fr/articles/js/react/cote-serveur/).
 
 Pour la petite anecdote, notre site utilise actuellement [metalsmith](http://www.metalsmith.io/),
 une petite bibliothèque simple mais qui permet par son API de faire des choses sympas.

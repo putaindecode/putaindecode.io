@@ -12,7 +12,7 @@ authors:
 <div class="putainde-Note">
 Nous vous conseillons aujourd'hui d'utiliser un gestionnaire de tâches qui
 nous paraît être mieux sur bien des points: configuration plus souple, lisible
-et facile et rapidité vous attendent avec [Gulp](/posts/js/introduction-gulp).
+et facile et rapidité vous attendent avec [Gulp](/fr/articles/js/gulp).
 </div>
 
 <figure class="putainde-Media putainde-Media--left">![](gruntjs.png)</figure>

@@ -31,7 +31,7 @@ Oubliez les risques liés à une abstraction trop élevée des CSS par les pré-
 
 Devinez quoi, vous n'en avez pas forcément besoin.
 
-Essayez **cssnext** et retournez à ce bon ~~vieux~~ nouveau CSS. Et avec un zeste de [méthodologie BEM](/posts/css/petite-definition-bem/), vous vous sentirez revivre.
+Essayez **cssnext** et retournez à ce bon ~~vieux~~ nouveau CSS. Et avec un zeste de [méthodologie BEM](/fr/articles/css/bem/), vous vous sentirez revivre.
 
 ## Exemples
 

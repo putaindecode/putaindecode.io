@@ -37,8 +37,7 @@ class Posts extends Component {
       reverse: true,
     })
     // temporary workaround to only include french posts
-    .filter((post) => post.__filename.startsWith("posts/"))
-    // other posts are in en/posts, es/posts...
+    .filter((post) => post.__filename.startsWith("fr/"))
 
     return (
       <div className="putainde-Main">
