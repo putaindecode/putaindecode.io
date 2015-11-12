@@ -13,7 +13,7 @@ header:
 ---
 
 Si vous êtes intéressé par
-[les problématiques que peut résoudre Webpack](/fr/articles/js/webpack),
+[les problématiques que peut résoudre Webpack](/fr/articles/js/webpack/),
 vous serez sûrement intéressé par cette petite configuration détaillée, qui vous
 permettra de faire vos premiers pas avec cet outil.
 
