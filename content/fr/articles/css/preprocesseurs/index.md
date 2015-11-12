@@ -47,7 +47,7 @@ sur ce point plus tard).
 Anciennement on aurait rajouté à cette liste la gestion du CSS 3, mais comme
 je l'expliquais il y a peu, ce n'est plus nécessaire, on a une méthode bien
 mieux, rapide et surtout <b>maintenu à jour</b> avec
-[AutoPrefixer](/fr/articles/css/autoprefixer)
+[AutoPrefixer](/fr/articles/css/autoprefixer/)
 
 ## Les principaux pré-processeurs
 

@@ -30,9 +30,9 @@ Webpack apporte à ce niveau des fonctionnalités intéressantes :
 - adapté pour les gros projets.
 
 Avant Webpack, nous avions beau avoir des super task-runners comme
-[Grunt](/fr/articles/js/grunt)
+[Grunt](/fr/articles/js/grunt/)
 ou
-[Gulp](/fr/articles/js/gulp),
+[Gulp](/fr/articles/js/gulp/),
 il faut avouer qu'on bricolait quand même pas mal.
 
 Et vous avez sûrement mieux à faire que de devoir modifier des configurations ou
@@ -108,7 +108,7 @@ Avec les solutions existantes, il est actuellement très difficile d'arriver
 facilement à ce que propose Webpack, pour ne pas dire impossible.
 
 Il est possible d'avoir l'équivalent avec
-[browserify](/fr/articles/js/browserify) comme l'a indiqué son auteur
+[browserify](/fr/articles/js/browserify/) comme l'a indiqué son auteur
 dans un article
 [browserify for Webpack users](https://gist.github.com/substack/68f8d502be42d5cd4942)
 (qui est une réponse à la ressource
