@@ -1,6 +1,6 @@
 ---
 date: "2015-05-12"
-route: /posts/shell/utilitaires-ligne-commande/
+route: /fr/articles/npm/utilitaire-cli/
 title: "Les utilitaires en ligne de commande"
 tags:
   - cli

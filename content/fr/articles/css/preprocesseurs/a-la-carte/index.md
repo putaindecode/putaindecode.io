@@ -9,8 +9,8 @@ authors:
   - MoOx
 ---
 
-Après vous avoir fait un petit [état de l'art des préprocesseurs CSS historiques](/posts/css/le-point-sur-les-preprocesseurs/)
-et vous avoir parlé [des postprocesseurs](/posts/css/le-point-sur-les-preprocesseurs/),
+Après vous avoir fait un petit [état de l'art des préprocesseurs CSS historiques](/fr/articles/css/preprocesseurs/)
+et vous avoir parlé [des postprocesseurs](/fr/articles/css/preprocesseurs/),
 je me dois de vous montrer le chemin qui me semble le plus pertinent aujourd'hui,
 en 2014, maintenant que [les spécifications CSS sont découpées en modules](http://www.w3.org/standards/techs/css#cr)
 qui peuvent du coup avancer (plus rapidement) chacune de leur côté.
@@ -180,7 +180,7 @@ Très pratique spécialement couplé avec rework-vars pour ajouter un peu de mat
 nous parse `@import` comme on l'aime.
 Peut taper dans votre dossier de sources ou en plus dans `node_modules`
 (pratique pour utiliser [normalize.css](https://www.npmjs.org/package/normalize.css)
-[via npm](/posts/frontend/npm-comme-package-manager-pour-le-front-end/) par exemple).
+[via npm](/fr/articles/npm/frontend/) par exemple).
 Il existe aussi [rework-importer](https://github.com/simme/rework-importer) qui amène quelques différences de syntaxe.
 
 ##### [rework-rem-fallback](https://github.com/ctalkington/rework-rem-fallback)
@@ -224,7 +224,7 @@ qui peuvent ajouter un peu de beurre dans les épinards :
 [rework-namespace-css](https://github.com/geordiemhall/rework-namespace-css) permet de namespacer vos CSS par une classe sur `<html>`.
 
 ##### rework-namespace
-[rework-namespace](https://github.com/kristoferjoseph/rework-namespace) permet de namespacer vos CSS par un préfixe. Pratique avec [BEM](/posts/css/petite-definition-bem/) lorsque vous préfixez par votre `.org-`.
+[rework-namespace](https://github.com/kristoferjoseph/rework-namespace) permet de namespacer vos CSS par un préfixe. Pratique avec [BEM](/fr/articles/css/bem/) lorsque vous préfixez par votre `.org-`.
 
 ##### rework-classmap
 [rework-classmap](https://github.com/andreypopp/rework-classmap) permet de renommer des classes via du mapping. Avec ça on pourrait presque avoir un code Bootstrap propre.
@@ -263,7 +263,7 @@ Plutôt que de réinventer la roue comme l'a fait [Pleeease](http://pleeease.io/
 on va plutôt partir comme [Myth.io](http://myth.io/) ou [Styl](https://github.com/visionmedia/styl) (successeur spirituel de Stylus)
 qui se concentrent sur le rendu et non le workflow pour générer ce rendu.
 
-Nous allons donc faire simple et efficace avec une task [gulp](/posts/js/introduction-gulp/).
+Nous allons donc faire simple et efficace avec une task [gulp](/fr/articles/js/gulp/).
 Ceci pourrait bien entendu être aussi bien fait avec grunt ou même make et [watchman](https://github.com/facebook/watchman).
 
 ```console

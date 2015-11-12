@@ -51,15 +51,15 @@
     developer: false
   navigation:
     -
-      url: "/posts"
+      url: "/fr/articles"
       name: "Articles"
       icon: "bookmark"
     -
-      url: "/c-est-quoi-putaindecode"
+      url: "/fr/c-est-quoi-putaindecode"
       name: "Readme"
       icon: "textFile"
     -
-      url: "/posts/comment-contribuer"
+      url: "/fr/contribuer"
       name: "Participer"
       icon: "pencil"
   footerNavigation:

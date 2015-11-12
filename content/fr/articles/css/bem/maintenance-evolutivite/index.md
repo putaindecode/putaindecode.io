@@ -14,7 +14,7 @@ Malgré la grossièreté de ces mots pour certains d'entre vous, il est tout à 
 
 ## Maintenable
 
-L'un des trucs les plus chiants du CSS c'est bien la cascade, qui, malgré sa bonne volonté, n'apporte pas que des solutions. Pour pallier aux problèmes que l'on peut vite créer, [la méthodologie BEM](http://putaindecode.fr/posts/css/petite-definition-bem/) a vu le jour avec son [lot de variantes](http://blog.kaelig.fr/post/48196348743/fifty-shades-of-bem).
+L'un des trucs les plus chiants du CSS c'est bien la cascade, qui, malgré sa bonne volonté, n'apporte pas que des solutions. Pour pallier aux problèmes que l'on peut vite créer, [la méthodologie BEM](/fr/articles/css/bem/) a vu le jour avec son [lot de variantes](http://blog.kaelig.fr/post/48196348743/fifty-shades-of-bem).
 
 La grande majorité des membres de p! utilisent cette convention :
 

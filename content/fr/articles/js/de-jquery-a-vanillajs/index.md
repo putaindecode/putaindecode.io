@@ -21,14 +21,14 @@ C'est parti !
 
 ## Table des matières
 
-1. [Évènements](/posts/js/de-jquery-a-vanillajs/#-v-nements)
-2. [Sélecteurs](/posts/js/de-jquery-a-vanillajs/#s-lecteurs)
-3. [Attributs](/posts/js/de-jquery-a-vanillajs/#attributs)
-4. [Classes](/posts/js/de-jquery-a-vanillajs/#classes)
-5. [Manipulation](/posts/js/de-jquery-a-vanillajs/#manipulation)
-6. [Navigation](/posts/js/de-jquery-a-vanillajs/#navigation)
-7. [AJAX](/posts/js/de-jquery-a-vanillajs/#ajax)
-8. [JSONP](/posts/js/de-jquery-a-vanillajs/#jsonp)
+1. [Évènements](#-v-nements)
+2. [Sélecteurs](#s-lecteurs)
+3. [Attributs](#attributs)
+4. [Classes](#classes)
+5. [Manipulation](#manipulation)
+6. [Navigation](#navigation)
+7. [AJAX](#ajax)
+8. [JSONP](#jsonp)
 
 ## Évènements
 

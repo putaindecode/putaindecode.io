@@ -12,7 +12,7 @@ authors:
 Démarrer une [Single Page Application](http://en.wikipedia.org/wiki/Single-page_application) aujourd'hui ça commence souvent par : "mais quel putain de framework il
 faut que je prenne ?" Et, vu que c'est pas ça qui manque, ça se complique !
 
-Parmi les multiples [technos disponibles](/posts/js/introduction-a-reactjs) il y a [Ember](http://emberjs.com). Pour que le choix
+Parmi les multiples [technos disponibles](/fr/articles/js/react/) il y a [Ember](http://emberjs.com). Pour que le choix
 ne se résume pas à prendre celui qui a le plus joli logo ou qui génère le plus de spam sur votre Twitter, on vous propose de découvrir
 [Ember](http://emberjs.com). Dans les posts à venir on verra comment construire concrètement une application avec ce framework.
 

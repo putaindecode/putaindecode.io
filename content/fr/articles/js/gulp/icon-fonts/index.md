@@ -12,7 +12,7 @@ authors:
   - kud
 ---
 
-Après [notre introduction sur gulp](/posts/js/introduction-gulp/), je vous propose de créer vos propres fontes à partir d'icônes.
+Après [notre introduction sur gulp](/fr/articles/js/gulp/), je vous propose de créer vos propres fontes à partir d'icônes.
 
 J'ai bien galéré lorsque j'ai dû passer de **grunt** à **gulp**. Non pas que gulp soit compliqué mais retrouver exactement le même _workflow_ qu'avant, sachant que gulp est jeune et que les _plugins_ sont bien moins nombreux que sur grunt, c'est pas si évident que ça.
 

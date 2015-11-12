@@ -47,7 +47,7 @@ sur ce point plus tard).
 Anciennement on aurait rajouté à cette liste la gestion du CSS 3, mais comme
 je l'expliquais il y a peu, ce n'est plus nécessaire, on a une méthode bien
 mieux, rapide et surtout <b>maintenu à jour</b> avec
-[AutoPrefixer](/posts/css/comment-en-finir-avec-les-prefixes/)
+[AutoPrefixer](/fr/articles/css/autoprefixer)
 
 ## Les principaux pré-processeurs
 
@@ -124,7 +124,7 @@ Puis si c'est juste pour ajouter des variables, il existe d'autres solutions...
 
 _Note: si vous avez d'autres pré-processeurs intéressants, je me ferais un plaisir
 de les ajouter ici. Mais bon [vous pouvez aussi le faire tout seul comme un
-grand](https://github.com/putaindecode/putaindecode.fr/blob/master/pages/posts/css/le-point-sur-les-preprocesseurs/index.md)._
+grand](https://github.com/putaindecode/putaindecode.fr/blob/master/pages/fr/articles/css/preprocesseurs/index.md)._
 
 ## Les pré-processeurs sont-ils vraiment nécessaire ?
 
@@ -253,4 +253,4 @@ vous pourrez continuer la lecture au prochain épisode qui sera consacré aux po
 <small>(Mamam, t'as vu ce cliffhanger digne des séries US !)</small>
 
 ~~Bon promis la prochaine fois je vous en parle des post-processeurs. Pour de vrai.~~
-Chose promise, chose due : [Les post-processeurs CSS](/posts/css/les-post-processeurs/)
+Chose promise, chose due : [Les post-processeurs CSS](/fr/articles/css/preprocesseurs/post-processeurs/)

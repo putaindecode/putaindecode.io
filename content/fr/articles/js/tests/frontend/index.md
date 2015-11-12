@@ -63,7 +63,7 @@ Utilisez un module-system : [browserify](http://browserify.org) ou
 conditionnel et souhaitez créer un bundle par build, utilisez browserify qui
 possède une syntaxe beaucoup plus sympathique et une codebase réduite, vous
 pourrez même `require` depuis un module npm
-[comme on vous l'explique dans un article dédié](/posts/js/browserify-all-the-things/)).
+[comme on vous l'explique dans un article dédié](/fr/articles/js/browserify/)).
 
 ```javascript
 var $ = require("jquery") // oh, un module npm

@@ -7,7 +7,7 @@ authors:
   - Erwyn
 ---
 
-Vous viendez de lire l'[article de madx](/posts/git/versionner-avec-git/) sur le gestionnaire
+Vous viendez de lire l'[article de madx](/fr/articles/git/) sur le gestionnaire
 de version Git et vous vous dites que vous aimeriez en découvrir plus! Vous l'utilisez déjà mais êtes
 en quête de quelques nouvelles (ou pas) astuces à vous mettre sous la dent! Bienvenue!
 

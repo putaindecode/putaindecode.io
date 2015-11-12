@@ -25,14 +25,15 @@ ou encore mon [plugin qui ouvre les liens externes avec du target blank automati
 <b>Je ne ferais plus jamais ça pour la simple raison du ratio "poids / % d'utilisation" de la dépendance.</b>
 
 Alors oui, utiliser jQuery a peut-être du bon. Mais s'en passer aussi.
-<a href="/posts/js/de-jquery-a-vanillajs/">C'est faisable pour pleins de petites choses</a>.
-<a href="/posts/js/comment-se-passer-de-libraries-frameworks-javascript/">Et c'est pas forcément difficile</a>.
+[C'est faisable pour pleins de petites choses](/fr/articles/js/de-jquery-a-vanillajs/).
+[Et c'est pas forcément difficile](/fr/articles/js/comment-se-passer-de-libraries-frameworks-javascript/).
 
 Car si je veux utiliser mon petit script qui ajoute des targets blank automatiquement,
  devoir inclure jQuery pour si peu, ça fait mal à mes kilobites.
 
-En attendant <a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules">
-la gestion de modules via ES6</a>, il nous faut gérer aujourd'hui nos composants
+En attendant
+[la gestion de modules via ES6](http://wiki.ecmascript.org/doku.php?id=harmony:modules),
+il nous faut gérer aujourd'hui nos composants
 et dépendances à la main.
 Encore qu'on pourrait faire un transpiler pour utiliser cette syntaxe (ça existe
 déjà, il n'y a qu'à voir sur GitHub), mais là on ne ferait que créer une nouvelle

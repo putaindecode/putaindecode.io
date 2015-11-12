@@ -9,7 +9,7 @@ header:
   credit: https://www.flickr.com/photos/tristantaussac/15145365916/
 ---
 
-Dans [l'article précédent](/posts/docker/introduction-a-docker), je vous ai
+Dans [l'article précédent](/fr/articles/docker), je vous ai
 présenté le fonctionnement de base de Docker. Mais cela vous limitait à
 l'usage des images que vous pouviez trouver sur le [Docker
 Hub](https://registry.hub.docker.com/). Afin de vraiment pouvoir utiliser
@@ -236,7 +236,7 @@ $ docker run -d -p 3000:3000 -v $(pwd)/log:/app/log fullstack-js
 Cette commande permet de lancer notre image en partageant le port et un dossier
 avec votre ordinateur, si vous voulez plus de détails sur le fonctionnement du
 client Docker, je vous invite à lire mon [article
-précédent](/posts/docker/introduction-a-docker).
+précédent](/fr/articles/docker).
 
 ---
 

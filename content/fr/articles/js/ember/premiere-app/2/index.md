@@ -9,7 +9,7 @@ authors:
   - bmeurant
 ---
 
-L'[article précédent](/posts/js/premiere-app-ember) vous a accompagné pour la création d'une première application [Ember][ember].
+L'[article précédent](/fr/articles/js/ember/premiere-app/1) vous a accompagné pour la création d'une première application [Ember][ember].
 Mais il faut bien reconnaître que l'exemple était très simple et que, du coup, le mérite est faible.
 Pour se  rattraper, on va complexifier un peu les choses.
 
@@ -51,7 +51,7 @@ Router.map(function() {
 });
 ```
 
-Pour que notre nouvelle route affiche la fiche en mode édition, on doit - [rappelez-vous](/posts/js/debuter-avec-ember/#les-fondamentaux) - impérativement suivre les
+Pour que notre nouvelle route affiche la fiche en mode édition, on doit - [rappelez-vous](/fr/articles/js/ember/#les-fondamentaux) - impérativement suivre les
 [conventions de nommage](http://emberjs.com/guides/concepts/naming-conventions/) et créer un gabarit `edit.hbs` dans le
 répertoire `/app/templates/series/series-item/` :
 
@@ -88,9 +88,9 @@ affiche donc toujours ce gabarit, même dans le cas d'une sous-route telle que `
 
 ### `outlets`
 
-La solution est à aller chercher du côté du concept d'`{{outlet}}` défini dans l'[article précédent](/posts/js/premiere-app-ember/#-code-outlet-code-et-routes-imbriquees).
+La solution est à aller chercher du côté du concept d'`{{outlet}}` défini dans l'[article précédent](/fr/articles/js/ember/premiere-app/1/#-code-outlet-code-et-routes-imbriquees).
 Un `{{outlet}}` est nécessaire **à chaque fois qu'on définit un niveau d'imbrication.** Mais comme on veut quand même continuer à afficher la série à
-l'URL `/series/{@id}/`, on va utiliser la **route implicite** `series.seriesItem.index` (cf. [article précédent](/posts/js/premiere-app-ember/#routes-et-controleurs-implicites))
+l'URL `/series/{@id}/`, on va utiliser la **route implicite** `series.seriesItem.index` (cf. [article précédent](/fr/articles/js/ember/premiere-app/1/#routes-et-controleurs-implicites))
 et son gabarit, dans lequel on va copier l'ancien contenu de `series-item.hbs`.
 
 ```html
@@ -141,7 +141,7 @@ En effet, une ressource réinitialise l'espace de nommage et permet donc des nom
 remplacer `this.route('seriesItem', ...` par `this.resource('seriesItem', ...`.
 
 On peut désormais éditer notre série. On remarque au passage que la modification du titre de la série le met également à jour en temps réel dans la liste des séries grâce
-au *binding* (cf. [article précédent](/posts/js/premiere-app-ember/#-em-bindings-em-et-mise-a-jour-des-gabarits)).
+au *binding* (cf. [article précédent](/fr/articles/js/ember/premiere-app/1/#-em-bindings-em-et-mise-a-jour-des-gabarits)).
 
 ### Enregistrement des modifications
 

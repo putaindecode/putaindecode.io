@@ -10,7 +10,7 @@ authors:
 
 [tl;dr](#tl-dr)
 
-Dans l'[article précédent](/posts/backend/premiers-pas-avec-ruby)
+Dans l'[article précédent](/fr/articles/ruby/premiers-pas/)
 nous avons installé Ruby. Désormais nous allons aborder les gems,
 les dépendances et commencer notre web service.
 
@@ -40,7 +40,7 @@ L'instruction `source` permet de préciser l'url des dépôts de gems.
 La version de ruby n'est pas obligatoire mais j'aime la préciser pour
 ne pas me mélanger dans mes projets avec différentes versions de Ruby
 (voir le
-[précédent article pour les versions du Ruby](/posts/backend/premiers-pas-avec-ruby)
+[précédent article pour les versions du Ruby](/fr/articles/ruby/premiers-pas/)
 et [rbenv](https://github.com/sstephenson/rbenv)). Et enfin, la
 déclaration de notre première bibliothèque de dépendance :
 [Sinatra](http://www.sinatrarb.com).

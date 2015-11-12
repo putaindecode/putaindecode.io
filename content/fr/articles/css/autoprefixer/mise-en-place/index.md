@@ -8,7 +8,7 @@ authors:
   - MoOx
 ---
 
-Suite à mon précédent article [Comment en finir avec les préfixes CSS](/posts/css/comment-en-finir-avec-les-prefixes/),
+Suite à mon précédent article [Comment en finir avec les préfixes CSS](/fr/articles/css/autoprefixer),
 certains sont restés sur leur faim.
 Voici donc de rapides exemples de mise en place de cette solution.
 

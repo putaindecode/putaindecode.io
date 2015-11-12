@@ -186,7 +186,7 @@ D'un autre côté, il y a la convention nodeJS qui impose des règles simples, n
 
 Côté front, on lui reproche de charger les dépendances sans les dédoublonner et de le faire en synchrone, ce qui n'est pas adapté quand le chargement des fichiers se fait via un réseau en http et pas directement depuis un disque local comme sur un serveur.
 
-C'est pourquoi a été inventé [browserify](http://http://browserify.org/) qui apporte actuellement [le meilleur des 2 mondes](http://putaindecode.fr/posts/js/browserify-all-the-things/) : toujours zéro config selon la convention nodeJS et un système de bundle/build (via une analyse syntaxique du code JS pour détecter les dépendances) afin d'assembler tous les modules en un seul fichier adapté au navigateur.
+C'est pourquoi a été inventé [browserify](http://http://browserify.org/) qui apporte actuellement [le meilleur des 2 mondes](/fr/articles/js/browserify/) : toujours zéro config selon la convention nodeJS et un système de bundle/build (via une analyse syntaxique du code JS pour détecter les dépendances) afin d'assembler tous les modules en un seul fichier adapté au navigateur.
 On peut lui reprocher la nécessité d'une étape de build et le fait que le code source en débug est en un seul fichier mais :
 
  1. de toute façon pour la prod, il y aura une étape de build et en dév, avec un outillage adapté (par exemple `watchify` qui rebuild en incrémental) ça n'est pas la mer à boire

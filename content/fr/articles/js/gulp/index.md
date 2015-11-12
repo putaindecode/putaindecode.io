@@ -16,7 +16,7 @@ Personnellement
  [pas arrêté](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/)
  [d'en parler](http://moox.io/slides/2014/introduction-gulp/)
  depuis que
- [Grunt](/posts/js/premiers-pas-avec-grunt/)
+ [Grunt](/fr/articles/js/grunt/)
  à déterré cette vielle problématique, assez récente pour le développement Web côté front end.
 
 Il faut avouer que de par l'évolution du développement Web, côté front end,
@@ -53,7 +53,7 @@ qui contient une partie explicative sur les streams.
 
 Dans la pratique cela évite d'avoir un gruntfile qui, si on imagine une task
 sass -> autoprefixer -> csso, passe [3 fois par des lectures/écritures sur le système
-de fichiers](/posts/css/mise-en-place-autoprefixer/#autoprefixer-avec-grunt).
+de fichiers](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-grunt).
 
 <figure>
   ![](http://jaysoo.ca/images/grunt-flow-2.png)
@@ -61,7 +61,7 @@ de fichiers](/posts/css/mise-en-place-autoprefixer/#autoprefixer-avec-grunt).
 </figure>
 
 Et du coup au lieu d'avoir un fichier de conf d'une soixantaine de lignes, on arrive
-à avoir [quelque chose de concis](http://putaindecode.fr/posts/css/mise-en-place-autoprefixer/#autoprefixer-avec-gulp)
+à avoir [quelque chose de concis](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-gulp)
 (une vingtaine de ligne seulement).
 
 <figure>
@@ -223,7 +223,7 @@ qui transforme des SVG en fontes d'icones avec le bout de CSS qui va bien ;
 - [scripts-linting](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts-linting.js),
 qui vérifie la qualité du code ;
 - [scripts](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts.js),
-du [browserify](/posts/js/browserify-all-the-things/) pour nos JS côté client ;
+du [browserify](/fr/articles/js/browserify/) pour nos JS côté client ;
 - [stylesheets](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/stylesheets.js),
 notre tâche pour coder des css du futur ;
 

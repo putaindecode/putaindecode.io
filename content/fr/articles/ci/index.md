@@ -29,14 +29,14 @@ développée.
 
 Avant de rentrer dans le vif du sujet, assurez-vous d'avoir déjà de bonne bases,
 pour maintenir une base de code saine en
-[versionnant avec git](/posts/git/versionner-avec-git/).
+[versionnant avec git](/fr/articles/git/).
 Nous sommes en 2015, l'année où l'on était censé avoir les voitures
 volantes, nous n'allons donc pas expliquer ici à quoi sert de versionner du
 code.
 
 Du code versionné ne suffit pas, il faut avoir des tests automatisés bien
 entendu.
-[Front](/posts/js/introduction-au-testing-js-front/) et back, il en faut de tous
+[Front](/fr/articles/js/tests/frontend/) et back, il en faut de tous
 les côtés.
 
 Ensuite, il nous faudra choisir un serveur qui va gérer l'intégration continue.
@@ -120,6 +120,6 @@ et agir en conséquence.
 Chez _Putain de code !_ (en date de cet article), notre couverture de
 tests est loin d'être bonne. Mais ce site étant un petit plaisir un peu risqué,
 nous faisons quand même du
-[déploiement continu](/posts/ci/le-deploiement-continu), l'étape d'après !
+[déploiement continu](/fr/articles/ci/deploiement-continu/), l'étape d'après !
 On aime bien l'idée du _[move fast & break ~~no~~thing
 ](http://zachholman.com/talk/move-fast-break-nothing)_.

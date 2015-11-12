@@ -12,9 +12,9 @@ authors:
 Vous avez surement entendu parler des [_post-processeurs CSS_](http://iamvdo.me/blog/les-postprocesseurs-css).
 J'ai personnellement pas mal fait référence à ~~ce concept~~ cette expression ces derniers temps.
 Que ce soit lorsque je vous racontais
-<a href="/posts/css/comment-en-finir-avec-les-prefixes/">comment se passer des préfixes CSS</a>
+<a href="/fr/articles/css/autoprefixer">comment se passer des préfixes CSS</a>
 ou lors
-<a href="/posts/css/le-point-sur-les-preprocesseurs/">d'un point sur les pré-processeurs CSS</a>.
+<a href="/fr/articles/css/preprocesseurs/">d'un point sur les pré-processeurs CSS</a>.
 N'y a-t-il rien qui vous a fait tiquer ?
 
 ## Du post-processing ?
@@ -202,7 +202,7 @@ Oui en effet, comme je le disais avant, c'est pas le but. C'est du "processing".
 Pré-, post-... Qu'est-ce que ça change dans le fond hein ?
 
 L'idée, en temps que développeur, est d'améliorer le confort d'écriture sans contrainte.
-Comme je l'ai indiqué [précédemment](/posts/css/le-point-sur-les-preprocesseurs/#mon-avis-sur-les-pr-processeurs),
+Comme je l'ai indiqué [précédemment](/fr/articles/css/preprocesseurs/#mon-avis-sur-les-pr-processeurs),
 j'ai laché les pré-processeurs "classiques" ayant l'impression d'utiliser un tank pour tuer une mouche.
 Car au fond pour 90% (si ce n'est plus) d'entres nous,
 que nous faut-il pour bien développer des feuilles de styles ?
@@ -217,4 +217,4 @@ J'aime conserver la syntaxe CSS et avoir un process ultra-rapide et transparent.
 
 ### Prochaine étape: faire son propre pré/post-processeur CSS, c'est simple
 
-Rework ayant un bon petit paquet de plugins déjà existants, c'est assez simple de [réaliser son propre pré-processeur](/posts/css/preprocesseur-a-la-carte/) via quelques lignes de code seulement.
+Rework ayant un bon petit paquet de plugins déjà existants, c'est assez simple de [réaliser son propre pré-processeur](/fr/articles/css/preprocesseurs/a-la-carte/) via quelques lignes de code seulement.
