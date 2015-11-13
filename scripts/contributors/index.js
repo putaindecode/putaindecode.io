@@ -28,7 +28,7 @@ const githubApi = new GithubApi({
 // @todo get user/repo from git origin
 const repoMetas = {
   user: "putaindecode",
-  repo: "putaindecode.fr",
+  repo: "putaindecode.io",
 }
 
 const commitsRE = /^(\d+)/

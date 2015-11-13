@@ -34,7 +34,7 @@
   twitterUsername: "putaindecode_fr"
   twitter: "https://twitter.com/putaindecode_fr/"
   twitterLabel: "Twitter"
-  github: "https://github.com/putaindecode/putaindecode.fr"
+  github: "https://github.com/putaindecode/putaindecode.io"
   githubLabel: "GitHub"
   chat: "/discuss/"
   chatLabel: "Discuter"
@@ -51,22 +51,19 @@
     developer: false
   navigation:
     -
-      url: "/posts"
+      url: "/fr/articles"
       name: "Articles"
       icon: "bookmark"
     -
-      url: "/c-est-quoi-putaindecode"
+      url: "/fr/c-est-quoi-putaindecode"
       name: "Readme"
       icon: "textFile"
     -
-      url: "/posts/comment-contribuer"
+      url: "/fr/contribuer"
       name: "Participer"
       icon: "pencil"
   footerNavigation:
     -
       url: "/feed.xml"
       name: "Flux RSS"
-    -
-      url: "/projets"
-      name: "Projets"
   madeWithHeart: "Made with ♥︎"

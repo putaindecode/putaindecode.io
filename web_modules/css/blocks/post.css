@@ -39,7 +39,7 @@
 
     /*
       vh only used for large screen, cause of the iOS 7 bug...
-      https://github.com/putaindecode/putaindecode.fr/issues/454
+      https://github.com/putaindecode/putaindecode.io/issues/454
       I guess no iOS 7 will match --r-minL
     */
     @media (--r-minL) {
@@ -144,7 +144,7 @@
   }
 
 /* enable nowrap for tooltip only for medium screen, to avoid scrollbar & shit */
-/* https://github.com/putaindecode/putaindecode.fr/issues/266 */
+/* https://github.com/putaindecode/putaindecode.io/issues/266 */
 @media (--r-minM) {
   .putainde-Post-readingTime::before {
     white-space: nowrap;

@@ -32,7 +32,7 @@ export default class LatestPosts extends Component {
         <div className="r-Grid" style={{ textAlign: "center" }}>
           <div className="r-Grid-cell r-all--8of12 ">
             <Link
-              to="/posts"
+              to="/fr/articles"
               className="putainde-Button putainde-Button--block"
             >
               {i18n.morePosts}
