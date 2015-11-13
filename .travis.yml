@@ -4,19 +4,9 @@ language: node_js
 node_js:
   - 4
 
-# contributors task: need all commits until we cache contributions somewhere else https://github.com/putaindecode/putaindecode.fr/issues/218
+# contributors task: need all commits to build the contributors cache correctly
 git:
   depth: 100000
-
-before_script:
-  # for headless browsers
-  # http://docs.travis-ci.com/user/gui-and-headless-browsers/
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
-  # gh-pages: because of how gulp-gh-pages works (with a clone), --global is required
-  - git config --global user.name "Travis-CI"
-  - git config --global user.email "mail+travis@putaindecode.fr"
 
 env:
   global:
