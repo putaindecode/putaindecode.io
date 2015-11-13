@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "putaindecode.fr",
-  "homepage": "http://putaindecode.fr",
-  "authors": "https://github.com/putaindecode/putaindecode.fr/graphs/contributors",
-  "repository": "https://github.com/putaindecode/putaindecode.fr.git",
+  "name": "putaindecode.io",
+  "homepage": "http://putaindecode.io",
+  "authors": "https://github.com/putaindecode/putaindecode.io/graphs/contributors",
+  "repository": "https://github.com/putaindecode/putaindecode.io.git",
   "license": "MIT",
   "dependencies": {
     "cssrecipes-custom-media-queries": "^0.3.0",
@@ -75,7 +75,7 @@
     "lint": "eslint --fix .",
     "start": "babel-node scripts/putaindebuild --server --open --dev",
     "build": "babel-node scripts/putaindebuild --static --production",
-    "postbuild": "echo 'putaindecode.fr' > dist/CNAME",
+    "postbuild": "echo 'putaindecode.io' > dist/CNAME",
     "pretest": "npm run lint",
     "test": "npm run build"
   },

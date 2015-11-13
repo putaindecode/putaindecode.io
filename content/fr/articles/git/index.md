@@ -88,10 +88,10 @@ dossier du nom spécifié en dernier argument.
 Par exemple, si je veux cloner le dépôt du site :
 
 ```console
-$ git clone https://github.com/putaindecode/putaindecode.fr.git
+$ git clone https://github.com/putaindecode/putaindecode.io.git
 ```
 
-Ça va créer un dossier `putaindecode.fr` avec le contenu du dépôt.
+Ça va créer un dossier `putaindecode.io` avec le contenu du dépôt.
 
 `clone` accepte plusieurs types d'adresses : HTTP(S), SSH, protocole Git dédié et
 même des chemins locaux pour cloner un dépôt situé ailleurs sur le système de

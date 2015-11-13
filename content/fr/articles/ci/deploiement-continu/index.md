@@ -73,5 +73,5 @@ serveur d'intégration continue, nous y étudierons simplement ce que nous avons
 fait pour notre site.
 
 Si vous êtes trop curieux, vous pouvez déjà [consulter le code source de notre
-site](https://github.com/putaindecode/putaindecode.fr) et fouiller dans le
+site](https://github.com/putaindecode/putaindecode.io) et fouiller dans le
 `package.json` (section `scripts`) pour deviner la suite...

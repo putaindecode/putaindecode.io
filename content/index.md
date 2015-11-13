@@ -21,8 +21,8 @@ Tout ce qui peut encore toucher à notre environnement de près ou de loin.
 _Nous nous voyons comme une communauté de passionnés du code._
 
 Vous pouvez en faire partie très simplement en
-[proposant des articles](https://github.com/putaindecode/putaindecode.fr/issues/new?title=Proposition%20de%20post:%20&body=),
-[en faisant des suggestions](https://github.com/putaindecode/putaindecode.fr/issues/new?title=Suggestion%20d%27am%C3%A9lioration:%20&body=)
-ou encore [en participer à l'évolution du site](https://github.com/putaindecode/putaindecode.fr/issues).
+[proposant des articles](https://github.com/putaindecode/putaindecode.io/issues/new?title=Proposition%20de%20post:%20&body=),
+[en faisant des suggestions](https://github.com/putaindecode/putaindecode.io/issues/new?title=Suggestion%20d%27am%C3%A9lioration:%20&body=)
+ou encore [en participer à l'évolution du site](https://github.com/putaindecode/putaindecode.io/issues).
 
 *On compte vraiment sur vous pour nous aider à faire de _Putain de code !_ un truc magnifique.*
