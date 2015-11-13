@@ -1,19 +1,19 @@
 # Putain de code !
 
-[![Travis Build Status](https://img.shields.io/travis/putaindecode/putaindecode.fr.svg?label=unix build)](https://travis-ci.org/putaindecode/putaindecode.fr)
-[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/putaindecode-fr.svg?label=windows build)](https://ci.appveyor.com/project/MoOx/putaindecode-fr)
+[![Travis Build Status](https://img.shields.io/travis/putaindecode/putaindecode.io.svg?label=unix build)](https://travis-ci.org/putaindecode/putaindecode.io)
+[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/putaindecode-io.svg?label=windows build)](https://ci.appveyor.com/project/MoOx/putaindecode-io)
 
-<img align="right" alt="" src="https://github.com/putaindecode/putaindecode.fr/blob/master/content/images/p!-logo--no-bubble-512--trim.png" width="128">
+<img align="right" alt="" src="https://github.com/putaindecode/putaindecode.io/blob/master/content/images/p!-logo--no-bubble-512--trim.png" width="128">
 
-Code source du site [_Putain de code !_](http://putaindecode.fr/).
+Code source du site [_Putain de code !_](http://putaindecode.io/).
 Contient tout le nécessaire pour faire fonctionner le site.
 Pas de base de données à installer, pas de serveurs à configurer.
 
 ## tl;dr;
 
 ```console
-$ git clone https://github.com/putaindecode/putaindecode.fr.git
-$ cd putaindecode.fr
+$ git clone https://github.com/putaindecode/putaindecode.io.git
+$ cd putaindecode.io
 $ npm install
 $ npm start
 ```
@@ -24,7 +24,7 @@ vous trouverez réponse dans la section de démarrage plus bas.**
 ## Contributions
 
 Les articles peuvent être postés ici sous forme de PR une fois qu'on est OK dans
-[une issue du repo](https://github.com/putaindecode/putaindecode.fr/issues).
+[une issue du repo](https://github.com/putaindecode/putaindecode.io/issues).
 Si vous souhaitez voir un post écrit, ou même en écrire un, faites un tour là
 bas ;)
 
@@ -44,8 +44,8 @@ pour télécharger le plugin adéquat pour votre éditeur.__
 ## Récupérer les sources du site
 
 ```console
-$ git clone https://github.com/putaindecode/putaindecode.fr.git
-$ cd putaindecode.fr
+$ git clone https://github.com/putaindecode/putaindecode.io.git
+$ cd putaindecode.io
 $ npm install
 ```
 
@@ -111,10 +111,10 @@ dans votre message de commit._
 ### Auteurs et contributeurs
 
 * [Membres de l'organisation](https://github.com/putaindecode?tab=members)
-* [Liste des contributeurs](https://github.com/putaindecode/putaindecode.fr/graphs/contributors)
+* [Liste des contributeurs](https://github.com/putaindecode/putaindecode.io/graphs/contributors)
 
 ### Logo & Avatar
 
 Remerciements à toutes les personnes impliquées dans cette discussion [putaindecode/organisation/issues/4](https://github.com/putaindecode/organisation/issues/4).
 Remerciement spécial à [@bloodyowl](https://github.com/bloodyowl) pour le
-[logo initial](https://github.com/putaindecode/putaindecode.fr/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
+[logo initial](https://github.com/putaindecode/putaindecode.io/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
