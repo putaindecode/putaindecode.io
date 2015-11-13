@@ -202,29 +202,29 @@ Du coup, on avait carrément refait notre site avec Gulp
 nous sommes passé de Gulp.**
 
 Pour aller plus loin, vous n'avez qu'à ouvrir notre ancien
-[Gulpfile](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/gulpfile.js)
+[Gulpfile](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/gulpfile.js)
 et regarder nos
-[tasks](https://github.com/putaindecode/putaindecode.fr/tree/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks)
+[tasks](https://github.com/putaindecode/putaindecode.io/tree/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks)
 de l'époque qui vont de
-[la plus simple](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/clean.js)
+[la plus simple](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/clean.js)
 à
-[la plus compliqué](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/contributors.js).
+[la plus compliqué](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/contributors.js).
 
 Pour voir des tâches plus « real world example » je vous invite à regarder les tasks suivantes :
 
-- [server](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/server.js),
+- [server](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/server.js),
 le server de dev local avec livereload dedans ;
-- [watch](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/watch.js),
+- [watch](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/watch.js),
 le classique et si simple watcher ;
-- [deploy](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/deploy.js),
+- [deploy](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/deploy.js),
 la tâche pour publier le dossier `dist/` sur les [gh-pages](https://pages.github.com/) ;
-- [icons](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/icons.js),
+- [icons](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/icons.js),
 qui transforme des SVG en fontes d'icones avec le bout de CSS qui va bien ;
-- [scripts-linting](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts-linting.js),
+- [scripts-linting](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts-linting.js),
 qui vérifie la qualité du code ;
-- [scripts](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts.js),
+- [scripts](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts.js),
 du [browserify](/fr/articles/js/browserify/) pour nos JS côté client ;
-- [stylesheets](https://github.com/putaindecode/putaindecode.fr/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/stylesheets.js),
+- [stylesheets](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/stylesheets.js),
 notre tâche pour coder des css du futur ;
 
 ## Vous reprendrez bien un peu de… Gulp* ! Pardon.

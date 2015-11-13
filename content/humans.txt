@@ -10,8 +10,8 @@
 /* TEAM */
 /* THANKS */
 
-https://github.com/putaindecode/putaindecode.fr/graphs/contributors
+https://github.com/putaindecode/putaindecode.io/graphs/contributors
 
 /* TECHNOLOGY COLOPHON */
 
-https://github.com/putaindecode/putaindecode.fr/blob/master/package.json
+https://github.com/putaindecode/putaindecode.io/blob/master/package.json

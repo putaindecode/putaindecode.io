@@ -279,5 +279,5 @@ J'ai donc codé [quelques plugins metalsmith](https://github.com/search?q=user%3
 dont un [metalsmith-react](https://github.com/MoOx/metalsmith-react) à l'occasion.
 
 N'hésitez pas à consulter
-[le code source de notre site](https://github.com/putaindecode/putaindecode.fr)
+[le code source de notre site](https://github.com/putaindecode/putaindecode.io)
 pour faire des découvertes sympas.

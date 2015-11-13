@@ -109,7 +109,7 @@ Pourquoi ne pas ajouter des liens dans les ressources retournées via REST ? Nou
 * Quand on renvoie un tableau json par exemple, dans chaque item,
   * on peut ajouter les liens qui permettent de le mettre à jour ;
   * on peut ajouter les liens qui permettent de récupérer des données liées comme l'auteur d'un livre, les mentions d'un tweet, etc. ;
-  * on peut ajouter l'URL de putaindecode.fr.
+  * on peut ajouter l'URL de putaindecode.io.
 
 Voici un exemple de trame JSON avec les informations HATEOAS. Pour information, il s'agit d'un webservice qui permet de lister des conférences.
 

@@ -314,9 +314,9 @@ site, afin d'ajuster notre configuration Webpack en développement, pour
 d'ajouter des fonctionnalités comme le "hot loading".
 
 Vous avez à votre disposition
-[notre script dev-server](https://github.com/putaindecode/putaindecode.fr/blob/2c1a8f23ec05768960617625f592ea30ed6e2062/scripts/webpack-dev-server.js)
+[notre script dev-server](https://github.com/putaindecode/putaindecode.io/blob/2c1a8f23ec05768960617625f592ea30ed6e2062/scripts/webpack-dev-server.js)
 (écrit en ES6/7), ainsi que son utilisation
-[dans notre build](https://github.com/putaindecode/putaindecode.fr/blob/2c1a8f23ec05768960617625f592ea30ed6e2062/scripts/build.js#L154-L159).
+[dans notre build](https://github.com/putaindecode/putaindecode.io/blob/2c1a8f23ec05768960617625f592ea30ed6e2062/scripts/build.js#L154-L159).
 
 _Note : pour avoir une éventuelle version plus à jour, regardez l'historique de
 ces fichiers au cas où nous ayons poussé des ajustements (ou remplacer le hash

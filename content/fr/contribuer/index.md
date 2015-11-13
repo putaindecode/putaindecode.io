@@ -31,8 +31,8 @@ Pour corriger un post de manière simple nous te conseillons l'interface GitHub 
 Forke le projet sur GitHub, puis :
 
 ```console
-$ git clone https://github.com/TON_PSEUDO_GITHUB/putaindecode.fr.git
-$ cd putaindecode.fr
+$ git clone https://github.com/TON_PSEUDO_GITHUB/putaindecode.io.git
+$ cd putaindecode.io
 $ npm run init
 $ npm install
 $ npm start
@@ -41,7 +41,7 @@ $ npm start
 Si tu as un fork en retard sur notre master, tu peux mettre ta master à jour:
 
 ```console
-$ git remote add upstream https://github.com/putaindecode/putaindecode.fr.git
+$ git remote add upstream https://github.com/putaindecode/putaindecode.io.git
 $ git fetch upstream
 $ git checkout master
 $ git merge upstream/master
@@ -114,7 +114,7 @@ Cela dit, ci-dessous, nous te conseillons de lire la version beaucoup plus ludiq
   t'expliquer).
 
   ```console
-  $ git clone https://github.com/marcassin/putaindecode.fr.git putaindecode
+  $ git clone https://github.com/marcassin/putaindecode.io.git putaindecode
   ```
 
 * Ensuite tu dois ajouter ce qu'on appelle une remote. Une remote c'est une
@@ -125,8 +125,8 @@ Cela dit, ci-dessous, nous te conseillons de lire la version beaucoup plus ludiq
   rapport avec le repo principal, on l'appelle souvent *upstream*.
 
   ```console
-  $ cd putaindecode.fr
-  $ git remote add upstream https://github.com/putaindecode/putaindecode.fr.git
+  $ cd putaindecode.io
+  $ git remote add upstream https://github.com/putaindecode/putaindecode.io.git
   $ git fetch upstream
   ```
 
@@ -135,7 +135,7 @@ Cela dit, ci-dessous, nous te conseillons de lire la version beaucoup plus ludiq
   [Gulp](https://github.com/gulpjs/gulp).
   Il te faudra donc installer les dépendances, tu verras c'est simple comme bonjour.
   Pour faire ça, tu vas lire le
-  [README.md](https://github.com/putaindecode/putaindecode.fr#readme)
+  [README.md](https://github.com/putaindecode/putaindecode.io#readme)
   à la racine du repo. On fait exprès de pas te le dire ici parce
   que c'est un peu une convention pour tous les projets Open Source, et que ça
   te fait pas de mal de commencer à apprendre à bien bosser.
@@ -179,7 +179,7 @@ est des types sympas.
   y'a pas que Wordpress pour faire un site) en se basant sur gulp
   (un esclave qui te permet d'éxécuter des tâches répétitives en JavaScript)
   et quelques autres truc cools. Tu pourrais éventuellement jeter un coup d'œil
-  [aux dépendances du projet](https://github.com/putaindecode/putaindecode.fr/blob/master/package.json),
+  [aux dépendances du projet](https://github.com/putaindecode/putaindecode.io/blob/master/package.json),
   histoire de savoir de quoi on cause.
 
 * Tous nos posts sont contenus dans `content/`. Si jamais c'est sur
@@ -228,13 +228,13 @@ est des types sympas.
   tracer ton adresse, et on va te trouver. Et tu vas comprendre que parmi
   nous, y'a des types qui sont pas du tout copains avec jQuery et qui sont pas
   tendres du tout.
-  Bon du coup quand t'as ton idée, [tu la proposes directement comme issue](https://github.com/putaindecode/putaindecode.fr/issues/new)
+  Bon du coup quand t'as ton idée, [tu la proposes directement comme issue](https://github.com/putaindecode/putaindecode.io/issues/new)
   afin de voir si ça intéresse du monde.
 
 * Il faut aussi que tu fasses attention à ne pas bosser sur le même post que
   quelqu'un d'autre et pour ça tu dois aller jeter un coup d'oeil du côté des
   issues en cours avec le label `post`. Allez, on est sympa, t'as [le
-  lien](https://github.com/putaindecode/putaindecode.fr/issues?labels=post&page=1&state=open).
+  lien](https://github.com/putaindecode/putaindecode.io/issues?labels=post&page=1&state=open).
 
 * Bref, une fois ton idée trouvée, il faut que tu crées le post pour pouvoir
   commencer à écrire dans le fichier. Tout d'abord tu vas devoir créer une
@@ -260,7 +260,7 @@ est des types sympas.
   automatiquement.
   Si ce n'est pas le cas, relance la tâche `$ npm start`.
   Si là tu as une erreur qui t'échappes, on t'invite à
-  [ouvrir une issue](https://github.com/putaindecode/putaindecode.fr/issues/new).
+  [ouvrir une issue](https://github.com/putaindecode/putaindecode.io/issues/new).
 
 * En l'état, tu devrais pouvoir consulter sur le site lancé localement ton post,
   voir s'il sort correctement et s'il est présentable à ton goût.
