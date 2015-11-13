@@ -1,5 +1,5 @@
 ---
-date: "2015-11-10"
+date: "2015-11-17"
 title: "Un favicon vite fait bien fait"
 tags:
   - favicon
