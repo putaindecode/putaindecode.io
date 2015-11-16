@@ -25,7 +25,7 @@ export default class PageError extends Component {
           ]}
         />
         <div className="r-Grid putainde-Post">
-          <div className="r-Grid-cell r-all--8of12">
+          <div className="r-Grid-cell r-minM--8of12">
             <div
               className="putainde-Post-contents"
               style={{ textAlign: "center" }}
