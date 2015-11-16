@@ -232,7 +232,7 @@ Puis bon, faut avouer que c'est super pratique cette balise hein ?
 Comme `<blink>` et `<marquee>` quoi. ❤
 
 <figure>
-  ![Can't handle my swag](canthandlemyswag.gif)
+  <img src="canthandlemyswag.gif" alt="Can't handle my swag" />
   <figcaption><marquee>Marquee for the win.</marquee></figcaption>
 </figure>
 

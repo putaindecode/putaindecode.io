@@ -31,7 +31,7 @@ par leur boulot.
 Et c’est à force de voir du code qui pique les yeux qu’on s’est dit qu’il
 fallait qu’on fasse quelque chose pour toi et tes semblables.
 
-  ![WAAAT](WAAAT.gif)
+  <img src="WAAAT.gif" alt="WAAAT" />
 
 Notre idée est simple : partager du code et des méthodes de travail de qualité,
 afin qu'on puisse tous s'améliorer ensemble.

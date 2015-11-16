@@ -40,7 +40,7 @@ maintenant (dans un dépôt Git bien entendu banane). Pour l'exemple, je l'ai r�
 de Putain De Code:
 
 <figure>
-  ![capture historique](omagad-history.png)
+  <img src="omagad-history.png" alt="capture historique" />
   <figcaption>Le pouvoir de l'arc en ciel</figcaption>
 </figure>
 
@@ -293,7 +293,7 @@ c'est votre *joker*, elle assure votre survie, notamment si vous avez été asse
 que honnêtement…
 
 <figure>
-    ![I have no idea what I'm doing](http://i1.kym-cdn.com/photos/images/newsfeed/000/305/224/3e1.jpg)
+    <img src="http://i1.kym-cdn.com/photos/images/newsfeed/000/305/224/3e1.jpg" alt="I have no idea what I'm doing" />
 </figure>
 
 Vous ne le savez peut être pas, mais Git, dans sa grande bonté, garde une référence de toutes vos actions, de tous les endroits où vous vous êtes déplacez.

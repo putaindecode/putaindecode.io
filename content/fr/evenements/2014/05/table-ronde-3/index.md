@@ -188,7 +188,7 @@ Par contre, [topcoat](http://topcoat.io/) peut se révéler assez intéressant d
 Lors de cas de contenus affichés via de l'ajax, pensez de plus en plus à faire du "prerender", c'est à dire que pendant que le contenu se charge, au lieu de mettre des _spinners_, _loaders_, _toussa_, essayez de mettre des visuels qui ressembleront à l'élément final. C'est ce que fait par exemple facebook, et c'est pas mal du tout. Tenez :
 
 <figure>
-  ![facebook prerender](prerender.jpg)
+  <img src="prerender.jpg" alt="facebook prerender" />
   <figcaption>Image d'aperçu des posts sur Facebook</figcaption>
 </figure>
 

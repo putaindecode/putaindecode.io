@@ -56,7 +56,7 @@ sass -> autoprefixer -> csso, passe [3 fois par des lectures/écritures sur le s
 de fichiers](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-grunt).
 
 <figure>
-  ![](http://jaysoo.ca/images/grunt-flow-2.png)
+  <img src="http://jaysoo.ca/images/grunt-flow-2.png" alt="" />
   <figcaption>Sans stream</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ Et du coup au lieu d'avoir un fichier de conf d'une soixantaine de lignes, on ar
 (une vingtaine de ligne seulement).
 
 <figure>
-  ![](http://jaysoo.ca/images/gulp-flow.png)
+  <img src="http://jaysoo.ca/images/gulp-flow.png" alt="" />
   <figcaption>Avec stream</figcaption>
 </figure>
 
