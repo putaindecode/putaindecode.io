@@ -51,7 +51,7 @@ fait, des templates, c'est un peu des composants d'interface).
 ## Exemple de template React/JSX
 
 Si vous ne savez pas trop ce qu'est React, nous vous recommandons de lire
-notre [introduction à React](/fr/articles/js/react//).
+notre [introduction à React](/fr/articles/js/react/).
 
 Dans notre cas, on ne va pas spécialement bénéficier de certaines de ses forces,
 mais ça fera très bien le job pour notre besoin.

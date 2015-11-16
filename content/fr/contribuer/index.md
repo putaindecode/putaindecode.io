@@ -95,7 +95,7 @@ Cela dit, ci-dessous, nous te conseillons de lire la version beaucoup plus ludiq
   travailler tranquillement.
 
   <figure>
-    ![Bouton Fork](fork-button.jpg)
+    <img src="fork-button.jpg" alt="Bouton Fork" />
     <figcaption>Clique au fond à droite</figcaption>
   </figure>
 
@@ -310,7 +310,7 @@ est des types sympas.
   branches / etc.
 
   <figure>
-    ![Bouton Pull Request](pull-request-button.jpg)
+    <img src="pull-request-button.jpg" alt="Bouton Pull Request" />
     <figcaption>C'est bon tu le vois là le bouton ?</figcaption>
   </figure>
 

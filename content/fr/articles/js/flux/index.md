@@ -19,7 +19,7 @@ Les ingénieurs front-end de Facebook, confrontés à une codebase de plus en pl
 
 Face à ce besoin, ces développeurs sont donc parvenus à deux solutions :
 
-- [ReactJS](/fr/articles/js/react//)
+- [ReactJS](/fr/articles/js/react/)
 - Flux
 
 Flux n'est pas un framework, mais simplement une architecture, une sorte de *guideline* qui résout pas mal de problèmes ayant pu apparaître avec les divers bibliothèques et frameworks MV* apparus lors des dernières années.
@@ -36,7 +36,7 @@ Flux comporte 4 concepts :
 Jusque-là, rien de bien fou. C'est dans leur manière d'interagir que la particularité se dessine :
 
 <figure>
-  ![](http://cl.ly/YENt/flux.png)
+  <img src="flux.jpg" alt="" />
   <figcaption>Oh bah dis donc, ça va toujours dans le même sens</figcaption>
 </figure>
 

@@ -85,7 +85,7 @@ require("index.html")
 C'est cette partie qui est aujourd'hui la plus intéressante et la plus flexible.
 
 <figure>
-  ![](index.jpg)
+  <img src="index.jpg" alt="" />
   <figcaption>
     Webpack transforme une multitude de fichiers en lots par responsabilité
   </figcaption>
