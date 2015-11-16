@@ -28,7 +28,7 @@ export default class Page extends Component {
           ]}
         />
         <article className="r-Grid putainde-Post">
-          <div className="r-Grid-cell r-all--8of12 putainde-Post-contents">
+          <div className="r-Grid-cell r-minM--8of12 putainde-Post-contents">
 
             {
               head.title &&
