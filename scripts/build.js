@@ -132,8 +132,8 @@ const webpackConfig = {
     ],
   },
 
-  postcss: () => [
-    require("postcss-import"),
+  postcss: (webpack) => [
+    require("postcss-import")({ addDependencyTo: webpack }),
     require("postcss-cssnext"),
   ],
 
