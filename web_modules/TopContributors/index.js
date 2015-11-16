@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from "react"
 
-import Author from "../Author"
+import Contributor from "Contributor"
 
 export default class TopContributors extends Component {
 
@@ -33,12 +33,15 @@ export default class TopContributors extends Component {
           </small>
         </div>
 
-        <div className="r-Grid r-Grid--withGutter">
+        <div
+          className="r-Grid r-Grid--withGutter"
+          style={ { textAlign: "center" } }
+        >
           {
             !topContributors.length &&
             <p
               className="r-Grid-cell"
-              style={ { textAlign: "center", opacity: .5 } }
+              style={ { opacity: .5 } }
             >
               { i18n.topContributorsNoData }
             </p>
@@ -47,12 +50,13 @@ export default class TopContributors extends Component {
             topContributors.length &&
             topContributors.map(author => {
               return (
-                <div key={author} className="r-Grid-cell r-all--1of2">
-                  <Author
-                    author={author}
-                    afterName={
-                      `(${contributors.recentContributions[author]} commits)`
-                    }
+                <div
+                  key={author}
+                  className="r-Grid-cell r-maxM--1of4 r-minM--1of8"
+                >
+                  <Contributor
+                    author={ author }
+                    commits= { contributors.recentContributions[author] }
                   />
                 </div>
               )
