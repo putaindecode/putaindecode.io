@@ -8,7 +8,6 @@ authors:
   - phbernard
 header:
     linearGradient: 160deg, rgb(91, 91, 91), rgba(51, 51, 51, 0.6)
-    credit: http://putaindecode.fr/
 ---
 
 Oublions un instant CSS et JavaScript pour parler d'un sujet vraiment
@@ -18,7 +17,7 @@ Alors d'accord, le favicon n'est que le petit détail qu'on expédie en fin de
 projet. Mais oubliez-le et votre client comprendra tout de suite qu'il manque
 quelque chose.
 
-Dans ce post, nous allons voir comment s'acquiter de cette tâche dans les temps
+Dans ce post, nous allons voir comment s'acquitter de cette tâche dans les temps
 et les règles de l'art. Et nous ferons intervenir un outil dont je suis l'heureux
 auteur.
 
@@ -41,16 +40,16 @@ Pour créer un favicon vite fait :
   - Créez une Touch icon (pour iOS et les autres). Si on en croit les résultats
   pour "apple touch icon size" sur Google, la taille maximale est 144x144.
 
-Voilà. Si vous faites tout ça, vous vous serez acquité de la tâche rapidement.
+Voilà. Si vous faites tout ça, vous vous serez acquitté de la tâche rapidement.
 Bon, ça sera mal fait, mais fait. C'est un début.
 
 ## Bien fait
 
-A présent, penchons-nous sur les difficultés qui nous attendent.
+À présent, penchons-nous sur les difficultés qui nous attendent.
 
 ### C'est la taille qui compte
 
-Ca ne fait pas plaisir à entendre et pourtant nous sommes au coeur du problème
+Ça ne fait pas plaisir à entendre et pourtant nous sommes au cœur du problème
 (nous parlons bien de favicon).
 
 `favicon.ico` devrait-il être en 16x16 ou 32x32 ? [Les deux, selon
@@ -59,8 +58,8 @@ est la taille de la Touch icon d'Apple ? [180x180 depuis iOS 8](https://develope
 La tuile `square70x70logo` pour Windows 8 et 10, c'est... du 70x70, hein ?
 Moui, mais [idéalement, 128x128](https://msdn.microsoft.com/library/dn455106(v=vs.85).aspx).
 
-Ca n'est pas tout : encore faut-il trouver ces informations. Google est
-assez variable sur ce point. Il met dans le mile pour une recherche concernant
+Ça n'est pas tout : encore faut-il trouver ces informations. Google est
+assez variable sur ce point. Il met dans le mille pour une recherche concernant
 le favicon classique (16x16 *et* 32x32), mais échoue, on l'a vu, pour la
 Touch icon. Les éditeurs ne sont pas en reste. Si [Apple indique bien les
 dimensions attendues pour l'iPhone 6](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW2),
@@ -78,7 +77,7 @@ que je voulais une icône digne de ce nom.
 
 ### Le design. Vraiment.
 
-Aller, j'ai fait dans l'anxiogène avec ces histoires de taille mais en réalité
+Allez, j'ai fait dans l'anxiogène avec ces histoires de taille mais en réalité
 ce problème a été largement amoindri ces derniers mois avec l'arrivée de
 générateurs de favicon de nouvelle génération. Et vous en aurez pour votre
 argent (d'autant qu'ils sont gratuits) : envoyez votre image et vous vous
@@ -104,7 +103,7 @@ Touch icône transparente.
 ![](so_android.png)
 
 Sur iOS et son univers tout de parallélépipèdes aux coins arrondis, point de
-transparence en revanche. L'icône de StackOverflow se voit affublé d'un fond
+transparence en revanche. L'icône de StackOverflow se voit affublée d'un fond
 noir. Le résultat n'est pas si mauvais, mais était-ce vraiment voulu ?
 
 ![](so_ios.png)
@@ -125,7 +124,7 @@ favicon qui devait vraiment solutionner le problème.
 
 Il n'y a pas grand chose à dire sur le sujet, et c'est le but: n'oublions pas
 que nous n'avons que peu de temps. Rendez-vous sur RealFaviconGenerator.net,
-postez votre image, éditez vos icônes plateforme par plateforme et vous voilà
+postez votre image, éditez vos icônes plate-forme par plate-forme et vous voilà
 avec ce qu'il faut d'images, de fichiers annexes et de code HTML pour
 configurer votre favicon.
 
@@ -148,7 +147,7 @@ ce qu'il s'est passé en un an :
  - L'Iphone 6 est sorti, et avec lui la touch icon en 180x180 (avant c'était
  152x152).
  - Android Chrome a cessé d'utiliser l'icône en 196x196 qui était autrefois
- spécifiée. A la place, il utilise une icône en 192x192 (et snobe la précédente
+ spécifiée. À la place, il utilise une icône en 192x192 (et snobe la précédente
  quoi qu'il arrive).
  - Oubliez cette histoire d'icône en 192x192, Android Chrome utilise désormais
  un manifeste et plusieurs versions d'icônes pour les différentes densités
@@ -161,7 +160,7 @@ fort à parier qu'il rende mal sur un iPad de dernière génération et le résu
 sur Android pourrait être assez aléatoire (Chrome utilisera une icône PNG qui
 n'est pas pour lui ou bien une Touch icon).
 
-A cet effet,
+À cet effet,
 [RealFaviconGenerator propose une API](https://realfavicongenerator.net/api).
 Tout ce qu'il est possible de faire via l'UI peut être reproduit via l'API.
 Hum... une API... de la doc à lire... Manifestement, ce n'est pas de cette
@@ -182,7 +181,7 @@ Les règles :
  secondes et c'est le genre de règle qu'on n'exécute qu'une fois de temps en
  temps, lorsqu'il y a du changement dans le paysage des favicons.
  - `inject-favicon-markups` : injecte les déclarations d'icônes
- dans les pages HTML. A exécuter à chaque modification de page, autant dire
+ dans les pages HTML. À exécuter à chaque modification de page, autant dire
  qu'elle va souvent servir.
  - `check-for-favicon-update` : vérifie s'il y a du nouveau sur
  RealFaviconGenerator. Si c'est le cas, elle fera échouer votre build bien
@@ -191,7 +190,7 @@ Les règles :
  à votre radar.
 
 La favicon a toujours été un parent pauvre des projets web, à juste titre.
-Avec la prolifération des platformes, le négliger est de plus en plus hasardeux.
+Avec la prolifération des plates-formes, le négliger est de plus en plus hasardeux.
 J'ai conçu RealFaviconGenerator pour apporter un peu d'ordre à tout cela. Ce
 n'est pas la seule initiative. Hayden Bleasel développe
 [favicons](https://github.com/haydenbleasel/favicons) qui ambitionne d'être
