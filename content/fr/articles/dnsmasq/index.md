@@ -47,7 +47,9 @@ Je vous propose dans un premier temps de partager votre connexion via le Wifi so
 
 Pour cela, il suffit de faire : `System Preferences > Sharing > Internet Sharing` puis choisir `Ethernet` en source, et `Wifi` en sortie. (Je vous conseille d'ailleurs de protéger votre Wifi avec une clé WPA2).
 
-<figure>![](macosx-network-sharing.png)</figure>
+<figure>
+  <img src="macosx-network-sharing.png" alt="" />
+</figure>
 
 _Ici, c'est USB Ethernet en source car je suis sur un Mac Book Air donc aucun port ethernet natif mais choisissez Ethernet si possible._
 
@@ -128,7 +130,9 @@ _(Sous Android)_
 
 `Wifi > Press on the current connnection > Modify network > Show advanced options`
 
-<figure>![](android-network-advanced.jpg)</figure>
+<figure>
+  <img src="android-network-advanced.jpg" alt="" />
+</figure>
 
 Mais quel intérêt car vous devrez faire cela sur tous vos appareils connectés
 
