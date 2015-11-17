@@ -20,7 +20,7 @@ export default class LatestPosts extends Component {
     return (
       <div>
         <div className="r-Grid putainde-Section">
-          <div className="r-Grid-cell r-all--8of12 putainde-Section-contents">
+          <div className="r-Grid-cell r-minM--8of12 putainde-Section-contents">
             <div className="putainde-Title putainde-Title--home">
               <h2 className="putainde-Title-text">
                 {i18n.latestPosts}
@@ -30,7 +30,7 @@ export default class LatestPosts extends Component {
           </div>
         </div>
         <div className="r-Grid" style={{ textAlign: "center" }}>
-          <div className="r-Grid-cell r-all--8of12 ">
+          <div className="r-Grid-cell r-minM--8of12">
             <Link
               to="/fr/articles"
               className="putainde-Button putainde-Button--block"

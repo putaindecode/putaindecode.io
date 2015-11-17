@@ -8,13 +8,3 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-@media (--r-maxM) {
-  .r-Grid {
-    width: auto;
-  }
-  .r-Grid-cell {
-    width: auto !important;
-    display: block !important;
-  }
-}

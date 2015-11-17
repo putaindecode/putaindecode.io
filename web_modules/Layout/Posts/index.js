@@ -52,7 +52,7 @@ class Posts extends Component {
           <div
             className={cx(
               "r-Grid-cell",
-              "r-all--8of12",
+              "r-minM--8of12",
               "putainde-Section-contents",
               "js-Posts"
             )}

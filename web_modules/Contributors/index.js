@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from "react"
-import cx from "classnames"
 
-import Avatar from "../Avatar"
+import Contributor from "Contributor"
 
 export default class Contributors extends Component {
 
@@ -97,25 +96,11 @@ export default class Contributors extends Component {
               console.warn(`${filename} have an undefined contributor.`)
             }
             return (
-              <div
-                key={login}
-                className={cx(
-                  "putainde-Contributor",
-                  "r-Tooltip",
-                  "r-Tooltip--bottom",
-                  "r-Tooltip--allowNewLines"
-                )}
-                data-r-tooltip={
-                  `${login}\n(${fileContributors[login]} commit${
-                    fileContributors[login] > 1 ? "s" : ""
-                  })`
-                }
-              >
-                <Avatar
-                  author={login}
-                  className="putainde-Contributor-avatar"
-                />
-              </div>
+              <Contributor
+                author={ login }
+                commits={ fileContributors[login] }
+                size={ "small" }
+              />
             )
           })
         }
