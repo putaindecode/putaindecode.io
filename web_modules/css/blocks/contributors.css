@@ -25,11 +25,17 @@
 
   .putainde-Contributor {
     display: inline-block;
-    margin-left: 1rem;
+    margin: 0 0 1rem 1rem;
     vertical-align: middle;
+    transform: none;
   }
 
     .putainde-Contributor-avatar {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .putainde-Contributor-avatar--small {
       width: 2.5rem;
       height: 2.5rem;
     }

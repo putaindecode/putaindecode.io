@@ -215,7 +215,7 @@ export default class Post extends Component {
           </header>
 
           <div className="r-Grid">
-            <div className="r-Grid-cell r-all--8of12 putainde-Post-contents">
+            <div className="r-Grid-cell r-minM--8of12 putainde-Post-contents">
               <div className="putainde-Post-md">
                 <div
                   dangerouslySetInnerHTML={{ __html: body }}

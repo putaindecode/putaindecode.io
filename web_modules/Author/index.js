@@ -12,15 +12,25 @@ export default class Author extends Component {
   }
 
   static propTypes = {
-    className: PropTypes.string,
     author: PropTypes.string.isRequired,
+    className: PropTypes.string,
     afterName: PropTypes.string,
     isPost: PropTypes.bool,
+    bio: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    bio: true,
   }
 
   render() {
     const { metadata } = this.context
     const i18n = metadata.i18n
+    const {
+      afterName,
+      isPost,
+      bio,
+    } = this.props
     const author = metadata.contributors.getContributor(this.props.author)
 
     return (
@@ -35,7 +45,7 @@ export default class Author extends Component {
           <div className="putainde-Author-title">
             <h3 className="putainde-Author-name">
               {
-                this.props.isPost &&
+                isPost &&
                 <span className="putainde-WrittenBy">
                   {`${i18n.writtenBy} `}
                 </span>
@@ -44,12 +54,12 @@ export default class Author extends Component {
                 className="putainde-Link"
                 href={getAuthorUri(author)}
               >
-                {author.login}
+                { author.login }
               </a>
               {
-                this.props.afterName &&
+                afterName &&
                 <span className="putainde-Author-afterName">
-                  {` ${this.props.afterName}`}
+                  {` ${afterName}`}
                 </span>
               }
             </h3>
@@ -100,13 +110,16 @@ export default class Author extends Component {
             </div>
           </div>
 
-          <p className="putainde-Author-bio">
-            {
-              (author.fr && author.fr.bio && author.fr.bio.long) &&
-              author.fr.bio.long
-              /* @todo add new lines betwee lines */
-            }
-          </p>
+          {
+            bio &&
+            <p className="putainde-Author-bio">
+              {
+                (author.fr && author.fr.bio && author.fr.bio.long) &&
+                author.fr.bio.long
+                /* @todo add new lines betwee lines */
+              }
+            </p>
+          }
         </div>
       </div>
     )
