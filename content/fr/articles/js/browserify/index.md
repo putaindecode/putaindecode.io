@@ -51,7 +51,9 @@ Même si [Node](http://nodejs.org/) n'implémente pas totalement
 écrire des programmes en JavaScript ailleurs que dans le navigateur,
 la façon de faire est assez proche.
 
-<figure>![](browserify.png)</figure>
+<figure>
+  <img src="browserify.png" alt="" />
+</figure>
 
 L'idée de [Browserify](http://browserify.org/) est d'amener cette façon de faire
 dans le navigateur.
@@ -288,7 +290,9 @@ npm install debowerify decomponentify deamdify deglobalify es6ify --save
 
 Consommer c'est bien, mais faire c'est <del>mieux</del> bien aussi.
 
-<figure>![](browserify-potter.png)</figure>
+<figure>
+  <img src="browserify-potter.png" alt="" />
+</figure>
 
 Tout droit sorti de [UMD](https://github.com/umdjs/umd) (Universal Module Definition),
 voici un wrapper qui vous permettra de créer votre module compatible avec CommonJS,
