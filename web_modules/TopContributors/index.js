@@ -52,7 +52,9 @@ export default class TopContributors extends Component {
               return (
                 <div
                   key={author}
-                  className="r-Grid-cell r-maxM--1of4 r-minM--1of8"
+                  className={
+                    "r-Grid-cell r-all--1of4 r-minM--1of8"
+                  }
                 >
                   <Contributor
                     author={ author }
