@@ -4,10 +4,12 @@ title: "Un favicon vite fait bien fait"
 tags:
   - favicon
   - gulp
+  - grunt
 authors:
   - phbernard
 header:
-    linearGradient: 160deg, rgb(91, 91, 91), rgba(51, 51, 51, 0.6)
+  image: index.jpg
+  linearGradient: 160deg, rgb(91, 91, 91), rgba(51, 51, 51, 0.6)
 ---
 
 Oublions un instant CSS et JavaScript pour parler d'un sujet vraiment
