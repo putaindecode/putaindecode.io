@@ -309,20 +309,6 @@
       border-bottom: 1px solid #eee;
     }
 
-  .putainde-Post-md .putainde-Media  {
-
-  }
-
-    .putainde-Post-md .putainde-Media--left  {
-      float: left;
-      margin-right: 1rem;
-    }
-
-    .putainde-Post-md .putainde-Media--right  {
-      float: right;
-      margin-left: 1rem;
-    }
-
 .putainde-Post-footer  {
   margin: var(--r-lineHeight) 0;
   padding: var(--r-lineHeight) 0;
