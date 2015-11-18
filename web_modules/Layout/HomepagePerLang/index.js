@@ -1,13 +1,16 @@
 import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
-import { Link } from "react-router"
-import { connect } from "react-redux"
 
-import getI18n from "i18n/get"
 import SVGIcon from "SVGIcon"
 
+import LatestPosts from "LatestPosts"
 import TopContributors from "TopContributors"
+
+import { connect } from "react-redux"
+import enhanceCollection from "statinamic/lib/enhance-collection"
+
+import getI18n from "i18n/get"
 
 export default
 @connect(
@@ -15,7 +18,7 @@ export default
     return { collection }
   }
 )
-class Homepage extends Component {
+class HomepagePerLang extends Component {
 
   static propTypes = {
     head: PropTypes.object.isRequired,
@@ -28,12 +31,19 @@ class Homepage extends Component {
   }
 
   render() {
+    const i18n = getI18n(this.context)
+
     const {
       head,
       body,
     } = this.props
 
-    const i18n = getI18n(this.context)
+    const latestPosts = enhanceCollection(this.props.collection, {
+      filter: { layout: "Post" },
+      sort: "date",
+      reverse: true,
+      limit: 6,
+    })
 
     return (
       <div className="putainde-Main">
@@ -45,6 +55,7 @@ class Homepage extends Component {
           ]}
         />
 
+        <LatestPosts posts={latestPosts} />
 
         <div className="putainde-Section putainde-Section--manifesto">
           <div className="r-Grid r-Grid--alignCenter">

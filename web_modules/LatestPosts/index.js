@@ -1,12 +1,14 @@
 import React, { Component, PropTypes } from "react"
 import { Link } from "react-router"
 
+import getI18n from "i18n/get"
 import PostsList from "../PostsList"
 
 export default class LatestPosts extends Component {
 
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
 
   static propTypes = {
@@ -14,8 +16,7 @@ export default class LatestPosts extends Component {
   }
 
   render() {
-    const { metadata } = this.context
-    const i18n = metadata.i18n
+    const i18n = getI18n(this.context)
 
     return (
       <div>
