@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
-
-import PostsList from "PostsList"
-
 import { connect } from "react-redux"
 import enhanceCollection from "statinamic/lib/enhance-collection"
+
+import getLang from "i18n/getLang"
+import PostsList from "PostsList"
 
 export default
 @connect(
@@ -21,11 +21,13 @@ class Posts extends Component {
     body: PropTypes.string.isRequired,
   }
 
-  static childContextTypes = {
+  static contextTypes = {
     metadata: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
 
   render() {
+    const lang = getLang(this.context)
     const {
       head,
       // body,
@@ -36,8 +38,8 @@ class Posts extends Component {
       sort: "date",
       reverse: true,
     })
-    // temporary workaround to only include french posts
-    .filter((post) => post.__filename.startsWith("fr/"))
+    // TODO use a real filter
+    .filter((post) => post.__filename.startsWith(`${ lang }/`))
 
     return (
       <div className="putainde-Main">

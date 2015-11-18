@@ -1,5 +1,5 @@
 ---
-layout: Homepage
+layout: HomepagePerLang
 title: "Putain de code !"
 ---
 
