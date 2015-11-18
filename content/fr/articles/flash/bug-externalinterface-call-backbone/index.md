@@ -7,9 +7,9 @@ tags:
   - flash
 authors:
   - kud
+header:
+  image: occupyflash.png
 ---
-
-<figure class="putainde-Media putainde-Media--left">![](occupyflash.png)</figure>
 
 Je voulais vous parler d'un bug qui m'a bien emmerdé récemment et comme j'aimerais que vous ne perdiez pas de temps avec cela, un article s'imposait.
 

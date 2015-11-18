@@ -7,9 +7,10 @@ tags:
   - vanillajs
 authors:
   - kud
+header:
+  image: jquery-die.jpg
+  linearGradient: 160deg, rgb(204, 51, 51), rgba(204, 51, 51, .6)
 ---
-
-<figure class="putainde-Media putainde-Media--left">![](jquery-die.jpg)</figure>
 
 Oui alors jQuery, c'est sûrement très bien, ça simplifie pas mal de choses et le _chaining_ est intéressant mais eeeest-ce que vous connaissez l'équivalent en _pur_ JavaScript ? Pas sûr hein.
 
