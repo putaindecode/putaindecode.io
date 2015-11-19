@@ -1,10 +1,17 @@
 ---
   lang: "English"
   title: "Putain de code !"
+  links:
+    articles: "/en/articles/"
+    help:
+      translate: "/en/contributing/translate/"
+  jumbotron: "is a place where you can read (and write) about best coding practices."
+  jumbotron2: "High quality content, reviewed by the community."
   description: "Share quality code and work methodologies, so we can be better together."
   latestPosts: "Latest Posts"
   posts: "Posts"
-  manifesto: "What is Putain de code !"
+  whatIsThis: "What is this website?"
+  howThisWorks: "How this works?"
   topContributors: "Most Active Contributors"
   topContributorsNoData: "No data to show the top"
   topContributorsNote: "on the last 12 months"
@@ -21,6 +28,7 @@
   contribution: "contribution"
   contributions: "contributions"
   noPosts: ":( no posts"
+  helpToTranslate: "Help us to translate our content !"
   BeTheFirstToContribute: "Be the first to contribute to this page"
   onThisPage: "on this page"
   pageEdit: "Edit"
@@ -29,7 +37,6 @@
   close: "&times;"
   copyright: "© 1970 - {*} Putain de code !"
   tags: "Tags"
-  the: "the"
   filters: "(filters)"
   twitterUsername: "putaindecode"
   twitter: "https://twitter.com/putaindecode/"
@@ -40,7 +47,6 @@
   chatLabel: "Discuss"
   forum: "https://github.com/putaindecode/forum/issues"
   forumLabel: "Forum"
-  elsewhere: "Found us on the interweb"
   PageError:
     title: "Page not found 😱"
     contentMissing: "The content your are looking for does not exist!"
@@ -54,8 +60,11 @@
       url: "/en/articles"
       name: "Articles"
       icon: "bookmark"
+    -
+      url: "/en/contribugin"
+      name: "Contribute"
+      icon: "pencil"
   footerNavigation:
     -
       url: "/feed.xml"
       name: "Flux RSS"
-  madeWithHeart: "Made with ♥︎"

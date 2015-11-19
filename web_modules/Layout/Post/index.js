@@ -187,7 +187,7 @@ export default class Post extends Component {
                 {
                   post.date &&
                   <span className="putainde-Date">
-                    {` ${i18n.the} ${formatDate(post.date)}`}
+                    { formatDate(post.date) }
                   </span>
                 }
                 {". "}

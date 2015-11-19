@@ -59,7 +59,7 @@ export default class PostPreview extends Component {
             post.date &&
               [
                 <br key="br" />,
-                <time key={post.date}>{i18n.the} {formatDate(post.date)}</time>,
+                <time key={post.date}>{ formatDate(post.date) }</time>,
               ]
           }
         </div>

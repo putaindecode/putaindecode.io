@@ -8,3 +8,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.r-Grid--large {
+  max-width: none;
+}

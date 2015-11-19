@@ -1,11 +1,6 @@
 ---
-date: "2013-11-05"
 title: Comment contribuer ?
-tags:
-  - putaindecode
-  - contribuer
-authors:
-  - Nyalab
+layout: Page
 ---
 
 Ici, chez _Putain de code !_, dans notre building 8 étages vitres teintées avec

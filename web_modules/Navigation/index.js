@@ -28,6 +28,18 @@ export default class Navigation extends Component {
     return (
       <nav className="putainde-Nav">
         {
+          home &&
+            [
+              <Link to={ "/en/"} className={ "putainde-Nav-item" }>
+                { "English" }
+              </Link>,
+              <Link to={ "/fr/"} className={ "putainde-Nav-item" }>
+                { "Français" }
+              </Link>,
+            ]
+        }
+        {
+          !home &&
           i18n.navigation.map((item) => (
             <Link to={item.url}
               key={item.url}
