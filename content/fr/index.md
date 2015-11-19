@@ -1,6 +1,7 @@
 ---
 layout: HomepagePerLang
 title: "Putain de code !"
+canonical: /
 ---
 
 <em>Putain de code !</em>
@@ -9,7 +10,7 @@ ainsi que leurs expériences.
 Si vous êtes un développeur qui aime ce que vous faites, vous en faites déjà
 partie.
 
-Nous aimons rester sur des choses simples, donc dans ce sens, contribuer à ce
-projet devrait être simple.
+Nous aimons garder les choses simples. Dans ce sens, contribuer à ce
+projet devrait être facile.
 
-[Il y a un multitude de possibilités pour aider.](/fr/contribuer/)
+[Il y a une multitude de possibilités pour aider.](/fr/contribuer/)

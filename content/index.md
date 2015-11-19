@@ -4,11 +4,12 @@ title: "Putain de code !"
 ---
 
 <em>Putain de code !</em>
-is a community of passionated developers that want to share their knowledge and
-experiences.
+est une communauté de développeurs passionés qui veulent partager leur savoir
+ainsi que leurs expériences.  
+Si vous êtes un développeur qui aime ce que vous faites, vous en faites déjà
+partie.
 
-If you are a developer that loves what you do, you are already part of it.
+Nous aimons garder les choses simples. Dans ce sens, contribuer à ce
+projet devrait être facile.
 
-We like to keep things simple, so contributing to this project should be easy.
-
-[There is a lot of different way to help.](/en/contributing/)
+[Il y a une multitude de possibilités pour aider.](/fr/contribuer/)
