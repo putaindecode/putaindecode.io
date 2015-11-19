@@ -2,8 +2,10 @@
 require.context("icons", true, /\.svg$/)
 require.context("../content", true, /\.(md|html|ico|jpe?g|png|gif)$/)
 
-// ---
+// OMG GLOBAL STYLES !
+import "_legacy-css/index.css"
 
+// statinamic
 import "babel-core/polyfill"
 import "whatwg-fetch"
 
@@ -19,6 +21,3 @@ statinamicClient({
   routes,
   store,
 })
-
-// OMG GLOBAL STYLES !
-import "index.css"

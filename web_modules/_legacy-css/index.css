@@ -1,0 +1,52 @@
+/* TODO explode this shit in css modules in components */
+
+/* base */
+@import "normalize.css";
+@import "cssrecipes-defaults";
+
+/* grid */
+@import "cssrecipes-custom-media-queries";
+@import "cssrecipes-grid";
+@import "cssrecipes-utils";
+
+@import "cssrecipes-vertical-rhythm";
+@import "cssrecipes-vertical-rhythm/lib/ratio/minor-third.css";
+
+/* quick fix to avoid adding r-VerticalRhythm class to <html> */
+html {
+  font-size: var(--r-fontSize);
+  line-height: var(--r-lineHeight);
+}
+
+@import "cssrecipes-tooltip";
+.r-Tooltip--allowNewLines::before {
+  white-space: pre;
+}
+
+@import "./base/typography.css";
+@import "./base/colours.css";
+@import "./base/layout.css";
+@import "./base/responsive.css";
+@import "./base/icons.css";
+/* @import "../../tmp/svg-symbols.css"; */
+
+@import "./blocks/header.css";
+@import "./blocks/footer.css";
+
+@import "./blocks/navigation.css";
+@import "./blocks/links.css";
+@import "./blocks/forms.css";
+
+@import "./blocks/section.css";
+@import "./blocks/column.css";
+@import "./blocks/post.css";
+
+@import "./blocks/author.css";
+@import "./blocks/contributors.css";
+
+@import "./blocks/list.css";
+@import "./blocks/note.css";
+
+/* @import "./js/images.css"; */
+
+@import "./blocks/highlight.css";

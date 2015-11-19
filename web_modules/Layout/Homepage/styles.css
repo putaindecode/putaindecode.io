@@ -1,4 +1,4 @@
-.putainde-HP-header {
+.header {
   display: flex;
   min-height: 40vh;
   color: #fff;
@@ -6,7 +6,7 @@
   justify-content: center;
   background:
     linear-gradient(160deg, #c33, color(#c33 a(.65))),
-    url(what.jpg) 50% 50% no-repeat,
+    url(./what.jpg) 50% 50% no-repeat,
     #121119
   ;
   box-shadow:
@@ -16,7 +16,7 @@
   margin-bottom: 1.5rem;
 }
 
-  .putainde-HP-header-cell {
+  .headerCell {
     font-size: 1.5rem;
     line-height: 1.75rem;
     font-weight: 300;
