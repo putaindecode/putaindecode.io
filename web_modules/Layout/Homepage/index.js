@@ -36,21 +36,15 @@ class Homepage extends Component {
     } = this.props
 
     const i18n = getI18n(this.context)
-    const allI18n = this.context.metadata.i18n
+    // const allI18n = this.context.metadata.i18n
 
     const latestPosts = enhanceCollection(this.props.collection, {
       filter: { layout: "Post" },
       sort: "date",
       reverse: true,
     })
-
-    const latestPostsEN = latestPosts
-      .filter((post) => post.__filename.startsWith(`en/`))
-      .slice(0, 3)
-
-    const latestPostsFR = latestPosts
-      .filter((post) => post.__filename.startsWith(`fr/`))
-      .slice(0, 3)
+    .filter((post) => post.__filename.startsWith(`fr/`))
+    .slice(0, 3)
 
     return (
       <div>
@@ -72,24 +66,19 @@ class Homepage extends Component {
           </div>
         </div>
 
-        <div className={ "r-Grid r-Grid--large" }>
+        <div
+          className={ "r-Grid" }
+          style={ {
+            maxWidth: "none",
+            textAlign: "center",
+          } }
+        >
           <div
-            className={ "r-Grid-cell r-minM--1of2" }
-            style={ { padding: "0 1rem 0 2rem" } }
+            className={ "r-Grid-cell r-minM--8of12 " + styles.latestPosts }
+            style={ { textAlign: "left" } }
           >
             <LatestPosts
-              posts={ latestPostsEN }
-              title={ "Latest Posts" }
-            />
-          </div>
-          <div
-            className={ "r-Grid-cell r-minM--1of2" }
-            style={ { padding: "0 2rem 0 1rem" } }
-          >
-            <LatestPosts
-              posts={ latestPostsFR }
-              title={ "Derniers articles" }
-              link={ allI18n.fr.links.articles }
+              posts={ latestPosts }
             />
           </div>
         </div>

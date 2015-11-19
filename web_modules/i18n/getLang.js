@@ -10,5 +10,5 @@ export default function getLang(context) {
   const firstURIlevel = location.pathname
     .replace(baseUrl.pathname, "")
     .split("/")[0]
-  return i18n[firstURIlevel] ? firstURIlevel : "en"
+  return i18n[firstURIlevel] ? firstURIlevel : "fr"
 }
