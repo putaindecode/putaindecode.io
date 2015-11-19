@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from "react"
 import cx from "classnames"
+import { Link } from "react-router"
 
 import getI18n from "i18n/get"
 import SVGIcon from "../SVGIcon"
@@ -96,7 +97,13 @@ export default class Footer extends Component {
                 "putainde-Footer-text--small"
               )}
             >
-              {i18n.madeWithHeart}
+              <Link to={ "/en/"}>
+                { "English" }
+              </Link>
+              { " | " }
+              <Link to={ "/fr/"}>
+                { "Français" }
+              </Link>
             </span>
           </div>
 

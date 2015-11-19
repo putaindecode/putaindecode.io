@@ -1,11 +1,16 @@
 ---
   lang: "Français"
   title: "Putain de code !"
+  links:
+    articles: "/fr/articles/"
+    help:
+      translate: "/fr/contribuer/traduire/"
   description: "Partager du code et des méthodes de travail de qualité, afin qu’on puisse tous s’améliorer ensemble."
   baseline: "On voulait mettre une baseline mais on a pas été foutu d'en trouver une"
   latestPosts: "Les derniers articles"
   posts: "Les articles"
-  manifesto: "Putain de code, c'est quoi ?"
+  whatIsThis: "C'est quoi ce site ?"
+  howThisWorks: "Comment ça marche ?"
   topContributors: "Top des contributeurs"
   topContributorsNoData: "Aucune donnée pour afficher le top des contributeurs"
   topContributorsNote: "sur les 12 derniers mois"
@@ -22,6 +27,7 @@
   contribution: "contribution"
   contributions: "contributions"
   noPosts: ":( pas d'article"
+  helpToTranslate: "Aidez-nous à traduire notre contenu !"
   BeTheFirstToContribute: "Soyez le premier à contribuer à cette page"
   onThisPage: "sur cette page"
   pageEdit: "Modifier"
@@ -30,7 +36,6 @@
   close: "&times;"
   copyright: "© 1970 - {*} Putain de code !"
   tags: "Tags"
-  the: "le"
   filters: "(filtres)"
   twitterUsername: "putaindecode_fr"
   twitter: "https://twitter.com/putaindecode_fr/"
@@ -41,7 +46,6 @@
   chatLabel: "Discuter"
   forum: "https://github.com/putaindecode/forum/issues"
   forumLabel: "Forum"
-  elsewhere: "Retrouvez-nous sur les internettes"
   PageError:
     title: "Page non trouvée 😱"
     contentMissing: "Le contenu que vous cherchez n’existe pas !"
@@ -56,15 +60,10 @@
       name: "Articles"
       icon: "bookmark"
     -
-      url: "/fr/c-est-quoi-putaindecode"
-      name: "Readme"
-      icon: "textFile"
-    -
       url: "/fr/contribuer"
-      name: "Participer"
+      name: "Contribuer"
       icon: "pencil"
   footerNavigation:
     -
       url: "/feed.xml"
       name: "Flux RSS"
-  madeWithHeart: "Made with ♥︎"

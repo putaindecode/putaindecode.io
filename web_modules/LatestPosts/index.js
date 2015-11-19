@@ -12,34 +12,34 @@ export default class LatestPosts extends Component {
   }
 
   static propTypes = {
-    posts: PropTypes.arrayOf(PropTypes.object),
+    posts: PropTypes.arrayOf(PropTypes.object).isRequired,
+    title: PropTypes.string,
+    link: PropTypes.string,
   }
 
   render() {
     const i18n = getI18n(this.context)
+    const {
+      title,
+      posts,
+      link,
+    } = this.props
 
     return (
       <div>
-        <div className="r-Grid putainde-Section">
-          <div className="r-Grid-cell r-minM--8of12 putainde-Section-contents">
-            <div className="putainde-Title putainde-Title--home">
-              <h2 className="putainde-Title-text">
-                {i18n.latestPosts}
-              </h2>
-            </div>
-            <PostsList posts={this.props.posts} />
-          </div>
+        <div className="putainde-Title putainde-Title--home">
+          <h2 className="putainde-Title-text">
+            { title ? title : i18n.latestPosts }
+          </h2>
         </div>
-        <div className="r-Grid" style={{ textAlign: "center" }}>
-          <div className="r-Grid-cell r-minM--8of12">
-            <Link
-              to="/fr/articles"
-              className="putainde-Button putainde-Button--block"
-            >
-              {i18n.morePosts}
-            </Link>
-          </div>
-        </div>
+        <PostsList posts={ posts } />
+        <Link
+          to={ link ? link : i18n.links.articles }
+          className="putainde-Button putainde-Button--block"
+          style={ { textAlign: "center" } }
+        >
+          { i18n.morePosts }
+        </Link>
       </div>
     )
   }

@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
-
-import SVGIcon from "SVGIcon"
+import { Link } from "react-router"
 
 import LatestPosts from "LatestPosts"
 import TopContributors from "TopContributors"
@@ -10,6 +9,7 @@ import TopContributors from "TopContributors"
 import { connect } from "react-redux"
 import enhanceCollection from "statinamic/lib/enhance-collection"
 
+import getLang from "i18n/getLang"
 import getI18n from "i18n/get"
 
 export default
@@ -31,6 +31,7 @@ class HomepagePerLang extends Component {
   }
 
   render() {
+    const lang = getLang(this.context)
     const i18n = getI18n(this.context)
 
     const {
@@ -38,12 +39,14 @@ class HomepagePerLang extends Component {
       body,
     } = this.props
 
-    const latestPosts = enhanceCollection(this.props.collection, {
+    const posts = enhanceCollection(this.props.collection, {
       filter: { layout: "Post" },
       sort: "date",
       reverse: true,
-      limit: 6,
     })
+    // TODO use a real filter
+    .filter((post) => post.__filename.startsWith(`${ lang }/`))
+    const latestPosts = posts.slice(0, 6)
 
     return (
       <div className="putainde-Main">
@@ -55,7 +58,38 @@ class HomepagePerLang extends Component {
           ]}
         />
 
-        <LatestPosts posts={latestPosts} />
+        <div className="putainde-Section">
+          <div className="r-Grid">
+            <div
+              className={cx(
+                "r-Grid-cell",
+                "r-minM--8of12",
+                "putainde-Section-contents",
+              )}
+            >
+              <LatestPosts posts={ latestPosts } />
+
+              {
+                <Link
+                  to={ i18n.links.help.translate }
+                  style={ {
+                    ...{
+                      display: "block",
+                      textAlign: "center",
+                      color: "#999",
+                    },
+                    ...posts.length < 10 && {
+                      fontWeight: "bold",
+                      color: "#111",
+                    },
+                  } }
+                >
+                  { i18n.helpToTranslate }
+                </Link>
+              }
+            </div>
+          </div>
+        </div>
 
         <div className="putainde-Section putainde-Section--manifesto">
           <div className="r-Grid r-Grid--alignCenter">
@@ -68,36 +102,13 @@ class HomepagePerLang extends Component {
               )}
             >
               <div className="putainde-Title putainde-Title--home">
-                <h2 className="putainde-Title-text">{i18n.manifesto}</h2>
+                <h2 className="putainde-Title-text">
+                  { i18n.whatIsThis }
+                </h2>
               </div>
               <div
                 dangerouslySetInnerHTML={{ __html: body }}
               />
-              <div className="putainde-Networks">
-                <a
-                  className="putainde-Network"
-                  href={i18n.github}
-                  title={i18n.githubLabel}
-                >
-                  <SVGIcon
-                    className="putainde-Icon"
-                    svg={require(`icons/github.svg`)}
-                    cleanup
-                  />
-                </a>
-                {i18n.elsewhere}
-                <a
-                  className="putainde-Network"
-                  href={i18n.twitter}
-                  title={i18n.twitterLabel}
-                >
-                  <SVGIcon
-                    className="putainde-Icon"
-                    svg={require(`icons/twitter.svg`)}
-                    cleanup
-                  />
-                </a>
-              </div>
             </div>
           </div>
         </div>

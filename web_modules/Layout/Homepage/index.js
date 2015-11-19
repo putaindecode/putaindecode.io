@@ -3,11 +3,13 @@ import cx from "classnames"
 import Helmet from "react-helmet"
 import { Link } from "react-router"
 import { connect } from "react-redux"
+import enhanceCollection from "statinamic/lib/enhance-collection"
 
 import getI18n from "i18n/get"
-import SVGIcon from "SVGIcon"
-
+import LatestPosts from "LatestPosts"
 import TopContributors from "TopContributors"
+
+import "./styles.css"
 
 export default
 @connect(
@@ -34,9 +36,24 @@ class Homepage extends Component {
     } = this.props
 
     const i18n = getI18n(this.context)
+    const allI18n = this.context.metadata.i18n
+
+    const latestPosts = enhanceCollection(this.props.collection, {
+      filter: { layout: "Post" },
+      sort: "date",
+      reverse: true,
+    })
+
+    const latestPostsEN = latestPosts
+      .filter((post) => post.__filename.startsWith(`en/`))
+      .slice(0, 3)
+
+    const latestPostsFR = latestPosts
+      .filter((post) => post.__filename.startsWith(`fr/`))
+      .slice(0, 3)
 
     return (
-      <div className="putainde-Main">
+      <div>
         <Helmet
           title={ head.title }
           meta={[
@@ -45,6 +62,49 @@ class Homepage extends Component {
           ]}
         />
 
+        <div className={ "putainde-HP-header" }>
+          <div className={ "putainde-HP-header-cell" }>
+            <em>{ i18n.title }</em>
+            { " " + i18n.jumbotron }
+            <br />
+            <br />
+            { i18n.jumbotron2 }
+          </div>
+        </div>
+
+        <div className={ "r-Grid r-Grid--large" }>
+          <div
+            className={ "r-Grid-cell r-minM--1of2" }
+            style={ { padding: "0 1rem 0 2rem" } }
+          >
+            <LatestPosts
+              posts={ latestPostsEN }
+              title={ "Latest Posts" }
+            />
+          </div>
+          <div
+            className={ "r-Grid-cell r-minM--1of2" }
+            style={ { padding: "0 2rem 0 1rem" } }
+          >
+            <LatestPosts
+              posts={ latestPostsFR }
+              title={ "Derniers articles" }
+              link={ allI18n.fr.links.articles }
+            />
+          </div>
+        </div>
+
+        <Link
+          to={ i18n.links.help.translate }
+          style={ {
+            display: "block",
+            textAlign: "center",
+            color: "#999",
+            textDecoration: "none",
+          } }
+        >
+          { i18n.helpToTranslate }
+        </Link>
 
         <div className="putainde-Section putainde-Section--manifesto">
           <div className="r-Grid r-Grid--alignCenter">
@@ -57,36 +117,12 @@ class Homepage extends Component {
               )}
             >
               <div className="putainde-Title putainde-Title--home">
-                <h2 className="putainde-Title-text">{i18n.manifesto}</h2>
+                <h2 className="putainde-Title-text">
+                  { i18n.howThisWorks }
+                </h2>
               </div>
-              <div
-                dangerouslySetInnerHTML={{ __html: body }}
-              />
-              <div className="putainde-Networks">
-                <a
-                  className="putainde-Network"
-                  href={i18n.github}
-                  title={i18n.githubLabel}
-                >
-                  <SVGIcon
-                    className="putainde-Icon"
-                    svg={require(`icons/github.svg`)}
-                    cleanup
-                  />
-                </a>
-                {i18n.elsewhere}
-                <a
-                  className="putainde-Network"
-                  href={i18n.twitter}
-                  title={i18n.twitterLabel}
-                >
-                  <SVGIcon
-                    className="putainde-Icon"
-                    svg={require(`icons/twitter.svg`)}
-                    cleanup
-                  />
-                </a>
-              </div>
+
+              <div dangerouslySetInnerHTML={{ __html: body }} />
             </div>
           </div>
         </div>
