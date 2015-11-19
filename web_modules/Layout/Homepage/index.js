@@ -62,8 +62,8 @@ class Homepage extends Component {
           ]}
         />
 
-        <div className={ "putainde-HP-header" }>
-          <div className={ "putainde-HP-header-cell" }>
+      <div className={ styles.header }>
+          <div className={ styles.headerCell }>
             <em>{ i18n.title }</em>
             { " " + i18n.jumbotron }
             <br />
