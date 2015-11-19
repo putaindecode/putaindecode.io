@@ -9,7 +9,7 @@ import getI18n from "i18n/get"
 import LatestPosts from "LatestPosts"
 import TopContributors from "TopContributors"
 
-import "./styles.css"
+import styles from "./styles.css"
 
 export default
 @connect(
