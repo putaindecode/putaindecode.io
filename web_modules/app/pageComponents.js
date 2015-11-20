@@ -1,6 +1,5 @@
 export Page from "Layout/Page"
 export PageError from "Layout/PageError"
 export Homepage from "Layout/Homepage"
-export HomepagePerLang from "Layout/HomepagePerLang"
 export Post from "Layout/Post"
 export Posts from "Layout/Posts"

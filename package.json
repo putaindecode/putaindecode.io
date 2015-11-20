@@ -36,6 +36,7 @@
     "chalk": "^1.0.0",
     "classnames": "^1.2.0",
     "css-loader": "^0.17.0",
+    "current-locale": "^1.0.7",
     "eslint": "^1.7.3",
     "eslint-loader": "^1.1.0",
     "eslint-plugin-react": "^3.6.3",

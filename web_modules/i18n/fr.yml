@@ -7,6 +7,11 @@
       translate: "/fr/contribuer/traduire/"
   jumbotron: "est un site où vous pouvez lire (et publier) des bonnes pratiques de développement."
   jumbotron2: "Du contenu de qualité, revu et approuvé par la communauté."
+  i18nBanner:
+    invite: "Peut-être seriez-vous intéressé par du contenu en français ?"
+    yes: "Oh oui !"
+    hide: "Non merci"
+    hideForever: "Non, et ne m'embêtez plus avec ça"
   latestPosts: "Les derniers articles"
   posts: "Les articles"
   whatIsThis: "C'est quoi ce site ?"

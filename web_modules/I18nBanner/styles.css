@@ -1,0 +1,11 @@
+.component {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  padding: 1rem;
+  text-align: center;
+
+  color: #fff;
+  background: color(#000 a(.8));
+}
