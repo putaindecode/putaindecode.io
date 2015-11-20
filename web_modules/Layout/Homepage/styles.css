@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  padding: 4rem 0;
   min-height: 40vh;
   color: #fff;
   align-items: center;

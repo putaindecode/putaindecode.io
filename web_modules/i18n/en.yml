@@ -7,6 +7,11 @@
       translate: "/en/contributing/translate/"
   jumbotron: "is a place where you can read (and write) about best coding practices."
   jumbotron2: "High quality content, reviewed by the community."
+  i18nBanner:
+    invite: "Maybe you would be interested by our content in english?"
+    yes: "Yes, please"
+    hide: "Not thanks"
+    hideForever: "Please never annoy me again with this"
   description: "Share quality code and work methodologies, so we can be better together."
   latestPosts: "Latest Posts"
   posts: "Posts"

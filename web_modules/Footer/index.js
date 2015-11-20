@@ -97,11 +97,11 @@ export default class Footer extends Component {
                 "putainde-Footer-text--small"
               )}
             >
-              <Link to={ "/en/"}>
+              <Link to={ "/en/" }>
                 { "English" }
               </Link>
               { " | " }
-              <Link to={ "/fr/"}>
+              <Link to={ "/fr/" }>
                 { "Français" }
               </Link>
             </span>
