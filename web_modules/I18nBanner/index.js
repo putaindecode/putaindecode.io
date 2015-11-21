@@ -2,8 +2,10 @@ import React from "react"
 import { PropTypes } from "react"
 
 import Button from "Button"
+import SVGIcon from "SVGIcon"
 
 import classes from "./styles.css"
+import crossSVG from "./cross.svg"
 
 const Component = (props) => (
   <div className={ classes.component }>
@@ -16,7 +18,7 @@ const Component = (props) => (
     </Button>
     <Button
       small
-      onClick={ () => props.onHide() }
+      onClick={ () => props.onHideForever() }
     >
       { props.labels.hide }
     </Button>
@@ -24,8 +26,15 @@ const Component = (props) => (
       small
       onClick={ () => props.onHideForever() }
     >
-      { props.labels.hideForever }
+      { props.labels.hide2 }
     </Button>
+    <span
+      className={ classes.close }
+      aria-role={ "button "}
+      onClick={ () => props.onHide() }
+    >
+      <SVGIcon className={ "putainde-Icon" } svg={ crossSVG } cleanup />
+    </span>
   </div>
 )
 

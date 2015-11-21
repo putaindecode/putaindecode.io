@@ -3,9 +3,9 @@ import cx from "classnames"
 import Helmet from "react-helmet"
 import { Link } from "react-router"
 import { connect } from "react-redux"
-import currentLocale from "current-locale"
 import enhanceCollection from "statinamic/lib/enhance-collection"
 
+import supportLocale from "browser-locale-support"
 import getLang from "i18n/getLang"
 import getI18n from "i18n/get"
 import I18nBanner from "I18nBanner"
@@ -14,10 +14,7 @@ import TopContributors from "TopContributors"
 
 import classes from "./styles.css"
 
-const locale = currentLocale({
-  supportedLocales: [ "fr", "en" ],
-  fallbackLocale: "en",
-})
+const supportedLocales = [ "fr", "en" ]
 
 export default
 @connect(
@@ -48,13 +45,13 @@ class Homepage extends Component {
   prepareI18nBanner() {
     this.hideI18nBanner()
 
-    if (
-      typeof window !== "undefined"
-      && window.localStorage
-      && !window.localStorage.getItem("i18nBanner")
-    ) {
+    if (typeof window !== "undefined") {
       setTimeout(() => {
-        if (getLang(this.context) !== locale) {
+        const locale = getLang(this.context)
+        if (
+          window.localStorage
+          && !window.localStorage.getItem(`i18nBanner-${ locale }`)
+          && !supportLocale({ locale, supportedLocales })) {
           this.showI18nBanner()
         }
       }, 2000)
@@ -68,7 +65,7 @@ class Homepage extends Component {
   hideI18nBanner(forever) {
     this.setState({ i18nBanner: false })
     if (forever) {
-      window.localStorage.setItem("i18nBanner", 1)
+      window.localStorage.setItem(`i18nBanner-${ forever }`, 1)
     }
   }
 
@@ -79,6 +76,8 @@ class Homepage extends Component {
     } = this.props
 
     const i18n = getI18n(this.context)
+    const locale = getLang(this.context)
+    const anotherLocale = supportedLocales.filter((l) => l !== locale)[0]
 
     const latestPosts = enhanceCollection(this.props.collection, {
       filter: { layout: "Post" },
@@ -101,10 +100,10 @@ class Homepage extends Component {
       {
         this.state && this.state.i18nBanner &&
         <I18nBanner
-          labels={ this.context.metadata.i18n[locale].i18nBanner }
-          onAccept={ () => window.location = "/en/" }
+          labels={ this.context.metadata.i18n[anotherLocale].i18nBanner }
+          onAccept={ () => window.location = `/${ anotherLocale }/` }
           onHide={ () => this.hideI18nBanner() }
-          onHideForever={ () => this.hideI18nBanner(true) }
+          onHideForever={ () => this.hideI18nBanner(locale) }
         />
       }
 

@@ -9,3 +9,9 @@
   color: #fff;
   background: color(#000 a(.8));
 }
+
+.close {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
