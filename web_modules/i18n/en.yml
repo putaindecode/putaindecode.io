@@ -10,8 +10,8 @@
   i18nBanner:
     invite: "Maybe you would be interested by our content in english?"
     yes: "Yes, please"
-    hide: "Not thanks"
-    hideForever: "Please never annoy me again with this"
+    hide: "No thanks"
+    hide2: "Désolé, je ne comprends pas"
   description: "Share quality code and work methodologies, so we can be better together."
   latestPosts: "Latest Posts"
   posts: "Posts"
