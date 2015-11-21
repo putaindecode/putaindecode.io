@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from "react"
 import { Link } from "react-router"
-
 import cx from "classnames"
 
+import getI18n from "i18n/get"
 import SVGIcon from "../SVGIcon"
 
 const SVGs = {
@@ -18,11 +18,11 @@ export default class Navigation extends Component {
 
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
 
   render() {
-    const { metadata } = this.context
-    const i18n = metadata.i18n
+    const i18n = getI18n(this.context)
 
     return (
       <nav className="putainde-Nav">

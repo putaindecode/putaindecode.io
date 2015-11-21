@@ -1,18 +1,19 @@
 import React, { Component, PropTypes } from "react"
-
 import cx from "classnames"
+import { Link } from "react-router"
 
+import getI18n from "i18n/get"
 import SVGIcon from "../SVGIcon"
 
 export default class Footer extends Component {
 
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
 
   render() {
-    const { metadata } = this.context
-    const i18n = metadata.i18n
+    const i18n = getI18n(this.context)
 
     return (
       <div className="putainde-Footer">
@@ -96,7 +97,13 @@ export default class Footer extends Component {
                 "putainde-Footer-text--small"
               )}
             >
-              {i18n.madeWithHeart}
+              <Link to={ "/en/" }>
+                { "English" }
+              </Link>
+              { " | " }
+              <Link to={ "/fr/" }>
+                { "Français" }
+              </Link>
             </span>
           </div>
 

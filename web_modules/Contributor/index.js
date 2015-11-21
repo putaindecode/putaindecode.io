@@ -3,11 +3,11 @@ import cx from "classnames"
 
 import Avatar from "../Avatar"
 
-export default class Contributors extends Component {
+export default class Contributor extends Component {
 
   static propTypes = {
     author: PropTypes.string.isRequired,
-    commits: PropTypes.string,
+    commits: PropTypes.number,
     size: PropTypes.string,
   }
 

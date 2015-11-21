@@ -1,5 +1,6 @@
 ---
 title: "C'est quoi Putain de code ?"
+layout: Page
 ---
 
 _Putain de code !_

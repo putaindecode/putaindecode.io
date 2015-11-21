@@ -39,9 +39,25 @@ export default class Page extends Component {
               </div>
             }
 
-            <div className="putainde-Post-md"
-              dangerouslySetInnerHTML={{ __html: body }}
-            />
+            {
+              !body &&
+              <div
+                style={ {
+                  fontSize: "3rem",
+                  color: "#ccc",
+                  margin: "20vh auto",
+                  textAlign: "center",
+                } }
+              >
+                { "TODO :)" }
+              </div>
+            }
+            {
+              body &&
+              <div className="putainde-Post-md"
+                dangerouslySetInnerHTML={{ __html: body }}
+              />
+            }
 
           </div>
         </article>
