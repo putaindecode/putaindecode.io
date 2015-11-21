@@ -84,7 +84,7 @@ class Homepage extends Component {
       sort: "date",
       reverse: true,
     })
-    .filter((post) => post.__filename.startsWith(`fr/`))
+    .filter((post) => post.__filename.startsWith(`${ locale }/`))
     .slice(0, 3)
 
     return (
