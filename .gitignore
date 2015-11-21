@@ -6,5 +6,7 @@ npm-debug.log
 contributors.json
 dist
 
-# statinamic static script builded with webpack for node
+# statinamic static build (for node)
 scripts/statinamic-static.js
+# statinamic static useless files
+scripts/_
