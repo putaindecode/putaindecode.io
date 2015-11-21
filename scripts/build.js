@@ -214,15 +214,7 @@ builder({
     plugins: [
       ...webpackConfig.plugins,
 
-      // ! \\ the static build below will extract the exact same thing in the
-      // same file, but here we use extract plugin to REMOVE REDUNDANT CSS
-      // from the build. Since there is a static build that is used for the
-      // first viewed page (which contains all css), we don't need styles in
-      // the JS too.
-      new ExtractTextPlugin(
-        "[name].css",
-        { disable: config.dev }
-      ),
+      new ExtractTextPlugin("[name].css", { disable: config.dev }),
 
       ...config.prod && [
         new webpack.optimize.DedupePlugin(),
@@ -255,9 +247,8 @@ builder({
     plugins: [
       ...webpackConfig.plugins,
 
-      // extract (and overwrite) statinamic client css
-      // poor workaround to avoid having 2 identical files...
-      new ExtractTextPlugin(path.join("..", destBase, "statinamic-client.css")),
+      // useless file
+      new ExtractTextPlugin("_/[name].css"),
     ],
   },
 })
