@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from "react"
 
+import getI18n from "i18n/get"
 import SVGIcon from "../SVGIcon"
 import Avatar from "../Avatar"
 
@@ -9,6 +10,7 @@ export default class Author extends Component {
 
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
 
   static propTypes = {
@@ -24,13 +26,14 @@ export default class Author extends Component {
   }
 
   render() {
+    const i18n = getI18n(this.context)
     const { metadata } = this.context
-    const i18n = metadata.i18n
     const {
       afterName,
       isPost,
       bio,
     } = this.props
+
     const author = metadata.contributors.getContributor(this.props.author)
 
     return (

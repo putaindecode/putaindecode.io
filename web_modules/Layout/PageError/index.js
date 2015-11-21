@@ -2,17 +2,19 @@ import React, { Component } from "react"
 import { PropTypes } from "react"
 import Helmet from "react-helmet"
 
+import getI18n from "i18n/get"
 export default class PageError extends Component {
 
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
 
   render() {
+    const i18n = getI18n(this.context)
     const { metadata } = this.context
     const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
 
-    const i18n = metadata.i18n
     const title = i18n.PageError.title
 
     return (

@@ -2,15 +2,18 @@ import React, { Component, PropTypes } from "react"
 
 import Contributor from "Contributor"
 
+import getI18n from "i18n/get"
+
 export default class TopContributors extends Component {
 
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
 
   render() {
+    const i18n = getI18n(this.context)
     const { metadata } = this.context
-    const i18n = metadata.i18n
     const contributors = metadata.contributors
     const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
     const recentContributors = Object.keys(contributors.recentContributions)

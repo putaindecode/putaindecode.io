@@ -3,6 +3,7 @@ import cx from "classnames"
 import Helmet from "react-helmet"
 import DisqusThread from "react-disqus-thread"
 
+import getI18n from "i18n/get"
 import AuthorsList from "AuthorsList"
 import Author from "Author"
 import Contributors from "Contributors"
@@ -21,6 +22,7 @@ export default class Post extends Component {
 
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
 
   // 2 cts autoprefixer
@@ -97,8 +99,8 @@ export default class Post extends Component {
   }
 
   render() {
+    const i18n = getI18n(this.context)
     const { metadata } = this.context
-    const i18n = metadata.i18n
 
     const {
       head,
@@ -185,7 +187,7 @@ export default class Post extends Component {
                 {
                   post.date &&
                   <span className="putainde-Date">
-                    {` ${i18n.the} ${formatDate(post.date)}`}
+                    { formatDate(post.date) }
                   </span>
                 }
                 {". "}
