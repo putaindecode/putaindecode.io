@@ -55,7 +55,7 @@
   PageError:
     title: "Page not found 😱"
     contentMissing: "The content your are looking for does not exist!"
-    report: "If you think that is a mistake, do not hesitate to"
+    report: "If you think that is a mistake, do not hesitate to "
     reportLink: "report it"
   disqus:
     id: "putaindecode"
