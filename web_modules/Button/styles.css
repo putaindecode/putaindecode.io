@@ -37,3 +37,9 @@
   .componentSmall {
     font-size: .75rem;
   }
+
+  @media (--minS) {
+    .componentSmall {
+      font-size: .85rem;
+    }
+  }
