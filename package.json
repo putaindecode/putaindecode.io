@@ -76,7 +76,7 @@
     "lint": "eslint .",
     "start": "babel-node scripts/putaindebuild --server --open --dev",
     "build": "babel-node scripts/putaindebuild --static --production",
-    "postbuild": "echo 'putaindecode.io' > dist/CNAME",
+    "postbuild": "echo 'putaindecode.io' > dist/CNAME && touch dist/.nojekyll",
     "pretest": "npm run lint",
     "test": "npm run build"
   },
