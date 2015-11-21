@@ -129,8 +129,12 @@ const webpackConfig = {
         ),
       },
       {
-        test: /\.(html|ico|jpe?g|png|gif)$/,
+        test: /content\/.*\.(html|ico|jpe?g|png|gif)$/,
         loader: "file-loader?name=[path][name].[ext]&context=./content",
+      },
+      {
+        test: /web_modules\/.*\.(html|ico|jpe?g|png|gif)$/,
+        loader: "file-loader?name=_/[path][name].[ext]&context=./web_modules",
       },
       {
         test: /^CNAME$/,
