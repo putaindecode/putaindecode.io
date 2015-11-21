@@ -3,11 +3,11 @@
   left: 0;
   right: 0;
 
-  padding: 1rem;
+  padding: 1rem 2rem;
   text-align: center;
 
   color: #fff;
-  background: color(#000 a(.8));
+  background: color(#000 a(.7));
 }
 
 .close {
