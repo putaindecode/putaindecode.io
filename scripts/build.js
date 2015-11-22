@@ -96,19 +96,45 @@ const webpackConfig = {
         ],
         exclude: /(statinamic|node_modules)/,
       },
+      // css modules
       {
-        test: /\.css$/,
+        test: /styles\.css$/,
         loader: ExtractTextPlugin.extract(
           "style-loader",
-          "css-loader" +
-            // "?localIdentName=[path][name]--[local]--[hash:base64:5]" +
-            // "&modules" +
-          "!postcss-loader"
+          [
+            "css-loader" + "?" + [
+              `localIdentName=${
+                config.dev
+                ? "[path][name]--[local]--[hash:base64:5]"
+                : "[hash:base64]"
+              }`,
+              "modules",
+            ].join("&"),
+            "postcss-loader",
+          ].join("!"),
+        ),
+      },
+      // for legacy css
+      // when this is unused (= we use only css modules)
+      // close this
+      // https://github.com/putaindecode/putaindecode.io/issues/509
+      {
+        test: /legacy-css\/.*\.css$/,
+        loader: ExtractTextPlugin.extract(
+          "style-loader",
+          [
+            "css-loader",
+            "postcss-loader",
+          ].join("!"),
         ),
       },
       {
-        test: /\.(html|ico|jpe?g|png|gif)$/,
+        test: /content\/.*\.(html|ico|jpe?g|png|gif)$/,
         loader: "file-loader?name=[path][name].[ext]&context=./content",
+      },
+      {
+        test: /web_modules\/.*\.(html|ico|jpe?g|png|gif)$/,
+        loader: "file-loader?name=_/[path][name].[ext]&context=./web_modules",
       },
       {
         test: /^CNAME$/,
@@ -134,7 +160,22 @@ const webpackConfig = {
 
   postcss: (webpack) => [
     require("postcss-import")({ addDependencyTo: webpack }),
-    require("postcss-cssnext"),
+    require("postcss-cssnext")({
+      features: {
+        customMedia: {
+          extensions: {
+            maxS: "(max-width: 30em)",
+            minS: "(min-width: 30.01em)",
+            maxM: "(max-width: 50em)",
+            minM: "(min-width: 50.01em)",
+            maxL: "(max-width: 65em)",
+            minL: "(min-width: 65.01em)",
+            maxXL: "(max-width: 80em)",
+            minXL: "(min-width: 80.01em)",
+          },
+        },
+      },
+    }),
   ],
 
   plugins: [
@@ -177,15 +218,7 @@ builder({
     plugins: [
       ...webpackConfig.plugins,
 
-      // ! \\ the static build below will extract the exact same thing in the
-      // same file, but here we use extract plugin to REMOVE REDUNDANT CSS
-      // from the build. Since there is a static build that is used for the
-      // first viewed page (which contains all css), we don't need styles in
-      // the JS too.
-      new ExtractTextPlugin(
-        "[name].css",
-        { disable: config.dev }
-      ),
+      new ExtractTextPlugin("[name].css", { disable: config.dev }),
 
       ...config.prod && [
         new webpack.optimize.DedupePlugin(),
@@ -218,9 +251,8 @@ builder({
     plugins: [
       ...webpackConfig.plugins,
 
-      // extract (and overwrite) statinamic client css
-      // poor workaround to avoid having 2 identical files...
-      new ExtractTextPlugin(path.join("..", destBase, "statinamic-client.css")),
+      // useless file
+      new ExtractTextPlugin("_/[name].css"),
     ],
   },
 })

@@ -1,1 +1,4 @@
-export default require("json-loader!yaml-loader!./index.yml")
+export default {
+  en: require("json-loader!yaml-loader!./en.yml"),
+  fr: require("json-loader!yaml-loader!./fr.yml"),
+}
