@@ -119,7 +119,7 @@ const webpackConfig = {
       // close this
       // https://github.com/putaindecode/putaindecode.io/issues/509
       {
-        test: /legacy-css.*\.css$/,
+        test: /legacy-css(\/|\\).*\.css$/,
         loader: ExtractTextPlugin.extract(
           "style-loader",
           [
@@ -129,11 +129,11 @@ const webpackConfig = {
         ),
       },
       {
-        test: /content\/.*\.(html|ico|jpe?g|png|gif)$/,
+        test: /content(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
         loader: "file-loader?name=[path][name].[ext]&context=./content",
       },
       {
-        test: /web_modules\/.*\.(html|ico|jpe?g|png|gif)$/,
+        test: /web_modules(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
         loader: "file-loader?name=_/[path][name].[ext]&context=./web_modules",
       },
       {
