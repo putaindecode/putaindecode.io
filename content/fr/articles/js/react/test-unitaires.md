@@ -14,40 +14,40 @@ header:
 ---
 
 L'équipe de React a implémenté une fonctionnalité appelé
-[Shallow rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering)
+[shallow rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering)
 (rendu peu profond),
 qui permet de rendre un composant avec un seul niveau de profondeur de rendu.
 
 Cela permet du coup de vérifier ce que le rendu retourne sans avoir à ce
-soucier du comportement des composants enfants, qui ne sont pas instancié ni
-rendu. Cela ne nécessite pas de DOM.
+soucier du comportement des composants enfants, qui ne sont pas instanciés ni
+rendus. Cela ne nécessite pas de DOM.
 
-Intéressant n'est-ce pas ? Et d'ailleurs, le _Shallow rendering_ est
+Intéressant, n'est-ce pas ? Et d'ailleurs, le _shallow rendering_ est
 actuellement
 [la méthode recommandée pour tester vos composants React](https://discuss.reactjs.org/t/whats-the-prefered-way-to-test-react-js-components/26).
 
 Comme vous pourrez le voir dans un article listé à la fin de celui-ci,
 le code permettant de tester des composants avec cette technique n'est pas
-forcément très concis, contrairement à ce qu'on pourrait s'attendre.
+forcément très concis, contrairement à ce qu'on pourrait attendre.
 
 Heureusement, [quelqu'un](https://github.com/vvo) a codé un truc plutôt cool:
 [react-element-to-jsx-string](https://github.com/algolia/react-element-to-jsx-string).
 Comme le nom l'indique, cette librairie permet de rendre un composant React en
 tant que chaîne JSX.
 
-C'est maintenant les choses deviennent intéressante:
-avec ces concepts en tête (le shallow render et le rendu de composant en string
-jsx), on peut facilement ajouter de simple tests unitaires sur ses composants.
+C'est maintenant les choses deviennent intéressantes :
+avec ces concepts en tête (le shallow render et le rendu de composant en strings
+JSX), on peut facilement ajouter de simple tests unitaires sur ses composants.
 
 _Il y a d'autres techniques pour tester des composants React, et la plupart
 implique le DOM. Vous devrez donc éxecuter vos tests dans un navigateur (ou
-en utilisant jsdom): vos tests seront plus lent que la technique qui va suivre
+en utilisant jsdom) : vos tests seront plus lents que la technique qui va suivre
 (qui pour le coup est plus du vrai test unitaire, dans le sens où vous utilisez
 moins de code et ne nécessitez pas un gros environnement)._
 
 ## Tester facilement des composants React (sans DOM)
 
-On va partir avec ce simple composant:
+On va partir avec ce simple composant :
 
 ```js
 // web_modules/Picture/index.js
@@ -92,7 +92,7 @@ export default Component
 ```
 
 Ce composant affiche une image avec un composant pour le titre.
-Si les données de l'image ne sont pas prête, on peut afficher un composant pour
+Si les données de l'image ne sont pas prêtes, on peut afficher un composant pour
 indiquer le chargement.
 
 Écrivons maintenant un petit test. Pour notre exemple, on va utiliser
@@ -186,12 +186,12 @@ droit au but.
 simples chaînes. Nous utilisons directement des composants React.**
 
 Vous pouvez tranquillement éxecuter l'exemple complet et le récupérant depuis le
-repository:
+repository :
 
 [github.com/MoOx/react-component-unit-testing-example](https://github.com/MoOx/react-component-unit-testing-example)
 
 Cet exemple contient les commandes et dépendances
-(défini dans le `package.json`)
+(définies dans le `package.json`)
 dont vous aurez besoin.
 
 # Et comment tester les évènements comme `onClick` ?
@@ -209,7 +209,7 @@ En gros, si vous avez un bout de code qui ressemble à
 `yourCallback()` dans vos tests juste avant votre comparaison.
 C'est bien assez !
 
-Si vous voulez aller un peu plus loin, vous pouvez continuer par lire:
+Si vous voulez aller un peu plus loin, vous pouvez continuer par lire :
 - [_Unit testing React components without a DOM_](https://simonsmith.io/unit-testing-react-components-without-a-dom/),
 par Simon Smith, qui couvre le même sujet, sans la simplicité de la comparaison
 JSX,
@@ -218,5 +218,5 @@ sur le blog d'Algolia, qui explique pourquoi ils ont choisi et créé les outils
 pour cette approche.
 
 Avec ces exemples, nous espérons vraiment que vous n'aurez plus peur de tester
-votre code et que vous n'hésiterez plus à couvrir tout vos composants React de
+votre code et que vous n'hésiterez plus à couvrir tous vos composants React de
 tests 😍.
