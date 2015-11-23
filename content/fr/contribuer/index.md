@@ -3,19 +3,12 @@ title: Comment contribuer ?
 layout: Page
 ---
 
-Ici, chez _Putain de code !_, dans notre building 8 étages vitres teintées avec
-masseuses et coke à volonté et à n'importe quelle heure de la journée, on sait
-qu'on va forcément t'aider à comprendre pas mal de trucs, mais on sait aussi
-qu'on peut faire des fois des erreurs dans les articles (à cause de la coke)
-ou tout simplement qu'il existe des types encore plus hipster
-que [bloodyowl](/#top-contributors) et qui voudront profiter de
-notre renomée inter~~nationale~~galactique pour se faire un peu de visibilité
-en proposant un post. Du coup, on s'attend vraiment à ce que tu aides à faire
-avancer le bouzin, que t'apportes ta pierre à l'édifice quoi (oui on t'apprend
-des expressions aussi), ou ta PR au repo comme on dit dans le monde des
-développeurs des internets.
-
-## tl;dr
+<div class="putainde-Note">
+Cette documentation n'est pas à jour.
+<a href="https://github.com/putaindecode/putaindecode.io/issues/531">
+Une réécriture plus digeste est prévue.
+</a>
+</div>
 
 ### Corriger du contenu rapidement
 
