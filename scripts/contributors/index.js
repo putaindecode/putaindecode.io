@@ -61,7 +61,6 @@ function sortObjectByKeys(obj) {
   return newObj
 }
 
-
 async function getContributorFromGitHub(user) {
   try {
     const githubUser = await asyncify(githubApi.user.getFrom)({ user })
