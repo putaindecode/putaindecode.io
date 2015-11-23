@@ -18,7 +18,7 @@ export default class TopContributors extends Component {
   render() {
     const i18n = getI18n(this.context)
     const { recentContributions } = this.props
-    const recentContributors = recentContributors
+    const recentContributors = recentContributions
       ? Object.keys(recentContributions)
       : []
     recentContributors.sort(
