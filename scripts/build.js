@@ -119,7 +119,7 @@ const webpackConfig = {
       // close this
       // https://github.com/putaindecode/putaindecode.io/issues/509
       {
-        test: /legacy-css\/.*\.css$/,
+        test: /legacy-css.*\.css$/,
         loader: ExtractTextPlugin.extract(
           "style-loader",
           [
