@@ -36,6 +36,18 @@ const emailRE = /<(.+)>$/
 
 const log = logger("contributors")
 
+let githubIsDown = false
+function isGithubDown(err) {
+  if (err.toString().indexOf("getaddrinfo ENOTFOUND") > -1) {
+    if (!githubIsDown) {
+      githubIsDown = true
+      log(color.red("⚠︎ Cannot reach GitHub API. Are you offline?"))
+    }
+  }
+  else {
+    throw err
+  }
+}
 let results = {}
 
 function sortObjectByKeys(obj) {
@@ -49,23 +61,33 @@ function sortObjectByKeys(obj) {
   return newObj
 }
 
+
 async function getContributorFromGitHub(user) {
-  const githubUser = await asyncify(githubApi.user.getFrom)({ user })
-  log("New contributor:", githubUser.login)
-  return {
-    // see what's available here
-    // https://developer.github.com/v3/users/
-    login: githubUser.login,
-    name: githubUser.name,
-    avatar_url: githubUser.avatar_url,
-    url:
-      githubUser.blog
-      ? githubUser.blog.indexOf("http") === 0
-        ? githubUser.blog
-        : "http://" + githubUser.blog
-      : undefined,
-    location: githubUser.location,
-    hireable: githubUser.hireable,
+  try {
+    const githubUser = await asyncify(githubApi.user.getFrom)({ user })
+    // log("New contributor:", githubUser.login)
+    return {
+      // see what's available here
+      // https://developer.github.com/v3/users/
+      login: githubUser.login,
+      name: githubUser.name,
+      avatar_url: githubUser.avatar_url,
+      url:
+        githubUser.blog
+        ? githubUser.blog.indexOf("http") === 0
+          ? githubUser.blog
+          : "http://" + githubUser.blog
+        : undefined,
+      location: githubUser.location,
+      hireable: githubUser.hireable,
+    }
+  }
+  catch (err) {
+    isGithubDown(err)
+    return {
+      login: user,
+      name: user,
+    }
   }
 }
 
@@ -180,11 +202,8 @@ async function contributorsMap() {
           log(color.red("⚠︎ Cannot connect to GitHub for " + email))
         }
         else {
-          // not sure why I need to do this to get exception throw
-          // await/async should handle that :(
           setTimeout(() => {
-            console.error("Unhandled error from GitHub API")
-            throw err
+            isGithubDown(err)
           }, 1)
         }
       }
@@ -346,7 +365,9 @@ export default async function() {
       log("✓ Contributions per files done")
     }
 
-    await writeFile(contributorsFile, JSON.stringify(results, true, 2))
+    if (!githubIsDown) {
+      await writeFile(contributorsFile, JSON.stringify(results, true, 2))
+    }
   }
 
   return results
