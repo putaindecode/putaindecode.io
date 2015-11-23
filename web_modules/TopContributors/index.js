@@ -6,6 +6,10 @@ import getI18n from "i18n/get"
 
 export default class TopContributors extends Component {
 
+  static propTypes = {
+    recentContributions: PropTypes.object.isRequired,
+  }
+
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
@@ -13,17 +17,20 @@ export default class TopContributors extends Component {
 
   render() {
     const i18n = getI18n(this.context)
-    const { metadata } = this.context
-    const contributors = metadata.contributors
-    const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
-    const recentContributors = Object.keys(contributors.recentContributions)
+    const { recentContributions } = this.props
+    const recentContributors = recentContributors
+      ? Object.keys(recentContributions)
+      : []
     recentContributors.sort(
       (a, b) => (
-        contributors.recentContributions[b]
-        - contributors.recentContributions[a]
+        recentContributions[b]
+        - recentContributions[a]
       )
     )
     const topContributors = recentContributors.slice(0, 8)
+
+    const { metadata } = this.context
+    const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
 
     return (
       <div>
@@ -61,7 +68,7 @@ export default class TopContributors extends Component {
                 >
                   <Contributor
                     author={ author }
-                    commits= { contributors.recentContributions[author] }
+                    commits= { recentContributions[author] }
                   />
                 </div>
               )

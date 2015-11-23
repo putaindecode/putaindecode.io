@@ -87,6 +87,8 @@ class Homepage extends Component {
     .filter((post) => post.__filename.startsWith(`${ locale }/`))
     .slice(0, 3)
 
+    const { recentContributions } = this.context.metadata.contributors
+
     return (
       <div>
         <Helmet
@@ -167,7 +169,7 @@ class Homepage extends Component {
           </div>
         </div>
 
-        <TopContributors />
+        <TopContributors recentContributions={ recentContributions } />
       </div>
     )
   }
