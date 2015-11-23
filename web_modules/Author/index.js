@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from "react"
 
+import getLang from "i18n/getLang"
 import getI18n from "i18n/get"
 import SVGIcon from "../SVGIcon"
 import Avatar from "../Avatar"
@@ -27,6 +28,7 @@ export default class Author extends Component {
 
   render() {
     const i18n = getI18n(this.context)
+    const locale = getLang(this.context)
     const { metadata } = this.context
     const {
       afterName,
@@ -117,9 +119,12 @@ export default class Author extends Component {
             bio &&
             <p className="putainde-Author-bio">
               {
-                (author.fr && author.fr.bio && author.fr.bio.long) &&
-                author.fr.bio.long
-                /* @todo add new lines betwee lines */
+                (
+                  author[locale] && author[locale].bio &&
+                  author[locale].bio.long
+                ) &&
+                author[locale].bio.long
+                /* @todo add new lines between lines */
               }
             </p>
           }
