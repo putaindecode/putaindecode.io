@@ -13,12 +13,12 @@ header:
   linearGradient: 160deg, rgba(0,0,0, .9), rgba(97, 218, 251, .7)
 ---
 
-L'équipe de React a implémenté une fonctionnalité appelé
+L'équipe de React a implémenté une fonctionnalité appelée
 [shallow rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering)
 (rendu peu profond),
 qui permet de rendre un composant avec un seul niveau de profondeur de rendu.
 
-Cela permet du coup de vérifier ce que le rendu retourne sans avoir à ce
+Cela permet du coup de vérifier ce que le rendu retourne sans avoir à se
 soucier du comportement des composants enfants, qui ne sont pas instanciés ni
 rendus. Cela ne nécessite pas de DOM.
 
@@ -30,7 +30,7 @@ Comme vous pourrez le voir dans un article listé à la fin de celui-ci,
 le code permettant de tester des composants avec cette technique n'est pas
 forcément très concis, contrairement à ce qu'on pourrait attendre.
 
-Heureusement, [quelqu'un](https://github.com/vvo) a codé un truc plutôt cool:
+Heureusement, [quelqu'un](https://github.com/vvo) a codé un truc plutôt cool :
 [react-element-to-jsx-string](https://github.com/algolia/react-element-to-jsx-string).
 Comme le nom l'indique, cette librairie permet de rendre un composant React en
 tant que chaîne JSX.
@@ -175,15 +175,15 @@ test("PageContainer is properly rendered", (t) => {
 })
 ```
 
-Ces tests sont une couverture minimal pour vous assurer que vous ne cassez rien
+Ces tests sont une couverture minimale pour vous assurer que vous ne cassez rien
 lorsque vous travaillez sur votre composant.
 
-Comme vous pouvez le constater, les tests sont assez simple à écrire et vont
+Comme vous pouvez le constater, les tests sont assez simples à écrire et vont
 droit au but.
 **Ce qui est intéressant ici, c'est que nous ne comparons pas à l'aide de
 simples chaînes. Nous utilisons directement des composants React.**
 
-Vous pouvez tranquillement éxecuter l'exemple complet et le récupérant depuis le
+Vous pouvez tranquillement exécuter l'exemple complet et le récupérer depuis le
 repository :
 
 [github.com/MoOx/react-component-unit-testing-example](https://github.com/MoOx/react-component-unit-testing-example)
@@ -197,10 +197,10 @@ dont vous aurez besoin.
 Vous n'avez pas à reproduire le clic complètement.
 
 **Vos tests n'ont pas besoin de vérifier que la prop `onClick` va bien être
-éxecutée lorsque vous cliquerez sur un élement du DOM.**
+exécutée lorsque vous cliquerez sur un élément du DOM.**
 _React couvre probablement cela dans sa suite de tests._
 
-Ce que vous avez besoin de tester, c'est que la valeur que vous passer au
+Ce que vous avez besoin de tester, c'est que la valeur que vous passez au
 `onClick` fait bien ce que vous voulez.
 En gros, si vous avez un bout de code qui ressemble à
 `onClick={ yourCallback }`, vous n'avez tout simplement qu'à appeler directement
