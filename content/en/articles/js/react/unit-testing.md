@@ -46,7 +46,7 @@ a huge environment)._
 
 ## Easy unit testing React components (without a DOM)
 
-Let's do this with the following (dump) component:
+Let's do this with the following (dumb) component:
 
 ```js
 // web_modules/Picture/index.js
