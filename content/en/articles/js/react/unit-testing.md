@@ -76,13 +76,11 @@ const Component = ({
   </div>
 )
 
-const elementType = PropTypes.oneOfType([ PropTypes.node, PropTypes.func ])
-
 Component.propTypes = {
   img: PropTypes.object,
   title: PropTypes.string,
-  Loader: elementType.isRequired,
-  Title: elementType.isRequired,
+  Loader: PropTypes.func.isRequired,
+  Title: PropTypes.func.isRequired,
 }
 
 Component.displayName = "Picture"
