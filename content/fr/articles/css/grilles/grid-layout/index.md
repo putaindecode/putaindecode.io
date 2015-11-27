@@ -12,17 +12,17 @@ header:
   credit: https://www.flickr.com/photos/thomashawk/8031723857
 ---
 
-La mise en page d'un site ou d'une application est toujours quelque chose de complexe et fastidieux à développer/maintenir. Pour cela, de nombreux de design sont élaborés à partir d'une grille. En effet, l'objectif de la grille est de servir de base pour placer les différents éléments et de faire en sorte qu'ils soient alignés et espacés uniformément. Le problème de CSS est qu'il rencontre beaucoup de lacune pour mettre en place cette logique.
+La mise en page d'un site ou d'une application est toujours quelque chose de complexe et fastidieux à développer/maintenir. Pour cela, de nombreux designs sont élaborés à partir d'une grille. En effet, l'objectif de la grille est de servir de base pour placer les différents éléments et de faire en sorte qu'ils soient alignés et espacés uniformément. Le problème de CSS est qu'il rencontre beaucoup de lacunes pour mettre en place cette logique.
 
-L'arrivé du module `Flexbox` a commencé à bien faciliter les choses. Toutefois, ce module n'est pas adapté à toutes les situations et il est bien plus pertinent sur du layout de composant.
+L'arrivé du module `Flexbox` a commencé à bien faciliter les choses. Toutefois, ce module n'est pas adapté à toutes les situations et il est bien plus pertinent sur du layout de composants.
 
-C'est pour cette raison qu'a été développé le module `Grid Layout` plus puissant et orienté mise en page.
+C'est pour cette raison qu'a été développé le module `Grid Layout`, plus puissant et orienté mise en page.
 
-## Ètats des lieux
+## États des lieux
 
-Parlons des choses qui fâchent dès le début. La dernière révision date du [17 Septembre 2015](http://www.w3.org/TR/css-grid-1/) et la spécification en est toujours à l'état de working draft.
+Parlons des choses qui fâchent dès le début. La dernière révision date du [17 septembre 2015](http://www.w3.org/TR/css-grid-1/) et la spécification en est toujours à l'état de *working draft*.
 
-La compatibilité des navigateurs est quelqu'un peu limitée. Excepté Internet Explorer 10+ (Edge également), il est nécessaire d'activer le flag `layout.css.grid.enabled` dans Firefox et `experimental Web Platform features` pour Chrome pour activer le support du module.
+La compatibilité des navigateurs est quelque peu limitée. Excepté Internet Explorer 10+ (Edge également), il est nécessaire d'activer le flag `layout.css.grid.enabled` dans Firefox et `experimental Web Platform features` pour Chrome pour activer le support du module.
 
 ![Caniuse Grid Layout](caniuse.jpg)
 
@@ -30,13 +30,13 @@ Autant dire qu'une utilisation en production est relativement prématurée, quan
 
 ## Grid
 
-La notion de Grid n'est pas nouvelle, de multiple framework/librairie utilisent déjà la mise en page en `Grid` :
+La notion de Grid n'est pas nouvelle, de multiple frameworks/librairies utilisent déjà la mise en page en `Grid` :
 - [SUIT CSS components-grid](https://github.com/suitcss/components-grid)
 - [Zurb Foundation](http://foundation.zurb.com/docs/components/grid.html)
 - [960](http://960.gs/)
 - [cssrecipes Grid](https://github.com/cssrecipes/grid)
 
-Toutes ces solutions se basent soit sur du `inline-block` ou plus récemment sur `Flexbox`. Même si elles sont relativement élégantes, elles nécessitent quand même quelques petits hack ou tricks pour réussir à faire quelque chose de cohérent (hello, `font-size: 0`, gouttière, calc avec marge négative etc..). La raison est simple, les techniques utilisées ne sont pas adaptées pour un système complet de `Grid`.
+Toutes ces solutions se basent soit sur du `inline-block`, soit plus récemment sur `Flexbox`. Même si elles sont relativement élégantes, elles nécessitent quand même quelques petits hacks ou tricks pour réussir à faire quelque chose de cohérent (hello, `font-size: 0`, gouttière, `calc` avec marge négative, etc.). La raison est simple : les techniques utilisées ne sont pas adaptées pour un système complet de `Grid`.
 
 ## Thinking in Grid
 
@@ -48,20 +48,20 @@ Avant de commencer à présenter les différentes propriétés, réfléchissons 
 
 ### Grid lines
 
-Si on applique cette notion à notre maquette, voici ce qu'on obtiendrait :
+Si on applique cette notion à notre maquette, voici ce qu'on obtient :
 
 ![Caniuse Grid Layout](grid-line.png)
 
 Concrètement, cela consiste à découper notre interface de façon à pouvoir en extraire une grille et ainsi virtualiser la position et l'espace pris pour chaque élément.
 
-On va donc pourvoir extrapoler notre UI en ligne (`rows`), en colonne (`column`), en cellule (`cells`) et en zone (`area`).
+On va donc pouvoir extrapoler notre UI en lignes (`rows`), en colonnes (`columns`), en cellules (`cells`) et en zones (`areas`).
 
 
-Cette dernière notion (`area`) est peut-être nouvelle dans la théorie, mais va s'avérer très utile dans la pratique pour la suite.
+Cette dernière notion (`areas`) est peut-être nouvelle dans la théorie, mais va s'avérer très utile dans la pratique pour la suite.
 
 ## Grid Layout
 
-On dispose de suffisamment d'information sur notre interface pour démarrer (enfin) notre intégration.
+On dispose de suffisamment d'informations sur notre interface pour démarrer (enfin) notre intégration.
 
 Voici le markup que l'on va utiliser pour notre maquette.
 
@@ -90,35 +90,35 @@ Dans un premier temps nous allons "configurer" notre Grid:
   /* Configuration de notre canvas */
 
   /*
-   * On définit le nombre de colonne:
-   * la première fera 200px de large
-   * la deuxième fera 10px de large
-   * la troisième prendra tous l'espace restant,
+   * On définit le nombre de colonnes :
+   * - la première fera 200px de large
+   * - la deuxième fera 10px de large
+   * - la troisième prendra tout l'espace restant
    */
    grid-template-columns: 200px 10px 1fr;
 
   /*
-   * Cette fois-ci autour des lignes.
-   * la première fera 70px de haut
-   * la deuxième fera 10px de haut
-   * la troisième ligne s'adaptera à la hauteur de son contenu
-   * la troisième fera 50px de haut.
+   * Cette fois-ci au tour des lignes :
+   * - la première fera 70px de haut
+   * - la deuxième fera 10px de haut
+   * - la troisième ligne s'adaptera à la hauteur de son contenu
+   * - la troisième fera 50px de haut
    */
    grid-template-rows: 70px 10px auto 10px 50px;
 
   /*
-   * on peut utiliser grid qui est le raccourci des
-   * deux propriétés précédentes
+   * On peut utiliser grid qui est le raccourci
+   * des deux propriétés précédentes
    */
    grid: 200px 10px 1fr / 70px 10px auto 10px 50px;
 }
 ```
 
-Notre `Grid` est prête, passons au positionnement de nos éléments
+Notre `Grid` est prête, passons au positionnement de nos éléments.
 
 ## grid-area
 
-Pour notre exemple nous allons utiliser la méthode la plus originale du module à savoir les `areas`. L'interêt de cette méthode est de pouvoir contrôler tant en terme d'espace occupé que de positionnement les différentes zones (`areas`) de notre grille. On pourrait définir la forme des valeurs de `grid-template-areas` comme de l' `ASCII art`.
+Pour notre exemple nous allons utiliser la méthode la plus originale du module à savoir les `areas`. L'interêt de cette méthode est de pouvoir contrôler tant en terme d'espace occupé que de positionnement les différentes zones (`areas`) de notre grille. On pourrait définir la forme des valeurs de `grid-template-areas` comme de l'`ASCII art`.
 
 ```CSS
 .UILayout {
@@ -139,7 +139,7 @@ grid-template-areas:
 
 /**
  * 1. Il est donc nécessaire de nommer chaque élément
- *    pour le contrôler dans notre areas
+ *    pour le contrôler dans notre area
  */
 
 .UIHeader {
@@ -160,12 +160,12 @@ grid-template-areas:
 
 ```
 
-Notre intégration est terminée, on constate qu'avec très peu d'HTML et de CSS, on arrive déjà à quelque chose d'intéressant. Il devient alors très facile de manipuler et déplacer nos différentes éléments en fonction du contexte de notre application (mobile first, reponsive etc..).
+Notre intégration est terminée, on constate qu'avec très peu d'HTML et de CSS, on arrive déjà à quelque chose d'intéressant. Il devient alors très facile de manipuler et déplacer nos différents éléments en fonction du contexte de notre application (mobile first, reponsive etc..).
 
-`Grid-Layout` est dispose d'une quantité assez impressionnante de propriété, il embarque pratiquement toutes les propriétés introduites par `Flexbox` (`align-items`, `order`, `justify-content` etc..).
+`Grid-Layout` dispose d'une quantité assez impressionnante de propriétés, il embarque pratiquement toutes les propriétés introduites par `Flexbox` (`align-items`, `order`, `justify-content` etc..).
 
-De nouvelles fonctions font leur apparition comme `repeat()`, mais aussi des nouvelles unités tels que `xfr`, `min-content`, `max-content`. La notion de `subgrid` est également présente pour l'imbrication de grille.
+De nouvelles fonctions font leur apparition comme `repeat()`, mais aussi de nouvelles unités tels que `xfr`, `min-content`, `max-content`. La notion de `subgrid` est également présente pour l'imbrication de grilles.
 
-Pour une même interface il est d'ailleurs tout à fait possible d'intégrer de plusieurs manière différentes. Si l'on reprend notre exemple, nous somme partis sur les propriétés utilisant les `area`, mais on aurait très bien pu utiliser `grid-row` et `grid-column` qui s'appliquent non pas sur le parent mais sur les enfants. Cette solution peut s'avérer très pratique pour des systèmes de grilles classiques.
+Il est d'ailleurs tout à fait possible d'intégrer une même interface de plusieurs manière différentes. Si l'on reprend notre exemple, nous somme partis sur les propriétés utilisant les `area`, mais on aurait très bien pu utiliser `grid-row` et `grid-column` qui s'appliquent non pas sur le parent mais sur les enfants. Cette solution peut s'avérer très pratique pour des systèmes de grilles classiques.
 
-`Grid Layout` est un module très puissant et très complet. Combiner avec `Flexbox` on dispose de suffisament d'outils pour travailler sur des mises en pages complexes. Reste plus qu'aux navigateurs à rapidement valider/intégrer /supporter cette nouvelle spécification.
+`Grid Layout` est un module très puissant et très complet. En le combinant avec `Flexbox`, on dispose de suffisament d'outils pour travailler sur des mises en pages complexes. Reste plus qu'aux navigateurs à rapidement valider/intégrer /supporter cette nouvelle spécification.
