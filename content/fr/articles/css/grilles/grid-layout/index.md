@@ -102,7 +102,7 @@ Dans un premier temps nous allons "configurer" notre Grid:
    * - la première fera 70px de haut
    * - la deuxième fera 10px de haut
    * - la troisième ligne s'adaptera à la hauteur de son contenu
-   * - la troisième fera 50px de haut
+   * - la quatrième fera 50px de haut
    */
    grid-template-rows: 70px 10px auto 10px 50px;
 
