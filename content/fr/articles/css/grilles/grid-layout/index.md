@@ -20,11 +20,9 @@ C'est pour cette raison qu'a été développé le module `Grid Layout`, plus pui
 
 ## États des lieux
 
-Parlons des choses qui fâchent dès le début. La dernière révision date du [17 septembre 2015](http://www.w3.org/TR/css-grid-1/) et la spécification en est toujours à l'état de *working draft*.
+Parlons des choses qui fâchent dès le début. À l'heure actuelle la dernière révision date du [17 septembre 2015](http://www.w3.org/TR/css-grid-1/) et la spécification en est toujours à l'état de *working draft*.
 
-La compatibilité des navigateurs est quelque peu limitée. Excepté Internet Explorer 10+ (Edge également), il est nécessaire d'activer le flag `layout.css.grid.enabled` dans Firefox et `experimental Web Platform features` pour Chrome pour activer le support du module.
-
-![Caniuse Grid Layout](caniuse.jpg)
+La compatibilité des [navigateurs est quelque peu limitée](http://caniuse.com/#feat=css-grid). Excepté Internet Explorer 10+ (Edge également), il est nécessaire d'activer le flag `layout.css.grid.enabled` dans Firefox et `experimental Web Platform features` pour Chrome pour activer le support du module.
 
 Autant dire qu'une utilisation en production est relativement prématurée, quand bien même cela ne doit pas nous empêcher d'expérimenter ce module.
 
