@@ -8,7 +8,7 @@ tags:
 authors:
   - magsout
 header:
-  image: https://c1.staticflickr.com/9/8173/8031723857_660e20f75c_b.jpg
+  image: 8031723857_660e20f75c_b.jpg
   credit: https://www.flickr.com/photos/thomashawk/8031723857
 ---
 
