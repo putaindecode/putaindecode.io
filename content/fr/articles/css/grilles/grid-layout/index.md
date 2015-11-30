@@ -43,7 +43,7 @@ bien même cela ne doit pas nous empêcher d'expérimenter ce module.
 
 ## Grid
 
-La notion de Grid n'est pas nouvelle, de multiple frameworks/librairies
+La notion de Grid n'est pas nouvelle, de multiples frameworks/librairies
 utilisent déjà la mise en page en `Grid` :
 - [SUIT CSS components-grid](https://github.com/suitcss/components-grid)
 - [Zurb Foundation](http://foundation.zurb.com/docs/components/grid.html)
@@ -102,7 +102,7 @@ Voici le markup que l'on va utiliser pour notre maquette.
 </div>
 ```
 
-Dans un premier temps nous allons "configurer" notre Grid:
+Dans un premier temps, nous allons "configurer" notre Grid:
 
 ```CSS
 .Layout {
@@ -192,7 +192,7 @@ comme de l'`ASCII art`.
 Notre intégration est terminée, on constate qu'avec très peu d'HTML et de CSS,
 on arrive déjà à quelque chose d'intéressant. Il devient alors très facile de
 manipuler et déplacer nos différents éléments en fonction du contexte de notre
-application (mobile first, reponsive etc..).
+application (mobile first, reponsive, etc.).
 
 ## Et c'est pas fini !
 
@@ -200,15 +200,15 @@ application (mobile first, reponsive etc..).
 embarque pratiquement toutes les propriétés introduites par `Flexbox`
 (`align-items`, `order`, `justify-content` etc..).
 
-De nouvelles fonctions font leur apparition comme `repeat`(permet d'appliquer
+De nouvelles fonctions font leur apparition comme `repeat` (permet d'appliquer
 des motifs de répétition), mais aussi de nouvelles unités tels que
-`xfr`(fraction de l'espace restant), `min-content`(se rapporte à l'élément le
-plus petit), `max-content`(se rapporte à l'élément le plus grand). La notion de
+`xfr` (fraction de l'espace restant), `min-content` (se rapporte à l'élément le
+plus petit), `max-content` (se rapporte à l'élément le plus grand). La notion de
 `subgrid` est également présente pour l'imbrication de grilles.
 
 Il est d'ailleurs tout à fait possible d'intégrer une même interface de
-plusieurs manière différentes. Si l'on reprend notre exemple, nous somme partis
-sur les propriétés utilisant les `area`, mais on aurait très bien pu utiliser
+plusieurs manières différentes. Si l'on reprend notre exemple, nous somme partis
+sur les propriétés utilisant les `areas`, mais on aurait très bien pu utiliser
 `grid-row` et `grid-column` qui s'appliquent non pas sur le parent mais sur les
 enfants. Cette solution peut s'avérer très pratique pour des systèmes de grilles
 classiques.
