@@ -64,20 +64,20 @@ On dispose de suffisamment d'informations sur notre interface pour démarrer (en
 Voici le markup que l'on va utiliser pour notre maquette.
 
 ```html
-<div class="UILayout">
-  <header class="UIHeader">Header</header>
-  <aside class="UIAside">Aside</aside>
-  <main class="UIMain">
+<div class="Layout">
+  <header class="Header">Header</header>
+  <aside class="Aside">Aside</aside>
+  <main class="Main">
     Main
   </main>
-  <footer class="UIFooter">Footer</footer>
+  <footer class="Footer">Footer</footer>
 </div>
 ```
 
 Dans un premier temps nous allons "configurer" notre Grid:
 
 ```CSS
-.UILayout {
+.Layout {
   /*
    * On déclare un nouveau contexte dans le parent
    * qui devient alors un grid-container
@@ -119,20 +119,19 @@ Notre `Grid` est prête, passons au positionnement de nos éléments.
 Pour notre exemple nous allons utiliser la méthode la plus originale du module à savoir les `areas`. L'interêt de cette méthode est de pouvoir contrôler tant en terme d'espace occupé que de positionnement les différentes zones (`areas`) de notre grille. On pourrait définir la forme des valeurs de `grid-template-areas` comme de l'`ASCII art`.
 
 ```CSS
-.UILayout {
-
-/**
- * 1. UIHeader s'affichera sur 3 colonnes
- * 2. On utilisera le symbole . pour définir un élément
- *    virtuel et ainsi l'utiliser pour définir les gouttières
- * 3. UIAside s'affichera sur 1 colonne et 3 lignes
- */
-grid-template-areas:
- "UIHeader UIHeader UIHeader"/* 1 */
- ".           .        .    " /* 2 */
- "UIAside     .     UIMain  " /* 3 */
- "UIAside     .        .    " /* 3 */
- "UIAside     .     UIFooter"; /* 3 */
+.Layout {
+  /**
+   * 1. Header s'affichera sur 3 colonnes
+   * 2. On utilisera le symbole . pour définir un élément
+   *    virtuel et ainsi l'utiliser pour définir les gouttières
+   * 3. Aside s'affichera sur 1 colonne et 3 lignes
+   */
+  grid-template-areas:
+   "Header Header Header"  /* 1 */
+   ".        .      .   "  /* 2 */
+   "Aside    .     Main "  /* 3 */
+   "Aside    .      .   "  /* 3 */
+   "Aside    .    Footer"; /* 3 */
 }
 
 /**
@@ -140,20 +139,20 @@ grid-template-areas:
  *    pour le contrôler dans notre area
  */
 
-.UIHeader {
-  grid-area: UIHeader; /* 1 */
+.Header {
+  grid-area: Header; /* 1 */
 }
 
-.UIMain {
-  grid-area: UIMain; /* 1 */
+.Main {
+  grid-area: Main; /* 1 */
 }
 
-.UIAside {
-  grid-area: UIAside; /* 1 */
+.Aside {
+  grid-area: Aside; /* 1 */
 }
 
-.UIFooter {
-  grid-area: UIFooter; /* 1 */
+.Footer {
+  grid-area: Footer; /* 1 */
 }
 
 ```
