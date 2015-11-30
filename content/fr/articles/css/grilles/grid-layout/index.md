@@ -159,9 +159,11 @@ Pour notre exemple nous allons utiliser la méthode la plus originale du module 
 
 Notre intégration est terminée, on constate qu'avec très peu d'HTML et de CSS, on arrive déjà à quelque chose d'intéressant. Il devient alors très facile de manipuler et déplacer nos différents éléments en fonction du contexte de notre application (mobile first, reponsive etc..).
 
+## Et c'est pas fini !
+
 `Grid-Layout` dispose d'une quantité assez impressionnante de propriétés, il embarque pratiquement toutes les propriétés introduites par `Flexbox` (`align-items`, `order`, `justify-content` etc..).
 
-De nouvelles fonctions font leur apparition comme `repeat()`, mais aussi de nouvelles unités tels que `xfr`, `min-content`, `max-content`. La notion de `subgrid` est également présente pour l'imbrication de grilles.
+De nouvelles fonctions font leur apparition comme `repeat`(permet d'appliquer des motifs de répétition), mais aussi de nouvelles unités tels que `xfr`(fraction de l'espace restant), `min-content`(se rapporte à l'élément le plus petit), `max-content`(se rapporte à l'élément le plus grand). La notion de `subgrid` est également présente pour l'imbrication de grilles.
 
 Il est d'ailleurs tout à fait possible d'intégrer une même interface de plusieurs manière différentes. Si l'on reprend notre exemple, nous somme partis sur les propriétés utilisant les `area`, mais on aurait très bien pu utiliser `grid-row` et `grid-column` qui s'appliquent non pas sur le parent mais sur les enfants. Cette solution peut s'avérer très pratique pour des systèmes de grilles classiques.
 
