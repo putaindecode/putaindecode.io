@@ -1,6 +1,6 @@
 ---
 date: "2015-12-01"
-title: "ES6, ES2015 : declaring variables using const, let and var"
+title: "ES6, ES2015: declaring variables with const, let and var"
 tags:
   - JavaScript
   - ES6
@@ -11,40 +11,40 @@ translators:
   - MoOx
 ---
 
-ES6 (known as ES2015) brings you new ways to declare your variables thanks to
-`let` and `const` but also keeps `var` in the language specification.
+ES6 (also known as ES2015) brings you new ways to declare your variables thanks
+to `let` and `const`, but also keeps `var` in the language specification.
 
-The first thing you need to know, is to forget everything you know about `var`.
+The first thing you need to do: forget everything you know about `var`.
 
 # Declarations
 
 ## const
 
-`const` allows you to declare a single assignment variable lexically binded.
-Sounds weird right? It means that you can assign a variable that can only
-contains a single value, scoped at the block level.
+`const` allows you to declare a single assignment variable lexically bound.
+Sounds posh right? That just means that you can only assign once a value in a
+variable, scoped at the block level.
 
-If you already heard stuff about `const`, be careful: those are not immutable
-variables. Only the assigned reference is immutable, not the value.
-This means that the content of an array or an object declared using `const`
-can evolve but the re-assignation of the reference is impossible.
+If you already read stuff about `const`, be careful: this is not a way to
+declare immutable variables. Only the assigned reference is immutable, not the
+value. This means that the content of an array or an object declared using
+`const` can evolve but the re-assignment of the reference is impossible.
 
 ```js
 function fn() {
   const foo = "bar"
   if (true) {
-    const foo // SyntaxError, variable need to be assigned with something
+    const foo // SyntaxError, variable needs to be assigned to something
     const foo = "qux"
     foo = "norf" // SyntaxError, variable cannot be re-assigned
     console.log(foo)
-    // "qux", variable belongs to the scope of the current block (the "if")
+    // "qux", variable belongs to the scope of the current block (the "if" one)
   }
   console.log(foo)
   // "bar", variable belongs to the scope of the "fn" function
 }
 ```
 
-With iterators, `const` can be nice to use:
+Just a fancy trick using `const` with an iterator:
 
 ```js
 function fn() {
@@ -56,16 +56,16 @@ function fn() {
 ```
 
 You might think a `let` should be used but here but the declaration is evaluated
-on each iteration, so `const` is more appropriate here.
+on each iteration, so `const` fits better here.
 
 ## let
 
-`let` allows you to do the same as `const` without the single assignation
+`let` allows you to do the same as `const` without the single assignment
 constraint. So you can understand here that the use-cases are the same as its
 ancestor, `var`.
-By the way, you might often heard or read: `let` is the new `var`.
-It's sort of true because it can do the same, but better if we consider the
-ability to be scoped to the block level.
+By the way, you might have been told that *`let` is the new `var`*.
+It is part true because it can do the same, but better if we consider the
+ability of the variable to be scoped to the block level.
 
 ```js
 function fn() {
@@ -74,12 +74,12 @@ function fn() {
   if (true) {
     let foo // that's ok (foo === undefined)
     var foo2
-    // Be careful, `var` are not scoped to the block level, so previous foo2
-    // is overwritten!
+    // Be careful, `var` statements are not scoped to the block level
+    // so previous foo2 is overwritten!
     foo = "qux"
     foo2 = "qux"
     console.log(foo)
-    // "qux", variable belongs to the scope of the current block (the "if")
+    // "qux", variable belongs to the scope of the current block (the "if" one)
     console.log(foo2)
     // "qux"
   }
@@ -92,7 +92,8 @@ function fn() {
 
 You can use `let` in loops, the variable used for the iteration will be scoped
 to the block of the loop, not the (parent) scope of the code that contains the
-loop. No more issue with `i` already defined !
+loop. This resolves any issues that you may have had with `i` already defined in
+the upper scope!
 
 ```js
 function fn2() {
@@ -113,16 +114,17 @@ fn2() // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 Note: the example with `const` used in the `for ... of` loop cannot be
 reproduced here.
 The classic `for` loop is imperative, and the declaration is only made once when
-the loop starts. `const` is not relevant is this case.
+the loop starts. `const` is not relevant in this case.
 
 ## var
 
 With `const` and `let`, there is no more space for `var` anymore.
-[Maybe in a `try`/`catch` context](https://twitter.com/getify/status/658662478528643072).
+[Maybe in a `try`/`catch`
+context](https://twitter.com/getify/status/658662478528643072).
 
-# Hoisting and TDZ (Temporal Dead Zone) trap
+# Hoisting and TDZ (Temporal Dead Zone) issues
 
-As a reminder, JavaScript have a hoisting mechanism. So for example, you can
+As a reminder, JavaScript does have a hoisting mechanism. For example, you can
 write:
 
 ```js
@@ -133,11 +135,11 @@ function fn() {
 ```
 
 JavaScript engine will read all `var` declarations and virtually move those at
-the start of the scope of your function.
+the start of your function scope.
 
-`let` and `const` do not benefit of this hoisting mechanism, which can create
-TDZ (Temporal Dead Zone) issues. Variable declaration is not moved, so you might
-encounter situation where a variable does not exist yet. That's the TDZ
+`let` and `const` do not benefit from variable hoisting, and therefore can
+create TDZ (Temporal Dead Zone) issues; these occur when a variable does not
+exist yet.
 
 ```js
 function fn() {
@@ -152,6 +154,10 @@ function fn() {
 So let's recap:
 
 - Use `const` (might be relevant 99% of the time)
-- If during you development, you need to re-affect the variable, switch to
-`let` (that might happen 1% of the time)
+- If during you development you happen to have to change the value of this
+variable, switch to `let` (that might happen 1% of the time)
 - If you are in the worst use-case of the world, use `var` (you can do the math)
+
+Thanks for taking the time to read my post, you can ask me questions, give me
+your feedback on the substance and form of the post or just thank me or chat
+on my twitter account @Nyalab or on the @putaindecode twitter account
