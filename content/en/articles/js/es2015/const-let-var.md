@@ -24,7 +24,7 @@ The first thing you need to do: forget everything you know about `var`.
 Sounds posh right? That just means that you can only assign once a value in a
 variable, scoped at the block level.
 
-If you already read stuff about `const`, be careful: this is not a way to
+If you have already read stuff about `const`, be careful: this is not a way to
 declare immutable variables. Only the assigned reference is immutable, not the
 value. This means that the content of an array or an object declared using
 `const` can evolve but the re-assignment of the reference is impossible.
@@ -55,17 +55,17 @@ function fn() {
 }
 ```
 
-You might think a `let` should be used but here but the declaration is evaluated
+You might think a `let` should be used here but the declaration is evaluated
 on each iteration, so `const` fits better here.
 
 ## let
 
 `let` allows you to do the same as `const` without the single assignment
-constraint. So you can understand here that the use-cases are the same as its
-ancestor, `var`.
+constraint. So you can understand here that the use-cases are the same as for
+its ancestor, `var`.
 By the way, you might have been told that *`let` is the new `var`*.
-It is part true because it can do the same, but better if we consider the
-ability of the variable to be scoped to the block level.
+It is partly true because it can do the same, but even better if we consider 
+the ability of the variable to be scoped to the block level.
 
 ```js
 function fn() {
@@ -151,7 +151,7 @@ function fn() {
 
 # Outro
 
-So let's recap:
+So, let's recap:
 
 - Use `const` (might be relevant 99% of the time)
 - If during you development you happen to have to change the value of this
@@ -160,4 +160,4 @@ variable, switch to `let` (that might happen 1% of the time)
 
 Thanks for taking the time to read my post, you can ask me questions, give me
 your feedback on the substance and form of the post or just thank me or chat
-on my twitter account @Nyalab or on the @putaindecode twitter account
+on my twitter account @Nyalab or on the @putaindecode Twitter account
