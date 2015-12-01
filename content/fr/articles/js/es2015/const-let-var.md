@@ -2,7 +2,7 @@
 date: "2015-12-01"
 title: "ES6, ES2015 : la déclaration de variables avec const, let et var"
 tags:
-  - javascript
+  - JavaScript
   - ES6
   - ES2015
 authors:
@@ -31,7 +31,7 @@ constantes au niveau référence. C'est à dire que le contenu d'un tableau ou d
 objet déclaré avec `const` bloque la réassignation de la variable, mais ne rend
 pas la valeur immutable.
 
-```javascript
+```js
 function fn() {
   const foo = "bar"
   if (true) {
@@ -49,7 +49,7 @@ function fn() {
 Le fonctionnement `const` peut être utilisé de manière cool dans le cas
 d'itérables :
 
-```javascript
+```js
 function fn() {
   const arr = [1, 2, 3]
   for (const el of arr) {
@@ -71,7 +71,7 @@ D'ailleurs, vous entendrez souvent : `let` est le nouveau `var` (*`let` is the
 new `var`*). C'est en partie vrai car il est capable de faire les mêmes choses,
 mais en mieux, car il a cette caractéristique d'être scopé au bloc courant.
 
-```javascript
+```js
 function fn() {
   let foo = "bar"
   var foo2 = "bar"
@@ -98,7 +98,7 @@ Vous pouvez par exemple utiliser `let` pour vos boucles, la variable servant à
 l'itération est désormais scopée au niveau de cette boucle et n'entrera pas en
 conflit avec votre code autour. Plus de problème de `i` déjà pris !
 
-```javascript
+```js
 function fn2() {
   let i = 0
   for (let i=i; i<10; i++) {
@@ -132,7 +132,7 @@ d'un bug, mais juste de syntaxe et de préférence
 Pour rappel, JavaScript possède un mécanisme de hoisting, par exemple, vous
 pouvez écrire :
 
-```javascript
+```js
 function fn() {
   console.log(foo) // undefined (au lieu de ReferenceError)
   var foo = "bar"
@@ -148,7 +148,7 @@ mener à des problèmes de TDZ (*Temporal Dead Zone*). Vu que la déclaration de
 votre variable n'est pas remontée au scope de la fonction, il existe un moment
 où votre variable n'existe pas. Ce moment, c'est la TDZ.
 
-```javascript
+```js
 function fn() {
   console.log(foo)
   // ReferenceError, on est dans la TDZ pour la variable foo
@@ -159,6 +159,7 @@ function fn() {
 # Outro
 
 Comment choisir quelle déclaration de variable utiliser ? C'est très simple :
+
  - Utilisez une déclaration par `const` (99% du temps, c'est le bon choix)
  - Si au fil de votre code vous changez sa valeur, modifiez pour un `let` (1%)
  - Si vous avez trouvé le pire cas d'utilisation du monde, changez pour un `var`
