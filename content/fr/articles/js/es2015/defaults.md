@@ -1,6 +1,6 @@
 ---
-date: "2015-12-01"
-  title: "ES6, ES2015 : valeus par défaut des arguments"
+  date: "2015-12-03"
+  title: "ES6, ES2015 : valeurs par défaut des arguments"
 tags:
   - javascript
   - ES6
