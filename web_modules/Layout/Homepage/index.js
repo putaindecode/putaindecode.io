@@ -99,17 +99,17 @@ class Homepage extends Component {
           ]}
         />
 
-      {
-        this.state && this.state.i18nBanner &&
-        <I18nBanner
-          labels={ this.context.metadata.i18n[anotherLocale].i18nBanner }
-          onAccept={ () => window.location = `/${ anotherLocale }/` }
-          onHide={ () => this.hideI18nBanner() }
-          onHideForever={ () => this.hideI18nBanner(locale) }
-        />
-      }
+        {
+          this.state && this.state.i18nBanner &&
+          <I18nBanner
+            labels={ this.context.metadata.i18n[anotherLocale].i18nBanner }
+            onAccept={ () => window.location = `/${ anotherLocale }/` }
+            onHide={ () => this.hideI18nBanner() }
+            onHideForever={ () => this.hideI18nBanner(locale) }
+          />
+        }
 
-      <div className={ classes.header }>
+        <div className={ classes.header }>
           <div className={ classes.headerCell }>
             <em>{ i18n.title }</em>
             { " " + i18n.jumbotron }
@@ -118,6 +118,21 @@ class Homepage extends Component {
             { i18n.jumbotron2 }
           </div>
         </div>
+
+        <Link
+          className="putainde-AdventCalendarLink"
+          to={
+            locale === "fr"
+            ? "/fr/evenements/2015/calendrier-avent/"
+            : "/en/events/2015/advent-calendar/"
+          }
+        >
+          {
+            locale === "fr"
+            ? "🎄 Jetez un oeil à notre calendrier de l'avent ES6/2015 ! 🎄"
+            : "🎄 Check out our ES6/2015 Advent calendar! 🎄"
+          }
+        </Link>
 
         <div
           className={ "r-Grid" }
