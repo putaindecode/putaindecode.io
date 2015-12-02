@@ -164,8 +164,3 @@ Comment choisir quelle déclaration de variable utiliser ? C'est très simple :
  - Si au fil de votre code vous changez sa valeur, modifiez pour un `let` (1%)
  - Si vous avez trouvé le pire cas d'utilisation du monde, changez pour un `var`
 (je vous laisse faire le calcul)
-
-Merci d'avoir pris le temps de lire mon post, vous pouvez me poser vos
-questions, me donner votre feedback sur le fond, ou la forme du post ou juste
-venir me remercier ou discuter sur mon twitter @Nyalab ou sur le twitter
-@putaindecode_fr
