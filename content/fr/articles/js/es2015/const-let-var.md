@@ -134,13 +134,14 @@ pouvez écrire :
 
 ```javascript
 function fn() {
-  console.log(foo) // "bar"
+  console.log(foo) // undefined (au lieu de ReferenceError)
   var foo = "bar"
 }
 ```
 
 Concrètement, le moteur d'exécution JavaScript va lire toutes les déclarations
-et remonter celles avec `var` au début du scope de votre fonction.
+et remonter celles avec `var` au début du scope de votre fonction (attention,
+cela concerne les déclarations, pas les affectations).
 
 `let` et `const` ne bénéficient pas de ce mécanisme de hoisting, ce qui peut
 mener à des problèmes de TDZ (*Temporal Dead Zone*). Vu que la déclaration de
