@@ -55,16 +55,16 @@ Dans l'expression d'une valeur par défaut, on peut réutiliser les paramètres
 **précédents** de la fonction :
 
 ```js
-function foo (x = 1, y = x+1) {
+function foo (x = 1, y = x + 1) {
   return x + y
 }
 
-function bar (x = y+1, y = 1) {
+function bar (x = y + 1, y = 1) {
   return x + y
 }
 
-foo() // 1 + (1+1) → 3
-bar() // (undefined+1) + 1 → NaN
+foo() // 1 + (1 + 1) → 3
+bar() // (undefined + 1) + 1 → NaN
 ```
 
 ### Cas particulier : TDZ (Temporal Dead Zone)
@@ -105,7 +105,7 @@ décomposition peuvent bénéficier de valeurs par défaut.
 
 ```js
 obj // {z: 42}
-const { x = 1, y = x+1, z, w } = obj
+const { x = 1, y = x + 1, z, w } = obj
 w // undefined
 x // 1
 y // 2
@@ -117,7 +117,7 @@ manière en ES5 :
 
 ```js
 var x = (obj.x === undefined) ? obj.x : 1
-var y = (obj.y === undefined) ? obj.y : x+1
+var y = (obj.y === undefined) ? obj.y : x + 1
 var z = obj.z
 var w = obj.w
 ```
