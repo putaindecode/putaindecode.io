@@ -238,6 +238,6 @@ forcément le matin), mais le résultat devrait être sympathique !
 
 <p style="font-size: 0.8rem; margin: 2rem; text-align: center;">
   <a href="https://github.com/putaindecode/putaindecode.io/issues/553">
-    Si vous voulez aidez, c'est par ici
+    Si vous voulez aider, c'est par ici
   </a>
 </p>
