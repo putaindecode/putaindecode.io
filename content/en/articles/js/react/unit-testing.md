@@ -202,7 +202,7 @@ just call directly `yourCallback()` in your test just before your comparison.
 That's enough!
 
 If you want to go deeper, you might also read:
-- [_Unit testing React components without a DOM_](https://simonsmith.io/unit-testing-react-components-without-a-dom/),
+- [_Unit testing React components without a DOM_](http://simonsmith.io/unit-testing-react-components-without-a-dom/),
 by Simon Smith, that covers the same topic without the simplicity of the JSX
 comparisons,
 - [_How we unit test React components using expect-jsx_](https://blog.algolia.com/how-we-unit-test-react-components-using-expect-jsx/)

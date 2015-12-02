@@ -208,7 +208,7 @@ En gros, si vous avez un bout de code qui ressemble à
 C'est bien assez !
 
 Si vous voulez aller un peu plus loin, vous pouvez continuer par lire :
-- [_Unit testing React components without a DOM_](https://simonsmith.io/unit-testing-react-components-without-a-dom/),
+- [_Unit testing React components without a DOM_](http://simonsmith.io/unit-testing-react-components-without-a-dom/),
 par Simon Smith, qui couvre le même sujet, sans la simplicité de la comparaison
 JSX,
 - [_How we unit test React components using expect-jsx_](https://blog.algolia.com/how-we-unit-test-react-components-using-expect-jsx/)
