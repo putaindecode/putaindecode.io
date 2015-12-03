@@ -54,9 +54,9 @@ o // { x: 1, y: 2 }
 
 ### Erreurs lors de la copie
 
-Si une propriété de la source, ``Object.assign`` se comportera toujours comme en
-mode *strict* (par opposition au mode *WTF*), et lèvera l'erreur avant
-d'interrompre la copie.
+Si une propriété de la cible est en lecture seule, ``Object.assign`` devrait se
+comporter comme en mode *strict* (par opposition au mode *WTF*), et lever
+l'erreur correspondante avant d'interrompre la copie.
 
 ```js
 let o = Object.create({}, {
