@@ -51,7 +51,7 @@ bar // 2
 ### Array
 
 ```js
-// For an array, we can use a syntax that is similar to a literale declaration
+// For an array, we can use a syntax that is similar to a literal declaration
 // of an array
 // You might notice that you can ignore an item by just put nothing between the
 // commas
