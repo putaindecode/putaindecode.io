@@ -119,8 +119,8 @@ As a reminder, the assignation in the previous example would have been written
 this way using ES5 :
 
 ```js
-var x = (obj.x === undefined) ? obj.x : 1
-var y = (obj.y === undefined) ? obj.y : x + 1
+var x = (obj.x === undefined) ? 1 : obj.x 
+var y = (obj.y === undefined) ? x + 1 : obj.y 
 var z = obj.z
 var w = obj.w
 ```
