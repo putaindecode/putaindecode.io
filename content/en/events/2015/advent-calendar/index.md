@@ -31,18 +31,18 @@ published the morning), but the result should be nice!
   <div class="r-Grid-cell r-minM--1of4">
     <a
       class="putainde-Day"
-      href=""
+      href="/en/articles/js/es2015/destructuring/"
     >
-      2. ?
+      2. The destructuring
     </a>
   </div>
 
   <div class="r-Grid-cell r-minM--1of4">
     <a
       class="putainde-Day"
-      href=""
+      href="/en/articles/js/es2015/defaults/"
     >
-      3. ?
+      3. Defaults values for arguments
     </a>
   </div>
 

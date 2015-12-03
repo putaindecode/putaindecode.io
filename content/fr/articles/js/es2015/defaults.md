@@ -1,6 +1,6 @@
 ---
 date: "2015-12-03"
-title: "ES6, ES2015 : valeurs par défaut des arguments"
+title: "ES6, ES2015 : les valeurs par défaut des arguments"
 tags:
   - javascript
   - ES6
@@ -95,13 +95,15 @@ On est bien, dès l'évaluation des valeurs par défaut, dans le scope de la
 fonction, et dans ce scope ``x`` fait référence au paramètre (pas encore défini)
 et pas à la variable du dessus.
 
-**#protip ne réutilisez pas 3 fois le même nom de variable** (ça pourra aussi
-aider à la compréhension)
+**ProTip:  ne réutilisez pas 3 fois le même nom de variable**
+(ça pourra aussi aider à la compréhension).
 
 ## Décomposition
 
 De la même manière que pour les paramètres de fonction, les affectations par
-décomposition peuvent bénéficier de valeurs par défaut.
+décomposition
+([destructuring](/fr/articles/js/es2015/destructuring/))
+peuvent bénéficier de valeurs par défaut.
 
 ```js
 obj // {z: 42}
@@ -129,4 +131,5 @@ votre code une fois passé à ES6.
 
 Un petit mot sur la compatibilité (à la date de cet article) : seul Firefox ≥ 43
 implémente les valeurs par défaut, et encore seulement pour les paramètres de
-fonctions. Il faudra donc utiliser Babel ou Traceur pour en profiter.
+fonctions.
+Il faudra donc utiliser [Babel](http://babeljs.io) ou Traceur pour en profiter.
