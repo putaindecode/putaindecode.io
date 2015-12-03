@@ -107,7 +107,7 @@ Like for the function arguments, assignments using
 can have a default value.
 
 ```js
-obj // {z: 42}
+const obj = {z: 42} 
 const { x = 1, y = x + 1, z, w } = obj
 w // undefined
 x // 1
