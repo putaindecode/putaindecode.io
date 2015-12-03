@@ -118,8 +118,8 @@ Pour rappel, l'affectation de l'exemple précédent aurait été écrit de cette
 manière en ES5 :
 
 ```js
-var x = (obj.x === undefined) ? obj.x : 1
-var y = (obj.y === undefined) ? obj.y : x + 1
+var x = (obj.x === undefined) ? 1 : obj.x 
+var y = (obj.y === undefined) ?  x + 1 : obj.y
 var z = obj.z
 var w = obj.w
 ```
