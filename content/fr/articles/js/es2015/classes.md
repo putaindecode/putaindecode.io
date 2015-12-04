@@ -45,7 +45,10 @@ d'écrire](https://gist.github.com/magsout/a876b2fa8240a987e523) cette classe en
 `es5` :
 
 ```js
-var User = function(firstname, lastname) {
+function User(firstname, lastname) {
+  if(!(this instanceof User)) {
+    throw new TypeError("Class constructors cannot be invoked without 'new'")
+  }
   this.firstname = firstname
   this.lastname = lastname
 }
@@ -92,6 +95,7 @@ class User {
   }
 }
 
+// le `new` est obligatoire pour appeler une classe
 const user = new User("John", "Doe", "Contributor")
 
 console.log(user.sayName()) // John Doe
@@ -115,6 +119,11 @@ class Contributor extends User {
     // et d'avoir accés aux méthodes du parent
     super(firstname, lastname)
     this.numberCommit = numberCommit
+  }
+
+  sayNameWithCommit() {
+    // on peut appeler une méthode de la classe parente avec `super.method`
+    return super.sayName() + " " + this.sayNumberCommit()
   }
 
   sayNumberCommit() {
