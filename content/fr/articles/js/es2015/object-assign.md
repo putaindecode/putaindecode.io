@@ -27,9 +27,9 @@ d'objets :
 * Puis on retourne l'objet cible.
 
 ```js
-let o = { y: 0 }
-let o1 = { x: 1, y: 2 }
-let o2 = { x: undefined, z: 3 }
+const o = { y: 0 }
+const o1 = { x: 1, y: 2 }
+const o2 = { x: undefined, z: 3 }
 Object.assign(o, o1, o2) // { x: undefined, y: 2, z: 3 }
 o // { x: undefined, y: 2, z: 3 }
 o1 // non modifié
@@ -43,9 +43,9 @@ général étant plutôt la création d'un nouvel objet résultant de la fusion 
 sources, on passera habituellement un nouvel objet en premier paramètre.
 
 ```js
-let o1 = { x: 1 }
-let o2 = { y: 2 }
-let o = Object.assign({}, o1, o2)
+const o1 = { x: 1 }
+const o2 = { y: 2 }
+const o = Object.assign({}, o1, o2)
 o // { x: 1, y: 2 }
 // o1 et o2 n'ont pas été modifiés
 ```
@@ -59,7 +59,7 @@ comporter comme en mode *strict* (par opposition au mode *WTF*), et lever
 l'erreur correspondante avant d'interrompre la copie.
 
 ```js
-let o = Object.create({}, {
+const o = Object.create({}, {
   val: { value: 42, enumerable: true, writable: false }
 })
 
@@ -92,7 +92,7 @@ ignorées. Les valeurs ``null`` et ``undefined`` également.
 Cas particulier : les chaîne des caractères sont traitées comme des tableaux.
 
 ```js
-let o = {}
+const o = {}
 Object.assign(o, 1, true, null, "toto", ["b", "a"], undefined)
 // 1, true, null, undefined sont ignorées
 // "toto" est converti en {0: "t", 1: "o", 2: "t", 3: "o"}
@@ -111,5 +111,5 @@ par les navigateurs modernes (donc pas IE) :
 * Chrome stable (46) ;
 * Firefox stable (42) ;
 * Node ≥ 4 ;
-* Et si vous devez supporter IE, il y a bien sûr Babel ou les nombreuses
-  implémentations utilisateur.
+* Et si vous devez supporter IE, il y a bien sûr [Babel](http://babeljs.io/)
+  ou les nombreuses implémentations utilisateur.
