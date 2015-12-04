@@ -96,7 +96,7 @@ const o = {}
 Object.assign(o, 1, true, null, "toto", ["b", "a"], undefined)
 // 1, true, null, undefined sont ignorées
 // "toto" est converti en {0: "t", 1: "o", 2: "t", 3: "o"}
-// [1, 2] est converti en {0: "b", 1: "a"}
+// ["b", "a"] est converti en {0: "b", 1: "a"}
 o // {0: "b", 1: "a", 2: "t", 3: "o"}
 ```
 
