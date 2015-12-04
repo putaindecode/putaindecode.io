@@ -54,7 +54,7 @@ function User(firstname, lastname) {
 }
 
 User.prototype.sayName = function() {
-  return(this.firstname + " " + this.lastname)
+  return this.firstname + " " + this.lastname
 }
 
 // instanciation
