@@ -10,7 +10,7 @@ authors:
 ---
 
 Vous connaissez les méthodes ``extend`` d'underscore ou lodash (mais plutôt
-lodash quand-même) ? Comme la plupart de ces fonctions utilitaires, elles sont
+lodash quand même) ? Comme la plupart de ces fonctions utilitaires, elles sont
 rendues obsolètes par une fonctionnalité d'ES6 (aka ES2015).
 
 # Object.assign
@@ -18,13 +18,13 @@ rendues obsolètes par une fonctionnalité d'ES6 (aka ES2015).
 La nouvelle méthode statique ``Object.assign`` prend en paramètres une série
 d'objets :
 
-* Le premier objet est la "cible" des copies ;
-* Les suivants sont les sources ;
-* Toutes les clés propres (*own properties*, soit les clés énumérables et non
+* le premier objet est la "cible" des copies ;
+* les suivants sont les sources ;
+* toutes les clés propres (*own properties*, soit les clés énumérables et non
   héritées, même celles dont la valeur est ``undefined``) des sources sont
   copiées vers la cible (les suivantes écrasant les précédentes) ;
-* **L'objet cible est donc modifié** (il doit être mutable) ;
-* Puis on retourne l'objet cible.
+* **l'objet cible est donc modifié** (il doit être mutable) ;
+* puis on retourne l'objet cible.
 
 ```js
 const o = { y: 0 }
@@ -79,7 +79,7 @@ Les clés déjà copiées avant la levée d'erreur sont conservées dans la cibl
 ainsi dans notre exemple ``x`` a été copiée mais pas ``y``.
 
 Note : ça c'est la théorie, lors de mes tests ce comportement a été le plus
-variable, en fonction de la plateforme et du contexte, l'erreur n'est pas
+variable, en fonction de la plate-forme et du contexte, l'erreur n'est pas
 toujours levée. Le mieux est de travailler en mode *strict* pour s'assurer d'un
 comportement prédictible.
 
@@ -89,7 +89,7 @@ Lorsque les sources sont des valeurs scalaires (nombre, booléen, etc.)
 ``Object.keys`` ne listera généralement aucune clé et ces valeurs seront donc
 ignorées. Les valeurs ``null`` et ``undefined`` également.
 
-Cas particulier : les chaîne des caractères sont traitées comme des tableaux.
+Cas particulier : les chaînes de caractères sont traitées comme des tableaux.
 
 ```js
 const o = {}
@@ -111,5 +111,5 @@ par les navigateurs modernes (donc pas IE) :
 * Chrome stable (46) ;
 * Firefox stable (42) ;
 * Node ≥ 4 ;
-* Et si vous devez supporter IE, il y a bien sûr [Babel](http://babeljs.io/)
+* et si vous devez supporter IE, il y a bien sûr [Babel](http://babeljs.io/)
   ou les nombreuses implémentations utilisateur.
