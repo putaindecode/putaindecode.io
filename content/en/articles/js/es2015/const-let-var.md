@@ -129,7 +129,7 @@ write:
 
 ```js
 function fn() {
-  console.log(foo) // "bar"
+  console.log(foo) // undefined (no ReferenceError)
   var foo = "bar"
 }
 ```
