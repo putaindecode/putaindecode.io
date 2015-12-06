@@ -10,7 +10,7 @@ authors:
 ---
 
 ES2015 ajoute le support des template strings qui va permettre enfin de se 
-simplifier la vie lorsqu'il doit manipuler des chaines de caractères.
+simplifier la vie lorsqu'on doit manipuler des chaines de caractères.
 
 ## Le principe
 
