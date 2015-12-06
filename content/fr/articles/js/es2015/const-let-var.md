@@ -29,7 +29,7 @@ Si vous avez déjà lu des posts ou des ressources parlant de `const`, méfiez-v
 : ce ne sont pas des vraies constantes au sens *valeur* de variable. Ce sont des
 constantes au niveau référence. C'est à dire que le contenu d'un tableau ou d'un
 objet déclaré avec `const` bloque la réassignation de la variable, mais ne rend
-pas la valeur immutable.
+pas la valeur immuable.
 
 ```js
 function fn() {
