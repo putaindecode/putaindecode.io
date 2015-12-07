@@ -67,18 +67,18 @@ forcément le matin), mais le résultat devrait être sympathique !
   <div class="r-Grid-cell r-minM--1of4">
     <a
       class="putainde-Day"
-      href=""
+      href="/fr/articles/js/es2015/promises/"
     >
-      6. ?
+      6. Les promises
     </a>
   </div>
 
   <div class="r-Grid-cell r-minM--1of4">
     <a
       class="putainde-Day"
-      href=""
+      href="/fr/articles/js/es2015/template-strings/"
     >
-      7. ?
+      7. Les templates strings
     </a>
   </div>
 

@@ -1,5 +1,5 @@
 ---
-date: "2015-12-08"
+date: "2015-12-07"
 title: "ES6, ES2015 : les promises"
 tags:
   - javascript
