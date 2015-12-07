@@ -140,12 +140,12 @@ console.log(contributor.sayNumberCommit())
 
 ```
 
-A ce propos, voici une [vidéo](https://www.youtube.com/watch?v=wfMtDGfHWpA) très
-intéressante sur le principe de la composition plutôt que de l'héritage.
+**Rappel: [préférez la composition à l'héritage](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
 
 ## That's it
 
-Concrètement, tout ce qui est possible de faire avec cette nouvelle notation l'était bien entendue
+Concrètement, tout ce qui est possible de faire avec cette nouvelle notation
+l'était bien entendue
 [avant](https://gist.github.com/bloodyowl/7edc9c973d2236ed17e1).
 
 Au final, on gagne en clarté, en lisibilité et donc en maintenabilité.
@@ -154,4 +154,5 @@ Au final, on gagne en clarté, en lisibilité et donc en maintenabilité.
 [babel](https://babeljs.io/) pour utiliser les classes.
 
 Une dernière petite chose, en utilisant les classes on active automatiquement le
-[mode strict](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode), il n'est donc pas nécessaire de le rajouter manuellement.
+[mode strict](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode),
+il n'est donc pas nécessaire de le rajouter manuellement.
