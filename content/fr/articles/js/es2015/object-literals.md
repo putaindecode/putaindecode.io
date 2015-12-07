@@ -10,9 +10,9 @@ authors:
 ---
 
 Là encore, cette évolution du langage amène un sucre syntaxique bien pratique
-lors de l'initialisation d'objet.
+lors de l'initialisation d'objets.
 
-## Nom des propriétées raccourcies
+## Nom des propriétés raccourcies
 
 Lorsqu'on crée un objet, il arrive fréquemment que lorsqu'on définisse une
 propriété depuis une variable, la clé porte le même nom que la variable.
@@ -68,7 +68,7 @@ function action(type, data) {
   return payload;
 }
 ```
-En ES2015, cela donnerait:
+En ES2015, cela donnerait :
 ```
 function action(type, data) {
   return {
@@ -76,6 +76,6 @@ function action(type, data) {
   }
 }
 ```
-** À noter **  qu'avec l'introduction des propriétés calculées, on va pouvoir 
+**À noter** qu'avec l'introduction des propriétés calculées, on va pouvoir 
 aussi déclarer plusieurs fois une même propriété, la dernière déclaration 
 écrasant les précédentes (et plus de `syntaxError`).
