@@ -40,7 +40,7 @@ const user = new User("John", "Doe")
 console.log(user.sayName()) // John Doe
 ```
 
-Pour rappelle, voici une [façon possible
+Pour rappel, voici une [façon possible
 d'écrire](https://gist.github.com/magsout/a876b2fa8240a987e523) cette classe en
 `es5` :
 
@@ -67,8 +67,8 @@ console.log(user.sayName()) // John Doe
 ## Expressions de classes
 
 Toutes les méthodes s'écrivent comme de simples fonctions à l'intérieur de la
-classe. Bien entendu les getter/setter sont toujours de la partie mais, bien
-plus simple à utiliser :
+classe. Bien entendu, les getter/setter sont toujours de la partie mais bien
+plus simples à utiliser :
 
 ```JS
 class User {
@@ -106,7 +106,7 @@ console.log(user.role) // Owner
 
 ## L'héritage
 
-Pour qu'une sous-classe hérite d'une autre classe on utilisera pour cela le mot
+Pour qu'une sous-classe hérite d'une autre classe on utilisera le mot
 clé `extends`.
 
 En utilisant notre exemple précédent :
@@ -116,7 +116,7 @@ class Contributor extends User {
   constructor(firstname, lastname, numberCommit) {
 
     // le mot clé super est utilisé comme super contructeur. Il permet d'appeler
-    // et d'avoir accés aux méthodes du parent
+    // et d'avoir accès aux méthodes du parent
     super(firstname, lastname)
     this.numberCommit = numberCommit
   }
@@ -140,12 +140,12 @@ console.log(contributor.sayNumberCommit())
 
 ```
 
-**Rappel: [préférez la composition à l'héritage](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
+**Rappel : [préférez la composition à l'héritage](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
 
 ## That's it
 
 Concrètement, tout ce qui est possible de faire avec cette nouvelle notation
-l'était bien entendue
+l'était bien entendu
 [avant](https://gist.github.com/bloodyowl/7edc9c973d2236ed17e1).
 
 Au final, on gagne en clarté, en lisibilité et donc en maintenabilité.
