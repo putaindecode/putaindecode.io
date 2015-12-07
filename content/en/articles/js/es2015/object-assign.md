@@ -1,5 +1,5 @@
 ---
-date: "2015-12-07"
+date: "2015-12-04"
 title: "ES6, ES2015 : Object.assign"
 tags:
   - JavaScript
