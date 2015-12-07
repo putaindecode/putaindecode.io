@@ -27,10 +27,10 @@ return {
 }
 ```
 
-Avec ES2015, on va pouvoir l'écrire comme ça&nbsp;:
+Avec ES2015, on va pouvoir l'écrire comme ça :
 ```
 const firstname = "Robert";
-const lastname = "Laiponje"
+const lastname = "Laiponje";
 
 return {
   firstname, 
@@ -39,7 +39,7 @@ return {
 // { firstname: "Robert", lastname: "Laiponje" }
 ```
 
-De la même manière, on pourra déclarer des fonctions en se passant du mot clé
+De la même manière, on pourra déclarer des méthodes en se passant du mot clé
 `function`. Idem pour les *getter* / *setter*.
 ```
 const obj = {
@@ -77,6 +77,5 @@ function action(type, data) {
 }
 ```
 ** À noter **  qu'avec l'introduction des propriétés calculées, on va pouvoir 
-aussi déclarer plusieurs fois une meme propriété, la dernière déclaration 
+aussi déclarer plusieurs fois une même propriété, la dernière déclaration 
 écrasant les précédentes (et plus de `syntaxError`).
-
