@@ -1,5 +1,5 @@
 ---
-date: "2015-12-08"
+date: "2015-12-05"
 title: "ES6, ES2015 : les classes"
 tags:
   - javascript
