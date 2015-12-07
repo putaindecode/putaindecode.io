@@ -2,9 +2,9 @@
 date: "2015-12-07"
 title: "ES6, ES2015 : les promises"
 tags:
-  - javascript
+  - JavaScript
+  - ES6
   - ES2015
-	- ES6
 authors:
   - Uhsac
 ---
