@@ -23,7 +23,7 @@ peut réagir en conséquence.
 
 Ce mécanisme permet de remplacer les callbacks d'une manière plus élégante. Au
 revoir, la suite de callbacks qui rend votre code illisible ! Vous ne me croyez
-pas ? Voici un exemple pour vous le prouvez :
+pas ? Voici un exemple pour vous le prouver :
 
 ``` javascript
 // En utilisant les callbacks
