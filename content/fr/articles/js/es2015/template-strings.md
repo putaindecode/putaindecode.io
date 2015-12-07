@@ -107,7 +107,7 @@ qui permettent de modifier le contenu de la dite chaîne de caractères.
 
 Ce tag aura pour paramètres un tableau de "literals" (les chaines de caractères),
 et ensuite tous les paramètres correspondront aux valeurs interpolées qui auront
-déjà évaluées, mais que l'on pourra quand même modifier.
+déjà été évaluées, mais que l'on pourra quand même modifier.
 
 ``` js
 function capitalizeVowels(strings, ...values) {
