@@ -16,7 +16,7 @@ simplifier la vie lorsqu'on doit manipuler des chaines de caractères.
 
 Pour définir une chaine en JavaScript, il faut utiliser soit des single quotes,
 soit des double quotes. Malheureusement ces délimiteurs posent quelques
-problème lorsque justement la chaine contient un single quote ou une
+problèmes lorsque justement la chaine contient un single quote ou une
 double quote.
 
 Ainsi, les templates strings utilisent le caractère "backtick" ou accent grave
