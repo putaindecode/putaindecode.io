@@ -10,9 +10,9 @@ authors:
 ---
 
 ES2015 apporte une fonctionnalité simplifiant grandement l'asynchrone en
-Javascript, les promises ! Visible depuis longtemps dans l'écosystème Javascript
+JavaScript, les promises ! Visible depuis longtemps dans l'écosystème JavaScript
 grâce a diverses librairies, on peut maintenant utiliser directement la
-spécification officiel.
+spécification officielle.
 
 ## C'est quoi une promise ?
 
@@ -21,14 +21,14 @@ immédiatement. Comme toute promesse, elle peut être tenue, la valeur est arriv
 et on peut s'en servir, ou ne pas l'être, dans ce cas une erreur arrive et on
 peut réagir en conséquence.
 
-Ce mécanisme permet de remplacer les callback d'une manière plus élégante. Au
-revoir, la suite de callback qui rend votre code illisible ! Vous ne me croyez
+Ce mécanisme permet de remplacer les callbacks d'une manière plus élégante. Au
+revoir, la suite de callbacks qui rend votre code illisible ! Vous ne me croyez
 pas ? Voici un exemple pour vous le prouvez :
 
 ``` javascript
-// En utilisant les callback
+// En utilisant les callbacks
 // Imaginez que chacune de ces fonctions effectue des tâches asynchrones
-// plus ou moins complexe (requête HTTP, appelle à une base de données
+// plus ou moins complexes (requête HTTP, appel à une base de données
 // ou encore lecture de fichier)
 const functionWithCallback1 = callback => callback('test', undefined)
 const functionWithCallback2 = (arg, callback) => callback(arg, undefined)
@@ -69,10 +69,7 @@ functionWithCallback1((result1, err) => {
   })
 })
 
-// En utilisant les promises
-// Imaginez que chacune de ces fonctions effectue des tâches asynchrones
-// plus ou moins complexe (requête HTTP, appelle à une base de données
-// ou encore lecture de fichier)
+// Et maintenant, en utilisant les promises
 const functionWithPromise1 = () => Promise.resolve('test')
 const functionWithPromise2 = arg => Promise.resolve(arg)
 const functionWithPromise3 = arg => Promise.resolve(arg)
@@ -92,22 +89,22 @@ functionWithPromise1()
   })
 ```
 
-Comme vous pouvez le voir l'exemple avec le promise est tout de même plus
+Comme vous pouvez le voir, l'exemple avec les promises est tout de même plus
 lisible !
 
 ## Trop bien ! Comment je les utilise ?
 
 Une promise peut avoir plusieurs états au cours de son existence :
-- En cours : la valeur qu'elle contient n'est pas encore arrivée
-- Résolue : la valeur est arrivée, on peut l'utiliser
-- Rejetée : une erreur est survenue, on peut y réagir
+- en cours : la valeur qu'elle contient n'est pas encore arrivée
+- résolue : la valeur est arrivée, on peut l'utiliser
+- rejetée : une erreur est survenue, on peut y réagir
 
 Une promise possède 2 fonctions : `then` et `catch`, vous pouvez utiliser `then`
-pour récupérer le resultat ou l'erreur d'une promise et `catch` pour récuperer
-l'erreur d'une ou plusieurs promise.
+pour récupérer le resultat ou l'erreur d'une promise et `catch` pour récupérer
+l'erreur d'une ou plusieurs promises.
 
-Voyons comment utiliser les promise à l'aide de la future implémentation de
-fetch.
+Voyons comment utiliser les promises à l'aide de la future implémentation de
+`fetch`.
 
 ``` javascript
 // À ce moment, la promise est en attente
@@ -122,7 +119,7 @@ const parsePromise = fetchPromise.then(fetchResult => {
   return fetchResult.text()
 })
 
-// Quand le parsing est terminé je peux recuperer son contenu
+// Quand le parsing est terminé, je peux recuperer son contenu
 parsePromise.then(textResult => {
   console.log(`Voici le résultat : ${textResult}`)
 })
@@ -137,7 +134,7 @@ parsePromise.catch(parseError => {
   console.log(`Une erreur a eu lieu pendant le parsing : ${parseError}`)
 })
 
-// Peut aussi être écrit
+// Cela peut aussi être écrit
 fetch('http://putaindecode.io')
   .then(fetchResult => fetchResult.text())
   .then(textResult => {
@@ -161,7 +158,7 @@ fetch('http://putaindecode.io')
   })
 ```
 
-## Mais comment je crée mes propres promise ?
+## Mais comment je crée mes propres promises ?
 
 C'est bien beau d'utiliser les promises, mais c'est encore mieux de savoir créer
 les vôtres ! Je vous rassure, c'est très simple.
@@ -189,7 +186,7 @@ functionThatReturnAPromise()
 
 ## Et demain ?
 
-Une fonctionnalité encore plus pratique que les promises arrivent en Javascript,
-les mots-clés async et await ! Ces mots-clés vous permettront d'avoir un code
+Une fonctionnalité encore plus pratique que les promises arrive en JavaScript,
+les mots-clés `async` et `await` ! Ces mots-clés vous permettront d'avoir un code
 encore plus lisible quand vous ferez de l'asynchrone, mais ça ne concerne pas
 ES2015 :)
