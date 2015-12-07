@@ -172,7 +172,7 @@ const functionThatReturnAPromise = () => {
   // fonctions en paramètre :
   // - resolve que l'on pourra appeler avec le résultat de notre fonction
   // - reject que l'on pourra appeler avec une erreur s'il y a une erreur
-  return new Promise((resove, reject) => {
+  return new Promise((resolve, reject) => {
     if (success) {
       resolve('success')
     } else {
