@@ -1,6 +1,6 @@
 ---
 date: "2015-12-07"
-title: "ES6, ES2015 : Les templates strings"
+title: "ES6, ES2015 : les template strings"
 tags:
   - JavaScript
   - ES6
@@ -9,33 +9,33 @@ authors:
   - jbleuzen
 ---
 
-ES2015 ajoute le support des templates strings qui va permettre enfin de se
-simplifier la vie lorsqu'on doit manipuler des chaines de caractères.
+ES2015 ajoute le support des *template strings* qui va permettre enfin de se
+simplifier la vie lorsqu'on doit manipuler des chaînes de caractères.
 
 ## Le principe
 
-Pour définir une chaine en JavaScript, il faut utiliser soit des single quotes,
+Pour définir une chaîne en JavaScript, il faut utiliser soit des single quotes,
 soit des double quotes. Malheureusement ces délimiteurs posent quelques
-problèmes lorsque justement la chaine contient un single quote ou une
+problèmes lorsque justement la chaîne contient un single quote ou une
 double quote.
 
-Ainsi, les templates strings utilisent le caractère "backtick" ou accent grave
-simple pour délimiter les chaines de caractères.
+Ainsi, les *template strings* utilisent le caractère "backtick" ou accent grave
+simple pour délimiter les chaînes de caractères.
 
 ``` js
 // Avant en ES5
-var myString = 'Je suis une "chaine de caractères"'
+var myString = 'Je suis une "chaîne de caractères"'
 
 // Maintenant en ES6
 const myNewString = `Je suis une "template string"`
 ```
 
 Jusque là, rien de bien novateur mais voyons un exemple que l'on rencontre
-tout le temps : l'interpolation d'expression dans les chaines de texte.
+tout le temps : l'interpolation d'expression dans les chaînes de texte.
 
 ## Interpolation d'expression
 
-On peut maintenant directement utiliser les variables dans une template string
+On peut maintenant directement utiliser les variables dans une *template string*
 si on les insère dans un placeholder qui s'écrit `${variable}`.
 
 ``` js
@@ -61,14 +61,14 @@ function square(num) {
 }
 const result = `${square(5)}` // => 25
 ```
-Ce qui rend l'utilisation des template strings extrêmement intéressante.
+Ce qui rend l'utilisation des *template strings* extrêmement intéressante.
 
-## Les template strings multi-lignes
+## Les *template strings* multi-lignes
 
-Une autre avancée des templates strings est le support multi-ligne, en effet en
+Une autre avancée des *template strings* est le support multi-ligne, en effet en
 ES5 il n'existe aucune solution esthétique (et pratique) pour générer des
-chaines multi-lignes.
-Ce problème disparait avec les templates strings.
+chaînes multi-lignes.
+Ce problème disparait avec les *template strings*.
 
 ``` js
 // Avant en ES5
@@ -86,7 +86,7 @@ const multiline = `foo
                    baz`;
 ```
 
-*Attention* cependant, les espaces sont conservés avec les templates strings,
+*Attention* cependant, les espaces sont conservés avec les *template strings*,
 ce qui peut surprendre si vous devez tester des strings multi-lignes.
 
 ``` js
@@ -99,13 +99,13 @@ const str2 = `foo
 str1 === str2 // => false
 ```
 
-## Les template strings taggués
+## Les *template strings* taggués
 
-On entre dans les fonctions moins connues et peu utilisées des templates strings.
-Les tags sont des fonctions que l'on place juste avant une template string et
-qui permettent de modifier le contenu de la dite chaine de caractères.
+On entre dans les fonctions moins connues et peu utilisées des *template strings*.
+Les tags sont des fonctions que l'on place juste avant une *template string* et
+qui permettent de modifier le contenu de la dite chaîne de caractères.
 
-Ce tag aura pour paramètres un tableau de "literals" (les chaines de caractères),
+Ce tag aura pour paramètres un tableau de "literals" (les chaînes de caractères),
 et ensuite tous les paramètres correspondront aux valeurs interpolées qui auront
 déjà été évaluées, mais que l'on pourra quand même modifier.
 
@@ -139,15 +139,15 @@ const v = "o"
 capitalizeVowels`foo ${ n } bar ${ c }${ v }${ v } ?` // => fOO 42 bAr fOO ?
 ```
 
-Voici un exemple intéressant d'utilisation des template strings taggués qui
-présente un système [de localisation de chaines de caractères](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
+Voici un exemple intéressant d'utilisation des *template strings* taggués qui
+présente un système [de localisation de chaînes de caractères](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
 
 ## String.raw
 
 Et pour finir, une nouvelle fonction a été ajouté au prototype de `String` qui
-permet d'afficher le contenu d'un template string brut. C'est à dire que la
+permet d'afficher le contenu d'un *template string* brut. C'est à dire que la
 fonction permettra de voir les caractères d'échappement qui sont
-automatiquement gérés avec une template string.
+automatiquement gérés avec une *template string*.
 
 ``` js
 String.raw`FOO\nbar` // => FOO\\nbar
@@ -155,8 +155,8 @@ String.raw`FOO\nbar` // => FOO\\nbar
 
 ## Conclusion
 
-Les template strings sont bien utiles au quotidien, l'ajout de l'interpolation
+Les *template strings* sont bien utiles au quotidien, l'ajout de l'interpolation
 simplifie grandement la vie et permet d'oublier les erreurs d'échappement.
 
 Aujourd'hui, [la grande majorité des navigateurs les supportent](https://kangax.github.io/compat-table/es6/#test-template_strings)
-ainsi que babel et traceur, donc usez et abusez des template strings…
+ainsi que babel et traceur, donc usez et abusez des *template strings*…
