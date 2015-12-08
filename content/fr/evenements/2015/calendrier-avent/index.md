@@ -85,9 +85,9 @@ forcément le matin), mais le résultat devrait être sympathique !
   <div class="r-Grid-cell r-minM--1of4">
     <a
       class="putainde-Day"
-      href=""
+      href="/fr/articles/js/es2015/object-literals/"
     >
-      8. ?
+      8. Object literals
     </a>
   </div>
 
