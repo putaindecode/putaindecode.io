@@ -25,12 +25,12 @@ Ce mécanisme permet de remplacer les callbacks d'une manière plus élégante. 
 revoir, la suite de callbacks qui rend votre code illisible ! Vous ne me croyez
 pas ? Voici un exemple pour vous le prouver :
 
-``` javascript
+```js
 // En utilisant les callbacks
 // Imaginez que chacune de ces fonctions effectue des tâches asynchrones
 // plus ou moins complexes (requête HTTP, appel à une base de données
 // ou encore lecture de fichier)
-const functionWithCallback1 = callback => callback('test', undefined)
+const functionWithCallback1 = (callback) => callback('test', undefined)
 const functionWithCallback2 = (arg, callback) => callback(arg, undefined)
 const functionWithCallback3 = (arg, callback) => callback(arg, undefined)
 const functionWithCallback4 = (arg, callback) => callback(arg, undefined)
@@ -71,11 +71,11 @@ functionWithCallback1((result1, err) => {
 
 // Et maintenant, en utilisant les promises
 const functionWithPromise1 = () => Promise.resolve('test')
-const functionWithPromise2 = arg => Promise.resolve(arg)
-const functionWithPromise3 = arg => Promise.resolve(arg)
-const functionWithPromise4 = arg => Promise.resolve(arg)
-const functionWithPromise5 = arg => Promise.resolve(arg)
-const functionWithPromise6 = arg => Promise.resolve(arg)
+const functionWithPromise2 = (arg) => Promise.resolve(arg)
+const functionWithPromise3 = (arg) => Promise.resolve(arg)
+const functionWithPromise4 = (arg) => Promise.resolve(arg)
+const functionWithPromise5 = (arg) => Promise.resolve(arg)
+const functionWithPromise6 = (arg) => Promise.resolve(arg)
 
 functionWithPromise1()
   .then(functionWithPromise2)
@@ -104,9 +104,9 @@ pour récupérer le resultat ou l'erreur d'une promise et `catch` pour récupér
 l'erreur d'une ou plusieurs promises.
 
 Voyons comment utiliser les promises à l'aide de la future implémentation de
-`fetch`.
+[`fetch`](https://fetch.spec.whatwg.org).
 
-``` javascript
+```js
 // À ce moment, la promise est en attente
 const fetchPromise = fetch('http://putaindecode.io')
 
@@ -126,12 +126,12 @@ parsePromise.then(textResult => {
 
 // Si la requête a un problème, la promise est rejetée avec une erreur
 fetchPromise.catch(fetchError => {
-  console.log(`Une erreur a eu lieu pendant la requête : ${fetchError}`)
+  console.log("Une erreur a eu lieu pendant la requête", fetchError)
 })
 
 // S'il y a une erreur pendant le parsing, je peux la récupérer
 parsePromise.catch(parseError => {
-  console.log(`Une erreur a eu lieu pendant le parsing : ${parseError}`)
+  console.log("Une erreur a eu lieu pendant le parsing", parseError)
 })
 
 // Cela peut aussi être écrit
@@ -141,21 +141,27 @@ fetch('http://putaindecode.io')
     console.log(`Voici le résultat : ${textResult}`)
   })
   .catch(error => {
-    console.log(`Une erreur a eu lieu pendant la requête ou le parsing : ${error}`)
+    console.log("Une erreur a eu lieu pendant la requête ou le parsing", fetchError)
   })
 
 // Ou encore
 fetch('http://putaindecode.io')
-  .then(fetchResult => {
-    return fetchResult.text()
-  }, fetchError => {
-    console.log(`Une erreur a eu lieu pendant la requête : ${fetchError}`)
-  })
-  .then(textResult => {
-    console.log(`Voici le résultat : ${textResult}`)
-  }, parseError => {
-    console.log(`Une erreur a eu lieu pendant le parsing : ${parseError}`)
-  })
+  .then(
+    fetchResult => {
+      return fetchResult.text()
+    },
+    fetchError => {
+      console.log("Une erreur a eu lieu pendant la requête", fetchError)
+    }
+  )
+  .then(
+    textResult => {
+      console.log(`Voici le résultat : ${textResult}`)
+    },
+    parseError => {
+      console.log("Une erreur a eu lieu pendant le parsing", parseError)
+    }
+  )
 ```
 
 ## Mais comment je crée mes propres promises ?
@@ -163,8 +169,8 @@ fetch('http://putaindecode.io')
 C'est bien beau d'utiliser les promises, mais c'est encore mieux de savoir créer
 les vôtres ! Je vous rassure, c'est très simple.
 
-``` javascript
-const functionThatReturnAPromise = () => {
+```js
+const functionThatReturnAPromise = (success) => {
   // On utilise la classe Promise pour en créer une, le constructeur prend 2
   // fonctions en paramètre :
   // - resolve que l'on pourra appeler avec le résultat de notre fonction
@@ -172,16 +178,24 @@ const functionThatReturnAPromise = () => {
   return new Promise((resolve, reject) => {
     if (success) {
       resolve('success')
-    } else {
+    }
+    else {
       reject('failed')
     }
   })
 }
 
 // Vous pouvez maintenant utiliser votre fonction comme vu précédemment
-functionThatReturnAPromise()
-  .then(res => console.log(res)) // log : 'success'
-  .catch(error => console.log(error)) // log : 'failed'
+functionThatReturnAPromise(success)
+  .then(res => console.log(res))
+  .catch(error => console.log(error))
+
+// équivalent dans notre cas à
+functionThatReturnAPromise(success)
+  .then(
+    (res) => console.log(res),
+    (error) => console.log(error)
+  )
 ```
 
 ## Et demain ?
