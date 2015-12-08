@@ -1,12 +1,12 @@
 ---
-date: "2015-12-01"
+date: "2015-12-08"
 title: "ES6, ES2015 : Object literals"
 tags:
   - JavaScript
   - ES6
   - ES2015
 authors:
-  - lionelb
+  - lionelB
 ---
 
 Là encore, cette évolution du langage amène un sucre syntaxique bien pratique
@@ -33,7 +33,7 @@ const firstname = "Robert";
 const lastname = "Laiponje";
 
 return {
-  firstname, 
+  firstname,
   lastname
 }
 // { firstname: "Robert", lastname: "Laiponje" }
@@ -56,9 +56,9 @@ const obj = {
 
 ## Nom de propriétés calculées
 
-La dernière nouveauté concernant les *literal objects* va nous permettre 
-de créer des noms de propriétés depuis une expression, directement à la 
-création de l'objet. Auparavant, il fallait procéder en 2 temps, création 
+La dernière nouveauté concernant les *literal objects* va nous permettre
+de créer des noms de propriétés depuis une expression, directement à la
+création de l'objet. Auparavant, il fallait procéder en 2 temps, création
 puis affectation.
 
 ```
@@ -76,6 +76,6 @@ function action(type, data) {
   }
 }
 ```
-**À noter** qu'avec l'introduction des propriétés calculées, on va pouvoir 
-aussi déclarer plusieurs fois une même propriété, la dernière déclaration 
+**À noter** qu'avec l'introduction des propriétés calculées, on va pouvoir
+aussi déclarer plusieurs fois une même propriété, la dernière déclaration
 écrasant les précédentes (et plus de `syntaxError`).
