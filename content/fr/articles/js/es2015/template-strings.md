@@ -19,14 +19,14 @@ soit des double quotes. Malheureusement ces délimiteurs posent quelques
 problèmes lorsque justement la chaîne contient un single quote ou une
 double quote.
 
-Ainsi, les *template strings* utilisent le caractère "backtick" ou accent grave
-simple pour délimiter les chaînes de caractères.
+Ainsi, les *template strings* utilisent le caractère _back-tick_ (accent grave
+simple) pour délimiter les chaînes de caractères.
 
-``` js
-// Avant en ES5
+```js
+// ES5
 var myString = 'Je suis une "chaîne de caractères"'
 
-// Maintenant en ES6
+// ES6
 const myNewString = `Je suis une "template string"`
 ```
 
@@ -38,12 +38,12 @@ tout le temps : l'interpolation d'expression dans les chaînes de texte.
 On peut maintenant directement utiliser les variables dans une *template string*
 si on les insère dans un placeholder qui s'écrit `${variable}`.
 
-``` js
-// Avant en ES5
+```js
+// ES5
 var name = "world";
 var myStrin = "Hello " + name; // => Hello world
 
-// Maintenant en ES6
+// ES6
 const newName = `developer`;
 const myStrin = `Hello ${ newName }`; // => Hello developer
 ```
@@ -51,7 +51,7 @@ const myStrin = `Hello ${ newName }`; // => Hello developer
 Il est également possible de faire des traitements dans un placeholder et
 d'appeler des fonctions.
 
-``` js
+```js
 const x = 1;
 const y = 2;
 const result = `${ x } + ${ y } = ${ x + y }` // => 1 + 2 = 3
@@ -61,6 +61,7 @@ function square(num) {
 }
 const result = `${square(5)}` // => 25
 ```
+
 Ce qui rend l'utilisation des *template strings* extrêmement intéressante.
 
 ## Les *template strings* multi-lignes
@@ -70,8 +71,8 @@ ES5 il n'existe aucune solution esthétique (et pratique) pour générer des
 chaînes multi-lignes.
 Ce problème disparait avec les *template strings*.
 
-``` js
-// Avant en ES5
+```js
+// ES5
 var multiline = "foo \
                  bar \
                  baz";
@@ -80,7 +81,7 @@ var multiline2 = "foo";
 multiline2 += "bar";
 multiline2 += "baz";
 
-// Aujourd'hui en ES6
+// ES6
 const multiline = `foo
                    bar
                    baz`;
@@ -89,7 +90,7 @@ const multiline = `foo
 *Attention* cependant, les espaces sont conservés avec les *template strings*,
 ce qui peut surprendre si vous devez tester des strings multi-lignes.
 
-``` js
+```js
 const str1 = `foo
 bar`;
 
@@ -106,10 +107,10 @@ Les tags sont des fonctions que l'on place juste avant une *template string* et
 qui permettent de modifier le contenu de la dite chaîne de caractères.
 
 Ce tag aura pour paramètres un tableau de "literals" (les chaînes de caractères),
-et ensuite tous les paramètres correspondront aux valeurs interpolées qui auront
+et ensuite tous les paramètres correspondant aux valeurs interpolées qui auront
 déjà été évaluées, mais que l'on pourra quand même modifier.
 
-``` js
+```js
 function capitalizeVowels(strings, ...values) {
 
   function replaceVowels(string) {
@@ -149,7 +150,7 @@ permet d'afficher le contenu d'un *template string* brut. C'est à dire que la
 fonction permettra de voir les caractères d'échappement qui sont
 automatiquement gérés avec une *template string*.
 
-``` js
+```js
 String.raw`FOO\nbar` // => FOO\\nbar
 ```
 
