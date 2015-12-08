@@ -77,7 +77,7 @@ En ES2015, cela donnerait :
 ```js
 function action(type, data) {
   return {
-    [type]: payload
+    [type]: data
   }
 }
 ```
