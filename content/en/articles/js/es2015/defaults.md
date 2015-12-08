@@ -1,6 +1,6 @@
 ---
 date: "2015-12-03"
-title: "ES6, ES2015 : default values for arguments"
+title: "ES6, ES2015: default values for arguments"
 tags:
   - javascript
   - ES6
@@ -68,12 +68,12 @@ foo() // 1 + (1 + 1) → 3
 bar() // (undefined + 1) + 1 → NaN
 ```
 
-### Particular case : TDZ (Temporal Dead Zone)
+### Particular case: TDZ (Temporal Dead Zone)
 
-A *temporal dead zone* is a area of your program where a variable exist, but is
+A temporal dead zone is an area of your program where a variable exists, but is
 not available yet while it didn't get its value.
 
-The following example is obviously invalid :
+The following example is obviously invalid:
 
 ```js
 function foo (x = x) { // throws ReferenceError?
@@ -81,11 +81,11 @@ function foo (x = x) { // throws ReferenceError?
 ```
 
 In fact, during the call of the function, `x` has not been defined yet,
-so cannot be used as a default value.
+so it cannot be used as a default value.
 This example should trigger an
 [error](http://dmitrysoshnikov.com/ecmascript/es6-notes-default-values-of-parameters/#tdz-temporal-dead-zone-for-parameters)
 
-However, scope rules will make this example invalid :
+However, scope rules will make this example invalid:
 
 ```js
 const x = 1
@@ -103,7 +103,7 @@ the value defined above.
 ## Destructuring
 
 Like for the function arguments, assignments using
-[destructuring](/fr/articles/js/es2015/destructuring/)
+[destructuring](/en/articles/js/es2015/destructuring/)
 can have a default value.
 
 ```js
@@ -116,7 +116,7 @@ z // 42
 ```
 
 As a reminder, the assignation in the previous example would have been written
-this way using ES5 :
+this way using ES5:
 
 ```js
 var x = (obj.x === undefined) ? 1 : obj.x 
@@ -127,7 +127,7 @@ var w = obj.w
 
 # Enjoy!
 
-There is no more reasons *a priori* to see an `undefined` in a ES6 codebase.
+There is no more reasons *a priori* to see an `undefined` in an ES6 codebase.
 
 About the compatibility (at the time of the writing): only Firefox ≥ 43
 support this feature (and just for function...).
