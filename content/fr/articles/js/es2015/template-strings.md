@@ -144,7 +144,7 @@ présente un système [de localisation de chaînes de caractères](http://jaysoo
 
 ## String.raw
 
-Et pour finir, une nouvelle fonction a été ajouté au prototype de `String` qui
+Et pour finir, une nouvelle fonction a été ajoutée au prototype de `String` qui
 permet d'afficher le contenu d'un *template string* brut. C'est à dire que la
 fonction permettra de voir les caractères d'échappement qui sont
 automatiquement gérés avec une *template string*.
