@@ -69,7 +69,7 @@ forcément le matin), mais le résultat devrait être sympathique !
       class="putainde-Day"
       href="/fr/articles/js/es2015/promises/"
     >
-      6. Les promises
+      6. Les promesses
     </a>
   </div>
 
@@ -87,7 +87,7 @@ forcément le matin), mais le résultat devrait être sympathique !
       class="putainde-Day"
       href="/fr/articles/js/es2015/object-literals/"
     >
-      8. Object literals
+      8. Les objets littéraux
     </a>
   </div>
 

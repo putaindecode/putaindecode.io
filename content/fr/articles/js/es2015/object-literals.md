@@ -1,6 +1,6 @@
 ---
 date: "2015-12-08"
-title: "ES6, ES2015 : Les object literals"
+title: "ES6, ES2015 : les objets littéraux"
 tags:
   - JavaScript
   - ES6
@@ -59,7 +59,7 @@ const obj = {
 
 ## Nom de propriétés calculées
 
-La dernière nouveauté concernant les *literal objects* va nous permettre
+La dernière nouveauté concernant les *objets littéraux* va nous permettre
 de créer des noms de propriétés depuis une expression, directement à la
 création de l'objet. Auparavant, il fallait procéder en 2 temps, création
 puis affectation.

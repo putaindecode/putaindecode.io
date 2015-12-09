@@ -1,6 +1,6 @@
 ---
 date: "2015-12-06"
-title: "ES6, ES2015 : les promises"
+title: "ES6, ES2015 : les promesses"
 tags:
   - JavaScript
   - ES6
@@ -10,13 +10,13 @@ authors:
 ---
 
 ES2015 apporte une fonctionnalité simplifiant grandement l'asynchrone en
-JavaScript, les promises ! Visible depuis longtemps dans l'écosystème JavaScript
+JavaScript, les promesses ! Visible depuis longtemps dans l'écosystème JavaScript
 grâce a diverses librairies, on peut maintenant utiliser directement la
 spécification officielle.
 
-## C'est quoi une promise ?
+## C'est quoi une promesse ?
 
-Une promise peut être vue comme la promesse d'une valeur non-disponible
+Une promesse peut être vue comme la promesse d'une valeur non-disponible
 immédiatement. Comme toute promesse, elle peut être tenue, la valeur est arrivée
 et on peut s'en servir, ou ne pas l'être, dans ce cas une erreur arrive et on
 peut réagir en conséquence.
@@ -89,33 +89,33 @@ functionWithPromise1()
   })
 ```
 
-Comme vous pouvez le voir, l'exemple avec les promises est tout de même plus
+Comme vous pouvez le voir, l'exemple avec les promesses est tout de même plus
 lisible !
 
 ## Trop bien ! Comment je les utilise ?
 
-Une promise peut avoir plusieurs états au cours de son existence :
+Une promesse peut avoir plusieurs états au cours de son existence :
 - en cours : la valeur qu'elle contient n'est pas encore arrivée
 - résolue : la valeur est arrivée, on peut l'utiliser
 - rejetée : une erreur est survenue, on peut y réagir
 
-Une promise possède 2 fonctions : `then` et `catch`, vous pouvez utiliser `then`
+Une promesse possède 2 fonctions : `then` et `catch`, vous pouvez utiliser `then`
 pour récupérer le resultat ou l'erreur d'une promise et `catch` pour récupérer
-l'erreur d'une ou plusieurs promises.
+l'erreur d'une ou plusieurs promesses.
 
-Voyons comment utiliser les promises à l'aide de la future implémentation de
+Voyons comment utiliser les promesses à l'aide de la future implémentation de
 [`fetch`](https://fetch.spec.whatwg.org).
 
 ```js
-// À ce moment, la promise est en attente
+// À ce moment, la promesse est en attente
 const fetchPromise = fetch('http://putaindecode.io')
 
-// Quand la requête est terminée la promise est résolue avec le résultat de
+// Quand la requête est terminée la promesse est résolue avec le résultat de
 // la requête
 const parsePromise = fetchPromise.then(fetchResult => {
-  // Je peux retourner une nouvelle promise à partir d'un then, ici
+  // Je peux retourner une nouvelle promesse à partir d'un then, ici
   // j'appelle .text() qui parse le contenu de la requête et retourne
-  // une promise
+  // une promesse
   return fetchResult.text()
 })
 
@@ -124,7 +124,7 @@ parsePromise.then(textResult => {
   console.log(`Voici le résultat : ${textResult}`)
 })
 
-// Si la requête a un problème, la promise est rejetée avec une erreur
+// Si la requête a un problème, la promesse est rejetée avec une erreur
 fetchPromise.catch(fetchError => {
   console.log("Une erreur a eu lieu pendant la requête", fetchError)
 })
@@ -164,9 +164,9 @@ fetch('http://putaindecode.io')
   )
 ```
 
-## Mais comment je crée mes propres promises ?
+## Mais comment je crée mes propres promesses ?
 
-C'est bien beau d'utiliser les promises, mais c'est encore mieux de savoir créer
+C'est bien beau d'utiliser les promesses, mais c'est encore mieux de savoir créer
 les vôtres ! Je vous rassure, c'est très simple.
 
 ```js
@@ -200,7 +200,7 @@ functionThatReturnAPromise(success)
 
 ## Et demain ?
 
-Une fonctionnalité encore plus pratique que les promises arrive en JavaScript,
+Une fonctionnalité encore plus pratique que les promesses arrive en JavaScript,
 les mots-clés `async` et `await` ! Ces mots-clés vous permettront d'avoir un code
 encore plus lisible quand vous ferez de l'asynchrone, mais ça ne concerne pas
 ES2015 :)
