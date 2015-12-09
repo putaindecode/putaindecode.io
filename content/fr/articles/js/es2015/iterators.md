@@ -12,7 +12,7 @@ authors:
 
 Imaginez un concept si important que si vous l’enleviez du langage, il faudrait
 en conséquence enlever le spread, le destructuring, les générateurs, le for…of
-et bien d’autres. Ce concept, introduit dans l’ES6, est enfait un protocole:
+et bien d’autres. Ce concept, introduit dans l’ES6, est enfait un protocole :
 le protocole d’itération.
 
 Le principe est de définir une convention dans le langage, qui permet de
@@ -31,7 +31,7 @@ function ``next()`` qui retourne un object avec 2 propriétés :
 
 Les appels successifs à la méthode ``next()`` d’un Iterator permettent donc de
 traverser et récupérer les valeurs d’un objet. Prenons l’exemple de l’Iterator
-retournée par un Array qui contiendrait 2 valeurs ("a" et "b") :
+retourné par un Array qui contiendrait 2 valeurs ("a" et "b") :
 
 ```js
 iteratorArray.next();
@@ -43,11 +43,11 @@ iteratorArray.next();
 ```
 
 Mais comment récupérer l’Iterator d’un objet vas-tu me dire ? (n’est-ce pas ?)
-Ca tombe bien, c’est le rôle de la seconde interface, appelée **Iterable**. Un
+Ça tombe bien, c’est le rôle de la seconde interface, appelée **Iterable**. Un
 objet est Iterable s’il implémente une méthode particulière qui va retourner
-l'Iterator. Cette méthode particulière (appelée *@@iterator*) doit être définie
-en utilisant le symbole ``[Symbol.iterator]``. (Les symboles seront expliqués dans
-un prochain article, pas de panique). 
+l'Iterator. Cette méthode particulière (appelée *@@iterator* dans la
+spécification) doit être définie en utilisant le symbole ``[Symbol.iterator]``.
+(Les symboles seront expliqués dans un prochain article, pas de panique). 
 
 En reprenant l’exemple précédent, voici comment récupérer l’Iterator d’un Array :
 
@@ -92,70 +92,70 @@ La deuxième bonne nouvelle, c’est que plusieurs concepts du langage tirent av
 ```js
 var arr = ["a", "b"];
 
-//La syntaxe à laquelle on pense immédiatement est la syntaxe « for .. of » 
-//qui permet de boucler sur les valeurs des Iterable.
+// La syntaxe à laquelle on pense immédiatement est la syntaxe « for .. of » 
+// qui permet de boucler sur les valeurs des Iterable.
 for (val of arr) {
     console.log(val);
 }
 
-//Le spread qui permet d'insérer facilement des valeurs dans un Array
-//utilise également des Iterable
-['0', ...arr, '1'] //0, a, b, 1
+// Le spread qui permet d'insérer facilement des valeurs dans un Array
+// utilise également des Iterable
+['0', ...arr, '1'] // 0, a, b, 1
 
-//yield nécessite également des Iterable
+// yield nécessite également des Iterable
 function* gen(){
   yield* arr;
 }
 gen().next(); // { value:"a", done:false }
 
-//Le destructuring avec le pattern Array
-let [x, y] = arr; //x = 'a',  y = "b"
+// Le destructuring avec le pattern Array
+let [x, y] = arr; // x = 'a',  y = "b"
 ```
 
 * Des API acceptent également des Iterable
 ```js
 var arr = ["a", "b", "b"];
 
-//Certains constructeurs acceptent des Iterable
+// Certains constructeurs acceptent des Iterable
 
-//Set et Weakset
+// Set et Weakset
 var set = new Set(arr);
 set.has("b") // true
-//Map et WeakMap
-var map = new Map(arr.entries()); //Attention, le constructeur attend un ensemble [clé, valeur]
+// Map et WeakMap
+var map = new Map(arr.entries()); // Attention, le constructeur attend un ensemble [clé, valeur]
 map.get(0) // 'a'
 
 
-//Ou encore les API suivants :
+// Ou encore les API suivants :
 
-Array.from(iterable); //transforme n'importe quel Iterable en Array.
-Promise.all(iterableCollectionDePromises); //n'importe quel Iterable qui contient un ensemble de Promises
-Promise.race(iterableCollectionDePromises); //idem
+Array.from(iterable); // transforme n'importe quel Iterable en Array.
+Promise.all(iterableCollectionDePromises); // n'importe quel Iterable qui contient un ensemble de Promises
+Promise.race(iterableCollectionDePromises); // idem
 ```
 
 # Built-in Iterable
 
 Troisième bonne nouvelles, plusieurs objets du langage implémentent déjà ce protocole :
 ```js
-//évidemment les Array
+// évidemment les Array
 var arr = ["l", "o", "l"];
 for (v of arr) {
     console.log(v);
-    //'l'
-    //'o'
-    //'l'
+    // 'l'
+    // 'o'
+    // 'l'
 }
 
-//les String
+// les String
 var str = "lol";
 for (v of str) {
     console.log(v);
-    //'l'
-    //'o'
-    //'l'
+    // 'l'
+    // 'o'
+    // 'l'
 }
 
-//les Map et Set (mais PAS WeakMap et WeakSet)
+// les Map et Set (mais PAS WeakMap et WeakSet)
 var map = new Map().set('l', 1).set('o', 2);
 for (v of map) {
     console.log(v);
@@ -165,60 +165,61 @@ for (v of map) {
 var set = new Set().add('l').add('o');
 for (v of map) {
     console.log(v);
-    //'l'
-    //'o'
+    // 'l'
+    // 'o'
 }
 
-//Les TypedArray que vous utilisez tous les jours
+// Les TypedArray que vous utilisez tous les jours
 var int16 = new Int16Array(2);
 int16[0] = 42;
 for (v of int16) {
     console.log(v);
-    //42
-    //0
+    // 42
+    // 0
 }
 
-//Même l'objet spécial arguments (que vous
-//ne devriez plus utilisé avec l'ES6) est un Iterable
+// Même l'objet spécial arguments (que vous
+// ne devriez plus utilisé avec l'ES6) est un Iterable
 function test()
 {
     for (v of arguments) {
         console.log(v);
-        //'l'
-        //'o'
-        //'l'
+        // 'l'
+        // 'o'
+        // 'l'
     }
 }
 test('l', 'o', 'l');
 
-//Les NodeList retournés par l'API DOM également !
+// Les NodeList retournés par l'API DOM également !
 var matches = document.querySelectorAll('div');
 for (m of matches) {
     console.log(m);
-    //<div id="topSection">
-    //<div id="brandLogo">
-    //...
+    // <div id="topSection">
+    // <div id="brandLogo">
+    // ...
 }
+```
 
-//Array, TypedArray, Map, Set sont des Iterable
-//mais définissent aussi des méthodes qui retournent
-//également des Iterable (Ca va, vous suivez toujours ? -_-)
-//- entries() retournent un ensemble des clés/valeurs
-//- keys() retournent les clés
-//- values() retournent les valeurs 
+Autre point : Array, TypedArray, Map, Set sont des Iterable mais définissent
+aussi des méthodes qui retournent également des Iterable (Ca va, vous suivez
+toujours ?) :
+- entries() retourne un ensemble des clés/valeurs
+- keys() retourne les clés
+- values() retourne les valeurs 
+
+```js
 for (cleVals of arr.entries()) {
     console.log(cleVals);
-    //[0, "l"]
-    //[1, "o"]
-    //[2, "l"]
+    // [0, "l"]
+    // [1, "o"]
+    // [2, "l"]
 }
-
-//Détail important, Object n'est pas Iterable
-//mais il n'est pas impossible de voir apparaitre 
-//dans l'ES7 les méthodes entries(), keys()
-//et values() sur Object
-//cf : https://github.com/tc39/proposal-object-values-entries
 ```
+
+Détail important, Object n'est pas Iterable mais il n'est pas impossible de
+voir apparaitre dans l'ES7 les méthodes entries(), keys() et values() sur
+Object. (cf : [Proposition spec](https://github.com/tc39/proposal-object-values-entries))
 
 # Conclusion
 
@@ -240,10 +241,10 @@ apprendrez notamment qu’un iterator peut retourner en option 2 autres méthode
 qu’un générateur est à la fois un Iterable et un Iterator, qu’un Iterable peut
 être infini ou encore des exemples d’implémentations divers et variés :
 
-[2ality](http://www.2ality.com/2015/02/es6-iteration.html),
-[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols),
-[Mozilla Hacks](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/),
-[Pony foo](https://ponyfoo.com/articles/es6-iterators-in-depth)
+* [Iterables and iterators in ECMAScript 6](http://www.2ality.com/2015/02/es6-iteration.html)
+* [Iteration Protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
+* [ES6 in depth : iterators and the for of loop](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
+* [ES6 iterators in depth](https://ponyfoo.com/articles/es6-iterators-in-depth)
 
-La pratique restant le meilleur moyen de se former, je vous conseille le site 
-[ES6 Katas](http://es6katas.org/) qui est très bien fait pour s'exercer.
+La pratique restant le meilleur moyen de se former, le site
+[ES6 Katas](http://es6katas.org/) est très bien fait pour s'exercer.
