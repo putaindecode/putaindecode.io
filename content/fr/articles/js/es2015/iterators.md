@@ -1,5 +1,5 @@
 ---
-date: "2015-12-08"
+date: "2015-12-09"
 title: "ES6, ES2015 : Le protocole d'itération"
 tags:
   - javascript
@@ -47,7 +47,7 @@ Mais comment récupérer l’Iterator d’un objet vas-tu me dire ? (n’est-ce 
 objet est Iterable s’il implémente une méthode particulière qui va retourner
 l'Iterator. Cette méthode particulière (appelée *@@iterator* dans la
 spécification) doit être définie en utilisant le symbole ``[Symbol.iterator]``.
-(Les symboles seront expliqués dans un prochain article, pas de panique). 
+(Les symboles seront expliqués dans un prochain article, pas de panique).
 
 En reprenant l’exemple précédent, voici comment récupérer l’Iterator d’un Array :
 
@@ -92,7 +92,7 @@ La deuxième bonne nouvelle, c’est que plusieurs concepts du langage tirent av
 ```js
 var arr = ["a", "b"];
 
-// La syntaxe à laquelle on pense immédiatement est la syntaxe « for .. of » 
+// La syntaxe à laquelle on pense immédiatement est la syntaxe « for .. of »
 // qui permet de boucler sur les valeurs des Iterable.
 for (val of arr) {
     console.log(val);
@@ -206,7 +206,7 @@ aussi des méthodes qui retournent également des Iterable (Ca va, vous suivez
 toujours ?) :
 - entries() retourne un ensemble des clés/valeurs
 - keys() retourne les clés
-- values() retourne les valeurs 
+- values() retourne les valeurs
 
 ```js
 for (cleVals of arr.entries()) {
