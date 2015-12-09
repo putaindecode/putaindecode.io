@@ -1,6 +1,6 @@
 ---
 date: "2015-12-09"
-title: "ES6, ES2015 : Le protocole d'itération"
+title: "ES6, ES2015 : le protocole d'itération"
 tags:
   - javascript
   - ES6
@@ -12,7 +12,7 @@ authors:
 
 Imaginez un concept si important que si vous l’enleviez du langage, il faudrait
 en conséquence enlever le spread, le destructuring, les générateurs, le for…of
-et bien d’autres. Ce concept, introduit dans l’ES6, est enfait un protocole :
+et bien d’autres. Ce concept, introduit dans l’ES6, est en fait un protocole :
 le protocole d’itération.
 
 Le principe est de définir une convention dans le langage, qui permet de
@@ -22,9 +22,9 @@ Première bonne nouvelle, ce protocole est assez simple à comprendre et se base
 sur 2 "interfaces" (oui les guillemets c’est pour dire qu’on ne parle pas
 d’interface au sens technique, puisqu’elles n’existent pas en JS).
 
-La première interface, appelée **Iterator** permet à un objet de produire en
-séquence des valeurs. Un objet est un Iterator lorsqu’il implémente une
-function ``next()`` qui retourne un object avec 2 propriétés :
+La première interface, appelée **Iterator** permet à un objet de produire des 
+valeurs en séquence. Un objet est un Iterator lorsqu’il implémente une
+function ``next()`` qui retourne un objet avec 2 propriétés :
 
 * ``value``: la valeur courante lors de l'itération
 * ``done`` : un booléen qui indique si on a atteint la fin de l’itération ou non
@@ -135,7 +135,7 @@ Promise.race(iterableCollectionDePromises); // idem
 
 # Built-in Iterable
 
-Troisième bonne nouvelles, plusieurs objets du langage implémentent déjà ce protocole :
+Troisième bonne nouvelle, plusieurs objets du langage implémentent déjà ce protocole :
 ```js
 // évidemment les Array
 var arr = ["l", "o", "l"];
@@ -179,7 +179,7 @@ for (v of int16) {
 }
 
 // Même l'objet spécial arguments (que vous
-// ne devriez plus utilisé avec l'ES6) est un Iterable
+// ne devriez plus utiliser avec l'ES6) est un Iterable
 function test()
 {
     for (v of arguments) {
@@ -202,7 +202,7 @@ for (m of matches) {
 ```
 
 Autre point : Array, TypedArray, Map, Set sont des Iterable mais définissent
-aussi des méthodes qui retournent également des Iterable (Ca va, vous suivez
+aussi des méthodes qui retournent également des Iterable (ça va, vous suivez
 toujours ?) :
 - entries() retourne un ensemble des clés/valeurs
 - keys() retourne les clés
@@ -230,9 +230,9 @@ cela permet d’établir une convention sur laquelle des librairies externes peu
 s’appuyer.
 
 Elles peuvent le faire de 2 manières :
-* En proposant des sources de données qui implémentent le protocole (ex:
+* en proposant des sources de données qui implémentent le protocole (ex:
 liste chaînée)
-* En tant que consommateur du protocole (ex: un algorithme de tri)
+* en tant que consommateur du protocole (ex: un algorithme de tri)
 
 # Un dernier verre pour la route
 
