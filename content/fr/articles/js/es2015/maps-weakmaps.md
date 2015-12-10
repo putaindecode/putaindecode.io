@@ -63,7 +63,7 @@ const myEntries = [...myMap] // […[key, value]]
 
 On peut aussi récupérer des itérables pour clés et valeurs:
 
-```
+```javascript
 const myKeys = [...myMap.keys()]
 const myValues = [...myMap.values()]
 ```
@@ -92,7 +92,7 @@ Les WeakMaps sont comme les Maps, mais qui ne gardent pas les valeurs "oubliées
 
 Les WeakMaps ne possèdent pas de méthodes d'itération et n'acceptent pas de valeurs primitives comme clés.
 
-```
+```javascript
 const myWeakMap = new WeakMap()
 myWeakMap.set(window, 1)
 (() => {
