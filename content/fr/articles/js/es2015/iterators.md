@@ -1,5 +1,5 @@
 ---
-date: "2015-12-09"
+date: "2015-12-10"
 title: "ES6, ES2015 : le protocole d'itération"
 tags:
   - javascript
@@ -22,7 +22,7 @@ Première bonne nouvelle, ce protocole est assez simple à comprendre et se base
 sur 2 "interfaces" (oui les guillemets c’est pour dire qu’on ne parle pas
 d’interface au sens technique, puisqu’elles n’existent pas en JS).
 
-La première interface, appelée **Iterator** permet à un objet de produire des 
+La première interface, appelée **Iterator** permet à un objet de produire des
 valeurs en séquence. Un objet est un Iterator lorsqu’il implémente une
 function ``next()`` qui retourne un objet avec 2 propriétés :
 
