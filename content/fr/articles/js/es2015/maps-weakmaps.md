@@ -115,7 +115,7 @@ Un usage possible est le stockage d'informations lié à une instance de classe,
 const callbacks = new WeakMap()
 
 class SimpleEventEmitter {
-	constructor() {
+  constructor() {
     callbacks.set(this, [])
   }
   addEventListener(callback) {
