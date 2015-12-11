@@ -1,5 +1,5 @@
 ---
-date: "2015-12-09"
+date: "2015-12-10"
 title: "ES6, ES2015 : itérateurs et générateurs"
 tags:
   - JavaScript
