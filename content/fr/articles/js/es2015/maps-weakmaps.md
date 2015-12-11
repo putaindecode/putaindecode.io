@@ -1,5 +1,5 @@
 ---
-date: "2015-12-10"
+date: "2015-12-11"
 title: "ES6, ES2015 : les Maps & WeakMaps"
 tags:
   - javascript
@@ -19,7 +19,7 @@ myMap.set(window, 1)
 myMap.get(window) // 1
 ```
 
-Pour créer une map avec des valeurs, on peut passer une tableau de clés/valeurs en argument:
+Pour créer une map avec des valeurs, on peut passer un tableau de clés/valeurs en argument:
 
 ```javascript
 const myMap = new Map([
@@ -55,13 +55,14 @@ for (const [key, value] of myMap) {
 }
 ```
 
-Ainsi que convertir la map en tableau à l'aide du spread, puisqu'une map est itérables:
+Ainsi que convertir la map en tableau à l'aide du spread, puisqu'une map est itérable:
 
 ```javascript
 const myEntries = [...myMap] // […[key, value]]
+const myEntries = [...myMap.entries()] // alternativement
 ```
 
-On peut aussi récupérer des itérables pour clés et valeurs:
+On peut aussi récupérer des itérables par clés et valeurs:
 
 ```javascript
 const myKeys = [...myMap.keys()]
@@ -88,9 +89,14 @@ dedupe([1, 1, 2, 3, 4, 4]) // [1, 2, 3, 4]
 
 ## WeakMaps
 
-Les WeakMaps sont comme les Maps, mais qui ne gardent pas les valeurs "oubliées". Elle permet donc de ne pas empêcher le *garbage collecting*.
+Les WeakMaps sont comme les Maps, mais qui ne gardent pas les valeurs "oubliées". Le garbage collector ne tient donc pas compte des weak maps.
 
 Les WeakMaps ne possèdent pas de méthodes d'itération et n'acceptent pas de valeurs primitives comme clés.
+
+```javascript
+const myWeakMap = new WeakMap()
+myWeakMap.set(1, 1) // TypeError
+```
 
 ```javascript
 const myWeakMap = new WeakMap()
@@ -106,14 +112,21 @@ myWeakMap.set(window, 1)
 Un usage possible est le stockage d'informations lié à une instance de classe, permettant de "cacher" cette information de l'instance :
 
 ```javascript
-const myWeakMap = new WeakMap()
+const callbacks = new WeakMap()
 
-class MyClass {
+class SimpleEventEmitter {
 	constructor() {
-    myWeakMap.set(this, someValue)
+    callbacks.set(this, [])
   }
-  someMethod() {
-    return myWeakMap.get(this)
+  addEventListener(callback) {
+    callback.set(this, callback.get(this).concat(callback))
+  }
+  removeEventListener(callback) {
+    callback.set(this, callback.get(this)
+      .filter((func) => func !== callback))
+  }
+  triggerEvent(...args) {
+    callback.get(this).forEach((func) => func(...args))
   }
 }
 ```
