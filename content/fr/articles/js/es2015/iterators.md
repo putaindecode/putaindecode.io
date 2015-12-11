@@ -34,11 +34,11 @@ traverser et récupérer les valeurs d’un objet. Prenons l’exemple de l’It
 retourné par un Array qui contiendrait 2 valeurs ("a" et "b") :
 
 ```js
-iteratorArray.next();
+iteratorArray.next()
 // -> Object {value: "a", done: false}
-iteratorArray.next();
+iteratorArray.next()
 // -> Object {value: "b", done: false}
-iteratorArray.next();
+iteratorArray.next()
 // -> Object {value: undefined, done: true}
 ```
 
@@ -52,13 +52,13 @@ spécification) doit être définie en utilisant le symbole ``[Symbol.iterator]`
 En reprenant l’exemple précédent, voici comment récupérer l’Iterator d’un Array :
 
 ```js
-var arr = ["a", "b"];
-var iteratorArray = arr[Symbol.iterator]();
-iteratorArray.next();
+const arr = ["a", "b"]
+const iteratorArray = arr[Symbol.iterator]()
+iteratorArray.next()
 // -> Object {value: "a", done: false}
-iteratorArray.next();
+iteratorArray.next()
 // -> Object {value: "b", done: false}
-iteratorArray.next();
+iteratorArray.next()
 // -> Object {value: undefined, done: true}
 ```
 
@@ -67,13 +67,13 @@ Il n’est pas très utile en soi, en voici donc un autre qui va permettre de
 boucler sur les valeurs et les afficher :
 
 ```js
-var arr = ["a", "b"];
-var iterator = arr[Symbol.iterator]();
+const arr = ["a", "b"]
+var iterator = arr[Symbol.iterator]()
 
-var result = iterator.next();
+var result = iterator.next()
 while (!result.done) {
-  console.log(result.value);
-  result = iterator.next();
+  console.log(result.value)
+  result = iterator.next()
 }
 // 'a'
 // 'b'
@@ -87,15 +87,15 @@ retourné est utilisé pour boucler sur ses valeurs.
 
 La deuxième bonne nouvelle, c’est que plusieurs concepts du langage tirent avantage de ce protocole :
 
-* Certaines syntaxes s’attendent à recevoir des Iterable
+* Certaines syntaxes s’attendent à recevoir des Iterables
 
 ```js
-var arr = ["a", "b"];
+const arr = ["a", "b"]
 
 // La syntaxe à laquelle on pense immédiatement est la syntaxe « for .. of »
-// qui permet de boucler sur les valeurs des Iterable.
+// qui permet de boucler sur les valeurs des Iterables.
 for (val of arr) {
-    console.log(val);
+    console.log(val)
 }
 
 // Le spread qui permet d'insérer facilement des valeurs dans un Array
@@ -104,122 +104,125 @@ for (val of arr) {
 
 // yield nécessite également des Iterable
 function* gen(){
-  yield* arr;
+  yield* arr
 }
-gen().next(); // { value:"a", done:false }
+gen().next() // { value:"a", done:false }
 
 // Le destructuring avec le pattern Array
-let [x, y] = arr; // x = 'a',  y = "b"
+const [x, y] = arr // x = 'a',  y = "b"
 ```
 
-* Des API acceptent également des Iterable
+* Des API acceptent également des Iterables
+
 ```js
-var arr = ["a", "b", "b"];
+const arr = ["a", "b", "b"]
 
 // Certains constructeurs acceptent des Iterable
 
 // Set et Weakset
-var set = new Set(arr);
+const set = new Set(arr)
 set.has("b") // true
 // Map et WeakMap
-var map = new Map(arr.entries()); // Attention, le constructeur attend un ensemble [clé, valeur]
+const map = new Map(arr.entries()) // Attention, le constructeur attend un ensemble [clé, valeur]
 map.get(0) // 'a'
 
 
 // Ou encore les API suivants :
 
-Array.from(iterable); // transforme n'importe quel Iterable en Array.
-Promise.all(iterableCollectionDePromises); // n'importe quel Iterable qui contient un ensemble de Promises
-Promise.race(iterableCollectionDePromises); // idem
+Array.from(iterable) // transforme n'importe quel Iterable en Array.
+Promise.all(iterableCollectionDePromises) // n'importe quel Iterable qui contient un ensemble de Promises
+Promise.race(iterableCollectionDePromises) // idem
 ```
 
 # Built-in Iterable
 
 Troisième bonne nouvelle, plusieurs objets du langage implémentent déjà ce protocole :
+
 ```js
 // évidemment les Array
-var arr = ["l", "o", "l"];
+const arr = ["l", "o", "l"]
 for (v of arr) {
-    console.log(v);
-    // 'l'
-    // 'o'
-    // 'l'
+  console.log(v)
+  // 'l'
+  // 'o'
+  // 'l'
 }
 
 // les String
-var str = "lol";
+const str = "lol"
 for (v of str) {
-    console.log(v);
-    // 'l'
-    // 'o'
-    // 'l'
+  console.log(v)
+  // 'l'
+  // 'o'
+  // 'l'
 }
 
 // les Map et Set (mais PAS WeakMap et WeakSet)
-var map = new Map().set('l', 1).set('o', 2);
+const map = new Map().set('l', 1).set('o', 2)
 for (v of map) {
-    console.log(v);
-    // ["l", 1]
-    // ["o", 2]
+  console.log(v)
+  // ["l", 1]
+  // ["o", 2]
 }
-var set = new Set().add('l').add('o');
+const set = new Set().add('l').add('o')
 for (v of map) {
-    console.log(v);
-    // 'l'
-    // 'o'
+  console.log(v)
+  // 'l'
+  // 'o'
 }
 
 // Les TypedArray que vous utilisez tous les jours
-var int16 = new Int16Array(2);
-int16[0] = 42;
+const int16 = new Int16Array(2)
+int16[0] = 42
 for (v of int16) {
-    console.log(v);
-    // 42
-    // 0
+  console.log(v)
+  // 42
+  // 0
 }
 
 // Même l'objet spécial arguments (que vous
 // ne devriez plus utiliser avec l'ES6) est un Iterable
-function test()
-{
-    for (v of arguments) {
-        console.log(v);
-        // 'l'
-        // 'o'
-        // 'l'
-    }
+function test() {
+  for (v of arguments) {
+    console.log(v)
+    // 'l'
+    // 'o'
+    // 'l'
+  }
 }
-test('l', 'o', 'l');
+test('l', 'o', 'l')
 
 // Les NodeList retournés par l'API DOM également !
-var matches = document.querySelectorAll('div');
+const matches = document.querySelectorAll('div')
 for (m of matches) {
-    console.log(m);
-    // <div id="topSection">
-    // <div id="brandLogo">
-    // ...
+  console.log(m)
+  // <div id="topSection">
+  // <div id="brandLogo">
+  // ...
 }
 ```
 
 Autre point : Array, TypedArray, Map, Set sont des Iterable mais définissent
 aussi des méthodes qui retournent également des Iterable (ça va, vous suivez
 toujours ?) :
+
 - entries() retourne un ensemble des clés/valeurs
 - keys() retourne les clés
 - values() retourne les valeurs
 
 ```js
 for (cleVals of arr.entries()) {
-    console.log(cleVals);
-    // [0, "l"]
-    // [1, "o"]
-    // [2, "l"]
+  console.log(cleVals)
+  // [0, "l"]
+  // [1, "o"]
+  // [2, "l"]
 }
 ```
 
-Détail important, Object n'est pas Iterable mais il n'est pas impossible de
+Détail important, ``Object`` n'est pas Iterable mais il n'est pas impossible de
 voir apparaitre dans l'ES7 les méthodes entries(), keys() et values() sur
-Object. (cf : [Proposition spec](https://github.com/tc39/proposal-object-values-entries))
+Object (cf.
+[la proposition spec](https://github.com/tc39/proposal-object-values-entries)).
 
 # Conclusion
 
@@ -230,6 +233,7 @@ cela permet d’établir une convention sur laquelle des librairies externes peu
 s’appuyer.
 
 Elles peuvent le faire de 2 manières :
+
 * en proposant des sources de données qui implémentent le protocole (ex:
 liste chaînée)
 * en tant que consommateur du protocole (ex: un algorithme de tri)
