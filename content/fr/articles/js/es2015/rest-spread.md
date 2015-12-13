@@ -111,3 +111,12 @@ const [first, ...rest] = words // même résulat
 ```js
 [...document.querySelectorAll('div')] // [<div>, <div>, <div>]
 ```
+
+## En résumé
+
+Comme vous avez pu le constater par vous même, les cas d'utilisation des
+paramètres rest et de l'opérateur spread sont légion.
+
+[Gérés](http://kangax.github.io/compat-table/es6/#spread_(...)_operator)
+correctement par Babel et Traceur, ils vous permettront de rendre votre code
+plus concis en évitant bien souvent l'écriture de boucles inutiles.
