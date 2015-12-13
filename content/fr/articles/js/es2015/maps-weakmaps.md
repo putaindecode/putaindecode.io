@@ -119,14 +119,14 @@ class SimpleEventEmitter {
     callbacks.set(this, [])
   }
   addEventListener(callback) {
-    callback.set(this, callback.get(this).concat(callback))
+    callbacks.set(this, callbacks.get(this).concat(callback))
   }
   removeEventListener(callback) {
-    callback.set(this, callback.get(this)
+    callbacks.set(this, callbacks.get(this)
       .filter((func) => func !== callback))
   }
   triggerEvent(...args) {
-    callback.get(this).forEach((func) => func(...args))
+    callbacks.get(this).forEach((func) => func(...args))
   }
 }
 ```
