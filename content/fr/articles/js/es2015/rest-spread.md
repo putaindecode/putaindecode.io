@@ -1,5 +1,5 @@
 ---
-date: "2015-12-16"
+date: "2015-12-12"
 title: "ES6, ES2015 : paramètres rest et opérateur spread"
 tags:
   - javascript
