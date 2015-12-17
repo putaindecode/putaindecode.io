@@ -9,8 +9,6 @@ authors:
   - naholyr
 ---
 
-# Itérateurs et générateurs
-
 Un gros morceau aujourd'hui : les itérateurs et les fonctions qui les génèrent,
 appelées "générateurs".
 ES6/2015 apporte énormément de "sucres syntaxiques", même s'ils sont
@@ -133,7 +131,7 @@ iterator.next() // { value: undefined, done: true }
 n'importe quel type de donnée : une fonction, un objet, un autre itérateur… Les
 possibilités sont infinies. On va en explorer une rapidement avec les promesses.
 
-### _Use case_ : coroutines
+### _Use case_ : co-routines
 
 Le code du générateur lui-même ne peut être réellement asynchrone : les appels à
 ``yield`` se suivent de manière synchrone. Le code contrôleur par contre, est
