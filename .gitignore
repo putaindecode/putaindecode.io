@@ -10,3 +10,6 @@ dist
 scripts/statinamic-static.js
 # statinamic static useless files
 scripts/_
+
+# WebStorm config
+.idea/
