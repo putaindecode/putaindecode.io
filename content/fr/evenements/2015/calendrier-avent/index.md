@@ -130,9 +130,9 @@ forcément le matin), mais le résultat devrait être sympathique !
   <div class="r-Grid-cell r-minM--1of4">
     <a
       class="putainde-Day"
-      href=""
+      href="/fr/articles/js/es2015/array-methods-addition/"
     >
-      13. ?
+      13. Les nouvelles méthodes d'Array
     </a>
   </div>
 

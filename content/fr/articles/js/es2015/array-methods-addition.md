@@ -9,8 +9,6 @@ authors:
   - lionelB
 ---
 
-# Les nouvelles méthodes d'Array
-
 ~~ES6~~  ES2015 enrichit les objets de la bibiliothèque standard de nouvelles fonctionnalités.
 Voici les nouveautés que l'on va trouver dans `Array`.
 
