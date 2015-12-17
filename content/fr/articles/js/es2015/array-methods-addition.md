@@ -30,7 +30,7 @@ const arr = Array.of("hello", "world")
 console.log(arr.join(" ")) // "hello world"
 ```
 
-## Array.proptotype.keys() & Array.prototype.entries()
+## Array.prototype.keys() & Array.prototype.entries()
 
 On retrouve aussi ces méthodes sur d'autres itérables comme Map ou Set.
 `Array.prototype.keys()` va renvoyer un nouveau tableau dont les valeurs seront les clefs du tableau passé en paramêtre. 
@@ -60,7 +60,7 @@ const notfound = arr.find(item => item.id === 3)
 console.log(found, notfound) // {id:2, name: "worl"}, undefined
 ```
 
-À noter qu'il existe aussi `Array.prototype.findIndex()` qui renverra non pas l'objet, mais l'index de l'objet qui validera la fonction de prédicat
+À noter qu'il existe aussi `Array.prototype.findIndex()` qui renverra non pas l'objet, mais l'index de l'objet qui validera la fonction de prédicat.
 
 ## Array.prototype.fill()
 
