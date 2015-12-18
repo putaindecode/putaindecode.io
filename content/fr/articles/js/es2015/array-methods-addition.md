@@ -33,14 +33,14 @@ console.log(arr.join(" ")) // "hello world"
 ## Array.prototype.keys() & Array.prototype.entries()
 
 On retrouve aussi ces méthodes sur d'autres itérables comme Map ou Set.
-`Array.prototype.keys()` va renvoyer un nouveau tableau dont les valeurs seront les clefs du tableau passé en paramêtre. 
+`Array.prototype.keys()` va renvoyer un nouveau tableau dont les valeurs seront les clefs du tableau passé en paramètre :
 
 ```javascript
 const arr =  [...Array(3).keys()]
 console.log(arr) // [0,1,2]
 ```
 
-`Array.prototype.entries()` quant à lui va renvoyer un tableau composé des paires clé,valeur
+`Array.prototype.entries()` quant à lui va renvoyer un tableau composé des paires clé/valeur :
 
 ```javascript
 const arr = ["hello", "world"]
@@ -49,8 +49,8 @@ console.log(arr.entries()) // [[0, "hello"], [1, "world"]]
 
 ## Array.prototype.find()
 
-Cette méthode va permettre de renvoyer une valeur contenue dans le tableau si celle ci vérifie 
-la condition définie par la fonction de prédicat passée en paramêtre. On retrouve le même principe qu'avec `filter`, `some` et `every`. Si aucune valeur ne 
+Cette méthode va permettre de renvoyer une valeur contenue dans le tableau si celle-ci vérifie 
+la condition définie par la fonction de prédicat passée en paramètre. On retrouve le même principe qu'avec `filter`, `some` et `every`. Si aucune valeur ne 
 valide la fonction de prédicat, alors la méthode renverra `undefined`.
 
 ```javascript
@@ -64,7 +64,7 @@ console.log(found, notfound) // {id:2, name: "worl"}, undefined
 
 ## Array.prototype.fill()
 
-Cette méthode va permettre de remplir un tableau avec une valeur passée en paramêtre. Il est toutefois possible de définir un index de début et un index de fin (comme avec slice par exemple), si l'on souhaite remplacer qu'une partie du tableau.
+Cette méthode va permettre de remplir un tableau avec une valeur passée en paramètre. Il est toutefois possible de définir un index de début et un index de fin (comme avec slice par exemple) si l'on souhaite remplacer qu'une partie du tableau.
 
 ```javascript
 const arr = Array(3).fill(1)
@@ -73,14 +73,14 @@ console.log(arr) // [1,1,1]
 
 ## Array.prototype.copyWithin()
 
-Cette méthode va permettre de renvoyer un nouveau tableau en remplaçant une partie du tableau par une séquence de ce dernier. Pour cela on va indiquer à partir de quel index l'on souhaite démarrer la copie de la sequence ainsi que l'index de début et de fin de la séquence que l'on souhaite voir répéter.
+Cette méthode va permettre de renvoyer un nouveau tableau en remplaçant une partie du tableau par une séquence de ce dernier. Pour cela on va indiquer à partir de quel index on souhaite démarrer la copie de la sequence, ainsi que l'index de début et de fin de la séquence que l'on souhaite voir répéter.
 
 ```javascript
 const arr = ["hello","alice", "my", "name", "is" "bob"]
 console.log(arr.copyWithin(1, 5)]) //  "hello","bob", "my", "name", "is" "bob"]
 ```
 
-Certaines méthodes paraissent pas forcément super utiles alors n'hésitez à utiliser les commentaires pour partager des exemples d'utilisation plus intéressants :p
+Certaines méthodes ne paraissent pas forcément super utiles alors n'hésitez à utiliser les commentaires pour partager des exemples d'utilisation plus intéressants :p
 
 
 
