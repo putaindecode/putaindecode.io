@@ -10,7 +10,7 @@ authors:
   - freezystem
 ---
 
-# Introduction
+## Introduction
 
 With the arrival of new iterable objects, ECMAScript had to create new ways to read through them.
 In the unique concern of maintaining the backward compatibility, ES6 had to let his `for..in` loop untouched.
@@ -21,7 +21,7 @@ Solution is quite simple: "Welcome to the `of` keyword!"
 
 But before I tell you more, and to fully understand the usefulness of this new keyword, let review the existing.
 
-# The good ol' `for..in`
+## The good ol' `for..in`
 
 All self-respecting _JavaScript enthousiast_ already knows the famous `for..in` loop 
 whose first value is to iterate over the different keys of an object or an array.
@@ -49,7 +49,7 @@ The `for..in` loop, despite its ease of use hide some pitfalls:
     ```
  - Iteration order over a given object properties may vary across depending on the code executing environment.
 
-# The alternative `.forEach()` method
+## The alternative `.forEach()` method
 
 The [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) 
 loop allow a more secure iteration, but bring other downsides as:
@@ -57,7 +57,7 @@ loop allow a more secure iteration, but bring other downsides as:
  - Impossibility to halt the loop with the traditional `break;` and `return;` statements.
  - Array only dedicated method.
 
-# `for..of` to the rescue
+## `for..of` to the rescue
 
 ECMA consortium has so decided to proceed with establishment of a new enhanced version of the `for..in` loop.
 Thus was born the `for..of` loop which, from now on, will coexist with the previous one allowing to maintain
@@ -84,7 +84,9 @@ for ( let arrValue of arr ) {
 
 The `for..of` loop can also iterate over more complex types like:
 
- - _Strings_, evaluating each character as a Unicode entity.
+### _Strings_
+
+In this case, each character is evaluated as a Unicode entity.
 
 ```js
 let str = 'sm00th';
@@ -94,7 +96,7 @@ for ( let chr of str ){
 }
 ```
 
- - _NodeList_
+### _NodeList_
 
 ```js
 // Note: This will only work in platforms that have
@@ -110,7 +112,7 @@ for ( let paragraph of articleParagraphs ) {
 }
 ```
  
- - _Maps_
+### _Maps_
 
 ```js
 let m = new Map([['foo', 'hello'], ['bar', 'world']]);
@@ -120,7 +122,7 @@ for ( let [name, value] of m ) {
 }
 ```
 
- - _Sets_
+### _Sets_
  
 ```js
 let s = new Set(['foo', true, 42]);
@@ -130,7 +132,7 @@ for ( let value of s ) {
 }
 ```
  
- - _Generators_
+### _Generators_
 
 ```js
 function *foo() {
@@ -159,7 +161,7 @@ for ( let key of Object.keys(obj) ) {
 }
 ```
 
-# In a nutshell
+## In a nutshell
 
 `for..of` comes to address `for..in` loop gaps and allow
 a simplified iteration over _iterable objects_ such as:
@@ -175,7 +177,7 @@ a simplified iteration over _iterable objects_ such as:
 Furthermore, `for..of` as of now resolve pitfalls such as unpredictable iteration order or 
 automated coercion of index to string.
 
-# To go further
+## To go further
 
 `for..of` loop is another added arrow to ES6 bow that
 allows to run through, in a native way, the brand new _iterable objects_ of the language.

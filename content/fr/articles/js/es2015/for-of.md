@@ -10,7 +10,7 @@ authors:
   - freezystem
 ---
 
-# Introduction
+## Introduction
 
 Avec l'arrivée de nouveaux objets itérables, ECMAScript avait la nécessité de s'enrichir de 
 nouvelles façons de parcourir ces derniers. Dans l'unique soucis de maintenir la rétro-compatibilité
@@ -22,7 +22,7 @@ La solution est simple : "Bienvenue au mot clé `of` !"
 
 Mais avant d'en dire plus, et pour comprendre l'utilité de ce nouveau mot clé, revoyons un peu l'existant.
 
-# Le bon vieux `for..in`
+## Le bon vieux `for..in`
 
 Tout _JavaScript enthousiast_ qui se respecte connaissait déjà la fameuse boucle `for..in` 
 dont l'utilité première est d'itérer sur les différentes clés d'un objet ou d'un tableau.
@@ -51,7 +51,7 @@ La boucle `for..in`, malgré sont apparente simplicité d'utilisation cache cert
     ```
  - L'ordre d'itération sur l'ensemble des clés d'un object peut varier selon l'environnement d'execution du code.
 
-# La methode alternative `.forEach()`
+## La methode alternative `.forEach()`
 
 La boucle [`Array.prototype.forEach()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/forEach) 
 permet une itération plus sécurisé, mais présente certains autres inconvénients tels que :
@@ -59,7 +59,7 @@ permet une itération plus sécurisé, mais présente certains autres inconvéni
  - Impossibilité d'interrompre la boucle avec les instructions traditionnelles `break;` et `return;`
  - Méthode réservée aux tableaux.
 
-# `for..of` à la rescousse
+## `for..of` à la rescousse
 
 Le consortium ECMA a donc décidé de procéder à la création d'une nouvelle version améliorée 
 de la boucle `for..in`. Ainsi nait la boucle `for..of` qui coexistera désormais avec la précédente 
@@ -86,7 +86,9 @@ for ( let arrValue of arr ) {
 
 La boucle `for..of` peut aussi itérer sur des types plus complexes comme :
 
- - les _Strings_, traitant chaque caractère comme une entité Unicode.
+### les _Strings_
+
+Dans ce cas, chaque caractère est traité comme une entité Unicode.
 
 ```js
 let str = 'sm00th';
@@ -96,7 +98,7 @@ for ( let chr of str ){
 }
 ```
 
- - les _NodeList_
+### les _NodeList_
 
 ```js
 // Note: Cela ne fonctionnera que sur les environnements 
@@ -112,7 +114,7 @@ for ( let paragraph of articleParagraphs ) {
 }
 ```
  
- - les _Maps_
+### les _Maps_
 
 ```js
 let m = new Map([['foo', 'hello'], ['bar', 'world']]);
@@ -122,7 +124,7 @@ for ( let [name, value] of m ) {
 }
 ```
 
- - les _Sets_
+### les _Sets_
  
 ```js
 let s = new Set(['foo', true, 42]);
@@ -132,7 +134,7 @@ for ( let value of s ) {
 }
 ```
  
- - les _Generators_
+### les _Generators_
 
 ```js
 function *foo() {
@@ -161,7 +163,7 @@ for ( let key of Object.keys(obj) ) {
 }
 ```
 
-# En résumé
+## En résumé
 
 `for..of` vient compléter les manques de `for..in` et permet
 une itération simplifiée sur les _objets itérables_ tels que :
@@ -177,7 +179,7 @@ une itération simplifiée sur les _objets itérables_ tels que :
 De plus, `for..of` résout à présent les pièges tels que l'ordre d'itération non constant ou la coercion
 automatique des index en chaine de caractères.
 
-# Pour aller plus loin
+## Pour aller plus loin
 
 La boucle `for..of` est donc une corde de plus à l'arc de l'ES6 qui 
 permet de parcourir, de manière native, les tout nouveaux _objets itérables_ du langage.
