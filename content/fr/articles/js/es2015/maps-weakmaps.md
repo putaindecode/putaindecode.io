@@ -11,7 +11,7 @@ authors:
 
 ## Maps
 
-Comme les objets, les maps et weak maps introduites avec ES6 sont des dictionnaires. La différence avec un objet, c'est que n'importe quelle valeur peut-être utilisée comme clé.
+Comme les objets, les maps et weak maps introduites avec ES6 sont des dictionnaires. La différence avec un objet, c'est que n'importe quelle valeur peut être utilisée comme clé.
 
 ```javascript
 const myMap = new Map()
@@ -19,7 +19,7 @@ myMap.set(window, 1)
 myMap.get(window) // 1
 ```
 
-Pour créer une map avec des valeurs, on peut passer un tableau de clés/valeurs en argument:
+Pour créer une map avec des valeurs, on peut passer un tableau de clés/valeurs en argument :
 
 ```javascript
 const myMap = new Map([
@@ -28,7 +28,7 @@ const myMap = new Map([
 ])
 ```
 
-Pour tester si une clé est présente, on peut utiliser la méthode `has`
+Pour tester si une clé est présente, on peut utiliser la méthode `has` :
 
 ```javascript
 map.has(1) // false
@@ -47,7 +47,7 @@ myMap.forEach((value, key) => {
 })
 ```
 
-On peut aussi itérer à l'aide du `for … of`
+On peut aussi itérer à l'aide du `for … of` :
 
 ```javascript
 for (const [key, value] of myMap) {
@@ -55,28 +55,28 @@ for (const [key, value] of myMap) {
 }
 ```
 
-Ainsi que convertir la map en tableau à l'aide du spread, puisqu'une map est itérable:
+Ainsi que convertir la map en tableau à l'aide du spread, puisqu'une map est itérable :
 
 ```javascript
 const myEntries = [...myMap] // […[key, value]]
 const myEntries = [...myMap.entries()] // alternativement
 ```
 
-On peut aussi récupérer des itérables par clés et valeurs:
+On peut aussi récupérer des itérables par clés et valeurs :
 
 ```javascript
 const myKeys = [...myMap.keys()]
 const myValues = [...myMap.values()]
 ```
 
-Particularité, la valeur `NaN` qui en JS n'est pas égale à elle même, est bien gérée :
+Particularité, la valeur `NaN`, qui en JS n'est pas égale à elle même, est bien gérée :
 
 ```javascript
 myMap.set(NaN, 1)
 myMap.get(NaN) // 1
 ```
 
-Une utilisation possible des Maps est la function `dedupe` pour éliminer les doublons d'un array:
+Une utilisation possible des Maps est la fonction `dedupe` pour éliminer les doublons d'un array :
 
 
 ```javascript
@@ -89,7 +89,7 @@ dedupe([1, 1, 2, 3, 4, 4]) // [1, 2, 3, 4]
 
 ## WeakMaps
 
-Les WeakMaps sont comme les Maps, mais qui ne gardent pas les valeurs "oubliées". Le garbage collector ne tient donc pas compte des weak maps.
+Les WeakMaps sont comme les Maps mais qui ne gardent pas les valeurs "oubliées". Le garbage collector ne tient donc pas compte des weak maps.
 
 Les WeakMaps ne possèdent pas de méthodes d'itération et n'acceptent pas de valeurs primitives comme clés.
 
