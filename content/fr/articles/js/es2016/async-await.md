@@ -8,8 +8,8 @@ authors:
   - naholyr
 ---
 
-Aujourd'hui une fonctionnalité taggée peut-être abusivement "ES6" puisqu'elle ne
-fait pas partie des propositions acceptées cette année.
+Aujourd'hui, une fonctionnalité taggée peut-être abusivement "ES6" puisqu'elle ne
+fait pas partie des propositions acceptées cette année : les fonctions asynchrones (async/await).
 La [spécification](https://tc39.github.io/ecmascript-asyncawait/) est encore au
 stade 3 (candidate) à l'heure de cet article. Mais il ne fait plus aucun doute
 qu'elle (ou une variante) fera partie de la spécification ES2016.
@@ -17,22 +17,22 @@ qu'elle (ou une variante) fera partie de la spécification ES2016.
 ## Fonctions asynchrones
 
 Pour les traitements asynchrones, vous connaissez déjà
-[les promesses](/fr/articles/js/es2015/promises/), qui ont
+[les promesses](/fr/articles/js/es2015/promises/) qui ont
 évidemment remplacé les callbacks dans votre code. Si vous n'avez pas déjà fait
 la bascule vers les promesses (ne serait-ce que pour la propagation d'erreur),
 [les générateurs](/fr/articles/js/es2015/generators/) ont
 du finir de vous convaincre grâce aux [coroutines](/fr/articles/js/es2015/generators/#use-case-co-routines).
 
 Nous allons voir aujourd'hui une nouvelle manière de traiter les fonctions
-asynchrones, mais ne jetez pas vos promesses, tout tourne encore autour d'elles.
+asynchrones. Mais ne jetez pas vos promesses, tout tourne encore autour d'elles.
 
 ## Exemple de traitement asynchrone : Promise
 
-Partons du programme suivant, dont l'API est basé sur les promesses, exécuté le
-6 décembre dernier :
+Partons du programme suivant exécuté le
+6 décembre dernier dont l'API est basée sur les promesses :
 
 * Il récupère tous les utilisateurs prénommés Nicolas
-* Il envoie  un mail à chacun pour souhaiter bonne fête
+* Il envoie un mail à chacun pour souhaiter bonne fête
 
 ```js
 function sendEmails (query) {
@@ -75,7 +75,7 @@ async function myFunction () {
 }
 ```
 
-Évidemment, l'expression a alors pour valeur la valeur de résolution de la
+Évidemment, l'expression a alors pour valeur celle de résolution de la
 promesse, et en cas d'erreur l'expression va lever (``throw``) une erreur :
 
 ```js
@@ -93,7 +93,7 @@ async function myFunction () {
 
 Concrètement, si vous vous souvenez de l'article sur les générateurs et de la
 partie sur les coroutines, remplacez ``async function`` par ``function *`` et
-``await`` par ``yield``, et vous avez compris le principe ;)
+``await`` par ``yield``, et vous avez compris le principe. ;)
 
 ## Notre premier exemple, avec les fonctions asynchrones
 
@@ -173,7 +173,7 @@ const result = sum(vars)
 ## Et aujourd'hui ?
 
 On peut utiliser Babel pour compiler son code utilisant ``async/await`` en un
-code basé sur les générateurs : Il vous suffira d'ajouter les plugins Babel
+code basé sur les générateurs : il vous suffira d'ajouter les plugins Babel
 ``syntax-async-functions`` et ``transform-async-to-generator`` (attention à
 inclure ``babel-polyfill`` en fichier d'entrée).
 
