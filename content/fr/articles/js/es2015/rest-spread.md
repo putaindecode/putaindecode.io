@@ -15,9 +15,9 @@ itérable.
 
 ## Les paramètres rest
 
-Avez vous déjà eu l'occasion d'utiliser l'horrible variable magique `arguments`?
+Avez-vous déjà eu l'occasion d'utiliser l'horrible variable magique `arguments` ?
 Disponible au sein de chaque fonction, elle permet d'en récupérer, comme son
-nom l'indique, les arguments. S'il l'objet récupéré est similaire à un `Array`,
+nom l'indique, les arguments. Si l'objet récupéré est similaire à un `Array`,
 il ne dispose d'aucune des propriétés ou des méthodes de celui-ci, à
 l'exception de `length`.
 
@@ -42,7 +42,7 @@ function myFunction(separator, ...words) {
 myFunction("-", "foo", "bar") // "foo-bar"
 ```
 
-Il vous sera par contre impossible de lui attribuer une [valeur par défaut](/fr/articles/js/es2015/defaults/).
+Il vous sera en revanche impossible de lui attribuer une [valeur par défaut](/fr/articles/js/es2015/defaults/).
 
 ## L'opérateur spread
 
@@ -67,7 +67,7 @@ new Date(1991, ...myArray, 12) // object Date - équivaut à: new Date(1991, 8, 
 ```
 
 Les possibilités offertes par cette nouveauté sont très nombreuses. Voici
-quelques usages un peu plus avancés pour stimuler votre inspiration:
+quelques usages un peu plus avancés pour stimuler votre inspiration :
 
 #### Éviter l'utilisation de .apply()
 
@@ -91,7 +91,7 @@ const stronglyTyped = ["scala", "haskell"]
 ["go", "rust", ...stronglyTyped] // ["go", "rust", "scala", "haskell"]
 ```
 
-#### Destructurer dans un tableau
+#### Déstructurer dans un tableau
 
 Si vous n'avez pas encore connaissance des possibilités offertes par le
 destructuring, je vous invite à lire ce [précédent article](/fr/articles/js/es2015/destructuring/).
@@ -114,7 +114,7 @@ const [first, ...rest] = words // même résulat
 
 ## En résumé
 
-Comme vous avez pu le constater par vous même, les cas d'utilisation des
+Comme vous avez pu le constater par vous-même, les cas d'utilisation des
 paramètres rest et de l'opérateur spread sont légion.
 
 [Gérés](http://kangax.github.io/compat-table/es6/#spread_(...)_operator)
