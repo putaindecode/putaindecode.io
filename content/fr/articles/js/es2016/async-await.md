@@ -1,26 +1,27 @@
 ---
-date: "2015-12-18"
-title: "ES6, ES2015 : fonctions asynchrones"
+date: "2015-12-14"
+title: "ES2016 (?): fonctions asynchrones (async/await)"
 tags:
   - JavaScript
-  - ES6
-  - ES2015
+  - ES2016
 authors:
   - naholyr
 ---
 
 Aujourd'hui une fonctionnalité taggée peut-être abusivement "ES6" puisqu'elle ne
-fait pas partie des propositions acceptées cette année. La [spécification](https://tc39.github.io/ecmascript-asyncawait/) est encore au
+fait pas partie des propositions acceptées cette année.
+La [spécification](https://tc39.github.io/ecmascript-asyncawait/) est encore au
 stade 3 (candidate) à l'heure de cet article. Mais il ne fait plus aucun doute
 qu'elle (ou une variante) fera partie de la spécification ES2016.
 
-# Fonctions asynchrones
+## Fonctions asynchrones
 
-Pour les traitements asynchrones, vous connaissez déjà [les promesses](http://putaindecode.io/fr/articles/js/es2015/promises/), qui ont
+Pour les traitements asynchrones, vous connaissez déjà
+[les promesses](/fr/articles/js/es2015/promises/), qui ont
 évidemment remplacé les callbacks dans votre code. Si vous n'avez pas déjà fait
 la bascule vers les promesses (ne serait-ce que pour la propagation d'erreur),
-[les générateurs](http://putaindecode.io/fr/articles/js/es2015/generators/) ont
-du finir de vous convaincre grâce aux [coroutines](http://putaindecode.io/fr/articles/js/es2015/generators/#use-case-co-routines).
+[les générateurs](/fr/articles/js/es2015/generators/) ont
+du finir de vous convaincre grâce aux [coroutines](/fr/articles/js/es2015/generators/#use-case-co-routines).
 
 Nous allons voir aujourd'hui une nouvelle manière de traiter les fonctions
 asynchrones, mais ne jetez pas vos promesses, tout tourne encore autour d'elles.
