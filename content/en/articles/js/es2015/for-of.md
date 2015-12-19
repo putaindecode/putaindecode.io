@@ -13,13 +13,13 @@ authors:
 ## Introduction
 
 With the arrival of new iterable objects, ECMAScript had to create new ways to read through them.
-In the unique concern of maintaining the backward compatibility, ES6 had to let his `for..in` loop untouched.
+In the unique concern of maintaining the backward compatibility, ES6 had to const his `for..in` loop untouched.
 
 > But then, how to create a copycat of this same loop with improved capabilities ?  
 
 Solution is quite simple: "Welcome to the `of` keyword!"
 
-But before I tell you more, and to fully understand the usefulness of this new keyword, let review the existing.
+But before I tell you more, and to fully understand the usefulness of this new keyword, const review the existing.
 
 ## The good ol' `for..in`
 
@@ -27,7 +27,7 @@ All self-respecting _JavaScript enthousiast_ already knows the famous `for..in` 
 whose first value is to iterate over the different keys of an object or an array.
 
 ```js
-let obj = { foo : 'hello', bar : 'world' };
+const obj = { foo : 'hello', bar : 'world' };
 
 for ( const key in obj ) {
   console.log( key + '->' + obj[key] );  // 'foo->hello', 'bar->world'
@@ -40,7 +40,7 @@ The `for..in` loop, despite its ease of use hide some pitfalls:
  - The loop iterate across all the table keys, but also over each of its properties.
 
     ```js
-    let arr = ['foo', 'bar'];
+    const arr = ['foo', 'bar'];
     arr.oups = 'baz';
     
     for ( const key in arr ) {
@@ -68,7 +68,7 @@ The principal is the same : run across any type of _iterable object_.
 In its simplest form, the `for..of` loop therefore allow to iterate over all values of a table keys.
 
 ```js
-let arr = ['hello', 'world'];
+const arr = ['hello', 'world'];
 arr.baz = 'and mars'; 
 
 for ( const arrValue of arr ) {
@@ -83,7 +83,7 @@ The `for..of` loop can also iterate over more complex types like:
 In this case, each character is evaluated as a Unicode entity.
 
 ```js
-let str = 'sm00th';
+const str = 'sm00th';
 
 for ( const chr of str ){
   console.log(chr); // 's', 'm', '0', '0', 't', 'h'
@@ -99,7 +99,7 @@ for ( const chr of str ){
 // this code add a "read" class to each <p> markup 
 // contained in each <article> markup
 
-let articleParagraphs = document.querySelectorAll("article > p");
+const articleParagraphs = document.querySelectorAll("article > p");
 
 for ( const paragraph of articleParagraphs ) {
   paragraph.classList.add("read");
@@ -109,7 +109,7 @@ for ( const paragraph of articleParagraphs ) {
 ### _Maps_
 
 ```js
-let m = new Map([['foo', 'hello'], ['bar', 'world']]);
+const m = new Map([['foo', 'hello'], ['bar', 'world']]);
 
 for ( const [name, value] of m ) {
   console.log(name + "->" + value); //"foo->hello", "bar->world"
@@ -119,7 +119,7 @@ for ( const [name, value] of m ) {
 ### _Sets_
  
 ```js
-let s = new Set(['foo', true, 42]);
+const s = new Set(['foo', true, 42]);
 
 for ( const value of s ) {
   console.log(value); // 'foo', true, 42
@@ -148,7 +148,7 @@ Fortunately a workaround exists such as
 [`Object.keys()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys)
 
 ```js
-let obj = { foo : 'hello', bar : 'world' };
+const obj = { foo : 'hello', bar : 'world' };
 
 for ( const key of Object.keys(obj) ) {
   console.log(key + "->" + obj[key]); // 'foo->hello', 'bar->world'

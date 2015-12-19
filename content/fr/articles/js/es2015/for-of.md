@@ -28,7 +28,7 @@ Tout _JavaScript enthousiast_ qui se respecte connaissait déjà la fameuse bouc
 dont l'utilité première est d'itérer sur les différentes clés d'un objet ou d'un tableau.
 
 ```js
-let obj = { foo : 'hello', bar : 'world' };
+const obj = { foo : 'hello', bar : 'world' };
 
 for ( const key in obj ) {
   console.log( key + '->' + obj[key] );  // 'foo->hello', 'bar->world'
@@ -42,7 +42,7 @@ La boucle `for..in`, malgré sont apparente simplicité d'utilisation cache cert
  - La boucle itère sur l'ensemble des clés du tableau, mais aussi sur chacune de ses propriétés.
 
     ```js
-    let arr = ['foo', 'bar'];
+    const arr = ['foo', 'bar'];
     arr.oups = 'baz';
     
     for ( const key in arr ) {
@@ -70,7 +70,7 @@ Le principe est le même : parcourir n'importe quel type _d'objet itérable_.
 Dans sa forme la plus simple, la boucle `for..of` permet donc d'itérer sur l'ensemble des valeurs des clés d'un tableau.
 
 ```js
-let arr = ['hello', 'world'];
+const arr = ['hello', 'world'];
 arr.baz = 'and mars'; 
 
 for ( const arrValue of arr ) {
@@ -85,7 +85,7 @@ La boucle `for..of` peut aussi itérer sur des types plus complexes comme :
 Dans ce cas, chaque caractère est traité comme une entité Unicode.
 
 ```js
-let str = 'sm00th';
+const str = 'sm00th';
 
 for ( const chr of str ){
   console.log(chr); // 's', 'm', '0', '0', 't', 'h'
@@ -101,7 +101,7 @@ for ( const chr of str ){
 // ce code ajoute une class "read" à toutes les balises <p> 
 // contenues dans la(les) balises <article>
 
-let articleParagraphs = document.querySelectorAll("article > p");
+const articleParagraphs = document.querySelectorAll("article > p");
 
 for ( const paragraph of articleParagraphs ) {
   paragraph.classList.add("read");
@@ -111,7 +111,7 @@ for ( const paragraph of articleParagraphs ) {
 ### les _Maps_
 
 ```js
-let m = new Map([['foo', 'hello'], ['bar', 'world']]);
+const m = new Map([['foo', 'hello'], ['bar', 'world']]);
 
 for ( const [name, value] of m ) {
   console.log(name + "->" + value); //"foo->hello", "bar->world"
@@ -121,7 +121,7 @@ for ( const [name, value] of m ) {
 ### les _Sets_
  
 ```js
-let s = new Set(['foo', true, 42]);
+const s = new Set(['foo', true, 42]);
 
 for ( const value of s ) {
   console.log(value); // 'foo', true, 42
@@ -150,7 +150,7 @@ cette nouvelle boucle. Heureusement il existe une solution de contournement
 par l'utilisation de [`Object.keys()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys)
 
 ```js
-let obj = { foo : 'hello', bar : 'world' };
+const obj = { foo : 'hello', bar : 'world' };
 
 for ( const key of Object.keys(obj) ) {
   console.log(key + "->" + obj[key]); // 'foo->hello', 'bar->world'
