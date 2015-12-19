@@ -29,7 +29,7 @@ whose first value is to iterate over the different keys of an object or an array
 ```js
 let obj = { foo : 'hello', bar : 'world' };
 
-for ( let key in obj ) {
+for ( const key in obj ) {
   console.log( key + '->' + obj[key] );  // 'foo->hello', 'bar->world'
 }
 ```
@@ -43,7 +43,7 @@ The `for..in` loop, despite its ease of use hide some pitfalls:
     let arr = ['foo', 'bar'];
     arr.oups = 'baz';
     
-    for ( let key in arr ) {
+    for ( const key in arr ) {
       console.log( key + '->' + arr[key] ); // '0->foo', '1->bar', 'oups->baz'
     }
     ```
@@ -68,16 +68,10 @@ The principal is the same : run across any type of _iterable object_.
 In its simplest form, the `for..of` loop therefore allow to iterate over all values of a table keys.
 
 ```js
-let obj = { foo : 'hello', bar : 'world' };
-
-for ( let objValue of obj ) {
-  console.log( objValue ); // 'hello', 'world'
-}
-
 let arr = ['hello', 'world'];
 arr.baz = 'and mars'; 
 
-for ( let arrValue of arr ) {
+for ( const arrValue of arr ) {
   console.log( arrValue ); // 'hello', 'world'
 }
 ```
@@ -91,7 +85,7 @@ In this case, each character is evaluated as a Unicode entity.
 ```js
 let str = 'sm00th';
 
-for ( let chr of str ){
+for ( const chr of str ){
   console.log(chr); // 's', 'm', '0', '0', 't', 'h'
 }
 ```
@@ -107,7 +101,7 @@ for ( let chr of str ){
 
 let articleParagraphs = document.querySelectorAll("article > p");
 
-for ( let paragraph of articleParagraphs ) {
+for ( const paragraph of articleParagraphs ) {
   paragraph.classList.add("read");
 }
 ```
@@ -117,7 +111,7 @@ for ( let paragraph of articleParagraphs ) {
 ```js
 let m = new Map([['foo', 'hello'], ['bar', 'world']]);
 
-for ( let [name, value] of m ) {
+for ( const [name, value] of m ) {
   console.log(name + "->" + value); //"foo->hello", "bar->world"
 }
 ```
@@ -127,7 +121,7 @@ for ( let [name, value] of m ) {
 ```js
 let s = new Set(['foo', true, 42]);
 
-for ( let value of s ) {
+for ( const value of s ) {
   console.log(value); // 'foo', true, 42
 }
 ```
@@ -142,7 +136,7 @@ function *foo() {
     yield 'bar';
 }
 
-for (let v of foo() ) {
+for (const v of foo() ) {
     console.log( v ); // 'foo', false, 42, 'bar'
 }
 ```
@@ -156,7 +150,7 @@ Fortunately a workaround exists such as
 ```js
 let obj = { foo : 'hello', bar : 'world' };
 
-for ( let key of Object.keys(obj) ) {
+for ( const key of Object.keys(obj) ) {
   console.log(key + "->" + obj[key]); // 'foo->hello', 'bar->world'
 }
 ```
