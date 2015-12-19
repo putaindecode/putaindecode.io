@@ -1,5 +1,5 @@
 ---
-date: "2015-12-19"
+date: "2015-12-16"
 title: "ES6, ES2015 : la boucle for..of"
 tags:
   - javascript
@@ -12,9 +12,9 @@ authors:
 
 ## Introduction
 
-Avec l'arrivée de nouveaux objets itérables, ECMAScript avait la nécessité de s'enrichir de 
+Avec l'arrivée de nouveaux objets itérables, ECMAScript avait la nécessité de s'enrichir de
 nouvelles façons de parcourir ces derniers. Dans l'unique soucis de maintenir la rétro-compatibilité
-avec l'existant, l'ES6 se devait de garder la boucle `for..in` intacte. 
+avec l'existant, l'ES6 se devait de garder la boucle `for..in` intacte.
 
 > Mais alors, comment créer une variante de cette même boucle avec des capacités améliorées ?  
 
@@ -24,7 +24,7 @@ Mais avant d'en dire plus, et pour comprendre l'utilité de ce nouveau mot clé,
 
 ## Le bon vieux `for..in`
 
-Tout _JavaScript enthousiast_ qui se respecte connaissait déjà la fameuse boucle `for..in` 
+Tout _JavaScript enthousiast_ qui se respecte connaissait déjà la fameuse boucle `for..in`
 dont l'utilité première est d'itérer sur les différentes clés d'un objet ou d'un tableau.
 
 ```js
@@ -35,16 +35,16 @@ for ( const key in obj ) {
 }
 ```
 
-La boucle `for..in`, malgré sont apparente simplicité d'utilisation cache certains pièges : 
- - Lors de l'itération sur un tableau la valeur de l'index est convertis en chaine 
- de caractères : "0", "1", "2", etc.. Ce qui peut potentiellement poser problème lors de 
+La boucle `for..in`, malgré sont apparente simplicité d'utilisation cache certains pièges :
+ - Lors de l'itération sur un tableau la valeur de l'index est convertis en chaine
+ de caractères : "0", "1", "2", etc.. Ce qui peut potentiellement poser problème lors de
  l'utilisation de l'index dans des opérations de calcul.
  - La boucle itère sur l'ensemble des clés du tableau, mais aussi sur chacune de ses propriétés.
 
     ```js
     const arr = ['foo', 'bar'];
     arr.oups = 'baz';
-    
+
     for ( const key in arr ) {
       console.log( key + '->' + arr[key] ); // '0->foo', '1->bar', 'oups->baz'
     }
@@ -53,7 +53,7 @@ La boucle `for..in`, malgré sont apparente simplicité d'utilisation cache cert
 
 ## La methode alternative `.forEach()`
 
-La boucle [`Array.prototype.forEach()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/forEach) 
+La boucle [`Array.prototype.forEach()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/forEach)
 permet une itération plus sécurisé, mais présente certains autres inconvénients tels que :
 
  - Impossibilité d'interrompre la boucle avec les instructions traditionnelles `break;` et `return;`
@@ -61,8 +61,8 @@ permet une itération plus sécurisé, mais présente certains autres inconvéni
 
 ## `for..of` à la rescousse
 
-Le consortium ECMA a donc décidé de procéder à la création d'une nouvelle version améliorée 
-de la boucle `for..in`. Ainsi nait la boucle `for..of` qui coexistera désormais avec la précédente 
+Le consortium ECMA a donc décidé de procéder à la création d'une nouvelle version améliorée
+de la boucle `for..in`. Ainsi nait la boucle `for..of` qui coexistera désormais avec la précédente
 permettant de maintenir la rétro-compatibilité avec les versions antérieures de la norme.
 
 Le principe est le même : parcourir n'importe quel type _d'objet itérable_.
@@ -71,7 +71,7 @@ Dans sa forme la plus simple, la boucle `for..of` permet donc d'itérer sur l'en
 
 ```js
 const arr = ['hello', 'world'];
-arr.baz = 'and mars'; 
+arr.baz = 'and mars';
 
 for ( const arrValue of arr ) {
   console.log( arrValue ); // 'hello', 'world'
@@ -95,10 +95,10 @@ for ( const chr of str ){
 ### les _NodeList_
 
 ```js
-// Note: Cela ne fonctionnera que sur les environnements 
+// Note: Cela ne fonctionnera que sur les environnements
 // implémentant NodeList.prototype[Symbol.iterator]
 
-// ce code ajoute une class "read" à toutes les balises <p> 
+// ce code ajoute une class "read" à toutes les balises <p>
 // contenues dans la(les) balises <article>
 
 const articleParagraphs = document.querySelectorAll("article > p");
@@ -107,7 +107,7 @@ for ( const paragraph of articleParagraphs ) {
   paragraph.classList.add("read");
 }
 ```
- 
+
 ### les _Maps_
 
 ```js
@@ -119,7 +119,7 @@ for ( const [name, value] of m ) {
 ```
 
 ### les _Sets_
- 
+
 ```js
 const s = new Set(['foo', true, 42]);
 
@@ -127,7 +127,7 @@ for ( const value of s ) {
   console.log(value); // 'foo', true, 42
 }
 ```
- 
+
 ### les _Generators_
 
 ```js
@@ -144,9 +144,9 @@ for (const v of foo() ) {
 ```
 
 > Et les objets traditionnels dans tout ça ?
- 
+
 Etonnement, les objets ne peuvent pas être parcouru directement avec l'aide de
-cette nouvelle boucle. Heureusement il existe une solution de contournement 
+cette nouvelle boucle. Heureusement il existe une solution de contournement
 par l'utilisation de [`Object.keys()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys)
 
 ```js
@@ -175,7 +175,7 @@ automatique des index en chaine de caractères.
 
 ## Pour aller plus loin
 
-La boucle `for..of` est donc une corde de plus à l'arc de l'ES6 qui 
+La boucle `for..of` est donc une corde de plus à l'arc de l'ES6 qui
 permet de parcourir, de manière native, les tout nouveaux _objets itérables_ du langage.
 
 Pour en savoir plus sur ses spécificités :
