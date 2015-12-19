@@ -114,7 +114,7 @@ published the morning), but the result should be nice!
       class="putainde-Day"
       href=""
     >
-      11. ?
+      11. (not translated yet)
     </a>
   </div>
 
@@ -123,7 +123,7 @@ published the morning), but the result should be nice!
       class="putainde-Day"
       href=""
     >
-      12. ?
+      12. (not translated yet)
     </a>
   </div>
 
@@ -132,7 +132,7 @@ published the morning), but the result should be nice!
       class="putainde-Day"
       href=""
     >
-      13. ?
+      13. (not translated yet)
     </a>
   </div>
 
@@ -141,7 +141,7 @@ published the morning), but the result should be nice!
       class="putainde-Day"
       href=""
     >
-      14. ?
+      14. (not translated yet)
     </a>
   </div>
 
