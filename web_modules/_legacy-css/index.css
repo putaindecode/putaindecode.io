@@ -57,9 +57,14 @@ html {
   border: 1px solid #c33;
   border-radius: 2px;
   display: block;
-  min-height: 7rem;
   margin: .2rem;
 }
+
+  @media (--r-minM) {
+    .putainde-Day {
+      min-height: 8rem;
+    }
+  }
 
 .putainde-Day[href=""] {
   opacity: .4;
