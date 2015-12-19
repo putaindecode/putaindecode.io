@@ -30,7 +30,7 @@ dont l'utilité première est d'itérer sur les différentes clés d'un objet ou
 ```js
 let obj = { foo : 'hello', bar : 'world' };
 
-for ( let key in obj ) {
+for ( const key in obj ) {
   console.log( key + '->' + obj[key] );  // 'foo->hello', 'bar->world'
 }
 ```
@@ -45,7 +45,7 @@ La boucle `for..in`, malgré sont apparente simplicité d'utilisation cache cert
     let arr = ['foo', 'bar'];
     arr.oups = 'baz';
     
-    for ( let key in arr ) {
+    for ( const key in arr ) {
       console.log( key + '->' + arr[key] ); // '0->foo', '1->bar', 'oups->baz'
     }
     ```
@@ -70,16 +70,10 @@ Le principe est le même : parcourir n'importe quel type _d'objet itérable_.
 Dans sa forme la plus simple, la boucle `for..of` permet donc d'itérer sur l'ensemble des valeurs des clés d'un tableau.
 
 ```js
-let obj = { foo : 'hello', bar : 'world' };
-
-for ( let objValue of obj ) {
-  console.log( objValue ); // 'hello', 'world'
-}
-
 let arr = ['hello', 'world'];
 arr.baz = 'and mars'; 
 
-for ( let arrValue of arr ) {
+for ( const arrValue of arr ) {
   console.log( arrValue ); // 'hello', 'world'
 }
 ```
@@ -93,7 +87,7 @@ Dans ce cas, chaque caractère est traité comme une entité Unicode.
 ```js
 let str = 'sm00th';
 
-for ( let chr of str ){
+for ( const chr of str ){
   console.log(chr); // 's', 'm', '0', '0', 't', 'h'
 }
 ```
@@ -109,7 +103,7 @@ for ( let chr of str ){
 
 let articleParagraphs = document.querySelectorAll("article > p");
 
-for ( let paragraph of articleParagraphs ) {
+for ( const paragraph of articleParagraphs ) {
   paragraph.classList.add("read");
 }
 ```
@@ -119,7 +113,7 @@ for ( let paragraph of articleParagraphs ) {
 ```js
 let m = new Map([['foo', 'hello'], ['bar', 'world']]);
 
-for ( let [name, value] of m ) {
+for ( const [name, value] of m ) {
   console.log(name + "->" + value); //"foo->hello", "bar->world"
 }
 ```
@@ -129,7 +123,7 @@ for ( let [name, value] of m ) {
 ```js
 let s = new Set(['foo', true, 42]);
 
-for ( let value of s ) {
+for ( const value of s ) {
   console.log(value); // 'foo', true, 42
 }
 ```
@@ -144,7 +138,7 @@ function *foo() {
     yield 'bar';
 }
 
-for (let v of foo() ) {
+for (const v of foo() ) {
     console.log( v ); // 'foo', false, 42, 'bar'
 }
 ```
@@ -158,7 +152,7 @@ par l'utilisation de [`Object.keys()`](https://developer.mozilla.org/fr/docs/Web
 ```js
 let obj = { foo : 'hello', bar : 'world' };
 
-for ( let key of Object.keys(obj) ) {
+for ( const key of Object.keys(obj) ) {
   console.log(key + "->" + obj[key]); // 'foo->hello', 'bar->world'
 }
 ```
