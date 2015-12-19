@@ -30,9 +30,9 @@ const myFn = (x) => {
 Les fonctions fléchées sont syntaxiquement similaire à ce qu'on trouve déjà dans
 d'autres langages comme CoffeeScript, Java (8+), C#…
 
-Elles supportent les expressions ou les en tant que corp de fonction.
+Elles supportent les expressions ou les blocs en tant que corps de fonction.
 Dans notre exemple précédent, nous avons utilisé un corps classique.
-Pour de simple fonctions, nous pouvons utiliser des expressions, le but étant
+Pour de simples fonctions, nous pouvons utiliser des expressions, le but étant
 d'avoir quelque chose de concis.
 Notre exemple précédent peut ainsi s'écrire de la sorte :
 
@@ -57,7 +57,7 @@ const myFn = x => (
 )
 ```
 
-Les exempls suivants sont donc tous les mêmes :
+Les exemples suivants sont donc tous les mêmes :
 
 ```js
 const myFn = (x) => {
@@ -84,7 +84,7 @@ const oddsSum = odds.reduce((sum, v) => sum+v, 0) // 9
 ## Les fonctions fléchées n'ont pas de `this`
 
 Oui, vous avez bien lu : à l'inverse des fonctions normales, les fonctions
-fléchées partagent le même ``this`` lexical que leur code autour.
+fléchées partagent le même ``this`` lexical que leur scope parent.
 Du coup, le ``this`` que vous pourrez utiliser dans votre corps de fonction
 fléchée est celui du code parent :
 
@@ -141,14 +141,14 @@ const aFn = (obj) => {key: obj.value}
 ```
 
 Gardez en tête que dans ce contexte, une accolade ouvre un corps de fonction,
-par un objet.
+pas un objet.
 Vous devrez donc faire comme ceci :
 
 ```js
 const aFn = (obj) => { return {key: obj.value} }
 ```
 
-Mais attendez, avec une astuce stupide, on s'en sort avec un couple de
+Mais attendez, avec une simple astuce, on s'en sort avec un couple de
 parenthèses :
 
 ```js
@@ -160,8 +160,7 @@ const aFn = (obj) => ({key: obj.value}) // It works !
 Regardez
 [la table de compatibilité](https://kangax.github.io/compat-table/es6/#test-arrow_functions).
 C'est plutôt bien supporté par la plupart des navigateurs, mais vous risquez
-surement d'avoir à utiliser [Babel](http://babeljs.io) pour être tranquille pour
-le moment.
+surement d'avoir à utiliser [Babel](http://babeljs.io) afin d'être tranquille.
 
 Vous verrez que vous utiliserez les fonctions fléchées de plus en plus.
 Même si le mot clé ``function`` n'est pas mort, les fonctions fléchées ont un
