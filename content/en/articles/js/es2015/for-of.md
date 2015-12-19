@@ -1,6 +1,6 @@
 ---
-date: "2015-12-19"
-title: "ES6, ES2015 : la boucle for..of"
+date: "2015-12-16"
+title: "ES6, ES2015 : for..of loop"
 tags:
   - javascript
   - ES6
@@ -23,7 +23,7 @@ But before I tell you more, and to fully understand the usefulness of this new k
 
 ## The good ol' `for..in`
 
-All self-respecting _JavaScript enthousiast_ already knows the famous `for..in` loop 
+All self-respecting _JavaScript enthousiast_ already knows the famous `for..in` loop
 whose first value is to iterate over the different keys of an object or an array.
 
 ```js
@@ -34,15 +34,15 @@ for ( const key in obj ) {
 }
 ```
 
-The `for..in` loop, despite its ease of use hide some pitfalls: 
- - When itarating over an array, index value is parsed to string : "0", "1", "2", etc.. 
+The `for..in` loop, despite its ease of use hide some pitfalls:
+ - When itarating over an array, index value is parsed to string : "0", "1", "2", etc..
  This behaviour can lead to potential error when index is used in computation.
  - The loop iterate across all the table keys, but also over each of its properties.
 
     ```js
     const arr = ['foo', 'bar'];
     arr.oups = 'baz';
-    
+
     for ( const key in arr ) {
       console.log( key + '->' + arr[key] ); // '0->foo', '1->bar', 'oups->baz'
     }
@@ -51,7 +51,7 @@ The `for..in` loop, despite its ease of use hide some pitfalls:
 
 ## The alternative `.forEach()` method
 
-The [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) 
+The [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 loop allow a more secure iteration, but bring other downsides as:
 
  - Impossibility to halt the loop with the traditional `break;` and `return;` statements.
@@ -69,7 +69,7 @@ In its simplest form, the `for..of` loop therefore allow to iterate over all val
 
 ```js
 const arr = ['hello', 'world'];
-arr.baz = 'and mars'; 
+arr.baz = 'and mars';
 
 for ( const arrValue of arr ) {
   console.log( arrValue ); // 'hello', 'world'
@@ -96,7 +96,7 @@ for ( const chr of str ){
 // Note: This will only work in platforms that have
 // implemented NodeList.prototype[Symbol.iterator]
 
-// this code add a "read" class to each <p> markup 
+// this code add a "read" class to each <p> markup
 // contained in each <article> markup
 
 const articleParagraphs = document.querySelectorAll("article > p");
@@ -105,7 +105,7 @@ for ( const paragraph of articleParagraphs ) {
   paragraph.classList.add("read");
 }
 ```
- 
+
 ### _Maps_
 
 ```js
@@ -117,7 +117,7 @@ for ( const [name, value] of m ) {
 ```
 
 ### _Sets_
- 
+
 ```js
 const s = new Set(['foo', true, 42]);
 
@@ -125,7 +125,7 @@ for ( const value of s ) {
   console.log(value); // 'foo', true, 42
 }
 ```
- 
+
 ### _Generators_
 
 ```js
@@ -142,9 +142,9 @@ for (const v of foo() ) {
 ```
 
 > What about traditional object ?
- 
+
 Suprisingly, objects can't be directly browsed by this brand new loop.
-Fortunately a workaround exists such as 
+Fortunately a workaround exists such as
 [`Object.keys()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys)
 
 ```js
@@ -168,7 +168,7 @@ a simplified iteration over _iterable objects_ such as:
 * [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
 * [arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 
-Furthermore, `for..of` as of now resolve pitfalls such as unpredictable iteration order or 
+Furthermore, `for..of` as of now resolve pitfalls such as unpredictable iteration order or
 automated coercion of index to string.
 
 ## To go further
@@ -178,7 +178,7 @@ allows to run through, in a native way, the brand new _iterable objects_ of the 
 
 For information about this feature :
 
-* [Documentation MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-* [Le post de Jason Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
-* [Le post de Dave Herman](http://tc39wiki.calculist.org/es6/for-of/)
-* [Specification ECMA-262](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-for-in-and-for-of-statements)
+* [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+* [The post of Jason Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
+* [The post of Dave Herman](http://tc39wiki.calculist.org/es6/for-of/)
+* [ECMA-262 Specification](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-for-in-and-for-of-statements)
