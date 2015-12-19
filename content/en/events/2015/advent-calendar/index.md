@@ -148,9 +148,9 @@ published the morning), but the result should be nice!
   <div class="r-Grid-cell r-minM--1of4">
     <a
       class="putainde-Day"
-      href=""
+      href="/en/articles/js/es2015/arrow-functions/"
     >
-      15. ?
+      15. Arrow functions
     </a>
   </div>
 
