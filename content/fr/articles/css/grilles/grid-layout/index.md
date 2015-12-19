@@ -1,5 +1,5 @@
 ---
-date: "2015-12-08"
+date: "2016-01-05"
 title: Introduction à Grid Layout
 tags:
   - css
@@ -8,7 +8,6 @@ tags:
 authors:
   - magsout
 header:
-  image: 8031723857_660e20f75c_b.jpg
   credit: https://www.flickr.com/photos/thomashawk/8031723857
 ---
 
@@ -192,7 +191,7 @@ comme de l'`ASCII art`.
 Notre intégration est terminée, on constate qu'avec très peu d'HTML et de CSS,
 on arrive déjà à quelque chose d'intéressant. Il devient alors très facile de
 manipuler et déplacer nos différents éléments en fonction du contexte de notre
-application (mobile first, reponsive, etc.).
+application (mobile first, responsive, etc.).
 
 ## Et c'est pas fini !
 
