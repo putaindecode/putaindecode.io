@@ -7,7 +7,7 @@ tags:
   - ES2015
   - for..of
 authors:
-  - freezystem
+  - Freezystem
 ---
 
 ## Introduction
