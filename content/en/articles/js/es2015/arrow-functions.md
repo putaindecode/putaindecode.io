@@ -116,8 +116,13 @@ class Stuff extends Component {
         </button>
 
         { /* LOOK MA', NO BIND ! */ }
-        <button onClick={ (e) => this.setState({ omg: true }) }>
+        <button onClick={ (e) => this.onClick(e) }>
           I don’t need `bind` anymore !
+        </button>
+
+        { /* Simpler way */ }
+        <button onClick={ (e) => this.setState({ omg: true }) }>
+          Hell yeah
         </button>
       </div>
     )

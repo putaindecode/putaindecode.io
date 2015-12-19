@@ -122,8 +122,13 @@ class Stuff extends Component {
         </button>
 
         { /* REGARDE MAMAN, JE BIND RIEN */ }
-        <button onClick={ (e) => this.setState({ omg: true }) }>
+        <button onClick={ (e) => this.onClick(e) }>
           I don’t need `bind` anymore !
+        </button>
+
+        { /* Encore plus simplement */ }
+        <button onClick={ (e) => this.setState({ omg: true }) }>
+          Hell yeah
         </button>
       </div>
     )
