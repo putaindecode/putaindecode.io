@@ -39,7 +39,7 @@ erreur.
 
 ## Utiliser les symboles pour l'implémentation d'un *enum*
 
-Plutôt que d'utiliser des chaines de caractères comme valeurs possible d'un
+Plutôt que d'utiliser des chaînes de caractères comme valeurs possible d'un
 *enum*, on peut utiliser des symboles.
 
 ```javascript
@@ -111,7 +111,8 @@ Ces propriétés sont ainsi protégées contre tout accès involontaire.
 ### Différences avec l'utilisation d'une chaine de caractères comme clé
 
 Les propriétés indexées par des symboles ne sont pas accessibles depuis les
-fonctions habituellement utilisées pour itérer sur les propriétés ou les valeurs.
+fonctions habituellement utilisées pour itérer sur les propriétés ou les
+valeurs.
 
 #### Énumération
 
@@ -130,7 +131,7 @@ Object.getOwnPropertySymbols(myObject) // [ Symbol() ]
 ```
 
 Ainsi, du code utilisant `Object.getOwnPropertyNames` et s'attendant à
-recevoir des chaines de caractères ne sera pas cassé par l'utilisation de
+recevoir des chaînes de caractères ne sera pas cassé par l'utilisation de
 symboles en tant que clés.
 
 #### `JSON.stringify`
@@ -149,7 +150,7 @@ JSON.stringify({
 
 Un symbole est unique, une fois créé, il est impossible d'en créér un autre
 ayant les mêmes propriétés. Il faut donc que le symbole créé soit accessible
-d'une manière ou d'une autre pour pouvoir l'employer. En revanche il est
+d'une manière ou d'une autre pour pouvoir l'employer. En revanche, il est
 possible de créer un symbole dans un registre global accessible de n'importe
 où, grâce à `Symbol.for`.
 
@@ -173,19 +174,19 @@ compris dans des contextes d'exécution différents (différentes frames).
 ## Support
 
 Côté navigateur, les symboles sont supportés depuis Chrome 38, Firefox 36,
-Opera 25 et safari 9. Rien chez Internet Explorer. Le support Babel est
+Opera 25 et Safari 9. Rien chez Internet Explorer. Le support Babel est
 limité.
 
 Côté nodeJS, le support des symboles est là depuis la version `0.12`.
 
 Les *well-known symbols* ne sont pas tous disponibles sur les différentes
-plateforme, leur présence dépendant des fonctionnalités auxquelles ils sont
+plates-formes, leur présence dépendant des fonctionnalités auxquelles ils sont
 liés.
 
 ## Pour résumer
 
 Les symboles fournissent un moyen de créer des tokens uniques, ce qui est bien
-plus robuste que l'utilisation de chaines de caractères. L'utilisation des
+plus robuste que l'utilisation de chaînes de caractères. L'utilisation des
 symboles pour représenter les valeurs d'un *enum* permet d'éviter les
 collisions et le mélange avec des données non qualifiées.
 
@@ -198,5 +199,6 @@ de protection contre des manipulations accidentelles.
 
 ## Pour aller plus loin
 
- - La documentation des symboles sur MDN <https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol>
- - Un article complet sur le fonctionnement des symboles et leur cas d'utilisation. <http://www.2ality.com/2014/12/es6-symbols.html>
+ - [La documentation des symboles sur MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+ - [Un article complet sur le fonctionnement des symboles et leur cas
+d'utilisation](http://www.2ality.com/2014/12/es6-symbols.html)
