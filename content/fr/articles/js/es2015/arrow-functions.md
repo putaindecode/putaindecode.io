@@ -1,6 +1,6 @@
 ---
 date: "2015-12-15"
-title: "ES6, ES2015 : Les fonctions fléchées"
+title: "ES6, ES2015 : les fonctions fléchées"
 tags:
   - JavaScript
   - ES6
@@ -27,7 +27,7 @@ const myFn = (x) => {
 }
 ```
 
-Les fonctions fléchées sont syntaxiquement similaire à ce qu'on trouve déjà dans
+Les fonctions fléchées sont syntaxiquement similaires à ce qu'on trouve déjà dans
 d'autres langages comme CoffeeScript, Java (8+), C#…
 
 Elles supportent les expressions ou les blocs en tant que corps de fonction.
@@ -71,9 +71,9 @@ const myFn = x => x + 1
 const myFn = x => (x + 1)
 ```
 
-Dans la pratique vous utiliserez souvent cette syntaxe pour des petites méthodes
+Dans la pratique, vous utiliserez souvent cette syntaxe pour des petites méthodes
 comme par exemple lors de l'utilisation des fonctions de tableau
-reduce/filter/map etc.
+reduce/filter/map, etc.
 
 ```js
 const nums = [1, 2, 3, 4, 5]
@@ -165,7 +165,7 @@ const aFn = (obj) => ({key: obj.value}) // It works !
 Regardez
 [la table de compatibilité](https://kangax.github.io/compat-table/es6/#test-arrow_functions).
 C'est plutôt bien supporté par la plupart des navigateurs, mais vous risquez
-surement d'avoir à utiliser [Babel](http://babeljs.io) afin d'être tranquille.
+sûrement d'avoir à utiliser [Babel](http://babeljs.io) afin d'être tranquille.
 
 Vous verrez que vous utiliserez les fonctions fléchées de plus en plus.
 Même si le mot clé ``function`` n'est pas mort, les fonctions fléchées ont un
