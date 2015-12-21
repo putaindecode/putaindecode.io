@@ -168,7 +168,7 @@ published the morning), but the result should be nice!
       class="putainde-Day"
       href=""
     >
-      17. ?
+      17.  (not translated yet)
     </a>
   </div>
 
