@@ -6,7 +6,7 @@ tags:
   - ES6
   - ES2015
 authors:
-  - clementd
+  - divarvel
 ---
 
 Dans sa politique d'enrichissement des types primitifs, ES6 introduit les
