@@ -8,7 +8,7 @@ authors:
   - naholyr
 ---
 
-Aujourd'hui, une fonctionnalité taggée peut-être abusivement "ES6" puisqu'elle ne
+Aujourd'hui, une fonctionnalité peut-être abusivement taggée "ES6" puisqu'elle ne
 fait pas partie des propositions acceptées cette année : les fonctions asynchrones (async/await).
 La [spécification](https://tc39.github.io/ecmascript-asyncawait/) est encore au
 stade 3 (candidate) à l'heure de cet article. Mais il ne fait plus aucun doute
@@ -21,7 +21,7 @@ Pour les traitements asynchrones, vous connaissez déjà
 évidemment remplacé les callbacks dans votre code. Si vous n'avez pas déjà fait
 la bascule vers les promesses (ne serait-ce que pour la propagation d'erreur),
 [les générateurs](/fr/articles/js/es2015/generators/) ont
-du finir de vous convaincre grâce aux [coroutines](/fr/articles/js/es2015/generators/#use-case-co-routines).
+dû finir de vous convaincre grâce aux [coroutines](/fr/articles/js/es2015/generators/#use-case-co-routines).
 
 Nous allons voir aujourd'hui une nouvelle manière de traiter les fonctions
 asynchrones. Mais ne jetez pas vos promesses, tout tourne encore autour d'elles.
@@ -181,11 +181,11 @@ inclure ``babel-polyfill`` en fichier d'entrée).
 
 Grâce aux fonctions asynchrones, la refactorisation d'un code bloquant vers un
 code non bloquant devient vraiment aisée. Les promesses simplifiaient déjà le
-processus mais on n'était pas débarassé des callbacks. Là, à deux mot-clés près
+processus mais on n'était pas débarassé des callbacks. Là, à deux mot-clés près,
 c'est exactement la même chose !
 
 D'un certain côté, c'est un retour en arrière : l'asynchrone mène aux promesses,
-qui mène à la programmation fonctionnelle, qui apporte tant de bienfaits… Il
+qui mènent à la programmation fonctionnelle, qui apporte tant de bienfaits… Il
 s'agira de trouver le bon équilibre, je ne suis pas convaincu d'abandonner mes
 ``.then`` tout de suite, mais il est certain que c'est une véritable avancée
 pour ce langage : la courbe d'apprentissage des traitements asynchrones va être
