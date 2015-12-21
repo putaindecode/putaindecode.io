@@ -12,20 +12,26 @@ authors:
 
 ## Introduction
 
-Avec l'arrivée de nouveaux objets itérables, ECMAScript avait la nécessité de s'enrichir de
-nouvelles façons de parcourir ces derniers. Dans l'unique soucis de maintenir la rétro-compatibilité
+Avec l'arrivée de nouveaux objets itérables, ECMAScript avait la nécessité de
+s'enrichir de
+nouvelles façons de parcourir ces derniers. Dans l'unique souci de maintenir la
+rétro-compatibilité
 avec l'existant, l'ES6 se devait de garder la boucle `for..in` intacte.
 
-> Mais alors, comment créer une variante de cette même boucle avec des capacités améliorées ?  
+> Mais alors, comment créer une variante de cette même boucle avec des capacités
+améliorées ?  
 
-La solution est simple : "Bienvenue au mot clé `of` !"
+La solution est simple : "Bienvenue au mot-clé `of` !"
 
-Mais avant d'en dire plus, et pour comprendre l'utilité de ce nouveau mot clé, revoyons un peu l'existant.
+Mais avant d'en dire plus, et pour comprendre l'utilité de ce nouveau mot-clé,
+revoyons un peu l'existant.
 
 ## Le bon vieux `for..in`
 
-Tout _JavaScript enthousiast_ qui se respecte connaissait déjà la fameuse boucle `for..in`
-dont l'utilité première est d'itérer sur les différentes clés d'un objet ou d'un tableau.
+Tout _JavaScript enthusiast_ qui se respecte connaissait déjà la fameuse boucle
+`for..in`
+dont l'utilité première est d'itérer sur les différentes clés d'un objet ou d'un
+tableau.
 
 ```js
 const obj = { foo : 'hello', bar : 'world' };
@@ -35,11 +41,15 @@ for ( const key in obj ) {
 }
 ```
 
-La boucle `for..in`, malgré sont apparente simplicité d'utilisation cache certains pièges :
- - Lors de l'itération sur un tableau la valeur de l'index est convertis en chaine
- de caractères : "0", "1", "2", etc.. Ce qui peut potentiellement poser problème lors de
+La boucle `for..in`, malgré son apparente simplicité d'utilisation, cache
+certains pièges :
+ - Lors de l'itération sur un tableau la valeur de l'index est convertie en
+chaîne
+ de caractères : "0", "1", "2", etc. Cela peut potentiellement poser problème
+lors de
  l'utilisation de l'index dans des opérations de calcul.
- - La boucle itère sur l'ensemble des clés du tableau, mais aussi sur chacune de ses propriétés.
+ - La boucle itère sur l'ensemble des clés du tableau, mais aussi sur chacune de
+ses propriétés.
 
     ```js
     const arr = ['foo', 'bar'];
@@ -49,25 +59,33 @@ La boucle `for..in`, malgré sont apparente simplicité d'utilisation cache cert
       console.log( key + '->' + arr[key] ); // '0->foo', '1->bar', 'oups->baz'
     }
     ```
- - L'ordre d'itération sur l'ensemble des clés d'un object peut varier selon l'environnement d'execution du code.
+ - L'ordre d'itération sur l'ensemble des clés d'un objet peut varier selon
+l'environnement d'éxecution du code.
 
 ## La methode alternative `.forEach()`
 
-La boucle [`Array.prototype.forEach()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/forEach)
-permet une itération plus sécurisé, mais présente certains autres inconvénients tels que :
+La boucle
+[`Array.prototype.forEach()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/forEach)
+permet une itération plus sécurisée, mais présente certains autres inconvénients
+tels que :
 
- - Impossibilité d'interrompre la boucle avec les instructions traditionnelles `break;` et `return;`
- - Méthode réservée aux tableaux.
+ - L'impossibilité d'interrompre la boucle avec les instructions traditionnelles
+`break;` et `return;`
+ - Il s'agit d'une méthode réservée aux tableaux.
 
 ## `for..of` à la rescousse
 
-Le consortium ECMA a donc décidé de procéder à la création d'une nouvelle version améliorée
-de la boucle `for..in`. Ainsi nait la boucle `for..of` qui coexistera désormais avec la précédente
-permettant de maintenir la rétro-compatibilité avec les versions antérieures de la norme.
+Le consortium ECMA a donc décidé de procéder à la création d'une nouvelle
+version améliorée
+de la boucle `for..in`. Ainsi naquit la boucle `for..of` qui coexistera
+désormais avec la précédente,
+permettant de maintenir la rétro-compatibilité avec les versions antérieures de
+la norme.
 
 Le principe est le même : parcourir n'importe quel type _d'objet itérable_.
 
-Dans sa forme la plus simple, la boucle `for..of` permet donc d'itérer sur l'ensemble des valeurs des clés d'un tableau.
+Dans sa forme la plus simple, la boucle `for..of` permet donc d'itérer sur
+l'ensemble des valeurs des clés d'un tableau.
 
 ```js
 const arr = ['hello', 'world'];
@@ -78,9 +96,10 @@ for ( const arrValue of arr ) {
 }
 ```
 
-La boucle `for..of` peut aussi itérer sur des types plus complexes comme :
+La boucle `for..of` peut aussi itérer sur des types plus complexes. Examinons
+cela de plus près.
 
-### les _Strings_
+### Les _Strings_
 
 Dans ce cas, chaque caractère est traité comme une entité Unicode.
 
@@ -92,10 +111,10 @@ for ( const chr of str ){
 }
 ```
 
-### les _NodeList_
+### Les _NodeList_
 
 ```js
-// Note: Cela ne fonctionnera que sur les environnements
+// Note: cela ne fonctionnera que sur les environnements
 // implémentant NodeList.prototype[Symbol.iterator]
 
 // ce code ajoute une class "read" à toutes les balises <p>
@@ -108,7 +127,7 @@ for ( const paragraph of articleParagraphs ) {
 }
 ```
 
-### les _Maps_
+### Les _Maps_
 
 ```js
 const m = new Map([['foo', 'hello'], ['bar', 'world']]);
@@ -118,7 +137,7 @@ for ( const [name, value] of m ) {
 }
 ```
 
-### les _Sets_
+### Les _Sets_
 
 ```js
 const s = new Set(['foo', true, 42]);
@@ -128,7 +147,7 @@ for ( const value of s ) {
 }
 ```
 
-### les _Generators_
+### Les _Generators_
 
 ```js
 function *foo() {
@@ -145,9 +164,10 @@ for (const v of foo() ) {
 
 > Et les objets traditionnels dans tout ça ?
 
-Etonnement, les objets ne peuvent pas être parcouru directement avec l'aide de
-cette nouvelle boucle. Heureusement il existe une solution de contournement
-par l'utilisation de [`Object.keys()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys)
+Étonnamment, les objets ne peuvent pas être parcourus directement avec l'aide de
+cette nouvelle boucle. Heureusement, il existe une solution de contournement
+par l'utilisation de
+[`Object.keys()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys)
 
 ```js
 const obj = { foo : 'hello', bar : 'world' };
@@ -159,7 +179,7 @@ for ( const key of Object.keys(obj) ) {
 
 ## En résumé
 
-`for..of` vient compléter les manques de `for..in` et permet
+`for..of` vient compléter les lacunes de `for..in` et permet
 une itération simplifiée sur les _objets itérables_ tels que :
 
 * [Array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)
@@ -170,17 +190,22 @@ une itération simplifiée sur les _objets itérables_ tels que :
 * [NodeList](https://developer.mozilla.org/fr/docs/Web/API/NodeList)
 * [arguments](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/arguments)
 
-De plus, `for..of` résout à présent les pièges tels que l'ordre d'itération non constant ou la coercion
-automatique des index en chaine de caractères.
+De plus, `for..of` résout à présent les pièges tels que l'ordre d'itération non
+constant ou la coercion
+automatique des index en chaîne de caractères.
 
 ## Pour aller plus loin
 
 La boucle `for..of` est donc une corde de plus à l'arc de l'ES6 qui
-permet de parcourir, de manière native, les tout nouveaux _objets itérables_ du langage.
+permet de parcourir, de manière native, les tout nouveaux _objets itérables_ du
+langage.
 
 Pour en savoir plus sur ses spécificités :
 
-* [Documentation MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/for...of)
-* [Le post de Jason Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
+* [Documentation
+MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/for...of)
+* [Le post de Jason
+Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
 * [Le post de Dave Herman](http://tc39wiki.calculist.org/es6/for-of/)
-* [Specification ECMA-262](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-for-in-and-for-of-statements)
+* [Specification
+ECMA-262](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-for-in-and-for-of-statements)
