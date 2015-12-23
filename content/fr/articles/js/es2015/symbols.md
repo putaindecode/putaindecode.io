@@ -10,7 +10,7 @@ authors:
 ---
 
 Dans sa politique d'enrichissement des types primitifs, ES6 introduit les
-symboles. Chers aux développeurs de nombreux langages, ruby en tête, les
+symboles. Chers aux développeurs de nombreux langages, Ruby en tête, les
 symboles constituent une étape de plus vers l'éradication du *stringly-typed
 programming*. En effet, les symboles fournissent un moyen plus robuste de
 représenter des identifiants.
@@ -177,7 +177,7 @@ Côté navigateur, les symboles sont supportés depuis Chrome 38, Firefox 36,
 Opera 25 et Safari 9. Rien chez Internet Explorer. Le support Babel est
 limité.
 
-Côté nodeJS, le support des symboles est là depuis la version `0.12`.
+Côté Node.js, le support des symboles est là depuis la version `0.12`.
 
 Les *well-known symbols* ne sont pas tous disponibles sur les différentes
 plates-formes, leur présence dépendant des fonctionnalités auxquelles ils sont
