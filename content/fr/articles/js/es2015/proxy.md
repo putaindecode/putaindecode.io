@@ -27,7 +27,7 @@ console.log(childNodes.length); // 0
 document.body.appendChild(document.createElement('div'))
 // Personne n'a touché explicitement l'objet dans la variable divs, pourtant :
 console.log(childNodes.length); // 1, wat!
-```
+```a
 
 Ce genre de comportement n'est pas explicable par la sémantique d'ES5 (à moins
 d'accepter des gros problèmes de performances qui consisteraient à ce que le
@@ -198,7 +198,7 @@ console.log(liveChildNodes.length); // 1, magie magie !
 ````
 
 
-### Attéanuation
+### Atténuation
 
 J'ai un objet avec plein de propriété et je veux en partager une version
 atténuée à une bibliothèque en laquelle je n'ai qu'une confiance partielle.
