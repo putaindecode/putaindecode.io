@@ -1,6 +1,6 @@
 ---
 date: "2015-12-18"
-title: "Les Proxy"
+title: "ES6, ES2015 : les Proxy"
 tags:
   - JavaScript
   - ES6
@@ -9,18 +9,17 @@ authors:
   - DavidBruant
 ---
 
-# Les Proxy
-
 ## Proxies Origin
 
 ### What the DOM?
 
-ES5 avait laissé un petit trou nommé 
+ES5 avait laissé un petit trou nommé
 *["host objects"](http://www.ecma-international.org/ecma-262/5.1/#sec-4.3.8)*
 afin de donner un "cadre légal" aux trucs bizarres qui peuvent arriver dans le
-DOM. Par exemple, certaines collections sont dites 
+DOM. Par exemple, certaines collections sont dites
 ["live"](https://dom.spec.whatwg.org/#concept-collection-live) et même si on ne
-touche pas l'objet directement, on se rend compte que la collection a été modifiée.
+touche pas l'objet directement, on se rend compte que la collection a été
+modifiée.
 
 ```js
 var childNodes = document.body.childNodes;
@@ -33,12 +32,13 @@ console.log(childNodes.length); // 1, wat!
 Ce genre de comportement n'est pas explicable par la sémantique d'ES5 (à moins
 d'accepter des gros problèmes de performances qui consisteraient à ce que le
 DOM garde une référence vers toutes les collections live et les mette à jour
-régulièrement, ou des getter partout, etc.). La 
+régulièrement, ou des getter partout, etc.). La
 [spec WebIDL](https://heycam.github.io/webidl/) qui fait le lien entre les
 objets décrits dans les spec W3C et la sémantique ECMAScript se contentait d'un
 "c'est un *host object*, allé, salut les gars les filles !" (en fait, c'était
 pire que ça&nbsp;:
-[la spec de l'époque](http://www.w3.org/TR/DOM-Level-2-Core/ecma-script-binding.html)
+[la spec de
+l'époque](http://www.w3.org/TR/DOM-Level-2-Core/ecma-script-binding.html)
 était absurde tant elle manquait de détails, mais je vous fais la version de
 Noël).
 
@@ -56,6 +56,7 @@ on créait des objets et des fois, on les passait à du code qui les modifiait e
 on se demandait bien quand/comment l'objet en question en était arrivé dans cet
 état. Depuis ES5, on peut logger dans des *getters* et *setters*, mais on ne
 peut pas savoir quand on s'est pris un `delete` ou un
+
 [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)&nbsp;;
 on peut constater le résultat, mais c'est dur de remonter à la source.
 
@@ -106,7 +107,8 @@ It's a (get) trap! a 1 // inside the trap
 
 ### Liste des traps
 
-L'exemple ci-dessus montre la trap `get`. Voici la liste des traps disponible&nbsp;:
+L'exemple ci-dessus montre la trap `get`. Voici la liste des traps
+disponible&nbsp;:
 
 * getPrototypeOf
     * pour `Object.getPrototypeOf`
@@ -139,6 +141,7 @@ L'exemple ci-dessus montre la trap `get`. Voici la liste des traps disponible&nb
 
 Le lecteur attentif aura remarqué que cette liste (et les signatures des
 fonctions) correspondent à l'API
+
 [Reflect](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect#Methods)
 
 
@@ -146,7 +149,8 @@ fonctions) correspondent à l'API
 
 ### Logger les opérations
 
-Vous voulez savoir quand on objet se prend un `delete`&nbsp;? Rien de plus facile&nbsp;!
+Vous voulez savoir quand on objet se prend un `delete`&nbsp;? Rien de plus
+facile&nbsp;!
 
 
 ````js
@@ -201,7 +205,7 @@ atténuée à une bibliothèque en laquelle je n'ai qu'une confiance partielle.
 
 ````js
 // On va se faire MitM avec ce HTTP sans 'S' !
-import dubiousLib from 'http://dubious-lib.com/main.js'; 
+import dubiousLib from 'http://dubious-lib.com/main.js';
 
 const myImportantObject = {
     jfkKillerName: '...',
@@ -212,7 +216,8 @@ const myImportantObject = {
     name: "David Bruant",
     xmasPresentList: [
         "Raspberry Pi B",
-        "Nouveau téléphone (mais pas FirefoxOS, parce qu'ils arrêtent les téls)",
+        "Nouveau téléphone (mais pas FirefoxOS, parce qu'ils arrêtent les
+téls)",
         "Une boîte de Tic Tac"
     ]
 }
@@ -222,50 +227,50 @@ function makeWhitelistProxy(t, whitelist){
         get(target, prop){
             if(!whitelist.has(prop))
                 throw new Error('Attempt to access forbidden property')
-            
+
             return Reflect.get(target, prop);
         },
         set(target, prop, value){
             if(!whitelist.has(prop))
                 throw new Error('Attempt to access forbidden property')
-            
+
             return Reflect.set(target, prop, value);
         },
         getOwnPropertyDescriptor(target, prop){
             if(!whitelist.has(prop))
                 throw new Error('Attempt to access forbidden property')
-            
+
             return Reflect.getOwnPropertyDescriptor(target, prop);
         },
         deleteProperty(target, prop){
             if(!whitelist.has(prop))
                 throw new Error('Attempt to access forbidden property')
-            
+
             return Reflect.deleteProperty(target, prop);
         },
         defineProperty(target, prop, desc){
             if(!whitelist.has(prop))
                 throw new Error('Attempt to access forbidden property')
-            
+
             return Reflect.defineProperty(target, prop, desc);
         },
         has(target, prop){
             if(!whitelist.has(prop))
                 throw new Error('Attempt to access forbidden property')
-            
+
             return Reflect.has(target, prop);
         }
     })
 }
 
 const attenatedObject = makeWhitelistProxy(
-    myImportantObject, 
+    myImportantObject,
     new Set(["name", "xmasPresentList"])
 );
 
 console.log(myImportantObject.name === attenatedObject.name);
 console.log(myImportantObject.jfkKillerName); // "..."
-console.log(attenatedObject.jfkKillerName); 
+console.log(attenatedObject.jfkKillerName);
 // error thrown! 'Error: Attempt to access forbidden property'
 
 dubiousLib(attenatedObject);
@@ -277,7 +282,7 @@ lecture à l'objet alors que l'on garde soi-même un accès en écriture (ce qui
 est impossible avec `Object.freeze`).
 
 
-### Révocation 
+### Révocation
 
 On peut révoquer l'accès à un objet en implémentant le *pattern* "caretaker"
 
@@ -294,7 +299,7 @@ function makeCaretaker(t){
             set(target, prop, value){
                 return Reflect.get(target, prop, value);
             }
-            // flemme d'écrire et vous faire lire les autres traps, 
+            // flemme d'écrire et vous faire lire les autres traps,
             // mais faut toutes les faire ;-)
         })
     }
@@ -328,14 +333,14 @@ function makeCaretaker(target){
         get(handler, trapName){
             if(!target)
                 throw new Error('Revoked object!')
-            else 
+            else
                 // Le miroir entre les traps et l'API Reflect vient de là ;-)
-                return Reflect[trapName]; 
+                return Reflect[trapName];
         }
     }
 
     const handler = new Proxy({}, metaHandler);
-    
+
     return {
         revoke(){
             target = undefined;
@@ -364,7 +369,8 @@ Il fait mal au crâne au début celui-là, mais après relecture, on se sent bie
 
 Pour des raisons par très intéressantes, les proxy révocables sont fournis
 directement via
-[Proxy.revocable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/revocable), 
+
+[Proxy.revocable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/revocable),
 donc, pas besoin de se fatiguer à le coder avec toutes les traps ou avec un
 meta handler.
 
