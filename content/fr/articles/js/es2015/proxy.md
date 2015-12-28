@@ -56,7 +56,6 @@ on créait des objets et des fois, on les passait à du code qui les modifiait e
 on se demandait bien quand/comment l'objet en question en était arrivé dans cet
 état. Depuis ES5, on peut logger dans des *getters* et *setters*, mais on ne
 peut pas savoir quand on s'est pris un `delete` ou un
-
 [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)&nbsp;;
 on peut constater le résultat, mais c'est dur de remonter à la source.
 
