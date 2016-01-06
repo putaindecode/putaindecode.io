@@ -137,10 +137,6 @@ const webpackConfig = {
         loader: "file-loader?name=_/[path][name].[ext]&context=./web_modules",
       },
       {
-        test: /^CNAME$/,
-        loader: "file-loader?name=[path][name].[ext]&context=./content",
-      },
-      {
         test: /\.(svg)$/,
         loaders : [
           "raw-loader",
