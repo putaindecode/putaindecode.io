@@ -18,14 +18,14 @@ servir de base pour placer les différents éléments et de faire en sorte qu'il
 soient alignés et espacés uniformément. Le problème de CSS est qu'il rencontre
 beaucoup de lacunes pour mettre en place cette logique.
 
-L'arrivé du module `Flexbox` a commencé à bien faciliter les choses. Toutefois,
+L'arrivée du module `Flexbox` a commencé à bien faciliter les choses. Toutefois,
 ce module n'est pas adapté à toutes les situations et il est bien plus pertinent
 sur du layout de composants.
 
 C'est pour cette raison qu'a été développé le module `Grid Layout`, plus
 puissant et orienté mise en page.
 
-## États des lieux
+## État des lieux
 
 Parlons des choses qui fâchent dès le début. À l'heure actuelle la dernière
 révision date du [17 septembre 2015](http://www.w3.org/TR/css-grid-1/) et la
@@ -101,7 +101,7 @@ Voici le markup que l'on va utiliser pour notre maquette.
 </div>
 ```
 
-Dans un premier temps, nous allons "configurer" notre Grid:
+Dans un premier temps, nous allons "configurer" notre `Grid`:
 
 ```CSS
 .Layout {
@@ -214,5 +214,5 @@ classiques.
 
 `Grid Layout` est un module très puissant et très complet. En le combinant avec
 `Flexbox`, on dispose de suffisament d'outils pour travailler sur des mises en
-pages complexes. Reste plus qu'aux navigateurs à rapidement valider/intégrer
-/supporter cette nouvelle spécification.
+pages complexes. Reste plus qu'aux navigateurs à rapidement valider/intégrer/supporter
+cette nouvelle spécification.
