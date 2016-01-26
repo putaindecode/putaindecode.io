@@ -164,16 +164,36 @@ for (const v of foo() ) {
 
 > Et les objets traditionnels dans tout ça ?
 
-Étonnamment, les objets ne peuvent pas être parcourus directement avec l'aide de
-cette nouvelle boucle. Heureusement, il existe une solution de contournement
-par l'utilisation de
+Étonnamment, les objets ne peuvent pas être parcourus avec cette nouvelle 
+boucle sauf s'ils définissent le symbole `Symbol.iterator`. Heureusement, 
+il existe une solution de contournement par l'utilisation de
 [`Object.keys()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/keys)
+ou encore 
+d'[`Object.values()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/values)
+et
+[`Object.entries()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/entries)
+(ajouts ECMAScript7).
 
 ```js
 const obj = { foo : 'hello', bar : 'world' };
 
 for ( const key of Object.keys(obj) ) {
   console.log(key + "->" + obj[key]); // 'foo->hello', 'bar->world'
+}
+
+```
+
+Exemple définissant un itérateur :
+
+```js
+const iterableObj = {
+  *[Symbol.iterator]() {
+    yield* Object.entries(obj);
+  }
+};
+
+for ( const [key, val] of iterableObj ) {
+  console.log(key + "->" + val); // 'foo->hello', 'bar->world'
 }
 ```
 
