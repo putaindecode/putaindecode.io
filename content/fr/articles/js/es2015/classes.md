@@ -153,6 +153,17 @@ Au final, on gagne en clarté, en lisibilité et donc en maintenabilité.
 À l'heure actuelle, il est nécessaire de passer par un transpileur comme
 [babel](https://babeljs.io/) pour utiliser les classes.
 
-Une dernière petite chose, en utilisant les classes on active automatiquement le
-[mode strict](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode),
-il n'est donc pas nécessaire de le rajouter manuellement.
+Une dernière petite chose, le 
+[mode strict](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode) 
+est automatiquement activé dans le corps des classes et leurs déclarations.
+Il n'est donc pas nécessaire de le rajouter manuellement.
+
+```js
+/* Mode strict initial */
+class MyClass {
+  someMethod() {
+    /* Ici le mode strict est implicitement activé */
+  }
+}
+/* Mode strict inchangé */
+```
