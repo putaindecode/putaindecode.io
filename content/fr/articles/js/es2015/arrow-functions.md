@@ -138,11 +138,22 @@ class Stuff extends Component {
 
 ## Note sur les expressions et les objets
 
-Si vous voulez retourner un objet, vous serez surement supris par une erreur de
-syntaxe avec ce code :
+Si vous voulez retourner un objet, vous serez surement supris de ne pas obtenir
+le résultat attendu avec ce code :
 
 ```js
 const aFn = (obj) => {key: obj.value}
+console.log(aFn()) // undefined
+```
+
+En effet, l'exemple ci-dessus pourrait être traduit en ES5 de la manière suivante :
+
+```js
+var aFn = function (obj) {
+  key:         // Defines a label named `key`
+    obj.value  // Gets `obj.value`
+               // Implicit returns `undefined`
+}
 ```
 
 Gardez en tête que dans ce contexte, une accolade ouvre un corps de fonction,

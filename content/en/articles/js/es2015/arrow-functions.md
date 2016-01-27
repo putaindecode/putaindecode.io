@@ -132,25 +132,35 @@ class Stuff extends Component {
 
 ## Note about expression body and Object
 
-If you want to return an object you might be surprised to get a syntax error
-with this code
+If you want to return an object you might be surprised to get `undefined`
+with this code:
 
 ```js
 const aFn = (obj) => {key: obj.value}
 ```
 
+Indeed the above snippet could be translated into ES5 this way:
+
+```js
+var aFn = function (obj) {
+  key:         // Defines a label named `key`
+    obj.value  // Gets `obj.value`
+               // Implicit returns `undefined`
+}
+```
+
 Keep in mind that in this context, a brace is to start a statement body, not an
 object.
-So you will need this
+So you will need this:
 
 ```js
 const aFn = (obj) => { return {key: obj.value} }
 ```
 
-But wait, there is a trick: a stupid couple of parenthesis:
+But wait, there is a trick: a stupid couple of parenthesis.
 
 ```js
-const aFn = (obj) => ({key: obj.value}) // It works !
+const aFn = (obj) => ({key: obj.value}) // It works!
 ```
 
 ## Conclusion
