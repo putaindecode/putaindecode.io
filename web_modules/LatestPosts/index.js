@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from "react"
 import { Link } from "react-router"
 
+import classes from "./styles.css"
+
 import getI18n from "i18n/get"
 import PostsList from "../PostsList"
 
@@ -19,6 +21,7 @@ export default class LatestPosts extends Component {
 
   render() {
     const i18n = getI18n(this.context)
+    console.log(i18n)
     const {
       title,
       posts,
@@ -32,14 +35,30 @@ export default class LatestPosts extends Component {
             { title ? title : i18n.latestPosts }
           </h2>
         </div>
-        <PostsList posts={ posts } />
-        <Link
-          to={ link ? link : i18n.links.articles }
-          className="putainde-Button putainde-Button--block"
-          style={ { textAlign: "center" } }
+        <div
+          className={ "r-Grid-cell r-minL--5of12 " + classes.latestPosts }
+          style={ { textAlign: "left" } }
         >
-          { i18n.morePosts }
-        </Link>
+          <PostsList posts={ posts.slice(0, posts.length / 2) } />
+        </div>
+        <div
+          className={ "r-Grid-cell r-minL--5of12 " + classes.latestPosts }
+          style={ { textAlign: "left" } }
+        >
+          <PostsList posts={ posts.slice(posts.length / 2) } />
+        </div>
+        <div
+          className={ "r-Grid-cell r-minL--10of12 " + classes.latestPosts }
+          style={ { textAlign: "left" } }
+        >
+          <Link
+            to={ link ? link : i18n.links.articles }
+            className="putainde-Button putainde-Button--block"
+            style={ { textAlign: "center" } }
+          >
+            { i18n.morePosts }
+          </Link>
+        </div>
       </div>
     )
   }
