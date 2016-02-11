@@ -260,7 +260,7 @@ once again. I insist.)
 
 ### Flexbox (not you, David)
 
-We also can, as judiciously pointed out by [lionelB](/#crew), take a closer
+We also can, as judiciously pointed out by lionelB, take a closer
 look at Flexbox, a new positioning paradigm that landed with CSS3.
 [Compatibility](http://caniuse.com/#search=flexbox) isn't quite satisfying yet
 (because of IE, what were the odds) but you can still get ready! You have

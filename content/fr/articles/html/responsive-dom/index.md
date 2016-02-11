@@ -267,7 +267,7 @@ toujours. J'insiste.)
 
 ### Flexbox (pas toi, David)
 
-On peut également, comme l'a très justement souligné [lionelB](/#crew), se
+On peut également, comme l'a très justement souligné lionelB, se
 pencher (mais pas trop) sur le cas de Flexbox, qui est un nouveau type de
 positionnement introduit en CSS3. La [compatibilité](http://caniuse.com/#search=flexbox)
 n'est pas encore au top (surtout grâce à IE, qui l'eût cru) mais autant se tenir

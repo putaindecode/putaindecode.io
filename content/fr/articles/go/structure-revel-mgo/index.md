@@ -19,7 +19,7 @@ sur la [homepage du projet](http://golang.org/) et à parcourir le
 (et très bien fichu).
 Mais si t'es juste curieux et que comprendre chaque pixel de l'article n'est pas
 une obsession pour toi, tu devrais pouvoir voir de quoi on parle. Même
-[Nyalab](/#crew) y est arrivé.
+Nyalab y est arrivé.
 
 Dans cet article on va voir **comment brancher un projet go+revel à une base de
 données mongodb** et obtenir ainsi une base de travail sympa pour explorer le
@@ -60,9 +60,7 @@ fonctions javascript.
 ## Attends, attends ... Pourquoi Go ?
 Le premier vrai argument, c'est la **performance**. Sans rentrer dans
 l'explication hyper poussée d'un [benchmark](http://jaxbot.me/articles/benchmarks_nodejs_vs_go_vs_php_3_14_2013), on peut
-affirmer sans trop de risque que Go se hisse au moins au niveau de node.js. On
-va pas risquer de vexer les autres membres du crew avec des affirmations
-trollesques dès le premier post.
+affirmer sans trop de risque que Go se hisse au moins au niveau de node.js.
 
 On peut aussi ajouter que Go est un **langage moderne**, qui inclut toutes les
 **petites friandises pour attirer le développeur** curieux et assoiffé de
