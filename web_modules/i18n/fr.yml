@@ -18,7 +18,7 @@
   howThisWorks: "Comment ça marche ?"
   topContributors: "Contributeurs les plus actifs"
   topContributorsNoData: "Aucune donnée pour afficher le top des contributeurs"
-  topContributorsNote: "sur les 12 derniers mois"
+  topContributorsNote: "sur les 6 derniers mois"
   initialCommit: "commit initial par"
   morePosts: "Plus d'articles"
   writtenBy: "Écrit par"
