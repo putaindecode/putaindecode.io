@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react"
+import React, { PropTypes } from "react"
 import { Link } from "react-router"
 import cx from "classnames"
 
@@ -14,58 +14,56 @@ const SVGs = {
   chat: require("icons/chat.svg"),
 }
 
-export default class Navigation extends Component {
-
-  static contextTypes = {
-    metadata: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-  }
-
-  render() {
-    const i18n = getI18n(this.context)
-
-    return (
-      <nav className="putainde-Nav">
-        {
-          i18n.navigation.map((item) => (
-            <Link to={item.url}
-              key={item.url}
-              className={ "putainde-Nav-item" }
-              activeClassName={ "putainde-Nav-item--current" }
-            >
-              {
-                item.icon &&
-                <SVGIcon
-                  className="putainde-Icon"
-                  svg={SVGs[item.icon]}
-                  cleanup
-                />
-              }
-              {item.name}
-            </Link>
-          ))
-        }
-        {
-          [ "github", "twitter", "chat" ].map((key) => (
-            <a href={i18n[key]}
-              key={i18n[key]}
-              className={cx({
-                "putainde-Nav-item": true,
-                "putainde-Nav-item--icon": true,
-                "r-Tooltip": true,
-                "r-Tooltip r-Tooltip--bottom": true,
-              })}
-              data-r-tooltip={i18n[key + "Label"]}
-            >
+const Navigation = ({}, context) => {
+  const i18n = getI18n(context)
+  return (
+    <nav className="putainde-Nav">
+      {
+        i18n.navigation.map((item) => (
+          <Link to={item.url}
+            key={item.url}
+            className={ "putainde-Nav-item" }
+            activeClassName={ "putainde-Nav-item--current" }
+          >
+            {
+              item.icon &&
               <SVGIcon
                 className="putainde-Icon"
-                svg={ SVGs[key] }
+                svg={SVGs[item.icon]}
                 cleanup
               />
-            </a>
-          ))
-        }
-      </nav>
-    )
-  }
+            }
+            {item.name}
+          </Link>
+        ))
+      }
+      {
+        [ "github", "twitter", "chat" ].map((key) => (
+          <a href={i18n[key]}
+            key={i18n[key]}
+            className={cx({
+              "putainde-Nav-item": true,
+              "putainde-Nav-item--icon": true,
+              "r-Tooltip": true,
+              "r-Tooltip r-Tooltip--bottom": true,
+            })}
+            data-r-tooltip={i18n[key + "Label"]}
+          >
+            <SVGIcon
+              className="putainde-Icon"
+              svg={ SVGs[key] }
+              cleanup
+            />
+          </a>
+        ))
+      }
+    </nav>
+  )
 }
+
+Navigation.contextTypes = {
+  metadata: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+}
+
+export default Navigation

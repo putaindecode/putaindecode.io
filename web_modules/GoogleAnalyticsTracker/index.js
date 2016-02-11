@@ -4,17 +4,7 @@ import { PropTypes } from "react"
 import ga from "react-google-analytics"
 const GoogleAnalyticsInitiailizer = ga.Initializer
 
-export default class GoogleAnalyticsTracker extends Component {
-
-  static propTypes = {
-    children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
-    params: PropTypes.object.isRequired,
-  }
-
-  static contextTypes = {
-    metadata: PropTypes.object.isRequired,
-  }
-
+class GoogleAnalyticsTracker extends Component {
   componentWillMount() {
     const { pkg } = this.context.metadata
     if (__PROD__) {
@@ -50,3 +40,14 @@ export default class GoogleAnalyticsTracker extends Component {
     )
   }
 }
+
+GoogleAnalyticsTracker.propTypes = {
+  children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
+  params: PropTypes.object.isRequired,
+}
+
+GoogleAnalyticsTracker.contextTypes = {
+  metadata: PropTypes.object.isRequired,
+}
+
+export default GoogleAnalyticsTracker

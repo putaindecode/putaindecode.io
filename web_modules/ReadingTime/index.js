@@ -1,38 +1,7 @@
 import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 
-export default class ReadingTime extends Component {
-
-  static defaultProps = {
-    // http://www.slate.fr/lien/57193/adulte-300-mots-minute
-    // http://www.combiendemots.com/mot-par-minute
-    // 250 seems cool
-    wordsPerMinute: 250,
-    templateText: {
-      1: "less than a minute",
-      2: "around ${minutes} minutes",
-    },
-    templateTooltip:
-      "Approxiate time, based on a speed of ${wordsPerMinute} words per minute",
-    tooltipPosition: "top",
-  }
-
-  static propTypes = {
-    text: PropTypes.string.isRequired,
-    before: PropTypes.string,
-    templateText: PropTypes.object,
-    after: PropTypes.string,
-    templateTooltip: PropTypes.string,
-    className: PropTypes.string,
-    wordsPerMinute: PropTypes.number,
-    tooltipPosition: PropTypes.oneOf([
-      "top",
-      "bottom",
-      "left",
-      "right",
-    ]),
-  }
-
+class ReadingTime extends Component {
   constructor(props) {
     super(props)
     const words = this.props.text
@@ -76,3 +45,35 @@ export default class ReadingTime extends Component {
     )
   }
 }
+
+ReadingTime.propTypes = {
+  text: PropTypes.string.isRequired,
+  before: PropTypes.string,
+  templateText: PropTypes.object,
+  after: PropTypes.string,
+  templateTooltip: PropTypes.string,
+  className: PropTypes.string,
+  wordsPerMinute: PropTypes.number,
+  tooltipPosition: PropTypes.oneOf([
+    "top",
+    "bottom",
+    "left",
+    "right",
+  ]),
+}
+
+ReadingTime.defaultProps = {
+  // http://www.slate.fr/lien/57193/adulte-300-mots-minute
+  // http://www.combiendemots.com/mot-par-minute
+  // 250 seems cool
+  wordsPerMinute: 250,
+  templateText: {
+    1: "less than a minute",
+    2: "around ${minutes} minutes",
+  },
+  templateTooltip:
+  "Approxiate time, based on a speed of ${wordsPerMinute} words per minute",
+  tooltipPosition: "top",
+}
+
+export default ReadingTime

@@ -1,26 +1,15 @@
-import React, { Component, PropTypes } from "react"
+import React, { PropTypes } from "react"
 
 import PostPreview from "../PostPreview"
 
-export default class PostsList extends Component {
+const PostsList = ({ posts }) => (
+  <div className="putainde-List">
+    { posts.map(post => <PostPreview key={post.title} post={post} />) }
+  </div>
+)
 
-  static contextTypes = {
-    i18n: PropTypes.object,
-  }
-
-  static propTypes = {
-    posts: PropTypes.array,
-  }
-
-  render() {
-    return (
-      <div className="putainde-List">
-      {
-        this.props.posts.map((post) => {
-          return <PostPreview key={post.title} post={post} />
-        })
-      }
-      </div>
-    )
-  }
+PostsList.propTypes = {
+  posts: PropTypes.array,
 }
+
+export default PostsList
