@@ -1,5 +1,5 @@
 import tape from "tape-catch"
-import React, { Component } from "react"
+import React from "react"
 import SVGIcon from ".."
 
 tape("SVGIcon", (test) => {

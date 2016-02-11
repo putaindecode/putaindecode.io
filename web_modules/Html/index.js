@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from "react"
+import React, { PropTypes } from "react"
 
 const Html = ({ children }) => (
   <html lang="fr" className="r-VerticalRhythm">
-    {this.props.children}
+    {children}
   </html>
 )
 

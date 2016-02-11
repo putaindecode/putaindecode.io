@@ -16,7 +16,7 @@ const AdventCalendar = (props) => (
 
         <footer className="putainde-Post-footer">
 
-          <Contributors filename={this.props.__filename} />
+          <Contributors filename={props.__filename} />
 
         </footer>
       </div>
