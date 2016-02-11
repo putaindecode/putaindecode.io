@@ -119,21 +119,6 @@ class Homepage extends Component {
           </div>
         </div>
 
-        <Link
-          className="putainde-AdventCalendarLink"
-          to={
-            locale === "fr"
-            ? "/fr/evenements/2015/calendrier-avent/"
-            : "/en/events/2015/advent-calendar/"
-          }
-        >
-          {
-            locale === "fr"
-            ? "🎄 Jetez un oeil à notre calendrier de l'avent ES6/2015 ! 🎄"
-            : "🎄 Check out our ES6/2015 Advent calendar! 🎄"
-          }
-        </Link>
-
         <div
           className={ "r-Grid" }
           style={ {
