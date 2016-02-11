@@ -15,6 +15,7 @@ import TopContributors from "TopContributors"
 import classes from "./styles.css"
 
 const supportedLocales = [ "fr", "en" ]
+const numberOfLatestPosts = 12
 
 export default
 @connect(
@@ -85,7 +86,7 @@ class Homepage extends Component {
       reverse: true,
     })
     .filter((post) => post.__filename.startsWith(`${ locale }/`))
-    .slice(0, 3)
+    .slice(0, numberOfLatestPosts)
 
     const { recentContributions } = this.context.metadata.contributors
 
@@ -126,14 +127,9 @@ class Homepage extends Component {
             textAlign: "center",
           } }
         >
-          <div
-            className={ "r-Grid-cell r-minM--8of12 " + classes.latestPosts }
-            style={ { textAlign: "left" } }
-          >
-            <LatestPosts
-              posts={ latestPosts }
-            />
-          </div>
+          <LatestPosts
+            posts={ latestPosts }
+          />
         </div>
 
         <Link
