@@ -14,7 +14,7 @@ const readFile = asyncify(fs.readFile)
 const writeFile = asyncify(fs.writeFile)
 
 //
-
+const topContribMonths = 6
 const authorsFiles = "content/authors/*.json"
 const contributorsFile = "contributors.json"
 
@@ -250,7 +250,7 @@ async function recentContributions() {
 
   // get recent contributions for the last X months
   const since = new Date()
-  since.setMonth(since.getMonth() - 12)
+  since.setMonth(since.getMonth() - topContribMonths)
 
   const command = `git shortlog --no-merges --summary --numbered --email ` +
     `--since "${ since.toISOString() }"` +

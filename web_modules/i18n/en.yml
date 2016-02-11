@@ -19,7 +19,7 @@
   howThisWorks: "How this works?"
   topContributors: "Most Active Contributors"
   topContributorsNoData: "No data to show the top"
-  topContributorsNote: "on the last 12 months"
+  topContributorsNote: "on the last 6 months"
   initialCommit: "initial commit by"
   morePosts: "More posts"
   writtenBy: "Written by"
