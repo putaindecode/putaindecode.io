@@ -43,7 +43,10 @@ const Post = (props, context) => {
               </div>
             }
 
-            <Contributors filename={props.__filename} />
+            <Contributors
+              filename={props.__filename}
+              reviewers={post.reviewers}
+            />
 
           </footer>
 

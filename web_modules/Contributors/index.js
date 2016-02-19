@@ -6,7 +6,7 @@ import getI18n from "i18n/get"
 const getGithubUrl
   = (repo, action, filename) => `${repo}/${action}/master/content/${filename}`
 
-const Contributors = ({ filename }, context) => {
+const Contributors = ({ filename, reviewers }, context) => {
   const i18n = getI18n(context)
   const { metadata } = context
   const contributors = metadata.contributors
@@ -14,6 +14,12 @@ const Contributors = ({ filename }, context) => {
 
   const fileContributors = contributors.files &&
   contributors.files[`content/${filename}`]
+
+  // Merges people that have contributed to the file + reviewers (with dedup)
+  const people = reviewers.reduce((acc, cur) => {
+    if (acc.indexOf(cur) === -1) acc.push(cur)
+    return acc
+  }, Object.keys(fileContributors))
 
   const nbFileContributors = fileContributors
     ? Object.keys(fileContributors).length
@@ -79,16 +85,17 @@ const Contributors = ({ filename }, context) => {
       </div>
 
       {
-        nbFileContributors > 1 && fileContributors &&
-        Object.keys(fileContributors).map(login => {
+        nbFileContributors > 1 && people.length &&
+        people.map((login, idx) => {
           if (login === undefined) {
             console.warn(`${filename} have an undefined contributor.`)
           }
           return (
             <Contributor
               author={ login }
-              commits={ fileContributors[login] }
+              commits={ parseInt(fileContributors[login], 10) || 0 }
               size={ "small" }
+              key={ idx }
             />
           )
         })
@@ -99,6 +106,11 @@ const Contributors = ({ filename }, context) => {
 
 Contributors.propTypes = {
   filename: PropTypes.string.isRequired,
+  reviewers: PropTypes.array,
+}
+
+Contributors.defaultProps = {
+  reviewers: [],
 }
 
 Contributors.contextTypes = {

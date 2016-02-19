@@ -12,10 +12,11 @@ const Contributor = ({ author, commits, size }) => (
       "r-Tooltip--bottom",
       "r-Tooltip--allowNewLines"
     ) }
-    data-r-tooltip={ [
-      author,
-      `(${ commits } commit${ commits > 1 ? "s" : "" })`,
-    ].join("\n") }
+    data-r-tooltip={
+      commits
+      ? `${ author }\n(${ commits } commit${ commits > 1 ? "s" : "" })`
+      : `${ author }\n(reviewer)`
+    }
   >
     <Avatar
       author={ author }
