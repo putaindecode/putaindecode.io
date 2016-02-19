@@ -1,5 +1,5 @@
 import tape from "tape-catch"
-import React, { Component } from "react"
+import React from "react"
 import SVGIcon from ".."
 
 tape("SVGIcon", (test) => {
@@ -26,13 +26,7 @@ tape("SVGIcon", (test) => {
     "parent component can be chosen by tagName"
   )
 
-  class TestComponent extends Component {
-    render() {
-      return (
-        <div {...this.props} className="foo" />
-      )
-    }
-  }
+  const TestComponent = (props) => <div {...props} className="foo" />
 
   test.equal(
     React.renderToStaticMarkup(

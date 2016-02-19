@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react"
+import React, { PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
 
@@ -79,151 +79,145 @@ function renderCSSBackground(metadata) {
   }
 }
 
-export default class WithHeroHeader extends Component {
+const WithHeroHeader = (
+  { body, children, head, meta, rawBody, tags, __url, __filename },
+  context
+) => {
+  const i18n = getI18n(context)
+  const { metadata } = context
+  const post = head
 
-  static propTypes = {
-    __url: PropTypes.string.isRequired,
-    __filename: PropTypes.string.isRequired,
-    head: PropTypes.object.isRequired,
-    body: PropTypes.string.isRequired,
-    rawBody: PropTypes.string.isRequired,
-    meta: PropTypes.bool,
-    tags: PropTypes.bool,
-  }
+  const twitterAuthor =
+    post.authors && post.authors.length
+    ? metadata.contributors.getContributor(post.authors[0]).twitter
+    : i18n.twitterUsername
 
-  static contextTypes = {
-    metadata: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-  }
-
-  defaultProps = {
-    meta: true,
-    tags: true,
-  }
-
-  render() {
-    const i18n = getI18n(this.context)
-    const { metadata } = this.context
-
-    const {
-      head,
-      rawBody,
-      meta,
-      tags,
-    } = this.props
-
-    const post = head
-
-    const twitterAuthor =
-      post.authors && post.authors.length
-      ? metadata.contributors.getContributor(post.authors[0]).twitter
-      : i18n.twitterUsername
-
-    return (
-      <div className="putainde-Main">
-        <Helmet
-          title={ post.title }
-          meta={[
-            { property: "og:type", content: "article" },
-            { property: "og:title", content: post.title },
-            { name: "twitter:card", content: "summary" },
-            { name: "twitter:title", content: post.title },
-            { name: "twitter:creator", content: `@${ twitterAuthor }` },
-          ]}
-        />
-        <article
-          className={cx({
-            "putainde-Post": true,
-            "putainde-Post--customHeader": post.header,
-          })}
-        >
-          <header>
-            <div
-              className={cx({
-                "putainde-Post-header": true,
-                "putainde-Post-header--custom": post.header,
-                "putainde-Post-header--filter":
-                  post.header && post.header.filter,
-                "putainde-Post-header--dark":
-                  post.header && !post.header.light,
-                "putainde-Post-header--light":
-                    post.header && post.header.light,
-              })}
-            >
-              {
-                post.header &&
-                <div
-                  className="putainde-Post-header-picture"
-                  style={renderCSSBackground(post.header)}
-                >
-                </div>
-              }
-              {
-                post.header && post.header.credit &&
-                <a
-                  className="putainde-Post-header-pictureCredit"
-                  href={post.header.credit}
-                >
-                  {"Crédit photo"}
-                </a>
-              }
-              {
-                post.title &&
-                <h1 className="putainde-Title">
-                  {post.title}
-                </h1>
-              }
-            </div>
+  return (
+    <div className="putainde-Main">
+      <Helmet
+        title={ post.title }
+        meta={[
+          { property: "og:type", content: "article" },
+          { property: "og:title", content: post.title },
+          { name: "twitter:card", content: "summary" },
+          { name: "twitter:title", content: post.title },
+          { name: "twitter:creator", content: `@${ twitterAuthor }` },
+        ]}
+      />
+      <article
+        className={cx({
+          "putainde-Post": true,
+          "putainde-Post--customHeader": post.header,
+        })}
+      >
+        <header>
+          <div
+            className={cx({
+              "putainde-Post-header": true,
+              "putainde-Post-header--custom": post.header,
+              "putainde-Post-header--filter":
+                post.header && post.header.filter,
+              "putainde-Post-header--dark":
+                post.header && !post.header.light,
+              "putainde-Post-header--light":
+                  post.header && post.header.light,
+            })}
+          >
             {
-              (meta && (post.authors || post.date)) &&
-              <div className="putainde-Post-metas">
-                {
-                  (post.authors && post.authors.length) &&
-                  <span>
-                    {`${i18n.writtenBy} `}
-                    <AuthorsList authors={post.authors} />
-                  </span>
-                }
-                {
-                  (post.authors && post.authors.length && post.date) &&
-                  <span>{", "}</span>
-                }
-                {
-                  post.date &&
-                  <span className="putainde-Date">
-                    { formatDate(post.date) }
-                  </span>
-                }
-                {". "}
-
-                <ReadingTime
-                  text={rawBody}
-                  before={i18n.readingTime}
-                  templateText={{
-                    1: i18n.readingTime1,
-                    2: i18n.readingTime2,
-                  }}
-                  templateTooltip={i18n.readingTimeComment}
-                  className="putainde-Post-readingTime"
-                />
+              post.header &&
+              <div
+                className="putainde-Post-header-picture"
+                style={renderCSSBackground(post.header)}
+              >
               </div>
             }
             {
-              tags && post.tags &&
-              <ul className="putainde-Tags putainde-Post-tags">
-              {
-                post.tags.map(tag => (
-                  <li key={tag} className="putainde-Tag">{tag}</li>
-                ))
-              }
-              </ul>
+              post.header && post.header.credit &&
+              <a
+                className="putainde-Post-header-pictureCredit"
+                href={post.header.credit}
+              >
+                {"Crédit photo"}
+              </a>
             }
-          </header>
+            {
+              post.title &&
+              <h1 className="putainde-Title">
+                {post.title}
+              </h1>
+            }
+          </div>
+          {
+            (meta && (post.authors || post.date)) &&
+            <div className="putainde-Post-metas">
+              {
+                (post.authors && post.authors.length) &&
+                <span>
+                  {`${i18n.writtenBy} `}
+                  <AuthorsList authors={post.authors} />
+                </span>
+              }
+              {
+                (post.authors && post.authors.length && post.date) &&
+                <span>{", "}</span>
+              }
+              {
+                post.date &&
+                <span className="putainde-Date">
+                  { formatDate(post.date) }
+                </span>
+              }
+              {". "}
 
-          { this.props.children }
+              <ReadingTime
+                text={rawBody}
+                before={i18n.readingTime}
+                templateText={{
+                  1: i18n.readingTime1,
+                  2: i18n.readingTime2,
+                }}
+                templateTooltip={i18n.readingTimeComment}
+                className="putainde-Post-readingTime"
+              />
+            </div>
+          }
+          {
+            tags && post.tags &&
+            <ul className="putainde-Tags putainde-Post-tags">
+            {
+              post.tags.map(tag => (
+                <li key={tag} className="putainde-Tag">{tag}</li>
+              ))
+            }
+            </ul>
+          }
+        </header>
 
-        </article>
-      </div>
-    )
-  }
+        { children }
+
+      </article>
+    </div>
+  )
 }
+
+WithHeroHeader.propTypes = {
+  __url: PropTypes.string.isRequired,
+  __filename: PropTypes.string.isRequired,
+  head: PropTypes.object.isRequired,
+  body: PropTypes.string.isRequired,
+  rawBody: PropTypes.string.isRequired,
+  meta: PropTypes.bool,
+  tags: PropTypes.bool,
+}
+
+WithHeroHeader.contextTypes = {
+  metadata: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+}
+
+WithHeroHeader.defaultProps = {
+  meta: true,
+  tags: true,
+}
+
+export default WithHeroHeader
