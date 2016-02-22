@@ -21,21 +21,12 @@ const Contributors = ({ filename, reviewers }, context) => {
     return acc
   }, Object.keys(fileContributors))
 
-  const nbFileContributors = fileContributors
-    ? Object.keys(fileContributors).length
-    : 1
-
   return (
     <div className="putainde-Contributors">
       <strong className="putainde-Contributors-label">
-      {
-        nbFileContributors === 1 &&
-        i18n.BeTheFirstToContribute
-      }
-      {
-        nbFileContributors > 1 &&
-        `${nbFileContributors} ${i18n.contributors} ` +
-        i18n.onThisPage
+      { people.length === 1 && i18n.BeTheFirstToContribute }
+      { people.length > 1 &&
+        `${people.length} ${i18n.contributors} ` + i18n.onThisPage
       }
       </strong>
 
@@ -85,8 +76,7 @@ const Contributors = ({ filename, reviewers }, context) => {
       </div>
 
       {
-        nbFileContributors > 1 && people.length &&
-        people.map((login, idx) => {
+        people.length && people.map((login, idx) => {
           if (login === undefined) {
             console.warn(`${filename} have an undefined contributor.`)
           }
