@@ -13,7 +13,7 @@ const Contributors = ({ filename, reviewers }, context) => {
   const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
 
   const fileContributors = contributors.files &&
-  contributors.files[`content/${filename}`]
+  contributors.files[`content/${filename}`] || []
 
   // Merges people that have contributed to the file + reviewers (with dedup)
   const people = reviewers.reduce((acc, cur) => {
