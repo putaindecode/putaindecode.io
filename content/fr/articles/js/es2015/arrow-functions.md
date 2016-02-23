@@ -7,6 +7,8 @@ tags:
   - ES2015
 authors:
   - MoOx
+reviewers:
+  - Nyalab
 ---
 
 ES2015 nous apporte encore du sucre syntaxique qui risque très probablement de

@@ -6,30 +6,27 @@ import getI18n from "i18n/get"
 const getGithubUrl
   = (repo, action, filename) => `${repo}/${action}/master/content/${filename}`
 
-const Contributors = ({ filename }, context) => {
+const Contributors = ({ filename, reviewers }, context) => {
   const i18n = getI18n(context)
   const { metadata } = context
   const contributors = metadata.contributors
   const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
 
   const fileContributors = contributors.files &&
-  contributors.files[`content/${filename}`]
+  contributors.files[`content/${filename}`] || []
 
-  const nbFileContributors = fileContributors
-    ? Object.keys(fileContributors).length
-    : 1
+  // Merges people that have contributed to the file + reviewers (with dedup)
+  const people = reviewers.reduce((acc, cur) => {
+    if (acc.indexOf(cur) === -1) acc.push(cur)
+    return acc
+  }, Object.keys(fileContributors))
 
   return (
     <div className="putainde-Contributors">
       <strong className="putainde-Contributors-label">
-      {
-        nbFileContributors === 1 &&
-        i18n.BeTheFirstToContribute
-      }
-      {
-        nbFileContributors > 1 &&
-        `${nbFileContributors} ${i18n.contributors} ` +
-        i18n.onThisPage
+      { people.length === 1 && i18n.BeTheFirstToContribute }
+      { people.length > 1 &&
+        `${people.length} ${i18n.contributors} ` + i18n.onThisPage
       }
       </strong>
 
@@ -79,16 +76,16 @@ const Contributors = ({ filename }, context) => {
       </div>
 
       {
-        nbFileContributors > 1 && fileContributors &&
-        Object.keys(fileContributors).map(login => {
+        people.length && people.map((login, idx) => {
           if (login === undefined) {
             console.warn(`${filename} have an undefined contributor.`)
           }
           return (
             <Contributor
               author={ login }
-              commits={ fileContributors[login] }
+              commits={ parseInt(fileContributors[login], 10) || 0 }
               size={ "small" }
+              key={ idx }
             />
           )
         })
@@ -99,6 +96,11 @@ const Contributors = ({ filename }, context) => {
 
 Contributors.propTypes = {
   filename: PropTypes.string.isRequired,
+  reviewers: PropTypes.array,
+}
+
+Contributors.defaultProps = {
+  reviewers: [],
 }
 
 Contributors.contextTypes = {
