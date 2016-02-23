@@ -6,7 +6,7 @@ tags:
   - outils
   - css modules
 authors:
-  - thib_thib
+  - thibthib
 ---
 
 > Je crois que même avant que je sache exactement ce qu'était le CSS, j'avais
@@ -17,13 +17,15 @@ outils de développement front-end évoluent rapidement, je trouve intéressant
 d'expliquer les nouvelles façons d'écrire le CSS.
 
 
-# Retour aux bases
+## Retour aux bases
+
 D'abord, pour comprendre quel sont les problèmes que les nouveaux outils tentent
 de résoudre, un petit rappel sur ce qu'est le CSS : *Cascading Style Sheets* ou
 *Feuilles de style en cascade*.
 
-Une feuille de style ? C'est facile ! C'est un bout de code qui lie des "styles" à
-du HTML. En cascade ? Et bien, quelques fois un élément HTML peut correspondre à
+Une feuille de style ? C'est facile ! C'est un bout de code qui lie des "styles"
+à du HTML.
+En cascade ? Et bien, quelques fois un élément HTML peut correspondre à
 plusieurs styles, et "en cascade" est le groupe de règles qui permet de
 déterminer lequel appliquer.
 
@@ -41,7 +43,8 @@ Ici, nous lions la ***règle (ou déclaration)*** `color: red` au ***sélecteur*
 > Et les dernières lueurs de bonheur s'éteignent alors que nous entrons dans
 > l'enfer de la cascade
 
-# Le truc qui cascade
+## Le truc qui cascade
+
 La cascade est pour moi un désastre qui rend le CSS très compliqué à maintenir
 si on ne suit pas de lignes directrices ou on n'utilise pas d'outils pour
 l'écrire. Je vais vous montrer quelques exemples simples pour vous expliquer les
@@ -49,8 +52,8 @@ principaux concepts de la cascade, mais gardez en tête que la plupart des
 applications web contiennent de nos jours beaucoup de code, aggravant les effets
 de la cascade.
 
-La nécessité d'avoir un système comme la cascade vient du fait que le CSS permet à
-plusieurs règles de style de s'appliquer à un même élément, ces dernières
+La nécessité d'avoir un système comme la cascade vient du fait que le CSS permet
+à plusieurs règles de style de s'appliquer à un même élément, ces dernières
 pouvant même venir de plusieurs origines (du site, mais aussi du navigateur ou
 encore même de l'utilisateur). Il faut donc pouvoir définir dans ce cas-là
 quelle est la règle qui au final sera appliquée. Pour cela, la cascade donne à
@@ -61,11 +64,13 @@ critères de calcul de poids ne le sont pas du tout.
 Les règles qui sont les plus légères dans la cascade ne sont pas vraiment un
 problème, mais il faut les connaitre afin de s'éviter des surprises :
 
-## Les valeurs par défaut du navigateur
+### Les valeurs par défaut du navigateur
+
 Voici le haut de la cascade. Ce sont les règles qui font qu'un titre h1 est gros
 même si on ne l'a pas spécifié.
 
-## L'héritage des parents
+### L'héritage des parents
+
 Ensuite, les règles sont héritées depuis les éléments HTML parents. Si on
 reprend notre élément h1, si une règle `color: blue` est définie sur l'élément
 `body`, le titre va en hériter, et sera donc bleu.
@@ -73,11 +78,14 @@ reprend notre élément h1, si une règle `color: blue` est définie sur l'élé
 Ceci étant dit, on entre maintenant dans un niveau plus douloureux de la
 cascade.
 
-## L'ordre des règles
-La position d'une règle par rapport aux autres va influer sur son poids. Deux règles
-auraient pu avoir le même poids si elles étaient à la même position mais, au
-final, c'est la dernière qui sera la plus lourde et sera donc appliquée. ***La
-dernière.***  Quand il s'agit de code assez simple, cela peut être facilement
+### L'ordre des règles
+
+La position d'une règle par rapport aux autres va influer sur son poids.
+Deux règles auraient pu avoir le même poids si elles étaient à la même position
+mais, au final, c'est la dernière qui sera la plus lourde et sera donc
+appliquée.
+***La dernière.***
+Quand il s'agit de code assez simple, cela peut être facilement
 compréhensible :
 
 ```css
@@ -94,11 +102,14 @@ fichier *bar.css* à charger, mais que le tag HTML référençant *foo.css* est
 avant celui de *bar.css*, quelle règle est appliquée ? Eh bien, c'est plus
 compliqué à savoir. *(indice : le temps de chargement n'est pas pris en compte)*
 
-## La spécificité des sélecteurs
+### La spécificité des sélecteurs
+
 Ce critère est un niveau de complexité au-dessus des autres, [si bien que des
 personnes en ont fait des calculettes pour le
 simplifier](https://specificity.keegan.st). Je ne vais pas rentrer dans les
-détails, mais il faut savoir que le poids d'un sélecteur est égal à la somme des poids de tous les sélecteurs le composant. Et que tous les sélecteurs n'ont pas le même poids.
+détails, mais il faut savoir que le poids d'un sélecteur est égal à la somme des
+poids de tous les sélecteurs le composant.
+Et que tous les sélecteurs n'ont pas le même poids.
 
 
 ```css
@@ -116,7 +127,8 @@ CSS, qui pèse lui-même 10. Le deuxième sélecteur quant à lui pèse 3, parce
 contient trois sélecteurs de tag, pesant chacun 1. Et donc, comme 10 > 3, le
 titre h1 sera rouge !
 
-## Les styles inline
+### Les styles inline
+
 Les règles qui sont dans l'attribut “style” d'un élément HTML sont plus lourdes
 que n'importe quel sélecteur défini précédemment. Et donc voici un titre bleu :
 
@@ -129,7 +141,8 @@ h1 {
 <h1 style="color: blue;">Title</h1>
 ```
 
-## Importance
+### Importance
+
 Et enfin le dernier critère, le God Mode, le broyeur de styles, le mot-clé
 ***!important.*** Quand on veut VRAIMENT que le titre soit rouge :
 
@@ -152,19 +165,21 @@ autres pour définir le style d'un site, et vous comprendrez l'enfer que peut
 être le CSS. Ainsi, des développeurs CSS ont imaginé différentes méthodologies
 et outils pour éviter ce cauchemar !
 
-# L'évolution des outils
+## L'évolution des outils
+
 Maintenant, je vais vous présenter comment ma façon d'écrire du CSS a évolué au
 fil du temps. Ne vous attendez pas à une chronologie complète de tous les
 outils inventés depuis la création du CSS en 1996 (j'avais 6 ans !) mais plutôt
 une explication de comment je me suis débrouillé avec la cascade dans ma courte
 expérience personnelle.
 
-## Pré-processeurs
+### Pré-processeurs
+
 J'ai commencé à developper des applications web en 2012, en plein âge d'or [des
-pré-processeurs](http://putaindecode.io/fr/articles/css/preprocesseurs/). Ils
+pré-processeurs](/fr/articles/css/preprocesseurs/). Ils
 étaient apparus quelques années auparavant, comme le CSS lui-même n'était pas
-suffisamment adapté pour construire des sites complexes. Les pré-processeurs sont des
-compilateurs qui génèrent du code CSS à partir de languages légèrement
+suffisamment adapté pour construire des sites complexes. Les pré-processeurs
+sont des compilateurs qui génèrent du code CSS à partir de languages légèrement
 différents, comme [Sass](http://sass-lang.com) ou [LESS](http://lesscss.org).
 Ces nouveaux languages permettent de créer des variables par exemple, ou
 d'imbriquer des sélecteurs, entre autres merveilleuses nouvelles
@@ -189,7 +204,7 @@ $textColor: #333333;
 
 body {
   background: lighten($textColor, 90%);
-    
+
   h1 {
     color: $textColor
   }
@@ -198,9 +213,9 @@ body {
 
 Avec ces nouveaux outils, et pour éviter aux règles d'entrer en collision dans
 la cascade, nous avons commencé à imbriquer nos sélecteurs et à répliquer toute
-notre structure HTML dans le code de notre pré-processeur favori. Notre CSS se 
+notre structure HTML dans le code de notre pré-processeur favori. Notre CSS se
 retrouva donc avec des sélecteurs très long et lourds qui étaient associés
-uniquement avec un element HTML précis, comme ce dernier : 
+uniquement avec un element HTML précis, comme ce dernier :
 
 > .searchPage .sideBar .refinements.default .category .star input
 
@@ -209,19 +224,20 @@ performants, et la structure du HTML étant répliquée, n'importe quel changeme
 dans cette dernière doit être répercuté dans les styles. Donc je suis passé à
 autre chose.
 
-## Méthodologies CSS
+### Méthodologies CSS
+
 À ce moment, quelques nouvelles guidelines CSS ont commencé a attirer mon
 attention. On pouvait les utiliser avec les pré-processeurs, et avaient pour but
 d'éviter les collisions dans la cascade (tout comme l'imbrication des
 sélecteurs) avec un certain nombre de règles, comme sur le nommage des
 sélecteurs.
 
-Ces methodologies sont arrivées au moment ou je commençais à découper mes
+Ces méthodologies sont arrivées au moment ou je commençais à découper mes
 développements en composants. L'imbrication des sélecteurs ne marchait pas très
 bien avec ces derniers, vu que le but est de créer des bouts de code
 réutilisables partout dans la web app, comme un bouton par exemple. La
 méthodologie que j'utilise (toujours aujourd'hui) est appelée [BEM, pour Block
-Element Modifier](http://putaindecode.io/fr/articles/css/bem/), mais il y en a
+Element Modifier](/fr/articles/css/bem/), mais il y en a
 d'autres avec le même but : chaque élément HTML de mes composants doit avoir une
 classe CSS qui lui est unique. De cette façon, pas besoin d'imbrication, et pas
 de collision de la cascade !
@@ -231,7 +247,7 @@ Et ce code de pré-processeur :
 ```scss
 h1 {
   color: $textColor
-  
+
   img {
     border: 1px solid black;
   }
@@ -251,15 +267,17 @@ se transforme en :
 ```
 
 Évidement, le code HTML doit être mis à jour avec les nouvelles classes, mais
-les sélecteurs sont maintenant courts et compréhensibles. Et ceci, sans aucune chance
-de collision de cascade.
+les sélecteurs sont maintenant courts et compréhensibles. Et ceci, sans aucune
+chance de collision de cascade.
 
 Maintenant, pour pouvoir mieux expliquer un dernier outil, celui qui je pense va
 résoudre tous nos problèmes, il faut que je vous montre une autre approche pour
 contourner les problèmes de la cascade :
 
-## Frameworks CSS
-Ici, pour éviter à nos règles CSS d'entrer en collision, nous… n'en écrivons plus !
+### Frameworks CSS
+
+Ici, pour éviter à nos règles CSS d'entrer en collision, nous… n'en écrivons
+plus !
 Les frameworks CSS sont des styles déjà écrits qu'on peut utiliser avec des
 classes CSS spécifiques. Il y a deux approches ici :
 
@@ -282,18 +300,19 @@ court que *“border-style: solid; border-width: 1px;”*
 Ces frameworks nous évitent tout tracas avec la cascade ! Mais je n'aimais pas
 le fait d'utiliser un framework, ainsi qu'avoir beaucoup de classes non
 compréhensibles dans mon code HTML. Cependant, la totale réutilisabilité et
-modularité des styles, sans problèmes de cascade, sont impressionnants. 
+modularité des styles, sans problèmes de cascade, sont impressionnants.
 
 Cela nous amène donc à cet outil génial, forgé directement avec la meilleure
 magie JavaScript :
 
-## CSS Modules
+### CSS Modules
+
 Ce concept a d'abord pris forme suite à une simple observation : de nos jours,
 le CSS est compilé à partir d'autres languages pour permettre une écriture plus
 facile, et pour cette même raison le HTML est aussi généré grâce à des outils de
 templating en JavaScript. Mais les sélecteurs CSS, le lien entre les éléments et
 les styles, ceux-la même auxquels le codeur doit faire très attention pour
-éviter qu'ils n'entrent en collision, n'ont pas d'outils du tout. 
+éviter qu'ils n'entrent en collision, n'ont pas d'outils du tout.
 
 Et [CSS Modules](https://github.com/css-modules/css-modules) fut créé. La
 première fonctionnalité intéressante est la génération automatique des noms de
@@ -306,6 +325,7 @@ permet de réécrire ce code CSS en BEM, et HTML :
   color: $textColor;
 }
 ```
+
 ```html
 <h1 class="Title"></h1>
 ```
@@ -317,6 +337,7 @@ en ce code CSS et template JavaScript :
   color: $textColor
 }
 ```
+
 ```js
 import styles from './style.css';
 `<h1 class=${styles.styleName}></h1>`
@@ -329,6 +350,7 @@ Une fois compilé, ce code générera quelque chose comme ça :
   color: #333333;
 }
 ```
+
 ```html
 <h1 class="styleName__abc5436"></h1>
 ```
@@ -339,7 +361,7 @@ La deuxième fonctionnalité géniale, directement inspirée par les frameworks 
 modulaires comme Tachyons, est la composition des styles. De la même façon qu'en
 ajoutant plusieurs classes utilitaires sur son élément HTML, CSS Modules nous
 permet de composer nos classes à partir de styles communs. Laissez-moi vous
-montrer : 
+montrer :
 
 ```css
 .titleColor {
@@ -356,6 +378,7 @@ montrer :
   font-size: 16px;
 }
 ```
+
 ```js
 import styles from './style.css';
 `<h1 class=${styles.bigTitle}></h1>
@@ -377,6 +400,7 @@ va générer :
   font-size: 16px;
 }
 ```
+
 ```js
 <h1 class="titleColor__abc5436 bigTitle__def6547"></h1>
 <h2 class="titleColor__abc5436 mediumTitle__1638bcd"></h2>
@@ -390,4 +414,4 @@ mauvais souvenir.
 Et c'est ainsi que j'ai expérimenté avec le CSS et sa cascade jusque-là.
 J'espère que les mois et les années à venir vont me surprendre avec de meilleurs
 outils et / ou méthodologies, et je serais heureux de les apprendre et les
-essayer 👍🏼
+essayer 👍

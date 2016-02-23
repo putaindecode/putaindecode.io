@@ -1,0 +1,23 @@
+{
+  "twitter": "thib_thib",
+  "fr": {
+    "bio": {
+      "short": "Designer d'interface et développeur web",
+      "long": [
+        "60% de sorcellerie front-end.",
+        "30% de design au pixel près.",
+        "10% de curiosité biologique."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Interface designer and web developer",
+      "long": [
+        "60% of front-end wizardry.",
+        "30% of pixel perfect design.",
+        "10% of biological curiosity."
+      ]
+    }
+  }
+}
