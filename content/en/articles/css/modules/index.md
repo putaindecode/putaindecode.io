@@ -1,9 +1,8 @@
 ---
 date: "2016-02-23"
-title: CSS tooling evolution
+title: Toward CSS modules
 tags:
   - css
-  - tooling
   - css modules
 authors:
   - thibthib

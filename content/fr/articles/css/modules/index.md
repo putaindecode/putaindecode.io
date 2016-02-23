@@ -1,9 +1,8 @@
 ---
 date: "2016-02-23"
-title: Évolution des outils CSS
+title: Vers les CSS modules
 tags:
   - css
-  - outils
   - css modules
 authors:
   - thibthib
