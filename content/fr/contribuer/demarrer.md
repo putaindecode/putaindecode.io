@@ -15,7 +15,7 @@ il faudra les choses suivantes:
 
 Ensuite _fork_ le projet sur GitHub
 
-![bouton fork](fork-button.jpg)
+![bouton fork](assets/fork-button.jpg)
 
 Une fois ceci fait, tu peux récupérer le projet chez toi
 et installer les dépendances :

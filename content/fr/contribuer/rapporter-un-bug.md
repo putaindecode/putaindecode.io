@@ -1,22 +1,33 @@
 ---
-title: Rapporter un bug
+title: J'ai trouvé un bug !
 layout: Page
 ---
 
-Rien de plus simple,
-[un formulaire simple vous attend](https://github.com/putaindecode/putaindecode.io/issues/new).
+_Note: Vous devez avoir avoir un compte GitHub._
 
-Selon la nature du bug, pensez à nous fournir les informations nécessaire pour
-le reproduire comme par exemple:
+## Soumettre un rapport de bug
 
-- Le nom et la version de votre navigateur web
-  (ex: Internet Explorer 6.0),
+Pas de panique ! Pour nous le signaler, il suffit simplement de remplir
+[le formulaire de rapport de bug](https://github.com/putaindecode/putaindecode.io/issues/new).
+
+Selon la nature du bug, pensez à nous fournir les informations nécessaires pour
+le reproduire comme par exemple :
+
+- Le nom et la version de votre navigateur web avec votre système d'exploitation
+  (ex: Internet Explorer 6.0 sous Windows 98),
 - La taille de votre navigateur web
   (ex: super grand, super petit),
-- L'heure à laquelle vous avez reproduit ce bug et vos conditions physiques
+- La date et l'heure à laquelle vous avez reproduit ce bug et vos conditions physiques
   (ex: 3h du matin, 4g de sang par litre d'alcool).
 
-Vous vouvez aussi fournir un screenshot (annoté) si vous pensez que c'est
-pertinent.
+Vous pouvez aussi fournir un screenshot si vous pensez que c'est pertinent.
 
-<!-- TODO ajouter un exemple de rapport bien fait -->
+## Exemples
+
+### Un mauvais rapport de bug
+
+![Mauvais rapport de bug](assets/bad-issue.png)
+
+### Un bon rapport de bug
+
+![Bon rapport de bug](assets/good-issue.png)

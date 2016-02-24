@@ -3,28 +3,35 @@ title: Comment contribuer ?
 layout: Page
 ---
 
-Il y a plusieurs façons de contribuer à notre projet.
-Dans tous les cas, _il vous faudra un compte [GitHub](https://github.com/)_.
+Rien qu'en venant sur cette page, tu as déja fait le premier pas, et pour ça, on
+ te remercie 🤗.
 
-Selon le temps, l'envie, il possible de nous aider de diverses façons:
+Le site, le contenu et les processus de publication et de mise à jour du code
+sont entièrement open source, donc n'importe qui avec n'importe quel niveau de
+compétences peut apporter son aide. Il suffit d'avoir un compte
+*[GitHub](https://github.com/)*.
 
-- [Corriger une tournure de phrase ou faute dans un texte](/fr/contribuer/modifier-texte/)
-- [Rapporter un bug](/fr/contribuer/rapporter-bug/)
+Selon le temps et l'envie, il existe diverses façons de nous aider :
 
-## Contribuer sur le contenu
+## Nous signaler une erreur
 
-- [Faire une proposition d'article (à lire ou écrire)](#todo)
-- [Ecrire un article une fois la proposition accepté par la communauté](#todo)
-- [Manifester de l'intérêt concernant une proposition d'article](#todo)
-- [Faire des relectures d'articles avant publication](#todo)
+- [J'ai trouvé une erreur d'orthographe ou de grammaire !](/fr/contribuer/corriger-texte/)
+- [J'ai trouvé un bug !](/fr/contribuer/rapporter-bug/)
 
-## Contribuer sur le contenant
+## Faire évoluer le contenu
 
-Pour contribuer sur le site en lui même, il te faudra tout d'abord
-[faire tourner le site en local](/fr/contribuer/demarrer/)
+- [J'aimerais que vous écriviez un article sur le site](#todo)
+- [Faire une proposition d'idée d'article](#todo)
+- [Nous aider à prioriser les prochains articles](#todo)
+- [Écrire et soumettre un article](#todo)
+- [Faire des relectures d'articles](#todo)
+- [Traduire un article dans une nouvelle langue](/fr/contribuer/traduire/)
+
+## Faire évoluer le site
+
+_Note : Pour pouvoir contribuer au développement du site, il faut d'abord
+[faire tourner le site en local](/fr/contribuer/demarrer/)._
 
 - [Corriger un bug](#todo)
-- [Proposer une amélioration ou un changement](#todo)
-- [Discuter des propositions d'améliorations ou de changements](#todo)
-- [Faire des revues de code concernant des améliorations ou changements](#todo)
-- [Traduire un article dans une nouvelle langue](/fr/contribuer/traduire/)
+- [Proposer et discuter de l'amélioreation ou du développement de features](#todo)
+- [Faire des revues de code du site](#todo)
