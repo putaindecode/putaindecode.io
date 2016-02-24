@@ -79,8 +79,6 @@
     position: absolute;
     top: .5em;
     right: 0;
-    background: #fafafa;
-    border-radius: 2em;
   }
     @media (--r-maxS) {
       .putainde-Author-social {
@@ -90,6 +88,7 @@
     }
 
     .putainde-Author-social a {
+      background: #f9f9f9;
       color: #444;
       fill: #444;
       display: inline-block;
@@ -99,8 +98,19 @@
       .putainde-Author-social a .putainde-Icon { font-size: 1.2em; }
       @media (--r-maxS) { .putainde-Author-social a { font-size: 1em } }
 
-      .putainde-Author-social a:hover,
-      .putainde-Author-social a:focus { background: #eee }
+      .putainde-Author-social a:active,
+      .putainde-Author-social a:focus,
+      .putainde-Author-social a:hover { background: #eee }
+
+      .putainde-Author-social a:first-child {
+        border-top-left-radius: 2em;
+        border-bottom-left-radius: 2em;
+      }
+
+      .putainde-Author-social a:last-child {
+        border-top-right-radius: 2em;
+        border-bottom-right-radius: 2em;
+      }
 
   .putainde-Author-description {
     font-size: var(--r-small-fontSize);
