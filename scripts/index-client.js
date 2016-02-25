@@ -6,7 +6,7 @@ require.context("../content", true, /\.(md|html|ico|jpe?g|png|gif)$/)
 import "_legacy-css/index.css"
 
 // statinamic
-import "babel-core/polyfill"
+import "babel-polyfill"
 import "whatwg-fetch"
 
 import statinamicClient from "statinamic/lib/client"

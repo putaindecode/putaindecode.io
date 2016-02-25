@@ -5,7 +5,7 @@ import store from "app/store"
 
 import metadata from "./metadata"
 
-export default ({
+module.exports = ({
   urls,
   pagesData,
   dest,
