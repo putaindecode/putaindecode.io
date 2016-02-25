@@ -17,12 +17,6 @@ import classes from "./styles.css"
 const supportedLocales = [ "fr", "en" ]
 const numberOfLatestPosts = 12
 
-export default
-@connect(
-  ({ collection }) => {
-    return { collection }
-  }
-)
 class Homepage extends Component {
 
   static propTypes = {
@@ -170,3 +164,9 @@ class Homepage extends Component {
     )
   }
 }
+
+export default connect(
+  ({ collection }) => {
+    return { collection }
+  }
+)(Homepage)
