@@ -110,7 +110,7 @@ async function contributorsMap() {
       login: author,
       name: author,
       ...results.map[author],
-      ...require("../../" + jsonAuthorFile),
+      ...require("../" + jsonAuthorFile),
     }
     loginCache[author] = results.map[author]
   }))
@@ -302,7 +302,7 @@ async function filesContributions() {
   }))
 }
 
-export default async function() {
+(async function() {
   if (Object.keys(results) > 1) {
     log("✓ Contributors list already generated")
   }
@@ -370,4 +370,5 @@ export default async function() {
   }
 
   return results
-}
+})()
+.catch(console.log)

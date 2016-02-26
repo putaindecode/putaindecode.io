@@ -78,6 +78,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "prestatinamic": "babel-node scripts/contributors",
     "statinamic": "cross-env BABEL_ENV=statinamic DEBUG=statinamic:* babel-node scripts/build",
     "start": "npm run statinamic -- --server --open --dev",
     "build": "npm run statinamic -- --static --production",
