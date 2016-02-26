@@ -5,10 +5,7 @@ export default function getLang(context) {
   } = context
   const {
     i18n,
-    baseUrl,
   } = metadata
-  const firstURIlevel = location.pathname
-    .replace(baseUrl.pathname, "")
-    .split("/")[0]
+  const firstURIlevel = location.pathname.split("/")[1]
   return i18n[firstURIlevel] ? firstURIlevel : "fr"
 }

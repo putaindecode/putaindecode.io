@@ -5,8 +5,3 @@ npm-debug.log
 # build
 contributors.json
 dist
-
-# statinamic static build (for node)
-scripts/statinamic-static.js
-# statinamic static useless files
-scripts/_

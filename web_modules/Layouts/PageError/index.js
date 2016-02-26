@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 
-import getI18n from "i18n/get"
+import getI18n from "../../i18n/get"
 
 const PageError = ({}, context) => {
   const i18n = getI18n(context)

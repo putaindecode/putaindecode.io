@@ -1,10 +1,10 @@
 import React, { PropTypes } from "react"
 import DisqusThread from "react-disqus-thread"
 
-import getI18n from "i18n/get"
-import Author from "Author"
-import Contributors from "Contributors"
-import WithHeroHeader from "Layout/WithHeroHeader"
+import getI18n from "../../i18n/get"
+import Author from "../../Author"
+import Contributors from "../../Contributors"
+import WithHeroHeader from "../WithHeroHeader"
 
 const Post = (props, context) => {
   const i18n = getI18n(context)

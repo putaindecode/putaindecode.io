@@ -8,15 +8,15 @@ import "_legacy-css/index.css"
 // statinamic
 import "babel-polyfill"
 import "whatwg-fetch"
-
 import statinamicClient from "statinamic/lib/client"
 
+import * as layouts from "layouts"
+import metadata from "app/metadata"
 import routes from "app/routes"
 import store from "app/store"
 
-import metadata from "./metadata"
-
 statinamicClient({
+  layouts,
   metadata,
   routes,
   store,

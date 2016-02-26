@@ -2,16 +2,16 @@ import React, { PropTypes } from "react"
 import { Link } from "react-router"
 import cx from "classnames"
 
-import getI18n from "i18n/get"
+import getI18n from "../i18n/get"
 import SVGIcon from "../SVGIcon"
 
 const SVGs = {
-  bookmark: require("icons/bookmark.svg"),
-  textFile: require("icons/text-file.svg"),
-  pencil: require("icons/pencil.svg"),
-  github: require("icons/github.svg"),
-  twitter: require("icons/twitter.svg"),
-  chat: require("icons/chat.svg"),
+  bookmark: require("../icons/bookmark.svg"),
+  textFile: require("../icons/text-file.svg"),
+  pencil: require("../icons/pencil.svg"),
+  github: require("../icons/github.svg"),
+  twitter: require("../icons/twitter.svg"),
+  chat: require("../icons/chat.svg"),
 }
 
 const Navigation = ({}, context) => {

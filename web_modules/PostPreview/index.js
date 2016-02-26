@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import { Link } from "react-router"
 
-import getI18n from "i18n/get"
+import getI18n from "../i18n/get"
 import Avatars from "../Avatars"
 import AuthorsList from "../AuthorsList"
 

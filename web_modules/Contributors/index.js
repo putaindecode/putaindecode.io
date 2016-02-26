@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 
-import Contributor from "Contributor"
-import getI18n from "i18n/get"
+import Contributor from "../Contributor"
+import getI18n from "../i18n/get"
 
 const getGithubUrl
   = (repo, action, filename) => `${repo}/${action}/master/content/${filename}`

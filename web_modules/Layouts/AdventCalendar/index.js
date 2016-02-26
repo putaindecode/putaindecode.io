@@ -1,8 +1,8 @@
 import React, { PropTypes } from "react"
 
-// import getI18n from "i18n/get"
-import Contributors from "Contributors"
-import WithHeroHeader from "Layout/WithHeroHeader"
+// import getI18n from "../../i18n/get"
+import Contributors from "../../Contributors"
+import WithHeroHeader from "../WithHeroHeader"
 
 const AdventCalendar = (props) => (
   <WithHeroHeader { ...props } meta={ false } tags={ false }>

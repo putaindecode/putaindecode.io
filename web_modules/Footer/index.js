@@ -2,7 +2,7 @@ import React, { PropTypes } from "react"
 import cx from "classnames"
 import { Link } from "react-router"
 
-import getI18n from "i18n/get"
+import getI18n from "../i18n/get"
 import SVGIcon from "../SVGIcon"
 
 const Footer = ({}, context) => {
@@ -46,7 +46,7 @@ const Footer = ({}, context) => {
                   >
                     <SVGIcon
                       className="putainde-Icon"
-                      svg={require(`icons/github.svg`)}
+                      svg={require("../icons/github.svg")}
                       cleanup
                     />
                   </a>
@@ -59,7 +59,7 @@ const Footer = ({}, context) => {
                   >
                     <SVGIcon
                       className="putainde-Icon"
-                      svg={require(`icons/twitter.svg`)}
+                      svg={require("../icons/twitter.svg")}
                       cleanup
                     />
                   </a>
@@ -72,7 +72,7 @@ const Footer = ({}, context) => {
                   >
                     <SVGIcon
                       className="putainde-Icon"
-                      svg={require(`icons/chat.svg`)}
+                      svg={require("../icons/chat.svg")}
                       cleanup
                     />
                   </a>

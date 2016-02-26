@@ -2,22 +2,21 @@ import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
 import { Link } from "react-router"
-import { connect } from "react-redux"
 import enhanceCollection from "statinamic/lib/enhance-collection"
 
-import supportLocale from "browser-locale-support"
-import getLang from "i18n/getLang"
-import getI18n from "i18n/get"
-import I18nBanner from "I18nBanner"
-import LatestPosts from "LatestPosts"
-import TopContributors from "TopContributors"
+import supportLocale from "../../browser-locale-support"
+import getLang from "../../i18n/getLang"
+import getI18n from "../../i18n/get"
+import I18nBanner from "../../I18nBanner"
+import LatestPosts from "../../LatestPosts"
+import TopContributors from "../../TopContributors"
 
 import classes from "./styles.css"
 
 const supportedLocales = [ "fr", "en" ]
 const numberOfLatestPosts = 12
 
-class Homepage extends Component {
+export default class Homepage extends Component {
 
   static propTypes = {
     head: PropTypes.object.isRequired,
@@ -25,6 +24,7 @@ class Homepage extends Component {
   }
 
   static contextTypes = {
+    collection: PropTypes.array.isRequired,
     metadata: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
   }
@@ -74,7 +74,7 @@ class Homepage extends Component {
     const locale = getLang(this.context)
     const anotherLocale = supportedLocales.filter((l) => l !== locale)[0]
 
-    const latestPosts = enhanceCollection(this.props.collection, {
+    const latestPosts = enhanceCollection(this.context.collection, {
       filter: { layout: "Post" },
       sort: "date",
       reverse: true,
@@ -164,9 +164,3 @@ class Homepage extends Component {
     )
   }
 }
-
-export default connect(
-  ({ collection }) => {
-    return { collection }
-  }
-)(Homepage)

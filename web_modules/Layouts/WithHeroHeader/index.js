@@ -2,10 +2,10 @@ import React, { PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
 
-import getI18n from "i18n/get"
-import AuthorsList from "AuthorsList"
-import formatDate from "formatDate"
-import ReadingTime from "ReadingTime"
+import getI18n from "../../i18n/get"
+import AuthorsList from "../../AuthorsList"
+import formatDate from "../../formatDate"
+import ReadingTime from "../../ReadingTime"
 
 function renderCSSBackground(metadata) {
   let image = metadata.image

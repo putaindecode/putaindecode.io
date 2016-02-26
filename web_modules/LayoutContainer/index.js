@@ -1,11 +1,11 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 
-import getLang from "i18n/getLang"
-import getI18n from "i18n/get"
-import Header from "Header"
-import Footer from "Footer"
-import GoogleAnalyticsTracker from "GoogleAnalyticsTracker"
+import getLang from "../i18n/getLang"
+import getI18n from "../i18n/get"
+import Header from "../Header"
+import Footer from "../Footer"
+import GoogleAnalyticsTracker from "../GoogleAnalyticsTracker"
 
 const Layout = ({ children, params }, context) => {
   const i18n = getI18n(context)
