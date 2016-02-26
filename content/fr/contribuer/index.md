@@ -20,7 +20,7 @@ Selon le temps et l'envie, il existe diverses façons de nous aider :
 
 ## Faire évoluer le contenu
 
-- [J'aimerais que vous écriviez un article sur le site](#todo)
+- [J'aimerais que vous écriviez un article sur le site](/fr/contribuer/demande-d-article/)
 - [Faire une proposition d'idée d'article](#todo)
 - [Nous aider à prioriser les prochains articles](#todo)
 - [Écrire et soumettre un article](#todo)
