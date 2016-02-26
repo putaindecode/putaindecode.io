@@ -150,6 +150,7 @@ export default {
       ),
       CLIENT: true,
       REDUX_DEVTOOLS: Boolean(process.env.REDUX_DEVTOOLS),
+      STATINAMIC_PATHNAME: JSON.stringify(process.env.STATINAMIC_PATHNAME),
     } }),
 
     ...config.production && [

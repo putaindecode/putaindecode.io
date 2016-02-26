@@ -1,6 +1,5 @@
 import React, { PropTypes } from "react"
 import cx from "classnames"
-import Helmet from "react-helmet"
 
 import getI18n from "../../i18n/get"
 import AuthorsList from "../../AuthorsList"
@@ -61,7 +60,7 @@ function renderCSSBackground(metadata) {
   return {
     backgroundColor: color,
     // we can not handle a css fallback with the same property name
-    // since a js object doesn't handle that like css rules set
+    // since a js object doesn’t handle that like css rules set
     // so here is the 2cts trick
     // background-image + background-size AND background. Yep.
     ...(
@@ -84,26 +83,10 @@ const WithHeroHeader = (
   context
 ) => {
   const i18n = getI18n(context)
-  const { metadata } = context
   const post = head
-
-  const twitterAuthor =
-    post.authors && post.authors.length
-    ? metadata.contributors.getContributor(post.authors[0]).twitter
-    : i18n.twitterUsername
 
   return (
     <div className="putainde-Main">
-      <Helmet
-        title={ post.title }
-        meta={[
-          { property: "og:type", content: "article" },
-          { property: "og:title", content: post.title },
-          { name: "twitter:card", content: "summary" },
-          { name: "twitter:title", content: post.title },
-          { name: "twitter:creator", content: `@${ twitterAuthor }` },
-        ]}
-      />
       <article
         className={cx({
           "putainde-Post": true,

@@ -71,6 +71,11 @@ const PageError = ({}, context) => {
   )
 }
 
+PageError.defaultProps = {
+  error: 404,
+  errorText: "Page Not Found",
+}
+
 PageError.contextTypes = {
   metadata: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
