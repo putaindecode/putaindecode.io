@@ -10,6 +10,7 @@ authors:
 reviewers:
   - Uhsac
   - MoOx
+  - Macxim
 header:
     image: swift.jpg
     linearGradient: 0deg, rgba(249,82,51, .9), rgba(252, 136, 63, .7)
