@@ -12,29 +12,37 @@
     "cssrecipes-tooltip": "^0.5.0",
     "cssrecipes-utils": "^0.5.0",
     "cssrecipes-vertical-rhythm": "^0.6.0",
+    "history": "^2.0.0",
     "invariant": "^2.1.1",
     "normalize.css": "^3.0.3",
-    "react": "^0.14.0",
+    "react": "^0.14.7",
     "react-disqus-thread": "^0.3.1",
-    "react-dom": "^0.14.0",
+    "react-dom": "^0.14.7",
     "react-google-analytics": "^0.2.0",
-    "react-helmet": "^2.1.1",
-    "react-redux": "^2.1.2",
-    "react-router": "^1.0.0-rc3",
-    "redux": "^2.0.0",
-    "redux-devtools": "^2.1.5",
-    "redux-thunk": "^0.1.0",
+    "react-helmet": "^2.2.0",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.0.0",
+    "redux": "^3.0.0",
+    "redux-devtools": "^3.0.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
+    "redux-thunk": "^1.0.3",
     "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {
-    "babel": "^5.8.3",
-    "babel-core": "^5.8.3",
-    "babel-eslint": "^4.0.6",
-    "babel-loader": "^5.0.0",
-    "babel-plugin-react-transform": "^1.1.1",
-    "babel-tape-runner": "^1.1.0",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.3",
+    "babel-plugin-webpack-loaders": "^0.3.6",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.0",
+    "babel-preset-stage-1": "^6.5.0",
     "chalk": "^1.0.0",
     "classnames": "^1.2.0",
+    "cross-env": "^1.0.7",
     "css-loader": "^0.17.0",
     "eslint": "^1.10.0",
     "eslint-loader": "^1.1.0",
@@ -58,11 +66,8 @@
     "postcss-loader": "^0.7.0",
     "promise": "^7.0.0",
     "raw-loader": "^0.5.1",
-    "react-transform-catch-errors": "^1.0.0",
-    "react-transform-hmr": "^1.0.1",
-    "redbox-react": "^1.1.1",
     "rimraf": "^2.3.2",
-    "statinamic": "^0.5.1",
+    "statinamic": "^0.8.0",
     "style-loader": "^0.12.2",
     "svgo": "^0.6.0",
     "svgo-loader": "^1.1.0",
@@ -74,35 +79,33 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "babel-node scripts/putaindebuild --server --open --dev",
-    "build": "babel-node scripts/putaindebuild --static --production",
-    "postbuild": "echo 'putaindecode.io' > dist/CNAME && touch dist/.nojekyll",
+    "prestatinamic": "babel-node scripts/contributors",
+    "statinamic": "cross-env BABEL_CACHE_DISABLE=1 BABEL_ENV=statinamic DEBUG=statinamic:* babel-node scripts/build",
+    "start": "npm run statinamic -- --server --open --dev",
+    "build": "npm run statinamic -- --static --production",
     "pretest": "npm run lint",
     "test": "npm run build"
   },
-  "browser": {
-    "fs": false
+  "statinamic": {
+    "CNAME": true
   },
   "babel": {
-    "stage": 0,
+    "presets": [
+      "babel-preset-react",
+      "babel-preset-es2015",
+      "babel-preset-stage-1"
+    ],
     "env": {
-      "development": {
-        "plugins": [ "react-transform" ],
-        "extra": {
-          "react-transform": {
-            "transforms": [
-              {
-                "transform": "react-transform-hmr",
-                "imports": [ "react" ],
-                "locals": [ "module" ]
-              },
-              {
-                "transform": "react-transform-catch-errors",
-                "imports": [ "react", "redbox-react" ]
-              }
-            ]
-          }
-        }
+      "statinamic": {
+        "plugins": [
+          [
+            "babel-plugin-webpack-loaders",
+            {
+              "config": "./scripts/webpack.config.babel.js",
+              "verbose": false
+            }
+          ]
+        ]
       }
     }
   },
@@ -116,7 +119,6 @@
       "modules": true,
       "experimentalObjectRestSpread": true
     },
-
     "env": {
       "es6": true,
       "browser": true,
@@ -169,12 +171,6 @@
       "react/self-closing-comp": 2,
       "react/sort-comp": 0,
       "react/wrap-multilines": 2
-    },
-    "globals": {
-      "__BASE_URL__": true,
-      "__DEV__": true,
-      "__PROD__": true,
-      "__DEVTOOLS__": true
     },
     "plugins": [
       "react"

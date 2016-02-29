@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 
-import getLang from "i18n/getLang"
-import getI18n from "i18n/get"
+import getLang from "../i18n/getLang"
+import getI18n from "../i18n/get"
 import SVGIcon from "../SVGIcon"
 import Avatar from "../Avatar"
 
@@ -53,7 +53,7 @@ const Author = ({ afterName, author, bio, className, isPost }, context) => {
               >
                 <SVGIcon
                   className="putainde-Icon"
-                  svg={require(`icons/home.svg`)}
+                  svg={require("../icons/home.svg")}
                   cleanup
                 />
               </a>
@@ -67,7 +67,7 @@ const Author = ({ afterName, author, bio, className, isPost }, context) => {
               >
                 <SVGIcon
                   className="putainde-Icon"
-                  svg={require(`icons/twitter.svg`)}
+                  svg={require("../icons/twitter.svg")}
                   cleanup
                 />
               </a>
@@ -81,7 +81,7 @@ const Author = ({ afterName, author, bio, className, isPost }, context) => {
               >
                 <SVGIcon
                   className="putainde-Icon"
-                  svg={require(`icons/github.svg`)}
+                  svg={require("../icons/github.svg")}
                   cleanup
                 />
               </a>

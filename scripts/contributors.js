@@ -95,7 +95,7 @@ async function contributorsMap() {
 
   const files = await glob(authorsFiles)
   log("✓ Authors json parsed")
-  await* files.map(async (jsonAuthorFile) => {
+  await Promise.all(files.map(async (jsonAuthorFile) => {
     const author = path.basename(jsonAuthorFile, ".json")
 
     // get author right now if not in cache
@@ -110,10 +110,10 @@ async function contributorsMap() {
       login: author,
       name: author,
       ...results.map[author],
-      ...require("../../" + jsonAuthorFile),
+      ...require("../" + jsonAuthorFile),
     }
     loginCache[author] = results.map[author]
-  })
+  }))
 
   const stdout = await exec("git log --pretty=format:%ae::%an | sort | uniq")
   log("- Git log done")
@@ -144,7 +144,7 @@ async function contributorsMap() {
   if (newUsers.length > 0) {
     log(`- ${ newUsers.length } new users`)
 
-    await* newUsers.map(async (author) => {
+    await Promise.all(newUsers.map(async (author) => {
       const email = author.email
       log("Request user information from GitHub for", email)
       const out = await exec(
@@ -206,7 +206,7 @@ async function contributorsMap() {
           }, 1)
         }
       }
-    })
+    }))
 
     log("✓ Parallel updates done")
   }
@@ -282,7 +282,7 @@ async function filesContributions() {
   results.files = {}
   const files = await glob("content/**/*")
 
-  await* files.map(async (file) => {
+  await Promise.all(files.map(async (file) => {
     const stdout = await exec(
       "git log --pretty=short --follow " + file +
         " | git shortlog --summary --numbered --no-merges --email"
@@ -299,10 +299,10 @@ async function filesContributions() {
           results.files[file][login] = line.match(commitsRE)[1]
         })
     }
-  })
+  }))
 }
 
-export default async function() {
+(async function() {
   if (Object.keys(results) > 1) {
     log("✓ Contributors list already generated")
   }
@@ -370,4 +370,5 @@ export default async function() {
   }
 
   return results
-}
+})()
+.catch(console.log)

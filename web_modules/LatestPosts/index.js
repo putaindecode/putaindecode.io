@@ -3,7 +3,7 @@ import { Link } from "react-router"
 
 import classes from "./styles.css"
 
-import getI18n from "i18n/get"
+import getI18n from "../i18n/get"
 import PostsList from "../PostsList"
 
 const LatestPosts = ({ link, posts, title }, context) => {

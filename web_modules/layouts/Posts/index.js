@@ -1,15 +1,14 @@
 import React, { PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
-import { connect } from "react-redux"
 import enhanceCollection from "statinamic/lib/enhance-collection"
 
-import getLang from "i18n/getLang"
-import PostsList from "PostsList"
+import getLang from "../../i18n/getLang"
+import PostsList from "../../PostsList"
 
-const Posts = ({ collection, head }, context) => {
+const Posts = ({ head }, context) => {
   const lang = getLang(context)
-  const posts = enhanceCollection(collection, {
+  const posts = enhanceCollection(context.collection, {
     filter: { layout: "Post" },
     sort: "date",
     reverse: true,
@@ -48,18 +47,14 @@ const Posts = ({ collection, head }, context) => {
 }
 
 Posts.propTypes = {
-  collection: PropTypes.array.isRequired,
   head: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
 }
 
 Posts.contextTypes = {
+  collection: PropTypes.object.isRequired,
   metadata: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 }
 
-export default connect(
-  ({ collection }) => {
-    return { collection }
-  }
-)(Posts)
+export default Posts

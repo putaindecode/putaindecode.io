@@ -1,14 +1,21 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 
-const Page = ({ head, body }) => (
+const Page = ({ head, body, __url }, { metadata }) => (
   <div className="putainde-Main">
     <Helmet
       title={ head.title }
-      meta={[
+      meta={ [
+        { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary" },
         { property: "og:title", content: head.title },
         { name: "twitter:title", content: head.title },
-      ]}
+        { property: "og:description", content: head.description },
+        { name: "twitter:description", content: head.description },
+        { property: "og:url", content: metadata.pkg.homepage + __url },
+        // { property: "og:image", content: header.image },
+        // { name: "twitter:image", content: header.image },
+      ] }
     />
     <article className="r-Grid putainde-Post">
       <div className="r-Grid-cell r-minM--8of12 putainde-Post-contents">
@@ -48,11 +55,12 @@ const Page = ({ head, body }) => (
 )
 
 Page.propTypes = {
+  __url: PropTypes.string.isRequired,
   head: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
 }
 
-Page.childContextTypes = {
+Page.contextTypes = {
   metadata: PropTypes.object.isRequired,
 }
 

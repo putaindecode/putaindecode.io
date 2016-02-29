@@ -1,8 +1,8 @@
 import React from "react"
 import { PropTypes } from "react"
 
-import Button from "Button"
-import SVGIcon from "SVGIcon"
+import Button from "../Button"
+import SVGIcon from "../SVGIcon"
 
 import classes from "./styles.css"
 import crossSVG from "./cross.svg"

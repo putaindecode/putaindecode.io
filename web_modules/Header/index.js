@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import { Link } from "react-router"
 
-import getI18n from "i18n/get"
+import getI18n from "../i18n/get"
 import Navigation from "../Navigation"
 import SVGIcon from "../SVGIcon"
 
@@ -15,7 +15,7 @@ const Header = ({}, context) => {
           <Link className="putainde-SiteTitle" to="/">
             <SVGIcon
               className="putainde-Logo"
-              svg={require("images/putaindecode-logo.svg")}
+              svg={require("../images/putaindecode-logo.svg")}
               cleanupExceptions={[ "fill" ]}
             />
             <span>{i18n.title}</span>

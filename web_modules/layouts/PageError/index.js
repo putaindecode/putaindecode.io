@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 
-import getI18n from "i18n/get"
+import getI18n from "../../i18n/get"
 
 const PageError = ({}, context) => {
   const i18n = getI18n(context)
@@ -69,6 +69,11 @@ const PageError = ({}, context) => {
       </div>
     </div>
   )
+}
+
+PageError.defaultProps = {
+  error: 404,
+  errorText: "Page Not Found",
 }
 
 PageError.contextTypes = {

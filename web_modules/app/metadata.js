@@ -1,9 +1,8 @@
-import pkg from "../package.json"
-import i18n from "i18n"
-import contributors from "../contributors.json"
+import pkg from "../../package.json"
+import i18n from "../i18n"
+import contributors from "../../contributors.json"
 
 export default {
-  baseUrl: __BASE_URL__,
   pkg,
   i18n,
   contributors: {

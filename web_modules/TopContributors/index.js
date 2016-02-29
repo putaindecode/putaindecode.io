@@ -1,8 +1,8 @@
 import React, { PropTypes } from "react"
 
-import Contributor from "Contributor"
+import Contributor from "../Contributor"
 
-import getI18n from "i18n/get"
+import getI18n from "../i18n/get"
 
 const TopContributors = ({ recentContributions }, context) => {
   const i18n = getI18n(context)
