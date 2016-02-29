@@ -7,16 +7,7 @@ const GoogleAnalyticsInitiailizer = ga.Initializer
 const isProduction = process.env.NODE_ENV === "production"
 const isClient = typeof window !== "undefined"
 
-export default class GoogleAnalyticsTracker extends Component {
-
-  static propTypes = {
-    children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
-    params: PropTypes.object.isRequired,
-  };
-
-  static contextTypes = {
-    metadata: PropTypes.object.isRequired,
-  };
+class GoogleAnalyticsTracker extends Component {
 
   componentWillMount() {
     if (isClient) {
@@ -57,3 +48,14 @@ export default class GoogleAnalyticsTracker extends Component {
     )
   }
 }
+
+GoogleAnalyticsTracker.propTypes = {
+  children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
+  params: PropTypes.object.isRequired,
+}
+
+GoogleAnalyticsTracker.contextTypes = {
+  metadata: PropTypes.object.isRequired,
+}
+
+export default GoogleAnalyticsTracker
