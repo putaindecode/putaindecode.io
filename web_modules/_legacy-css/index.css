@@ -34,8 +34,6 @@ body {
 
 body {
   position: relative;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background: #fefefe;
 }
 
@@ -45,8 +43,15 @@ body {
 }
 
 :root {
-  --fontFamily-body: "Helvetica Neue", Helvetica, "Liberation Sans", "Droid Sans", Arial, sans-serif;
-  --fontFamily-title: Avenir, "Helvetica Neue", Helvetica, "Liberation Sans", "Droid Sans", sans-serif;
+  /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
+  --fontFamily-body:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --fontFamily-title:
+    Avenir, Futura, /* os x */
+    Gill Sans, Franklin Gothic Medium, /* windows */
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 html {
@@ -60,6 +65,8 @@ h4,
 h5 {
   font-family: var(--fontFamily-title);
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 em em {
@@ -91,9 +98,17 @@ em em {
   font-weight: normal;
   text-decoration: none;
   text-transform: none;
+}
 
+.putainde-Title {
+  margin: calc(var(--r-lineHeight) / 2) 0;
+  overflow: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.putainde-Title--home {
+  text-align: center;
 }
 
 @import "./blocks/header.css";

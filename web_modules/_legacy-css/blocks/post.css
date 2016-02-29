@@ -60,16 +60,6 @@
       padding: 0 1rem;
     }
 
-    .putainde-Title {
-      margin: calc(var(--r-lineHeight) / 2) 0;
-      overflow: auto;
-    }
-
-    .putainde-Title--home {
-      text-align: center;
-
-    }
-
     @media (--minL) {
       .putainde-Post-header .putainde-Title {
         font-size: calc(var(--r-h1-fontSize) * 1.5);
@@ -186,8 +176,6 @@
   }
 
   .putainde-Post-md pre {
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: auto;
     overflow: auto;
     margin: var(--r-lineHeight) 0;
     padding: calc(var(--r-lineHeight) / 2);
