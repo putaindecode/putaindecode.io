@@ -12,6 +12,7 @@
     "cssrecipes-tooltip": "^0.5.0",
     "cssrecipes-utils": "^0.5.0",
     "cssrecipes-vertical-rhythm": "^0.6.0",
+    "history": "^2.0.0",
     "invariant": "^2.1.1",
     "normalize.css": "^3.0.3",
     "react": "^0.14.7",
