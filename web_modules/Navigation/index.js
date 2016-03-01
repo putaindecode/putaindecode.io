@@ -11,25 +11,28 @@ const SVGs = {
   pencil: require("../icons/pencil.svg"),
   github: require("../icons/github.svg"),
   twitter: require("../icons/twitter.svg"),
+  facebook: require("../icons/facebook.svg"),
   chat: require("../icons/chat.svg"),
 }
+
+import styles from "./styles.css"
 
 const Navigation = ({}, context) => {
   const i18n = getI18n(context)
   return (
-    <nav className="putainde-Nav">
+    <nav className={ styles.nav }>
       {
         i18n.navigation.map((item) => (
           <Link to={item.url}
             key={item.url}
-            className={ "putainde-Nav-item" }
-            activeClassName={ "putainde-Nav-item--current" }
+            className={ styles.item }
+            activeClassName={ styles.itemCurrent }
           >
             {
               item.icon &&
               <SVGIcon
                 className="putainde-Icon"
-                svg={SVGs[item.icon]}
+                svg={ SVGs[item.icon] }
                 cleanup
               />
             }
@@ -38,12 +41,13 @@ const Navigation = ({}, context) => {
         ))
       }
       {
-        [ "github", "twitter", "chat" ].map((key) => (
+        [ "github", "twitter", "facebook", "chat" ].map((key) => (
+          i18n[key] &&
           <a href={i18n[key]}
             key={i18n[key]}
             className={cx({
-              "putainde-Nav-item": true,
-              "putainde-Nav-item--icon": true,
+              [styles.item]: true,
+              [styles.itemIcon]: true,
               "r-Tooltip": true,
               "r-Tooltip r-Tooltip--bottom": true,
             })}

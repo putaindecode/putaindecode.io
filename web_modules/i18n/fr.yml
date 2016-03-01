@@ -47,6 +47,8 @@
   twitterLabel: "Twitter"
   github: "https://github.com/putaindecode/putaindecode.io"
   githubLabel: "GitHub"
+  facebook: "http://facebook.com/PutainDeCode"
+  facebookLabel: "Facebook"
   chat: "/discuss/"
   chatLabel: "Discuter"
   forum: "https://github.com/putaindecode/forum/issues"
