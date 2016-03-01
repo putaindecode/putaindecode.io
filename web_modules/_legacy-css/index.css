@@ -19,6 +19,9 @@ html {
 }
 
 @import "cssrecipes-tooltip";
+.r-Tooltip {
+  z-index: 1;
+}
 .r-Tooltip--allowNewLines::before {
   white-space: pre;
 }
