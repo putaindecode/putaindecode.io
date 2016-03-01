@@ -8,11 +8,11 @@
   }
 
 .putainde-Link--emphasis {
-  color: var(--putainde-Color-red);
-  fill: var(--putainde-Color-red);
+  color: var(--colorRed);
+  fill: var(--colorRed);
 }
   .putainde-Link--emphasis:hover,
   .putainde-Link--emphasis:focus {
-    color: color(var(--putainde-Color-red) lightness(-10%));
-    fill: color(var(--putainde-Color-red) lightness(-10%));
+    color: color(var(--colorRed) lightness(-10%));
+    fill: color(var(--colorRed) lightness(-10%));
   }

@@ -12,8 +12,8 @@
 }
 
 .putainde-Section--manifesto {
-  background: var(--putainde-Color-red);
-  background: linear-gradient(160deg, var(--putainde-Color-red), color(var(--putainde-Color-red) a(.9)));
+  background: var(--colorRed);
+  background: linear-gradient(160deg, var(--colorRed), color(var(--colorRed) a(.9)));
   padding: var(--r-lineHeight);
   color: #fff;
   /*margin: calc(var(--r-lineHeight) * 2) 0;*/
