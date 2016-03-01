@@ -2,7 +2,7 @@
   text-align: left;
   padding: 0 2em;
 }
-  @media (--r-maxM) {
+  @media (--maxM) {
     .putainde-Column {
       padding: .5em
     }
@@ -40,11 +40,11 @@
   font-family: inherit;
   font-size: .85em;
   vertical-align: middle;
-  color: var(--putainde-Color-red);
+  color: var(--colorRed);
   cursor: pointer;
 }
 
-  @media (--r-maxM) {
+  @media (--maxM) {
     .putainde-TagFilters-toggle {
       display: inline-block
     }
@@ -66,13 +66,13 @@
   line-height: 1;
 }
 
-  @media (--r-maxM) {
+  @media (--maxM) {
     .putainde-TagFilters-close {
       display: inline-block
     }
   }
 
-@media (--r-maxM) {
+@media (--maxM) {
   .putainde-TagFilters {
     background: #fff;
     box-shadow: .2em 0 .4em color(#000 alpha(10%)), 1px 0 color(#000 alpha(10%));
@@ -103,7 +103,7 @@ body {
   transition: .2s ease-in-out left
 }
 
-  @media (--r-maxM) {
+  @media (--maxM) {
     .putainde-Body--tagFiltersOpened .putainde-TagFilters {
       display: block;
       left: 0em;

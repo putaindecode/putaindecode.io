@@ -9,7 +9,7 @@
     border-color: transparent;
   }
 
-  @media (--r-maxS) {
+  @media (--maxS) {
     .putainde-List-item {
       padding: 0 0 0 4rem;
     }

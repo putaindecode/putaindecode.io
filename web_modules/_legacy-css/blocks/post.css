@@ -10,8 +10,8 @@
   }
 
   .putainde-Post a {
-    color: var(--putainde-Color-red);
-    fill: var(--putainde-Color-red);
+    color: var(--colorRed);
+    fill: var(--colorRed);
     text-decoration: none;
   }
     .putainde-Post a:hover,
@@ -42,7 +42,7 @@
       https://github.com/putaindecode/putaindecode.io/issues/454
       I guess no iOS 7 will match --r-minL
     */
-    @media (--r-minL) {
+    @media (--minL) {
       .putainde-Post-header--custom {
         padding: 15vh 0;
       }
@@ -70,7 +70,7 @@
 
     }
 
-    @media (--r-minL) {
+    @media (--minL) {
       .putainde-Post-header .putainde-Title {
         font-size: calc(var(--r-h1-fontSize) * 1.5);
         line-height: calc(var(--r-h1-lineHeight) * 1.5);
@@ -145,7 +145,7 @@
 
 /* enable nowrap for tooltip only for medium screen, to avoid scrollbar & shit */
 /* https://github.com/putaindecode/putaindecode.io/issues/266 */
-@media (--r-minM) {
+@media (--minM) {
   .putainde-Post-readingTime::before {
     white-space: nowrap;
   }
@@ -312,7 +312,7 @@
 .putainde-Post-footer  {
   margin: var(--r-lineHeight) 0;
   padding: var(--r-lineHeight) 0;
-  box-shadow: inset 0 1px 0 0 var(--putainde-Color-lightGrey);
+  box-shadow: inset 0 1px 0 0 var(--colorLightGrey);
 }
 
 #disqus_thread {
