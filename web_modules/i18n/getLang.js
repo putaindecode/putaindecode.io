@@ -1,11 +1,14 @@
+import invariant from "invariant"
+
 export default function getLang(context) {
   const {
     location,
-    metadata,
+    metadata: { i18n },
   } = context
-  const {
-    i18n,
-  } = metadata
-  const firstURIlevel = location.pathname.split("/")[1]
+
+  invariant(location, "'location' is required from the context")
+  invariant(i18n, "'metadata.i18n' is required from the context")
+
+  const firstURIlevel = location.pathname.split("/")[0]
   return i18n[firstURIlevel] ? firstURIlevel : "fr"
 }
