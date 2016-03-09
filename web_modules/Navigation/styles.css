@@ -1,0 +1,67 @@
+@media (--minM) {
+  .nav {
+    text-align: right;
+  }
+}
+
+.item {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #333;
+  fill: var(--colorRed);
+  text-decoration: none;
+  padding: 0 .4rem;
+}
+
+  @media (--minS) {
+    .item {
+      padding: 0 1rem;
+    }
+  }
+
+  .item:hover,
+  .item:focus {
+    background: color(#000 alpha(10%));
+  }
+
+
+.itemCurrent::after {
+  content: "";
+  position: absolute;
+  bottom: .2em;
+  height: .3em;
+  width: .3em;
+  background: var(--colorRed);
+  box-shadow: 0 0 .3em var(--colorRed);
+  border-radius: .3em;
+  left: 50%;
+  margin-left: .5em;
+}
+
+.item :global(.putainde-Icon) {
+  font-weight: normal;
+  fill: var(--colorRed);
+  width: 0.75em;
+}
+
+.nav .item:not(.itemIcon) + .itemIcon {
+  margin-left: 1rem;
+}
+
+.nav :global(.putainde-Icon) { font-size: 1.6rem; }
+
+  /* icons for item with label can be smaller */
+  .nav :global(:not(.r-Tooltip) .putainde-Icon) {
+    font-size: 1.2rem;
+    margin-right: 0.25rem; /* temporary fix for spacing; remove this when SVGs are inline */
+  }
+
+@media (--maxM) {
+  /* hide icons for item that have a label on small screen */
+  .nav :global(:not(.r-Tooltip) .putainde-Icon) {
+    display: none;
+  }
+}

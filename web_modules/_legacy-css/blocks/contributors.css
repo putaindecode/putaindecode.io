@@ -15,8 +15,8 @@
     margin: 0 0 calc(var(--r-lineHeight) / 2);
     padding: calc(var(--r-lineHeight) / 2) 0;
     box-shadow:
-      inset 0 1px 0 0 var(--putainde-Color-lightGrey),
-      inset 0 -1px 0 0 var(--putainde-Color-lightGrey);
+      inset 0 1px 0 0 var(--colorLightGrey),
+      inset 0 -1px 0 0 var(--colorLightGrey);
   }
 
   .putainde-Contributors-action {
@@ -37,7 +37,7 @@
       max-height: 100%;
     }
 
-      @media (--r-minS) {
+      @media (--minS) {
         .putainde-Contributor-avatar {
           width: 4rem;
           height: 4rem;

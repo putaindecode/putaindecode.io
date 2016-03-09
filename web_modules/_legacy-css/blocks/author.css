@@ -10,7 +10,7 @@
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  box-shadow: 0 0 0 1px var(--putainde-Color-lightGrey);
+  box-shadow: 0 0 0 1px var(--colorLightGrey);
 }
 
   .putainde-Avatar img {
@@ -34,7 +34,7 @@
   padding: 0 0 0 calc(var(--putainde-Author-picture-size) + 1rem);
   margin: var(--r-lineHeight) 0;
 }
-  @media (--r-maxS) {
+  @media (--maxS) {
     .putainde-Author {
       padding-left: 4em;
     }
@@ -47,7 +47,7 @@
     height: var(--putainde-Author-picture-size);
     width: var(--putainde-Author-picture-size);
   }
-    @media (--r-maxS) {
+    @media (--maxS) {
       .putainde-Author-picture {
         height: calc(var(--r-lineHeight) * 2);
         width: calc(var(--r-lineHeight) * 2);
@@ -80,7 +80,7 @@
     top: .5em;
     right: 0;
   }
-    @media (--r-maxS) {
+    @media (--maxS) {
       .putainde-Author-social {
         position: static;
         display: inline-block;
@@ -96,7 +96,7 @@
     }
 
       .putainde-Author-social a .putainde-Icon { font-size: 1.2em; }
-      @media (--r-maxS) { .putainde-Author-social a { font-size: 1em } }
+      @media (--maxS) { .putainde-Author-social a { font-size: 1em } }
 
       .putainde-Author-social a:active,
       .putainde-Author-social a:focus,

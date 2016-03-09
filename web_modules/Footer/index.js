@@ -5,6 +5,13 @@ import { Link } from "react-router"
 import getI18n from "../i18n/get"
 import SVGIcon from "../SVGIcon"
 
+const SVGs = {
+  github: require("../icons/github.svg"),
+  twitter: require("../icons/twitter.svg"),
+  facebook: require("../icons/facebook.svg"),
+  chat: require("../icons/chat.svg"),
+}
+
 const Footer = ({}, context) => {
   const i18n = getI18n(context)
 
@@ -22,8 +29,7 @@ const Footer = ({}, context) => {
           {
             i18n.footerNavigation &&
             <ul className="putainde-Footer-list">
-            {
-              [
+              {
                 i18n.footerNavigation.map((item) => {
                   return (
                     <li key={ item.url }>
@@ -32,53 +38,25 @@ const Footer = ({}, context) => {
                       </a>
                     </li>
                   )
-                }),
-                <li key={ i18n.forum }>
-                  <a href={ i18n.forum }>
-                    { i18n.forumLabel }
-                  </a>
-                </li>,
-                <li key={i18n.github}>
-                  <a
-                    href={i18n.github}
-                    data-r-tooltip={i18n.githubLabel}
-                    className="r-Tooltip r-Tooltip--top"
-                  >
-                    <SVGIcon
-                      className="putainde-Icon"
-                      svg={require("../icons/github.svg")}
-                      cleanup
-                    />
-                  </a>
-                </li>,
-                <li key={i18n.twitter}>
-                  <a
-                    href={i18n.twitter}
-                    data-r-tooltip={i18n.twitterLabel}
-                    className="r-Tooltip r-Tooltip--top"
-                  >
-                    <SVGIcon
-                      className="putainde-Icon"
-                      svg={require("../icons/twitter.svg")}
-                      cleanup
-                    />
-                  </a>
-                </li>,
-                <li key={i18n.chat}>
-                  <a
-                    href={i18n.chat}
-                    data-r-tooltip={i18n.chatLabel}
-                    className="r-Tooltip r-Tooltip--top"
-                  >
-                    <SVGIcon
-                      className="putainde-Icon"
-                      svg={require("../icons/chat.svg")}
-                      cleanup
-                    />
-                  </a>
-                </li>,
-              ]
-            }
+                })
+              }
+              {
+                [ "github", "twitter", "facebook", "chat" ].map((key) => (
+                  i18n[key] &&
+                  <li key={i18n[key]}>
+                    <a href={i18n[key]}
+                      className="r-Tooltip r-Tooltip--top"
+                      data-r-tooltip={i18n[key + "Label"]}
+                    >
+                      <SVGIcon
+                        className="putainde-Icon"
+                        svg={ SVGs[key] }
+                        cleanup
+                      />
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           }
         </div>

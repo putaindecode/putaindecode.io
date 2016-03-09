@@ -80,11 +80,13 @@
   "scripts": {
     "lint": "eslint .",
     "prestatinamic": "babel-node scripts/contributors",
-    "statinamic": "cross-env BABEL_CACHE_DISABLE=1 BABEL_ENV=statinamic DEBUG=statinamic:* babel-node scripts/build",
+    "statinamic": "cross-env BABEL_DISABLE_CACHE=1 BABEL_ENV=statinamic DEBUG=statinamic:* babel-node scripts/build",
     "start": "npm run statinamic -- --server --open --dev",
     "build": "npm run statinamic -- --static --production",
     "pretest": "npm run lint",
-    "test": "npm run build"
+    "test": "npm run build",
+    "predeploy": "npm run test",
+    "deploy": "./scripts/deploy.sh"
   },
   "statinamic": {
     "CNAME": true

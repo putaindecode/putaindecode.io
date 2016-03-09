@@ -1,5 +1,5 @@
 .putainde-Footer {
-  border-bottom: 0.8em solid var(--putainde-Color-red);
+  border-bottom: 0.8em solid var(--colorRed);
 }
 
   .putainde-Footer > .r-Grid {
@@ -8,7 +8,7 @@
     margin-top: -1px;
   }
 
-    @media (--r-maxM) {
+    @media (--maxM) {
       .putainde-Footer > .r-Grid > .r-Grid-cell {
         padding: calc(var(--r-lineHeight) / 2) 0;
         text-align: center;
@@ -16,8 +16,8 @@
     }
 
   .putainde-Footer a {
-    color: var(--putainde-Color-red);
-    fill: var(--putainde-Color-red);
+    color: var(--colorRed);
+    fill: var(--colorRed);
     text-decoration: none;
   }
     .putainde-Footer a:hover,
@@ -42,13 +42,13 @@
   font-size: var(--r-small-fontSize);
 }
 
-@media (--r-minM) {
+@media (--minM) {
   .putainde-Footer-text--right {
     text-align: right;
   }
 }
 
-  @media (--r-minM) {
+  @media (--minM) {
     .putainde-Footer-list {
       text-align: center
     }

@@ -107,6 +107,12 @@ export default {
     require("postcss-import")({ addDependencyTo: webpack }),
     require("postcss-cssnext")({
       features: {
+        customProperties: {
+          variables: {
+            colorRed: "#c33",
+            colorLightGrey: "#ebeef0",
+          },
+        },
         customMedia: {
           extensions: {
             maxS: "(max-width: 30em)",
