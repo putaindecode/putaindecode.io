@@ -34,7 +34,7 @@ outils.
 
 Grâce à un partenariat entre Apple et IBM,  vous pouvez faire du **Swift sur
 votre navigateur** avec Bluemix. La plate-forme de cloud coding d'IBM
-[swiftlang.ng.bluemix.net](swiftlang.ng.bluemix.net) offre ainsi un
+[swiftlang.ng.bluemix.net](https://swiftlang.ng.bluemix.net) offre ainsi un
 **`playground` en ligne** pour apprendre et vous entrainer en **Swift**. Donc
 plus de limitation due à l'OS pour apprendre !
 
