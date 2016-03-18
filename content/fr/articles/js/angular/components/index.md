@@ -35,14 +35,14 @@ un _helper_ permettant la déclaration de composants réutilisables.
 `angular.directive()` s'est donc enrichi au cours des années en faisant un atout 
 incontournable du framework de par sa flexibilité et sa simplicité.  
 
-Mais toutes ces possibilités de déclaration n'était plus vraiment en phase avec 
+Mais toutes ces possibilités de déclaration n'étaient plus vraiment en phase avec 
 les spécifications du W3C, `angular.component()` se présente donc un retour aux sources.
 
 ## De `.directive()` à `.component()`
 
-Pour comprendre à quoi on arrive, il faut connaitre de quoi on est parti.
+Pour comprendre à quoi on arrive, il faut savoir de quoi on est parti.
 De toute évidence vous ne pourrez pas transformer toutes vos vieilles directives
-en composant web, du moins, pas sans compromis. 
+en composants web, du moins, pas sans compromis. 
 
 Pour rappel une directive Angular est définie par un objet JavaScript pouvant comporter
 les attributs suivants :
@@ -77,7 +77,7 @@ On peut aussi autoriser l'utilisation mixe en combinant les lettres : `restrict 
 ### Isolement du scope
 
 Contrairement à `.directive()`, `.component()` force l'isolement du scope, 
-ainsi on colle à la specification : Le composant web est agnostique du contexte.
+ainsi on colle à la specification : le composant web est agnostique du contexte.
 
 l'attribut `scope` est donc forcé à `{}` et n'est plus configurable.
 
@@ -100,6 +100,10 @@ L'attribut, qui prend une chaine de caractères pour valeur, est à présent fac
 S'il est omit le controller est automatiquement aliassé par l'objet `$ctrl`.
 
 ### L'abandon de la transclusion ?
+
+La transclusion permet la ré-injection des balises présentes initialement à l'intérieur 
+de la directive avant sa phase de compilation à un endroit qu'on aura spécifié 
+( avec la balise `<ng-transclude>`) dans le template final. 
 
 Depuis la version 1.5.0 rc1, le paramètre `transclude` est passé à `false` par défaut.
 
@@ -159,8 +163,8 @@ angular.component('helloWorld', function helloWorld () {
 ```
 
 Les changements sont légers mais permettent une lecture améliorée des attributs.
-Le composant est donc une version simplifiée de la directive, qui conviendra tout 
-de même à la plupart des usages.
+Le composant est donc une version simplifiée de la directive, plus en phase avec 
+la logique d'Angular 2.
 
 Ce nouveau _helper_ permet donc l'introduction progressive des _web-components_ au
 sein d'Angular en vue de leur intégration et utilisation active dans la version 2.
