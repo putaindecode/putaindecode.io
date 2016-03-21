@@ -15,18 +15,14 @@
     "history": "^2.0.0",
     "invariant": "^2.1.1",
     "normalize.css": "^3.0.3",
-    "react": "^0.14.7",
+    "react": "^15.0.0-rc.1",
     "react-disqus-thread": "^0.3.1",
-    "react-dom": "^0.14.7",
+    "react-dom": "^15.0.0-rc.1",
     "react-google-analytics": "^0.2.0",
     "react-helmet": "^2.2.0",
-    "react-redux": "^4.0.0",
+    "react-redux": "^4.4.1",
     "react-router": "^2.0.0",
     "redux": "^3.0.0",
-    "redux-devtools": "^3.0.1",
-    "redux-devtools-dock-monitor": "^1.0.1",
-    "redux-devtools-log-monitor": "^1.0.1",
-    "redux-thunk": "^1.0.3",
     "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {
@@ -42,7 +38,6 @@
     "babel-preset-stage-1": "^6.5.0",
     "chalk": "^1.0.0",
     "classnames": "^1.2.0",
-    "cross-env": "^1.0.7",
     "css-loader": "^0.17.0",
     "eslint": "^1.10.0",
     "eslint-loader": "^1.1.0",
@@ -55,8 +50,6 @@
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
     "json-loader": "^0.5.3",
-    "markdown-it": "^5.0.0",
-    "markdown-it-toc-and-anchor": "^1.0.1",
     "mkdirp": "^0.5.0",
     "multimatch": "^2.0.0",
     "nano-logger": "^1.0.0",
@@ -67,7 +60,7 @@
     "promise": "^7.0.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.3.2",
-    "statinamic": "^0.8.0",
+    "statinamic": "^0.9.0",
     "style-loader": "^0.12.2",
     "svgo": "^0.6.0",
     "svgo-loader": "^1.1.0",
@@ -79,10 +72,11 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "prestatinamic": "babel-node scripts/contributors",
-    "statinamic": "cross-env BABEL_DISABLE_CACHE=1 BABEL_ENV=statinamic DEBUG=statinamic:* babel-node scripts/build",
-    "start": "npm run statinamic -- --server --open --dev",
-    "build": "npm run statinamic -- --static --production",
+    "start": "statinamic start",
+    "build": "statinamic build",
+    "contributors": "babel-node scripts/contributors",
+    "prestart": "npm run contributors",
+    "prebuild": "npm run contributors",
     "pretest": "npm run lint",
     "test": "npm run build",
     "predeploy": "npm run test",
@@ -96,20 +90,7 @@
       "babel-preset-react",
       "babel-preset-es2015",
       "babel-preset-stage-1"
-    ],
-    "env": {
-      "statinamic": {
-        "plugins": [
-          [
-            "babel-plugin-webpack-loaders",
-            {
-              "config": "./scripts/webpack.config.babel.js",
-              "verbose": false
-            }
-          ]
-        ]
-      }
-    }
+    ]
   },
   "eslintConfig": {
     "root": true,
