@@ -1,8 +1,6 @@
 import builder from "statinamic/lib/builder"
 
 import config from "./config.js"
-import webpackConfig from "./webpack.config.babel.js"
-import clientWebpackConfig from "./webpack.config.client.js"
 
 import store from "../web_modules/app/store"
 const exports = {
@@ -13,9 +11,6 @@ const exports = {
 
 builder({
   config,
-  webpackConfig,
-  clientWebpackConfig,
-
   exports,
   store,
 })
