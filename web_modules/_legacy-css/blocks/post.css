@@ -207,7 +207,7 @@
     position: relative;
   }
 
-    .putainde-Post-md .markdownIt-Anchor {
+    .putainde-Post-md .statinamic-HeadingAnchor {
       position: absolute;
       left: -1em;
       width: 1em;
@@ -217,12 +217,12 @@
       color: #999;
     }
 
-      .putainde-Post-md h1:hover .markdownIt-Anchor,
-      .putainde-Post-md h2:hover .markdownIt-Anchor,
-      .putainde-Post-md h3:hover .markdownIt-Anchor,
-      .putainde-Post-md h4:hover .markdownIt-Anchor,
-      .putainde-Post-md h5:hover .markdownIt-Anchor,
-      .putainde-Post-md h6:hover .markdownIt-Anchor {
+      .putainde-Post-md h1:hover .statinamic-HeadingAnchor,
+      .putainde-Post-md h2:hover .statinamic-HeadingAnchor,
+      .putainde-Post-md h3:hover .statinamic-HeadingAnchor,
+      .putainde-Post-md h4:hover .statinamic-HeadingAnchor,
+      .putainde-Post-md h5:hover .statinamic-HeadingAnchor,
+      .putainde-Post-md h6:hover .statinamic-HeadingAnchor {
         opacity: 1;
       }
 

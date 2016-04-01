@@ -26,17 +26,17 @@ Sounds good, right? And guess what, shallow rendering is currently the
 [preferred way to test your React components](https://discuss.reactjs.org/t/whats-the-prefered-way-to-test-react-js-components/26).
 
 As you can see in the post mentioned at the end of this one, the
-actual code to test some components might seem a bit longer that what you could
+actual code to test some components might seem a bit longer that what you might
 expect.
 
-Hopefully, [someone](https://github.com/vvo) created something pretty cool:
+Thankfully, [someone](https://github.com/vvo) created something pretty cool:
 [react-element-to-jsx-string](https://github.com/algolia/react-element-to-jsx-string).
 As the name of the package says, this library helps to render a react component
 into a JSX string.
 
 Now things start to become interesting:
 with those two things in mind (shallow render and react components as JSX strings),
-we can easily add some basic unit tests to some components.
+we can easily add some basic unit tests for some components.
 
 _There are others techniques to test React components, and most of those
 involve the DOM. This means you will need to run your tests in the browser (or
@@ -89,9 +89,9 @@ export default Component
 ```
 
 This component displays an image with a title component.
-If the image data are not ready yet, it can display a loader component.
+If the image data is not ready yet, it can display a loader component.
 
-Now let's write some simple test for it. For the example we will use
+Now let's write a simple test for it. For the example we will use
 [tape](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)
 with the help of [tape-jsx-equals](https://github.com/atabel/tape-jsx-equals),
 but you will find
@@ -176,7 +176,7 @@ test("PageContainer is properly rendered", (t) => {
 These tests are the minimum coverage to ensure you don't break anything when you work
 on your component.
 
-As you can see, tests here are pretty easy to write & straightforward.  
+As you can see, the tests here are pretty easy to write & straightforward.  
 **The interesting part is that you don't compare using strings.
 You can use real React components.**
 
