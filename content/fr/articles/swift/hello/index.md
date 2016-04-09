@@ -129,24 +129,40 @@ Quelques exemples de boucles `while` et `for` :
 var i = 0
 while i < 10 { // Tant que i < 10 j'affiche
     print("i = \(i)")
-    i++ // incrémente i
+    i+=1 // incrémente i de 1
 }
 
-// For classique
-for var i = 0; i < 3; i++ {
-    print("\(i)")
+for i in (0...10) { // pour i de 0 à 10
+	print(i)
 }
 
-// For avec Range
+for i in (1...10).reverse() { // pour i de 1 à 10 en moonwalk
+    print(i)
+}
+
+for i in 0.stride(to: 10, by: 2) { // pour i de 0 à 10 par saut de 2 (10 non compris)
+    print(i)
+}
+
+// autre notation de For utilisant des Ranges
 for i in 0..<3{
     print(i)
 }
 
-// For-In
+// For-In : Pour mes éléments d'un Array
 for element in myCollection {
     element.doSomething()
 }
+
+// For-In : en enumurant la boucle
+for (index,valeur) in myCollection.enumerate(){
+	print("valeur à l'index [\(index)] -> \(valeur)")
+}
+
+
 ```
+
+> Depuis Swift 2.2, les notations `--` et `++` sont dépréciées, donc plus de i++ dans les boucles 😩. Ce qui explique aussi que les boucles For C-Style sont aussi dépréciées. Ex:`for var i = 0; i < 3; i++`. Pour ce genre de boucle il faut utiliser la notation `(0...3)`.
 
 ## Fonctions
 
