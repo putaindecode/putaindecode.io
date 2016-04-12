@@ -1,5 +1,5 @@
 ---
-date: "2016-01-24"  
+date: "2016-04-12"  
 title: "Angular 1.5 : un pas de plus vers les web-components"  
 tags:
   - javascript
