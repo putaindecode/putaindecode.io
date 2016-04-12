@@ -28,7 +28,7 @@ On voit donc progressivement apparaitre de nouvelles fonctionnalités comme :
 
 Mais le point qui nous intéresse particulièrement ici n'est autre que 
 le nouveau _helper_ permettant la déclaration de similis 
-(composants web)[https://fr.wikipedia.org/wiki/Composants_web], aka web-components.
+[composants web](https://fr.wikipedia.org/wiki/Composants_web), aka web-components.
 
 Les habitués connaissaient déjà [`angular.directive()`](https://docs.angularjs.org/api/ng/service/$compile), 
 un _helper_ permettant la déclaration de composants réutilisables. 
