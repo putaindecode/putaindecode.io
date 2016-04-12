@@ -9,7 +9,7 @@ authors:
   - Freezystem
 ---
 
-Ce post est écrit à la lumière du 
+Ce post a été écrit à la lumière du 
 [changelog d'Angular 1.5.0 rc1](https://github.com/angular/angular.js/blob/master/CHANGELOG.md#150-rc1-quantum-fermentation-2016-01-15).  
 Toutes information est succeptible d'évoluer au cours des publications de 
 nouvelles versions du framework.
