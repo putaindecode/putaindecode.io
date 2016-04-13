@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
 import { Link } from "react-router"
-import enhanceCollection from "statinamic/lib/enhance-collection"
+import enhanceCollection from "phenomic/lib/enhance-collection"
 
 import supportLocale from "../../browser-locale-support"
 import getLang from "../../i18n/getLang"
