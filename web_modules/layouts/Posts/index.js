@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import cx from "classnames"
 import Helmet from "react-helmet"
-import enhanceCollection from "statinamic/lib/enhance-collection"
+import enhanceCollection from "phenomic/lib/enhance-collection"
 
 import getLang from "../../i18n/getLang"
 import PostsList from "../../PostsList"
