@@ -81,38 +81,20 @@ ainsi on colle à la specification : le composant web est agnostique du contexte
 
 l'attribut `scope` est donc forcé à `{}` et n'est plus configurable.
 
-### Passage de paramètres via `bindToController`
+### Passage de paramètres via `bindings`
 
-L'attibut `scope` n'étant plus disponible le nouvel attribut 
-[`bindToController`](https://toddmotto.com/no-scope-soup-bind-to-controller-angularjs/), 
-qui était apparu en 1.3 et amélioré en 1.4, est à présent l'unique manière de 
-passer des variables au composant. 
+La propriété `scope` n'étant plus disponible `component`. Il faut à présent utiliser la propriété `bindings`. La syntaxe de celle-ci est équivalent à celle de la propriété `scope`. Mais les éléments passés sont automatiquement attachés à l'instance du contrôleur lié au `component`.
 
-Il fonctionne de la même manière et est définit à `true` par défaut.
+Notons, que s'il reste possible d'utiliser la syntaxe `=` (two-way data binding), celle-ci est déconseillée au profit de la syntaxe `<` (one-way data binding).
 
 ### Utilisation _forcée_ de `controllerAs`
 
 Déjà présenté comme une _[best practice](https://toddmotto.com/digging-into-angulars-controller-as-syntax/)_,
 `controllerAs` fait son chemin de manière évidente jusqu'au nouveau _helper_ 
-`.component()` son utilisation va de pair avec celle de `bindToController`.
+`.component()` son utilisation va de pair avec celle de `bindings`.
 
 L'attribut, qui prend une chaine de caractères pour valeur, est à présent facultatif. 
 S'il est omit le controller est automatiquement aliassé par l'objet `$ctrl`.
-
-### L'abandon de la transclusion ?
-
-La transclusion permet la ré-injection des balises présentes initialement à l'intérieur 
-de la directive avant sa phase de compilation à un endroit qu'on aura spécifié 
-( avec la balise `<ng-transclude>`) dans le template final. 
-
-Depuis la version 1.5.0 rc1, le paramètre `transclude` est passé à `false` par défaut.
-
-Du point de vue du _web-component_ c'est plutôt logique si on convient que le
-composant doit être agnostique du contexte. Angular semble en tout cas pousser 
-les développeurs dans cette direction.
-
-> Angular précise que pour toute utilisation incompatible, à cause des changements
-> évoqués précédemment l'usage de `.directive()` reste la référence.
 
 ## Exemple de migration
 
@@ -147,18 +129,16 @@ angular.directive('helloWorld', function helloWorld () {
 La syntaxe _component_ :
 
 ```js
-angular.component('helloWorld', function helloWorld () {
-  return {
-    bindToController  : {
-      name : '@'
-    },
-    controller        : function helloWorldCtrl () {
-      this.logName = angular.bind(this, function () {
-        console.log(this.name);
-      });
-    },
-    template          : '<div><span ng-click="$ctrl.logName()">Hi {{$ctrl.name}}!</span></div>'
-  }
+angular.component('helloWorld', {
+  bindings: {
+    name: '@'
+  },
+  controller : function helloWorldCtrl () {
+    this.logName = angular.bind(this, function () {
+      console.log(this.name);
+    });
+  },
+  template : '<div><span ng-click="$ctrl.logName()">Hi {{$ctrl.name}}!</span></div>'
 });
 ```
 
