@@ -23,34 +23,34 @@ les tests pour notifier l'état. Quand même.
 ## C'est qui Travis?
 
 [Travis-CI](https://travis-ci.com/) est un service en ligne qui permet de tester
-et déployer ses applications de manière automatisé.
+et déployer ses applications de manière automatisée.
 
-Ce service payant propose une solution gratuite à tous les projets Open Source,
+Ce service payant propose une solution gratuite à tous les projets open source,
 ce qui est assez cool. Cette version est disponible sur 
 [travis-ci.org](https://travis-ci.org/).
-Il existe bien entendu plein d'autre services similaires, mais Travis-CI étant très
-répandu dans la communauté Open Source, on le prendra pour notre exemple.
+Il existe bien entendu plein d'autres services similaires, mais Travis-CI étant très
+répandu dans la communauté open source, on le prendra pour notre exemple.
 
 ## Configuration de Travis-CI
 
 Travis-CI fonctionne avec un fichier de configuration assez simple. Il n'y a
 qu'à voir [le
-notre](https://github.com/putaindecode/putaindecode.io/blob/master/.travis.yml).
+nôtre](https://github.com/putaindecode/putaindecode.io/blob/master/.travis.yml).
 
-Voici ci-dessous une version minimal pour faire tourner un projet node par
+Voici ci-dessous une version minimale pour faire tourner un projet node par
 exemple :
 
 ```yml
 language: node_js
 ```
 
-Oui c'est tout. Par défaut, selon le language et/ou les fichiers présents, 
+Oui, c'est tout. Selon le language et/ou les fichiers présents, 
 Travis-CI va choisir la commande de test par défaut.
 Avec node par exemple, ce sera `npm test` si un package.json est présent.
-Si un [Makefile](/fr/articles/make/) est de la partie, Travis-CI va executer `make
+Si un [Makefile](/fr/articles/make/) est de la partie, Travis-CI va exécuter `make
 test`.
 
-Voici un fichier plus complet avec quelques exemples et trucs bon à savoir.
+Voici un fichier plus complet avec quelques exemples et trucs bons à savoir.
 
 ```yml
 language: node_js
@@ -66,7 +66,7 @@ matrix:
 # met en cache node_modules, à noter que dans ce genre d’utilisation pour des
 # librairies open source consommées via npm, il ne faudra pas oublier
 # npm prune utilisé ci-après, histoire de ne pas lancer des tests avec
-# des paquets encore en cache mais non présent dans le package.json
+# des paquets encore en cache mais non présents dans le package.json
 cache:
   directories:
     - node_modules
@@ -84,9 +84,9 @@ before_script:
 # si on veut utiliser autre chose que la commande par défaut
 script: npm run test-with-coverage
 
-# voici un exemple de ce que l’on peut faire après les tests:
+# voici un exemple de ce que l’on peut faire après les tests :
 # on peut lancer une tâche qui va envoyer les informations de
-# pourcentage de couverture de code un service tiers.
+# pourcentage de couverture de code à un service tiers.
 # (eg: http://coveralls.io/, https://codecov.io/)
 after_success: 'npm run coverage'
 
@@ -111,7 +111,7 @@ env:
 
 On va prendre un petit projet simple en JavaScript qu’on va déployer sur GitHub
 Pages.
-Il va nous falloir donc un token GitHub qu’on va encrypter via un utilitaire
+Il va donc nous falloir un token GitHub qu’on va encrypter via un utilitaire
 fourni par Travis-CI afin de ne pas publier cela à la vue de tous.
 
 ### Générer un token GitHub encrypté sur Travis-CI
@@ -121,7 +121,7 @@ token](https://github.com/settings/tokens/new).
 
 #### Encryption du token
 
-Maintenant nous allons encrypter ce token. Vous avez 2 possibilités :
+Maintenant, nous allons encrypter ce token. Vous avez 2 possibilités :
 
 - soit installer le paquet node `travis-encrypt`
 - soit installer la gem ruby `travis` (qui embarque la commande `encrypt`)
@@ -149,9 +149,9 @@ Les 2 commandes devraient ajouter automatiquement le token encrypté dans votre
 env:
   global:
     - NODE_ENV=production
-    # Ajouter un petit commentaire pour indiquer que c’est votre token github
+    # Ajouter un petit commentaire pour indiquer que c’est votre token GitHub
     # GITHUB_TOKEN
-    # cela permettra, si vous avez d’autre variable encryptée et
+    # cela permettra, si vous avez d’autres variables encryptées et
 que vous devez
     # changer de token pour X raison(s), de savoir lequel supprimer
     - secure: vqhHD....ROxGPQo= # VOTRE TOKEN DOIT ETRE PAR LA
@@ -162,7 +162,7 @@ que vous devez
 
 ### Utilisation du token encrypté
 
-#### Utilisation du token dans un script
+#### Utilisation dans un script
 
 Imaginons que vous ayez un projet à deployer sur GitHub Pages (exemple : vous
 générez un site statique avec [Phenomic](https://phenomic.io/), le générateur
@@ -179,10 +179,10 @@ https://docs.travis-ci.com/user/deployment/
 
 Dans notre cas, on va choisir un provider très simple : un script bash.
 
-**Par défaut, ceci sera executer pour tous les commits, sur toutes les
+**Par défaut, ceci sera executé pour tous les commits, sur toutes les
 branches.**
 
-On va devoir donc ajuster un peu le tir, car par exemple les commits sur
+On va donc devoir ajuster un peu le tir, car par exemple les commits sur
 `gh-pages` ne doivent rien faire (déjà pour éviter la boucle infinie).
 Il en sera de même pour les commits sur d'autres branches de travail ainsi que
 les pull/merge requests, comme on l’a vu dans le précédent exemple.
@@ -203,7 +203,7 @@ deploy:
     node: '5'
 ```
 
-#### Ecrire notre fameux `scripts/deploy.sh`
+#### Écrire notre fameux `scripts/deploy.sh`
 
 Dans le cas d’un déploiement de dossier sur une branche `gh-pages`, on peut
 faire de manière assez simple avec le script suivant :
@@ -240,10 +240,10 @@ _Note: pour commiter sans déclencher un build sur Travis-CI, il suffit d'ajoute
 votre message de commit. Pratique quand on modifie juste un README par exemple._
 
 Cette méthode est celle que nous utilisons pour générer et deployer notre site
-statique. Et cela permet, par exemple, que si quelqu'un corrige une typo depuis
+statique. Et cela permet, par exemple, si quelqu'un corrige une typo depuis
 l'interface en ligne de GitHub, de n'avoir rien d'autre à faire que de "merger" la correction 
-(et pour rappel: vous pouvez **modifier** n'importe quel article via le lien situé plus bas).
+(et pour rappel : vous pouvez **modifier** n'importe quel article via le lien situé plus bas).
 
-Travis éxecutera nos tests, génèrera notre site si les tests sont bon et mettra
-ça en production. Les mises en prod‘ le vendredi à 19h45? Même pas peur.
+Travis exécutera nos tests, génèrera notre site si les tests sont bons et mettra
+ça en production. Les mises en prod' le vendredi à 19h45 ? Même pas peur.
 
