@@ -13,9 +13,9 @@ header:
   credit: https://www.flickr.com/photos/jurvetson/7408451314
 ---
 
-On va partir comme ça: on a un projet sur git et tous les commits dans la
+On va partir comme ça : on a un projet sur git et tous les commits dans la
 branche `master` provoqueront une mise en production automatique une fois les
-tests sont bon.
+tests validés.
 
 Les autres commits sur les autres branches et pull/merge requests joueront juste
 les tests pour notifier l'état. Quand même.
@@ -37,20 +37,20 @@ Travis-CI fonctionne avec un fichier de configuration assez simple. Il n'y a
 qu'à voir [le
 notre](https://github.com/putaindecode/putaindecode.io/blob/master/.travis.yml).
 
-Voici ci dessous une version minimal pour faire tourner un projet node par
-exemple
+Voici ci-dessous une version minimal pour faire tourner un projet node par
+exemple :
 
 ```yml
 language: node_js
 ```
 
-Oui c'est tout. Par défaut selon le language et/ou des fichiers présents, Travis
+Oui c'est tout. Par défaut selon le language et/ou les fichiers présents, Travis
 va choisir la commande de test par défaut.
 Avec node par exemple, ça sera `npm test` si un package.json est présent.
-Si un [Makefile](/fr/articles/make/) est de la partie, Travis vas executer `make
+Si un [Makefile](/fr/articles/make/) est de la partie, Travis va executer `make
 test`.
 
-Voici un fichier plus complet avec quelques examples et trucs bon à savoir
+Voici un fichier plus complet avec quelques exemples et trucs bon à savoir
 
 ```yml
 language: node_js
@@ -64,9 +64,9 @@ matrix:
   fast_finish: true
 
 # cache node modules, à noter que dans ce genre d’utilisation pour des
-# libraries open source consommer via npm, il ne faudra pas oublier
-# npm prune utiliser ci-après histoire de ne pas lancer des tests avec
-# des paquets encore en cache mais pas présent dans le package.json
+# librairies open source consommer via npm, il ne faudra pas oublier
+# npm prune utilisé ci-après histoire de ne pas lancer des tests avec
+# des paquets encore en cache mais non présent dans le package.json
 cache:
   directories:
     - node_modules
@@ -81,7 +81,7 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
-# si on veux utiliser autre chose que la commande par défaut
+# si on veut utiliser autre chose que la commande par défaut
 script: npm run test-with-coverage
 
 # exemple de ce que l’on peut faire après les tests:
@@ -90,7 +90,7 @@ script: npm run test-with-coverage
 # (eg: http://coveralls.io/, https://codecov.io/)
 after_success: 'npm run coverage'
 
-# partie intéressante: ici on ne va déployer que les commits sur la
+# partie intéressante : ici on ne va déployer que les commits sur la
 # branche master uniquement pour une version de node
 # (car sinon on déploierait plusieurs fois…)
 deploy:
@@ -114,7 +114,7 @@ env:
 
 On va prendre un petit projet simple en JavaScript qu’on va déployer sur GitHub
 Pages.
-Il va nous falloir donc un token GitHub qu’on va encrypté via un utilitaire
+Il va nous falloir donc un token GitHub qu’on va encrypter via un utilitaire
 Travis afin de ne pas
 publier cela à la vue de tous.
 
@@ -125,7 +125,7 @@ token](https://github.com/settings/tokens/new).
 
 #### Encryption du token
 
-Maintenant nous allons encrypter ce token. Vous avez 2 possibilités:
+Maintenant nous allons encrypter ce token. Vous avez 2 possibilités :
 
 - soit installer le paquet node `travis-encrypt`
 - soit installer la gem ruby `travis` (qui embarque la commande `encrypt`)
@@ -168,7 +168,7 @@ que vous devez
 
 #### Utilisation du token dans un script
 
-Imaginons que vous ayez un projet à deployer sur GitHub Pages (exemple: vous
+Imaginons que vous ayez un projet à deployer sur GitHub Pages (exemple : vous
 générez un site static avec [Phenomic](https://phenomic.io/), le générateur
 de site statique qu'on utilise).
 Vous aller devoir générer votre projet, puis ensuite pousser le dossier générer
@@ -181,13 +181,13 @@ faire un deploiement.
 
 https://docs.travis-ci.com/user/deployment/
 
-Dans notre cas on va choisir un provider très simple: un script bash.
+Dans notre cas on va choisir un provider très simple : un script bash.
 
 **Par défaut, ceci sera executer pour tous les commits sur toutes les
 branches.**
 
 On va devoir donc ajuster un peu le tir, car par exemple les commits sur
-`gh-pages` ne doivent rien faire (déjà pour éviter la boucle infini).
+`gh-pages` ne doivent rien faire (déjà pour éviter la boucle infinie).
 Il en sera de même pour les commits sur d'autres branches de travail ainsi que
 les pull/merge requests, comme on l’a vu dans le précédent exemple.
 
@@ -210,7 +210,7 @@ deploy:
 #### Ecrire notre fameux `scripts/deploy.sh`
 
 Dans le cas d’un déploiement de dossier sur une branche `gh-pages`, on peut
-faire de manière assez simple avec le script suivant:
+faire de manière assez simple avec le script suivant :
 
 ```sh
 #!/usr/bin/env bash
@@ -238,7 +238,7 @@ git push --force "${GIT_DEPLOY_REPO}" master:gh-pages
 
 ## Y'a plus qu'à !
 
-Et voilà on pousse un commit sur `master` et la magie devrait opérer!
+Et voilà on pousse un commit sur `master` et la magie devrait opérer !
 
 _Note: pour commiter sans provoquer Travis, il suffit d'ajouter `[ci skip]` dans
 votre message de commit. Pratique quand on modifie juste un README par exemple._
