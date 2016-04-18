@@ -116,9 +116,10 @@ angular.directive('helloWorld', function helloWorld () {
       name : '@'
     },
     controller        : function helloWorldCtrl () {
-      this.logName = angular.bind(this, function () {
-        console.log(this.name);
-      });
+      var vm = this;  
+      this.logName = function () {
+        console.log(vm.name);
+      }
     },
     controllerAs      : 'hw',
     template          : '<div><span ng-click="hw.logName()">Hello {{hw.name}}!</span></div>'
@@ -134,9 +135,10 @@ angular.component('helloWorld', {
     name: '@'
   },
   controller : function helloWorldCtrl () {
-    this.logName = angular.bind(this, function () {
-      console.log(this.name);
-    });
+    var vm = this;    
+    vm.logName = function logName() {
+      console.log(vm.name);
+    }
   },
   template : '<div><span ng-click="$ctrl.logName()">Hi {{$ctrl.name}}!</span></div>'
 });
