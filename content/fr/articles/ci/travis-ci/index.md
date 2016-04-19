@@ -7,6 +7,10 @@ tags:
   - travis-ci
 authors:
   - MoOx
+reviewers:
+  - magsout
+  - lionelB
+  - Macxim
 header:
   linearGradient: 160deg, rgba(204, 51, 51, .8), rgba(204, 51, 51, .4)
   image: https://farm8.staticflickr.com/7279/7408451314_e0c3faeaaa_z.jpg
@@ -26,10 +30,10 @@ les tests pour notifier l'état. Quand même.
 et déployer ses applications de manière automatisée.
 
 Ce service payant propose une solution gratuite à tous les projets open source,
-ce qui est assez cool. Cette version est disponible sur 
+ce qui est assez cool. Cette version est disponible sur
 [travis-ci.org](https://travis-ci.org/).
-Il existe bien entendu plein d'autres services similaires, mais Travis-CI étant très
-répandu dans la communauté open source, on le prendra pour notre exemple.
+Il existe bien entendu plein d'autres services similaires, mais Travis-CI étant
+très répandu dans la communauté open source, on le prendra pour notre exemple.
 
 ## Configuration de Travis-CI
 
@@ -44,11 +48,11 @@ exemple :
 language: node_js
 ```
 
-Oui, c'est tout. Selon le language et/ou les fichiers présents, 
+Oui, c'est tout. Selon le language et/ou les fichiers présents,
 Travis-CI va choisir la commande de test par défaut.
 Avec node par exemple, ce sera `npm test` si un package.json est présent.
-Si un [Makefile](/fr/articles/make/) est de la partie, Travis-CI va exécuter `make
-test`.
+Si un [Makefile](/fr/articles/make/) est de la partie, Travis-CI va exécuter
+`make test`.
 
 Voici un fichier plus complet avec quelques exemples et trucs bons à savoir.
 
@@ -59,7 +63,7 @@ node_js:
   - '5'
   - ‘4’
 
-# échoue dès qu'une erreur intervient 
+# échoue dès qu'une erreur intervient
 matrix:
   fast_finish: true
 
@@ -112,7 +116,7 @@ env:
 On va prendre un petit projet simple en JavaScript qu’on va déployer sur GitHub
 Pages.
 Il va donc nous falloir un token GitHub qu’on va encrypter via un utilitaire
-fourni par Travis-CI afin de ne pas publier cela à la vue de tous.
+spécifique afin de ne pas publier cela à la vue de tous.
 
 ### Générer un token GitHub encrypté sur Travis-CI
 
@@ -172,8 +176,8 @@ sur votre branche `gh-pages`.
 
 #### Utiliser la tâche de déploiement seulement si nécessaire
 
-Travis-CI possède une étape qui s'exécute après le succès des tests afin de pouvoir
-faire un deploiement.
+Travis-CI possède une étape qui s'exécute après le succès des tests afin de
+pouvoir faire un deploiement.
 
 https://docs.travis-ci.com/user/deployment/
 
@@ -236,14 +240,16 @@ git push --force "${GIT_DEPLOY_REPO}" master:gh-pages
 
 Et voilà ! On pousse un commit sur `master` et la magie devrait opérer !
 
-_Note: pour commiter sans déclencher un build sur Travis-CI, il suffit d'ajouter `[ci skip]` dans
-votre message de commit. Pratique quand on modifie juste un README par exemple._
+_Note: pour commiter sans déclencher un build sur Travis-CI, il suffit d'ajouter
+`[ci skip]` dans votre message de commit. Pratique quand on modifie juste un
+README par exemple._
 
 Cette méthode est celle que nous utilisons pour générer et deployer notre site
 statique. Et cela permet, par exemple, si quelqu'un corrige une typo depuis
-l'interface en ligne de GitHub, de n'avoir rien d'autre à faire que de "merger" la correction 
-(et pour rappel : vous pouvez **modifier** n'importe quel article via le lien situé plus bas).
+l'interface en ligne de GitHub, de n'avoir rien d'autre à faire que de "merger"
+la correction
+(et pour rappel : vous pouvez **modifier** n'importe quel article via le lien
+situé plus bas).
 
 Travis exécutera nos tests, génèrera notre site si les tests sont bons et mettra
 ça en production. Les mises en prod' le vendredi à 19h45 ? Même pas peur.
-
