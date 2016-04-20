@@ -68,7 +68,7 @@ matrix:
   fast_finish: true
 
 # met en cache node_modules, à noter que dans ce genre d’utilisation pour des
-# librairies open source consommées via npm, il ne faudra pas oublier
+# bibliothèques open source consommées via npm, il ne faudra pas oublier
 # npm prune utilisé ci-après, histoire de ne pas lancer des tests avec
 # des paquets encore en cache mais non présents dans le package.json
 cache:
@@ -156,8 +156,8 @@ env:
     # Ajouter un petit commentaire pour indiquer que c’est votre token GitHub
     # GITHUB_TOKEN
     # cela permettra, si vous avez d’autres variables encryptées et
-que vous devez
-    # changer de token pour X raison(s), de savoir lequel supprimer
+    # que vous devez changer de token pour X raison(s), de savoir lequel
+    # supprimer
     - secure: vqhHD....ROxGPQo= # VOTRE TOKEN DOIT ETRE PAR LA
 
     # ici vous pouvez définir en plus d'autres variables non encryptées
@@ -171,7 +171,7 @@ que vous devez
 Imaginons que vous ayez un projet à deployer sur GitHub Pages (exemple : vous
 générez un site statique avec [Phenomic](https://phenomic.io/), le générateur
 de site statique qu'on utilise).
-Vous aller devoir générer votre projet, puis ensuite pousser le dossier généré
+Vous allez devoir générer votre projet, puis ensuite pousser le dossier généré
 sur votre branche `gh-pages`.
 
 #### Utiliser la tâche de déploiement seulement si nécessaire
@@ -240,16 +240,16 @@ git push --force "${GIT_DEPLOY_REPO}" master:gh-pages
 
 Et voilà ! On pousse un commit sur `master` et la magie devrait opérer !
 
-_Note: pour commiter sans déclencher un build sur Travis-CI, il suffit d'ajouter
+_Note : pour commiter sans déclencher un build sur Travis-CI, il suffit d'ajouter
 `[ci skip]` dans votre message de commit. Pratique quand on modifie juste un
 README par exemple._
 
 Cette méthode est celle que nous utilisons pour générer et deployer notre site
 statique. Et cela permet, par exemple, si quelqu'un corrige une typo depuis
-l'interface en ligne de GitHub, de n'avoir rien d'autre à faire que de "merger"
+l'interface en ligne de GitHub, de n'avoir rien d'autre à faire que de « merger »
 la correction
 (et pour rappel : vous pouvez **modifier** n'importe quel article via le lien
 situé plus bas).
 
 Travis exécutera nos tests, génèrera notre site si les tests sont bons et mettra
-ça en production. Les mises en prod' le vendredi à 19h45 ? Même pas peur.
+ça en production. Les mises en prod' le vendredi à 19 h 45 ? Même pas peur.
