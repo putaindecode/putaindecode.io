@@ -61,7 +61,7 @@ Webpack propose un système de *loader* qui permet de transformer tout et
 n'importe quoi en JavaScript (mais pas que).
 Ainsi, tout est consommable en tant que module.
 
-Webpack prend à charge la fonction `require()` (connue et utilisée dans node.js et
+Webpack prend en charge la fonction `require()` (connue et utilisée dans node.js et
 browserify) et permet de définir des nouveaux comportements.
 
 ```js
