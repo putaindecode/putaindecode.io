@@ -8,11 +8,12 @@ import "_legacy-css/index.css"
 // phenomic
 import "babel-polyfill"
 import "whatwg-fetch"
-import phenomicClient from "phenomic/lib/client"
 
-import metadata from "app/metadata"
-import routes from "app/routes"
-import store from "app/store"
+import metadata from "../web_modules/app/metadata"
+import routes from "../web_modules/app/routes"
+import store from "../web_modules/app/store"
+
+import phenomicClient from "phenomic/lib/client"
 
 phenomicClient({
   metadata,
@@ -20,6 +21,7 @@ phenomicClient({
   store,
 })
 
+// hot loading
 // md files → JSON && generate collection + hot loading for dev
 let mdContext = require.context("../content", true, /\.md$/)
 mdContext.keys().forEach(mdContext)
