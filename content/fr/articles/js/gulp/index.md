@@ -198,7 +198,7 @@ Avec Gulp on se sent plus libre, moins contraint.
 Du coup, on avait carrément refait notre site avec Gulp
 (puis au passage un petit refresh graphique tant qu'à faire).
 
-**Mise à jour: depuis nous avons simplifié encore simplifié notre process et nous
+**Mise à jour: depuis nous avons encore simplifié notre process et nous
 nous sommes passé de Gulp.**
 
 Pour aller plus loin, vous n'avez qu'à ouvrir notre ancien
