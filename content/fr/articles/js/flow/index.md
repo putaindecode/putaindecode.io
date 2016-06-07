@@ -127,11 +127,11 @@ C'est là que [Flow](http://flowtype.org) intervient. C'est un outil d'analyse s
 
 ```javascript
 /* @flow */
-const add = (a, b) => {
-  return a + b
+const multiply = (a, b) => {
+  return a * b
 }
 
-add(1, "1")
+multiply(1, "1")
 ```
 
 ```
