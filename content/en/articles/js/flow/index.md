@@ -7,6 +7,7 @@ tags:
   - type
 authors:
   - bloodyowl
+translators:
   - skinnyfoetusboy
 ---
 
@@ -14,9 +15,9 @@ authors:
 document.body.firstChild.getBoundingClientRect()
 ```
 
-This hypothetic line of code doesn't always work.
+This hypothetical line of code doesn't always work.
 
-The reason for this is that `element.firstChild` is a `Node` and that not all `Nodes` have a `getBoundingClientRect` method, which is always found on `Elements`, a class that inherits from `Node`.
+The reason for this is that `element.firstChild` is a `Node`, not all of which have a `getBoundingClientRect` method, which is always found on `Elements`, a class that inherits from `Node`.
 
 This kind of error is rather usual, and unfortunately JavaScript doesn't quite get out of its way to warn us that *oi m8 that might not work*. JS actually prefers warning us at *runtime* when it's too late because the bug already happened.
 
@@ -69,7 +70,7 @@ const multiply = (a, b) => {
 }
 ```
 
-Good, now the team knows what types the function needs. Doesn't quite prevent runtime errors from happening but at least, hey, it's something.
+Good, now the team knows what types the function needs. It doesn't quite prevent runtime errors from happening but at least, hey, it's something.
 
 ### Going all the way in dynamic typing
 
@@ -85,7 +86,7 @@ const multiply = (a, b) => {
 }
 ```
 
-We can check types at runtime to find possible bugs in a drastic way, still doesn't protect us from that one issue that will break our app.
+We can check types at runtime to find possible bugs in a drastic way, but that still doesn't protect us from that one issue that will break our app.
 
 ### Acting like it's no biggie
 
@@ -101,11 +102,11 @@ const multiply = (a, b) => {
 }
 ```
 
-That's "defensive programming" for you. Instead of preventing the bug from happening, we tolerate it. In 99% of all cases, the result will definitely not be the one you expected and you won't even now when something went wrong.
+That's "defensive programming" for you. Instead of preventing the bug from happening, we tolerate it. In 99% of all cases, the result will definitely not be the one you expected and you won't even know when something went wrong.
 
 ## How are other languages doing?
 
-Other languages use static typing, which means the program won't compile if types are wrong.
+Other languages use static typing, which means the program won't compile if the types are wrong.
 
 ```ocaml
 let value = "1";;
@@ -123,7 +124,7 @@ Error: This expression has type string but an expression was expected of type
 
 ## Okay, how do we get this in JS?
 
-That's the part where [Flow](http://flowtype.org) does its magic. It's a static analysis tool for JS. It detects typing incompatibilities in your code.
+That's the part where [Flow](http://flowtype.org), a static analysis tool for JS, does its magic; it detects typing incompatibilities in your code.
 
 ```javascript
 /* @flow */
@@ -143,8 +144,8 @@ add(1, "1")
             ^^^^^ number
 ```
 
-In the precedent case, Flow analyses your code and understands that an operation of a `string` and a `number` is not directly possible.
-That means we can have code running on the first try every time, because Flow eliminates all our stupid little mistakes. As a bonus, it also avoids useless unit tests on types.
+In the previous case, Flow analyses your code and understands that an operation of a `string` and a `number` is not directly possible.
+This means we can have code running on the first try every time, because Flow eliminates all our stupid little mistakes. As a bonus, it also avoids useless unit tests on types.
 
 Flow also adds a syntax to define expected types in a given situation. We use `:` followed by the type the value should have.
 
@@ -174,7 +175,7 @@ class Person {
 const person: Person = new Person("foo")
 ```
 
-Flow allows to create typing aliases, which is essential to share them within a codebase. A syntax for importing types from a file also exists. Those imports are purged from the build.
+Flow allows creation of typing aliases, which is essential to share them within a codebase. A syntax for importing types from a file also exists. Those imports are purged from the build.
 
 ```javascript
 /* @flow */
@@ -285,6 +286,6 @@ const add = (a/*: number */, b/*: number */)/*: number */ => {
 add(1, 1)
 ```
 
-Alright, now none of you have any excuses not to type their JS so it would be quite a good idea to go on [Flow's website](http://flowtype.org/docs/getting-started.html#_) to learn a little more about it.
+Alright, now none of you have any excuses not to type your JS so it would be quite a good idea to go on [Flow's website](http://flowtype.org/docs/getting-started.html#_) to learn a little more about it.
 
 Buh-bye.
