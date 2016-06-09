@@ -12,7 +12,7 @@ Alors si vous faites du développement web et que vous ne vivez pas dans une cav
 
 ## Kesako ?
 
-Redux est une implémentation dérivée de Flux. Ça permet de créer un **Store** qui contient un **état**, réagit à des **actions dispatchées**, et auquel on peut **souscrire** pour être notifiés des changements. Il permet également l'ajout de **middlewares**, qui peuvent en quelque store *pre-process* les actions.
+Redux est une implémentation dérivée de Flux. Ça permet de créer un **Store** qui contient un **état**, réagit à des **actions dispatchées**, et auquel on peut **souscrire** pour être notifiés des changements. Il permet également l'ajout de **middlewares**, qui peuvent en quelque sorte *pre-process* les actions.
 
 Du coup, on va écrire une implémentation de Redux pour mieux décomposer son fonctionnement.
 
