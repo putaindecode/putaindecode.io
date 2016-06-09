@@ -5,6 +5,3 @@ npm-debug.log
 # build
 contributors.json
 dist
-*.bundle.js
-# https://github.com/MoOx/phenomic/issues/439
-scripts/_
