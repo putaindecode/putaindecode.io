@@ -275,7 +275,7 @@ et vous n'avez plus qu'à ajouter `"syntax-flow"` et `"transform-flow-strip-type
 
 ## Mais je peux pas utiliser babel sur mon projet
 
-C'est balot, mais tu peux quand même utiliser Flow avec de jolis commentaires.
+C'est ballot, mais tu peux quand même utiliser Flow avec de jolis commentaires.
 
 ```javascript
 /* @flow */
