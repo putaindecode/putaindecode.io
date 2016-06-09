@@ -12,7 +12,7 @@ Alors si vous faites du développement web et que vous ne vivez pas dans une cav
 
 ## Kesako ?
 
-Redux est une implémentation dérivée de Flux. Ça permet de créer un **Store** qui contient un **état**, réagit à des **actions dispatchées**, et auquel on peut **souscrire** pour être notifiés des changements. Il permet également l'ajout de **middlewares**, qui peuvent en quelque store *pre-process* les actions.
+Redux est une implémentation dérivée de Flux. Ça permet de créer un **Store** qui contient un **état**, réagit à des **actions dispatchées**, et auquel on peut **souscrire** pour être notifié des changements. Il permet également l'ajout de **middlewares**, qui peuvent en quelque sorte *pre-process* les actions.
 
 Du coup, on va écrire une implémentation de Redux pour mieux décomposer son fonctionnement.
 
@@ -26,7 +26,7 @@ Pour faire simple, votre état vaudra toujours :
 dispatchedActions.reduce(reducer, undefined)
 ```
 
-Si ça vous paraît un peu abstrait, prenons un exemple tout con de reducer:
+Si ça vous paraît un peu abstrait, prenons un exemple tout con de reducer :
 
 ```javascript
 // on part de 0
@@ -104,7 +104,7 @@ Ayé, le mécanisme est en place.
 
 ## 3. Combiner les reducers
 
-Maintenant ce qui serait pas mal, ce serait de permettre d'avoir plusieurs reducers, afin de pouvoir les découper et d'éviter d'avoir du gros code bloated qui tache. Pour ce faire, on va créer la fonction `combineReducers` qui va prendre un objet contenant des reducers, et transformer ça en un seul reducer qui va retourner un objet de la même forme, avec l'état retourné par le reducer de la même clé.
+Maintenant ce qui serait pas mal, ce serait de permettre d'avoir plusieurs reducers, afin de pouvoir les découper et d'éviter d'avoir du gros code bloated qui tâche. Pour ce faire, on va créer la fonction `combineReducers` qui va prendre un objet contenant des reducers, et transformer ça en un seul reducer qui va retourner un objet de la même forme, avec l'état retourné par le reducer de la même clé.
 
 ```javascript
 const combineReducers = (reducers) => {
