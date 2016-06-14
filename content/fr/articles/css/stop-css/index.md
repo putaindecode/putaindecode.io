@@ -228,6 +228,6 @@ const styles = {
 
 Par ailleurs, avec certaines bibliothèques permettant naturellement l'usage d'inline-styles (comme React), cela vous permet d'avoir le style et le markup dans le même fichier, sans avoir besoin de naviguer entre les onglets de votre éditeur.
 
-En résumé, utiliser JS pour définir et appliquer les styles vous permet de prendre le contrôle sur le styling de vos composants, tout en apportant le confort d'un langage offrant naturellement de nombreux avantages. Si vous êtes bloqués avec CSS.
+En résumé, utiliser JS pour définir et appliquer les styles vous permet de prendre le contrôle sur le styling de vos composants, tout en apportant le confort d'un langage offrant naturellement de nombreux avantages. Si vous êtes bloqués avec CSS, partez sur les CSS modules ou la méthologie BEM selon vos possibilités.
 
 Bisous bisous.
