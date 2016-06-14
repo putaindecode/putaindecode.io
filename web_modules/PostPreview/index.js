@@ -1,6 +1,8 @@
 import React, { PropTypes } from "react"
 import { Link } from "react-router"
 
+import classes from "./styles.css"
+
 import getI18n from "../i18n/get"
 import Avatars from "../Avatars"
 import AuthorsList from "../AuthorsList"
@@ -23,31 +25,32 @@ const PostPreview = ({ post }, context) => {
       >
         {post.title}
       </Link>
-
-      {
-        post.tags &&
-        <ul className="putainde-Tags putainde-List-item-tags">
+      <div className={classes.footer}>
         {
-          post.tags.map(tag => {
-            return (
-              <li key={tag} className="putainde-Tag">{tag}</li>
-            )
-          })
+          post.tags &&
+          <ul className="putainde-Tags putainde-List-item-tags">
+          {
+            post.tags.map(tag => {
+              return (
+                <li key={tag} className="putainde-Tag">{tag}</li>
+              )
+            })
+          }
+          </ul>
         }
-        </ul>
-      }
 
-      <div className="putainde-List-author">
-        {i18n.initialCommit}
-        {" "}
-        { post.authors && <AuthorsList authors={post.authors} /> }
-        {
-          post.date &&
-            [
-              <br key="br" />,
-              <time key={post.date}>{ formatDate(post.date) }</time>,
-            ]
-        }
+        <div className="putainde-List-author">
+          {i18n.initialCommit}
+          {" "}
+          { post.authors && <AuthorsList authors={post.authors} /> }
+          {
+            post.date &&
+              [
+                <br key="br" />,
+                <time key={post.date}>{ formatDate(post.date) }</time>,
+              ]
+          }
+        </div>
       </div>
     </div>
   )
