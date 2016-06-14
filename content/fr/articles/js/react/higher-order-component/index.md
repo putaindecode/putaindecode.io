@@ -88,7 +88,7 @@ Afin de consommer le `context`, un component doit définir une propriété stati
 Une autre solution serait d'utiliser l'héritage d'une sous-classe de `ReactComponent`. Ça ne marche pas pour deux raisons:
 
 - Plus d'un niveau d'héritage est en général une idée de merde. Cela mène souvent à des conflits entre méthodes, et force à vérifier toute la chaîne d'héritage à chaque fois que l'on souhaite modifier quelque chose. L'API des `mixins` de `React.createClass` réglait ce souci en définissant des comportements de merge selon les méthodes, mais cela rend encore plus obscure la compréhension du fonctionnement de nos composants.
-- Si l'on peut des APIs **interopérables**, on ne peut pas partir de l'héritage. React offre trois moyens de définir un composant: `class extends React.Component {}`, `React.createClass({})` et `(props) => ReactElement`. Les deux derniers ne peuvent pas bénéficier de l'héritage.
+- Si l'on veut des APIs **interopérables**, on ne peut pas partir de l'héritage. React offre trois moyens de définir un composant: `class extends React.Component {}`, `React.createClass({})` et `(props) => ReactElement`. Les deux derniers ne peuvent pas bénéficier de l'héritage.
 
 La meilleure façon de créer une fonctionnalité réutilisable est d'utiliser le pattern du **Higher Order Component** (ou *HOC*). Ce que ça veut dire, c'est qu'on va simplement wrapper un composant dans un autre, lequel a pour unique rôle d'injecter la fonctionnalité et de la passer via les `props`. Il s'agit tout bêtement du principe de composition : au lieu d'exporter `A`, vous exportez `Wrapped(A)`, et ce dernier retourne un composant React qui va appeler `A` dans sa méthode `render`.
 
