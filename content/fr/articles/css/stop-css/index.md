@@ -9,15 +9,15 @@ authors:
   - bloodyowl
 ---
 
-On va commencer en douceur : CSS, c'est de la grosse merde.
+CSS est un langage horriblement dangereux, parce qu'il mèle des concepts complètement pétés et une folle capacité à faire confondre facilité et simplicité aux gens qui l'utilisent.
 
 ## Qu'est-ce qui ne va pas ?
 
 À l'origine, CSS a été conçu pour styler des documents, pas des applications. Du coup lorsqu'on doit *scale*, c'est rapidement douloureux.
 
-### Les selecteurs
+### Les sélecteurs
 
-Les selecteurs sont des **variables globales mutables**. Lorsque vous faites :
+Les sélecteurs sont des **variables globales mutables**. Lorsque vous faites :
 
 ```css
 .selector {
@@ -55,9 +55,9 @@ Alors ça, c'est particulièrement drôle : la spécificité d'un sélecteur va 
 | `li.red.level` | 0,0,2,1 |
 | `#x34y` | 0,1,0,0 |
 
-Si le style est défini dans l'attribute `style`, la spécificité est de 1,0,0,0. Si une valeur associée à une propriété est suffixée d'un `!important`, elle prend quoiqu'il arrive l'ascendance.
+Si le style est défini dans l'attribut `style`, la spécificité est de 1,0,0,0. Si une valeur associée à une propriété est suffixée d'un `!important`, elle prend quoiqu'il arrive l'ascendance.
 
-Si on résume, on nage en plein délire, la priorité se définit dans l'ordre par : la présence de `!important`, la façon de définir le style, la spécificité sélecteur utilisé puis par l'ordre de définition dans l'ensemble des CSS de la page. Évidemment, à l'époque où avait qu'une pauvre petite feuille de style pour l'ensemble de son site, ça marchait ; plus maintenant.
+Si on résume, on nage en plein délire, la priorité se définit dans l'ordre par : la présence de `!important`, la façon de définir le style, la spécificité du sélecteur utilisé puis par l'ordre de définition dans l'ensemble des CSS de la page. Évidemment, à l'époque où avait qu'une pauvre petite feuille de style pour l'ensemble de son site, ça marchait ; plus maintenant.
 
 ### Les regressions
 
@@ -113,7 +113,7 @@ mais bien évidemment non, comme vu plus haut, c'est le foutu ordre de définiti
 .red { color: red; }
 ```
 
-C'est pire si vous utilisez un préprocesseur tel que SASS et LESS. Lorsque vous faites un :
+C'est pire si vous utilisez un préprocesseur tel que Sass et LESS. Lorsque vous faites un :
 
 ```css
 .blue {
@@ -226,8 +226,8 @@ const styles = {
 }
 ```
 
-Par ailleurs, avec certaines bibliothèques permettant naturellement l'usage d'inline-styles (comme React), cela vous permet d'avoir le style et le markup dans le même fichier, sans avoir besoin de naviguer entre les onglets de votre éditeur.
+Par ailleurs, avec certaines bibliothèques permettant naturellement l'usage d'inline-styles (comme React), cela vous donne la possibilité d'avoir le style et le markup dans le même fichier, sans avoir besoin de naviguer entre les onglets de votre éditeur (vous pouvez cependant séparer en plusieurs fichiers si ça vous fait plaisir).
 
-En résumé, utiliser JS pour définir et appliquer les styles vous permet de prendre le contrôle sur le styling de vos composants, tout en apportant le confort d'un langage offrant naturellement de nombreux avantages. Si vous êtes bloqués avec CSS, partez sur les CSS modules ou la méthologie BEM selon vos possibilités.
+En résumé, utiliser JS pour définir et appliquer les styles vous permet de prendre le contrôle sur le styling de vos composants, tout en apportant le confort d'un langage offrant naturellement de nombreux avantages. Si vous êtes bloqués avec CSS, partez sur les CSS modules ou la méthologie BEM selon vos possibilités. Le but, c'est d'éliminer les [7 maux de CSS](https://github.com/necolas/react-native-web/blob/master/docs/guides/style.md).
 
 Bisous bisous.
