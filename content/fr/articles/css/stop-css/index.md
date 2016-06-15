@@ -37,7 +37,7 @@ window.selector = (window.selector || []).concat({
 
 - La définition d'un style associé à un sélecteur peut être redéfinie ailleurs
 - Si associe plusieurs styles à un sélecteur, les derniers définis dans le CSS auront toujours la priorité
-- Quelqu'un peut péter les styles d'un composants pour peu qu'il ne sache pas qu'un sélecteur est utilisé ailleurs
+- Quelqu'un peut péter les styles d'un composant pour peu qu'il ne sache pas qu'un sélecteur est utilisé ailleurs
 
 ### La spécificité
 
