@@ -9,7 +9,7 @@ authors:
   - bloodyowl
 ---
 
-CSS est un langage horriblement dangereux, parce qu'il mèle des concepts complètement pétés et une folle capacité à faire confondre facilité et simplicité aux gens qui l'utilisent.
+CSS est un langage horriblement dangereux, parce qu'il mêle des concepts complètement pétés et une folle capacité à faire confondre facilité et simplicité aux gens qui l'utilisent.
 
 ## Qu'est-ce qui ne va pas ?
 
@@ -36,7 +36,7 @@ window.selector = (window.selector || []).concat({
 Ça veut dire que :
 
 - La définition d'un style associé à un sélecteur peut être redéfinie ailleurs
-- Si associe plusieurs styles à un sélecteur, les derniers définis dans le CSS auront toujours la priorité
+- Si on associe plusieurs styles à un sélecteur, les derniers définis dans le CSS auront toujours la priorité
 - Quelqu'un peut péter les styles d'un composant pour peu qu'il ne sache pas qu'un sélecteur est utilisé ailleurs
 
 ### La spécificité
@@ -55,11 +55,11 @@ Alors ça, c'est particulièrement drôle : la spécificité d'un sélecteur va 
 | `li.red.level` | 0,0,2,1 |
 | `#x34y` | 0,1,0,0 |
 
-Si le style est défini dans l'attribut `style`, la spécificité est de 1,0,0,0. Si une valeur associée à une propriété est suffixée d'un `!important`, elle prend quoiqu'il arrive l'ascendance.
+Si le style est défini dans l'attribut `style`, la spécificité est de 1,0,0,0. Si une valeur associée à une propriété est suffixée d'un `!important`, elle prend quoi qu'il arrive l'ascendance.
 
-Si on résume, on nage en plein délire, la priorité se définit dans l'ordre par : la présence de `!important`, la façon de définir le style, la spécificité du sélecteur utilisé puis par l'ordre de définition dans l'ensemble des CSS de la page. Évidemment, à l'époque où avait qu'une pauvre petite feuille de style pour l'ensemble de son site, ça marchait ; plus maintenant.
+Si on résume, on nage en plein délire, la priorité se définit dans l'ordre par : la présence de `!important`, la façon de définir le style, la spécificité du sélecteur utilisé puis par l'ordre de définition dans l'ensemble des CSS de la page. Évidemment, à l'époque où on n'avait qu'une pauvre petite feuille de style pour l'ensemble de son site, ça marchait ; plus maintenant.
 
-### Les regressions
+### Les régressions
 
 Prenons un exemple tout bête :
 
@@ -94,7 +94,7 @@ Quelqu'un de la team modifie `.item` :
 
 Super, une regression dans `some-context`. Face à ça, deux possibilités :
 
-- Vous vous foutez d'avoir des regressions qui pètent votre site
+- Vous vous foutez d'avoir des régressions qui pètent votre site
 - À chaque changement minime du CSS vous vérifiez l'intégralité du site et testez tous les comportements dans tous les contextes.
 
 ### Le choix de priorisation des styles
@@ -132,7 +132,7 @@ C'est pire si vous utilisez un préprocesseur tel que Sass et LESS. Lorsque vous
 
 Vous imaginez que `.blue` étant appliqué après dans `.my-selector`, il va prendre la priorité. EH BAH NON, c'est `.red`, parce que sa déclaration est située après `.blue`.
 
-Si ce constat peut aussi permettre à ceux et celles qui utilisent des CSS atomiques d'arrêter immédiatement:
+Si ce constat peut aussi permettre à ceux et celles qui utilisent des CSS atomiques d'arrêter immédiatement :
 
 ```css
 .relative { position: relative; }
@@ -164,14 +164,14 @@ C'est super, mais si quelqu'un vient ajouter :
 }
 ```
 
-quelque part, il y a deux cas:
+quelque part, il y a deux cas :
 
 - soit c'est chargé avant, et ça ne fait rien
 - soit c'est chargé après, et ça override toutes les propriétés utilisant `--mainColor`. On est bien contents.
 
 ## Vous ne pouvez pas vous permettre de laisser tomber CSS ?
 
-Dans ce cas, forcez vous à utiliser la [méthodologie BEM](/fr/articles/css/bem/). Ça ne réglera pas tout, mais au moins cela vous permettra d'éviter un maximum de conneries en vous forçant à découper en composants isolés, et à mieux maîtriser la priorisation, puisque le scope auquel vous devrez y veiller sera considérablement réduit:
+Dans ce cas, forcez vous à utiliser la [méthodologie BEM](/fr/articles/css/bem/). Ça ne réglera pas tout, mais au moins cela vous permettra d'éviter un maximum de conneries en vous forçant à découper en composants isolés, et à mieux maîtriser la priorisation, puisque le scope auquel vous devrez y veiller sera considérablement réduit :
 
 ```css
 /* Header.css */
@@ -193,7 +193,7 @@ Encore mieux, si vous avez du tooling à la webpack, vous pouvez utiliser les [C
 
 ## Vous pouvez vous permettre de laisser tomber CSS ?
 
-JavaScript vous permet déjà de bénéficier d'un système de modules, de variables, de conditions, de fonctions réutilisables, et tout ça sans hack. En plus de ça, vous maitrisez la priorisation, parce c'est que c'est vous qui décidez ce qui s'applique:
+JavaScript vous permet déjà de bénéficier d'un système de modules, de variables, de conditions, de fonctions réutilisables, et tout ça sans hack. En plus de ça, vous maitrisez la priorisation, parce c'est que c'est vous qui décidez ce qui s'applique :
 
 ```javascript
 class MyComponent extends React.Component {
