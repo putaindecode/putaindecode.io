@@ -26,8 +26,8 @@ Vous pouvez aussi fournir un screenshot si vous pensez que c'est pertinent.
 
 ### Un mauvais rapport de bug
 
-![Mauvais rapport de bug](assets/bad-issue.png)
+![Mauvais rapport de bug](../assets/bad-issue.png)
 
 ### Un bon rapport de bug
 
-![Bon rapport de bug](assets/good-issue.png)
+![Bon rapport de bug](../assets/good-issue.png)

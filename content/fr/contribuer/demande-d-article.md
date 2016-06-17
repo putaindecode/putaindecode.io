@@ -6,7 +6,7 @@ layout: Page
 _Note: Vous devez avoir avoir un compte GitHub._
 
 Vous cherchez des informations sur un sujet technique et vous ne trouvez aucune
-ressource en français ou alors de mauvaise qualité ? Ça peut être l'occasion
+ressource en français ou alors seulement de mauvaise qualité ? Ça peut être l'occasion
 d'avoir un article sur Putain de code à ce sujet !
 
 ## Nous soumettre une idée d'article
@@ -15,11 +15,13 @@ On fonctionne de manière totalement transparente sur notre workflow de
 rédaction d'articles. Tout peut être trouvé dans [les issues de notre repo
 GitHub](https://github.com/putaindecode/putaindecode.io/issues).
 
-On utilise un système de _labels_ pour s'organiser, on en a 4 : un pour la
-proposition d'idée de post, un pour le demande de relecture, un pour demander
-des améliorations sur un post, un pour valider la publication d'un post.
+On utilise un système de _labels_ pour s'organiser, actuellement on en a 4 :
+* proposition d'idée de post
+* demande de relecture
+* demande d'améliorations sur un post
+* validation de publication d'un post
 
-Dans le cas présent, c'est le label `Post: idea` ([exemple](https://github.com/putaindecode/putaindecode.io/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22Post%3A+idea%22))
+Dans le cas présent, c'est le label `Post: idea` ([exemple](https://github.com/putaindecode/putaindecode.io/issues?q=is%3Aopen+is%3Aissue+label%3A%22scope%3A+post%22))
 qui va être utile.
 
 Il vous suffit d'écrire une issue claire et détaillée expliquant le sujet de
@@ -35,4 +37,4 @@ viendra y apposer le label `Post: idea`.
 
 À partir de là, vous pouvez décider [d'écrire le post](#TODO) ou bien de
 laisser la rédaction de celui-ci à quelqu'un qui s'y connait (mais gardez à
-  l'esprit que les choses vont plus vite quand on les fait par nous-mêmes).
+  l'esprit que les choses vont plus vite quand on les fait par soi-même).

@@ -3,7 +3,7 @@ title: Comment contribuer ?
 layout: Page
 ---
 
-Rien qu'en venant sur cette page, tu as déja fait le premier pas, et pour ça, on
+Rien qu'en venant sur cette page, vous avez déja fait le premier pas, et pour ça, on
  te remercie 🤗.
 
 Le site, le contenu et les processus de publication et de mise à jour du code
@@ -21,8 +21,7 @@ Selon le temps et l'envie, il existe diverses façons de nous aider :
 ## Faire évoluer le contenu
 
 - [J'aimerais que vous écriviez un article sur le site](/fr/contribuer/demande-d-article/)
-- [Faire une proposition d'idée d'article](#todo)
-- [Nous aider à prioriser les prochains articles](#todo)
+- [Participer à la priorisation / manifester de l'intérêt pour un article](/fr/contribuer/participer-priorisation/)
 - [Écrire et soumettre un article](#todo)
 - [Faire des relectures d'articles](#todo)
 - [Traduire un article dans une nouvelle langue](/fr/contribuer/traduire/)
