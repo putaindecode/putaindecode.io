@@ -2,6 +2,7 @@ import React, { PropTypes } from "react"
 import { Link } from "react-router"
 
 import getI18n from "../i18n/get"
+import getLang from "../i18n/getLang"
 import Navigation from "../Navigation"
 import SVGIcon from "../SVGIcon"
 
@@ -12,7 +13,7 @@ const Header = ({}, context) => {
     <div className="putainde-Header">
       <div className="r-Grid">
         <div className="r-Grid-cell r-minM--1of3">
-          <Link className="putainde-SiteTitle" to="/">
+          <Link className="putainde-SiteTitle" to={`/${getLang(context)}/`}>
             <SVGIcon
               className="putainde-Logo"
               svg={require("../images/putaindecode-logo.svg")}
