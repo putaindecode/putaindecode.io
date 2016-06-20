@@ -234,7 +234,7 @@ Bisous bisous.
 
 ## Edit
 
-Afin de répondre aux diverses incompréhensions et commentaires en réponses à l’article, voilà un follow-up qui va tenter d’aller plus en profondeur dans la critique de CSS.
+Afin de répondre aux diverses incompréhensions et commentaires en réponse à l’article, voilà un follow-up qui va tenter d’aller plus en profondeur dans la critique de CSS.
 
 Je vais donc répondre à [l’article de Daniel Glazman](http://www.glazman.org/weblog/dotclear/index.php?post/2016/06/18/Pourquoi-il-n-aurait-pas-du-arrêter-d-utiliser-CSS), ancien co-chairman du CSS Working Group.
 
@@ -242,15 +242,15 @@ Le premier point n’a rien à voir avec le sujet, mais l’auteur fait un paral
 
 Le grand problème de l’état actuel des sélecteurs CSS, c’est qu’ils n’offrent naturellement aucune API (hors *Shadow DOM*) permettant de limiter le scope d’un sélecteur sans augmenter sa spécificité. Si je veux ajouter des propriétés de style à un élément comportant un certain sélecteur dans un certain contexte, je suis obligé d’avoir connaissance de tous les sélecteurs correspondant potentiellement à cet éléments, de vérifier leur spécificité, et possiblement d’adapter le sélecteur simple que j’envisageais à l’origine pour pallier le manque de spécificité. Super, ma codebase contient maintenant des sélecteurs différents de leur sens original dans le simple but de les appliquer.
 
-Lorsque je lis la réaction épidermique de l’auteur face à BEM, une méthodologie ajoutant un namespace pour simuler côté utilisateur ce scope, apportant un minimum de sécurité lorsque l’on travaille sur un projet à grande échelle, j’avoue un peu flipper quant à la conception des specifications CSS.
+Lorsque je lis la réaction épidermique de l’auteur face à BEM, une méthodologie ajoutant un namespace pour simuler ce scope côté utilisateur qui apporte un minimum de sécurité lorsque l’on travaille sur un projet à grande échelle, j’avoue un peu flipper quant à la conception des spécifications CSS.
 
-BEM est une réponse de la communauté d’utilisateurs à plusieurs soucis qu’ils ont rencontré dans leurs utilisations variées de CSS. On dirait même dans sa réponse qu’il n’a pas pris le temps de se renseigner sur la nature de la méthodologie, qui ne consiste selon lui qu’à ajouter des indentations dont on se fout parce que CSSOM les ignore. WTF.
+BEM est une réponse de la communauté d’utilisateurs à plusieurs soucis qu’ils ont rencontrés dans leurs utilisations variées de CSS. On dirait même dans sa réponse qu’il n’a pas pris le temps de se renseigner sur la nature de la méthodologie, qui ne consiste selon lui qu’à ajouter des indentations dont on se fout parce que CSSOM les ignore. WTF.
 
 Ignorer le feedback que constitue l’apparition de cette méthodologie et dénigrer les utilisateurs pour qui elle règle des problèmes posés par le laxisme du langage, ça ne fait pas avancer le langage, et ça ne donnera certainement pas envie de retourner à CSS.
 
 Concernant la spécificité des sélecteurs, évidemment qu’une quantité astronomique de sites utilise les sélecteurs CSS, simplement parce qu’ils n’ont pas eu d’alternative viable. Ça n’en fait pas une fonctionnalité bien conçue pour autant.
 
-Sur les regressions, l’idée à comprendre, c’est que l’absence de scope et de namespace dans le langage peut créer des regressions potentiellement partout dans un large site, parce qu’un sélecteur est global. Il n’y a pas moyen de sécuriser un rayon d’action pour travailler, à moins de gérer le namespace soi-même, dans le sélecteur.
+Sur les régressions, l’idée à comprendre, c’est que l’absence de scope et de namespace dans le langage peut créer des régressions potentiellement partout dans un large site, parce qu’un sélecteur est global. Il n’y a pas moyen de sécuriser un rayon d’action pour travailler, à moins de gérer le namespace soi-même, dans le sélecteur.
 
 Concernant le choix de priorisation des styles, c'est un fait que l'ordre de la `DOMTokenList` n’a pas d'importance actuellement, et je ne fais que déplorer qu’en utilisant des sélecteurs, le choix de l’application des styles ne puisse pas se faire à l’endroit où l’élément est utilisé, avec la connaissance précise de son contexte.
 
@@ -323,10 +323,10 @@ const styles = {
 }
 ```
 
-C’est juste une application d’une approche centrée sur les composants. L’important, c’est d’isoler ces composants pour les rendre facilement réutilisables, prévenir les effets de bord, et passer moins de temps à essayer de travailler avec des propriétés du langage qui nous gênent dans notre travail de tous les jours. Réduire la liberté d’utilisation permet ici d’apporter propriétés (immutabilité des styles, application déterministe des styles, scope) qui nous permettent de raisonner notre code de manière beaucoup plus simple.
+C’est juste une application d’une approche centrée sur les composants. L’important, c’est d’isoler ces composants pour les rendre facilement réutilisables, prévenir les effets de bord, et passer moins de temps à essayer de travailler avec des propriétés du langage qui nous gênent dans notre travail de tous les jours. Réduire la liberté d’utilisation permet ici d’apporter des propriétés (immutabilité des styles, application déterministe des styles, scope) qui nous permettent de raisonner notre code de manière beaucoup plus simple.
 
 Si l’on regarde du côté des CSS modules, qu’est-ce que ça fait exactement ? La même chose. Le tooling va limiter le scope d’une feuille de style en rendant opaques et globalement uniques les sélecteurs. Le CSS peut être utilisé en target de compilation sans problème, et la plupart des solutions rendant son utilisation confortable font une chose simple : contraindre à une utilisation plus stricte en masquant des parties trop laxistes du langage. C’est ce que le tooling JS a connu depuis quelques années, et on ne s’en porte que mieux.
 
-Le dernier argument utilisé est que «si le monde entier a adopté CSS (y compris le monde de l'édition qui vient pourtant de solutions assez radicalement différentes du Web), c'est bien parce que c'est bien et que ça marche». Qu’est-ce qu’on peut répondre sinon que CSS a été adopté avant que les besoins du web aient suffisamment évolué pour que CSS dans son état actuel ait un énorme potentiel de fragilisation d’une codebase. Ne pas remettre en question le langage parce que ses utilisateurs n’ont pas d’alternative, c’est condamner le langage. C’est comme si la SNCF disait «BOARF ça sert à rien de faire arriver les trains à l’heure, vu que tout le monde le prend déjà c’est que c’est nickel». Du coup faut pas venir s’étonner que certains de ces utilisateurs aillent chercher des alternatives ailleurs.
+Le dernier argument utilisé est que « si le monde entier a adopté CSS (y compris le monde de l'édition qui vient pourtant de solutions assez radicalement différentes du Web), c'est bien parce que c'est bien et que ça marche ». Qu’est-ce qu’on peut répondre sinon que CSS a été adopté avant que les besoins du web n'aient suffisamment évolué pour que CSS dans son état actuel ait un énorme potentiel de fragilisation d’une codebase. Ne pas remettre en question le langage parce que ses utilisateurs n’ont pas d’alternative, c’est condamner le langage. C’est comme si la SNCF disait « BOARF ça sert à rien de faire arriver les trains à l’heure, vu que tout le monde le prend déjà c’est que c’est nickel ». Du coup, faut pas venir s’étonner que certains de ces utilisateurs aillent chercher des alternatives ailleurs.
 
 En conclusion, je déplore vraiment l'absence d'intérêt apparent de l'auteur pour écouter le feedback des utilisateurs sur les problèmes d'un langage. Il faut regarder ailleurs, et ne pas ignorer ou mépriser ce que les utilisateurs font de leur côté pour travailler plus sainement, ça pourrait même donner des idées pour améliorer ce qui fait perdre du temps aux utilisateurs.
