@@ -31,6 +31,7 @@ class GoogleAnalyticsTracker extends Component {
   logPageview() {
     if (isClient) {
       if (isProduction) {
+        ga("set", "page", window.location.pathname)
         ga("send", "pageview")
       }
       else {
