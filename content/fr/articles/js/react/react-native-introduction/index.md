@@ -82,3 +82,8 @@ const styles = StyleSheet.create({
 
 AppRegistry.registerComponent('PutainDeBiere', () => App);
 ```
+
+<figure>
+  <img src="welcome.png" alt="welcome PutainDeBiere preview" />
+  <figcaption>Une bien jolie première étape</figcaption>
+</figure>
