@@ -2,21 +2,19 @@
   "twitter": "zoontek",
   "fr": {
     "bio": {
-      "short": "Développeur web sans étiquette, à l'avis souvent bien tranché.",
+      "short": "Développeur web & mobile @ Colisweb.",
       "long": [
-        "Développeur web, bidouille du Ruby, du PHP, du JS et d'autres choses quand il le peut.",
-        "Passionné par les nouvelles technologies au service de l'humanité.",
-        "Comme tout jeune nordiste normalement constitué, il aime la bière et les concerts."
+        "Développeur web & mobile @ Colisweb.",
+        "JS, Scala, Ruby, whatever works."
       ]
     }
   },
   "en": {
     "bio": {
-      "short": "Unlabeled web developer, with some clear-cut opinions.",
+      "short": "Web & mobile developer @ Colisweb.",
       "long": [
-        "Web developer, work with Ruby, PHP, JS and other stuff when he can.",
-        "Fascinated by new technologies at the service of humanity.",
-        "Like every young person from the north of France, he like beer and concerts."
+        "Web & mobile developer @ Colisweb.",
+        "JS, Scala, Ruby, whatever works."
       ]
     }
   }
