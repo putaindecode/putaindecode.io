@@ -19,7 +19,7 @@ Ainsi, `cordova-plugin-contacts` permet d'accéder au carnet d'adresses du smart
 
 Le problème, c'est que si l'utilisation de plugins permet de faire pont avec le code natif (un message est envoyé de la partie JS à la partie Objective-C / Java, qui l'exécute de son côté et renvoit le résultat au JS), l'UI de l'application n'utilise elle pas du tout le layout natif des OS mobiles. Les performances et le look'n'feel de celle-ci seront donc équivalente à une app web, et non une app mobile.
 
-Avec React Native, point de navigateur embedded, de HTML ou de CSS: vous devez composer vos interfaces à l'aide de components React qui font appel au layout natif de la plateforme. Un exemple simple: `<View>` (qui est l'équivalent d'une `<div>` HTML) communique via un pont JS <-> Objective-C / Java pour contrôler une UIView (sur iOS) ou une android.view. Les performances de l'UI sont donc quasi similaires aux performances natives.
+Avec React Native, point de navigateur embedded, de HTML ou de CSS: vous devez composer vos interfaces à l'aide de composants React qui font appel au layout natif de la plateforme. Un exemple simple: `<View>` (qui est l'équivalent d'une `<div>` HTML) communique via un pont JS <-> Objective-C / Java pour contrôler une UIView (sur iOS) ou une android.view. Les performances de l'UI sont donc quasi similaires aux performances natives.
 
 ## Découverte de l'environnement de dev
 
@@ -91,7 +91,7 @@ AppRegistry.registerComponent('PutainDeBiere', () => App);
 
 Afin de requêter notre API, React Native nous offre plusieurs plusieurs solutions: `fetch()` ou `XMLHttpRequest`. Tenez vous en **uniquement** à l'utilisation de la première, la deuxième n'étant présente que pour assurer une compatibilité avec des librairies tierces.
 
-Ainsi, nous allons modifier notre Component `<App>` afin de faire une requête simple de toutes les bières avant le montage de celui-ci.
+Ainsi, nous allons modifier notre composant `<App>` afin de faire une requête simple de toutes les bières avant le montage de celui-ci.
 
 */!\ Notre clé API doit être encodé en base64. La function `btoa()` n'étant pas disponible en React Native, il est nécessaire d'installer une dépendance.*
 
