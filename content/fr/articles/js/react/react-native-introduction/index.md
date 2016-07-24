@@ -45,13 +45,13 @@ Selon votre plateforme cible, ouvrez `index.ios.js` ou `index.android.js` dans v
 ```javascript
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View
-} from 'react-native';
+} from 'react-native'
 
 class App extends Component {
   render() {
@@ -61,7 +61,7 @@ class App extends Component {
           Welcome to PutainDeBiere!
         </Text>
       </View>
-    );
+    )
   }
 }
 
@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
-});
+})
 
-AppRegistry.registerComponent('PutainDeBiere', () => App);
+AppRegistry.registerComponent('PutainDeBiere', () => App)
 ```
 
 <figure>
