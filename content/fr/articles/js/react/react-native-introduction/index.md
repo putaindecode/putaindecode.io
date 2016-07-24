@@ -117,6 +117,7 @@ class App extends Component {
     fetch('https://punkapi.com/api/v1/beers', { headers })
       .then(response => response.json())
       .then(json => console.log(json))
+      .error(error => console.error(error))
   }
 
   …
