@@ -28,8 +28,7 @@ Fatigués par JavaScript et son tooling un peu trop fourni ? Rassurez-vous: vou
 En bons passionnés de bière, nous allons réaliser ensemble une app qui requête la [PunkAPI](https://punkapi.com/) (faites la demande d'une clé API via le formulaire prévu à cet effet).
 
 Je vous renvoie à la [documentation officielle](https://facebook.github.io/react-native/docs/getting-started.html) pour ce qui est de l'installation des dépendances (celles-ci variant selon votre OS et l'OS cible).
-
-Une fois Xcode / Android studio, node et watchman installés, ouvrez un terminal et initiez le projet:
+Xcode / Android studio, node et watchman étant installés, ouvrez un terminal et initiez le projet:
 ```
 npm install -g react-native-cli
 react-native init PutainDeBiere
@@ -37,11 +36,11 @@ react-native init PutainDeBiere
 
 Une fois le projet initialisé, le CLI vous informe de la façon dont lancer votre application: faites le dans la foulée. En ce qui me concerne, je développe pour iOS.
 
-```
+```bash
 react-native run-ios
 ```
 
-Selon votre plateforme cible, ouvrez `index.ios.js` ou `index.android.js` dans votre éditeur préféré. Modifiez quelque peu le texte et rafraichissez votre app via `Command⌘ + R`, deux pressions sur la touche `R` (emulateur android), ou `Reload` dans le dev menu (device android).
+Selon votre plateforme cible, ouvrez `index.ios.js` ou `index.android.js` dans votre éditeur préféré. Modifiez quelque peu le texte et rafraichissez votre app via `Command⌘ + R`, deux pressions sur la touche `R` (emulateur android).
 
 ```javascript
 /* @flow */
@@ -86,4 +85,47 @@ AppRegistry.registerComponent('PutainDeBiere', () => App);
 <figure>
   <img src="welcome.png" alt="welcome PutainDeBiere preview" />
   <figcaption>Une bien jolie première étape</figcaption>
+</figure>
+
+## Récupération des données
+
+Afin de requêter notre API, React Native nous offre plusieurs plusieurs solutions: `fetch()` ou `XMLHttpRequest`. Tenez vous en **uniquement** à l'utilisation de la première, la deuxième n'étant présente que pour assurer une compatibilité avec des librairies tierces.
+
+Ainsi, nous allons modifier notre Component `<App>` afin de faire une requête simple de toutes les bières avant le montage de celui-ci.
+
+*/!\ Notre clé API doit être encodé en base64. La function `btoa()` n'étant pas disponible en React Native, il est nécessaire d'installer une dépendance.*
+
+```bash
+npm install --save base-64
+```
+
+```javascript
+import base64 from 'base-64'; // ajoutez l'import de la dépendance
+
+class App extends Component {
+  componentWillMount() {
+    const username = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' // changez pour votre clé API
+    const password = '' // la punk API n'utilise aucun mot de passe
+    const auth = base64.encode(`${username}:${password}`)
+    
+    const headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Basic ${auth}`
+    }
+
+    fetch('https://punkapi.com/api/v1/beers', { headers })
+      .then(response => response.json())
+      .then(json => console.log(json))
+  }
+
+  …
+}
+```
+
+Vous apercevez la présence d'un appel à `console.log()`. Pour y accéder, rien de plus simple: pressez `Command⌘ + D` au sein de l'émulateur iOS, ou appuyez sur le bouton `menu` de l'émulateur android. Celui-ci contient de multiples choses que je vous laisse expérimenter par la suite; ce qui nous intéresse ici c'est le bouton `Debug JS Remotely`, qui va ouvrir un nouvel onglet dans Chrome ou sera exécuté notre code JS. Il devient donc possible d'ouvrir les Chrome Devtools (dont la console) afin de débuguer notre app.
+
+<figure>
+  <img src="devmenu.png" alt="devmenu + chrome devtools" />
+  <figcaption>Jusqu'ici tout va bien</figcaption>
 </figure>
