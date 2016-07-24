@@ -113,7 +113,7 @@ const headers = {
   'Authorization': `Basic ${authBase64}` // HTTP basic auth
 }
 
-// retourne une recette de bière au hasard (Promise)
+// retourne une recette de bière au hasard
 export const getRandomBrewdog = () =>
   fetch(`${rootEndpoint}/beers/random`, { headers })
     .then(response => response.json()) // on parse la réponse en JSON
@@ -126,7 +126,7 @@ import { getRandomBrewdog } from './punkapi'
 
 class App extends Component {
   componentWillMount() {
-    getRandomBrewdog()
+    getRandomBrewdog() // fetch() retourne une Promise
       .then(json => console.log(json))
       .catch(error => console.error(error))
   }
