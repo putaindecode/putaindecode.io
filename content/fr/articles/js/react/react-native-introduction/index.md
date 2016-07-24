@@ -91,40 +91,53 @@ AppRegistry.registerComponent('PutainDeBiere', () => App);
 
 Afin de requêter notre API, React Native nous offre plusieurs plusieurs solutions: `fetch()` ou `XMLHttpRequest`. Tenez vous en **uniquement** à l'utilisation de la première, la deuxième n'étant présente que pour assurer une compatibilité avec des librairies tierces.
 
-Ainsi, nous allons modifier notre composant `<App>` afin de faire une requête simple de toutes les bières avant le montage de celui-ci.
-
 */!\ Notre clé API doit être encodé en base64. La function `btoa()` n'étant pas disponible en React Native, il est nécessaire d'installer une dépendance.*
 
 ```bash
 npm install --save base-64
 ```
 
+Histoire de séparer notre logique API de nos composants React, nous allons créer un fichier nommé `punkapi.js` à la racine de notre projet.
+
 ```javascript
-import base64 from 'base-64'; // ajoutez l'import de la dépendance
+import base64 from 'base-64' // importez la dépendance tout juste installée
+
+const rootEndpoint = 'https://punkapi.com/api/v1'
+const username = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' // votre clé API
+const password = '' // la punk API n'utilise aucun mot de passe
+const authBase64 = base64.encode(`${username}:${password}`)
+
+const headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': `Basic ${authBase64}` // HTTP basic auth
+}
+
+// retourne une recette de bière au hasard (Promise)
+export const getRandomBrewdog = () =>
+  fetch(`${rootEndpoint}/beers/random`, { headers })
+    .then(response => response.json()) // on parse la réponse en JSON
+```
+
+Nous allons maintenant modifier notre composant `<App>` afin de faire une requête simple d'une bière au hasard juste avant le montage de celui-ci.
+
+```javascript
+import { getRandomBrewdog } from './punkapi'
 
 class App extends Component {
   componentWillMount() {
-    const username = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' // changez pour votre clé API
-    const password = '' // la punk API n'utilise aucun mot de passe
-    const auth = base64.encode(`${username}:${password}`)
-    
-    const headers = {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'Authorization': `Basic ${auth}`
-    }
-
-    fetch('https://punkapi.com/api/v1/beers', { headers })
-      .then(response => response.json())
+    getRandomBrewdog()
       .then(json => console.log(json))
-      .error(error => console.error(error))
+      .catch(error => console.error(error))
   }
 
   …
 }
 ```
 
-Vous apercevez la présence d'un appel à `console.log()`. Pour y accéder, rien de plus simple: pressez `Command⌘ + D` au sein de l'émulateur iOS, ou appuyez sur le bouton `menu` de l'émulateur android. Celui-ci contient de multiples choses que je vous laisse expérimenter par la suite; ce qui nous intéresse ici c'est le bouton `Debug JS Remotely`, qui va ouvrir un nouvel onglet dans Chrome ou sera exécuté notre code JS. Il devient donc possible d'ouvrir les Chrome Devtools (dont la console) afin de débuguer notre app.
+Vous apercevez la présence d'un appel à `console.log()`. Pour y accéder, rien de plus simple: pressez `Command⌘ + D` au sein de l'émulateur iOS, ou appuyez sur le bouton `Menu` de l'émulateur android. Celui-ci contient de multiples choses que je vous laisse expérimenter par la suite; ce qui nous intéresse ici c'est le bouton `Debug JS Remotely`, qui va ouvrir un nouvel onglet dans Chrome ou sera exécuté notre code JS.
+
+Il devient donc possible d'ouvrir les Chrome Devtools (dont la console) afin de débuguer notre app.
 
 <figure>
   <img src="devmenu.png" alt="devmenu + chrome devtools" />
