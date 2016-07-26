@@ -103,9 +103,11 @@ Histoire de séparer notre logique API de nos composants React, nous allons cré
 import base64 from 'base-64' // importez la dépendance tout juste installée
 
 const rootEndpoint = 'https://punkapi.com/api/v1'
-const username = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' // votre clé API
+// pour simplifier la compréhension de ce tuto, nous renseignons la clé API "en dur"
+// ne faites jamais cela au sein de vos projets (voir http://12factor.net/fr/config)
+const punkApiKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 const password = '' // la punk API n'utilise aucun mot de passe
-const authBase64 = base64.encode(`${username}:${password}`)
+const authBase64 = base64.encode(`${punkApiKey}:${password}`)
 
 const headers = {
   'Content-Type': 'application/json',
