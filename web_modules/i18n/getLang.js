@@ -9,6 +9,6 @@ export default function getLang(context) {
   invariant(location, "'location' is required from the context")
   invariant(i18n, "'metadata.i18n' is required from the context")
 
-  const firstURIlevel = location.pathname.split("/")[0]
+  const firstURIlevel = location.pathname.replace(/^\//, "").split("/")[0]
   return i18n[firstURIlevel] ? firstURIlevel : "fr"
 }
