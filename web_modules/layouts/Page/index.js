@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 
-const Page = ({ head, body, __url }, { metadata }) => (
+const Page = ({ head, body, __url, children }, { metadata }) => (
   <div className="putainde-Main">
     <Helmet
       title={ head.title }
@@ -30,7 +30,7 @@ const Page = ({ head, body, __url }, { metadata }) => (
         }
 
         {
-          !body &&
+          !body && !children &&
           <div
             style={ {
               fontSize: "3rem",
@@ -48,7 +48,7 @@ const Page = ({ head, body, __url }, { metadata }) => (
             dangerouslySetInnerHTML={{ __html: body }}
           />
         }
-
+        { children }
       </div>
     </article>
   </div>
@@ -57,7 +57,8 @@ const Page = ({ head, body, __url }, { metadata }) => (
 Page.propTypes = {
   __url: PropTypes.string.isRequired,
   head: PropTypes.object.isRequired,
-  body: PropTypes.string.isRequired,
+  body: PropTypes.string,
+  children: PropTypes.node,
 }
 
 Page.contextTypes = {
