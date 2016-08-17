@@ -6,9 +6,9 @@ import enhanceCollection from "phenomic/lib/enhance-collection"
 import getLang from "../../i18n/getLang"
 import PostsList from "../../PostsList"
 
-const Posts = ({ head }, context) => {
+const Posts = ({ head, posts }, context) => {
   const lang = getLang(context)
-  const posts = enhanceCollection(context.collection, {
+  posts = posts || enhanceCollection(context.collection, {
     filter: { layout: "Post" },
     sort: "date",
     reverse: true,
@@ -49,6 +49,7 @@ const Posts = ({ head }, context) => {
 Posts.propTypes = {
   head: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
+  posts: PropTypes.array,
 }
 
 Posts.contextTypes = {
