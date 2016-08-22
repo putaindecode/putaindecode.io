@@ -46,7 +46,6 @@
     "file-loader": "^0.8.4",
     "github": "^0.2.3",
     "glob": "^5.0.5",
-    "highlight.js": "^8.8.0",
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
     "json-loader": "^0.5.3",
