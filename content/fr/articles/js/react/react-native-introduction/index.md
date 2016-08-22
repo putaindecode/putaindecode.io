@@ -145,3 +145,154 @@ Il devient donc possible d'ouvrir les Chrome Devtools (dont la console) afin de 
   <img src="devmenu.png" alt="devmenu + chrome devtools" />
   <figcaption>Jusqu'ici tout va bien</figcaption>
 </figure>
+
+## Présentation des données
+
+Afin d'afficher les informations que nous venons de récupérer, nous allons avoir besoin de plusieurs (heureusement fournis), à savoir de quoi encapsuler d'autres composants (une `<View>` ~= une `<div>` HTML), de quoi rendre du texte (`<Text>` ~= `<span>`), d'un bouton (nous allons utiliser `<TouchableOpacity>`, une zone dont l'opacité est modifiée lors d'un `onTouch`) et enfin d'un spinner pour indiquer qu'une requête est en cours (`<ActivityIndicator>`).
+
+Nous allons également rendre notre unique composant statefull afin de stocker quelques informations retournées par l'API.
+
+```javascript
+import React, { Component } from 'react'
+import {
+  AppRegistry,
+  StyleSheet,
+  ActivityIndicator, // import des composants
+  TouchableOpacity,
+  Text,
+  View,
+} from 'react-native'
+
+import { getRandomBrewdog } from './punkapi'
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    // la state de notre composant est utilisé pour
+    // stocker quelques infos renvoyées par l'API
+    this.state = {
+      name: '', // nom de la bière
+      description: '', // sa description
+      isLoading: false // la requête API est-elle en cours ?
+    }
+  }
+
+  // nous externalisons cette fonction afin de
+  // pouvoir l'appeler lorsqu'on le souhaite
+  _getRandomBrewdogWithFeedback = () => {
+    this.setState({ isLoading: true })
+
+    getRandomBrewdog()
+      .then(json => this.setState({
+        name: json.name,
+        description: json.description,
+        isLoading: false // la requête est terminée
+      }))
+      .catch(error => console.error(error))
+  }
+
+  componentWillMount() {
+    this._getRandomBrewdogWithFeedback()
+  }
+
+  render() {
+    const content = this.state.isLoading
+      ? <ActivityIndicator /> // si requête en cours, on affiche un spinner
+      : <Text style={styles.welcome}>
+          Welcome to PutainDeBiere!
+        </Text>
+
+    return (
+      <View style={styles.container}>
+        {content}
+      </View>
+    )
+  }
+}
+
+…
+```
+
+Votre application affiche dorénavant un spinner quelques secondes avant de rendre le fameux "Welcome to PutainDeBiere!" le temps que la requête à la punkAPI se fasse. Continuons de customiser ce render afin d'afficher les informations retournées (et maintenant présente dans la state de notre app).
+
+```javascript
+class App extends Component {
+  …
+
+  render() {
+    const content = this.state.isLoading
+      ? <ActivityIndicator /> // si requête en cours, on affiche un spinner
+      : <View style={styles.infosContainer}>
+          <Text style={styles.name}>
+            {this.state.name} // sinon on affiche le nom de la bière
+          </Text>
+
+          <Text style={styles.description}>
+            {this.state.description} // sa description
+          </Text>
+
+          <TouchableOpacity // on ajoute un "bouton" qui requête une autre bière aléatoire
+            onPress={this._getRandomBrewdogWithFeedback}
+            style={styles.button}
+          >
+            <Text>Grab a new beer!</Text>
+          </TouchableOpacity>
+        </View>
+
+    return (
+      <View style={styles.container}>
+        {content}
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  // ajout de styles divers
+  infosContainer: {
+    margin: 30,
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: '700',
+    marginBottom: 10,
+  },
+  description: {
+    marginBottom: 10,
+  },
+  button: {
+    borderWidth: 1,
+    borderColor: '#000',
+    borderRadius: 3,
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+})
+```
+
+<figure>
+  <img src="final_result.png" alt="devmenu + chrome devtools" />
+  <figcaption>Le rendu "final"</figcaption>
+</figure>
+
+## Et maintenant ?
+
+Si vous connaissez déjà React, vous pouvez:
+- améliorer le code de l'app avec l'ajout de redux (par exemple) afin de supprimer la state de notre composant
+- créer un composant stateless "\<Button\>"
+- styliser davantage l'app à l'aide d'[images](https://facebook.github.io/react-native/docs/image.html) ou d'[animations](https://facebook.github.io/react-native/docs/animations.html)
+- désactiver et modifier le style du bouton lors d'une requête API
+
+Si ce n'est pas le cas, n'hésitez pas à lire ces deux articles pour vous familiariser avec ces librairies avant de continuer sur votre lancée:
+- [Introduction à ReactJS](/fr/articles/js/react/)
+- [Redux, comment ça marche ?](/fr/articles/js/redux/)
+
+Bonne découverte !
