@@ -2,7 +2,7 @@ import React from "react"
 import { PropTypes } from "react"
 
 import Button from "../Button"
-import SVGIcon from "../SVGIcon"
+import SVGInline from "react-svg-inline"
 
 import classes from "./styles.css"
 import crossSVG from "./cross.svg"
@@ -33,7 +33,7 @@ const Component = (props) => (
       aria-role={ "button "}
       onClick={ () => props.onHide() }
     >
-      <SVGIcon className={ "putainde-Icon" } svg={ crossSVG } cleanup />
+      <SVGInline className={ "putainde-Icon" } svg={ crossSVG } cleanup />
     </span>
   </div>
 )

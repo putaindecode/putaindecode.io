@@ -2,7 +2,7 @@ import React, { PropTypes } from "react"
 
 import getLang from "../i18n/getLang"
 import getI18n from "../i18n/get"
-import SVGIcon from "../SVGIcon"
+import SVGInline from "react-svg-inline"
 import Avatar from "../Avatar"
 
 import getAuthorUri from "../getAuthorUri"
@@ -51,7 +51,7 @@ const Author = ({ afterName, author, bio, className, isPost }, context) => {
                 className="r-Tooltip r-Tooltip--top"
                 data-r-tooltip="Website"
               >
-                <SVGIcon
+                <SVGInline
                   className="putainde-Icon"
                   svg={require("../icons/home.svg")}
                   cleanup
@@ -65,7 +65,7 @@ const Author = ({ afterName, author, bio, className, isPost }, context) => {
                 className="r-Tooltip r-Tooltip--top"
                 data-r-tooltip="Twitter"
               >
-                <SVGIcon
+                <SVGInline
                   className="putainde-Icon"
                   svg={require("../icons/twitter.svg")}
                   cleanup
@@ -79,7 +79,7 @@ const Author = ({ afterName, author, bio, className, isPost }, context) => {
                 className="r-Tooltip r-Tooltip--top"
                 data-r-tooltip="Github"
               >
-                <SVGIcon
+                <SVGInline
                   className="putainde-Icon"
                   svg={require("../icons/github.svg")}
                   cleanup
