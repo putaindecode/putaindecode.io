@@ -1,5 +1,5 @@
 import React, { PropTypes } from "react"
-import getCollection from "phenomic/lib/enhance-collection"
+import enhanceCollection from "phenomic/lib/enhance-collection"
 
 import Posts from "../layouts/Posts"
 import getLang from "../i18n/getLang"
@@ -10,8 +10,8 @@ const PostsByTag = (props, context) => {
   const i18n = getI18n(context)
   const { tag } = props.params
 
-  const posts = getCollection(context.collection, {
-    filter: (item) => (
+  const posts = enhanceCollection(context.collection, {
+    filter: (item) => Boolean(
       item.layout === "Post" &&
       (item.tags && item.tags.indexOf(tag) > -1) &&
       // only posts of the current language
@@ -36,7 +36,7 @@ PostsByTag.propTypes = {
 }
 
 PostsByTag.contextTypes = {
-  collection: PropTypes.object.isRequired,
+  collection: PropTypes.array.isRequired,
   metadata: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 }

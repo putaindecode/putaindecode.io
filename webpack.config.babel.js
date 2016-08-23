@@ -2,7 +2,11 @@ import path from "path"
 
 import webpack from "webpack"
 import ExtractTextPlugin from "extract-text-webpack-plugin"
-import { phenomicLoader } from "phenomic"
+import {
+  phenomicLoader,
+  phenomicLoaderPresets,
+  phenomicLoaderPlugins,
+} from "phenomic"
 
 import pkg from "./package.json"
 
@@ -103,6 +107,11 @@ export const makeConfig = (config = {}) => {
 
     phenomic: {
       context: path.join(__dirname, config.source),
+      plugins: [
+        ...phenomicLoaderPresets.default,
+        ...phenomicLoaderPresets.markdown,
+        phenomicLoaderPlugins.initRawBodyPropertyFromContent,
+      ],
       feedsOptions: {
         title: pkg.name,
         site_url: pkg.homepage,
@@ -171,6 +180,13 @@ export const makeConfig = (config = {}) => {
       path: path.join(__dirname, config.destination),
       publicPath: config.baseUrl.pathname,
       filename: "[name].[hash].js",
+    },
+
+    // https://github.com/MoOx/phenomic/issues/656
+    ...config.static && {
+      externals: [
+        /fs-promise/,
+      ],
     },
 
     // resolve: {

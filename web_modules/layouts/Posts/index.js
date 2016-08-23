@@ -48,12 +48,12 @@ const Posts = ({ head, posts }, context) => {
 
 Posts.propTypes = {
   head: PropTypes.object.isRequired,
-  body: PropTypes.string.isRequired,
+  body: PropTypes.string,
   posts: PropTypes.array,
 }
 
 Posts.contextTypes = {
-  collection: PropTypes.object.isRequired,
+  collection: PropTypes.array.isRequired,
   metadata: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 }
