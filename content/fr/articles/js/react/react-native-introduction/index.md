@@ -118,7 +118,10 @@ const headers = {
 // retourne une recette de bière au hasard
 export const getRandomBrewdog = () =>
   fetch(`${rootEndpoint}/beers/random`, { headers })
-    .then(response => response.json()) // on parse la réponse en JSON
+    .then(({status, json}) => {
+      if (status !== 200) throw new Error(`API answered with status code ${status}`) // gestion du status code HTTP
+      else return json() // on parse la réponse en JSON
+    })
 ```
 
 Nous allons maintenant modifier notre composant `<App>` afin de faire une requête simple d'une bière au hasard juste avant le montage de celui-ci.
