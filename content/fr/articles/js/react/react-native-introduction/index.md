@@ -293,6 +293,7 @@ Si vous connaissez déjà React, vous pouvez:
 - créer un composant stateless "\<Button\>"
 - styliser davantage l'app à l'aide d'[images](https://facebook.github.io/react-native/docs/image.html) ou d'[animations](https://facebook.github.io/react-native/docs/animations.html)
 - désactiver et modifier le style du bouton lors d'une requête API
+- gérer les erreurs de requêtage de façon un poil plus élégante que de balancer une erreur à la tête de l'utilisateur
 
 Si ce n'est pas le cas, n'hésitez pas à lire ces deux articles pour vous familiariser avec ces librairies avant de continuer sur votre lancée:
 - [Introduction à ReactJS](/fr/articles/js/react/)
