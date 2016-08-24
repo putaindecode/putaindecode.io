@@ -2,6 +2,11 @@ import path from "path"
 
 import webpack from "webpack"
 import ExtractTextPlugin from "extract-text-webpack-plugin"
+import {
+  phenomicLoader,
+  phenomicLoaderPresets,
+  phenomicLoaderPlugins,
+} from "phenomic"
 
 import pkg from "./package.json"
 
@@ -20,7 +25,7 @@ export const makeConfig = (config = {}) => {
         {
           // phenomic requirement
           test: /\.md$/,
-          loader: "phenomic/lib/content-loader",
+          loader: phenomicLoader,
         },
         {
           test: /\.json$/,
@@ -101,27 +106,29 @@ export const makeConfig = (config = {}) => {
     },
 
     phenomic: {
-      contentLoader: {
-        context: path.join(__dirname, config.source),
-        // renderer: (text) => html
-        feedsOptions: {
-          title: pkg.name,
-          site_url: pkg.homepage,
-        },
-        feeds: {
-          "feed.xml": {
-            collectionOptions: {
-              filter: { layout: "Post" },
-              sort: "date",
-              reverse: true,
-              limit: 20,
-            },
+      context: path.join(__dirname, config.source),
+      plugins: [
+        ...phenomicLoaderPresets.default,
+        ...phenomicLoaderPresets.markdown,
+        phenomicLoaderPlugins.initRawBodyPropertyFromContent,
+      ],
+      feedsOptions: {
+        title: pkg.name,
+        site_url: pkg.homepage,
+      },
+      feeds: {
+        "feed.xml": {
+          collectionOptions: {
+            filter: { layout: "Post" },
+            sort: "date",
+            reverse: true,
+            limit: 20,
           },
         },
-        defaultHead: {
-          layout: "Post",
-          comments: true,
-        },
+      },
+      defaultHead: {
+        layout: "Post",
+        comments: true,
       },
     },
 
@@ -173,6 +180,13 @@ export const makeConfig = (config = {}) => {
       path: path.join(__dirname, config.destination),
       publicPath: config.baseUrl.pathname,
       filename: "[name].[hash].js",
+    },
+
+    // https://github.com/MoOx/phenomic/issues/656
+    ...config.static && {
+      externals: [
+        /fs-promise/,
+      ],
     },
 
     // resolve: {

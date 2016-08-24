@@ -1,6 +1,7 @@
 ---
   lang: "Français"
   title: "Putain de code !"
+  and: "et"
   links:
     articles: "/fr/articles/"
     help:
@@ -14,6 +15,8 @@
     hide2: "Sorry, I don't understand"
   latestPosts: "Les derniers articles"
   posts: "Les articles"
+  postsTaggedWith: "Les articles taggés avec"
+  postsWrittenBy: "Les articles écrits par"
   whatIsThis: "C'est quoi ce site ?"
   howThisWorks: "Comment ça marche ?"
   topContributors: "Contributeurs les plus actifs"

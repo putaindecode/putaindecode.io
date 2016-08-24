@@ -3,6 +3,7 @@ import { Link } from "react-router"
 
 import classes from "./styles.css"
 
+import getLang from "../i18n/getLang"
 import getI18n from "../i18n/get"
 import Avatars from "../Avatars"
 import AuthorsList from "../AuthorsList"
@@ -10,6 +11,7 @@ import AuthorsList from "../AuthorsList"
 import formatDate from "../formatDate"
 
 const PostPreview = ({ post }, context) => {
+  const lang = getLang(context)
   const i18n = getI18n(context)
   return (
     <div className="putainde-List-item js-Post">
@@ -32,7 +34,14 @@ const PostPreview = ({ post }, context) => {
           {
             post.tags.map(tag => {
               return (
-                <li key={tag} className="putainde-Tag">{tag}</li>
+                <li key={tag} className="putainde-Tag">
+                  <Link
+                    className="putainde-Tag-link"
+                    to={ `/${ lang }/tag/${ encodeURIComponent(tag) }` }
+                  >
+                    { tag }
+                  </Link>
+                </li>
               )
             })
           }

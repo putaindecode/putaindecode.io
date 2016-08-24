@@ -12,6 +12,9 @@ import Post from "../layouts/Post"
 import Posts from "../layouts/Posts"
 import AdventCalendar from "../layouts/AdventCalendar"
 
+import PostsByTag from "../PostsByTag"
+import PostsByAuthor from "../PostsByAuthor"
+
 class PageContainer extends Component {
   render() {
     const { props } = this
@@ -35,6 +38,10 @@ class PageContainer extends Component {
 // routes
 export default (
   <Route component={ LayoutContainer }>
+    <Route path="fr/tag/:tag" component={ PostsByTag } />
+    <Route path="en/tag/:tag" component={ PostsByTag } />
+    <Route path="fr/author/:author" component={ PostsByAuthor } />
+    <Route path="en/author/:author" component={ PostsByAuthor } />
     <Route path="*" component={ PageContainer } />
   </Route>
 )

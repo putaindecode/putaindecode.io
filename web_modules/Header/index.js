@@ -4,7 +4,7 @@ import { Link } from "react-router"
 import getI18n from "../i18n/get"
 import getLang from "../i18n/getLang"
 import Navigation from "../Navigation"
-import SVGIcon from "../SVGIcon"
+import SVGInline from "react-svg-inline"
 
 const Header = ({}, context) => {
   const i18n = getI18n(context)
@@ -14,7 +14,7 @@ const Header = ({}, context) => {
       <div className="r-Grid">
         <div className="r-Grid-cell r-minM--1of3">
           <Link className="putainde-SiteTitle" to={`/${getLang(context)}/`}>
-            <SVGIcon
+            <SVGInline
               className="putainde-Logo"
               svg={require("../images/putaindecode-logo.svg")}
               cleanupExceptions={[ "fill" ]}

@@ -3,7 +3,7 @@ import { Link } from "react-router"
 import cx from "classnames"
 
 import getI18n from "../i18n/get"
-import SVGIcon from "../SVGIcon"
+import SVGInline from "react-svg-inline"
 
 const SVGs = {
   bookmark: require("../icons/bookmark.svg"),
@@ -30,7 +30,7 @@ const Navigation = ({}, context) => {
           >
             {
               item.icon &&
-              <SVGIcon
+              <SVGInline
                 className="putainde-Icon"
                 svg={ SVGs[item.icon] }
                 cleanup
@@ -53,7 +53,7 @@ const Navigation = ({}, context) => {
             })}
             data-r-tooltip={i18n[key + "Label"]}
           >
-            <SVGIcon
+            <SVGInline
               className="putainde-Icon"
               svg={ SVGs[key] }
               cleanup

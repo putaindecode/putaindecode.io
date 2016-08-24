@@ -4,18 +4,21 @@ import { PropTypes } from "react"
 
 import classes from "./styles.css"
 
-const Component = (props) => (
-  <button
-    { ...props }
-    className={cx({
-      [classes.component]: true,
-      [classes.componentBlock]: props.block,
-      [classes.componentSmall]: props.small,
-    })}
-  >
-    { props.children }
-  </button>
-)
+const Component = (props) => {
+  const { small, block, ...otherProps } = props
+  return (
+    <button
+      { ...otherProps }
+      className={cx({
+        [classes.component]: true,
+        [classes.componentBlock]: block,
+        [classes.componentSmall]: small,
+      })}
+    >
+      { props.children }
+    </button>
+  )
+}
 
 Component.propTypes = {
   children: PropTypes.node,

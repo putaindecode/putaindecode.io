@@ -115,6 +115,14 @@
   vertical-align: middle;
 }
 
+.putainde-Tag-link {
+  color: inherit !important;
+  text-decoration: none;
+}
+.putainde-Tag-link:hover {
+  text-decoration: underline;
+}
+
 .putainde-List-author {
   color: #888;
   font-size: var(--r-small-fontSize);

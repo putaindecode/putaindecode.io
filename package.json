@@ -22,6 +22,7 @@
     "react-helmet": "^3.0.0",
     "react-redux": "^4.4.1",
     "react-router": "^2.3.0",
+    "react-svg-inline": "^1.2.0",
     "redux": "^3.0.0",
     "whatwg-fetch": "^0.9.0"
   },
@@ -46,7 +47,6 @@
     "file-loader": "^0.8.4",
     "github": "^0.2.3",
     "glob": "^5.0.5",
-    "highlight.js": "^8.8.0",
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
     "json-loader": "^0.5.3",
@@ -54,7 +54,7 @@
     "multimatch": "^2.0.0",
     "nano-logger": "^1.0.0",
     "opn": "^1.0.1",
-    "phenomic": "^0.15.0",
+    "phenomic": "^0.16.2",
     "postcss-cssnext": "^2.2.0",
     "postcss-import": "^7.1.0",
     "postcss-loader": "^0.7.0",
@@ -67,7 +67,6 @@
     "svgo-loader": "^1.1.0",
     "tape": "^4.0.0",
     "tape-catch": "^1.0.4",
-    "testem": "^0.8.3",
     "webpack": "^1.12.2",
     "yaml-loader": "^0.1.0"
   },

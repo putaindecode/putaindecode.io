@@ -1,6 +1,7 @@
 ---
   lang: "English"
   title: "Putain de code !"
+  and: "and"
   links:
     articles: "/en/articles/"
     help:
@@ -15,6 +16,8 @@
   description: "Share quality code and work methodologies, so we can be better together."
   latestPosts: "Latest Posts"
   posts: "Posts"
+  postsTaggedWith: "Posts tagged with"
+  postsWrittenBy: "Posts written by"
   whatIsThis: "What is this website?"
   howThisWorks: "How this works?"
   topContributors: "Most Active Contributors"

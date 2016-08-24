@@ -3,7 +3,7 @@ import cx from "classnames"
 import { Link } from "react-router"
 
 import getI18n from "../i18n/get"
-import SVGIcon from "../SVGIcon"
+import SVGInline from "react-svg-inline"
 
 const SVGs = {
   github: require("../icons/github.svg"),
@@ -48,7 +48,7 @@ const Footer = ({}, context) => {
                       className="r-Tooltip r-Tooltip--top"
                       data-r-tooltip={i18n[key + "Label"]}
                     >
-                      <SVGIcon
+                      <SVGInline
                         className="putainde-Icon"
                         svg={ SVGs[key] }
                         cleanup
