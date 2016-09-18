@@ -1,6 +1,6 @@
 // assets
 require.context("icons", true, /\.svg$/)
-require.context("../content", true, /\.(html|ico|jpe?g|png|gif)$/)
+require.context("../content", true, /\.(html|json|txt|ico|jpe?g|png|gif)$/)
 
 // OMG GLOBAL STYLES !
 import "_legacy-css/index.css"

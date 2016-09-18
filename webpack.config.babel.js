@@ -30,6 +30,9 @@ export const makeConfig = (config = {}) => {
         {
           test: /\.json$/,
           loader: "json-loader",
+          exclude: [
+            path.resolve(__dirname, "content"),
+          ],
         },
         {
           test: /\.js$/,
@@ -78,7 +81,7 @@ export const makeConfig = (config = {}) => {
           ),
         },
         {
-          test: /content(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
+          test: /content(\/|\\).*\.(html|json|txt|ico|jpe?g|png|gif)$/,
           loader: "file-loader" +
             "?name=[path][name].[ext]&context=" +
             path.join(config.cwd, config.source),
