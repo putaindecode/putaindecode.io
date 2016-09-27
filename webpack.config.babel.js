@@ -2,11 +2,11 @@ import path from "path"
 
 import webpack from "webpack"
 import ExtractTextPlugin from "extract-text-webpack-plugin"
-import {
-  phenomicLoader,
-  phenomicLoaderPresets,
-  phenomicLoaderPlugins,
-} from "phenomic"
+import { phenomicLoader } from "phenomic"
+import phenomicLoaderPresetDefault from "phenomic/lib/loader-preset-default"
+import phenomicLoaderPresetMarkDown from "phenomic/lib/loader-preset-markdown"
+import phenomicLoaderPluginsInitRawBodyPropertyFromContent
+  from "phenomic/lib/loader-plugin-init-rawBody-property-from-content"
 
 import pkg from "./package.json"
 
@@ -37,16 +37,12 @@ export const makeConfig = (config = {}) => {
         {
           test: /\.js$/,
           loaders: [
-            `babel-loader${
-              config.dev
-              ? "?cacheDirectory=true&presets[]=babel-preset-react-hmre"
-              : "?cacheDirectory=true"
-            }`,
-            "eslint-loader?fix",
+            "babel-loader",
+            "eslint-loader?fix&emitWarning",
           ],
           include: [
             path.resolve(__dirname, "scripts"),
-            path.resolve(__dirname, "web_modules"),
+            path.resolve(__dirname, "src"),
           ],
         },
         {
@@ -87,8 +83,8 @@ export const makeConfig = (config = {}) => {
             path.join(config.cwd, config.source),
         },
         {
-          test: /web_modules(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
-          loader: "file-loader?name=_/[path][name].[ext]&context=./web_modules",
+          test: /src(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
+          loader: "file-loader?name=_/[path][name].[ext]&context=./src",
         },
         {
           test: /\.svg$/,
@@ -111,9 +107,9 @@ export const makeConfig = (config = {}) => {
     phenomic: {
       context: path.join(__dirname, config.source),
       plugins: [
-        ...phenomicLoaderPresets.default,
-        ...phenomicLoaderPresets.markdown,
-        phenomicLoaderPlugins.initRawBodyPropertyFromContent,
+        ...phenomicLoaderPresetDefault,
+        ...phenomicLoaderPresetMarkDown,
+        phenomicLoaderPluginsInitRawBodyPropertyFromContent,
       ],
       feedsOptions: {
         title: pkg.name,
