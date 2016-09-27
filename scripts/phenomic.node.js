@@ -1,6 +1,6 @@
-import metadata from "../web_modules/app/metadata"
-import routes from "../web_modules/app/routes"
-import store from "../web_modules/app/store"
+import metadata from "../src/metadata"
+import routes from "../src/routes"
+import store from "../src/store"
 
 import phenomicStatic from "phenomic/lib/static"
 
