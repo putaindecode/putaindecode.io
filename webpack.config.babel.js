@@ -7,6 +7,8 @@ import phenomicLoaderPresetDefault from "phenomic/lib/loader-preset-default"
 import phenomicLoaderPresetMarkDown from "phenomic/lib/loader-preset-markdown"
 import phenomicLoaderPluginsInitRawBodyPropertyFromContent
   from "phenomic/lib/loader-plugin-init-rawBody-property-from-content"
+import PhenomicLoaderFeedWebpackPlugin
+  from "phenomic/lib/loader-feed-webpack-plugin"
 
 import pkg from "./package.json"
 
@@ -111,20 +113,6 @@ export const makeConfig = (config = {}) => {
         ...phenomicLoaderPresetMarkDown,
         phenomicLoaderPluginsInitRawBodyPropertyFromContent,
       ],
-      feedsOptions: {
-        title: pkg.name,
-        site_url: pkg.homepage,
-      },
-      feeds: {
-        "feed.xml": {
-          collectionOptions: {
-            filter: { layout: "Post" },
-            sort: "date",
-            reverse: true,
-            limit: 20,
-          },
-        },
-      },
       defaultHead: {
         layout: "Post",
         comments: true,
@@ -166,6 +154,23 @@ export const makeConfig = (config = {}) => {
     ],
 
     plugins: [
+      new PhenomicLoaderFeedWebpackPlugin({
+        // here you define generic metadata for your feed
+        feedsOptions: {
+          title: pkg.name,
+          site_url: pkg.homepage,
+        },
+        feeds: {
+          "feed.xml": {
+            collectionOptions: {
+              filter: { layout: "Post" },
+              sort: "date",
+              reverse: true,
+              limit: 20,
+            },
+          },
+        },
+      }),
       new ExtractTextPlugin("[name].[hash].css", { disable: config.dev }),
       ...config.production && [
         new webpack.optimize.DedupePlugin(),
