@@ -2,7 +2,7 @@
 date: "2016-10-04"
 title: Votre première app React Native
 tags:
-  - javascript
+  - js
   - react-native
   - reactjs
 authors:
