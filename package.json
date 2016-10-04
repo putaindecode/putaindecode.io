@@ -55,7 +55,7 @@
     "multimatch": "^2.0.0",
     "nano-logger": "^1.0.0",
     "opn": "^1.0.1",
-    "phenomic": "^0.17.1",
+    "phenomic": "^0.17.6",
     "postcss-cssnext": "^2.2.0",
     "postcss-import": "^7.1.0",
     "postcss-loader": "^0.7.0",
