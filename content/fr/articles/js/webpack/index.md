@@ -3,6 +3,7 @@ date: "2015-07-20"
 title: Webpack
 tags:
   - javascript
+  - webpack
   - task-runner
 authors:
   - MoOx
