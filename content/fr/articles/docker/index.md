@@ -55,7 +55,7 @@ d'un outil en ligne de commande
 
 Si vous voulez plus d'informations sur le fonctionnement interne de Docker je
 vous redirige vers l'article du site officiel : [Understanding
-Docker](https://docs.docker.com/introduction/understanding-docker)
+Docker](https://docs.docker.com/engine/understanding-docker/)
 
 ### Comment l'installer ?
 

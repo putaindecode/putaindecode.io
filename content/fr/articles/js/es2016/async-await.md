@@ -36,7 +36,7 @@ Partons du programme suivant exécuté le
 
 ```js
 function sendEmails (query) {
-  const usersP = getUsers({firstName: 'Nicolas'})
+  const usersP = getUsers(query)
   // On récupère le champ "email" de tous les utilisateurs
   const emailsP = usersP.then((users) => users.map(u => u.email))
   // Pour chaque email…
@@ -101,7 +101,7 @@ Réécrivons notre premier exemple avec des fonctions asynchrones :
 
 ```js
 async function sendEmails (query) {
-  const users = await getUsers({firstName: 'Nicolas'})
+  const users = await getUsers(query)
   const emails = users.map(u => u.email)
   const sentP = emails.map((email) => sendMail(email, 'Bonne fête'))
   return await Promise.all(sentP)

@@ -3,6 +3,7 @@ date: "2015-07-21"
 title: Premier exemple d'utilisation de Webpack
 tags:
   - javascript
+  - webpack
   - task-runner
 authors:
   - MoOx

@@ -2,17 +2,19 @@
   "twitter": "bloodyowl",
   "fr": {
     "bio": {
-      "short": "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens.",
+      "short": "Lead développeur front-end @ BeOpinion.",
       "long": [
-        "Développeur front-end, aime la bonne bière artisanale, la musique, et JavaScript; n'aime ni les points virgules, ni les gens."
+        "Lead développeur front-end @ BeOpinion.",
+        "Joue avec JavaScript & HTML (et déteste CSS)."
       ]
     }
   },
   "en": {
     "bio": {
-      "short": "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people.",
+      "short": "Lead front-end developer @ BeOpinion",
       "long": [
-        "Front-end developer; likes nice craft beer, music, and JavaScript; doesn’t like semicolons and people."
+        "Lead front-end developer @ BeOpinion.",
+        "Plays with JavaScript & HTML (and hates CSS)."
       ]
     }
   }
