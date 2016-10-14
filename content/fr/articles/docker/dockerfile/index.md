@@ -59,7 +59,7 @@ La première commande nous permet d'installer curl et de nettoyer ensuite le
 gestionnaire de paquets afin que notre image soit un peu plus légère.
 
 Avec la deuxième commande, nous téléchargeons le binaire de Node.js que nous
-installons ensuite à ça place, et on n'oublie pas de supprimer l'archive
+installons ensuite à sa place, et on n'oublie pas de supprimer l'archive
 ensuite.
 
 Vous pouvez vous demander pourquoi j'exécute plusieurs commandes sur une même
