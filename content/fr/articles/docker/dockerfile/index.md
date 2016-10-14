@@ -34,7 +34,7 @@ est plutôt légère en comparaison avec celle d'Ubuntu par exemple).
 FROM debian:jessie
 ```
 
-`FROM` permet de définir notre image de base, vous pouvez l'utiliser uniquement
+`FROM` permet de définir notre image de base, vous pouvez l'utiliser seulement
 une fois dans un Dockerfile.
 
 Comme nous voulons créer une image pour une application JavaScript full-stack,
