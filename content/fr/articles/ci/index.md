@@ -98,7 +98,7 @@ pour se prévenir soi-même ne serait pas de refus.
 Une fois la barrière franchie, on se dit vraiment qu'on était stupide de pas
 avoir essayé avant.
 
-## Une commande qui éxecute les tests
+## Une commande qui exécute les tests
 
 Un fois qu'on a écrit des tests, ou même souvent avant, on automatise
 l'exécution des tests. En général c'est rapide, étant donné qu'une simple
