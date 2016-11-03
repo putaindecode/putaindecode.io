@@ -1,7 +1,10 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
+import { BodyContainer } from "phenomic"
 
-const Page = ({ head, body, __url, children }, { metadata }) => (
+import Loading from "../../components/Loading"
+
+const Page = ({ isLoading, head, body, __url, children }, { metadata }) => (
   <div className="putainde-Main">
     <Helmet
       title={ head.title }
@@ -30,7 +33,7 @@ const Page = ({ head, body, __url, children }, { metadata }) => (
         }
 
         {
-          !body && !children &&
+          !isLoading && !body && !children &&
           <div
             style={ {
               fontSize: "3rem",
@@ -43,10 +46,9 @@ const Page = ({ head, body, __url, children }, { metadata }) => (
           </div>
         }
         {
-          body &&
-          <div className="putainde-Post-md"
-            dangerouslySetInnerHTML={{ __html: body }}
-          />
+          isLoading
+          ? <Loading />
+          : <BodyContainer className="putainde-Post-md">{ body }</BodyContainer>
         }
         { children }
       </div>
@@ -56,6 +58,7 @@ const Page = ({ head, body, __url, children }, { metadata }) => (
 
 Page.propTypes = {
   __url: PropTypes.string.isRequired,
+  isLoading: PropTypes.boolean,
   head: PropTypes.object.isRequired,
   body: PropTypes.string,
   children: PropTypes.node,
