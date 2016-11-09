@@ -123,7 +123,7 @@ spécifique afin de ne pas publier cela à la vue de tous.
 Le plus simple est d’utiliser l'interface GitHub pour [ajouter un
 token](https://github.com/settings/tokens/new).
 
-#### Encryption du token
+#### Encryption du token et utilisation
 
 Maintenant, nous allons encrypter ce token. Vous avez 2 possibilités :
 
@@ -134,14 +134,14 @@ Maintenant, nous allons encrypter ce token. Vous avez 2 possibilités :
 
 ```console
 $ sudo gem install travis
-$ travis encrypt --add --repo {YOU/YOUR_REPO} GH_TOKEN={YOUR_TOKEN}
+$ travis encrypt --add --repo {YOU/YOUR_REPO} GITHUB_TOKEN={YOUR_TOKEN}
 ```
 
 ##### Via le paquet Node `travis-encrypt`
 
 ```bash
 $ npm i -g travis-encrypt
-$ travis-encrypt --add --repo {YOU/YOUR_REPO} GH_TOKEN={YOUR_TOKEN}
+$ travis-encrypt --add --repo {YOU/YOUR_REPO} GITHUB_TOKEN={YOUR_TOKEN}
 ```
 
 Les 2 commandes devraient ajouter automatiquement le token encrypté dans votre
@@ -159,14 +159,15 @@ env:
     # que vous devez changer de token pour X raison(s), de savoir lequel
     # supprimer
     - secure: vqhHD....ROxGPQo= # VOTRE TOKEN DOIT ETRE PAR LA
+    # vous aller maintenant ajouter une url utilisant le token
+    # (pensez à ajuter l'url du repo)
+    - GIT_DEPLOY_REPO=https://$GITHUB_TOKEN@github.com/YOU/YOUR_REPO.git
 
     # ici vous pouvez définir en plus d'autres variables non encryptées
     # qui seront réutilsables par la suite
 ```
 
-### Utilisation du token encrypté
-
-#### Utilisation dans un script
+### Automatisation
 
 Imaginons que vous ayez un projet à deployer sur GitHub Pages (exemple : vous
 générez un site statique avec [Phenomic](https://phenomic.io/), le générateur
