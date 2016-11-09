@@ -11,7 +11,7 @@ TopBarProgressIndicator.config({
   shadowBlur: 5,
 })
 
-export default class PageLoading extends Component {
+export default class Loading extends Component {
 
   render() {
     return (

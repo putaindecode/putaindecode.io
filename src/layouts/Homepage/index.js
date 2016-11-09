@@ -3,7 +3,9 @@ import cx from "classnames"
 import Helmet from "react-helmet"
 import { Link } from "react-router"
 import enhanceCollection from "phenomic/lib/enhance-collection"
+import { BodyContainer } from "phenomic"
 
+import Loading from "../../components/Loading"
 import supportLocale from "../../components/browser-locale-support"
 import getLang from "../../i18n/getLang"
 import getI18n from "../../i18n/get"
@@ -66,6 +68,7 @@ export default class Homepage extends Component {
 
   render() {
     const {
+      isLoading,
       head,
       body,
     } = this.props
@@ -153,8 +156,11 @@ export default class Homepage extends Component {
                   { i18n.howThisWorks }
                 </h2>
               </div>
-
-              <div dangerouslySetInnerHTML={{ __html: body }} />
+              {
+                isLoading
+                ? <Loading />
+                : <BodyContainer>{ body }</BodyContainer>
+              }
             </div>
           </div>
         </div>

@@ -1,5 +1,7 @@
 import React, { PropTypes } from "react"
+import { BodyContainer } from "phenomic"
 
+import Loading from "../../components/Loading"
 // import getI18n from "../../i18n/get"
 import Contributors from "../../components/Contributors"
 import WithHeroHeader from "../WithHeroHeader"
@@ -9,9 +11,11 @@ const AdventCalendar = (props) => (
     <div className="r-Grid">
       <div className="r-Grid-cell r-minM--8of12 putainde-Post-contents">
         <div className="putainde-Post-md">
-          <div
-            dangerouslySetInnerHTML={{ __html: props.body }}
-          />
+          {
+            props.isLoading
+            ? <Loading />
+            : <BodyContainer>{ props.body }</BodyContainer>
+          }
         </div>
 
         <footer className="putainde-Post-footer">
@@ -27,9 +31,9 @@ const AdventCalendar = (props) => (
 AdventCalendar.propTypes = {
   __url: PropTypes.string.isRequired,
   __filename: PropTypes.string.isRequired,
+  isLoading: PropTypes.boolean,
   head: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
-  rawBody: PropTypes.string.isRequired,
 }
 
 AdventCalendar.contextTypes = {

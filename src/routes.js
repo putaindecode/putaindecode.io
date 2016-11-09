@@ -6,7 +6,6 @@ import AppContainer from "./AppContainer.js"
 
 import Page from "./layouts/Page"
 import PageError from "./layouts/PageError"
-import PageLoading from "./layouts/PageLoading"
 import Homepage from "./layouts/Homepage"
 import Post from "./layouts/Post"
 import Posts from "./layouts/Posts"
@@ -24,7 +23,6 @@ class PageContainer extends Component {
         layouts={ {
           Page,
           PageError,
-          PageLoading,
           Homepage,
           Post,
           Posts,

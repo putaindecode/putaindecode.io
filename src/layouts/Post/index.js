@@ -1,7 +1,9 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 import DisqusThread from "react-disqus-thread"
+import { BodyContainer } from "phenomic"
 
+import Loading from "../../components/Loading"
 import getI18n from "../../i18n/get"
 import Author from "../../components/Author"
 import Contributors from "../../components/Contributors"
@@ -10,7 +12,7 @@ import WithHeroHeader from "../WithHeroHeader"
 const Post = (props, context) => {
   const i18n = getI18n(context)
   const { metadata } = context
-  const { body, head, __url } = props
+  const { isLoading, body, head, __url } = props
   const post = head
 
   const twitterAuthor =
@@ -39,9 +41,11 @@ const Post = (props, context) => {
       <div className="r-Grid">
         <div className="r-Grid-cell r-minM--8of12 putainde-Post-contents">
           <div className="putainde-Post-md">
-            <div
-              dangerouslySetInnerHTML={{ __html: body }}
-            />
+            {
+              isLoading
+              ? <Loading />
+              : <BodyContainer>{ body }</BodyContainer>
+            }
           </div>
 
           <footer className="putainde-Post-footer">
@@ -90,6 +94,7 @@ const Post = (props, context) => {
 Post.propTypes = {
   __url: PropTypes.string.isRequired,
   __filename: PropTypes.string.isRequired,
+  isLoading: PropTypes.boolean,
   head: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
   rawBody: PropTypes.string.isRequired,

@@ -152,16 +152,20 @@ const WithHeroHeader = (
               }
               {". "}
 
-              <ReadingTime
-                text={rawBody}
-                before={i18n.readingTime}
-                templateText={{
-                  1: i18n.readingTime1,
-                  2: i18n.readingTime2,
-                }}
-                templateTooltip={i18n.readingTimeComment}
-                className="putainde-Post-readingTime"
-              />
+              {
+                rawBody && (
+                  <ReadingTime
+                    text={rawBody}
+                    before={i18n.readingTime}
+                    templateText={{
+                      1: i18n.readingTime1,
+                      2: i18n.readingTime2,
+                    }}
+                    templateTooltip={i18n.readingTimeComment}
+                    className="putainde-Post-readingTime"
+                  />
+                )
+              }
             </div>
           }
           {
