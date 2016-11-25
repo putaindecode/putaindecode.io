@@ -15,11 +15,11 @@ header:
 
 Depuis fin 2014, et un virage radical vers l'ecosystème React, j'ai eu l'occasion de mener plusieurs projets (Applis pros, mobiles/hybrides, site webs...) sur cette stack : React, Webpack, Babel, npm...
 
-Ces deux années ont été très prolifiques dans la communauté Javascript et React, le tooling est encore parfois exotique, mais il se stabilise et de gros progrès ont été faits sur la documentation.
+Ces deux années ont été très prolifiques dans la communauté JavaScript et React, le tooling est encore parfois exotique, mais il se stabilise et de gros progrès ont été faits sur la documentation.
 
 **Nous disposons maintenant d'un ecosystème incroyablement riche et dynamique, et d'un paradigme "universel" pour construire les applications de demain, web ou natives.**
 
-React est la bibliothèque de facto pour ce type d'applications, mais on peut le remplacer assez facilement par une alternative comme [Preact](https://preactjs.com/) ou [Inferno](http://infernojs.org/), donc toutes les connaissances acquises sur cette bibliothèque **et son ecosystème** sont exploitables ailleurs dans la communauté Javascript.
+React est la bibliothèque de facto pour ce type d'applications, mais on peut le remplacer assez facilement par une alternative comme [Preact](https://preactjs.com/) ou [Inferno](http://infernojs.org/), donc toutes les connaissances acquises sur cette bibliothèque **et son ecosystème** sont exploitables ailleurs dans la communauté JavaScript.
 
 Voici un petit recap de cette stack magique :)
 
@@ -35,7 +35,7 @@ Son écosystème, riche et évolutif, l'est moins.
 
 ### Use next generation JavaScript, today.
 
-La communauté Javascript a massivement adopté le transpileur Babel, qui permet de coder en Javascript version ES2015 ou supérieure puis de convertir en code compatible avec les navigateurs du marché.
+La communauté JavaScript a massivement adopté le transpileur Babel, qui permet de coder en JavaScript version ES2015 ou supérieure puis de convertir en code compatible avec les navigateurs du marché.
 
 Pour apprendre ES2015 et plus :
   - [Articles sur putaindecode.io](http://putaindecode.io/fr/tag/ES6)
@@ -48,7 +48,7 @@ Le format JSX, est devenu un standard qui peut simplifier le développement :
 
  - il permet de localiser les templates au plus près du code
  - d'utiliser une syntaxe XML-like plus rigoureuse, mais bénéfique
- - d'utiliser du javascript pur au lieu d'un pseudo language comme on trouve dans les moteurs de template habituels
+ - d'utiliser du JavaScript pur au lieu d'un pseudo language comme on trouve dans les moteurs de template habituels
 
 Ca peut paraître déroutant au début mais ca rentre vite !
 
@@ -113,7 +113,7 @@ Selon la complexité de vos design, le CSS peut être ce qui prend le plus de te
 
 Et la qualité et la modularité du CSS est essentielle pour la maintenabilité des applications.
 
-Pour créer des composants réutilisables nous pouvons maintenant utiliser les [CSS modules](https://github.com/css-modules/css-modules), qui ont l'avantage d'être du CSS classique, mais d'être scopé aux composants, et, accessible depuis le Javascript (plus de css global); Et le [CSS in JS](https://youtu.be/WyFGfMFjfH4?t=26m23s) peut compléter/remplacer si besoin pour les cas les plus dynamiques.
+Pour créer des composants réutilisables nous pouvons maintenant utiliser les [CSS modules](https://github.com/css-modules/css-modules), qui ont l'avantage d'être du CSS classique, mais d'être scopé aux composants, et, accessible depuis le JavaScript (plus de css global); Et le [CSS in JS](https://youtu.be/WyFGfMFjfH4?t=26m23s) peut compléter/remplacer si besoin pour les cas les plus dynamiques.
 
 A défaut, vous pouvez toujours utiliser du CSS global si vous respectez scrupuleusement les [conventions BEM](http://putaindecode.io/fr/articles/css/bem/).
 
@@ -224,6 +224,6 @@ Une fois l'outillage en place et assimilé, la productivité est excellente (ES2
  - [npm scripts docs](https://docs.npmjs.com/misc/scripts)
  - [aframe-react](https://github.com/ngokevin/aframe-react) : Build VR experiences with A-Frame and React
  - [phenomic.io](http://phenomic.io) : react-based static site generator
- - [jsbooks.revolunet.com](http://jsbooks.revolunet.com) : free Javascript ebooks
+ - [jsbooks.revolunet.com](http://jsbooks.revolunet.com) : free JavaScript ebooks
 
 
