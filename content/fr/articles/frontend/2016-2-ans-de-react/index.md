@@ -31,7 +31,7 @@ Son écosystème, riche et évolutif, l'est moins.
 
 ## Babel/ES2015
 
-![](babel.png)
+![](/assets/babel.png)
 
 ### Use next generation JavaScript, today.
 
@@ -40,13 +40,14 @@ La communauté JavaScript a massivement adopté le transpileur Babel, qui permet
 Pour apprendre ES2015 et plus :
   - [articles sur putaindecode.io](http://putaindecode.io/fr/tag/ES6)
   - exercices en ligne : [es6katas.org](http://es6katas.org)
+  - tutorial Babel : [babeljs.io](http://babeljs.io/docs/learn-es2015)  
   - comparaisons ES5/ES2015 : [es6-features.org](http://es6-features.org/#BlockScopedVariables)
 
 Vous pouvez très bien faire de l'ES2015 sans Babel, puisque [les navigateurs modernes en supportent une grande partie](https://kangax.github.io/compat-table/es6/), mais le support est inégal, d'où l'idée d'utiliser un transpileur comme Babel qui convertit en ES5.
 
 Le format JSX, est devenu un standard qui peut simplifier le développement :
 
- - il permet de localiser les templates au plus près du code
+ - il permet de centraliser la présentation et la logique d'un composant au même endroit
  - d'utiliser une syntaxe XML-like plus rigoureuse, mais bénéfique
  - d'utiliser du JavaScript pur au lieu d'un pseudo-langage comme on trouve dans les moteurs de template habituels
 
@@ -56,7 +57,7 @@ Plus d'infos sur JSX dans [Introducing JSX](https://facebook.github.io/react/doc
 
 ## npm
 
-![](npm.png)
+![](/assets/npm.png)
 
 Quel que soit votre besoin, il y a sûrement déjà un module npm pour ça :)
 
@@ -68,10 +69,12 @@ Votre appli doit utiliser un maximum de code externe, qui est déjà validé, te
 
 Ceci implique de suivre les corrections/évolutions des dits modules et d'utiliser le [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning) à bon escient.
 
+NB: Dans sa lancée open-source, Facebook vient de publier une alternative au CLI npm : [yarn](http://yarnpkg.org) plus rapide, fiable et sécurisé.
+
 
 ## Webpack
 
-![](webpack.png)
+![](/assets/webpack.png)
 
 ### Le saviez-vous ?
 
@@ -95,13 +98,13 @@ import logo from './logo.png'
 const img = <img src={ logo } />
 ```
 
-Et la célèbre [config de webpack](https://webpack.github.io/docs/configuration.html) permet de tuner votre build à tous les niveaux.
+Et la célèbre [config de webpack](https://webpack.js.org/configuration/) permet de tuner votre build à tous les niveaux.
 
-Plus de détails sur Webpack sur [les articles Putain de code ! dédiés](http://putaindecode.io/fr/articles/js/webpack/premier-exemple/).
+Plus de détails sur Webpack sur [les articles Putain de code ! dédiés](http://putaindecode.io/fr/tag/webpack).
 
 ## CSS
 
-![css-modules](css-modules.png)
+![](/assets/css-modules.png)
 
 ### Le saviez-vous ?
 
@@ -115,19 +118,21 @@ Et la qualité et la modularité du CSS est essentielle pour la maintenabilité 
 
 Pour créer des composants réutilisables nous pouvons maintenant utiliser les [CSS modules](https://github.com/css-modules/css-modules), qui ont l'avantage d'être du CSS classique, mais d'être scopés aux composants, et, accessibles depuis le JavaScript (plus de CSS global). Et le [CSS in JS](https://youtu.be/WyFGfMFjfH4?t=26m23s) peut compléter/remplacer si besoin pour les cas les plus dynamiques.
 
-A défaut, vous pouvez toujours utiliser du CSS global si vous respectez scrupuleusement les [conventions BEM](http://putaindecode.io/fr/articles/css/bem/).
+A défaut, vous pouvez toujours utiliser du CSS global si vous respectez scrupuleusement les [conventions BEM](http://putaindecode.io/fr/articles/css/bem/). Découvrez d'autres [articles dédiés au CSS sur putaindecode.io](http://putaindecode.io/fr/tag/css).
 
 Il existe plusieurs bibliothèques de composants UI assez fournies pour React :
 
  - [rebass](http://jxnblk.com/rebass/)
  - [ant.design](http://ant.design)
  - [semantic-ui](http://semantic-ui.com)
- - [material-ui](https://github.com/callemall/material-ui)
+ - [react-toolbox](http://react-toolbox.com/)
  - [blueprintjs](http://blueprintjs.com)
+
+Et voici un article recensant des [librairies de composants React open-source](http://davidwells.io/19-open-source-react-component-libraries-to-use-in-your-next-project/).
 
 ## React : Learn once, run everywhere
 
-![react](react.png)
+![](/assets/react.png)
 
 Plus qu'une bibliothèque ou un framework, React est un paradigme de programmation d'interfaces utilisateurs, qui permet d'adresser de nombreuses plateformes, avec toujours du code React "standard".
 
@@ -135,11 +140,11 @@ Théoriquement, une application codée en React est capable de produire n'import
 
 Et pour toutes ces targets, une convention générale s'applique :
 
-<div style="font-size:2em;line-height:2em;font-style:italic;color:#222">ui = f(state)</div>
+<pre><code style="font-size:2em">ui = f(state)</pre></code>
 
 À tout moment, à partir un `state` donné, une application ou un composant React est capable de se "render" correctement dans l'état désiré.
 
-Le fonctionnement interne est donc plutôt straightforward, les composants se passent simplement des `props` (valeurs et callbacks) de parent à enfant, et certains composants peuvent avoir un `state` local qui, une fois modifié, déclenchera son re-render, ainsi que celui de ses enfants, en optimisant les performances grâce au Virtual Dom.
+Le fonctionnement interne est donc plutôt straightforward, les composants se passent simplement des `props` (valeurs et callbacks) de parent à enfant, et certains composants peuvent avoir un `state` local qui, une fois modifié, déclenchera un re-render du composant et de ses descendants.
 
 Les composants doivent être simples, focus, composables.
 
@@ -153,7 +158,12 @@ Les composants doivent être simples, focus, composables.
 </Toolbar>
 ```
 
-Plus d'articles sur React sur putain de code : http://putaindecode.io/fr/tag/react/
+Au niveau performances, React ne fait pas de miracles malgré le [virtual-dom](http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/);
+
+À chaque fois qu'un composant reçoit de nouvelles props ou modifie son state, React appelle la méthode `render` de ce dernier ainsi que de ces descendants. Même s'il ne modifie pas le DOM, le fait de comparer les deux arbres retournés par render peut s'avérer coûteux si votre composant présente beaucoup de contenu. Heureusement, React permet aux développeurs d'intervenir avant le render et l'annuler s'il n'est pas nécessaire avec `shouldComponentUpdate`.
+
+
+Plus d'[articles sur React sur putain de code](http://putaindecode.io/fr/tag/react)
 
 ## Redux
 
@@ -175,7 +185,9 @@ Votre bibliothèque de composants peut même être un projet à part, que vous i
 
 ### Composition
 
-Utilisez au maximum la composition de composants React pour garder des composants simples et réutilisables. http://putaindecode.io/fr/articles/js/react/higher-order-component/
+Utilisez au maximum la composition de composants React pour garder des composants simples et réutilisables.
+
+Plus de détails sur le [pattern "higher order components"](http://putaindecode.io/fr/articles/js/react/higher-order-component)
 
 ### nvm
 
@@ -199,9 +211,9 @@ Pour créer un site web comme [putaindecode.io](http://putaindecode.io) vous pou
 
 Cette stack, qui peut paraître lourde en outillage, permet de créer des apps riches, performantes, testables, évolutives, multi-plateformes.
 
-ES2015 et React en eux-mêmes ne sont pas plus compliqués qu'Angular (au contraire) et simplifient plutôt le code et le workflow de développement.
-
 Une fois l'outillage en place et assimilé, la productivité est excellente (ES2015, npm, tests, developer experience, dev/build/deploy...).
+
+Dans la plupart des cas, les boilerplates cités ci-dessus vous fournissent tout le nécessaire.
 
 ## Must read and watch
 
@@ -223,6 +235,7 @@ Une fois l'outillage en place et assimilé, la productivité est excellente (ES2
  - [redux-ecosystem-links](https://github.com/markerikson/redux-ecosystem-links)
  - [npm scripts docs](https://docs.npmjs.com/misc/scripts)
  - [aframe-react](https://github.com/ngokevin/aframe-react) : Build VR experiences with A-Frame and React
+ - [reactpatterns.com](http://reactpatterns.com) : quelques patterns react
  - [phenomic.io](http://phenomic.io) : react-based static site generator
  - [jsbooks.revolunet.com](http://jsbooks.revolunet.com) : free JavaScript ebooks
 
