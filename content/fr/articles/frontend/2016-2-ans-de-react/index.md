@@ -175,7 +175,9 @@ Votre bibliothèque de composants peut même être un projet à part, que vous i
 
 ### Composition
 
-Utilisez au maximum la composition de composants React pour garder des composants simples et réutilisables. http://putaindecode.io/fr/articles/js/react/higher-order-component/
+Utilisez au maximum la composition de composants React pour garder des composants simples et réutilisables.
+
+Plus de détails sur le [pattern "higher order components"](http://putaindecode.io/fr/articles/js/react/higher-order-component)
 
 ### nvm
 
@@ -223,6 +225,7 @@ Une fois l'outillage en place et assimilé, la productivité est excellente (ES2
  - [redux-ecosystem-links](https://github.com/markerikson/redux-ecosystem-links)
  - [npm scripts docs](https://docs.npmjs.com/misc/scripts)
  - [aframe-react](https://github.com/ngokevin/aframe-react) : Build VR experiences with A-Frame and React
+ - [reactpatterns.com](http://reactpatterns.com) : quelques patterns react
  - [phenomic.io](http://phenomic.io) : react-based static site generator
  - [jsbooks.revolunet.com](http://jsbooks.revolunet.com) : free JavaScript ebooks
 
