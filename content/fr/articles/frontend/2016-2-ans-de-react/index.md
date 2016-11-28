@@ -40,13 +40,14 @@ La communauté JavaScript a massivement adopté le transpileur Babel, qui permet
 Pour apprendre ES2015 et plus :
   - [articles sur putaindecode.io](http://putaindecode.io/fr/tag/ES6)
   - exercices en ligne : [es6katas.org](http://es6katas.org)
+  - tutorial Babel : [babeljs.io](http://babeljs.io/docs/learn-es2015)  
   - comparaisons ES5/ES2015 : [es6-features.org](http://es6-features.org/#BlockScopedVariables)
 
 Vous pouvez très bien faire de l'ES2015 sans Babel, puisque [les navigateurs modernes en supportent une grande partie](https://kangax.github.io/compat-table/es6/), mais le support est inégal, d'où l'idée d'utiliser un transpileur comme Babel qui convertit en ES5.
 
 Le format JSX, est devenu un standard qui peut simplifier le développement :
 
- - il permet de localiser les templates au plus près du code
+ - il permet de centraliser la présentation et la logique d'un composant au même endroit
  - d'utiliser une syntaxe XML-like plus rigoureuse, mais bénéfique
  - d'utiliser du JavaScript pur au lieu d'un pseudo-langage comme on trouve dans les moteurs de template habituels
 
@@ -67,6 +68,8 @@ Pour bien choisir vos packages, regardez l'activité du projet sur GitHub (commi
 Votre appli doit utiliser un maximum de code externe, qui est déjà validé, testé... séparément. Publiez un maximum de modules indépendants, en open source si possible, et utilisables hors-contexte ([FIRST principle](https://addyosmani.com/first/)).
 
 Ceci implique de suivre les corrections/évolutions des dits modules et d'utiliser le [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning) à bon escient.
+
+NB: Dans sa lancée open-source, Facebook vient de publier une alternative au CLI npm : [yarn](http://yarnpkg.org) plus rapide, fiable et sécurisé.
 
 
 ## Webpack
@@ -95,9 +98,9 @@ import logo from './logo.png'
 const img = <img src={ logo } />
 ```
 
-Et la célèbre [config de webpack](https://webpack.github.io/docs/configuration.html) permet de tuner votre build à tous les niveaux.
+Et la célèbre [config de webpack](https://webpack.js.org/configuration/) permet de tuner votre build à tous les niveaux.
 
-Plus de détails sur Webpack sur [les articles Putain de code ! dédiés](http://putaindecode.io/fr/articles/js/webpack/premier-exemple/).
+Plus de détails sur Webpack sur [les articles Putain de code ! dédiés](http://putaindecode.io/fr/tag/webpack).
 
 ## CSS
 
@@ -115,19 +118,21 @@ Et la qualité et la modularité du CSS est essentielle pour la maintenabilité 
 
 Pour créer des composants réutilisables nous pouvons maintenant utiliser les [CSS modules](https://github.com/css-modules/css-modules), qui ont l'avantage d'être du CSS classique, mais d'être scopés aux composants, et, accessibles depuis le JavaScript (plus de CSS global). Et le [CSS in JS](https://youtu.be/WyFGfMFjfH4?t=26m23s) peut compléter/remplacer si besoin pour les cas les plus dynamiques.
 
-A défaut, vous pouvez toujours utiliser du CSS global si vous respectez scrupuleusement les [conventions BEM](http://putaindecode.io/fr/articles/css/bem/).
+A défaut, vous pouvez toujours utiliser du CSS global si vous respectez scrupuleusement les [conventions BEM](http://putaindecode.io/fr/articles/css/bem/). Découvrez d'autres [articles dédiés au CSS sur putaindecode.io](http://putaindecode.io/fr/tag/css).
 
 Il existe plusieurs bibliothèques de composants UI assez fournies pour React :
 
  - [rebass](http://jxnblk.com/rebass/)
  - [ant.design](http://ant.design)
  - [semantic-ui](http://semantic-ui.com)
- - [material-ui](https://github.com/callemall/material-ui)
+ - [react-toolbox](http://react-toolbox.com/)
  - [blueprintjs](http://blueprintjs.com)
+
+Et voici un article recensant des [librairies de composants React open-source](http://davidwells.io/19-open-source-react-component-libraries-to-use-in-your-next-project/).
 
 ## React : Learn once, run everywhere
 
-![react](react.png)
+![](react.png)
 
 Plus qu'une bibliothèque ou un framework, React est un paradigme de programmation d'interfaces utilisateurs, qui permet d'adresser de nombreuses plateformes, avec toujours du code React "standard".
 
@@ -135,7 +140,7 @@ Théoriquement, une application codée en React est capable de produire n'import
 
 Et pour toutes ces targets, une convention générale s'applique :
 
-<div style="font-size:2em;line-height:2em;font-style:italic;color:#222">ui = f(state)</div>
+<pre><code style="font-size:2em">ui = f(state)</pre></code>
 
 À tout moment, à partir un `state` donné, une application ou un composant React est capable de se "render" correctement dans l'état désiré.
 
