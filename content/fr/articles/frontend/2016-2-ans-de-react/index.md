@@ -158,6 +158,8 @@ Les composants doivent être simples, focus, composables.
 </Toolbar>
 ```
 
+Au niveau performances, React ne fait pas de miracles malgré le [virtual-dom](http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/); Le comportement par défaut est de re-render tout composant dont le state a été modifié, ainsi que ses enfants, ce qui n'est pas souhaitable si votre app présente beaucoup de contenu et si les mises à jours sont fréquentes. Heureusement, React permet de maîtriser très finement le "flow" des datas et de contrôler quels composants doivent être mis à jour, ou pas (par exemple avec le couple redux + reselect).
+
 Plus d'articles sur React sur putain de code : http://putaindecode.io/fr/tag/react/
 
 ## Redux
