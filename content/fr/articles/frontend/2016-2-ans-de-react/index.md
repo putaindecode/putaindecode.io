@@ -31,7 +31,7 @@ Son écosystème, riche et évolutif, l'est moins.
 
 ## Babel/ES2015
 
-![](../../../../assets/babel.png)
+![](/assets/babel.png)
 
 ### Use next generation JavaScript, today.
 
@@ -57,7 +57,7 @@ Plus d'infos sur JSX dans [Introducing JSX](https://facebook.github.io/react/doc
 
 ## npm
 
-![](../../../../assets/npm.png)
+![](/assets/npm.png)
 
 Quel que soit votre besoin, il y a sûrement déjà un module npm pour ça :)
 
@@ -74,7 +74,7 @@ NB: Dans sa lancée open-source, Facebook vient de publier une alternative au CL
 
 ## Webpack
 
-![](../../../../assets/webpack.png)
+![](/assets/webpack.png)
 
 ### Le saviez-vous ?
 
@@ -104,7 +104,7 @@ Plus de détails sur Webpack sur [les articles Putain de code ! dédiés](http:/
 
 ## CSS
 
-![](../../../../assets/css-modules.png)
+![](/assets/css-modules.png)
 
 ### Le saviez-vous ?
 
@@ -132,7 +132,7 @@ Et voici un article recensant des [librairies de composants React open-source](h
 
 ## React : Learn once, run everywhere
 
-![](../../../../assets/react.png)
+![](/assets/react.png)
 
 Plus qu'une bibliothèque ou un framework, React est un paradigme de programmation d'interfaces utilisateurs, qui permet d'adresser de nombreuses plateformes, avec toujours du code React "standard".
 
