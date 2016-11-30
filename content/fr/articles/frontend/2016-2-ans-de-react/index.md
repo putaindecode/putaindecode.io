@@ -211,9 +211,9 @@ Pour créer un site web comme [putaindecode.io](http://putaindecode.io) vous pou
 
 Cette stack, qui peut paraître lourde en outillage, permet de créer des apps riches, performantes, testables, évolutives, multi-plateformes.
 
-ES2015 et React en eux-mêmes ne sont pas plus compliqués qu'Angular (au contraire) et simplifient plutôt le code et le workflow de développement.
-
 Une fois l'outillage en place et assimilé, la productivité est excellente (ES2015, npm, tests, developer experience, dev/build/deploy...).
+
+Dans la plupart des cas, les boilerplates cités ci-dessus vous fournissent tout le nécessaire.
 
 ## Must read and watch
 
