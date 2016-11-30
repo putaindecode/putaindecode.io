@@ -201,7 +201,7 @@ Technique des `position: absolute; + marges négatives` avec tailles connues à 
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -{X/2}em; /* remplacer {X/2} par la moitié de votre height */
+  margin-left: -{X/2}em; /* remplacer {X/2} par la moitié de votre width */
   margin-top: -{Y/2}em; /* remplacer {Y/2} par la moitié de votre height */
 }
 ```
