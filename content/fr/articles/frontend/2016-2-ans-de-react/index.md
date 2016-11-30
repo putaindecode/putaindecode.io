@@ -144,7 +144,7 @@ Et pour toutes ces targets, une convention générale s'applique :
 
 À tout moment, à partir un `state` donné, une application ou un composant React est capable de se "render" correctement dans l'état désiré.
 
-Le fonctionnement interne est donc plutôt straightforward, les composants se passent simplement des `props` (valeurs et callbacks) de parent à enfant, et certains composants peuvent avoir un `state` local qui, une fois modifié, déclenchera son re-render, ainsi que celui de ses enfants, en optimisant les performances grâce au Virtual Dom.
+Le fonctionnement interne est donc plutôt straightforward, les composants se passent simplement des `props` (valeurs et callbacks) de parent à enfant, et certains composants peuvent avoir un `state` local qui, une fois modifié, déclenchera un re-render du composant et de ses descendants.
 
 Les composants doivent être simples, focus, composables.
 
@@ -160,7 +160,7 @@ Les composants doivent être simples, focus, composables.
 
 Au niveau performances, React ne fait pas de miracles malgré le [virtual-dom](http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/);
 
-À chaque fois qu'un composant reçoit de nouvelles props ou modifie son state, React appelle la méthode render de ce dernier ainsi que de ces descendants. Même s'il ne modifie pas le DOM, le fait de comparer les deux arbres retournés par render peut s'avérer coûteux si votre composant présente beaucoup de contenu. Heureusement, React permet aux développeurs d'intervenir avant le render et l'annuler s'il n'est pas nécessaire avec shouldComponentUpdate.
+À chaque fois qu'un composant reçoit de nouvelles props ou modifie son state, React appelle la méthode `render` de ce dernier ainsi que de ces descendants. Même s'il ne modifie pas le DOM, le fait de comparer les deux arbres retournés par render peut s'avérer coûteux si votre composant présente beaucoup de contenu. Heureusement, React permet aux développeurs d'intervenir avant le render et l'annuler s'il n'est pas nécessaire avec `shouldComponentUpdate`.
 
 
 Plus d'[articles sur React sur putain de code](http://putaindecode.io/fr/tag/react)
