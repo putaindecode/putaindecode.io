@@ -1,8 +1,8 @@
 ---
 date: "2016-11-24"
-title: "2 ans de React"
+title: "2 ans avec React, Babel, Webpack et cie"
 tags:
-  - Javascript
+  - JavaScript
   - react
   - es6
 authors:
@@ -10,8 +10,6 @@ authors:
 header:
   credit: https://www.flickr.com/photos/billyrichards
 ---
-
-# 2 ans de React !
 
 Depuis fin 2014, et un virage radical vers l'écosystème React, j'ai eu l'occasion de mener plusieurs projets (applis pros, mobiles/hybrides, sites web...) sur cette stack : React, Webpack, Babel, npm...
 
@@ -148,7 +146,7 @@ Le fonctionnement interne est donc plutôt straightforward, les composants se pa
 
 Les composants doivent être simples, focus, composables.
 
-```jsx
+```js
 <Toolbar>
   <Icon name="success" onClick={ onClickSuccess } />
   <Menu>
@@ -177,7 +175,7 @@ Plus d'articles sur redux sur Putain de code ! : http://putaindecode.io/fr/tag/r
 
 ## Tips
 
-### Storybook 
+### Storybook
 
 Utiliser un outil comme [storybook](https://github.com/storybooks/react-storybook) permet de travailler sur les composants hors-contexte, de pouvoir les visualiser dans différents états pendant que vous travaillez... et ainsi d'avoir une base saine de composants réutilisables.
 
@@ -238,5 +236,3 @@ Dans la plupart des cas, les boilerplates cités ci-dessus vous fournissent tout
  - [reactpatterns.com](http://reactpatterns.com) : quelques patterns react
  - [phenomic.io](http://phenomic.io) : react-based static site generator
  - [jsbooks.revolunet.com](http://jsbooks.revolunet.com) : free JavaScript ebooks
-
-
