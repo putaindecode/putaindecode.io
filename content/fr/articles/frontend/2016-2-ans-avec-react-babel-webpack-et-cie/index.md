@@ -263,8 +263,7 @@ composants réutilisables.
 
 Votre bibliothèque de composants peut même être un projet à part, que vous
 importerez dans vos différentes applications. Par exemple, Cloudflare publie
-séparément [tous ses composants UI réutilisables](ex :
-https://github.com/cloudflare/cf-ui).
+séparément [tous ses composants UI réutilisables](https://github.com/cloudflare/cf-ui).
 
 ### Composition
 
