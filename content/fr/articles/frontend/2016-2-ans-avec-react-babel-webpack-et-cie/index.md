@@ -115,9 +115,9 @@ Webpack a coûté aux devs **2.312.533 heures** en 2015. Par jour.
 ### Un grand pouvoir implique de grandes responsabilités
 
 Webpack est puissant, il remplace browserify ou vos multiples tâches grunt,
-gulp, blurp qui géraient votre pipeline d'assets.
+gulp, blurp... qui géraient votre pipeline d'assets.
 
-À partir du votre point d'entrée de votre application uniquement, par exemple
+À partir du point d'entrée de votre application uniquement, par exemple
 `index.js`, il est capable de servir et bundler toutes les dépendances (code,
 images, CSS...) de votre projet automatiquement, grâce aux nombreux
 [loaders](https://webpack.github.io/docs/loaders.html).
