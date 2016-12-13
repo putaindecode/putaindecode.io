@@ -10,7 +10,7 @@ authors:
 
 Ça fait quelques mois qu'on en parle au sein de l'équipe de contributeurs, et c'est un projet qui a mis du temps à se développer mais le voilà enfin.
 
-On passé pas mal de temps à préparer le format, à se motiver à le faire et à acheter le matériel.
+On a passé pas mal de temps à préparer le format, à se motiver à le faire et à acheter le matériel.
 
 Ce premier épisode est encore un peu maladroit (on apprend sur le tas) mais on a bon espoir de l'améliorer avec le temps.
 
@@ -33,7 +33,7 @@ et on vous y parle de :
 - Sketch 41
 - Origami Studio
 
-Évidemment on digresse SANS-ARRÊT, ça manque de structure et le son a quelques soucis, on vous demande d'être indulgents là dessus : faut bien commencer quelque part 😶
+Évidemment on digresse SANS ARRÊT, ça manque de structure et le son a quelques soucis, on vous demande d'être indulgents là-dessus : faut bien commencer quelque part 😶
 
 Faites-nous part de vos retours pour qu'on puisse améliorer ce podcast à chaque épisode.
 
