@@ -1,11 +1,10 @@
 ---
-date: "2016-12-19"
+date: "2016-12-20"
 title: Petit tour d'horizon de l'animation sur le web (et ailleurs)
 tags:
   - animation
   - css
   - easing
-  - zizine
   - spring
 authors:
   - bloodyowl
@@ -27,7 +26,7 @@ CSS possède deux propriétés permettant d'animer des valeurs: les `animation` 
 }
 ```
 
-Cette transition est définie sur un modèle simple : on fixe une durée d'animation (ici `300ms`) et un easing —*ou *zizine* si vous écoutez le podcast*— (ici `linear`).
+Cette transition est définie sur un modèle simple : on fixe une durée d'animation (ici `300ms`) et un easing —*ou *zizine* si vous écoutez [le podcast](http://putaindecode.io/fr/articles/podcast/1/)*— (ici `linear`).
 
 L'easing est une fonction toute bête comme vous avez pu en voir au collège et les avez dessiné sur votre calculatrice Casio ou Texas (si comme moi vous étiez le seul péquin de la classe à avoir l'autre modèle, à devoir toujours se demmerder parce que les profs savaient pas comment la votre marchait).
 
@@ -106,7 +105,7 @@ Afin d'obéir à des lois "logiques" de la physique, l'animation spring doit pre
 À chaque frame, il va executer la fonction suivante pour déterminer la `value` et `velocity` à venir (note: ce côté est une simplification du code utilisé par [react-motion](https://github.com/chenglou/react-motion)).
 
 ```javascript
-const secondsPerFrame = 16.666 / 1000
+const unitOfTime = 1 / 60 // the number of seconds in a frame
 const precision = 0.01
 
 const step = (
@@ -120,8 +119,8 @@ const step = (
   const damper = -damping * lastVelocity
 
   const all = spring + damper
-  const nextVelocity = lastVelocity + all * secondsPerFrame
-  const nextValue = lastValue + nextVelocity * secondsPerFrame
+  const nextVelocity = lastVelocity + all * unitOfTime
+  const nextValue = lastValue + nextVelocity * unitOfTime
 
   const shouldRest = Math.abs(nextVelocity) < precision && Math.abs(nextValue - toValue) < precision
 
@@ -212,7 +211,7 @@ myElement.onmouseup = () => {
 
 <iframe width="100%" height="300" src="//jsfiddle.net/bloodyowl/36d0nc7r/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-En conclusion, les animations spring ont de nombreux avantages. Elles vous permettent d'utiliser un vocabulaire cohérent avec celui du mouvement. Elles vous permettent aussi de gérer de manière intelligente le timing de vos animations : plus besoin de *hardcoder* le temps qu'elles doivent mettre ; seule la description du mouvement compte. Aussi, vous n'avez plus à vous soucier des changements de valeur et de ses conséquences sur la cohérence globale d'une animation : le système les gère et s'adapte.
+Les animations spring ont de nombreux avantages. Elles vous permettent d'utiliser un vocabulaire cohérent avec celui du mouvement. Elles vous permettent aussi de gérer de manière intelligente le timing de vos animations : plus besoin de *hardcoder* le temps qu'elles doivent mettre ; seule la description du mouvement compte. Aussi, vous n'avez plus à vous soucier des changements de valeur et de ses conséquences sur la cohérence globale d'une animation : le système les gère et s'adapte.
 
 Il existe plusieurs solutions pour les gérer :
 
