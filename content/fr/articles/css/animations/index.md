@@ -10,7 +10,7 @@ authors:
   - bloodyowl
 ---
 
-Les animations prennent une grande place dans les interfaces utilisateur. Loin de n'apporter qu'un côté esthétique, elles augmentent la performance perçue, améliorent notre expérience en nous aidant à nous repérer et en guidant notre attention. Sur les application natives, ces animations sont souvent plus naturelles que sur le web, et pour cause, beaucoup de leurs animations sont des *springs*.
+Les animations prennent une grande place dans les interfaces utilisateur. Loin de n'apporter qu'un côté esthétique, elles augmentent la performance perçue, améliorent notre expérience en nous aidant à nous repérer et en guidant notre attention. Sur les applications natives, ces animations sont souvent plus naturelles que sur le web, et pour cause, beaucoup de leurs animations sont des *springs*.
 
 Qu'est-ce qu'une animation *spring* ? Pour arriver à le définir, voyons comment on a l'habitude de créer des animations avec les technologies web.
 
@@ -26,9 +26,9 @@ CSS possède deux propriétés permettant d'animer des valeurs: les `animation` 
 }
 ```
 
-Cette transition est définie sur un modèle simple : on fixe une durée d'animation (ici `300ms`) et un easing —*ou *zizine* si vous écoutez [le podcast](http://putaindecode.io/fr/articles/podcast/1/)*— (ici `linear`).
+Cette transition est définie sur un modèle simple : on fixe une durée d'animation (ici `300ms`) et un easing —*ou *zizine* si vous écoutez [le podcast](http://putaindecode.io/fr/articles/podcast/1/)*— qui est une fonction d'interpolation (ici `linear`).
 
-L'easing est une fonction toute bête comme vous avez pu en voir au collège et les avez dessiné sur votre calculatrice Casio ou Texas (si comme moi vous étiez le seul péquin de la classe à avoir l'autre modèle, à devoir toujours se demmerder parce que les profs savaient pas comment la votre marchait).
+L'easing est une fonction toute bête comme vous avez pu en voir au collège et les avez dessinées sur votre calculatrice Casio ou Texas (si comme moi vous étiez le seul péquin de la classe à avoir l'autre modèle, à devoir toujours se demmerder parce que les profs savaient pas comment la votre marchait).
 
 Bref, une fonction d'easing est assez simple. Par exemple, la `linear` ça revient à :
 
