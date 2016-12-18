@@ -44,7 +44,7 @@ Le paramètre `x` varie entre `0` et `1`, c'est la progression de l'animation. C
 En faisant à la main une version du système gérant l'animation, ça donne quelque chose dans ce style :
 
 ```js
-const createTransition = (duration, easing) => (onUpdate) => (startValue, endValue) => {
+const transition = ({ duration, easing, onUpdate, startValue, endValue }) => {
   const startDate = Date.now() // le moment où commence l'animation
   // la fonction tick sera executée périodiquement
   const tick = () => {
@@ -62,10 +62,13 @@ const createTransition = (duration, easing) => (onUpdate) => (startValue, endVal
 }
 
 
-const transition = createTransition(500, x => x)
-const subscribedTransition = transition((value) => myElement.style.transform = `translateY(${ value + "px" })`)
-
-myElement.onclick = () => subscribedTransition(0, 200)
+myElement.onclick = () => transition({
+  duration: 500,
+  easing: x => x,
+  onUpdate: (value) => myElement.style.transform = `translateY(${ value + "px" })`,
+  startValue: 0,
+  endValue: 200,
+})
 ```
 
 Pour définir cette fonction d'easing, CSS vous permet également de configurer des courbes de Bézier cubiques.
