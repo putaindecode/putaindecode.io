@@ -1,5 +1,5 @@
 ---
-date: "2016-01-10"
+date: "2017-01-10"
 title: Quelques petits h͔̞̞̭͙͠a̘ç̫̯͓k̵͖̘̬̳̱̯̤s̴͎̻̯ typographiques
 tags:
   - css
