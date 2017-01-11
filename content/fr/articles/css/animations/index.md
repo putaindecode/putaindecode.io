@@ -14,7 +14,7 @@ Les animations prennent une grande place dans les interfaces utilisateur. Loin d
 
 Qu'est-ce qu'une animation *spring* ? Pour arriver à le définir, voyons comment on a l'habitude de créer des animations avec les technologies web.
 
-CSS possède deux propriétés permettant d'animer des valeurs: les `animation` et les `transition`. Au delà de la différence entre leurs capacités au sein de CSS (propriété vs ensemble de propriété avec des étapes), les deux reposent sur le même mécanisme. On va donc étudier le plus simple: `transition`.
+CSS possède deux propriétés permettant d'animer des valeurs: les `animation` et les `transition`. Au delà de la différence entre leurs capacités au sein de CSS (propriété VS ensemble de propriétés avec des étapes), les deux reposent sur le même mécanisme. On va donc étudier le plus simple: `transition`.
 
 ```css
 .block {
@@ -28,7 +28,7 @@ CSS possède deux propriétés permettant d'animer des valeurs: les `animation` 
 
 Cette transition est définie sur un modèle simple : on fixe une durée d'animation (ici `300ms`) et un easing —*ou *zizine* si vous écoutez [le podcast](http://putaindecode.io/fr/articles/podcast/1/)*— qui est une fonction d'interpolation (ici `linear`).
 
-L'easing est une fonction toute bête comme vous avez pu en voir au collège et les avez dessinées sur votre calculatrice Casio ou Texas (si comme moi vous étiez le seul péquin de la classe à avoir l'autre modèle, à devoir toujours se demmerder parce que les profs savaient pas comment la votre marchait).
+L'easing est une fonction toute bête comme vous avez pu en voir au collège et les avez dessinées sur votre calculatrice Casio ou Texas (si comme moi vous étiez le seul péquin de la classe à avoir l'autre modèle, à devoir toujours se démerder parce que les profs savaient pas comment la vôtre marchait).
 
 Bref, une fonction d'easing est assez simple. Par exemple, la `linear` ça revient à :
 
@@ -81,31 +81,31 @@ Vu que votre animation commence et finit à des valeurs définies à l'avance, d
 
 Vous avez avec CSS la liberté de définir `P1` et `P2` sous la forme `cubic-bezier(P1x, P1y, P2x, P2y)`. Pour visualiser le fonctionnement, je vous conseille de faire un tour sur [cubic-bezier](http://cubic-bezier.com) de [Lea Verou](https://twitter.com/leaverou).
 
-Tout ce que nous avons vu jusque là sont des animations *timées* (vive les anglicismes). Leur durée est connue à l'avance et est immuable, les variations possibles se feront dans les limites de ces contraintes.
+Tout ce que nous avons vu jusque-là sont des animations *timées* (vive les anglicismes). Leur durée est connue à l'avance et est immuable, les variations possibles se feront dans les limites de ces contraintes.
 
 Ces animations sont très pratiques pour certaines animations basiques et rempliront très bien leur mission, mais elles peuvent rapidement avoir des limites :
 
 Avec CSS :
 
-- On n'a aucun contrôle sur l'execution de l'animation
+- On n'a aucun contrôle sur l'exécution de l'animation
 - Configurer des animations complexes complique la maintenance
 
 Avec un easing basique en général :
 
-- `cubic-bezier` limite énormément les possibilité d'évolution de la valeur animée (e.g. on souhaite que l'animation ait de l'élasticité, les timing-functions ne permettent de faire qu'un seul débord qui ne parait pas "naturel").
+- `cubic-bezier` limite énormément les possibilités d'évolution de la valeur animée (e.g. on souhaite que l'animation ait de l'élasticité, les timing-functions ne permettent de faire qu'un seul débord qui ne parait pas "naturel").
 -  Avoir des animations cohérentes dans toute notre UI est extrêmement contraignant avec CSS
 
 Pour l'élasticité, vous pouvez vous débrouiller avec `@keyframes`, hardcoder toutes les valeurs, les *timer* à la main, y passer des heures pour vous retrouver avec 60 étapes dans votre animation et au final de ne pas être satisfait du résultat, claquer la porte de votre boulot et partir élever des brebis dans les Pyrénées.
 
 C'est là qu'interviennent les *springs*.
 
-Une animation spring vous expose en général deux paramètres : `tension` et `friction` (ou `stiffness`, pour rigidité & `damping`, pour amortissement, selon les systèmes). Ce sont des valeurs logiques dans ce context, puisqu'elles viennent des lois de la physique (big up Newton).
+Une animation spring vous expose en général deux paramètres : `tension` et `friction` (ou `stiffness`, pour rigidité & `damping`, pour amortissement, selon les systèmes). Ce sont des valeurs logiques dans ce contexte, puisqu'elles viennent des lois de la physique (big up Newton).
 
 Quelques exemples sur les [demos de Rebound.js](http://facebook.github.io/rebound-js/examples/) peuvent vous aider à visualiser ce que représentent ces paramètres au sein de l'animation.
 
 Afin d'obéir à des lois "logiques" de la physique, l'animation spring doit prendre en compte à chaque `tick` non seulement la valeur actuelle et celle d'arrivée mais aussi sa rapidité actuelle : c'est ce qui lui permet d'enchaîner naturellement les animations.
 
-À chaque frame, il va executer la fonction suivante pour déterminer la `value` et `velocity` à venir (note: ce côté est une simplification du code utilisé par [react-motion](https://github.com/chenglou/react-motion)).
+À chaque frame, il va exécuter la fonction suivante pour déterminer la `value` et `velocity` à venir (note : ce côté est une simplification du code utilisé par [react-motion](https://github.com/chenglou/react-motion)).
 
 ```javascript
 const unitOfTime = 1 / 60 // the number of seconds in a frame
@@ -134,7 +134,7 @@ const step = (
 }
 ```
 
-Ensuite, une simple fonction `spring` qui reproduit à peu de chose près la mécanique de notre `createTransition` vu plus haut :
+Ensuite, une simple fonction `spring` qui reproduit à peu de choses près la mécanique de notre `createTransition` vu plus haut :
 
 ```javascript
 const spring = ({ stiffness = 180, damping = 12, onRest = (() => {}), toValue }) => onUpdate => {
@@ -214,7 +214,7 @@ myElement.onmouseup = () => {
 
 <iframe width="100%" height="300" src="//jsfiddle.net/bloodyowl/36d0nc7r/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-Les animations spring ont de nombreux avantages. Elles vous permettent d'utiliser un vocabulaire cohérent avec celui du mouvement. Elles vous permettent aussi de gérer de manière intelligente le timing de vos animations : plus besoin de *hardcoder* le temps qu'elles doivent mettre ; seule la description du mouvement compte. Aussi, vous n'avez plus à vous soucier des changements de valeur et de ses conséquences sur la cohérence globale d'une animation : le système les gère et s'adapte.
+Les animations spring ont de nombreux avantages. Elles vous permettent d'utiliser un vocabulaire cohérent avec celui du mouvement. Elles vous permettent aussi de gérer de manière intelligente le timing de vos animations : plus besoin de *hardcoder* le temps qu'elles doivent mettre ; seule la description du mouvement compte. Aussi, vous n'avez plus à vous soucier des changements de valeurs et de ses conséquences sur la cohérence globale d'une animation : le système les gère et s'adapte.
 
 Il existe plusieurs solutions pour les gérer :
 
