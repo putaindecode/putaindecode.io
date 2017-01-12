@@ -75,4 +75,4 @@
   footerNavigation:
     -
       url: "/feed.xml"
-      name: "Flux RSS"
+      name: "RSS"

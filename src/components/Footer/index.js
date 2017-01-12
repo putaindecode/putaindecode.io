@@ -2,6 +2,7 @@ import React, { PropTypes } from "react"
 import cx from "classnames"
 import { Link } from "react-router"
 
+import { iconsOrder } from "../Navigation"
 import getI18n from "../../i18n/get"
 import SVGInline from "react-svg-inline"
 
@@ -10,6 +11,8 @@ const SVGs = {
   twitter: require("../../icons/twitter.svg"),
   facebook: require("../../icons/facebook.svg"),
   chat: require("../../icons/chat.svg"),
+  itunes: require("../../icons/itunes.svg"),
+  soundcloud: require("../../icons/soundcloud.svg"),
 }
 
 const Footer = ({}, context) => {
@@ -41,7 +44,7 @@ const Footer = ({}, context) => {
                 })
               }
               {
-                [ "github", "twitter", "facebook", "chat" ].map((key) => (
+                iconsOrder.map((key) => (
                   i18n[key] &&
                   <li key={i18n[key]}>
                     <a href={i18n[key]}
