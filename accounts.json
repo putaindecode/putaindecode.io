@@ -16,12 +16,12 @@
       "passwd-salt": "gg"
     },
     "twitter": {
-      "user": "putaindecode_fr",
+      "user": "putaindecode",
       "mail": "mail+twitter-fr@putaindecode.io",
       "passwd-salt": "tw"
     },
-    "twitter_fr": {
-      "user": "putaindecode_fr",
+    "twitter_en": {
+      "user": "putaindecode_en",
       "mail": "mail+twitter-en@putaindecode.io",
       "passwd-salt": "tw"
     },
