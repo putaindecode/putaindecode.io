@@ -13,9 +13,20 @@ const SVGs = {
   twitter: require("../../icons/twitter.svg"),
   facebook: require("../../icons/facebook.svg"),
   chat: require("../../icons/chat.svg"),
+  itunes: require("../../icons/itunes.svg"),
+  soundcloud: require("../../icons/soundcloud.svg"),
 }
 
 import styles from "./styles.css"
+
+export const iconsOrder = [
+  "twitter",
+  "facebook",
+  "soundcloud",
+  "itunes",
+  "github",
+  "chat",
+]
 
 const Navigation = ({}, context) => {
   const i18n = getI18n(context)
@@ -41,7 +52,7 @@ const Navigation = ({}, context) => {
         ))
       }
       {
-        [ "github", "twitter", "facebook", "chat" ].map((key) => (
+        iconsOrder.map((key) => (
           i18n[key] &&
           <a href={i18n[key]}
             key={i18n[key]}

@@ -54,6 +54,10 @@
   facebookLabel: "Facebook"
   chat: "/discuss/"
   chatLabel: "Discuter"
+  soundcloud: "https://soundcloud.com/putaindecode"
+  soundcloudLabel: "SoundCloud (Podcast)"
+  itunes: "https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825"
+  itunesLabel: "iTunes (Podcast)"
   forum: "https://github.com/putaindecode/forum/issues"
   forumLabel: "Forum"
   PageError:
@@ -76,4 +80,4 @@
   footerNavigation:
     -
       url: "/feed.xml"
-      name: "Flux RSS"
+      name: "RSS"
