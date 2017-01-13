@@ -165,6 +165,36 @@ export default class Homepage extends Component {
           </div>
         </div>
 
+        {
+          locale === "fr" && (
+            <div className={ classes.podcast }>
+              <div className={ classes.podcastTitle }>
+                { "Découvrez notre Podcast sur " }
+                <a
+                  className={ classes.podcastLink }
+                  href={ i18n.soundcloud  }
+                >
+                  { "SoundCloud" }
+                </a>
+                { " ou " }
+                <a
+                  className={ classes.podcastLink }
+                  href={ i18n.itunes  }
+                >
+                  { "iTunes" }
+                </a>
+              </div>
+              <div className={ classes.podcastImageCredit }>
+                <small>
+                  <a href="https://www.flickr.com/photos/fensterbme/99108769">
+                    { "Crédit image" }
+                  </a>
+                </small>
+              </div>
+            </div>
+          )
+        }
+
         <TopContributors recentContributions={ recentContributions } />
       </div>
     )
