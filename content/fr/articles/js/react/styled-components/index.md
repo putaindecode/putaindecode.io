@@ -10,7 +10,7 @@ authors:
 
 ---
 
-Il existe de nombreuses d'approches et solutions différentes pour gérer le CSS en ReactJS, je vais parler ici de [styled-components](https://github.com/styled-components/styled-components) qui permet de gagner en productivité et en qualité quand on veut créer et distribuer des composants UI.
+Il existe de nombreuses d'approches et [solutions différentes](https://github.com/MicheleBertoli/css-in-js) pour gérer le CSS en ReactJS, je vais parler ici de [styled-components](https://github.com/styled-components/styled-components) qui permet de gagner en productivité et en qualité quand on veut créer et distribuer des composants UI.
 
 La force de [styled-components](https://github.com/styled-components/styled-components) c'est de faciliter la création de composants visuels ReactJS minimalistes et configurables, en combinant du **CSS standard** et **un zeste de JavaScript**. Ces composants deviendront littéralement les pièces de lego qui pourront être utilisée et partagées entre les UIs de toutes vos applications, sites webs...
 
@@ -21,6 +21,26 @@ Avec styled, on peut abstraire le CSS et le DOM de la vue, ce qui va grandement 
 ##### Avant :
 
 ```jsx
+// solution en pure CSS-in-JS
+
+const styles = {
+  box: {
+    width: '60%',
+    border: '1px solid silver'
+  },
+  title: {
+    fontSize: '1.2em',
+    fontWeight: 'bold'
+  },
+  description: {
+    fontSize: '0.8em'
+  },
+  important: {
+    fontWeight: 'bold'
+  }
+}
+
+// nos composants intègrent les styles dans le code
 <div className={ styles.box }>
   <div className={ styles.title }>{ title }</div>
   <div className={ classnames(styles.description, styled.important) }>{ description }</div>
@@ -30,6 +50,24 @@ Avec styled, on peut abstraire le CSS et le DOM de la vue, ce qui va grandement 
 ##### Après :
 
 ```jsx
+// avec styled-components
+
+const Box = styled.div`
+  width: 60%;
+  border: 1px solid silver;
+`
+
+const Title = styled.div`
+  font-size: 1.2em;
+  font-weight: bold;
+`
+
+const Description = styled.div`
+  font-size: 0.8em;
+  font-weight: ${ props => props.important ? 'bold' : 'normal '}
+`
+
+// les composants sont pré-stylés, pas de bruit généré pas le styling
 <Box>
   <Title>{ title }</Title>
   <Description important>{ description }</Description>
@@ -41,10 +79,10 @@ Avec styled, on peut abstraire le CSS et le DOM de la vue, ce qui va grandement 
  - support des [thèmes](https://github.com/styled-components/styled-components/blob/master/docs/theming.md)
  - [syntaxe CSS "classique"](https://github.com/styled-components/styled-components/blob/master/docs/css-we-support.md) mais scopé automatiquement
  - Gestion des media queries, pseudo-selectors, nesting
- - Autroprefixer intégré
+ - Un [autoprefixer-like intégré](https://github.com/rofrischmann/inline-style-prefixer/)
  - Code "métier" plus lisible
  - Compatible react-native
- - Unit testing automatique avec les [snapshots jest](https://facebook.github.io/jest/)
+ - Compatible avec les [snapshots Jest](https://facebook.github.io/jest/) out of the box
  - Ne nécessite pas de loader Webpack spécifique ❤️
 
 ### Inconvénients :
@@ -182,7 +220,7 @@ Usage avancé des media queries : https://github.com/styled-components/styled-co
 
 ### Composants configurables
 
-Mieux : comme le composant à directement accès aux `props` (attributs du composant), on peut le composant configurable en JavaScript :
+Mieux : comme le composant à directement accès aux `props` (attributs du composant), on peut le configurer depuis le JavaScript :
 
 ```jsx
 const Title = styled.div`
