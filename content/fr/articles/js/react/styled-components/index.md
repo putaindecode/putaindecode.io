@@ -1,5 +1,5 @@
 ---
-date: "2017-01-31"
+date: "2017-02-01"
 title: "Introduction à styled-components"
 tags:
   - javascript
@@ -88,7 +88,7 @@ const Description = styled.div`
 ### Inconvénients :
  - pas encore idéal pour [des styles très dynamiques](https://github.com/styled-components/styled-components/issues/134)
  - pas encore idéal pour [le server-side](https://github.com/styled-components/styled-components/issues/124)
- - syntaxe pas forcement bien [surlignée ou lintée](https://github.com/styled-components/styled-components#linting)
+ - syntaxe pas forcement bien [surlignée ou lintée](https://github.com/styled-components/styled-components#linting) mais [des plugins existent](https://github.com/styled-components/styled-components#syntax-highlighting).
 
 
 ### Fonctionnement
