@@ -67,7 +67,7 @@ const Description = styled.div`
   font-weight: ${ props => props.important ? 'bold' : 'normal '}
 `
 
-// les composants sont pré-stylés, pas de bruit généré pas le styling
+// les composants sont pré-stylés, pas de bruit généré par le styling
 <Box>
   <Title>{ title }</Title>
   <Description important>{ description }</Description>
