@@ -127,7 +127,7 @@ Pour utiliser notre HOC, il suffira d'exporter nos composants wrappés :
 
 ```javascript
 import React from "React"
-import theme from "theme"
+import themed from "themed"
 
 const MyStatelessComponent = ({ text, theme }) => (
   <div style={{ color: theme.color }}>
