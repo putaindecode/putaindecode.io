@@ -67,7 +67,7 @@ const Description = styled.div`
   font-weight: ${ props => props.important ? 'bold' : 'normal '}
 `
 
-// les composants sont pré-stylés, pas de bruit généré pas le styling
+// les composants sont pré-stylés, pas de bruit généré par le styling
 <Box>
   <Title>{ title }</Title>
   <Description important>{ description }</Description>
@@ -336,7 +336,7 @@ Plus d'infos sur [la doc d'injectGlobal](https://github.com/styled-components/st
 
 ### React Storybook
 
-En ajoutant [react-storybook](https://github.com/storybooks/react-storybook) dans votre projet, vous pourrez facilement vous constituter une bibliothèque visuelles avec vos propres composants, hors contexte, dans tous leurs etats possibles, et avec du Hot-Reload ce qui est **très très pratique dans la phase de conception**.
+En ajoutant [react-storybook](https://github.com/storybooks/react-storybook) dans votre projet, vous pourrez facilement vous constituter une bibliothèque visuelle avec vos propres composants, hors-contexte, dans tous leurs états possibles, et avec du Hot-Reload ce qui est **très très pratique dans la phase de conception**.
 
 ### Autres liens :
 
