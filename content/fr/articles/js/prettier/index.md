@@ -31,7 +31,7 @@ Cette solution officielle n'existe pas en JS. Mais c'est ici qu'intervient [pret
 
 ## Comment ça fonctionne ?
 
-Croyez-le ou non, mais ce n'est pas "tellement" complexe. À la manière de babel ou flow, prettier utilise un AST parser (Abstract Syntax Tree parser) afin d'analyser le contenu de votre fichier JS, suite à quoi il lui suffit de réarranger / formater votre code de la façon voulue.
+Croyez-le ou non, mais ce n'est pas "tellement" complexe. À la manière de babel ou flow, prettier utilise un AST parser (Abstract Syntax Tree parser) afin d'analyser le contenu de votre fichier JS, suite à quoi il va simplement formater votre code sans tenir compte de la forme précédente, en ne gardant que ce qui est important: le fond, pas la forme.
 
 Je vous invite à jouer avec [AST explorer](https://astexplorer.net/) pour comprendre beaucoup plus simplement comment tout cela fonctionne.
 
