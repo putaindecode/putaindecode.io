@@ -11,27 +11,27 @@ authors:
 
 Rob Pike et Ken Thompson ont conçu le langage de programmation Go de façon à ce que celui-ci soit à portée des jeunes développeurs : si vous découvrez et commencez à apprendre le Go le lundi, vous devriez être en mesure d'être productif le mercredi. Le langage est extrêmement minimaliste, il y a rarement plus d'une façon de faire quelque chose.
 
-Seulement voilà, le développeur torturé se posera toujours un tas de questions essentielles : tabs ou spaces ? 2, 4 ou 8 spaces ? single quotes ou double quotes ? Après quelles structures de contrôle passer une ligne ? Mais aussi les éternels : vim ou emacs ? flow ou TypeScript ? Maintenir ce projet Angular 1 ou démissionner comme un prince ?
+Seulement voilà, le développeur torturé se posera toujours un tas de questions essentielles : tabs ou spaces ? 2, 4 ou 8 spaces ? Single quotes ou double quotes ? Après quelles structures de contrôle passer une ligne ? Mais aussi les éternels : vim ou emacs ? Flow ou TypeScript ? Maintenir ce projet Angular 1 ou démissionner comme un prince ?
 
-*N.B. : (Pour information, les bonnes réponses sont bien évidemment spaces, 2, single quotes, vim, flow, la démission)*
+*N.B. : Pour information, les bonnes réponses sont bien évidemment spaces, 2, single quotes, vim, flow, la démission*
 
 C'est pour répondre à ce problème (enfin, ceux liés au formatage de votre code) que Go intègre un formatting tool (`fmt`, comme la commande Unix), intitulé [gofmt](https://golang.org/cmd/gofmt/). 
 
-1) Vous codez comme vous le sentez
-2) Vous sauvegardez votre fichier
-3) Votre code est automatiquement formaté
-4) Vous vous sentez frustré
+1) Vous codez comme vous le sentez  
+2) Vous sauvegardez votre fichier  
+3) Votre code est automatiquement formaté  
+4) Vous vous sentez frustré  
 5) Très vite, vous vous rendez compte que c'est pour votre bien, et que perdre du temps ou débattre sur ce genre de détails, c'est tout sauf utile
 
 Autre avantage non négligeable : le code Go que vous trouverez dans d'autres packages, des exemples, etc. sera toujours formaté de la même façon.
 
 *À noter : Reason offre quelque chose de similaire avec [refmt](https://facebook.github.io/reason/tools.html).*
 
-Cette solution officielle n'existe pas en JS. Mais c'est ici qu'intervient [prettier](https://github.com/prettier/prettier) (et non [jsfmt](https://www.npmjs.com/package/jsfmt), qui existe mais ne semble plus maintenu), un projet relativement récent, en version `0.21` à l'heure où j'écris ces lignes. Compatible out of the box avec le JS es2017, JSX, flow, il offre également le moins de configuration possible (ce qui est une bonne chose). Le projet est activement suivi par FaceBook, qui discute même la possibilité de s'en servir sur la codebase de React.
+Cette solution officielle n'existe pas en JS. Mais c'est ici qu'intervient [prettier](https://github.com/prettier/prettier) (et non [jsfmt](https://www.npmjs.com/package/jsfmt), qui existe mais ne semble plus maintenu), un projet relativement récent, en version `0.21` à l'heure où j'écris ces lignes. Compatible *out of the box* avec le JS ES2017, JSX, flow, il offre également le moins de configuration possible (ce qui est une bonne chose). Le projet est activement suivi par Facebook, qui discute même la possibilité de s'en servir sur la codebase de React.
 
 ## Comment ça fonctionne ?
 
-Croyez-le ou non, mais ce n'est pas "tellement" complexe. À la manière de babel ou flow, prettier utilise un AST parser (Abstract Syntax Tree parser) afin d'analyser le contenu de votre fichier JS, suite à quoi il va simplement formater votre code sans tenir compte de la forme précédente, en ne gardant que ce qui est important: le fond, pas la forme.
+Croyez-le ou non, ce n'est pas "tellement" complexe. À la manière de babel ou flow, prettier utilise un AST parser (Abstract Syntax Tree parser) afin d'analyser le contenu de votre fichier JS, suite à quoi il va simplement formater votre code sans tenir compte de la forme précédente, en ne gardant que ce qui est important: le fond, pas la forme.
 
 Je vous invite à jouer avec [AST explorer](https://astexplorer.net/) pour comprendre beaucoup plus simplement comment tout cela fonctionne.
 
@@ -63,7 +63,7 @@ Car oui, il y en a tout de même un peu. Il est possible de régler:
 
 > Mais attends…Si l'on peut malgré tout configurer tout ça, ce n'est plus vraiment un style standard ?
 
-Oui et non, car il y aura toujours beaucoup de détails sur lequel il nous sera impossible de choisir, les options resteront minimalistes. Par exemple, vous ne pourrez jamais retirer les points-virgules.
+Oui et non, car il y aura toujours beaucoup de détails sur lesquels il nous sera impossible de choisir, les options resteront minimalistes. Par exemple, vous ne pourrez jamais retirer les points-virgules.
 
 Dans tous les cas, prettier reste un outil extrêmement pratique pour forcer le formatage du code au sein de votre équipe.
 
