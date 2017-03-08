@@ -61,7 +61,7 @@ Car oui, il y en a tout de même un peu. Il est possible de régler:
 - Comment fermer les balises JSX (`jsxBracketSameLine`, `false` par défaut)
 - Quel parser utiliser (`parser`, `babylon` par défaut, `flow` est disponible)
 
-> Mais attends…Si l'on peut malgré tout configurer tout ça, ce n'est plus vraiment un style standard ?
+> Mais attends… Si l'on peut malgré tout configurer tout ça, ce n'est plus vraiment un style standard ?
 
 Oui et non, car il y aura toujours beaucoup de détails sur lesquels il nous sera impossible de choisir, les options resteront minimalistes. Par exemple, vous ne pourrez jamais retirer les points-virgules.
 
@@ -81,7 +81,7 @@ Ouvrez votre `package.json`, c'est parti.
 ```
 
 `npm run prettify` ou `yarn run prettify` formateront automatiquement tous les fichiers `.js` contenus dans votre dossier `/src`.
-…Bon j'avoue, c'est assez basique comme usage. Ajoutons-y notre config préférée.
+Bon j'avoue, c'est assez basique comme usage. Ajoutons-y notre config préférée.
 
 ```json
 {
