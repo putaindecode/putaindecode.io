@@ -107,7 +107,7 @@ OK. Mais si un membre de l'équipe oublie d'exécuter le script avant de commite
   },
   "lint-staged": {
     "{src,__{tests,mocks}__}/**/*.js": [
-      "prettier--single-quote --trailing-comma all --write",
+      "prettier --single-quote --trailing-comma all --write",
       "git add"
     ]
   },
