@@ -9,7 +9,7 @@ authors:
   - zoontek
 ---
 
-Rob Pike et Ken Thompson ont conçu le langage de programmation Go de façon à ce que celui-ci soit à portée des jeunes développeurs : si vous découvrez et commencez à apprendre le Go le lundi, vous devriez être en mesure d'être productif le mercredi. Le langage est extrêmement minimaliste, il y a rarement plus d'une façon quelque chose.
+Rob Pike et Ken Thompson ont conçu le langage de programmation Go de façon à ce que celui-ci soit à portée des jeunes développeurs : si vous découvrez et commencez à apprendre le Go le lundi, vous devriez être en mesure d'être productif le mercredi. Le langage est extrêmement minimaliste, il y a rarement plus d'une façon de faire quelque chose.
 
 Seulement voilà, le développeur torturé se posera toujours un tas de questions essentielles : tabs ou spaces ? 2, 4 ou 8 spaces ? single quotes ou double quotes ? Après quelles structures de contrôle passer une ligne ? Mais aussi les éternels : vim ou emacs ? flow ou TypeScript ? Maintenir ce projet Angular 1 ou démissionner comme un prince ?
 
@@ -27,7 +27,7 @@ Autre avantage non négligeable : le code Go que vous trouverez dans d'autres p
 
 *À noter : Reason offre quelque chose de similaire avec [refmt](https://facebook.github.io/reason/tools.html).*
 
-Cette solution officielle n'existe pas en JS. Mais c'est ici qu'intervient [prettier](https://github.com/prettier/prettier) (et non [jsfmt](https://www.npmjs.com/package/jsfmt), qui existe mais ne semble plus maintenu), un projet relativement récent, en version `0.21` à l'heure où j'écris ces lignes. Compatible out of the box avec le JS es2017, JSX, flow, il offre également le moins de configuration possible (ce qui est une bonne chose).
+Cette solution officielle n'existe pas en JS. Mais c'est ici qu'intervient [prettier](https://github.com/prettier/prettier) (et non [jsfmt](https://www.npmjs.com/package/jsfmt), qui existe mais ne semble plus maintenu), un projet relativement récent, en version `0.21` à l'heure où j'écris ces lignes. Compatible out of the box avec le JS es2017, JSX, flow, il offre également le moins de configuration possible (ce qui est une bonne chose). Le projet est activement suivi par FaceBook, qui discute même la possibilité de s'en servir sur la codebase de React.
 
 ## Comment ça fonctionne ?
 
@@ -37,13 +37,13 @@ Je vous invite à jouer avec [AST explorer](https://astexplorer.net/) pour compr
 
 ## Installation
 
-```sh
+```console
 npm install --save-dev prettier
 ```
 
 Ou, pour les meilleurs d'entre vous :
 
-```
+```console
 yarn add --dev prettier
 ```
 
@@ -63,7 +63,9 @@ Car oui, il y en a tout de même un peu. Il est possible de régler:
 
 > Mais attends…Si l'on peut malgré tout configurer tout ça, ce n'est plus vraiment un style standard ?
 
-En effet. Mais prettier reste un outil extrêmement pratique pour forcer le formatage du code au sein de votre équipe.
+Oui et non, car il y aura toujours beaucoup de détails sur lequel il nous sera impossible de choisir, les options resteront minimalistes. Par exemple, vous ne pourrez jamais retirer les points-virgules.
+
+Dans tous les cas, prettier reste un outil extrêmement pratique pour forcer le formatage du code au sein de votre équipe.
 
 Ouvrez votre `package.json`, c'est parti.
 
@@ -75,7 +77,6 @@ Ouvrez votre `package.json`, c'est parti.
   "devDependencies": {
     "prettier": "^0.21.0"
   }
-  …
 }
 ```
 
@@ -85,12 +86,11 @@ Ouvrez votre `package.json`, c'est parti.
 ```json
 {
   "scripts": {
-    "prettify": "prettier --parser flow --single-quote --trailing-comma all --write '{src,__{tests,mocks}__}/**/*.js'"
+    "prettify": "prettier --single-quote --trailing-comma all --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "devDependencies": {
     "prettier": "^0.21.0"
   }
-  …
 }
 ```
 
@@ -102,11 +102,12 @@ OK. Mais si un membre de l'équipe oublie d'exécuter le script avant de commite
 ```json
 {
   "scripts": {
-    "prettify": "prettier --parser flow --single-quote --trailing-comma all --write '{src,__{tests,mocks}__}/**/*.js'"
+    "precommit": "lint-staged",
+    "prettify": "prettier --single-quote --trailing-comma all --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "lint-staged": {
     "{src,__{tests,mocks}__}/**/*.js": [
-      "prettier --parser flow --single-quote --trailing-comma all --write",
+      "prettier--single-quote --trailing-comma all --write",
       "git add"
     ]
   },
@@ -115,7 +116,6 @@ OK. Mais si un membre de l'équipe oublie d'exécuter le script avant de commite
     "lint-staged": "^3.3.1",
     "prettier": "^0.21.0"
   }
-  …
 }
 ```
 
