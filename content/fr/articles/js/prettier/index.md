@@ -27,7 +27,7 @@ Autre avantage non négligeable : le code Go que vous trouverez dans d'autres p
 
 *À noter : Reason offre quelque chose de similaire avec [refmt](https://facebook.github.io/reason/tools.html).*
 
-Cette solution officielle n'existe pas en JS. Mais c'est ici qu'intervient [prettier](https://github.com/prettier/prettier) (et non [jsfmt](https://www.npmjs.com/package/jsfmt), qui existe mais ne semble plus maintenu), un projet relativement récent, en version `0.21` à l'heure où j'écris ces lignes. Compatible *out of the box* avec le JS ES2017, JSX, flow, il offre également le moins de configuration possible (ce qui est une bonne chose). Le projet est activement suivi par Facebook, qui discute même la possibilité de s'en servir sur la codebase de React.
+Cette solution officielle n'existe pas en JS. Mais c'est ici qu'intervient [prettier](https://github.com/prettier/prettier) (et non [jsfmt](https://www.npmjs.com/package/jsfmt), qui existe mais ne semble plus maintenu), un projet relativement récent, en version `0.21` à l'heure où j'écris ces lignes. Compatible *out of the box* avec le JS ES2017, JSX, flow, il offre également le moins de configuration possible (ce qui est une bonne chose). Le projet est activement suivi par Facebook, qui discute même la possibilité de s'en servir sur la codebase de [React](https://github.com/facebook/react/pull/9101).
 
 ## Comment ça fonctionne ?
 
@@ -131,4 +131,6 @@ J'ai mieux. Il est possible d'[essayer en ligne](https://prettier.github.io/pret
 
 ## Donc c'est bon, tu conseilles ?
 
-C'est tout de même à réfléchir. Le projet est encore jeune et en beta. Tout n'est pas encore parfaitement supporté, mais je vous rassure, si vous m'utilisez pas flow vous ne risquez pas de rencontrer beaucoup de problèmes avec la dernière version. 😉
+C'est tout de même à réfléchir. Le projet est encore jeune et en beta, même s'il évolue extrêmement vite. Tout n'est pas encore parfaitement supporté, mais je vous rassure, si vous m'utilisez pas le flow-parser vous ne risquez pas de rencontrer beaucoup de problèmes avec la dernière version.
+
+Des projets tels que [immutable-js](https://github.com/facebook/immutable-js/commit/9bcc8b54a17c3bbc94d70864121784bc91011e8f), [react-native-web](https://github.com/necolas/react-native-web/commit/a2f25a46c495ca53a75e728cfb14dbdf67cdb342) et [babel](https://github.com/babel/babel/commit/bdbe2cfbc5ab5ba6f528b7ee3e4bf5ed940a47af) y sont déjà passés. Pourquoi pas vous ? 😉
