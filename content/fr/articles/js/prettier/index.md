@@ -131,6 +131,6 @@ J'ai mieux. Il est possible d'[essayer en ligne](https://prettier.github.io/pret
 
 ## Donc c'est bon, tu conseilles ?
 
-C'est tout de même à réfléchir. Le projet est encore jeune et en beta, même s'il évolue extrêmement vite. Tout n'est pas encore parfaitement supporté, mais je vous rassure, si vous m'utilisez pas le flow-parser vous ne risquez pas de rencontrer beaucoup de problèmes avec la dernière version.
+C'est tout de même à réfléchir. Le projet est encore jeune et en beta, même s'il évolue extrêmement vite. Tout n'est pas encore parfaitement supporté, mais je vous rassure, si vous n'utilisez pas le flow-parser vous ne risquez pas de rencontrer beaucoup de problèmes avec la dernière version.
 
 Des projets tels que [immutable-js](https://github.com/facebook/immutable-js/commit/9bcc8b54a17c3bbc94d70864121784bc91011e8f), [react-native-web](https://github.com/necolas/react-native-web/commit/a2f25a46c495ca53a75e728cfb14dbdf67cdb342) et [babel](https://github.com/babel/babel/commit/bdbe2cfbc5ab5ba6f528b7ee3e4bf5ed940a47af) y sont déjà passés. Pourquoi pas vous ? 😉
