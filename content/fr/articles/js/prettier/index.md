@@ -65,6 +65,8 @@ Car oui, il y en a tout de même un peu. Il est possible de régler:
 
 Oui et non, car il y aura toujours beaucoup de détails sur lesquels il nous sera impossible de choisir, les options resteront minimalistes. Par exemple, vous ne pourrez jamais retirer les points-virgules.
 
+`EDIT: Il semblerait que malgré ce qui a pu être annoncé par l'auteur de prettier, une option --no-semicolons soit dans les tuyaux.`
+
 Dans tous les cas, prettier reste un outil extrêmement pratique pour forcer le formatage du code au sein de votre équipe.
 
 Ouvrez votre `package.json`, c'est parti.
