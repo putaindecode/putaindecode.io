@@ -1,0 +1,19 @@
+{
+  "twitter": "IAmNotCyril",
+  "fr": {
+    "bio": {
+      "short": "Développeur front-end",
+      "long": [
+        "J'ai jamais sû rien faire d'autre que de l'HTML, du CSS et du JS alors j'en ai fait mon métier. Malin."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Front-end developer",
+      "long": [
+        "I've never been able to do anything other than HTML, CSS and JS, so that's my job now. Crafty move."
+      ]
+    }
+  }
+}
