@@ -9,7 +9,7 @@ authors:
   - MoOx
   - zoontek
   - skinnyfoetusboy
-  - IAmNotCyril
+  - DaPo
 ---
 
 On se retrouve avec un épisode un poil plus long et arrosé, avec Mathieu (https://twitter.com/Zoontek), Georges (https://twitter.com/skinnyfoetusboy), Maxime (https://twitter.com/MoOx), Matthias (https://twitter.com/bloodyowl) et le premier invité de l'émission : Cyril (https://twitter.com/IAmNotCyril), développeur front-end chez Netcats (https://twitter.com/gonetcats).
