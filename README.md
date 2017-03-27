@@ -82,7 +82,7 @@ votre navigateur.
 
 **Note :
 vous aurez besoin d'un token GitHub disponible en variable d'environnement
-(dans `GITHUB_TOKEN` ou `GH_TOKEN`) afin de pouvoir constuire l'index des
+(dans `GITHUB_TOKEN` ou `GH_TOKEN`) afin de pouvoir construire l'index des
 contributions pour avoir accès à toutes les fonctionnalités du site.
 Autrement, le site fonctionnera en mode dégradé.**
 
