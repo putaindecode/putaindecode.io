@@ -100,7 +100,7 @@ const user = new User("John", "Doe", "Contributor")
 
 console.log(user.sayName()) // John Doe
 console.log(user.role) // Contributor
-user.role = "owner"
+user.role = "Owner"
 console.log(user.role) // Owner
 ```
 
