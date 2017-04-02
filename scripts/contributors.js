@@ -3,6 +3,7 @@ import path from "path"
 
 import color from "chalk"
 import { denodeify as asyncify } from "promise"
+import pLimit from "p-limit"
 
 import GithubApi from "github"
 
@@ -281,8 +282,9 @@ async function filesContributions() {
   // files contributions
   results.files = {}
   const files = await glob("content/**/*")
+  const limit = pLimit(5)
 
-  await Promise.all(files.map(async (file) => {
+  const pmises = files.map(async (file) => limit(async () => {
     const stdout = await exec(
       "git log --pretty=short --follow " + file +
         " | git shortlog --summary --numbered --no-merges --email"
@@ -300,6 +302,8 @@ async function filesContributions() {
         })
     }
   }))
+
+  await Promise.all(pmises)
 }
 
 (async function() {
