@@ -16,7 +16,7 @@ import pkg from "./package.json"
 // which is used for phenomic to build dynamic configuration based on your needs
 // see the end of the file if you want to export a default config
 // (eg: if you share your config for phenomic and other stuff)
-export const makeConfig = (config = {}) => {
+export default (config = {}) => {
   return {
     ...config.dev && {
       devtool: "#cheap-module-eval-source-map",
@@ -28,13 +28,18 @@ export const makeConfig = (config = {}) => {
           // phenomic requirement
           test: /\.md$/,
           loader: phenomicLoader,
-        },
-        {
-          test: /\.json$/,
-          loader: "json-loader",
-          exclude: [
-            path.resolve(__dirname, "content"),
-          ],
+          options: {
+            context: path.join(__dirname, config.source),
+            plugins: [
+              ...phenomicLoaderPresetDefault,
+              ...phenomicLoaderPresetMarkDown,
+              phenomicLoaderPluginsInitRawBodyPropertyFromContent,
+            ],
+            defaultHead: {
+              layout: "Post",
+              comments: true,
+            },
+          },
         },
         {
           test: /\.js$/,
@@ -49,19 +54,23 @@ export const makeConfig = (config = {}) => {
         },
         {
           test: /styles\.css$/,
-          loader: ExtractTextPlugin.extract(
-            "style-loader",
-            "css-loader" + (
-              "?modules"+
-              "&localIdentName=" +
-              (
-                process.env.NODE_ENV === "production"
-                ? "[hash:base64:5]"
-                : "[path][name]--[local]--[hash:base64:5]"
-              ).toString()
-            ) + "!" +
-            "postcss-loader",
-          ),
+          loader: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
+              {
+                loader: "css-loader",
+                options: {
+                  modules: true,
+                  localIdentName: (
+                    config.production
+                    ? "[hash:base64:5]"
+                    : "[path][name]--[local]--[hash:base64:5]"
+                  ),
+                },
+              },
+              "postcss-loader",
+            ],
+          }),
         },
 
         // for legacy css
@@ -70,13 +79,13 @@ export const makeConfig = (config = {}) => {
         // https://github.com/putaindecode/putaindecode.io/issues/509
         {
           test: /legacy-css(\/|\\).*\.css$/,
-          loader: ExtractTextPlugin.extract(
-            "style-loader",
-            [
+          loader: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
               "css-loader",
               "postcss-loader",
-            ].join("!"),
-          ),
+            ],
+          }),
         },
         {
           test: /content(\/|\\).*\.(html|json|txt|ico|jpe?g|png|gif)$/,
@@ -92,7 +101,16 @@ export const makeConfig = (config = {}) => {
           test: /\.svg$/,
           loaders : [
             "raw-loader",
-            "svgo-loader?useConfig=svgo",
+            {
+              loader: "svgo-loader",
+              options: {
+                plugins: [
+                  { removeTitle: true, removeDesc: true },
+                  { convertColors: { shorthex: false } },
+                  { convertPathData: false },
+                ],
+              },
+            },
           ],
         },
 
@@ -105,53 +123,6 @@ export const makeConfig = (config = {}) => {
         },
       ],
     },
-
-    phenomic: {
-      context: path.join(__dirname, config.source),
-      plugins: [
-        ...phenomicLoaderPresetDefault,
-        ...phenomicLoaderPresetMarkDown,
-        phenomicLoaderPluginsInitRawBodyPropertyFromContent,
-      ],
-      defaultHead: {
-        layout: "Post",
-        comments: true,
-      },
-    },
-
-    svgo: {
-      plugins: [
-        { removeTitle: true, removeDesc: true },
-        { convertColors: { shorthex: false } },
-        { convertPathData: false },
-      ],
-    },
-
-    postcss: (webpack) => [
-      require("postcss-import")({ addDependencyTo: webpack }),
-      require("postcss-cssnext")({
-        features: {
-          customProperties: {
-            variables: {
-              colorRed: "#c33",
-              colorLightGrey: "#ebeef0",
-            },
-          },
-          customMedia: {
-            extensions: {
-              maxS: "(max-width: 30em)",
-              minS: "(min-width: 30.01em)",
-              maxM: "(max-width: 50em)",
-              minM: "(min-width: 50.01em)",
-              maxL: "(max-width: 65em)",
-              minL: "(min-width: 65.01em)",
-              maxXL: "(max-width: 80em)",
-              minXL: "(min-width: 80.01em)",
-            },
-          },
-        },
-      }),
-    ],
 
     plugins: [
       new PhenomicLoaderFeedWebpackPlugin({
@@ -171,9 +142,11 @@ export const makeConfig = (config = {}) => {
           },
         },
       }),
-      new ExtractTextPlugin("[name].[hash].css", { disable: config.dev }),
+      new ExtractTextPlugin({
+        filename: "[name].[hash].css",
+        disable: config.dev,
+      }),
       ...config.production && [
-        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin(
           { compress: { warnings: false } }
         ),
@@ -192,14 +165,5 @@ export const makeConfig = (config = {}) => {
         /fs-promise/,
       ],
     },
-
-    // resolve: {
-    //   extensions: [ ".js", ".json", "" ],
-    //   root: [ path.join(__dirname, "node_modules") ],
-    // },
-    // resolveLoader: { root: [ path.join(__dirname, "node_modules") ] },
   }
 }
-
-// you might want to export a default config for another usage ?
-// export default makeConfig()
