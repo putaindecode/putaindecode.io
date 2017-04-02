@@ -3,9 +3,15 @@ date: "2017-02-16"
 title: Podcast épisode 3
 tags:
   - podcast
-  - putaindecode
+  - flow
+  - typescript
+  - oo
+  - fp
+  - monorepo
 authors:
   - bloodyowl
+  - MoOx
+  - zoontek
 ---
 
 ## *Orga-nisé*

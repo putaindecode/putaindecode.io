@@ -3,7 +3,12 @@ date: "2017-03-21"
 title: "Podcast 4: Ça scale pas quand on sait en faire (feat. iAmNotCyril)"
 tags:
   - podcast
-  - putaindecode
+  - integrateurs
+  - front-end
+  - editors
+  - sublime text
+  - atom
+  - vscode
 authors:
   - bloodyowl
   - MoOx
