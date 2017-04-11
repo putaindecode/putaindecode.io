@@ -3,9 +3,16 @@ date: "2016-12-12"
 title: On lance un podcast
 tags:
   - podcast
-  - putaindecode
+  - yarn
+  - webpack
+  - css
+  - sketch
+  - origami studio
 authors:
   - bloodyowl
+  - MoOx
+  - zoontek
+  - skinnyfoetusboy
 ---
 
 Ça fait quelques mois qu'on en parle au sein de l'équipe de contributeurs, et c'est un projet qui a mis du temps à se développer mais le voilà enfin.
@@ -47,5 +54,3 @@ Bisous.
 
 - Le [RSS](http://feeds.soundcloud.com/users/soundcloud:users:273901232/sounds.rss)
 - Sur iTunes : [Putain de Code](https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825?l=en&mt=2)
-
-

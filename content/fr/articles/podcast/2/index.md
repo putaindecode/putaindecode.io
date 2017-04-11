@@ -3,9 +3,13 @@ date: "2017-01-12"
 title: Podcast épisode 2
 tags:
   - podcast
-  - putaindecode
+  - front-end
+  - unit-testing
+  - macbook
 authors:
   - bloodyowl
+  - MoOx
+  - zoontek
 ---
 
 ## *Le lendemain des trois jours*
