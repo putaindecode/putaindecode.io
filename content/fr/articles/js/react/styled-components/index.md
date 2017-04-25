@@ -43,7 +43,7 @@ const styles = {
 // nos composants intègrent les styles dans le code
 <div className={ styles.box }>
   <div className={ styles.title }>{ title }</div>
-  <div className={ classnames(styles.description, styled.important) }>{ description }</div>
+  <div className={ classnames(styles.description, styles.important) }>{ description }</div>
 </div>
 ```
 
