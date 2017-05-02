@@ -9,6 +9,8 @@ authors:
   - MoOx
   - zoontek
   - skinnyfoetusboy
+header:
+  image: index.jpg
 ---
 
 Très certainement notre pire épisode, en tout cas le plus pénible à monter.
