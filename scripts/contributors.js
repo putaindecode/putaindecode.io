@@ -191,8 +191,8 @@ async function contributorsMap() {
           else {
             results.mapByEmail[email] = contributor.login
             if (!results.map[contributor.login]) {
-               results.map[contributor.login] = contributor
-             }
+              results.map[contributor.login] = contributor
+            }
             log("New contributor added in map", contributor.login)
           }
         }
