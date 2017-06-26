@@ -145,7 +145,9 @@ async function contributorsMap() {
   if (newUsers.length > 0) {
     log(`- ${ newUsers.length } new users`)
 
-    await Promise.all(newUsers.map(async (author) => {
+    const promises = []
+
+    for (let author of newUsers) {
       const email = author.email
       log("Request user information from GitHub for", email)
       const out = await exec(
@@ -153,7 +155,7 @@ async function contributorsMap() {
       )
       // log("- New contibutor update in progress", email)
       let contributor
-      try {
+       try {
         const contributorCommit = await asyncify(githubApi.repos.getCommit)({
           ...repoMetas,
           sha: out,
@@ -207,9 +209,8 @@ async function contributorsMap() {
           }, 1)
         }
       }
-    }))
-
-    log("✓ Parallel updates done")
+    }
+    log("✓ Sequential updates done")
   }
 
   // sort
