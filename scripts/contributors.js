@@ -161,18 +161,18 @@ async function contributorsMap() {
 
         if (contributorCommit && contributorCommit.author) {
           if (loginCache[contributorCommit.author.login]) {
-             contributor = loginCache[contributorCommit.author.login]
-             log(
+            contributor = loginCache[contributorCommit.author.login]
+            log(
               "Contributor already in cache",
               contributorCommit.author.login
             )
-           }
+          }
           else {
-             contributor =
+            contributor =
               await getContributorFromGitHub(contributorCommit.author.login)
-             loginCache[contributorCommit.author.login] = contributor
-             log("Contributor added to cache", contributorCommit.author.login)
-           }
+            loginCache[contributorCommit.author.login] = contributor
+            log("Contributor added to cache", contributorCommit.author.login)
+          }
         }
         else {
           log(
@@ -184,17 +184,17 @@ async function contributorsMap() {
 
         if (contributor) {
           if (!Object.keys(contributor).length) {
-             log(
+            log(
               color.red(`⚠︎ Some contributor data are emtpy for ${email}`)
             )
-           }
+          }
           else {
-             results.mapByEmail[email] = contributor.login
-             if (!results.map[contributor.login]) {
-              results.map[contributor.login] = contributor
-            }
-             log("New contributor added in map", contributor.login)
-           }
+            results.mapByEmail[email] = contributor.login
+            if (!results.map[contributor.login]) {
+               results.map[contributor.login] = contributor
+             }
+            log("New contributor added in map", contributor.login)
+          }
         }
       }
       catch (err) {
