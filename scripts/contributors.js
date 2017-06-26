@@ -155,47 +155,47 @@ async function contributorsMap() {
       let contributor
       try {
         const contributorCommit = await asyncify(githubApi.repos.getCommit)({
-           ...repoMetas,
-           sha: out,
-         })
+          ...repoMetas,
+          sha: out,
+        })
 
         if (contributorCommit && contributorCommit.author) {
-           if (loginCache[contributorCommit.author.login]) {
-            contributor = loginCache[contributorCommit.author.login]
-            log(
+          if (loginCache[contributorCommit.author.login]) {
+             contributor = loginCache[contributorCommit.author.login]
+             log(
               "Contributor already in cache",
               contributorCommit.author.login
             )
-          }
+           }
           else {
-            contributor =
+             contributor =
               await getContributorFromGitHub(contributorCommit.author.login)
-            loginCache[contributorCommit.author.login] = contributor
-            log("Contributor added to cache", contributorCommit.author.login)
-          }
-         }
+             loginCache[contributorCommit.author.login] = contributor
+             log("Contributor added to cache", contributorCommit.author.login)
+           }
+        }
         else {
-           log(
+          log(
             "✗ Unable to get contributor information for " +
             author.name + " <" + author.email +
             `> (no commit in ${ repoMetas.user }/${ repoMetas.repo })`
           )
-         }
+        }
 
         if (contributor) {
-           if (!Object.keys(contributor).length) {
-            log(
+          if (!Object.keys(contributor).length) {
+             log(
               color.red(`⚠︎ Some contributor data are emtpy for ${email}`)
             )
-          }
+           }
           else {
-            results.mapByEmail[email] = contributor.login
-            if (!results.map[contributor.login]) {
+             results.mapByEmail[email] = contributor.login
+             if (!results.map[contributor.login]) {
               results.map[contributor.login] = contributor
             }
-            log("New contributor added in map", contributor.login)
-          }
-         }
+             log("New contributor added in map", contributor.login)
+           }
+        }
       }
       catch (err) {
         if (err.toString().indexOf("\Not Found\"") > -1) {
