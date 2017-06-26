@@ -145,9 +145,7 @@ async function contributorsMap() {
   if (newUsers.length > 0) {
     log(`- ${ newUsers.length } new users`)
 
-    const promises = []
-
-    for (let author of newUsers) {
+    for (const author of newUsers) {
       const email = author.email
       log("Request user information from GitHub for", email)
       const out = await exec(
@@ -155,14 +153,14 @@ async function contributorsMap() {
       )
       // log("- New contibutor update in progress", email)
       let contributor
-       try {
+      try {
         const contributorCommit = await asyncify(githubApi.repos.getCommit)({
-          ...repoMetas,
-          sha: out,
-        })
+           ...repoMetas,
+           sha: out,
+         })
 
         if (contributorCommit && contributorCommit.author) {
-          if (loginCache[contributorCommit.author.login]) {
+           if (loginCache[contributorCommit.author.login]) {
             contributor = loginCache[contributorCommit.author.login]
             log(
               "Contributor already in cache",
@@ -175,17 +173,17 @@ async function contributorsMap() {
             loginCache[contributorCommit.author.login] = contributor
             log("Contributor added to cache", contributorCommit.author.login)
           }
-        }
+         }
         else {
-          log(
+           log(
             "✗ Unable to get contributor information for " +
             author.name + " <" + author.email +
             `> (no commit in ${ repoMetas.user }/${ repoMetas.repo })`
           )
-        }
+         }
 
         if (contributor) {
-          if (!Object.keys(contributor).length) {
+           if (!Object.keys(contributor).length) {
             log(
               color.red(`⚠︎ Some contributor data are emtpy for ${email}`)
             )
@@ -197,7 +195,7 @@ async function contributorsMap() {
             }
             log("New contributor added in map", contributor.login)
           }
-        }
+         }
       }
       catch (err) {
         if (err.toString().indexOf("\Not Found\"") > -1) {
