@@ -3,7 +3,7 @@ date: "2016-03-01"
 title: Hello Swift
 tags:
   - swift
-  - playgroud
+  - playground
   - helloworld
 authors:
   - leoderbois
@@ -82,7 +82,7 @@ son type.
 
 // Ce code ne compile pas :
 var implicitString = "Luigi"
-name = nil // Error : Nil cannot be assigned to type 'String'
+implicitString = nil // Error : Nil cannot be assigned to type 'String'
 
 // Mais celui-ci, si
 let explicitOptionalString:String? = "Mario"
@@ -136,11 +136,11 @@ for i in (0...10) { // pour i de 0 à 10
 	print(i)
 }
 
-for i in (1...10).reverse() { // pour i de 1 à 10 en moonwalk
+for i in (1...10).reversed() { // pour i de 1 à 10 en moonwalk
     print(i)
 }
 
-for i in 0.stride(to: 10, by: 2) { // pour i de 0 à 10 par saut de 2 (10 non compris)
+for i in stride(from: 0, to: 10, by: 2) { // pour i de 0 à 10 par saut de 2 (10 non compris)
     print(i)
 }
 
