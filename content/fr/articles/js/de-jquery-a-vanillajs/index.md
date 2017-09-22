@@ -201,7 +201,7 @@ $.getJSON('//openexchangerates.org/latest.json?callback=?', function (data) {
 })
 
 // Vanilla
-function success(data) {
+function formatCurrency(data) {
   // code
 }
 var scr = document.createElement('script')

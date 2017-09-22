@@ -205,7 +205,6 @@ une itération simplifiée sur les _objets itérables_ tels que :
 * [Array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)
 * [String](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)
 * [Maps & WeakMaps](http://putaindecode.io/fr/articles/js/es2015/maps-weakmaps/)
-* [Sets & WeakSets](http://putaindecode.io/fr/articles/js/es2015/sets-weaksets/)
 * [Generators](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/function*)
 * [NodeList](https://developer.mozilla.org/fr/docs/Web/API/NodeList)
 * [arguments](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/arguments)

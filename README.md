@@ -1,9 +1,9 @@
 # Putain de code !
 
-[![Travis Build Status](https://img.shields.io/travis/putaindecode/putaindecode.io.svg?label=unix build)](https://travis-ci.org/putaindecode/putaindecode.io)
-[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/putaindecode-io.svg?label=windows build)](https://ci.appveyor.com/project/MoOx/putaindecode-io)
+[![Travis Build Status](https://img.shields.io/travis/putaindecode/putaindecode.io.svg?label=unix%20build)](https://travis-ci.org/putaindecode/putaindecode.io)
+[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/putaindecode-io.svg?label=windows%20build)](https://ci.appveyor.com/project/MoOx/putaindecode-io)
 
-<img align="right" alt="" src="https://github.com/putaindecode/putaindecode.io/blob/master/content/images/p!-logo--no-bubble-512--trim.png" width="128">
+<img align="right" alt="" src="https://github.com/putaindecode/putaindecode.io/blob//master/src/images/putaindecode-logo--no-bubble-512--trim.png" width="128">
 
 Code source du site [_Putain de code !_](http://putaindecode.io/).
 Contient tout le nécessaire pour faire fonctionner le site.
@@ -18,15 +18,15 @@ $ npm install
 $ npm start
 ```
 
-**Note: Si vous rencontrez une erreur concernant le token GitHub,
+**Note : Si vous rencontrez une erreur concernant le token GitHub,
 vous trouverez réponse dans la section de démarrage plus bas.**
 
 ## Contributions
 
 Les articles peuvent être postés ici sous forme de PR une fois qu'on est OK dans
 [une issue du repo](https://github.com/putaindecode/putaindecode.io/issues).
-Si vous souhaitez voir un post écrit, ou même en écrire un, faites un tour là
-bas ;)
+Si vous souhaitez voir un post écrit, ou même en écrire un, faites un tour
+là-bas ;)
 
 Pour contribuer au site, n'hésitez pas, en plus de lire la partie technique
 ci-dessous, à lire le fichier spécifique [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -52,7 +52,7 @@ $ npm install
 ## Mettre à jour les sources
 
 Lorsque vous n'avez pas travaillé sur le site depuis un petit moment, on vous
-conseille d'exécuter les commandes suivantes :
+conseille d'exécuter les commandes suivantes :
 
 ```console
 $ git pull
@@ -80,10 +80,10 @@ $ npm start
 Oui oui, c'est tout, vous devriez avoir le site web qui s'ouvre tout seul dans
 votre navigateur.
 
-**Note:
+**Note :
 vous aurez besoin d'un token GitHub disponible en variable d'environnement
-(dans `GITHUB_TOKEN` ou `GH_TOKEN`) afin de pouvoir constuire l'index des
-contribution pour avoir accès à toutes les fonctionnalités du site.
+(dans `GITHUB_TOKEN` ou `GH_TOKEN`) afin de pouvoir construire l'index des
+contributions pour avoir accès à toutes les fonctionnalités du site.
 Autrement, le site fonctionnera en mode dégradé.**
 
 
@@ -101,7 +101,7 @@ $ npm run deploy
 **Cela dit, tous les commits dans la branche `master` provoqueront une mise en
 production automatique via [Travis-CI](https://travis-ci.org/).**
 
-_Note: pour commiter sans provoquer un `deploy`, il suffit d'ajouter `[ci skip]`
+_Note : pour commiter sans provoquer un `deploy`, il suffit d'ajouter `[ci skip]`
 dans votre message de commit._
 
 ---

@@ -1,0 +1,21 @@
+{
+  "twitter": "skinnyfoetusboy",
+  "fr": {
+    "bio": {
+      "short": "Développeur front-end chez Altima°",
+      "long": [
+        "Développeur front-end chez Altima°. ",
+        "Faux hipster aux obédiences incertaines."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Front-end developer @ Altima°",
+      "long": [
+        "Front-end developer @ Altima°. ",
+        "Falsely hipsterish with no known allegiances."
+      ]
+    }
+  }
+}

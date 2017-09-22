@@ -3,6 +3,7 @@ import path from "path"
 
 import color from "chalk"
 import { denodeify as asyncify } from "promise"
+import pLimit from "p-limit"
 
 import GithubApi from "github"
 
@@ -144,7 +145,7 @@ async function contributorsMap() {
   if (newUsers.length > 0) {
     log(`- ${ newUsers.length } new users`)
 
-    await Promise.all(newUsers.map(async (author) => {
+    for (const author of newUsers) {
       const email = author.email
       log("Request user information from GitHub for", email)
       const out = await exec(
@@ -206,9 +207,8 @@ async function contributorsMap() {
           }, 1)
         }
       }
-    }))
-
-    log("✓ Parallel updates done")
+    }
+    log("✓ Sequential updates done")
   }
 
   // sort
@@ -281,8 +281,9 @@ async function filesContributions() {
   // files contributions
   results.files = {}
   const files = await glob("content/**/*")
+  const limit = pLimit(5)
 
-  await Promise.all(files.map(async (file) => {
+  const pmises = files.map(async (file) => limit(async () => {
     const stdout = await exec(
       "git log --pretty=short --follow " + file +
         " | git shortlog --summary --numbered --no-merges --email"
@@ -300,6 +301,8 @@ async function filesContributions() {
         })
     }
   }))
+
+  await Promise.all(pmises)
 }
 
 (async function() {

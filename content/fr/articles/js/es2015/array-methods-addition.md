@@ -17,7 +17,7 @@ Voici les nouveautés que l'on va trouver dans `Array`.
 Parmi les nouvelles méthodes ajoutées à Array, `Array.from()` est peut-être celle que vous allez utiliser le plus souvent. Elle va nous permettre de créer un tableau à partir d'un itérable ou d'un objet qui ressemble à un tableau comme une NodeList, ou encore `arguments`.
 
 ```javascript
-const nodes = Array.from(document.querySeletorAll('div'))
+const nodes = Array.from(document.querySelectorAll('div'))
 nodes.forEach(node => console.log(node))
 ```
 
