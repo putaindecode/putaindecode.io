@@ -2,19 +2,19 @@
   "twitter": "zoontek",
   "fr": {
     "bio": {
-      "short": "Développeur web & mobile @ Colisweb.",
+      "short": "Développeur mobile & web @ United Drivers.",
       "long": [
-        "Développeur web & mobile @ Colisweb.",
-        "JS, Scala, Ruby, whatever works."
+        "Développeur web & mobile @ United Drivers.",
+        "Juste un mec curieux. Je touche un peu à React, j'aime la programmation fonctionnelle."
       ]
     }
   },
   "en": {
     "bio": {
-      "short": "Web & mobile developer @ Colisweb.",
+      "short": "Mobile & web developer @ United Drivers.",
       "long": [
-        "Web & mobile developer @ Colisweb.",
-        "JS, Scala, Ruby, whatever works."
+        "Mobile & web developer @ United Drivers.",
+        "Just a curious man. I play with React, I like functional programming."
       ]
     }
   }
