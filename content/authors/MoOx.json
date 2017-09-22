@@ -2,19 +2,19 @@
   "twitter": "MoOx",
   "fr": {
     "bio": {
-      "short": "Développeur web front-end 100% bio. Disponible en Freelance.",
+      "short": "Développeur UI (web & mobile) avec React & co. Drogué d'Open source. Freelance.",
       "long": [
-        "Open source addict vivant dans la campagne près de Toulouse, Maxime est développeur web front-end le jour, et justicier du code la nuit.  ",
-        "Il aime faire des calins à HTML, CSS et JavaScript en tant que freelance."
+        "Développeur UI (web & mobile) avec React & co car il n'aime plus HTML et CSS.",
+        "Drogué d'Open Source, bricoleur et freelance."
       ]
     }
   },
   "en": {
     "bio": {
-      "short": "100% Organic Front-end Web Developer. Available for Freelance.",
+      "short": "UI developer (web & mobile) with React & friends. Open Source addict. Freelancer.",
       "long": [
-        "Open source addict living in the country near Toulouse, France, Maxime is a front-end web developer by day & a code vigilante by night.  ",
-        "He likes to play with HTML, CSS & JavaScript, as a freelancer."
+        "UI developer (web & mobile) with React & friends because he doesn't like HTML & CSS anymore.",
+        "Open Source addict, handyman and freelancer."
       ]
     }
   }

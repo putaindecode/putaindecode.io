@@ -94,10 +94,11 @@ const Author = ({ afterName, author, bio, className, isPost }, context) => {
           <p className="putainde-Author-bio">
             {
               (
-                authorData[locale] && authorData[locale].bio &&
+                authorData[locale] &&
+                authorData[locale].bio &&
                 authorData[locale].bio.long
               ) &&
-              authorData[locale].bio.long
+              authorData[locale].bio.long.join(" ")
               /* @todo add new lines between lines */
             }
           </p>

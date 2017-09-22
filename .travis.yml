@@ -10,9 +10,9 @@ git:
 
 env:
   global:
-    # GH_TOKEN
-    - secure: d1VZ29IbfOn0Re774eOWFpCcSLMd3N49ehmMOF8NiAQBV30NddTr5GVua19sMfCBVryHVu5MaaD+xf8Qr1fANqZveFhjIdTsTRLt7BkfxpmrWwHKn6g1szQq6KMCUECtHToe9qrCwA/UC0p4+rNofd3PnlF51dTPvP8ZG1Yy7U0=
-    - GIT_DEPLOY_REPO=https://$GH_TOKEN@github.com/putaindecode/putaindecode.io.git
+    # GITHUB_TOKEN
+    - secure: RtRXfa7kyNqgH5APYsWegU4OKmZ5VmDpKyTCXDHumoeRYxKLy5Durewwq6/eFt4itDycPFatOJ6aeBM8g8g7Y/uKYN85d0NVp7vZI/1X+haYFtEYYiEYOY8m0FwqMPYoCZTFMNEv5r6W0PCjQNiiB2Hz7CFsb38i4VrqFFgrYHQ=
+    - GIT_DEPLOY_REPO=https://$GITHUB_TOKEN@github.com/putaindecode/putaindecode.io.git
 
 deploy:
   skip_cleanup: true
