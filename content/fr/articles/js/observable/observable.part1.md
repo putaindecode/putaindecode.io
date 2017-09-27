@@ -1,4 +1,4 @@
-# Synchrone, Asynchrone : tous les types mènent aux Observable
+# Synchrone, Asynchrone : tous les types donnes mènent aux Observable
 
 Bienvenue dans la 1ère partie de cette série de 3 articles qui vont vous plonger dans le monde merveilleux des oberservable.
 
