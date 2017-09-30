@@ -14,32 +14,32 @@ header:
 
 Les bugs c'est chiant, surtout quand on sait qu'on aurait pu les éviter. Avec JavaScript, c'est plus facile d'en avoir que de les éviter.
 
-JavaScript, on ne peut pas y échapper parce que c'est partout, parce que c'est le langage de programmation le plus utilisé sur terre, et parce que c'est le seul truc qui (pour l'instant) tourne nativement dans le navigateur. Et puis c'est pas si mal, c'est facile de l'apprendre en bidouillant un peu, c'est très permissif et pas trop frustrant pour débuter.
+JavaScript, on ne peut pas y échapper parce que c'est partout, parce que c'est le langage de programmation le plus utilisé sur Terre, et parce que c'est le seul truc qui (pour l'instant) tourne nativement dans le navigateur. Et puis c'est pas si mal, c'est facile de l'apprendre en bidouillant un peu, c'est très permissif et pas trop frustrant pour débuter.
 
-Le problème c'est que facile d'en faire, mais c'est très dur d'en faire **bien** (moins que CSS, mais quand même). On s'est tous déjà retrouvé avec `undefined is not a function`, `null is not an object` ou un bon gros `[object Object]` qui traine dans la console.
+Le problème c'est que c'est facile d'en faire, mais c'est très dur d'en faire **bien** (moins que CSS, mais quand même). On s'est tous déjà retrouvé avec `undefined is not a function`, `null is not an object` ou un bon gros `[object Object]` qui traîne dans la console.
 
-Pourquoi est-ce que c'est comme ça ?
+## Pourquoi est-ce que c'est comme ça ?
 
-JavaScript est langage dynamiquement et faiblement typé, ce qui veut dire :
+JavaScript est un langage dynamiquement et faiblement typé, ce qui veut dire :
 - qu'une fonction ne sait pas ce qu'elle prend ou retourne comme type
 d'arguments, c'est à vous de gérer.
 - que le programme n'en a aucune idée non plus tant qu'il n'execute pas
 la portion de code
 
-Ça fait de JavaScript un langage difficile à sécuriser.
+Tout ça fait qu'il est très difficile de faire confiance à du code JavaScript.
 
 <figure>
 <img src="./js.png" alt="js" />
 <caption>Source: MIT</caption>
 </figure>
 
-Il existe Flow et TypeScript (dont on a parlé dans un [précédent article](http://putaindecode.io/fr/articles/js/flow/)) sont deux projets qui permettent d'apporter du typage statique pour sécuriser son code. Ils ajoutent une couche de protection sur JavaScript, mais devront toujours se battre contre la permissivité de JavaScript.
+Il existe Flow et TypeScript (dont on a parlé dans un [précédent article](http://putaindecode.io/fr/articles/js/flow/)), deux projets qui permettent d'apporter du typage statique pour sécuriser son code. Ils contraignent votre usage de JavaScript, mais devront toujours se battre contre sa permissivité.
 
-Ça revient au final à coller des rustines sur vos pneus avant d'aller rouler sur des clous, ça va vous protéger un peu, mais ça reste quand même pas bien malin d'aller rouler sur des clous.
+Ça revient au final à coller des rustines sur vos pneus avant d'aller rouler sur des clous, ça va vous protéger un peu, mais ça reste de base pas bien malin d'aller rouler sur des clous.
 
 Il existe des langages qui ont la judicieuse idée de balayer la route pour virer les clous avant d'y aller: les langages typés fortement et statiquement (10 points pour Gryffondor pour cette métaphore filée).
 
-OCaml est un de ces langages. Il est de la famille ML et a été crée en France dans les années 90. Il est à peu près aussi âgé que JavaScript mais est beaucoup plus sage. Il est certes fortement et statiquement typé, mais il infère la plupart des types du programme (ce qui veut dire que vous n'avez pas à renseigner les types partout, il va l'extrapoler dès qu'il le peut). En bonus, il possède de bonnes data-structures.
+OCaml est un de ces langages. Il est de la famille ML et a été créé en France dans les années 90. Il est à peu près aussi âgé que JavaScript mais est beaucoup plus sage. Il est certes fortement et statiquement typé, mais il infère la plupart des types du programme (ce qui veut dire que vous n'avez pas à renseigner les types partout, il va l'extrapoler dès qu'il le peut). En bonus, il possède de bonnes data-structures.
 
 Seulement voilà, OCaml, comme beaucoup de langages fonctionnels n'a pas vraiment mis l'accent sur l'accessibilité pour les débutants, et a une syntaxe qu'on peut pour le moins qualifier de pas très friendly: elle n'a rien de bien mal, mais mettez quelqu'un qui vient de JS/PHP/Java devant, ça va pas lui causer des masses:
 
@@ -67,7 +67,7 @@ C'est en gros:
 - avec un tooling le rendant plus simple à utiliser
 - qui peut compiler vers JavaScript et de multiples plateformes
 
-Avec son type system, OCaml propose langage *safe-by-design*, chose que même avec une palanquée d'outils on ne pas atteindre avec JavaScript.
+Avec son type system, OCaml propose un langage *safe-by-design*, chose que même avec une palanquée d'outils on ne pas atteindre avec JavaScript.
 
 Le langage propose par défaut une approche fonctionnelle et immutable, mais permet cependant de choisir d'utiliser des structures mutables et de l'orienté objet au besoin.
 
@@ -82,7 +82,7 @@ OCaml comporte plus de types de primitifs que JavaScript:
 /* un caractère est d'un type différent de string */
 "foo" /* string */
 'a' /* char */
-/* on trouve list ET array, chacune utilise pour différents cas */
+/* on trouve list ET array, chacun peut être utilisé pour différents cas */
 [1, 2, 3] /* list */
 [| 1, 2, 3 |] /* array */
 /* pas de null, mais des valeurs de type `option` qui contiennent
@@ -91,7 +91,7 @@ Some 1 /* option int */
 None /* option int */
 ```
 
-Puisqu'il est fortement typé, il est impossible de mixer les types comme en JavaScript, vous devrez les convertir:
+Puisqu'il est fortement typé, il est impossible de mixer les types comme en JavaScript, vous devrez obligatoirement les convertir:
 
 ```reason
 1 + 1.0;
@@ -101,7 +101,7 @@ Puisqu'il est fortement typé, il est impossible de mixer les types comme en Jav
 /* - : int = 2 */
 ```
 
-La plupart des opérations de transformations de type primitifs vers un autre sont accessibles dans le module `Pervasives` qui contient plein de petits utilitaires bien pratique. Toutes les fonctions de ce module sont accessibles directement dans n'importe quel de vos fichier.
+La plupart des opérations de transformations de type primitifs vers un autre sont accessibles dans le module `Pervasives` qui contient plein de petits utilitaires bien pratiques. Toutes les fonctions de ce module sont accessibles directement dans n'importe quel de vos fichiers.
 
 Les fonctions d'OCaml sont beaucoup plus puissantes qu'en JavaScript:
 
@@ -113,13 +113,13 @@ add 1 2;
 add 1 2.0;
 /* This expression has type float but an expression was expected of type int */
 
-/* Les fonctions sont "autocurried", ce qui signifie qu'une fonction
+/* Les fonctions sont "auto-curried", ce qui signifie qu'une fonction
    qui n'a pas reçu tous ses paramètres retourne une nouvelle fonction
   qui va recevoir les paramètres manquants */
 let addOne = add 1;
 /* int => int */
 
-/* Les fonctions peuvent avoir des paramètres nommés, optionnels et par défaut */
+/* Les fonctions peuvent avoir des paramètres nommés, optionnels et avec des valeurs par défaut */
 let sayHi ::name ::punct="!" () => "Hello " ^ name ^ punct;
 /* name::string => string */
 sayHi name::"you" ();
@@ -206,7 +206,7 @@ type message =
 
 let stringMessage = String "Hello"; /* On crée la valeur avec son constructeur */
 let imageMessage = Image {url: "https://fakeimg.pl/300x300", width: 300, height: 300};
-let emojiMessage = Emoji {js|🐫|js}; /* Pour unicode, on définit les strings entre avec {js|votre string|js} */
+let emojiMessage = Emoji {js|🐫|js}; /* Pour unicode, on définit les strings avec {js|votre string|js} */
 ```
 
 Ici, notre type `message` est bien délimité, et ses valeurs ne peuvent être que celles que l'on a défini.
@@ -214,7 +214,7 @@ Ici, notre type `message` est bien délimité, et ses valeurs ne peuvent être q
 Pour utiliser les valeurs d'un variant, on peut les extraire à l'aide de `switch`, qui va *pattern-matcher* pour nous permettre d'identifier et d'extraire les valeurs.
 
 ```reason
-/* Petit bonus, l'exemple utilise ReasonReact, mais on détaillera ça dans mon prochain article */
+/* Petit bonus, l'exemple utilise ReasonReact, mais on détaillera ça dans un prochain article */
 let component = ReasonReact.statelessComponent "ChatMessage";
 
 let make ::message _children => {
