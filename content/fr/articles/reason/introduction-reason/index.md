@@ -67,7 +67,7 @@ C'est en gros:
 - avec un tooling le rendant plus simple à utiliser
 - qui peut compiler vers JavaScript et de multiples plateformes
 
-Avec son type system, OCaml propose un langage *safe-by-design*, chose que même avec une palanquée d'outils, on ne pas atteindre avec JavaScript.
+Avec son type system, OCaml propose un langage *safe-by-design*, chose que même avec une palanquée d'outils, on ne peut pas atteindre avec JavaScript.
 
 Le langage propose par défaut une approche fonctionnelle et immutable, mais permet cependant de choisir d'utiliser des structures mutables et de l'orienté objet au besoin.
 
