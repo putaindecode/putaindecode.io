@@ -11,9 +11,9 @@ header:
   linearGradient: #DD4B39, #DD4B39
 ---
 
-Dans un [précédent article](fr/articles/reason/introduction-reason/), on vous présentait une nouvelle syntaxe pour OCaml: [ReasonML](https://reasonml.github.io), elle rend le langage plus accessible en le rapprochant de JavaScript.
+Dans un [précédent article](fr/articles/reason/introduction-reason/), on vous présentait une nouvelle syntaxe pour OCaml: [ReasonML](https://reasonml.github.io), elle rend le langage plus accessible en le rapprochant de JavaScript moderne.
 
-À l'aide du projet [BuckleScript](https://bucklescript.github.io/bucklescript/Manual.html) qui support Reason nativement, on peut compiler notre code Reason vers JavaScript très facilement. Le créateur de BuckleScript utilisait à l'origine un autre projet appelé [js_of_ocaml](http://ocsigen.org/js_of_ocaml/). Trouvant qu'il serait possible d'optimiser et de rendre plus lisible le code JavaScript en sortie si le compiler commençait son travail à une étape plus haut niveau (une représentation du programme contenant des informations supplémentaires, alors que js_of_ocaml utilise du bytecode), il propose ce changement à la team js_of_ocaml qui refuse, et décide donc de se lancer dans le projet qui deviendra BuckleScript.
+À l'aide du projet [BuckleScript](https://bucklescript.github.io/bucklescript/Manual.html) qui supporte Reason nativement, on peut compiler notre code Reason vers JavaScript très facilement. Le créateur de BuckleScript utilisait à l'origine un autre projet appelé [js_of_ocaml](http://ocsigen.org/js_of_ocaml/). Trouvant qu'il serait possible d'optimiser et de rendre plus lisible le code JavaScript en sortie si le compiler commençait son travail à une étape plus haut niveau (une représentation du programme contenant des informations supplémentaires, alors que js_of_ocaml utilise du bytecode), il propose ce changement à la team js_of_ocaml qui refuse, et décide donc de se lancer dans le projet qui deviendra BuckleScript.
 
 Pour démarrer un projet avec BuckleScript et Reason, on ouvre son terminal, et c'est parti:
 
@@ -23,7 +23,7 @@ On installe BuckleScript:
 $ npm install -g bs-platform
 ```
 
-On intialise le projet:
+On initialise le projet:
 
 ```console
 $ bsb -init my-app -theme basic-reason
@@ -120,7 +120,7 @@ On peut directement utiliser des objets JavaScript en Reason. Pour accéder à u
 myJsObject##property
 ```
 
-C'est bien sympa pour dépanner, mais au sein de notre code Reason, on préférera bien souvent utiliser des records: ils ont une représentation plus légère et sont par défaut immutables. Pour effectuer une conversion, on procède de la manière suivante:
+Ça dépanne, mais au sein de notre code Reason, on préférera bien souvent utiliser des records: ils ont une représentation plus légère et sont par défaut immutables. Pour effectuer une conversion, on procède de la manière suivante:
 
 ```reason
 type jsUser =
@@ -264,7 +264,7 @@ exports.myArray = myArray;
 
 ## La technique bourrin
 
-Pour les cas extrèmes ou vous voulez juste balancer une fonction JS, vous pouvez:
+Pour les cas extrêmes ou vous voulez juste balancer une fonction JS, vous pouvez:
 
 ```reason
 /* %bs.raw pour une expression, %%bs.raw pour un bloc de code arbitraire */
@@ -299,6 +299,6 @@ exports.log = log;
 
 ## Conclusion
 
-OCaml peut s'exprimer en grande majorité avec du JavaScript très simple. Il est assez simple de créer des ponts entre les deux langages à l'aide des FFI. L'énorme avantage de cette feature, c'est que l'on peut commencer à utiliser Reason incrémentalement sur son projet sans avoir à **tout** réécrire d'un coup.
+OCaml peut en grande majorité être compilé en JavaScript très simple, parce qu'il partage beaucoup de concepts avec ce dernier. Il est assez simple de créer des ponts entre les deux langages à l'aide des FFI. L'énorme avantage de cette feature, c'est que l'on peut commencer à utiliser Reason incrémentalement sur son projet sans avoir à tout réécrire d'un coup.
 
 Bisous bisous.
