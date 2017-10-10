@@ -11,7 +11,7 @@ header:
   linearGradient: #DD4B39, #DD4B39
 ---
 
-Dans un [précédent article](fr/articles/reason/introduction-reason/), on vous présentait une nouvelle syntaxe pour OCaml: [ReasonML](https://reasonml.github.io), elle rend le langage plus accessible en le rapprochant de JavaScript moderne.
+Dans un [précédent article](/fr/articles/reason/introduction-reason/), on vous présentait une nouvelle syntaxe pour OCaml: [ReasonML](https://reasonml.github.io), elle rend le langage plus accessible en le rapprochant de JavaScript moderne.
 
 À l'aide du projet [BuckleScript](https://bucklescript.github.io/bucklescript/Manual.html) qui supporte Reason nativement, on peut compiler notre code Reason vers JavaScript très facilement. Le créateur de BuckleScript utilisait à l'origine un autre projet appelé [js_of_ocaml](http://ocsigen.org/js_of_ocaml/). Trouvant qu'il serait possible d'optimiser et de rendre plus lisible le code JavaScript en sortie si le compiler commençait son travail à une étape plus haut niveau (une représentation du programme contenant des informations supplémentaires, alors que js_of_ocaml utilise du bytecode), il propose ce changement à la team js_of_ocaml qui refuse, et décide donc de se lancer dans le projet qui deviendra BuckleScript.
 
