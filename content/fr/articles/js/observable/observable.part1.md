@@ -1,134 +1,117 @@
 # Synchrone, Asynchrone : tous les types de données mènent aux Observable
 
-Bienvenue dans la 1ère partie de cette série de 3 articles qui vont vous plonger dans le monde merveilleux des oberservable.
+Bienvenue dans la 1ère partie de la série d'articles qui va vous plonger dans le monde merveilleux des oberservables.
 
-En Javascript nous devons faire face à deux types de valeurs  :
+## Synchrone - Asynchrone
 
-- Synchrone
-- Asynchrone
+En JavaScript, nous pouvons executer du code synchrone (bloquant) et du code asynchrone (non bloquant).
 
-Et pour traiter ces données nous avons la possibilité de faire appel à une callback (fonction de rappel).
-
-Prenons cette fonction "AfficheValue”, qui servira de fonction de rappel pour afficher la valeur qu’elle reçoit en paramètre dans la console :
+Pour traiter ces données nous avons la possibilité de faire appel à une callback (fonction de rappel).
+Prenons la fonction `logValue`, qui servira de callback pour afficher la valeur qu’elle reçoit en paramètre dans la console :
 
 ```Javascript
-// Fonction de rappel
-
-function afficheValue(value) {
+function logValue(value) {
    console.log(value)
 }
 ```
 
-Nous allons appliquer cette fonction à différentes valeurs dites **synchrones** :
-
-```Javascript
-const val  = 12
-
-afficheValue(val) // Affiche 12
-```
+Nous allons appliquer `logValue()` à des valeurs dites **synchrones** :
 
 ```Javascript
 const arrayOfValues = [1, 2, 3, 4, 5]
 
 arrayOfValues.forEach(function (elem) {
-	afficheValue(elem) // Affiche 1 2 3 4 5
+	logValue(elem) // Affiche 1 2 3 4 5
 })
 ```
 
-Appliquons maintenant notre fonction de rappel à des valeurs dites **asynchrones** :
+Appliquons maintenant `logValue()` à des valeurs dites **asynchrones** :
 
 ```Javascript
-let i = 0
-
-setInterval(function() {
-	afficheValue(i++) /// Incremente i toutes les 3 secondes
-}, 3000)
+setTimeout(logValue, 3000, "HELLO WORLD !") // Affiche 'HELLO WORLD !' au bout de 3 secondes
 ```
 * [Resultat](https://jsbin.com/sutilo/edit?js,console)
-
-> Notre fonction afficheValue est appelée toutes les 3000 millisecondes avec une nouvelle valeur pour la variable i. Il s’agit d’une fonction asynchrone puisque nous subissons la contrainte de setInterval. Nous sommes dans l’obligation d’attendre l’écoulement des 3 secondes avant de pouvoir afficher la valeur de i.
 
 ```Javascript
 const result =
     fetch('https://api.github.com/users/wyeo')
         .then(res => res.json())
 
-result.then(afficheValue) // Affiche le résultat de notre requête au format JSON
+result.then(logValue) // Affiche le résultat de notre requête au format JSON
 ```
 * [Resultat](https://jsbin.com/sagubeh/edit?js,console)
 
-> Nous avons fetcher l’API de GitHub avec API fetch qui nous renvoie une promesse à laquelle nous appliquons notre fameuse fonction de rappel pour afficher les résultats de notre requête. TOUT VA BIEN !
+> Nous avons interrogé l’API de GitHub avec API fetch qui nous renvoie une promesse à laquelle nous appliquons notre fameuse callback pour afficher les résultats de notre requête : TOUT VA BIEN !
 
-Maintenant imaginons que ma requête échoue pour X raisons : C’est LA MERDE !
-Il s’agit d’un cas d’erreur et nous avons aussi la possibilité de gérer les cas d’erreurs avec la promesse qui nous a été renvoyé par fetch.
-Nous allons donc implémenter une seconde fonction de rappel qui aura pour rôle de gérer les cas d’erreurs.
+Maintenant imaginons que ma requête échoue pour X raison.
+Il s’agit d’un "cas d’erreur". Nous avons aussi la possibilité de gérer les cas d’erreurs avec la `Promise` qui nous a été renvoyée par `fetch`.
+Nous allons donc implémenter une seconde `callback` qui aura pour rôle de gérer les cas d’erreurs.
 
 ```Javascript
-// Nouvelles fonctions de rappel
-
-function afficheValue(value) { console.log(value) }
-function afficheErreur(err) { console.log(err) }
-
+function logValue(value) { console.log(value) }
+function logError(err) { console.log(err) }
 ```
 
 ```Javascript
-
 const result =
     fetch('https://api.gitxyzhub.com/users/wyeo').then(res => res.json())
 
-result.then(afficheValue).catch(afficheErreur) // Nous interceptons les erreurs
+result.then(logValue).catch(logError) // Nous interceptons les erreurs
 ```
 * [Resultat](https://jsbin.com/tixerix/edit?js,console)
 
-> Les deux cas envisageables sont maintenant gérer par nos fonctions de rappel : OUF !
+> Les deux cas envisageables sont maintenant gérés par nos fonctions de rappel : OUF !
 
-Voyons maintenant un dernier exemple de valeur asynchrone qui devrait surtout parler aux fans de NodeJS :
+Voyons maintenant un dernier exemple de valeur asynchrone :
 
 Nous allons lire le contenu d’un fichier de manière asynchrone. Et parce qu’il s’agit d’une opération asynchrone nous aurons aussi besoin d’être informer lorsque le fichier aura été lu entièrement.
 
-En NodeJS, voici comment se présente la fonction qui nous permet de lire un fichier : `fs.readFile(path, options, callback)`
+En Node.js, voici comment se présente la fonction qui va nous permettre de lire notre fichier : `fs.readFile(path, options, callback)`
 
-*elle nous renvoie soit une erreur, soit le contenu du fichier: (err, data)*
+*`readFile` va soit parvenir à lire le fichier, soit échouer. Pour nous le signaler,
+ elle appellera `callback` avec deux paramètres `error` et `data`, si `error`
+ est `null` cela signifie que tout s'est bien passé et qu'on peut lire `data`,
+ dans le cas contraire, on devra gérer `error`*
 
-* Implémentons nos trois fonctions de rappel :
+* Implémentons nos trois `callbacks` :
 
 ``` Javascript
-// callback
-
-function afficheData(data) {
-    console.log(value)
+function logData(data) {
+    console.log(data)
 }
 
-function afficheErreur(data) {
-    console.log(erreur)
+function logErr(err) {
+    console.log(err)
 }
 
-function afficheLectureComplete() {
-    console.log(‘Lecture complète du fichier’)
+function onComplete() {
+    console.log('Done.')
 }
 ```
 
-* Appliquons nos fonctions de rappel à fs.readFile:
+* Appliquons nos fonctions de rappel à `fs.readFile()`:
 
->On imagine un fichier nommé alphabet.txt, qui comporte toutes les lettres de l’alphabet
+>On imagine un fichier nommé `alphabet.txt`, qui comporte toutes les lettres de l’alphabet
 
 ``` Javascript
 fs.readFile('./alphabet.txt', {encoding: 'utf-8'}, (err, data) => {
     if (err) {
-        afficheErreur(err)
+        logErr(err)
     } else {
-        afficheData(data)
+        logData(data)
     }
-    afficheLectureComplete()
+    onComplete()
 })
 ```
 
-Tout fonctionne. Mais il y a un problème.. écrire des lignes et des lignes de fonctions de rappel tout le temps devient très vite laissant et épuisant pour les pauvres développeur paresseux que nous sommes. Par conséquent pourquoi ne pas imaginer d’implémenter une petite API / Object / Bloc de fonction qui pourrait s’adapter à tous formes de donner synchrones/asynchrones ( fournies par arrayOfValues, fetch, fs.readFile etc… ).
+Ça fonctionne ! Mais bon écrire des lignes et des lignes de callback devient très vite laissant et épuisant pour les pauvres développeurs paresseux que nous sommes. Par conséquent pourquoi ne pas implémenter une petite API / Object / Bloc de fonction qui pourrait s’adapter à toutes formes de donner synchrones ou asynchrones ( fournies par `arrayOfValues`, `fetch`, `fs.readFile` etc… ).
+
+> Ce objet est appelé un `Observer` dans le monde des Observables
+
+## Observer
 
 ```Javascript
-
-// API / Object / Ensemble de fonctions de rappel qui nous permet de traiter toutes les formes de données
-
+// API / Object / Ensemble de callback (bref un `Oberserver` quoi !) qui nous permet de traiter toutes les formes de données
 const observer = {
    next: function(val) { console.log(val) },
    error: function(err) { console.log(err) },
@@ -136,36 +119,33 @@ const observer = {
 }
 ```
 
-Maintenant nous pouvons juste envoyer notre objet observer en tant que “callback” :
+Maintenant nous pouvons juste envoyer notre objet `observer` en tant que “callback” :
 
 `function subscribe(observer) {
   [1,2,3,4,5].forEach(observer.next)
 }`
 
-Le nommage de cette fonction n'est pas du au hasard. "Subscribe" par soucis de comprehension. Finalement, nous pouvons très imaginer que nous souscrivons à une source donnée qui est interprétée dans notre “API” de callback **observer**.
+> Nous disposons d’une source de données. Pour avoir accès à cette source de données, nous devons faire appel à la fonction `subscribe()` en lui passant notre Observer.
 
-> Nous disposons d’une source de données. Pour avoir accès à cette source de données, nous allons souscrire.
+## Observable
 
-Maintenant imaginons un monde où toutes les sources de données synchrones comme asynchrones nous permettent un accès à ses données tout simplement par souscription. Nous allons appelé ces objets des Observable.
+*Un observable est un objet qui dispose d'une méthode `subscribe()` qui elle-même prend en paramètre un `observer`.
+L'`Observable` se charge d'appeler l'`Observer` ayant *souscrit* lorsqu'il recoit la donnée.*
 
-**Un observable est donc un objet qui comporte une méthode subscribe qui prend
-prend en paramètre une suite de callback(Observer).
-L'observable s'occupe d'appeler l'observer adéquat en fonction des situations**
-
-* Deux exemples de ce monde parfait avec une suite d’observable :
+* Exemple d’`Observable` :
 
 ```Javascript
-
 const observer = {
   next: function(val) { console.log(val) },
   err: function(err) { console.log(err) },
   complete: function() { console.log('Done.') }
 }
 
-const observableWithArrayOfInteger = {
-   values: [1,2,'trois',4,5],
+const values = [1,2,'trois',4,5]
+
+const observableWithArrayOfInteger = (values) => ({
    subscribe: function (observer) {
-      this.values.forEach((elem) => {
+      values.forEach((elem) => {
         if (Number.isInteger(elem)) {
           observer.next(elem)
         } else {
@@ -174,37 +154,16 @@ const observableWithArrayOfInteger = {
       })
       observer.complete()
    }
-}
+})
 
-observableWithArrayOfInteger.subscribe(observer)
-
-const observableAlphabetWithInterval = {
-    subscribe: function(observer) {
-        let i = 0
-        const values = ['a','b','c', 'd', 'e', 'f', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-        setInterval(function(){
-          if (i === 25) {
-            observer.complete()
-          }
-          if (typeof values[i] !== "string") {
-              observer.err(new Error("NOT A STRING"))
-          } else {
-            observer.next(values[i])
-          }
-          i++
-        }, 3000)
-    }
-}
-
-
-observableAlphabetWithInterval.subscribe(observer) // a...b...c...
-
+observableWithArrayOfInteger(values).subscribe(observer)
 ```
 * [oberservableArrayOfInteger Resultat](https://jsbin.com/mixalip/edit?js,console)
 
-* [observableAlphabetWithInterval Resultat](https://jsbin.com/cecitop/edit?js,console)
+> Nous *souscrivons* aux sources de données(Observable) via la méthode `subscribe()` à qui nous appliquons notre `Observer`.
 
-> Nous souscrivons aux deux sources de données(Observable) via la méthode subscribe à qui nous appliquons notre Observer(Suite de callback).
+## Résumons
 
-Voilà ! ce tutoriel touche à sa fin.
-Nous avons vu la construction, le fonctionnement interne d’un Observable et surtout à quoi il pourrait nous servir.
+Nous avons vu la construction, le fonctionnement interne d’un Observable et surtout un petit aperçu de ce à quoi il pourrait nous servir.
+
+Dans la seconde partie de la série, nous verrons comment implementer d'autres méthodes, combiner les Observables et enfin comment nous pouvons intégrer le tout dans un environnement React.
