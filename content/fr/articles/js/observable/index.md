@@ -8,7 +8,7 @@ authors:
   - wyeo
 ---
 
-En JavaScript, nous pouvons executer du code de manière synchrone (bloquant)
+En JavaScript, nous pouvons exécuter du code de manière synchrone (bloquant)
 ou asynchrone (non bloquant).
 
 Prenons une fonction `logValue`, qui prend une valeur et l'affiche dans la console :
@@ -19,7 +19,7 @@ function logValue(value) {
 }
 ```
 
-Nous allons passer `logValue` comme callback à la méthode `Array.prototype.forEach`, qui va l'executer de manière **synchrone** :
+Nous allons passer `logValue` comme callback à la méthode `Array.prototype.forEach`, qui va l'exécuter de manière **synchrone** :
 
 ```JavaScript
 const arrayOfValues = [1, 2, 3, 4, 5]
@@ -28,7 +28,7 @@ arrayOfValues.forEach(logValue)
 // Log 1, 2, 3, 4 puis 5
 ```
 
-On peut également passer `logValue` comme callback de `setTimeout`, qui va l'executer de manière **asynchrone** :
+On peut également passer `logValue` comme callback de `setTimeout`, qui va l'exécuter de manière **asynchrone** :
 
 ```JavaScript
 setTimeout(logValue, 3000, "Hello world!")
@@ -40,7 +40,7 @@ logValue("How are you?")
 Une fonction est agnostique: elle peut être appelée de manière synchrone ou asynchrone, c'est la façon dont elle est exécutée qui le définira.
 
 Un cas où il est utile d'utiliser des APIs asynchrones avec Node.js: les accès au *file-system*.
-Si vous lisez un gros fichier en mode synchrone, il va bloquer l'execution de votre programme tant qu'il n'a pas fini, mieux vaut attendre qu'il vous l'envoie quand il est prêt.
+Si vous lisez un gros fichier en mode synchrone, il va bloquer l'exécution de votre programme tant qu'il n'a pas fini, mieux vaut attendre qu'il vous l'envoie quand il est prêt.
 
 Node.js propose l'API suivante: `fs.readFile(fileToRead, options, callback)`
 
@@ -68,7 +68,7 @@ fetch("https://api.github.com/users/wyeo")
   .catch(logError) // Lance une erreur dans la console si quelque chose s'est mal passé
 ```
 
-Dans cet exemple, l'API renvoie une `Promise`: une structure représentant une valeur potentielle. Lorsque sa valeur est disponible, la promesse est *remplie*, et executera les callbacks qu'on lui a passé dans `.then`, si elle constate une erreur, elle executera les callbacks qu'on lui a passé dans `.catch`.
+Dans cet exemple, l'API renvoie une `Promise`: une structure représentant une valeur potentielle. Lorsque sa valeur est disponible, la promesse est *remplie*, et exécutera les callbacks qu'on lui a passé dans `.then`, si elle constate une erreur, elle exécutera les callbacks qu'on lui a passé dans `.catch`.
 
 Les `Promise` ne permettent cependant pas de traiter de la donnée au fur et à mesure de son arrivée: elle est remplie une seule fois.
 
@@ -78,9 +78,9 @@ Un `Observable` est un objet implémentant une une méthode `.subscribe` qui pre
 
 ```javascript
 const observer = {
-  next: val => console.log(val), // une fonction à executer à chaque nouvel évenement
-  error: err => console.error(err), // une fonction à executer en cas d'erreur
-  complete: () => console.info("Complete!") // une fonction à executer lorsque l'observable a fini
+  next: val => console.log(val), // une fonction à exécuter à chaque nouvel évenement
+  error: err => console.error(err), // une fonction à exécuter en cas d'erreur
+  complete: () => console.info("Complete!") // une fonction à exécuter lorsque l'observable a fini
 };
 ```
 
