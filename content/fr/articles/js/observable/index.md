@@ -28,7 +28,7 @@ arrayOfValues.forEach(logValue)
 // Log 1, 2, 3, 4 puis 5
 ```
 
-On peut également passer `logValue` comme callback de `setTimeout`, qui va l'executer de mannière **asynchrone** :
+On peut également passer `logValue` comme callback de `setTimeout`, qui va l'executer de manière **asynchrone** :
 
 ```JavaScript
 setTimeout(logValue, 3000, "Hello world!")
@@ -37,7 +37,7 @@ logValue("How are you?")
 // Log "Hello world!" 3 secondes plus tard
 ```
 
-Une fonction est agnostique: elle peut être appelée de manière synchrone ou asynchrone, c'est la manière dont elle est executée qui le définira.
+Une fonction est agnostique: elle peut être appelée de manière synchrone ou asynchrone, c'est la façon dont elle est exécutée qui le définira.
 
 Un cas où il est utile d'utiliser des APIs asynchrones avec Node.js: les accès au *file-system*.
 Si vous lisez un gros fichier en mode synchrone, il va bloquer l'execution de votre programme tant qu'il n'a pas fini, mieux vaut attendre qu'il vous l'envoie quand il est prêt.
@@ -51,11 +51,10 @@ fs.readFile("./alphabet.txt", {encoding: "utf-8"}, (err, data) => {
   } else {
     onData(data)
   }
-  onDone()
 })
 ```
 
-Cet exemple montre une API utilisant un simple callback qui est executé lorsque `readFile` a lu le fichier ou échoué à le faire.
+Cet exemple montre une API utilisant un simple callback qui est exécuté lorsque `readFile` a lu le fichier ou échoué à le faire.
 
 Un autre cas où utiliser des APIs asynchrones est particulièrement important : les appels réseaux. On ne peut pas se permettre de *freeze* toute notre interface pendant que la requête réseau tourne.
 
