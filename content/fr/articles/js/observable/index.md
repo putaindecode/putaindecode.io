@@ -1,7 +1,6 @@
 ---
 date: "2017-10-19"
-title: "Synchrone, Asynchrone : tous les types de données
-mènent aux Observable"
+title: "Introduction aux pattern des observables"
 tags:
   - Observable
   - JavaScript
@@ -9,189 +8,118 @@ authors:
   - wyeo
 ---
 
-Bienvenue dans la 1ère partie de la série d'articles qui va vous plonger
-dans le monde merveilleux des oberservables.
+En JavaScript, nous pouvons executer du code de manière synchrone (bloquant)
+ou asynchrone (non bloquant).
 
-## Synchrone - Asynchrone
+Prenons une fonction `logValue`, qui prend une valeur et l'affiche dans la console :
 
-En JavaScript, nous pouvons executer du code synchrone (bloquant)
-et du code asynchrone (non bloquant).
-
-Pour traiter ces données nous avons la possibilité de faire appel à une
-callback (fonction de rappel).
-Prenons la fonction `logValue`, qui servira de callback pour afficher
-la valeur qu’elle reçoit en paramètre dans la console :
-
-```JavaScript
+```javascript
 function logValue(value) {
   console.log(value);
 }
 ```
 
-Nous allons appliquer `logValue()` à des valeurs dites **synchrones** :
+Nous allons passer `logValue` comme callback à la méthode `Array.prototype.forEach`, qui va l'executer de manière **synchrone** :
 
 ```JavaScript
 const arrayOfValues = [1, 2, 3, 4, 5]
 
-arrayOfValues.forEach(logValue) // Affiche 1, 2, 3, 4, 5
+arrayOfValues.forEach(logValue)
+// Log 1, 2, 3, 4 puis 5
 ```
 
-Appliquons maintenant `logValue()` à des valeurs dites **asynchrones** :
+On peut également passer `logValue` comme callback de `setTimeout`, qui va l'executer de mannière **asynchrone** :
 
 ```JavaScript
-setTimeout(logValue, 3000, "HELLO WORLD !") // Affiche 'HELLO WORLD !' au bout de 3 secondes
+setTimeout(logValue, 3000, "Hello world!")
+logValue("How are you?")
+// Log "How are you?"
+// Log "Hello world!" 3 secondes plus tard
 ```
-* [Resultat](https://jsbin.com/sutilo/edit?js,console)
 
-```JavaScript
-const result = fetch("https://api.github.com/users/wyeo").then(res => res.json());
+Une fonction est agnostique: elle peut être appelée de manière synchrone ou asynchrone, c'est la manière dont elle est executée qui le définira.
 
-result.then(logValue) // Affiche le résultat de notre requête au format JSON
+Un cas où il est utile d'utiliser des APIs asynchrones avec Node.js: les accès au *file-system*.
+Si vous lisez un gros fichier en mode synchrone, il va bloquer l'execution de votre programme tant qu'il n'a pas fini, mieux vaut attendre qu'il vous l'envoie quand il est prêt.
+
+Node.js propose l'API suivante: `fs.readFile(fileToRead, options, callback)`
+
+``` JavaScript
+fs.readFile("./alphabet.txt", {encoding: "utf-8"}, (err, data) => {
+  if (err) {
+    onError(err)
+  } else {
+    onData(data)
+  }
+  onDone()
+})
 ```
-* [Resultat](https://jsbin.com/sagubeh/edit?js,console)
 
-> Nous avons interrogé l’API de GitHub avec API fetch qui nous renvoie une promesse à laquelle nous appliquons notre fameuse callback pour afficher les résultats de notre requête : TOUT VA BIEN !
+Cet exemple montre une API utilisant un simple callback qui est executé lorsque `readFile` a lu le fichier ou échoué à le faire.
 
-Maintenant imaginons que ma requête échoue pour X raison.
-Il s’agit d’un "cas d’erreur". Nous avons aussi la possibilité
-de gérer les cas d’erreurs avec la `Promise` qui nous a été renvoyée par `fetch`.
-Nous allons donc implémenter une seconde `callback` qui aura pour rôle de gérer
-les cas d’erreurs.
+Un autre cas où utiliser des APIs asynchrones est particulièrement important : les appels réseaux. On ne peut pas se permettre de *freeze* toute notre interface pendant que la requête réseau tourne.
 
 ```JavaScript
 function logValue(value) { console.log(value) }
-function logError(err) { console.log(err) }
+function logError(err) { console.error(err) }
+
+fetch("https://api.github.com/users/wyeo")
+  .then(res => res.json())
+  .then(logValue) // Log le payload JSON lorsque la requête est terminée
+  .catch(logError) // Lance une erreur dans la console si quelque chose s'est mal passé
 ```
 
-```JavaScript
-const result =
-    fetch('https://api.gitxyzhub.com/users/wyeo').then(res => res.json())
+Dans cet exemple, l'API renvoie une `Promise`: une structure représentant une valeur potentielle. Lorsque sa valeur est disponible, la promesse est *remplie*, et executera les callbacks qu'on lui a passé dans `.then`, si elle constate une erreur, elle executera les callbacks qu'on lui a passé dans `.catch`.
 
-result.then(logValue).catch(logError) // Nous interceptons les erreurs
-```
-* [Resultat](https://jsbin.com/tixerix/edit?js,console)
+Les `Promise` ne permettent cependant pas de traiter de la donnée au fur et à mesure de son arrivée: elle est remplie une seule fois.
 
-> Les deux cas envisageables sont maintenant gérés par nos fonctions de rappel : OUF !
+C'est là que les `Observable` arrivent à la rescousse.
 
-Voyons maintenant un dernier exemple de valeur asynchrone :
+Un `Observable` est un objet implémentant une une méthode `.subscribe` qui prend comme paramètre un `Observer`. Ce dernier a cette forme :
 
-Nous allons lire le contenu d’un fichier de manière asynchrone.
-Et parce qu’il s’agit d’une opération asynchrone, nous aurons aussi besoin
-d’être informé lorsque le fichier aura été lu entièrement.
-
-En Node.js, voici comment se présente la fonction qui va nous permettre de lire
-notre fichier : `fs.readFile(path, options, callback)`
-
-*`readFile` va soit parvenir à lire le fichier, soit échouer.
-Pour nous le signaler, elle appellera `callback` avec deux paramètres
-`error` et `data`, si `error` est `null` cela signifie que tout s'est bien
-passé et qu'on peut lire `data`, dans le cas contraire, on devra gérer `error`*
-
-* Implémentons nos trois `callbacks` :
-
-``` JavaScript
-function logData(data) {
-    console.log(data)
-}
-
-function logErr(err) {
-    console.log(err)
-}
-
-function onComplete() {
-    console.log('Done.')
-}
-```
-
-* Appliquons nos fonctions de rappel à `fs.readFile()`:
-
->On imagine un fichier nommé `alphabet.txt`, qui comporte toutes les lettres de l’alphabet
-
-``` JavaScript
-fs.readFile('./alphabet.txt', {encoding: 'utf-8'}, (err, data) => {
-    if (err) {
-        logErr(err)
-    } else {
-        logData(data)
-    }
-    onComplete()
-})
-```
-
-Ça fonctionne ! Mais bon écrire des lignes et des lignes de callback devient
-très vite laissant et épuisant pour les pauvres développeurs paresseux que nous
-sommes. Par conséquent pourquoi ne pas implémenter une petite
-API / Object / Bloc de fonction qui pourrait s’adapter à toutes formes de donner
- synchrones ou asynchrones
- ( fournies par `arrayOfValues`, `fetch`, `fs.readFile` etc… ).
-
-> Ce objet est appelé un `Observer` dans le monde des Observables
-
-## Observer
-
-```JavaScript
-// API / Object / Ensemble de callback (bref un `Oberserver` quoi !) qui nous permet de traiter toutes les formes de données
+```javascript
 const observer = {
-   next: function(val) { console.log(val) },
-   error: function(err) { console.log(err) },
-   complete: function() { console.log(‘complete!’)
-}
+  next: val => console.log(val), // une fonction à executer à chaque nouvel évenement
+  error: err => console.error(err), // une fonction à executer en cas d'erreur
+  complete: () => console.info("Complete!") // une fonction à executer lorsque l'observable a fini
+};
 ```
 
-Maintenant nous pouvons juste envoyer notre objet `observer`
-en tant que “callback” :
+Implémentons naïvement un `Observable` qui va réagir lorsqu'un user va taper sur son clavier et se considérer terminé une fois `Enter` pressé:
 
-`function subscribe(observer) {
-  [1,2,3,4,5].forEach(observer.next)
-}`
-
-> Nous disposons d’une source de données. Pour avoir accès à cette
-source de données, nous devons faire appel à la fonction `subscribe()`
-en lui passant notre Observer.
-
-## Observable
-
-*Un observable est un objet qui dispose d'une méthode `subscribe()`
-qui elle-même prend en paramètre un `observer`.
-L'`Observable` se charge d'appeler l'`Observer` ayant *souscrit*
-lorsqu'il recoit la donnée.*
-
-* Exemple d’`Observable` :
-
-```JavaScript
-const observer = {
-  next: function(val) { console.log(val) },
-  err: function(err) { console.log(err) },
-  complete: function() { console.log('Done.') }
-}
-
-const values = [1,2,'trois',4,5]
-
-const observableWithArrayOfInteger = (values) => ({
-   subscribe: function (observer) {
-      values.forEach((elem) => {
-        if (Number.isInteger(elem)) {
-          observer.next(elem)
+```javascript
+const KeyboardObservable = {
+  subscribe: (observer) => {
+    const handleKeyUp = event => {
+      if(typeof event.keyCode === "number") {
+        if(event.keyCode === 13 /* Enter */) {
+          document.removeEventListener("keyup", handleKeyUp)
+          observer.complete()
         } else {
-          observer.err(new Error("NOT A NUMBER"))
+          observer.next(event.keyCode)
         }
-      })
-      observer.complete()
-   }
+      } else {
+        observer.error(new Error("No keyCode found"))
+      }
+    };
+    document.addEventListener("keyup", handleKeyUp)
+    // subscribe retourne la "soucription", contenant une fonction pour la stopper
+    return {
+      unsubscribe: () => document.removeEventListener("keyup", handleKeyUp)
+    }
+  },
+};
+
+let keys = [];
+KeyboardObservable.subscribe({
+  next: keyCode => keys.push(String.fromCharCode(keyCode)),
+  error: error => console.error(error),
+  complete: () => alert(keys.join(""))
 })
-
-observableWithArrayOfInteger(values).subscribe(observer)
 ```
-* [oberservableArrayOfInteger Resultat](https://jsbin.com/mixalip/edit?js,console)
 
-> Nous *souscrivons* aux sources de données(Observable) via la méthode
-`subscribe()` à qui nous appliquons notre `Observer`.
+Un `Observable` fonctionne à la fois pour du code synchrone et asynchrone, et il s'agit d'un pattern qui peut s'appliquer à des cas où `Promise` manque de granularité, puisqu'il permet de traiter la donnée au fur et à mesure de son arrivée. *In fine*, un observable est un *event emitter* avec un concept de completion.
 
-## Résumons
+Il existe d'ailleurs un [*proposal* en stage 1](https://tc39.github.io/proposal-observable/) pour en faire une API de la specification de JavaScript. On peut très bien imaginer que les observables deviennent une interface très répandue dans un futur proche.
 
-Nous avons vu la construction, le fonctionnement interne d’un Observable et
-surtout un petit aperçu de ce à quoi il pourrait nous servir.
-
-Dans la seconde partie de la série, nous verrons comment implementer d'autres
-méthodes, combiner les Observables et enfin comment nous pouvons intégrer
-le tout dans un environnement React.
+Dans les prochains articles, nous verrons pourquoi et comment combiner des observables ainsi que les cas d'usage au sein d'une application React.
