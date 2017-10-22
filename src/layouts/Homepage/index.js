@@ -6,16 +6,13 @@ import enhanceCollection from "phenomic/lib/enhance-collection"
 import { BodyContainer } from "phenomic"
 
 import Loading from "../../components/Loading"
-import supportLocale from "../../components/browser-locale-support"
 import getLang from "../../i18n/getLang"
 import getI18n from "../../i18n/get"
-import I18nBanner from "../../components/I18nBanner"
 import LatestPosts from "../../components/LatestPosts"
 import TopContributors from "../../components/TopContributors"
 
 import classes from "./styles.css"
 
-const supportedLocales = [ "fr", "en" ]
 const numberOfLatestPosts = 12
 
 export default class Homepage extends Component {
@@ -31,41 +28,6 @@ export default class Homepage extends Component {
     location: PropTypes.object.isRequired,
   }
 
-  componentWillMount() {
-    this.prepareI18nBanner()
-  }
-
-  componentWillReceiveProps() {
-    this.prepareI18nBanner()
-  }
-
-  prepareI18nBanner() {
-    this.hideI18nBanner()
-
-    if (typeof window !== "undefined") {
-      setTimeout(() => {
-        const locale = getLang(this.context)
-        if (
-          window.localStorage
-          && !window.localStorage.getItem(`i18nBanner-${ locale }`)
-          && !supportLocale({ locale, supportedLocales })) {
-          this.showI18nBanner()
-        }
-      }, 2000)
-    }
-  }
-
-  showI18nBanner() {
-    this.setState({ i18nBanner: true })
-  }
-
-  hideI18nBanner(forever) {
-    this.setState({ i18nBanner: false })
-    if (forever) {
-      window.localStorage.setItem(`i18nBanner-${ forever }`, 1)
-    }
-  }
-
   render() {
     const {
       isLoading,
@@ -75,7 +37,6 @@ export default class Homepage extends Component {
 
     const i18n = getI18n(this.context)
     const locale = getLang(this.context)
-    const anotherLocale = supportedLocales.filter((l) => l !== locale)[0]
 
     const latestPosts = enhanceCollection(this.context.collection, {
       filter: { layout: "Post" },
@@ -97,19 +58,9 @@ export default class Homepage extends Component {
           ]}
         />
 
-        {
-          this.state && this.state.i18nBanner &&
-          <I18nBanner
-            labels={ this.context.metadata.i18n[anotherLocale].i18nBanner }
-            onAccept={ () => window.location = `/${ anotherLocale }/` }
-            onHide={ () => this.hideI18nBanner() }
-            onHideForever={ () => this.hideI18nBanner(locale) }
-          />
-        }
-
         <div className={ classes.header }>
           <div className={ classes.headerCell }>
-            <em>{ i18n.title }</em>
+            <strong>{ i18n.title }</strong>
             { " " + i18n.jumbotron }
             <br />
             <br />

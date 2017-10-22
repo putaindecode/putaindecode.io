@@ -17,7 +17,8 @@ const Header = ({}, context) => {
             <SVGInline
               className="putainde-Logo"
               svg={require("../../images/putaindecode-logo.svg")}
-              cleanupExceptions={[ "fill" ]}
+              width={"55px"}
+              height={"55px"}
             />
             <span>{i18n.title}</span>
           </Link>
