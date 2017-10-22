@@ -6,9 +6,8 @@
   align-items: center;
   justify-content: center;
   background:
-    linear-gradient(160deg, #c33, color(#c33 a(.65))),
-    url(./what.jpg) 50% 50% no-repeat,
-    #121119
+    linear-gradient(160deg, #E41D57, #CC0613),
+    #CC0613
   ;
   box-shadow:
     0 0 1rem color(#000 a(.2)) inset,

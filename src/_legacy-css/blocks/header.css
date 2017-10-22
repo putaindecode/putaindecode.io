@@ -50,17 +50,11 @@
   position: absolute;
   top: 50%;
   left: 0;
-  width: var(--putainde-Logo-size-s);
-  height: var(--putainde-Logo-size-s);
+  width: 55px;
+  height: 55px;
   transition: .2s;
   transform: translateY(-50%);
 }
-  @media (--minM) {
-    .putainde-Logo {
-      width: var(--putainde-Logo-size-l);
-      height: var(--putainde-Logo-size-l);
-    }
-  }
 
 .putainde-SiteTitle:hover .putainde-Logo {
   transform: translateY(-50%) rotate(-2deg) scale(1.2);
