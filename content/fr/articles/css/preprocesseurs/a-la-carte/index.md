@@ -9,6 +9,8 @@ authors:
   - MoOx
 ---
 
+> ⚠️ Cet article est marqué comme obsolète
+
 Après vous avoir fait un petit [état de l'art des préprocesseurs CSS historiques](/fr/articles/css/preprocesseurs/)
 et vous avoir parlé [des postprocesseurs](/fr/articles/css/preprocesseurs/),
 je me dois de vous montrer le chemin qui me semble le plus pertinent aujourd'hui,
