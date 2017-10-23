@@ -84,7 +84,11 @@
     "pretest": "npm run lint",
     "test": "npm run build",
     "predeploy": "npm run test",
-    "deploy": "./scripts/deploy.sh"
+    "deploy": "./scripts/deploy.sh",
+    "format": "prettier --write \"**/*.js\""
+  },
+  "prettier": {
+    "parser": "flow"
   },
   "phenomic": {
     "CNAME": true
