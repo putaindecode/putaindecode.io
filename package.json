@@ -2,7 +2,8 @@
   "private": true,
   "name": "putaindecode.io",
   "homepage": "http://putaindecode.io",
-  "authors": "https://github.com/putaindecode/putaindecode.io/graphs/contributors",
+  "authors":
+    "https://github.com/putaindecode/putaindecode.io/graphs/contributors",
   "repository": "https://github.com/putaindecode/putaindecode.io.git",
   "license": "MIT",
   "dependencies": {
@@ -85,7 +86,7 @@
     "test": "npm run build",
     "predeploy": "npm run test",
     "deploy": "./scripts/deploy.sh",
-    "format": "prettier --write \"**/*.js\""
+    "format": "prettier --write \"**/*.{js,json}\""
   },
   "prettier": {
     "parser": "flow"
@@ -93,7 +94,8 @@
   "phenomic": {
     "CNAME": true
   },
-  "#babel": "webpack-(development|production) are useful for webpack 2, otherwise use development|production",
+  "#babel":
+    "webpack-(development|production) are useful for webpack 2, otherwise use development|production",
   "babel": {
     "env": {
       "test": {
@@ -156,9 +158,7 @@
     }
   },
   "eslintConfig": {
-    "extends": [
-      "eslint-config-i-am-meticulous/react"
-    ],
+    "extends": ["eslint-config-i-am-meticulous/react"],
     "rules": {
       "no-unused-vars": 0,
       "import/order": 0,
