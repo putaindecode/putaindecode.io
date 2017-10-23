@@ -49,11 +49,14 @@
     "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.1",
+    "git-exec-and-restage": "^1.0.1",
     "github": "^0.2.3",
     "glob": "^5.0.5",
+    "husky": "^0.14.3",
     "js-yaml": "^3.2.7",
     "jsdom": "^5.4.1",
     "json-loader": "^0.5.4",
+    "lint-staged": "^4.3.0",
     "mkdirp": "^0.5.0",
     "multimatch": "^2.0.0",
     "nano-logger": "^1.0.0",
@@ -78,6 +81,9 @@
     "yaml-loader": "^0.1.0"
   },
   "scripts": {
+    "#<git hooks>": "handled by husky",
+    "#precommit": "lint-staged",
+    "#</git hooks>": "handled by husky",
     "lint": "eslint .",
     "start": "phenomic start",
     "build": "phenomic build",
@@ -89,6 +95,9 @@
     "predeploy": "npm run test",
     "deploy": "./scripts/deploy.sh",
     "format": "prettier --write \"**/*.{js,json,css,md}\""
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["git-exec-and-restage prettier --write"]
   },
   "prettier": {
     "parser": "flow"
