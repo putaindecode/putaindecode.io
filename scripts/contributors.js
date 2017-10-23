@@ -37,6 +37,13 @@ const emailRE = /<(.+)>$/
 
 const log = logger("contributors")
 
+const logError = (msg) => {
+  if (process.env.CI) {
+    throw new Error(msg)
+  }
+  log(color.red(msg))
+}
+
 let githubIsDown = false
 function isGithubDown(err) {
   if (err.toString().indexOf("getaddrinfo ENOTFOUND") > -1) {
@@ -175,7 +182,7 @@ async function contributorsMap() {
           }
         }
         else {
-          log(
+          logError(
             "✗ Unable to get contributor information for " +
             author.name + " <" + author.email +
             `> (no commit in ${ repoMetas.user }/${ repoMetas.repo })`
@@ -184,8 +191,8 @@ async function contributorsMap() {
 
         if (contributor) {
           if (!Object.keys(contributor).length) {
-            log(
-              color.red(`⚠︎ Some contributor data are emtpy for ${email}`)
+            logError(
+              `⚠︎ Some contributor data are emtpy for ${email}`
             )
           }
           else {
@@ -199,7 +206,7 @@ async function contributorsMap() {
       }
       catch (err) {
         if (err.toString().indexOf("\Not Found\"") > -1) {
-          log(color.red("⚠︎ Cannot connect to GitHub for " + email))
+          logError("⚠︎ Cannot connect to GitHub for " + email)
         }
         else {
           setTimeout(() => {
@@ -327,7 +334,7 @@ async function filesContributions() {
 
     const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN
     if (!githubToken && Object.keys(results.map).length === 0) {
-      log(color.yellow(
+      logError(color.yellow(
         "In order to generate a new `contributors.json` map, " +
         "you will need a GitHub token available as an environement variable. "
       ))
