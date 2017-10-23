@@ -63,6 +63,8 @@
     "postcss-cssnext": "^2.2.0",
     "postcss-import": "^7.0.0",
     "postcss-loader": "^1.3.3",
+    "prettier":
+      "https://github.com/prettier/prettier.git#c0aaa0fa523a0cd4cf112fa5e53efe35a62c454b",
     "promise": "^7.0.0",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.0.0-beta.5",
