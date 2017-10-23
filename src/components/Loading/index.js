@@ -11,16 +11,13 @@ TopBarProgressIndicator.config({
   shadowBlur: 5,
 })
 
-export default class Loading extends Component {
+const Loading = () => (
+  <div>
+    <TopBarProgressIndicator />
+    <div className={ styles.loader }>
+      <div className={ styles.spinner } />
+    </div>
+  </div>
+)
 
-  render() {
-    return (
-      <div>
-        <TopBarProgressIndicator />
-        <div className={ styles.loader }>
-          <div className={ styles.spinner }></div>
-        </div>
-      </div>
-    )
-  }
-}
+export default Loading

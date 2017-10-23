@@ -11,6 +11,7 @@ import logger from "nano-logger"
 
 const exec = asyncify(require("child_process").exec)
 const glob = asyncify(require("glob"))
+
 const readFile = asyncify(fs.readFile)
 const writeFile = asyncify(fs.writeFile)
 
@@ -205,7 +206,7 @@ async function contributorsMap() {
         }
       }
       catch (err) {
-        if (err.toString().indexOf("\Not Found\"") > -1) {
+        if (err.toString().indexOf("\"Not Found\"") > -1) {
           logError("⚠︎ Cannot connect to GitHub for " + email)
         }
         else {

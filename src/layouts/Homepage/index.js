@@ -15,6 +15,7 @@ import classes from "./styles.css"
 
 const numberOfLatestPosts = 12
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class Homepage extends Component {
 
   static propTypes = {

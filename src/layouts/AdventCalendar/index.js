@@ -31,7 +31,7 @@ const AdventCalendar = (props) => (
 AdventCalendar.propTypes = {
   __url: PropTypes.string.isRequired,
   __filename: PropTypes.string.isRequired,
-  isLoading: PropTypes.boolean,
+  isLoading: PropTypes.bool,
   head: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
 }

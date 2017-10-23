@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 
 import getI18n from "../../i18n/get"
 
-const PageError = ({}, context) => {
+const PageError = (props, context) => {
   const i18n = getI18n(context)
   const { metadata } = context
   const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")

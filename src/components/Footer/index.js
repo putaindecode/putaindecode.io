@@ -15,7 +15,7 @@ const SVGs = {
   soundcloud: require("../../icons/soundcloud.svg"),
 }
 
-const Footer = ({}, context) => {
+const Footer = (props, context) => {
   const i18n = getI18n(context)
 
   return (

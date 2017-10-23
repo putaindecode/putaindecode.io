@@ -53,7 +53,7 @@ const Post = (props, context) => {
             {
               post.authors && post.authors.length === 1 &&
               <div>
-                <Author author={post.authors[0]} isPost={true} />
+                <Author author={post.authors[0]} isPost />
               </div>
             }
             {

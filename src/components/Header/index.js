@@ -6,7 +6,7 @@ import getLang from "../../i18n/getLang"
 import Navigation from "../Navigation"
 import SVGInline from "react-svg-inline"
 
-const Header = ({}, context) => {
+const Header = (props, context) => {
   const i18n = getI18n(context)
 
   return (

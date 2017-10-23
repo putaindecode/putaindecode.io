@@ -58,7 +58,7 @@ const Page = ({ isLoading, head, body, __url, children }, { metadata }) => (
 
 Page.propTypes = {
   __url: PropTypes.string.isRequired,
-  isLoading: PropTypes.boolean,
+  isLoading: PropTypes.bool,
   head: PropTypes.object.isRequired,
   body: PropTypes.string,
   children: PropTypes.node,

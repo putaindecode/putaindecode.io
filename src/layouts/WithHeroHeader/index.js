@@ -111,8 +111,7 @@ const WithHeroHeader = (
               <div
                 className="putainde-Post-header-picture"
                 style={renderCSSBackground(post.header)}
-              >
-              </div>
+              />
             }
             {
               post.header && post.header.credit &&

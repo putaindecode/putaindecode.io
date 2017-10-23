@@ -28,7 +28,7 @@ export const iconsOrder = [
   "chat",
 ]
 
-const Navigation = ({}, context) => {
+const Navigation = (props, context) => {
   const i18n = getI18n(context)
   return (
     <nav className={ styles.nav }>

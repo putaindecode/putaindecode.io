@@ -14,24 +14,19 @@ import AdventCalendar from "./layouts/AdventCalendar"
 import PostsByTag from "./components/PostsByTag"
 import PostsByAuthor from "./components/PostsByAuthor"
 
-class PageContainer extends Component {
-  render() {
-    const { props } = this
-    return (
-      <PhenomicPageContainer
-        { ...props }
-        layouts={ {
-          Page,
-          PageError,
-          Homepage,
-          Post,
-          Posts,
-          AdventCalendar,
-        } }
-      />
-    )
-  }
-}
+const PageContainer = (props) => (
+  <PhenomicPageContainer
+    { ...props }
+    layouts={ {
+      Page,
+      PageError,
+      Homepage,
+      Post,
+      Posts,
+      AdventCalendar,
+    } }
+  />
+)
 
 // routes
 export default (
