@@ -68,7 +68,7 @@ fetch("https://api.github.com/users/wyeo")
   .catch(logError) // Lance une erreur dans la console si quelque chose s'est mal passé
 ```
 
-Dans cet exemple, l'API renvoie une `Promise`: une structure représentant une valeur potentielle. Lorsque sa valeur est disponible, la promesse est *remplie*, et exécutera les callbacks qu'on lui a passé dans `.then`, si elle constate une erreur, elle exécutera les callbacks qu'on lui a passé dans `.catch`.
+Dans cet exemple, l'API renvoie une `Promise`: [une structure représentant une valeur potentielle](/fr/articles/js/es2015/promises/). Lorsque sa valeur est disponible, la promesse est *remplie*, et exécutera les callbacks qu'on lui a passé dans `.then`, si elle constate une erreur, elle exécutera les callbacks qu'on lui a passé dans `.catch`.
 
 Les `Promise` ne permettent cependant pas de traiter de la donnée au fur et à mesure de son arrivée: elle est remplie une seule fois.
 
