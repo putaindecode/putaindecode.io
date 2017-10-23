@@ -44,16 +44,17 @@ bien même cela ne doit pas nous empêcher d'expérimenter ce module.
 
 La notion de Grid n'est pas nouvelle, de multiples frameworks/librairies
 utilisent déjà la mise en page en `Grid` :
-- [SUIT CSS components-grid](https://github.com/suitcss/components-grid)
-- [Zurb Foundation](http://foundation.zurb.com/docs/components/grid.html)
-- [960](http://960.gs/)
-- [cssrecipes Grid](https://github.com/cssrecipes/grid)
+
+* [SUIT CSS components-grid](https://github.com/suitcss/components-grid)
+* [Zurb Foundation](http://foundation.zurb.com/docs/components/grid.html)
+* [960](http://960.gs/)
+* [cssrecipes Grid](https://github.com/cssrecipes/grid)
 
 Toutes ces solutions se basent soit sur du `inline-block`, soit plus récemment
 sur `Flexbox`. Même si elles sont relativement élégantes, elles nécessitent
 quand même quelques petits hacks ou tricks pour réussir à faire quelque chose de
 cohérent (hello, `font-size: 0`, gouttière, `calc` avec marge négative, etc.).
-La raison est simple : les techniques utilisées ne sont pas adaptées pour un
+La raison est simple : les techniques utilisées ne sont pas adaptées pour un
 système complet de `Grid`.
 
 ## Thinking in Grid
@@ -78,7 +79,6 @@ chaque élément.
 
 On va donc pouvoir extrapoler notre UI en lignes (`rows`), en colonnes
 (`columns`), en cellules (`cells`) et en zones (`areas`).
-
 
 Cette dernière notion (`areas`) est peut-être nouvelle dans la théorie, mais va
 s'avérer très utile dans la pratique pour la suite.
@@ -185,7 +185,6 @@ comme de l'`ASCII art`.
 .Footer {
   grid-area: Footer; /* 1 */
 }
-
 ```
 
 Notre intégration est terminée, on constate qu'avec très peu d'HTML et de CSS,
@@ -200,9 +199,9 @@ embarque pratiquement toutes les propriétés introduites par `Flexbox`
 (`align-items`, `order`, `justify-content` etc..).
 
 De nouvelles fonctions font leur apparition comme `repeat` (permet d'appliquer
-des motifs de répétition), mais aussi de nouvelles unités tels que
-`xfr` (fraction de l'espace restant), `min-content` (se rapporte à l'élément le
-plus petit), `max-content` (se rapporte à l'élément le plus grand). La notion de
+des motifs de répétition), mais aussi de nouvelles unités tels que `xfr`
+(fraction de l'espace restant), `min-content` (se rapporte à l'élément le plus
+petit), `max-content` (se rapporte à l'élément le plus grand). La notion de
 `subgrid` est également présente pour l'imbrication de grilles.
 
 Il est d'ailleurs tout à fait possible d'intégrer une même interface de
@@ -214,5 +213,5 @@ classiques.
 
 `Grid Layout` est un module très puissant et très complet. En le combinant avec
 `Flexbox`, on dispose de suffisament d'outils pour travailler sur des mises en
-pages complexes. Reste plus qu'aux navigateurs à rapidement valider/intégrer/supporter
-cette nouvelle spécification.
+pages complexes. Reste plus qu'aux navigateurs à rapidement
+valider/intégrer/supporter cette nouvelle spécification.

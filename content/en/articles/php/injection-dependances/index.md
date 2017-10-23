@@ -18,10 +18,12 @@ and let's move shit around!
 If you're into object-oriented programming, I'd bet you've stumbled upon the
 word before. As for us PHP folks, we mainly started to hear about it with the
 advent of Symfony, which is now the main web framework for the language. Fabien
-Potencier, its creator and lead developer, explains the concept on [his blog](http://fabien.potencier.org/article/11/what-is-dependency-injection)
-by quoting the following definition:
+Potencier, its creator and lead developer, explains the concept on [his
+blog](http://fabien.potencier.org/article/11/what-is-dependency-injection) by
+quoting the following definition:
 
-> *Dependency Injection is where components are given their dependencies through their constructors, methods, or directly into fields.*
+> _Dependency Injection is where components are given their dependencies through
+> their constructors, methods, or directly into fields._
 >
 > Someone
 
@@ -127,7 +129,7 @@ parameter is an instance of the class we want and nothing else.
 Alright, I can already hear you ranting:
 
 > Well now I gotta instantiate an address by myself every time I do so with a
-person, this is shit
+> person, this is shit
 
 If so is your opinion, ~~you'd be better off dead~~ please keep on reading this
 article with that wild enthusiasm of yours!
@@ -263,7 +265,7 @@ echo($person->getAddress()->getFullAddress()); // 'test test one two one two'
 echo($robert->getAddress()->getFullAddress()); // '1, rue de la Paix, 75002 Paris, France'
 ```
 
-See the point? By asking for an instance of *any* class implementing
+See the point? By asking for an instance of _any_ class implementing
 `AddressInterface` instead of an instance of `Address` specifically, we loosen
 even more the coupling between our classes. No matter how we create a person,
 should it be with `Address` or `BasicAddress`, we'll be able to print the actual
@@ -321,6 +323,7 @@ container library you can use in your own project.
 If you're a PHP developer, I hope I could show you how to write more
 maintenable, elegant code by making use of dependency injection. If you're not,
 be aware that this concept is quite common in object-oriented programming in
-general - after all, [it's even in Angular](https://docs.angularjs.org/guide/di).
+general - after all, [it's even in
+Angular](https://docs.angularjs.org/guide/di).
 
 Happy coding, and remember, pushing to production on Friday is bad. Now, go!

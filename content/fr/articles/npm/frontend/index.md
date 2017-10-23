@@ -10,10 +10,11 @@ authors:
   - kewah
 ---
 
-NPM, le package manager de Node.js, a grandement participé au succès de ce dernier.
-Il facilite la création, le partage et l'installation de modules.
-Il permet aux développeurs de suivre la [philosophie Unix](http://www.faqs.org/docs/artu/ch01s06.html)
-où chaque module fait une seule tâche (évite la complexité, facilite la réutilisation et les tests).
+NPM, le package manager de Node.js, a grandement participé au succès de ce
+dernier. Il facilite la création, le partage et l'installation de modules. Il
+permet aux développeurs de suivre la [philosophie
+Unix](http://www.faqs.org/docs/artu/ch01s06.html) où chaque module fait une
+seule tâche (évite la complexité, facilite la réutilisation et les tests).
 
 Cependant NPM ne se limite pas aux modules JavaScript. Il est en effet possible
 de publier tout type de fichier et c'est là que ça devient intéressant pour nos
@@ -35,22 +36,22 @@ votre module.
 }
 ```
 
-Dans un article précédent, il vous a été présenté le développement d'une application
-autour de [modules JavaScript avec Browserify](/fr/articles/js/browserify/).
+Dans un article précédent, il vous a été présenté le développement d'une
+application autour de [modules JavaScript avec
+Browserify](/fr/articles/js/browserify/).
 
 ## Module pour tout type de fichier
 
 C'est grâce au champ "[files](https://www.npmjs.org/doc/json.html#files)" que
-l'on peut définir la liste des fichiers que l'on va publier (autre que les fichiers JavaScript).
-Voici un exemple de `package.json` d'un module pour un système de grille CSS.
+l'on peut définir la liste des fichiers que l'on va publier (autre que les
+fichiers JavaScript). Voici un exemple de `package.json` d'un module pour un
+système de grille CSS.
 
 ```json
 {
   "name": "putaindegrid",
   "version": "0.0.1",
-  "files": [
-    "grid.css"
-  ]
+  "files": ["grid.css"]
 }
 ```
 
@@ -66,33 +67,39 @@ HTML. (Ou l'`@import`er dans votre fichier Sass/Less principal.)
 
 ## Pourquoi NPM plutôt qu'un autre package manager ?
 
-- Il a déjà fait ses preuves comme package manager pour Node.js.
-- Pas besoin d'installer un nouvel outil, NPM étant installé avec Node.js, ce qui
-évite un lot de bugs et de fichiers de configuration supplémentaires (un simple `package.json` suffit).
-- Et surtout, toutes les dépendances de votre projet peuvent être gérées via NPM:
-votre tasks runner et ses plugins ([Gulp](/fr/articles/js/gulp/), [Grunt](/fr/articles/js/grunt/) & co), vos [modules JavaScript](/fr/articles/js/browserify/), vos [tests](/fr/articles/js/tests/frontend/)
-et comme on vient de le voir, vos fichiers de style.
+* Il a déjà fait ses preuves comme package manager pour Node.js.
+* Pas besoin d'installer un nouvel outil, NPM étant installé avec Node.js, ce
+  qui évite un lot de bugs et de fichiers de configuration supplémentaires (un
+  simple `package.json` suffit).
+* Et surtout, toutes les dépendances de votre projet peuvent être gérées via
+  NPM: votre tasks runner et ses plugins ([Gulp](/fr/articles/js/gulp/),
+  [Grunt](/fr/articles/js/grunt/) & co), vos [modules
+  JavaScript](/fr/articles/js/browserify/), vos
+  [tests](/fr/articles/js/tests/frontend/) et comme on vient de le voir, vos
+  fichiers de style.
 
 Dans le cas où vous n'auriez pas envie de passer par l'étape de publication
 (`npm publish`) pour diverses raisons, sachez qu'il est possible
-d'[installer](https://www.npmjs.org/doc/cli/npm-install.html) des packages qui ne
-sont pas publiés. Mon alternative favorite étant l'utilisation du namespace Github
-`npm install user/repo --save`.
-Cependant, même si vous ne publiez pas votre module, lorsque vous en modifiez le
-code n'oubliez jamais de mettre à jour sa version suivant la convention
-[semver](http://semver.org/). Sinon vous serez susceptible d'inclure des bugs dans
-les projets qui l'utilisent. Ce qui implique :
+d'[installer](https://www.npmjs.org/doc/cli/npm-install.html) des packages qui
+ne sont pas publiés. Mon alternative favorite étant l'utilisation du namespace
+Github `npm install user/repo --save`. Cependant, même si vous ne publiez pas
+votre module, lorsque vous en modifiez le code n'oubliez jamais de mettre à jour
+sa version suivant la convention [semver](http://semver.org/). Sinon vous serez
+susceptible d'inclure des bugs dans les projets qui l'utilisent. Ce qui implique
+:
 
-- Mettre à jour le champ "version" de votre `package.json` (vous pouvez vous
-  aider des commandes `npm version patch`, `npm version minor` et `npm version major`).
-- Ajouter un tag git (`git tag -a 0.1.0 -m "Initial release"`).
+* Mettre à jour le champ "version" de votre `package.json` (vous pouvez vous
+  aider des commandes `npm version patch`, `npm version minor` et `npm version
+  major`).
+* Ajouter un tag git (`git tag -a 0.1.0 -m "Initial release"`).
 
-NPM est une excellente solution pour gérer les dépendences de votre projet, aussi
-bien pour vos outils de build, que pour vos assets front-end. Je pense qu'il est
-important de garder les choses simples, en commençant par utiliser un seul
-gestionnaire de dépendances, dans le cas où celui-ci n'intègre pas d'autres
+NPM est une excellente solution pour gérer les dépendences de votre projet,
+aussi bien pour vos outils de build, que pour vos assets front-end. Je pense
+qu'il est important de garder les choses simples, en commençant par utiliser un
+seul gestionnaire de dépendances, dans le cas où celui-ci n'intègre pas d'autres
 fonctionnalités que le téléchargement de modules.
 
 Bye bye Bower!
 
-PS: vous avez besoin d'un module qui n'a pas de package.json ? Pas de problème, [napa est là pour ça](/fr/articles/npm/napa/)
+PS: vous avez besoin d'un module qui n'a pas de package.json ? Pas de problème,
+[napa est là pour ça](/fr/articles/npm/napa/)

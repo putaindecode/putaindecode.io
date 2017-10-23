@@ -9,12 +9,12 @@ header:
   credit: https://www.flickr.com/photos/tristantaussac/15145365916/
 ---
 
-Dans [l'article précédent](/fr/articles/docker/), je vous ai
-présenté le fonctionnement de base de Docker. Mais cela vous limitait à
-l'usage des images que vous pouviez trouver sur le [Docker
-Hub](https://registry.hub.docker.com/). Afin de vraiment pouvoir utiliser
-Docker au maximum, il serait appréciable de pouvoir créer des images adaptées à
-nos projets et c'est là l'utilité des Dockerfiles.
+Dans [l'article précédent](/fr/articles/docker/), je vous ai présenté le
+fonctionnement de base de Docker. Mais cela vous limitait à l'usage des images
+que vous pouviez trouver sur le [Docker Hub](https://registry.hub.docker.com/).
+Afin de vraiment pouvoir utiliser Docker au maximum, il serait appréciable de
+pouvoir créer des images adaptées à nos projets et c'est là l'utilité des
+Dockerfiles.
 
 # Les Dockerfiles
 
@@ -25,10 +25,10 @@ une image permettant de lancer un projet JavaScript.
 Pour commencer, créez un nouveau fichier `Dockerfile` à la racine de votre
 projet.
 
-La première chose à faire dans un Dockerfile est de définir de quelle image
-vous héritez. Pour cet exemple, je vous propose d'utiliser une image de Debian
-comme base (ce qui est une bonne pratique, car cette image
-est plutôt légère en comparaison avec celle d'Ubuntu par exemple).
+La première chose à faire dans un Dockerfile est de définir de quelle image vous
+héritez. Pour cet exemple, je vous propose d'utiliser une image de Debian comme
+base (ce qui est une bonne pratique, car cette image est plutôt légère en
+comparaison avec celle d'Ubuntu par exemple).
 
 ```
 FROM debian:jessie
@@ -97,9 +97,9 @@ instruction dans un conteneur, et le résultat de cette instruction est
 sauvegardé sous forme de couche. Au final, une image est un assemblage de
 plusieurs couches (une par instruction). Et donc, quand vous reconstruisez une
 image pour la seconde fois, les instructions qui n'impliquent pas de changements
-ne sont pas réexécutées, car la couche est récupérée depuis l'image précédente. Par
-contre, si l'instruction implique un changement quelconque, elle est réexécutée
-ainsi que toutes les instructions suivantes.
+ne sont pas réexécutées, car la couche est récupérée depuis l'image précédente.
+Par contre, si l'instruction implique un changement quelconque, elle est
+réexécutée ainsi que toutes les instructions suivantes.
 
 Dans notre cas, les sources auront tendance à beaucoup changer, et donc ne pas
 retélécharger les dépendances à chaque changement dans le code est un réel gain
@@ -113,6 +113,7 @@ EXPOSE 3000
 
 VOLUME /app/log
 ```
+
 `EXPOSE` et `VOLUME` permettent respectivement d'indiquer quel port et quel
 dossier nous souhaitons partager.
 
@@ -165,9 +166,8 @@ Avant de transformer ce Dockerfile en une image, vous devez créer un fichier de
 plus, le `.dockerignore`, ce fichier permet comme un `.gitignore` de ne pas
 inclure certain fichiers dans votre image Docker, et c'est très important afin
 d'éviter d'inclure les dépendances de votre projet dans votre image
-(`node_modules` dans notre cas) qui sont propres à votre
-système, mais pas au système du conteneur. Voici à quoi votre `.dockerignore`
-doit ressembler :
+(`node_modules` dans notre cas) qui sont propres à votre système, mais pas au
+système du conteneur. Voici à quoi votre `.dockerignore` doit ressembler :
 
 ```
 node_modules
@@ -224,8 +224,8 @@ Successfully built aaf20fb25dac
 ```
 
 L'option `-t` permet de nommer votre image docker, ce qui vous servira lorsque
-vous voudrez lancer votre conteneur. Et le `.` est le repertoire où se trouve
-le Dockerfile, dans notre cas le dossier courant.
+vous voudrez lancer votre conteneur. Et le `.` est le repertoire où se trouve le
+Dockerfile, dans notre cas le dossier courant.
 
 Maintenant, vous pouvez lancer votre conteneur de cette manière :
 
@@ -238,14 +238,14 @@ avec votre ordinateur, si vous voulez plus de détails sur le fonctionnement du
 client Docker, je vous invite à lire mon [article
 précédent](/fr/articles/docker/).
 
----
+- - -
 
 Dans cet article, vous avez pu voir comment créer votre propre Dockerfile,
 maintenant vous pouvez créer des images Docker parfaitement adaptées à votre
 projet, et même plus. En cherchant sur Internet, vous pourrez trouver des images
 Docker pour tout et n'importe quoi, comme des images pour lancer Chrome dans un
-conteneur par exemple. Pour en savoir plus, je vous redirige vers le
-blog de [Jessie
+conteneur par exemple. Pour en savoir plus, je vous redirige vers le blog de
+[Jessie
 Frazelle](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/).
 
 Dans le prochain article, je vous parlerai de docker-compose, un outil qui

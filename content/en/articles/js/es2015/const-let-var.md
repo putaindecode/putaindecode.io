@@ -48,44 +48,43 @@ Just a fancy trick using `const` with an iterator:
 
 ```js
 function fn() {
-  const arr = [1, 2, 3]
+  const arr = [1, 2, 3];
   for (const el of arr) {
-    console.log(el)
+    console.log(el);
   }
 }
 ```
 
-You might think a `let` should be used here but the declaration is evaluated
-on each iteration, so `const` fits better here.
+You might think a `let` should be used here but the declaration is evaluated on
+each iteration, so `const` fits better here.
 
 ## let
 
 `let` allows you to do the same as `const` without the single assignment
 constraint. So you can understand here that the use-cases are the same as for
-its ancestor, `var`.
-By the way, you might have been told that *`let` is the new `var`*.
-It is partly true because it can do the same, but even better if we consider
-the ability of the variable to be scoped to the block level.
+its ancestor, `var`. By the way, you might have been told that *`let` is the new
+`var`*. It is partly true because it can do the same, but even better if we
+consider the ability of the variable to be scoped to the block level.
 
 ```js
 function fn() {
-  let foo = "bar"
-  var foo2 = "bar"
+  let foo = "bar";
+  var foo2 = "bar";
   if (true) {
-    let foo // that's ok (foo === undefined)
-    var foo2
+    let foo; // that's ok (foo === undefined)
+    var foo2;
     // Be careful, `var` statements are not scoped to the block level
     // so previous foo2 is overwritten!
-    foo = "qux"
-    foo2 = "qux"
-    console.log(foo)
+    foo = "qux";
+    foo2 = "qux";
+    console.log(foo);
     // "qux", variable belongs to the scope of the current block (the "if" one)
-    console.log(foo2)
+    console.log(foo2);
     // "qux"
   }
-  console.log(foo)
+  console.log(foo);
   // "bar", variable belongs to the scope of its block (the "fn" function)
-  console.log(foo2)
+  console.log(foo2);
   // "qux"
 }
 ```
@@ -97,30 +96,28 @@ the upper scope!
 
 ```js
 function fn2() {
-  let i = 0
-  for (let i=i; i<10; i++) {
-    console.log(i)
+  let i = 0;
+  for (let i = i; i < 10; i++) {
+    console.log(i);
   }
-  console.log(i)
+  console.log(i);
   // 0
 
-  for (let j=i; j<10; j++) {}
-  console.log(j)
+  for (let j = i; j < 10; j++) {}
+  console.log(j);
   // j is not defined
 }
-fn2() // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+fn2(); // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 ```
 
 Note: the example with `const` used in the `for ... of` loop cannot be
-reproduced here.
-The classic `for` loop is imperative, and the declaration is only made once when
-the loop starts. `const` is not relevant in this case.
+reproduced here. The classic `for` loop is imperative, and the declaration is
+only made once when the loop starts. `const` is not relevant in this case.
 
 ## var
 
-With `const` and `let`, there is no more space for `var` anymore.
-[Maybe in a `try`/`catch`
-context](https://twitter.com/getify/status/658662478528643072).
+With `const` and `let`, there is no more space for `var` anymore. [Maybe in a
+`try`/`catch` context](https://twitter.com/getify/status/658662478528643072).
 
 # Hoisting and TDZ (Temporal Dead Zone) issues
 
@@ -129,8 +126,8 @@ write:
 
 ```js
 function fn() {
-  console.log(foo) // undefined (no ReferenceError)
-  var foo = "bar"
+  console.log(foo); // undefined (no ReferenceError)
+  var foo = "bar";
 }
 ```
 
@@ -143,9 +140,9 @@ exist yet.
 
 ```js
 function fn() {
-  console.log(foo)
+  console.log(foo);
   // ReferenceError, we are in the TDZ of "foo"
-  let foo = "bar"
+  let foo = "bar";
 }
 ```
 
@@ -153,7 +150,7 @@ function fn() {
 
 So, let's recap:
 
-- Use `const` (might be relevant 99% of the time)
-- If during you development you happen to have to change the value of this
-variable, switch to `let` (that might happen 1% of the time)
-- If you are in the worst use-case of the world, use `var` (you can do the math)
+* Use `const` (might be relevant 99% of the time)
+* If during you development you happen to have to change the value of this
+  variable, switch to `let` (that might happen 1% of the time)
+* If you are in the worst use-case of the world, use `var` (you can do the math)

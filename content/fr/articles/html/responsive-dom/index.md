@@ -12,7 +12,7 @@ authors:
 Bien, commençons par le commencement, si tu veux bien. Le **responsive
 webdesign**, ça te dit quelque chose ? Oui ? Bon. Dans ce cas, tu as peut-être
 comme moi déjà été confronté à un cas de figure plutôt ennuyeux. Que tu sois
-adepte du *mobile-first* ou irréductible dégradateur progressiste, il est
+adepte du _mobile-first_ ou irréductible dégradateur progressiste, il est
 forcément arrivé un moment où tu t'es dit cette chose toute bête :
 
 > Ce serait quand même pas mal si cet élément était ici plutôt que là. Sauf que
@@ -24,7 +24,7 @@ d'écran. Et là, il faut bien avouer qu'il n'existe pas vraiment de solution
 miracle.
 
 J'entends déjà les plus teigneux vociférer qu'avec une meilleure réflexion en
-amont, le *markup* aurait été mieux conçu et on n'en serait pas là. Bien qu'un
+amont, le _markup_ aurait été mieux conçu et on n'en serait pas là. Bien qu'un
 peu facile, cette réponse peut s'avérer vraie dans un certain nombre de cas
 (admire la phrase du mec qui ne se mouille pas). Mais quoi qu'il en soit, si tu
 en es au stade de ce type de questionnement, c'est qu'il est de toute façon trop
@@ -46,12 +46,11 @@ qu'on en bénéficie tous. C'est bon, on y va ? Je t'attends, moi !
 Imagine une page de blog, où apparaissent consécutivement le titre de l'article,
 la photo l'illustrant, et enfin le texte. Comme une photo, selon la qualité de
 ta connexion, ça peut être un peu galère à charger sur mobile (et que la
-question des images en responsive design
-[est encore un sacré bordel](http://css-tricks.com/responsive-images-hard/)), tu
-prends la décision de passer la photo en dessous du contenu textuel pour que tes
-visiteurs puissent lire leur article peinards même si la photo n'a pas fini de
-charger - et tu vas même en profiter pour la remplacer par une version plus
-light.
+question des images en responsive design [est encore un sacré
+bordel](http://css-tricks.com/responsive-images-hard/)), tu prends la décision
+de passer la photo en dessous du contenu textuel pour que tes visiteurs puissent
+lire leur article peinards même si la photo n'a pas fini de charger - et tu vas
+même en profiter pour la remplacer par une version plus light.
 
 Dans un tel cas, la meilleure solution peut encore être de dupliquer ta balise
 `img`, et de masquer l'une ou l'autre avec CSS en fonction de la taille d'écran,
@@ -142,15 +141,18 @@ var handleImages = function() {
   // non encore chargées (attribut src indéfini)
   // et non masquées par CSS
 
-  [].forEach.call(document.querySelectorAll('img[data-src]:not([src])'), function(el) {
-    if (window.getComputedStyle(el).display != 'none') {
-      el.src = el.getAttribute('data-src');
+  [].forEach.call(
+    document.querySelectorAll("img[data-src]:not([src])"),
+    function(el) {
+      if (window.getComputedStyle(el).display != "none") {
+        el.src = el.getAttribute("data-src");
+      }
     }
-  });
+  );
 };
 
-window.addEventListener('load', handleImages);
-window.addEventListener('resize', handleImages);
+window.addEventListener("load", handleImages);
+window.addEventListener("resize", handleImages);
 ```
 
 Ainsi, seules les images nécessaires seront chargées avec la page. J'applique
@@ -170,7 +172,7 @@ ce genre de cas. Elle se nomme [enquire.js](http://wicky.nillia.ms/enquire.js/)
 et permet tout simplement d'affecter des callbacks à des media queries :
 
 ```javascript
-enquire.register('screen and (min-width: 768px)', {
+enquire.register("screen and (min-width: 768px)", {
   match: function() {
     // L'écran fait 768px de large ou plus...
   },
@@ -200,26 +202,30 @@ plus nécessaire) :
 ```
 
 ```javascript
-var content = document.querySelector('p'),
-
+var content = document.querySelector("p"),
   switchImage = function(isMobile) {
-    var attr = isMobile ? 'data-mobile-src' : 'data-src';
+    var attr = isMobile ? "data-mobile-src" : "data-src";
 
-    [].forEach.call(document.querySelectorAll('img[' + attr + ']'), function(el) {
+    [].forEach.call(document.querySelectorAll("img[" + attr + "]"), function(
+      el
+    ) {
       // On affecte l'une ou l'autre source à notre image,
       // entraînant son chargement si nécessaire.
       el.src = el.getAttribute(attr);
 
       // On en profite pour la bouger avant ou après le contenu
-      content.parentNode.insertBefore(el, isMobile ? content.nextSibling : content);
+      content.parentNode.insertBefore(
+        el,
+        isMobile ? content.nextSibling : content
+      );
     });
   };
 
-enquire.register('screen and (min-width: 768px)', function() {
+enquire.register("screen and (min-width: 768px)", function() {
   switchImage(false);
 });
 
-enquire.register('screen and (max-width: 767px)', function() {
+enquire.register("screen and (max-width: 767px)", function() {
   switchImage(true);
 });
 ```
@@ -243,7 +249,8 @@ peut-être même avant, j'ai pas vérifié) un peu de sucre syntaxique HTML
 permettant de switcher (via JS, œuf corse) simplement entre différents contenus
 pour l'élément sur lequel on l'utilise.
 
-C'est pas mal. Ça donne ça (tiré de [la doc](http://foundation.zurb.com/docs/components/interchange.html)) :
+C'est pas mal. Ça donne ça (tiré de [la
+doc](http://foundation.zurb.com/docs/components/interchange.html)) :
 
 > We use the data-interchange attribute on a markup container (probably a div)
 > to do this. Here's an example which loads up a small, static map on mobile, a
@@ -262,16 +269,17 @@ C'est pas mal. Ça donne ça (tiré de [la doc](http://foundation.zurb.com/docs/
 ```
 
 `small`, `medium` et `large` étant des raccourcis pour des media queries données
-(c'est dans [la doc](http://foundation.zurb.com/docs/components/interchange.html),
-toujours. J'insiste.)
+(c'est dans [la
+doc](http://foundation.zurb.com/docs/components/interchange.html), toujours.
+J'insiste.)
 
 ### Flexbox (pas toi, David)
 
-On peut également, comme l'a très justement souligné lionelB, se
-pencher (mais pas trop) sur le cas de Flexbox, qui est un nouveau type de
-positionnement introduit en CSS3. La [compatibilité](http://caniuse.com/#search=flexbox)
-n'est pas encore au top (surtout grâce à IE, qui l'eût cru) mais autant se tenir
-prêts ! Pour ceux qui ont dormi, en gros, tu définis un conteneur :
+On peut également, comme l'a très justement souligné lionelB, se pencher (mais
+pas trop) sur le cas de Flexbox, qui est un nouveau type de positionnement
+introduit en CSS3. La [compatibilité](http://caniuse.com/#search=flexbox) n'est
+pas encore au top (surtout grâce à IE, qui l'eût cru) mais autant se tenir prêts
+! Pour ceux qui ont dormi, en gros, tu définis un conteneur :
 
 ```css
 .flex-container {
@@ -319,7 +327,8 @@ flexibilité et la propreté du code que cette technique nous permet d'écrire
 résolvent notre problème en deux secondes douze. Ce n'est évidemment ici que la
 partie émergée du flexberg ; il y a des tas de bonnes ressources qui vous
 expliqueront ça en long, en large et en travers bien mieux que moi, notamment
-[cet article](http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html)
+[cet
+article](http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html)
 sur lequel j'ai honteusement pompé les snippets de cette partie.
 
 ## Conclusion

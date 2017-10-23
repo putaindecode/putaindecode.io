@@ -29,15 +29,15 @@ class User {
   }
 
   sayName() {
-    return `${this.firstname} ${this.lastname}`
+    return `${this.firstname} ${this.lastname}`;
   }
 }
 
 // instanciation
-const user = new User("John", "Doe")
+const user = new User("John", "Doe");
 
 // appel de la méthode sayName()
-console.log(user.sayName()) // John Doe
+console.log(user.sayName()); // John Doe
 ```
 
 Pour rappel, voici une [façon possible
@@ -46,22 +46,22 @@ d'écrire](https://gist.github.com/magsout/a876b2fa8240a987e523) cette classe en
 
 ```js
 function User(firstname, lastname) {
-  if(!(this instanceof User)) {
-    throw new TypeError("Class constructors cannot be invoked without 'new'")
+  if (!(this instanceof User)) {
+    throw new TypeError("Class constructors cannot be invoked without 'new'");
   }
-  this.firstname = firstname
-  this.lastname = lastname
+  this.firstname = firstname;
+  this.lastname = lastname;
 }
 
 User.prototype.sayName = function() {
-  return this.firstname + " " + this.lastname
-}
+  return this.firstname + " " + this.lastname;
+};
 
 // instanciation
-var user = new User("John", "Doe")
+var user = new User("John", "Doe");
 
 // appel de la méthode sayName()
-console.log(user.sayName()) // John Doe
+console.log(user.sayName()); // John Doe
 ```
 
 ## Expressions de classes
@@ -106,41 +106,40 @@ console.log(user.role) // Owner
 
 ## L'héritage
 
-Pour qu'une sous-classe hérite d'une autre classe on utilisera le mot
-clé `extends`.
+Pour qu'une sous-classe hérite d'une autre classe on utilisera le mot clé
+`extends`.
 
 En utilisant notre exemple précédent :
 
 ```js
 class Contributor extends User {
   constructor(firstname, lastname, numberCommit) {
-
     // le mot clé super est utilisé comme super contructeur. Il permet d'appeler
     // et d'avoir accès aux méthodes du parent
-    super(firstname, lastname)
-    this.numberCommit = numberCommit
+    super(firstname, lastname);
+    this.numberCommit = numberCommit;
   }
 
   sayNameWithCommit() {
     // on peut appeler une méthode de la classe parente avec `super.method`
-    return super.sayName() + " " + this.sayNumberCommit()
+    return super.sayName() + " " + this.sayNumberCommit();
   }
 
   sayNumberCommit() {
-    return this.numberCommit
+    return this.numberCommit;
   }
 }
 
 // instanciation
-const contributor = new Contributor('Jane', 'Smith', 10)
+const contributor = new Contributor("Jane", "Smith", 10);
 
 // appel de la méthode sayName()
-console.log(contributor.sayName())
-console.log(contributor.sayNumberCommit())
-
+console.log(contributor.sayName());
+console.log(contributor.sayNumberCommit());
 ```
 
-**Rappel : [préférez la composition à l'héritage](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
+**Rappel : [préférez la composition à
+l'héritage](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
 
 ## That's it
 
@@ -153,10 +152,10 @@ Au final, on gagne en clarté, en lisibilité et donc en maintenabilité.
 À l'heure actuelle, il est nécessaire de passer par un transpileur comme
 [babel](https://babeljs.io/) pour utiliser les classes.
 
-Une dernière petite chose, le 
-[mode strict](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode) 
-est automatiquement activé dans le corps des classes et leurs déclarations.
-Il n'est donc pas nécessaire de le rajouter manuellement.
+Une dernière petite chose, le [mode
+strict](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode)
+est automatiquement activé dans le corps des classes et leurs déclarations. Il
+n'est donc pas nécessaire de le rajouter manuellement.
 
 ```js
 /* Mode strict initial */

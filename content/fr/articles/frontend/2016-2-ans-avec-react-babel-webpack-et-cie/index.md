@@ -54,11 +54,12 @@ de coder en JavaScript version ES2015 ou supérieure puis de convertir en code
 compatible avec les navigateurs du marché.
 
 Pour apprendre ES2015 et plus :
-  - [articles sur putaindecode.io](http://putaindecode.io/fr/tag/ES6)
-  - exercices en ligne : [es6katas.org](http://es6katas.org)
-  - tutorial Babel : [babeljs.io](http://babeljs.io/docs/learn-es2015)  
-  - comparaisons ES5/ES2015 :
-[es6-features.org](http://es6-features.org/#BlockScopedVariables)
+
+* [articles sur putaindecode.io](http://putaindecode.io/fr/tag/ES6)
+* exercices en ligne : [es6katas.org](http://es6katas.org)
+* tutorial Babel : [babeljs.io](http://babeljs.io/docs/learn-es2015)
+* comparaisons ES5/ES2015 :
+  [es6-features.org](http://es6-features.org/#BlockScopedVariables)
 
 Vous pouvez très bien faire de l'ES2015 sans Babel, puisque [les navigateurs
 modernes en supportent une grande
@@ -67,11 +68,11 @@ d'où l'idée d'utiliser un transpileur comme Babel qui convertit en ES5.
 
 Le format JSX, est devenu un standard qui peut simplifier le développement :
 
- - il permet de centraliser la présentation et la logique d'un composant au même
-endroit
- - d'utiliser une syntaxe XML-like plus rigoureuse, mais bénéfique
- - d'utiliser du JavaScript pur au lieu d'un pseudo-langage comme on trouve dans
-les moteurs de template habituels
+* il permet de centraliser la présentation et la logique d'un composant au même
+  endroit
+* d'utiliser une syntaxe XML-like plus rigoureuse, mais bénéfique
+* d'utiliser du JavaScript pur au lieu d'un pseudo-langage comme on trouve dans
+  les moteurs de template habituels
 
 Ça peut paraître déroutant au début mais ça rentre vite !
 
@@ -103,7 +104,6 @@ escient.
 NB: Dans sa lancée open-source, Facebook vient de publier une alternative au CLI
 npm : [yarn](http://yarnpkg.org) plus rapide, fiable et sécurisé.
 
-
 ## Webpack
 
 ![](/assets/webpack.png)
@@ -126,12 +126,12 @@ Pour cela, les assets doivent être correctement déclarés dans le code :
 
 ```js
 // require some CSS
-import styles from './styles.css'
-const ex1 = <div className={ styles.title }>title</div>
+import styles from "./styles.css";
+const ex1 = <div className={styles.title}>title</div>;
 
 // require an image
-import logo from './logo.png'
-const img = <img src={ logo } />
+import logo from "./logo.png";
+const img = <img src={logo} />;
 ```
 
 Et la célèbre [config de webpack](https://webpack.js.org/configuration/) permet
@@ -170,11 +170,11 @@ dédiés au CSS sur putaindecode.io](http://putaindecode.io/fr/tag/css).
 
 Il existe plusieurs bibliothèques de composants UI assez fournies pour React :
 
- - [rebass](http://jxnblk.com/rebass/)
- - [ant.design](http://ant.design)
- - [semantic-ui](http://semantic-ui.com)
- - [react-toolbox](http://react-toolbox.com/)
- - [blueprintjs](http://blueprintjs.com)
+* [rebass](http://jxnblk.com/rebass/)
+* [ant.design](http://ant.design)
+* [semantic-ui](http://semantic-ui.com)
+* [react-toolbox](http://react-toolbox.com/)
+* [blueprintjs](http://blueprintjs.com)
 
 Et voici un article recensant des [librairies de composants React
 open-source](http://davidwells.io/19-open-source-react-component-libraries-to-use-in-your-next-project/).
@@ -210,12 +210,12 @@ Les composants doivent être simples, focus, composables.
 
 ```js
 <Toolbar>
-  <Icon name="success" onClick={ onClickSuccess } />
+  <Icon name="success" onClick={onClickSuccess} />
   <Menu>
-    <Icon name="warning" onClick={ onClickWarning } />
-    <Icon name="error" onClick={ onClickError } />
+    <Icon name="warning" onClick={onClickWarning} />
+    <Icon name="error" onClick={onClickError} />
   </Menu>
-</Toolbar>
+</Toolbar>;
 ```
 
 Au niveau performances, React ne fait pas de miracles malgré le
@@ -227,7 +227,6 @@ Même s'il ne modifie pas le DOM, le fait de comparer les deux arbres retournés
 par render peut s'avérer coûteux si votre composant présente beaucoup de
 contenu. Heureusement, React permet aux développeurs d'intervenir avant le
 render et l'annuler s'il n'est pas nécessaire avec `shouldComponentUpdate`.
-
 
 Plus d'[articles sur React sur putain de
 code](http://putaindecode.io/fr/tag/react)
@@ -263,7 +262,8 @@ composants réutilisables.
 
 Votre bibliothèque de composants peut même être un projet à part, que vous
 importerez dans vos différentes applications. Par exemple, Cloudflare publie
-séparément [tous ses composants UI réutilisables](https://github.com/cloudflare/cf-ui).
+séparément [tous ses composants UI
+réutilisables](https://github.com/cloudflare/cf-ui).
 
 ### Composition
 
@@ -311,35 +311,34 @@ le nécessaire.
 
 ## Must read and watch
 
- - [Intro to React](https://facebook.github.io/react/tutorial/tutorial.html)
- - Free videos
-[egghead.io/react-fundamentals](https://egghead.io/courses/react-fundamentals)
- - Free videos
-[egghead.io/getting-started-with-redux](https://egghead.io/courses/getting-started-with-redux)
- - [You might not need
-redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367#.8swndjba2)
- - [Smart VS dumb
-components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.v583rvea1)
- - [Les patterns Provider & Higher-Order Component avec
-React](http://putaindecode.io/fr/articles/js/react/higher-order-component/)
- - [React higher components in
-depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.t74wxicu0)
+* [Intro to React](https://facebook.github.io/react/tutorial/tutorial.html)
+* Free videos
+  [egghead.io/react-fundamentals](https://egghead.io/courses/react-fundamentals)
+* Free videos
+  [egghead.io/getting-started-with-redux](https://egghead.io/courses/getting-started-with-redux)
+* [You might not need
+  redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367#.8swndjba2)
+* [Smart VS dumb
+  components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.v583rvea1)
+* [Les patterns Provider & Higher-Order Component avec
+  React](http://putaindecode.io/fr/articles/js/react/higher-order-component/)
+* [React higher components in
+  depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.t74wxicu0)
 
 ## Liens
 
 > Quelques pépites
 
- - [create-react-app](https://github.com/facebookincubator/create-react-app) :
-CLI complet pour faire une application react
- - [nwb](https://github.com/insin/nwb) : CLI complet faire un composant react
-(dev,build,demo,tests,npm...)
- - [react-css-components](https://github.com/andreypopp/react-css-components) :
-créer des composants React à partir de CSS
- - [redux-ecosystem-links](https://github.com/markerikson/redux-ecosystem-links)
- - [npm scripts docs](https://docs.npmjs.com/misc/scripts)
- - [aframe-react](https://github.com/ngokevin/aframe-react) : Build VR
-experiences with A-Frame and React
- - [reactpatterns.com](http://reactpatterns.com) : quelques patterns react
- - [phenomic.io](http://phenomic.io) : react-based static site generator
- - [jsbooks.revolunet.com](http://jsbooks.revolunet.com) : free JavaScript
-ebooks
+* [create-react-app](https://github.com/facebookincubator/create-react-app) :
+  CLI complet pour faire une application react
+* [nwb](https://github.com/insin/nwb) : CLI complet faire un composant react
+  (dev,build,demo,tests,npm...)
+* [react-css-components](https://github.com/andreypopp/react-css-components) :
+  créer des composants React à partir de CSS
+* [redux-ecosystem-links](https://github.com/markerikson/redux-ecosystem-links)
+* [npm scripts docs](https://docs.npmjs.com/misc/scripts)
+* [aframe-react](https://github.com/ngokevin/aframe-react) : Build VR
+  experiences with A-Frame and React
+* [reactpatterns.com](http://reactpatterns.com) : quelques patterns react
+* [phenomic.io](http://phenomic.io) : react-based static site generator
+* [jsbooks.revolunet.com](http://jsbooks.revolunet.com) : free JavaScript ebooks

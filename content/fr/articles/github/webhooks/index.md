@@ -12,10 +12,10 @@ header:
 
 Vous avez pu lire récemment une [introduction sur l'intégration
 continue](/fr/articles/ci/deploiement-continu/) qui mène vers [le déploiement
-continu](/fr/articles/ci/). Si vous utilisez GitHub pour héberger vos
-sources et que vous cherchez un moyen très simple (peut-être un peu trop) de
-mettre en place le déploiement continu _sans serveur d'intégration continue
-dédié_, alors les webhooks peuvent répondre parfaitement à votre besoin.
+continu](/fr/articles/ci/). Si vous utilisez GitHub pour héberger vos sources et
+que vous cherchez un moyen très simple (peut-être un peu trop) de mettre en
+place le déploiement continu *sans serveur d'intégration continue dédié*, alors
+les webhooks peuvent répondre parfaitement à votre besoin.
 
 ## Les quoi ?
 
@@ -78,66 +78,65 @@ API/script, etc.
 Voici un petit exemple utilisant `express` :
 
 ```js
-var express = require("express")
-var app = express()
-var bodyParser = require("body-parser")
-var xhub = require("express-x-hub")
+var express = require("express");
+var app = express();
+var bodyParser = require("body-parser");
+var xhub = require("express-x-hub");
 
 //Const
-var xhubSecret = "MySecretKey"
-var port = "8085"
-var host = "localhost"
+var xhubSecret = "MySecretKey";
+var port = "8085";
+var host = "localhost";
 
 //Secret key
-app.use(xhub({ algorithm: "sha1", secret: xhubSecret }))
+app.use(xhub({ algorithm: "sha1", secret: xhubSecret }));
 
 // Configure express json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // Main : Start the express http server
-var server = app.listen(port, host, function () {
+var server = app.listen(port, host, function() {
   console.log(
     "App listening at http://%s:%s",
     server.address().address,
     server.address().port
-  )
-})
+  );
+});
 
 // Add default route
-app.post("/webhook", function (req, res) {
-  if(!req.isXHubValid()){
-    res.status(400).send('Invalid X-Hub Request')
-    console.log("Secret key is invalid")
-    return
+app.post("/webhook", function(req, res) {
+  if (!req.isXHubValid()) {
+    res.status(400).send("Invalid X-Hub Request");
+    console.log("Secret key is invalid");
+    return;
   }
 
-  var command = req.headers["x-github-event"]
+  var command = req.headers["x-github-event"];
 
-  switch(command) {
-
+  switch (command) {
     //Event create (Branch, or tag created)
     case "create":
-      res.send("Event create trigger")
-      console.log("Create event")
-      break
+      res.send("Event create trigger");
+      console.log("Create event");
+      break;
 
     //Event release (Release published in a repository)
     case "release":
-      res.send("Event release trigger")
-      console.log("Release Event")
-      break
+      res.send("Event release trigger");
+      console.log("Release Event");
+      break;
 
     default:
-      res.status(400).send("Event not supported : " + command)
-      console.log("Event not supported : " + req.headers["X-Github-Event"])
+      res.status(400).send("Event not supported : " + command);
+      console.log("Event not supported : " + req.headers["X-Github-Event"]);
   }
-})
+});
 ```
 
 Pour vous donner une idée de ce que peut envoyer GitHub, voici deux gists :
 
-- [Headers](header.txt)
-- [Payload](payload.json)
+* [Headers](header.txt)
+* [Payload](payload.json)
 
 ## This is just the beginning
 

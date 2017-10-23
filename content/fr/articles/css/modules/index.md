@@ -9,23 +9,21 @@ authors:
 ---
 
 > Je crois que même avant que je sache exactement ce qu'était le CSS, j'avais
-déjà entendu quelqu'un me dire "Je HAIS le CSS". Cette phrase était souvent dite
-par un de mes amis du back-end, et souvent pour de très bonnes raisons. Cet
-article n'essaiera pas de défendre ni de vous faire aimer le CSS, mais comme les
-outils de développement front-end évoluent rapidement, je trouve intéressant
-d'expliquer les nouvelles façons d'écrire le CSS.
-
+> déjà entendu quelqu'un me dire "Je HAIS le CSS". Cette phrase était souvent
+> dite par un de mes amis du back-end, et souvent pour de très bonnes raisons.
+> Cet article n'essaiera pas de défendre ni de vous faire aimer le CSS, mais
+> comme les outils de développement front-end évoluent rapidement, je trouve
+> intéressant d'expliquer les nouvelles façons d'écrire le CSS.
 
 ## Retour aux bases
 
 D'abord, pour comprendre quel sont les problèmes que les nouveaux outils tentent
-de résoudre, un petit rappel sur ce qu'est le CSS : *Cascading Style Sheets* ou
+de résoudre, un petit rappel sur ce qu'est le CSS : _Cascading Style Sheets_ ou
 *Feuilles de style en cascade*.
 
 Une feuille de style ? C'est facile ! C'est un bout de code qui lie des "styles"
-à du HTML.
-En cascade ? Et bien, quelques fois un élément HTML peut correspondre à
-plusieurs styles, et "en cascade" est le groupe de règles qui permet de
+à du HTML. En cascade ? Et bien, quelques fois un élément HTML peut correspondre
+à plusieurs styles, et "en cascade" est le groupe de règles qui permet de
 déterminer lequel appliquer.
 
 Voici du code CSS basique : nous voulons que nos titres h1 soient rouges.
@@ -36,7 +34,7 @@ h1 {
 }
 ```
 
-Ici, nous lions la ***règle (ou déclaration)*** `color: red` au ***sélecteur***
+Ici, nous lions la **_règle (ou déclaration)_** `color: red` au **_sélecteur_**
 "h1". Un sélecteur peut contenir plusieurs règles dans son bloc de déclarations.
 
 > Et les dernières lueurs de bonheur s'éteignent alors que nous entrons dans
@@ -79,13 +77,11 @@ cascade.
 
 ### L'ordre des règles
 
-La position d'une règle par rapport aux autres va influer sur son poids.
-Deux règles auraient pu avoir le même poids si elles étaient à la même position
-mais, au final, c'est la dernière qui sera la plus lourde et sera donc
-appliquée.
-***La dernière.***
-Quand il s'agit de code assez simple, cela peut être facilement
-compréhensible :
+La position d'une règle par rapport aux autres va influer sur son poids. Deux
+règles auraient pu avoir le même poids si elles étaient à la même position mais,
+au final, c'est la dernière qui sera la plus lourde et sera donc appliquée.
+**_La dernière._** Quand il s'agit de code assez simple, cela peut être
+facilement compréhensible :
 
 ```css
 h1 {
@@ -94,12 +90,12 @@ h1 {
 }
 ```
 
-Facile, n'est-ce pas ? Le titre sera bleu ! Mais s'il y a une règle `color:
-red` dans un fichier CSS nommé *foo.css*, et une règle `color: blue` dans un
-autre fichier nommé *bar.css*, que le fichier *foo.css* met plus de temps que le
-fichier *bar.css* à charger, mais que le tag HTML référençant *foo.css* est
+Facile, n'est-ce pas ? Le titre sera bleu ! Mais s'il y a une règle `color: red`
+dans un fichier CSS nommé *foo.css*, et une règle `color: blue` dans un autre
+fichier nommé *bar.css*, que le fichier _foo.css_ met plus de temps que le
+fichier _bar.css_ à charger, mais que le tag HTML référençant _foo.css_ est
 avant celui de *bar.css*, quelle règle est appliquée ? Eh bien, c'est plus
-compliqué à savoir. *(indice : le temps de chargement n'est pas pris en compte)*
+compliqué à savoir. _(indice : le temps de chargement n'est pas pris en compte)_
 
 ### La spécificité des sélecteurs
 
@@ -107,9 +103,8 @@ Ce critère est un niveau de complexité au-dessus des autres, [si bien que des
 personnes en ont fait des calculettes pour le
 simplifier](https://specificity.keegan.st). Je ne vais pas rentrer dans les
 détails, mais il faut savoir que le poids d'un sélecteur est égal à la somme des
-poids de tous les sélecteurs le composant.
-Et que tous les sélecteurs n'ont pas le même poids.
-
+poids de tous les sélecteurs le composant. Et que tous les sélecteurs n'ont pas
+le même poids.
 
 ```css
 .title {
@@ -136,6 +131,7 @@ h1 {
   color: red;
 }
 ```
+
 ```html
 <h1 style="color: blue;">Title</h1>
 ```
@@ -143,13 +139,14 @@ h1 {
 ### Importance
 
 Et enfin le dernier critère, le God Mode, le broyeur de styles, le mot-clé
-***!important.*** Quand on veut VRAIMENT que le titre soit rouge :
+**_!important._** Quand on veut VRAIMENT que le titre soit rouge :
 
 ```css
 h1 {
   color: red !important;
 }
 ```
+
 ```html
 <h1 style="color: blue;">Title</h1>
 ```
@@ -167,28 +164,27 @@ et outils pour éviter ce cauchemar !
 ## L'évolution des outils
 
 Maintenant, je vais vous présenter comment ma façon d'écrire du CSS a évolué au
-fil du temps. Ne vous attendez pas à une chronologie complète de tous les
-outils inventés depuis la création du CSS en 1996 (j'avais 6 ans !) mais plutôt
-une explication de comment je me suis débrouillé avec la cascade dans ma courte
+fil du temps. Ne vous attendez pas à une chronologie complète de tous les outils
+inventés depuis la création du CSS en 1996 (j'avais 6 ans !) mais plutôt une
+explication de comment je me suis débrouillé avec la cascade dans ma courte
 expérience personnelle.
 
 ### Pré-processeurs
 
 J'ai commencé à developper des applications web en 2012, en plein âge d'or [des
-pré-processeurs](/fr/articles/css/preprocesseurs/). Ils
-étaient apparus quelques années auparavant, comme le CSS lui-même n'était pas
-suffisamment adapté pour construire des sites complexes. Les pré-processeurs
-sont des compilateurs qui génèrent du code CSS à partir de languages légèrement
-différents, comme [Sass](http://sass-lang.com) ou [LESS](http://lesscss.org).
-Ces nouveaux languages permettent de créer des variables par exemple, ou
-d'imbriquer des sélecteurs, entre autres merveilleuses nouvelles
-fonctionnalités.
+pré-processeurs](/fr/articles/css/preprocesseurs/). Ils étaient apparus quelques
+années auparavant, comme le CSS lui-même n'était pas suffisamment adapté pour
+construire des sites complexes. Les pré-processeurs sont des compilateurs qui
+génèrent du code CSS à partir de languages légèrement différents, comme
+[Sass](http://sass-lang.com) ou [LESS](http://lesscss.org). Ces nouveaux
+languages permettent de créer des variables par exemple, ou d'imbriquer des
+sélecteurs, entre autres merveilleuses nouvelles fonctionnalités.
 
 On peut transformer ce vieux code CSS compliqué à maintenir :
 
 ```css
 body {
-  background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 body h1 {
@@ -196,7 +192,7 @@ body h1 {
 }
 ```
 
-en cette bien *meilleure* version :
+en cette bien _meilleure_ version :
 
 ```scss
 $textColor: #333333;
@@ -205,7 +201,7 @@ body {
   background: lighten($textColor, 90%);
 
   h1 {
-    color: $textColor
+    color: $textColor;
   }
 }
 ```
@@ -216,7 +212,7 @@ notre structure HTML dans le code de notre pré-processeur favori. Notre CSS se
 retrouva donc avec des sélecteurs très long et lourds qui étaient associés
 uniquement avec un element HTML précis, comme ce dernier :
 
-> .searchPage .sideBar .refinements.default .category .star input
+> .searchPage .sideBar .refinements.default .category .star input
 
 Et ça a plutôt bien marché au début ! Mais ces sélecteurs n'étaient pas les plus
 performants, et la structure du HTML étant répliquée, n'importe quel changement
@@ -236,18 +232,16 @@ développements en composants. L'imbrication des sélecteurs ne marchait pas tr�
 bien avec ces derniers, vu que le but est de créer des bouts de code
 réutilisables partout dans la web app, comme un bouton par exemple. La
 méthodologie que j'utilise (toujours aujourd'hui) est appelée [BEM, pour Block
-Element Modifier](/fr/articles/css/bem/), mais il y en a
-d'autres avec le même but : chaque élément HTML de mes composants doit avoir une
-classe CSS qui lui est unique. De cette façon, pas besoin d'imbrication, et pas
-de collision de la cascade !
+Element Modifier](/fr/articles/css/bem/), mais il y en a d'autres avec le même
+but : chaque élément HTML de mes composants doit avoir une classe CSS qui lui
+est unique. De cette façon, pas besoin d'imbrication, et pas de collision de la
+cascade !
 
-Et ce code de pré-processeur :
+Et ce code de pré-processeur :
 
 ```scss
 h1 {
-  color: $textColor
-
-  img {
+  color: $textColor img {
     border: 1px solid black;
   }
 }
@@ -257,7 +251,7 @@ se transforme en :
 
 ```css
 .Title {
-  color: $textColor
+  color: $textColor;
 }
 
 .Title-icon {
@@ -276,25 +270,24 @@ contourner les problèmes de la cascade :
 ### Frameworks CSS
 
 Ici, pour éviter à nos règles CSS d'entrer en collision, nous… n'en écrivons
-plus !
-Les frameworks CSS sont des styles déjà écrits qu'on peut utiliser avec des
-classes CSS spécifiques. Il y a deux approches ici :
+plus ! Les frameworks CSS sont des styles déjà écrits qu'on peut utiliser avec
+des classes CSS spécifiques. Il y a deux approches ici :
 
 * Les frameworks de styles "finaux" comme [Bootstrap](http://getbootstrap.com).
-Il suffit d'ajouter la classe `btn` sur un élément HTML et… tada ! C'est
-maintenant un magnifique bouton. Certaines variables sont modifiables pour
-transformer le look global du framework.
+  Il suffit d'ajouter la classe `btn` sur un élément HTML et… tada ! C'est
+  maintenant un magnifique bouton. Certaines variables sont modifiables pour
+  transformer le look global du framework.
 
 * Les frameworks de styles "utilitaires" comme [Tachyons](http://tachyons.io).
-Ici, il n'y a pas de styles pré-définis, mais plein de classes utilitaires
-sont disponibles, comme `pam` pour donner un *medium padding* à un élément,
-ou encore `ba` pour lui donner une *border all* tout autour.
+  Ici, il n'y a pas de styles pré-définis, mais plein de classes utilitaires
+  sont disponibles, comme `pam` pour donner un _medium padding_ à un élément, ou
+  encore `ba` pour lui donner une _border all_ tout autour.
 
 Les frameworks utilitaires sont assez intéressants, du fait que le fichier CSS
 final fera autour de 10kB et jamais plus, même si le site grandit ! Mais il y
 aura beaucoup de classes peu compréhensibles dans le code HTML. C'est comparable
 aux styles inline, avec une optimization de poids final, comme `ba` est plus
-court que *“border-style: solid; border-width: 1px;”*
+court que _“border-style: solid; border-width: 1px;”_
 
 Ces frameworks nous évitent tout tracas avec la cascade ! Mais je n'aimais pas
 le fait d'utiliser un framework, ainsi qu'avoir beaucoup de classes non
@@ -333,13 +326,13 @@ en ce code CSS et template JavaScript :
 
 ```css
 .styleName {
-  color: $textColor
+  color: $textColor;
 }
 ```
 
 ```js
-import styles from './style.css';
-`<h1 class=${styles.styleName}></h1>`
+import styles from "./style.css";
+`<h1 class=${styles.styleName}></h1>`;
 ```
 
 Une fois compilé, ce code générera quelque chose comme ça :
@@ -379,12 +372,12 @@ montrer :
 ```
 
 ```js
-import styles from './style.css';
+import styles from "./style.css";
 `<h1 class=${styles.bigTitle}></h1>
- <h2 class=${styles.mediumTitle}></h2>`
+ <h2 class=${styles.mediumTitle}></h2>`;
 ```
 
-va générer :
+va générer :
 
 ```css
 .titleColor__abc5436 {

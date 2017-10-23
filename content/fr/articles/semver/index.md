@@ -11,16 +11,16 @@ header:
 ---
 
 _Ce post a été largement inspiré de la mauvaise expérience que j'ai pu avoir
-avec l'évolution de [Backbone.js](http://backbonejs.org/) qui, ne respectant pas SemVer, m'a posé des
-problèmes lors de mise à jour de versions. Les node_modules (dépendances de
-dépendances) sont aussi en question._
+avec l'évolution de [Backbone.js](http://backbonejs.org/) qui, ne respectant pas
+SemVer, m'a posé des problèmes lors de mise à jour de versions. Les node_modules
+(dépendances de dépendances) sont aussi en question._
 
 Depuis quelques temps, vous devez entendre le terme **SemVer** par-ci par-là
 mais peut-être que vous ne savez pas ce que c'est ou que vous ne savez pas
 comment l'appliquer. Et je vous comprends, j'ai mis un peu de temps à maitriser
 le sujet.
 
-Pour faire simple, **SemVer** (voulant dire _Semantic Versioning_) est une
+Pour faire simple, **SemVer** (voulant dire *Semantic Versioning*) est une
 gestion sémantique des versions. En d'autres termes, une façon de numéroter les
 versions de manière logique, cohérente, parlante, ayant du sens. Ce n'est
 cependant pas forcément une norme, vous n'êtes pas obligé(e) de la respecter
@@ -33,9 +33,9 @@ tout ce qui a une progression en informatique. Cela permet de définir
 l'avancement du produit. La majorité du temps (sauf pour quelques hérétiques),
 cela s'écrit de cette façon : `X.Y.Z` où `X`, `Y` et `Z` sont des entiers (pas
 forcément des chiffres d'ailleurs, cela peut être supérieur à 9) soit `1.0.10`
-par exemple. Il est possible que vous voyiez cette forme `vX.Y.Z` comme `v1.0.10`
-mais en toute franchise, je ne l'apprécie pas. J'aime que mon tag équivaille à
-ma version en elle-même. Purement personnel.
+par exemple. Il est possible que vous voyiez cette forme `vX.Y.Z` comme
+`v1.0.10` mais en toute franchise, je ne l'apprécie pas. J'aime que mon tag
+équivaille à ma version en elle-même. Purement personnel.
 
 Maintenant que nous savons ce qu'est une version, voyons voir ce qu'est
 réellement **SemVer**.
@@ -46,18 +46,17 @@ savoir rapidement quelles modifications ont été apportées à votre projet.
 Voyons voir ce que dit la documentation officielle de
 [SemVer](http://semver.org/lang/fr/)
 
+> Étant donné un numéro de version MAJEUR.MINEUR.CORRECTIF, il faut incrémenter
+> :
 
->Étant donné un numéro de version MAJEUR.MINEUR.CORRECTIF, il faut incrémenter :
+> le numéro de version MAJEUR quand il y a des changements
+> rétro-incompatibles,<br> le numéro de version MINEUR quand il y a des
+> changements rétro-compatibles,<br> le numéro de version de CORRECTIF quand il
+> y a des corrections d’anomalies rétro-compatibles
 
->le numéro de version MAJEUR quand il y a des changements
-rétro-incompatibles,<br>
->le numéro de version MINEUR quand il y a des changements rétro-compatibles,<br>
->le numéro de version de CORRECTIF quand il y a des corrections d’anomalies
-rétro-compatibles
-
->Des libellés supplémentaires peuvent être ajoutés pour les versions de
-pré-livraison et pour des méta-données de construction sous forme d'extension du
-format MAJEURE.MINEURE.CORRECTIF.
+> Des libellés supplémentaires peuvent être ajoutés pour les versions de
+> pré-livraison et pour des méta-données de construction sous forme d'extension
+> du format MAJEURE.MINEURE.CORRECTIF.
 
 On comprend effectivement l'idée de **SemVer** (et la suite du site explique
 comment l'appliquer) mais je trouve que l'on peut mieux expliquer.
@@ -71,22 +70,22 @@ versions que vous proposez.
 
 Si je devais définir à quelqu'un ce qu'est **SemVer**, je lui dirais ceci :
 
->SemVer s'écrit de cette façon : `X.Y.Z` où `X` est "majeur", `Y` est "mineur",
-`Z` est "patch".
+> SemVer s'écrit de cette façon : `X.Y.Z` où `X` est "majeur", `Y` est "mineur",
+> `Z` est "patch".
 
->Qu'est-ce que cela veut dire. Cela veut dire que si vous avez corrigé un bug
-dans votre lib et que cela n'affecte en rien le code écrit par votre
-utilisateur, alors incrémentez `Z` (+0.0.1).
+> Qu'est-ce que cela veut dire. Cela veut dire que si vous avez corrigé un bug
+> dans votre lib et que cela n'affecte en rien le code écrit par votre
+> utilisateur, alors incrémentez `Z` (+0.0.1).
 
->Si vous avez fait des ajouts dans votre app qui peuvent être intéressants pour
-l'utilisateur et mérite une certaine attention afin d'améliorer le code qui
-utilise votre lib, alors incrémentez `Y` (+0.1.0).
+> Si vous avez fait des ajouts dans votre app qui peuvent être intéressants pour
+> l'utilisateur et mérite une certaine attention afin d'améliorer le code qui
+> utilise votre lib, alors incrémentez `Y` (+0.1.0).
 
->Si en revanche, vous avez cassé ne serait-ce qu'une partie de l'API ("breaking
-changes"), que vous avez _juste_ changé des noms de méthodes / fonctions déjà
-existantes (et donc sûrement utilisées par quelqu'un d'autre), que finalement
-cela nécessite **forcément** une modification de la part de l'utilisateur sous
-peine que sa propre app ne fonctionne plus, alors incrémentez `X` (+1.0.0).
+> Si en revanche, vous avez cassé ne serait-ce qu'une partie de l'API ("breaking
+> changes"), que vous avez _juste_ changé des noms de méthodes / fonctions déjà
+> existantes (et donc sûrement utilisées par quelqu'un d'autre), que finalement
+> cela nécessite **forcément** une modification de la part de l'utilisateur sous
+> peine que sa propre app ne fonctionne plus, alors incrémentez `X` (+1.0.0).
 
 C'est vraiment une question de respect envers qui vous proposez votre lib. Par
 **SemVer**, je vous informe des potentielles modifications ou lectures de
@@ -124,7 +123,7 @@ git en utilisant la commande `$ npm version`. Comme ceci :
 $ npm version (major|minor|patch)
 ```
 
-Cela vous incrémentera le `package.json`  et vous fera un beau commit + tag dans
+Cela vous incrémentera le `package.json` et vous fera un beau commit + tag dans
 git tel que :
 
 ```console
@@ -147,14 +146,14 @@ important lors d'ajouts de fonctionnalités ou de modifications (majeures et
 mineures) afin de voir directement les méthodes / fonctions affectées mais aussi
 dans le cas d'un patch de voir le gain obtenu de cette nouvelle mise à jour. À
 ajouter directement dans le `README.md` à la fin ou carrément dans un fichier ou
-des fichiers dédiés à ça.
-Voici un [exemple](https://github.com/cssnext/cssnext/blob/master/CHANGELOG.md).
+des fichiers dédiés à ça. Voici un
+[exemple](https://github.com/cssnext/cssnext/blob/master/CHANGELOG.md).
 
----
+- - -
 
 Stay safe, use **SemVer**.
 
 Ressources :
 
-- [site officiel](http://semver.org/)
-- [semver-ftw](http://semver-ftw.org/)
+* [site officiel](http://semver.org/)
+* [semver-ftw](http://semver-ftw.org/)

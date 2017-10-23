@@ -12,11 +12,15 @@ header:
   linearGradient: 160deg, rgb(204, 51, 51), rgba(204, 51, 51, .6)
 ---
 
-Oui alors jQuery, c'est sûrement très bien, ça simplifie pas mal de choses et le _chaining_ est intéressant mais eeeest-ce que vous connaissez l'équivalent en _pur_ JavaScript ? Pas sûr hein.
+Oui alors jQuery, c'est sûrement très bien, ça simplifie pas mal de choses et le
+_chaining_ est intéressant mais eeeest-ce que vous connaissez l'équivalent en
+_pur_ JavaScript ? Pas sûr hein.
 
-Ce petit article vous propose de quoi peut-être vous faire changer d'avis sur la bibliothèque qui pèse tout de même environ ~80ko.
+Ce petit article vous propose de quoi peut-être vous faire changer d'avis sur la
+bibliothèque qui pèse tout de même environ ~80ko.
 
-_Note : [Vanilla JS](http://vanilla-js.com/) n'est pas un framework mais veut simplement dire "à nu", c'est du JavaScript sans bibliothèque._
+_Note : [Vanilla JS](http://vanilla-js.com/) n'est pas un framework mais veut
+simplement dire "à nu", c'est du JavaScript sans bibliothèque._
 
 C'est parti !
 
@@ -37,12 +41,12 @@ C'est parti !
 // jQuery
 $(document).ready(function() {
   // code
-})
+});
 
 // Vanilla
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
   // code
-})
+});
 ```
 
 ```javascript
@@ -63,83 +67,85 @@ $('a').click(function() {
 
 ```javascript
 // jQuery
-var divs = $('div')
+var divs = $("div");
 
 // Vanilla
-var divs = document.querySelectorAll('div')
+var divs = document.querySelectorAll("div");
 ```
 
 ```javascript
 // jQuery
-var newDiv = $('<div/>')
+var newDiv = $("<div/>");
 
 // Vanilla
-var newDiv = document.createElement('div')
+var newDiv = document.createElement("div");
 ```
 
 ## Attributs
 
 ```javascript
 // jQuery
-$('img').filter(':first').attr('alt', 'My image')
+$("img")
+  .filter(":first")
+  .attr("alt", "My image");
 
 // Vanilla
-document.querySelector('img').setAttribute('alt', 'My image')
+document.querySelector("img").setAttribute("alt", "My image");
 ```
 
 ## Classes
 
 ```javascript
 // jQuery
-newDiv.addClass('foo')
+newDiv.addClass("foo");
 
 // Vanilla
-newDiv.classList.add('foo')
+newDiv.classList.add("foo");
 ```
 
 ```javascript
 // jQuery
-newDiv.toggleClass('foo')
+newDiv.toggleClass("foo");
 
 // Vanilla
-newDiv.classList.toggle('foo')
+newDiv.classList.toggle("foo");
 ```
 
 ## Manipulation
 
 ```javascript
 // jQuery
-$('body').append($('<p/>'))
+$("body").append($("<p/>"));
 
 // Vanilla
-document.body.appendChild(document.createElement('p'))
+document.body.appendChild(document.createElement("p"));
 ```
 
 ```javascript
 // jQuery
-var clonedElement = $('#about').clone()
+var clonedElement = $("#about").clone();
 
 // Vanilla
-var clonedElement = document.getElementById('about').cloneNode(true)
+var clonedElement = document.getElementById("about").cloneNode(true);
 ```
 
 ```javascript
 // jQuery
-$('#wrap').empty()
+$("#wrap").empty();
 
 // Vanilla
-var wrap = document.getElementById('wrap')
-while(wrap.firstChild) wrap.removeChild(wrap.firstChild)
+var wrap = document.getElementById("wrap");
+while (wrap.firstChild) wrap.removeChild(wrap.firstChild);
 ```
 
 ## Navigation
 
 ```javascript
 // jQuery
-var parent = $('#about').parent()
+var parent = $("#about").parent();
 
 // Vanilla
-var parent = document.getElementById('about').parentNode
+var parent = document.getElementById("about").parentNode;
 ```
 
 ```javascript
@@ -152,67 +158,76 @@ if(!document.getElementById('wrap').hasChildNodes())
 
 ```javascript
 // jQuery
-var nextElement = $('#wrap').next()
+var nextElement = $("#wrap").next();
 
 // Vanilla
-var nextElement = document.getElementById('wrap').nextSibling
+var nextElement = document.getElementById("wrap").nextSibling;
 ```
 
 ## AJAX
 
 ### GET
+
 ```javascript
 // jQuery
-$.get('//example.com', function (data) {
+$.get("//example.com", function(data) {
   // code
-})
+});
 
 // Vanilla
-var httpRequest = new XMLHttpRequest()
-httpRequest.onreadystatechange = function (data) {
+var httpRequest = new XMLHttpRequest();
+httpRequest.onreadystatechange = function(data) {
   // code
-}
-httpRequest.open('GET', url)
-httpRequest.send()
+};
+httpRequest.open("GET", url);
+httpRequest.send();
 ```
 
 ### POST
+
 ```javascript
 // jQuery
-$.post('//example.com', { username: username }, function (data) {
+$.post("//example.com", { username: username }, function(data) {
   // code
-})
+});
 
 // Vanilla
-var httpRequest = new XMLHttpRequest()
-httpRequest.onreadystatechange = function (data) {
+var httpRequest = new XMLHttpRequest();
+httpRequest.onreadystatechange = function(data) {
   // code
-}
-httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-httpRequest.open('POST', url)
-httpRequest.send('username=' + encodeURIComponent(username))
+};
+httpRequest.setRequestHeader(
+  "Content-Type",
+  "application/x-www-form-urlencoded"
+);
+httpRequest.open("POST", url);
+httpRequest.send("username=" + encodeURIComponent(username));
 ```
 
 ### JSONP
+
 ```javascript
 // jQuery
-$.getJSON('//openexchangerates.org/latest.json?callback=?', function (data) {
+$.getJSON("//openexchangerates.org/latest.json?callback=?", function(data) {
   // code
-})
+});
 
 // Vanilla
 function formatCurrency(data) {
   // code
 }
-var scr = document.createElement('script')
-scr.src = '//openexchangerates.org/latest.json?callback=formatCurrency'
-document.body.appendChild(scr)
+var scr = document.createElement("script");
+scr.src = "//openexchangerates.org/latest.json?callback=formatCurrency";
+document.body.appendChild(scr);
 ```
 
 Cela vous parait-il encore difficile de vous passer de jQuery ? :)
 
-Un grand merci à [@deaxon](http://playground.deaxon.com/js/vanilla-js/) qui est à l'origine de cet éclaircissement.
+Un grand merci à [@deaxon](http://playground.deaxon.com/js/vanilla-js/) qui est
+à l'origine de cet éclaircissement.
 
 ## À creuser
 
-Il existe une version minimaliste de jQuery basée sur la même API mais beaucoup plus légère s'appelant [Zepto](http://zeptojs.com/). Il est actuellement utilisé en production sur le site mobile de ma boite.
+Il existe une version minimaliste de jQuery basée sur la même API mais beaucoup
+plus légère s'appelant [Zepto](http://zeptojs.com/). Il est actuellement utilisé
+en production sur le site mobile de ma boite.

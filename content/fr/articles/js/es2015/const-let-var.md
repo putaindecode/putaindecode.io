@@ -15,7 +15,6 @@ dans la spécification du langage.
 
 Première étape, on oublie tout ce qu'on sait sur `var`.
 
-
 # Déclarations
 
 ## const
@@ -26,7 +25,7 @@ salle à côté du radiateur, ça veut simplement dire que vous pouvez déclarer
 variable qui ne contiendra qu'une valeur et qui sera scopée au niveau du bloc.
 
 Si vous avez déjà lu des posts ou des ressources parlant de `const`, méfiez-vous
-: ce ne sont pas des vraies constantes au sens *valeur* de variable. Ce sont des
+: ce ne sont pas des vraies constantes au sens _valeur_ de variable. Ce sont des
 constantes au niveau référence. C'est à dire que le contenu d'un tableau ou d'un
 objet déclaré avec `const` bloque la réassignation de la variable, mais ne rend
 pas la valeur immuable.
@@ -51,9 +50,9 @@ d'itérables :
 
 ```js
 function fn() {
-  const arr = [1, 2, 3]
+  const arr = [1, 2, 3];
   for (const el of arr) {
-    console.log(el)
+    console.log(el);
   }
 }
 ```
@@ -73,23 +72,23 @@ mais en mieux, car il a cette caractéristique d'être scopé au bloc courant.
 
 ```js
 function fn() {
-  let foo = "bar"
-  var foo2 = "bar"
+  let foo = "bar";
+  var foo2 = "bar";
   if (true) {
-    let foo // pas d'erreur, foo === undefined
-    var foo2
+    let foo; // pas d'erreur, foo === undefined
+    var foo2;
     // Attention, les déclarations "var" ne sont pas scopées au niveau bloc
     // foo2 est en réalité écrasé !
-    foo = "qux"
-    foo2 = "qux"
-    console.log(foo)
+    foo = "qux";
+    foo2 = "qux";
+    console.log(foo);
     // "qux", la variable appartient au scope de son blocs (le "if")
-    console.log(foo2)
+    console.log(foo2);
     // "qux"
   }
-  console.log(foo)
+  console.log(foo);
   // "bar", la variable appartient au scope de son bloc (la fonction "fn")
-  console.log(foo2)
+  console.log(foo2);
   // "qux"
 }
 ```
@@ -100,18 +99,18 @@ conflit avec votre code autour. Plus de problème de `i` déjà pris !
 
 ```js
 function fn2() {
-  let i = 0
-  for (let i=i; i<10; i++) {
-    console.log(i)
+  let i = 0;
+  for (let i = i; i < 10; i++) {
+    console.log(i);
   }
-  console.log(i)
+  console.log(i);
   // 0
 
-  for (let j=i; j<10; j++) {}
-  console.log(j)
+  for (let j = i; j < 10; j++) {}
+  console.log(j);
   // j is not defined
 }
-fn2() // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+fn2(); // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 ```
 
 Note : l'exemple avec `const` dans une boucle `for ... of` ne peut être
@@ -134,8 +133,8 @@ pouvez écrire :
 
 ```js
 function fn() {
-  console.log(foo) // undefined (au lieu de ReferenceError)
-  var foo = "bar"
+  console.log(foo); // undefined (au lieu de ReferenceError)
+  var foo = "bar";
 }
 ```
 
@@ -150,9 +149,9 @@ où votre variable n'existe pas. Ce moment, c'est la TDZ.
 
 ```js
 function fn() {
-  console.log(foo)
+  console.log(foo);
   // ReferenceError, on est dans la TDZ pour la variable foo
-  let foo = "bar"
+  let foo = "bar";
 }
 ```
 
@@ -160,7 +159,7 @@ function fn() {
 
 Comment choisir quelle déclaration de variable utiliser ? C'est très simple :
 
- - Utilisez une déclaration par `const` (99% du temps, c'est le bon choix)
- - Si au fil de votre code vous changez sa valeur, modifiez pour un `let` (1%)
- - Si vous avez trouvé le pire cas d'utilisation du monde, changez pour un `var`
-(je vous laisse faire le calcul)
+* Utilisez une déclaration par `const` (99% du temps, c'est le bon choix)
+* Si au fil de votre code vous changez sa valeur, modifiez pour un `let` (1%)
+* Si vous avez trouvé le pire cas d'utilisation du monde, changez pour un `var`
+  (je vous laisse faire le calcul)
