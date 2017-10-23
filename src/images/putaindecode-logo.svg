@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
-    <title>Code</title>
+    <title>Oval-2@3x</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="127.223881%" id="linearGradient-1">
             <stop stop-color="#E41D57" offset="0%"></stop>
             <stop stop-color="#C60000" offset="100%"></stop>
         </linearGradient>
-        <circle id="path-2" cx="250" cy="250" r="250"></circle>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Code">
-            <g id="Group-2">
-                <g id="Oval-2">
-                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
-                    <circle stroke="#FFFFFF" stroke-width="15.625" cx="250" cy="250" r="242.1875"></circle>
+        <g id="putaindecode-logo">
+            <g id="Oval-2">
+                <g id="path-2-link" fill="url(#linearGradient-1)">
+                    <circle id="path-2" cx="250" cy="250" r="250"></circle>
                 </g>
-                <text id="&gt;" font-family="SFMono-Bold, SF Mono" font-size="208.333333" font-style="condensed" font-weight="bold" fill="#FFFFFF">
-                    <tspan x="138.020833" y="323">&gt;</tspan>
-                </text>
-                <rect id="Rectangle-3" fill="#FFFFFF" x="304.6875" y="153.645833" width="28.6458333" height="195.3125"></rect>
+                <circle id="Oval" stroke="#FFFFFF" stroke-width="15.625" cx="250" cy="250" r="242.1875"></circle>
             </g>
         </g>
     </g>
