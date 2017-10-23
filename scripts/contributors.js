@@ -123,7 +123,7 @@ async function contributorsMap() {
     loginCache[author] = results.map[author]
   }))
 
-  const stdout = await exec("git log --pretty=format:%ae::%an | sort | uniq")
+  const stdout = await exec("git log --use-mailmap --pretty=format:%aE::%an | sort | uniq")
   log("- Git log done")
 
   const newUsers = []
