@@ -10,22 +10,31 @@
   color: var(--colorRed);
   border: 1px solid transparent;
   border-color: #ddd;
-  background: linear-gradient(var(--putainde-Button-color1), var(--putainde-Button-color2));
-  border-radius: .2em;
+  background: linear-gradient(
+    var(--putainde-Button-color1),
+    var(--putainde-Button-color2)
+  );
+  border-radius: 0.2em;
   text-decoration: none;
 }
 
-  .putainde-Button--block {
-    display: block;
-    text-align: center;
-  }
+.putainde-Button--block {
+  display: block;
+  text-align: center;
+}
 
-  .putainde-Button:hover,
-  .putainde-Button:focus {
-    border-color: #ddd;
-    background: linear-gradient(var(--putainde-Button-color1), color(var(--putainde-Button-color2) b(+5%)));
-  }
-  .putainde-Button:active {
-    border-color: #ddd;
-    background: linear-gradient(color(var(--putainde-Button-color2) b(+10%)), var(--putainde-Button-color1));
-  }
+.putainde-Button:hover,
+.putainde-Button:focus {
+  border-color: #ddd;
+  background: linear-gradient(
+    var(--putainde-Button-color1),
+    color(var(--putainde-Button-color2) b(+5%))
+  );
+}
+.putainde-Button:active {
+  border-color: #ddd;
+  background: linear-gradient(
+    color(var(--putainde-Button-color2) b(+10%)),
+    var(--putainde-Button-color1)
+  );
+}

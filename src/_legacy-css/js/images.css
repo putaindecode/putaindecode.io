@@ -4,7 +4,7 @@
 
 .js-Loaded {
   visibility: visible;
-  animation: .8s ease-in-out Animation--fadeIn;
+  animation: 0.8s ease-in-out Animation--fadeIn;
 }
 
 @keyframes Animation--fadeIn {

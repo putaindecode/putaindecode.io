@@ -2,17 +2,17 @@
   color: inherit;
   text-decoration: none;
 }
-  .putainde-Link:hover,
-  .putainde-Link:focus {
-    text-decoration: underline;
-  }
+.putainde-Link:hover,
+.putainde-Link:focus {
+  text-decoration: underline;
+}
 
 .putainde-Link--emphasis {
   color: var(--colorRed);
   fill: var(--colorRed);
 }
-  .putainde-Link--emphasis:hover,
-  .putainde-Link--emphasis:focus {
-    color: color(var(--colorRed) lightness(-10%));
-    fill: color(var(--colorRed) lightness(-10%));
-  }
+.putainde-Link--emphasis:hover,
+.putainde-Link--emphasis:focus {
+  color: color(var(--colorRed) lightness(-10%));
+  fill: color(var(--colorRed) lightness(-10%));
+}

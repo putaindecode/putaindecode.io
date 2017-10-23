@@ -2,11 +2,11 @@
   text-align: left;
   padding: 0 2em;
 }
-  @media (--maxM) {
-    .putainde-Column {
-      padding: .5em
-    }
+@media (--maxM) {
+  .putainde-Column {
+    padding: 0.5em;
   }
+}
 
 .putainde-Column-title {
   font-size: 1.275em;
@@ -25,10 +25,10 @@
 }
 
 .putainde-Label input {
-  margin-right: 1em
+  margin-right: 1em;
 }
 
 .putainde-Label-text {
-  font-size: .875em;
+  font-size: 0.875em;
   color: #444;
 }

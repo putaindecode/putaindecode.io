@@ -86,7 +86,7 @@
     "test": "npm run build",
     "predeploy": "npm run test",
     "deploy": "./scripts/deploy.sh",
-    "format": "prettier --write \"**/*.{js,json}\""
+    "format": "prettier --write \"**/*.{js,json,css}\""
   },
   "prettier": {
     "parser": "flow"
