@@ -1,12 +1,12 @@
-import React, { PropTypes } from "react"
+import React, { PropTypes } from "react";
 
-import getAuthorUri from "../getAuthorUri"
-import defaultAvatar from "./default.png"
+import getAuthorUri from "../getAuthorUri";
+import defaultAvatar from "./default.png";
 
 const Avatar = ({ author, className }, context) => {
-  const { metadata } = context
-  const authorData = metadata.contributors.getContributor(author)
-  const size = size || 128
+  const { metadata } = context;
+  const authorData = metadata.contributors.getContributor(author);
+  const size = size || 128;
 
   return (
     <a
@@ -17,22 +17,22 @@ const Avatar = ({ author, className }, context) => {
         className="js-AnimateLoad"
         src={
           authorData && authorData.avatar_url
-          ? authorData.avatar_url + "&s=" + size
-          : defaultAvatar
+            ? authorData.avatar_url + "&s=" + size
+            : defaultAvatar
         }
         alt=""
       />
     </a>
-  )
-}
+  );
+};
 
 Avatar.contextTypes = {
-  metadata: PropTypes.object.isRequired,
-}
+  metadata: PropTypes.object.isRequired
+};
 
 Avatar.propTypes = {
   className: PropTypes.string,
-  author: PropTypes.string.isRequired,
-}
+  author: PropTypes.string.isRequired
+};
 
-export default Avatar
+export default Avatar;

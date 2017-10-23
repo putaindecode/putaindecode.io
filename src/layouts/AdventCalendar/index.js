@@ -1,44 +1,42 @@
-import React, { PropTypes } from "react"
-import { BodyContainer } from "phenomic"
+import React, { PropTypes } from "react";
+import { BodyContainer } from "phenomic";
 
-import Loading from "../../components/Loading"
+import Loading from "../../components/Loading";
 // import getI18n from "../../i18n/get"
-import Contributors from "../../components/Contributors"
-import WithHeroHeader from "../WithHeroHeader"
+import Contributors from "../../components/Contributors";
+import WithHeroHeader from "../WithHeroHeader";
 
-const AdventCalendar = (props) => (
-  <WithHeroHeader { ...props } meta={ false } tags={ false }>
+const AdventCalendar = props => (
+  <WithHeroHeader {...props} meta={false} tags={false}>
     <div className="r-Grid">
       <div className="r-Grid-cell r-minM--8of12 putainde-Post-contents">
         <div className="putainde-Post-md">
-          {
-            props.isLoading
-            ? <Loading />
-            : <BodyContainer>{ props.body }</BodyContainer>
-          }
+          {props.isLoading ? (
+            <Loading />
+          ) : (
+            <BodyContainer>{props.body}</BodyContainer>
+          )}
         </div>
 
         <footer className="putainde-Post-footer">
-
           <Contributors filename={props.__filename} />
-
         </footer>
       </div>
     </div>
   </WithHeroHeader>
-)
+);
 
 AdventCalendar.propTypes = {
   __url: PropTypes.string.isRequired,
   __filename: PropTypes.string.isRequired,
   isLoading: PropTypes.bool,
   head: PropTypes.object.isRequired,
-  body: PropTypes.string.isRequired,
-}
+  body: PropTypes.string.isRequired
+};
 
 AdventCalendar.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-}
+  location: PropTypes.object.isRequired
+};
 
-export default AdventCalendar
+export default AdventCalendar;

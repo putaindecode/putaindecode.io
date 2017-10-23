@@ -1,13 +1,13 @@
-import React, { PropTypes } from "react"
-import { Link } from "react-router"
+import React, { PropTypes } from "react";
+import { Link } from "react-router";
 
-import getI18n from "../../i18n/get"
-import getLang from "../../i18n/getLang"
-import Navigation from "../Navigation"
-import SVGInline from "react-svg-inline"
+import getI18n from "../../i18n/get";
+import getLang from "../../i18n/getLang";
+import Navigation from "../Navigation";
+import SVGInline from "react-svg-inline";
 
 const Header = (props, context) => {
-  const i18n = getI18n(context)
+  const i18n = getI18n(context);
 
   return (
     <div className="putainde-Header">
@@ -28,12 +28,12 @@ const Header = (props, context) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Header.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-}
+  location: PropTypes.object.isRequired
+};
 
-export default Header
+export default Header;

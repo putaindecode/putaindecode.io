@@ -1,41 +1,38 @@
-import React, { Component } from "react"
-import { PropTypes } from "react"
-import ga from "react-google-analytics"
+import React, { Component } from "react";
+import { PropTypes } from "react";
+import ga from "react-google-analytics";
 
-const GoogleAnalyticsInitiailizer = ga.Initializer
+const GoogleAnalyticsInitiailizer = ga.Initializer;
 
-const isProduction = process.env.NODE_ENV === "production"
-const isClient = typeof window !== "undefined"
+const isProduction = process.env.NODE_ENV === "production";
+const isClient = typeof window !== "undefined";
 
 class GoogleAnalyticsTracker extends Component {
-
   componentWillMount() {
     if (isClient) {
-      const { pkg } = this.context.metadata
+      const { pkg } = this.context.metadata;
       if (isProduction) {
-        ga("create", pkg.googleAnalyticsUA, "auto")
+        ga("create", pkg.googleAnalyticsUA, "auto");
+      } else {
+        console.info("ga.create", pkg.googleAnalyticsUA);
       }
-      else {
-        console.info("ga.create", pkg.googleAnalyticsUA)
-      }
-      this.logPageview()
+      this.logPageview();
     }
   }
 
   componentWillReceiveProps(props) {
     if (props.params.splat !== this.props.params.splat) {
-      this.logPageview()
+      this.logPageview();
     }
   }
 
   logPageview() {
     if (isClient) {
       if (isProduction) {
-        ga("set", "page", window.location.pathname)
-        ga("send", "pageview")
-      }
-      else {
-        console.info("New pageview", window.location.href)
+        ga("set", "page", window.location.pathname);
+        ga("send", "pageview");
+      } else {
+        console.info("New pageview", window.location.href);
       }
     }
   }
@@ -43,20 +40,20 @@ class GoogleAnalyticsTracker extends Component {
   render() {
     return (
       <div>
-        { this.props.children }
+        {this.props.children}
         <GoogleAnalyticsInitiailizer />
       </div>
-    )
+    );
   }
 }
 
 GoogleAnalyticsTracker.propTypes = {
-  children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
-  params: PropTypes.object.isRequired,
-}
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  params: PropTypes.object.isRequired
+};
 
 GoogleAnalyticsTracker.contextTypes = {
-  metadata: PropTypes.object.isRequired,
-}
+  metadata: PropTypes.object.isRequired
+};
 
-export default GoogleAnalyticsTracker
+export default GoogleAnalyticsTracker;
