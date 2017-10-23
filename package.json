@@ -172,6 +172,7 @@
     "extends": ["eslint-config-i-am-meticulous/react"],
     "rules": {
       "no-unused-vars": 0,
+      "import/no-unresolved": 0,
       "import/order": 0,
       "import/max-dependencies": 0,
       "import/no-namespace": 0,
