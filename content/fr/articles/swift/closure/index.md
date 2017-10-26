@@ -1,6 +1,6 @@
 ---
 date: "2017-10-26"
-title: Swift - la fonction: une closure particulière
+title: "Swift - la fonction: une closure particulière"
 tags:
   - swift
   - function
@@ -29,22 +29,22 @@ func sayHello(name:String, age:UInt){
 }
 ```
 
-L’appel se fait aussi simplement que ça : `sayHello(name:"Bob", age: 32)`. Le mot clé `_` permet de d'enlever le label du paramètre dans l'appel si besoin : 
+L’appel se fait aussi simplement que ça : `sayHello(name:"Bob", age: 32)`. Le mot clé `_` permet de d'enlever le label du paramètre dans l'appel si besoin :
 
 ```swift
 // Declaration
 func sayHello(name:String,_ age:UInt){
- print("Hello \(name), you are \(age)") 
+ print("Hello \(name), you are \(age)")
 }
 // Appel
 sayHello(name:"Bob", 32)
 ```
 
-Mais vous perdrez en clarté de code suivant les cas. Par exemple, avec `min(3,6)` on voit tout de suite ce que fait la fonction. Alors que `sayHelloTo("Bob", 32)`, le `32` pourrait être beaucoup de choses. 
+Mais vous perdrez en clarté de code suivant les cas. Par exemple, avec `min(3,6)` on voit tout de suite ce que fait la fonction. Alors que `sayHelloTo("Bob", 32)`, le `32` pourrait être beaucoup de choses.
 
 > Les paramètres sont obligatoirement typés, mais peuvent être optionnels (en autorisant la valeur nil) avec la notation ? (e.g. Int?, String?).
 
-Vous pouvez aussi définir des valeurs par défauts pour les paramètres : 
+Vous pouvez aussi définir des valeurs par défauts pour les paramètres :
 
 ```swift
 // Declaration
@@ -70,7 +70,7 @@ func formatHelloSentence(name:String, age:UInt? = nil) -> String {
         return "Hello \(name), you are \(age)"
     }
 }
-// Appel 
+// Appel
 let helloSentence = formatHelloSentence(name:"Bob", age: 32)
 ```
 
@@ -111,9 +111,9 @@ let myTuple = hardFunction([2.4,2.6,1.8])
 let myTupleString = myTuple.errorString // myTuple.3 marche encore
 ```
 
-L'exécution du code permettant d'avoir les valeurs *Tuple* n'est exécuté qu'a demande de ces valeurs. Dans l'exemple ci-dessus, le code de `hardFunction` ne sera appelé qu'a la dernière ligne, car c'est la qu'on a besoin de `errorString`, pas avant. 
+L'exécution du code permettant d'avoir les valeurs *Tuple* n'est exécuté qu'a demande de ces valeurs. Dans l'exemple ci-dessus, le code de `hardFunction` ne sera appelé qu'a la dernière ligne, car c'est la qu'on a besoin de `errorString`, pas avant.
 
- Et la notion de *Closure* fait son entrée! 
+ Et la notion de *Closure* fait son entrée!
 
 ## La closure: la variable-fonction
 
@@ -129,16 +129,16 @@ Une *closure*  se déclare grâce au `{}` et peut être appelé (exécuté) grâ
  let helloClosure = {
      print("hello, I’m a closure")
  }
- 
+
  helloClosure() // Le code est exécuté ici
 ```
 
-Ça vous rappelle rien ? L’appel d’une *fonction* ! En réalité, la *fonction* est une *closure* particulière associé à un contexte (Object, environnement, Bundle...) pour réaliser des optimisations et une meilleur compréhension du code. 
+Ça vous rappelle rien ? L’appel d’une *fonction* ! En réalité, la *fonction* est une *closure* particulière associé à un contexte (Object, environnement, Bundle...) pour réaliser des optimisations et une meilleur compréhension du code.
 
 > Pour une *closure* "à l’air libre", on dit d’elle, qu’elle est *Self Contained* alors qu’une fonction est contenue par un contexte (`class` par exemple)
 
 Comme les fonctions, les *closures*  ont des paramètres d’entrée et de retour:  
- 
+
 ```swift
 let complexClosure = {(name:String, age:Float) -> Bool in
     // Code
@@ -147,16 +147,16 @@ let complexClosure = {(name:String, age:Float) -> Bool in
 let success = complexClosure("Louis",32)
 print("Louis has \(success)")
 ```
-    
+
 Ainsi, les valeurs dans la première partie après la `{` sont les paramètres d’entrées et après la `->` ce sont les paramètres de sortie. Le code à exécuter est après le `in`.
 
 > Comme vous avez dû le remarquer, les *closures* n’ont pas de paramètres nominatif. IL faut passer les paramètres d'entré dans l'ordre de la déclaration.
 
 ### Closure et Type
 
-Toute variable est typée en *Swift*, implicitement ou explicitement. Pour les *closures* le type est souvent implicite, aussi bien qu’on en oubli souvent qu’elles sont typées. Le type d’une closure va être défini par ses paramètres d’entrée et de sortie. Ainsi la *complexClosure*  ci-dessus est du type : `((String, Float)) -> (Bool)`. 
+Toute variable est typée en *Swift*, implicitement ou explicitement. Pour les *closures* le type est souvent implicite, aussi bien qu’on en oubli souvent qu’elles sont typées. Le type d’une closure va être défini par ses paramètres d’entrée et de sortie. Ainsi la *complexClosure*  ci-dessus est du type : `((String, Float)) -> (Bool)`.
 
-Je peux alors écrire ce code puisque les closures sont du même type : 
+Je peux alors écrire ce code puisque les closures sont du même type :
 
 ```swift
 let otherComplexClosure = { (surname:String,size:Float) -> Bool in
@@ -166,7 +166,7 @@ let otherComplexClosure = { (surname:String,size:Float) -> Bool in
 complexClosure = otherComplexClosure
 ```
 
-### Utilisation du contexte 
+### Utilisation du contexte
 
 Les *closures* ont une connaissance du contexte qui l’entoure. Ce qui veut dire que si la closure est créé dans une méthode, elle aura accès :
 
@@ -176,7 +176,7 @@ Les *closures* ont une connaissance du contexte qui l’entoure. Ce qui veut dir
 ```swift
 class Animal {
     var name = "Boby"
-    
+
     func crier(cri:String){
         let uselessClosure = {
             print("\(self.name) cri \(cri)")
@@ -184,16 +184,16 @@ class Animal {
         uselessClosure()
     }
 }
-``` 
+```
 
 ### Trailing Closure
 
-Pour finir, un peu d'esthétisme car on aime tous le *beau* code. La *Trailing Closure* est une syntaxe d'appel de fonction qui permet de rendre le code plus facile à lire. 
+Pour finir, un peu d'esthétisme car on aime tous le *beau* code. La *Trailing Closure* est une syntaxe d'appel de fonction qui permet de rendre le code plus facile à lire.
 
-Prenant la fonction suivante, prenant une `URL` est une closure de type `Void->Void` : 
+Prenant la fonction suivante, prenant une `URL` est une closure de type `Void->Void` :
 
 ```swift
-func doLongTask(on file:URL, 
+func doLongTask(on file:URL,
         completion:() -> ()){
     //long task
     completion()
@@ -208,7 +208,7 @@ doLongTask(on: aFileURL, completion:{
 })
 ```
 
-Avec du code plus complexe, ça commence à devenir difficile à lire. Or si le dernier paramètre d'une fonction est une *closure*, on peut alors écrire l'appel comme ceci : 
+Avec du code plus complexe, ça commence à devenir difficile à lire. Or si le dernier paramètre d'une fonction est une *closure*, on peut alors écrire l'appel comme ceci :
 
 ```swift
 doLongTask(on: aFileURL){
@@ -218,7 +218,7 @@ doLongTask(on: aFileURL){
 
 ## Pro Tip
 
-Imaginons une classe `A` ayant une variable `event`  et un classe `B` ayant une fonction `awesomeEvent`  ayant la même signature de la variable de A. Je peux alors allouer à la variable `event` le code de `awesomeEvent`. 
+Imaginons une classe `A` ayant une variable `event`  et un classe `B` ayant une fonction `awesomeEvent`  ayant la même signature de la variable de A. Je peux alors allouer à la variable `event` le code de `awesomeEvent`.
 
 ```swift
 class A {
@@ -242,6 +242,6 @@ a.event?("Dude")
 
 ## Conclusion
 
-Voilà vous savez tout, ou presque, sur les fonctions et les closures. Les closures ont vraiment la part belle en Swift, donc apprenez à les utiliser et les comprendre pour simplifiez votre code. Elles sont partout dans les API iOS et macOS. 
+Voilà vous savez tout, ou presque, sur les fonctions et les closures. Les closures ont vraiment la part belle en Swift, donc apprenez à les utiliser et les comprendre pour simplifiez votre code. Elles sont partout dans les API iOS et macOS.
 
 Et un petit conseil: faite attention à l'état de vos *closures* dans vos `Thread` si vous voulez pas de fuite 😊
