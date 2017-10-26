@@ -41,7 +41,7 @@ logValue("How are you?")
 ```
 
 Une fonction est agnostique: elle peut être appelée de manière synchrone ou
-asynchrone, c'est la façon dont elle est exécutée qui le définira.
+asynchrone, c'est la façon dont elle est exécutée qui définira le "mode".
 
 Un cas où il est utile d'utiliser des APIs asynchrones avec Node.js: les accès
 au *file-system*. Si vous lisez un gros fichier en mode synchrone, il va bloquer
