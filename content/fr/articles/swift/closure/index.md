@@ -15,13 +15,13 @@ header:
   linearGradient: 0deg, rgba(249,82,51, .9), rgba(252, 136, 63, .7)
 ---
 
-**Swift** est un langage simple pour les débutants, tout en offrant de grandes possibilitées aux développeurs expérimentés. Les *fonctions* Swift sont un bon exemple de cette façon d’avoir penser le langage.
+**Swift** est un langage simple pour les débutants, tout en offrant de grandes possibilitées aux développeurs expérimentés. Les *fonctions* Swift sont un bon exemple de cette façon d’avoir pensé le langage.
 
 ## Les fonctions
 
 ### Déclaration simple
 
-La déclaration et l’utilisation de *fonction* est simple. On commence avec le mot clé `func` suivi du *nom*, puis des *paramètres* entre parenthèses (a.k.a. `input`) :
+La déclaration et l’utilisation de *fonctions* est simple. On commence avec le mot clé `func` suivi du *nom*, puis des *paramètres* entre parenthèses (a.k.a. `input`) :
 
 ```swift
 func sayHello(name:String, age:UInt){
@@ -60,7 +60,7 @@ sayHello(name:"Bob") // -> Hello Bob
 sayHello(name:"Bob", 32) // ->  Hello Bob, you are 32
 ```
 
-La plupart du temps nos fonctions servent à nous retourner des informations. Pour cela on utilise `->` en signe de retour suivi du type de la valeur retourné.
+La plupart du temps nos fonctions servent à nous retourner des informations. Pour cela on utilise `->` en signe de retour suivi du type de la valeur retournée.
 
 ```
 func formatHelloSentence(name:String, age:UInt? = nil) -> String {
@@ -74,7 +74,7 @@ func formatHelloSentence(name:String, age:UInt? = nil) -> String {
 let helloSentence = formatHelloSentence(name:"Bob", age: 32)
 ```
 
-### Retours multiple ou Tuples
+### Retours multiples ou Tuples
 
 Apple n’est pas connu pour sa générosité, mais dans Swift ils en ont fait autrement `:troll:` : on peut retourner plusieurs valeurs avec une seule fonction. Pour cela on utilise un `Tuple` : un collection de variables ordonnées.
 
@@ -111,7 +111,7 @@ let myTuple = hardFunction([2.4,2.6,1.8])
 let myTupleString = myTuple.errorString // myTuple.3 marche encore
 ```
 
-L'exécution du code permettant d'avoir les valeurs *Tuple* n'est exécuté qu'a demande de ces valeurs. Dans l'exemple ci-dessus, le code de `hardFunction` ne sera appelé qu'a la dernière ligne, car c'est la qu'on a besoin de `errorString`, pas avant.
+L'exécution du code permettant d'avoir les valeurs *Tuple* n'est effectuée qu'à la demande de ces valeurs. Dans l'exemple ci-dessus, le code de `hardFunction` ne sera appelé qu'à la dernière ligne, car c'est la qu'on a besoin de `errorString`, pas avant.
 
  Et la notion de *Closure* fait son entrée!
 
@@ -119,11 +119,11 @@ L'exécution du code permettant d'avoir les valeurs *Tuple* n'est exécuté qu'a
 
 ### Quésaco
 
-**Une *closure* est une partie de code, avec paramètres et sorties, qui peut être encapsulé dans une variable, et exécuté à la demande**. Si vous développez en C++ ou Objective-C vous connaissez peut-être déjà les *blocks* et en Java ou C# les *lambdas* qui sont des *features* très (très) proche.
+**Une *closure* est une partie de code, avec paramètres et sorties, qui peut être encapsulé dans une variable, et exécutée à la demande**. Si vous développez en C++ ou Objective-C vous connaissez peut-être déjà les *blocks* et en Java ou C# les *lambdas* qui sont des *features* très (très) proches.
 
 ### Déclaration
 
-Une *closure*  se déclare grâce au `{}` et peut être appelé (exécuté) grâce aux parenthèses  :
+Une *closure*  se déclare grâce au `{}` et peut être appelée (exécutée) grâce aux parenthèses :
 
 ```swift
  let helloClosure = {
@@ -150,7 +150,7 @@ print("Louis has \(success)")
 
 Ainsi, les valeurs dans la première partie après la `{` sont les paramètres d’entrées et après la `->` ce sont les paramètres de sortie. Le code à exécuter est après le `in`.
 
-> Comme vous avez dû le remarquer, les *closures* n’ont pas de paramètres nominatif. IL faut passer les paramètres d'entré dans l'ordre de la déclaration.
+> Comme vous avez dû le remarquer, les *closures* n’ont pas de paramètres nominatif. IL faut passer les paramètres d'entrée dans l'ordre de la déclaration.
 
 ### Closure et Type
 
@@ -218,7 +218,7 @@ doLongTask(on: aFileURL){
 
 ## Pro Tip
 
-Imaginons une classe `A` ayant une variable `event`  et un classe `B` ayant une fonction `awesomeEvent`  ayant la même signature de la variable de A. Je peux alors allouer à la variable `event` le code de `awesomeEvent`.
+Imaginons une classe `A` ayant une variable `event`  et un classe `B` ayant une fonction `awesomeEvent` ayant la même signature de la variable de A. Je peux alors allouer à la variable `event` le code de `awesomeEvent`.
 
 ```swift
 class A {
