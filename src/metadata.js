@@ -1,6 +1,6 @@
 import pkg from "../package.json";
 import i18n from "./i18n";
-import contributors from "../contributors.json";
+import contributors from "../cache/contributors.json";
 
 export default {
   pkg,

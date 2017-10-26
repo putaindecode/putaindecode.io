@@ -18,7 +18,7 @@ const writeFile = asyncify(fs.writeFile);
 //
 const topContribMonths = 6;
 const authorsFiles = "content/authors/*.json";
-const contributorsFile = "contributors.json";
+const contributorsFile = "cache/contributors.json";
 
 const githubApi = new GithubApi({
   version: "3.0.0",

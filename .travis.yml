@@ -12,7 +12,7 @@ cache:
   yarn: true
   directories:
     - node_modules
-    - contributors.json
+    - cache
 
 # contributors task: need all commits to build the contributors cache correctly
 git:

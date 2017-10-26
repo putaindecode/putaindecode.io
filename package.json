@@ -87,7 +87,7 @@
     "lint": "eslint .",
     "start": "phenomic start",
     "build": "phenomic build",
-    "contributors": "babel-node scripts/contributors",
+    "contributors": "mkdirp cache && babel-node scripts/contributors",
     "prestart": "npm run contributors",
     "prebuild": "npm run contributors",
     "pretest": "npm run lint",

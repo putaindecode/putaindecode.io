@@ -42,7 +42,7 @@ C'est l'étape la plus simple, utilise l'interface de GitHub pour ça.
   * Pour le choix de l'URL, merci de consulter l'équipe en cas de doute (via une
     issue/proposition ou via le chat)
   * Une fois ton premier commit réalisé, si tu rebuildes le site, tu devrais
-    avoir une modification dans le fichier `contributors.json`. N'hésite pas à
+    avoir une modification dans le fichier `cache/contributors.json`. N'hésite pas à
     commit via [`--amend`](http://www.git-scm.com/docs/git-commit) sur ton
     précédent commit. C'est un mal nécessaire pour afficher correctement les
     contributeurs lorsque le site est généré (l'API GitHub ayant des limites
