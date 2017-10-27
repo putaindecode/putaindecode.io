@@ -29,7 +29,7 @@ func sayHello(name:String, age:UInt){
 }
 ```
 
-L’appel se fait aussi simplement que ça : `sayHello(name:"Bob", age: 32)`. Le mot clé `_` permet de d'enlever le label du paramètre dans l'appel si besoin :
+L’appel se fait aussi simplement que ça : `sayHello(name:"Bob", age: 32)`. Le mot clé `_` permet d'enlever le label du paramètre dans l'appel si besoin :
 
 ```swift
 // Declaration
@@ -111,7 +111,7 @@ let myTuple = hardFunction([2.4,2.6,1.8])
 let myTupleString = myTuple.errorString // myTuple.3 marche encore
 ```
 
-L'exécution du code permettant d'avoir les valeurs *Tuple* n'est effectuée qu'à la demande de ces valeurs. Dans l'exemple ci-dessus, le code de `hardFunction` ne sera appelé qu'à la dernière ligne, car c'est la qu'on a besoin de `errorString`, pas avant.
+L'exécution du code permettant d'avoir les valeurs *Tuple* n'est effectuée qu'à la demande de ces valeurs. Dans l'exemple ci-dessus, le code de `hardFunction` ne sera appelé qu'à la dernière ligne, car c'est là qu'on a besoin de `errorString`, pas avant.
 
  Et la notion de *Closure* fait son entrée!
 
@@ -154,7 +154,7 @@ Ainsi, les valeurs dans la première partie après la `{` sont les paramètres d
 
 ### Closure et Type
 
-Toute variable est typée en *Swift*, implicitement ou explicitement. Pour les *closures* le type est souvent implicite, aussi bien qu’on en oubli souvent qu’elles sont typées. Le type d’une closure va être défini par ses paramètres d’entrée et de sortie. Ainsi la *complexClosure*  ci-dessus est du type : `((String, Float)) -> (Bool)`.
+Toute variable est typée en *Swift*, implicitement ou explicitement. Pour les *closures* le type est souvent implicite, aussi bien qu’on en oublie souvent qu’elles sont typées. Le type d’une closure va être défini par ses paramètres d’entrée et de sortie. Ainsi la *complexClosure*  ci-dessus est du type : `((String, Float)) -> (Bool)`.
 
 Je peux alors écrire ce code puisque les closures sont du même type :
 
@@ -218,7 +218,7 @@ doLongTask(on: aFileURL){
 
 ## Pro Tip
 
-Imaginons une classe `A` ayant une variable `event`  et un classe `B` ayant une fonction `awesomeEvent` ayant la même signature de la variable de A. Je peux alors allouer à la variable `event` le code de `awesomeEvent`.
+Imaginons une classe `A` ayant une variable `event`  et un classe `B` ayant une fonction `awesomeEvent` ayant le même type que la variable `event` de la classe `A`. Je peux alors allouer, à la variable `event`, le code de `awesomeEvent`.
 
 ```swift
 class A {
@@ -244,4 +244,4 @@ a.event?("Dude")
 
 Voilà vous savez tout, ou presque, sur les fonctions et les closures. Les closures ont vraiment la part belle en Swift, donc apprenez à les utiliser et les comprendre pour simplifiez votre code. Elles sont partout dans les API iOS et macOS.
 
-Et un petit conseil: faite attention à l'état de vos *closures* dans vos `Thread` si vous voulez pas de fuite 😊
+Et un petit conseil: faite attention à l'état de vos *closures* dans vos `Thread` si vous ne voulez pas de fuite 😊
