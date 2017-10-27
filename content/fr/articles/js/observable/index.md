@@ -88,7 +88,7 @@ mesure de son arrivée: elle est remplie une seule fois.
 
 C'est là que les `Observable` arrivent à la rescousse.
 
-Un `Observable` est un objet implémentant une une méthode `.subscribe` qui prend
+Un `Observable` est un objet implémentant une méthode `.subscribe` qui prend
 comme paramètre un `Observer`. Ce dernier a cette forme :
 
 ```javascript
