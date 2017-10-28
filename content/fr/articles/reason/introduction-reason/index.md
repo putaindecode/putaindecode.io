@@ -109,18 +109,18 @@ Reason comporte plus de types de primitifs que JavaScript:
 
 ```reason
 /* pas un gros "number" fourre tout, magique */
-1 /* int */
-1.0 /* float */
+1; /* int */
+1.0; /* float */
 /* un caractère est d'un type différent de string */
-"foo" /* string */
-'a' /* char */
+"foo"; /* string */
+'a'; /* char */
 /* on trouve list ET array, chacun peut être utilisé pour différents cas */
-[1, 2, 3] /* list */
-[| 1, 2, 3 |] /* array */
+[1, 2, 3]; /* list */
+[| 1, 2, 3 |]; /* array */
 /* pas de null, mais des valeurs de type `option` qui contiennent
   soit une valeur, soit rien */
-Some 1 /* option int */
-None /* option int */
+Some(1); /* option int */
+None; /* option int */
 ```
 
 Puisqu'il est fortement typé, il est impossible de mixer les types comme en
@@ -130,7 +130,7 @@ JavaScript, vous devrez obligatoirement les convertir:
 1 + 1.0;
 /* Error:
   This expression has type int but an expression was expected of type float */
-1 + int_of_float 1.0;
+1 + int_of_float(1.0);
 /* - : int = 2 */
 ```
 
@@ -142,26 +142,26 @@ directement dans n'importe quel de vos fichiers.
 Les fonctions de Reason sont beaucoup plus puissantes qu'en JavaScript:
 
 ```reason
-let add a b => a + b;
+let add = (a, b) => a + b;
 /* int => int => int */
-add 1 2;
+add(1, 2);
 /* 3 */
-add 1 2.0;
+add(1, 2.0);
 /* This expression has type float but an expression was expected of type int */
 
 /* Les fonctions sont "auto-curried", ce qui signifie qu'une fonction
    qui n'a pas reçu tous ses paramètres retourne une nouvelle fonction
   qui va recevoir les paramètres manquants */
-let addOne = add 1;
+let addOne = add(1);
 /* int => int */
 
 /* Les fonctions peuvent avoir des paramètres nommés, optionnels et avec des valeurs par défaut */
-let sayHi ::name ::punct="!" () => "Hello " ^ name ^ punct;
+let sayHi = (~name, ~punct="!", ()) => "Hello " ++ name ++ punct;
 /* name::string => string */
-sayHi name::"you" ();
+sayHi(~name="you", ());
 /* "Hello you!" */
 /* L'ordre des arguments nommés n'a pas d'importance*/
-sayHi punct::"?" name::"you"  ();
+sayHi(~punct,"?", ~name="you", ());
 /* "Hello you?" */
 ```
 
@@ -195,14 +195,14 @@ module User = {
   type t = {
     id: string,
     username: string,
-    email: option string
+    email: option(string)
   };
-  let make ::id ::username ::email => {id, username, email};
-  let sayHi user => "Hello " ^ user.username ^ "!";
+  let make = (~id, ~username, ~email) => {id, username, email};
+  let sayHi = (user) => "Hello " ++ user.username ++ "!";
 };
 
 /* Pour utiliser un module, tapez son nom, tout simplement */
-User.make id::"0" username::"bloodyowl" email::None
+User.make(~id="0", ~username="bloodyowl", ~email=None)
   /* (ah oui, le pipe existe déjà ici, pas besoin d'attendre ES2050)*/
   |> User.sayHi
   |> print_endline;
@@ -210,7 +210,7 @@ User.make id::"0" username::"bloodyowl" email::None
 
 /* On peut également rendre toutes les valeurs d'un module accessibles localement */
 User.(
-  make id::"0" username::"bloodyowl" email::None
+  make(~id="0", ~username="bloodyowl", ~email=None)
     |> sayHi
     |> print_endline
 );
@@ -218,7 +218,7 @@ User.(
 /* Carrément les rendre accessibles globalement dans le module */
 open User;
 
-make id::"0" username::"bloodyowl" email::None
+make(~id="0", ~username="bloodyowl", ~email=None)
   |> sayHi
   |> print_endline;
 
@@ -226,7 +226,7 @@ make id::"0" username::"bloodyowl" email::None
   ça vous parle ça, Prototype et MooTools ?! */
 module UserThatCanSayBye = {
   include User;
-  let sayBye user => "Bye " ^ user.username ^ "!";
+  let sayBye = (user) => "Bye " ++ user.username ++ "!";
 };
 ```
 
@@ -242,13 +242,13 @@ type image = {url: string, width: int, height: int};
 
 /* chaque cas du variant peut prendre des paramètres */
 type message =
-  | String string /* soit une chaîne de caractères */
-  | Image image /* soit une image */
-  | Emoji string; /* soit un gros emoji */
+  | String(string) /* soit une chaîne de caractères */
+  | Image(image) /* soit une image */
+  | Emoji(string); /* soit un gros emoji */
 
-let stringMessage = String "Hello"; /* On crée la valeur avec son constructeur */
-let imageMessage = Image {url: "https://fakeimg.pl/300x300", width: 300, height: 300};
-let emojiMessage = Emoji {js|🐫|js}; /* Quand la string contient de caractères unicode,
+let stringMessage = String("Hello"); /* On crée la valeur avec son constructeur */
+let imageMessage = Image({url: "https://fakeimg.pl/300x300", width: 300, height: 300});
+let emojiMessage = Emoji({js|🐫|js}); /* Quand la string contient de caractères unicode,
   on doit utiliser {js|votre string|js} */
 ```
 
@@ -261,28 +261,27 @@ d'extraire les valeurs.
 
 ```reason
 /* Petit bonus, l'exemple utilise ReasonReact, mais on détaillera ça dans un prochain article */
-let component = ReasonReact.statelessComponent "ChatMessage";
+let component = ReasonReact.statelessComponent("ChatMessage");
 
-let make ::message _children => {
+let make = (~message, _children) => {
   ...component,
-  render: fun _ => {
+  render: (_) =>
     <div>
       (switch message {
-        | String value => ReasonReact.stringToElement value
-        | Image {url: src, width, height} => <img width height src />
+        | String(value) => ReasonReact.stringToElement(value)
+        | Image({url: src, width, height}) => <img width height src />
         /* Si par mégarde j'oublie un cas possible dans un switch, je vais avoir un joli warning du
           compiler qui me dira:
             This pattern-matching is not exhaustive.
             Here is an example of a value that is not matched:
               Emoji
         */
-        | Emoji value =>
-          <div style=(ReactDOMRe.Style.make fontSize::"40px" ())>
-            (ReasonReact.stringToElement value)
+        | Emoji(value) =>
+          <div style=(ReactDOMRe.Style.make(~fontSize="40px", ()))>
+            (ReasonReact.stringToElement(value))
           </div>
       })
     </div>
-  }
 };
 ```
 

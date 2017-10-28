@@ -58,7 +58,7 @@ BuckleScript vient les overloader pour les adapter à JavaScript.
 Créons une FFI pour la fonction `alert` :
 
 ```reason
-external alert : string => unit = "" [@@bs.val];
+[@bs.val] external alert : string => unit = "";
 ```
 
 On définit:
@@ -66,16 +66,16 @@ On définit:
 * une fonction externe nommée `alert`
 * qui prend une `string` et ne retourne _rien_ (ici représenté par la valeur
   `unit`)
-* qui est une valeur à simplement récupérer (`[@@bs.val]`)
+* qui est une valeur à simplement récupérer (`[@bs.val]`)
 
 Si on regarde le code JavaScript en sortie, c'est vide. En effet, `external` est
 un moyen de définir comment accéder à une valeur ainsi que son type. Si en
 revanche on utilise la function `alert` dans le module:
 
 ```reason
-external alert : string => unit = "" [@@bs.val];
+[@bs.val] external alert : string => unit = "";
 
-alert "Hello!";
+alert("Hello!");
 ```
 
 On voit dans l'output que BuckleScript a _inliné_ l'appel de `alert`, il n'a pas
@@ -97,15 +97,15 @@ Maintenant amusons nous à créer des bindings pour jQuery, juste pour le fun:
 type jQuery;
 
 /* On type le module jQuery */
-external jQuery : string => jQuery = "jquery" [@@bs.module];
+[@bs.module] external jQuery : string => jQuery = "jquery";
 
 /* On type la méthod `on`, BuckleScript peut naturellement typer
   le pattern de chaining, assez commun en JS, à l'aide de l'annotation
   `bs.send.pipe: type` */
-external on : string => (Dom.event => unit) => jQuery = "" [@@bs.send.pipe: jQuery];
+[@bs.send.pipe: jQuery] external on : string => (Dom.event => unit) => jQuery = "";
 
-jQuery ".selector"
-  |> on "click" (fun _ => alert "hey");
+jQuery(".selector")
+  |> on("click", (_) => alert("hey"));
 ```
 
 Ce qui va nous sortir:
@@ -149,16 +149,15 @@ utiliser des records: ils ont une représentation plus légère et sont par déf
 immutables. Pour effectuer une conversion, on procède de la manière suivante:
 
 ```reason
-type jsUser =
-  Js.t {
-    .
-    id : string,
-    username : string,
-    /* valeur pouvant être null, undefined, ou la valeur */
-    birthdate : Js.Null_undefined.t string,
-    /* "light" ou "dark", les enums sont souvent représentés par des strings en JS */
-    theme : string
-  };
+type jsUser = {
+  .
+  "id": string,
+  "username": string,
+  /* valeur pouvant être null, undefined, ou la valeur */
+  "birthdate": Js.Null_undefined.t(string),
+  /* "light" ou "dark", les enums sont souvent représentés par des strings en JS */
+  "theme": string
+};
 
 /* En Reason, les enums sont représentés par des variants */
 type theme =
@@ -169,16 +168,16 @@ type user = {
   id: string,
   username: string,
   /* pas de null ou undefined, on utilise un type option */
-  birthdate: option string,
+  birthdate: option(string),
   theme
 };
 
 /* une fonction de transformation JS -> Reason */
-let fromJs jsUser => {
+let fromJs = (jsUser) => {
   id: jsUser##id,
   username: jsUser##username,
   /* BuckleScript propose des helpers pour les conversions */
-  birthdate: Js.Null_undefined.to_opt jsUser##birthdate,
+  birthdate: Js.Null_undefined.to_opt(jsUser##birthdate),
   theme:
     switch jsUser##theme {
     | "dark" => Dark
@@ -194,10 +193,10 @@ let fromJs jsUser => {
 /* Pour créer un objet JS en Reason, il suffit de l'écrire comme un
      record, mais avec des clés entre quotes, comme du JSON.
    */
-let toJs user => {
+let toJs = (user) => {
   "id": user.id,
   "username": user.username,
-  "birthdate": Js.Null_undefined.from_opt user.birthdate,
+  "birthdate": Js.Null_undefined.from_opt(user.birthdate),
   "theme":
     switch user.theme {
     | Light => "light"
@@ -260,8 +259,8 @@ JavaScript.
 let myArray = [|1, 2, 3, 4, 5|];
 
 myArray
-  |> Js.Array.map (fun item => item * 2)
-  |> Js.Array.reduce (fun acc item => acc + item) 0;
+  |> Js.Array.map((item) => item * 2)
+  |> Js.Array.reduce((acc, item) => acc + item, 0);
 ```
 
 vous sortira:
@@ -297,7 +296,7 @@ let log: string => unit = [%bs.raw {|
   }
 |}];
 
-log "ok";
+log("ok");
 ```
 
 qui vous sort un joli:
