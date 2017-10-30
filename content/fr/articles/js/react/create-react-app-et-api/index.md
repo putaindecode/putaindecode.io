@@ -25,7 +25,7 @@ Si l'architecture de votre projet est de ce type, et que vous attaquez la concep
 
 Le principe est le suivant : vous ne souhaitez pas forcément modifier l'API qui est implémentée par une autre équipe, ou par un collègue, mais vous devez y accéder facilement depuis votre application React.
 
-Vous allez pour cela devoir imbriquer deux dépôts clonés : celui du _frontend_ React contiendra celui de l'API, et un _script NPM_ se chargera de lancer les deux applications, sur deux ports différents.
+Vous allez pour cela devoir imbriquer deux dépôts Git clonés : celui du _frontend_ React contiendra celui de l'API, et un _script NPM_ se chargera de lancer les deux applications, sur deux ports différents.
 
 
 
@@ -85,7 +85,7 @@ Nous utiliserons pour cela un script NPM défini dans le `package.json` situé �
 
 Deux petits outils seront nécessaires pour créer le script _ad hoc_ :
 
-- le package [`concurrently`](https://www.npmjs.com/package/concurrently) qui permet de lancer plusieurs scripts en une seule commande. Faites par exemple un `npm install -g concurrently` à la racine du projet.
+- le package [`concurrently`](https://www.npmjs.com/package/concurrently) qui permet de lancer plusieurs scripts en une seule commande. Faites par exemple un `npm install -g concurrently`.
 - le package [`nodemon`](https://www.npmjs.com/package/nodemon) qui scrute votre _backend_ Node.js et relance le serveur automatiquement en cas de modification du code. Faites donc un `npm install -g nodemon`, vous ne le regretterez pas.
 
 Tout est prêt ! Ouvrez `package.json` et ajoutez dans les `scripts`:
@@ -94,7 +94,7 @@ Tout est prêt ! Ouvrez `package.json` et ajoutez dans les `scripts`:
 "start-with-api": "concurrently \"react-scripts start\" \"PORT=3001 nodemon ./my-node-api/server/server.js\""
 ```
 
-Le chemin d'accès au script serveur API est à adapter en fonction de vos propres choix techniques !
+Le chemin d'accès au script serveur API est à adapter en fonction de vos propres choix techniques ! Notez que dans ce cas précis, on passe une variable d'environnement `PORT` que le script serveur utilise pour écraser son port d'écoute par défaut.
 
 Au final, le `package.json` doit ressembler à ceci :
 
@@ -121,10 +121,12 @@ Au final, le `package.json` doit ressembler à ceci :
 }
 ```
 
+Pour mémoire, nous n'avons ajouté que deux lignes : "proxy" et "scripts/start-with-api".
+
 ## Une astuce pour les pressés
 
-Si le backend ne joue pas un grand rôle dans votre application ou si -plus probable- vous souhaitez démarrer sans attendre que le véritable backend soit disponible, je vous conseille de tester [`json-server`](https://github.com/typicode/json-server).
+Si le backend ne joue pas un grand rôle dans votre application ou si -plus probablement- vous souhaitez démarrer sans attendre que le véritable backend soit disponible, je vous conseille de tester l'excellent [`json-server`](https://github.com/typicode/json-server).
 
-Ce package élégant vous permet de construire un json avec quelques données factices (_data fixtures_) et de les mettre à disposition de votre application à la façon d'une API RESTful, grâce à un simple `json-server --watch db.json`.
+Cet élégant package offre la possibilité de construire un json avec quelques données factices (_data fixtures_) et de les mettre à disposition de votre application à la façon d'une API RESTful, grâce à un simple `json-server --watch db.json`.
 
 Il va sans dire qu'en modifiant légèrement le script _start-with-api_, vous disposerez en quelques secondes d'un _backend_ au poil pour votre nouvelle SPA.
