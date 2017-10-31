@@ -39,7 +39,7 @@ s'encombrer avec les CSS, les JS, et autres gifs animés (oui, les gifs animés,
 ### La première école : SOAP
 
 Imaginons deux programmes qui veulent discuter en passant par le web. Dans les
-années 90, des mecs super brillants se sont dit : *"On va se baser sur le XML
+années 90, des gens super brillants se sont dit : *"On va se baser sur le XML
 pour faire communiquer nos programmes sur le web"*. L'approche est assez logique
 et ingénieuse. Tout d'abord, les deux parties (le client et le serveur) se
 partagent une notice d'utilisation : la WSDL (Web Service Description Language),

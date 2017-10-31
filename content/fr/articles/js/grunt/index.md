@@ -36,7 +36,7 @@ pénible de devoir indiquer à tous ses collègues comment ils doivent bosser po
 que vous soyez tous cohérents ? Oui ? **Grunt** permet de résoudre ce genre de
 choses : respecter un putain de _workflow_ en s'assurant que le parcours soit le
 même pour tout le monde et d'exécuter tout ça en lançant une seule commande.
-N'est-ce pas fucking aweeeeesome dude ? Bref.
+N'est-ce pas fucking aweeeeesome folks ? Bref.
 
 Voici un _workflow_ assez classique :
 

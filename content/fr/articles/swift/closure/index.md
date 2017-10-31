@@ -235,7 +235,7 @@ let b = B()
 let a = A()
 
 a.event = b.awesome
-a.event?("Dude")
+a.event?("Mate")
 ```
 
 [Exécutez ce code sur IBM Swift Sandbox c'est magique!](http://swift.sandbox.bluemix.net/#/repl/59ecdb8508529b23242b5696)
