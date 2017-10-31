@@ -157,7 +157,7 @@ Le test est passé, ajoutons un autre cas standard.
 const countWords = text => text ? text.split(' ').length : 0;
 console.assert(countWords('') === 0, 'test 0: le texte ne contient aucun mot');
 console.assert(countWords('nope') === 1, 'test 1: le texte contient 1 mot');
-console.assert(countWords('tdd is fun bro') === 4, 'test 2: le texte contient 4 mots');
+console.assert(countWords('tdd is so fun') === 4, 'test 2: le texte contient 4 mots');
 ```
 > `undefined`
 
@@ -171,7 +171,7 @@ Vérifions à présent la robustesse de la fonction.
 const countWords = text => text ? text.split(' ').length : 0;
 console.assert(countWords('') === 0, 'test 0: le texte ne contient aucun mot');
 console.assert(countWords('nope') === 1, 'test 1: le texte contient 1 mot');
-console.assert(countWords('tdd is fun bro') === 4, 'test 2: le texte contient 4 mots');
+console.assert(countWords('tdd is so fun') === 4, 'test 2: le texte contient 4 mots');
 console.assert(countWords(' so is skateboarding ') === 3, 'test 3: le texte contient 3 mots');
 ```
 > `Assertion failed: test 3: le texte contient 3 mots`
@@ -183,7 +183,7 @@ espaces inutiles avant et après le texte.
 const countWords = text => text ? text.trim().split(' ').length : 0;
 console.assert(countWords('') === 0, 'test 0: le texte ne contient aucun mot');
 console.assert(countWords('nope') === 1, 'test 1: le texte contient 1 mot');
-console.assert(countWords('tdd is fun bro') === 4, 'test 2: le texte contient 4 mots');
+console.assert(countWords('tdd is so fun') === 4, 'test 2: le texte contient 4 mots');
 console.assert(countWords(' so is skateboarding ') === 3, 'test 3: le texte contient 3 mots');
 ```
 > `undefined`
@@ -196,7 +196,7 @@ Parfait, La fonction est améliorée! Ajoutons quand même un dernier test pour 
 const countWords = text => text ? text.trim().split(' ').length : 0;
 console.assert(countWords('') === 0, 'test 0: le texte ne contient aucun mot');
 console.assert(countWords('nope') === 1, 'test 1: le texte contient 1 mot');
-console.assert(countWords('tdd is fun bro') === 4, 'test 2: le texte contient 4 mots');
+console.assert(countWords('tdd is so fun') === 4, 'test 2: le texte contient 4 mots');
 console.assert(countWords(' so is skateboarding ') === 3, 'test 3: le texte contient 3 mots');
 console.assert(countWords(`  I'm 28, I love $#@! and    multi-spaces  `) === 7, 'test 4: le texte contient 7 mots');
 ```
@@ -209,7 +209,7 @@ On doit ici retirer les espaces inutiles entre les mots.
 const countWords = text => text ? text.trim().replace(/\s+/g, ' ').split(' ').length : 0;
 console.assert(countWords('') === 0, 'test 0: le texte ne contient aucun mot');
 console.assert(countWords('nope') === 1, 'test 1: le texte contient 1 mot');
-console.assert(countWords('tdd is fun bro') === 4, 'test 2: le texte contient 4 mots');
+console.assert(countWords('tdd is so fun') === 4, 'test 2: le texte contient 4 mots');
 console.assert(countWords(' so is skateboarding ') === 3, 'test 3: le texte contient 3 mots');
 console.assert(countWords(`  I'm 28, I love $#@! and    multi-spaces  `) === 7, 'test 4: le texte contient 7 mots');
 ```
@@ -268,7 +268,7 @@ describe('countWords()', () => {
   });
 
   it('doit traiter un texte de n mots', () => {
-    expect(countWords('tdd is fun bro')).toBe(4);
+    expect(countWords('tdd is so fun')).toBe(4);
   });
 
   it('doit traiter un texte avec des espaces aux extrémités', () => {
