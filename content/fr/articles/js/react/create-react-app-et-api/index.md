@@ -11,7 +11,7 @@ authors:
   - tmaziere
 ---
 ## tl;dr
-En environnement de développement, pour lancer dans le même temps votre application React et une API basée sur Node.js, vous pouvez imbriquer judicieusement les deux dépôts Git, puis utiliser un script NPM et quelques packages bien pratiques tels que _concurrently_ et _nodemon_ pour lancer les deux serveurs d'une seule commande. Pratique ! D'autant que pour contourner les restrictions d'accès liées à la [_politique de même origine_](https://fr.wikipedia.org/wiki/Same-origin_policy), **Create-react-app** permet le paramétrage d'un _proxy_ pour vos requêtes API.
+Dans un environnement de développement, pour lancer dans le même temps votre application React et une API basée sur Node.js, vous pouvez imbriquer judicieusement les deux dépôts Git, puis utiliser un script NPM et quelques packages bien pratiques tels que _concurrently_ et _nodemon_ pour lancer les deux serveurs d'une seule commande. Pratique ! D'autant que pour contourner les restrictions d'accès liées à la [_politique de même origine_](https://fr.wikipedia.org/wiki/Same-origin_policy), **Create-react-app** permet le paramétrage d'un _proxy_ pour vos requêtes API.
 
 ## Est-ce que ça me concerne ?
 
@@ -25,13 +25,12 @@ Si l'architecture de votre projet est de ce type, et que vous attaquez la concep
 
 Le principe est le suivant : vous ne souhaitez pas forcément modifier l'API qui est implémentée par une autre équipe, ou par un collègue, mais vous devez y accéder facilement depuis votre application React.
 
-Vous allez pour cela devoir imbriquer deux dépôts Git clonés : celui du _frontend_ React contiendra celui de l'API, et un _script NPM_ se chargera de lancer les deux applications, sur deux ports différents.
+Vous allez pour cela devoir travailler sur deux dépôts Git clonés : celui du _frontend_ React contiendra par exemple celui de l'API, et un _script NPM_ se chargera de lancer les deux applications, sur deux ports différents.
 
 
 
-_Faut-il utiliser un framework backend en particulier ?_
-
-Absolument pas ! Si pour ma part je travaille plus volontiers avec [LoopBack](https://loopback.io/), tout ce que qui s'appuie sur Node.js fait l'affaire.
+_Faut-il utiliser un framework en particulier pour le backend ?_  
+Absolument pas ! Pour ma part je travaille plus volontiers avec [LoopBack](https://loopback.io/), mais tout ce que qui s'appuie sur Node.js fait l'affaire.
 
 ## Organisation locale du code
 
@@ -61,11 +60,16 @@ cd my-node-api/
 git pull
 ```
 
+_Faut-il forcément organiser les dépôts de cette façon ?_  
+Pas du tout. Mais l'intérêt de cette configuration, c'est que le _backend_ est "dans sa bulle" et que les développeurs qui le font évoluer n'ont pas à organiser le code en fonction de ce _frontend_ en particulier.
+
+Dernière chose importante : pensez à ajouter `my-node-api/` au fichier `.gitignore` du projet React. Il ne faudrait évidemment pas qu'il versionne le _backend_.
+
 ## Passez moi sur le CORS
 
 En production, il est fréquent d'utiliser le même serveur pour servir l'application SPA React et l'API sous-jacente. Dans cette configuration, le mécanisme de _Cross-origin resource sharing_ ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)), basé sur des headers HTTP, n'a pas à être implémenté.
 
-En développement, par contre, il est plus pratique de dissocier les serveurs pour bénéficier de toutes les fonctionnalités de l'environnement React.
+En développement, par contre, il est plus pratique de dissocier les serveurs pour bénéficier de toutes les fonctionnalités de l'écosystème React.
 
 Pour répondre à cette contrainte, _Create-react-app_ propose [un mécanisme](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development) qui permet de mettre en place un **proxy** d'API.
 
@@ -77,11 +81,11 @@ En partant du principe que votre frontend écoute sur le port 3000, et le serveu
 } 
 ```
 
-De cette façon, vous pourrez accéder à toute ressource non-asset en utilisant un chemin relatif : `fetch('/api/bananas')`, par exemple, requêtera notre API sur `http://localhost:3001/api/bananas`.
+De cette façon, vous pourrez utiliser un chemin relatif pour accéder à vos ressources. Si une requête ne concerne pas un _asset_ statique, elle sera relayée vers votre _backend_. `fetch('/api/bananas')`, par exemple, requêtera notre API sur `http://localhost:3001/api/bananas`.
 
 ## Tout lancer en une seule commande
 
-Nous utiliserons pour cela un script NPM défini dans le `package.json` situé à la racine du projet.
+Nous utiliserons pour cela un script NPM défini dans le `package.json` situé à la racine du projet React.
 
 Deux petits outils seront nécessaires pour créer le script _ad hoc_ :
 
