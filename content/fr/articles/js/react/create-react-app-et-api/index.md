@@ -28,7 +28,6 @@ Le principe est le suivant : vous ne souhaitez pas forcément modifier l'API qui
 Vous allez pour cela devoir travailler sur deux dépôts Git clonés : celui du _frontend_ React contiendra par exemple celui de l'API, et un _script NPM_ se chargera de lancer les deux applications, sur deux ports différents.
 
 
-
 _Faut-il utiliser un framework en particulier pour le backend ?_  
 Absolument pas ! Pour ma part je travaille plus volontiers avec [LoopBack](https://loopback.io/), mais tout ce que qui s'appuie sur Node.js fait l'affaire.
 
@@ -98,7 +97,7 @@ Tout est prêt ! Ouvrez `package.json` et ajoutez dans les `scripts`:
 "start-with-api": "concurrently \"react-scripts start\" \"PORT=3001 nodemon ./my-node-api/server/server.js\""
 ```
 
-Le chemin d'accès au script serveur API est à adapter en fonction de vos propres choix techniques ! Notez que dans ce cas précis, on passe une variable d'environnement `PORT` que le script serveur utilise pour écraser son port d'écoute par défaut.
+Le chemin d'accès au script serveur est à adapter en fonction de vos propres choix techniques ! Notez que dans ce cas précis, on passe une variable d'environnement `PORT` que le script serveur utilise pour écraser son port d'écoute par défaut.
 
 Au final, le `package.json` doit ressembler à ceci :
 
@@ -131,6 +130,6 @@ Pour mémoire, nous n'avons ajouté que deux lignes : "proxy" et "scripts/start-
 
 Si le backend ne joue pas un grand rôle dans votre application ou si -plus probablement- vous souhaitez démarrer sans attendre que le véritable backend soit disponible, je vous conseille de tester l'excellent [`json-server`](https://github.com/typicode/json-server).
 
-Cet élégant package offre la possibilité de construire un json avec quelques données factices (_data fixtures_) et de les mettre à disposition de votre application à la façon d'une API RESTful, grâce à un simple `json-server --watch db.json`.
+Cet élégant package offre la possibilité de créer un fichier JSON avec quelques données factices (_data fixtures_) et de les mettre à disposition de votre application à la façon d'une API RESTful, grâce à un simple `json-server --watch db.json`.
 
 Il va sans dire qu'en modifiant légèrement le script _start-with-api_, vous disposerez en quelques secondes d'un _backend_ au poil pour votre nouvelle SPA.
