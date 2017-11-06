@@ -76,7 +76,7 @@ En partant du principe que votre frontend écoute sur le port 3000, et le serveu
 
 ```json
 {
-    "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3001",
 }
 ```
 
@@ -88,8 +88,8 @@ Nous utiliserons pour cela un script NPM défini dans le `package.json` situé �
 
 Deux petits outils seront nécessaires pour créer le script _ad hoc_ :
 
-- le package [`concurrently`](https://www.npmjs.com/package/concurrently) qui permet de lancer plusieurs scripts en une seule commande. Faites par exemple un `npm install --save concurrently`.
-- le package [`nodemon`](https://www.npmjs.com/package/nodemon) qui scrute votre _backend_ Node.js et relance le serveur automatiquement en cas de modification du code. Faites donc un `npm install --save nodemon`, vous ne le regretterez pas.
+- le package [`concurrently`](https://www.npmjs.com/package/concurrently) qui permet de lancer plusieurs scripts en une seule commande. Faites par exemple un `npm install --save-dev concurrently`.
+- le package [`nodemon`](https://www.npmjs.com/package/nodemon) qui scrute votre _backend_ Node.js et relance le serveur automatiquement en cas de modification du code. Faites donc un `npm install --save-dev nodemon`, vous ne le regretterez pas.
 
 Tout est prêt ! Ouvrez `package.json` et ajoutez dans les `scripts`:
 
@@ -115,7 +115,9 @@ Au final, le `package.json` doit ressembler à ceci :
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-scripts": "1.0.14"
+    "react-scripts": "1.0.14",
+    "concurrently": "3.5.0",
+    "nodemon": "1.12.1"
   },
   "dependencies": {
     "react": "^16.0.0",
