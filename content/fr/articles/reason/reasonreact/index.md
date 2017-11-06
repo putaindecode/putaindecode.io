@@ -12,11 +12,11 @@ header:
   linearGradient: #DD4B39, #DD4B39
 ---
 
-Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intéressés au typage pour vos applications front (c'est ça de commencer avec JS …), vous avez certainement utilisé les `propTypes` au début en vous disant "putain c'est cool de vérifier les types, ça m'évite bien de problèmes". Puis c’était sympa mais bon, faut quand même executer le bout code qui pète et il est peut-être super chiant à accéder dans l'app. Du coup, vous vous êtes sûrement tournés vers Flow ou TypeScript.
+Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intéressés au typage pour vos applications front (c'est ça de commencer avec JS…), vous avez certainement utilisé les `propTypes` au début en vous disant "putain c'est cool de vérifier les types, ça m'évite bien des problèmes". Puis c’était sympa mais bon, faut quand même exécuter le bout de code qui pète et il est peut-être super chiant d'y accéder dans l'app. Du coup, vous vous êtes sûrement tournés vers Flow ou TypeScript.
 
 Dans cet article, on va découvrir la *next-step* dans ce cheminement : écrire nos composants React dans un langage statiquement et fortement typé: Reason 🚀. Reason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple quand on vient du JS. Si vous n’avez pas lu [l’introduction à ce langage](fr/articles/reason/introduction-reason/), c’est le moment.
 
-Là, je vais vous présenter **ReasonReact**, des bindings APIs par dessus React.js supporté officiellement par l'équipe de Reason. Facebook dogfood la solution puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses composants.
+Là, je vais vous présenter **ReasonReact**, des bindings API par dessus React.js supportés officiellement par l'équipe de Reason. Facebook *dogfood* la solution puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses composants.
 
 ## Stateless
 
@@ -33,10 +33,10 @@ let component = ReasonReact.statelessComponent("HelloWorld");
    contenant les `children`. Cette fonction doit retourner un record, dans
    lequel on spread notre `component` et dans lequel on définit une propriété
    `render` qui prend comme paramètre `self` (équivalent du `this`) et qui retourne
-   un élément React, là dessus ça va pas trop vous chambouler de ce que
+   un élément React. Là-dessus ça devrait pas trop vous chambouler de ce que
    vous connaissez de React.
-   On peut remarquer que les props sont directement les arguments de tout la fonction `make`,
-   comme avec des composants fonctionnels de React.js.*/
+   On peut remarquer que les props sont les arguments de la fonction `make`,
+   comme avec les composants fonctionnels de React.js.*/
 let make = (~message, _children) => {
   ...component,
   render: (_self) =>
@@ -52,15 +52,15 @@ Et pour monter le composant :
 ReactDOMRe.renderToElementWithId(<HelloWorld message="Helloworld" />, "root");
 ```
 
-Un des gros avantages à utiliser Reason, c’est que le langage est capable d’inférer la grande majorité des types, et sera en mesure de détecter dans toute l’app si quelque chose n’est pas passé correctement : pour le langage, il s‘agit simplement de fonctions qui appellent d’autres fonctions, et les langages fonctionnels statiquement et fortement typés sont plutôt pas dégueulasses pour ça.
+Un des gros avantages à utiliser Reason, c’est que le langage est capable d’inférer la grande majorité des types et sera en mesure de détecter dans toute l’app si quelque chose n’est pas passé correctement : pour le langage, il s‘agit simplement de fonctions qui appellent d’autres fonctions, et les langages fonctionnels statiquement et fortement typés sont plutôt pas dégueulasses pour ça.
 
 ## Stateful
 
-La petite particularité de ReasonReact par rapport aux composants stateful, c’est que les mises à jour d'états doivent passer par un reducer, comme si chaque composant embarquait sa petite implémentation de redux.
+La petite particularité de ReasonReact vis à vis des composants stateful, c’est que les mises à jour d'états doivent passer par un reducer, comme si chaque composant embarquait sa petite implémentation de redux.
 
-Maintenant, comment qu'on fait pour créer une composant stateful ?
+Maintenant, comment qu'on fait pour créer un composant stateful ?
 
-On commence par définir le type du state, à noter qu’il ne s’agit pas forcément d’un objet comme en JS, ça peut être une chaîne de caractère, un entier, un variant, un boolean, un arbuste, une map, un jus de fruits frais, un tableau, whatever.
+On commence par définir le type du state : contrairement à JS, il ne s'agit pas forcément d'un objet, ça peut être une chaîne de caractère, un entier, un variant, un boolean, un arbuste, une map, un jus de fruits frais, un tableau, whatever.
 
 ```reason
 type state = {
@@ -68,7 +68,7 @@ type state = {
 };
 ```
 
-On va définir notre type action, sous la forme de variants: chaque variant représente un des type d’action possible. Pour bien se représenter ce qu'est un action, c’est un token, contenant possiblement des paramètres, qu’on va va envoyer à dans notre fameux reducer qui, lui, retournera une réaction à cette action.
+On va définir notre type action, sous la forme de variants: chaque variant représente un des type d’action possible. Pour bien se représenter ce qu'est une action, c’est un token, contenant possiblement des paramètres, qu’on va envoyer à notre fameux reducer qui, lui, retournera une réaction à cette action.
 
 ```reason
 type action =
@@ -76,14 +76,14 @@ type action =
   | Decrement;
 ```
 
-Dans le composant retourné par `make`, on ajoute une fonction `initialState` qui retourne … l'état initial, et une fonction `reducer`, qui effectue un pattern-matching sur l’action et retourne une update.
+Dans le composant retourné par `make`, on ajoute une fonction `initialState` qui retourne… l'état initial (c'est bien, vous suivez), et une fonction `reducer`, qui effectue un pattern-matching sur l’action et retourne une update.
 Cette fonction prend deux paramètres: l'`action` à traiter et le `state` à jour (comme lorsque l'on passe un callback à `setState` dans l'équivalent JavaScript `setState(state => newState)`).
 
-L’update retournée indique au component comment mettre à jour le composant (ici sont listés les cas courants) :
+L’update retournée indique au component comment il doit se mettre à jour (ici sont listés les cas courants) :
 
 - `NoUpdate`, pour ne rien faire
 - `Update`, pour mettre à jour l’état et re-rendre le composant
-- `SideEffect` pour lancer un effet de bord (e.g. une requete réseau)
+- `SideEffect` pour lancer un effet de bord (e.g. une requête réseau)
 - `UpdateWithSideEffect`, pour changer le state et lancer un effet de bord (e.g. afficher un loader et lancer une requête)
 
 *Wrapping up* :
@@ -111,7 +111,7 @@ let make = (~initialCounter=0, _) => {
     <div>
       (ReasonReact.stringToElement(state.counter |> string_of_int))
       /* La fonction reduce prend une fonction qui retourne l'action.
-           Il s'agit d'une fonction pour pouvoir lire les propriétés des
+           Il s'agit d'une fonction pour lire les propriétés des
            events (qui sont pooled dans React) de manière synchrone, alors
            que le reducer est appelé de manière asyncrhone.
          */
@@ -143,7 +143,7 @@ Exemple ici avec un composant où on va faire comme si on récupérait l'utilisa
 module User = {
   type t = {username: string};
   /* faisons comme si on avait un appel serveur
-     (je le fais comme ça pour que vous puissiez copier coller le code
+     (je le fais comme ça pour que vous puissiez copier/coller le code
      pour essayer chez vous) */
   let count = ref(0);
   let getUser = (_) =>
@@ -187,12 +187,12 @@ let component = ReasonReact.reducerComponent("User");
 let getUser = (credentials, {ReasonReact.reduce}) =>
   ignore(
     User.getUser(credentials)
-    /* Tout s'est bien passé */
+    /* Si tout s'est bien passé */
     |> Js.Promise.then_(
          /* On peut utiliser les actions en dehors du `make`: c'est juste des variants */
          (payload) => Js.Promise.resolve(reduce((payload) => Receive(Idle(payload)), payload))
        )
-    /* Ou ça a merdé */
+    /* Si ça a merdé */
     |> Js.Promise.catch((_) => Js.Promise.resolve(reduce(() => Receive(Errored), ())))
   );
 
@@ -275,6 +275,6 @@ let make = (~message: string, _children) =>
   );
 ```
 
-Voilà pour les *basics* de ReasonReact. Pour en savoir plus, y'a [la petite doc qui va bien](https://reasonml.github.io/reason-react/), et on vous préparera un petit article sur les aspects un peu plus avancés de l'usage.
+Voilà pour les *basics* de ReasonReact. Pour en savoir plus, y a [la petite doc qui va bien](https://reasonml.github.io/reason-react/), et on vous préparera un petit article sur les aspects un peu plus avancés de l'usage.
 
 Bisous bisous.
