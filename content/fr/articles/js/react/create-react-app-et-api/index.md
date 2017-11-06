@@ -1,5 +1,5 @@
 ---
-date: "2017-11-06"
+date: "2017-11-07"
 title: Développer avec Create React App et une API Node.js
 tags:
   - javascript
@@ -11,7 +11,7 @@ authors:
   - tmaziere
 ---
 ## tl;dr
-Dans un environnement de développement, pour lancer dans le même temps votre application React et une API basée sur Node.js, vous pouvez imbriquer judicieusement les deux dépôts Git, puis utiliser un script NPM et quelques packages bien pratiques tels que _concurrently_ et _nodemon_ pour lancer les deux serveurs d'une seule commande. Pratique ! D'autant que pour contourner les restrictions d'accès liées à la [_politique de même origine_](https://fr.wikipedia.org/wiki/Same-origin_policy), **Create-react-app** permet le paramétrage d'un _proxy_ pour vos requêtes API.
+Dans un environnement de développement, pour lancer dans le même temps votre application React et une API basée sur Node.js, vous pouvez imbriquer judicieusement les deux dépôts Git, puis utiliser un script NPM et quelques packages bien pratiques tels que _concurrently_ et _nodemon_ pour lancer les deux serveurs d'une seule commande. Pratique ! D'autant que pour contourner les restrictions d'accès liées à la [_politique de même origine_](https://fr.wikipedia.org/wiki/Same-origin_policy), **create-react-app** permet le paramétrage d'un _proxy_ pour vos requêtes API.
 
 ## Est-ce que ça me concerne ?
 
@@ -19,7 +19,7 @@ La généralisation des architectures dites "API first" répond à des impérati
 
 De cette façon, la conception de l'interface utilisateur est libérée d'une grande partie des contraintes qui régissent les architectures MVC traditionnelles. Le développeur peut ainsi mieux se concentrer sur la qualité de sa réponse aux spécifications fonctionnelles.
 
-Si l'architecture de votre projet est de ce type, et que vous attaquez la conception d'un frontend [SPA](https://fr.wikipedia.org/wiki/Application_web_monopage) React avec [Create-React-App](https://github.com/facebookincubator/create-react-app) (quelle bonne idée !), ce qui suit peut vous éclairer. Nous allons voir comment il est possible d'accéder sans se compliquer la vie à une API RESTful basée sur Node.js, en imbriquant correctement ses dépôts.
+Si l'architecture de votre projet est de ce type, et que vous attaquez la conception d'un frontend [SPA](https://fr.wikipedia.org/wiki/Application_web_monopage) React avec [create-react-app](https://github.com/facebookincubator/create-react-app) (quelle bonne idée !), ce qui suit peut vous éclairer. Nous allons voir comment il est possible d'accéder sans se compliquer la vie à une API RESTful basée sur Node.js, en imbriquant correctement ses dépôts.
 
 ## Deux dépôts : le frontend, l’API
 
@@ -35,7 +35,7 @@ Absolument pas ! Pour ma part je travaille plus volontiers avec [LoopBack](https
 
 Mettons que votre projet React s'appelle **my-react-frontend** et que l'API qu'il consomme répond au doux nom de **my-node-api**.
 
-**my-react-frontend** est cloné à la racine, c'est le projet "père". Il contient au moins les répertoires `src/`, `public/` et `node_modules/` générés par _create-react-app_.
+**my-react-frontend** est cloné à la racine, c'est le projet parent. Il contient au moins les répertoires `src/`, `public/` et `node_modules/` générés par _create-react-app_.
 
 `build/` peut également être présent si vous avez déjà lancé au moins une fois la commande `npm run build`.
 
@@ -66,18 +66,18 @@ Dernière chose importante : pensez à ajouter `my-node-api/` au fichier `.gitig
 
 ## Passez moi sur le CORS
 
-En production, il est fréquent d'utiliser le même serveur pour servir l'application SPA React et l'API sous-jacente. Dans cette configuration, le mécanisme de _Cross-origin resource sharing_ ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)), basé sur des headers HTTP, n'a pas à être implémenté.
+En production, il est fréquent d'utiliser le même serveur pour servir l'application React et l'API sous-jacente. Dans cette configuration, le mécanisme de _Cross-origin resource sharing_ ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)), basé sur des headers HTTP, n'a pas à être implémenté.
 
 En développement, par contre, il est plus pratique de dissocier les serveurs pour bénéficier de toutes les fonctionnalités de l'écosystème React.
 
-Pour répondre à cette contrainte, _Create-react-app_ propose [un mécanisme](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development) qui permet de mettre en place un **proxy** d'API.
+Pour répondre à cette contrainte, _create-react-app_ propose [un mécanisme](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development) qui permet de mettre en place un **proxy** d'API.
 
 En partant du principe que votre frontend écoute sur le port 3000, et le serveur API sur le port 3001, il suffit d'ajouter un paramètre au premier niveau du `package.json` :
 
 ```json
 {
     "proxy": "http://localhost:3001",
-} 
+}
 ```
 
 De cette façon, vous pourrez utiliser un chemin relatif pour accéder à vos ressources. Si une requête ne concerne pas un _asset_ statique, elle sera relayée vers votre _backend_. `fetch('/api/bananas')`, par exemple, requêtera notre API sur `http://localhost:3001/api/bananas`.
@@ -88,8 +88,8 @@ Nous utiliserons pour cela un script NPM défini dans le `package.json` situé �
 
 Deux petits outils seront nécessaires pour créer le script _ad hoc_ :
 
-- le package [`concurrently`](https://www.npmjs.com/package/concurrently) qui permet de lancer plusieurs scripts en une seule commande. Faites par exemple un `npm install -g concurrently`.
-- le package [`nodemon`](https://www.npmjs.com/package/nodemon) qui scrute votre _backend_ Node.js et relance le serveur automatiquement en cas de modification du code. Faites donc un `npm install -g nodemon`, vous ne le regretterez pas.
+- le package [`concurrently`](https://www.npmjs.com/package/concurrently) qui permet de lancer plusieurs scripts en une seule commande. Faites par exemple un `npm install --save concurrently`.
+- le package [`nodemon`](https://www.npmjs.com/package/nodemon) qui scrute votre _backend_ Node.js et relance le serveur automatiquement en cas de modification du code. Faites donc un `npm install --save nodemon`, vous ne le regretterez pas.
 
 Tout est prêt ! Ouvrez `package.json` et ajoutez dans les `scripts`:
 
@@ -107,19 +107,19 @@ Au final, le `package.json` doit ressembler à ceci :
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
-  "devDependencies": {
-    "react-scripts": "1.0.14"
-  },
-  "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
   "scripts": {
     "start": "react-scripts start",
     "start-with-api": "concurrently \"react-scripts start\" \"PORT=3001 nodemon ./my-node-api/server/server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.14"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
 ```
@@ -132,4 +132,4 @@ Si le backend ne joue pas un grand rôle dans votre application ou si -plus prob
 
 Cet élégant package offre la possibilité de créer un fichier JSON avec quelques données factices (_data fixtures_) et de les mettre à disposition de votre application à la façon d'une API RESTful, grâce à un simple `json-server --watch db.json`.
 
-Il va sans dire qu'en modifiant légèrement le script _start-with-api_, vous disposerez en quelques secondes d'un _backend_ au poil pour votre nouvelle SPA.
+Il va sans dire qu'en modifiant légèrement le script _start-with-api_, vous disposerez en quelques secondes d'un _backend_ au poil pour votre nouvelle application.
