@@ -150,7 +150,6 @@ module User = {
   /* faisons comme si on avait un appel serveur
      (je le fais comme ça pour que vous puissiez copier/coller le code
      pour essayer chez vous) */
-  let count = ref(0);
   let getUser = (_) =>
     resolveAfter(1000)
     |> Js.Promise.then_(
