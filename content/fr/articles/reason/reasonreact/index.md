@@ -140,6 +140,11 @@ Bien que ça puisse paraître un peu lourd de devoir faire un `reducer` pour gé
 Exemple ici avec un composant où on va faire comme si on récupérait l'utilisateur connecté sur une API.
 
 ```reason
+let resolveAfter = (ms) =>
+  Js.Promise.make(
+    (~resolve, ~reject as _) => ignore(Js.Global.setTimeout(() => [@bs] resolve(ms), ms))
+  );
+
 module User = {
   type t = {username: string};
   /* faisons comme si on avait un appel serveur
@@ -147,26 +152,13 @@ module User = {
      pour essayer chez vous) */
   let count = ref(0);
   let getUser = (_) =>
-    Js.Promise.make(
-      (~resolve, ~reject as _reject) =>
-        ignore(
-          Js.Global.setTimeout(
-            () =>
-              [@bs]
-              resolve({
-                username:
-                  "FooBar"
-                  ++ string_of_int(
-                       {
-                         count := count^ + 1;
-                         count^
-                       }
-                     )
-              }),
-            1000
-          )
-        )
-    );
+    resolveAfter(1000)
+    |> Js.Promise.then_(
+         (_) =>
+           Js.Promise.resolve({
+             username: "MyUsername" ++ string_of_int(Js.Math.random_int(0, 9999))
+           })
+       );
 };
 
 /* Le "user" distant peut avoir 4 états possibles ici */
