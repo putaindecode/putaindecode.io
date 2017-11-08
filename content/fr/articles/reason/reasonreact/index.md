@@ -16,7 +16,7 @@ Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intére
 
 Dans cet article, on va découvrir la *next-step* dans ce cheminement : écrire nos composants React dans un langage statiquement et fortement typé: Reason 🚀. Reason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple quand on vient du JS. Si vous n’avez pas lu [l’introduction à ce langage](fr/articles/reason/introduction-reason/), c’est le moment.
 
-Là, je vais vous présenter **ReasonReact**, des bindings API par dessus React.js supportés officiellement par l'équipe de Reason. Facebook *dogfood* la solution puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses composants.
+Là, je vais vous présenter **ReasonReact**, des bindings API par dessus ReactJS supportés officiellement par l'équipe de Reason. Facebook *dogfood* la solution puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses composants.
 
 ## Stateless
 
@@ -29,14 +29,14 @@ Commençons par le traditionnel HelloWorld™ :
 let component = ReasonReact.statelessComponent("HelloWorld");
 
 /* Ensuite, on déclare une fonction `make` qui prend des arguments nommés
-   (qui équivalent aux `props` de React.js) et un dernier argument non-nommé,
+   (qui équivalent aux `props` de ReactJS) et un dernier argument non-nommé,
    contenant les `children`. Cette fonction doit retourner un record, dans
    lequel on spread notre `component` et dans lequel on définit une propriété
    `render` qui prend comme paramètre `self` (équivalent du `this`) et qui retourne
    un élément React. Là-dessus ça devrait pas trop vous chambouler de ce que
    vous connaissez de React.
    On peut remarquer que les props sont les arguments de la fonction `make`,
-   comme avec les composants fonctionnels de React.js.*/
+   comme avec les composants fonctionnels de ReactJS.*/
 let make = (~message, _children) => {
   ...component,
   render: (_self) =>
@@ -102,7 +102,8 @@ let make = (~initialCounter=0, _) => {
   ...component,
   initialState: () => {counter: initialCounter},
   reducer: (action, state) =>
-    /* Toutes mes updates passent par là, bien pratique pour la découvrabilité */
+    /* Toutes mes updates passent par là, bien pratique pour qu'une
+      personne puisse aborder rapidement le composant */
     switch action {
     | Increment => ReasonReact.Update({counter: state.counter + 1})
     | Decrement => ReasonReact.Update({counter: max(0, state.counter - 1)})
@@ -180,7 +181,7 @@ let getUser = (credentials, {ReasonReact.reduce}) =>
     User.getUser(credentials)
     /* Si tout s'est bien passé */
     |> Js.Promise.then_(
-         /* On peut utiliser les actions en dehors du `make`: c'est juste des variants */
+         /* On peut utiliser les actions en dehors du `make`: c'est juste des variants */
          (payload) => Js.Promise.resolve(reduce((payload) => Receive(Idle(payload)), payload))
        )
     /* Si ça a merdé */
@@ -229,11 +230,11 @@ let make = (~credentials, _) => {
 };
 ```
 
-## Oui mais est-ce que je peux l'utiliser aujourd'hui alors que j'ai déjà une grosse codebase React.js ?
+## Oui mais est-ce que je peux l'utiliser aujourd'hui alors que j'ai déjà une grosse codebase ReactJS ?
 
 <img src="./tenor.gif" alt="" />
 
-Pour utiliser des composants ReasonReact avec React.js
+Pour utiliser des composants ReasonReact avec ReactJS
 
 ```reason
 let jsComponent =
@@ -253,7 +254,7 @@ et
 const MyComponent = require("path/to/reason/output").jsComponent;
 ```
 
-Pour utiliser des composants React.js avec ReasonReact
+À l'inverse, pour utiliser des composants ReactJS avec ReasonReact
 
 ```js
 [@bs.module "path/to/good/old/reactjs/component"] external myJsComponent : ReasonReact.reactClass = "default";
