@@ -16,7 +16,7 @@ Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intére
 
 Dans cet article, on va découvrir la *next-step* dans ce cheminement : écrire nos composants React dans un langage statiquement et fortement typé: Reason 🚀. Reason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple quand on vient du JS. Si vous n’avez pas lu [l’introduction à ce langage](/fr/articles/reason/introduction-reason/), c’est le moment.
 
-Là, je vais vous présenter **ReasonReact**, des bindings API par dessus ReactJS supportés officiellement par l'équipe de Reason. Facebook *dogfood* la solution puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses composants.
+Là, je vais vous présenter **ReasonReact**, des bindings API par dessus React supportés officiellement par l'équipe de Reason. Facebook *dogfood* la solution puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses composants.
 
 ## Stateless
 
@@ -29,14 +29,14 @@ Commençons par le traditionnel HelloWorld™ :
 let component = ReasonReact.statelessComponent("HelloWorld");
 
 /* Ensuite, on déclare une fonction `make` qui prend des arguments nommés
-   (qui équivalent aux `props` de ReactJS) et un dernier argument non-nommé,
+   (qui équivalent aux `props` de React) et un dernier argument non-nommé,
    contenant les `children`. Cette fonction doit retourner un record, dans
    lequel on spread notre `component` et dans lequel on définit une propriété
    `render` qui prend comme paramètre `self` (équivalent du `this`) et qui retourne
    un élément React. Là-dessus ça devrait pas trop vous chambouler de ce que
    vous connaissez de React.
    On peut remarquer que les props sont les arguments de la fonction `make`,
-   comme avec les composants fonctionnels de ReactJS.*/
+   comme avec les composants fonctionnels de React.*/
 let make = (~message, _children) => {
   ...component,
   render: (_self) =>
@@ -230,11 +230,11 @@ let make = (~credentials, _) => {
 };
 ```
 
-## Oui mais est-ce que je peux l'utiliser aujourd'hui alors que j'ai déjà une grosse codebase ReactJS ?
+## Oui mais est-ce que je peux l'utiliser aujourd'hui alors que j'ai déjà une grosse codebase React ?
 
 <img src="./tenor.gif" alt="" />
 
-Pour utiliser des composants ReasonReact avec ReactJS
+Pour utiliser des composants ReasonReact avec React
 
 ```js
 let jsComponent =
@@ -254,7 +254,7 @@ et
 const MyComponent = require("path/to/reason/output").jsComponent;
 ```
 
-À l'inverse, pour utiliser des composants ReactJS avec ReasonReact
+À l'inverse, pour utiliser des composants React avec ReasonReact
 
 ```js
 [@bs.module "path/to/good/old/reactjs/component"] external myJsComponent : ReasonReact.reactClass = "default";
