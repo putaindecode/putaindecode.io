@@ -114,7 +114,7 @@ let make = (~initialCounter=0, _) => {
       /* La fonction reduce prend une fonction qui retourne l'action.
            Il s'agit d'une fonction pour lire les propriétés des
            events (qui sont pooled dans React) de manière synchrone, alors
-           que le reducer est appelé de manière asyncrhone.
+           que le reducer est appelé de manière asynchrone.
          */
       <button onClick=(reduce((_event) => Decrement))> (ReasonReact.stringToElement("-")) </button>
       <button onClick=(reduce((_event) => Increment))> (ReasonReact.stringToElement("+")) </button>
