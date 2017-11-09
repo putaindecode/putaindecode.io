@@ -176,4 +176,4 @@ Si vous souhaitez un peu plus d'informations sur le sujet, je vous invite à lir
 la [présentation](https://speakerdeck.com/vjeux/react-css-in-js) de
 [@Vjeux](https://twitter.com/Vjeux), front-end engineer chez Facebook. Il
 explique les problèmes rencontrés avec le `CSS` et les solutions mises en place
-par les développeurs de Facebook ou plus exactement de `ReactJS`.
+par les développeurs de Facebook ou plus exactement de `React`.

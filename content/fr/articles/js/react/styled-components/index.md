@@ -11,14 +11,14 @@ authors:
 
 Il existe de nombreuses approches et [solutions
 différentes](https://github.com/MicheleBertoli/css-in-js) pour gérer le CSS en
-ReactJS, je vais parler ici de
+React, je vais parler ici de
 [styled-components](https://github.com/styled-components/styled-components) qui
 permet de gagner en productivité et en qualité quand on veut créer et distribuer
 des composants UI.
 
 La force de
 [styled-components](https://github.com/styled-components/styled-components)
-c'est de faciliter la création de composants visuels ReactJS minimalistes et
+c'est de faciliter la création de composants visuels React minimalistes et
 configurables, en combinant du **CSS standard** et **un zeste de JavaScript**.
 Ces composants deviendront littéralement les pièces de lego qui pourront être
 utilisées et partagées entre les UIs de toutes vos applications, sites webs...
@@ -172,7 +172,7 @@ et injectera dans le CSS de la page le style associé :
 
 ### Composition
 
-Les composants styled sont des composants ReactJS standards qui peuvent recevoir
+Les composants styled sont des composants React standards qui peuvent recevoir
 des `children` et se composer les uns avec les autres.
 
 ```jsx

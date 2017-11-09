@@ -254,7 +254,7 @@ La méthode intéressante de React est dans notre cas `renderToStaticMarkup()` q
 va nous générer un HTML qui va bien.
 
 Pour aller plus loin on pourrait décider d'utiliser `renderToString()` plutôt
-que `renderToStaticMarkup()` afin de pouvoir faire prendre le relais à ReactJS
+que `renderToStaticMarkup()` afin de pouvoir faire prendre le relais à React
 côté client mais là [le niveau de complexité est
 différent](/fr/articles/js/react/cote-serveur/).
 

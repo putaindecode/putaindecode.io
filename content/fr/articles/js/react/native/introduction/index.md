@@ -4,7 +4,7 @@ title: Votre première app React Native
 tags:
   - js
   - react-native
-  - reactjs
+  - react
 authors:
   - zoontek
 ---
@@ -355,7 +355,7 @@ Si vous connaissez déjà React, vous pouvez:
 Si ce n'est pas le cas, n'hésitez pas à lire ces deux articles pour vous
 familiariser avec ces librairies avant de continuer sur votre lancée:
 
-* [Introduction à ReactJS](/fr/articles/js/react/)
+* [Introduction à React](/fr/articles/js/react/)
 * [Redux, comment ça marche ?](/fr/articles/js/redux/)
 
 Bonne découverte !

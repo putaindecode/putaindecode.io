@@ -1,14 +1,14 @@
 ---
 date: "2014-06-04"
-title: Introduction à ReactJS
+title: Introduction à React
 tags:
   - javascript
-  - reactjs
+  - react
 authors:
   - bloodyowl
 ---
 
-Cela fait maintenant un an que ReactJS est open-sourced. C'est l'occasion de
+Cela fait maintenant un an que React est open-sourced. C'est l'occasion de
 présenter le petit dernier de la vague MV\*.
 
 ## Les différentes approches d'UI

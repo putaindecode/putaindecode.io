@@ -3,7 +3,7 @@ date: "2015-05-01"
 title: "Implémenter Flux"
 tags:
   - javascript
-  - reactjs
+  - react
   - flux
 authors:
   - bloodyowl

@@ -3,7 +3,7 @@ date: "2014-10-27"
 title: "Flux, qu'est-ce que c'est ?"
 tags:
   - javascript
-  - reactjs
+  - react
   - flux
 authors:
   - bloodyowl
@@ -25,7 +25,7 @@ repenser la structure des composants les plus cruciaux.
 
 Face à ce besoin, ces développeurs sont donc parvenus à deux solutions :
 
-* [ReactJS](/fr/articles/js/react/)
+* [React](/fr/articles/js/react/)
 * Flux
 
 Flux n'est pas un framework, mais simplement une architecture, une sorte de

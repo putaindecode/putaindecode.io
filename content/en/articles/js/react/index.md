@@ -1,16 +1,16 @@
 ---
 date: "2014-06-04"
-title: Introduction to ReactJS
+title: Introduction to React
 tags:
   - javascript
-  - reactjs
+  - react
 authors:
   - bloodyowl
 translators:
   - skinnyfoetusboy
 ---
 
-It's been quite some time since ReactJS has been open-sourced by facebook. Let's
+It's been quite some time since React has been open-sourced by facebook. Let's
 take it as an opportunity to introduce the last-born child of the MV\* trend.
 
 ## Different takes on UI
