@@ -14,7 +14,7 @@ header:
 
 Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intéressés au typage pour vos applications front (c'est ça de commencer avec JS…), vous avez certainement utilisé les `propTypes` au début en vous disant "putain c'est cool de vérifier les types, ça m'évite bien des problèmes". Puis c’était sympa mais bon, faut quand même exécuter le bout de code qui pète et il est peut-être super chiant d'y accéder dans l'app. Du coup, vous vous êtes sûrement tournés vers Flow ou TypeScript.
 
-Dans cet article, on va découvrir la *next-step* dans ce cheminement : écrire nos composants React dans un langage statiquement et fortement typé: Reason 🚀. Reason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple quand on vient du JS. Si vous n’avez pas lu [l’introduction à ce langage](fr/articles/reason/introduction-reason/), c’est le moment.
+Dans cet article, on va découvrir la *next-step* dans ce cheminement : écrire nos composants React dans un langage statiquement et fortement typé: Reason 🚀. Reason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple quand on vient du JS. Si vous n’avez pas lu [l’introduction à ce langage](/fr/articles/reason/introduction-reason/), c’est le moment.
 
 Là, je vais vous présenter **ReasonReact**, des bindings API par dessus ReactJS supportés officiellement par l'équipe de Reason. Facebook *dogfood* la solution puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses composants.
 
