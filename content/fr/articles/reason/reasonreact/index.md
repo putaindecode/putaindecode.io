@@ -22,7 +22,7 @@ Là, je vais vous présenter **ReasonReact**, des bindings API par dessus ReactJ
 
 Commençons par le traditionnel HelloWorld™ :
 
-```reason
+```js
 /* Un composant ReasonReact se crée en deux temps: d'abord on crée le `component`
    à partir d’un appel à `statelessComponent` ou `reducerComponent` (il existe d'autres
    cas plus avancés, mais on s'y attardera pas dans cet article d'introduction). */
@@ -48,7 +48,7 @@ let make = (~message, _children) => {
 
 Et pour monter le composant :
 
-```reason
+```js
 ReactDOMRe.renderToElementWithId(<HelloWorld message="Helloworld" />, "root");
 ```
 
@@ -62,7 +62,7 @@ Maintenant, comment qu'on fait pour créer un composant stateful ?
 
 On commence par définir le type du state : contrairement à JS, il ne s'agit pas forcément d'un objet, ça peut être une chaîne de caractère, un entier, un variant, un boolean, un arbuste, une map, un jus de fruits frais, un tableau, whatever.
 
-```reason
+```js
 type state = {
   counter: int
 };
@@ -70,7 +70,7 @@ type state = {
 
 On va définir notre type action, sous la forme de variants: chaque variant représente un des type d’action possible. Pour bien se représenter ce qu'est une action, c’est un token, contenant possiblement des paramètres, qu’on va envoyer à notre fameux reducer qui, lui, retournera une réaction à cette action.
 
-```reason
+```js
 type action =
   | Increment
   | Decrement;
@@ -88,7 +88,7 @@ L’update retournée indique au component comment il doit se mettre à jour (ic
 
 *Wrapping up* :
 
-```reason
+```js
 type state = {counter: int};
 
 type action =
@@ -124,7 +124,7 @@ let make = (~initialCounter=0, _) => {
 
 et hop:
 
-```reason
+```js
 ReactDOM.renderToElementWithId(<Count initialCount=0 />, "App");
 ```
 
@@ -140,7 +140,7 @@ Bien que ça puisse paraître un peu lourd de devoir faire un `reducer` pour gé
 
 Exemple ici avec un composant où on va faire comme si on récupérait l'utilisateur connecté sur une API.
 
-```reason
+```js
 let resolveAfter = (ms) =>
   Js.Promise.make(
     (~resolve, ~reject as _) => ignore(Js.Global.setTimeout(() => [@bs] resolve(ms), ms))
@@ -236,7 +236,7 @@ let make = (~credentials, _) => {
 
 Pour utiliser des composants ReasonReact avec ReactJS
 
-```reason
+```js
 let jsComponent =
   ReasonReact.wrapReasonForJs(
     ~component,
