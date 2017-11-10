@@ -15,20 +15,20 @@ itérable.
 
 ## Les paramètres rest
 
-Avez-vous déjà eu l'occasion d'utiliser l'horrible variable magique `arguments` ?
-Disponible au sein de chaque fonction, elle permet d'en récupérer, comme son
-nom l'indique, les arguments. Si l'objet récupéré est similaire à un `Array`,
-il ne dispose d'aucune des propriétés ou des méthodes de celui-ci, à
-l'exception de `length`.
+Avez-vous déjà eu l'occasion d'utiliser l'horrible variable magique `arguments`
+? Disponible au sein de chaque fonction, elle permet d'en récupérer, comme son
+nom l'indique, les arguments. Si l'objet récupéré est similaire à un `Array`, il
+ne dispose d'aucune des propriétés ou des méthodes de celui-ci, à l'exception de
+`length`.
 
 ```js
 function myFunction(separator) {
   // conversion nécessaire en objet de type Array
-  var words = Array.prototype.slice.call(arguments, 1)
-  return words.join(separator)
+  var words = Array.prototype.slice.call(arguments, 1);
+  return words.join(separator);
 }
 
-myFunction("-", "foo", "bar") // "foo-bar"
+myFunction("-", "foo", "bar"); // "foo-bar"
 ```
 
 Les paramètres rest vous permettent de récupérer un véritable `Array` à l'aide
@@ -36,13 +36,14 @@ du simple préfixe `...` appliqué sur le **dernier** argument de votre fonction
 
 ```js
 function myFunction(separator, ...words) {
-  return words.join(separator)
+  return words.join(separator);
 }
 
-myFunction("-", "foo", "bar") // "foo-bar"
+myFunction("-", "foo", "bar"); // "foo-bar"
 ```
 
-Il vous sera en revanche impossible de lui attribuer une [valeur par défaut](/fr/articles/js/es2015/defaults/).
+Il vous sera en revanche impossible de lui attribuer une [valeur par
+défaut](/fr/articles/js/es2015/defaults/).
 
 ## L'opérateur spread
 
@@ -62,21 +63,21 @@ const myString = "foo bar"
 mélangé aux autres arguments d'une fonction.
 
 ```js
-const myArray = [8, 1]
-new Date(1991, ...myArray, 12) // object Date - équivaut à: new Date(1991, 8, 1, 12)
+const myArray = [8, 1];
+new Date(1991, ...myArray, 12); // object Date - équivaut à: new Date(1991, 8, 1, 12)
 ```
 
 Les possibilités offertes par cette nouveauté sont très nombreuses. Voici
-quelques usages un peu plus avancés pour stimuler votre inspiration :
+quelques usages un peu plus avancés pour stimuler votre inspiration :
 
 #### Éviter l'utilisation de .apply()
 
 ```js
 // ES5
-console.log.apply(console, ["foo", "bar"])
+console.log.apply(console, ["foo", "bar"]);
 
 // ES6 / ES2015
-console.log(...["foo", "bar"]) // même résultat
+console.log(...["foo", "bar"]); // même résultat
 ```
 
 #### Concaténer plusieurs itérables
@@ -94,22 +95,24 @@ const stronglyTyped = ["scala", "haskell"]
 #### Déstructurer dans un tableau
 
 Si vous n'avez pas encore connaissance des possibilités offertes par le
-destructuring, je vous invite à lire ce [précédent article](/fr/articles/js/es2015/destructuring/).
+destructuring, je vous invite à lire ce [précédent
+article](/fr/articles/js/es2015/destructuring/).
 
 ```js
-const words = ["foo", "bar", "baz"]
+const words = ["foo", "bar", "baz"];
 
 // ES5
-const first = words[0] // "foo"
-const rest = words.slice(1) // ["bar", "baz"]
+const first = words[0]; // "foo"
+const rest = words.slice(1); // ["bar", "baz"]
 
 // ES6 / ES2015
-const [first, ...rest] = words // même résulat
+const [first, ...rest] = words; // même résulat
 ```
 
 #### Itérer sur le résultat d'un .querySelectorAll()
+
 ```js
-[...document.querySelectorAll('div')] // [<div>, <div>, <div>]
+[...document.querySelectorAll("div")]; // [<div>, <div>, <div>]
 ```
 
 ## En résumé
@@ -117,6 +120,6 @@ const [first, ...rest] = words // même résulat
 Comme vous avez pu le constater par vous-même, les cas d'utilisation des
 paramètres rest et de l'opérateur spread sont légion.
 
-[Gérés](http://kangax.github.io/compat-table/es6/#spread_(...)_operator)
+[Gérés](<http://kangax.github.io/compat-table/es6/#spread_(...)_operator>)
 correctement par Babel et Traceur, ils vous permettront de rendre votre code
 plus concis en évitant bien souvent l'écriture de boucles inutiles.

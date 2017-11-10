@@ -1,60 +1,52 @@
-import React, { PropTypes } from "react"
-import cx from "classnames"
+import React, { PropTypes } from "react";
+import cx from "classnames";
 
-import getI18n from "../../i18n/get"
-import AuthorsList from "../../components/AuthorsList"
-import formatDate from "../../components/formatDate"
-import ReadingTime from "../../components/ReadingTime"
+import getI18n from "../../i18n/get";
+import AuthorsList from "../../components/AuthorsList";
+import formatDate from "../../components/formatDate";
+import ReadingTime from "../../components/ReadingTime";
 
 function renderCSSBackground(metadata) {
-  let image = metadata.image
-  if (
-    metadata.image === true ||
-    (!metadata.image && metadata.credit)
-  ) {
-    image = "index.jpg"
+  let image = metadata.image;
+  if (metadata.image === true || (!metadata.image && metadata.credit)) {
+    image = "index.jpg";
   }
 
-  const color = metadata.color || "#c33"
+  const color = metadata.color || "#c33";
 
   // default to just the image
   const backgrounds = {
     // "" => no need for prefix, see trick below
-    "": [
-      [
-        `${color} url("${image}")`,
-        "no-repeat 50% 50% / cover",
-      ],
-    ],
-  }
+    "": [[`${color} url("${image}")`, "no-repeat 50% 50% / cover"]]
+  };
 
   // if there is a modification that need some prefix, we use a trick
   if (metadata.linearGradient || metadata.radialGradient) {
-    const prefixes = [ "", "-webkit-" ]
-    prefixes.forEach((prefix) => {
-      const background = []
+    const prefixes = ["", "-webkit-"];
+    prefixes.forEach(prefix => {
+      const background = [];
       if (metadata.linearGradient) {
         background.push([
           `${prefix}linear-gradient(${metadata.linearGradient})`,
-          "repeat 0% 0%",
-        ])
+          "repeat 0% 0%"
+        ]);
       }
       if (metadata.radialGradient) {
         background.push([
           `${prefix}radial-gradient(${metadata.linearGradient})`,
-          "repeat 0% 0%",
-        ])
+          "repeat 0% 0%"
+        ]);
       }
       // only need the image if there will be both prefixed and unprefixed
       // versions
       if (image) {
         background.push([
           `${color} url("${image}")`,
-          "no-repeat 50% 50% / cover",
-        ])
+          "no-repeat 50% 50% / cover"
+        ]);
       }
-      backgrounds[prefix] = background
-    })
+      backgrounds[prefix] = background;
+    });
   }
 
   return {
@@ -63,34 +55,30 @@ function renderCSSBackground(metadata) {
     // since a js object doesn’t handle that like css rules set
     // so here is the 2cts trick
     // background-image + background-size AND background. Yep.
-    ...(
-      backgrounds["-webkit-"]
+    ...(backgrounds["-webkit-"]
       ? {
-        backgroundImage: backgrounds["-webkit-"].map(bg => bg[0]).join(", "),
-        backgroundSize: backgrounds["-webkit-"].map(bg => bg[1]).join(", "),
-      }
-      : {}
-    ),
-    background: (
-      backgrounds[""].map(bg => `${bg[0]} ${bg[1]}`).join(", ")
-    ),
-    filter: metadata.filter,
-  }
+          backgroundImage: backgrounds["-webkit-"].map(bg => bg[0]).join(", "),
+          backgroundSize: backgrounds["-webkit-"].map(bg => bg[1]).join(", ")
+        }
+      : {}),
+    background: backgrounds[""].map(bg => `${bg[0]} ${bg[1]}`).join(", "),
+    filter: metadata.filter
+  };
 }
 
 const WithHeroHeader = (
   { body, children, head, meta, rawBody, tags, __url, __filename },
   context
 ) => {
-  const i18n = getI18n(context)
-  const post = head
+  const i18n = getI18n(context);
+  const post = head;
 
   return (
     <div className="putainde-Main">
       <article
         className={cx({
           "putainde-Post": true,
-          "putainde-Post--customHeader": post.header,
+          "putainde-Post--customHeader": post.header
         })}
       >
         <header>
@@ -98,94 +86,77 @@ const WithHeroHeader = (
             className={cx({
               "putainde-Post-header": true,
               "putainde-Post-header--custom": post.header,
-              "putainde-Post-header--filter":
-                post.header && post.header.filter,
-              "putainde-Post-header--dark":
-                post.header && !post.header.light,
-              "putainde-Post-header--light":
-                  post.header && post.header.light,
+              "putainde-Post-header--filter": post.header && post.header.filter,
+              "putainde-Post-header--dark": post.header && !post.header.light,
+              "putainde-Post-header--light": post.header && post.header.light
             })}
           >
-            {
-              post.header &&
+            {post.header && (
               <div
                 className="putainde-Post-header-picture"
                 style={renderCSSBackground(post.header)}
-              >
-              </div>
-            }
-            {
-              post.header && post.header.credit &&
-              <a
-                className="putainde-Post-header-pictureCredit"
-                href={post.header.credit}
-              >
-                {"Crédit photo"}
-              </a>
-            }
-            {
-              post.title &&
-              <h1 className="putainde-Title">
-                {post.title}
-              </h1>
-            }
+              />
+            )}
+            {post.header &&
+              post.header.credit && (
+                <a
+                  className="putainde-Post-header-pictureCredit"
+                  href={post.header.credit}
+                >
+                  {"Crédit photo"}
+                </a>
+              )}
+            {post.title && <h1 className="putainde-Title">{post.title}</h1>}
           </div>
-          {
-            (meta && (post.authors || post.date)) &&
-            <div className="putainde-Post-metas">
-              {
-                (post.authors && post.authors.length) &&
-                <span>
-                  {`${i18n.writtenBy} `}
-                  <AuthorsList authors={post.authors} />
-                </span>
-              }
-              {
-                (post.authors && post.authors.length && post.date) &&
-                <span>{", "}</span>
-              }
-              {
-                post.date &&
-                <span className="putainde-Date">
-                  { formatDate(post.date) }
-                </span>
-              }
-              {". "}
+          {meta &&
+            (post.authors || post.date) && (
+              <div className="putainde-Post-metas">
+                {post.authors &&
+                  post.authors.length && (
+                    <span>
+                      {`${i18n.writtenBy} `}
+                      <AuthorsList authors={post.authors} />
+                    </span>
+                  )}
+                {post.authors &&
+                  post.authors.length &&
+                  post.date && <span>{", "}</span>}
+                {post.date && (
+                  <span className="putainde-Date">{formatDate(post.date)}</span>
+                )}
+                {". "}
 
-              {
-                rawBody && (
+                {rawBody && (
                   <ReadingTime
                     text={rawBody}
                     before={i18n.readingTime}
                     templateText={{
                       1: i18n.readingTime1,
-                      2: i18n.readingTime2,
+                      2: i18n.readingTime2
                     }}
                     templateTooltip={i18n.readingTimeComment}
                     className="putainde-Post-readingTime"
                   />
-                )
-              }
-            </div>
-          }
-          {
-            tags && post.tags &&
-            <ul className="putainde-Tags putainde-Post-tags">
-            {
-              post.tags.map(tag => (
-                <li key={tag} className="putainde-Tag">{tag}</li>
-              ))
-            }
-            </ul>
-          }
+                )}
+              </div>
+            )}
+          {tags &&
+            post.tags && (
+              <ul className="putainde-Tags putainde-Post-tags">
+                {post.tags.map(tag => (
+                  <li key={tag} className="putainde-Tag">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            )}
         </header>
 
-        { children }
-
+        {children}
       </article>
     </div>
-  )
-}
+  );
+};
 
 WithHeroHeader.propTypes = {
   __url: PropTypes.string.isRequired,
@@ -194,17 +165,17 @@ WithHeroHeader.propTypes = {
   body: PropTypes.string.isRequired,
   rawBody: PropTypes.string.isRequired,
   meta: PropTypes.bool,
-  tags: PropTypes.bool,
-}
+  tags: PropTypes.bool
+};
 
 WithHeroHeader.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-}
+  location: PropTypes.object.isRequired
+};
 
 WithHeroHeader.defaultProps = {
   meta: true,
-  tags: true,
-}
+  tags: true
+};
 
-export default WithHeroHeader
+export default WithHeroHeader;

@@ -13,20 +13,19 @@
   box-shadow: 0 0 0 1px var(--colorLightGrey);
 }
 
-  .putainde-Avatar img {
-    display: block;
+.putainde-Avatar img {
+  display: block;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    /* center in parent */
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
+  /* center in parent */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 .putainde-Author {
   text-align: left;
@@ -34,89 +33,97 @@
   padding: 0 0 0 calc(var(--putainde-Author-picture-size) + 1rem);
   margin: var(--r-lineHeight) 0;
 }
-  @media (--maxS) {
-    .putainde-Author {
-      padding-left: 4em;
-    }
+@media (--maxS) {
+  .putainde-Author {
+    padding-left: 4em;
   }
+}
 
+.putainde-Author-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--putainde-Author-picture-size);
+  width: var(--putainde-Author-picture-size);
+}
+@media (--maxS) {
   .putainde-Author-picture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: var(--putainde-Author-picture-size);
-    width: var(--putainde-Author-picture-size);
+    height: calc(var(--r-lineHeight) * 2);
+    width: calc(var(--r-lineHeight) * 2);
   }
-    @media (--maxS) {
-      .putainde-Author-picture {
-        height: calc(var(--r-lineHeight) * 2);
-        width: calc(var(--r-lineHeight) * 2);
-      }
-    }
+}
 
-  .putainde-Author-title {
-    border-bottom: 1px solid #f0f0f0;
-    margin-bottom: calc((var(--r-lineHeight) / 2) - 1px);
-    position: relative;
-  }
+.putainde-Author-title {
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: calc((var(--r-lineHeight) / 2) - 1px);
+  position: relative;
+}
 
-  .putainde-Author-name {
-    color: #222;
-    margin: 0;
-  }
+.putainde-Author-name {
+  color: #222;
+  margin: 0;
+}
 
-  .putainde-Author-afterName {
-    font-size: .5em;
-    margin-left: .5em;
-    opacity: .5;
-  }
+.putainde-Author-afterName {
+  font-size: 0.5em;
+  margin-left: 0.5em;
+  opacity: 0.5;
+}
 
-    .putainde-Author:hover .putainde-Author-afterName {
-      opacity: .8;
-    }
+.putainde-Author:hover .putainde-Author-afterName {
+  opacity: 0.8;
+}
 
+.putainde-Author-social {
+  position: absolute;
+  top: 0.5em;
+  right: 0;
+}
+@media (--maxS) {
   .putainde-Author-social {
-    position: absolute;
-    top: .5em;
-    right: 0;
+    position: static;
+    display: inline-block;
   }
-    @media (--maxS) {
-      .putainde-Author-social {
-        position: static;
-        display: inline-block;
-      }
-    }
+}
 
-    .putainde-Author-social a {
-      background: #f9f9f9;
-      color: #444;
-      fill: #444;
-      display: inline-block;
-      padding: .2em 1em;
-    }
+.putainde-Author-social a {
+  background: #f9f9f9;
+  color: #444;
+  fill: #444;
+  display: inline-block;
+  padding: 0.2em 1em;
+}
 
-      .putainde-Author-social a .putainde-Icon { font-size: 1.2em; }
-      @media (--maxS) { .putainde-Author-social a { font-size: 1em } }
-
-      .putainde-Author-social a:active,
-      .putainde-Author-social a:focus,
-      .putainde-Author-social a:hover { background: #eee }
-
-      .putainde-Author-social a:first-child {
-        border-top-left-radius: 2em;
-        border-bottom-left-radius: 2em;
-      }
-
-      .putainde-Author-social a:last-child {
-        border-top-right-radius: 2em;
-        border-bottom-right-radius: 2em;
-      }
-
-  .putainde-Author-description {
-    font-size: var(--r-small-fontSize);
-    color: #444;
+.putainde-Author-social a .putainde-Icon {
+  font-size: 1.2em;
+}
+@media (--maxS) {
+  .putainde-Author-social a {
+    font-size: 1em;
   }
+}
 
-    .putainde-Author-bio {
-      min-height: var(--r-lineHeight);
-    }
+.putainde-Author-social a:active,
+.putainde-Author-social a:focus,
+.putainde-Author-social a:hover {
+  background: #eee;
+}
+
+.putainde-Author-social a:first-child {
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+
+.putainde-Author-social a:last-child {
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+.putainde-Author-description {
+  font-size: var(--r-small-fontSize);
+  color: #444;
+}
+
+.putainde-Author-bio {
+  min-height: var(--r-lineHeight);
+}

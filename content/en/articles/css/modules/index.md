@@ -9,18 +9,18 @@ authors:
 ---
 
 > I think that even before I ever knew what it was, I already heard someone
-telling me “Oh god, I HATE CSS”. This sentence is often said by one of my
-backender friends, and often for very good reasons. This post isn’t going to
-defend nor make you embrace CSS , but as front-end tooling is quickly improving,
-I find it interesting to explain the new ways of writing it.
+> telling me “Oh god, I HATE CSS”. This sentence is often said by one of my
+> backender friends, and often for very good reasons. This post isn’t going to
+> defend nor make you embrace CSS , but as front-end tooling is quickly
+> improving, I find it interesting to explain the new ways of writing it.
 
 ## Back to basics
 
 First, to understand what are the problems that the new tools are attempting to
 solve, a small reminder of what CSS is: *Cascading Style Sheets*.
 
-A style sheet ? Boy, that’s easy ! It’s some code that maps some  “styles” to
-HTML elements. Cascading ? Well, sometimes more than one (or no) style can match
+A style sheet ? Boy, that’s easy ! It’s some code that maps some “styles” to
+HTML elements. Cascading ? Well, sometimes more than one (or no) style can match
 for an HTML element, and “cascading” is the set of rules that exist to determine
 which one to apply.
 
@@ -32,7 +32,7 @@ h1 {
 }
 ```
 
-Here, we map the ***rule (or declaration)*** “color: red” to the ***selector***
+Here, we map the **_rule (or declaration)_** “color: red” to the **_selector_**
 “h1”. A selector can contain multiples rules in its declaration block.
 
 > And now the delight dies as we enter the cascade hell.
@@ -48,11 +48,9 @@ The need for such a system like the cascade comes from the fact that CSS allows
 multiple rules to be applied on the same element, even from different origins
 (the website, but also the browser or even from the user). It is therefore
 necessary to define what is the rule that ultimately will be applied in this
-case.
-The cascade gives each rule a weight, calculated from several criteria, and
-apply the heaviest on the element.
-I could appear simple at first, but the calculations
-criteria are not, at all.
+case. The cascade gives each rule a weight, calculated from several criteria,
+and apply the heaviest on the element. I could appear simple at first, but the
+calculations criteria are not, at all.
 
 The rules that have the lightest cascade weight are not really an issue, but we
 have to keep them in mind to avoid surprises:
@@ -74,8 +72,8 @@ That being said, we now enter a more painful level of cascade weight.
 
 The position of a rule compared with others will have an influence on its
 weight. Thus, if two rules were to have the same weight if on the same position,
-it finally will be the latest that will be the heaviest, and so applied. ***The
-latest.*** With some quite simple code, it can be easy to understand:
+it finally will be the latest that will be the heaviest, and so applied. **_The
+latest._** With some quite simple code, it can be easy to understand:
 
 ```css
 h1 {
@@ -84,11 +82,11 @@ h1 {
 }
 ```
 
-Easy, right ? The h1 will be blue ! But if there is a “color: red” rule in one
+Easy, right ? The h1 will be blue ! But if there is a “color: red” rule in one
 CSS file named *foo.css*, a “color: blue” rule in another file named *bar.css*,
-that the *foo.css* loading takes more time than *bar.css*, but that the
-*foo.css* HTML tag is before the *bar.css* one, which rule is applied ? Well,
-it’s quite harder to know. *(hint: the loading time is not taken into account)*
+that the _foo.css_ loading takes more time than *bar.css*, but that the
+_foo.css_ HTML tag is before the _bar.css_ one, which rule is applied ? Well,
+it’s quite harder to know. _(hint: the loading time is not taken into account)_
 
 ### Selector specificity
 
@@ -110,7 +108,7 @@ body header h1 {
 In this example, the first selector’s weight is 10 because it only contains a
 CSS class selector which weigh 10. The second selector’s weight is 3, because it
 contains three tag selectors, weighing each 1. So, as 10 > 3, the h1 title will
-be red !
+be red !
 
 ### Inline styles
 
@@ -122,6 +120,7 @@ h1 {
   color: red;
 }
 ```
+
 ```html
 <h1 style="color: blue;">Title</h1>
 ```
@@ -129,31 +128,32 @@ h1 {
 ### Importance
 
 And last but not least, the God Mode, the crusher of all styles, the
-***!important*** keyword. When we REALLY want our title to be red:
+**_!important_** keyword. When we REALLY want our title to be red:
 
 ```css
 h1 {
   color: red !important;
 }
 ```
+
 ```html
 <h1 style="color: blue;">Title</h1>
 ```
 
-As all this cascade is about weight, if two rules are marked as !important, the
+As all this cascade is about weight, if two rules are marked as !important, the
 rest of the criteria is still taken into account to calculate which one is the
 heavier, and so applied.
 
 **…And that is as bad as it gets.** Now, imagine thousands and thousands of
 selectors cascading over themselves to style a website, and you’ll understand
 the hell CSS can be. So, some fellow CSS developers imagined several
-methodologies and tools to prevent this nightmare to happen !
+methodologies and tools to prevent this nightmare to happen !
 
 ## Tooling evolution
 
 Now I’ll present to you how my way of writing CSS evolved over time. Do not
 expect a complete timeline of all the tools invented since the first release of
-CSS in 1996 (I was 6 years old !), but a description of how I worked with (or
+CSS in 1996 (I was 6 years old !), but a description of how I worked with (or
 around) the cascade in my short personal experience.
 
 ### Pre-processors
@@ -169,7 +169,7 @@ We could transform some old and un-easy to maintain CSS:
 
 ```css
 body {
-  background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 body h1 {
@@ -177,7 +177,7 @@ body h1 {
 }
 ```
 
-into this much *better* version:
+into this much _better_ version:
 
 ```scss
 $textColor: #333333;
@@ -186,7 +186,7 @@ body {
   background: lighten($textColor, 90%);
 
   h1 {
-    color: $textColor
+    color: $textColor;
   }
 }
 ```
@@ -196,9 +196,9 @@ nesting and replicating the whole HTML structure into our Sass or LESS code. Our
 CSS ended up with super long and heavy selectors matching only and exactly our
 element, like this one:
 
-> .searchPage .sideBar .refinements.default .category .star input
+> .searchPage .sideBar .refinements.default .category .star input
 
-And this worked pretty well for a time ! But these selectors weren’t the more
+And this worked pretty well for a time ! But these selectors weren’t the more
 efficient, and the HTML structure being doubled, any change in it must be passed
 on the styles. So I moved on.
 
@@ -214,15 +214,13 @@ create bits of code usable everywhere in my web app, like a button for example.
 The one I use (still today) is named [BEM, for Block Element
 Modifier](https://en.bem.info/method/), but there are others with the same aim:
 each HTML element of my component has to have an unique CSS class. This way, no
-nesting is needed, and no cascade collision !
+nesting is needed, and no cascade collision !
 
 And this pre-processed code:
 
 ```scss
 h1 {
-  color: $textColor
-
-  img {
+  color: $textColor img {
     border: 1px solid black;
   }
 }
@@ -232,7 +230,7 @@ was transformed into:
 
 ```css
 .Title {
-  color: $textColor
+  color: $textColor;
 }
 
 .Title-icon {
@@ -241,7 +239,7 @@ was transformed into:
 ```
 
 Obviously, the HTML code needed to be updated with the new classes, but the
-selectors are now short and self-explanatory ! Without any chance of cascade
+selectors are now short and self-explanatory ! Without any chance of cascade
 collision.
 
 Now, and to better explain a final tool, the one I think will solve all our
@@ -250,26 +248,25 @@ the cascade:
 
 ### CSS Frameworks
 
-Here, to prevent our CSS to collide, we… stop writing our own ! CSS frameworks
+Here, to prevent our CSS to collide, we… stop writing our own ! CSS frameworks
 are already written styles that we can use with specific CSS classes. There is
 two different approaches here:
 
 * “Final” styles framework as [Bootstrap](http://getbootstrap.com): a simple
- *“btn”* class on a HTML element and… tada ! Now it is a magnificent button.
- Besides, some variables are available to customize the frameworks’ look.
- Utility styles framework, like [Tachyons](http://tachyons.io). Here, there
- aren’t any pre-defined style, but a lot of utility CSS classes are available,
- like *“pam”* to make an element have a *medium padding*, or *“ba”* to make it
- have a *border all* around it.
+  _“btn”_ class on a HTML element and… tada ! Now it is a magnificent button.
+  Besides, some variables are available to customize the frameworks’ look.
+  Utility styles framework, like [Tachyons](http://tachyons.io). Here, there
+  aren’t any pre-defined style, but a lot of utility CSS classes are available,
+  like _“pam”_ to make an element have a *medium padding*, or _“ba”_ to make it
+  have a _border all_ around it.
 
 * The second one is quite interesting, as our final CSS file will only weigh
- 10kB and never more, even if the  website grows ! But the HTML will have a lot
- of gibberish classes.
- It’s comparable with having all the styles inline, with a
- weight optimization comparable with minification, as *“ba”* is shorter than
- *“border-style: solid; border-width: 1px;”*.
+  10kB and never more, even if the website grows ! But the HTML will have a lot
+  of gibberish classes. It’s comparable with having all the styles inline, with
+  a weight optimization comparable with minification, as _“ba”_ is shorter than
+  *“border-style: solid; border-width: 1px;”*.
 
-These frameworks will keep us from complex CSS cascade calculations ! But I
+These frameworks will keep us from complex CSS cascade calculations ! But I
 quite didn’t like the fact to use a framework, and to have a lot of quite
 unreadable CSS classes in my HTML. But the full re-usability and modularity of
 the styles, without any cascade problems, are awesome.
@@ -306,16 +303,16 @@ into this CSS and JS template code:
 
 ```css
 .styleName {
-  color: $textColor
+  color: $textColor;
 }
 ```
 
 ```js
-import styles from './style.css';
-`<h1 class=${styles.styleName}></h1>`
+import styles from "./style.css";
+`<h1 class=${styles.styleName}></h1>`;
 ```
 
-And when compiled, this code will generate something like this !
+And when compiled, this code will generate something like this !
 
 ```css
 .styleName__abc5436 {
@@ -327,12 +324,12 @@ And when compiled, this code will generate something like this !
 <h1 class="styleName__abc5436"></h1>
 ```
 
-A casc-what ? I don’t know what this is ! ❤️
+A casc-what ? I don’t know what this is ! ❤️
 
 The second main feature, which is directly inspired by modular CSS frameworks
 like Tachyons, is the styles composition. Just like it allowed to style HTML
 elements with some common utility classes, CSS modules allows to compose our
-classes with common styles. Let me show you !
+classes with common styles. Let me show you !
 
 ```css
 .titleColor {
@@ -351,9 +348,9 @@ classes with common styles. Let me show you !
 ```
 
 ```js
-import styles from './style.css';
+import styles from "./style.css";
 `<h1 class=${styles.bigTitle}></h1>
- <h2 class=${styles.mediumTitle}></h2>`
+ <h2 class=${styles.mediumTitle}></h2>`;
 ```
 
 will compile into:

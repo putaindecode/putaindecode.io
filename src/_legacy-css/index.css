@@ -44,12 +44,12 @@ body {
 
 :root {
   /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
-  --fontFamily-body:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --fontFamily-title:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --fontFamily-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --fontFamily-title: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 html {
@@ -131,19 +131,19 @@ em em {
 
 /* advent calendar */
 .putainde-Day {
-  padding: .5rem;
+  padding: 0.5rem;
   border: 1px solid #c33;
   border-radius: 2px;
   display: block;
-  margin: .2rem;
+  margin: 0.2rem;
 }
 
-  @media (--minM) {
-    .putainde-Day {
-      min-height: 8rem;
-    }
+@media (--minM) {
+  .putainde-Day {
+    min-height: 8rem;
   }
+}
 
 .putainde-Day[href=""] {
-  opacity: .4;
+  opacity: 0.4;
 }

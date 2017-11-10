@@ -1,0 +1,21 @@
+{
+    "twitter": "tmaziere",
+    "fr": {
+      "bio": {
+        "short": "Architecte logiciel et développeur @ Incaya.",
+        "long": [
+          "Architecte logiciel et développeur @ Incaya.",
+          "Santé publique et applications scientifiques."
+        ]
+      }
+    },
+    "en": {
+      "bio": {
+        "short": "Software architect and developer @ Incaya.",
+        "long": [
+          "Software architect and developer @ Incaya.",
+          "Public health and scientific applications."
+        ]
+      }
+    }
+  }

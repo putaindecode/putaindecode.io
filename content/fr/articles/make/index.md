@@ -12,10 +12,10 @@ authors:
 [Grunt][p!grunt] ou autres [Rake][gem:rake], certains irréductibles (dont je
 fais partie) ont fait le choix d'employer un des outils les plus standards et
 emblématiques dont tout développeur a entendu parler au moins une fois dans sa
-vie : *Make*.
+vie : *Make*.
 
 Si de prime abord on a l'impression d'un système assez archaïque (ce qui n'est
-pas toujours forcément faux), on se rend rapidement compte que _Make_, couplé à
+pas toujours forcément faux), on se rend rapidement compte que *Make*, couplé à
 une petite dose de scripting shell permet rapidement de mettre en place un moyen
 de compiler ses fichiers et de lancer des tâches.
 
@@ -26,11 +26,11 @@ terminal.
 
 # Hello World
 
-Je vous propose de commencer en douceur par un classique _Hello World_. On va
+Je vous propose de commencer en douceur par un classique *Hello World*. On va
 simplement définir une tâche `hello-world` dont l'action va être d'afficher
 _"Hello, world"_ à l'écran (boooring).
 
-``` make
+```make
 hello-world:
 	echo "Hello, world"
 ```
@@ -40,17 +40,16 @@ Première remarque importante, les indentations dans un _Makefile_ **doivent**
 Python, mais c'est comme ça.
 
 Voilà le genre d'erreurs qu'on se prend si on met des espaces à la place des
-tabulations :
+tabulations :
 
 ```
 Makefile:2: *** séparateur manquant . Arrêt.
 ```
 
-
 Pour exécuter notre commande, il nous suffit de lancer `make hello-world` dans
-un terminal :
+un terminal :
 
-``` console
+```console
 $ make hello-world
 echo "Hello, world"
 Hello, world
@@ -58,17 +57,17 @@ Hello, world
 
 Décortiquons un peu cette exécution. Pour chaque commande qu'il exécute, _Make_
 affiche la commande complète avant d'afficher la sortie standard de ladite
-commande. C'est souvent très pratique car toutes les variables (on va revenir là dessus)
-qu'on met dans la commande sont résolues, et on voit clairement ce que _Make_
-exécute. Par contre, dans certains cas on s'en fout un peu, on peut alors
-préfixer la ligne à rendre silencieuse par un `@`, comme ça :
+commande. C'est souvent très pratique car toutes les variables (on va revenir là
+dessus) qu'on met dans la commande sont résolues, et on voit clairement ce que
+_Make_ exécute. Par contre, dans certains cas on s'en fout un peu, on peut alors
+préfixer la ligne à rendre silencieuse par un `@`, comme ça :
 
-``` make
+```make
 hello-world:
 	@ echo "Hello, world"
 ```
 
-``` console
+```console
 $ make hello-world
 Hello, world
 ```
@@ -95,9 +94,9 @@ c'est la première règle trouvée qui est exécutée (donc dans notre cas,
 `hello-world`).
 
 Les pré-requis sont déclarés après la cible. On pourrait par exemple ajouter un
-`sauter-une-ligne` comme pré-requis à notre cible `hello-world` :
+`sauter-une-ligne` comme pré-requis à notre cible `hello-world` :
 
-``` make
+```make
 hello-world: sauter-une-ligne
 	@ echo "Hello, world"
 
@@ -105,13 +104,13 @@ sauter-une-ligne:
 	@ echo
 ```
 
-``` console
+```console
 $ make hello-world
 
 Hello, world
 ```
 
-Facile, non ? Ok alors on peut *vraiment* attaquer les choses sérieuses.
+Facile, non ? Ok alors on peut _vraiment_ attaquer les choses sérieuses.
 
 # Construire des fichiers
 
@@ -121,9 +120,9 @@ processus de compilation (paraît même que c'est grosso modo la définition de 
 compilation).
 
 On peut par exemple écrire un _Makefile_ nous permettant de compiler un fichier
-_Markdown_ en _HTML_ :
+_Markdown_ en _HTML_ :
 
-``` make
+```make
 article.html: article.md
 	marked article.md > article.html
 ```
@@ -149,10 +148,10 @@ contact.html`).
 
 # Variables et substitutions
 
-La syntaxe des variables dans un *Makefile* ressemblent beaucoup aux variables
+La syntaxe des variables dans un _Makefile_ ressemblent beaucoup aux variables
 de votre Shell, *mais pas tout à fait*.
 
-``` make
+```make
 SOURCE = index.md
 DESTINATION = index.html
 
@@ -161,55 +160,55 @@ ${DESTINATION}: ${SOURCE}
 ```
 
 On peut aussi utiliser une substitution pour s'éviter de tout retaper. La
-syntaxe pour ça est assez simple et se passe d'explications :
+syntaxe pour ça est assez simple et se passe d'explications :
 
-``` make
+```make
 SOURCE = index.md
 DESTINATION = ${SOURCE:.md=.html}
 ```
 
 Là où ça devient beaucoup plus intéressant c'est qu'on peut stocker des listes
 dans une variable. Pour ça, pas vraiment d'effort à faire, il suffit de rajouter
-des noms à la suite :
+des noms à la suite :
 
-``` make
+```make
 SOURCE = index.md article.md
 DESTINATION = ${SOURCE:.md=.html}
 ```
 
-Attention par contre ! En faisant ça si vous utilisez `${SOURCE}` comme cible
+Attention par contre ! En faisant ça si vous utilisez `${SOURCE}` comme cible
 d'une règle, vous allez définir plusieurs règles d'un coup, ce qui n'est peut
 être pas ce que vous voulez.
 
 On peut contourner ça assez simplement en utilisant une substitution au niveau
-de la règle. La syntaxe est un poil différente :
+de la règle. La syntaxe est un poil différente :
 
-``` make
+```make
 %.html: %.md
   [...]
 ```
 
 Vous l'aurez compris, `%` est identique dans la cible et dans la dépendance,
-donc avec cette règle si vous faites un `make index.html`, *Make* va tenter de
+donc avec cette règle si vous faites un `make index.html`, _Make_ va tenter de
 construire la dépendance `index.md` avant tout.
 
-Un problème se pose à nous avec cette syntaxe : « Bah merde, comment je récupère
-les noms de fichiers là ? »
+Un problème se pose à nous avec cette syntaxe : « Bah merde, comment je récupère
+les noms de fichiers là ? »
 
 # Variables spéciales
 
 Superbe transition étant donné qu'on va parler ici de quelques variables
-spéciales bien pratiques !
+spéciales bien pratiques !
 
-- `$@` contient le nom de la cible de la règle en cours d'exécution ;
-- `$^` contient la liste des dépendances de la règle (la flèche pointe vers la
-  liste de dépendances) ;
-- `$<` contient la première dépendance de la règle (la flèche pointe à gauche,
+* `$@` contient le nom de la cible de la règle en cours d'exécution ;
+* `$^` contient la liste des dépendances de la règle (la flèche pointe vers la
+  liste de dépendances) ;
+* `$<` contient la première dépendance de la règle (la flèche pointe à gauche,
   là où est la dépendance).
 
-À l'aide de celles-ci on peut du coup compléter notre exemple précédent :
+À l'aide de celles-ci on peut du coup compléter notre exemple précédent :
 
-``` make
+```make
 %.html: %.md
   marked $< > $@
   [...]
@@ -217,14 +216,14 @@ spéciales bien pratiques !
 
 # Fonctions
 
-Pour faciliter quelques opérations, *Make* fournit un ensemble de fonctions de
+Pour faciliter quelques opérations, _Make_ fournit un ensemble de fonctions de
 base. Appeler ces fonctions rappelle un peu la façon dont on lance une commande
-dans un sous-shell en Bash : `$(fonction argument1 argument2)`.
+dans un sous-shell en Bash : `$(fonction argument1 argument2)`.
 
 Voici une petite démonstration de `wildcard`, `addsuffix` et `basename` dont
-vous vous doutez sans doute les effets :
+vous vous doutez sans doute les effets :
 
-``` make
+```make
 SOURCES = $(wildcard *.md)
 DESTINATIONS = $(addsuffix .html,$(basename ${SOURCES}))
 
@@ -235,15 +234,15 @@ all: ${DESTINATIONS}
 ```
 
 L'exemple construit dynamiquement la liste des fichiers HTML à produire à partir
-de la liste des fichiers *Markdown* disponibles puis définit une règle `all`
+de la liste des fichiers _Markdown_ disponibles puis définit une règle `all`
 permettant de tout construire d'un coup, et une règle définissant compiler
-unitairement un fichier *Markdown* vers HTML.
+unitairement un fichier _Markdown_ vers HTML.
 
 Vous noterez qu'`addsuffix`/`basename` peut être remplacé par une substitution
 simple comme on a vu précédemment.
 
-Je vous invite à fouiller
-[le chapitre sur les fonctions du manuel][man:make:functions].
+Je vous invite à fouiller [le chapitre sur les fonctions du
+manuel][man:make:functions].
 
 # La cible `.PHONY`
 
@@ -253,13 +252,13 @@ cas de notre cible `website` [un peu plus haut](#ref-phony-target)).
 Dans ces cas-là, on va vouloir exécuter la règle quoi qu'il arrive, comme si la
 cible était tout le temps périmée.
 
-Une cible particulière existe pour ça : `.PHONY`. Toutes les dépendances de
+Une cible particulière existe pour ça : `.PHONY`. Toutes les dépendances de
 cette cible seront marquées comme (traduction pourrie) imposteurs (*phony*
 donc).
 
-Pour reprendre l'exemple précédent, on déclarera donc :
+Pour reprendre l'exemple précédent, on déclarera donc :
 
-``` make
+```make
 .PHONY: website
 
 website: index.html apropos.html contact.html
@@ -274,7 +273,7 @@ et exécutera les commandes de la recette de la règle.
 L'exemple suivant permet de compiler un site Web depuis un ensemble de fichiers
 *Markdown*.
 
-``` make
+```make
 SOURCES = $(wildcard src/*.md)
 DESTINATIONS = ${SOURCES:src/%.md=build/%.html}
 
@@ -298,24 +297,24 @@ potentiellement le créer quand on compile un fichier dedans.
 
 # Pour aller plus loin
 
-Il existe bien d'autres fonctionnalités dans *Make* (du moins dans *GNU Make*),
-avec notamment :
+Il existe bien d'autres fonctionnalités dans _Make_ (du moins dans *GNU Make*),
+avec notamment :
 
-- Les [*canned recipes*][man:make:canned] (recettes en boîte), permettant de
+* Les [_canned recipes_][man:make:canned] (recettes en boîte), permettant de
   définir un bout de règle réutilisable à plusieurs endroits.
-- Des [expressions conditionnelles][man:make:conditions] pour avoir des tests
-  dans votre *Makefile* et effectuer des traitements différents selon
+* Des [expressions conditionnelles][man:make:conditions] pour avoir des tests
+  dans votre _Makefile_ et effectuer des traitements différents selon
   l'environnement.
-- Les [règles en *order only*][man:make:types] qui permettent d'indiquer une
+* Les [règles en _order only_][man:make:types] qui permettent d'indiquer une
   dépendance dont la date de modification ne doit pas être prise en compte (on
   peut s'en servir pour éviter le `mkdir` dans l'exemple complet).
-- Et [plein d'autres fonctions][man:make:functions] bien pratiques !
+* Et [plein d'autres fonctions][man:make:functions] bien pratiques !
 
-Je vous invite aussi à jeter un coup d'œil au [*Makefile* de Veil][gh:veil], un outil que
-j'utilise pour générer des sites statiques à partir de fichiers *Markdown*
-(ah bah tiens, comme dans mes exemples, c'est rigolo). Il y a plein de
-fonctionnalités de *Make* utilisées dans ce projet et je pense que ça peut être
-source d'idées.
+Je vous invite aussi à jeter un coup d'œil au [_Makefile_ de Veil][gh:veil], un
+outil que j'utilise pour générer des sites statiques à partir de fichiers
+_Markdown_ (ah bah tiens, comme dans mes exemples, c'est rigolo). Il y a plein
+de fonctionnalités de _Make_ utilisées dans ce projet et je pense que ça peut
+être source d'idées.
 
 Voilà pour cette premier introduction à *Make*, j'espère que ça vous a plu et
 que vous êtes fin prêts à affronter tous ces bouseux avec leur système de build

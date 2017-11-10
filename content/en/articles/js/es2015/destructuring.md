@@ -18,32 +18,32 @@ an array based on their structure.
 // Let's consider this object `myObject`
 var myObject = {
   foo: 1,
-  bar: 2,
-}
+  bar: 2
+};
 
 // With ES5, you need to do
-var foo = myObject.foo
-var bar = myObject.bar
+var foo = myObject.foo;
+var bar = myObject.bar;
 
-foo // 1
-bar // 2
+foo; // 1
+bar; // 2
 
 // With ES6, you can write the same with
-const { foo, bar } = myObject
-foo // 1
-bar // 2
+const { foo, bar } = myObject;
+foo; // 1
+bar; // 2
 
 // We can even destructure the value returned by a function (if this one
 // returns a function or an array)
 const getMyObject = function() {
   return {
     foo: 1,
-    bar: 2,
-  }
-}
-const { foo, bar } = getMyObject()
-foo // 1
-bar // 2
+    bar: 2
+  };
+};
+const { foo, bar } = getMyObject();
+foo; // 1
+bar; // 2
 ```
 
 ## Different syntaxes
@@ -55,25 +55,25 @@ bar // 2
 // of an array
 // You might notice that you can ignore an item by just put nothing between the
 // commas
-const [ first, second, , fourth ] = [1, 2, 3, 4]
-first // 1
-second // 2
-fourth // 4
+const [first, second, , fourth] = [1, 2, 3, 4];
+first; // 1
+second; // 2
+fourth; // 4
 ```
 
 ### Use a different name for the key
 
 For an object, the default behavior is that the name of a variable will match
-the name of the key.
-So if you have already a variable with this name, you can choose another one.
+the name of the key. So if you have already a variable with this name, you can
+choose another one.
 
 ```js
 var myObject = {
   foo: 1,
   bar: 2
-}
-const { foo: renamedFoo } = myObject
-renamedFoo // 1
+};
+const { foo: renamedFoo } = myObject;
+renamedFoo; // 1
 ```
 
 This syntax doesn't offer a good readability.
@@ -83,10 +83,10 @@ This syntax doesn't offer a good readability.
 ```js
 // We can use destructuring directing in a function declaration
 function myFunction({ title, text }) {
-	return title + ": " + text
+  return title + ": " + text;
 }
 
-myFunction({ title: "foo", text: "bar" }) // "foo: bar"
+myFunction({ title: "foo", text: "bar" }); // "foo: bar"
 ```
 
 ### Nested destructuring
@@ -96,15 +96,15 @@ We can also nest the assignments.
 ```js
 var myObject = {
   foo: {
-    bar: 1,
-  },
-}
-const { foo: { bar } } = myObject
-bar // 1
+    bar: 1
+  }
+};
+const { foo: { bar } } = myObject;
+bar; // 1
 ```
 
 Be careful, if the destructuring of the first level should return `undefined`
 (if the value doesn't exist), be sure that you will have a nesting error, since
-a value will try to be retrieved from an `undefined` property.
-To prevent this issue, you will need to define
-[defaults](/en/articles/js/es2015/defaults/) values.
+a value will try to be retrieved from an `undefined` property. To prevent this
+issue, you will need to define [defaults](/en/articles/js/es2015/defaults/)
+values.

@@ -13,7 +13,7 @@ header:
 ---
 
 On s'est lancés un défi un peu fou pour un 1er décembre (oui on a décidé le 1er
-à 15h) : **vous apprendre ES6 (ES2015) en 24 jours.**
+à 15h) : **vous apprendre ES6 (ES2015) en 24 jours.**
 
 On va être un peu sur les rotules quelques jours (et les articles sortiront pas
 forcément le matin), mais le résultat devrait être sympathique !

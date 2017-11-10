@@ -12,8 +12,8 @@ header:
   linearGradient: 160deg, rgba(204, 51, 51, .8), rgba(204, 51, 51, .4)
 ---
 
-We started a crazy challenge for a December 1 (yes we decided on the 1st
-at 3pm): **teach you ES6 (ES2015) in 24 days**.
+We started a crazy challenge for a December 1 (yes we decided on the 1st at
+3pm): **teach you ES6 (ES2015) in 24 days**.
 
 We'll be a little on the ball for a few days (and articles might not be
 published the morning), but the result should be nice!

@@ -13,24 +13,24 @@ Avant de vous parler de Docker je vais vous raconter une histoire que tout
 développeur a vécu au moins une fois.
 
 Il était une fois un jeune développeur qui codait tranquillement sur son
-ordinateur. Il était pressé car comme tout étudiant qui se
-respecte il devait présenter son travail le lendemain matin. Après des heures de
-travail, l'application était là, et elle fonctionnait à merveille ! Le
-lendemain, notre codeur arriva tout fier pour sa présentation, avec son projet
-sur une clé usb. Il le transfère sur l'ordinateur de son pote et là, ça
-ne fonctionne pas !
+ordinateur. Il était pressé car comme tout étudiant qui se respecte il devait
+présenter son travail le lendemain matin. Après des heures de travail,
+l'application était là, et elle fonctionnait à merveille ! Le lendemain, notre
+codeur arriva tout fier pour sa présentation, avec son projet sur une clé usb.
+Il le transfère sur l'ordinateur de son pote et là, ça ne fonctionne pas !
 
 ## Quel est le problème ?
 
-L'application de notre jeune développeur ne fonctionne pas sur l'ordinateur de son ami à cause d'un problème d'environnement. Entre deux systèmes, il
-peut y avoir des différences de version sur les dépendances ou encore des
-bibliothèques manquantes.
+L'application de notre jeune développeur ne fonctionne pas sur l'ordinateur de
+son ami à cause d'un problème d'environnement. Entre deux systèmes, il peut y
+avoir des différences de version sur les dépendances ou encore des bibliothèques
+manquantes.
 
 Ici, notre problème se limite à 2 systèmes, mais imaginez une équipe de 10
 personnes avec des ordinateurs sous OS X, Linux ou même Windows, un serveur de
-test sous Ubuntu 12.04, et un serveur de production sous CentOS 7.
-S'assurer que leur application fonctionne bien sur tous ces environnements peut
-s'avérer être un vrai cauchemar !
+test sous Ubuntu 12.04, et un serveur de production sous CentOS 7. S'assurer que
+leur application fonctionne bien sur tous ces environnements peut s'avérer être
+un vrai cauchemar !
 
 Mais il existe des solutions et parmi l'une d'entre elles nous avons...
 
@@ -48,10 +48,11 @@ Docker peut donc résoudre notre problème d'environnement, car quelle que soit 
 machine que nous utiliserons, le code s'exécutera de la même manière.
 
 La plateforme Docker est composée de deux éléments :
-- Le démon Docker qui s'exécute en arrière-plan et qui s'occupe de gérer vos
-conteneurs
-- Le client Docker qui vous permet d'interagir avec le démon par l'intermédiaire
-d'un outil en ligne de commande
+
+* Le démon Docker qui s'exécute en arrière-plan et qui s'occupe de gérer vos
+  conteneurs
+* Le client Docker qui vous permet d'interagir avec le démon par l'intermédiaire
+  d'un outil en ligne de commande
 
 Si vous voulez plus d'informations sur le fonctionnement interne de Docker je
 vous redirige vers l'article du site officiel : [Understanding
@@ -60,8 +61,8 @@ Docker](https://docs.docker.com/engine/understanding-docker/)
 ### Comment l'installer ?
 
 Le client Docker fonctionne sur tous les systèmes d'exploitation. En revanche,
-le démon Docker utilise des fonctionnalités du noyau Linux afin de gérer
-les conteneurs. Il ne fonctionne donc que sur Linux. Heureusement la majorité des
+le démon Docker utilise des fonctionnalités du noyau Linux afin de gérer les
+conteneurs. Il ne fonctionne donc que sur Linux. Heureusement la majorité des
 serveurs utilise Linux, et pour vos ordinateurs sous OS X, ou même Windows, il
 existe une solution.
 
@@ -80,6 +81,7 @@ Avant de commencer, vous allez devoir télécharger une image Docker qui servira
 de base à vos prochains conteneurs.
 
 Pour cet exemple, on va partir d'une image Ubuntu :
+
 ```console
 $ docker pull ubuntu:trusty
 trusty: Pulling from ubuntu
@@ -93,8 +95,8 @@ Status: Downloaded newer image for ubuntu:trusty
 ```
 
 Cette commande va télécharger depuis le Docker Hub l'image de la version 14.04
-(trusty) d'Ubuntu. Il existe bien d'autres images que vous pourrez trouver
-[sur le registry Docker](https://registry.hub.docker.com).
+(trusty) d'Ubuntu. Il existe bien d'autres images que vous pourrez trouver [sur
+le registry Docker](https://registry.hub.docker.com).
 
 Pour voir les images que vous avez téléchargées, utilisez cette commande :
 
@@ -188,13 +190,13 @@ Status: Downloaded newer image for node:0.12.4
 Puis créez un fichier `server.js` avec le contenu suivant :
 
 ```js
-var http = require('http')
+var http = require("http");
 
 var server = http.createServer(function(req, res) {
-  res.end('Coucou depuis Docker')
+  res.end("Coucou depuis Docker");
 });
 
-server.listen(3000)
+server.listen(3000);
 ```
 
 Et maintenant, pour lancer notre application à l'intérieur d'un conteneur, vous
@@ -210,28 +212,30 @@ ou Mac), vous verrez : 'Coucou depuis Docker'
 
 C'est beau, mais comment ça marche ? Examinons les options une par une :
 
-- `-d` : cette option permet de lancer le conteneur en mode démon et donc de
-tourner en tâche de fond à la différence de `-it` qui lançait le conteneur au
-premier plan et nous donnait un accès direct au conteneur.
-- `--name node-app` : cette option permet simplement de nommer notre conteneur,
-ce qui peut servir pour l'arrêter et le relancer plus simplement (et à d'autres
-choses plus complexes dont je parlerai dans un prochain article).
-- `-p 3000:3000` : cette option permet de partager le port de votre machine avec
-le port du conteneur. Le premier nombre est le port de votre machine et le
-deuxième le port dans le conteneur.
-- `-v $(pwd):/app` : cette option permet de partager un dossier avec votre
-conteneur, ici, nous partageons le dossier courant (où se trouve notre fichier
-`server.js`) avec le dossier `/app` dans le conteneur (attention si vous êtes
-sur Mac ou Windows uniquement votre 'home' est partagé).
-- `node:0.12.4` : l'image Docker que vous voulez utiliser.
-- `node /app/server.js` : la commande à exécuter dans le conteneur.
+* `-d` : cette option permet de lancer le conteneur en mode démon et donc de
+  tourner en tâche de fond à la différence de `-it` qui lançait le conteneur au
+  premier plan et nous donnait un accès direct au conteneur.
+* `--name node-app` : cette option permet simplement de nommer notre conteneur,
+  ce qui peut servir pour l'arrêter et le relancer plus simplement (et à
+  d'autres choses plus complexes dont je parlerai dans un prochain article).
+* `-p 3000:3000` : cette option permet de partager le port de votre machine avec
+  le port du conteneur. Le premier nombre est le port de votre machine et le
+  deuxième le port dans le conteneur.
+* `-v $(pwd):/app` : cette option permet de partager un dossier avec votre
+  conteneur, ici, nous partageons le dossier courant (où se trouve notre fichier
+  `server.js`) avec le dossier `/app` dans le conteneur (attention si vous êtes
+  sur Mac ou Windows uniquement votre 'home' est partagé).
+* `node:0.12.4` : l'image Docker que vous voulez utiliser.
+* `node /app/server.js` : la commande à exécuter dans le conteneur.
 
-Et maintenant ? Vous pouvez afficher le conteneur en faisant : `docker ps`, l'arrêter
-avec : `docker stop node-app` et le supprimer avec `docker rm node-app`.
+Et maintenant ? Vous pouvez afficher le conteneur en faisant : `docker ps`,
+l'arrêter avec : `docker stop node-app` et le supprimer avec `docker rm
+node-app`.
 
------
+- - -
 
 Dans cet article, nous avons vu comment récupérer des images Docker depuis le
-Docker Hub et comment les instancier afin de créer des conteneurs. Mais pour aller
-plus loin, ce serait bien si nous pouvions créer nos propres images, c'est ce que
-nous apprendrons à faire à l'aide des Dockerfile dans le prochain article.
+Docker Hub et comment les instancier afin de créer des conteneurs. Mais pour
+aller plus loin, ce serait bien si nous pouvions créer nos propres images, c'est
+ce que nous apprendrons à faire à l'aide des Dockerfile dans le prochain
+article.

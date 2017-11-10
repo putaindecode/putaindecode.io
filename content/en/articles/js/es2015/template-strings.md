@@ -11,30 +11,30 @@ translators:
   - MoOx
 ---
 
-ES2015 add a new way to write better strings that will simplify our code:
-the *template strings*.
+ES2015 add a new way to write better strings that will simplify our code: the
+*template strings*.
 
 ## Principle
 
-To define a string in JavaScript, we have single quotes or double quotes.
-No one is really better than the other since you need to escape the quotes you
-are using in the string itself.
+To define a string in JavaScript, we have single quotes or double quotes. No one
+is really better than the other since you need to escape the quotes you are
+using in the string itself.
 
-*Template strings* use _back-tick_ (grave accent) to delimitate strings.
+_Template strings_ use _back-tick_ (grave accent) to delimitate strings.
 
 ```js
 // ES5
-var myString = 'I\'m a "string"'
+var myString = 'I\'m a "string"';
 
 // ES6
-const myNewString = `I'm a "template string"`
+const myNewString = `I'm a "template string"`;
 ```
 
 Nothing really awesome. So let's see the interesting new feature: interpolation.
 
 ## Interpolation
 
-Now you can directly use expression in a *template string* if you use the new
+Now you can directly use expression in a _template string_ if you use the new
 place holder syntax.: `${ expression }`.
 
 ```js
@@ -44,7 +44,7 @@ var myStrin = "Hello " + name; // => Hello world
 
 // ES6
 const newName = `developer`;
-const myStrin = `Hello ${ newName }`; // => Hello developer
+const myStrin = `Hello ${newName}`; // => Hello developer
 ```
 
 Here we are just using a variable, but we can use any expression:
@@ -52,19 +52,19 @@ Here we are just using a variable, but we can use any expression:
 ```js
 const x = 1;
 const y = 2;
-const result = `${ x } + ${ y } = ${ x + y }` // => 1 + 2 = 3
+const result = `${x} + ${y} = ${x + y}`; // => 1 + 2 = 3
 
 function square(num) {
   return num * num;
 }
-const result = `${square(5)}` // => 25
+const result = `${square(5)}`; // => 25
 ```
 
-This is what make *template strings* awesome.
+This is what make _template strings_ awesome.
 
-## *template strings* are multi-lines capable
+## _template strings_ are multi-lines capable
 
-Another cool thing is that *template strings* handle multi-lines.
+Another cool thing is that _template strings_ handle multi-lines.
 
 ```js
 // ES5
@@ -82,7 +82,7 @@ const multiline = `foo
                    baz`;
 ```
 
-*Note* keep in mind that spaces are as you write them, which can surprise you.
+_Note_ keep in mind that spaces are as you write them, which can surprise you.
 
 ```js
 const str1 = `foo
@@ -91,33 +91,32 @@ bar`;
 const str2 = `foo
              bar`;
 
-str1 === str2 // => false
+str1 === str2; // => false
 ```
 
-## Tagged *template strings*
+## Tagged _template strings_
 
-Let's dive into another interesting feature of *template strings*.
-Tags are functions that will use just before the *template string* and they
-allow us to enhance the string result.
+Let's dive into another interesting feature of *template strings*. Tags are
+functions that will use just before the _template string_ and they allow us to
+enhance the string result.
 
 A tag take an array of "literals" (strings), and then all interpolated
 (evaluated) expressions that we can still modify.
 
 ```js
 function capitalizeVowels(strings, ...values) {
-
   function replaceVowels(string) {
-    return string.replace(/[aeiou]/g, function(c){
+    return string.replace(/[aeiou]/g, function(c) {
       return c.toUpperCase();
     });
   }
 
   let result = "";
-  for(let i = 0; i < strings.length; ++i) {
+  for (let i = 0; i < strings.length; ++i) {
     const nextValue = values[i] || "";
     result += replaceVowels(strings[i]);
-    if(! parseInt(nextValue)) {
-      result += replaceVowels(nextValue)
+    if (!parseInt(nextValue)) {
+      result += replaceVowels(nextValue);
     } else {
       result += nextValue;
     }
@@ -125,16 +124,15 @@ function capitalizeVowels(strings, ...values) {
   return result;
 }
 
-
-capitalizeVowels`foo bar ?` // => fOO bAr ?
-const n = 42
-const c = "f"
-const v = "o"
-capitalizeVowels`foo ${ n } bar ${ c }${ v }${ v } ?` // => fOO 42 bAr fOO ?
+capitalizeVowels`foo bar ?`; // => fOO bAr ?
+const n = 42;
+const c = "f";
+const v = "o";
+capitalizeVowels`foo ${n} bar ${c}${v}${v} ?`; // => fOO 42 bAr fOO ?
 ```
 
-Here is an interesting example of tagged *template strings* to handle
-[i18n for strings](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
+Here is an interesting example of tagged _template strings_ to handle [i18n for
+strings](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
 
 ## String.raw
 
@@ -142,7 +140,7 @@ A new function has been added to `String` prototype that allows us display raw
 content so you can see unescaped characters:
 
 ```js
-String.raw`FOO\nbar` // => FOO\\nbar
+String.raw`FOO\nbar`; // => FOO\\nbar
 ```
 
 ## Conclusion
@@ -150,7 +148,7 @@ String.raw`FOO\nbar` // => FOO\\nbar
 When you will start to use *template strings*, you are likely going to like
 them. They are clearly really useful in a daily basis.
 
-Almost all
-[modern browser handle template strings](https://kangax.github.io/compat-table/es6/#test-template_strings)
+Almost all [modern browser handle template
+strings](https://kangax.github.io/compat-table/es6/#test-template_strings)
 today, as well as [Babel](http://babeljs.io/) and Traceur, so you do not
 hesitate to use *template strings*.

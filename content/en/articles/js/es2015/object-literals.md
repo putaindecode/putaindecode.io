@@ -11,8 +11,8 @@ translators:
   - MoOx
 ---
 
-Again, ES6 brings us more syntax sugar, that you might appreciate when
-creating new object.
+Again, ES6 brings us more syntax sugar, that you might appreciate when creating
+new object.
 
 ## Shorter property name
 
@@ -20,56 +20,56 @@ When you create an object, you might create a variable and then reuse it to
 define a property of an object that have the same name.
 
 ```js
-var firstname = "Robert"
-var lastname = "Laiponje"
+var firstname = "Robert";
+var lastname = "Laiponje";
 
 return {
   firstname: firstname,
-  lastname: lastname,
-}
+  lastname: lastname
+};
 ```
 
 Thanks to ES6, you can directly write:
 
 ```js
-const firstname = "Robert"
-const lastname = "Laiponje"
+const firstname = "Robert";
+const lastname = "Laiponje";
 
 return {
   firstname,
-  lastname,
-}
+  lastname
+};
 // { firstname: "Robert", lastname: "Laiponje" }
 ```
 
 In the same spirit, you will be able to declare methods without the `function`
-keyword (this also apply for *getter* and *setter*).
+keyword (this also apply for _getter_ and *setter*).
 
 ```js
 const obj = {
   get email() {
-    return this.email()
+    return this.email();
   },
   set email(email) {
-    this.email = email
+    this.email = email;
   },
   validateEmail(email) {
-    return true
-  },
-}
+    return true;
+  }
+};
 ```
 
 ## Dynamic property name
 
-One last thing for *objects literal* will allow you to create dynamic property
-name using an expression, directly when you create an object.
-With ES5 you have to do that in two steps:
+One last thing for _objects literal_ will allow you to create dynamic property
+name using an expression, directly when you create an object. With ES5 you have
+to do that in two steps:
 
 ```js
 function action(type, data) {
-  var payload = {}
-  payload[type] = data
-  return payload
+  var payload = {};
+  payload[type] = data;
+  return payload;
 }
 ```
 
@@ -79,7 +79,7 @@ Now with ES6, you can do:
 function action(type, data) {
   return {
     [type]: data
-  }
+  };
 }
 ```
 

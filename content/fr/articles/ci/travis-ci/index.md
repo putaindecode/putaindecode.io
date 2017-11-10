@@ -31,9 +31,9 @@ et déployer ses applications de manière automatisée.
 
 Ce service payant propose une solution gratuite à tous les projets open source,
 ce qui est assez cool. Cette version est disponible sur
-[travis-ci.org](https://travis-ci.org/).
-Il existe bien entendu plein d'autres services similaires, mais Travis-CI étant
-très répandu dans la communauté open source, on le prendra pour notre exemple.
+[travis-ci.org](https://travis-ci.org/). Il existe bien entendu plein d'autres
+services similaires, mais Travis-CI étant très répandu dans la communauté open
+source, on le prendra pour notre exemple.
 
 ## Configuration de Travis-CI
 
@@ -48,11 +48,10 @@ exemple :
 language: node_js
 ```
 
-Oui, c'est tout. Selon le language et/ou les fichiers présents,
-Travis-CI va choisir la commande de test par défaut.
-Avec node par exemple, ce sera `npm test` si un package.json est présent.
-Si un [Makefile](/fr/articles/make/) est de la partie, Travis-CI va exécuter
-`make test`.
+Oui, c'est tout. Selon le language et/ou les fichiers présents, Travis-CI va
+choisir la commande de test par défaut. Avec node par exemple, ce sera `npm
+test` si un package.json est présent. Si un [Makefile](/fr/articles/make/) est
+de la partie, Travis-CI va exécuter `make test`.
 
 Voici un fichier plus complet avec quelques exemples et trucs bons à savoir.
 
@@ -114,9 +113,8 @@ env:
 ## Exemple concret
 
 On va prendre un petit projet simple en JavaScript qu’on va déployer sur GitHub
-Pages.
-Il va donc nous falloir un token GitHub qu’on va encrypter via un utilitaire
-spécifique afin de ne pas publier cela à la vue de tous.
+Pages. Il va donc nous falloir un token GitHub qu’on va encrypter via un
+utilitaire spécifique afin de ne pas publier cela à la vue de tous.
 
 ### Générer un token GitHub encrypté sur Travis-CI
 
@@ -127,8 +125,8 @@ token](https://github.com/settings/tokens/new).
 
 Maintenant, nous allons encrypter ce token. Vous avez 2 possibilités :
 
-- soit installer le paquet node `travis-encrypt`
-- soit installer la gem ruby `travis` (qui embarque la commande `encrypt`)
+* soit installer le paquet node `travis-encrypt`
+* soit installer la gem ruby `travis` (qui embarque la commande `encrypt`)
 
 ##### Via la gem Ruby `travis`
 
@@ -170,10 +168,9 @@ env:
 ### Automatisation
 
 Imaginons que vous ayez un projet à deployer sur GitHub Pages (exemple : vous
-générez un site statique avec [Phenomic](https://phenomic.io/), le générateur
-de site statique qu'on utilise).
-Vous allez devoir générer votre projet, puis ensuite pousser le dossier généré
-sur votre branche `gh-pages`.
+générez un site statique avec [Phenomic](https://phenomic.io/), le générateur de
+site statique qu'on utilise). Vous allez devoir générer votre projet, puis
+ensuite pousser le dossier généré sur votre branche `gh-pages`.
 
 #### Utiliser la tâche de déploiement seulement si nécessaire
 
@@ -188,9 +185,9 @@ Dans notre cas, on va choisir un provider très simple : un script bash.
 branches.**
 
 On va donc devoir ajuster un peu le tir, car par exemple les commits sur
-`gh-pages` ne doivent rien faire (déjà pour éviter la boucle infinie).
-Il en sera de même pour les commits sur d'autres branches de travail ainsi que
-les pull/merge requests, comme on l’a vu dans le précédent exemple.
+`gh-pages` ne doivent rien faire (déjà pour éviter la boucle infinie). Il en
+sera de même pour les commits sur d'autres branches de travail ainsi que les
+pull/merge requests, comme on l’a vu dans le précédent exemple.
 
 ```yml
 deploy:
@@ -241,16 +238,15 @@ git push --force "${GIT_DEPLOY_REPO}" master:gh-pages
 
 Et voilà ! On pousse un commit sur `master` et la magie devrait opérer !
 
-_Note : pour commiter sans déclencher un build sur Travis-CI, il suffit d'ajouter
-`[ci skip]` dans votre message de commit. Pratique quand on modifie juste un
-README par exemple._
+_Note : pour commiter sans déclencher un build sur Travis-CI, il suffit
+d'ajouter `[ci skip]` dans votre message de commit. Pratique quand on modifie
+juste un README par exemple._
 
 Cette méthode est celle que nous utilisons pour générer et deployer notre site
 statique. Et cela permet, par exemple, si quelqu'un corrige une typo depuis
-l'interface en ligne de GitHub, de n'avoir rien d'autre à faire que de « merger »
-la correction
-(et pour rappel : vous pouvez **modifier** n'importe quel article via le lien
-situé plus bas).
+l'interface en ligne de GitHub, de n'avoir rien d'autre à faire que de « merger
+» la correction (et pour rappel : vous pouvez **modifier** n'importe quel
+article via le lien situé plus bas).
 
 Travis exécutera nos tests, génèrera notre site si les tests sont bons et mettra
 ça en production. Les mises en prod' le vendredi à 19 h 45 ? Même pas peur.

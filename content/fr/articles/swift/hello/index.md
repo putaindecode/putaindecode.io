@@ -15,12 +15,13 @@ header:
     image: swift.jpg
     linearGradient: 0deg, rgba(249,82,51, .9), rgba(252, 136, 63, .7)
 ---
+
 > Le **Swift** est un langage de programmation présenté en **2014** par
-**Apple**. Il a été créé pour simplifier le développement d'applications pour
-les environnements d'Apple (iOS, OS X, tvOS, watchOS), car les nouveaux
-développeurs,  non habitués à `Objective C`, trouvent souvent celui-ci  trop dur
-à appréhender. En 2015, Apple présente **Swift 2.0**, une version finalisée et
-stable du langage. **Swift** est **open-source** depuis novembre 2015.
+> **Apple**. Il a été créé pour simplifier le développement d'applications pour
+> les environnements d'Apple (iOS, OS X, tvOS, watchOS), car les nouveaux
+> développeurs, non habitués à `Objective C`, trouvent souvent celui-ci trop dur
+> à appréhender. En 2015, Apple présente **Swift 2.0**, une version finalisée et
+> stable du langage. **Swift** est **open-source** depuis novembre 2015.
 
 ## Le playground
 
@@ -32,14 +33,14 @@ algorithmes**, des animations ou plus simplement **apprendre à maitriser le
 langage**. Les `playgrounds` servent à prototyper plus qu’à écrire de vrais
 outils.
 
-Grâce à un partenariat entre Apple et IBM,  vous pouvez faire du **Swift sur
+Grâce à un partenariat entre Apple et IBM, vous pouvez faire du **Swift sur
 votre navigateur** avec Bluemix. La plate-forme de cloud coding d'IBM
 [swiftlang.ng.bluemix.net](https://swiftlang.ng.bluemix.net) offre ainsi un
 **`playground` en ligne** pour apprendre et vous entrainer en **Swift**. Donc
 plus de limitation due à l'OS pour apprendre !
 
 Sur OS X vous pouvez utiliser les `playground` avec Xcode, l'IDE d'Apple. Pour
-créer un  **`playground`**,  vous ouvrez Xcode et `File→New→Playground`(ou
+créer un **`playground`**, vous ouvrez Xcode et `File→New→Playground`(ou
 <kbd>⌥</kbd> + <kbd>⇧</kbd> + <kbd>⌘</kbd> + <kbd>N</kbd>). Vous nommez votre
 `playground` et choisissez une plate-forme pour utiliser des frameworks
 spécifiques pour chaque environnement (iOS ou OS X).
@@ -79,7 +80,6 @@ dite *optionelle*, il faut déclarer une variable explicite en ajoutant un `?` �
 son type.
 
 ```swift
-
 // Ce code ne compile pas :
 var implicitString = "Luigi"
 implicitString = nil // Error : Nil cannot be assigned to type 'String'
@@ -124,7 +124,6 @@ if (a > x) || (a < y) { // Si a est plus grand que x ou plus petit que y
 Quelques exemples de boucles `while` et `for` :
 
 ```swift
-
 // While
 var i = 0
 while i < 10 { // Tant que i < 10 j'affiche
@@ -158,11 +157,12 @@ for element in myCollection {
 for (index,valeur) in myCollection.enumerate(){
 	print("valeur à l'index [\(index)] -> \(valeur)")
 }
-
-
 ```
 
-> Depuis Swift 2.2, les notations `--` et `++` sont dépréciées, donc plus de i++ dans les boucles 😩. Ce qui explique aussi que les boucles For C-Style sont aussi dépréciées. Ex:`for var i = 0; i < 3; i++`. Pour ce genre de boucle il faut utiliser la notation `(0...3)`.
+> Depuis Swift 2.2, les notations `--` et `++` sont dépréciées, donc plus de i++
+> dans les boucles 😩. Ce qui explique aussi que les boucles For C-Style sont
+> aussi dépréciées. Ex:`for var i = 0; i < 3; i++`. Pour ce genre de boucle il
+> faut utiliser la notation `(0...3)`.
 
 ## Fonctions
 
@@ -182,13 +182,15 @@ func myFunctionName(myStringInput:String,myIntInput:Int)->Int{
 
 En réalité, les fonctions sont un cas particulier d'utilisation d'une notion
 introduite par Swift qu'ils appellent les *closures*. Pour les amateurs de
-*Block* (Objective C, C++14) et  **Lambdas** (C++, Java,...), les closures
-seront détaillées dans un prochain article.
+_Block_ (Objective C, C++14) et **Lambdas** (C++, Java,...), les closures seront
+détaillées dans un prochain article.
 
 ## Le mot de la fin
 
-Avec tout ça vous devriez déjà vous amuser un peu !
-Pour information, les scripts Swift peuvent **utiliser [Foundation](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/ObjC_classic/)**
+Avec tout ça vous devriez déjà vous amuser un peu ! Pour information, les
+scripts Swift peuvent **utiliser
+[Foundation](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/ObjC_classic/)**
 sur Linux ou OS X , le framework de base des OS d'Apple bien connu des
 développeurs OS X/iOS. Il permet le traitement des fichiers, des `String` et
-[bien plus](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/ObjC_classic/).
+[bien
+plus](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/ObjC_classic/).

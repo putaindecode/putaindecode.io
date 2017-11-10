@@ -3,5 +3,7 @@ node_modules
 npm-debug.log
 
 # build
-contributors.json
+cache
 dist
+
+.vscode

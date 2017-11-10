@@ -2,7 +2,8 @@
   "twitter": "MoOx",
   "fr": {
     "bio": {
-      "short": "Développeur UI (web & mobile) avec React & co. Drogué d'Open source. Freelance.",
+      "short":
+        "Développeur UI (web & mobile) avec React & co. Drogué d'Open source. Freelance.",
       "long": [
         "Développeur UI (web & mobile) avec React & co car il n'aime plus HTML et CSS.",
         "Drogué d'Open Source, bricoleur et freelance."
@@ -11,7 +12,8 @@
   },
   "en": {
     "bio": {
-      "short": "UI developer (web & mobile) with React & friends. Open Source addict. Freelancer.",
+      "short":
+        "UI developer (web & mobile) with React & friends. Open Source addict. Freelancer.",
       "long": [
         "UI developer (web & mobile) with React & friends because he doesn't like HTML & CSS anymore.",
         "Open Source addict, handyman and freelancer."

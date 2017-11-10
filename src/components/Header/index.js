@@ -1,13 +1,13 @@
-import React, { PropTypes } from "react"
-import { Link } from "react-router"
+import React, { PropTypes } from "react";
+import { Link } from "react-router";
 
-import getI18n from "../../i18n/get"
-import getLang from "../../i18n/getLang"
-import Navigation from "../Navigation"
-import SVGInline from "react-svg-inline"
+import getI18n from "../../i18n/get";
+import getLang from "../../i18n/getLang";
+import Navigation from "../Navigation";
+import SVGInline from "react-svg-inline";
 
-const Header = ({}, context) => {
-  const i18n = getI18n(context)
+const Header = (props, context) => {
+  const i18n = getI18n(context);
 
   return (
     <div className="putainde-Header">
@@ -17,7 +17,8 @@ const Header = ({}, context) => {
             <SVGInline
               className="putainde-Logo"
               svg={require("../../images/putaindecode-logo.svg")}
-              cleanupExceptions={[ "fill" ]}
+              width={"55px"}
+              height={"55px"}
             />
             <span>{i18n.title}</span>
           </Link>
@@ -27,12 +28,12 @@ const Header = ({}, context) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Header.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-}
+  location: PropTypes.object.isRequired
+};
 
-export default Header
+export default Header;

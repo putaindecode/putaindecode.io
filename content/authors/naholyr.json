@@ -11,7 +11,8 @@
   },
   "en": {
     "bio": {
-      "short": "Enthousiastic JavaScript developer and idealistic entrepreneur.",
+      "short":
+        "Enthousiastic JavaScript developer and idealistic entrepreneur.",
       "long": [
         "Associate in ByteClub, developer, consultant, trainer, around modern JavaScript technologies (ES6, Node, React…).",
         "Regular open-source contributor, blog posts author, and speaker. Said shortly: passionate :)"
