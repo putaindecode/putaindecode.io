@@ -28,7 +28,7 @@ Puisque dans le corps de `Array.prototype.push()`, `this` correspond à `Array.p
 [][0] // 1
 ```
 
-Et hop. À noter que vue l'implémentation de la plupart des fonctions travaillant avec des *arrays*, ça devrait pas causer grand dommage puisque `length` est géré au niveau de l'array, et pas de son prototype. Ceci-dit ça peut surprendre en faisant mumuse dans la console.
+Et hop. À noter que vu l'implémentation de la plupart des fonctions travaillant avec des *arrays*, ça devrait pas causer grand dommage puisque `length` est géré au niveau de l'array, et pas de son prototype. Ceci-dit ça peut surprendre en faisant mumuse dans la console.
 
 ## 9. L'objet magique
 
