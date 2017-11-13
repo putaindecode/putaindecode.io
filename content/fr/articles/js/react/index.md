@@ -70,71 +70,56 @@ Du coup, et si on appelait `.render()` à chaque modification ? Ça a l'air
 stupide, hein ? Pas tant que ça en fait.
 
 React implémente un **DOM virtuel**, une représentation interne du DOM
-extrêmement rapide. Il inclut par ailleurs son propre système d'événements, ce
-qui permet à React de faire bénéficier de la phase de capturing aux navigateurs
-n'implémentant pas `EventTarget` (oui, IE8, c'est toi que je regarde).
-
-La méthode `render` retourne des objets correspondant à la représentation
+extrêmement rapide. La méthode `render` retourne des objets correspondant à la représentation
 interne du DOM virtuel.
 
-Les classes React se définissent par leur `state`. Lorsque l'on crée une classe,
-on définit une méthode `getInitialState` qui retournera un état initial.
+Un composant React reçoit des `props`, ses paramètres, et peut avoir un `state`, un état local. Lorsque l'on définit un composant React, on peut y mettre un état par défaut en définissant une propriété `state` dans la `class`.
 
-Après cela, le seul moyen de changer l'état est d'indiquer à `this.setState`
-quelles valeurs de l'état ont changé afin de mettre à jour le DOM.
-
-Une classe React se voit passer des propriétés au moment d'être instanciée : les
-`props`. À ne pas confondre avec le `state`, son contenu ne doit être manipulé
-que par l'extérieur de la classe (bien que celle-ci puisse obtenir des valeurs
-par défaut en définissant une méthode `getDefaultProps` qui les retourne).
-
-Le `state`, en revanche, ne doit être modifié qu'au sein des méthodes propres à
-la classe.
+Après cela, on peut mettre à jour l'état avec la méthode `this.setState`, en y passage les valeurs de l'état à changer afin de mettre à jour le DOM.
 
 Le principal avantage est que l'on est certain, du fait de l'appel systématique
 à `render`, que notre composant React aura la représentation attendue pour un
-état donné.
+état donné, et ce à n'importe quel point dans le temps.
 
 Un des autres avantages de React est son algorithme de diff interne. Le DOM
 virtuel va être comparé avec la version visible, et React effectue à l'aide
 d'opérations simples les seuls changements nécessaires.
 
 Cela résoud des problématiques comme la position du curseur dans un champ texte
-qui effectue du two-way data-binding; puisque l'algorithme n'y voit pas de
+qui reçoit sa valeur de JavaScript; puisque l'algorithme n'y voit pas de
 changement nécessaire, le champ texte n'est pas modifié et l'on garde donc le
 focus. Du même fait, si vous avez un gif qui boucle, il ne se relancera pas
 inopinément.
 
-React est idéalement utilisé avec jsx, un pré-processeur js qui permet d'écrire
-les templates avec une syntaxe xml (voir l'exemple plus bas), ce qui permet à
-des novices de le prendre en main très rapidement.
+React peut être utilisé avec JSX, un *superset* de js qui permet d'écrire
+les templates avec une syntaxe XML (voir l'exemple plus bas), ce qui permet de le prendre en main très rapidement.
 
 ## Créons un component react :
 
 ```javascript
-var View = React.createClass({
-  getInitialState: function() {
-    // état initial
-    return {
-      checked: false
-    };
-  },
-  getDefaultProps: function() {
-    // si `this.props.label` n'est pas présent, ce sera `"?"`
-    return {
-      label: "?"
-    };
-  },
-  toggle: function() {
+import React from "react";
+import ReactDOM from "react-dom";
+import cx from "classnames";
+
+class View extends React.Component {
+  // état initial
+  state = {
+    checked: false
+  };
+  static defaultProps = {
+    label: "?"
+  };
+  toggle = () => {
     // on crée un nouvel état (les états de react sont immutable)
     // et on déclenche le render
     this.setState({
       checked: !this.state.checked
     });
-  },
-  render: function() {
-    // petit addon pour se simplifier la vie
-    var classes = React.addons.classSet({
+  }
+  render() {
+    // `cx` (classnames sur npm) permet de générer une chaîne "className" à
+    // partir d'objets ayant pour clé un className et pour valeur un booléen
+    const classes = cx({
       "list-item": true,
       "list-item--valid": this.state.checked
     });
@@ -150,15 +135,13 @@ var View = React.createClass({
       </div>
     );
   }
-});
+};
 
-// on mount le component, et l'on passe le label
-var view = React.render(
-  <View label="helloworld" />,
+// on mount le component, et on passe le label
+ReactDOM.render(
+  <View label="HelloWorld" />,
   document.getElementById("id")
 );
-// et hop
-view.toggle();
 ```
 
 ## Sum up des avantages de React
@@ -174,11 +157,9 @@ React a bien compris ces points :
   fonctionnalités sans devoir créer des chaînes d'héritage complexes) ont de
   grands intérêts, trop peu utilisés en front-end.
 
-En bonus, React, même s'il n'impose pas de bibliothèque pour les data et la
-communication des modules, offre une approche nommée
-[flux](http://facebook.github.io/flux/docs/overview.html) très intéressante et
-vous offrant des clés pour concevoir une app avec en tête les paradigmes pensés
-pour React.
+React n'impose pas de bibliothèque pour les data et la
+communication des modules. Il existe une bibliothèque nommée
+[redux](https://redux.js.org), aujourd'hui standard, permettant de gérer ces aspecs facilement.
 
 Last but not least, vous pouvez render vos composants React depuis le serveur et
 la lib sera assez intelligente pour reconnaitre les composants déjà générés pour
