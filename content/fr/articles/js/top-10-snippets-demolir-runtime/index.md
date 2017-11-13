@@ -28,7 +28,7 @@ Puisque dans le corps de `Array.prototype.push()`, `this` correspond à `Array.p
 [][0] // 1
 ```
 
-Et hop. À noter que vu l'implémentation de la plupart des fonctions travaillant avec des *arrays*, ça devrait pas causer grand dommage puisque `length` est géré au niveau de l'array, et pas de son prototype. Ceci-dit ça peut en surprendre en faisant mumuse dans la console.
+Et hop. À noter que vue l'implémentation de la plupart des fonctions travaillant avec des *arrays*, ça devrait pas causer grand dommage puisque `length` est géré au niveau de l'array, et pas de son prototype. Ceci-dit ça peut surprendre en faisant mumuse dans la console.
 
 ## 9. L'objet magique
 
@@ -42,7 +42,7 @@ for(let index = 0; index < 10; index++) {
 };
 ```
 
-Même concept que pour l'exemple précédent, avec l'héritage prototypal. Le petit côté rigolo ici, c'est que c'est un pattern très courant en JavaScript, notamment dans les bibliothèques que vous utilisez probablement. Et c'est là qu'on se rend compte que de faire hériter la fonction qui vérifie si une propriété est héritée ou non, c'est pas forcément l'idée du siècle.
+Même concept que pour l'exemple précédent, avec l'héritage prototypal. Le petit côté rigolo ici, c'est que c'est un pattern très courant en JavaScript, notamment dans les bibliothèques que vous utilisez probablement. Et c'est là qu'on se rend compte que de mettre la fonction qui vérifie si une propriété est héritée ou non dans l'héritage, c'est pas forcément l'idée du siècle.
 
 ```javascript
 let object = {};
@@ -56,7 +56,7 @@ for(let key in object) {
 
 ## 8. Le DOM fou
 
-Celui là est plutôt sympa quand vous ou vos bibliothèques DOM de prédilection touchez un peu aux élements. Vu que l'appel à `Math.random()` rend l'opération aussi déterministe que l'application de styles assignés à des sélecteurs CSS chargés de manière asynchrone, vous risquez de jolies surprises.
+Celui-là est plutôt sympa quand vous ou vos bibliothèques DOM de prédilection touchez un peu aux élements. Vu que l'appel à `Math.random()` rend l'opération aussi déterministe que l'application de styles assignés à des sélecteurs CSS chargés de manière asynchrone, vous risquez de jolies surprises.
 
 ```javascript
 Element.prototype.appendChild = function(element) {
