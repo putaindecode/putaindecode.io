@@ -77,7 +77,7 @@ for(let index = 0; index < 10; index++) {
 
 ## 7. Simple mais efficace, faire de la console une no-op
 
-Bizarrement, j'ai déjà vu des sites qui faisaient ça en production (e.g. Twitter si je me rappelle correctement). Vous rendez inopérable la console, ce qui, peut faire une très bonne blague à vos collègues en cachant ça dans un vieux commit avec l'option `amend`.
+Bizarrement, j'ai déjà vu des sites qui faisaient ça en production (e.g. Twitter si je me rappelle correctement). Vous rendez inopérable la console, ce qui peut faire une très bonne blague à vos collègues en cachant ça dans un vieux commit avec l'option `amend`.
 
 ```javascript
 Object.keys(console).forEach(key => {
