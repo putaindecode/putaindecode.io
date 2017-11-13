@@ -16,23 +16,23 @@ header:
 
 ## 10. L'array vide magique
 
-Cette technique fonctionne grace à l'héritage prototypal et au fait que pour une obscure raison, `Array.prototype` est un array (qui hérite de lui même, va savoir). Il suffit d'appeler une des méthodes mutatives d'`Array.prototype` sur lui même :
+Cette technique fonctionne grace à l'héritage prototypal et au fait que pour une obscure raison, `Array.prototype` est un array (qui hérite de lui même, allez savoir). Il suffit d'appeler une des méthodes mutatives d'`Array.prototype` sur lui-même :
 
 ```javascript
 Array.protoype.push(1, 2, 3);
 ```
 
-Puisque dans le corpds de `Array.prototype.push()`, `this` correspond à `Array.prototype`, c'est dans celui ci que seront injectés les éléments.
+Puisque dans le corps de `Array.prototype.push()`, `this` correspond à `Array.prototype`, c'est dans celui-ci que seront injectés les éléments.
 
 ```javascript
 [][0] // 1
 ```
 
-Et hop. À noter que vu l'implémentation de la plupart des fonctions travaillant avec des *arrays*, ça devrait pas faire grand chose puisque `length` est géré au niveau de l'array, et pas de son prototype.
+Et hop. À noter que vu l'implémentation de la plupart des fonctions travaillant avec des *arrays*, ça devrait pas causer grand dommage puisque `length` est géré au niveau de l'array, et pas de son prototype. Ceci-dit ça peut en surprendre en faisant mumuse dans la console.
 
 ## 9. L'objet magique
 
-Souvent, dans une boucle `for(name in object)`, on appelle `object.hasOwnProperty(name)`pour vérifier si la propriété appartient bien à l'objet et qu'il ne s'agit pas juste d'un truc hérité.
+Souvent, dans une boucle `for(name in object)`, on appelle `object.hasOwnProperty(name)` pour vérifier si la propriété appartient bien à l'objet et qu'il ne s'agit pas juste d'un truc hérité.
 
 ```javascript
 Object.prototype.hasOwnProperty = () => true;
@@ -42,7 +42,7 @@ for(let index = 0; index < 10; index++) {
 };
 ```
 
-Même concept que pour l'exemple précédent, avec l'héritage prototypal. Le petit côté rigolo ici, c'est que c'est un pattern très courant en JavaScript, notamment dans les bibliothèques que vous utilisez probablement.
+Même concept que pour l'exemple précédent, avec l'héritage prototypal. Le petit côté rigolo ici, c'est que c'est un pattern très courant en JavaScript, notamment dans les bibliothèques que vous utilisez probablement. Et c'est là qu'on se rend compte que de faire hériter la fonction qui vérifie si une propriété est héritée ou non, c'est pas forcément l'idée du siècle.
 
 ```javascript
 let object = {};
@@ -56,11 +56,15 @@ for(let key in object) {
 
 ## 8. Le DOM fou
 
-Celui là est plutôt sympa quand vous ou vos bibliothèques DOM de prédilection touchez un peu aux élements. Vu que l'appel à `Math.random()` rend l'opération aussi déterministe que la priorité d'application de sélecteurs CSS chargés de manière asynchrone, vous risquez de jolies surprises.
+Celui là est plutôt sympa quand vous ou vos bibliothèques DOM de prédilection touchez un peu aux élements. Vu que l'appel à `Math.random()` rend l'opération aussi déterministe que l'application de styles assignés à des sélecteurs CSS chargés de manière asynchrone, vous risquez de jolies surprises.
 
 ```javascript
 Element.prototype.appendChild = function(element) {
-  return Element.prototype.insertBefore.call(this, element, this.childNodes[Math.floor(Math.random() * this.childNodes.length)])
+  return Element.prototype.insertBefore.call(
+    this,
+    element,
+    this.childNodes[Math.floor(Math.random() * this.childNodes.length)]
+  )
 };
 ```
 
@@ -73,7 +77,7 @@ for(let index = 0; index < 10; index++) {
 
 ## 7. Simple mais efficace, faire de la console une no-op
 
-Bizarrement, j'ai déjà vu des sites qui faisaient ça en production (e.g. Twitter si je me rappelle correctement). Vous rendez inopérable la console, ce qui, pour faire une blague à vos collègues en cachant ça dans un vieux commit avec l'option `amend`.
+Bizarrement, j'ai déjà vu des sites qui faisaient ça en production (e.g. Twitter si je me rappelle correctement). Vous rendez inopérable la console, ce qui, peut faire une très bonne blague à vos collègues en cachant ça dans un vieux commit avec l'option `amend`.
 
 ```javascript
 Object.keys(console).forEach(key => {
@@ -81,9 +85,9 @@ Object.keys(console).forEach(key => {
 });
 ```
 
-## 6. Vicieux: supprimer les stack traces des erreurs
+## 6. Supprimer les stack traces des erreurs
 
-Là, on est vraiment sur le petit truc horrible, parce que vous pouvez mettre un petit moment avant de le réaliser. Le constructeur `Error` vient normalement ajouter une propriété `stack` qui vous permet de retrouver le chemin qu'a emprunté le code avant de jeter une erreur. Fini, à vous le debug à l'aveugle !
+Là, on est vraiment sur le petit truc horrible, parce que vous pouvez mettre un petit moment avant de le réaliser. Le constructeur `Error` vient normalement ajouter une propriété `stack` qui vous permet de retrouver le chemin qu'a emprunté le code avant de jeter une erreur. Eh ben fini, à vous le debug à l'aveugle !
 
 ```javascript
 (() => {
@@ -95,15 +99,38 @@ Là, on est vraiment sur le petit truc horrible, parce que vous pouvez mettre un
 })();
 ```
 
-## 5. Rendez l'asynchrone synchrone
+## 5. Rendre l'asynchrone synchrone
 
-Il est assez courrant d'avoir des `setTimeout(func)` ou `setTimeout(func, 0)` (les deux sont équivalents). Cela permet s'assurer qu'on décalle un peu l'execution d'une fonction, et souvent de s'assurer que si elle jette une erreur, elle n'empêchera pas le reste de s'executer.
+Il est assez courrant d'avoir des `setTimeout(func)` ou `setTimeout(func, 0)` (les deux sont équivalents). Ça permet s'assurer qu'on décale un peu l'execution d'une fonction, et souvent de s'assurer que si elle jette une erreur, elle n'empêchera pas le reste de s'executer.
 
 ```javascript
 (() => {
   let originalTimeout = window.setTimeout;
   window.setTimeout = (func, duration, ...args) => !duration ? func(...args) : originalTimeout.call(window, func, duration, ...args);
 })()
+```
+
+Avec ce snippet, petites surprises bizarres assurées. Et c'est un bug présent dans quelques bibliothèques implémentant une fonction `domReady`, et qui font:
+
+```javascript
+function domReady(func) {
+  if (document.readyState === "complete") {
+    func()
+  } else {
+    document.addEventListener("DOMContentLoaded", func)
+  }
+}
+```
+
+Avec une implémentation comme celle qu'on voit au dessus, `func` aura un comportement différent si le DOM est chargé ou non:
+
+```javascript
+domReady(() => {
+  throw new Error()
+})
+console.log(1)
+// Logue 1 si le DOM est prêt, parce que l'execution de func par le handler DOMContentLoaded est asynchrone
+// Logue rien du tout si func() est appelé en synchrone par la première branche de domReady
 ```
 
 ## 4. Le réseau qui ne répond jamais
