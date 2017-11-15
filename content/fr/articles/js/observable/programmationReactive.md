@@ -1,128 +1,52 @@
 ---
- date: "2017-11-7"
+ date: "2017-11-16"
  title: "La programmation reactive avec RxJS"
  tags:
    - Observable
    - JavaScript
  authors:
    - wyeo
- ---
+---
 
-# La programmation reactive avec RxJS
+La [programmation réactive](https://www.reactivemanifesto.org/fr) est un paradigme de programmation dont le concept repose sur l'émission de données depuis une ou plusieurs sources (producteurs) à destinations d'autres éléments appelés *consommateurs*. Elle repose sur le design pattern [Observable - Observer](http://design-patterns.fr/observateur).
 
-La [programmation reactive](https://www.reactivemanifesto.org/fr) est un paradigme de programmation dont le concept repose sur l'émission de données depuis une ou plusieurs sources (producteurs) à destinations d'autres éléments appelés *consommateurs*. Elle repose sur le design pattern [Observable - Observer](http://design-patterns.fr/observateur) implémenté par les observables, aisément manipulable via les operateurs.
+Dans ce paradigme, on traite toutes les données, quelles qu'elles soient, de la même façon: au travers de flux. Un flux, c'est en gros une structure qui balance une ou plusieurs données dans le temps au travers d'observables, comme on l'a vu dans le [post précédent](/fr/articles/js/observable/).
 
-**Programmation réactive = programmation avec des flux de données asynchrones**. Tout peut être un flux : les variables, les entrées utilisateurs, les propriétés, les caches, les structures de données, etc.
-Un flux peut être utilisé comme entrée d'un autre. Plusieurs flux peuvent aussi être combinés pour en produire un nouveau. Deux flux peuvent être fusionnés. Un flux peut être filtré pour produire un nouveau flux avec uniquement les événements qui vous intéressent. Vous pouvez transformer chaque événement d'un flux pour en produire un nouveau.
+![Programmation Réactive](https://i.imgur.com/NLqK4bF.png)
 
-![Programmation Reactive](https://camo.githubusercontent.com/36c0a9ffd8ed22236bd6237d44a1d3eecbaec336/687474703a2f2f692e696d6775722e636f6d2f634c344d4f73532e706e67)
 
-Un flux est simplement une séquence d'événements en cours de production et ordonnés dans le temps. Trois types de signaux peuvent être émis par un flux : une valeur (d'un certain type), une erreur, ou un signal « fin ». Le signal de « fin » est par exemple envoyé quand l'utilisateur ferme la fenêtre qui émettait les événements souris.
+Un flux, pour résumer, c'est simplement de la donnée qui arrive de manière ordonnée dans le temps. Comme expliqué précédemment, trois types de signaux peuvent être émis par un flux : une valeur, une erreur ou un signal de fin indiquant que le flux n'a plus de données à envoyer.
 
-Dans [l'introduction aux observables](http://putaindecode.io/fr/articles/js/observable/), nous avons découvert cet objet permettant de souscrire à une source de donnée avec un `Observer`. Cette mécanique permet de réagir aux données émisent par l'`Observable` par le biais de `Observer`, et cela pendant toute la durée du **flux**.
-
-Maintenant, voyons comment nous pouvons manipuler ce flux grâce aux opérateurs de transformation.
-
-## Les opérateurs
-
-Un Observable peut se représenter comme un tableau dont les elements arrivent avec le temps. Vous connaissez probablement les méthodes `Array.prototype.map`, `Array.prototype.filter`. Nous appliquons le même principe avec les operateurs sur un observable :
-
-```JavaScript
-KeyBoardObservable
-  .map(x => String.fromCharCode(keyCode))
-  .filter(x => /[a-z]/.text(x))
-  .subscribe(observer)
-```
-
-Les opérateurs peuvent être coupler dans l’ordre que l’on souhaite. Mais pour accéder au résultat de notre transformation, nous devrons faire appel à **l'operateur `.subscribe()`** et lui appliquer un `Observer`.
-
-Schema d’exploitation d’un observable sans opérateur :
-
-	ArrayObservable
-		|--> 1, 2, 3 --> .subscribe(Observer) // Affiche 1, 2, 3
-
-Schema d’exploitation d’un observable avec opérateurs :
-
-	ArrayObservable
-		|—-> 1, 2, 3      —->	.map(x => x * 10)       --> Renvoie 10, 20, 30
-		|—-> 10, 20, 30   -->	.filter(x => x >= 20)   --> Renvoie 20, 30
-		|—-> 20, 30       -->	.subscribe(Observer)    --> Affiche 20, 30
-
-L'opérateur n’échappe pas à la règle : pour accéder aux données de l’observable, il doit dans un premier temps y souscrire. Ensuite devra renvoyer un nouvel observable(avec le resultat de sa transformation) à l'operateur qui suit.
-
-Voyons maintenant un exemple simple d'implémetation des operateurs `.map()` et `.subscribe()` :
-
-```JavaScript
-function createObservable (subscribe) {
-  return {
-    subscribe: subscribe,
-    map: function(transformFn) {
-      const inputObservable = this
-      const outputObservable = createObservable(function
-        subscribe(outputObserver) {
-          inputObservable.subscribe({
-            next: function (x) {
-              const y = transformFn(x)
-              outputObserver.next(y)
-            },
-            error: function (err) {
-              outputObserver.error(err)
-            },
-            complete: function() {
-              outputObserver.complete()
-            }
-          })
-        })
-      return outputObservable
-    }
-  }
-}
-
-const ArrayObservable = createObservable(function subscribe(observer) {
-  [1, 2, 3].forEach(val => observer.next(val))
-  observer.complete()
-})
-```
-
-```JavaScript
-const observer = {
-  next: val => console.log(val),
-  error: err => console.log(err),
-  complete: () => console.log('Complete!')
-}
-
-ArrayObservable
-  .map(x => x * 10)
-  .subscribe(observer) // log: 10, 20, 30 et 'Complete!'
-```
+L'idée des flux, c'est cool, mais comment on manipule ça ?
 
 ## La bibliothèque RxJS
 
-[RxJS](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/libraries/main/rx.md) est l'implémentation JavaScript de [ReactiveX](http://reactivex.io/), ou "extensions-réactives", un projet visant à ajouter des outils pour la programmation reactives dans de multiples languages.
-Aussi appelé le **Lodash** des données asynchrones, il implémente la notion d'observables-observer et fournit tout un panel d'opérateurs (transformation, filtrage, combinaison et bien d'autres).
-Vous pourrez facilement plugger Rx à l'aide d'operateurs tels que `Rx.from` (pour des valeurs synchrones), `Rx.fromEvent`, `Rx.fromPromise`, `Rx.Ajax` et bien d'autres.
+[RxJS](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/libraries/main/rx.md) est l'implémentation JavaScript de [ReactiveX](http://reactivex.io/), *extensions-réactives* en français, un projet visant à implémenter sous la forme de bibliothèque les outils nécessaire pour utiliser le paradigme réactif dans de multiples languages.
+Aussi appelé le **Lodash** des données asynchrones, il implémente la notion d'observables-observer et fournit tout un panel d'opérateurs pour travailler avec les données qui y passent.
 
-Cette bibliothèque vous permettra d'avoir une meilleure qualité de code grâce à l'abstraction fonctionnelle : les operateurs agissent sur le stream sans **effets de bord** et permettent d'écrire moins de code.
+Vous pourrez facilement intégrer progressivement Rx à votre codebase à l'aide d'opérateurs tels que `Rx.from` (qui crée un observable à partir d'une valeur synchrone), `Rx.fromEvent` (qui va carrément écouter les évenement DOM d'un élement pour en faire un observable), `Rx.fromPromise`, `Rx.Ajax` et bien d'autres.
 
-Un exemple d'implementation avec RxJS :
+Exemple tout simple : on va compter le nombre de clics sur un bouton.
 
 ```JavaScript
 const Rx = require('rxjs')
 
-const button = document.getElementById('btn')
-
-const button$ = Rx.Observable.fromEvent(button, 'click')
+// on écoute les clics
+const button$ = Rx.Observable.fromEvent(document.getElementById("button"), "click")
+  // scan est l'équivalent de reduce ; il va garder l'accumulateur et retourner le nouveau à chaque clic
   .scan(count => count + 1, 0)
-  .subscribe(console.log)
-
-// Incrémente count à chaque clic et log la valeur courante
+  .subscribe(clickCount => {
+    // on met ça dans le DOM à chaque changement
+    document.getElementById("count").innerHTML = "You clicked " + clickCount + " times"
+  })
 ```
-Vous verrez souvent le suffixe **$** après la définition d'un observable. Il s'agit d'une convention pour montrer que c'est un stream/flux.
 
-Pour pouvez vous aider des [`Marbles diagrams`](http://rxmarbles.com/) pour avoir une idée du fonctionnement de chaque operateur et des effets sur le flux de données.
+Si vous vous demandez pourquoi `button$` et pas `button`, c'est que le suffixe **$** est une convention montrant qu'il s'agit d'un flux.
 
+La programmation réactive peut être compliquée à se représenter, ainsi, pour mieux la visualiser, il existe les [`marbles diagrams`](http://rxmarbles.com/) qui vous permettront de mettre en rapport entrée et sortie de chaque transformation de la data avec une idée plus concrète que de simples bouts de code.
 
-Nous avons pu voir le fonctionnement du paradigme de la programmation reactive ainsi que des élements qui la composent.
-N'hésitez pas à vous exercer avec les operateurs, merger les observables entre eux pour bien assimuler leur fonctionnement.
+Le cœur de la programmation réactive, c'est de concevoir votre programme comme quelque chose qui est valable à n'importe quel point dans le temps, et c'est son avantage principal. Si une donnée change, toutes les parties de votre programme l'utilisant en seront notifiées et pourront agir en conséquence.
 
-Dans le prochain prochain chapitre, nous verrons les cas d'usages des Observables au sein d'une application React/Redux.
+Si vos programmes récupèrent des données de manière asynchrone (et il y a de fortes chances pour que ce soit le cas), ça peut valoir le coup de jeter un œil à ce paradigme, vous pourrez peut-être vous enlever un paquet d'épines du pied.
+
+Dans le prochain chapitre, nous verrons les cas d'usages des Observables au sein d'une application React/Redux.
