@@ -19,7 +19,7 @@ header:
 Cette technique fonctionne grace à l'héritage prototypal et au fait que pour une obscure raison, `Array.prototype` est un array (qui hérite de lui même, allez savoir). Il suffit d'appeler une des méthodes mutatives d'`Array.prototype` sur lui-même :
 
 ```javascript
-Array.protoype.push(1, 2, 3);
+Array.prototype.push(1, 2, 3);
 ```
 
 Puisque dans le corps de `Array.prototype.push()`, `this` correspond à `Array.prototype`, c'est dans celui-ci que seront injectés les éléments.
