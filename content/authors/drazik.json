@@ -1,0 +1,21 @@
+{
+  "twitter": "@JesmoDrazik",
+  "fr": {
+    "bio": {
+      "short": "Lead dev front-end chez Wandi",
+      "long": [
+        "Lead dev front-end chez Wandi",
+        "Fan de tennis, compétiteur du dimanche"
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Lead front-end dev at Wandi",
+      "long": [
+        "Lead front-end dev at Wandi",
+        "Tennis fan, sunday competitor"
+      ]
+    }
+  }
+}
