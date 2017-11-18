@@ -267,9 +267,9 @@ addInts or addFloats
 ```
 
 Semantic-release publiera dans ce cas la version `2.0.0`, parce qu'il détectera
-que ce commit contient des modifications non rétrocompatibles. Il s'occupera
-aussi d'ajouter aux notes de version une liste des changements non
-rétrocompatibles.
+(grâce au "BREAKING CHANGE") que ce commit contient des modifications non
+rétrocompatibles. Il s'occupera aussi d'ajouter aux notes de version une liste
+des changements non rétrocompatibles.
 
 ## Si vous voulez aller un peu plus loin
 
