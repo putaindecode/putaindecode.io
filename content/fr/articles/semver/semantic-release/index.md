@@ -6,9 +6,6 @@ tags:
   - semantic-release
 authors:
   - drazik
-header:
-  linearGradient: rgba(0,0,0, 0.6), rgba(0,0,0, 0.5)
-  credit: https://www.flickr.com/photos/stevensnodgrass/5480863464/
 ---
 
 ## Petit rappel : SemVer, c'est quoi déjà ?
@@ -16,21 +13,18 @@ header:
 SemVer signifie **Sem**antic **Ver**sionning. C'est une manière de numéroter
 les versions succéssives d'un module. Je vous invite à aller lire
 [l'article sur SemVer de kud](http://putaindecode.io/fr/articles/semver/) avant
-de lire la suite si vous n'êtes pas certain de bien comprendre ce qu'est
-SemVer. Je vais ici citer certaines parties de ce post afin de faire un rapide
+de lire la suite si vous n'êtes pas certain de bien comprendre ce que c'est. 
+Je vais ici citer certaines parties de ce post afin de faire un rapide
 résumé :
 
 > Une version s'applique à un produit, une application, une bibliothèque, un OS,
 tout ce qui a une progression en informatique. Cela permet de définir
-l'avancement du produit. La majorité du temps (sauf pour quelques hérétiques),
-cela s'écrit de cette façon : X.Y.Z où X, Y et Z sont des entiers
+l'avancement du produit. SemVer s'écrit de cette façon : X.Y.Z où X est 
+"majeur", Y est "mineur", Z est "patch".
 
 > SemVer est un contrat que vous signez avec vos utilisateurs, une forme de
 respect qui leur permet d'adapter leur code ou non en fonction des versions que
 vous proposez.
-
-> SemVer s'écrit de cette façon : X.Y.Z où X est "majeur", Y est "mineur", Z
-est "patch".
 
 > Cela veut dire que si vous avez corrigé un bug dans votre lib et que cela
 n'affecte en rien le code écrit par votre utilisateur, alors incrémentez Z
@@ -91,8 +85,7 @@ utilisateurs.
 Après avoir réglé le problème, une question se pose : comment éviter cela à
 l'avenir ?
 
-## semantic-release, pour ne plus se soucier de rien, sauf ce sur quoi on
-travaille
+## semantic-release, pour ne plus se soucier de rien, sauf de ce sur quoi on travaille
 
 Eviter ce problème, c'est la promesse de
 [semantic-release](https://github.com/semantic-release/semantic-release). Ce
@@ -119,7 +112,7 @@ projet AngularJS, qui propose le format suivant :
 ```
 
 Ainsi, si un commit correspond à la correction d'un bug, je peux lui attribuer
-un message de la forme :
+un message de la forme (exemples tirés de la documentation) :
 
 ```
 fix(pencil): stop graphite breaking when too much pressure applied
@@ -145,14 +138,13 @@ analyser le type de chacun d'entre eux, ainsi que rechercher les "BREAKING
 CHANGE", afin d'incrémenter le numéro de version comme il se doit.
 
 Petit bonus : semantic-release se charge aussi de vous générer des notes de
-version et de les ajouter à votre release sur Github. Alors, elle est pas belle
-la vie ?
+version et de les ajouter à votre release sur Github. 
 
 Finalement, en écrivant de bons messages de commits (ce qui devrait déjà être
 le cas, non ?) qui suivent un formalisme précis, vous vous épargnez d'avoir à
 gérer vous-même SemVer pour votre module.
 
-## La pratique : mettre en place semantic-release sur son projet
+## Mettre en place semantic-release sur son projet
 
 Voyons maintenant comment mettre en place semantic-release sur un projet de
 module npm.
@@ -186,7 +178,7 @@ Pour la suite, il n'y a pas besoin de maîtriser Travis CI ni l'intégration
 continue en soit. Je vous suggère juste de lire
 [l'article d'introduction de MoOx](http://putaindecode.io/fr/articles/ci/) si
 le concept d'intégration continue ne vous parle pas du tout
-* `Do you want a `.travis.yml` file with semantic-release setup?` : Yes !
+* `Do you want a .travis.yml file with semantic-release setup?` : Yes !
 
 Voilà, tout est configuré et prêt à être utilisé :
 
@@ -203,12 +195,15 @@ lorsque vous ferez un `git push`
 * Un token npm a été ajouté au repository sur Travis CI, pour que celui-ci
 puisse s'authentifier lorsqu'il voudra publier une nouvelle version
 
-_Une petite note concernant Travis CI. Le but de semantic-release étant
+_Une petite note concernant Travis CI : le but de semantic-release étant
 d'automatiser le processus de publication d'un module npm, celui-ci va tout
 bonnement refuser de se lancer en dehors d'un environnement d'intégration
-continue._
+continue. Une configuration de base est fournie, il n'y a donc pas à se
+soucier de ça, mais sans intégration continue, pas de semantic-release.
+C'est pourquoi l'utilisation d'une plateforme d'intégration continue vous
+est imposée._
 
-Bien, maintenant que tout est en place, il va falloir travailler un peu, faire
+Maintenant que tout est en place, il va falloir travailler un peu, faire
 quelques commits afin d'arriver au point où on voudra publier une nouvelle
 version. Disons que je travaille sur un module `math` qui implémente
 actuellement les fonctions `add` et `substract`. Le module est actuellement en
@@ -226,7 +221,7 @@ s'applique à la fonction add, et qui règle un problème d'addition sur des
 nombres décimaux. Il pourra donc prendre la décision d'incrémenter la
 composante `MINEUR` de la version du module.
 
-Satisfaits de mon travail pour aujourd'hui, je décide de m'arrêter là, et je
+Satisfait de mon travail pour aujourd'hui, je décide de m'arrêter là, et je
 fais un `git push`. Travis CI déclenchera un build dès qu'il aura détecté ce
 nouveau commit sur mon repository GitHub. Celui-ci va donc lancer mes tests, et
 si ceux-ci passent, lancera le script npm créé lors du setup de
@@ -267,18 +262,19 @@ deux nombre décimaux, je ferais le commit suivant :
 ```
 feat(add): split add function into addInts and addFloats
 
-BREAKING CHANGE: add function has been removed. You must replace it with addInts or addFloats
+BREAKING CHANGE: add function has been removed. You must replace it with 
+addInts or addFloats
 ```
 
 Semantic-release publiera dans ce cas la version `2.0.0`, parce qu'il détectera
-que ce commit contient des modifications non rétrocompatibles.
+que ce commit contient des modifications non rétrocompatibles. Il s'occupera
+aussi d'ajouter aux notes de version une liste des changements non
+rétrocompatibles.
 
-Elle est pas belle la vie ?
+## Si vous voulez aller un peu plus loin
 
-## Aller un peu plus loin
-
-Nous avons jusqu'ici utiliser semantic-release avec tout ce qu'il propose par
-défaut. Toutefois celui-ci est basé sur des plugins et peut donc être
+Nous avons jusqu'ici utilisé semantic-release avec tout ce qu'il propose par
+défaut. Toutefois celui-ci est basé sur un système de plugins et peut donc être
 personnalisé quasiment de A à Z. Je ne détaillerais pas tout ici, mais chaque
 étape du processus qui se déroule au lancement du script npm `semantic-release`
 ne fait qu'exécuter une liste de plugins qui peuvent tous être remplacés. Vous
@@ -288,5 +284,5 @@ convention différente de celle d'Angular JS.
 
 [La documentation](https://github.com/semantic-release/semantic-release#plugins)
 explique bien comment écrire un plugin. Les possibilités sont virtuellement
-infinies, libre à vous d'adapter semantic-release à votre workflow et vos
-envies.
+infinies, libre à vous d'adapter semantic-release à votre façon de travailler et
+vos envies.
