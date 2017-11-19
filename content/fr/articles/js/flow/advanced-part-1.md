@@ -11,7 +11,7 @@ authors:
 
 Ça y est: vos collègues ont enfin réussi à vous motiver à utiliser [flow](https://flow.org/en/), l'outil de Facebook vous permettant d'ajouter du typage fort au sein de vos fichiers JavaScript. Seulement voilà, vous avez utilisé des langages à typage dynamique faible toute votre vie (PHP, JavaScript, Ruby, Python…), et pour le moment vous vous contentez d'ajouter des annotations de types `Object`, `Function` ou encore `string`. Frustrés, vous ne pouvez vous empêcher de crier sur tous les toits que le typage, c'est quand même chiant et limite une perte de temps puisque flow continue de manquer un tas d'erreurs potentielles au sein de votre code. Cet article est là pour vous aider à comprendre de quoi le bouzin est réellement capable, et même si vous m'utilisez pas flow, il peut servir de chouette introduction un peu poussé à son utilisation.
 
-Nous utiliserons la dernière version en date à l'heure où j'écris ces lignes, c'est à dire la 0.58.
+Nous utiliserons la dernière version en date à l'heure où j'écris ces lignes, c'est à dire la 0.59.
 Pour l'ajouter au sein de votre projet, petit rappel:
 
 ```sh
@@ -25,7 +25,7 @@ npx flow init # pour créer le fichier .flowconfig
 Flow est un outil intelligent: il est inutile de préciser quel type est utilisé si celui-ci est évident à l'usage.
 
 ```js
-// @flow <- le pragma nécessaire pour indiquer à flow d'analyser votre fichier
+// @flow <- le pragma nécessaire pour indiquer à flow d'analyser votre fichier. À noter que si vous l'ajouter sur un projet tout neuf, vous pouvez le configurer pour que celui-ci ne soit pas nécessaire
 
 const quote = "Thirouin rouin rouin rouin";
 Math.round(quote); // erreur! le type attendu est un number
@@ -56,8 +56,8 @@ sayHello(["Mathieu", "zoontek"]).toLowerCase(); // erreur! le type attendu est u
 
 ## Les types primitifs et litéraux
 
-Le nombre de type primitifs existants en JavaScript est assez restreint. Vous avez le nombre `number`, la chaine de caractères `string`, les booléens `boolean`, et bien évidemment les valeures nulles `null` et inexistantes `void`.
-À noter que ES2015 a également apporté `Symbol`, mais que ce dernier n'est pas encore supporté par flow.
+Le nombre de type primitifs existants en JavaScript est assez restreint. Vous avez le nombre (`number`), la chaine de caractères (`string`), les booléens (`boolean`), et bien évidemment les valeures nulles (`null`) et inexistantes (`void`).
+À noter que ES2015 a également apporté (`Symbol`), mais que ce dernier n'est pas encore supporté par flow.
 
 ```js
 // @flow
@@ -69,7 +69,7 @@ const d: null = null;
 const e: void = undefined;
 ```
 
-Afin de vous montrer plus précis encore, vous pouvez également utiliser des valeurs litérales comme type. Après tout `string`, ça peut être tout et n'importe quoi. Si cela peut vous sembler stupide dans un premier temps, ceux-ci sont **extrèmement** utiles lorsque le système de typage est suffisamment perfectionné.
+Afin de vous montrer plus précis encore, vous pouvez également utiliser des valeurs litérales comme type. Après tout `string`, ça peut être tout et n'importe quoi. Si cela peut vous sembler stupide dans un premier temps, ceux-ci sont **extrêmement** utiles lorsque le système de typage est suffisamment perfectionné, commme vous le verrez par la suite.
 
 ```js
 // @flow
@@ -80,7 +80,7 @@ const bar: 2 = 3; // erreur! n'est pas égal à 2
 
 ## La différence entre `any`, `mixed` et `*`
 
-Comme expliqué au dessus, utiliser `any` revient à dire à flow qu'une variable peut être de n'importe quel type et cela est bien sûr extrèmement dangereux. Heureusement, il existe 2 alternatives plus sûres à connaitre:
+Comme expliqué au dessus, utiliser `any` revient à dire à flow qu'une variable peut être de n'importe quel type et cela est bien sûr extrêmement dangereux. Heureusement, il existe 2 alternatives plus sûres à connaitre:
 
 - `mixed`, un type qui dit que peut importe le type de la variable, l'appel à une fonction devrait se faire correctement
 - `*` qui laisse travailler l'inférence de type de flow
@@ -102,7 +102,7 @@ baz.push("Hello"); // "foo" est maintenant inféré en Array<number | string> (t
 
 ## Les types optionnels (ou maybe types)
 
-Si vous avez déjà utilisé un langage qui essaye d'éviter l'erreur à un milliard de dollard, vous connaissez surement les types `Option` / `Maybe`. Ils représentent la possible absence d'une valeur et sont symbolisés à l'aide d'un point d'interrogation.
+Si vous avez déjà utilisé un langage qui essaye d'éviter [l'erreur à un milliard de dollars](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare), vous connaissez surement les types `Option` / `Maybe`. Ils représentent la possible absence d'une valeur et sont ici symbolisés à l'aide d'un point d'interrogation.
 
 ```js
 // @flow
@@ -126,7 +126,7 @@ function correctToUpperCase(str: ?string) {
 
 ## Les types génériques (generics)
 
-Avez vous remarqué la syntaxe des tableaux `Array<any>` tout à l'heure? Il s'agit de ce qu'on appelle un type générique: un type construit depuis un autre type. Ainsi, si `Array<any>` symbolise un tableau de tout et n'importe quoi, `Array<number>` symbolisera un tableau de numbers, etc.
+Vous souvenez vous de la syntaxe des tableaux (`Array<any>`) croisée plus tôt? Il s'agit de ce qu'on appelle un type générique: un type construit depuis un autre type. Ainsi, si `Array<any>` symbolise un tableau de tout et n'importe quoi, `Array<number>` symbolisera un tableau de numbers, etc.
 
 ```js
 // @flow
@@ -163,7 +163,7 @@ const p: Promise<number> = Promise.resolve(42);
 
 ## La manipulation d'objets
 
-Avez vous remarqués que pour le moment, j'ai tenté de ne pas utiliser d'objets au sein de mes exemples (oui, c'était chiant)? C'est tout simplement car les possibilités de manipulation des types de ceux-ci sont très nombreuses. Je vous propose un exemple fleuve histoire d'y voir plus clair.
+Avez vous remarqué que pour le moment, j'ai tenté de ne pas utiliser d'objets au sein de mes exemples (oui, c'était chiant)? C'est tout simplement car les possibilités de manipulation des types de ceux-ci sont très nombreuses. Je vous propose un exemple fleuve histoire d'y voir plus clair.
 
 Un type objet se définit de la sorte:
 
@@ -180,7 +180,7 @@ const user: User = {
   pseudo: "zoontek"
 };
 
-// Ce qui n'exclu pas de faire
+// Ce qui n'exclut pas de faire
 user.age = 26; // pas d'erreur
 ```
 
@@ -208,7 +208,7 @@ Pour indiquer qu'une propriété de notre objet est immutable, on utilise la not
 // @flow
 
 type User = {
-  name: string,
+  +name: string,
   pseudo: string
 };
 
@@ -227,7 +227,7 @@ const newUser: User = {
 
 > Le spreading c'est vraiment cool! Ça exste aussi pour les types?
 
-Et bien oui, jeune lecteur lambda!
+Yep.
 
 ```js
 // @flow
