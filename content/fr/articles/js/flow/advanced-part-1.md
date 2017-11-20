@@ -126,7 +126,7 @@ function correctToUpperCase(str: ?string) {
 
 ## Les types génériques (generics)
 
-Vous souvenez vous de la syntaxe des tableaux (`Array<any>`) croisée plus tôt? Il s'agit de ce qu'on appelle un type générique: un type construit depuis un autre type. Ainsi, si `Array<any>` symbolise un tableau de tout et n'importe quoi, `Array<number>` symbolisera un tableau de numbers, etc.
+Vous souvenez-vous de la syntaxe des tableaux (`Array<any>`) croisée plus tôt? Il s'agit de ce qu'on appelle un type générique : un type construit depuis un autre type. Ainsi, si `Array<any>` symbolise un tableau de tout et n'importe quoi, `Array<number>` symbolisera un tableau de numbers, etc.
 
 ```js
 // @flow
