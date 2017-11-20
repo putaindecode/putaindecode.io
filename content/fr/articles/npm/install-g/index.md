@@ -1,0 +1,149 @@
+---
+date: "2017-11-21"
+title: "Stop aux `npm install -g` sauvages (ou pourquoi vous ne devriez pas installer en global de packages et outils CLI)"
+tags:
+  - npm
+  - yarn
+authors:
+  - MoOx
+header:
+  linearGradient: 160deg, rgba(204, 51, 51, .8), rgba(204, 51, 51, .4)
+  image: https://farm9.staticflickr.com/8176/8071576461_077d371de8_z.jpg
+  credit: https://www.flickr.com/photos/twicepix/8071576461
+---
+
+À chaque fois qu’un développeur installe un outil globalement, une discussion
+tabs vs spaces commence. Et Dieu sait que c’est inutile. Les espaces c’est
+mieux. Fin de la discussion.
+
+À chaque fois qu’un développeur utilise un outil de développement global, un
+chaton meurt. Et Dieu sait que nous aimons les chats.
+
+Non mais c’est une vraie question. Et une bonne question.
+
+## Pourquoi installer un outil de manière globale sur sa machine est une mauvaise idée?
+
+On va tenter de répondre ici de manière constructive.
+
+La raison est simple et c’est la même raison pour laquelle aujourd’hui il y a
+Yarn et npm 5 qui utilise des fichiers .lock. Le numéro de version.
+
+Très souvent, dans le fond un outil CLI n’est rien de plus qu’une dépendance à
+un projet. Il est tout à fait probable et même hautement probable que sur deux
+projets différents développés à deux instants différents dans le temps vous ayez
+utiliser deux versions différentes d’un outil.
+
+Le première exemple de ma vie qui me vient en tête c’est les pré-processeur CSS.
+À l’époque où j’utilisais Sass, il était courant que pour une raison X ou Y (par
+exemple une nouvelle fonctionnalité disponible dans une version majeure) je dois
+mettre à jour la version pour le projet en cours. Mais que se passe-t-il alors
+pour tous mes anciens projets ? Vont-ils être compatible ? Vont-ils avoir des
+problèmes ? Vais-je devoir mettre mes autres projets à jour ? Cela va-t-il me
+péter les couilles d’une manière hors du commun ?
+
+Vous avez ici des vraies questions qui ne sont pas existentielles mais
+extrêmement pratique. Ça dû arriver à tout le monde d’avoir ce cas de figure.
+
+Et je vais ajouter à ceci un autre problème.
+
+## «  mais puisse ke je te di ke sa marche sur ma machine ! »
+
+On a tous travaillé à plus de deux développeurs sur un projet (et encore ça peut
+nous arriver tout seul au changement de machine)
+
+Le fameux « ça marche sur ma machine ». Celui-là qui nous casse bien les
+cacahouètes. Celui-là qui peut nous faire perdre des heures à comprendre
+pourquoi ça marche pas sur le PC du collègue.
+
+Celui-là qui énerve les personnes chez qui ça marche et ce chez qui cela ne
+marche pas. Oui ça fait clairement chier tout le monde.
+
+Du coup pour éviter ce problème, il y a une méthode simple.
+
+## ne jamais (ô grand jamais) installer un outil de développeur globalement sur
+sa machine.
+
+De rien. Voilà c’était un conseil gratuit.
+
+(Je détaillerai à la fin de cet article les seules raisons valables pour
+utiliser et installer globalement un package ou un outil CLI)
+
+Bon du coup pour éviter ce problème on a une solution extrêmement simple :
+installer localement à chaque projet TOUTES les dépendances.
+
+Il y a deux choses que peu de gens savent : la première est que npm et yarn vont
+automatiquement ajouter tous les bin disponibles vu tous les node_modules locaux
+dans le PATH utilisé via les scripts définis dans votre package.json.
+
+Du coup dans la pratique il vous suffit de vous faire un petit alias pour chaque
+outils CLI et le tour est joué.
+
+```js
+{
+  "scripts": {
+    "cmd": "cmd" // on assume qu'on a un outil qui offre le bin `cmd`
+  }
+}
+```
+
+```console
+npm run cmd
+```
+
+À savoir avec npm il faudra rajouter des — à la fin d’une commande pour que cela
+fonctionne correctement si vous passez des arguments.
+
+```console
+npm run cmd -- arg
+```
+
+Avec Yarn, cela n’est pas nécessaire. C’est bien plus bref (et pratique)
+
+```console
+yarn cmd arg
+```
+
+Il faut savoir que pour les développeurs de ce type d’outil c’est aussi un petit
+cauchemar gérer.
+
+Comment savoir lorsqu’un outil à une interface CLI et une librairie si les deux
+versions sont en phase ?
+
+De cette problématique est né une solution très récurrente. : Les CLI qui ont
+des librairies en parallèle vont très souvent avoir un CLI très light qui va en
+général consister à aller chercher dans le dossier de la librairie où vous vous
+trouvez le vrai code à exécuter.
+
+Je dirais même que c’est plutôt cool dans un sens.
+
+Mais on voit bien ici qu’on a un petit problème car cela demande du travail
+supplémentaire aux développeurs des projets qui sont déjà trop souvent à
+fleureter avec le burnout.
+
+## Petite astuce bien stylé
+
+Vous pouvez ajouter tous les binaires de `node_modules/.bin` localement à votre
+PATH histoire de pouvoir les utiliser en CLI.
+
+```sh
+# to avoid npm install -g / yarn global add
+export PATH=$PATH:./node_modules/.bin
+```
+
+Une fois cette astuce réalisé déposé dans votre `.bashrc` (ou`.zshrc`…), vous
+pourrez utiliser des bin locaux à votre projet comme si ils avaient été
+installés globalement. Sans passer par alias. Mais ça ne marchera bien entendu
+qu’à la racine du projet. Ça reste bien pratique n’est-ce pas?
+
+## Les seuls cas valides où les outils globaux ont du sens
+
+Les seuls cas valident sont pour des outils qui ne sont pas des outils liés à un
+projet. C’est pas plus compliqué!
+
+Un très bon exemple serait [`trash(-cli)`](https://www.npmjs.com/package/trash)
+que je vous conseille d’utiliser en place de `rm -rf`. Et encore si je l’utilise
+sur un projet, je l’ajoute aux dépendances (de dev)!
+
+N’hésitez pas à réagir à ces conseils.
+
+Bisous à tous 😘
