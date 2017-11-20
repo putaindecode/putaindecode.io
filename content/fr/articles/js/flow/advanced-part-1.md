@@ -9,7 +9,7 @@ authors:
   - zoontek
 ---
 
-Ça y est: vos collègues ont enfin réussi à vous motiver à utiliser [flow](https://flow.org/en/), l'outil de Facebook vous permettant d'ajouter du typage fort au sein de vos fichiers JavaScript. Seulement voilà, vous avez utilisé des langages à typage dynamique faible toute votre vie (PHP, JavaScript, Ruby, Python…), et pour le moment vous vous contentez d'ajouter des annotations de types `Object`, `Function` ou encore `string`. Frustrés, vous ne pouvez vous empêcher de crier sur tous les toits que le typage, c'est quand même chiant et limite une perte de temps puisque flow continue de manquer un tas d'erreurs potentielles au sein de votre code. Cet article est là pour vous aider à comprendre de quoi le bouzin est réellement capable, et même si vous m'utilisez pas flow, il peut servir de chouette introduction un peu poussé à son utilisation.
+Ça y est: vos collègues ont enfin réussi à vous motiver à utiliser [flow](https://flow.org/en/), l'outil de Facebook vous permettant d'ajouter du typage fort au sein de vos fichiers JavaScript. Seulement voilà, vous avez utilisé des langages à typage dynamique faible toute votre vie (PHP, JavaScript, Ruby, Python…), et pour le moment vous vous contentez d'ajouter des annotations de types `Object`, `Function` ou encore `string`. Frustrés, vous ne pouvez vous empêcher de crier sur tous les toits que le typage, c'est quand même chiant et limite une perte de temps puisque flow continue de manquer un tas d'erreurs potentielles au sein de votre code. Cet article est là pour vous aider à comprendre de quoi le bouzin est réellement capable, et même si vous n'utilisez pas flow, il peut servir de chouette introduction un peu poussée à son utilisation.
 
 Nous utiliserons la dernière version en date à l'heure où j'écris ces lignes, c'est à dire la 0.59.
 Pour l'ajouter au sein de votre projet, petit rappel:
@@ -25,7 +25,7 @@ npx flow init # pour créer le fichier .flowconfig
 Flow est un outil intelligent: il est inutile de préciser quel type est utilisé si celui-ci est évident à l'usage.
 
 ```js
-// @flow <- le pragma nécessaire pour indiquer à flow d'analyser votre fichier. À noter que si vous l'ajouter sur un projet tout neuf, vous pouvez le configurer pour que celui-ci ne soit pas nécessaire
+// @flow <- le pragma nécessaire pour indiquer à flow d'analyser votre fichier. À noter que si vous l'ajoutez sur un projet tout neuf, vous pouvez le configurer pour que celui-ci ne soit pas nécessaire
 
 const quote = "Thirouin rouin rouin rouin";
 Math.round(quote); // erreur! le type attendu est un number
@@ -45,18 +45,18 @@ Mais vous pouvez toujours faire pire: en annotant la fonction `sayHello` du type
 const sayHello: Function = name => `Hello ${name}`; // inféré en (name: any) => any
 ```
 
-La bonne façon de faire est bien sûr la suivante:
+La bonne façon de faire est bien sûr la suivante :
 
 ```js
 // @flow
 const sayHello = (name: string) => `Hello ${name}`; // (name: string) => string
 sayHello("Mathieu"); // pas d'erreur
-sayHello(["Mathieu", "zoontek"]).toLowerCase(); // erreur! le type attendu est un string
+sayHello(["Mathieu", "zoontek"]).toLowerCase(); // erreur! le type attendu est une string
 ```
 
 ## Les types primitifs et litéraux
 
-Le nombre de type primitifs existants en JavaScript est assez restreint. Vous avez le nombre (`number`), la chaine de caractères (`string`), les booléens (`boolean`), et bien évidemment les valeures nulles (`null`) et inexistantes (`void`).
+Le nombre de types primitifs existants en JavaScript est assez restreint. Vous avez le nombre (`number`), la chaine de caractères (`string`), les booléens (`boolean`), et bien évidemment les valeurs nulles (`null`) et inexistantes (`void`).
 À noter que ES2015 a également apporté (`Symbol`), mais que ce dernier n'est pas encore supporté par flow.
 
 ```js
@@ -80,9 +80,9 @@ const bar: 2 = 3; // erreur! n'est pas égal à 2
 
 ## La différence entre `any`, `mixed` et `*`
 
-Comme expliqué au dessus, utiliser `any` revient à dire à flow qu'une variable peut être de n'importe quel type et cela est bien sûr extrêmement dangereux. Heureusement, il existe 2 alternatives plus sûres à connaitre:
+Comme expliqué au dessus, utiliser `any` revient à dire à flow qu'une variable peut être de n'importe quel type et cela est bien sûr extrêmement dangereux. Heureusement, il existe 2 alternatives plus sûres à connaître :
 
-- `mixed`, un type qui dit que peut importe le type de la variable, l'appel à une fonction devrait se faire correctement
+- `mixed`, un type qui dit que peu importe le type de la variable, l'appel à une fonction devrait se faire correctement
 - `*` qui laisse travailler l'inférence de type de flow
 
 ```js
@@ -90,11 +90,11 @@ Comme expliqué au dessus, utiliser `any` revient à dire à flow qu'une variabl
 
 function foo(arg: mixed) {
   console.log(arg);
-} // pas d'erreur: peu import le type réel du paramètre arg, l'appel se fera correctement
+} // pas d'erreur: peu importe le type réel du paramètre arg, l'appel se fera correctement
 
 function bar(arg: mixed) {
   console.log(arg.toUpperCase());
-} // erreur! arg pourrait ne pas être un string
+} // erreur! arg pourrait ne pas être une string
 
 const baz: Array<*> = [1, 2, 3]; // inféré en Array<number>
 baz.push("Hello"); // "foo" est maintenant inféré en Array<number | string> (tableau de string ou de numbers)
@@ -102,19 +102,19 @@ baz.push("Hello"); // "foo" est maintenant inféré en Array<number | string> (t
 
 ## Les types optionnels (ou maybe types)
 
-Si vous avez déjà utilisé un langage qui essaye d'éviter [l'erreur à un milliard de dollars](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare), vous connaissez surement les types `Option` / `Maybe`. Ils représentent la possible absence d'une valeur et sont ici symbolisés à l'aide d'un point d'interrogation.
+Si vous avez déjà utilisé un langage qui essaye d'éviter [l'erreur à un milliard de dollars](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare), vous connaissez sûrement les types `Option` / `Maybe`. Ils représentent la possible absence d'une valeur et sont ici symbolisés à l'aide d'un point d'interrogation.
 
 ```js
 // @flow
 
-let foo: ?string; // peut-être un string, null ou undefined
+let foo: ?string; // peut-être une string, null ou undefined
 foo = "foo"; // pas d'erreur
 foo = undefined; // pas d'erreur
 foo = null; // pas d'erreur
-foo = 3; // erreur - number n'est ni un string, ni null, ni undefined
+foo = 3; // erreur - number n'est ni une string, ni null, ni undefined
 
 function wrongToUpperCase(str: ?string) {
-  return str.toUpperCase(); // erreur, str est possiblement nul, vous devez traitez ce cas
+  return str.toUpperCase(); // erreur, str est possiblement nul, vous devez traiter ce cas
 }
 
 function correctToUpperCase(str: ?string) {
@@ -145,7 +145,7 @@ const numberClassement: Classement<number> = {
 };
 ```
 
-Voici quelques exemples de types génériques disponibles out-of-the-box:
+Voici quelques exemples de types génériques disponibles out-of-the-box :
 
 ```js
 // @flow
@@ -165,7 +165,7 @@ const p: Promise<number> = Promise.resolve(42);
 
 Avez vous remarqué que pour le moment, j'ai tenté de ne pas utiliser d'objets au sein de mes exemples (oui, c'était chiant)? C'est tout simplement car les possibilités de manipulation des types de ceux-ci sont très nombreuses. Je vous propose un exemple fleuve histoire d'y voir plus clair.
 
-Un type objet se définit de la sorte:
+Un type objet se définit de la sorte :
 
 ```js
 // @flow
@@ -184,7 +184,7 @@ const user: User = {
 user.age = 26; // pas d'erreur
 ```
 
-Pour sceller les propriétés de notre objet, on utilise la notation `{||}`:
+Pour sceller les propriétés de notre objet, on utilise la notation `{||}` :
 
 ```js
 // @flow
@@ -225,7 +225,7 @@ const newUser: User = {
 }; // pas d'erreur
 ```
 
-> Le spreading c'est vraiment cool! Ça exste aussi pour les types?
+> Le spreading c'est vraiment cool! Ça existe aussi pour les types?
 
 Yep.
 
@@ -237,7 +237,7 @@ type Bar = {| a: string |};
 type Baz = {| ...Foo, ...Bar |}; // {| a: string, b: string |}
 ```
 
-Un dernier petit trick sur les objets pour la route? Vous pouvez les utiliser comme maps:
+Un dernier petit trick sur les objets pour la route? Vous pouvez les utiliser comme maps :
 
 ```js
 // @flow
@@ -250,7 +250,7 @@ const foo: { [key: string]: number } = {
 
 ## Les unions et intersections de types
 
-Si vous avez remarqué la notation avec `|` plus tôt, vous vous posez surement la question de ce que ça représente. Il s'agit d'une union de types: la variable aura une valeur à plusieurs types possibles. Petit conseil: utilisez toujours une union de types litéraux à la place du simple `string` lorsque vous connaissez à l'avance les possibles valeurs de celui-ci.
+Si vous avez remarqué la notation avec `|` plus tôt, vous vous posez sûrement la question de ce que ça représente. Il s'agit d'une union de types : la variable aura une valeur à plusieurs types possibles. Petit conseil : utilisez toujours une union de types litéraux à la place du simple `string` lorsque vous connaissez à l'avance les possibles valeurs de celui-ci.
 
 ```js
 // @flow
@@ -305,7 +305,7 @@ const bar: ApiResponseCorrectlyTyped = { success: true, error: new Error("oups!"
 const baz: ApiResponseCorrectlyTyped = { success: false, error: new Error("oups!") }; // pas d'erreur
 ```
 
-Si les union de types sont le **OU** logique du système de typage, les intersection de types en sont le **ET**. On les symbolise à l'aide d'un `&`.
+Si les unions de types sont le **OU** logique du système de typage, les intersections de types en sont le **ET**. On les symbolise à l'aide d'un `&`.
 
 ```js
 // @flow
@@ -320,9 +320,9 @@ const test: Foo & Bar & Baz = {
   c: true
 }; // pas d'erreur
 
-let impossible: number & string; // sera forcément impossible à initialiser: une valeur ne pourra jamais être un number ET un string
+let impossible: number & string; // sera forcément impossible à initialiser : une valeur ne pourra jamais être un number ET une string
 ```
 
-C'est tout pour le moment! Vous vous doutez que l'on égratine à peine la surface de ce qui nous est offert par flow et les systèmes de typages forts en général. Si vous êtes vraiment impatients de découvrir la suite, je vous renvoi vers la [documentation de flow](https://flow.org/en/docs/), très bien foutue. Pour les autres, d'autres articles devraient sortir très prochainement sur P! sur le même sujet (on y parlera classes, interfaces et peut être même types opaques si vous êtes sages).
+C'est tout pour le moment! Vous vous doutez que l'on égratigne à peine la surface de ce qui nous est offert par flow et les systèmes de typage fort en général. Si vous êtes vraiment impatients de découvrir la suite, je vous renvoie vers la [documentation de flow](https://flow.org/en/docs/), très bien foutue. Pour les autres, d'autres articles devraient sortir très prochainement sur P! sur le même sujet (on y parlera classes, interfaces et peut être même types opaques si vous êtes sages).
 
 Stay tuned! La bise.
