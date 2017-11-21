@@ -12,14 +12,14 @@ authors:
 
 SemVer signifie **Sem**antic **Ver**sionning. C'est une manière de numéroter
 les versions succéssives d'un module. Je vous invite à aller lire
-[l'article sur SemVer de kud](http://putaindecode.io/fr/articles/semver/) avant
-de lire la suite si vous n'êtes pas certain de bien comprendre ce que c'est. 
+[l'article sur SemVer](http://putaindecode.io/fr/articles/semver/) avant
+de lire la suite si vous n'êtes pas certain de bien comprendre ce que c'est.
 Je vais ici citer certaines parties de ce post afin de faire un rapide
 résumé :
 
 > Une version s'applique à un produit, une application, une bibliothèque, un OS,
 tout ce qui a une progression en informatique. Cela permet de définir
-l'avancement du produit. SemVer s'écrit de cette façon : X.Y.Z où X est 
+l'avancement du produit. SemVer s'écrit de cette façon : X.Y.Z où X est
 "majeur", Y est "mineur", Z est "patch".
 
 > SemVer est un contrat que vous signez avec vos utilisateurs, une forme de
@@ -138,7 +138,7 @@ analyser le type de chacun d'entre eux, ainsi que rechercher les "BREAKING
 CHANGE", afin d'incrémenter le numéro de version comme il se doit.
 
 Petit bonus : semantic-release se charge aussi de vous générer des notes de
-version et de les ajouter à votre release sur Github. 
+version et de les ajouter à votre release sur Github.
 
 Finalement, en écrivant de bons messages de commits (ce qui devrait déjà être
 le cas, non ?) qui suivent un formalisme précis, vous vous épargnez d'avoir à
@@ -176,7 +176,7 @@ reçu ici
 pouvez utiliser ce que vous voulez si vous avez un système de CI particulier.
 Pour la suite, il n'y a pas besoin de maîtriser Travis CI ni l'intégration
 continue en soit. Je vous suggère juste de lire
-[l'article d'introduction de MoOx](http://putaindecode.io/fr/articles/ci/) si
+[l'article d'introduction](http://putaindecode.io/fr/articles/ci/) si
 le concept d'intégration continue ne vous parle pas du tout
 * `Do you want a .travis.yml file with semantic-release setup?` : Yes !
 
@@ -262,7 +262,7 @@ deux nombre décimaux, je ferais le commit suivant :
 ```
 feat(add): split add function into addInts and addFloats
 
-BREAKING CHANGE: add function has been removed. You must replace it with 
+BREAKING CHANGE: add function has been removed. You must replace it with
 addInts or addFloats
 ```
 
