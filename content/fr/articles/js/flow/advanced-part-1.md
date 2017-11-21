@@ -82,8 +82,8 @@ const bar: 2 = 3; // erreur! n'est pas égal à 2
 
 Comme expliqué au dessus, utiliser `any` revient à dire à flow qu'une variable peut être de n'importe quel type et cela est bien sûr extrêmement dangereux. Heureusement, il existe 2 alternatives plus sûres à connaître :
 
-- `mixed`, un type qui dit que peu importe le type de la variable, l'appel à une fonction devrait se faire correctement
-- `*` qui laisse travailler l'inférence de type de flow
+- `mixed` qui dit que peu importe le type de la variable passée à une fonction, l'appel de celle-ci doit pouvoir se faire correctement: vous ne pourrez donc pas y appeler des méthodes spécifiques à un type de variable en particulier.
+- `*` qui laisse travailler l'inférence de type de flow.
 
 ```js
 // @flow
@@ -112,6 +112,10 @@ foo = "foo"; // pas d'erreur
 foo = undefined; // pas d'erreur
 foo = null; // pas d'erreur
 foo = 3; // erreur - number n'est ni une string, ni null, ni undefined
+
+let bar = {
+  baz?: string; // baz sera forcément une string si elle est présente
+};
 
 function wrongToUpperCase(str: ?string) {
   return str.toUpperCase(); // erreur, str est possiblement nul, vous devez traiter ce cas
@@ -278,8 +282,8 @@ function toHexadecimal(color: Color) {
 toHexadecimal("red"); // pas d'erreur
 toHexadecimal("green"); // pas d'erreur
 toHexadecimal("blue"); // pas d'erreur
-toHexadecimal("pink"); // erreur! "pink" n'est pas une des possibles valeurs
-toHexadecimal("dog"); // erreur! "dog" n'est pas une des possibles valeurs
+toHexadecimal("pink"); // erreur! "pink" n'est pas une valeur possible
+toHexadecimal("dog"); // erreur! "dog" n'est pas une valeur possible
 ```
 
 Parfois, une union de types se montre également bien plus efficace pour modéliser ce que vous souhaitez, à contrario d'un tas de maybe types.
@@ -323,6 +327,6 @@ const test: Foo & Bar & Baz = {
 let impossible: number & string; // sera forcément impossible à initialiser : une valeur ne pourra jamais être un number ET une string
 ```
 
-C'est tout pour le moment! Vous vous doutez que l'on égratigne à peine la surface de ce qui nous est offert par flow et les systèmes de typage fort en général. Si vous êtes vraiment impatients de découvrir la suite, je vous renvoie vers la [documentation de flow](https://flow.org/en/docs/), très bien foutue. Pour les autres, d'autres articles devraient sortir très prochainement sur P! sur le même sujet (on y parlera classes, interfaces et peut être même types opaques si vous êtes sages).
+C'est tout pour le moment! Vous vous doutez que l'on égratigne à peine la surface de ce qui nous est offert par flow et les systèmes de typage fort en général. Si vous êtes vraiment impatients de découvrir la suite, je vous renvoie vers la [documentation de flow](https://flow.org/en/docs/), très bien foutue. Pour les autres, on devrait sortir très prochainement un article sur le même sujet (on y parlera classes, interfaces et peut être même types opaques si vous êtes sages).
 
 Stay tuned! La bise.
