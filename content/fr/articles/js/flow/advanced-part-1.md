@@ -20,6 +20,8 @@ npm install --save-dev flow-remove-types # pour les besoin du tuto - vous pouvez
 npx flow init # pour créer le fichier .flowconfig
 ```
 
+*Pour plus d'infos sur npx, c'est [par ici](https://www.npmjs.com/package/npx). À noter que c'est livré de base avec npm maintenant.*
+
 ## Rappels sur l'inférence de type
 
 Flow est un outil intelligent: il est inutile de préciser quel type est utilisé si celui-ci est évident à l'usage.
