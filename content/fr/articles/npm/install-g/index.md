@@ -46,7 +46,7 @@ extrêmement pratique. Ça dû arriver à tout le monde d’avoir ce cas de figu
 
 Et je vais ajouter à ceci un autre problème.
 
-## «  mais puisse ke je te di ke sa marche sur ma machine ! »
+## « mais puisse ke je te di ke sa marche sur ma machine ! »
 
 On a tous travaillé à plus de deux développeurs sur un projet (et encore ça peut
 nous arriver tout seul au changement de machine)
@@ -61,6 +61,7 @@ marche pas. Oui ça fait clairement chier tout le monde.
 Du coup pour éviter ce problème, il y a une méthode simple.
 
 ## ne jamais (ô grand jamais) installer un outil de développeur globalement sur
+
 sa machine.
 
 De rien. Voilà c’était un conseil gratuit.
@@ -135,14 +136,37 @@ pourrez utiliser des bin locaux à votre projet comme si ils avaient été
 installés globalement. Sans passer par alias. Mais ça ne marchera bien entendu
 qu’à la racine du projet. Ça reste bien pratique n’est-ce pas?
 
+(Et non, si vous faites ça dans l'ordre décrit plus haut, il n'y a pas de soucis
+de sécurité genre _"un package remplace `rm` et fait ce qu'il veut avec mes
+données"_ puisque la priorité sera donné à la première partie du `PATH`.)
+
+## Alternative bien stylé
+
+Si vous n'êtes pas fan de modifier votre `PATH`,
+[`npx`](https://www.npmjs.com/package/npx) est un outil qui va justement
+permettre d'appeler les `node_modules/.bin` locaux sans le modifier.
+
+Au mais comment on l'installe? Avec -g. Oui `npx` est un des rare outils qui
+méritent d'installer un package en global. Car ils sont pour l'environnement du
+développeur, pas pour un projet.
+
+D'ailleurs parlons en de ces cas où -g est valide.
+
 ## Les seuls cas valides où les outils globaux ont du sens
 
 Les seuls cas valident sont pour des outils qui ne sont pas des outils liés à un
 projet. C’est pas plus compliqué!
 
-Un très bon exemple serait [`trash(-cli)`](https://www.npmjs.com/package/trash)
-que je vous conseille d’utiliser en place de `rm -rf`. Et encore si je l’utilise
-sur un projet, je l’ajoute aux dépendances (de dev)!
+Répétez avec moi: _Installer avec -g c'est pour mon environnement de
+développeur, rien qu'à moi, pas pour un projet._
+
+En plus de `npx`, un très bon exemple serait
+[`trash(-cli)`](https://www.npmjs.com/package/trash), que je vous conseille
+d’utiliser en place de `rm -rf`. Et encore si vous l’utilisez sur un projet,
+pensez à l’ajouter aux dépendances (--dev)!
+
+Ils en existera d'autres, mais rappelez-vous que `npm install -g` est clairement
+overrated!
 
 N’hésitez pas à réagir à ces conseils.
 
