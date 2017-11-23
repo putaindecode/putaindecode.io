@@ -1,5 +1,5 @@
 ---
-date: "2017-11-21"
+date: "2017-11-28"
 title: "Stop aux `npm install -g` sauvages (ou pourquoi vous ne devriez pas installer en global de packages et outils CLI)"
 tags:
   - npm
@@ -33,20 +33,20 @@ un projet. Il est tout à fait probable et même hautement probable que sur deux
 projets différents développés à deux instants différents dans le temps vous ayez
 utiliser deux versions différentes d’un outil.
 
-Le première exemple de ma vie qui me vient en tête c’est les pré-processeur CSS.
+Le premier exemple de ma vie qui me vient en tête c’est les pré-processeurs CSS.
 À l’époque où j’utilisais Sass, il était courant que pour une raison X ou Y (par
-exemple une nouvelle fonctionnalité disponible dans une version majeure) je dois
-mettre à jour la version pour le projet en cours. Mais que se passe-t-il alors
-pour tous mes anciens projets ? Vont-ils être compatible ? Vont-ils avoir des
-problèmes ? Vais-je devoir mettre mes autres projets à jour ? Cela va-t-il me
-péter les couilles d’une manière hors du commun ?
+exemple une nouvelle fonctionnalité disponible dans une version majeure) que je
+dois mettre à jour la version pour le projet en cours. Mais que se passe-t-il
+alors pour tous mes anciens projets ? Vont-ils être compatible ? Vont-ils avoir
+des problèmes ? Vais-je devoir mettre mes autres projets à jour ? Cela va-t-il
+me péter les couilles d’une manière hors du commun ?
 
 Vous avez ici des vraies questions qui ne sont pas existentielles mais
 extrêmement pratique. Ça dû arriver à tout le monde d’avoir ce cas de figure.
 
 Et je vais ajouter à ceci un autre problème.
 
-## « mais puisse ke je te di ke sa marche sur ma machine ! »
+## « mais puisse ke je te di ke sa marche cez moi ! »
 
 On a tous travaillé à plus de deux développeurs sur un projet (et encore ça peut
 nous arriver tout seul au changement de machine)
@@ -60,9 +60,7 @@ marche pas. Oui ça fait clairement chier tout le monde.
 
 Du coup pour éviter ce problème, il y a une méthode simple.
 
-## ne jamais (ô grand jamais) installer un outil de développeur globalement sur
-
-sa machine.
+## Ne jamais (ô grand jamais) installer un outil de développeur globalement sur sa machine.
 
 De rien. Voilà c’était un conseil gratuit.
 
@@ -146,27 +144,30 @@ Si vous n'êtes pas fan de modifier votre `PATH`,
 [`npx`](https://www.npmjs.com/package/npx) est un outil qui va justement
 permettre d'appeler les `node_modules/.bin` locaux sans le modifier.
 
-Au mais comment on l'installe? Avec -g. Oui `npx` est un des rare outils qui
-méritent d'installer un package en global. Car ils sont pour l'environnement du
-développeur, pas pour un projet.
+Au mais comment on l'installe? Avec `-g` pardis ! Je plaisante. Il est inclus
+avec `npm`. Faites un petit `which npx` pour vérifier!
 
-D'ailleurs parlons en de ces cas où -g est valide.
+Dans tous les cas, `npx` est un des rare outils qui méritent d'être installer en
+global. Car ils sont pour l'environnement du développeur, pas pour un projet.
+
+D'ailleurs parlons en de ces cas où `-g` est valide.
 
 ## Les seuls cas valides où les outils globaux ont du sens
 
 Les seuls cas valident sont pour des outils qui ne sont pas des outils liés à un
 projet. C’est pas plus compliqué!
 
-Répétez avec moi: _Installer avec -g c'est pour mon environnement de
-développeur, rien qu'à moi, pas pour un projet._
+Répétez avec moi: _"Installer avec -g c'est pour mon environnement de
+développeur, rien qu'à moi. Pas pour un projet"._
 
 En plus de `npx`, un très bon exemple serait
 [`trash(-cli)`](https://www.npmjs.com/package/trash), que je vous conseille
-d’utiliser en place de `rm -rf`. Et encore si vous l’utilisez sur un projet,
-pensez à l’ajouter aux dépendances (--dev)!
+d’utiliser en place de `rm -rf` (il va plus vite (déplace dans votre corbeille),
+et permet donc la récupération, sait-on jamais). Et encore si vous l’utilisez
+sur un projet, pensez à l’ajouter aux dépendances (--dev)!
 
 Ils en existera d'autres, mais rappelez-vous que `npm install -g` est clairement
-overrated!
+trop souvent recommandé alors qu'il ne devrait pas l'être!
 
 N’hésitez pas à réagir à ces conseils.
 
