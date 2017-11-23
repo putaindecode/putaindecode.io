@@ -115,7 +115,7 @@ foo = undefined; // pas d'erreur
 foo = null; // pas d'erreur
 foo = 3; // erreur - number n'est ni une string, ni null, ni undefined
 
-let bar = {
+type Bar = {
   baz?: string; // baz sera forcément une string si elle est présente
 };
 
