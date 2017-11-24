@@ -300,18 +300,18 @@ Parfois, une union de types se montre également bien plus efficace pour modéli
 ```js
 // @flow
 
-type ApiResponseBadlyTyped = {
+type ApiResponseBadlyTyped = {|
   success: boolean,
   value?: string, // value peut être présent
   error?: Error // error peut être présent
-};
+|};
 
 const foo: ApiResponseBadlyTyped = { success: true }; // pas d'erreur alors que j'attends une value
 const bar: ApiResponseBadlyTyped = { success: true, error: new Error("oups!") }; // pas d'erreur non plus
 
 type ApiResponseCorrectlyTyped =
-  | { success: true, value: string }
-  | { success: false, error: Error };
+  | {| success: true, value: string |}
+  | {| success: false, error: Error |};
 
 const foo: ApiResponseCorrectlyTyped = { success: true }; // erreur! il manque value
 const bar: ApiResponseCorrectlyTyped = { success: true, error: new Error("oups!") }; // erreur! si success est à true, on ne doit pas trouver d'error dans notre objet
