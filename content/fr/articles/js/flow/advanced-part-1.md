@@ -182,8 +182,8 @@ type User = {
 };
 
 const user: User = {
-  name: 'Mathieu',
-  pseudo: 'zoontek'
+  name: "Mathieu",
+  pseudo: "zoontek"
 };
 
 // Ce qui n'exclut pas de faire
@@ -205,8 +205,8 @@ type User = {|
 |};
 
 const user: User = {
-  name: 'Mathieu',
-  pseudo: 'zoontek'
+  name: "Mathieu",
+  pseudo: "zoontek"
 };
 
 const newUser: User = {
