@@ -1,5 +1,5 @@
 ---
-date: "2017-11-23"
+date: "2017-11-24"
 title: "Podcast 8: Google va t-il tuer le web ? (et Firefox, GitHub, Fastlane)"
 tags:
   - podcast
@@ -10,7 +10,6 @@ tags:
   - fastlane
 authors:
   - bloodyowl
-  - zoontek
   - skinnyfoetusboy
   - MoOx
 ---
@@ -24,7 +23,6 @@ On vous y parle de Reason3, Firefox Quantum, Atom Teletype, GitHub, fastlane, de
 À nouveau, je (Matthias, https://twitter.com/bloodyowl) présente avec mes fidèles comparses :
 
 - Maxime (https://twitter.com/MoOx)
-- Mathieu (https://twitter.com/Zoontek)
 - Georges (https://twitter.com/skinnyfoetusboy)
 
 Les liens:
