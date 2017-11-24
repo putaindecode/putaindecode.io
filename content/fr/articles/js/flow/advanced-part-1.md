@@ -178,16 +178,20 @@ Un type objet se définit de la sorte :
 
 type User = {
   name: string,
-  pseudo: string
-};
+  pseudo: string,
+}
 
 const user: User = {
-  name: "Mathieu",
-  pseudo: "zoontek"
-};
+  name: 'Mathieu',
+  pseudo: 'zoontek',
+}
 
 // Ce qui n'exclut pas de faire
-user.age = 26; // pas d'erreur
+const newUser: User = {
+  ...user,
+  age: 26,
+} // pas d'erreur
+
 ```
 
 Pour sceller les propriétés de notre objet, on utilise la notation `{||}` :
@@ -197,15 +201,18 @@ Pour sceller les propriétés de notre objet, on utilise la notation `{||}` :
 
 type User = {|
   name: string,
-  pseudo: string
-|};
+  pseudo: string,
+|}
 
 const user: User = {
-  name: "Mathieu",
-  pseudo: "zoontek"
-};
+  name: 'Mathieu',
+  pseudo: 'zoontek',
+}
 
-user.age = 26; // erreur! la propriété age n'existe pas
+const newUser: User = {
+  ...user,
+  age: 26,
+} // erreur! la propriété age n'existe pas
 ```
 
 Pour indiquer qu'une propriété de notre objet est immutable, on utilise la notation `+`. Un must-have pour vos reducers Redux.
