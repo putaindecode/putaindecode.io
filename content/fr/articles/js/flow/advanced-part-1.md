@@ -33,13 +33,12 @@ const quote = "Thirouin rouin rouin rouin";
 Math.round(quote); // erreur! le type attendu est un number
 
 const sayHello = name => `Hello ${name}`; // inféré en (name: any) => string
-sayHello("Mathieu").toLowerCase(); // pas d'erreur
-sayHello(["Mathieu", "zoontek"]).toLowerCase(); // pas d'erreur (?)
+sayHello("Mathieu"); // pas d'erreur
+sayHello(42); // pas d'erreur
+sayHello(["Mathieu", "zoontek"]); // erreur: ne peut être un array
 ```
 
-On voit ici très vite les limites de l'inférence de type en JavaScript: par défaut si flow n'est pas capable de deviner de quel type il s'agit, il utilisera le type "any", qui correspond à un bon gros "osef, ça peut être n'importe quoi" des familles.
-
-Mais vous pouvez toujours faire pire: en annotant la fonction `sayHello` du type `Function`, vous perdez carrément l'inférence sur le type de retour. Comme quoi, parfois ne pas préciser le type d'une variable peut se montrer plus efficace que d'utiliser des types "génériques" tels que `Object` ou `Function` (d'ailleurs je vous encourage à ne jamais le faire).
+Attention: En annotant la fonction `sayHello` du type `Function`, vous perdez carrément l'inférence. Comme quoi, parfois ne pas préciser le type d'une variable peut se montrer plus efficace que d'utiliser des types "génériques" tels que `Object` ou `Function` (d'ailleurs je vous encourage à ne jamais le faire).
 
 ```js
 // @flow
@@ -47,13 +46,13 @@ Mais vous pouvez toujours faire pire: en annotant la fonction `sayHello` du type
 const sayHello: Function = name => `Hello ${name}`; // inféré en (name: any) => any
 ```
 
-La bonne façon de faire est bien sûr la suivante :
+Si vous désirez interpoler un string, la bonne façon de faire est bien sûr la suivante :
 
 ```js
 // @flow
 const sayHello = (name: string) => `Hello ${name}`; // (name: string) => string
 sayHello("Mathieu"); // pas d'erreur
-sayHello(["Mathieu", "zoontek"]).toLowerCase(); // erreur! le type attendu est une string
+sayHello(42); // pas d'erreur
 ```
 
 ## Les types primitifs et litéraux
