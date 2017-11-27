@@ -19,19 +19,20 @@ mieux. Fin de la discussion.
 À chaque fois qu’un développeur utilise un outil de développement global, un
 chaton meurt. Et Dieu sait que nous aimons les chats.
 
-Non mais c’est une vraie question. Et une bonne question.
+Plus sérieusement, c’est une vraie question. Et une bonne question.
 
 ## Pourquoi installer un outil de manière globale sur sa machine est une mauvaise idée?
 
 On va tenter de répondre ici de manière constructive.
 
 La raison est simple et c’est la même raison pour laquelle aujourd’hui il y a
-Yarn et npm 5 qui utilise des fichiers .lock. Le numéro de version.
+Yarn et npm 5 qui utilisent des fichiers `lock` : parce que vous voulez avoir
+l'assurance d'avoir la même version que vos collègues.
 
 Très souvent, dans le fond un outil CLI n’est rien de plus qu’une dépendance à
-un projet. Il est tout à fait probable et même hautement probable que sur deux
-projets différents développés à deux instants différents dans le temps vous ayez
-utiliser deux versions différentes d’un outil.
+un projet. Il est tout à fait (voire hautement) probable que sur deux projets
+différents développés à deux instants différents dans le temps vous ayez utilisé
+deux versions différentes d’un outil.
 
 Le premier exemple de ma vie qui me vient en tête c’est les pré-processeurs CSS.
 À l’époque où j’utilisais Sass, il était courant que pour une raison X ou Y (par
@@ -39,10 +40,10 @@ exemple une nouvelle fonctionnalité disponible dans une version majeure) que je
 dois mettre à jour la version pour le projet en cours. Mais que se passe-t-il
 alors pour tous mes anciens projets ? Vont-ils être compatible ? Vont-ils avoir
 des problèmes ? Vais-je devoir mettre mes autres projets à jour ? Cela va-t-il
-me péter les couilles d’une manière hors du commun ?
+me faire chier d’une manière hors du commun ?
 
-Vous avez ici des vraies questions qui ne sont pas existentielles mais
-extrêmement pratique. Ça dû arriver à tout le monde d’avoir ce cas de figure.
+Vous avez ici des vraies questions d'ordre pratique. Ça dû arriver à tout le
+monde d’avoir ce cas de figure.
 
 Et je vais ajouter à ceci un autre problème.
 
@@ -51,9 +52,9 @@ Et je vais ajouter à ceci un autre problème.
 On a tous travaillé à plus de deux développeurs sur un projet (et encore ça peut
 nous arriver tout seul au changement de machine)
 
-Le fameux « ça marche sur ma machine ». Celui-là qui nous casse bien les
-cacahouètes. Celui-là qui peut nous faire perdre des heures à comprendre
-pourquoi ça marche pas sur le PC du collègue.
+Le fameux « ça marche sur ma machine ». Celui-là qui prend grâve la tête.
+Celui-là qui peut nous faire perdre des heures à comprendre pourquoi ça marche
+pas sur le PC des collègues.
 
 Celui-là qui énerve les personnes chez qui ça marche et ce chez qui cela ne
 marche pas. Oui ça fait clairement chier tout le monde.
@@ -109,15 +110,15 @@ Comment savoir lorsqu’un outil à une interface CLI et une librairie si les de
 versions sont en phase ?
 
 De cette problématique est né une solution très récurrente. : Les CLI qui ont
-des librairies en parallèle vont très souvent avoir un CLI très light qui va en
-général consister à aller chercher dans le dossier de la librairie où vous vous
-trouvez le vrai code à exécuter.
+des bibliothèques en parallèle vont très souvent avoir un CLI très light qui va
+en général consister à aller chercher dans le dossier de la librairie où vous
+vous trouvez le vrai code à exécuter.
 
 Je dirais même que c’est plutôt cool dans un sens.
 
 Mais on voit bien ici qu’on a un petit problème car cela demande du travail
-supplémentaire aux développeurs des projets qui sont déjà trop souvent à
-fleureter avec le burnout.
+supplémentaire aux développeurs des projets qui sont déjà trop souvent à flirter
+avec le burnout.
 
 ## Petite astuce bien stylé
 
@@ -138,7 +139,7 @@ qu’à la racine du projet. Ça reste bien pratique n’est-ce pas?
 de sécurité genre _"un package remplace `rm` et fait ce qu'il veut avec mes
 données"_ puisque la priorité sera donné à la première partie du `PATH`.)
 
-## Alternative bien stylé
+## Alternative bien stylée
 
 Si vous n'êtes pas fan de modifier votre `PATH`,
 [`npx`](https://www.npmjs.com/package/npx) est un outil qui va justement
