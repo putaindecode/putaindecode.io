@@ -56,7 +56,7 @@ Le fameux « ça marche sur ma machine ». Celui-là qui prend grâve la tête.
 Celui-là qui peut nous faire perdre des heures à comprendre pourquoi ça marche
 pas sur le PC des collègues.
 
-Celui-là qui énerve les personnes chez qui ça marche et ce chez qui cela ne
+Celui-là qui énerve les personnes chez qui ça marche et ceux chez qui cela ne
 marche pas. Oui ça fait clairement chier tout le monde.
 
 Du coup pour éviter ce problème, il y a une méthode simple.
@@ -104,15 +104,15 @@ yarn cmd arg
 ```
 
 Il faut savoir que pour les développeurs de ce type d’outil c’est aussi un petit
-cauchemar gérer.
+cauchemar à gérer.
 
-Comment savoir lorsqu’un outil à une interface CLI et une librairie si les deux
-versions sont en phase ?
+Lorsqu’un outil à une package offrant une interface CLI, comment savoir si la
+version de la bibliothèque fonctionnera avec ?
 
-De cette problématique est né une solution très récurrente. : Les CLI qui ont
-des bibliothèques en parallèle vont très souvent avoir un CLI très light qui va
-en général consister à aller chercher dans le dossier de la librairie où vous
-vous trouvez le vrai code à exécuter.
+De cette problématique est né une solution récurrente : les package qui
+ont une CLI et une bibliothèque en parallèle vont très souvent avoir une CLI
+très light qui va en général consister à aller chercher dans le dossier de la
+bibliothèque où vous vous trouvez le vrai code à exécuter.
 
 Je dirais même que c’est plutôt cool dans un sens.
 
@@ -130,7 +130,7 @@ PATH histoire de pouvoir les utiliser en CLI.
 export PATH=$PATH:./node_modules/.bin
 ```
 
-Une fois cette astuce réalisé déposé dans votre `.bashrc` (ou`.zshrc`…), vous
+Une fois cette astuce réalisé, déposez dans votre `.bashrc` (ou`.zshrc`…), vous
 pourrez utiliser des bin locaux à votre projet comme si ils avaient été
 installés globalement. Sans passer par alias. Mais ça ne marchera bien entendu
 qu’à la racine du projet. Ça reste bien pratique n’est-ce pas?
@@ -148,14 +148,15 @@ permettre d'appeler les `node_modules/.bin` locaux sans le modifier.
 Au mais comment on l'installe? Avec `-g` pardis ! Je plaisante. Il est inclus
 avec `npm`. Faites un petit `which npx` pour vérifier!
 
-Dans tous les cas, `npx` est un des rare outils qui méritent d'être installer en
-global. Car ils sont pour l'environnement du développeur, pas pour un projet.
+Dans tous les cas, `npx` fait parti des rares outils qui méritent d'être
+installés en global, ceux qui sont pour l'environnement du développeur,
+pas pour un projet.
 
 D'ailleurs parlons en de ces cas où `-g` est valide.
 
 ## Les seuls cas valides où les outils globaux ont du sens
 
-Les seuls cas valident sont pour des outils qui ne sont pas des outils liés à un
+Les seuls cas valides sont pour des outils qui ne sont pas des outils liés à un
 projet. C’est pas plus compliqué!
 
 Répétez avec moi: _"Installer avec -g c'est pour mon environnement de
@@ -167,7 +168,7 @@ d’utiliser en place de `rm -rf` (il va plus vite (déplace dans votre corbeill
 et permet donc la récupération, sait-on jamais). Et encore si vous l’utilisez
 sur un projet, pensez à l’ajouter aux dépendances (--dev)!
 
-Ils en existera d'autres, mais rappelez-vous que `npm install -g` est clairement
+Il en existera d'autres, mais rappelez-vous que `npm install -g` est clairement
 trop souvent recommandé alors qu'il ne devrait pas l'être!
 
 N’hésitez pas à réagir à ces conseils.
