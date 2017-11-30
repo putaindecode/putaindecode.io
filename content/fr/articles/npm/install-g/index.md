@@ -1,5 +1,5 @@
 ---
-date: "2017-11-28"
+date: "2017-11-30"
 title: "Stop aux `npm install -g` sauvages (ou pourquoi vous ne devriez pas installer en global de packages et outils CLI)"
 tags:
   - npm
