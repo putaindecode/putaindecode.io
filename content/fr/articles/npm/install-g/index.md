@@ -38,11 +38,11 @@ Le premier exemple de ma vie qui me vient en tête c’est les pré-processeurs 
 À l’époque où j’utilisais Sass, il était courant que pour une raison X ou Y (par
 exemple une nouvelle fonctionnalité disponible dans une version majeure) que je
 dois mettre à jour la version pour le projet en cours. Mais que se passe-t-il
-alors pour tous mes anciens projets ? Vont-ils être compatible ? Vont-ils avoir
+alors pour tous mes anciens projets ? Vont-ils être compatibles ? Vont-ils avoir
 des problèmes ? Vais-je devoir mettre mes autres projets à jour ? Cela va-t-il
 me faire chier d’une manière hors du commun ?
 
-Vous avez ici des vraies questions d'ordre pratique. Ça dû arriver à tout le
+Vous avez ici des vraies questions d'ordre pratique. Ça a dû arriver à tout le
 monde d’avoir ce cas de figure.
 
 Et je vais ajouter à ceci un autre problème.
@@ -76,7 +76,7 @@ automatiquement ajouter tous les bin disponibles vu tous les node_modules locaux
 dans le PATH utilisé via les scripts définis dans votre package.json.
 
 Du coup dans la pratique il vous suffit de vous faire un petit alias pour chaque
-outils CLI et le tour est joué.
+outil CLI et le tour est joué.
 
 ```js
 {
@@ -109,7 +109,7 @@ cauchemar à gérer.
 Lorsqu’un outil à une package offrant une interface CLI, comment savoir si la
 version de la bibliothèque fonctionnera avec ?
 
-De cette problématique est né une solution récurrente : les package qui
+De cette problématique est née une solution récurrente : les package qui
 ont une CLI et une bibliothèque en parallèle vont très souvent avoir une CLI
 très light qui va en général consister à aller chercher dans le dossier de la
 bibliothèque où vous vous trouvez le vrai code à exécuter.
@@ -120,7 +120,7 @@ Mais on voit bien ici qu’on a un petit problème car cela demande du travail
 supplémentaire aux développeurs des projets qui sont déjà trop souvent à flirter
 avec le burnout.
 
-## Petite astuce bien stylé
+## Petite astuce bien stylée
 
 Vous pouvez ajouter tous les binaires de `node_modules/.bin` localement à votre
 PATH histoire de pouvoir les utiliser en CLI.
@@ -130,14 +130,14 @@ PATH histoire de pouvoir les utiliser en CLI.
 export PATH=$PATH:./node_modules/.bin
 ```
 
-Une fois cette astuce réalisé, déposez dans votre `.bashrc` (ou`.zshrc`…), vous
+Une fois cette astuce réalisée, déposez dans votre `.bashrc` (ou`.zshrc`…), vous
 pourrez utiliser des bin locaux à votre projet comme si ils avaient été
 installés globalement. Sans passer par alias. Mais ça ne marchera bien entendu
 qu’à la racine du projet. Ça reste bien pratique n’est-ce pas?
 
 (Et non, si vous faites ça dans l'ordre décrit plus haut, il n'y a pas de soucis
 de sécurité genre _"un package remplace `rm` et fait ce qu'il veut avec mes
-données"_ puisque la priorité sera donné à la première partie du `PATH`.)
+données"_ puisque la priorité sera donnée à la première partie du `PATH`.)
 
 ## Alternative bien stylée
 
@@ -145,10 +145,10 @@ Si vous n'êtes pas fan de modifier votre `PATH`,
 [`npx`](https://www.npmjs.com/package/npx) est un outil qui va justement
 permettre d'appeler les `node_modules/.bin` locaux sans le modifier.
 
-Au mais comment on l'installe? Avec `-g` pardis ! Je plaisante. Il est inclus
+Au mais comment on l'installe? Avec `-g` pardi ! Je plaisante. Il est inclus
 avec `npm`. Faites un petit `which npx` pour vérifier!
 
-Dans tous les cas, `npx` fait parti des rares outils qui méritent d'être
+Dans tous les cas, `npx` fait partie des rares outils qui méritent d'être
 installés en global, ceux qui sont pour l'environnement du développeur,
 pas pour un projet.
 
@@ -183,14 +183,14 @@ Bisous à tous 😘
 Par exemple tapez `npx mocha` et il vous installera le package `mocha` en global
 et ira même jusqu'à s'occuper des mises à jour tout seul (en plus d'exécuter la
 commande, puisque c'est son but initial).
-Malheureusement, pour les raisons expliqué plus haut,
+Malheureusement, pour les raisons expliquées plus haut,
 je ne pense vraiment pas que ça soit une bonne idée.
-Que ce passe-t-il si vous avez pris l'habitude d'utiliser `npx` et qu'un beau
+Que se passe-t-il si vous avez pris l'habitude d'utiliser `npx` et qu'un beau
 jour il vous télécharge (puisque il ne vous demande rien - c'est magique)
 une version contenant un bug? Vous aurez l'air malin. Et cela n'empêche en rien
 le fameux problème du "ça marche sur ma machine" puisque vous aurez
-potentielement des collègues qui ne l'utiliseront pas. Oui ceux qui ne lisent
-jamais les README et n'écoute pas les recommendations...
+potentiellement des collègues qui ne l'utiliseront pas. Oui ceux qui ne lisent
+jamais les README et n'écoute pas les recommandations...
 
 (Je vois encore trop souvent des gens utiliser `npm` sur des projets nécessitant
 `yarn` et qui viennent se plaindre de temps en temps que
