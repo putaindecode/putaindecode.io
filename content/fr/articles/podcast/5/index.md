@@ -29,8 +29,10 @@ Est présent physiquement:
 On vous parle du concept d'immutabilité, du nouvel outil Prettier ainsi que du
 langage Go que Mathieu nous présente.
 
-Liens: -Prettier: https://github.com/prettier/prettier -LearnXInYMinutes:
-https://learnxinyminutes.com
+Liens:
+
+* Prettier: https://github.com/prettier/prettier
+* LearnXInYMinutes: https://learnxinyminutes.com
 
 Erratum par avance:
 
