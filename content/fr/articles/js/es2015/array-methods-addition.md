@@ -90,8 +90,8 @@ partir de quel index on souhaite démarrer la copie de la séquence, ainsi que
 l'index de début et de fin de la séquence que l'on souhaite voir répétée.
 
 ```javascript
-const arr = ["hello","alice", "my", "name", "is" "bob"]
-console.log(arr.copyWithin(1, 5)]) //  "hello","bob", "my", "name", "is" "bob"]
+const arr = ["hello","alice", "my", "name", "is", "bob"]
+console.log(arr.copyWithin(1, 5)]) //  "hello","bob", "my", "name", "is", "bob"]
 ```
 
 Certaines méthodes ne paraissent pas forcément super utiles alors n'hésitez à
