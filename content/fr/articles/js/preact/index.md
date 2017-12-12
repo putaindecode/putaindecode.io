@@ -151,7 +151,7 @@ Puis il faut ajouter des alias à votre système de build, afin que tous vos
 imports de `react` et `react-dom` soient reroutés vers `preact-compat`. Par
 exemple, pour webpack :
 
-```js
+```javasscript
 module.exports = {
     //... votre configuration webpack
     resolve: {
@@ -224,7 +224,7 @@ Dans ce cas, il faudra les transformer en références fonctionnelles.
 Il ne vous reste plus qu'à mettre à jour vos imports pour que ceux-ci pointent
 vers Preact. Voici un petit exemple :
 
-```js
+```javascript
 import { h, Component, render } from "preact";
 
 const Header = () => <header>Ma putain d'app</header>;
