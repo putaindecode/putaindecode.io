@@ -3,6 +3,7 @@ date: "2017-12-15"
 title: "Découverte de Preact"
 tags:
   - preact
+  - react
 authors:
   - drazik
 ---
@@ -12,12 +13,12 @@ officielle :
 
 > Fast 3kB alternative to React with the same ES6 API.
 
-Cette description semble allèchante au premier coup d'oeil. Si on peut avoir un
+Cette description semble alléchante au premier coup d'oeil. Si on peut avoir un
 React de 3ko, banco, on switch !
 
 Pas si vite. L'API est la même, mais rien n'indique que Preact est un React qui
 tient dans 3 petits ko (bien que c'est ce qu'on peut parfois lire). Ça ferait
-bien longtemps que les ingénieurs de Facebook auraient réagit si il était
+bien longtemps que les ingénieurs de Facebook auraient réagit s'il était
 possible de faire en sorte que React soit si petit. Preact fait donc des
 compromis, des choix, et présente donc des différences avec React qu'il faut
 connaître et prendre en compte avant d'envisager de switcher.
@@ -25,7 +26,7 @@ connaître et prendre en compte avant d'envisager de switcher.
 *Cet article est destiné aux gens qui connaissent déjà au moins un petit peu
 React. Tous les concepts liés à (P)React ne seront pas détaillés. Si vous ne
 connaissez rien à React, je vous invite à lire [l'introduction à
-React](http://putaindecode.io/fr/articles/js/react/).*
+React](/fr/articles/js/react/).*
 
 ## Quelles sont les différences en React et Preact ?
 
@@ -45,9 +46,9 @@ Cette spécialisation pour le DOM permet à Preact de ne pas avoir à implément
 le système de Synthetic Events utilisé par React. Ainsi, Preact peut se
 permettre d'utiliser simplement le système d'événements standard du navigateur.
 Il faut bien avoir cela en tête lorsqu'on a l'habitude de travailler avec
-React, car celui-ci prend quelques libertés vis-à-vis de la spécification
-(notamment sur `onChange`). Des différences dans le comportement de votre app
-est donc à prévoir en cas de switch.
+React, car celui-ci corrige, ou du moins unifie certains comportements entre
+les navigateurs (notamment sur `onChange`). Des différences dans le
+comportement de votre app est donc à prévoir en cas de switch.
 
 Enfin, Preact n'embarque pas de gestion de validation des PropTypes. Partant du
 principe que celles-ci ne sont pas utilisées par tout le monde, la décision a
@@ -70,7 +71,8 @@ eux-mêmes des paramètres.
 Preact gère l'API `context`, mais il n'existe pas de `contextTypes` ni de
 `childContextTypes` (ce qui est raccord avec l'absence de `propTypes`). Tous
 les enfants reçoivent le `context` définit dans la méthode `getChildContext()`
-de leurs parents.
+de leurs parents. Si plusieurs parents implémentent cette méthode, alors les
+descendants recevront un agrégat.
 
 Dans Preact, `props.children` est un `Array`. On peut donc utiliser toutes les
 méthodes de `Array.prototype` dessus, sans avoir à passer par un équivalent de
@@ -144,7 +146,7 @@ spécifiquement pour React, ainsi que vous son écosystème.
 Il faut donc l'installer, ainsi que Preact :
 
 ```bash
-npm install preact preact-compat
+npm install --save preact preact-compat
 ```
 
 Puis il faut ajouter des alias à votre système de build, afin que tous vos
@@ -183,7 +185,7 @@ bundle le plus léger possible.
 Premièrement, il faut installer Preact :
 
 ```bash
-npm install preact
+npm install --save preact
 ```
 
 Puis il faut indiquer à votre compiler le pragma JSX qu'il doit utiliser. Pour
@@ -246,4 +248,5 @@ render(<App />, document.getElementById("app"));
 ```
 
 Voilà, vous avez maintenant une aperçu de ce qu'est Preact et des moyens à
-votre disposition pour l'utiliser.
+votre disposition pour l'utiliser. Facebook ne vous est plus d'aucune utilité,
+vous pouvez fermer votre compte.
