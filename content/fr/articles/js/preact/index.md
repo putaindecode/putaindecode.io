@@ -93,14 +93,14 @@ application. Si vous connaissez `create-react-app`, alors vous aurez deviné que
 
 Commençons par l'installer : 
 
-```bash
+```console
 npm install -g preact-cli
 ```
 
 Nous avons maintenant accès à la commande `preact`. Celle-ci s'utilise de la
 manière suivante :
 
-```bash
+```console
 preact create <template-name> <project-name>
 ```
 
@@ -111,7 +111,7 @@ et `<project-name>` est le nom du dossier dans lequel la structure du projet
 sera créée. Pour notre exemple, nous utiliserons le template `default`, et le
 nom `test-preact` pour notre projet :
 
-```bash
+```console
 preact create default test-preact
 ```
 
@@ -145,7 +145,7 @@ spécifiquement pour React, ainsi que vous son écosystème.
 
 Il faut donc l'installer, ainsi que Preact :
 
-```bash
+```console
 npm install --save preact preact-compat
 ```
 
@@ -184,14 +184,14 @@ bundle le plus léger possible.
 
 Premièrement, il faut installer Preact :
 
-```bash
+```console
 npm install --save preact
 ```
 
 Puis il faut indiquer à votre compiler le pragma JSX qu'il doit utiliser. Pour
 babel, vous pouvez installer le plugin `babel-plugin-transform-react-jsx` :
 
-```bash
+```console
 npm instal --save-dev babel-plugin-transform-react-jsx
 ```
 
