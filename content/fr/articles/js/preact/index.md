@@ -28,7 +28,7 @@ React. Tous les concepts liés à (P)React ne seront pas détaillés. Si vous ne
 connaissez rien à React, je vous invite à lire [l'introduction à
 React](/fr/articles/js/react/).*
 
-## Quelles sont les différences en React et Preact ?
+## Quelles sont les différences entre React et Preact ?
 
 Les différences entre React et Preact peuvent être rangées dans deux catégories
 : ce qu'il "manque" à Preact, et ce qui est là, mais différent.
@@ -76,7 +76,8 @@ descendants recevront un agrégat.
 
 Dans Preact, `props.children` est un `Array`. On peut donc utiliser toutes les
 méthodes de `Array.prototype` dessus, sans avoir à passer par un équivalent de
-`React.Children`.
+`React.Children`. Toutefois, certains patterns tels que le *function as child*
+nécessitent un peu de bricolage pour fonctionner.
 
 Enfin, il est possible d'utiliser l'attribut `class` sur un noeud JSX.
 `className` est aussi supporté, mais vous ne vous prendrez plus d'erreur
@@ -250,3 +251,9 @@ render(<App />, document.getElementById("app"));
 Voilà, vous avez maintenant une aperçu de ce qu'est Preact et des moyens à
 votre disposition pour l'utiliser. Facebook ne vous est plus d'aucune utilité,
 vous pouvez fermer votre compte.
+
+Plus sérieusement, nous avons vu que Preact est en grande partie compatible
+avec React et peut presque le remplacer sur une app web. Cela nécessite tout de
+même un peu de travail et de vigilance, mais le switch est possible et peut
+vous permettre de faire économiser à vos utilisateurs le téléchargement de
+précieux ko.
