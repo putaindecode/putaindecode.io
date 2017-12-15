@@ -128,7 +128,9 @@ par défaut :
 
 * Du code-splitting pour chaque route
 * Votre page `index.html` prérendue pour un affichage le plus rapide possible
-* Un ServiceWorker prêt à l'emploi (score Lighthouse 100/100)
+* Un ServiceWorker prêt à l'emploi (score Lighthouse 100/100 à la génération de
+l'app, ce score est bien évidemment dépendant de ce que vous faites par la
+suite)
 * Des metas preload en fonction de vos URL
 * Des polyfills chargés uniquement si nécessaire
 
