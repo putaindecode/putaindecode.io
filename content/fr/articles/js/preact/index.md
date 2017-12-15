@@ -50,9 +50,16 @@ React, car celui-ci corrige, ou du moins unifie certains comportements entre
 les navigateurs (notamment sur `onChange`). Des différences dans le
 comportement de votre app est donc à prévoir en cas de switch.
 
-Enfin, Preact n'embarque pas de gestion de validation des PropTypes. Partant du
+Preact n'embarque pas de gestion de validation des PropTypes. Partant du
 principe que celles-ci ne sont pas utilisées par tout le monde, la décision a
 été prise de ne pas les inclure dans le coeur de la bibliothèque.
+
+Pour finir, Preact n'expose pas (encore, tout du moins) les nouvelles APIs de
+React 16 telles que `React.Fragment` (dont [le support est
+prévu](https://github.com/developit/preact/issues/946)),
+`ReactDOM.createPortal` (la fonctionnalité existe tout de même sous une forme
+différente dans [preact-portal](https://github.com/developit/preact-portal)) ou
+`ReactDOM.hydrate`.
 
 ### Ce qui est différent
 
