@@ -143,12 +143,13 @@ information, le routing est géré par
 Oui, et pour ça il y a deux possibilités : ajouter une couche de compatibilité,
 ou passer purement et simplement à Preact. 
 
-### Rendre Preact totalement compatible avec React en utilisant `preact-compat`
+### Rendre Preact quasi-compatible avec React en utilisant `preact-compat`
 
 Le plus rapide est d'utiliser
 [`preact-compat`](https://github.com/developit/preact-compat). Ce module vient
 s'ajouter à Preact pour y ajouter une couche de compatibilité le rendant
-compatible avec n'importe quel module écrit pour React. Pour cela,
+compatible avec preque n'importe quel module écrit pour React (tant que
+celui-ci n'utilise pas les quelques bouts d'API manquants). Pour cela,
 `preact-compat` expose l'ensemble de l'API de `react` et `react-dom`. Cela vous
 permettra de continuer à utiliser sereinement tous vos composants écrits
 spécifiquement pour React, ainsi que vous son écosystème.
