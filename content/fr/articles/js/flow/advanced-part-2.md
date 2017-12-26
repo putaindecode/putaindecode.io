@@ -9,13 +9,13 @@ authors:
   - zoontek
 ---
 
-Vous avez digéré le premier article, peut-être même débuté avec [flow](https://flow.org/) depuis, mais vous mourrez d'envie de découvrir ce que vous pouvez faire de plus avec votre nouvel outil préféré ? Tant mieux, puisque nous sommes là pour parler d'une fonctionnalité assez avancée, apparue avec la version 0.51 et, à l'heure où j'écris ces lignes, indisponible dans TypeScript: les types opaques.
+Vous avez digéré le premier article, peut-être même débuté avec [flow](https://flow.org/) depuis, mais vous mourez d'envie de découvrir ce que vous pouvez faire de plus avec votre nouvel outil préféré ? Tant mieux, puisque nous sommes là pour parler d'une fonctionnalité assez avancée, apparue avec la version 0.51 et, à l'heure où j'écris ces lignes, indisponible dans TypeScript: les types opaques.
 
 Si vous n'avez pas installé flow au sein de votre projet, je vous renvoie au [premier article](http://putaindecode.io/fr/articles/js/flow/advanced-part-1/) qui vous expliquera très bien comment faire.
 
 ## Transparence de types
 
-Si on parle de types opaques, c'est bien parce que les types transparents existent. D'ailleur par défaut, tout alias de type défini l'est. Mais que sont-ils ? Simple: ce sont des types compatibles et donc interchangeables.
+Si on parle de types opaques, c'est bien parce que les types transparents existent. D'ailleurs par défaut, tout alias de type défini l'est. Mais que sont-ils ? Simple: ce sont des types compatibles entre eux et donc interchangeables.
 
 ```js
 // @flow
@@ -31,7 +31,7 @@ const name: LastName = "Acthernoene";
 yellFirstName(name);
 ```
 
-Dans cet exemple, les types `FirstName` et `LastName` étant tout deux des alias de `string`, on peut sans problème utiliser la variable `name` de type `LastName` là où la function `yellFirstName` attends un paramètre de type `FirstName`. Pas cool.
+Dans cet exemple, les types `FirstName` et `LastName` étant tout deux des alias de `string`, on peut sans problème utiliser la variable `name` de type `LastName` là où la function `yellFirstName` attend un paramètre de type `FirstName`. Pas cool.
 
 ## Rendons tout cela opaque
 
@@ -86,7 +86,7 @@ const user = createUser("Acthernoene", "Mathieu");
 yellFirstName(user.firstName); // Pas d'erreur
 ```
 
-On voit ici qu'il n'est en fait possible d'utiliser le type `FirstName` qu'après son assignation au sein du module ou celui-ci est défini. Un autre exemple: s'il ont venait à rendre le type `User` opaque, alors nous ne pourrions pas accéder à `user.firstName`, la propriété étant innacessible autrement que par une fonction qui manipulera le type `User`.
+On voit ici qu'il n'est en fait possible d'utiliser le type `FirstName` qu'après son assignation au sein du module où celui-ci est défini. Un autre exemple: si l'on venait à rendre le type `User` opaque, alors nous ne pourrions pas accéder à `user.firstName`, la propriété étant inaccessible autrement que par une fonction qui manipulera le type `User`.
 
 ```js
 // @flow
@@ -203,3 +203,5 @@ uuid.toUpperCase(); // Pas d'erreur: même si uuid est un UUID, il est utilisabl
 Comme on a pu le voir, les types opaques élèvent clairement le niveau du type-game dans le milieu du JavaScript. Forcément utiles pour imposer l'utilisation de fonctions pour créer / manipuler certaines données, ils s'avéreront assez vite indispensables pour structurer davantage votre JS et améliorer sa maintenabilité.
 
 Je vous encourage d'ailleurs à vous en servir quasiment partout (ça sera assez chiant au début, mais vous me remercierez plus tard) !
+
+La bise, et rendez-vous pour une troisième partie 😘
