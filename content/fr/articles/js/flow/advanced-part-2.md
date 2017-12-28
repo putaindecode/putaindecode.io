@@ -11,7 +11,7 @@ authors:
 
 Vous avez digéré le premier article, peut-être même débuté avec [flow](https://flow.org/) depuis, mais vous mourez d'envie de découvrir ce que vous pouvez faire de plus avec votre nouvel outil préféré ? Tant mieux, puisque nous sommes là pour parler d'une fonctionnalité assez avancée, apparue avec la version 0.51 et, à l'heure où j'écris ces lignes, indisponible dans TypeScript: les types opaques.
 
-Si vous n'avez pas installé flow au sein de votre projet, je vous renvoie au [premier article](http://putaindecode.io/fr/articles/js/flow/advanced-part-1/) qui vous expliquera très bien comment faire.
+Si vous n'avez pas installé flow au sein de votre projet, je vous renvoie au [premier article](/fr/articles/js/flow/advanced-part-1/) qui vous expliquera très bien comment faire.
 
 ## Transparence de types
 
@@ -175,7 +175,7 @@ Reprenons l'exemple précédent.
 import uuidv4 from "uuid/v4";
 import validator from "validator";
 
-export opaque type UUID: string = string; // Seul cette ligne change, on y ajoute un sous-type number
+export opaque type UUID: string = string; // Seul cette ligne change, on y ajoute un sous-type string
 
 export function create(): UUID {
   return uuidv4();
