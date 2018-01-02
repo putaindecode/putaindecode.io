@@ -1,5 +1,5 @@
 ---
-date: "2017-12-26"
+date: "2018-01-02"
 title: "Flow avancé - Seconde partie: les types opaques"
 tags:
   - javascript
