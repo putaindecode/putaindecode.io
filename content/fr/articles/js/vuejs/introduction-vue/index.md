@@ -37,6 +37,18 @@ polyfills et offrant des performances vraiment excellentes (un poil meilleures
 que React), tout en restant très légère (~21Kb gzip pour la version light de
 Vue, ~30Kb quand on y ajoute le routeur et la gestion d'état de l'application).
 
+En plus, le framework est basé sur une initiative 100% open source, aucune
+grosse compagnie n'a été derrière le développement durant les premiers instants
+de Vue, là où React avait Facebook et Angular, Google.
+
+Cela a, je pense, implicitement introduit une faiblesse dans les outils annexes
+disponibles, qui est la génération d'application mobile native. Angular et
+React ont chacun un outil pour créer ces applications, Vue n'en a aucun. C'est
+en train de changer sur l'impulsion d'Alibaba (l'Amazon chinois) avec
+[weex](https://weex.apache.org/) qui continue de le développer, mais n'atteint
+pas encore le niveau de stabilité de ses adversaires. C'est quelque chose
+à prendre en compte suivant le projet qu'on veut lancer.
+
 ## Comment ça marche
 Vue peut être balancé dans une page HTML tout simplement et déjà faire des
 miracles.
