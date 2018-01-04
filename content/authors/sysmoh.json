@@ -1,0 +1,18 @@
+{
+    "fr": {
+        "bio": {
+            "short": "Développeur Symfony, avec une pointe de frontend",
+            "long": [
+                "Etudiant et développeur qui essaie tout, et ne sait finalement rien"
+            ]
+        }
+    },
+    "en": {
+        "bio": {
+            "short": "Symfony developper, with a bit of frontend",
+            "long": [
+                "Student and developper trying everything, thus mastering nothing"
+            ]
+        }
+    }
+}
