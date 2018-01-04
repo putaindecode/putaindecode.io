@@ -324,8 +324,35 @@ var app = new Vue({
 ## Les outils de bundling
 C'est bien joli de s'amuser vite fait sur une page HTML, mais c'est plus cool
 si on peut développer des trucs plus complexe et poussés. Pour ceci, les devs
-de Vue mettent à disposition [vue-cli](https://github.com/vuejs/vue-cli) qui
-permet de rapidement bootstraper un projet vide
+de Vue mettent à disposition [vue-cli](https://github.com/vuejs/vue-cli) qui permet
+de rapidement bootstraper un projet vide. L'avantage est que l'on peut ensuite
+travailler plus agréablement avec les composants, et les écrire comme
+```
+<template>
+    <div>{{ message }}</div>
+</template>
+
+<script>
+export default {
+    data: function() {
+        return {
+            message: "Hello"
+        }
+    }
+}
+</script>
+
+<style>
+div {
+    color:red;
+    background:green;
+}
+</style>
+```
+Cette manière de les écrire nous permet de bien encapsuler le code qui décrit
+chacun de nos composants. On peut aussi beaucoup plus facilement les faire
+intéragir entre eux, mais ça ce sera pour plus tard.
+
 ## En conclusion
 On a fait un petit tour d'horizon de ce que Vue peut faire tout simplement, mais
 c'est vraiment seulement la pointe de l'iceberg. Si le coeur vous en dit je vous
