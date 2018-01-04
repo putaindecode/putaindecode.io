@@ -41,13 +41,15 @@ En plus, le framework est basé sur une initiative 100% open source, aucune
 grosse compagnie n'a été derrière le développement durant les premiers instants
 de Vue, là où React avait Facebook et Angular, Google.
 
-Cela a, je pense, implicitement introduit une faiblesse dans les outils annexes
-disponibles, qui est la génération d'application mobile native. Angular et
-React ont chacun un outil pour créer ces applications, Vue n'en a aucun. C'est
-en train de changer sur l'impulsion d'Alibaba (l'Amazon chinois) avec
-[weex](https://weex.apache.org/) qui continue de le développer, mais n'atteint
-pas encore le niveau de stabilité de ses adversaires. C'est quelque chose
-à prendre en compte suivant le projet qu'on veut lancer.
+### La lacune des applis mobiles
+En soit c'est un besoin particulier, mais qui nécessite d'être dit.
+Angular et React ont chacun des outils pour créer des applications mobiles
+natives, que ce soit React Native ou NativeScript. Vue n'en a malheureusement
+aucun qui lui soit dédié. C'est en train de changer sur l'impulsion d'Alibaba
+(l'Amazon chinois) avec [weex](https://weex.apache.org/) dont le développement
+continue activement, mais n'atteint pas encore le niveau de stabilité de ses
+adversaires. De plus, weex, tout en supportant la syntaxe Vue, est en premier
+lieu orienté vers tout l'univers javascript, c'est cool mais ça prend du temps.
 
 ## Comment ça marche
 Vue peut être balancé dans une page HTML tout simplement et déjà faire des
