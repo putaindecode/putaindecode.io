@@ -9,7 +9,7 @@ tags:
   - objective c
   - xcode
 authors:
-  - leoderbois
+  - leolelego
 ---
 
 Aujourd'hui, on va aborder un sujet qui parle à tous les devs iOS : les
