@@ -46,14 +46,14 @@ Lancez `cmd.exe` en mode administrateur (touche windows puis "cmd" puis
 shift+ctrl+enter) et exécutez ce code :
 
 ```console
-$ @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 ```
 
 Ou `PowerShell` en mode administrateur (touche windows puis "powershell" puis
 shift+ctrl+enter) et éxecutez :
 
 ```console
-$ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
 Une fois installé, vous pourrez installer n'importe quel logiciel listé sur
@@ -72,7 +72,7 @@ Lorsque tu joues à un jeu vidéo, tu sauvegardes régulièrement ton avancement
 ? Bah là, c'est pareil mais pour le code.
 
 ```console
-$ choco install git.install
+choco install git.install
 ```
 
 * [site officiel](http://git-scm.com/)
@@ -84,7 +84,7 @@ Faire du JavaScript côté serveur ou en shell, le pied. Surtout pour faire des
 scripts Windows, plutôt que de passer par Batch.
 
 ```console
-$ choco install nodejs.install
+choco install nodejs.install
 ```
 
 * [site officiel](http://nodejs.org/)
@@ -95,7 +95,7 @@ $ choco install nodejs.install
 Sublime Text, l'éditeur préféré des Franç... je m'égare. Bref, un bon éditeur.
 
 ```console
-$ choco install sublimetext3
+choco install sublimetext3
 ```
 
 * [site officiel](http://www.sublimetext.com/)
@@ -108,7 +108,7 @@ Vous pouvez aussi installer [Atom](https://atom.io/) si vous préférez.
 HeidiSQL, un logiciel avec une interface qui se rapproche de phpMyAdmin.
 
 ```console
-$ choco install HeidiSQL
+choco install HeidiSQL
 ```
 
 * [site officiel](http://www.heidisql.com/)
@@ -121,7 +121,7 @@ Ou encore MySQL Workbench un excellent soft pour gérer une base de données:
 * Migration Par contre, il est un peu plus complexe à utiliser.
 
 ```console
-$ choco install mysql.workbench
+choco install mysql.workbench
 ```
 
 * [site officiel](http://dev.mysql.com/downloads/workbench/)
@@ -136,7 +136,7 @@ l'intégration de PuTTY et d'autres choses venu de la banquise. (le lieu de vie
 des pinguins)
 
 ```console
-$ choco install Cmder
+choco install Cmder
 ```
 
 * [site officiel](https://bliker.github.io/cmder/)
@@ -148,7 +148,7 @@ Pour le SSH sous Windows c'est assez complexe, il faut quelques outils dont le
 principal, putty (un terminal et +).
 
 ```console
-$ choco install putty
+choco install putty
 ```
 
 * [site officiel](http://chocolatey.org/packages/putty)
@@ -175,8 +175,8 @@ accès à des machines virtuelles gratuitement sur
 lancer.
 
 ```console
-$ choco install virtualbox
-$ choco install VirtualBox.ExtensionPack
+choco install virtualbox
+choco install VirtualBox.ExtensionPack
 ```
 
 > l'Extension Pack est utile pour une intégration parfaite avec votre machine si
@@ -190,7 +190,7 @@ $ choco install VirtualBox.ExtensionPack
 7zip, le logiciel de référence pour ce genre de pratique.
 
 ```console
-$ choco install 7zip.install
+choco install 7zip.install
 ```
 
 * [site officiel](http://www.7-zip.org/)
@@ -208,7 +208,7 @@ des PDFs.
 * [lien du package](https://chocolatey.org/packages/sumatrapdf.install)
 
 ```console
-$ choco install sumatrapdf.install
+choco install sumatrapdf.install
 ```
 
 #### PDFCreator
@@ -217,7 +217,7 @@ $ choco install sumatrapdf.install
 * [lien du package](https://chocolatey.org/packages/pdfcreator)
 
 ```console
-$ choco install pdfcreator
+choco install pdfcreator
 ```
 
 ### Mettre des onglets dans l'explorateur de fichiers
@@ -226,7 +226,7 @@ Nous sommes en 2014 ça fait des années que Microsoft sait mais, ce n'est
 toujours pas disponible. C'est là que Clover rentre en jeu.
 
 ```console
-$ choco install Clover
+choco install Clover
 ```
 
 * [site officiel](http://ejie.me/)
@@ -240,7 +240,7 @@ fenêtres, je vous propose VirtuaWin. Cela vous permettra de garder en plein
 `alt+tab` mais en allant d'un bureau à un autre.
 
 ```console
-$ choco install virtuawin
+choco install virtuawin
 ```
 
 * [site officiel](http://virtuawin.sourceforge.net/)
@@ -255,7 +255,7 @@ vachement bien. Ca permet aussi de faire des recherches de fichier, des calculs,
 et tout un tas d'autres choses. Voici alors Launchy.
 
 ```console
-$ choco install launchy-beta
+choco install launchy-beta
 ```
 
 * [site officiel](http://www.launchy.net/)
@@ -286,7 +286,7 @@ pour réduire les différences de couleurs et éviter de vous abimer les yeux. E
 plus, ça permet au cerveau de se préparer à aller se coucher. :D
 
 ```console
-$ choco install f.lux
+choco install f.lux
 ```
 
 * [site officiel](https://justgetflux.com/)
@@ -304,7 +304,7 @@ MacType qui permet de remplacer le font rendering de Windows et d'apprécier lir
 à nouveau sur cet OS.
 
 ```console
-$ choco install mactype
+choco install mactype
 ```
 
 Je vous conseille le profil `XMac.LCD.Default`.
