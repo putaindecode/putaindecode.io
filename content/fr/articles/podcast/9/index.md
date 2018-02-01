@@ -10,7 +10,7 @@ tags:
 authors:
   - bloodyowl
   - skinnyfoetusboy
-  - Zoontek
+  - zoontek
 ---
 
 Un épisode qui arrive non pas avec un, mais deux mois de retard, et avec un son dégueulasse. On a eu un petit accident de prise de son et en dépit des essais de rattrapage, ça n'a pas donné grand chose. On en est vraiment désolé et on va mieux s'équiper pour la suite.
