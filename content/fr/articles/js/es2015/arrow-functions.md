@@ -38,36 +38,39 @@ simples fonctions, nous pouvons utiliser des expressions, le but étant d'avoir
 quelque chose de concis. Notre exemple précédent peut ainsi s'écrire de la sorte
 :
 
-```js
-const myFn = x => x + 1;
+```
+const myFn = (x) => x + 1;
 ```
 
 Notez que lorsque l'on a qu'un argument dans notre fonction, on peut omettre les
 parenthèses. Notre exemple peut donc aussi s'écrire ainsi :
 
-```js
+```
 const myFn = x => x + 1;
 ```
 
 Si notre expression mérite d'être sur plusieurs lignes, on peut aussi utiliser
 des parenthèses :
 
-```js
-const myFn = x => x + 1; // Ici vous pouvez faire du multi lignes tranquille, on peut imaginer du JSX
+```
+const myFn = x => (
+  x +
+  1 // Ici vous pouvez faire du multi lignes tranquille, on peut imaginer du JSX
+)
 ```
 
 Les exemples suivants sont donc tous les mêmes :
 
-```js
-const myFn = x => {
+```
+const myFn = (x) => {
   return x + 1;
 };
 // ===
-const myFn = x => x + 1;
+const myFn = (x) => x + 1;
 // ===
 const myFn = x => x + 1;
 // ===
-const myFn = x => x + 1;
+const myFn = x => (x + 1);
 ```
 
 Dans la pratique, vous utiliserez souvent cette syntaxe pour des petites
@@ -150,12 +153,12 @@ console.log(aFn()); // undefined
 En effet, l'exemple ci-dessus pourrait être traduit en ES5 de la manière
 suivante :
 
-```js
-var aFn = function(obj) {
-  // Defines a label named `key`
-  key: obj.value; // Gets `obj.value`
-  // Implicit returns `undefined`
-};
+```
+var aFn = function (obj) {
+  key:         // Defines a label named `key`
+    obj.value  // Gets `obj.value`
+               // Implicit returns `undefined`
+}
 ```
 
 Gardez en tête que dans ce contexte, une accolade ouvre un corps de fonction,
