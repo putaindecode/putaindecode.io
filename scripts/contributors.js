@@ -9,6 +9,7 @@ import GithubApi from "github";
 
 import logger from "nano-logger";
 
+const spawn = require("child_process").spawn;
 const exec = asyncify(require("child_process").exec);
 const glob = asyncify(require("glob"));
 
@@ -19,6 +20,32 @@ const writeFile = asyncify(fs.writeFile);
 const topContribMonths = 6;
 const authorsFiles = "content/authors/*.json";
 const contributorsFile = "cache/contributors.json";
+
+// https://stackoverflow.com/a/44474536/988941
+const gitExec = command =>
+  new Promise((resolve, reject) => {
+    const thread = spawn("git", command, {
+      stdio: ["inherit", "pipe", "pipe"]
+    });
+    const stdOut = [];
+    const stdErr = [];
+
+    thread.stdout.on("data", data => {
+      stdOut.push(data.toString("utf8"));
+    });
+
+    thread.stderr.on("data", data => {
+      stdErr.push(data.toString("utf8"));
+    });
+
+    thread.on("close", () => {
+      if (stdErr.length) {
+        reject(stdErr.join(""));
+        return;
+      }
+      resolve(stdOut.join());
+    });
+  });
 
 const githubApi = new GithubApi({
   version: "3.0.0",
@@ -255,12 +282,10 @@ async function recentContributions() {
   since.setMonth(since.getMonth() - topContribMonths);
 
   const command =
-    `git shortlog --no-merges --summary --numbered --email ` +
-    `--since "${since.toISOString()}"` +
-    // http://stackoverflow.com/questions/15564185/#15566068
-    ` < /dev/tty`;
+    `shortlog --no-merges --summary --numbered --email ` +
+    `--since "${since.toISOString()}"`;
 
-  const stdout = await exec(command);
+  const stdout = await gitExec(command.split(" "));
 
   stdout
     .trim("\n")
