@@ -1,0 +1,9 @@
+[build]
+  publish = "dist"
+  command = "yarn build"
+[build.environment]
+  NODE_VERSION = "8"
+  YARN_VERSION = "1.3.2"
+  YARN_FLAGS = "--pure-lockfile"
+
+# GITHUB_TOKEN for API request is defined in Netlify UI
