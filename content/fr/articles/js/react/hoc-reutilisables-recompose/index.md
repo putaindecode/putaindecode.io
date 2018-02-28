@@ -34,7 +34,9 @@ composants React.
 
 Sur le site de React vous trouverez une
 [page très fournie](https://reactjs.org/docs/higher-order-components.html) si
-vous souhaitez en savoir plus sur les HOC.
+vous souhaitez en savoir plus sur les HOC. Il y a également un
+[très bon article sur Putain de code](/fr/articles/js/react/higher-order-component/#le-pattern-higher-order-component)
+présentant les HOC à travers un autre cas d’utilisation (le pattern *provider*).
 
 Un exemple très simple :
 
@@ -60,6 +62,8 @@ Si vous avez utilisé React avec Redux et React-Redux, vous avez sans doute
 utilisé le HOC `connect` pour faire le mapping de l’état et des actions avec les
 propriétés.
 
+## Exemple : champ de saisie d’un numéro de téléphone
+
 Comme exemple complet pour cette article, nous allons utiliser le concept d’HOC
 pour créer un champ de saisie de numéro de téléphone, qui :
 
@@ -69,9 +73,12 @@ pour créer un champ de saisie de numéro de téléphone, qui :
   champ (évènement _blur_). (Seuls les numéros de téléphone Nord-Americains
   seront pris en compte : « (514) 555-0199 ».)
 
-<center>![Phone number input result](./phoneNumberInput.gif)</center>
+<figure>
+  <img src="phoneNumberInput.gif" alt="Champ de saisie de numéro de téléphone" />
+  <figcaption>Notre champ de saisie de numéro de téléphone</figcaption>
+</figure>
 
-Notez que l’on supposera que notre champs sera contrôllé, c’est-à-dire que nous
+Notez que l’on supposera que notre champs sera contrôlé, c’est-à-dire que nous
 utiliserons les propriétés `value` et `onChange` pour savoir quel texte afficher
 et comment le mettre à jour. Nous souhaitons également que la valeur ne
 contienne que les chiffres du numéro de téléphone (« 5145550199 »), sans se
@@ -311,6 +318,39 @@ créer vos propres HOC.
 
 <iframe width="100%" height="300" src="//jsfiddle.net/scastiel/prme4k6L/8/embedded/js,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
+## Les _render props_ : une alternative aux _high-order components_ ?
+
+Écrire des composants réutilisables est tout à fait possible sans utiliser de
+HOC. Pour reprendre notre exemple de champ de saisie de numéro de téléphone nous
+pourrions créer un composant `FormattedInput`, qui prendrait en paramètres
+(propriété) les caractères autorisés d’une part, et les fonctions de formattage
+d’autre part. Il resterait un inconvénient à cette méthode : cela vous contraint
+à n’utiliser qu’un type de champ fixé à l’avance, par exemple `<input>`.
+
+C’est là qu’intervient un concept particulièrement intéressant : celui des
+_render props_. Tout simplement, cela consiste à passer en propriété de votre
+composant une fonction permettant de générer un autre composant, qui sera une
+composante du premier.
+
+Par exemple notre `PhoneNumberInput` pourrait nous laisser la possibilité de lui
+indiquer comment générer un champ de saisie (sur lequel il ajoutera le
+comportement spécifique, ici la mise en forme) :
+
+```js
+<PhoneNumberInput renderInput={inputProps => <input {...inputProps} />} />
+```
+
+Il y aurait de quoi écrire un article entier sur les _render props_, et selon
+moi il serait dommage de les voir comme une sorte de « concurrent » des HOC ;
+les deux peuvent répondre à des problématiques parfois similaires, parfois
+différentes.
+
+Pour en savoir plus sur les _render props_ la
+[page consacrée de la documentation de React](https://reactjs.org/docs/render-props.html)
+est très détaillée et donne également de bons exemples d’utilisation.
+
+## En conclusion…
+
 J’espère que cet article vous a donné envie d’en savoir plus à propos de
 Recompose et des _high-order components_ en général. Je suis convaincu que les
 HOC créent une nouvelle manière d’écrire des composants réutilisables ; on en
@@ -330,7 +370,9 @@ Quelques ressources pour aller plus loin :
   : une très bonne introduction aux HOC ;
 * [Why The Hipsters Recompose Everything](https://medium.com/javascript-inside/why-the-hipsters-recompose-everything-23ac08748198)
   : une introduction sympa à Recompose (semble un peu datée…).
+* [La documentation de React sur les *render props*](https://reactjs.org/docs/render-props.html)
+* [Les patterns Provider & Higher-Order Component avec React](/fr/articles/js/react/higher-order-component/#le-pattern-higher-order-component) sur Putain de code
 
-_Cet article est la traduction en français de mon article initialement en
+_Cet article est (pour la plus grande partie) la traduction en français de mon article initialement en
 anglais disponible sur mon blog :
 [Create reusable high-order React components with Recompose](https://blog.castiel.me/posts/006-reusable-hoc-with-recompose.html)._
