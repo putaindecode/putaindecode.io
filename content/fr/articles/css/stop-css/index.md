@@ -284,7 +284,7 @@ prendre le contrôle sur le styling de vos composants, tout en apportant le
 confort d'un langage offrant naturellement de nombreux avantages. Si vous êtes
 bloqués avec CSS, partez sur les CSS modules ou la méthologie BEM selon vos
 possibilités. Le but, c'est d'éliminer les [7 maux de
-CSS](https://github.com/necolas/react-native-web/blob/master/docs/guides/style.md).
+CSS](https://github.com/necolas/react-native-web/blob/master/website/guides/style.md).
 
 Bisous bisous.
 
