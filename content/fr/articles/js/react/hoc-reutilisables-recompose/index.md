@@ -1,5 +1,5 @@
 ---
-date: "2018-03-01"
+date: "2018-03-13"
 title: "Écrire des high-order components réutilisables avec Recompose"
 tags:
   - javascript
