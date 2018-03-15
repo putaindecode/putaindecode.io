@@ -9,7 +9,7 @@
   jumbotron: "is a place where you can read (and write) about best coding practices."
   jumbotron2: "High quality content, reviewed by the community."
   i18nBanner:
-    invite: "Maybe you would be interested by our content in english?"
+    invite: "Maybe you would be interested by our content in English?"
     yes: "Yes, please"
     hide: "No thanks"
     hide2: "Désolé, je ne comprends pas"
@@ -57,7 +57,7 @@
   forumLabel: "Forum"
   PageError:
     title: "Page not found 😱"
-    contentMissing: "The content your are looking for does not exist!"
+    contentMissing: "The content you are looking for does not exist!"
     report: "If you think that is a mistake, do not hesitate to "
     reportLink: "report it"
   disqus:
