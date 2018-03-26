@@ -1,0 +1,19 @@
+{
+  "twitter": "scastiel",
+  "fr": {
+    "bio": {
+      "short": "Développeur front-end expatrié à Montréal",
+      "long": [
+        "Passionné par le développement front-end, notamment React, mais aussi par tout ce qui touche à la blockchain et aux cryptomonnaies, à la photographie…"
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Frontend developer, expatriate in Montréal",
+      "long": [
+        "Passionate about frontend development, in particular by React, but also by everything related to blockchain and cryptocurrencies, photography…"
+      ]
+    }
+  }
+}
