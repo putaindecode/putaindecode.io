@@ -110,7 +110,7 @@ bouches était juste. J'ai donc arrêté un moment, sans pour autant fermer l'AE
 l'AE est intéressante. J'ai laissé dormir le truc.
 
 Puis par la suite, [le CDI étant ce qu'il
-est](http://viserlalune.com/blog/et-si-le-cdi-etait-une-connerie/) avec ses bons
+est](https://vincent.jousse.org/blog/et-si-le-cdi-etait-une-connerie/) avec ses bons
 et surtout ses mauvais côtés, un jour après que le projet sur lequel j'ai été
 embauché soit jeté à la poubelle et que je doive me rabattre sur d'autres tâches
 qui ne m'amusaient plus du tout, j'ai décidé de démissionner. Mais bon, c'était
