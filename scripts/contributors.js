@@ -16,10 +16,12 @@ const glob = asyncify(require("glob"));
 const readFile = asyncify(fs.readFile);
 const writeFile = asyncify(fs.writeFile);
 
-//
 const topContribMonths = 6;
 const authorsFiles = "content/authors/*.json";
 const contributorsFile = "cache/contributors.json";
+
+const debug = console.log;
+// const debug = () => {}
 
 // https://stackoverflow.com/a/44474536/988941
 const gitExec = command =>
@@ -257,6 +259,8 @@ async function totalContributions() {
       `${sha.trim()}..HEAD`
   );
 
+  debug("totalContributions", "\n", stdout);
+
   stdout
     .trim("\n")
     .split("\n")
@@ -286,6 +290,8 @@ async function recentContributions() {
     `--since "${since.toISOString()}"`;
 
   const stdout = await gitExec(command.split(" "));
+
+  debug("recentContributions", "\n", stdout);
 
   stdout
     .trim("\n")
@@ -317,6 +323,8 @@ async function filesContributions() {
           file +
           " | git shortlog --summary --numbered --no-merges --email"
       );
+
+      // debug("filesContributions", file, "\n", stdout);
 
       if (stdout) {
         results.files[file] = {};
