@@ -5,7 +5,7 @@ import color from "chalk";
 import { denodeify as asyncify } from "promise";
 import pLimit from "p-limit";
 
-import GithubApi from "github";
+import GithubApi from "@octokit/rest";
 
 import logger from "nano-logger";
 
@@ -58,7 +58,7 @@ const githubApi = new GithubApi({
 
 // @todo get user/repo from git origin
 const repoMetas = {
-  user: "putaindecode",
+  owner: "putaindecode",
   repo: "putaindecode.io"
 };
 
@@ -99,10 +99,10 @@ function sortObjectByKeys(obj) {
   return newObj;
 }
 
-async function getContributorFromGitHub(user) {
+async function getContributorFromGitHub(username) {
   try {
-    const githubUser = await asyncify(githubApi.user.getFrom)({ user });
-    // log("New contributor:", githubUser.login)
+    const { data: githubUser } = await githubApi.users.getForUser({ username });
+    // log("New contributor:", githubUser.login);
     return {
       // see what's available here
       // https://developer.github.com/v3/users/
@@ -118,10 +118,12 @@ async function getContributorFromGitHub(user) {
       hireable: githubUser.hireable
     };
   } catch (err) {
-    isGithubDown(err);
+    if (err.code === 404) {
+      log("Fail for ", username, ". Username has probably been updated.");
+    } else isGithubDown(err);
     return {
-      login: user,
-      name: user
+      login: username,
+      name: username
     };
   }
 }
@@ -152,6 +154,8 @@ async function contributorsMap() {
       loginCache[author] = results.map[author];
     })
   );
+
+  // log("loginCache", loginCache);
 
   const stdout = await exec(
     "git log --use-mailmap --pretty=format:%aE::%an | sort | uniq"
@@ -190,24 +194,28 @@ async function contributorsMap() {
       const out = await exec(
         "git log --max-count=1 --pretty=format:%H --author=" + email
       );
-      // log("- New contibutor update in progress", email)
+      // log("- New contibutor update in progress", email, out);
       let contributor;
       try {
-        const contributorCommit = await asyncify(githubApi.repos.getCommit)({
+        const contributorCommit = await githubApi.repos.getCommit({
           ...repoMetas,
           sha: out
         });
 
-        if (contributorCommit && contributorCommit.author) {
-          if (loginCache[contributorCommit.author.login]) {
-            contributor = loginCache[contributorCommit.author.login];
-            log("Contributor already in cache", contributorCommit.author.login);
+        // log("contributorCommit", contributorCommit);
+        if (
+          contributorCommit &&
+          contributorCommit.data &&
+          contributorCommit.data.author
+        ) {
+          const author = contributorCommit.data.author;
+          if (loginCache[author.login]) {
+            contributor = loginCache[author.login];
+            log("Contributor already in cache", author.login);
           } else {
-            contributor = await getContributorFromGitHub(
-              contributorCommit.author.login
-            );
-            loginCache[contributorCommit.author.login] = contributor;
-            log("Contributor added to cache", contributorCommit.author.login);
+            contributor = await getContributorFromGitHub(author.login);
+            loginCache[author.login] = contributor;
+            log("Contributor added to cache", author.login);
           }
         } else {
           logError(
@@ -215,9 +223,11 @@ async function contributorsMap() {
               author.name +
               " <" +
               author.email +
-              `> (no commit in ${repoMetas.user}/${repoMetas.repo})`
+              `> (no commit in ${repoMetas.owner}/${repoMetas.repo})`
           );
         }
+
+        // log("contributor", contributor);
 
         if (contributor) {
           if (!Object.keys(contributor).length) {

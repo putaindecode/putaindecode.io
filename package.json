@@ -2,8 +2,7 @@
   "private": true,
   "name": "putaindecode.io",
   "homepage": "http://putaindecode.io",
-  "authors":
-    "https://github.com/putaindecode/putaindecode.io/graphs/contributors",
+  "authors": "https://github.com/putaindecode/putaindecode.io/graphs/contributors",
   "repository": "https://github.com/putaindecode/putaindecode.io.git",
   "license": "MIT",
   "dependencies": {
@@ -29,6 +28,7 @@
     "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {
+    "@octokit/rest": "^15.2.6",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^8.0.0",
@@ -50,7 +50,6 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.1",
     "git-exec-and-restage": "^1.0.1",
-    "github": "^0.2.3",
     "glob": "^5.0.5",
     "husky": "^0.14.3",
     "js-yaml": "^3.2.7",
@@ -66,8 +65,7 @@
     "postcss-cssnext": "^2.2.0",
     "postcss-import": "^7.0.0",
     "postcss-loader": "^1.3.3",
-    "prettier":
-      "https://github.com/prettier/prettier.git#c0aaa0fa523a0cd4cf112fa5e53efe35a62c454b",
+    "prettier": "https://github.com/prettier/prettier.git#c0aaa0fa523a0cd4cf112fa5e53efe35a62c454b",
     "promise": "^7.0.0",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.0.0-beta.5",
@@ -97,7 +95,9 @@
     "format": "prettier --write \"**/*.{js,json,css,md}\""
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["git-exec-and-restage prettier --write"]
+    "*.{js,json,css,md}": [
+      "git-exec-and-restage prettier --write"
+    ]
   },
   "prettier": {
     "parser": "flow"
@@ -105,8 +105,7 @@
   "phenomic": {
     "CNAME": true
   },
-  "#babel":
-    "webpack-(development|production) are useful for webpack 2, otherwise use development|production",
+  "#babel": "webpack-(development|production) are useful for webpack 2, otherwise use development|production",
   "babel": {
     "env": {
       "test": {
@@ -169,7 +168,9 @@
     }
   },
   "eslintConfig": {
-    "extends": ["eslint-config-i-am-meticulous/react"],
+    "extends": [
+      "eslint-config-i-am-meticulous/react"
+    ],
     "rules": {
       "no-unused-vars": 0,
       "import/no-unresolved": 0,
