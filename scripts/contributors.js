@@ -301,7 +301,7 @@ async function recentContributions() {
 
   const stdout = await gitExec(command.split(" "));
 
-  debug("recentContributions", "\n", stdout);
+  debug("recentContributions", command, "\n", stdout);
 
   stdout
     .trim("\n")
