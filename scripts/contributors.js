@@ -326,7 +326,9 @@ async function filesContributions() {
           .forEach(line => {
             line = line.trim();
             const login = results.mapByEmail[line.match(emailRE)[1]];
-            results.files[file][login] = line.match(commitsRE)[1];
+            results.files[file][login] =
+              (results.files[file][login] || 0) +
+              parseInt(line.match(commitsRE)[1], 10);
           });
       }
     })
