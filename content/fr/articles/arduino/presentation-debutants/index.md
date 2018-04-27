@@ -80,7 +80,7 @@ Le programme principal consiste en deux fonctions (ce sera toujours le cas), don
 * void setup()
 * void loop()
 
-setup() est appelée une seule vois, au moment de la mise sous tension de la carte.
+setup() est appelée une seule fois, au moment de la mise sous tension de la carte.
 loop() est appelée, comme son nom l'indique, en boucle. Elle est lancée après setup(), et tourne à fond à l'infini (tant que la carte est alimentée en tout cas).
 
 Ah j'oubliais: le langage de programmation utilisé est au choix le C, ou le C++. J'ai un faible pour le C++ pour sa relative simplicité par rapport au C pur.
