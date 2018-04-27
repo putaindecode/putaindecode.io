@@ -65,7 +65,7 @@ Ok, ok, les informations sont de très bas niveau, vu que c'est un signal soit d
 
 Un bit, quoi. Tout juste de quoi faire clignoter un LED (**spoiler** : c'est ce que nous allons faire tout de suite).
 
-Nous verrons plus tard que des protocoles de communication sont à notre disposition pour ne pas de taper l'écriture des bits un par un sur une pin (c'est très sexuel comme terminologie hein).
+Nous verrons plus tard que des protocoles de communication sont à notre disposition pour ne pas se taper l'écriture des bits un par un sur une pin (c'est très sexuel comme terminologie hein).
 
 **Mais vous l'aurez compris, globalement, on va être dans de la programmation de bas niveau.**
 
