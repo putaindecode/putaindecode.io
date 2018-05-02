@@ -169,7 +169,7 @@ Par exemple, si une photorésistance est branchée entre le +5V et la pin A0, on
 int ambientBrightness = analogRead(A0);
 ```
 
-Donc pour allumer la LED uniquement si le bouton est pressé **ET** que la luminosité ambiante est suffisemment basse (seuil à déterminer empiriquement, disons 600):
+Donc pour allumer la LED uniquement si le bouton est pressé **ET** que la luminosité ambiante est suffisamment basse (seuil à déterminer empiriquement, disons 600):
 
 ```C
 int ledPin = 13;   // LED sur la pin 13
