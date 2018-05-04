@@ -9,7 +9,6 @@ import Loading from "../../components/Loading";
 import getLang from "../../i18n/getLang";
 import getI18n from "../../i18n/get";
 import LatestPosts from "../../components/LatestPosts";
-import TopContributors from "../../components/TopContributors";
 
 import classes from "./styles.css";
 
@@ -41,8 +40,6 @@ export default class Homepage extends Component {
     })
       .filter(post => post.__filename.startsWith(`${locale}/`))
       .slice(0, numberOfLatestPosts);
-
-    const { recentContributions } = this.context.metadata.contributors;
 
     return (
       <div>
@@ -125,8 +122,6 @@ export default class Homepage extends Component {
             </div>
           </div>
         )}
-
-        <TopContributors recentContributions={recentContributions} />
       </div>
     );
   }

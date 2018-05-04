@@ -85,19 +85,10 @@ Autrement, le site fonctionnera en mode dégradé.**
 
 ## Mise en production
 
-La commande suivante (lorsque vous avez les droits nécessaires) va construire le
-site en version optimisée, et le publier (mise à jour de la branche `gh-pages`,
-qui, grâce à GitHub, suffit à mettre en ligne le site).
+Rien à faire, ça se débrouille tout seul.
 
-```console
-$ npm run deploy
-```
-
-**Cela dit, tous les commits dans la branche `master` provoqueront une mise en
-production automatique via [Travis-CI](https://travis-ci.org/).**
-
-_Note : pour commiter sans provoquer un `deploy`, il suffit d'ajouter `[ci
-skip]` dans votre message de commit._
+**Tous les commits dans la branche `master` provoqueront une mise en
+production automatique.**
 
 - - -
 

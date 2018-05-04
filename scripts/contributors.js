@@ -20,34 +20,8 @@ const topContribMonths = 6;
 const authorsFiles = "content/authors/*.json";
 const contributorsFile = "cache/contributors.json";
 
-const debug = console.log;
-// const debug = () => {}
-
-// https://stackoverflow.com/a/44474536/988941
-const gitExec = command =>
-  new Promise((resolve, reject) => {
-    const thread = spawn("git", command, {
-      stdio: ["inherit", "pipe", "pipe"]
-    });
-    const stdOut = [];
-    const stdErr = [];
-
-    thread.stdout.on("data", data => {
-      stdOut.push(data.toString("utf8"));
-    });
-
-    thread.stderr.on("data", data => {
-      stdErr.push(data.toString("utf8"));
-    });
-
-    thread.on("close", () => {
-      if (stdErr.length) {
-        reject(stdErr.join(""));
-        return;
-      }
-      resolve(stdOut.join());
-    });
-  });
+// const debug = console.log;
+const debug = () => {};
 
 const githubApi = new GithubApi({
   version: "3.0.0",
@@ -288,38 +262,6 @@ async function totalContributions() {
   return true;
 }
 
-async function recentContributions() {
-  results.recentContributions = {};
-
-  // get recent contributions for the last X months
-  const since = new Date();
-  since.setMonth(since.getMonth() - topContribMonths);
-
-  const command =
-    `shortlog --no-merges --summary --numbered --email ` +
-    `--since "${since.toISOString()}"`;
-
-  const stdout = await gitExec(command.split(" "));
-
-  debug("recentContributions", "\n", stdout);
-
-  stdout
-    .trim("\n")
-    .split("\n")
-    .forEach(function(line) {
-      line = line.trim();
-      const login = results.mapByEmail[line.match(emailRE)[1]];
-      const contributions = parseInt(line.match(commitsRE)[1], 10);
-      if (!results.recentContributions[login]) {
-        results.recentContributions[login] = contributions;
-      } else {
-        results.recentContributions[login] += contributions;
-      }
-    });
-
-  return true;
-}
-
 async function filesContributions() {
   // files contributions
   results.files = {};
@@ -414,9 +356,6 @@ async function filesContributions() {
 
       await totalContributions();
       log("✓ Total contributions done");
-
-      await recentContributions();
-      log("✓ Recent contributions done");
 
       await filesContributions();
       log("✓ Contributions per files done");
