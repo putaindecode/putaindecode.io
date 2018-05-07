@@ -6,7 +6,7 @@ tags:
   - function
   - closure
 authors:
-  - leoderbois
+  - leolelego
 reviewers:
   - bloodyowl
   - MoOx

@@ -5,20 +5,23 @@ import color from "chalk";
 import { denodeify as asyncify } from "promise";
 import pLimit from "p-limit";
 
-import GithubApi from "github";
+import GithubApi from "@octokit/rest";
 
 import logger from "nano-logger";
 
+const spawn = require("child_process").spawn;
 const exec = asyncify(require("child_process").exec);
 const glob = asyncify(require("glob"));
 
 const readFile = asyncify(fs.readFile);
 const writeFile = asyncify(fs.writeFile);
 
-//
 const topContribMonths = 6;
 const authorsFiles = "content/authors/*.json";
 const contributorsFile = "cache/contributors.json";
+
+// const debug = console.log;
+const debug = () => {};
 
 const githubApi = new GithubApi({
   version: "3.0.0",
@@ -29,7 +32,7 @@ const githubApi = new GithubApi({
 
 // @todo get user/repo from git origin
 const repoMetas = {
-  user: "putaindecode",
+  owner: "putaindecode",
   repo: "putaindecode.io"
 };
 
@@ -70,10 +73,10 @@ function sortObjectByKeys(obj) {
   return newObj;
 }
 
-async function getContributorFromGitHub(user) {
+async function getContributorFromGitHub(username) {
   try {
-    const githubUser = await asyncify(githubApi.user.getFrom)({ user });
-    // log("New contributor:", githubUser.login)
+    const { data: githubUser } = await githubApi.users.getForUser({ username });
+    // log("New contributor:", githubUser.login);
     return {
       // see what's available here
       // https://developer.github.com/v3/users/
@@ -89,10 +92,12 @@ async function getContributorFromGitHub(user) {
       hireable: githubUser.hireable
     };
   } catch (err) {
-    isGithubDown(err);
+    if (err.code === 404) {
+      log("Fail for ", username, ". Username has probably been updated.");
+    } else isGithubDown(err);
     return {
-      login: user,
-      name: user
+      login: username,
+      name: username
     };
   }
 }
@@ -123,6 +128,8 @@ async function contributorsMap() {
       loginCache[author] = results.map[author];
     })
   );
+
+  // log("loginCache", loginCache);
 
   const stdout = await exec(
     "git log --use-mailmap --pretty=format:%aE::%an | sort | uniq"
@@ -161,24 +168,28 @@ async function contributorsMap() {
       const out = await exec(
         "git log --max-count=1 --pretty=format:%H --author=" + email
       );
-      // log("- New contibutor update in progress", email)
+      // log("- New contibutor update in progress", email, out);
       let contributor;
       try {
-        const contributorCommit = await asyncify(githubApi.repos.getCommit)({
+        const contributorCommit = await githubApi.repos.getCommit({
           ...repoMetas,
           sha: out
         });
 
-        if (contributorCommit && contributorCommit.author) {
-          if (loginCache[contributorCommit.author.login]) {
-            contributor = loginCache[contributorCommit.author.login];
-            log("Contributor already in cache", contributorCommit.author.login);
+        // log("contributorCommit", contributorCommit);
+        if (
+          contributorCommit &&
+          contributorCommit.data &&
+          contributorCommit.data.author
+        ) {
+          const author = contributorCommit.data.author;
+          if (loginCache[author.login]) {
+            contributor = loginCache[author.login];
+            log("Contributor already in cache", author.login);
           } else {
-            contributor = await getContributorFromGitHub(
-              contributorCommit.author.login
-            );
-            loginCache[contributorCommit.author.login] = contributor;
-            log("Contributor added to cache", contributorCommit.author.login);
+            contributor = await getContributorFromGitHub(author.login);
+            loginCache[author.login] = contributor;
+            log("Contributor added to cache", author.login);
           }
         } else {
           logError(
@@ -186,9 +197,11 @@ async function contributorsMap() {
               author.name +
               " <" +
               author.email +
-              `> (no commit in ${repoMetas.user}/${repoMetas.repo})`
+              `> (no commit in ${repoMetas.owner}/${repoMetas.repo})`
           );
         }
+
+        // log("contributor", contributor);
 
         if (contributor) {
           if (!Object.keys(contributor).length) {
@@ -230,6 +243,8 @@ async function totalContributions() {
       `${sha.trim()}..HEAD`
   );
 
+  debug("totalContributions", "\n", stdout);
+
   stdout
     .trim("\n")
     .split("\n")
@@ -241,38 +256,6 @@ async function totalContributions() {
         results.contributions[login] = contributions;
       } else {
         results.contributions[login] += contributions;
-      }
-    });
-
-  return true;
-}
-
-async function recentContributions() {
-  results.recentContributions = {};
-
-  // get recent contributions for the last X months
-  const since = new Date();
-  since.setMonth(since.getMonth() - topContribMonths);
-
-  const command =
-    `git shortlog --no-merges --summary --numbered --email ` +
-    `--since "${since.toISOString()}"` +
-    // http://stackoverflow.com/questions/15564185/#15566068
-    ` < /dev/tty`;
-
-  const stdout = await exec(command);
-
-  stdout
-    .trim("\n")
-    .split("\n")
-    .forEach(function(line) {
-      line = line.trim();
-      const login = results.mapByEmail[line.match(emailRE)[1]];
-      const contributions = parseInt(line.match(commitsRE)[1], 10);
-      if (!results.recentContributions[login]) {
-        results.recentContributions[login] = contributions;
-      } else {
-        results.recentContributions[login] += contributions;
       }
     });
 
@@ -293,6 +276,8 @@ async function filesContributions() {
           " | git shortlog --summary --numbered --no-merges --email"
       );
 
+      // debug("filesContributions", file, "\n", stdout);
+
       if (stdout) {
         results.files[file] = {};
         stdout
@@ -301,7 +286,9 @@ async function filesContributions() {
           .forEach(line => {
             line = line.trim();
             const login = results.mapByEmail[line.match(emailRE)[1]];
-            results.files[file][login] = line.match(commitsRE)[1];
+            results.files[file][login] =
+              (results.files[file][login] || 0) +
+              parseInt(line.match(commitsRE)[1], 10);
           });
       }
     })
@@ -369,9 +356,6 @@ async function filesContributions() {
 
       await totalContributions();
       log("✓ Total contributions done");
-
-      await recentContributions();
-      log("✓ Recent contributions done");
 
       await filesContributions();
       log("✓ Contributions per files done");

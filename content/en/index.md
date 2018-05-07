@@ -9,4 +9,4 @@ If you are a developer that loves what you do, you are already part of it.
 
 We like to keep things simple, so contributing to this project should be easy.
 
-[There is a lot of different way to help.](/en/contributing/)
+[There are a lot of different ways to help.](/en/contributing/)

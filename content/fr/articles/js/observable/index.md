@@ -5,7 +5,7 @@ tags:
   - Observable
   - JavaScript
 authors:
-  - wyeo
+  - MrWi2l
 ---
 
 En JavaScript, nous pouvons exécuter du code de manière synchrone (bloquant) ou
@@ -71,7 +71,7 @@ interface pendant que la requête réseau tourne.
 function logValue(value) { console.log(value) }
 function logError(err) { console.error(err) }
 
-fetch("https://api.github.com/users/wyeo")
+fetch("https://api.github.com/users/MrWi2l")
   .then(res => res.json())
   .then(logValue) // Log le payload JSON lorsque la requête est terminée
   .catch(logError) // Lance une erreur dans la console si quelque chose s'est mal passé

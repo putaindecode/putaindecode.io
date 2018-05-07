@@ -82,7 +82,7 @@ d'autres ressources, dont notamment le livre [Vim pour les
 humains](https://vimebook.com/), le font très bien en douceur.
 
 C'est d'ailleur grâce à ce livre que je me suis lancé. Je tiens donc à remercier
-[Vincent Jousse](http://viserlalune.com/) pour avoir pris le temps d'écrire cet
+[Vincent Jousse](https://vincent.jousse.org/) pour avoir pris le temps d'écrire cet
 ouvrage.
 
 Profitez de cet ouvrage, en plus [le prix est

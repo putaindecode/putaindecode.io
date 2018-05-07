@@ -28,6 +28,7 @@
     "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {
+    "@octokit/rest": "^15.2.6",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^8.0.0",
@@ -49,7 +50,6 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.1",
     "git-exec-and-restage": "^1.0.1",
-    "github": "^0.2.3",
     "glob": "^5.0.5",
     "husky": "^0.14.3",
     "js-yaml": "^3.2.7",
@@ -90,8 +90,6 @@
     "prebuild": "npm run contributors",
     "pretest": "npm run lint",
     "test": "npm run build",
-    "predeploy": "npm run test",
-    "deploy": "./scripts/deploy.sh",
     "format": "prettier --write \"**/*.{js,json,css,md}\""
   },
   "lint-staged": {
