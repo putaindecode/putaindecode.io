@@ -90,8 +90,6 @@
     "prebuild": "npm run contributors",
     "pretest": "npm run lint",
     "test": "npm run build",
-    "predeploy": "npm run test",
-    "deploy": "./scripts/deploy.sh",
     "format": "prettier --write \"**/*.{js,json,css,md}\""
   },
   "lint-staged": {

@@ -22,11 +22,3 @@ env:
   global:
     # GITHUB_TOKEN
     - secure: RtRXfa7kyNqgH5APYsWegU4OKmZ5VmDpKyTCXDHumoeRYxKLy5Durewwq6/eFt4itDycPFatOJ6aeBM8g8g7Y/uKYN85d0NVp7vZI/1X+haYFtEYYiEYOY8m0FwqMPYoCZTFMNEv5r6W0PCjQNiiB2Hz7CFsb38i4VrqFFgrYHQ=
-    - GIT_DEPLOY_REPO=https://$GITHUB_TOKEN@github.com/putaindecode/putaindecode.io.git
-
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: ./scripts/deploy.sh
-  on:
-    branch: master
