@@ -1,15 +1,13 @@
 ---
-date: "2018-04-26"
+date: "2018-05-07"
 title: "Programmation Arduino: présentation pour les débutants"
 tags:
   - arduino
-  - introduction
   - C++
 authors:
   - toxnico
 header:
   image: arduino_logo.png
-  #linearGradient: rgba(255,255,255,0.5), rgba(255,255,255,0.5)
   credit: https://www.arduino.cc/
 ---
 
