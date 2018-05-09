@@ -8,8 +8,6 @@ tags:
   - javascript
 authors:
   - jeans11
-header:
-  linearGradient: #DD4B39, #DD4B39
 ---
 
 La mise en oeuvre d’applications web, mobile, etc implique bien
@@ -75,7 +73,7 @@ Comme tous les langages, Clojure comporte des primitives:
 #### Une histoire de parenthèses
 
 Clojure reprend la syntaxe de LISP, c’est-à-dire que le langage s’écrit en
-utilisant ses propres structures de données (homoiconicité). Une opérations 
+utilisant ses propres structures de données (homoiconicité). Une opération
 est donc faite de liste:
 
 ```clojure
@@ -113,9 +111,9 @@ En Clojure, les appels de fonctions se feront toujours de cette façon:
 => true
 ```
 
-`+`, `*`, `-`, `/` sont avant tout des fonctions.
-Même si la syntaxe utilise des listes du langage,
-il y a une différence entre une opération et une liste.
+En Clojure, les opérateurs `+`, `*`, `-`, `/` sont avant tout des fonctions.
+Même si la syntaxe est faite de listes, il y a une différence syntaxique entre
+un appel de fonction et la définition d'une liste
 
 ```clojure
 ;Une opération
@@ -172,7 +170,7 @@ pikachu
 `let` est une fonction qui définit des variables temporaires seulement dans son
 scope local (jusqu'à la fin de la parenthèse fermante). À l'intérieur du `let`,
 la variable `pikachu` sera toujours égale à `PIKACHU`, à l'extérieur elle
-prendra la valeur `pikachu`. Le code, ci-dessous, provoque une erreur:
+prendra la valeur `pikachu`. Le code ci-dessous provoque une erreur:
 
 ```clojure
 (let [raichu "Raichu"]
