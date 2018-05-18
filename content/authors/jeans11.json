@@ -3,13 +3,13 @@
   "fr": {
     "bio": {
       "short": "Développeur full stack @ BeOpinion.",
-      "long": "Développeur full stack @ BeOpinion."
+      "long": ["Développeur full stack @ BeOpinion."]
     }
   },
   "en": {
     "bio": {
       "short": "Full stack developer @ BeOpinion",
-      "long": "Full stack developer @ BeOpinion"
+      "long": ["Full stack developer @ BeOpinion"]
     }
   }
 }
