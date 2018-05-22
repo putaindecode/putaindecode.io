@@ -5,7 +5,7 @@ tags:
   - Observable
   - JavaScript
 authors:
-  - MrWi2l
+  - wyeo
 ---
 
 La [programmation réactive](https://www.reactivemanifesto.org/fr) est un paradigme de programmation dont le concept repose sur l'émission de données depuis une ou plusieurs sources (producteurs) à destinations d'autres éléments appelés *consommateurs*. Elle repose sur le design pattern [Observable - Observer](http://design-patterns.fr/observateur).
