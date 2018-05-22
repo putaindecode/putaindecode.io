@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2018-05-22"
 title: "Introduction à Clojure(Script)"
 tags:
   - clojure
