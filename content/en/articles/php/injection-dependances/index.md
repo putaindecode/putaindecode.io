@@ -18,9 +18,9 @@ and let's move shit around!
 If you're into object-oriented programming, I'd bet you've stumbled upon the
 word before. As for us PHP folks, we mainly started to hear about it with the
 advent of Symfony, which is now the main web framework for the language. Fabien
-Potencier, its creator and lead developer, explains the concept on [his
-blog](http://fabien.potencier.org/article/11/what-is-dependency-injection) by
-quoting the following definition:
+Potencier, its creator and lead developer, explains the concept on
+[his blog](http://fabien.potencier.org/article/11/what-is-dependency-injection)
+by quoting the following definition:
 
 > _Dependency Injection is where components are given their dependencies through
 > their constructors, methods, or directly into fields._
@@ -117,7 +117,7 @@ class Person
 ```
 
 Dependency injection is just that. If a class needs an instance of another
-class, should it be in its constructor or another method (like a *setter*), said
+class, should it be in its constructor or another method (like a _setter_), said
 method should directly receive this instance as a parameter and absolutely not
 dwelve into the specifics of instantiating it by itself. Doing so helps writing
 **decoupled** code, avoiding interdependency between its components, which makes
@@ -191,7 +191,7 @@ wouldn't.
 
 ## Yes, an interface has a purpose
 
-In your white-out student Friday mornings (*cf. supra*), you may find back some
+In your white-out student Friday mornings (_cf. supra_), you may find back some
 scattered memories of a lesson on **interfaces**. If all you can remember is
 that "an empty class is freakin' useless", read on.
 
@@ -323,7 +323,7 @@ container library you can use in your own project.
 If you're a PHP developer, I hope I could show you how to write more
 maintenable, elegant code by making use of dependency injection. If you're not,
 be aware that this concept is quite common in object-oriented programming in
-general - after all, [it's even in
-Angular](https://docs.angularjs.org/guide/di).
+general - after all,
+[it's even in Angular](https://docs.angularjs.org/guide/di).
 
 Happy coding, and remember, pushing to production on Friday is bad. Now, go!

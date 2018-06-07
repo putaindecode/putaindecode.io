@@ -67,13 +67,13 @@ gulp.task("glyphicons", function() {
       iconfontCss({
         fontName: "icons", // nom de la fonte, doit être identique au nom du plugin iconfont
         targetPath: "../../styles/shared/icons.css", // emplacement de la css finale
-        fontPath: "../fonts/" // emplacement des fontes finales
-      })
+        fontPath: "../fonts/", // emplacement des fontes finales
+      }),
     )
     .pipe(
       iconfont({
-        fontName: "icons" // identique au nom de iconfontCss
-      })
+        fontName: "icons", // identique au nom de iconfontCss
+      }),
     )
     .pipe(gulp.dest("src/assets/fonts"));
 });
@@ -97,16 +97,16 @@ gulp.task("glyphicons", function() {
       iconfontCss({
         fontName: "icons", // nom de la fonte, doit être identique au nom du plugin iconfont
         targetPath: "../../styles/shared/icons.css", // emplacement de la css finale
-        fontPath: "../fonts/" // emplacement des fontes finales
-      })
+        fontPath: "../fonts/", // emplacement des fontes finales
+      }),
     )
     .pipe(
       iconfont({
-        fontName: "icons" // identique au nom de iconfontCss
-      })
+        fontName: "icons", // identique au nom de iconfontCss
+      }),
     )
     .pipe(gulp.dest("src/assets/fonts"));
 });
 ```
 
-Et voilà, on est bon. On peut transformer nos _svg_ en *font*. \o/
+Et voilà, on est bon. On peut transformer nos _svg_ en _font_. \o/

@@ -17,7 +17,7 @@ const Layout = ({ children, params }, context) => {
         <Helmet
           meta={[
             { property: "og:site_name", content: i18n.title },
-            { name: "twitter:site", content: `@${i18n.twitterUsername}` }
+            { name: "twitter:site", content: `@${i18n.twitterUsername}` },
           ]}
         />
         <Header />
@@ -30,12 +30,12 @@ const Layout = ({ children, params }, context) => {
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  params: PropTypes.object
+  params: PropTypes.object,
 };
 
 Layout.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Layout;

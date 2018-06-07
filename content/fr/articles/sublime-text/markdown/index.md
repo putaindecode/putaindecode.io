@@ -17,13 +17,13 @@ n'avait rien à voir avec celui actuel, et je me retrouve à personnaliser mon
 Sublime Text pour Markdown car ne souhaitant plus utiliser autre chose que
 celui-ci pour l'écriture.
 
-Il y a certes le très bon [Mou.app](http://mouapp.com/) (`$ brew cask install
-mou`) sur Mac OS X mais comme indiqué, il n'est que pour Mac, or il m'arrive
-parfois d'être sur Windows. De plus, les éditeurs en ligne comme
-[stackedit.io](https://stackedit.io/) ou [dillinger.io](http://dillinger.io/)
-sont pratiques mais comme j'ai tendance à stocker mes brouillons sur
-[dropbox](https://db.tt/nTkiSUb), ces outils vous demandent l'accès de toute
-votre dropbox, chose que je n'aime pas spécialement.
+Il y a certes le très bon [Mou.app](http://mouapp.com/)
+(`$ brew cask install mou`) sur Mac OS X mais comme indiqué, il n'est que pour
+Mac, or il m'arrive parfois d'être sur Windows. De plus, les éditeurs en ligne
+comme [stackedit.io](https://stackedit.io/) ou
+[dillinger.io](http://dillinger.io/) sont pratiques mais comme j'ai tendance à
+stocker mes brouillons sur [dropbox](https://db.tt/nTkiSUb), ces outils vous
+demandent l'accès de toute votre dropbox, chose que je n'aime pas spécialement.
 
 Bref, tout ça pour dire que tout centraliser sur Sublime Text et utiliser
 dropbox pour écrire des articles me semble une pratique plutôt agréable.
@@ -78,16 +78,16 @@ Bien, passons à la suite.
 ## Markdown Preview
 
 Notre cher [@revolunet](https://twitter.com/revolunet) a fait un excellent
-plugin Markdown pour Sublime Text: [Sublime Text Markdown
-Preview](https://github.com/revolunet/sublimetext-markdown-preview). Celui-ci
-permet d'avoir un rendu de votre Markdown en `.html`. Vous pouvez soit compiler
-votre Markdown pour créer un fichier HTML, soit l'ouvrir directement dans votre
-navigateur.
+plugin Markdown pour Sublime Text:
+[Sublime Text Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview).
+Celui-ci permet d'avoir un rendu de votre Markdown en `.html`. Vous pouvez soit
+compiler votre Markdown pour créer un fichier HTML, soit l'ouvrir directement
+dans votre navigateur.
 
 Différents formats disponibles :
 
-* Python Markdown
-* Github Flavored Markdown
+- Python Markdown
+- Github Flavored Markdown
 
 Un autre parfait compagnon en somme, qui quant à lui s'occupera de digérer
 l'excellent article que vous êtes en train d'écrire.
@@ -126,10 +126,10 @@ c'est parti.
 ## Bonus : Markdown Extended
 
 Il est possible que vous n'aimiez pas forcément MarkdownEditing, et dans ce cas
-je vous propose un autre plugin pas inintéressant non plus s'appelant [Markdown
-Extended](https://github.com/jonschlinkert/sublime-markdown-extended). Il vous
-permettra d'avoir la bonne coloration syntaxique lorsque vous écrivez du code
-dans votre éditeur.
+je vous propose un autre plugin pas inintéressant non plus s'appelant
+[Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended).
+Il vous permettra d'avoir la bonne coloration syntaxique lorsque vous écrivez du
+code dans votre éditeur.
 
 #### Avant
 
@@ -142,8 +142,6 @@ dans votre éditeur.
 Oh et j'oubliais, voici quelques documentations sur Markdown histoire de bien
 l'utiliser :
 
-* [Documentation officielle](http://daringfireball.net/projects/markdown/syntax)
-* [Markdown
-  Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-* [Another Markdown
-  Cheatsheet](http://warpedvisions.org/projects/markdown-cheat-sheet.md)
+- [Documentation officielle](http://daringfireball.net/projects/markdown/syntax)
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [Another Markdown Cheatsheet](http://warpedvisions.org/projects/markdown-cheat-sheet.md)

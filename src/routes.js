@@ -23,7 +23,7 @@ const PageContainer = props => (
       Homepage,
       Post,
       Posts,
-      AdventCalendar
+      AdventCalendar,
     }}
   />
 );

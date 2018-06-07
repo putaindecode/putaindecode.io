@@ -49,11 +49,11 @@ class GoogleAnalyticsTracker extends Component {
 
 GoogleAnalyticsTracker.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  params: PropTypes.object.isRequired
+  params: PropTypes.object.isRequired,
 };
 
 GoogleAnalyticsTracker.contextTypes = {
-  metadata: PropTypes.object.isRequired
+  metadata: PropTypes.object.isRequired,
 };
 
 export default GoogleAnalyticsTracker;

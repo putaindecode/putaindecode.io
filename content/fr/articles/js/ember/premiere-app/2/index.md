@@ -19,21 +19,21 @@ concepts mis en œuvre. Parce que vous le valez bien.
 
 ## Sommaire
 
-* [Édition d'une série](#edition-d-une-serie)
-  * [Routes imbriquées](#routes-imbriquees)
-  * [Outlets](#-code-outlets-code-)
-  * [Liens entre routes](#liens-entre-routes)
-  * [Enregistrement des modifications](#enregistrement-des-modifications)
-  * [Actions sur les transitions](#actions-sur-les-transitions)
-* [Relations avec Ember Data](#relations-avec-ember-data)
-* [Insertion d'un gabarit](#insertion-d-un-gabarit)
-* [Création d'une nouvelle série](#creation-d-une-nouvelle-serie)
-* [Conclusion](#conclusion)
+- [Édition d'une série](#edition-d-une-serie)
+  - [Routes imbriquées](#routes-imbriquees)
+  - [Outlets](#-code-outlets-code-)
+  - [Liens entre routes](#liens-entre-routes)
+  - [Enregistrement des modifications](#enregistrement-des-modifications)
+  - [Actions sur les transitions](#actions-sur-les-transitions)
+- [Relations avec Ember Data](#relations-avec-ember-data)
+- [Insertion d'un gabarit](#insertion-d-un-gabarit)
+- [Création d'une nouvelle série](#creation-d-une-nouvelle-serie)
+- [Conclusion](#conclusion)
 
 ## Édition d'une série
 
 On veut pouvoir basculer depuis la fiche d'une série vers son édition en mode
-*in place*. C'est-à-dire en **remplaçant** la zone de visualisation de cette
+_in place_. C'est-à-dire en **remplaçant** la zone de visualisation de cette
 fiche par sa zone d'édition.
 
 On accède à la fiche en mode visualisation à l'URL `/series/{id}/` et en mode
@@ -58,9 +58,10 @@ Router.map(function() {
 
 Pour que notre nouvelle route affiche la fiche en mode édition, on doit -
 [rappelez-vous](/fr/articles/js/ember/#les-fondamentaux) - impérativement suivre
-les [conventions de
-nommage](http://emberjs.com/guides/concepts/naming-conventions/) et créer un
-gabarit `edit.hbs` dans le répertoire `/app/templates/series/series-item/` :
+les
+[conventions de nommage](http://emberjs.com/guides/concepts/naming-conventions/)
+et créer un gabarit `edit.hbs` dans le répertoire
+`/app/templates/series/series-item/` :
 
 ```html
 <!-- /app/templates/series/series-item/edit.hbs` -->
@@ -98,13 +99,12 @@ sous-route telle que `series.seriesItem.edit`.
 ### `outlets`
 
 La solution est à aller chercher du côté du concept d'`{{outlet}}` défini dans
-l'[article
-précédent](/fr/articles/js/ember/premiere-app/1/#-code-outlet-code-et-routes-imbriquees).
+l'[article précédent](/fr/articles/js/ember/premiere-app/1/#-code-outlet-code-et-routes-imbriquees).
 Un `{{outlet}}` est nécessaire **à chaque fois qu'on définit un niveau
 d'imbrication.** Mais comme on veut quand même continuer à afficher la série à
 l'URL `/series/{@id}/`, on va utiliser la **route implicite**
-`series.seriesItem.index` (cf. [article
-précédent](/fr/articles/js/ember/premiere-app/1/#routes-et-controleurs-implicites))
+`series.seriesItem.index` (cf.
+[article précédent](/fr/articles/js/ember/premiere-app/1/#routes-et-controleurs-implicites))
 et son gabarit, dans lequel on va copier l'ancien contenu de `series-item.hbs`.
 
 ```html
@@ -141,8 +141,8 @@ Et voilà ! L'affichage de l'URL `/series/{@id}/` est inchangé alors que l'URL
 ### Liens entre routes
 
 Pour pouvoir plus facilement basculer en mode édition, on ajoute un lien vers la
-route correspondante grâce à `link-to` (cf. [doc
-officielle](http://emberjs.com/guides/templates/links/)).
+route correspondante grâce à `link-to` (cf.
+[doc officielle](http://emberjs.com/guides/templates/links/)).
 
 ```html
 <!-- /app/templates/series/series-item/index.hbs -->
@@ -160,13 +160,13 @@ Pour pouvoir pointer vers `seriesItem.edit` on aurait donc dû remplacer
 
 On peut désormais éditer notre série. On remarque au passage que la modification
 du titre de la série le met également à jour en temps réel dans la liste des
-séries grâce au _binding_ (cf. [article
-précédent](/fr/articles/js/ember/premiere-app/1/#-em-bindings-em-et-mise-a-jour-des-gabarits)).
+séries grâce au _binding_ (cf.
+[article précédent](/fr/articles/js/ember/premiere-app/1/#-em-bindings-em-et-mise-a-jour-des-gabarits)).
 
 ### Enregistrement des modifications
 
 Nous allons maintenant rendre opérationnels nos deux boutons d'édition _annuler_
-et *valider*. Pour cela, on commence par associer des actions à nos boutons :
+et _valider_. Pour cela, on commence par associer des actions à nos boutons :
 
 ```html
 <!-- /app/templates/series/series-item/edit.hbs` -->
@@ -194,34 +194,34 @@ export default Ember.Route.extend({
         .then(
           function() {
             this.transitionTo("series.seriesItem");
-          }.bind(this)
+          }.bind(this),
         );
     },
 
     cancel: function() {
       this.modelFor("series.seriesItem.edit").rollback();
       this.transitionTo("series.seriesItem");
-    }
-  }
+    },
+  },
 });
 ```
 
 Quelques mots sur ces quelques lignes :
 
-* Dans une `route`, le modèle courant est récupéré via
+- Dans une `route`, le modèle courant est récupéré via
   `this.modelFor('nomRoute')`. Ici, on récupère explicitement le modèle chargé
   automatiquement (par convention) par la route mère `seriesItem`. Notez qu'on
   aurait pu omettre la récupération du modèle complètement car la route mère
   s'en occupe pour nous.
-* Une fois le modèle récupéré, on peut invoquer les méthodes apportées par
+- Une fois le modèle récupéré, on peut invoquer les méthodes apportées par
   [Ember Data][ember-data].
-* Pour un `cancel`, on invoque `rollback()` : toutes les modifications
+- Pour un `cancel`, on invoque `rollback()` : toutes les modifications
   effectuées sont annulées et le modèle est réinitialisé.
-* Pour un `submit`, on invoque un `save()` qui enregistre les modifications
+- Pour un `submit`, on invoque un `save()` qui enregistre les modifications
   apportées au modèle dans le _magasin_
   ([Store](http://emberjs.com/api/data/classes/DS.Store.html)) d'[Ember
   Data][ember-data].
-* Les opérations effectuées sur les modèles sont bien souvent asynchrones
+- Les opérations effectuées sur les modèles sont bien souvent asynchrones
   puisque, dans le cas nominal, elles font intervenir des API REST pour
   enregistrer ou mettre à jour les données depuis un serveur. Dans le cas où
   l'on souhaite attendre la fin du traitement pour effectuer une action (comme
@@ -230,7 +230,7 @@ Quelques mots sur ces quelques lignes :
   contraire, le code serait exécuté avant la fin du traitement et ne permettrait
   pas de proposer un retour utilisateur propre (gestion des cas d'erreurs
   notamment).
-* Les transitions entre routes sont possibles via
+- Les transitions entre routes sont possibles via
   `this.transitionTo('nomRoute')`.
 
 ### Actions sur les transitions
@@ -238,8 +238,8 @@ Quelques mots sur ces quelques lignes :
 Mais je voudrais encore ajouter une dernière petite cerise sur ce gâteau :
 annuler automatiquement toutes les modifications effectuées sur la série dès que
 l'on quitte la route. [Ember][ember] prévoit en effet des mécanismes avancés
-pour travailler sur les transitions entre routes (cf. [doc
-officielle](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/)).
+pour travailler sur les transitions entre routes (cf.
+[doc officielle](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/)).
 En particulier `willTransition` :
 
 ```js
@@ -264,9 +264,9 @@ Ajoutons donc des albums à nos séries :
 
 On définit d'abord une nouvelle entité `Album` et ses propriétés et on indique
 que cet album était associé à une série via la propriété `series` et à la
-méthode `DS.belongsTo` (cf. [doc
-officielle](http://emberjs.com/api/data/#method_belongsTo)). Ce qui se traduit
-plus loin, dans l'initialisation des données par `series: 1` où 1 est
+méthode `DS.belongsTo` (cf.
+[doc officielle](http://emberjs.com/api/data/#method_belongsTo)). Ce qui se
+traduit plus loin, dans l'initialisation des données par `series: 1` où 1 est
 l'identifiant de la série en question.
 
 ```js
@@ -281,7 +281,7 @@ var Album = DS.Model.extend({
   series: DS.belongsTo("seriesItem"),
   coverUrl: function() {
     return "/assets/images/albums/covers/" + this.get("coverName");
-  }.property("coverName")
+  }.property("coverName"),
 });
 
 Album.reopenClass({
@@ -292,7 +292,7 @@ Album.reopenClass({
       publicationDate: "Nov 2000",
       number: 1,
       coverName: "blacksad-1.jpg",
-      series: 1
+      series: 1,
     },
     {
       id: 2,
@@ -300,18 +300,18 @@ Album.reopenClass({
       publicationDate: "Mar 2003",
       number: 2,
       coverName: "blacksad-2.jpg",
-      series: 1
-    }
-  ]
+      series: 1,
+    },
+  ],
 });
 
 export default Album;
 ```
 
 On modifie ensuite le modèle `SeriesItem` pour indiquer une relation inverse
-grâce à la propriété `albums` et à la méthode `DS.hasMany` (cf. [doc
-officielle](http://emberjs.com/api/data/#method_hasMany)) puis affecter la liste
-des identifiants des albums à la série via `albums: [1, 2]` :
+grâce à la propriété `albums` et à la méthode `DS.hasMany` (cf.
+[doc officielle](http://emberjs.com/api/data/#method_hasMany)) puis affecter la
+liste des identifiants des albums à la série via `albums: [1, 2]` :
 
 ```js
 // /app/models/series-item.js
@@ -342,8 +342,8 @@ visualisation d'une série. On ne veut rien proposer d'autre pour ces albums que
 le _binding_ des propriétés et leur affichage. Pas besoin de route ou de
 contrôleur. On va pour cela utiliser un outil particulier permettant simplement
 d'insérer (d'afficher) un gabarit au sein d'une route existante via le _helper_
-: `render` (cf. [doc
-officielle](http://emberjs.com/guides/templates/rendering-with-helpers/#toc_the-code-view-code-helper)).
+: `render` (cf.
+[doc officielle](http://emberjs.com/guides/templates/rendering-with-helpers/#toc_the-code-view-code-helper)).
 
 On modifie donc le gabarit `/series/series-item.hbs` pour qu'à côté de la fiche
 d'une série soit affichée la liste de ses albums :
@@ -418,9 +418,9 @@ export default Ember.Route.extend({
           function() {
             this.transitionTo(
               "series.seriesItem",
-              this.modelFor("series.create")
+              this.modelFor("series.create"),
             );
-          }.bind(this)
+          }.bind(this),
         );
     },
 
@@ -432,8 +432,8 @@ export default Ember.Route.extend({
     willTransition: function() {
       this.modelFor("series.create").rollback();
       return true;
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -450,19 +450,19 @@ export default Ember.Route.extend({
 
 Les points importants à noter :
 
-* Le modèle est, cette fois-ci, créé à l'activation de la route via
+- Le modèle est, cette fois-ci, créé à l'activation de la route via
   `this.store.createRecord(...)`.
-* Comme on ne souhaite pas proposer de gabarit propre pour cette route, on
+- Comme on ne souhaite pas proposer de gabarit propre pour cette route, on
   utilise `renderTemplate` pour indiquer à [Ember][ember] quel gabarit il doit
   utiliser.
-* Les actions `submit`, `cancel` et `willTransition` sont sensiblement les mêmes
+- Les actions `submit`, `cancel` et `willTransition` sont sensiblement les mêmes
   que pour l'édition mais travaillent sur un modèle différent et renvoient vers
   d'autres routes.
-* On note le passage du modèle lors de la transition en cas de `submit`.
-* Il serait légitime de se poser la question de réutilisation de code entre ces
+- On note le passage du modèle lors de la transition en cas de `submit`.
+- Il serait légitime de se poser la question de réutilisation de code entre ces
   deux routes, compte tenu des similarités. Ce n'est pas l'objet de l'article
-  mais pourrait être envisagé à l'aide d'un `mixin` partagé (cf. [doc
-  officielle](http://emberjs.com/api/classes/Ember.Mixin.html)).
+  mais pourrait être envisagé à l'aide d'un `mixin` partagé (cf.
+  [doc officielle](http://emberjs.com/api/classes/Ember.Mixin.html)).
 
 ## Conclusion
 
@@ -480,8 +480,8 @@ afin d'aller plus loin que les conventions par défaut.
 Maintenant, vous n'avez plus d'excuses... Vous ne pourrez pas dire que vous ne
 connaissiez pas.
 
-_Note: les sources de l'application exemple sont [disponibles sur
-github](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember-suite)._
+_Note: les sources de l'application exemple sont
+[disponibles sur github](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember-suite)._
 
 [ember]: http://emberjs.com
 [ember-data]: https://github.com/emberjs/data

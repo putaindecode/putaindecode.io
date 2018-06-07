@@ -16,16 +16,16 @@ const PostsByTag = (props, context) => {
         item.layout === "Post" &&
           (item.tags && item.tags.indexOf(tag) > -1) &&
           // only posts of the current language
-          item.__filename.startsWith(`${lang}/`)
+          item.__filename.startsWith(`${lang}/`),
       ),
     sort: "date",
-    reverse: true
+    reverse: true,
   });
 
   return (
     <Posts
       head={{
-        title: i18n.postsTaggedWith + " " + tag
+        title: i18n.postsTaggedWith + " " + tag,
       }}
       posts={posts}
     />
@@ -33,13 +33,13 @@ const PostsByTag = (props, context) => {
 };
 
 PostsByTag.propTypes = {
-  params: PropTypes.object
+  params: PropTypes.object,
 };
 
 PostsByTag.contextTypes = {
   collection: PropTypes.array.isRequired,
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default PostsByTag;

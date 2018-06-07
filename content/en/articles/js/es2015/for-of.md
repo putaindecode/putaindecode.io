@@ -40,10 +40,10 @@ for (const key in obj) {
 
 The `for..in` loop, despite its ease of use hide some pitfalls:
 
-* When itarating over an array, index value is parsed to string : "0", "1", "2",
+- When itarating over an array, index value is parsed to string : "0", "1", "2",
   etc.. This behaviour can lead to potential error when index is used in
   computation.
-* The loop iterate across all the table keys, but also over each of its
+- The loop iterate across all the table keys, but also over each of its
   properties.
 
   ```js
@@ -55,7 +55,7 @@ The `for..in` loop, despite its ease of use hide some pitfalls:
   }
   ```
 
-* Iteration order over a given object properties may vary across depending on
+- Iteration order over a given object properties may vary across depending on
   the code executing environment.
 
 ## The alternative `.forEach()` method
@@ -64,9 +64,9 @@ The
 [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 loop allow a more secure iteration, but bring other downsides as:
 
-* Impossibility to halt the loop with the traditional `break;` and `return;`
+- Impossibility to halt the loop with the traditional `break;` and `return;`
   statements.
-* Array only dedicated method.
+- Array only dedicated method.
 
 ## `for..of` to the rescue
 
@@ -75,7 +75,7 @@ version of the `for..in` loop. Thus was born the `for..of` loop which, from now
 on, will coexist with the previous one allowing to maintain the backward
 compatibility with former version of the standard.
 
-The principal is the same : run across any type of *iterable object*.
+The principal is the same : run across any type of _iterable object_.
 
 In its simplest form, the `for..of` loop therefore allow to iterate over all
 values of a table keys.
@@ -173,15 +173,13 @@ for (const key of Object.keys(obj)) {
 `for..of` comes to address `for..in` loop gaps and allow a simplified iteration
 over _iterable objects_ such as:
 
-* [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-* [Maps &
-  WeakMaps](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
-* [Sets &
-  WeakSets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
-* [Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function%2A)
-* [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
-* [arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
+- [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [Maps & WeakMaps](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- [Sets & WeakSets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+- [Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function%2A)
+- [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+- [arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 
 Furthermore, `for..of` as of now resolve pitfalls such as unpredictable
 iteration order or automated coercion of index to string.
@@ -193,10 +191,7 @@ a native way, the brand new _iterable objects_ of the language.
 
 For information about this feature :
 
-* [MDN
-  Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-* [The post of Jason
-  Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
-* [The post of Dave Herman](http://tc39wiki.calculist.org/es6/for-of/)
-* [ECMA-262
-  Specification](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-for-in-and-for-of-statements)
+- [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+- [The post of Jason Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
+- [The post of Dave Herman](http://tc39wiki.calculist.org/es6/for-of/)
+- [ECMA-262 Specification](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-for-in-and-for-of-statements)

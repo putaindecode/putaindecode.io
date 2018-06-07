@@ -45,8 +45,8 @@ Une connexion se fera entre les deux navigateurs (mobile et desktop) et vous
 permettra de voir ce qu'il se passe sur votre mobile en regardant la fenêtre de
 devtools sur votre desktop. Quelques précisions pour chacun des navigateurs :
 
-* Chrome : lancez l'URL `chrome://inspect`
-* Safari : allez dans `develop` puis vous verrez vos appareils connectés et les
+- Chrome : lancez l'URL `chrome://inspect`
+- Safari : allez dans `develop` puis vous verrez vos appareils connectés et les
   URL lancées sur vos appareils
 
 Pas mal non ?
@@ -70,8 +70,8 @@ l'option à `true`.
 
 Allez après dans devtools, "settings" (l'engrenage) et activez :
 
-* `Enable browser chrome and add-on debugging toolboxes`
-* `Enable remote debugging`
+- `Enable browser chrome and add-on debugging toolboxes`
+- `Enable remote debugging`
 
 puis redémarrez.
 
@@ -85,9 +85,9 @@ installez `ADB Helper Add-on` ainsi que `Tools Adapters Add-on`.
 Vous êtes bon(ne) pour pouvoir déboguer. Plus qu'à brancher votre appareil,
 allez dans `Select runtime` et le voir dans la section `USB Devices`.
 
-N'hésitez pas à vous référer à la [documentation
-officielle](https://developer.mozilla.org/en-US/docs/Tools/WebIDE) pour de plus
-amples informations.
+N'hésitez pas à vous référer à la
+[documentation officielle](https://developer.mozilla.org/en-US/docs/Tools/WebIDE)
+pour de plus amples informations.
 
 Un petit hic tout de même. Cela reste une beta (à mon sens), de ce fait la
 connexion est un peu instable. Il est parfois difficile de se connecter à un
@@ -153,7 +153,7 @@ Ajoutez le script dans votre page qui communiquera avec votre serveur (exemple)
 :
 
 ```javascript
-<script src="http://localhost:8080/target/target-script-min.js#anonymous" />;
+<script src="http://localhost:8080/target/target-script-min.js#anonymous" />
 ```
 
 Puis ouvrez la page `http://localhost:8080`, vous devriez avoir quelque chose
@@ -179,14 +179,14 @@ _maintainer_ est encore à l'écoute et recevra volontiers vos améliorations.
 
 Il existe deux alternatives à weinre :
 
-* [jsconsole](http://jsconsole.com/remote-debugging.html) (que je n'ai pas
+- [jsconsole](http://jsconsole.com/remote-debugging.html) (que je n'ai pas
   testé)
-* [Vorlon.js](http://vorlonjs.com/) : très sympa, très prometteur, plus propre
+- [Vorlon.js](http://vorlonjs.com/) : très sympa, très prometteur, plus propre
   que weinre. Seul hic, j'ai voulu tester Vorlon.js sur Android Browser (Android
   4.3), il a fait planter Android Browser rendant impossible le debug. Dommage,
   j'aurais bien remplacé weinre par celui-ci.
 
-- - -
+---
 
 Bien. On a fait le tour des solutions pour inspecter facilement le DOM ainsi
 qu'avoir une console sur n'importe quel navigateur.
@@ -200,9 +200,9 @@ Pour cette tâche, je vous propose d'installer l'outil
 [mitmproxy](http://mitmproxy.org/) qui vous permettra de créer un proxy
 récupérant tout votre trafic HTTP et de vous l'afficher requête par requête.
 
-Ce qui va sûrement vous intéresser sera la partie [transparent
-proxying](http://mitmproxy.org/doc/transparent.html). Le proxy se chargera juste
-d'écouter votre trafic et de l'afficher.
+Ce qui va sûrement vous intéresser sera la partie
+[transparent proxying](http://mitmproxy.org/doc/transparent.html). Le proxy se
+chargera juste d'écouter votre trafic et de l'afficher.
 
 Il sera nécessaire aussi de configurer votre navigateur afin que celui-ci se
 connecte à votre proxy.
@@ -210,14 +210,14 @@ connecte à votre proxy.
 Si vous êtes sur Android, il vous est nécessaire de le spécifier dans la
 configuration réseau de votre appareil. Pour cela :
 
-* Connectez-vous au WiFi (du même réseau que votre hôte) (par exemple "MoOx")
-* Allez dans "Settings", "Wi-Fi"
-* Restez appuyé sur le nom du WiFi (toujours "MoOx")
-* Une popin apparaîtra, cliquez sur "Modify network"
-* Cochez "Show advanced options"
-* "Proxy settings", mettez `manual`
-* Entrez les informations de mitmproxy pour vous y connecter
-* Validez
+- Connectez-vous au WiFi (du même réseau que votre hôte) (par exemple "MoOx")
+- Allez dans "Settings", "Wi-Fi"
+- Restez appuyé sur le nom du WiFi (toujours "MoOx")
+- Une popin apparaîtra, cliquez sur "Modify network"
+- Cochez "Show advanced options"
+- "Proxy settings", mettez `manual`
+- Entrez les informations de mitmproxy pour vous y connecter
+- Validez
 
 Tout passera maintenant par lui et vous aurez dans votre shell une belle
 interface montrant toutes les trames passant.
@@ -228,12 +228,12 @@ interface montrant toutes les trames passant.
 
 Une petite note rapide. Pour utliser le Simulator iOS (si vous n'avez pas
 d'iPhone/iPad sous la main par exemple) il est possible que vous deviez
-installer [iOS Webkit Debug
-Proxy](https://github.com/google/ios-webkit-debug-proxy). Je n'ai pas eu à le
-faire mais [@tfeserver](https://twitter.com/tfeserver) en a eu besoin. Je vous
-laisse ça de côté si par hasard cela vous était nécessaire.
+installer
+[iOS Webkit Debug Proxy](https://github.com/google/ios-webkit-debug-proxy). Je
+n'ai pas eu à le faire mais [@tfeserver](https://twitter.com/tfeserver) en a eu
+besoin. Je vous laisse ça de côté si par hasard cela vous était nécessaire.
 
-- - -
+---
 
 Avec ça, vous pouvez maintenant masteriser le debug sur tous les appareils sans
 vous prendre la tête. Il existe aussi une solution s'appelant

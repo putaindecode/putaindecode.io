@@ -21,9 +21,9 @@ qui pense encore que c'est trop compliqué :)
 Dans un premier temps, vous devez simplement avoir quelques connaissances de
 base :
 
-* **HTML** : une bonne
+- **HTML** : une bonne
   [introduction](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Introduction)
-* **GitHub** : créez un compte gratuit ici : [github.com](http://github.com)
+- **GitHub** : créez un compte gratuit ici : [github.com](http://github.com)
 
 Nous allons utiliser [github.com](http://github.com) pour héberger notre **site
 web statique** dans un _repository_ (un dossier). Ce service incontournable
@@ -50,11 +50,11 @@ n'importe où, et à moindre coût. Le code du site sera uniquement composé de
 HTML, CSS et JavaScript, et s'exécutera directement dans le navigateur du
 visiteur, ce qui présente de nombreux avantages :
 
-* simple et efficace
-* pas de maintenance
-* pas de risque de hacking
-* performances optimales
-* liberté totale
+- simple et efficace
+- pas de maintenance
+- pas de risque de hacking
+- performances optimales
+- liberté totale
 
 De plus, en 2015, n'importe quel service en ligne digne de ce nom propose une
 [API](https://www.mashape.com) qui permet d'intégrer directement sur votre site
@@ -62,9 +62,9 @@ des fonctionnalités tierces, sans avoir besoin de code côté serveur, donc cet
 approche pure **client-side** n'a **pas de limites**.
 
 Dans ce premier article nous allons voir comment créer un site web basique à
-base de HTML/CSS, mais nous verrons par la suite comment utiliser un [générateur
-de site web statique](http://staticgen.com) pour créer des sites webs plus
-avancés.
+base de HTML/CSS, mais nous verrons par la suite comment utiliser un
+[générateur de site web statique](http://staticgen.com) pour créer des sites
+webs plus avancés.
 
 ## Créer le repository GitHub
 
@@ -81,10 +81,10 @@ Grâce aux templates par défaut, créez votre site _single-page_ en 3 clics.
 Allez sur la page du projet :
 [https://github.com/USERNAME/supersite](https://github.com/USERNAME/supersite)
 
-* Puis **Repository settings** (icône en bas à droite)
-* **Automatic page generator** puis **Launch**
-* Éditez le texte du site
-* Sélectionnez votre template préféré puis **Publish Page**
+- Puis **Repository settings** (icône en bas à droite)
+- **Automatic page generator** puis **Launch**
+- Éditez le texte du site
+- Sélectionnez votre template préféré puis **Publish Page**
 
 Attendez quelques secondes et allez sur :
 [http://USERNAME.github.io/supersite](http://USERNAME.github.io/supersite) pour
@@ -124,11 +124,11 @@ Installez et configurez l'application GitHub :
 [mac.github.com](http://mac.github.com) ou
 [windows.github.com](http://windows.github.com)
 
-* **Clone** : va rapatrier les fichiers de votre site sur votre ordinateur
-* **Éditez** les fichiers directement
-* **Testez** si le site fonctionne comme prévu
-* Puis choisissez **Commit** pour enregistrer vos modifications
-* Et enfin **Sync** pour renvoyer vos fichiers sur GitHub et mettre à jour le
+- **Clone** : va rapatrier les fichiers de votre site sur votre ordinateur
+- **Éditez** les fichiers directement
+- **Testez** si le site fonctionne comme prévu
+- Puis choisissez **Commit** pour enregistrer vos modifications
+- Et enfin **Sync** pour renvoyer vos fichiers sur GitHub et mettre à jour le
   site pour le reste du monde.
 
 **✔** Site web mis à jour :)
@@ -139,11 +139,11 @@ Vous pouvez ouvrir le fichier `index.html` dans un navigateur pour voir le
 résultat.
 
 **Note :** Si vous avez ajouté Google Maps ou une API JavaScript, vous devrez
-lancer un serveur web pour pouvoir voir le résultat. Par exemple, lancez `python
--m SimpleHTTPServer` dans votre terminal depuis le dossier du site (où se trouve
-`index.html`) puis ouvrez http://127.0.0.1:8000 dans votre navigateur. (Ceci est
-dû à une [restriction de
-sécurité](https://developer.mozilla.org/fr/docs/Web/JavaScript/Same_origin_policy_for_JavaScript))
+lancer un serveur web pour pouvoir voir le résultat. Par exemple, lancez
+`python -m SimpleHTTPServer` dans votre terminal depuis le dossier du site (où
+se trouve `index.html`) puis ouvrez http://127.0.0.1:8000 dans votre navigateur.
+(Ceci est dû à une
+[restriction de sécurité](https://developer.mozilla.org/fr/docs/Web/JavaScript/Same_origin_policy_for_JavaScript))
 
 ## Installer un superbe template
 
@@ -160,55 +160,53 @@ Téléchargez les sources et placez les fichiers dans votre projet.
 
 ## Et après ?
 
-* Apprenez la syntaxe Markdown :
+- Apprenez la syntaxe Markdown :
   [réference](https://en.support.wordpress.com/markdown-quick-reference/)
-* Apprenez Git : [try.github.io](https://try.github.io)
-* Apprenez JavaScript : [jsbooks.revolunet.com](http://jsbooks.revolunet.com) et
-  [le livre d'Eric
-  Elliott](https://ericelliottjs.com/product/programming-javascript-applications-paper-ebook-bundle/)
-* Lisez tous les articles de [Putain de code !](/)
+- Apprenez Git : [try.github.io](https://try.github.io)
+- Apprenez JavaScript : [jsbooks.revolunet.com](http://jsbooks.revolunet.com) et
+  [le livre d'Eric Elliott](https://ericelliottjs.com/product/programming-javascript-applications-paper-ebook-bundle/)
+- Lisez tous les articles de [Putain de code !](/)
 
-- - -
+---
 
 ## FAQ
 
 ### Comment installer un nom de domaine ?
 
-* Achetez un nom de domaine sur [gandi.net](http://gandi.net) ou un autre
+- Achetez un nom de domaine sur [gandi.net](http://gandi.net) ou un autre
   fournisseur sérieux (surtout pas chez pas 1&1, lws ou autre discounter
   douteux)
-* Éditez la "Zone DNS" du domaine et suivez les [instructions GitHub pour
-  DNS](https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/)
-* ajoutez un fichier `CNAME` dans votre projet, contenant la ligne
+- Éditez la "Zone DNS" du domaine et suivez les
+  [instructions GitHub pour DNS](https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/)
+- ajoutez un fichier `CNAME` dans votre projet, contenant la ligne
   `www.myproject.com`.
 
 Les changements DNS peuvent mettre jusqu'à 24h pour se propager donc essayez
 www.myproject.com un peu plus tard.
 
-Ces pages d'aide sur GitHub pourront vous être utiles : [Custom
-domain](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/),
-[DNS
-setup](https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/).
+Ces pages d'aide sur GitHub pourront vous être utiles :
+[Custom domain](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/),
+[DNS setup](https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/).
 
 ### Comment ajouter une page ?
 
 Pour créer simplement des pages supplémentaires, ajoutez un nouveau fichier
 HTML, par exemple `produits.html`, dans le projet et faites un lien vers cette
-page depuis l'index, par exemple `<a href="produits.html">Consulter les
-produits</a>`.
+page depuis l'index, par exemple
+`<a href="produits.html">Consulter les produits</a>`.
 
 ### Comment analyser le trafic de mon site ?
 
 Si vous voulez tracker vos visiteurs, savoir d'où ils viennent, ce qu'ils font
-et où ils vont, créez un compte sur [Google
-Analytics](http://www.google.com/analytics) et ajoutez le code de tracking sur
-vos pages HTML.
+et où ils vont, créez un compte sur
+[Google Analytics](http://www.google.com/analytics) et ajoutez le code de
+tracking sur vos pages HTML.
 
 ### Comment ajouter une carte ?
 
-Suivez les [instructions
-Leaflet](http://leafletjs.com/examples/quick-start.html), la cartographie
-open-source et gratuite qui bénéficie d'une communauté active.
+Suivez les
+[instructions Leaflet](http://leafletjs.com/examples/quick-start.html), la
+cartographie open-source et gratuite qui bénéficie d'une communauté active.
 
 Si vous avez juste besoin d'une carte sous forme d'image fixe, générez le code
 HTML ici : [staticmapmaker.com](http://staticmapmaker.com) et copiez le code
@@ -246,7 +244,7 @@ Naturellement, d'autres sites parleront alors du vôtre, vous enverront des
 visiteurs et vous feront monter progressivement dans les résultats au fil des
 mois.
 
-- - -
+---
 
 Voilà pour ce premier pas vers le développement web !
 

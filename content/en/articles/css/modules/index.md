@@ -17,7 +17,7 @@ authors:
 ## Back to basics
 
 First, to understand what are the problems that the new tools are attempting to
-solve, a small reminder of what CSS is: *Cascading Style Sheets*.
+solve, a small reminder of what CSS is: _Cascading Style Sheets_.
 
 A style sheet ? Boy, that’s easy ! It’s some code that maps some “styles” to
 HTML elements. Cascading ? Well, sometimes more than one (or no) style can match
@@ -83,17 +83,18 @@ h1 {
 ```
 
 Easy, right ? The h1 will be blue ! But if there is a “color: red” rule in one
-CSS file named *foo.css*, a “color: blue” rule in another file named *bar.css*,
-that the _foo.css_ loading takes more time than *bar.css*, but that the
+CSS file named _foo.css_, a “color: blue” rule in another file named _bar.css_,
+that the _foo.css_ loading takes more time than _bar.css_, but that the
 _foo.css_ HTML tag is before the _bar.css_ one, which rule is applied ? Well,
 it’s quite harder to know. _(hint: the loading time is not taken into account)_
 
 ### Selector specificity
 
-This one is a level of complexity higher, [some people even made calculators to
-simplify it](https://specificity.keegan.st). I will not enter into much details,
-but know that the weight of a selector is equal to the sum of all the weights of
-the selectors composing it. And that all selectors does’t weigh the same.
+This one is a level of complexity higher,
+[some people even made calculators to simplify it](https://specificity.keegan.st).
+I will not enter into much details, but know that the weight of a selector is
+equal to the sum of all the weights of the selectors composing it. And that all
+selectors does’t weigh the same.
 
 ```css
 .title {
@@ -211,10 +212,10 @@ weren’t exclusive with pre-processors, and aimed to avoid cascade collision
 These methodologies came by the time I started to split my developments into
 components. The nesting didn’t work well with these, as the purpose was to
 create bits of code usable everywhere in my web app, like a button for example.
-The one I use (still today) is named [BEM, for Block Element
-Modifier](https://en.bem.info/method/), but there are others with the same aim:
-each HTML element of my component has to have an unique CSS class. This way, no
-nesting is needed, and no cascade collision !
+The one I use (still today) is named
+[BEM, for Block Element Modifier](https://en.bem.info/method/), but there are
+others with the same aim: each HTML element of my component has to have an
+unique CSS class. This way, no nesting is needed, and no cascade collision !
 
 And this pre-processed code:
 
@@ -252,19 +253,19 @@ Here, to prevent our CSS to collide, we… stop writing our own ! CSS frameworks
 are already written styles that we can use with specific CSS classes. There is
 two different approaches here:
 
-* “Final” styles framework as [Bootstrap](http://getbootstrap.com): a simple
+- “Final” styles framework as [Bootstrap](http://getbootstrap.com): a simple
   _“btn”_ class on a HTML element and… tada ! Now it is a magnificent button.
   Besides, some variables are available to customize the frameworks’ look.
   Utility styles framework, like [Tachyons](http://tachyons.io). Here, there
   aren’t any pre-defined style, but a lot of utility CSS classes are available,
-  like _“pam”_ to make an element have a *medium padding*, or _“ba”_ to make it
+  like _“pam”_ to make an element have a _medium padding_, or _“ba”_ to make it
   have a _border all_ around it.
 
-* The second one is quite interesting, as our final CSS file will only weigh
+- The second one is quite interesting, as our final CSS file will only weigh
   10kB and never more, even if the website grows ! But the HTML will have a lot
   of gibberish classes. It’s comparable with having all the styles inline, with
   a weight optimization comparable with minification, as _“ba”_ is shorter than
-  *“border-style: solid; border-width: 1px;”*.
+  _“border-style: solid; border-width: 1px;”_.
 
 These frameworks will keep us from complex CSS cascade calculations ! But I
 quite didn’t like the fact to use a framework, and to have a lot of quite

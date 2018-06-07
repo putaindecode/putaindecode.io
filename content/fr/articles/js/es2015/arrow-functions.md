@@ -179,8 +179,8 @@ const aFn = obj => ({ key: obj.value }); // It works !
 
 ## Conclusion
 
-Regardez [la table de
-compatibilité](https://kangax.github.io/compat-table/es6/#test-arrow_functions).
+Regardez
+[la table de compatibilité](https://kangax.github.io/compat-table/es6/#test-arrow_functions).
 C'est plutôt bien supporté par la plupart des navigateurs, mais vous risquez
 sûrement d'avoir à utiliser [Babel](http://babeljs.io) afin d'être tranquille.
 

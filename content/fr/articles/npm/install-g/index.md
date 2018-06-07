@@ -109,10 +109,10 @@ cauchemar à gérer.
 Lorsqu’un outil à une package offrant une interface CLI, comment savoir si la
 version de la bibliothèque fonctionnera avec ?
 
-De cette problématique est née une solution récurrente : les package qui
-ont une CLI et une bibliothèque en parallèle vont très souvent avoir une CLI
-très light qui va en général consister à aller chercher dans le dossier de la
-bibliothèque où vous vous trouvez le vrai code à exécuter.
+De cette problématique est née une solution récurrente : les package qui ont une
+CLI et une bibliothèque en parallèle vont très souvent avoir une CLI très light
+qui va en général consister à aller chercher dans le dossier de la bibliothèque
+où vous vous trouvez le vrai code à exécuter.
 
 Je dirais même que c’est plutôt cool dans un sens.
 
@@ -149,8 +149,8 @@ Au mais comment on l'installe? Avec `-g` pardi ! Je plaisante. Il est inclus
 avec `npm`. Faites un petit `which npx` pour vérifier!
 
 Dans tous les cas, `npx` fait partie des rares outils qui méritent d'être
-installés en global, ceux qui sont pour l'environnement du développeur,
-pas pour un projet.
+installés en global, ceux qui sont pour l'environnement du développeur, pas pour
+un projet.
 
 D'ailleurs parlons en de ces cas où `-g` est valide.
 
@@ -179,18 +179,17 @@ Bisous à tous 😘
 
 ## Note sur `npx` et sa magie intégrée
 
-`npx` permet de télécharger automatiquement les packages.
-Par exemple tapez `npx mocha` et il vous installera le package `mocha` en global
-et ira même jusqu'à s'occuper des mises à jour tout seul (en plus d'exécuter la
-commande, puisque c'est son but initial).
-Malheureusement, pour les raisons expliquées plus haut,
-je ne pense vraiment pas que ça soit une bonne idée.
-Que se passe-t-il si vous avez pris l'habitude d'utiliser `npx` et qu'un beau
-jour il vous télécharge (puisque il ne vous demande rien - c'est magique)
-une version contenant un bug? Vous aurez l'air malin. Et cela n'empêche en rien
-le fameux problème du "ça marche sur ma machine" puisque vous aurez
-potentiellement des collègues qui ne l'utiliseront pas. Oui ceux qui ne lisent
-jamais les README et n'écoute pas les recommandations...
+`npx` permet de télécharger automatiquement les packages. Par exemple tapez
+`npx mocha` et il vous installera le package `mocha` en global et ira même
+jusqu'à s'occuper des mises à jour tout seul (en plus d'exécuter la commande,
+puisque c'est son but initial). Malheureusement, pour les raisons expliquées
+plus haut, je ne pense vraiment pas que ça soit une bonne idée. Que se
+passe-t-il si vous avez pris l'habitude d'utiliser `npx` et qu'un beau jour il
+vous télécharge (puisque il ne vous demande rien - c'est magique) une version
+contenant un bug? Vous aurez l'air malin. Et cela n'empêche en rien le fameux
+problème du "ça marche sur ma machine" puisque vous aurez potentiellement des
+collègues qui ne l'utiliseront pas. Oui ceux qui ne lisent jamais les README et
+n'écoute pas les recommandations...
 
 (Je vois encore trop souvent des gens utiliser `npm` sur des projets nécessitant
 `yarn` et qui viennent se plaindre de temps en temps que

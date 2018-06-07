@@ -13,10 +13,10 @@ authors:
 
 ### What the DOM?
 
-ES5 avait laissé un petit trou nommé _["host
-objects"](http://www.ecma-international.org/ecma-262/5.1/#sec-4.3.8)_ afin de
-donner un "cadre légal" aux trucs bizarres qui peuvent arriver dans le DOM. Par
-exemple, certaines collections sont dites
+ES5 avait laissé un petit trou nommé
+_["host objects"](http://www.ecma-international.org/ecma-262/5.1/#sec-4.3.8)_
+afin de donner un "cadre légal" aux trucs bizarres qui peuvent arriver dans le
+DOM. Par exemple, certaines collections sont dites
 ["live"](https://dom.spec.whatwg.org/#concept-collection-live) et même si on ne
 touche pas l'objet directement, on se rend compte que la collection a été
 modifiée.
@@ -32,13 +32,14 @@ console.log(childNodes.length); // 1, wat!
 Ce genre de comportement n'est pas explicable par la sémantique d'ES5 (à moins
 d'accepter des gros problèmes de performances qui consisteraient à ce que le DOM
 garde une référence vers toutes les collections live et les mette à jour
-régulièrement, ou des getter partout, etc.). La [spec
-WebIDL](https://heycam.github.io/webidl/) qui fait le lien entre les objets
-décrits dans les spec W3C et la sémantique ECMAScript se contentait d'un "c'est
-un *host object*, allé, salut les gars les filles !" (en fait, c'était pire que
-ça&nbsp;: [la spec de
-l'époque](http://www.w3.org/TR/DOM-Level-2-Core/ecma-script-binding.html) était
-absurde tant elle manquait de détails, mais je vous fais la version de Noël).
+régulièrement, ou des getter partout, etc.). La
+[spec WebIDL](https://heycam.github.io/webidl/) qui fait le lien entre les
+objets décrits dans les spec W3C et la sémantique ECMAScript se contentait d'un
+"c'est un _host object_, allé, salut les gars les filles !" (en fait, c'était
+pire que ça&nbsp;:
+[la spec de l'époque](http://www.w3.org/TR/DOM-Level-2-Core/ecma-script-binding.html)
+était absurde tant elle manquait de détails, mais je vous fais la version de
+Noël).
 
 Mais ce genre d'explication n'est pas vraiment acceptable. Et si un navigateur a
 un bug, comment je polyfille le comportement correct, hein ?
@@ -47,12 +48,12 @@ Les proxies peuvent aider.
 
 ### Qu'est-il arrivé à mon objet ?
 
-Avant que la planète JS ne s'amourache des [structures des données
-immutables](https://facebook.github.io/immutable-js/), on créait des objets et
-des fois, on les passait à du code qui les modifiait et on se demandait bien
-quand/comment l'objet en question en était arrivé dans cet état. Depuis ES5, on
-peut logger dans des _getters_ et *setters*, mais on ne peut pas savoir quand on
-s'est pris un `delete` ou un
+Avant que la planète JS ne s'amourache des
+[structures des données immutables](https://facebook.github.io/immutable-js/),
+on créait des objets et des fois, on les passait à du code qui les modifiait et
+on se demandait bien quand/comment l'objet en question en était arrivé dans cet
+état. Depuis ES5, on peut logger dans des _getters_ et _setters_, mais on ne
+peut pas savoir quand on s'est pris un `delete` ou un
 [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)&nbsp;;
 on peut constater le résultat, mais c'est dur de remonter à la source.
 
@@ -73,7 +74,7 @@ de nouveaux objets et de se lancer dans des synchronisations coûteuses).
 ## Les proxies, comment ça marche
 
 Un **proxy** est un nouvel objet (on ne peut pas transformer un objet en un
-proxy) qui "emballe" (*wrap*) un objet existant, la **target** et décrit le
+proxy) qui "emballe" (_wrap_) un objet existant, la **target** et décrit le
 comportement du proxy via un objet appelé le **handler** qui définit les _traps_
 du proxy.
 
@@ -84,7 +85,7 @@ const handler = {
   get(target, prop) {
     console.log("It's a (get) trap!", prop, target[prop]);
     return target[prop] + 1;
-  }
+  },
 };
 
 const proxy = new Proxy(target, handler);
@@ -103,34 +104,34 @@ It's a (get) trap! a 1 // inside the trap
 L'exemple ci-dessus montre la trap `get`. Voici la liste des traps
 disponible&nbsp;:
 
-* getPrototypeOf
-  * pour `Object.getPrototypeOf`
-* setPrototypeOf
-  * pour `Object.setPrototypeOf`
-* isExtensible
-  * pour `Object.isExtensible`
-* preventExtensions
-  * pour `Object.preventExtensions`
-* getOwnPropertyDescriptor
-  * pour `Object.getOwnPropertyDescriptor`
-* defineProperty
-  * pour `Object.defineProperty`
-* has
-  * pour l'opérateur `in`
-* get
-  * pour _getter_ une propriété
-* set
-  * pour _setter_ une propriété
-* deleteProperty
-  * pour l'opérateur `delete`
-* enumerate
-  * pour les `for...in` et `Object.keys`
-* ownKeys
-  * pour `Object.getOwnPropertyNames`
-* apply
-  * pour quand on appelle le proxy comme une fonction.
-* construct
-  * pour quand on appelle le proxy comme un constructeur (avec `new`).
+- getPrototypeOf
+  - pour `Object.getPrototypeOf`
+- setPrototypeOf
+  - pour `Object.setPrototypeOf`
+- isExtensible
+  - pour `Object.isExtensible`
+- preventExtensions
+  - pour `Object.preventExtensions`
+- getOwnPropertyDescriptor
+  - pour `Object.getOwnPropertyDescriptor`
+- defineProperty
+  - pour `Object.defineProperty`
+- has
+  - pour l'opérateur `in`
+- get
+  - pour _getter_ une propriété
+- set
+  - pour _setter_ une propriété
+- deleteProperty
+  - pour l'opérateur `delete`
+- enumerate
+  - pour les `for...in` et `Object.keys`
+- ownKeys
+  - pour `Object.getOwnPropertyNames`
+- apply
+  - pour quand on appelle le proxy comme une fonction.
+- construct
+  - pour quand on appelle le proxy comme un constructeur (avec `new`).
 
 Le lecteur attentif aura remarqué que cette liste (et les signatures des
 fonctions) correspondent à l'API
@@ -155,8 +156,8 @@ const p = new Proxy(
     freeze(target) {
       console.log("Wow, someone just froze the object");
       return Reflect.freeze(target);
-    }
-  }
+    },
+  },
 );
 
 delete p.b;
@@ -165,7 +166,7 @@ Object.freeze(p);
 
 ### Implémenter des NodeList live
 
-Ici, on prétend réimplémenter une collection DOM *live*.
+Ici, on prétend réimplémenter une collection DOM _live_.
 
 ```js
 function getChildNodesLiveCollection(parent) {
@@ -178,8 +179,8 @@ function getChildNodesLiveCollection(parent) {
           // chercher la valeur au moment de l'appel
           return parent.childNodes.length;
         } else return target[prop];
-      }
-    }
+      },
+    },
   );
 }
 
@@ -287,10 +288,10 @@ function makeCaretaker(t) {
       },
       set(target, prop, value) {
         return Reflect.get(target, prop, value);
-      }
+      },
       // flemme d'écrire et vous faire lire les autres traps,
       // mais faut toutes les faire ;-)
-    })
+    }),
   };
 }
 
@@ -311,7 +312,7 @@ proxy.b; // BOOM! TypeError: target is not a non-null object
 
 #### ...via un meta-proxy
 
-La petite astuce rigolote avec les proxy, vu que l'API est dite *stratifiée*,
+La petite astuce rigolote avec les proxy, vu que l'API est dite _stratifiée_,
 c'est que vu que le handler est un objet, on pourrait en faire un proxy pour
 implémenter la révocation plus simplement.
 
@@ -320,10 +321,9 @@ function makeCaretaker(target) {
   const metaHandler = {
     get(handler, trapName) {
       if (!target) throw new Error("Revoked object!");
-      else
-        // Le miroir entre les traps et l'API Reflect vient de là ;-)
-        return Reflect[trapName];
-    }
+      // Le miroir entre les traps et l'API Reflect vient de là ;-)
+      else return Reflect[trapName];
+    },
   };
 
   const handler = new Proxy({}, metaHandler);
@@ -332,7 +332,7 @@ function makeCaretaker(target) {
     revoke() {
       target = undefined;
     },
-    proxy: new Proxy(target, handler)
+    proxy: new Proxy(target, handler),
   };
 }
 

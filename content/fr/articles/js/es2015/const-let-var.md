@@ -66,8 +66,8 @@ meilleur choix !
 `let` vous permet de faire pareil que `const` mais sans la contrainte
 d'assignation unique. Vous devriez donc instinctivement voir que les cas
 d'utilisation pour `let` sont les mêmes que ceux de `var`, son ancêtre.
-D'ailleurs, vous entendrez souvent : `let` est le nouveau `var` (*`let` is the
-new `var`*). C'est en partie vrai car il est capable de faire les mêmes choses,
+D'ailleurs, vous entendrez souvent : `let` est le nouveau `var` (_`let` is the
+new `var`_). C'est en partie vrai car il est capable de faire les mêmes choses,
 mais en mieux, car il a cette caractéristique d'être scopé au bloc courant.
 
 ```js
@@ -126,7 +126,7 @@ de grande place pour `var`. À mon avis, le seul cas d'utilisation valable pour
 d'un bug, mais juste de syntaxe et de préférence
 ([exemple](https://twitter.com/getify/status/658662478528643072)).
 
-# Piège du hoisting et de la TDZ (*Temporal Dead Zone*)
+# Piège du hoisting et de la TDZ (_Temporal Dead Zone_)
 
 Pour rappel, JavaScript possède un mécanisme de hoisting, par exemple, vous
 pouvez écrire :
@@ -143,7 +143,7 @@ et remonter celles avec `var` au début du scope de votre fonction (attention,
 cela concerne les déclarations, pas les affectations).
 
 `let` et `const` ne bénéficient pas de ce mécanisme de hoisting, ce qui peut
-mener à des problèmes de TDZ (*Temporal Dead Zone*). Vu que la déclaration de
+mener à des problèmes de TDZ (_Temporal Dead Zone_). Vu que la déclaration de
 votre variable n'est pas remontée au scope de la fonction, il existe un moment
 où votre variable n'existe pas. Ce moment, c'est la TDZ.
 
@@ -159,7 +159,7 @@ function fn() {
 
 Comment choisir quelle déclaration de variable utiliser ? C'est très simple :
 
-* Utilisez une déclaration par `const` (99% du temps, c'est le bon choix)
-* Si au fil de votre code vous changez sa valeur, modifiez pour un `let` (1%)
-* Si vous avez trouvé le pire cas d'utilisation du monde, changez pour un `var`
+- Utilisez une déclaration par `const` (99% du temps, c'est le bon choix)
+- Si au fil de votre code vous changez sa valeur, modifiez pour un `let` (1%)
+- Si vous avez trouvé le pire cas d'utilisation du monde, changez pour un `var`
   (je vous laisse faire le calcul)

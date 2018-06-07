@@ -25,10 +25,11 @@ acceptable voire agréable. Je me suis alors lancé pour vous dans cette aventur
 
 Oh mais pourquoi j'ai dû faire ça à la base ?
 
-Après avoir créé [mon propre système de synchronisation de machines sous Mac OS
-X](https://github.com/kud/my) (plus souvent communément appelé dotfiles mais
-faisant un peu plus), j'ai voulu faire de même sous Windows au cas où mon
-système crasherait et où je devrais tout réinstaller. On n'est jamais à l'abri.
+Après avoir créé
+[mon propre système de synchronisation de machines sous Mac OS X](https://github.com/kud/my)
+(plus souvent communément appelé dotfiles mais faisant un peu plus), j'ai voulu
+faire de même sous Windows au cas où mon système crasherait et où je devrais
+tout réinstaller. On n'est jamais à l'abri.
 
 Pour cela, plusieurs outils vont vous être nécessaires. Un chef sans bons
 outils, c'est drôlement handicapant. (Déjà que l'OS en question n'aide pas).
@@ -75,8 +76,8 @@ Lorsque tu joues à un jeu vidéo, tu sauvegardes régulièrement ton avancement
 choco install git.install
 ```
 
-* [site officiel](http://git-scm.com/)
-* [lien du package](https://chocolatey.org/packages/git.install)
+- [site officiel](http://git-scm.com/)
+- [lien du package](https://chocolatey.org/packages/git.install)
 
 ### Node.js
 
@@ -87,8 +88,8 @@ scripts Windows, plutôt que de passer par Batch.
 choco install nodejs.install
 ```
 
-* [site officiel](http://nodejs.org/)
-* [lien du package](https://chocolatey.org/packages/nodejs.install)
+- [site officiel](http://nodejs.org/)
+- [lien du package](https://chocolatey.org/packages/nodejs.install)
 
 ### Éditeur de texte
 
@@ -98,8 +99,8 @@ Sublime Text, l'éditeur préféré des Franç... je m'égare. Bref, un bon édi
 choco install sublimetext3
 ```
 
-* [site officiel](http://www.sublimetext.com/)
-* [lien du package](https://chocolatey.org/packages/sublimetext3)
+- [site officiel](http://www.sublimetext.com/)
+- [lien du package](https://chocolatey.org/packages/sublimetext3)
 
 Vous pouvez aussi installer [Atom](https://atom.io/) si vous préférez.
 
@@ -111,21 +112,21 @@ HeidiSQL, un logiciel avec une interface qui se rapproche de phpMyAdmin.
 choco install HeidiSQL
 ```
 
-* [site officiel](http://www.heidisql.com/)
-* [lien du package](http://chocolatey.org/packages/HeidiSQL)
+- [site officiel](http://www.heidisql.com/)
+- [lien du package](http://chocolatey.org/packages/HeidiSQL)
 
 Ou encore MySQL Workbench un excellent soft pour gérer une base de données:
 
-* Modélisation
-* Édition
-* Migration Par contre, il est un peu plus complexe à utiliser.
+- Modélisation
+- Édition
+- Migration Par contre, il est un peu plus complexe à utiliser.
 
 ```console
 choco install mysql.workbench
 ```
 
-* [site officiel](http://dev.mysql.com/downloads/workbench/)
-* [lien du package](http://chocolatey.org/packages/mysql.workbench)
+- [site officiel](http://dev.mysql.com/downloads/workbench/)
+- [lien du package](http://chocolatey.org/packages/mysql.workbench)
 
 ### Un meilleur shell
 
@@ -139,8 +140,8 @@ des pinguins)
 choco install Cmder
 ```
 
-* [site officiel](https://bliker.github.io/cmder/)
-* [lien du package](http://chocolatey.org/packages/Cmder)
+- [site officiel](https://bliker.github.io/cmder/)
+- [lien du package](http://chocolatey.org/packages/Cmder)
 
 ### Si vous avez besoin de SSH
 
@@ -151,21 +152,21 @@ principal, putty (un terminal et +).
 choco install putty
 ```
 
-* [site officiel](http://chocolatey.org/packages/putty)
-* [lien du package](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
+- [site officiel](http://chocolatey.org/packages/putty)
+- [lien du package](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
 
 Putty vient avec une suite de logiciels :
 
-* [PuTTYgen](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+- [PuTTYgen](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
   pour générer une clé SSH sous Windows
-* [Plink](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour
+- [Plink](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) pour
   permettre à HeidiSQL de se connecter à une base de données via SSH.
-* [Pageant](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+- [Pageant](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
   pour charger votre clé SSH dans Windows pour éviter qu'il demande sans cesse
   la clé ou le mot de passe.
 
 > Pour que le ssh soit agréable, je vous recommande pageant et ensuite un
-> terminal comme _Clink_ ou encore _git bash_ qui s'installe via *git*.
+> terminal comme _Clink_ ou encore _git bash_ qui s'installe via _git_.
 
 ### Une machine virtuelle pour tester IE ou même GNU/Linux
 
@@ -182,8 +183,8 @@ choco install VirtualBox.ExtensionPack
 > l'Extension Pack est utile pour une intégration parfaite avec votre machine si
 > vous installez votre propre VM GNU/Linux ou Windows.
 
-* [site officiel](hhttps://www.virtualbox.org/)
-* [lien du package](http://chocolatey.org/packages/virtualbox)
+- [site officiel](hhttps://www.virtualbox.org/)
+- [lien du package](http://chocolatey.org/packages/virtualbox)
 
 ### Compresser / décompresser comme vous le voulez
 
@@ -193,8 +194,8 @@ choco install VirtualBox.ExtensionPack
 choco install 7zip.install
 ```
 
-* [site officiel](http://www.7-zip.org/)
-* [lien du package](https://chocolatey.org/packages/7zip.install)
+- [site officiel](http://www.7-zip.org/)
+- [lien du package](https://chocolatey.org/packages/7zip.install)
 
 ### Gérer les pdf
 
@@ -203,9 +204,8 @@ des PDFs.
 
 #### Sumatra
 
-* [site
-  officiel](http://blog.kowalczyk.info/software/sumatrapdf/free-pdf-reader.html)
-* [lien du package](https://chocolatey.org/packages/sumatrapdf.install)
+- [site officiel](http://blog.kowalczyk.info/software/sumatrapdf/free-pdf-reader.html)
+- [lien du package](https://chocolatey.org/packages/sumatrapdf.install)
 
 ```console
 choco install sumatrapdf.install
@@ -213,8 +213,8 @@ choco install sumatrapdf.install
 
 #### PDFCreator
 
-* [site officiel](http://www.pdfforge.org/pdfcreator)
-* [lien du package](https://chocolatey.org/packages/pdfcreator)
+- [site officiel](http://www.pdfforge.org/pdfcreator)
+- [lien du package](https://chocolatey.org/packages/pdfcreator)
 
 ```console
 choco install pdfcreator
@@ -229,8 +229,8 @@ toujours pas disponible. C'est là que Clover rentre en jeu.
 choco install Clover
 ```
 
-* [site officiel](http://ejie.me/)
-* [lien du package](http://chocolatey.org/packages/Clover)
+- [site officiel](http://ejie.me/)
+- [lien du package](http://chocolatey.org/packages/Clover)
 
 ### Spaaaaaaaces
 
@@ -243,8 +243,8 @@ fenêtres, je vous propose VirtuaWin. Cela vous permettra de garder en plein
 choco install virtuawin
 ```
 
-* [site officiel](http://virtuawin.sourceforge.net/)
-* [lien du package](https://chocolatey.org/packages/virtuawin)
+- [site officiel](http://virtuawin.sourceforge.net/)
+- [lien du package](https://chocolatey.org/packages/virtuawin)
 
 ### Launchy, le Alfred-like sous Windows
 
@@ -258,8 +258,8 @@ et tout un tas d'autres choses. Voici alors Launchy.
 choco install launchy-beta
 ```
 
-* [site officiel](http://www.launchy.net/)
-* [lien du package](https://chocolatey.org/packages/launchy-beta)
+- [site officiel](http://www.launchy.net/)
+- [lien du package](https://chocolatey.org/packages/launchy-beta)
 
 ### Pipette et retouche
 
@@ -267,9 +267,9 @@ L'indispensable [PhotoFiltre](http://photofiltre.free.fr/frames.htm) qui, bien
 qu'il ne soit plus mis à jour depuis 2012, est très stable et efficace. Il fait
 peu mais, le fait bien.
 
-* Édition rapide d'images
-* Pipette
-* etc.
+- Édition rapide d'images
+- Pipette
+- etc.
 
 Et surtout, il est ultra léger et démarre en moins d'une seconde.
 
@@ -289,8 +289,8 @@ plus, ça permet au cerveau de se préparer à aller se coucher. :D
 choco install f.lux
 ```
 
-* [site officiel](https://justgetflux.com/)
-* [lien du package](https://chocolatey.org/packages/f.lux)
+- [site officiel](https://justgetflux.com/)
+- [lien du package](https://chocolatey.org/packages/f.lux)
 
 #### MacType
 
@@ -309,8 +309,8 @@ choco install mactype
 
 Je vous conseille le profil `XMac.LCD.Default`.
 
-* [site officiel](https://code.google.com/p/mactype/)
-* [lien du package](https://chocolatey.org/packages/mactype)
+- [site officiel](https://code.google.com/p/mactype/)
+- [lien du package](https://chocolatey.org/packages/mactype)
 
 ## Vous voilà paré(e) !
 

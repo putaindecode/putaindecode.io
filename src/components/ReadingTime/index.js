@@ -11,7 +11,7 @@ class ReadingTime extends Component {
       // split by words
       .split(/\s+|\s*\.\s*/);
     this.state = {
-      minutes: Math.ceil(words.length / this.props.wordsPerMinute)
+      minutes: Math.ceil(words.length / this.props.wordsPerMinute),
     };
   }
 
@@ -27,7 +27,7 @@ class ReadingTime extends Component {
         className={cx(
           `r-Tooltip`,
           `r-Tooltip--${this.props.tooltipPosition}`,
-          this.props.className
+          this.props.className,
         )}
         data-r-tooltip={this.replaceParameters(this.props.templateTooltip)}
       >
@@ -50,7 +50,7 @@ ReadingTime.propTypes = {
   templateTooltip: PropTypes.string,
   className: PropTypes.string,
   wordsPerMinute: PropTypes.number,
-  tooltipPosition: PropTypes.oneOf(["top", "bottom", "left", "right"])
+  tooltipPosition: PropTypes.oneOf(["top", "bottom", "left", "right"]),
 };
 
 ReadingTime.defaultProps = {
@@ -60,11 +60,11 @@ ReadingTime.defaultProps = {
   wordsPerMinute: 250,
   templateText: {
     1: "less than a minute",
-    2: "around ${minutes} minutes"
+    2: "around ${minutes} minutes",
   },
   templateTooltip:
     "Approxiate time, based on a speed of ${wordsPerMinute} words per minute",
-  tooltipPosition: "top"
+  tooltipPosition: "top",
 };
 
 export default ReadingTime;

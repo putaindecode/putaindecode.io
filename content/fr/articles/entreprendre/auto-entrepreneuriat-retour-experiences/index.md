@@ -30,13 +30,13 @@ client, effectuer des factures, échanger avec l'administration (ah quel plaisir
 vos études ou à être plus indépendant(e) de vos parents.
 
 Tant de raisons qui peuvent vous pousser à vous ouvrir à l'auto-entreprise. Et
-pour ça, [_kud](http://kud.io/) et [MoOx](http://moox.io/) ont vécu cette
+pour ça, [\_kud](http://kud.io/) et [MoOx](http://moox.io/) ont vécu cette
 expérience et vous proposent de répondre à quelques questions pour vous faire
 une petite idée.
 
 ## Pourquoi avez-vous créé votre entreprise ?
 
-##### **_kud**
+##### **\_kud**
 
 Étant déjà en CDI et étant souvent sollicité pour créer des petits sites à
 droite à gauche, je voulais m'initier à plusieurs choses comme la création
@@ -48,27 +48,28 @@ fin de mois.
 
 ##### **MoOx**
 
-*Travailler plus pour gagner plus*, au départ ça devait être pour cette raison.
+_Travailler plus pour gagner plus_, au départ ça devait être pour cette raison.
 Je n'avais pas de quoi frimer à la sortie de l'école, et je pouvais encore moins
 me payer de la blanche. Il me fallait donc une solution (rires). Plus
 sérieusement, dans le fond, tout comme Erwann, j'avais sûrement envie de tester
-un modèle plus indépendant que le CDI, en attendant que [le revenu de
-base](http://revenudebase.info/comprendre-le-revenu-de-base/) vienne bien
-démolir le modèle actuel.
+un modèle plus indépendant que le CDI, en attendant que
+[le revenu de base](http://revenudebase.info/comprendre-le-revenu-de-base/)
+vienne bien démolir le modèle actuel.
 
 ## Comment s'inscrire ?
 
-C'est relativement simple. Il faut aller sur le [site de
-l'auto-entrepreneur](http://www.lautoentrepreneur.fr/) et remplir le formulaire.
+C'est relativement simple. Il faut aller sur le
+[site de l'auto-entrepreneur](http://www.lautoentrepreneur.fr/) et remplir le
+formulaire.
 
-##### **_kud**
+##### **\_kud**
 
 En ce qui me concerne, j'ai choisi "Prestations de services informatiques", ce
 qui me permettait d'être plutôt libre sur mes actions :
 
-* donner des cours d'informatique ;
-* créer des sites web ;
-* faire de la réparation (même si ce n'est pas vraiment un cas que je souhaitais
+- donner des cours d'informatique ;
+- créer des sites web ;
+- faire de la réparation (même si ce n'est pas vraiment un cas que je souhaitais
   envisager).
 
 ##### **MoOx**
@@ -82,7 +83,7 @@ l'époque (2010). Après, on n'ira pas vous ennuyer avec ça, je pense.
 
 ## Qu'avez vous fait avec ?
 
-##### **_kud**
+##### **\_kud**
 
 C'est une bonne question.
 
@@ -101,7 +102,7 @@ marchaient Internet et le Web. J'ai tout bonnement **adoré**.
 
 ##### **MoOx**
 
-Pareil qu'Erwann (**_kud**: *bingo*), au début c'était forfait soir et week-end
+Pareil qu'Erwann (**\_kud**: _bingo_), au début c'était forfait soir et week-end
 de temps en temps. J'ai pris quelques petits projets sur mesure ou "du WordPress
 pour manger" (2 fois seulement je le jure). Ensuite ça m'a fatigué mine de rien,
 puis j'avais d'autres priorités même si mon seul salaire en CDI pour nourrir 2
@@ -109,17 +110,18 @@ bouches était juste. J'ai donc arrêté un moment, sans pour autant fermer l'AE
 (étant donné qu'au début, 0 CA = 0 charge). Mais c'est là où mon expérience avec
 l'AE est intéressante. J'ai laissé dormir le truc.
 
-Puis par la suite, [le CDI étant ce qu'il
-est](https://vincent.jousse.org/blog/et-si-le-cdi-etait-une-connerie/) avec ses bons
-et surtout ses mauvais côtés, un jour après que le projet sur lequel j'ai été
-embauché soit jeté à la poubelle et que je doive me rabattre sur d'autres tâches
-qui ne m'amusaient plus du tout, j'ai décidé de démissionner. Mais bon, c'était
-une situation un peu tendue, car je n'avais rien en plan B. Qui dit démission,
-dit "démerde-toi". Et à Toulouse, des boulots intéressants dans le web, si tu
-veux faire autre chose que du PHP, c'est un peu tendu du `string`.
+Puis par la suite,
+[le CDI étant ce qu'il est](https://vincent.jousse.org/blog/et-si-le-cdi-etait-une-connerie/)
+avec ses bons et surtout ses mauvais côtés, un jour après que le projet sur
+lequel j'ai été embauché soit jeté à la poubelle et que je doive me rabattre sur
+d'autres tâches qui ne m'amusaient plus du tout, j'ai décidé de démissionner.
+Mais bon, c'était une situation un peu tendue, car je n'avais rien en plan B.
+Qui dit démission, dit "démerde-toi". Et à Toulouse, des boulots intéressants
+dans le web, si tu veux faire autre chose que du PHP, c'est un peu tendu du
+`string`.
 
-En cherchant, j'ai découvert un truc sympa : la [rupture
-conventionnelle](http://travail-emploi.gouv.fr/informations-pratiques,89/les-fiches-pratiques-du-droit-du,91/rupture-conventionnelle-du-contrat,1208/la-rupture-conventionnelle-du,8383.html).
+En cherchant, j'ai découvert un truc sympa : la
+[rupture conventionnelle](http://travail-emploi.gouv.fr/informations-pratiques,89/les-fiches-pratiques-du-droit-du,91/rupture-conventionnelle-du-contrat,1208/la-rupture-conventionnelle-du,8383.html).
 Pour faire simple, c'est une démission à l'amiable avec ton patron. Il faut son
 accord et tout le tralala administratif, mais à partir du moment où tu es en
 bons termes avec ton patron (et s'il n'est pas assez stupide pour dire des
@@ -155,8 +157,8 @@ Bon, par contre attention, quand tu bosses avec des gens qui considèrent bien
 ton travail, et qui te mettent sur un piédestal (tu es en position de force cher
 développeur, je te laisse à l'étymologie du nom de métier) plutôt que de te
 prendre pour la dernière roue du carrosse, tu vas vite dépasser le plafond
-imposé par l'AE (no shit³). [Et il n'y a pas que mon expérience qui vous le
-dira](https://gist.github.com/tibastral/8301072).
+imposé par l'AE (no shit³).
+[Et il n'y a pas que mon expérience qui vous le dira](https://gist.github.com/tibastral/8301072).
 
 Pour l'anecdote, je n'ai demandé les indemnités de chômage que deux mois
 seulement sur près d'un an en situation freestyle (avant que je change pour un
@@ -165,15 +167,14 @@ vrai statut).
 Du coup, pour moi l'AE aura été une bonne transition entre CDI, situation
 précaire et ma situation actuelle de freelance. J'ai bien entendu changé
 rapidement de statut depuis (pour passer simplement à l'AE Level 2,
-l'[entreprise
-individuelle](http://www.apce.com/pid1628/l-entreprise-individuelle.html?espace=1&tp=1).
+l'[entreprise individuelle](http://www.apce.com/pid1628/l-entreprise-individuelle.html?espace=1&tp=1).
 
 ## Que deviez-vous déclarer ?
 
 Oui, parce que c'est bien beau tout ça mais qui dit statut administratif dit
 déclaration.
 
-##### **_kud**
+##### **\_kud**
 
 Tous les trimestres, je me devais de [déclarer](http://www.net-entreprises.fr/)
 ce que je facturais à mes clients et je payais directement mes impôts via le
@@ -197,7 +198,7 @@ meilleure idée pour être sûr de ne pas se tromper.
 
 ## Avez-vous eu des surprises ?
 
-##### **_kud**
+##### **\_kud**
 
 Tout d'abord, ce qui est quelque peu déstabilisant, c'est la quantité de
 courriers reçus. Prévoyances, mutuelles, maaaaaass papiers. En fait, c'est pas
@@ -266,7 +267,7 @@ J'avais choisi aussi le versement libératoire, et mon faible revenu pour 2 part
 
 ## Si vous l'avez arrêté, pourquoi ?
 
-##### **_kud**
+##### **\_kud**
 
 Je n'avais plus assez de temps pour moi. Les démarches m'ont un peu saoulé (même
 s'il y en avait vraiment pas beaucoup mais devoir constamment déclarer même si
@@ -275,8 +276,8 @@ vous êtes à 0 € sous peine d'avoir une amende, ça fait chier).
 Je n'ai pas non plus apprécié voir mon taux d'impôts sur le revenu augmenter,
 c'était pas ce qui était "vendu" lorsque ce statut m'a été présenté.
 
-Et puis, je risquais de payer [la taxe
-CFE](http://vosdroits.service-public.fr/professionnels-entreprises/F23547.xhtml)
+Et puis, je risquais de payer
+[la taxe CFE](http://vosdroits.service-public.fr/professionnels-entreprises/F23547.xhtml)
 d'ici l'année prochaine. Chose d'ailleurs qui n'est toujours pas claire d'après
 ce que je peux lire sur Internet : les AE ne savent toujours pas si la CFE va
 devoir être payée ou non.

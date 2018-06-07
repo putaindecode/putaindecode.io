@@ -50,17 +50,17 @@ on dirty checking).
 ### Ember
 
 [Ember](http://emberjs.com) is a well-thought and well-developed framework. It
-integrates `data-binding` thanks to [DOM
-Ranges](https://developer.mozilla.org/en-US/docs/Web/API/range). It also has
-strong design patterns and contrary to what people commonly think, it's actually
-pretty straightforward. Subviews are also pretty easy to use thanks to
+integrates `data-binding` thanks to
+[DOM Ranges](https://developer.mozilla.org/en-US/docs/Web/API/range). It also
+has strong design patterns and contrary to what people commonly think, it's
+actually pretty straightforward. Subviews are also pretty easy to use thanks to
 `{{outlet}}`.
 
 In other words, Ember and Angular both come bundled with real solutions for UI
 management. But they also share the same way to do it:
 
-* _rendering_ (creating and inserting DOM nodes) once
-* updating the bindings
+- _rendering_ (creating and inserting DOM nodes) once
+- updating the bindings
 
 ### React
 
@@ -117,27 +117,27 @@ var View = React.createClass({
   getInitialState: function() {
     // initial state
     return {
-      checked: false
+      checked: false,
     };
   },
   getDefaultProps: function() {
     // if `this.props.label` isn't defined, then `"?"` will be used
     return {
-      label: "?"
+      label: "?",
     };
   },
   toggle: function() {
     // creates a new state (React states are immutable)
     // and we trigger the rendering
     this.setState({
-      checked: !this.state.checked
+      checked: !this.state.checked,
     });
   },
   render: function() {
     // little addon that makes life easier
     var classes = React.addons.classSet({
       "list-item": true,
-      "list-item--valid": this.state.checked
+      "list-item--valid": this.state.checked,
     });
     return (
       <div className={classes}>
@@ -150,13 +150,13 @@ var View = React.createClass({
         {this.props.label}
       </div>
     );
-  }
+  },
 });
 
 // we mount the component and pass the label to it
 var view = React.render(
   <View label="helloworld" />,
-  document.getElementById("id")
+  document.getElementById("id"),
 );
 // and voilà!
 view.toggle();
@@ -166,11 +166,11 @@ view.toggle();
 
 React has this figured out:
 
-* the DOM is slow, particularly when it comes to writing, and it is crucial to
+- the DOM is slow, particularly when it comes to writing, and it is crucial to
   limit interactions with it;
-* we should not always have to be thinking about the state the DOM at a specific
+- we should not always have to be thinking about the state the DOM at a specific
   point in time while developing the UI of our component;
-* immutability (objects don't change, a new one gets created every time you need
+- immutability (objects don't change, a new one gets created every time you need
   to change something in it) and composition (composing a class of several
   functionnalities without having to create deep and complex chains of
   inheritance) are really useful and not used nearly as much as they should be

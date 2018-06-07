@@ -13,8 +13,8 @@ header:
   linearGradient: 160deg, rgba(0,0,0, .9), rgba(97, 218, 251, .7)
 ---
 
-L'équipe de React a implémenté une fonctionnalité appelée [shallow
-rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering)
+L'équipe de React a implémenté une fonctionnalité appelée
+[shallow rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering)
 (rendu peu profond), qui permet de rendre un composant avec un seul niveau de
 profondeur de rendu.
 
@@ -23,8 +23,8 @@ du comportement des composants enfants, qui ne sont pas instanciés ni rendus.
 Cela ne nécessite pas de DOM.
 
 Intéressant, n'est-ce pas ? Et d'ailleurs, le _shallow rendering_ est
-actuellement [la méthode recommandée pour tester vos composants
-React](https://discuss.reactjs.org/t/whats-the-prefered-way-to-test-react-js-components/26).
+actuellement
+[la méthode recommandée pour tester vos composants React](https://discuss.reactjs.org/t/whats-the-prefered-way-to-test-react-js-components/26).
 
 Comme vous pourrez le voir dans un article listé à la fin de celui-ci, le code
 permettant de tester des composants avec cette technique n'est pas forcément
@@ -67,7 +67,7 @@ Component.propTypes = {
   img: PropTypes.object,
   title: PropTypes.string,
   Loader: PropTypes.func.isRequired,
-  Title: PropTypes.func.isRequired
+  Title: PropTypes.func.isRequired,
 };
 
 Component.displayName = "Picture";
@@ -82,8 +82,8 @@ chargement.
 Écrivons maintenant un petit test. Pour notre exemple, on va utiliser
 [tape](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)
 couplé avec [tape-jsx-equals](https://github.com/atabel/tape-jsx-equals), mais
-vous n'aurez pas de mal à trouver un paquet à [votre sauce sur
-npm](https://www.npmjs.com/search?q=expect+jsx).
+vous n'aurez pas de mal à trouver un paquet à
+[votre sauce sur npm](https://www.npmjs.com/search?q=expect+jsx).
 
 ```js
 // web_modules/Picture/__tests__/index.js
@@ -111,7 +111,7 @@ test("PageContainer is properly rendered", t => {
     <div>
       <Loader />
     </div>,
-    "can render a Loader component if no image data are passed"
+    "can render a Loader component if no image data are passed",
   );
 
   renderer.render(
@@ -120,16 +120,16 @@ test("PageContainer is properly rendered", t => {
       Title={Title}
       img={{
         src: "SRC",
-        alt: "ALT"
+        alt: "ALT",
       }}
-    />
+    />,
   );
   t.jsxEquals(
     renderer.getRenderOutput(),
     <div>
       <img src="SRC" alt="ALT" />
     </div>,
-    "should render an image if data are passed"
+    "should render an image if data are passed",
   );
 
   renderer.render(
@@ -138,10 +138,10 @@ test("PageContainer is properly rendered", t => {
       Title={Title}
       img={{
         src: "SRC",
-        alt: "ALT"
+        alt: "ALT",
       }}
       title={"TITLE"}
-    />
+    />,
   );
   t.jsxEquals(
     renderer.getRenderOutput(),
@@ -149,7 +149,7 @@ test("PageContainer is properly rendered", t => {
       <img src="SRC" alt="ALT" />
       <Title text="TITLE" />
     </div>,
-    "can render a Title if data are passed"
+    "can render a Title if data are passed",
   );
 
   t.end();
@@ -187,12 +187,10 @@ comparaison. C'est bien assez !
 
 Si vous voulez aller un peu plus loin, vous pouvez continuer par lire :
 
-* [_Unit testing React components without a
-  DOM_](http://simonsmith.io/unit-testing-react-components-without-a-dom/), par
-  Simon Smith, qui couvre le même sujet, sans la simplicité de la comparaison
-  JSX,
-* [_How we unit test React components using
-  expect-jsx_](https://blog.algolia.com/how-we-unit-test-react-components-using-expect-jsx/)
+- [_Unit testing React components without a DOM_](http://simonsmith.io/unit-testing-react-components-without-a-dom/),
+  par Simon Smith, qui couvre le même sujet, sans la simplicité de la
+  comparaison JSX,
+- [_How we unit test React components using expect-jsx_](https://blog.algolia.com/how-we-unit-test-react-components-using-expect-jsx/)
   sur le blog d'Algolia, qui explique pourquoi ils ont choisi et créé les outils
   pour cette approche.
 

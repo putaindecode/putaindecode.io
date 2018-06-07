@@ -21,7 +21,7 @@ de définir une valeur par défaut à un paramètre.
 
 Il est maintenant possible de spécifier une valeur par défaut à un paramètre de
 fonction. Cette valeur sera utilisée si le paramètre n'est pas fourni, ou qu'il
-est explicitement défini à *undefined*.
+est explicitement défini à _undefined_.
 
 ```js
 function incr(value, step = 1) {
@@ -82,8 +82,8 @@ function foo(x = x) {
 
 En effet, au moment de l'appel à la fonction, `x` n'a pas encore été défini, et
 ne peut donc être utilisé comme valeur par défaut. Il semble que cet exemple
-devrait [lever une
-erreur](http://dmitrysoshnikov.com/ecmascript/es6-notes-default-values-of-parameters/#tdz-temporal-dead-zone-for-parameters).
+devrait
+[lever une erreur](http://dmitrysoshnikov.com/ecmascript/es6-notes-default-values-of-parameters/#tdz-temporal-dead-zone-for-parameters).
 
 Néanmoins, les règles de portée font que ce programme est également invalide :
 

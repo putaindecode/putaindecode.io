@@ -21,17 +21,17 @@ $ gem install sinatra
 $ rbenv rehash
 ```
 
-Tous les ans, depuis des années, sort un article : *"[Est-ce que Ruby est mort
-?](http://www.reddit.com/comments/1oi8wd)"*. Et chaque année les résultats sont
-les mêmes, *"Ruby perd en intensité"*, *"Node.js prend le dessus"*. Et pourtant
-Ruby reste chaque année dans l'actualité avec autant d'importance. Il faut être
-honnête et admettre que [Ruby souffre de certaines
-difficultés](http://blog.federicocarrone.com/2014/01/18/ruby-dying-or-ruby-hype-dead)
-comme tous les langages, mais [Ruby n'est pas
-mort](http://jmoses.co/2013/12/21/is-ruby-dying.html) et il y a encore beaucoup
-à en tirer, du langage, de ses frameworks et de sa communauté. Sans oublier que
-de grands sites l'ont utilisé et l'utilisent toujours comme Twitter, Github,
-Shopify, ou encore Hulu.
+Tous les ans, depuis des années, sort un article :
+_"[Est-ce que Ruby est mort ?](http://www.reddit.com/comments/1oi8wd)"_. Et
+chaque année les résultats sont les mêmes, _"Ruby perd en intensité"_, _"Node.js
+prend le dessus"_. Et pourtant Ruby reste chaque année dans l'actualité avec
+autant d'importance. Il faut être honnête et admettre que
+[Ruby souffre de certaines difficultés](http://blog.federicocarrone.com/2014/01/18/ruby-dying-or-ruby-hype-dead)
+comme tous les langages, mais
+[Ruby n'est pas mort](http://jmoses.co/2013/12/21/is-ruby-dying.html) et il y a
+encore beaucoup à en tirer, du langage, de ses frameworks et de sa communauté.
+Sans oublier que de grands sites l'ont utilisé et l'utilisent toujours comme
+Twitter, Github, Shopify, ou encore Hulu.
 
 Nous commençons donc une série d'articles sur Ruby afin de le découvrir et
 commencer à développer et à devenir productif avec. Et pour ce premier article,
@@ -43,7 +43,7 @@ n'arriverons plus à nous arrêter.
 
 Tout d'abord, il faut savoir qu'il existe plusieurs implémentations de Ruby,
 c'est-à-dire différents interpréteurs du langage. L'implémentation principale et
-originale est *MRI*, pour Matz's Ruby Interpreter, Yukihiro "Matz" Matsumoto
+originale est _MRI_, pour Matz's Ruby Interpreter, Yukihiro "Matz" Matsumoto
 étant le créateur de Ruby. On trouve également JRuby, un interpretteur Ruby en
 Java, permettant de bénéficier de toutes les fonctionnalités de la JVM. Parmi
 les plus connues également MacRuby qui est une implémentation spécifique à OS X
@@ -54,10 +54,10 @@ fasse ressentir.
 > C'est bien tout ça mais au final j'en sais pas plus sur Ruby.
 
 Et ça va en rester ainsi pour le moment, car au lieu de voir la théorie sur Ô
-combien [Ruby est
-génial](http://www.slideshare.net/astrails/ruby-is-awesome-16466895), nous
-allons tout de suite installer Ruby pour nous rapprocher rapidement de notre
-éditeur de texte.
+combien
+[Ruby est génial](http://www.slideshare.net/astrails/ruby-is-awesome-16466895),
+nous allons tout de suite installer Ruby pour nous rapprocher rapidement de
+notre éditeur de texte.
 
 ## Installation avec _rbenv_
 
@@ -66,9 +66,9 @@ passant par Github, par les packages officiels, brew, etc. _rbenv_ reste d'aprè
 moi la façon la plus simple, propre et légère. Beaucoup pourront préférer _RVM_
 disant qu'il fait la même chose en mieux, d'autres diront qu'au contraire il en
 fait trop en écrasant par exemple la méthode `cd`. J'ai utilisé les deux, il
-fallait faire un choix, ce sera *rbenv*.
+fallait faire un choix, ce sera _rbenv_.
 
-Pour utiliser *rbenv*, il faut avoir Git. Si vous ne l'avez pas, vous devriez.
+Pour utiliser _rbenv_, il faut avoir Git. Si vous ne l'avez pas, vous devriez.
 Et ça tombe bien, [madx](https://github.com/madx) et
 [Erwyn](https://github.com/Erwyn) ont fait deux super articles pour
 l'[utiliser](/fr/articles/git/) et le
@@ -91,8 +91,8 @@ $ git clone git@github.com:sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-buil
 ```
 
 C'est bon, vous pouvez installer Ruby. J'ai constaté sur Ubuntu qu'il était
-nécessaire d'installer au préalable `libssl-dev` et `g++`, simplement avec `sudo
-apt-get install libssl-dev g++`. Lançons-nous :
+nécessaire d'installer au préalable `libssl-dev` et `g++`, simplement avec
+`sudo apt-get install libssl-dev g++`. Lançons-nous :
 
 ```console
 $ rbenv install 2.1.1
@@ -112,8 +112,8 @@ installer une gem qui sera exécutée dans la console comme Sass il est nécessa
 de l'installer de cette façon : `gem install sass`. Seulement pour Sinatra, nous
 avons seulement besoin que le framework soit disponible dans nos scripts Ruby.
 Pour cela nous allons utiliser un gestionnaire de dépendance des gem Ruby, et
-nous verrons cela dans [le prochain article pour nos premiers pas avec
-Sinatra](/fr/articles/ruby/bundler/).
+nous verrons cela dans
+[le prochain article pour nos premiers pas avec Sinatra](/fr/articles/ruby/bundler/).
 
 D'ici là vous pouvez commencer à jouer avec Ruby en tapant la commande `irb`
 dans votre terminal, qui lance l'interpretteur Ruby. Pourquoi pas essayer un

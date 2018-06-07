@@ -92,9 +92,9 @@ As you can see, example with promises is clear and more concise.
 
 A promise can have different status:
 
-* in progress: value is not ready yet
-* resolved: value is here, we can use it
-* rejected: an error has been thrown, we should handle it.
+- in progress: value is not ready yet
+- resolved: value is here, we can use it
+- rejected: an error has been thrown, we should handle it.
 
 A promise have 2 functions: `then` and `catch`. You can use `then` to wait for
 the result (or handle an error), and `catch` to catch all possibles errors of
@@ -139,7 +139,7 @@ fetch("http://putaindecode.io")
   .catch(error => {
     console.log(
       `We got an issue during the request or the parsing`,
-      fetchError
+      fetchError,
     );
   });
 
@@ -151,7 +151,7 @@ fetch("http://putaindecode.io")
     },
     fetchError => {
       console.log(`We got an issue during the request`, fetchError);
-    }
+    },
   )
   .then(
     textResult => {
@@ -159,7 +159,7 @@ fetch("http://putaindecode.io")
     },
     parseError => {
       console.log("We got an issue during the parsing", parseError);
-    }
+    },
   );
 ```
 
@@ -191,7 +191,7 @@ functionThatReturnAPromise(success)
 // In our case, the previous example can be also written
 functionThatReturnAPromise(success).then(
   res => console.log(res),
-  error => console.log(error)
+  error => console.log(error),
 );
 ```
 

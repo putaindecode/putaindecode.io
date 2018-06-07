@@ -19,7 +19,7 @@ authors:
 
 D'abord, pour comprendre quel sont les problèmes que les nouveaux outils tentent
 de résoudre, un petit rappel sur ce qu'est le CSS : _Cascading Style Sheets_ ou
-*Feuilles de style en cascade*.
+_Feuilles de style en cascade_.
 
 Une feuille de style ? C'est facile ! C'est un bout de code qui lie des "styles"
 à du HTML. En cascade ? Et bien, quelques fois un élément HTML peut correspondre
@@ -91,20 +91,19 @@ h1 {
 ```
 
 Facile, n'est-ce pas ? Le titre sera bleu ! Mais s'il y a une règle `color: red`
-dans un fichier CSS nommé *foo.css*, et une règle `color: blue` dans un autre
-fichier nommé *bar.css*, que le fichier _foo.css_ met plus de temps que le
+dans un fichier CSS nommé _foo.css_, et une règle `color: blue` dans un autre
+fichier nommé _bar.css_, que le fichier _foo.css_ met plus de temps que le
 fichier _bar.css_ à charger, mais que le tag HTML référençant _foo.css_ est
-avant celui de *bar.css*, quelle règle est appliquée ? Eh bien, c'est plus
+avant celui de _bar.css_, quelle règle est appliquée ? Eh bien, c'est plus
 compliqué à savoir. _(indice : le temps de chargement n'est pas pris en compte)_
 
 ### La spécificité des sélecteurs
 
-Ce critère est un niveau de complexité au-dessus des autres, [si bien que des
-personnes en ont fait des calculettes pour le
-simplifier](https://specificity.keegan.st). Je ne vais pas rentrer dans les
-détails, mais il faut savoir que le poids d'un sélecteur est égal à la somme des
-poids de tous les sélecteurs le composant. Et que tous les sélecteurs n'ont pas
-le même poids.
+Ce critère est un niveau de complexité au-dessus des autres,
+[si bien que des personnes en ont fait des calculettes pour le simplifier](https://specificity.keegan.st).
+Je ne vais pas rentrer dans les détails, mais il faut savoir que le poids d'un
+sélecteur est égal à la somme des poids de tous les sélecteurs le composant. Et
+que tous les sélecteurs n'ont pas le même poids.
 
 ```css
 .title {
@@ -171,14 +170,15 @@ expérience personnelle.
 
 ### Pré-processeurs
 
-J'ai commencé à developper des applications web en 2012, en plein âge d'or [des
-pré-processeurs](/fr/articles/css/preprocesseurs/). Ils étaient apparus quelques
-années auparavant, comme le CSS lui-même n'était pas suffisamment adapté pour
-construire des sites complexes. Les pré-processeurs sont des compilateurs qui
-génèrent du code CSS à partir de languages légèrement différents, comme
-[Sass](http://sass-lang.com) ou [LESS](http://lesscss.org). Ces nouveaux
-languages permettent de créer des variables par exemple, ou d'imbriquer des
-sélecteurs, entre autres merveilleuses nouvelles fonctionnalités.
+J'ai commencé à developper des applications web en 2012, en plein âge d'or
+[des pré-processeurs](/fr/articles/css/preprocesseurs/). Ils étaient apparus
+quelques années auparavant, comme le CSS lui-même n'était pas suffisamment
+adapté pour construire des sites complexes. Les pré-processeurs sont des
+compilateurs qui génèrent du code CSS à partir de languages légèrement
+différents, comme [Sass](http://sass-lang.com) ou [LESS](http://lesscss.org).
+Ces nouveaux languages permettent de créer des variables par exemple, ou
+d'imbriquer des sélecteurs, entre autres merveilleuses nouvelles
+fonctionnalités.
 
 On peut transformer ce vieux code CSS compliqué à maintenir :
 
@@ -231,11 +231,11 @@ Ces méthodologies sont arrivées au moment ou je commençais à découper mes
 développements en composants. L'imbrication des sélecteurs ne marchait pas très
 bien avec ces derniers, vu que le but est de créer des bouts de code
 réutilisables partout dans la web app, comme un bouton par exemple. La
-méthodologie que j'utilise (toujours aujourd'hui) est appelée [BEM, pour Block
-Element Modifier](/fr/articles/css/bem/), mais il y en a d'autres avec le même
-but : chaque élément HTML de mes composants doit avoir une classe CSS qui lui
-est unique. De cette façon, pas besoin d'imbrication, et pas de collision de la
-cascade !
+méthodologie que j'utilise (toujours aujourd'hui) est appelée
+[BEM, pour Block Element Modifier](/fr/articles/css/bem/), mais il y en a
+d'autres avec le même but : chaque élément HTML de mes composants doit avoir une
+classe CSS qui lui est unique. De cette façon, pas besoin d'imbrication, et pas
+de collision de la cascade !
 
 Et ce code de pré-processeur :
 
@@ -273,12 +273,12 @@ Ici, pour éviter à nos règles CSS d'entrer en collision, nous… n'en écrivo
 plus ! Les frameworks CSS sont des styles déjà écrits qu'on peut utiliser avec
 des classes CSS spécifiques. Il y a deux approches ici :
 
-* Les frameworks de styles "finaux" comme [Bootstrap](http://getbootstrap.com).
+- Les frameworks de styles "finaux" comme [Bootstrap](http://getbootstrap.com).
   Il suffit d'ajouter la classe `btn` sur un élément HTML et… tada ! C'est
   maintenant un magnifique bouton. Certaines variables sont modifiables pour
   transformer le look global du framework.
 
-* Les frameworks de styles "utilitaires" comme [Tachyons](http://tachyons.io).
+- Les frameworks de styles "utilitaires" comme [Tachyons](http://tachyons.io).
   Ici, il n'y a pas de styles pré-définis, mais plein de classes utilitaires
   sont disponibles, comme `pam` pour donner un _medium padding_ à un élément, ou
   encore `ba` pour lui donner une _border all_ tout autour.

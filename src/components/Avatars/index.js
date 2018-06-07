@@ -9,9 +9,9 @@ const Avatars = ({ authors, className }) => (
       {
         "putainde-Avatars": true,
         "putainde-Avatars--multi": authors.length > 1,
-        [`putainde-Avatars--${authors.length}`]: authors.length > 1
+        [`putainde-Avatars--${authors.length}`]: authors.length > 1,
       },
-      className
+      className,
     )}
   >
     {authors.map(author => {
@@ -30,11 +30,11 @@ const Avatars = ({ authors, className }) => (
 Avatars.propTypes = {
   className: PropTypes.string,
   authors: PropTypes.arrayOf(PropTypes.string).isRequired,
-  size: PropTypes.number
+  size: PropTypes.number,
 };
 
 Avatars.contextTypes = {
-  i18n: PropTypes.object
+  i18n: PropTypes.object,
 };
 
 export default Avatars;

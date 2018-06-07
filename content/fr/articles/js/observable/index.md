@@ -44,7 +44,7 @@ Une fonction est agnostique: elle peut être appelée de manière synchrone ou
 asynchrone, c'est la façon dont elle est exécutée qui définira le "mode".
 
 Un cas où il est utile d'utiliser des APIs asynchrones avec Node.js: les accès
-au *file-system*. Si vous lisez un gros fichier en mode synchrone, il va bloquer
+au _file-system_. Si vous lisez un gros fichier en mode synchrone, il va bloquer
 l'exécution de votre programme tant qu'il n'a pas fini, mieux vaut attendre
 qu'il vous l'envoie quand il est prêt.
 
@@ -77,11 +77,11 @@ fetch("https://api.github.com/users/wyeo")
   .catch(logError) // Lance une erreur dans la console si quelque chose s'est mal passé
 ```
 
-Dans cet exemple, l'API renvoie une `Promise`: [une structure représentant une
-valeur potentielle](/fr/articles/js/es2015/promises/). Lorsque sa valeur est
-disponible, la promesse est *remplie*, et exécutera les callbacks qu'on lui a
-passé dans `.then`, si elle constate une erreur, elle exécutera les callbacks
-qu'on lui a passé dans `.catch`.
+Dans cet exemple, l'API renvoie une `Promise`:
+[une structure représentant une valeur potentielle](/fr/articles/js/es2015/promises/).
+Lorsque sa valeur est disponible, la promesse est _remplie_, et exécutera les
+callbacks qu'on lui a passé dans `.then`, si elle constate une erreur, elle
+exécutera les callbacks qu'on lui a passé dans `.catch`.
 
 Les `Promise` ne permettent cependant pas de traiter de la donnée au fur et à
 mesure de son arrivée: elle est remplie une seule fois.
@@ -95,7 +95,7 @@ comme paramètre un `Observer`. Ce dernier a cette forme :
 const observer = {
   next: val => console.log(val), // une fonction à exécuter à chaque nouvel évenement
   error: err => console.error(err), // une fonction à exécuter en cas d'erreur
-  complete: () => console.info("Complete!") // une fonction à exécuter lorsque l'observable a fini
+  complete: () => console.info("Complete!"), // une fonction à exécuter lorsque l'observable a fini
 };
 ```
 
@@ -120,29 +120,29 @@ const KeyboardObservable = {
     document.addEventListener("keyup", handleKeyUp);
     // subscribe retourne la "soucription", contenant une fonction pour la stopper
     return {
-      unsubscribe: () => document.removeEventListener("keyup", handleKeyUp)
+      unsubscribe: () => document.removeEventListener("keyup", handleKeyUp),
     };
-  }
+  },
 };
 
 let keys = [];
 KeyboardObservable.subscribe({
   next: keyCode => keys.push(String.fromCharCode(keyCode)),
   error: error => console.error(error),
-  complete: () => alert(keys.join(""))
+  complete: () => alert(keys.join("")),
 });
 ```
 
 Un `Observable` fonctionne à la fois pour du code synchrone et asynchrone, et il
 s'agit d'un pattern qui peut s'appliquer à des cas où `Promise` manque de
 granularité, puisqu'il permet de traiter la donnée au fur et à mesure de son
-arrivée. *In fine*, un observable est un _event emitter_ avec un concept de
+arrivée. _In fine_, un observable est un _event emitter_ avec un concept de
 completion.
 
-Il existe d'ailleurs un [_proposal_ en stage
-1](https://tc39.github.io/proposal-observable/) pour en faire une API de la
-specification de JavaScript. On peut très bien imaginer que les observables
-deviennent une interface très répandue dans un futur proche.
+Il existe d'ailleurs un
+[_proposal_ en stage 1](https://tc39.github.io/proposal-observable/) pour en
+faire une API de la specification de JavaScript. On peut très bien imaginer que
+les observables deviennent une interface très répandue dans un futur proche.
 
 Dans les prochains articles, nous verrons pourquoi et comment combiner des
 observables ainsi que les cas d'usage au sein d'une application React.

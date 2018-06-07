@@ -19,9 +19,9 @@ Si tu fais de la programmation orientée objet, il est fort probable que ce term
 ne te soit pas totalement inconnu. En PHP, on a principalement commencé à nous
 en rebattre les oreilles avec l'avènement de Symfony, qui est aujourd'hui le
 framework web majeur pour ce langage. Fabien Potencier, créateur et _lead
-developer_ de Symfony, cite en exemple sur [son
-blog](http://fabien.potencier.org/article/11/what-is-dependency-injection) cette
-définition :
+developer_ de Symfony, cite en exemple sur
+[son blog](http://fabien.potencier.org/article/11/what-is-dependency-injection)
+cette définition :
 
 > _Dependency Injection is where components are given their dependencies through
 > their constructors, methods, or directly into fields._
@@ -197,7 +197,7 @@ Tu t'imagines faire ce genre de chose dans la classe `Person` ou la classe
 
 ## Oui, ça sert à quelque chose une interface
 
-Dans tes souvenirs brumeux de vendredis matins étudiants (*cf. supra*), tu
+Dans tes souvenirs brumeux de vendredis matins étudiants (_cf. supra_), tu
 retrouveras peut-être des bribes de cours portant sur les **interfaces**. Si
 tout ce que tu as retenu, c'est qu'"une classe toute vide ça sert à rien", lis
 donc ce qui va suivre.
@@ -292,7 +292,7 @@ encore, l'injection de dépendances peut nous aider, quoique de manière indirec
 Un conteneur (ça sera plus court) peut _grosso modo_ être comparé à une grosse
 _factory_ capable d'instancier plusieurs classes. En pratique, afin d'éviter
 d'écrire et de devoir maintenir une classe monolithique, on en fera plutôt
-quelque chose qui fait appel aux différentes *factories*. Poursuivons sur notre
+quelque chose qui fait appel aux différentes _factories_. Poursuivons sur notre
 exemple :
 
 ```php
@@ -337,8 +337,8 @@ très bien fichu que tu peux utiliser dans ton projet si tu le souhaites.
 Si tu développes en PHP, j'espère t'avoir montré qu'il est possible d'écrire du
 code plus maintenable et plus élégant en utilisant l'injection de dépendances.
 Dans le cas contraire, sache que ce concept est très répandu dans les langages
-orientés objet d'une manière générale - après tout, [on en retrouve même dans
-Angular](https://docs.angularjs.org/guide/di).
+orientés objet d'une manière générale - après tout,
+[on en retrouve même dans Angular](https://docs.angularjs.org/guide/di).
 
 Bon code, et n'oublie pas, on ne met pas en prod le vendredi, c'est mal. Allez,
 file !

@@ -76,19 +76,19 @@
   transform: translateX(calc(-0%));
 }
 .putainde-Avatars--2 .putainde-List-avatars-author-avatar {
-  transform: translateX(calc(-25% - 12.5%*(2-2)/2));
+  transform: translateX(calc(-25% - 12.5% * (2-2) / 2));
 }
 .putainde-Avatars--3 .putainde-List-avatars-author-avatar {
-  transform: translateX(calc(-25% - 12.5%*(3-2)/2));
+  transform: translateX(calc(-25% - 12.5% * (3-2) / 2));
 }
 .putainde-Avatars--4 .putainde-List-avatars-author-avatar {
-  transform: translateX(calc(-25% - 12.5%*(4-2)/2));
+  transform: translateX(calc(-25% - 12.5% * (4-2) / 2));
 }
 .putainde-Avatars--5 .putainde-List-avatars-author-avatar {
-  transform: translateX(calc(-25% - 12.5%*(5-2)/2));
+  transform: translateX(calc(-25% - 12.5% * (5-2) / 2));
 }
 .putainde-Avatars--6 .putainde-List-avatars-author-avatar {
-  transform: translateX(calc(-25% - 12.5%*(6-2)/2));
+  transform: translateX(calc(-25% - 12.5% * (6-2) / 2));
 }
 
 .putainde-Message {

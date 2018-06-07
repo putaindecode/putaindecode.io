@@ -97,9 +97,9 @@ lisible !
 
 Une promesse peut avoir plusieurs états au cours de son existence :
 
-* en cours : la valeur qu'elle contient n'est pas encore arrivée
-* résolue : la valeur est arrivée, on peut l'utiliser
-* rejetée : une erreur est survenue, on peut y réagir
+- en cours : la valeur qu'elle contient n'est pas encore arrivée
+- résolue : la valeur est arrivée, on peut l'utiliser
+- rejetée : une erreur est survenue, on peut y réagir
 
 Une promesse possède 2 fonctions : `then` et `catch`, vous pouvez utiliser
 `then` pour récupérer le resultat ou l'erreur d'une promesse et `catch` pour
@@ -145,7 +145,7 @@ fetch("http://putaindecode.io")
   .catch(error => {
     console.log(
       "Une erreur a eu lieu pendant la requête ou le parsing",
-      fetchError
+      fetchError,
     );
   });
 
@@ -157,7 +157,7 @@ fetch("http://putaindecode.io")
     },
     fetchError => {
       console.log("Une erreur a eu lieu pendant la requête", fetchError);
-    }
+    },
   )
   .then(
     textResult => {
@@ -165,7 +165,7 @@ fetch("http://putaindecode.io")
     },
     parseError => {
       console.log("Une erreur a eu lieu pendant le parsing", parseError);
-    }
+    },
   );
 ```
 
@@ -197,7 +197,7 @@ functionThatReturnAPromise(success)
 // équivalent dans notre cas à
 functionThatReturnAPromise(success).then(
   res => console.log(res),
-  error => console.log(error)
+  error => console.log(error),
 );
 ```
 

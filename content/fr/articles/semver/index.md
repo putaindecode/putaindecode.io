@@ -20,7 +20,7 @@ mais peut-être que vous ne savez pas ce que c'est ou que vous ne savez pas
 comment l'appliquer. Et je vous comprends, j'ai mis un peu de temps à maitriser
 le sujet.
 
-Pour faire simple, **SemVer** (voulant dire *Semantic Versioning*) est une
+Pour faire simple, **SemVer** (voulant dire _Semantic Versioning_) est une
 gestion sémantique des versions. En d'autres termes, une façon de numéroter les
 versions de manière logique, cohérente, parlante, ayant du sens. Ce n'est
 cependant pas forcément une norme, vous n'êtes pas obligé(e) de la respecter
@@ -149,11 +149,11 @@ ajouter directement dans le `README.md` à la fin ou carrément dans un fichier 
 des fichiers dédiés à ça. Voici un
 [exemple](https://github.com/cssnext/cssnext/blob/master/CHANGELOG.md).
 
-- - -
+---
 
 Stay safe, use **SemVer**.
 
 Ressources :
 
-* [site officiel](http://semver.org/)
-* [semver-ftw](http://semver-ftw.org/)
+- [site officiel](http://semver.org/)
+- [semver-ftw](http://semver-ftw.org/)

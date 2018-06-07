@@ -51,8 +51,8 @@ Enfin, Swift peut être utilisé comme langage de script, en créant un fichier
 `.swift`, à exécuter dans le terminal avec `swift [file].swift`. Cette méthode
 offre peu de confort, car même en ouvrant le fichier sur Xcode vous n'aurez pas
 l'autocomplétion. Mais si vous êtes un mordu de **Linux**, sachez qu'il existe
-un compilateur Swift Linux fourni par Apple sur la [page dédiée sur
-swift.org](https://swift.org/download/#linux).
+un compilateur Swift Linux fourni par Apple sur la
+[page dédiée sur swift.org](https://swift.org/download/#linux).
 
 ## Les variables
 
@@ -76,7 +76,7 @@ let implicitString = "Luigi" // This is a string too
 ```
 
 Par défaut, les variables ne peuvent pas être nulles. Pour qu'une variable soit
-dite *optionelle*, il faut déclarer une variable explicite en ajoutant un `?` à
+dite _optionelle_, il faut déclarer une variable explicite en ajoutant un `?` à
 son type.
 
 ```swift
@@ -181,7 +181,7 @@ func myFunctionName(myStringInput:String,myIntInput:Int)->Int{
 ```
 
 En réalité, les fonctions sont un cas particulier d'utilisation d'une notion
-introduite par Swift qu'ils appellent les *closures*. Pour les amateurs de
+introduite par Swift qu'ils appellent les _closures_. Pour les amateurs de
 _Block_ (Objective C, C++14) et **Lambdas** (C++, Java,...), les closures seront
 détaillées dans un prochain article.
 
@@ -192,5 +192,4 @@ scripts Swift peuvent **utiliser
 [Foundation](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/ObjC_classic/)**
 sur Linux ou OS X , le framework de base des OS d'Apple bien connu des
 développeurs OS X/iOS. Il permet le traitement des fichiers, des `String` et
-[bien
-plus](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/ObjC_classic/).
+[bien plus](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/ObjC_classic/).

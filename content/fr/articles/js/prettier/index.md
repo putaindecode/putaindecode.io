@@ -28,12 +28,12 @@ C'est pour répondre à ce problème (enfin, ceux liés au formatage de votre co
 que Go intègre un formatting tool (`fmt`, comme la commande Unix), intitulé
 [gofmt](https://golang.org/cmd/gofmt/).
 
-1. Vous codez comme vous le sentez
-2. Vous sauvegardez votre fichier
-3. Votre code est automatiquement formaté
-4. Vous vous sentez frustré
-5. Très vite, vous vous rendez compte que c'est pour votre bien, et que perdre
-   du temps ou débattre sur ce genre de détails, c'est tout sauf utile
+1.  Vous codez comme vous le sentez
+2.  Vous sauvegardez votre fichier
+3.  Votre code est automatiquement formaté
+4.  Vous vous sentez frustré
+5.  Très vite, vous vous rendez compte que c'est pour votre bien, et que perdre
+    du temps ou débattre sur ce genre de détails, c'est tout sauf utile
 
 Autre avantage non négligeable : le code Go que vous trouverez dans d'autres
 packages, des exemples, etc. sera toujours formaté de la même façon.
@@ -74,24 +74,24 @@ Ou, pour les meilleurs d'entre vous :
 yarn add --dev prettier
 ```
 
-¯\\*( ツ )*/¯
+¯\\_( ツ )_/¯
 
 ## Configuration
 
 Car oui, il y en a tout de même un peu. Il est possible de régler:
 
-* La longueur maximale des lignes (`printWidth`, `80` caractères par défaut)
-* Le nombre d'espaces pour l'indentation (`tabWidth`, `2` par défaut, pas de
+- La longueur maximale des lignes (`printWidth`, `80` caractères par défaut)
+- Le nombre d'espaces pour l'indentation (`tabWidth`, `2` par défaut, pas de
   tabs)
-* Single quotes / double quotes (`singleQuote`, `false` par défaut)
-* S'il faut ajouter des virgules en fin de certaines structures (comme les
+- Single quotes / double quotes (`singleQuote`, `false` par défaut)
+- S'il faut ajouter des virgules en fin de certaines structures (comme les
   objets, mais aussi dans les paramètres de fonction, ce qui est possible depuis
   peu) (`trailingComma`, `none` par défaut, `es5` et `all` sont également
   possibles)
-* S'il faut ajouter des espaces dans un objet écrit sur une seule ligne
+- S'il faut ajouter des espaces dans un objet écrit sur une seule ligne
   (`bracketSpacing`, `true` par défaut)
-* Comment fermer les balises JSX (`jsxBracketSameLine`, `false` par défaut)
-* Quel parser utiliser (`parser`, `babylon` par défaut, `flow` est disponible)
+- Comment fermer les balises JSX (`jsxBracketSameLine`, `false` par défaut)
+- Quel parser utiliser (`parser`, `babylon` par défaut, `flow` est disponible)
 
 > Mais attends… Si l'on peut malgré tout configurer tout ça, ce n'est plus
 > vraiment un style standard ?
@@ -100,8 +100,7 @@ Oui et non, car il y aura toujours beaucoup de détails sur lesquels il nous ser
 impossible de choisir, les options resteront minimalistes. Par exemple, vous ne
 pourrez jamais retirer les points-virgules.
 
-`EDIT: Il semblerait que malgré ce qui a pu être annoncé par l'auteur de
-prettier, une option --no-semicolons soit dans les tuyaux.`
+`EDIT: Il semblerait que malgré ce qui a pu être annoncé par l'auteur de prettier, une option --no-semicolons soit dans les tuyaux.`
 
 Dans tous les cas, prettier reste un outil extrêmement pratique pour forcer le
 formatage du code au sein de votre équipe.
@@ -177,8 +176,8 @@ de votre éditeur si le code est à nouveau formaté en pre-commit._
 
 ## Quelques exemples, c'est possible ?
 
-J'ai mieux. Il est possible d'[essayer en
-ligne](https://prettier.github.io/prettier) ! ✨
+J'ai mieux. Il est possible
+d'[essayer en ligne](https://prettier.github.io/prettier) ! ✨
 
 ## Donc c'est bon, tu conseilles ?
 

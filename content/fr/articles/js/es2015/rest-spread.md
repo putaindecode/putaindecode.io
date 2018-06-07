@@ -42,8 +42,8 @@ function myFunction(separator, ...words) {
 myFunction("-", "foo", "bar"); // "foo-bar"
 ```
 
-Il vous sera en revanche impossible de lui attribuer une [valeur par
-défaut](/fr/articles/js/es2015/defaults/).
+Il vous sera en revanche impossible de lui attribuer une
+[valeur par défaut](/fr/articles/js/es2015/defaults/).
 
 ## L'opérateur spread
 
@@ -95,8 +95,8 @@ const stronglyTyped = ["scala", "haskell"]
 #### Déstructurer dans un tableau
 
 Si vous n'avez pas encore connaissance des possibilités offertes par le
-destructuring, je vous invite à lire ce [précédent
-article](/fr/articles/js/es2015/destructuring/).
+destructuring, je vous invite à lire ce
+[précédent article](/fr/articles/js/es2015/destructuring/).
 
 ```js
 const words = ["foo", "bar", "baz"];

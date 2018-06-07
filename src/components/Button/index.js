@@ -12,7 +12,7 @@ const Component = props => {
       className={cx({
         [classes.component]: true,
         [classes.componentBlock]: block,
-        [classes.componentSmall]: small
+        [classes.componentSmall]: small,
       })}
     >
       {props.children}
@@ -23,7 +23,7 @@ const Component = props => {
 Component.propTypes = {
   children: PropTypes.node,
   block: PropTypes.bool,
-  small: PropTypes.bool
+  small: PropTypes.bool,
 };
 
 Component.displayName = "Button";

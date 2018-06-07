@@ -21,12 +21,12 @@ le SEO&nbsp;; quoique Google comme les lecteurs d'écran ont plutôt bien évolu
 sur ce point. L'autre avantage non négligeable à mon sens, est qu'on améliore
 les performances perçues par rapport à une SPA classique puisque&nbsp;:
 
-* On supprime une requête _ajax_ au démarrage pour récupérer le contenu initial.
-* On améliore la vitesse de rendu initial de page.
-* On bénéficie de la fluidité de navigation d'une SPA.
+- On supprime une requête _ajax_ au démarrage pour récupérer le contenu initial.
+- On améliore la vitesse de rendu initial de page.
+- On bénéficie de la fluidité de navigation d'une SPA.
 
-Pour plus d'info sur les avantages, il y a [cet
-article](http://tech.m6web.fr/isomorphic-single-page-app-parfaite-react-flux/)
+Pour plus d'info sur les avantages, il y a
+[cet article](http://tech.m6web.fr/isomorphic-single-page-app-parfaite-react-flux/)
 sur le blog de M6Tech.
 
 Afin de me familiariser avec React et son écosystème, rien de mieux que mettre
@@ -128,7 +128,7 @@ var Html = React.createClass({
         </body>
       </html>
     );
-  }
+  },
 });
 
 module.exports = Html;
@@ -143,18 +143,18 @@ rationalisation des outils, j'ai préféré utiliser React.
 Vous avez dû vous apercevoir qu'on utilise 2 méthodes différentes pour générer
 du HTML avec React&nbsp;:
 
-* `React.renderToString(React.createElement(Handler), data);`
-* `React.renderToStaticMarkup(React.createElement(Handler), data);`
+- `React.renderToString(React.createElement(Handler), data);`
+- `React.renderToStaticMarkup(React.createElement(Handler), data);`
 
 La différence entre les deux méthodes est simple. Dans la première, React annote
 les nœuds HTML avec des `data-reactid` dans le but de pouvoir ensuite reprendre
 la main lorsque votre l'application s'exécutera dans le navigateur. De cette
 manière, React sait que vous l'initialisez avec un contenu généré depuis le
 serveur. Et si il détecte une différence entre le code existant et celui qu'il
-génère, vous aurez droit à un [petit
-warning](https://github.com/facebook/react/blob/2aeb8a2a6beb00617a4217f7f8284924fa2ad819/src/browser/ui/__tests__/ReactRenderDocument-test.js#L205-L215).
+génère, vous aurez droit à un
+[petit warning](https://github.com/facebook/react/blob/2aeb8a2a6beb00617a4217f7f8284924fa2ad819/src/browser/ui/__tests__/ReactRenderDocument-test.js#L205-L215).
 La deuxième méthode permet de générer du code HTML sans annotations, comme
-n'importe quel moteur de *template*.
+n'importe quel moteur de _template_.
 
 Les plus attentifs auront remarqué qu'on passe les données initiales lors de la
 création de l'application via des _props_ React. Quid de l'utilisation de flux
@@ -170,10 +170,10 @@ stores avant d'appeler `React.renderToString()`.
 Là où ça se corse un peu, c'est qu'il va falloir remplir nos stores avant de
 démarrer notre application sous peine de voir le message d'alerte dont je
 parlais plus haut. Le plus simple alors est de passer ces données au moteur de
-template, en plus du markup (par exemple sous la forme d'un nœud `<script
-type="application/json">JSON DATA</script>`. Il ne reste plus qu'a récupérer ces
-données avant d’appeler `React.render( Application,
-document.getElementById("react-app"))`
+template, en plus du markup (par exemple sous la forme d'un nœud
+`<script type="application/json">JSON DATA</script>`. Il ne reste plus qu'a
+récupérer ces données avant d’appeler
+`React.render( Application, document.getElementById("react-app"))`
 
 Par exemple&nbsp;:
 
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 Penser son application React pour qu'elle puisse être rendue coté serveur
 introduit de nouvelles problématiques, notamment avec l'ajout du _pattern_ Flux.
 En fonction des pages que l'on souhaite afficher, on devra initialiser
-différents *stores*. À nous de déterminer, en fonction de l'URL et du composant
+différents _stores_. À nous de déterminer, en fonction de l'URL et du composant
 à afficher, lequel initialiser, et cela, que l'on soit sur le client ou le
 serveur. De la même manière, il faudra être capable de charger nos données,
 indépendamment de l'environnement d’exécution (coucou XHR).
@@ -221,8 +221,8 @@ var ProjectPage = React.createClass({
 Dans ce bloc `statics`, on définit une fonction qui servira à récupérer les
 données pour ce composant mais on pourrait très bien imaginer retourner la liste
 d'actions à lancer ou encore les _stores_ à initialiser voire même un
-descripteur des données nécessaires à la vue ([cf Relay /
-GraphQL](https://www.youtube.com/watch?v=9sc8Pyc51uU))
+descripteur des données nécessaires à la vue
+([cf Relay / GraphQL](https://www.youtube.com/watch?v=9sc8Pyc51uU))
 
 Ensuite, lorsque le callback fourni à `Router.run()` est appelé, il suffit de
 parcourir les _Handler_ pour récupérer les informations contenues dans les blocs
@@ -251,7 +251,6 @@ souhaitez partager vos expériences dans ce domaine.
 
 Et quelques liens vidéo des sessions de la #reactjsconf :
 
-* [React.js Conf 2015 - react-router increases your productivity
-  ](https://www.youtube.com/watch?v=XZfvW1a8Xac)
-* [React.js Conf 2015 - Hype!](https://www.youtube.com/watch?v=z5e7kWSHWTg) : un
+- [React.js Conf 2015 - react-router increases your productivity ](https://www.youtube.com/watch?v=XZfvW1a8Xac)
+- [React.js Conf 2015 - Hype!](https://www.youtube.com/watch?v=z5e7kWSHWTg) : un
   aperçu des possibilités de react-router

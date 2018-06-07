@@ -74,11 +74,11 @@ au plus haut parent) ou **capturing** (descente d'évènements du plus haut pare
 
 Pour faire de la délégation, on va procéder en trois temps :
 
-* Choper `event.target`
-* Vérifier que le sélecteur qui nous intéresse correspond bien à `event.target`
+- Choper `event.target`
+- Vérifier que le sélecteur qui nous intéresse correspond bien à `event.target`
   ou un de ses parents (dans le cas où l'on clique sur le `.icon-Arrow` dans
   `.js-Button-action`)
-* Si ça match, on garde l'élement correspondant au sélecteur, sinon, exit
+- Si ça match, on garde l'élement correspondant au sélecteur, sinon, exit
 
 Les browsers relativement récents possèdent une méthode : `matchesSelector` (et
 tous ses alias préfixés). Ce qu'on peut donc faire, c'est ceci :
@@ -184,7 +184,7 @@ var myXHR = ajax({
   },
   error: function() {
     showError(this.status);
-  }
+  },
 });
 ```
 
@@ -217,10 +217,8 @@ Object.keys(myObject).forEach(function(key) {
 ```
 
 De même, on bénéficie de méthodes s'avérant très utiles, comme
-[`Array.prototype.map`, `Array.prototype.reduce`,
-`Array.prototype.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype),
-[`Object.create`, `Object.getPrototypeOf`, `Object.getOwnPropertyNames`,
-`Object.defineProperty`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object).
+[`Array.prototype.map`, `Array.prototype.reduce`, `Array.prototype.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype),
+[`Object.create`, `Object.getPrototypeOf`, `Object.getOwnPropertyNames`, `Object.defineProperty`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object).
 Si cela t'intéresse, je t'invite vivement à te renseigner sur ces dernières. Et
 si tu veux avoir plus de détails, read the fucking manual :
 [http://es5.github.io](http://es5.github.io).
@@ -239,7 +237,7 @@ var myElementClickEvents = {
     this.callbacks.forEach(function(item) {
       item.call(self.element, evt);
     });
-  }
+  },
 };
 myElement.addEventListener("click", myElementClickEvents);
 
@@ -322,7 +320,7 @@ function create() {
 
 var klass = {
   create: create,
-  extend: extend
+  extend: extend,
 };
 ```
 
@@ -335,14 +333,14 @@ var animal = klass.extend({
   },
   getName: function() {
     return this.name;
-  }
+  },
 });
 
 var cat = animal.extend({
   constructor: function(name) {
     animal.constructor.call(this, name);
   },
-  type: "cat"
+  type: "cat",
 });
 
 var myAnimal = animal.create("Foo");

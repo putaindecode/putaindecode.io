@@ -6,8 +6,8 @@ module.exports = {
         customProperties: {
           variables: {
             colorRed: "#c33",
-            colorLightGrey: "#ebeef0"
-          }
+            colorLightGrey: "#ebeef0",
+          },
         },
         customMedia: {
           extensions: {
@@ -18,10 +18,10 @@ module.exports = {
             maxL: "(max-width: 65em)",
             minL: "(min-width: 65.01em)",
             maxXL: "(max-width: 80em)",
-            minXL: "(min-width: 80.01em)"
-          }
-        }
-      }
-    }
-  }
+            minXL: "(min-width: 80.01em)",
+          },
+        },
+      },
+    },
+  },
 };

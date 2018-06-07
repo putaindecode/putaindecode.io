@@ -59,7 +59,7 @@ pour trouver d'où peut bien venir ce fichu problème, et on se coule un café
 parce qu'entre nous, ça peut prendre du temps.
 
 Heureusement pour nous, là aussi Git est au rendez-vous avec sa fonctionnalité
-de *bisecting*. Je vous vois déjà en train de baver devant votre écran, mais
+de _bisecting_. Je vous vois déjà en train de baver devant votre écran, mais
 non, Git ne va pas corriger vos bugs bien évidemment, il va vous aider à trouver
 le changement dans le code qui l'a fait apparaître et ceci grâce à la commande
 `git bisect`.
@@ -77,16 +77,16 @@ $
 </figure>
 
 Oui bon d'accord, il va falloir s'investir un peu plus pour parvenir à nos fins.
-Pour l'instant Git est passé en mode *bisection*, maintenant il a besoin
+Pour l'instant Git est passé en mode _bisection_, maintenant il a besoin
 d'informations pour s'exécuter:
 
-* Un commit où le bug est présent
-* Un commit où le bug est absent
+- Un commit où le bug est présent
+- Un commit où le bug est absent
 
 Imaginons que le commit sur lequel nous sommes comporte le bug, nous allons donc
 le signaler à Git avec `git bisect bad`. Nous allons ensuite nous déplacer sur
-un commit plus ancien qui ne comporte pas le bug et le signaler à son tour: `git
-bisect good`.
+un commit plus ancien qui ne comporte pas le bug et le signaler à son tour:
+`git bisect good`.
 
 Git va alors se mettre en route et vous déplacer automatiquement de commit en
 commit. Pour chacun d'eux vous n'aurez qu'à le déclarer bon ou mauvais comme
@@ -117,11 +117,11 @@ imagination, je suis sûr que vous trouverez.
 
 Pour les fanatiques de l'efficacité et de l'automatisation, sachez que Git en a
 encore dans le ventre. Si vous connaissez déjà un bon et un mauvais commit, vous
-pouvez tout simplement lancer la _bissection_ à grand coup de `git bisect start
-MAUVAIS_COMMIT BON_COMMIT` et si, cerise sur le gâteau, vous êtes en possession
-d'une suite de tests unitaires (oui non je sais faut pas déconner), `git bisect
-run <votre_script>` vous permettra de la lancer et la recherche du premier
-commit défectueux se fera alors toute seule!
+pouvez tout simplement lancer la _bissection_ à grand coup de
+`git bisect start MAUVAIS_COMMIT BON_COMMIT` et si, cerise sur le gâteau, vous
+êtes en possession d'une suite de tests unitaires (oui non je sais faut pas
+déconner), `git bisect run <votre_script>` vous permettra de la lancer et la
+recherche du premier commit défectueux se fera alors toute seule!
 
 ## git rebase, du pur story-telling
 
@@ -162,8 +162,8 @@ Date:   Tue Feb 18 21:38:35 2014 +0100
 </figure>
 
 Bien que l'on essaye de nous faire croire que les logiciels libres sont codés
-par des rockstars, ce qui permet de justifier le mythe du *1 commit = 1
-fonctionnalité*, vous n'êtes pas dupes; l'historique Git de ces dépôts est bel
+par des rockstars, ce qui permet de justifier le mythe du _1 commit = 1
+fonctionnalité_, vous n'êtes pas dupes; l'historique Git de ces dépôts est bel
 et bien retravaillé, et ceci dans le but de maintenir sa cohérence et de
 permettre à tous les contributeurs de le comprendre. Si cela s'applique
 particulièrement dans le cadre des logiciels libres, il n'en est pas moins
@@ -182,9 +182,9 @@ mon outil de tracking préféré.
 Pour commencer, il faut dire jusqu'à quel commit on souhaite effectuer cette
 réécriture; pour cela, dans mon cas, deux solutions:
 
-* Faire référence à partir de HEAD (l'étiquette courante), ici: HEAD~3 (je veux
+- Faire référence à partir de HEAD (l'étiquette courante), ici: HEAD~3 (je veux
   réécrire jusqu'au commit avant 'stuff')
-* Fournir le SHA1 du commit avant 'stuff' (ici
+- Fournir le SHA1 du commit avant 'stuff' (ici
   2645b1cdbdd72bea6c392c011320556997327761)
 
 Je vais utiliser la première méthode (le choix n'influe en rien sur la suite),
@@ -217,34 +217,34 @@ pick e739e7c Now my new functionality finally works
 ```
 
 Git m'affiche tous les commits concernés par l'opération (en ordre inverse),
-devant chacun d'eux, la mention *pick*, et une légende en bas. *pick*, comme
+devant chacun d'eux, la mention _pick_, et une légende en bas. _pick_, comme
 l'indique la légende, signifie que ce commit sera conservé, mais je peux
 remplacer cette mention par les suivantes:
 
-* reword : modifier le message de commit.
-* edit : utiliser le commit mais me laisser le modifier avec un `git commit
-  --amend` qui permet de commiter l'état courant de la copie de travail en
-  l'incorporant au commit précédent.
-* squash : utiliser le commit en le fusionnant avec le commit précédent.
-* fixup : utiliser le commit en le fusionnant avec le commit précédent et ne pas
+- reword : modifier le message de commit.
+- edit : utiliser le commit mais me laisser le modifier avec un
+  `git commit --amend` qui permet de commiter l'état courant de la copie de
+  travail en l'incorporant au commit précédent.
+- squash : utiliser le commit en le fusionnant avec le commit précédent.
+- fixup : utiliser le commit en le fusionnant avec le commit précédent et ne pas
   utiliser son message associé.
-* exec : exécuter une commande sur ce commit.
+- exec : exécuter une commande sur ce commit.
 
 En plus de ces différentes mentions, je peux également effectuer deux autres
 actions:
 
-* déplacer un commit, ce qui aura pour effet final de le déplacer dans
+- déplacer un commit, ce qui aura pour effet final de le déplacer dans
   l'historique.
-* supprimer un commit, ce qui aura comme résultat de le faire disparaître de
+- supprimer un commit, ce qui aura comme résultat de le faire disparaître de
   l'historique.
 
 Pour ma part, je vais:
 
-* supprimer la première ligne parce que j'ai décidé que le commit 'stuff' ne me
+- supprimer la première ligne parce que j'ai décidé que le commit 'stuff' ne me
   servait à rien.
-* mettre la mention reword devant le commit 'misc', car je vais fusionner le
+- mettre la mention reword devant le commit 'misc', car je vais fusionner le
   dernier commit avec celui-ci et mettre un nouveau message.
-* mettre la mention fixup devant le commit 'Now my new functionality finally
+- mettre la mention fixup devant le commit 'Now my new functionality finally
   works' car je vais le fusionner au précédent et abandonner son message.
 
 Ce qui nous donne le résultat suivant:
@@ -282,7 +282,7 @@ déplacement de commits, provoquent des conflits, Git va vous demander de les
 résoudre au fur et à mesure; il suffit pour cela d'éditer vos fichiers, puis de
 les marquer comme résolus au moyen de la commande `git add <lefichier>` avant de
 reprendre avec la commande `git rebase --continue`. Comme convenu, Git vous
-demande d'éditer le message du commit marqué en *reword*:
+demande d'éditer le message du commit marqué en _reword_:
 
 ```
 Story #34 - Poker cards now have a real back picture
@@ -331,7 +331,7 @@ l'option [--autosquash](http://madx.me/articles/git_rebase_autosquash.html).
 
 Voici venu le temps ~~des rires et des chants~~ de la denière commande que je
 souhaitais vous présenter, j'ai nommé `git reflog`. Cette commande c'est votre
-*joker*, elle assure votre survie, notamment si vous avez été assez zinzins pour
+_joker_, elle assure votre survie, notamment si vous avez été assez zinzins pour
 suivre les exemples donnés dans cet article, parce que honnêtement…
 
 <figure>
@@ -340,7 +340,7 @@ suivre les exemples donnés dans cet article, parce que honnêtement…
 
 Vous ne le savez peut être pas, mais Git, dans sa grande bonté, garde une
 référence de toutes vos actions, de tous les endroits où vous vous êtes
-déplacez. Ce registre, c'est le *references log*, et en plus on peut y accéder
+déplacez. Ce registre, c'est le _references log_, et en plus on peut y accéder
 simplement grâce à la commande `git reflog` (sans déconner). Faisons un petit
 tour dans le miens:
 

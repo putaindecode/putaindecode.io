@@ -16,7 +16,7 @@ simplicité aux gens qui l'utilisent.
 ## Qu'est-ce qui ne va pas ?
 
 À l'origine, CSS a été conçu pour styler des documents, pas des applications. Du
-coup lorsqu'on doit *scale*, c'est rapidement douloureux.
+coup lorsqu'on doit _scale_, c'est rapidement douloureux.
 
 ### Les sélecteurs
 
@@ -32,16 +32,16 @@ C'est comme si en JavaScript vous faisiez :
 
 ```javascript
 window.selector = (window.selector || []).concat({
-  fontSize: "1rem"
+  fontSize: "1rem",
 });
 ```
 
 Ça veut dire que :
 
-* La définition d'un style associé à un sélecteur peut être redéfinie ailleurs
-* Si on associe plusieurs styles à un sélecteur, les derniers définis dans le
+- La définition d'un style associé à un sélecteur peut être redéfinie ailleurs
+- Si on associe plusieurs styles à un sélecteur, les derniers définis dans le
   CSS auront toujours la priorité
-* Quelqu'un peut péter les styles d'un composant pour peu qu'il ne sache pas
+- Quelqu'un peut péter les styles d'un composant pour peu qu'il ne sache pas
   qu'un sélecteur est utilisé ailleurs
 
 ### La spécificité
@@ -106,8 +106,8 @@ Quelqu'un de la team modifie `.item` :
 
 Super, une regression dans `some-context`. Face à ça, deux possibilités :
 
-* Vous vous foutez d'avoir des régressions qui pètent votre site
-* À chaque changement minime du CSS vous vérifiez l'intégralité du site et
+- Vous vous foutez d'avoir des régressions qui pètent votre site
+- À chaque changement minime du CSS vous vérifiez l'intégralité du site et
   testez tous les comportements dans tous les contextes.
 
 ### Le choix de priorisation des styles
@@ -198,17 +198,17 @@ C'est super, mais si quelqu'un vient ajouter :
 
 quelque part, il y a deux cas :
 
-* soit c'est chargé avant, et ça ne fait rien
-* soit c'est chargé après, et ça override toutes les propriétés utilisant
+- soit c'est chargé avant, et ça ne fait rien
+- soit c'est chargé après, et ça override toutes les propriétés utilisant
   `--mainColor`. On est bien contents.
 
 ## Vous ne pouvez pas vous permettre de laisser tomber CSS ?
 
-Dans ce cas, forcez vous à utiliser la [méthodologie
-BEM](/fr/articles/css/bem/). Ça ne réglera pas tout, mais au moins cela vous
-permettra d'éviter un maximum de conneries en vous forçant à découper en
-composants isolés, et à mieux maîtriser la priorisation, puisque le scope auquel
-vous devrez y veiller sera considérablement réduit :
+Dans ce cas, forcez vous à utiliser la
+[méthodologie BEM](/fr/articles/css/bem/). Ça ne réglera pas tout, mais au moins
+cela vous permettra d'éviter un maximum de conneries en vous forçant à découper
+en composants isolés, et à mieux maîtriser la priorisation, puisque le scope
+auquel vous devrez y veiller sera considérablement réduit :
 
 ```css
 /* Header.css */
@@ -251,7 +251,7 @@ class MyComponent extends React.Component {
         style={{
           ...styles.myComponent,
           ...(active ? styles.active : null),
-          ...(disabled && !active ? styles.disabled : null)
+          ...(disabled && !active ? styles.disabled : null),
         }}
       >
         tadaa
@@ -262,14 +262,14 @@ class MyComponent extends React.Component {
 
 const styles = {
   myComponent: {
-    fontSize: 18
+    fontSize: 18,
   },
   active: {
-    textDecoration: "underline"
+    textDecoration: "underline",
   },
   disabled: {
-    opacity: 0.5
-  }
+    opacity: 0.5,
+  },
 };
 ```
 
@@ -283,8 +283,8 @@ En résumé, utiliser JS pour définir et appliquer les styles vous permet de
 prendre le contrôle sur le styling de vos composants, tout en apportant le
 confort d'un langage offrant naturellement de nombreux avantages. Si vous êtes
 bloqués avec CSS, partez sur les CSS modules ou la méthologie BEM selon vos
-possibilités. Le but, c'est d'éliminer les [7 maux de
-CSS](https://github.com/necolas/react-native-web/blob/master/website/guides/style.md).
+possibilités. Le but, c'est d'éliminer les
+[7 maux de CSS](https://github.com/necolas/react-native-web/blob/master/website/guides/style.md).
 
 Bisous bisous.
 
@@ -294,8 +294,8 @@ Afin de répondre aux diverses incompréhensions et commentaires en réponse à
 l’article, voilà un follow-up qui va tenter d’aller plus en profondeur dans la
 critique de CSS.
 
-Je vais donc répondre à [l’article de Daniel
-Glazman](http://www.glazman.org/weblog/dotclear/index.php?post/2016/06/18/Pourquoi-il-n-aurait-pas-du-arrêter-d-utiliser-CSS),
+Je vais donc répondre à
+[l’article de Daniel Glazman](http://www.glazman.org/weblog/dotclear/index.php?post/2016/06/18/Pourquoi-il-n-aurait-pas-du-arrêter-d-utiliser-CSS),
 ancien co-chairman du CSS Working Group.
 
 Le premier point n’a rien à voir avec le sujet, mais l’auteur fait un parallèle
@@ -305,7 +305,7 @@ de programmation. De plus, en JS, les variables ont une portée, et l’opérate
 `const` existe pour prévenir la réassignation. `</digression>`
 
 Le grand problème de l’état actuel des sélecteurs CSS, c’est qu’ils n’offrent
-naturellement aucune API (hors *Shadow DOM*) permettant de limiter le scope d’un
+naturellement aucune API (hors _Shadow DOM_) permettant de limiter le scope d’un
 sélecteur sans augmenter sa spécificité. Si je veux ajouter des propriétés de
 style à un élément comportant un certain sélecteur dans un certain contexte, je
 suis obligé d’avoir connaissance de tous les sélecteurs correspondant
@@ -369,8 +369,8 @@ var a = 2;
 // alerts 2
 ```
 
-Sur ma proposition alternative, outre être *“une horreur non-maintenable,
-verbeuse et error-prone”*, on va regarder ce que ça donne sur un cas plus simple
+Sur ma proposition alternative, outre être _“une horreur non-maintenable,
+verbeuse et error-prone”_, on va regarder ce que ça donne sur un cas plus simple
 :
 
 ```javascript
@@ -390,7 +390,7 @@ export default props => {
               ...styles.text,
               // appliquer un style conditionné par le contexte est très simple
               // et permet de prioriser à la définition du markup
-              ...(index % 2 === 0 && styles.oddText)
+              ...(index % 2 === 0 && styles.oddText),
             }}
           >
             {item.text}
@@ -405,19 +405,19 @@ export default props => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
   },
   item: {
-    flexBasis: 200
+    flexBasis: 200,
   },
   text: {
     // peut utiliser des variables qui ne seront pas écrasées si j'en définis
     // une avec le même nom ailleurs dans l'app
-    color: mainBlue
+    color: mainBlue,
   },
   oddText: {
-    color: mainRed
-  }
+    color: mainRed,
+  },
 };
 ```
 

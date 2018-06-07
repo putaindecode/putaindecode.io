@@ -21,7 +21,7 @@ The `=` operator can now help to define a default value to a parameter.
 ## Function parameters
 
 You can now specify a default value for a parameter of a function. This value
-will be used if the parameter is not defined, or explicitly set to *undefined*.
+will be used if the parameter is not defined, or explicitly set to _undefined_.
 
 ```js
 function incr(value, step = 1) {

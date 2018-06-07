@@ -29,13 +29,14 @@ puissant et orienté mise en page.
 
 Parlons des choses qui fâchent dès le début. À l'heure actuelle la dernière
 révision date du [17 septembre 2015](http://www.w3.org/TR/css-grid-1/) et la
-spécification en est toujours à l'état de *working draft*.
+spécification en est toujours à l'état de _working draft_.
 
-La compatibilité des [navigateurs est quelque peu
-limitée](http://caniuse.com/#feat=css-grid). Excepté Internet Explorer 10+ (Edge
-également), il est nécessaire d'activer le flag `layout.css.grid.enabled` dans
-Firefox et `experimental Web Platform features` pour Chrome pour activer le
-support du module.
+La compatibilité des
+[navigateurs est quelque peu limitée](http://caniuse.com/#feat=css-grid).
+Excepté Internet Explorer 10+ (Edge également), il est nécessaire d'activer le
+flag `layout.css.grid.enabled` dans Firefox et
+`experimental Web Platform features` pour Chrome pour activer le support du
+module.
 
 Autant dire qu'une utilisation en production est relativement prématurée, quand
 bien même cela ne doit pas nous empêcher d'expérimenter ce module.
@@ -45,10 +46,10 @@ bien même cela ne doit pas nous empêcher d'expérimenter ce module.
 La notion de Grid n'est pas nouvelle, de multiples frameworks/librairies
 utilisent déjà la mise en page en `Grid` :
 
-* [SUIT CSS components-grid](https://github.com/suitcss/components-grid)
-* [Zurb Foundation](http://foundation.zurb.com/docs/components/grid.html)
-* [960](http://960.gs/)
-* [cssrecipes Grid](https://github.com/cssrecipes/grid)
+- [SUIT CSS components-grid](https://github.com/suitcss/components-grid)
+- [Zurb Foundation](http://foundation.zurb.com/docs/components/grid.html)
+- [960](http://960.gs/)
+- [cssrecipes Grid](https://github.com/cssrecipes/grid)
 
 Toutes ces solutions se basent soit sur du `inline-block`, soit plus récemment
 sur `Flexbox`. Même si elles sont relativement élégantes, elles nécessitent

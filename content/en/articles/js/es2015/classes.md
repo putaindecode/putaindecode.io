@@ -39,8 +39,9 @@ const user = new User("John", "Doe");
 console.log(user.sayName()); // John Doe
 ```
 
-As a reminder, here is one [way to
-code](https://gist.github.com/magsout/a876b2fa8240a987e523) this class in `ES5`:
+As a reminder, here is one
+[way to code](https://gist.github.com/magsout/a876b2fa8240a987e523) this class
+in `ES5`:
 
 ```js
 function User(firstname, lastname) {
@@ -131,8 +132,8 @@ console.log(contributor.sayName());
 console.log(contributor.sayNumberCommit());
 ```
 
-**Reminder: [prefer inheritance to
-composition](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
+**Reminder:
+[prefer inheritance to composition](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
 
 ## That's it
 
@@ -145,8 +146,8 @@ For now, you will need to use a transpiler like [babel](https://babeljs.io/) to
 be able to use classes.
 
 One last thing: the bodies of class declarations and class expressions are
-executed in [strict
-mode](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Strict_mode).
+executed in
+[strict mode](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Strict_mode).
 
 ```js
 /* Initial strict mode */

@@ -33,14 +33,14 @@ Atom vs VSCo… le mieux c'est de laisser Mathieu parler de ce dernier.
 
 Les liens:
 
-* Sublime Text:
+- Sublime Text:
   https://web.archive.org/web/20080701071916/http://www.sublimetext.com/
-* Atom: https://atom.io
-* VSCode: https://code.visualstudio.com
+- Atom: https://atom.io
+- VSCode: https://code.visualstudio.com
 
 <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/313086300%3Fsecret_token%3Ds-uDXSJ&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 
-* Le
+- Le
   [RSS](http://feeds.soundcloud.com/users/soundcloud:users:273901232/sounds.rss)
-* Sur iTunes : [Putain de
-  Code](https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825?l=en&mt=2)
+- Sur iTunes :
+  [Putain de Code](https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825?l=en&mt=2)

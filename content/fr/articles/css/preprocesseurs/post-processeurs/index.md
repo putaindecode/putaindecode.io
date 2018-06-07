@@ -9,21 +9,21 @@ authors:
   - MoOx
 ---
 
-Vous avez surement entendu parler des [_post-processeurs
-CSS_](http://iamvdo.me/blog/les-postprocesseurs-css). J'ai personnellement pas
-mal fait référence à ~~ce concept~~ cette expression ces derniers temps. Que ce
-soit lorsque je vous racontais <a href="/fr/articles/css/autoprefixer">comment
-se passer des préfixes CSS</a> ou lors
-<a href="/fr/articles/css/preprocesseurs/">d'un point sur les pré-processeurs
-CSS</a>. N'y a-t-il rien qui vous a fait tiquer ?
+Vous avez surement entendu parler des
+[_post-processeurs CSS_](http://iamvdo.me/blog/les-postprocesseurs-css). J'ai
+personnellement pas mal fait référence à ~~ce concept~~ cette expression ces
+derniers temps. Que ce soit lorsque je vous racontais
+<a href="/fr/articles/css/autoprefixer">comment se passer des préfixes CSS</a>
+ou lors <a href="/fr/articles/css/preprocesseurs/">d'un point sur les
+pré-processeurs CSS</a>. N'y a-t-il rien qui vous a fait tiquer ?
 
 ## Du post-processing ?
 
 Bon on va pas jouer sur les mots mais quand même un peu. _Post_ ça veut dire
-après. Mais après quoi ? Après du *processing*. Donc en théorie après que la
+après. Mais après quoi ? Après du _processing_. Donc en théorie après que la
 feuille de style ait été traitée.
 
-Si on revient sur *pré-processeurs*, on a quelques choses de sensé. On travaille
+Si on revient sur _pré-processeurs_, on a quelques choses de sensé. On travaille
 sur la feuille de style avant qu'elle n'ait été traitée. Traitée par qui ? Je
 dirais le navigateur pas vous ? Dans ce cas le pré-processing est tout à fait
 logique.
@@ -129,8 +129,8 @@ Avec l'exemple d'avant, et ce bout de CSS:
 }
 ```
 
-Notre exemple n'est pas intégré dans un [workflow
-automatisé](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/),
+Notre exemple n'est pas intégré dans un
+[workflow automatisé](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/),
 mais c'est juste pour vous montrer que c'est l'histoire de 5 lignes de code et
 pas autant de lignes que de fois où l'on a `rem` dans sa feuille de style.
 
@@ -144,23 +144,23 @@ pré-processeur, cet autre langage, ait fait son boulot.
 
 _Ce processing s'effectue sur du vrai CSS (disons la syntaxe CSS)._
 
-Cette syntaxe étant très simple (se résumant principalement à `selecteur { prop:
-value }` - oui y'a les règles `@*` en plus je sais), [c'est très rapide à
-parser](https://github.com/reworkcss/css-parse#performance).
+Cette syntaxe étant très simple (se résumant principalement à
+`selecteur { prop: value }` - oui y'a les règles `@*` en plus je sais),
+[c'est très rapide à parser](https://github.com/reworkcss/css-parse#performance).
 
 ## Pourquoi du post-processing ?
 
 Comme on vient de le voir avec les 2 points précédents, on a déjà 3 bonnes
 raisons :
 
-* la simplicité (pour certains cas de figures, c'est plus pertinent, ça évite
+- la simplicité (pour certains cas de figures, c'est plus pertinent, ça évite
   trop de code et des oublis)
-* la vitesse
-* le fait de pouvoir brancher ses propres plugins
+- la vitesse
+- le fait de pouvoir brancher ses propres plugins
 
 Je sais pas vous mais moi ça me suffit. Et en cherchant mieux, on pourrait
-sûrement trouver d'autres arguments. (*Rappel : d'ailleurs n'hésitez pas à
-modifier cet article si vous en avez*).
+sûrement trouver d'autres arguments. (_Rappel : d'ailleurs n'hésitez pas à
+modifier cet article si vous en avez_).
 
 ## Avec quoi doit-on post-processer ces CSS ?
 
@@ -169,10 +169,9 @@ il existe aussi PostCSS, plus récent.
 
 ### [Rework](https://github.com/reworkcss/rework)
 
-Rework a été initié par le grand [TJ
-Holowaychuck](https://github.com/visionmedia), cette machine de guerre ([que
-certains ne pensent même pas
-humain](http://www.quora.com/TJ-Holowaychuk-1/How-is-TJ-Holowaychuk-so-insanely-productive)
+Rework a été initié par le grand
+[TJ Holowaychuck](https://github.com/visionmedia), cette machine de guerre
+([que certains ne pensent même pas humain](http://www.quora.com/TJ-Holowaychuk-1/How-is-TJ-Holowaychuk-so-insanely-productive)
 pour vous dire). TJ était il fut un temps utilisateur de Sass, il avait donc
 même commencé le portage de [Sass en Node](https://github.com/stunti/sass.js).
 Il a dû se rendre compte bien avant nous que ce n'était finalement pas forcément
@@ -181,22 +180,22 @@ la meilleure option. Il a donc développé
 temps de comprendre qu'une autre approche était possible (pour info, il ne
 maintient maintenant plus Stylus).
 
-C'est donc [le 1er Septembre 2012 qu'il pousse la première version de
-Rework](https://github.com/reworkcss/rework/commit/0a7be255bfe753d03f93c7072351266fa636e80a).
+C'est donc
+[le 1er Septembre 2012 qu'il pousse la première version de Rework](https://github.com/reworkcss/rework/commit/0a7be255bfe753d03f93c7072351266fa636e80a).
 
 L'objectif de Rework n'est pas spécialement de gérer du post-process. Rework se
 place comme un manipulateur de CSS, permettant (entre autres) :
 
-* l'automatisation d'ajout des préfixes
-* la création de nouvelles propriétés
-* l'intégration d'images inline
+- l'automatisation d'ajout des préfixes
+- la création de nouvelles propriétés
+- l'intégration d'images inline
 
 Vous me direz que ça ressemble vachement à un pré-processeur n'est-ce pas ? Vu
-l'historique que je viens de vous conter et [les plugins par
-défaut](https://github.com/reworkcss/rework#plugins), vous aurez bien compris
-que c'est l'idée : faire un moteur de pré-processeur où l'on y branche des
-plugins pour ajouter nos propres fonctionnalités. C'est grâce à ce projet
-qu'Autoprefixer a initialement vu le jour d'ailleurs.
+l'historique que je viens de vous conter et
+[les plugins par défaut](https://github.com/reworkcss/rework#plugins), vous
+aurez bien compris que c'est l'idée : faire un moteur de pré-processeur où l'on
+y branche des plugins pour ajouter nos propres fonctionnalités. C'est grâce à ce
+projet qu'Autoprefixer a initialement vu le jour d'ailleurs.
 
 ### [PostCSS](https://github.com/ai/postcss)
 
@@ -204,11 +203,11 @@ Beaucoup plus récent, PostCSS a été écrit par l'auteur d'Autoprefixer.
 
 > Heu mais quoi ? Tu viens de nous dire que Autoprefixer utilisait Rework ?!
 
-Oui _c'était_ le cas. *Utilisait*. L'auteur de PostCSS s'explique dans [son
-README](https://github.com/ai/postcss#rework). Il y indique que, bien que très
-similaire, Rework et PostCSS n'ont pas été développé pour les mêmes raisons.
-C'est ce qui explique les différences au niveau des moteurs. PostCSS se veut
-plus préservateur par rapport à votre source d'origine, et gère donc mieux
+Oui _c'était_ le cas. _Utilisait_. L'auteur de PostCSS s'explique dans
+[son README](https://github.com/ai/postcss#rework). Il y indique que, bien que
+très similaire, Rework et PostCSS n'ont pas été développé pour les mêmes
+raisons. C'est ce qui explique les différences au niveau des moteurs. PostCSS se
+veut plus préservateur par rapport à votre source d'origine, et gère donc mieux
 sourcemap, peut conserver votre espacement et indentation, parse de manière plus
 sécurisé (vu que ça se veut mieux gérer le code legacy).
 
@@ -225,8 +224,8 @@ l'instant, définitivement Rework.
 Ce dernier a clairement beaucoup plus de plugins existants. Voyez par vous-mêmes
 :
 
-* [npmjs.org/search?q=rework](https://www.npmjs.org/search?q=rework)
-* [npmjs.org/search?q=postcss](https://www.npmjs.org/search?q=postcss)
+- [npmjs.org/search?q=rework](https://www.npmjs.org/search?q=rework)
+- [npmjs.org/search?q=postcss](https://www.npmjs.org/search?q=postcss)
 
 ## Rework ce n'est pas _que_ du post-processing ?
 
@@ -252,6 +251,6 @@ J'aime conserver la syntaxe CSS et avoir un process ultra-rapide et transparent.
 ### Prochaine étape: faire son propre pré/post-processeur CSS, c'est simple
 
 Rework ayant un bon petit paquet de plugins déjà existants, c'est assez simple
-de [réaliser son propre
-pré-processeur](/fr/articles/css/preprocesseurs/a-la-carte/) via quelques lignes
-de code seulement.
+de
+[réaliser son propre pré-processeur](/fr/articles/css/preprocesseurs/a-la-carte/)
+via quelques lignes de code seulement.

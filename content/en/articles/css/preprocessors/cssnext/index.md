@@ -25,10 +25,10 @@ quite some time for the browsers to implement those modules and even more for
 the W3C to give them the ultimate status of
 [Recommandation](http://www.w3.org/2005/10/Process-20051014/tr#RecsW3C).
 
-With **cssnext**, you can use the syntax of [CSS Module Level
-4](http://www.xanthir.com/b4Ko0) such as _custom properties_ or *custom media
-queries*. **cssnext** will transform this new strange syntax into something that
-the browser can actually understand.
+With **cssnext**, you can use the syntax of
+[CSS Module Level 4](http://www.xanthir.com/b4Ko0) such as _custom properties_
+or _custom media queries_. **cssnext** will transform this new strange syntax
+into something that the browser can actually understand.
 
 In short, it makes you **taste the future**.
 
@@ -52,8 +52,8 @@ will [feel alive again](http://philipwalton.com/articles/side-effects-in-css/).
 
 Let's take a look at the features that **cssnext** offers at the moment.
 
-First of all, be sure to check out the [playground on the official
-website](http://cssnext.io/playground/).
+First of all, be sure to check out the
+[playground on the official website](http://cssnext.io/playground/).
 
 ### Automatic vendor prefixes
 
@@ -78,8 +78,8 @@ This will be transformed by **cssnext** via Autoprefixer in:
 
 ### Custom properties & var() limited to `:root`
 
-Also known as the much awaited [CSS
-variables](http://www.w3.org/TR/css-variables/).
+Also known as the much awaited
+[CSS variables](http://www.w3.org/TR/css-variables/).
 
 ```css
 :root {
@@ -105,8 +105,8 @@ body {
 
 ### Custom Media Queries
 
-Simply-named and semantic aliases ([check the
-specs](http://dev.w3.org/csswg/mediaqueries/#custom-mq)).
+Simply-named and semantic aliases
+([check the specs](http://dev.w3.org/csswg/mediaqueries/#custom-mq)).
 
 ```css
 @custom-media --viewport-medium (width <= 40rem);
@@ -252,9 +252,9 @@ This will output:
 
 #### #rrggbbaa
 
-**cssnext** transforms the [hexadecimal
-notations](http://dev.w3.org/csswg/css-color/#hex-notation) #RRGGBBAA and #RGBA
-into rgba().
+**cssnext** transforms the
+[hexadecimal notations](http://dev.w3.org/csswg/css-color/#hex-notation)
+#RRGGBBAA and #RGBA into rgba().
 
 ```css
 body {
@@ -280,8 +280,8 @@ into `rgb(102, 51, 153)`.
 
 ### filter properties
 
-A whole _new_ world of [image
-modifications](http://www.w3.org/TR/filter-effects/)!
+A whole _new_ world of
+[image modifications](http://www.w3.org/TR/filter-effects/)!
 
 ```css
 .awesome-Image {
@@ -337,9 +337,9 @@ However, they are definitely worth mentioning in this introduction.
 ### `import`
 
 What if you could import inline local files and modules (`node_modules` or
-`web_modules`) to output a bundled CSS file? Yes, [I'm looking at you Sass
-users](https://github.com/sass/sass/issues/193), ahem. Well, with **cssnext**,
-you can.
+`web_modules`) to output a bundled CSS file? Yes,
+[I'm looking at you Sass users](https://github.com/sass/sass/issues/193), ahem.
+Well, with **cssnext**, you can.
 
 ### `compress`
 
@@ -349,8 +349,8 @@ file. By the way, this option uses [cssnano](https://github.com/ben-eb/cssnano).
 ### Usage
 
 Below is a basic example of these two features. I used
-[gulp-cssnext](https://github.com/cssnext/gulp-cssnext), one of the [many
-plugins](http://cssnext.io/setup/) to help you start with **cssnext**.
+[gulp-cssnext](https://github.com/cssnext/gulp-cssnext), one of the
+[many plugins](http://cssnext.io/setup/) to help you start with **cssnext**.
 
 ```js
 var gulp = require("gulp"),
@@ -361,8 +361,8 @@ gulp.task("styles", function() {
     .src("css/index.css")
     .pipe(
       cssnext({
-        compress: true // default is false
-      })
+        compress: true, // default is false
+      }),
     )
     .pipe(gulp.dest("./dist/"));
 });
@@ -396,14 +396,13 @@ Well, just to wrap it up here, let's say that the main purpose of **cssnext** is
 to build things according to the W3C specifications keeping in mind that,
 theoretically, it can be removed later on (when not needed anymore).
 
-Meanwhile, there is still work to do: here you can find a [list of features that
-are waiting to be
-implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
+Meanwhile, there is still work to do: here you can find a
+[list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
 
-Now it's your time to play. Be sure to check the [GitHub
-repository](https://github.com/cssnext/cssnext), follow
+Now it's your time to play. Be sure to check the
+[GitHub repository](https://github.com/cssnext/cssnext), follow
 [@cssnext](https://twitter.com/cssnext) on Twitter to get the latest news and
 join the [cssnext room on Gitter](https://gitter.im/cssnext/cssnext) if you have
 any questions.
 
-* [Official website](http://cssnext.io/)
+- [Official website](http://cssnext.io/)

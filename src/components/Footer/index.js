@@ -12,7 +12,7 @@ const SVGs = {
   facebook: require("../../icons/facebook.svg"),
   chat: require("../../icons/chat.svg"),
   itunes: require("../../icons/itunes.svg"),
-  soundcloud: require("../../icons/soundcloud.svg")
+  soundcloud: require("../../icons/soundcloud.svg"),
 };
 
 const Footer = (props, context) => {
@@ -53,7 +53,7 @@ const Footer = (props, context) => {
                         />
                       </a>
                     </li>
-                  )
+                  ),
               )}
             </ul>
           )}
@@ -63,7 +63,7 @@ const Footer = (props, context) => {
           <span
             className={cx(
               "putainde-Footer-text",
-              "putainde-Footer-text--small"
+              "putainde-Footer-text--small",
             )}
           >
             <Link to={"/en/"}>{"English"}</Link>
@@ -78,7 +78,7 @@ const Footer = (props, context) => {
 
 Footer.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Footer;

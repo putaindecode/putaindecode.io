@@ -14,7 +14,7 @@ const SVGs = {
   facebook: require("../../icons/facebook.svg"),
   chat: require("../../icons/chat.svg"),
   itunes: require("../../icons/itunes.svg"),
-  soundcloud: require("../../icons/soundcloud.svg")
+  soundcloud: require("../../icons/soundcloud.svg"),
 };
 
 import styles from "./styles.css";
@@ -25,7 +25,7 @@ export const iconsOrder = [
   "soundcloud",
   "itunes",
   "github",
-  "chat"
+  "chat",
 ];
 
 const Navigation = (props, context) => {
@@ -59,13 +59,13 @@ const Navigation = (props, context) => {
                 [styles.item]: true,
                 [styles.itemIcon]: true,
                 "r-Tooltip": true,
-                "r-Tooltip r-Tooltip--bottom": true
+                "r-Tooltip r-Tooltip--bottom": true,
               })}
               data-r-tooltip={i18n[key + "Label"]}
             >
               <SVGInline className="putainde-Icon" svg={SVGs[key]} cleanup />
             </a>
-          )
+          ),
       )}
     </nav>
   );
@@ -73,7 +73,7 @@ const Navigation = (props, context) => {
 
 Navigation.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Navigation;

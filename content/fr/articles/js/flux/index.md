@@ -15,7 +15,7 @@ Allez, tant pis, on saute l'intro et on entre directement dans le vif du sujet
 ## La petite histoire
 
 Il était une fois un gros site web _que s'apelorio_ Facebook. Qui dit Facebook,
-dit webapp plus grosse que la plus grosse de tes copines (*no offense*
+dit webapp plus grosse que la plus grosse de tes copines (_no offense_
 <sup>[1](#foonote-1)</sup>) ; et du coup, propension à se retrouver submergé de
 bugs plus élevée.
 
@@ -25,8 +25,8 @@ repenser la structure des composants les plus cruciaux.
 
 Face à ce besoin, ces développeurs sont donc parvenus à deux solutions :
 
-* [React](/fr/articles/js/react/)
-* Flux
+- [React](/fr/articles/js/react/)
+- Flux
 
 Flux n'est pas un framework, mais simplement une architecture, une sorte de
 _guideline_ qui résout pas mal de problèmes ayant pu apparaître avec les divers
@@ -36,14 +36,14 @@ bibliothèques et frameworks MV\* apparus lors des dernières années.
 
 Flux comporte 4 concepts :
 
-* les **actions**, qu'elles proviennent du serveur ou d'une interaction
+- les **actions**, qu'elles proviennent du serveur ou d'une interaction
   utilisateur ;
-* le **dispatcher** dans lequel sont envoyées les actions que ce dernier
-  transmet *à qui veut*, un peu comme un `EventEmitter` global ;
-* les **stores**, qui sont l'équivalent du `model` de l'architecture MVC, ils
+- le **dispatcher** dans lequel sont envoyées les actions que ce dernier
+  transmet _à qui veut_, un peu comme un `EventEmitter` global ;
+- les **stores**, qui sont l'équivalent du `model` de l'architecture MVC, ils
   contiennent les données, et réagissent aux actions que le dispatcher leur
   transmet ;
-* les **views**, qui s'occupent du rendu des données dans le DOM, et de lancer
+- les **views**, qui s'occupent du rendu des données dans le DOM, et de lancer
   des actions lorsque l'utilisateur effectue certaines actions.
 
 Jusque-là, rien de bien fou. C'est dans leur manière d'interagir que la
@@ -74,9 +74,9 @@ module.exports = {
   addToBasket: function(productId) {
     AppDispatcher.handleViewAction({
       type: ActionTypes.ADD_TO_BASKET,
-      productId: productId
+      productId: productId,
     });
-  }
+  },
 };
 ```
 
@@ -104,7 +104,7 @@ var Product = React.createClass({
         />
       </div>
     );
-  }
+  },
 });
 
 module.exports = Product;
@@ -123,7 +123,7 @@ var merge = require("../utils/merge");
 var Store = require("../utils/store");
 
 var _store = {
-  products: []
+  products: [],
 };
 
 var BasketStore = merge(Store, {
@@ -154,7 +154,7 @@ var BasketStore = merge(Store, {
       default:
         break;
     }
-  })
+  }),
 });
 
 module.exports = BasketStore;
@@ -205,7 +205,7 @@ var Product = React.createClass({
         {/* rest of the component */}
       </div>
     );
-  }
+  },
 });
 
 module.exports = Product;
@@ -213,12 +213,12 @@ module.exports = Product;
 
 Tout cela peut sembler relativement verbeux, mais il faut préciser deux choses :
 
-* les exemples ici le sont volontairement pour la démonstration, et il est
+- les exemples ici le sont volontairement pour la démonstration, et il est
   aisément faisable d'utiliser un `StoreMixin` simplifier la déclaration des
   `class` React ;
-* pour ce qui est du reste, notamment stocker les noms d'actions dans un objet
+- pour ce qui est du reste, notamment stocker les noms d'actions dans un objet
   partagé dans l'app, c'est pour rendre plus idiomatique et cohérente la façon
-  dont on code l'app, et pour simplifier ses *refactoring*.
+  dont on code l'app, et pour simplifier ses _refactoring_.
 
 ## Ce qu'il faut savoir sur l'alliance Flux + React
 
@@ -237,11 +237,11 @@ est nécessaire d'appeler `render()`.
 
 ## tl;dr
 
-* Flux, c'est comme du MVC en plus simple, et avec moins de bugs
-* L'architecture est unidirectionnelle
-* On raisonne en actions, qui sont déclenchées par la vue ou le serveur
-* Toutes les actions passent par le dispatcher
-* Seuls les stores signalent aux vues qu'il faut se mettre à jour
+- Flux, c'est comme du MVC en plus simple, et avec moins de bugs
+- L'architecture est unidirectionnelle
+- On raisonne en actions, qui sont déclenchées par la vue ou le serveur
+- Toutes les actions passent par le dispatcher
+- Seuls les stores signalent aux vues qu'il faut se mettre à jour
 
 Bisous bisous.
 
@@ -249,11 +249,10 @@ Bisous bisous.
 
 Pour aller un peu plus loin :
 
-* [Les sources des
-  exemples](https://gist.github.com/bloodyowl/b41532cf3627c560b57e) contenant le
-  dispatcher et les constants ;
-* [La doc de Flux](http://facebook.github.io/flux/docs/overview.html#content) ;
-* [Le repository Flux](https://github.com/facebook/flux) et ses différents
+- [Les sources des exemples](https://gist.github.com/bloodyowl/b41532cf3627c560b57e)
+  contenant le dispatcher et les constants ;
+- [La doc de Flux](http://facebook.github.io/flux/docs/overview.html#content) ;
+- [Le repository Flux](https://github.com/facebook/flux) et ses différents
   exemples.
 
 <small>

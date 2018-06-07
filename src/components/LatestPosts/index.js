@@ -47,12 +47,12 @@ const LatestPosts = ({ link, posts, title }, context) => {
 LatestPosts.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
 };
 
 LatestPosts.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default LatestPosts;

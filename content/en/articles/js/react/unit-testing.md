@@ -13,8 +13,8 @@ header:
   linearGradient: 160deg, rgba(0,0,0, .9), rgba(97, 218, 251, .7)
 ---
 
-The React team has implemented a feature called [shallow
-rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering),
+The React team has implemented a feature called
+[shallow rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering),
 which
 
 > lets you render a component "one level deep" and assert facts about what its
@@ -23,8 +23,7 @@ which
 > DOM.
 
 Sounds good, right? And guess what, shallow rendering is currently the
-[preferred way to test your React
-components](https://discuss.reactjs.org/t/whats-the-prefered-way-to-test-react-js-components/26).
+[preferred way to test your React components](https://discuss.reactjs.org/t/whats-the-prefered-way-to-test-react-js-components/26).
 
 As you can see in the post mentioned at the end of this one, the actual code to
 test some components might seem a bit longer that what you might expect.
@@ -66,7 +65,7 @@ Component.propTypes = {
   img: PropTypes.object,
   title: PropTypes.string,
   Loader: PropTypes.func.isRequired,
-  Title: PropTypes.func.isRequired
+  Title: PropTypes.func.isRequired,
 };
 
 Component.displayName = "Picture";
@@ -80,8 +79,8 @@ not ready yet, it can display a loader component.
 Now let's write a simple test for it. For the example we will use
 [tape](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)
 with the help of [tape-jsx-equals](https://github.com/atabel/tape-jsx-equals),
-but you will find [all kind of flavors on
-npm](https://www.npmjs.com/search?q=expect+jsx).
+but you will find
+[all kind of flavors on npm](https://www.npmjs.com/search?q=expect+jsx).
 
 ```js
 // web_modules/Picture/__tests__/index.js
@@ -109,7 +108,7 @@ test("PageContainer is properly rendered", t => {
     <div>
       <Loader />
     </div>,
-    "can render a Loader component if no image data are passed"
+    "can render a Loader component if no image data are passed",
   );
 
   renderer.render(
@@ -118,16 +117,16 @@ test("PageContainer is properly rendered", t => {
       Title={Title}
       img={{
         src: "SRC",
-        alt: "ALT"
+        alt: "ALT",
       }}
-    />
+    />,
   );
   t.jsxEquals(
     renderer.getRenderOutput(),
     <div>
       <img src="SRC" alt="ALT" />
     </div>,
-    "should render an image if data are passed"
+    "should render an image if data are passed",
   );
 
   renderer.render(
@@ -136,10 +135,10 @@ test("PageContainer is properly rendered", t => {
       Title={Title}
       img={{
         src: "SRC",
-        alt: "ALT"
+        alt: "ALT",
       }}
       title={"TITLE"}
-    />
+    />,
   );
   t.jsxEquals(
     renderer.getRenderOutput(),
@@ -147,7 +146,7 @@ test("PageContainer is properly rendered", t => {
       <img src="SRC" alt="ALT" />
       <Title text="TITLE" />
     </div>,
-    "can render a Title if data are passed"
+    "can render a Title if data are passed",
   );
 
   t.end();
@@ -181,12 +180,10 @@ you have something like `onClick={ yourCallback }`, just call directly
 
 If you want to go deeper, you might also read:
 
-* [_Unit testing React components without a
-  DOM_](http://simonsmith.io/unit-testing-react-components-without-a-dom/), by
-  Simon Smith, that covers the same topic without the simplicity of the JSX
+- [_Unit testing React components without a DOM_](http://simonsmith.io/unit-testing-react-components-without-a-dom/),
+  by Simon Smith, that covers the same topic without the simplicity of the JSX
   comparisons,
-* [_How we unit test React components using
-  expect-jsx_](https://blog.algolia.com/how-we-unit-test-react-components-using-expect-jsx/)
+- [_How we unit test React components using expect-jsx_](https://blog.algolia.com/how-we-unit-test-react-components-using-expect-jsx/)
   on Algolia blog, that explains why they choose and create tools for this
   approach.
 

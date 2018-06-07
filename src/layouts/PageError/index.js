@@ -15,7 +15,7 @@ const PageError = (props, context) => {
         title={title}
         meta={[
           { property: "og:title", content: title },
-          { name: "twitter:title", content: title }
+          { name: "twitter:title", content: title },
         ]}
       />
       <div className="r-Grid putainde-Post">
@@ -50,7 +50,7 @@ const PageError = (props, context) => {
                 src="http://www.reactiongifs.com/r/sywht1.gif"
                 style={{
                   width: "100%",
-                  margin: "1rem auto"
+                  margin: "1rem auto",
                 }}
               />
             </div>
@@ -63,12 +63,12 @@ const PageError = (props, context) => {
 
 PageError.defaultProps = {
   error: 404,
-  errorText: "Page Not Found"
+  errorText: "Page Not Found",
 };
 
 PageError.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default PageError;

@@ -76,16 +76,16 @@ const Contributors = ({ filename, reviewers }, context) => {
 
 Contributors.propTypes = {
   filename: PropTypes.string.isRequired,
-  reviewers: PropTypes.array
+  reviewers: PropTypes.array,
 };
 
 Contributors.defaultProps = {
-  reviewers: []
+  reviewers: [],
 };
 
 Contributors.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Contributors;

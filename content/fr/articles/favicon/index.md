@@ -34,12 +34,12 @@ détail qu'on vous dit !
 
 Pour créer un favicon vite fait :
 
-* Créez un `favicon.ico` avec n'importe quel générateur trouvé sur le net.
+- Créez un `favicon.ico` avec n'importe quel générateur trouvé sur le net.
   Déclarez-le avec `<link rel="icon" href="favicon.ico" type="image/x-icon">`.
-  Ou peut-être `<link rel="shortcut icon" href="favicon.ico"
-  type="image/x-icon">` ? Non parce qu'on trouve les deux. Dans le doute,
-  déclarez-le deux fois.
-* Créez une Touch icon (pour iOS et les autres). Si on en croit les résultats
+  Ou peut-être
+  `<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">` ? Non
+  parce qu'on trouve les deux. Dans le doute, déclarez-le deux fois.
+- Créez une Touch icon (pour iOS et les autres). Si on en croit les résultats
   pour "apple touch icon size" sur Google, la taille maximale est 144x144.
 
 Voilà. Si vous faites tout ça, vous vous serez acquitté de la tâche rapidement.
@@ -54,23 +54,21 @@ Bon, ça sera mal fait, mais fait. C'est un début.
 Ça ne fait pas plaisir à entendre et pourtant nous sommes au cœur du problème
 (nous parlons bien de favicon).
 
-`favicon.ico` devrait-il être en 16x16 ou 32x32 ? [Les deux, selon
-Microsoft](<https://msdn.microsoft.com/library/gg491740(v=vs.85).aspx>). Quelle
-est la taille de la Touch icon d'Apple ? [180x180 depuis iOS
-8](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW2).
+`favicon.ico` devrait-il être en 16x16 ou 32x32 ?
+[Les deux, selon Microsoft](<https://msdn.microsoft.com/library/gg491740(v=vs.85).aspx>).
+Quelle est la taille de la Touch icon d'Apple ?
+[180x180 depuis iOS 8](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW2).
 La tuile `square70x70logo` pour Windows 8 et 10, c'est... du 70x70, hein ? Moui,
-mais [idéalement,
-128x128](<https://msdn.microsoft.com/library/dn455106(v=vs.85).aspx>).
+mais
+[idéalement, 128x128](<https://msdn.microsoft.com/library/dn455106(v=vs.85).aspx>).
 
 Ça n'est pas tout : encore faut-il trouver ces informations. Google est assez
 variable sur ce point. Il met dans le mille pour une recherche concernant le
 favicon classique (16x16 _et_ 32x32), mais échoue, on l'a vu, pour la Touch
-icon. Les éditeurs ne sont pas en reste. Si [Apple indique bien les dimensions
-attendues pour l'iPhone
-6](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW2),
-il a en revanche [oublié de mettre à jour sa page qui sort pourtant en premier
-résultat pour la recherche "apple touch
-icon"](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+icon. Les éditeurs ne sont pas en reste. Si
+[Apple indique bien les dimensions attendues pour l'iPhone 6](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW2),
+il a en revanche
+[oublié de mettre à jour sa page qui sort pourtant en premier résultat pour la recherche "apple touch icon"](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 (152x152 d'après elle).
 
 Le [favicon cheat sheet](https://github.com/audreyr/favicon-cheat-sheet) est une
@@ -97,8 +95,8 @@ Mais cette solution cache un problème presque plus grave. Si votre image
 originale passera bien sur une platforme, elle risque fort de ne pas
 correspondre à une autre.
 
-Prenons l'exemple des icônes pour Android et iOS. Elles servent surtout au *Add
-to homescreen*, lorsque votre visiteur vous fait l'honneur d'ajouter un lien
+Prenons l'exemple des icônes pour Android et iOS. Elles servent surtout au _Add
+to homescreen_, lorsque votre visiteur vous fait l'honneur d'ajouter un lien
 vers votre site sur l'écran de son smartphone. Pas vraiment le moment de le
 décevoir. Sur Android, beaucoup d'icônes ne sont pas carrées mais exploitent la
 transparence, notamment les applications natives de Google.
@@ -153,15 +151,15 @@ utiliser un package manager.
 Est-il souhaitable d'industrialiser le favicon de la même manière ? Voyons voir
 ce qu'il s'est passé en un an :
 
-* L'Iphone 6 est sorti, et avec lui la touch icon en 180x180 (avant c'était
+- L'Iphone 6 est sorti, et avec lui la touch icon en 180x180 (avant c'était
   152x152).
-* Android Chrome a cessé d'utiliser l'icône en 196x196 qui était autrefois
+- Android Chrome a cessé d'utiliser l'icône en 196x196 qui était autrefois
   spécifiée. À la place, il utilise une icône en 192x192 (et snobe la précédente
   quoi qu'il arrive).
-* Oubliez cette histoire d'icône en 192x192, Android Chrome utilise désormais un
+- Oubliez cette histoire d'icône en 192x192, Android Chrome utilise désormais un
   manifeste et plusieurs versions d'icônes pour les différentes densités
   d'écran.
-* Apple a sorti une nouvelle icône au format SVG pour les "pinned tabs" de
+- Apple a sorti une nouvelle icône au format SVG pour les "pinned tabs" de
   Safari pour Mac OS X El Capitan.
 
 Autrement dit, si vous avez créé un favicon il y a un peu plus d'un an, il y a
@@ -169,11 +167,12 @@ fort à parier qu'il rende mal sur un iPad de dernière génération et le résu
 sur Android pourrait être assez aléatoire (Chrome utilisera une icône PNG qui
 n'est pas pour lui ou bien une Touch icon).
 
-À cet effet, [RealFaviconGenerator propose une
-API](https://realfavicongenerator.net/api). Tout ce qu'il est possible de faire
-via l'UI peut être reproduit via l'API. Hum... une API... de la doc à lire...
-Manifestement, ce n'est pas de cette façon qu'on va accélérer les choses. Mais
-tout n'est pas perdu car le code peut être généré automatiquement.
+À cet effet,
+[RealFaviconGenerator propose une API](https://realfavicongenerator.net/api).
+Tout ce qu'il est possible de faire via l'UI peut être reproduit via l'API.
+Hum... une API... de la doc à lire... Manifestement, ce n'est pas de cette façon
+qu'on va accélérer les choses. Mais tout n'est pas perdu car le code peut être
+généré automatiquement.
 
 Actuellement, RealFaviconGenerator supporte Grunt et Gulp. Par exemple, après
 avoir créé votre favicon, cliquez sur l'onglet "Gulp". Vous avez le fragment de
@@ -185,13 +184,13 @@ des Coffee scripts.
 
 Les règles :
 
-* `generate-favicon` : génère les icônes. Elle prend quelques secondes et c'est
+- `generate-favicon` : génère les icônes. Elle prend quelques secondes et c'est
   le genre de règle qu'on n'exécute qu'une fois de temps en temps, lorsqu'il y a
   du changement dans le paysage des favicons.
-* `inject-favicon-markups` : injecte les déclarations d'icônes dans les pages
+- `inject-favicon-markups` : injecte les déclarations d'icônes dans les pages
   HTML. À exécuter à chaque modification de page, autant dire qu'elle va souvent
   servir.
-* `check-for-favicon-update` : vérifie s'il y a du nouveau sur
+- `check-for-favicon-update` : vérifie s'il y a du nouveau sur
   RealFaviconGenerator. Si c'est le cas, elle fera échouer votre build bien
   comme il faut. Un peu brutal mais ça a le mérite d'être clair. Si vous avez un
   système d'intégration continue, arrangez-vous pour ajouter cette règle à votre
@@ -202,8 +201,7 @@ la prolifération des plates-formes, le négliger est de plus en plus hasardeux.
 J'ai conçu RealFaviconGenerator pour apporter un peu d'ordre à tout cela. Ce
 n'est pas la seule initiative. Hayden Bleasel développe
 [favicons](https://github.com/haydenbleasel/favicons) qui ambitionne d'être
-[intégré au Web Starter Kit de
-Google](https://github.com/google/web-starter-kit/issues/599).
+[intégré au Web Starter Kit de Google](https://github.com/google/web-starter-kit/issues/599).
 
 Et maintenant, c'est à vous : que pensez-vous de la formule "génération de
 Gulp/Grunt/autre" ? Quelles sont les technos que vous aimeriez trouver ?

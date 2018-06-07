@@ -4,7 +4,7 @@
 }
 
 .putainde-Button {
-  line-height: calc(var(--r-lineHeight)*2);
+  line-height: calc(var(--r-lineHeight) * 2);
   margin: -1px 0 var(--r-lineHeight);
 
   color: var(--colorRed);

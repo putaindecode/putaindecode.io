@@ -11,7 +11,7 @@ authors:
 
 Following its goal of enriching primitive types, ES6 introduces symbols.
 Familiar to developers in many langages, especially Ruby, symbols bring us a
-step further towards the eradication of *stringly-typed programming*. Symbols
+step further towards the eradication of _stringly-typed programming_. Symbols
 provide us with a more robust way to encode identifiers.
 
 ## Creating Symbols
@@ -36,7 +36,7 @@ avoid collisions: it's impossible to mistakenly have two identical symbols.
 
 ## Implement an _enum_ with symbols
 
-Instead of using strings as possible values for an *enum*, it's possible to use
+Instead of using strings as possible values for an _enum_, it's possible to use
 symbols.
 
 ```javascript
@@ -54,7 +54,7 @@ function getDescription(animal) {
 ```
 
 This way, there is no risk of mistakenly mixing a user-provided string with an
-*enum*. This forces the value through a verifying and parsing stage.
+_enum_. This forces the value through a verifying and parsing stage.
 
 ## Symbols as keys
 
@@ -68,7 +68,7 @@ myMutableObject[myKey] = "a value";
 
 // With *computed property keys*
 const myObj = {
-  [myKey]: "a value"
+  [myKey]: "a value",
 };
 ```
 
@@ -87,7 +87,7 @@ const myIterableObject = {
     yield "One";
     yield "Two";
     yield "Three";
-  }
+  },
 };
 
 // Displays One, Two and Three
@@ -100,7 +100,7 @@ for (x of {}) {
 }
 ```
 
-Several symbols (called *well-known symbols*) index behaviour defining object
+Several symbols (called _well-known symbols_) index behaviour defining object
 properties: `Symbol.iterator` for the iterator on an object's values,
 `Symbol.hasInstance` to alter the result of `instanceof`, …
 
@@ -120,7 +120,7 @@ Properties indexed by symbols are not visited by `for..in`, nor listed by
 ```javascript
 const myObject = {
   [Symbol()]: "symbol-keyed value",
-  key: "string-keyed value"
+  key: "string-keyed value",
 };
 
 Object.getOwnPropertyNames(myObject); // [ "key" ]
@@ -137,7 +137,7 @@ Symbol-indexed properties are ignored by `JSON.stringify`.
 ```javascript
 JSON.stringify({
   [Symbol()]: "symbol-keyed value",
-  key: "string-keyed value"
+  key: "string-keyed value",
 }); // '{"key":"string-keyed value"}'
 ```
 
@@ -187,7 +187,5 @@ This offers some protection against tampering.
 
 ## Further reading
 
-* [MDN documentation on
-  symbols](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
-* [Thorough article on how symbols work and how they can be
-  used](http://www.2ality.com/2014/12/es6-symbols.html)
+- [MDN documentation on symbols](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+- [Thorough article on how symbols work and how they can be used](http://www.2ality.com/2014/12/es6-symbols.html)

@@ -40,9 +40,9 @@ const user = new User("John", "Doe");
 console.log(user.sayName()); // John Doe
 ```
 
-Pour rappel, voici une [façon possible
-d'écrire](https://gist.github.com/magsout/a876b2fa8240a987e523) cette classe en
-`es5` :
+Pour rappel, voici une
+[façon possible d'écrire](https://gist.github.com/magsout/a876b2fa8240a987e523)
+cette classe en `es5` :
 
 ```js
 function User(firstname, lastname) {
@@ -138,8 +138,8 @@ console.log(contributor.sayName());
 console.log(contributor.sayNumberCommit());
 ```
 
-**Rappel : [préférez la composition à
-l'héritage](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
+**Rappel :
+[préférez la composition à l'héritage](https://www.youtube.com/watch?v=wfMtDGfHWpA).**
 
 ## That's it
 
@@ -152,8 +152,8 @@ Au final, on gagne en clarté, en lisibilité et donc en maintenabilité.
 À l'heure actuelle, il est nécessaire de passer par un transpileur comme
 [babel](https://babeljs.io/) pour utiliser les classes.
 
-Une dernière petite chose, le [mode
-strict](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode)
+Une dernière petite chose, le
+[mode strict](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode)
 est automatiquement activé dans le corps des classes et leurs déclarations. Il
 n'est donc pas nécessaire de le rajouter manuellement.
 

@@ -45,7 +45,7 @@ const PostPreview = ({ post }, context) => {
           {post.authors && <AuthorsList authors={post.authors} />}
           {post.date && [
             <br key="br" />,
-            <time key={post.date}>{formatDate(post.date)}</time>
+            <time key={post.date}>{formatDate(post.date)}</time>,
           ]}
         </div>
       </div>
@@ -54,12 +54,12 @@ const PostPreview = ({ post }, context) => {
 };
 
 PostPreview.propTypes = {
-  post: PropTypes.object
+  post: PropTypes.object,
 };
 
 PostPreview.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default PostPreview;

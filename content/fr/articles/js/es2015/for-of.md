@@ -42,10 +42,10 @@ for (const key in obj) {
 La boucle `for..in`, malgré son apparente simplicité d'utilisation, cache
 certains pièges :
 
-* Lors de l'itération sur un tableau la valeur de l'index est convertie en
+- Lors de l'itération sur un tableau la valeur de l'index est convertie en
   chaîne de caractères : "0", "1", "2", etc. Cela peut potentiellement poser
   problème lors de l'utilisation de l'index dans des opérations de calcul.
-* La boucle itère sur l'ensemble des clés du tableau, mais aussi sur chacune de
+- La boucle itère sur l'ensemble des clés du tableau, mais aussi sur chacune de
   ses propriétés.
 
       ```js
@@ -57,7 +57,7 @@ certains pièges :
       }
       ```
 
-* L'ordre d'itération sur l'ensemble des clés d'un objet peut varier selon
+- L'ordre d'itération sur l'ensemble des clés d'un objet peut varier selon
   l'environnement d'éxecution du code.
 
 ## La methode alternative `.forEach()`
@@ -67,9 +67,9 @@ La boucle
 permet une itération plus sécurisée, mais présente certains autres inconvénients
 tels que :
 
-* L'impossibilité d'interrompre la boucle avec les instructions traditionnelles
+- L'impossibilité d'interrompre la boucle avec les instructions traditionnelles
   `break;` et `return;`
-* Il s'agit d'une méthode réservée aux tableaux.
+- Il s'agit d'une méthode réservée aux tableaux.
 
 ## `for..of` à la rescousse
 
@@ -78,7 +78,7 @@ version améliorée de la boucle `for..in`. Ainsi naquit la boucle `for..of` qui
 coexistera désormais avec la précédente, permettant de maintenir la
 rétro-compatibilité avec les versions antérieures de la norme.
 
-Le principe est le même : parcourir n'importe quel type *d'objet itérable*.
+Le principe est le même : parcourir n'importe quel type _d'objet itérable_.
 
 Dans sa forme la plus simple, la boucle `for..of` permet donc d'itérer sur
 l'ensemble des valeurs des clés d'un tableau.
@@ -184,7 +184,7 @@ Exemple définissant un itérateur :
 const iterableObj = {
   *[Symbol.iterator]() {
     yield* Object.entries(obj);
-  }
+  },
 };
 
 for (const [key, val] of iterableObj) {
@@ -197,12 +197,12 @@ for (const [key, val] of iterableObj) {
 `for..of` vient compléter les lacunes de `for..in` et permet une itération
 simplifiée sur les _objets itérables_ tels que :
 
-* [Array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)
-* [String](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)
-* [Maps & WeakMaps](http://putaindecode.io/fr/articles/js/es2015/maps-weakmaps/)
-* [Generators](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/function*)
-* [NodeList](https://developer.mozilla.org/fr/docs/Web/API/NodeList)
-* [arguments](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/arguments)
+- [Array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array)
+- [String](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)
+- [Maps & WeakMaps](http://putaindecode.io/fr/articles/js/es2015/maps-weakmaps/)
+- [Generators](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/function*)
+- [NodeList](https://developer.mozilla.org/fr/docs/Web/API/NodeList)
+- [arguments](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/arguments)
 
 De plus, `for..of` résout à présent les pièges tels que l'ordre d'itération non
 constant ou la coercion automatique des index en chaîne de caractères.
@@ -214,10 +214,7 @@ parcourir, de manière native, les tout nouveaux _objets itérables_ du langage.
 
 Pour en savoir plus sur ses spécificités :
 
-* [Documentation
-  MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/for...of)
-* [Le post de Jason
-  Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
-* [Le post de Dave Herman](http://tc39wiki.calculist.org/es6/for-of/)
-* [Specification
-  ECMA-262](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-for-in-and-for-of-statements)
+- [Documentation MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/for...of)
+- [Le post de Jason Orendorff](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
+- [Le post de Dave Herman](http://tc39wiki.calculist.org/es6/for-of/)
+- [Specification ECMA-262](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-for-in-and-for-of-statements)

@@ -19,8 +19,8 @@ possible de pondre du CSS en utilisant tous ces principes.
 L'un des trucs les plus chiants du CSS c'est bien la cascade, qui, malgré sa
 bonne volonté, n'apporte pas que des solutions. Pour pallier aux problèmes que
 l'on peut vite créer, [la méthodologie BEM](/fr/articles/css/bem/) a vu le jour
-avec son [lot de
-variantes](http://blog.kaelig.fr/post/48196348743/fifty-shades-of-bem).
+avec son
+[lot de variantes](http://blog.kaelig.fr/post/48196348743/fifty-shades-of-bem).
 
 La grande majorité des membres de p! utilisent cette convention :
 
@@ -71,7 +71,7 @@ donc sur le long terme plus maintenable.
 
 Il va de soi qu'on utilisera son outil préféré pour concaténer et minimiser le
 tout en un seul fichier, sinon on risque d'avoir quelques problèmes de
-*webperf*.
+_webperf_.
 
 ## Accessible
 

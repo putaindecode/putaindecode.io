@@ -21,8 +21,8 @@ et facile et rapidité vous attendent avec
 Vous avez sûrement déjà entendu parler de **Grunt** à droite à gauche, en
 conférence, voire votre boite l'utilise déjà mais vous ne savez toujours pas
 trop ce qui se cache derrière ce terme saugrenu digne d'un personnage de
-Warcraft. Soit, ce n'est pas bien grave. **Grunt** est simplement un *JavaScript
-Task Runner*, un outil vous permettant de créer des tâches automatisées en
+Warcraft. Soit, ce n'est pas bien grave. **Grunt** est simplement un _JavaScript
+Task Runner_, un outil vous permettant de créer des tâches automatisées en
 JavaScript. Forcément ce n'est pas très parlant mais c'est tout l'intérêt de cet
 article, vous expliquer ce qu'est **Grunt** et pourquoi il peut vous être utile
 dans un _workflow_ de front-end dev.
@@ -30,7 +30,7 @@ dans un _workflow_ de front-end dev.
 # Commençons
 
 Vous est-il déjà arrivé de devoir régulièrement lancer, lancer et relancer des
-processus tels que *Sass*, *LESS*, _uglify_ - en somme des préprocesseurs ou des
+processus tels que _Sass_, _LESS_, _uglify_ - en somme des préprocesseurs ou des
 minifiers - régulièrement à la main ? N'est-ce pas pénible ? N'est-ce pas aussi
 pénible de devoir indiquer à tous ses collègues comment ils doivent bosser pour
 que vous soyez tous cohérents ? Oui ? **Grunt** permet de résoudre ce genre de
@@ -40,9 +40,9 @@ N'est-ce pas fucking aweeeeesome folks ? Bref.
 
 Voici un _workflow_ assez classique :
 
-* Compiler mes `.scss` en `.css`;
-* Concaténer mes `*.js` en un seul fichier;
-* Minifier (avec _uglify_ par exemple) la résultante de l'action précédente.
+- Compiler mes `.scss` en `.css`;
+- Concaténer mes `*.js` en un seul fichier;
+- Minifier (avec _uglify_ par exemple) la résultante de l'action précédente.
 
 Voyons maintenant comment l'on peut mettre en place ceci via **Grunt**.
 
@@ -102,15 +102,15 @@ expliquions que nous voulons en tout premier lieu compiler nos `.scss` en
 
 ## Créer sa première tâche
 
-Une petite recherche sur votre moteur de recherche préféré en tapant `grunt
-sass` et vous trouverez le projet
+Une petite recherche sur votre moteur de recherche préféré en tapant
+`grunt sass` et vous trouverez le projet
 [`grunt-contrib-sass`](https://github.com/gruntjs/grunt-contrib-sass).
 
 Toute documentation pour installer une tâche **Grunt** est indiquée sur chaque
 `README.md` du projet mais pour un souci de clarté et de compréhension, je vais
 tout de même vous expliquer ici comment faire.
 
-D'abord, installons le package pour *Sass*.
+D'abord, installons le package pour _Sass_.
 
 ```console
 $ npm install grunt-contrib-sass --save-dev
@@ -131,15 +131,15 @@ module.exports = function(grunt) {
         // Nom de la sous-tâche
         options: {
           // Options
-          style: "expanded"
+          style: "expanded",
         },
         files: {
           // Liste des fichiers
           "main.css": "main.scss", // 'destination': 'source'
-          "widgets.css": "widgets.scss"
-        }
-      }
-    }
+          "widgets.css": "widgets.scss",
+        },
+      },
+    },
   });
 
   // Import du package
@@ -163,7 +163,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -172,11 +172,11 @@ module.exports = function(grunt) {
             cwd: "src/styles/",
             src: ["*.scss"],
             dest: "dist/styles/",
-            ext: ".css"
-          }
-        ]
-      }
-    }
+            ext: ".css",
+          },
+        ],
+      },
+    },
   });
 
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -215,11 +215,11 @@ module.exports = function(grunt) {
             cwd: "src/styles/",
             src: ["*.scss"],
             dest: "dist/styles/",
-            ext: ".css"
-          }
-        ]
-      }
-    }
+            ext: ".css",
+          },
+        ],
+      },
+    },
   });
 
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -237,7 +237,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -245,20 +245,20 @@ module.exports = function(grunt) {
             cwd: "src/styles/",
             src: ["*.scss"],
             dest: "dist/styles/",
-            ext: ".css"
-          }
-        ]
-      }
+            ext: ".css",
+          },
+        ],
+      },
     },
     concat: {
       options: {
-        separator: ";" // permet d'ajouter un point-virgule entre chaque fichier concaténé.
+        separator: ";", // permet d'ajouter un point-virgule entre chaque fichier concaténé.
       },
       dist: {
         src: ["src/intro.js", "src/project.js", "src/outro.js"], // la source
-        dest: "dist/built.js" // la destination finale
-      }
-    }
+        dest: "dist/built.js", // la destination finale
+      },
+    },
   });
 
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -276,7 +276,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -284,20 +284,20 @@ module.exports = function(grunt) {
             cwd: "src/styles/",
             src: ["*.scss"],
             dest: "dist/styles/",
-            ext: ".css"
-          }
-        ]
-      }
+            ext: ".css",
+          },
+        ],
+      },
     },
     concat: {
       options: {
-        separator: ";" // permet d'ajouter un point-virgule entre chaque fichier concaténé.
+        separator: ";", // permet d'ajouter un point-virgule entre chaque fichier concaténé.
       },
       dist: {
         src: ["src/intro.js", "src/project.js", "src/outro.js"], // la source
-        dest: "dist/built.js" // la destination finale
-      }
-    }
+        dest: "dist/built.js", // la destination finale
+      },
+    },
   });
 
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -322,7 +322,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -330,29 +330,29 @@ module.exports = function(grunt) {
             cwd: "src/styles/",
             src: ["*.scss"],
             dest: "dist/styles/",
-            ext: ".css"
-          }
-        ]
-      }
+            ext: ".css",
+          },
+        ],
+      },
     },
     concat: {
       options: {
-        separator: ";"
+        separator: ";",
       },
       dist: {
         src: ["src/intro.js", "src/project.js", "src/outro.js"],
-        dest: "dist/built.js"
-      }
+        dest: "dist/built.js",
+      },
     },
     uglify: {
       options: {
-        separator: ";"
+        separator: ";",
       },
       dist: {
         src: ["src/intro.js", "src/project.js", "src/outro.js"],
-        dest: "dist/built.js"
-      }
-    }
+        dest: "dist/built.js",
+      },
+    },
   });
 
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -379,7 +379,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -387,29 +387,29 @@ module.exports = function(grunt) {
             cwd: "src/styles/",
             src: ["*.scss"],
             dest: "dist/styles/",
-            ext: ".css"
-          }
-        ]
-      }
+            ext: ".css",
+          },
+        ],
+      },
     },
     concat: {
       options: {
-        separator: ";"
+        separator: ";",
       },
       dist: {
         src: ["src/intro.js", "src/project.js", "src/outro.js"],
-        dest: "dist/built.js"
-      }
+        dest: "dist/built.js",
+      },
     },
     uglify: {
       options: {
-        separator: ";"
+        separator: ";",
       },
       dist: {
         src: ["src/intro.js", "src/project.js", "src/outro.js"],
-        dest: "dist/built.js"
-      }
-    }
+        dest: "dist/built.js",
+      },
+    },
   });
 
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -429,7 +429,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -437,29 +437,29 @@ module.exports = function(grunt) {
             cwd: "src/styles/",
             src: ["*.scss"],
             dest: "dist/styles/",
-            ext: ".css"
-          }
-        ]
-      }
+            ext: ".css",
+          },
+        ],
+      },
     },
     concat: {
       options: {
-        separator: ";"
+        separator: ";",
       },
       dist: {
         src: ["src/intro.js", "src/project.js", "src/outro.js"],
-        dest: "dist/built.js"
-      }
+        dest: "dist/built.js",
+      },
     },
     uglify: {
       options: {
-        separator: ";"
+        separator: ";",
       },
       dist: {
         src: ["src/intro.js", "src/project.js", "src/outro.js"],
-        dest: "dist/built.js"
-      }
-    }
+        dest: "dist/built.js",
+      },
+    },
   });
 
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -488,7 +488,7 @@ Très simple, `watch` va vous permettre de "regarder" vos fichiers, savoir
 lesquels ont changé et donc lancer une action en fonction du type de fichiers.
 
 Imaginons que l'on veut par exemple compiler nos CSS à chaque fois que l'on
-change un fichier *Sass*. Ou encore que l'on concatène nos fichiers JavaScript
+change un fichier _Sass_. Ou encore que l'on concatène nos fichiers JavaScript
 dès que l'on touche à l'un d'entre eux.
 
 ```javascript
@@ -553,14 +553,14 @@ fichiers en lançant simplement `$ grunt watch`.
 
 Oui, comprenez bien que lorsque vous ajoutez une tâche dans la définition de la
 configuration de **Grunt**, elle est appelable directement. Typiquement, vous
-pouvez faire `$ grunt premier-niveau:deuxieme-niveau` soit par exemple `$ grunt
-sass:dist`. Vous n'êtes pas obligé(e) de (re)définir chaque tâche via
+pouvez faire `$ grunt premier-niveau:deuxieme-niveau` soit par exemple
+`$ grunt sass:dist`. Vous n'êtes pas obligé(e) de (re)définir chaque tâche via
 `grunt.registerTask()`.
 
 Je ne sais pas si vous vous rappelez mais nous avions créé une tâche de base
 s'appelant `default`. Cette tâche se lance dès que vous ne passez aucun
-paramètre à **Grunt** soit `$ grunt`. Vous pouvez aussi l'appeler via `$ grunt
-default` mais aucun intérêt.
+paramètre à **Grunt** soit `$ grunt`. Vous pouvez aussi l'appeler via
+`$ grunt default` mais aucun intérêt.
 
 Tout ça pour dire qu'il est serait sûrement intéressant de lancer la tâche
 `watch` dès qu'on souhaite lancer **Grunt** étant donné que c'est sûrement la
@@ -647,7 +647,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -655,41 +655,41 @@ module.exports = function(grunt) {
             cwd: "src/styles/",
             src: ["*.scss"],
             dest: "dist/styles/",
-            ext: ".css"
-          }
-        ]
+            ext: ".css",
+          },
+        ],
       },
-      dev: {} // À vous de le faire ! vous verrez que certaines options Sass sont plus intéressantes en mode dev que d'autres.
+      dev: {}, // À vous de le faire ! vous verrez que certaines options Sass sont plus intéressantes en mode dev que d'autres.
     },
     concat: {
       options: {
-        separator: ";"
+        separator: ";",
       },
       compile: {
         // On renomme vu qu'on n'a pas de mode dev/dist. Dist étant une autre tâche : uglify
         src: jsSrc, // Vu qu'on doit l'utiliser deux fois, autant en faire une variable.
-        dest: jsDist // Il existe des hacks plus intéressants mais ce n'est pas le sujet du post.
-      }
+        dest: jsDist, // Il existe des hacks plus intéressants mais ce n'est pas le sujet du post.
+      },
     },
     uglify: {
       options: {
-        separator: ";"
+        separator: ";",
       },
       compile: {
         src: jsSrc,
-        dest: jsDist
-      }
+        dest: jsDist,
+      },
     },
     watch: {
       scripts: {
         files: "**/*.js",
-        tasks: ["scripts:dev"]
+        tasks: ["scripts:dev"],
       },
       styles: {
         files: "**/*.scss",
-        tasks: ["styles:dev"]
-      }
-    }
+        tasks: ["styles:dev"],
+      },
+    },
   });
 
   grunt.registerTask("default", ["dev", "watch"]);

@@ -21,8 +21,8 @@ très pratiques.
 
 Deux postulats avant de commencer :
 
-* Pourquoi JavaScript ? En cohérence avec le workflow que j'utilise.
-* Cet article n'a pas pour but d'apprendre à écrire du JavaScript avec
+- Pourquoi JavaScript ? En cohérence avec le workflow que j'utilise.
+- Cet article n'a pas pour but d'apprendre à écrire du JavaScript avec
   Node.js/iojs.
 
 ## Hello world
@@ -160,9 +160,9 @@ disposition.
 Pour gagner du temps et éviter d'avoir à recoder la roue. Le script
 `putaindecode-cli` va avoir besoin de trois choses :
 
-* une gestion des commandes (commande, argument, aide)
-* une gestion des couleurs (notice, error, warning)
-* une capacité à stopper proprement notre code.
+- une gestion des commandes (commande, argument, aide)
+- une gestion des couleurs (notice, error, warning)
+- une capacité à stopper proprement notre code.
 
 ### `commander`
 
@@ -242,17 +242,17 @@ Dans le cas d'une erreur, la valeur de `exit` doit systématiquement être
 supérieure à 0, et donc bien naturellement en cas de succès, elle doit être
 égale à 0.
 
-Voici une [liste des
-valeurs](http://www.virtsync.com/c-error-codes-include-errno) de `exit` et de
-leurs correspondances.
+Voici une
+[liste des valeurs](http://www.virtsync.com/c-error-codes-include-errno) de
+`exit` et de leurs correspondances.
 
 ## Thanks god for our terminal
 
 Si vous souhaitez voir quelques exemples de projets avec des commandes et des
 mises en situations intéressantes, allez faire un tour sur ces projets :
 
-* [cssnext](https://github.com/cssnext/cssnext/blob/9aad8a94eaef5c73f3e925cc63ede6945403a520/src/bin.js)
-* [trash](https://github.com/sindresorhus/trash-cli/blob/master/cli.js)
+- [cssnext](https://github.com/cssnext/cssnext/blob/9aad8a94eaef5c73f3e925cc63ede6945403a520/src/bin.js)
+- [trash](https://github.com/sindresorhus/trash-cli/blob/master/cli.js)
 
 Je vous invite également à visionner la
 [vidéo](http://blog.clement.delafargue.name/posts/2015-02-25-declarative-cli-parsing-in-js.html)

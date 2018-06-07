@@ -9,10 +9,10 @@ authors:
   - MoOx
 ---
 
-Vous commencez tous à connaitre les *tasks runners*, ces outils qui permettent
-d'automatiser les tâches de développement récurrentes. Personnellement [je
-n'ai](http://moox.io/slides/2013/grunt-before-after/) [pas
-arrêté](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/)
+Vous commencez tous à connaitre les _tasks runners_, ces outils qui permettent
+d'automatiser les tâches de développement récurrentes. Personnellement
+[je n'ai](http://moox.io/slides/2013/grunt-before-after/)
+[pas arrêté](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/)
 [d'en parler](http://moox.io/slides/2014/introduction-gulp/) depuis que
 [Grunt](/fr/articles/js/grunt/) à déterré cette vielle problématique, assez
 récente pour le développement Web côté front end.
@@ -28,7 +28,7 @@ zone de confort qu'on va de l'avant. Enfin si vous avez des exemples contraires,
 je suis preneur. Mais tout cela doit provenir du fait que pas mal de métiers
 dans le web sont nouveaux, dont celui de « développeur Web front end » et que du
 coup, peu de personnes ont initialement suivi des formations appropriés (pour ma
-part je proviens d'une formation *d'analyste-programmeur*, conception et
+part je proviens d'une formation _d'analyste-programmeur_, conception et
 développement software quoi). Je remarque que niveau back end il y a beaucoup
 moins de lacunes, du fait que les problématiques gérées de ce côté sont (il me
 semble) moins nouvelles.
@@ -42,17 +42,16 @@ Brunch et Broccoli. Rentrons dans le vif. Parlons Gulp.
 Je vais faire court. Pour faire simple, son point fort réside dans le fait qu'il
 utilise des [streams](http://dailyjs.com/2012/09/10/streams/) (tl;dr: un flux de
 données - en mémoire) et qu'il limite au maximum l'utilisation de fichiers. Au
-point qu'il existe une [police
-Gulp](https://github.com/godaddy/gulp-header/issues/4#issuecomment-32111457)
+point qu'il existe une
+[police Gulp](https://github.com/godaddy/gulp-header/issues/4#issuecomment-32111457)
 pour vous dire. Si vous voulez en savoir plus sur les streams, n'hésitez pas à
-lire l'article de Nicolas Froidure [Gulp remplacera-t-il Grunt
-?](http://insertafter.com/fr/blog/gulp_vs_grunt.html) qui contient une partie
-explicative sur les streams.
+lire l'article de Nicolas Froidure
+[Gulp remplacera-t-il Grunt ?](http://insertafter.com/fr/blog/gulp_vs_grunt.html)
+qui contient une partie explicative sur les streams.
 
 Dans la pratique cela évite d'avoir un gruntfile qui, si on imagine une task
-sass -> autoprefixer -> csso, passe [3 fois par des lectures/écritures sur le
-système de
-fichiers](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-grunt).
+sass -> autoprefixer -> csso, passe
+[3 fois par des lectures/écritures sur le système de fichiers](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-grunt).
 
 <figure>
   <img src="http://jaysoo.ca/images/grunt-flow-2.png" alt="" />
@@ -60,8 +59,8 @@ fichiers](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-grunt).
 </figure>
 
 Et du coup au lieu d'avoir un fichier de conf d'une soixantaine de lignes, on
-arrive à avoir [quelque chose de
-concis](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-gulp)
+arrive à avoir
+[quelque chose de concis](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-gulp)
 (une vingtaine de ligne seulement).
 
 <figure>
@@ -170,8 +169,8 @@ gulp.task("styles", function() {
     .pipe(
       cssnext({
         compress: options.production,
-        sourcemap: !options.production
-      })
+        sourcemap: !options.production,
+      }),
     )
 
     // Super important, on convertit nos streams en fichiers
@@ -192,13 +191,13 @@ gulp.task("default", ["styles"], function() {
 Bien entendu, vous avez déjà compris que si vous voulez remplacer cssnext par
 Sass, c'est l'histoire de 4 secondes.
 
-Chez _Putain de code !_ on a aimé Gulp. Il faut bien avouer que [ça va
-vite](https://twitter.com/putaindecode/status/460868992396460032) (encore plus
-appréciable lorsque l'on n'a pas de SSD) et que c'est plaisant à écrire comparé
-à Grunt. Pas de configurations pas spécialement verbeuse et trop espacée. Avec
-Gulp on se sent plus libre, moins contraint. Du coup, on avait carrément refait
-notre site avec Gulp (puis au passage un petit refresh graphique tant qu'à
-faire).
+Chez _Putain de code !_ on a aimé Gulp. Il faut bien avouer que
+[ça va vite](https://twitter.com/putaindecode/status/460868992396460032) (encore
+plus appréciable lorsque l'on n'a pas de SSD) et que c'est plaisant à écrire
+comparé à Grunt. Pas de configurations pas spécialement verbeuse et trop
+espacée. Avec Gulp on se sent plus libre, moins contraint. Du coup, on avait
+carrément refait notre site avec Gulp (puis au passage un petit refresh
+graphique tant qu'à faire).
 
 **Mise à jour: depuis nous avons encore simplifié notre process et nous nous
 sommes passé de Gulp.**
@@ -207,54 +206,53 @@ Pour aller plus loin, vous n'avez qu'à ouvrir notre ancien
 [Gulpfile](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/gulpfile.js)
 et regarder nos
 [tasks](https://github.com/putaindecode/putaindecode.io/tree/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks)
-de l'époque qui vont de [la plus
-simple](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/clean.js)
-à [la plus
-compliqué](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/contributors.js).
+de l'époque qui vont de
+[la plus simple](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/clean.js)
+à
+[la plus compliqué](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/contributors.js).
 
 Pour voir des tâches plus « real world example » je vous invite à regarder les
 tasks suivantes :
 
-* [server](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/server.js),
+- [server](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/server.js),
   le server de dev local avec livereload dedans ;
-* [watch](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/watch.js),
+- [watch](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/watch.js),
   le classique et si simple watcher ;
-* [deploy](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/deploy.js),
+- [deploy](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/deploy.js),
   la tâche pour publier le dossier `dist/` sur les
   [gh-pages](https://pages.github.com/) ;
-* [icons](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/icons.js),
+- [icons](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/icons.js),
   qui transforme des SVG en fontes d'icones avec le bout de CSS qui va bien ;
-* [scripts-linting](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts-linting.js),
+- [scripts-linting](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts-linting.js),
   qui vérifie la qualité du code ;
-* [scripts](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts.js),
+- [scripts](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/scripts.js),
   du [browserify](/fr/articles/js/browserify/) pour nos JS côté client ;
-* [stylesheets](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/stylesheets.js),
+- [stylesheets](https://github.com/putaindecode/putaindecode.io/blob/6702dffed608cf6d03141f1dcdbb096a66ff7d8f/tasks/stylesheets.js),
   notre tâche pour coder des css du futur ;
 
 ## Vous reprendrez bien un peu de… Gulp\* ! Pardon.
 
 Si vous avez encore envie de détails je vous renvoie sur l'article anglais
-[Getting started with
-gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp/) qui détaille
-tellement bien chaque point que même un anglophobe comprendrait.
+[Getting started with gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp/)
+qui détaille tellement bien chaque point que même un anglophobe comprendrait.
 
-Vous avez aussi [une
-documentation](https://github.com/gulpjs/gulp/blob/master/docs/README.md) très
-bien faite, qui comporte carrément [des exemples _officiels_ tout
-prêts](https://github.com/gulpjs/gulp/tree/master/docs/recipes).
+Vous avez aussi
+[une documentation](https://github.com/gulpjs/gulp/blob/master/docs/README.md)
+très bien faite, qui comporte carrément
+[des exemples _officiels_ tout prêts](https://github.com/gulpjs/gulp/tree/master/docs/recipes).
 
 Comme je vous disais plus tôt, les auteurs de Gulp sont assez carrés et valident
-(ou plutôt *invalident*) [les
-plugins](https://www.npmjs.org/search?q=gulpplugin) qui ne respectent pas les
+(ou plutôt _invalident_)
+[les plugins](https://www.npmjs.org/search?q=gulpplugin) qui ne respectent pas
+les
 [règles](https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md).
 Je trouve que c'est gage de qualité.
 
 Pour finir quelques liens pour ceux qui en veulent toujours plus :
 
-* [Gulp : Retour
-  d'expérience](http://insertafter.com/fr/blog/retour_experience_gulp.html)
-* [Grunt vs. Gulp, au-delà des
-  chiffres](http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/) (anglais)
+- [Gulp : Retour d'expérience](http://insertafter.com/fr/blog/retour_experience_gulp.html)
+- [Grunt vs. Gulp, au-delà des chiffres](http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/)
+  (anglais)
 
 ```console
 $ gulp bisous

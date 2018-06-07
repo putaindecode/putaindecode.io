@@ -24,9 +24,9 @@ L'[article précédent](/fr/articles/js/ember/) a insisté sur le fait
 qu'[Ember][ember] était un framework avec des partis pris forts et un modèle de
 développement structurant.
 
-_Note : sur ce sujet, vu que [ça fait
-réagir](/fr/articles/js/ember/#comment-1644383934), je précise. Je ne dis pas
-que c'est bien ou que ce n'est pas bien. Je dis juste que c'est une
+_Note : sur ce sujet, vu que
+[ça fait réagir](/fr/articles/js/ember/#comment-1644383934), je précise. Je ne
+dis pas que c'est bien ou que ce n'est pas bien. Je dis juste que c'est une
 caractéristique importante d'[Ember][ember]. Autant le savoir._
 
 Eh bien, aussi étonnant que cela puisse paraître, [Ember][ember] **nous laisse
@@ -43,9 +43,9 @@ d'autres.
 
 De base, avec [Ember][ember] on peut donc déclarer nos routes, contrôleurs,
 modèles, etc. dans un seul fichier JavaScript ou dans une balise `<script>`. On
-doit par contre impérativement respecter les [conventions de
-nommage](http://emberjs.com/guides/concepts/naming-conventions/) et enregistrer
-nos objets dans une variable globale :
+doit par contre impérativement respecter les
+[conventions de nommage](http://emberjs.com/guides/concepts/naming-conventions/)
+et enregistrer nos objets dans une variable globale :
 
 ```js
 App = Ember.Application.create();
@@ -103,23 +103,24 @@ CLI][ember-cli].
 [Ember][ember]. Elle repose sur l'outil de build [Broccoli][broccoli] et permet
 :
 
-* d'initialiser une application Ember avec, cette fois, une [structure de
-  fichiers][folder-layout] et des [conventions de
-  nommage](http://www.ember-cli.com/#naming-conventions)
-* de générer différents objets en mode scaffolding via des
+- d'initialiser une application Ember avec, cette fois, une [structure de
+  fichiers][folder-layout] et des
+  [conventions de nommage](http://www.ember-cli.com/#naming-conventions)
+- de générer différents objets en mode scaffolding via des
   [commandes](http://www.ember-cli.com/#using-ember-cli). Autant le dire tout de
   suite, je ne suis pas fan du scaffolding mais on va regarder quand même pour
   ne pas mourir idiots.
-* d'utiliser des outils de build basés sur [Broccoli][broccoli] pour le
+- d'utiliser des outils de build basés sur [Broccoli][broccoli] pour le
   prétraitement des pré-processeurs CSS par exemple
-* d'utiliser les [modules
-  ES6](https://people.mozilla.org/~jorendorff/es6-draft.html) plutôt
+- d'utiliser les
+  [modules ES6](https://people.mozilla.org/~jorendorff/es6-draft.html) plutôt
   qu'[AMD](http://en.wikipedia.org/wiki/Asynchronous_module_definition) ou
   [CommonJS](http://en.wikipedia.org/wiki/CommonJS) pour la modularisation.
   Cette question a été largement débattue. Si ça vous intéresse, je vous laisse
-  découvrir un [article très
-  intéressant](http://tomdale.net/2012/01/amd-is-not-the-answer/) à ce sujet.
-* ...
+  découvrir un
+  [article très intéressant](http://tomdale.net/2012/01/amd-is-not-the-answer/)
+  à ce sujet.
+- ...
 
 Je ne vais pas vous détailler davantage le truc, vous trouverez vous-même la
 [doc officielle][ember-cli]. Et puis, on va tout de suite le mettre en pratique.
@@ -167,7 +168,7 @@ et l'explication dans ce
 _Note: le code de l'exemple est dispo sur
 [github](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember)._
 
-* Modification du gabarit général de l'application
+- Modification du gabarit général de l'application
   `/app/templates/application.hbs` :
 
 ```html
@@ -183,7 +184,7 @@ _Note: le code de l'exemple est dispo sur
 _Note : on en profite pour remarquer le rechargement à chaud via `ember server`
 lorsqu'on modifie un fichier._
 
-* Création de la première route `/series` via `ember` :
+- Création de la première route `/series` via `ember` :
 
 ```console
 $ ember generate route series
@@ -217,7 +218,7 @@ peut constater l'imbrication du gabarit `series.hbs` dans le gabarit général
 Ces notions sont au cœur d'[Ember][ember]. Leur fonctionnement est assez simple.
 Lorsqu'une route est imbriquée dans une autre, [Ember][ember] va rechercher les
 gabarits de ces deux routes et remplacer la zone `{{outlet}}` de la _route mère_
-avec le rendu de la *route fille*. Ainsi de suite jusqu'à résolution complète de
+avec le rendu de la _route fille_. Ainsi de suite jusqu'à résolution complète de
 la route. Lors des transitions entre routes, les zones des `{{outlet}}`
 concernées par le changement sont mises à jour.
 
@@ -230,11 +231,11 @@ l'application entière.
 ### Routes et contrôleurs implicites
 
 Pour rappel, [Ember][ember] définit et utilise différents types d'objets ayant
-chacun une responsabilité propre (voir [article
-précédent](/fr/articles/js/ember/)) et, pour ne pas nous obliger à fournir
-nous-même une implémentation par défaut de ces objets, les génère pour nous
-(voir [article précédent - _Génération
-d'objets_](/fr/articles/js/ember/#generation-d-objets)).
+chacun une responsabilité propre (voir
+[article précédent](/fr/articles/js/ember/)) et, pour ne pas nous obliger à
+fournir nous-même une implémentation par défaut de ces objets, les génère pour
+nous (voir
+[article précédent - _Génération d'objets_](/fr/articles/js/ember/#generation-d-objets)).
 
 Si nous n'avons eu ici qu'à fournir le gabarit `application.hbs`, c'est
 qu'[Ember][ember] a généré pour nous la route implicite `ApplicationRoute`
@@ -250,7 +251,7 @@ peuvent être trouvées dans la
 Ces éléments implicites sont générés pour chaque route qui n'est pas une route
 de dernier niveau et peuvent être surchargés.
 
-* L'URL `/` ne nous intéresse pas. Surchargeons la route `IndexRoute` pour
+- L'URL `/` ne nous intéresse pas. Surchargeons la route `IndexRoute` pour
   rediriger vers `/series` :
 
 ```js
@@ -260,12 +261,12 @@ import Ember from "ember";
 export default Ember.Route.extend({
   redirect: function() {
     this.transitionTo("series");
-  }
+  },
 });
 ```
 
--> Par-là la [doc sur les
-redirections](http://emberjs.com/guides/routing/redirection/).
+-> Par-là la
+[doc sur les redirections](http://emberjs.com/guides/routing/redirection/).
 
 Maintenant, on veut afficher la liste des séries en allant sur `/series`. Encore
 faut-il avoir des séries... Pour ça, on va utiliser la librairie [Ember
@@ -305,9 +306,9 @@ import DS from "ember-data";
 export default DS.FixtureAdapter.extend({});
 ```
 
-* On va donc créer un modèle correspondant. Seulement, voilà, comme j'ai eu la
+- On va donc créer un modèle correspondant. Seulement, voilà, comme j'ai eu la
   bonne idée de prendre un des rares mots en anglais où le pluriel et le
-  singulier sont identiques (*serie* n'existe pas), on va devoir créer un modèle
+  singulier sont identiques (_serie_ n'existe pas), on va devoir créer un modèle
   _seriesItem_ :
 
 ```js
@@ -352,7 +353,7 @@ export default SeriesItem;
 Au passage, on remarque les valeurs par défaut ainsi que la [propriété
 calculée][computed-prop] `coverUrl`. On aura l'occasion d'en reparler.
 
-* On modifie donc notre application pour afficher, lors de l'activation de
+- On modifie donc notre application pour afficher, lors de l'activation de
   `SeriesRoute`, la liste des séries :
 
 ```js
@@ -362,7 +363,7 @@ import Ember from "ember";
 export default Ember.Route.extend({
   model: function() {
     return this.store.find("seriesItem");
-  }
+  },
 });
 ```
 
@@ -386,10 +387,10 @@ export default Ember.Route.extend({
 ```
 
 On remarque le `{{#each}}` sans arguments qui par convention retrouve l'objet
-`model` du contrôleur. `{{#each model}}`, `{{#each controller}}` ou `{{#each
-controller.model}}` sont des notations équivalentes.
+`model` du contrôleur. `{{#each model}}`, `{{#each controller}}` ou
+`{{#each controller.model}}` sont des notations équivalentes.
 
-* Maintenant, on va essayer de dynamiser un peu tout ça en ajoutant un bouton
+- Maintenant, on va essayer de dynamiser un peu tout ça en ajoutant un bouton
   pour trier la liste :
 
 ```html
@@ -415,8 +416,8 @@ export default Ember.ArrayController.extend({
   actions: {
     sort: function() {
       this.toggleProperty("sortAscending");
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -461,7 +462,7 @@ statique.
 -> Plus d'infos sur les classes
 [ici](http://emberjs.com/guides/templates/binding-element-class-names/).
 
-* Mais on ne va pas s'arrêter là. On va ajouter un petit filtre sur le titre des
+- Mais on ne va pas s'arrêter là. On va ajouter un petit filtre sur le titre des
   séries :
 
 ```html
@@ -512,11 +513,11 @@ actions: {
 ### Propriétés calculées
 
 Je vous passe le contenu de la fonction `filteredModel` qui n'apporte rien au
-sujet. Examinons par contre la notation `.property('filter', 'sortAscending',
-'model.@each.title')`. Cela constitue la définition d'une [propriété
-calculée][computed-prop] : propriété accessible et manipulable comme n'importe
-quelle propriété au sein des gabarits mais qui est le résultat d'une fonction
-dont le retour dépend de l'état d'autres propriétés.
+sujet. Examinons par contre la notation
+`.property('filter', 'sortAscending', 'model.@each.title')`. Cela constitue la
+définition d'une [propriété calculée][computed-prop] : propriété accessible et
+manipulable comme n'importe quelle propriété au sein des gabarits mais qui est
+le résultat d'une fonction dont le retour dépend de l'état d'autres propriétés.
 
 La syntaxe `.property('filter', 'sortAscending', 'model.@each.title')` définit
 les autres propriétés _observées_ par cette propriété calculée et dont le
@@ -574,29 +575,29 @@ introduit même quelques effets de bord en CSS lorsqu'on utilise les
 dynamiques de manière performante - j'ai fini par voir ça comme un mal
 nécessaire. Mais surtout, j'ai compris que ces `metamorph` étaient voués à
 disparaître assez rapidement avec l'utilisation du moteur [HTMLBars][html-bars].
-Vous pouvez jeter un œil à ce sujet à la [présentation d'Eric
-Bryn](http://talks.erikbryn.com/htmlbars/) (notamment slide 10). Ouf ! Le
-support d'[HTMLBars][html-bars] est prévu pour [Ember][ember] 1.9 ou 1.10 (la
-release actuelle est 1.7) ... On est impatients !
+Vous pouvez jeter un œil à ce sujet à la
+[présentation d'Eric Bryn](http://talks.erikbryn.com/htmlbars/) (notamment slide
+10). Ouf ! Le support d'[HTMLBars][html-bars] est prévu pour [Ember][ember] 1.9
+ou 1.10 (la release actuelle est 1.7) ... On est impatients !
 
 _Bonus: l'élément est un élément `script` et pas un autre car c'est à priori le
 seul élément qui peut être inséré partout sans rien casser._
 
-_**Edit**: Aujourd'hui (28/10/2014) est sortie la [version 1.8.0
-d'Ember](http://emberjs.com/blog/2014/10/26/ember-1-8-0-released.html). Cette
-release ne contient pas encore le support complet d'[HTMLBars][html-bars] mais
-signe déjà la fin des `metamorph` au profit de l'utilisation d'élements `Text`
-vides, non intrusifs ! Ça méritait d'être signalé._
+_**Edit**: Aujourd'hui (28/10/2014) est sortie la
+[version 1.8.0 d'Ember](http://emberjs.com/blog/2014/10/26/ember-1-8-0-released.html).
+Cette release ne contient pas encore le support complet d'[HTMLBars][html-bars]
+mais signe déjà la fin des `metamorph` au profit de l'utilisation d'élements
+`Text` vides, non intrusifs ! Ça méritait d'être signalé._
 
 ### _RunLoop_
 
 Un autre mécanisme important est impliqué tant dans le rendu des gabarits que
-dans le calcul et la synchronisation des propriétés entre elles : la *RunLoop*.
+dans le calcul et la synchronisation des propriétés entre elles : la _RunLoop_.
 Ce mécanisme est absolument central dans le fonctionnement d'[Ember][ember] et
 s'appuie sur la lib [Backburner](https://github.com/ebryn/backburner.js/). Dans
 la plupart des cas, vous n'avez pas à vous en préoccuper et vous pouvez
 parfaitement mettre en place une application [Ember][ember] complète sans
-interagir directement avec la *RunLoop*, sauf lorsque vous ajoutez vos propres
+interagir directement avec la _RunLoop_, sauf lorsque vous ajoutez vos propres
 `helpers` [Handlebars](http://handlebarsjs.com/) ou vos propres composants
 avancés. C'est par contre important d'en comprendre le fonctionnement.
 
@@ -604,11 +605,11 @@ Comme son nom ne l'indique pas, la _RunLoop_ n'est pas une loop mais un ensemble
 de queues permettant à [Ember][ember] de différer un certain nombre d'opérations
 qui seront ensuite exécutées en dépilant ces queues dans un ordre de priorité
 donné. Les queues sont `sync`, `actions`, `routerTransitions`, `render`,
-`afterRender`, et `destroy`. Je vous laisse découvrir par vous-même dans la [doc
-officielle](http://emberjs.com/guides/understanding-ember/run-loop/) et dans
-cette [présentation d'Eric
-Bryn](http://talks.erikbryn.com/backburner.js-and-the-ember-run-loop) le contenu
-de ces queues et la manière dont est faite l'exécution.
+`afterRender`, et `destroy`. Je vous laisse découvrir par vous-même dans la
+[doc officielle](http://emberjs.com/guides/understanding-ember/run-loop/) et
+dans cette
+[présentation d'Eric Bryn](http://talks.erikbryn.com/backburner.js-and-the-ember-run-loop)
+le contenu de ces queues et la manière dont est faite l'exécution.
 
 Je voudrais juste insister sur un aspect particulier : c'est ce mécanisme qui
 permet, en quelque sorte, d'empiler les calculs de propriétés calculées lorsque
@@ -616,9 +617,9 @@ les propriétés _observées_ sont modifiées et surtout c'est grâce à ce méc
 que le rendu n'est effectué qu'une seule fois lors de la modification d'un
 modèle.
 
-Pour reprendre l'exemple de la [doc
-officielle](http://emberjs.com/guides/understanding-ember/run-loop/), si vous
-avez l'objet suivant :
+Pour reprendre l'exemple de la
+[doc officielle](http://emberjs.com/guides/understanding-ember/run-loop/), si
+vous avez l'objet suivant :
 
 ```js
 var User = Ember.Object.extend({
@@ -626,7 +627,7 @@ var User = Ember.Object.extend({
   lastName: null,
   fullName: function() {
     return this.get("firstName") + " " + this.get("lastName");
-  }.property("firstName", "lastName")
+  }.property("firstName", "lastName"),
 });
 ```
 
@@ -637,12 +638,12 @@ Et le gabarit :
 {{fullName}}
 ```
 
-Tout ça, sans la *RunLoop*, ferait qu'on exécuterait le rendu deux fois si l'on
+Tout ça, sans la _RunLoop_, ferait qu'on exécuterait le rendu deux fois si l'on
 modifie successivement `firstname` puis `lastname`. La _RunLoop_ met tout ça (et
 plein d'autres choses) en queue et n'effectue le rendu qu'une seule et unique
 fois, lorsque nécessaire.
 
-* Après ça, on va finir en douceur en ajoutant simplement ou nouvelle route pour
+- Après ça, on va finir en douceur en ajoutant simplement ou nouvelle route pour
   afficher la série qu'on a sélectionné :
 
 ```js
@@ -688,22 +689,22 @@ Router.map(function() {
 
 Et voilà ! Quelques remarques en passant :
 
-* on peut maintenant sélectionner une série dans la liste grâce au
+- on peut maintenant sélectionner une série dans la liste grâce au
   `{{link-to}}`. On remarque au passage qu'[Ember][ember] sélectionne
   automatiquement (ajoute une classe `active`) la série de la liste dont la
   route est activée. On note également l'utilisation de `this` pour référencer
-  l'objet courant (ici l'instance courante de `SeriesItem`). -> [doc
-  officielle](http://emberjs.com/guides/templates/links/).
-* on a transformé la route `series` en _Resource_ qui permet de grouper les
+  l'objet courant (ici l'instance courante de `SeriesItem`). ->
+  [doc officielle](http://emberjs.com/guides/templates/links/).
+- on a transformé la route `series` en _Resource_ qui permet de grouper les
   routes sous un même espace de nommage. Notez que si la route `seriesItem`
   avait été une ressource, on aurait dû fournir le template
   `/app/templates/series-item.hbs` au lieu de
   `/app/templates/series/series-item.hbs` car une ressource réinitialise
-  l'espace de nommage et permet ainsi de simplifier les URL. -> [doc
-  officielle](http://emberjs.com/guides/routing/defining-your-routes/#toc_resources)
-* on a ajouté un _segment dynamique_ `{path: '/:seriesItem_id'}` à la route
-  `seriesItem` pour l'ID de la série. -> [doc
-  officielle](http://emberjs.com/guides/routing/defining-your-routes/#toc_dynamic-segments).
+  l'espace de nommage et permet ainsi de simplifier les URL. ->
+  [doc officielle](http://emberjs.com/guides/routing/defining-your-routes/#toc_resources)
+- on a ajouté un _segment dynamique_ `{path: '/:seriesItem_id'}` à la route
+  `seriesItem` pour l'ID de la série. ->
+  [doc officielle](http://emberjs.com/guides/routing/defining-your-routes/#toc_dynamic-segments).
 
 ## Conclusions
 
@@ -733,8 +734,8 @@ Pour finir, je souhaite remercier l'équipe de _Putain de code !_ qui ne partage
 pas mes opinions sur les frameworks en général mais qui m'accueille quand même.
 Cet article a vraiment dû vous piquer les yeux. Désolé :-)
 
-_Note: les sources de l'application exemple sont [disponibles sur
-github](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember)._
+_Note: les sources de l'application exemple sont
+[disponibles sur github](https://github.com/bmeurant/ember-articles/tree/premiere-app-ember)._
 
 [ember]: http://emberjs.com
 [ember-cli]: http://www.ember-cli.com/

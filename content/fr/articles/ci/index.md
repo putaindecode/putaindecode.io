@@ -28,10 +28,10 @@ continu afin d'avoir du PSD > HTML 24h sur 24.
 ## Pré-requis pour mettre en place l'intégration continue
 
 Avant de rentrer dans le vif du sujet, assurez-vous d'avoir déjà de bonne bases,
-pour maintenir une base de code saine en [versionnant avec
-git](/fr/articles/git/). Nous sommes en 2015, l'année où l'on était censé avoir
-les voitures volantes, nous n'allons donc pas expliquer ici à quoi sert de
-versionner du code.
+pour maintenir une base de code saine en
+[versionnant avec git](/fr/articles/git/). Nous sommes en 2015, l'année où l'on
+était censé avoir les voitures volantes, nous n'allons donc pas expliquer ici à
+quoi sert de versionner du code.
 
 Du code versionné ne suffit pas, il faut avoir des tests automatisés bien
 entendu. [Front](/fr/articles/js/tests/frontend/) et back, il en faut de tous
@@ -40,16 +40,16 @@ les côtés.
 Ensuite, il nous faudra choisir un serveur qui va gérer l'intégration continue.
 Il existe des services tels que:
 
-* [Travis](http://travis-ci.org/)
-* [CircleCI](https://circleci.com/)
-* [Bamboo](https://www.atlassian.com/software/bamboo/)
-* [Codeship](https://codeship.com/)
-* [Jenkins](http://jenkins-ci.org/)
+- [Travis](http://travis-ci.org/)
+- [CircleCI](https://circleci.com/)
+- [Bamboo](https://www.atlassian.com/software/bamboo/)
+- [Codeship](https://codeship.com/)
+- [Jenkins](http://jenkins-ci.org/)
 
 ## L'intégration continue en pratique
 
 Un fois qu'on a notre code testé et versionné et qu'on a configuré son serveur
-de *CI*, chaque modification va déclencher des actions sur ce serveur, puis, en
+de _CI_, chaque modification va déclencher des actions sur ce serveur, puis, en
 fonction des résultats, va déclencher d'autres actions tout en vous notifiant si
 besoin.
 
@@ -63,12 +63,12 @@ services que vous avez configurés (email, IRC, webhook, etc).
 
 Nous pouvons imaginer que votre serveur vienne vous insulter sur votre logiciel
 de chat interne, en vous montrant du doigt. On pourrait aussi imaginer une
-synthèse vocale crier votre nom et préciser à toute l'équipe que [vous avez
-merté](https://www.youtube.com/watch?v=mbDcnUH6rOc) : *“MoOx, you just fucked up
-the build by breaking 42 tests! Fix that please”*. Pour finir dans les exemples
-farfelus, nous pourrions avoir une petite tourelle type _Nerf_ qui vous met un
-petit headshot qui va bien. Des équipes font vraiment ça, et vous vous en
-doutez, y'a de la grosse marrade au programme.
+synthèse vocale crier votre nom et préciser à toute l'équipe que
+[vous avez merté](https://www.youtube.com/watch?v=mbDcnUH6rOc) : _“MoOx, you
+just fucked up the build by breaking 42 tests! Fix that please”_. Pour finir
+dans les exemples farfelus, nous pourrions avoir une petite tourelle type _Nerf_
+qui vous met un petit headshot qui va bien. Des équipes font vraiment ça, et
+vous vous en doutez, y'a de la grosse marrade au programme.
 
 L'idée est vraiment de pousser le plus souvent possible, les plus petites
 modifications possibles avec la meilleure couverture de tests possible. Ceci
@@ -85,9 +85,9 @@ J'ai mis un titre pour ça car c'est important. Vraiment. Tout développeur qui
 n'a pas encore écrit ses premiers tests a peur. Puis avec le temps, il se dit
 que finalement, il ne fallait pas avoir autant d'appréhension et qu'il était
 très con de ne pas avoir testé automatiquement tout ses codes sources plus tôt.
-À tel point qu'une [DeLorean
-modifiée](http://the--kyza.deviantart.com/art/What-the-Flux-511691704) pour se
-prévenir soi-même ne serait pas de refus.
+À tel point qu'une
+[DeLorean modifiée](http://the--kyza.deviantart.com/art/What-the-Flux-511691704)
+pour se prévenir soi-même ne serait pas de refus.
 
 Une fois la barrière franchie, on se dit vraiment qu'on était stupide de pas
 avoir essayé avant.
@@ -113,7 +113,7 @@ et agir en conséquence.
 
 Chez _Putain de code !_ (en date de cet article), notre couverture de tests est
 loin d'être bonne. Mais ce site étant un petit plaisir un peu risqué, nous
-faisons quand même du [déploiement
-continu](/fr/articles/ci/deploiement-continu/), l'étape d'après ! On aime bien
-l'idée du *[move fast & break ~~no~~thing
-](http://zachholman.com/talk/move-fast-break-nothing)*.
+faisons quand même du
+[déploiement continu](/fr/articles/ci/deploiement-continu/), l'étape d'après !
+On aime bien l'idée du
+_[move fast & break ~~no~~thing ](http://zachholman.com/talk/move-fast-break-nothing)_.

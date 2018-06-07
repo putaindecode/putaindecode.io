@@ -8,9 +8,10 @@ authors:
   - MoOx
 ---
 
-Suite à mon précédent article [Comment en finir avec les préfixes
-CSS](/fr/articles/css/autoprefixer/), certains sont restés sur leur faim. Voici
-donc de rapides exemples de mise en place de cette solution.
+Suite à mon précédent article
+[Comment en finir avec les préfixes CSS](/fr/articles/css/autoprefixer/),
+certains sont restés sur leur faim. Voici donc de rapides exemples de mise en
+place de cette solution.
 
 ## Installation d’autoprefixer
 
@@ -34,7 +35,7 @@ autoprefixer 1.0.20140203
 
 Vous remarquerez que le numéro de version est un peu spécial : il contient une
 date en place d’un numéro de patch. Cette date correspond à la dernière mise à
-jour de la base de données de *Can I Use*.
+jour de la base de données de _Can I Use_.
 
 ## Utilisation d’autoprefixer
 
@@ -93,22 +94,20 @@ $ cat prefixed.css
 On a bien eu des préfixes ajoutés en fonction de notre demande (bon rien pour IE
 qui n’est pas passé par une version préfixé)
 
-Par défaut, _autoprefixer_ utilise `> 1%, last 2 versions, Firefox ESR, Opera
-12.1` pour les navigateurs. Je pense que pour la plupart d’entre vous voudront
-ajouter "Explorer 8" à la liste, mais ça n’est en théorie pas nécessaire vu le
-permier argument qui demande de préfixer tous les navigateurs dont l’usage
-global est supérieur à 1%. Peut-être Explorer 7 pour certains ? Faites un tour
-sur la [page dédié aux statistiques globales sur
-CanIUse.com](http://caniuse.com/usage_table.php) pour avoir une idée.
+Par défaut, _autoprefixer_ utilise
+`> 1%, last 2 versions, Firefox ESR, Opera 12.1` pour les navigateurs. Je pense
+que pour la plupart d’entre vous voudront ajouter "Explorer 8" à la liste, mais
+ça n’est en théorie pas nécessaire vu le permier argument qui demande de
+préfixer tous les navigateurs dont l’usage global est supérieur à 1%. Peut-être
+Explorer 7 pour certains ? Faites un tour sur la
+[page dédié aux statistiques globales sur CanIUse.com](http://caniuse.com/usage_table.php)
+pour avoir une idée.
 
 Sinon, pour du petit one shot, un plugin dans votre éditeur suffira:
 
-* [plugin autoprefixer pour
-  Atom](https://github.com/sindresorhus/atom-autoprefixer)
-* [plugin autoprefixer pour Sublime
-  Text](https://github.com/sindresorhus/sublime-autoprefixer)
-* [plugin autoprefixer pour
-  Brackets](https://github.com/mikaeljorhult/brackets-autoprefixer)
+- [plugin autoprefixer pour Atom](https://github.com/sindresorhus/atom-autoprefixer)
+- [plugin autoprefixer pour Sublime Text](https://github.com/sindresorhus/sublime-autoprefixer)
+- [plugin autoprefixer pour Brackets](https://github.com/mikaeljorhult/brackets-autoprefixer)
 
 <figure>
   <img src="../autoprefixer.gif" alt="sublime text autoprefixer preview" />
@@ -118,24 +117,23 @@ Sinon, pour du petit one shot, un plugin dans votre éditeur suffira:
 ## Automatisation d’autoprefixer (autoception)
 
 Bien entendu on va pas se taper la commande à la main tout le temps hein... Il
-nous faut automatiser nos processus. Sans quoi on perd du temps, et [le temps...
-C’est du temps
-!](http://deboutlesgens.com/blog/jai-pas-le-temps-la-pire-excuse-qui-soit/)
+nous faut automatiser nos processus. Sans quoi on perd du temps, et
+[le temps... C’est du temps !](http://deboutlesgens.com/blog/jai-pas-le-temps-la-pire-excuse-qui-soit/)
 
 Donc, comme je l’ai dit précédemment, on peut utiliser _autoprefixer_ avec les
 solutions suivantes:
 
-* via [Node.js](https://github.com/ai/autoprefixer#nodejs) directement,
-* en plugin [Gulp](https://www.npmjs.org/package/gulp-autoprefixer),
-* en plugin [Grunt](https://github.com/ai/autoprefixer#grunt),
-* via [Compass](https://github.com/ai/autoprefixer#compass),
-* en plugin [Stylus](https://github.com/ai/autoprefixer#stylus),
-* avec [RoR](https://github.com/ai/autoprefixer#ruby-on-rails) ou
+- via [Node.js](https://github.com/ai/autoprefixer#nodejs) directement,
+- en plugin [Gulp](https://www.npmjs.org/package/gulp-autoprefixer),
+- en plugin [Grunt](https://github.com/ai/autoprefixer#grunt),
+- via [Compass](https://github.com/ai/autoprefixer#compass),
+- en plugin [Stylus](https://github.com/ai/autoprefixer#stylus),
+- avec [RoR](https://github.com/ai/autoprefixer#ruby-on-rails) ou
   [Ruby](https://github.com/ai/autoprefixer#ruby),
-* avec l’application [Prepros](https://github.com/ai/autoprefixer#prepros)
-* via [Mincer](https://github.com/ai/autoprefixer#mincer)
-* via [Middleman](https://github.com/ai/autoprefixer#middleman)
-* avec [PHP](https://github.com/ai/autoprefixer#php) (vous avez bien lu)
+- avec l’application [Prepros](https://github.com/ai/autoprefixer#prepros)
+- via [Mincer](https://github.com/ai/autoprefixer#mincer)
+- via [Middleman](https://github.com/ai/autoprefixer#middleman)
+- avec [PHP](https://github.com/ai/autoprefixer#php) (vous avez bien lu)
 
 Si vous avez besoin, je pense que vous trouverez sans trop de problème d’autres
 implémentations.
@@ -185,8 +183,8 @@ _Attention : Les Makefiles utilisent des tabulations uniquement ! Sans quoi cela
 ne va pas marcher comme prévu._
 
 Vous avez donc maintenant un exemple assez simpliste qui peut être utilisé si
-vous n’avez pas encore [automatisé votre
-workflow](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/)
+vous n’avez pas encore
+[automatisé votre workflow](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/)
 via des outils comme [Gulp](http://gulpjs.com/) ou [Grunt](http://gruntjs.com/).
 
 Passons justement à ces solutions plus sérieuses.
@@ -271,7 +269,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: "expanded"
+          style: "expanded",
         },
         files: [
           {
@@ -280,22 +278,22 @@ module.exports = function(grunt) {
             cwd: "./src/css",
             src: ["*.scss"],
             dest: "./dist/css",
-            ext: ".css"
-          }
-        ]
-      }
+            ext: ".css",
+          },
+        ],
+      },
     },
     autoprefixer: {
       options: {
-        browsers: ["last 2 versions", "> 1%", "Explorer 7", "Android 2"]
+        browsers: ["last 2 versions", "> 1%", "Explorer 7", "Android 2"],
       },
       dist: {
         expand: true,
         flatten: true,
         cwd: "./dist/css",
         src: ["*.css"],
-        dest: "./dist/css/"
-      }
+        dest: "./dist/css/",
+      },
     },
     csso: {
       dist: {
@@ -303,15 +301,15 @@ module.exports = function(grunt) {
         flatten: true,
         cwd: "./dist/css/",
         src: ["*.css"],
-        dest: "./dist/css/"
-      }
+        dest: "./dist/css/",
+      },
     },
     watch: {
       styles: {
         files: ["./src/css/**/*.scss"],
-        tasks: ["styles"]
-      }
-    }
+        tasks: ["styles"],
+      },
+    },
   });
 
   grunt.registerTask("styles", ["sass", "autoprefixer"]);
@@ -362,7 +360,7 @@ La façon de faire de gulp, via des streams pour éviter la lecture / écriture
 multiple fait que le plugin _autoprefixer-stylus_ est vide de sens. Vous pouvez
 donc utiliser _autoprefixer_ normalement, après l’appel du pré-processeur.
 
-- - -
+---
 
 Voilà j’espère que cette fois-ci vous êtes rassasié(e) afin de ne plus avoir
 envie de manger des préfixes CSS !

@@ -68,11 +68,12 @@ Ce qui rend l'utilisation des _template strings_ extrêmement intéressante.
 
 Une autre avancée des _template strings_ est le support multi-ligne, en effet en
 ES5 il n'existe aucune solution esthétique (et pratique) pour générer des
-chaînes multi-lignes. Ce problème disparait avec les *template strings*.
+chaînes multi-lignes. Ce problème disparait avec les _template strings_.
 
 ```js
 // ES5
-var multiline = "foo \
+var multiline =
+  "foo \
                  bar \
                  baz";
 
@@ -86,7 +87,7 @@ const multiline = `foo
                    baz`;
 ```
 
-_Attention_ cependant, les espaces sont conservés avec les *template strings*,
+_Attention_ cependant, les espaces sont conservés avec les _template strings_,
 ce qui peut surprendre si vous devez tester des strings multi-lignes.
 
 ```js
@@ -101,8 +102,8 @@ str1 === str2; // => false
 
 ## Les _template strings_ taggués
 
-On entre dans les fonctions moins connues et peu utilisées des *template
-strings*. Les tags sont des fonctions que l'on place juste avant une _template
+On entre dans les fonctions moins connues et peu utilisées des _template
+strings_. Les tags sont des fonctions que l'on place juste avant une _template
 string_ et qui permettent de modifier le contenu de la dite chaîne de
 caractères.
 
@@ -140,15 +141,15 @@ capitalizeVowels`foo ${n} bar ${c}${v}${v} ?`; // => fOO 42 bAr fOO ?
 ```
 
 Voici un exemple intéressant d'utilisation des _template strings_ taggués qui
-présente un système [de localisation de chaînes de
-caractères](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
+présente un système
+[de localisation de chaînes de caractères](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
 
 ## String.raw
 
 Et pour finir, une nouvelle fonction a été ajoutée au prototype de `String` qui
 permet d'afficher le contenu d'un _template string_ brut. C'est à dire que la
 fonction permettra de voir les caractères d'échappement qui sont automatiquement
-gérés avec une *template string*.
+gérés avec une _template string_.
 
 ```js
 String.raw`FOO\nbar`; // => FOO\\nbar
@@ -159,6 +160,6 @@ String.raw`FOO\nbar`; // => FOO\\nbar
 Les _template strings_ sont bien utiles au quotidien, l'ajout de l'interpolation
 simplifie grandement la vie et permet d'oublier les erreurs d'échappement.
 
-Aujourd'hui, [la grande majorité des navigateurs les
-supportent](https://kangax.github.io/compat-table/es6/#test-template_strings)
-ainsi que babel et traceur, donc usez et abusez des *template strings*…
+Aujourd'hui,
+[la grande majorité des navigateurs les supportent](https://kangax.github.io/compat-table/es6/#test-template_strings)
+ainsi que babel et traceur, donc usez et abusez des _template strings_…

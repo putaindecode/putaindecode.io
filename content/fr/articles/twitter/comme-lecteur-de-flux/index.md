@@ -30,7 +30,7 @@ J'expérimente pourtant une solution depuis quelques mois qui me sied bien.
 J'utilise en effet Twitter en tant que lecteur de flux. Oui, car cela a
 plusieurs avantages :
 
-* Il existe une application pour
+- Il existe une application pour
   [Android](https://play.google.com/store/apps/details?id=com.twitter.android&hl=fr),
   [iOS](https://about.twitter.com/products/iphone) ainsi que
   [Mac](https://itunes.apple.com/fr/app/twitter/id409789998?mt=12); mais aussi
@@ -38,7 +38,7 @@ plusieurs avantages :
   [Tweetdeck](https://tweetdeck.twitter.com/) est disponible sur tous les
   environnements.
 
-* Je fais ma veille majoritairement via Twitter; j'écrème au fil de la journée
+- Je fais ma veille majoritairement via Twitter; j'écrème au fil de la journée
   ce qui m'intéresse ou non. Si c'est rapide à lire alors je le lis, sinon je
   _bookmark_ l'article en "Read later" sur mon navigateur. Cela permet de trier
   rapidement l'information et de lire plus paisiblement cela au moment opportun.
@@ -49,13 +49,13 @@ plusieurs avantages :
   moteur de recherche... donc aucune problématique de "neutralité" de
   l'information.
 
-* De plus, étant donné que je fais justement cette veille via Twitter, cela me
+- De plus, étant donné que je fais justement cette veille via Twitter, cela me
   permet d'avoir qu'un seul outil. Cela m'ennuie au plus haut point de
   collectionner les outils. Je suis certes partisant d'utiliser le bon outil
   pour chaque tâche plutôt qu'un couteau-suisse, mais finalement Twitter et un
   lecteur de flux ne sont pas si éloignés.
 
-* Enfin, la majorité des blogs / sites que j'apprécie ont leur propre compte
+- Enfin, la majorité des blogs / sites que j'apprécie ont leur propre compte
   twitter qui postent l'url de leurs articles, il suffit alors de les suivre. Et
   si ce n'est pas le cas, je vous montrerai une petite astuce pour que ça le
   soit.
@@ -75,7 +75,7 @@ souhaitez :
 ![](create-list.png)
 
 Nous voilà avec notre belle liste. Il n'y a plus qu'à la remplir de jolis
-*following*.
+_following_.
 
 Prenons par exemple `@nodenpm`, un beau _bot_ tweetant les nouveaux packages
 node.js ou/et les updates de ces packages.
@@ -86,7 +86,7 @@ Ajoutons-le à notre liste.
 
 ![](add-in-list.png)
 
-Nous voilà maintenant avec notre liste comprenant un *following*. Ce qui en
+Nous voilà maintenant avec notre liste comprenant un _following_. Ce qui en
 ayant ajouté quelques comptes donnera quelque chose comme ceci :
 
 ![](twitter-list-read.jpg)
@@ -105,13 +105,13 @@ souhaite.
 
 ### Compte twitter "bot"
 
-* Déconnectez-vous
-* Inscrivez-vous à nouveau sur Twitter (le mien s'appelle
+- Déconnectez-vous
+- Inscrivez-vous à nouveau sur Twitter (le mien s'appelle
   [@kud_feeds](https://twitter.com/kud_feeds) par exemple)
-* Mettez-lui une belle bio, un bel avatar
-* Déconnectez-vous à nouveau
-* Connectez-vous avec votre vrai compte
-* Ajoutez votre "bot" à la liste que vous venez de créer précédemment
+- Mettez-lui une belle bio, un bel avatar
+- Déconnectez-vous à nouveau
+- Connectez-vous avec votre vrai compte
+- Ajoutez votre "bot" à la liste que vous venez de créer précédemment
 
 ... et voilà !
 
@@ -129,31 +129,31 @@ IFTTT va vous permettre d'aller pomper les flux {rss|atom} de vos sites préfér
 puis ayant accès à votre _bot_ va permettre de tweeter le contenu des flux !
 C'est pas beau ça hein ?! =)
 
-* Allez sur [ifttt.com](https://ifttt.com)
-* Créez-vous un compte (je vous conseille de créer un compte spécialement pour
+- Allez sur [ifttt.com](https://ifttt.com)
+- Créez-vous un compte (je vous conseille de créer un compte spécialement pour
   le _bot_ car IFTTT ne propose de relier qu'un seul compte twitter. Du coup, si
   comme moi vous appréciez IFTTT et que vous souhaitez autant utiliser IFTTT
-  pour votre compte twitter principal que votre compte *bot*, je vous conseille
+  pour votre compte twitter principal que votre compte _bot_, je vous conseille
   de vous créer deux comptes IFTTT)
-* Créez une nouvelle recette en cliquant sur `Create`
-* Cliquez sur `this`
-* Puis `feed`
-* Choissisez le _trigger_ ("déclencheur") que vous souhaitez, moi je prends
+- Créez une nouvelle recette en cliquant sur `Create`
+- Cliquez sur `this`
+- Puis `feed`
+- Choissisez le _trigger_ ("déclencheur") que vous souhaitez, moi je prends
   plutôt le premier `New feed item` (le plus simple)
-* Indiquez l'url du flux de votre site, par exemple
+- Indiquez l'url du flux de votre site, par exemple
   `http://dribbble.com/_kud/shots/following.rss`
-* Puis `then`
-* Twitter
-* `Post a tweet`
-* Laissez tel quel le _template_ de base pour le moment (vous pourrez le changer
+- Puis `then`
+- Twitter
+- `Post a tweet`
+- Laissez tel quel le _template_ de base pour le moment (vous pourrez le changer
   quand vous serez à l'aise avec IFTTT)
-* Mettez la description qui va bien
+- Mettez la description qui va bien
 
 Et on est bon.
 
 Vous avez maintenant une nouvelle recette qui dès qu'un article sortira, un
 tweet de votre _bot_ apparaitra. Vous pouvez d'ailleurs vérifier que tout marche
-bien en cliquant sur la flèche *Check Recipe Now*.
+bien en cliquant sur la flèche _Check Recipe Now_.
 
 Vous n'aurez plus qu'à créer une nouvelle recette en dupliquant cette recette à
 chaque fois que vous voudrez suivre un nouveau flux. Certes éventuellement plus

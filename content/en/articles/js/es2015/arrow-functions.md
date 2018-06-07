@@ -167,9 +167,9 @@ const aFn = obj => ({ key: obj.value }); // It works!
 
 ## Conclusion
 
-Take a look to the [compatibility
-table](https://kangax.github.io/compat-table/es6/#test-arrow_functions). You
-will see that arrow functions are already supported by most browsers but you
+Take a look to the
+[compatibility table](https://kangax.github.io/compat-table/es6/#test-arrow_functions).
+You will see that arrow functions are already supported by most browsers but you
 might need [Babel](http://babeljs.io) to use it today.
 
 You will probably use this more and more. Even if `function` keyword is not

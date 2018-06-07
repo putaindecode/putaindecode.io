@@ -45,12 +45,12 @@ Alors là, j’en entends déjà qui parle à voix haute au milieu de la classe 
 
 Sans rentrer dans un débat trollesque (encore un), à part peut-être avec
 _Stylus_ et ces mixins transparent (coucou
-*[Nib](http://visionmedia.github.io/nib/)*), on est obligé de rajouter du code.
+_[Nib](http://visionmedia.github.io/nib/)_), on est obligé de rajouter du code.
 Avec _Sass_ il faudra (en scss) rajouter `@include` et un couple de parenthèse
 (et au passage avoir _Compass_ si on ne veut pas coder les mixins à la main).
 Avec _Less_ il faudra aussi une librairie _Less Hat_ si on n’a pas envie de se
-taper du mixin qui donne de la nausée comme on peut voir sur la [page
-d’accueil](http://lesscss.org/).
+taper du mixin qui donne de la nausée comme on peut voir sur la
+[page d’accueil](http://lesscss.org/).
 
 ## Les préfixes, c’est comme le lait, ça tourne
 
@@ -63,9 +63,8 @@ aujourd’hui préfixées à tort, car comme on peut le voir sur le site de
 [CanIUse.com](http://caniuse.com/), elles n’ont plus vraiment besoin d’être
 préfixées, à moins que vous supportiez encore Firefox 3.6, Safari iOS 3 ou
 Android 2... Je vous renvoie rapidement sur ce (vieil) article de Chris Coyier
-[Do we need box-shadow or border-radius prefixes
-anymore?](http://css-tricks.com/do-we-need-box-shadow-prefixes/) en guise de
-mémo :)
+[Do we need box-shadow or border-radius prefixes anymore?](http://css-tricks.com/do-we-need-box-shadow-prefixes/)
+en guise de mémo :)
 
 Sans être de mauvaise foi, on va vite avouer qu’on ne peut pas forcément tout
 savoir. Donc on ne peut pas être au top pour connaître quand il faut ou quand il
@@ -123,21 +122,21 @@ Là bon de suite, réflexe, vous me sautez dessus à la gorge en me criant:
 No problem, comme tout outil bien foutu, il y’a une multitudes de façon de
 l’utiliser :
 
-* via [Node.js](https://github.com/ai/autoprefixer#nodejs) directement,
-* en plugin [Gulp](https://www.npmjs.org/package/gulp-autoprefixer),
-* en plugin [Grunt](https://github.com/ai/autoprefixer#grunt),
-* via [Compass](https://github.com/ai/autoprefixer#compass),
-* en plugin [Stylus](https://github.com/ai/autoprefixer#stylus),
-* avec [RoR](https://github.com/ai/autoprefixer#ruby-on-rails) ou
+- via [Node.js](https://github.com/ai/autoprefixer#nodejs) directement,
+- en plugin [Gulp](https://www.npmjs.org/package/gulp-autoprefixer),
+- en plugin [Grunt](https://github.com/ai/autoprefixer#grunt),
+- via [Compass](https://github.com/ai/autoprefixer#compass),
+- en plugin [Stylus](https://github.com/ai/autoprefixer#stylus),
+- avec [RoR](https://github.com/ai/autoprefixer#ruby-on-rails) ou
   [Ruby](https://github.com/ai/autoprefixer#ruby),
-* avec l’application [Prepros](https://github.com/ai/autoprefixer#prepros)
-* via [Mincer](https://github.com/ai/autoprefixer#mincer)
-* via [Middleman](https://github.com/ai/autoprefixer#middleman)
-* avec [PHP](https://github.com/ai/autoprefixer#php) (vous avez bien lu),
+- avec l’application [Prepros](https://github.com/ai/autoprefixer#prepros)
+- via [Mincer](https://github.com/ai/autoprefixer#mincer)
+- via [Middleman](https://github.com/ai/autoprefixer#middleman)
+- avec [PHP](https://github.com/ai/autoprefixer#php) (vous avez bien lu),
 
 Bien entendu, parfois, lorsqu’on fait un petit bout de CSS standalone, vous avez
-aussi à dispo des plugins pour [Sublime
-Text](https://github.com/sindresorhus/sublime-autoprefixer) ou
+aussi à dispo des plugins pour
+[Sublime Text](https://github.com/sindresorhus/sublime-autoprefixer) ou
 [Brackets](https://github.com/mikaeljorhult/brackets-autoprefixer) afin de ne
 pas forcément avoir à utiliser les app ou process cités juste avant.
 
@@ -151,14 +150,14 @@ post-processeur CSS. Vous pouvez donc l’utiliser en plugin pour ce
 post-procésseur.
 
 Attends attends, un WAT ? Un **POST**-processeur ? Oui tu as bien lu car les
-pré-processeurs c’est so 2000. Regarde par là [Le point sur les pré-processeurs
-CSS](/fr/articles/css/preprocesseurs/) ;)
+pré-processeurs c’est so 2000. Regarde par là
+[Le point sur les pré-processeurs CSS](/fr/articles/css/preprocesseurs/) ;)
 
 Tout plein de -moz-bisous.
 
 <hr />
 
 PS: Convaincu par cette solution ? Tant mieux, elle est simple à mettre en
-place. Tout ça est décrit dans la [mise en place
-d'autoprefixer](/fr/articles/css/autoprefixer/mise-en-place/) avec des exemples
-concrets pour ajouter ça dans un workflow existant.
+place. Tout ça est décrit dans la
+[mise en place d'autoprefixer](/fr/articles/css/autoprefixer/mise-en-place/)
+avec des exemples concrets pour ajouter ça dans un workflow existant.

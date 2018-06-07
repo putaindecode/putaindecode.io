@@ -17,7 +17,7 @@ function renderCSSBackground(metadata) {
   // default to just the image
   const backgrounds = {
     // "" => no need for prefix, see trick below
-    "": [[`${color} url("${image}")`, "no-repeat 50% 50% / cover"]]
+    "": [[`${color} url("${image}")`, "no-repeat 50% 50% / cover"]],
   };
 
   // if there is a modification that need some prefix, we use a trick
@@ -28,13 +28,13 @@ function renderCSSBackground(metadata) {
       if (metadata.linearGradient) {
         background.push([
           `${prefix}linear-gradient(${metadata.linearGradient})`,
-          "repeat 0% 0%"
+          "repeat 0% 0%",
         ]);
       }
       if (metadata.radialGradient) {
         background.push([
           `${prefix}radial-gradient(${metadata.linearGradient})`,
-          "repeat 0% 0%"
+          "repeat 0% 0%",
         ]);
       }
       // only need the image if there will be both prefixed and unprefixed
@@ -42,7 +42,7 @@ function renderCSSBackground(metadata) {
       if (image) {
         background.push([
           `${color} url("${image}")`,
-          "no-repeat 50% 50% / cover"
+          "no-repeat 50% 50% / cover",
         ]);
       }
       backgrounds[prefix] = background;
@@ -58,17 +58,17 @@ function renderCSSBackground(metadata) {
     ...(backgrounds["-webkit-"]
       ? {
           backgroundImage: backgrounds["-webkit-"].map(bg => bg[0]).join(", "),
-          backgroundSize: backgrounds["-webkit-"].map(bg => bg[1]).join(", ")
+          backgroundSize: backgrounds["-webkit-"].map(bg => bg[1]).join(", "),
         }
       : {}),
     background: backgrounds[""].map(bg => `${bg[0]} ${bg[1]}`).join(", "),
-    filter: metadata.filter
+    filter: metadata.filter,
   };
 }
 
 const WithHeroHeader = (
   { body, children, head, meta, rawBody, tags, __url, __filename },
-  context
+  context,
 ) => {
   const i18n = getI18n(context);
   const post = head;
@@ -78,7 +78,7 @@ const WithHeroHeader = (
       <article
         className={cx({
           "putainde-Post": true,
-          "putainde-Post--customHeader": post.header
+          "putainde-Post--customHeader": post.header,
         })}
       >
         <header>
@@ -88,7 +88,7 @@ const WithHeroHeader = (
               "putainde-Post-header--custom": post.header,
               "putainde-Post-header--filter": post.header && post.header.filter,
               "putainde-Post-header--dark": post.header && !post.header.light,
-              "putainde-Post-header--light": post.header && post.header.light
+              "putainde-Post-header--light": post.header && post.header.light,
             })}
           >
             {post.header && (
@@ -132,7 +132,7 @@ const WithHeroHeader = (
                     before={i18n.readingTime}
                     templateText={{
                       1: i18n.readingTime1,
-                      2: i18n.readingTime2
+                      2: i18n.readingTime2,
                     }}
                     templateTooltip={i18n.readingTimeComment}
                     className="putainde-Post-readingTime"
@@ -165,17 +165,17 @@ WithHeroHeader.propTypes = {
   body: PropTypes.string.isRequired,
   rawBody: PropTypes.string.isRequired,
   meta: PropTypes.bool,
-  tags: PropTypes.bool
+  tags: PropTypes.bool,
 };
 
 WithHeroHeader.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 WithHeroHeader.defaultProps = {
   meta: true,
-  tags: true
+  tags: true,
 };
 
 export default WithHeroHeader;

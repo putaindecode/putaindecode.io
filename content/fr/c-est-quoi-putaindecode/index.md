@@ -15,12 +15,12 @@ On va commencer simple avec notre définition de ce qu'est du putain de code:
 > Putain de code - /py.tɛ̃ də kɔd/ orthographe invariable, forme de locution
 > nominale
 >
-> 1. (Vulgaire) (Injurieux) (Péjoratif) Code source méprisable.
->    > Mais vas-y, c’est quoi ce putain de code là ? Qui a pondu cette grosse
->    > merde qui rame autant ?
-> 2. (Très familier) (Injurieux) (Mélioratif) Code source exaltant.
->    > Eh gro’ mate moi ce putain de code ! Comment je t’ai refactorisé ces 1337
->    > lignes là. 42 lignes, mec. Et ça va carrément plus vite !
+> 1.  (Vulgaire) (Injurieux) (Péjoratif) Code source méprisable.
+>     > Mais vas-y, c’est quoi ce putain de code là ? Qui a pondu cette grosse
+>     > merde qui rame autant ?
+> 2.  (Très familier) (Injurieux) (Mélioratif) Code source exaltant.
+>     > Eh gro’ mate moi ce putain de code ! Comment je t’ai refactorisé ces
+>     > 1337 lignes là. 42 lignes, mec. Et ça va carrément plus vite !
 
 Maintenant que tu commences à te faire ton idée, on va prendre le temps de
 t'expliquer ça un peu plus en détail de manière à ce qu'on gagne tous un peu de
@@ -29,7 +29,7 @@ réponses.
 
 ## Le concept
 
-*Putain de code !*, c'est un regroupement de développeurs vraiment passionnés
+_Putain de code !_, c'est un regroupement de développeurs vraiment passionnés
 par leur boulot.
 
 Et c’est à force de voir du code qui pique les yeux qu’on s’est dit qu’il
@@ -45,7 +45,7 @@ afin qu'on puisse tous s'améliorer ensemble.
 On est partis d’un constat simple : les internets ne regorgent pas vraiment de
 sites de ressources de qualité en français (s’il vous plaît).
 
-Faut bien avouer qu'on a en tous un peu plein le c\** de trouver du résultat de
+Faut bien avouer qu'on a en tous un peu plein le c\*\* de trouver du résultat de
 _commentcamarche.net_ et autres _developpez.net_ en tête de gondole quand tu
 fais des recherches. D'ailleurs on se demande pourquoi l'extension c'est .net
 alors que souvent le contenu ne l'est pas vraiment... Serait-ce <del>grâce</del>
@@ -74,19 +74,19 @@ contributions sur les articles quelles qu'en soient leurs formes.
 
 Dans les faits :
 
-* tu peux corriger nos conneries directement dans l'article, en faisant [une
-  PR](/fr/contribuer/#correction-d-un-post-existant) ;
-* tout naturellement, tu peux commenter les articles ;
-* tu peux aussi [soumettre des
-  articles](https://github.com/putaindecode/putaindecode.io/issues), on se fera
-  un plaisir de les prendre en compte (sauf si c’est une review hebdomadaire de
-  plugins jQuery) ;
-* tu peux aussi simplement faire de la [relecture de propositions prêtes à être
-  publiées](https://github.com/putaindecode/putaindecode.io/pulls?q=is%3Aopen+label%3Apost+is%3Apr).
+- tu peux corriger nos conneries directement dans l'article, en faisant
+  [une PR](/fr/contribuer/#correction-d-un-post-existant) ;
+- tout naturellement, tu peux commenter les articles ;
+- tu peux aussi
+  [soumettre des articles](https://github.com/putaindecode/putaindecode.io/issues),
+  on se fera un plaisir de les prendre en compte (sauf si c’est une review
+  hebdomadaire de plugins jQuery) ;
+- tu peux aussi simplement faire de la
+  [relecture de propositions prêtes à être publiées](https://github.com/putaindecode/putaindecode.io/pulls?q=is%3Aopen+label%3Apost+is%3Apr).
 
 L'idée générale c'est que tu peux faire un peu ce que tu veux, tant que tu fais
-ça proprement et que tu suis les [quelques règles de
-contributions](https://github.com/putaindecode/putaindecode.io/blob/master/CONTRIBUTING.md)
+ça proprement et que tu suis les
+[quelques règles de contributions](https://github.com/putaindecode/putaindecode.io/blob/master/CONTRIBUTING.md)
 que nous avons rédigées.
 
 On veut avoir quelque chose de propre, mais simple avant tout.

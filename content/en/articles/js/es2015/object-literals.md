@@ -25,7 +25,7 @@ var lastname = "Laiponje";
 
 return {
   firstname: firstname,
-  lastname: lastname
+  lastname: lastname,
 };
 ```
 
@@ -37,13 +37,13 @@ const lastname = "Laiponje";
 
 return {
   firstname,
-  lastname
+  lastname,
 };
 // { firstname: "Robert", lastname: "Laiponje" }
 ```
 
 In the same spirit, you will be able to declare methods without the `function`
-keyword (this also apply for _getter_ and *setter*).
+keyword (this also apply for _getter_ and _setter_).
 
 ```js
 const obj = {
@@ -55,7 +55,7 @@ const obj = {
   },
   validateEmail(email) {
     return true;
-  }
+  },
 };
 ```
 
@@ -78,7 +78,7 @@ Now with ES6, you can do:
 ```js
 function action(type, data) {
   return {
-    [type]: data
+    [type]: data,
   };
 }
 ```

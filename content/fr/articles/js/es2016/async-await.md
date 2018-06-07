@@ -17,12 +17,13 @@ qu'elle (ou une variante) fera partie de la spécification ES2016.
 
 ## Fonctions asynchrones
 
-Pour les traitements asynchrones, vous connaissez déjà [les
-promesses](/fr/articles/js/es2015/promises/) qui ont évidemment remplacé les
-callbacks dans votre code. Si vous n'avez pas déjà fait la bascule vers les
-promesses (ne serait-ce que pour la propagation d'erreur), [les
-générateurs](/fr/articles/js/es2015/generators/) ont dû finir de vous convaincre
-grâce aux [coroutines](/fr/articles/js/es2015/generators/#use-case-co-routines).
+Pour les traitements asynchrones, vous connaissez déjà
+[les promesses](/fr/articles/js/es2015/promises/) qui ont évidemment remplacé
+les callbacks dans votre code. Si vous n'avez pas déjà fait la bascule vers les
+promesses (ne serait-ce que pour la propagation d'erreur),
+[les générateurs](/fr/articles/js/es2015/generators/) ont dû finir de vous
+convaincre grâce aux
+[coroutines](/fr/articles/js/es2015/generators/#use-case-co-routines).
 
 Nous allons voir aujourd'hui une nouvelle manière de traiter les fonctions
 asynchrones. Mais ne jetez pas vos promesses, tout tourne encore autour d'elles.
@@ -32,8 +33,8 @@ asynchrones. Mais ne jetez pas vos promesses, tout tourne encore autour d'elles.
 Partons du programme suivant exécuté le 6 décembre dernier dont l'API est basée
 sur les promesses :
 
-* Il récupère tous les utilisateurs prénommés Nicolas
-* Il envoie un mail à chacun pour souhaiter bonne fête
+- Il récupère tous les utilisateurs prénommés Nicolas
+- Il envoie un mail à chacun pour souhaiter bonne fête
 
 ```js
 function sendEmails(query) {
@@ -45,7 +46,7 @@ function sendEmails(query) {
     emails.map(email => {
       // … on envoie un mail
       return sendMail(email, "Bonne fête");
-    })
+    }),
   );
   // On attend que tous les envois soient résolus
   return Promise.all(sentP);

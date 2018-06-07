@@ -17,7 +17,7 @@ import pkg from "./package.json";
 export default (config = {}) => {
   return {
     ...(config.dev && {
-      devtool: "#cheap-module-eval-source-map"
+      devtool: "#cheap-module-eval-source-map",
     }),
     module: {
       noParse: /\.min\.js/,
@@ -31,21 +31,21 @@ export default (config = {}) => {
             plugins: [
               ...phenomicLoaderPresetDefault,
               ...phenomicLoaderPresetMarkDown,
-              phenomicLoaderPluginsInitRawBodyPropertyFromContent
+              phenomicLoaderPluginsInitRawBodyPropertyFromContent,
             ],
             defaultHead: {
               layout: "Post",
-              comments: true
-            }
-          }
+              comments: true,
+            },
+          },
         },
         {
           test: /\.js$/,
           loaders: ["babel-loader", "eslint-loader?fix&emitWarning"],
           include: [
             path.resolve(__dirname, "scripts"),
-            path.resolve(__dirname, "src")
-          ]
+            path.resolve(__dirname, "src"),
+          ],
         },
         {
           test: /styles\.css$/,
@@ -58,12 +58,12 @@ export default (config = {}) => {
                   modules: true,
                   localIdentName: config.production
                     ? "[hash:base64:5]"
-                    : "[path][name]--[local]--[hash:base64:5]"
-                }
+                    : "[path][name]--[local]--[hash:base64:5]",
+                },
               },
-              "postcss-loader"
-            ]
-          })
+              "postcss-loader",
+            ],
+          }),
         },
 
         // for legacy css
@@ -74,19 +74,19 @@ export default (config = {}) => {
           test: /legacy-css(\/|\\).*\.css$/,
           loader: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: ["css-loader", "postcss-loader"]
-          })
+            use: ["css-loader", "postcss-loader"],
+          }),
         },
         {
           test: /content(\/|\\).*\.(html|json|txt|ico|jpe?g|png|gif)$/,
           loader:
             "file-loader" +
             "?name=[path][name].[ext]&context=" +
-            path.join(config.cwd, config.source)
+            path.join(config.cwd, config.source),
         },
         {
           test: /src(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
-          loader: "file-loader?name=_/[path][name].[ext]&context=./src"
+          loader: "file-loader?name=_/[path][name].[ext]&context=./src",
         },
         {
           test: /\.svg$/,
@@ -98,18 +98,18 @@ export default (config = {}) => {
                 plugins: [
                   { removeTitle: true, removeDesc: true },
                   { convertColors: { shorthex: false } },
-                  { convertPathData: false }
-                ]
-              }
-            }
-          ]
+                  { convertPathData: false },
+                ],
+              },
+            },
+          ],
         },
 
         {
           test: /\.yml$/,
-          loaders: ["json-loader", "yaml-loader"]
-        }
-      ]
+          loaders: ["json-loader", "yaml-loader"],
+        },
+      ],
     },
 
     plugins: [
@@ -117,7 +117,7 @@ export default (config = {}) => {
         // here you define generic metadata for your feed
         feedsOptions: {
           title: pkg.name,
-          site_url: pkg.homepage
+          site_url: pkg.homepage,
         },
         feeds: {
           "feed.xml": {
@@ -125,29 +125,29 @@ export default (config = {}) => {
               filter: { layout: "Post" },
               sort: "date",
               reverse: true,
-              limit: 20
-            }
-          }
-        }
+              limit: 20,
+            },
+          },
+        },
       }),
       new ExtractTextPlugin({
         filename: "[name].[hash].css",
-        disable: config.dev
+        disable: config.dev,
       }),
       ...(config.production && [
-        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
-      ])
+        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+      ]),
     ],
 
     output: {
       path: path.join(__dirname, config.destination),
       publicPath: config.baseUrl.pathname,
-      filename: "[name].[hash].js"
+      filename: "[name].[hash].js",
     },
 
     // https://github.com/MoOx/phenomic/issues/656
     ...(config.static && {
-      externals: [/fs-promise/]
-    })
+      externals: [/fs-promise/],
+    }),
   };
 };

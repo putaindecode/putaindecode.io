@@ -11,9 +11,9 @@ authors:
 
 ## Pourquoi les pré-processeurs
 
-Voilà ce que j'ai écrit en 2011 dans [mon premier post sur les
-pré-processeur](http://moox.io/blog/utiliser-des-variables-fonctions-css/). Je
-venais de découvrir cette notion et j'avais donc fait le tour de la question.
+Voilà ce que j'ai écrit en 2011 dans
+[mon premier post sur les pré-processeur](http://moox.io/blog/utiliser-des-variables-fonctions-css/).
+Je venais de découvrir cette notion et j'avais donc fait le tour de la question.
 
 > Le langage des CSS n’a pas de côté dynamique. C’est lui avec lequel, à chaque
 > fois qu’on intègre une maquette graphique, on doit se taper tout de zéro. Il a
@@ -37,12 +37,12 @@ reviendrais sur ce point plus tard).
 
 ## Principales fonctionnalités
 
-* variables
-* fonctions
-* mixins (permettant de réaliser des sorties CSS paramétrables)
-* `@import` intelligent (pas côté client)
-* nesting (imbrications des sélecteurs pour éviter la répétition)
-* optimisation et abstraction poussée (via les mixins, placeholders et
+- variables
+- fonctions
+- mixins (permettant de réaliser des sorties CSS paramétrables)
+- `@import` intelligent (pas côté client)
+- nesting (imbrications des sélecteurs pour éviter la répétition)
+- optimisation et abstraction poussée (via les mixins, placeholders et
   `@extend`)
 
 Anciennement on aurait rajouté à cette liste la gestion du CSS 3, mais comme je
@@ -61,8 +61,8 @@ plus pour avec la feature `@content` qui permet pour le coup de passer tout un
 bloc de propriétés en paramètre à des mixins. Ce qui est super pratique lorsque
 l'on écrit pas mal de media queries. (Après, venez pas me dire qu'on a plein de
 fois les media-queries qui se répètent et que ce n'est pas bien pour la taille
-du fichier, gzip se chargera de ça - <small>[exemple
-similaire](https://twitter.com/kaelig/status/412909849207644160))</small>.
+du fichier, gzip se chargera de ça -
+<small>[exemple similaire](https://twitter.com/kaelig/status/412909849207644160))</small>.
 
 Le langage Sass possède une implémentation d'origine en Ruby mais aussi depuis
 quelques temps une implémentation C qui se veut beaucoup plus rapide et
@@ -77,9 +77,9 @@ avec la syntaxe ou l'aspect programmation (il n'y a qu'à voir des trucs comme
 
 Bibliotèques construites sur Sass :
 
-* [Compass](http://compass-style.org/), solide, basé sur Ruby (incompatible
+- [Compass](http://compass-style.org/), solide, basé sur Ruby (incompatible
   libsass),
-* [Bourbon](http://bourbon.io/), plus light mais plus rapide.
+- [Bourbon](http://bourbon.io/), plus light mais plus rapide.
 
 ### [LESS](http://lesscss.org/)
 
@@ -102,8 +102,8 @@ dont sont gérés les mixins conditionnels. Je passe sur ce point gerbant.
 
 Bibliotèques construites sur Less :
 
-* [LESS Hat](http://lesshat.madebysource.com/),
-* [LESS Elements](http://www.lesselements.com/).
+- [LESS Hat](http://lesshat.madebysource.com/),
+- [LESS Elements](http://www.lesselements.com/).
 
 ### [Stylus](http://learnboost.github.io/stylus/)
 
@@ -117,20 +117,19 @@ Niveau fonctionnalités cela ne vaut pas Sass. Ici pas de `@content` ou de maps.
 
 Bibliotèque construite sur Stylus :
 
-* [Nib](http://visionmedia.github.io/nib/)
+- [Nib](http://visionmedia.github.io/nib/)
 
 ### Alternatives
 
 On peut s'amuser à faire un pré-processeur CSS avec n'importe quel langage c'est
-évident. Mais [les enfants, ne faites pas
-ça.](http://www.alsacreations.com/astuce/lire/1433-utiliser-php-pour-gerer-vos-styles-css.html)
+évident. Mais
+[les enfants, ne faites pas ça.](http://www.alsacreations.com/astuce/lire/1433-utiliser-php-pour-gerer-vos-styles-css.html)
 À moins que vous souhaitiez alourdir vos CSS plus que vous y gagnerez. Puis si
 c'est juste pour ajouter des variables, il existe d'autres solutions...
 
 _Note: si vous avez d'autres pré-processeurs intéressants, je me ferais un
-plaisir de les ajouter ici. Mais bon [vous pouvez aussi le faire tout seul comme
-un
-grand](https://github.com/putaindecode/putaindecode.io/blob/master/pages/fr/articles/css/preprocesseurs/index.md)._
+plaisir de les ajouter ici. Mais bon
+[vous pouvez aussi le faire tout seul comme un grand](https://github.com/putaindecode/putaindecode.io/blob/master/pages/fr/articles/css/preprocesseurs/index.md)._
 
 ## Les pré-processeurs sont-ils vraiment nécessaire ?
 
@@ -204,17 +203,18 @@ réutilisable.
 ### L'abstraction cay dangereux
 
 On en revient à la magie. Lorsqu'on a trop de couche qui cache ce qu'il y a
-réellement sous le capot, [on peut vite perdre le
-contrôle](http://linuxfr.org/news/encore-un-exemple-de-code-spaghetti-toyota).
+réellement sous le capot,
+[on peut vite perdre le contrôle](http://linuxfr.org/news/encore-un-exemple-de-code-spaghetti-toyota).
 
-Et voici [un parfait
-exemple](https://github.com/MoOx/compass-recipes/issues/104) où un utilisateur
-de ma bibliothèque [Compass Recipes](https://github.com/MoOx/compass-recipes)
-avait un problème lorsqu'il utilisait 2 mixins qui cachaient trop de code. Dans
-notre cas corners-tucked (version coin scotché) et background-noise (bruit
-visuel). Il en a perdu des choses simples et avait passé beaucoup de temps à se
-prendre la tête alors que la solution était très (trop) simple (une histoire
-entre `background-image` et le shorthand `background`).
+Et voici
+[un parfait exemple](https://github.com/MoOx/compass-recipes/issues/104) où un
+utilisateur de ma bibliothèque
+[Compass Recipes](https://github.com/MoOx/compass-recipes) avait un problème
+lorsqu'il utilisait 2 mixins qui cachaient trop de code. Dans notre cas
+corners-tucked (version coin scotché) et background-noise (bruit visuel). Il en
+a perdu des choses simples et avait passé beaucoup de temps à se prendre la tête
+alors que la solution était très (trop) simple (une histoire entre
+`background-image` et le shorthand `background`).
 
 Je me laisse souvent attirer par la magie d'un code, mais mon expérience
 m'indique aujourd'hui qu'il ne faut pas abuser de cette partie mystérieuse où
@@ -253,9 +253,9 @@ fonctionnalités. J'évite l'overkill quoi.
 
 Quand on voit que des _grands_ de l'HTML / CSS comme
 [@necolas](http://nicolasgallagher.com/) n'utilise pas de pré-processeur, on a
-de quoi se poser des questions. Avec une bonne bibliothèque comme [SUIT
-CSS](https://github.com/suitcss/suit/), on s'en retrouve à ne manquer que des
-petites choses.
+de quoi se poser des questions. Avec une bonne bibliothèque comme
+[SUIT CSS](https://github.com/suitcss/suit/), on s'en retrouve à ne manquer que
+des petites choses.
 
 Que l'on peut combler.
 
@@ -271,5 +271,5 @@ post-processeurs...
 <small>(Mamam, t'as vu ce cliffhanger digne des séries US !)</small>
 
 ~~Bon promis la prochaine fois je vous en parle des post-processeurs. Pour de
-vrai.~~ Chose promise, chose due : [Les post-processeurs
-CSS](/fr/articles/css/preprocesseurs/post-processeurs/)
+vrai.~~ Chose promise, chose due :
+[Les post-processeurs CSS](/fr/articles/css/preprocesseurs/post-processeurs/)

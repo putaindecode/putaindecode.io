@@ -38,10 +38,10 @@ Prenons un exemple simple et moche :
 
 Tester ce code est particulièrement lourd, pour plusieurs raisons :
 
-* les functions à tester ne sont pas accessibles
-* on doit simuler un `click` pour tester un comportement logique.
-* on doit créer un element et modifier son `data-id` à chaque cas souhaité.
-* pour tester `addToCart` on doit aller regarder dans le DOM.
+- les functions à tester ne sont pas accessibles
+- on doit simuler un `click` pour tester un comportement logique.
+- on doit créer un element et modifier son `data-id` à chaque cas souhaité.
+- pour tester `addToCart` on doit aller regarder dans le DOM.
 
 ### 1. Rendez accessibles vos méthodes au test runner
 
@@ -61,8 +61,8 @@ Utilisez un module-system : [browserify](http://browserify.org) ou
 [requirejs](http://requirejs.org) (si vous n'avez pas besoin de chargement
 conditionnel et souhaitez créer un bundle par build, utilisez browserify qui
 possède une syntaxe beaucoup plus sympathique et une codebase réduite, vous
-pourrez même `require` depuis un module npm [comme on vous l'explique dans un
-article dédié](/fr/articles/js/browserify/)).
+pourrez même `require` depuis un module npm
+[comme on vous l'explique dans un article dédié](/fr/articles/js/browserify/)).
 
 ```javascript
 var $ = require("jquery"); // oh, un module npm
@@ -71,7 +71,7 @@ module.exports = {
   element: $("#cart"),
   addToCart: function() {
     /* … */
-  }
+  },
 };
 ```
 
@@ -111,16 +111,16 @@ module.exports = view.extend({
     {
       type: "click",
       selector: ".js-addToCart",
-      listener: "addToCart"
-    }
+      listener: "addToCart",
+    },
   ],
   addToCart: function(eventObject) {
     var target = eventObject.currentTarget;
     var id = $(target).data("id");
     eventbus.fire("addToCart", {
-      id: id
+      id: id,
     });
-  }
+  },
 });
 ```
 
@@ -142,7 +142,7 @@ module.exports = {
   addToCart: function(eventObject) {
     // et on a eventObject.id
     this.products.push(catalog[eventObject.currentTarget.data("id")]);
-  }
+  },
 };
 ```
 
@@ -166,7 +166,7 @@ tape("view", function(test) {
     test.equal(eventObject.id, 1);
   });
   view.addToCart({
-    currentTarget: element
+    currentTarget: element,
   });
 });
 ```
@@ -290,12 +290,12 @@ Et ajouter un webhook dans l'admin de votre repository GitHub pointant vers
 > http://git.testling.com
 
 Vous pouvez l'utiliser avec tape (son test harness par défaut) Mocha, QUnit et
-n'importe quelle bibliothèque de test supportant `TAP` comme indiqué sur [le
-site de testling](https://ci.testling.com/guide/custom_libraries).
+n'importe quelle bibliothèque de test supportant `TAP` comme indiqué sur
+[le site de testling](https://ci.testling.com/guide/custom_libraries).
 
 Vous trouverez aussi des alternatives populaires
-[similaires](http://www.browserstack.com), ou ayant [une approche
-différente](http://karma-runner.github.io).
+[similaires](http://www.browserstack.com), ou ayant
+[une approche différente](http://karma-runner.github.io).
 
 Par ailleurs, si dans votre code il existe des variations entre les navigateurs,
 vous pouvez utiliser du test conditionnel :
@@ -305,7 +305,7 @@ if (typeof {}.__proto__ == "object") {
   test.equal(
     list.__proto__ === Array.prototype,
     false,
-    "__proto__ isn't Array.prototype"
+    "__proto__ isn't Array.prototype",
   );
 } else {
   test.equal(list instanceof Array, false, "Isn't a window Array");

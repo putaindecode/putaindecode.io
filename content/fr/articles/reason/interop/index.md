@@ -63,10 +63,10 @@ Créons une FFI pour la fonction `alert` :
 
 On définit:
 
-* une fonction externe nommée `alert`
-* qui prend une `string` et ne retourne _rien_ (ici représenté par la valeur
+- une fonction externe nommée `alert`
+- qui prend une `string` et ne retourne _rien_ (ici représenté par la valeur
   `unit`)
-* qui est une valeur à simplement récupérer (`[@bs.val]`)
+- qui est une valeur à simplement récupérer (`[@bs.val]`)
 
 Si on regarde le code JavaScript en sortie, c'est vide. En effet, `external` est
 un moyen de définir comment accéder à une valeur ainsi que son type. Si en
@@ -129,11 +129,9 @@ pourrait écrire à la main.
 
 Pour en savoir un peu plus sur les FFI JavaScript:
 
-* [La documentation de
-  BuckleScript](https://bucklescript.github.io/bucklescript/Manual.html)
-* [Les projets de bindings crées par la
-  communauté](https://github.com/reasonml-community) (ceux nommés
-  `bs-{nom-de-lib-js}`)
+- [La documentation de BuckleScript](https://bucklescript.github.io/bucklescript/Manual.html)
+- [Les projets de bindings crées par la communauté](https://github.com/reasonml-community)
+  (ceux nommés `bs-{nom-de-lib-js}`)
 
 ## Les objets
 
@@ -231,7 +229,7 @@ function fromJs(jsUser) {
     /* id */ jsUser.id,
     /* username */ jsUser.username,
     /* birthdate */ Js_primitive.null_undefined_to_opt(jsUser.birthdate),
-    /* theme */ tmp
+    /* theme */ tmp,
   ];
 }
 
@@ -241,7 +239,7 @@ function toJs(user) {
     id: user[/* id */ 0],
     username: user[/* username */ 1],
     birthdate: Js_null_undefined.from_opt(user[/* birthdate */ 2]),
-    theme: match !== 0 ? "dark" : "light"
+    theme: match !== 0 ? "dark" : "light",
   };
 }
 

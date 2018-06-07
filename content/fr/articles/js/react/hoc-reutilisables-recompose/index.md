@@ -36,20 +36,20 @@ Sur le site de React vous trouverez une
 [page très fournie](https://reactjs.org/docs/higher-order-components.html) si
 vous souhaitez en savoir plus sur les HOC. Il y a également un
 [très bon article sur Putain de code](/fr/articles/js/react/higher-order-component/#le-pattern-higher-order-component)
-présentant les HOC à travers un autre cas d’utilisation (le pattern *provider*).
+présentant les HOC à travers un autre cas d’utilisation (le pattern _provider_).
 
 Un exemple très simple :
 
 ```js
 const addBorder = borderWidth => Component => props => (
-  <div style={{ borderColor: 'black', borderStyle: 'solid', borderWidth }}>
+  <div style={{ borderColor: "black", borderStyle: "solid", borderWidth }}>
     <Component {...props} />
   </div>
-)
+);
 
-const MyText = <p>Hello!</p>
+const MyText = <p>Hello!</p>;
 
-const MyTextWithBorder = addBorder(5)(MyText)
+const MyTextWithBorder = addBorder(5)(MyText);
 ```
 
 Vous obtenez un composant `MyTextWithBorder` qui affiche le texte « Hello » avec
@@ -67,9 +67,9 @@ propriétés.
 Comme exemple complet pour cette article, nous allons utiliser le concept d’HOC
 pour créer un champ de saisie de numéro de téléphone, qui :
 
-* n’acceptera que les chiffres, parenthèses, tirets et espaces en entrée (à la
+- n’acceptera que les chiffres, parenthèses, tirets et espaces en entrée (à la
   frappe) ;
-* mettra en forme le numéro de téléphone lorsque le focus sera perdu par le
+- mettra en forme le numéro de téléphone lorsque le focus sera perdu par le
   champ (évènement _blur_). (Seuls les numéros de téléphone Nord-Americains
   seront pris en compte : « (514) 555-0199 ».)
 
@@ -95,8 +95,8 @@ composant final soit défini ainsi :
 
 ```js
 const PhoneNumberInput = formatPhoneNumber(
-  forbidNonPhoneNumberCharacters(props => <input {...props} />)
-)
+  forbidNonPhoneNumberCharacters(props => <input {...props} />),
+);
 ```
 
 C’est le bon moment pour introduire la première fonction de _Recompose_ que nous
@@ -106,8 +106,8 @@ fusionner en un seul, de sorte que nous pouvons écrire plus simplement :
 ```js
 const PhoneNumberInput = compose(
   formatPhoneNumber,
-  forbidNonPhoneNumberCharacters
-)(props => <input {...props} />)
+  forbidNonPhoneNumberCharacters,
+)(props => <input {...props} />);
 ```
 
 Et parce que nous souhaitons rendre nos HOC aussi réutilisable que possible
@@ -116,23 +116,23 @@ rendons-les plus génériques :
 
 ```js
 // Ne garde que les chiffres, espaces, tirets et parenthèses
-const forbiddenCharactersInPhoneNumber = /[^\d\s\-()]/g
+const forbiddenCharactersInPhoneNumber = /[^\d\s\-()]/g;
 
 // '5145551234' => '(514) 555-1234'
 const formatPhoneNumber = value =>
-  value.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3')
+  value.replace(/^(\d{3})(\d{3})(\d{4})$/, "($1) $2-$3");
 
 // '(514) 555-1234' => '5145551234'
 const parsePhoneNumber = formattedPhoneNumber =>
-  formattedPhoneNumber.replace(/[^\d]/g, '').slice(0, 10)
+  formattedPhoneNumber.replace(/[^\d]/g, "").slice(0, 10);
 
 const PhoneNumberInput = compose(
   formatInputValue({
     formatValue: formatPhoneNumber,
-    parseValue: parsePhoneNumber
+    parseValue: parsePhoneNumber,
   }),
-  forbidCharacters(forbiddenCharactersInPhoneNumber)
-)(props => <input {...props} />)
+  forbidCharacters(forbiddenCharactersInPhoneNumber),
+)(props => <input {...props} />);
 ```
 
 Ne trouvez-vous pas cela déjà génial si l’on peut réutiliser uniquement nos deux
@@ -167,19 +167,19 @@ const forbidCharacters = forbiddenCharsRegexp =>
       // N’oublions pas que `onChange` n’est pas une propriété requise
       // (même si rien ne se produira si elle est absente).
       if (props.onChange) {
-        const value = event.target.value
-        const cleanValue = value.replace(forbiddenCharsRegexp, '')
+        const value = event.target.value;
+        const cleanValue = value.replace(forbiddenCharsRegexp, "");
         // On ne modifie pas l’évènement original, mais on le clone
         // en y redéfinissant event.target.value avec la valeur propre.
         const newEvent = {
           ...event,
-          target: { ...event.target, value: cleanValue }
-        }
+          target: { ...event.target, value: cleanValue },
+        };
         // On réémet notre évènement au `onChange` parent.
-        props.onChange(newEvent)
+        props.onChange(newEvent);
       }
-    }
-  })
+    },
+  });
 ```
 
 Souvenez-vous qu’autant que possible le composant que nous créons à partir d’un
@@ -190,7 +190,7 @@ propriétés avec le même type.
 chiffres, nous pouvons écrire :
 
 ```js
-const NumericField = forbidCharacters(/[^\d]/g)(props => <input {...props} />)
+const NumericField = forbidCharacters(/[^\d]/g)(props => <input {...props} />);
 ```
 
 Nous avons maintenant notre premier HOC pour interdire certains caractères;
@@ -215,11 +215,11 @@ Pour ajouter notre état local nous écrirons :
 
 ```js
 withState(
-  'inputValue',
-  'setInputValue',
+  "inputValue",
+  "setInputValue",
   // `formatValue` est l’un des paramètres de notre HOC
-  props => formatValue(props.value)
-)
+  props => formatValue(props.value),
+);
 ```
 
 Facile, non ? 😉
@@ -271,9 +271,9 @@ exclure certaines propriétés d’un objet pour en créer un nouveau :
 
 ```js
 mapProps(props => ({
-  ...omit(props, ['inputValue', 'setInputValue']),
-  value: props.inputValue
-}))
+  ...omit(props, ["inputValue", "setInputValue"]),
+  value: props.inputValue,
+}));
 ```
 
 En assemblant le tout avec `compose`, on obtient :
@@ -281,32 +281,32 @@ En assemblant le tout avec `compose`, on obtient :
 ```js
 const formatInputValue = ({ formatValue, parseValue }) =>
   compose(
-    withState('inputValue', 'setInputValue', props => formatValue(props.value)),
+    withState("inputValue", "setInputValue", props => formatValue(props.value)),
     withHandlers({
       onChange: props => event => {
-        props.setInputValue(event.target.value)
+        props.setInputValue(event.target.value);
       },
       onBlur: props => event => {
-        const parsedValue = parseValue(props.inputValue)
-        const formattedValue = formatValue(parsedValue)
-        props.setInputValue(formattedValue)
+        const parsedValue = parseValue(props.inputValue);
+        const formattedValue = formatValue(parsedValue);
+        props.setInputValue(formattedValue);
         const newEvent = {
           ...event,
-          target: { ...event.target, value: parsedValue }
-        }
+          target: { ...event.target, value: parsedValue },
+        };
         if (props.onChange) {
-          props.onChange(newEvent)
+          props.onChange(newEvent);
         }
         if (props.onBlur) {
-          props.onBlur(newEvent)
+          props.onBlur(newEvent);
         }
-      }
+      },
     }),
     mapProps(props => ({
-      ...omit(props, ['inputValue', 'setInputValue']),
-      value: props.inputValue
-    }))
-  )
+      ...omit(props, ["inputValue", "setInputValue"]),
+      value: props.inputValue,
+    })),
+  );
 ```
 
 Et voilà ! Nous avons deux _high-order components_, on peut les utiliser pour
@@ -358,21 +358,22 @@ entendra sans aucun doute parler de plus en plus dans le futur 😀.
 
 Quelques ressources pour aller plus loin :
 
-* La
+- La
   [documentation de l’API de Recompose](https://github.com/acdlite/recompose/blob/master/docs/API.md)
   est assez complète, bien que selon moi elle manque parfois d’exemples pour
   comprendre certaines fonctions complexes ;
-* La
+- La
   [page de React à propos des HOC](https://reactjs.org/docs/higher-order-components.html)
   contient un grand nombre d’informations, par exemple ce que vous ne devriez
   pas faire avec les HOC 😉 ;
-* [React Higher Order Components in depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
+- [React Higher Order Components in depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
   : une très bonne introduction aux HOC ;
-* [Why The Hipsters Recompose Everything](https://medium.com/javascript-inside/why-the-hipsters-recompose-everything-23ac08748198)
+- [Why The Hipsters Recompose Everything](https://medium.com/javascript-inside/why-the-hipsters-recompose-everything-23ac08748198)
   : une introduction sympa à Recompose (semble un peu datée…).
-* [La documentation de React sur les *render props*](https://reactjs.org/docs/render-props.html)
-* [Les patterns Provider & Higher-Order Component avec React](/fr/articles/js/react/higher-order-component/#le-pattern-higher-order-component) sur Putain de code
+- [La documentation de React sur les _render props_](https://reactjs.org/docs/render-props.html)
+- [Les patterns Provider & Higher-Order Component avec React](/fr/articles/js/react/higher-order-component/#le-pattern-higher-order-component)
+  sur Putain de code
 
-_Cet article est (pour la plus grande partie) la traduction en français de mon article initialement en
-anglais disponible sur mon blog :
+_Cet article est (pour la plus grande partie) la traduction en français de mon
+article initialement en anglais disponible sur mon blog :
 [Create reusable high-order React components with Recompose](https://blog.castiel.me/posts/006-reusable-hoc-with-recompose.html)._

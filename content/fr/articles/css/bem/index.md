@@ -32,14 +32,14 @@ documentation du monde. Je ne dis pas qu'il ne faut pas documenter mais un code
 doit être facilement compréhensible, la documentation doit juste apporter un
 contexte, une situation particulière.
 
-Bref, **BEM** est le sigle pour *Block*, *Element*, *Modifier*. Qu'est-ce que
+Bref, **BEM** est le sigle pour _Block_, _Element_, _Modifier_. Qu'est-ce que
 cela veut dire.
 
 Prenons par exemple un site web. Nous avons un ensemble avec dedans deux onglets
 et en dessous le contenu de chaque onglet.
 
-Nous allons définir ce que sont le *block*, le ou les _elements_ et les
-*modifiers*.
+Nous allons définir ce que sont le _block_, le ou les _elements_ et les
+_modifiers_.
 
 Dans ce cas précis, le _block_ est le conteneur, l'ensemble, ce qui entoure le
 tout. Appelons-le "Window".
@@ -49,9 +49,9 @@ nommer "Tab", et le contenu, là où il y a le texte de chaque onglet "Content".
 
 Comment cela se traduit en **BEM** :
 
-* Notre _block_ s'appelant "Window" sera alors `.Window`
-* Nos _elements_ "Tab" seront `.Window-tab`
-* Notre _element_ "Content" sera `.Window-content`
+- Notre _block_ s'appelant "Window" sera alors `.Window`
+- Nos _elements_ "Tab" seront `.Window-tab`
+- Notre _element_ "Content" sera `.Window-content`
 
 Jusque là, cela devrait aller :
 
@@ -78,9 +78,9 @@ Ce qui revient de manère générique à :
 
 Oui, je vous conseille d'indenter votre code afin de grouper vos classes.
 
-Maintenant, nous allons définir ce qu'est un *modifier*. Un _modifier_ change
-l'état de l'élément, il peut s'appliquer aussi bien sur un *block*, qu'un
-*element*.
+Maintenant, nous allons définir ce qu'est un _modifier_. Un _modifier_ change
+l'état de l'élément, il peut s'appliquer aussi bien sur un _block_, qu'un
+_element_.
 
 Si par exemple je souhaite mettre en actif un onglet (le mettre en avant car
 séléctionné), je ferai alors `.Window-tab--active`, soit :
@@ -164,8 +164,8 @@ Maintenant, vous savez tout sur **BEM**. Sachez qu'il existe tout de même
 plusieurs conventions de **BEM**. Celle que je vous ai apprise là est la norme
 de **montage.js** mais il y en a d'autres par exemple qui n'utilisent pas les
 majuscules et font ce genre de choses : `.my-block__my-element--my-modifier`. Il
-s'avère que c'est la [convention
-pseudo-officielle](http://bem.info/method/definitions/#naming-for-independent-css-classes).
+s'avère que c'est la
+[convention pseudo-officielle](http://bem.info/method/definitions/#naming-for-independent-css-classes).
 
 L'inconvénient de ceci est que c'est moins lisible au premier abord qui est
 quoi, et de plus, les `_` ne permettent pas de sélectionner facilement un terme
@@ -174,7 +174,7 @@ en _double-cliquant_ dessus.
 Deux petites choses avant de partir.
 
 Dans le but d'éviter de vous faire écraser vos propriétés par quelqu'un d'autre
-(une bibliothèque, un *SDK*), je vous conseille de rajouter votre organisation.
+(une bibliothèque, un _SDK_), je vous conseille de rajouter votre organisation.
 
 Typiquement, ça donne `.org-Block-element--modifier`. Tout en minuscule et si
 possible ne pas dépasser les 3 lettres car vous allez devoir le répéter à chaque
@@ -184,7 +184,7 @@ La deuxième chose est la classe qui sert de sélecteur en JavaScript. Plutôt q
 _binder_ un élément via sa classe "CSS" (à chaque classe sa responsabilité), il
 est nettement préférable de créer une classe spécifique au JavaScript. Cela
 donne : `.org-js-Block-element--modifier`. Il suffit simplement de rajouter
-`-js` entre l'organisation et le *block*.
+`-js` entre l'organisation et le _block_.
 
 Nous arrivons à la convention suivante : `.org[-js]-Block[-element][--modifier]`
 
@@ -211,6 +211,5 @@ Ciao les kids.
 
 Quelques ressources pour la route :
 
-* [50 nuances de
-  BEM](http://blog.kaelig.fr/post/48196348743/fifty-shades-of-bem)
-* [BEM Resources](https://github.com/sturobson/BEM-resources)
+- [50 nuances de BEM](http://blog.kaelig.fr/post/48196348743/fifty-shades-of-bem)
+- [BEM Resources](https://github.com/sturobson/BEM-resources)

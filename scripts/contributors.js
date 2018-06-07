@@ -26,14 +26,14 @@ const debug = () => {};
 const githubApi = new GithubApi({
   version: "3.0.0",
   headers: {
-    "user-agent": "putaindecode"
-  }
+    "user-agent": "putaindecode",
+  },
 });
 
 // @todo get user/repo from git origin
 const repoMetas = {
   owner: "putaindecode",
-  repo: "putaindecode.io"
+  repo: "putaindecode.io",
 };
 
 const commitsRE = /^(\d+)/;
@@ -89,7 +89,7 @@ async function getContributorFromGitHub(username) {
           : "http://" + githubUser.blog
         : undefined,
       location: githubUser.location,
-      hireable: githubUser.hireable
+      hireable: githubUser.hireable,
     };
   } catch (err) {
     if (err.code === 404) {
@@ -97,7 +97,7 @@ async function getContributorFromGitHub(username) {
     } else isGithubDown(err);
     return {
       login: username,
-      name: username
+      name: username,
     };
   }
 }
@@ -123,16 +123,16 @@ async function contributorsMap() {
         login: author,
         name: author,
         ...results.map[author],
-        ...require("../" + jsonAuthorFile)
+        ...require("../" + jsonAuthorFile),
       };
       loginCache[author] = results.map[author];
-    })
+    }),
   );
 
   // log("loginCache", loginCache);
 
   const stdout = await exec(
-    "git log --use-mailmap --pretty=format:%aE::%an | sort | uniq"
+    "git log --use-mailmap --pretty=format:%aE::%an | sort | uniq",
   );
   log("- Git log done");
 
@@ -147,7 +147,7 @@ async function contributorsMap() {
       if (!results.mapByEmail[author[0]]) {
         newUsers.push({
           email: author[0],
-          name: author[1]
+          name: author[1],
         });
       }
     });
@@ -166,14 +166,14 @@ async function contributorsMap() {
       const email = author.email;
       log("Request user information from GitHub for", email);
       const out = await exec(
-        "git log --max-count=1 --pretty=format:%H --author=" + email
+        "git log --max-count=1 --pretty=format:%H --author=" + email,
       );
       // log("- New contibutor update in progress", email, out);
       let contributor;
       try {
         const contributorCommit = await githubApi.repos.getCommit({
           ...repoMetas,
-          sha: out
+          sha: out,
         });
 
         // log("contributorCommit", contributorCommit);
@@ -197,7 +197,7 @@ async function contributorsMap() {
               author.name +
               " <" +
               author.email +
-              `> (no commit in ${repoMetas.owner}/${repoMetas.repo})`
+              `> (no commit in ${repoMetas.owner}/${repoMetas.repo})`,
           );
         }
 
@@ -240,7 +240,7 @@ async function totalContributions() {
   // Get all contributor since first commit
   const stdout = await exec(
     `git shortlog --no-merges --summary --numbered --email ` +
-      `${sha.trim()}..HEAD`
+      `${sha.trim()}..HEAD`,
   );
 
   debug("totalContributions", "\n", stdout);
@@ -273,7 +273,7 @@ async function filesContributions() {
       const stdout = await exec(
         "git log --pretty=short --follow " +
           file +
-          " | git shortlog --summary --numbered --no-merges --email"
+          " | git shortlog --summary --numbered --no-merges --email",
       );
 
       // debug("filesContributions", file, "\n", stdout);
@@ -291,7 +291,7 @@ async function filesContributions() {
               parseInt(line.match(commitsRE)[1], 10);
           });
       }
-    })
+    }),
   );
 
   await Promise.all(pmises);
@@ -303,7 +303,7 @@ async function filesContributions() {
   } else {
     try {
       const contributors = await readFile(contributorsFile, {
-        encoding: "utf-8"
+        encoding: "utf-8",
       });
       results = JSON.parse(contributors);
       log("✓ contributors.json parsed");
@@ -319,36 +319,36 @@ async function filesContributions() {
       logError(
         color.yellow(
           "In order to generate a new `contributors.json` map, " +
-            "you will need a GitHub token available as an environement variable. "
-        )
+            "you will need a GitHub token available as an environement variable. ",
+        ),
       );
       log(
         color.yellow(
           "Please be sure to get one in GITHUB_TOKEN or GH_TOKEN variables. " +
             "\nThis will be require to get full features of the website that " +
-            "concern contributors."
-        )
+            "concern contributors.",
+        ),
       );
       log(
         color.yellow(
           "Visit https://github.com/settings/tokens/new to generate a token, " +
-            "then you can put it in a file in your home and source it like this: "
-        )
+            "then you can put it in a file in your home and source it like this: ",
+        ),
       );
       log(
         color.yellow(
           "if [[ -f $HOME/.github_token ]]\n" +
             "then\n" +
             "  export GITHUB_TOKEN=$(cat $HOME/.github_token)\n" +
-            "fi\n"
-        )
+            "fi\n",
+        ),
       );
     }
 
     if (githubToken) {
       githubApi.authenticate({
         type: "oauth",
-        token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN
+        token: process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
       });
 
       await contributorsMap();

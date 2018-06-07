@@ -92,7 +92,7 @@ const Author = ({ afterName, author, bio, className, isPost }, context) => {
 
 Author.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 Author.propTypes = {
@@ -100,11 +100,11 @@ Author.propTypes = {
   afterName: PropTypes.string,
   bio: PropTypes.bool,
   className: PropTypes.string,
-  isPost: PropTypes.bool
+  isPost: PropTypes.bool,
 };
 
 Author.defaultProps = {
-  bio: true
+  bio: true,
 };
 
 export default Author;

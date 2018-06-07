@@ -22,7 +22,7 @@ have a `getBoundingClientRect` method, which is always found on `Elements`, a
 class that inherits from `Node`.
 
 This kind of error is rather usual, and unfortunately JavaScript doesn't quite
-get out of its way to warn us that *oi m8 that might not work*. JS actually
+get out of its way to warn us that _oi m8 that might not work_. JS actually
 prefers warning us at _runtime_ when it's too late because the bug already
 happened.
 
@@ -207,7 +207,7 @@ export type UserType = {
   firstName?: string,
   lastName?: string,
   email: string,
-  avatar: MediaType
+  avatar: MediaType,
 };
 ```
 
@@ -219,7 +219,7 @@ are kinda like type placeholders.
 // `T here, is a type that will defined at the call-site
 function findLast<T>(
   array: Array<T>,
-  func: (item: T, index: number, array: Array<T>) => any
+  func: (item: T, index: number, array: Array<T>) => any,
 ): null | T {
   let index = array.length;
   while (--index >= 0) {
@@ -234,7 +234,7 @@ function findLast<T>(
 // Flow knows that in this case, `T` will be a number
 const lastEvenNumber: ?number = findLast(
   [1, 2, 3, 4, 5, 6, 7, 8, 9],
-  item => item % 2 === 0
+  item => item % 2 === 0,
 );
 ```
 
@@ -277,7 +277,7 @@ class User extends Component<void, Props, void> {
 }
 
 type Props = {
-  user: UserType
+  user: UserType,
 };
 ```
 
@@ -306,8 +306,8 @@ add(1, 1);
 ```
 
 Alright, now none of you have any excuses not to type your JS so it would be
-quite a good idea to go on [Flow's
-website](http://flowtype.org/docs/getting-started.html#_) to learn a little more
-about it.
+quite a good idea to go on
+[Flow's website](http://flowtype.org/docs/getting-started.html#_) to learn a
+little more about it.
 
 Buh-bye.

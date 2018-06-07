@@ -235,18 +235,17 @@ $ docker run -d -p 3000:3000 -v $(pwd)/log:/app/log fullstack-js
 
 Cette commande permet de lancer notre image en partageant le port et un dossier
 avec votre ordinateur, si vous voulez plus de détails sur le fonctionnement du
-client Docker, je vous invite à lire mon [article
-précédent](/fr/articles/docker/).
+client Docker, je vous invite à lire mon
+[article précédent](/fr/articles/docker/).
 
-- - -
+---
 
 Dans cet article, vous avez pu voir comment créer votre propre Dockerfile,
 maintenant vous pouvez créer des images Docker parfaitement adaptées à votre
 projet, et même plus. En cherchant sur Internet, vous pourrez trouver des images
 Docker pour tout et n'importe quoi, comme des images pour lancer Chrome dans un
 conteneur par exemple. Pour en savoir plus, je vous redirige vers le blog de
-[Jessie
-Frazelle](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/).
+[Jessie Frazelle](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/).
 
 Dans le prochain article, je vous parlerai de docker-compose, un outil qui
 permet de lancer des applications multi-conteneurs facilement.

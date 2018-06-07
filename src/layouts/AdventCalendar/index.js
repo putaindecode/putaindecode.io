@@ -31,12 +31,12 @@ AdventCalendar.propTypes = {
   __filename: PropTypes.string.isRequired,
   isLoading: PropTypes.bool,
   head: PropTypes.object.isRequired,
-  body: PropTypes.string.isRequired
+  body: PropTypes.string.isRequired,
 };
 
 AdventCalendar.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default AdventCalendar;

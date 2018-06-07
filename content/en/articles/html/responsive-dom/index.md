@@ -42,8 +42,8 @@ ready now? I'm waiting, you know!
 
 Consider a blog page, where successively appear the article's title, its photo,
 and its text at last. Given that a photo, depending your connection's quality,
-can be quite a PITA to load on mobile (and that the responsive image thing [is
-still a goddamn mess](http://css-tricks.com/responsive-images-hard/)), you
+can be quite a PITA to load on mobile (and that the responsive image thing
+[is still a goddamn mess](http://css-tricks.com/responsive-images-hard/)), you
 decide to put the photo below the text content so your readers can enjoy the
 article even if the picture isn't done loading yet - even switching it for a
 lighter version in the process.
@@ -141,7 +141,7 @@ var handleImages = function() {
       if (window.getComputedStyle(el).display != "none") {
         el.src = el.getAttribute("data-src");
       }
-    }
+    },
   );
 };
 
@@ -173,7 +173,7 @@ enquire.register("screen and (min-width: 768px)", {
   unmatch: function() {
     // ...and here, 767px wide or below.
     // The lib relies on matchMedia and matchMedia.addListener
-  }
+  },
 });
 ```
 
@@ -200,7 +200,7 @@ var content = document.querySelector("p"),
     var attr = isMobile ? "data-mobile-src" : "data-src";
 
     [].forEach.call(document.querySelectorAll("img[" + attr + "]"), function(
-      el
+      el,
     ) {
       // We assign one source or the other to our image,
       // triggering its loading if necessary.
@@ -209,7 +209,7 @@ var content = document.querySelector("p"),
       // We also move it before or after the text content
       content.parentNode.insertBefore(
         el,
-        isMobile ? content.nextSibling : content
+        isMobile ? content.nextSibling : content,
       );
     });
   };
@@ -240,8 +240,8 @@ quoting (given you seem to want it that bad).
 maybe even before, didn't check lol) some HTML syntactic sugar allowing to
 switch contents for a given element (through JS).
 
-Not bad, I must say. Here it goes (from [the
-docs](http://foundation.zurb.com/docs/components/interchange.html)):
+Not bad, I must say. Here it goes (from
+[the docs](http://foundation.zurb.com/docs/components/interchange.html)):
 
 > We use the data-interchange attribute on a markup container (probably a div)
 > to do this. Here's an example which loads up a small, static map on mobile, a
@@ -315,8 +315,8 @@ You obviously were smart enough to put your image last in the DOM...
 And there we are! No need to have graduated from Polly Pocket to understand how
 such flexibility and code tidiness solve our problem in two goddamn seconds. But
 this is just the tip of the flexberg; there are a lot of great resources to walk
-yourself through it better than I ever could, like [this
-article](http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html)
+yourself through it better than I ever could, like
+[this article](http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html)
 I shamelessly borrowed my snippets from.
 
 ## Conclusion

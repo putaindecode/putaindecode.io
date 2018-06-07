@@ -18,13 +18,13 @@ obsolètes par une fonctionnalité d'ES6 (aka ES2015).
 La nouvelle méthode statique `Object.assign` prend en paramètres une série
 d'objets :
 
-* le premier objet est la "cible" des copies ;
-* les suivants sont les sources ;
-* toutes les clés propres (*own properties*, soit les clés énumérables et non
+- le premier objet est la "cible" des copies ;
+- les suivants sont les sources ;
+- toutes les clés propres (_own properties_, soit les clés énumérables et non
   héritées, même celles dont la valeur est `undefined`) des sources sont copiées
   vers la cible (les suivantes écrasant les précédentes) ;
-* **l'objet cible est donc modifié** (il doit être mutable) ;
-* puis on retourne l'objet cible.
+- **l'objet cible est donc modifié** (il doit être mutable) ;
+- puis on retourne l'objet cible.
 
 ```js
 const o = { y: 0 };
@@ -55,15 +55,15 @@ o; // { x: 1, y: 2 }
 ### Erreurs lors de la copie
 
 Si une propriété de la cible est en lecture seule, `Object.assign` devrait se
-comporter comme en mode _strict_ (par opposition au mode *WTF*), et lever
+comporter comme en mode _strict_ (par opposition au mode _WTF_), et lever
 l'erreur correspondante avant d'interrompre la copie.
 
 ```js
 const o = Object.create(
   {},
   {
-    val: { value: 42, enumerable: true, writable: false }
-  }
+    val: { value: 42, enumerable: true, writable: false },
+  },
 );
 
 // En mode "standard":
@@ -110,9 +110,9 @@ Plus besoin de `_.clone`, `_.extend`, etc. avec cette méthode :)
 Pour finir, le topo compatibilité : `Object.assign` est plutôt bien supportée
 par les navigateurs modernes (donc pas IE) :
 
-* Edge (IE ≥ 12) ;
-* Chrome stable (46) ;
-* Firefox stable (42) ;
-* Node ≥ 4 ;
-* et si vous devez supporter IE, il y a bien sûr [Babel](http://babeljs.io/) ou
+- Edge (IE ≥ 12) ;
+- Chrome stable (46) ;
+- Firefox stable (42) ;
+- Node ≥ 4 ;
+- et si vous devez supporter IE, il y a bien sûr [Babel](http://babeljs.io/) ou
   les nombreuses implémentations utilisateur.

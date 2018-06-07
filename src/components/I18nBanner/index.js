@@ -33,7 +33,7 @@ Component.propTypes = {
   labels: PropTypes.object.isRequired,
   onAccept: PropTypes.func.isRequired,
   onHide: PropTypes.func.isRequired,
-  onHideForever: PropTypes.func.isRequired
+  onHideForever: PropTypes.func.isRequired,
 };
 
 Component.displayName = "I18nBanner";

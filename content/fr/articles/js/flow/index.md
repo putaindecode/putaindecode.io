@@ -20,8 +20,8 @@ possèdent pas la méthode `getBoundingClientRect`, que l'on trouve
 systématiquement sur les `Element`, une classe héritant de `Node`.
 
 Ce type d'erreur est assez commun, et malheureusement JavaScript n'en fout pas
-une pour nous prévenir que *attention là ça peut merder*. Le langage préfère
-nous prévenir au *runtime*, quand c'est déjà trop tard, parce que le bug s'est
+une pour nous prévenir que _attention là ça peut merder_. Le langage préfère
+nous prévenir au _runtime_, quand c'est déjà trop tard, parce que le bug s'est
 produit.
 
 Et c'est parce que JavaScript est un langage … à typage **faible** et
@@ -210,11 +210,11 @@ export type UserType = {
   firstName?: string,
   lastName?: string,
   email: string,
-  avatar: MediaType
+  avatar: MediaType,
 };
 ```
 
-Lorsque l'on écrit du code qui se fout du type, on peut utiliser les *generics*,
+Lorsque l'on écrit du code qui se fout du type, on peut utiliser les _generics_,
 qui est une sorte de placeholder de type.
 
 ```javascript
@@ -222,7 +222,7 @@ qui est une sorte de placeholder de type.
 // `T` est ici un type qui sera défini au call-site.
 function findLast<T>(
   array: Array<T>,
-  func: (item: T, index: number, array: Array<T>) => any
+  func: (item: T, index: number, array: Array<T>) => any,
 ): null | T {
   let index = array.length;
   while (--index >= 0) {
@@ -237,7 +237,7 @@ function findLast<T>(
 // Flow sait que dans ce cas `T` est un nombre
 const lastEvenNumber: ?number = findLast(
   [1, 2, 3, 4, 5, 6, 7, 8, 9],
-  item => item % 2 === 0
+  item => item % 2 === 0,
 );
 ```
 
@@ -280,7 +280,7 @@ class User extends Component<void, Props, void> {
 }
 
 type Props = {
-  user: UserType
+  user: UserType,
 };
 ```
 

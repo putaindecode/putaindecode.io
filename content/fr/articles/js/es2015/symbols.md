@@ -11,8 +11,8 @@ authors:
 
 Dans sa politique d'enrichissement des types primitifs, ES6 introduit les
 symboles. Chers aux développeurs de nombreux langages, Ruby en tête, les
-symboles constituent une étape de plus vers l'éradication du *stringly-typed
-programming*. En effet, les symboles fournissent un moyen plus robuste de
+symboles constituent une étape de plus vers l'éradication du _stringly-typed
+programming_. En effet, les symboles fournissent un moyen plus robuste de
 représenter des identifiants.
 
 ## Créer un symbole
@@ -38,7 +38,7 @@ les collisions : on ne peut pas avoir deux symboles identiques par erreur.
 ## Utiliser les symboles pour l'implémentation d'un _enum_
 
 Plutôt que d'utiliser des chaînes de caractères comme valeurs possible d'un
-*enum*, on peut utiliser des symboles.
+_enum_, on peut utiliser des symboles.
 
 ```javascript
 const ANIMAL_DOG = Symbol();
@@ -55,7 +55,7 @@ function getDescription(animal) {
 ```
 
 De cette manière, on ne risque pas de mélanger accidentellement une chaine de
-caractères fournie par l'utilisateur et la valeur d'un *enum*. On est obligé de
+caractères fournie par l'utilisateur et la valeur d'un _enum_. On est obligé de
 passer par une phase de parsing et de vérification.
 
 ## Utiliser un symbole comme clé
@@ -70,7 +70,7 @@ myMutableObject[myKey] = "a value";
 
 // En utilisant les *computed property keys*
 const myObj = {
-  [myKey]: "a value"
+  [myKey]: "a value",
 };
 ```
 
@@ -87,7 +87,7 @@ const myIterableObject = {
     yield "One";
     yield "Two";
     yield "Three";
-  }
+  },
 };
 
 // Affichera One, Two et Three
@@ -100,7 +100,7 @@ for (x of {}) {
 }
 ```
 
-Différents symboles (les *well-known symbols*) sont disponibles pour indexer des
+Différents symboles (les _well-known symbols_) sont disponibles pour indexer des
 propriétés qui personnalisent le comportement des objets : `Symbol.iterator`
 pour itérer sur les valeurs d'un objet, `Symbol.hasInstance` pour modifier le
 retour de `instanceof`, …
@@ -122,7 +122,7 @@ sont listées par `Object.getOwnPropertySymbols`.
 ```javascript
 const myObject = {
   [Symbol()]: "symbol-keyed value",
-  key: "string-keyed value"
+  key: "string-keyed value",
 };
 
 Object.getOwnPropertyNames(myObject); // [ "key" ]
@@ -140,7 +140,7 @@ Les propriétés indexées par un symbole sont ignorées par `JSON.stringify`.
 ```javascript
 JSON.stringify({
   [Symbol()]: "symbol-keyed value",
-  key: "string-keyed value"
+  key: "string-keyed value",
 }); // '{"key":"string-keyed value"}'
 ```
 
@@ -195,7 +195,5 @@ protection contre des manipulations accidentelles.
 
 ## Pour aller plus loin
 
-* [La documentation des symboles sur
-  MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
-* [Un article complet sur le fonctionnement des symboles et leur cas
-  d'utilisation](http://www.2ality.com/2014/12/es6-symbols.html)
+- [La documentation des symboles sur MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+- [Un article complet sur le fonctionnement des symboles et leur cas d'utilisation](http://www.2ality.com/2014/12/es6-symbols.html)

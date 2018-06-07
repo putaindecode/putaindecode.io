@@ -12,9 +12,9 @@ translators:
 ---
 
 ES2015 brings a lot of syntax sugar but not a lot of new real features.
-Generators are a new feature to generate iterators that follow the [iterator
-protocol](/en/articles/js/es2015/iterators/). They allow to take control of the
-execution of a function from the outside.
+Generators are a new feature to generate iterators that follow the
+[iterator protocol](/en/articles/js/es2015/iterators/). They allow to take
+control of the execution of a function from the outside.
 
 ## Idle function
 
@@ -44,8 +44,8 @@ can continue later, but meanwhile, the _event-loop_ is still running.
 Following the [iterator protocol](/en/articles/js/es2015/iterators/), the
 `next()` method will returns an object with 2 properties :
 
-* `done` is equal to `true` when generator has finished its job exécution
-* `value` is the value emitted by the generator when it become idle
+- `done` is equal to `true` when generator has finished its job exécution
+- `value` is the value emitted by the generator when it become idle
 
 How to emit a value ? The keyword `yield` is made for this: it will returns a
 value and idle the execution of the function. The thing is: you are going to use
@@ -274,8 +274,8 @@ iterator.next(); // { value: undefined, done: true }
 
 ## Conclusion
 
-Take a look to the [compatibility
-table](https://kangax.github.io/compat-table/es6/#test-generators).
+Take a look to the
+[compatibility table](https://kangax.github.io/compat-table/es6/#test-generators).
 
 Generators bring us a new bundle of feature that allow us to inverse
 responsibility : the code that calling the generator can take over the way the

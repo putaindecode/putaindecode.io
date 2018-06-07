@@ -31,7 +31,7 @@ vous souhaitez voir un post écrit, ou même en écrire un, faites un tour là-b
 Pour contribuer au site, n'hésitez pas, en plus de lire la partie technique
 ci-dessous, à lire le fichier spécifique [CONTRIBUTING.md](CONTRIBUTING.md).
 
-- - -
+---
 
 ## Développement
 
@@ -87,22 +87,21 @@ Autrement, le site fonctionnera en mode dégradé.**
 
 Rien à faire, ça se débrouille tout seul.
 
-**Tous les commits dans la branche `master` provoqueront une mise en
-production automatique.**
+**Tous les commits dans la branche `master` provoqueront une mise en production
+automatique.**
 
-- - -
+---
 
 ## Crédits
 
 ### Auteurs et contributeurs
 
-* [Membres de l'organisation](https://github.com/putaindecode?tab=members)
-* [Liste des
-  contributeurs](https://github.com/putaindecode/putaindecode.io/graphs/contributors)
+- [Membres de l'organisation](https://github.com/putaindecode?tab=members)
+- [Liste des contributeurs](https://github.com/putaindecode/putaindecode.io/graphs/contributors)
 
 ### Logo & Avatar
 
 Remerciements à toutes les personnes impliquées dans cette discussion
 [putaindecode/organisation/issues/4](https://github.com/putaindecode/organisation/issues/4).
-Remerciement spécial à [@bloodyowl](https://github.com/bloodyowl) pour le [logo
-initial](https://github.com/putaindecode/putaindecode.io/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
+Remerciement spécial à [@bloodyowl](https://github.com/bloodyowl) pour le
+[logo initial](https://github.com/putaindecode/putaindecode.io/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).

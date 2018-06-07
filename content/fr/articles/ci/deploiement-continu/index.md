@@ -23,10 +23,10 @@ modifications de votre collègue, qui lui aussi vient de pousser un bon gros
 patch bien sale.
 
 La première conséquence est que les mises en production ne sont plus
-stressantes, car très régulières. [Certaines personnes ne recommandent pas les
-mises en production tous les jours
-](http://www.estcequonmetenprodaujourdhui.info/) mais lorsque vous avez mis en
-place l'intégration continue, vous minimisez grandement les risques.
+stressantes, car très régulières.
+[Certaines personnes ne recommandent pas les mises en production tous les jours ](http://www.estcequonmetenprodaujourdhui.info/)
+mais lorsque vous avez mis en place l'intégration continue, vous minimisez
+grandement les risques.
 
 La preuve en est que certaines entreprises font des mises en productions
 plusieurs centaines de fois par jour ! (GitHub est un bon exemple).
@@ -34,8 +34,8 @@ plusieurs centaines de fois par jour ! (GitHub est un bon exemple).
 ## Pré-requis au déploiement continu
 
 Vous n'avez qu'une chose à faire avant de vous attaquer à la mise en place du
-déploiement continu : vous devez déjà avoir [l'intégration
-continue](/fr/articles/ci/) en place.
+déploiement continu : vous devez déjà avoir
+[l'intégration continue](/fr/articles/ci/) en place.
 
 Une fois vous êtes bon à ce niveau, vous pouvez passer à l'étape suivante.
 
@@ -49,8 +49,8 @@ Un déploiement FTP, un déploiement git, ou plus compliqué via CDN, peu import
 **Il faut juste une commande qui marche simplement.**
 
 Pour notre site, la commande est `npm run deploy`. Cette commande pousse le site
-généré sur la branche `gh-pages` (puisqu'on se sert [des pages
-GitHub](https://pages.github.com/)).
+généré sur la branche `gh-pages` (puisqu'on se sert
+[des pages GitHub](https://pages.github.com/)).
 
 ## Automatiser le script qui fait les choses qui vont bien quand les tests vont bien
 
@@ -71,6 +71,6 @@ La prochaine étape (dans un prochain article) sera de mettre ça en place sur u
 serveur d'intégration continue, nous y étudierons simplement ce que nous avons
 fait pour notre site.
 
-Si vous êtes trop curieux, vous pouvez déjà [consulter le code source de notre
-site](https://github.com/putaindecode/putaindecode.io/tree/43dc29344debf0ccf81050214a1cf3cb6c8f6231) et fouiller dans le
-`package.json` (section `scripts`) pour deviner la suite...
+Si vous êtes trop curieux, vous pouvez déjà
+[consulter le code source de notre site](https://github.com/putaindecode/putaindecode.io/tree/43dc29344debf0ccf81050214a1cf3cb6c8f6231)
+et fouiller dans le `package.json` (section `scripts`) pour deviner la suite...

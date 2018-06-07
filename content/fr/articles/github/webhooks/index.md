@@ -10,12 +10,13 @@ header:
   credit: https://www.flickr.com/photos/haru__q/14396323454/
 ---
 
-Vous avez pu lire récemment une [introduction sur l'intégration
-continue](/fr/articles/ci/deploiement-continu/) qui mène vers [le déploiement
-continu](/fr/articles/ci/). Si vous utilisez GitHub pour héberger vos sources et
-que vous cherchez un moyen très simple (peut-être un peu trop) de mettre en
-place le déploiement continu *sans serveur d'intégration continue dédié*, alors
-les webhooks peuvent répondre parfaitement à votre besoin.
+Vous avez pu lire récemment une
+[introduction sur l'intégration continue](/fr/articles/ci/deploiement-continu/)
+qui mène vers [le déploiement continu](/fr/articles/ci/). Si vous utilisez
+GitHub pour héberger vos sources et que vous cherchez un moyen très simple
+(peut-être un peu trop) de mettre en place le déploiement continu _sans serveur
+d'intégration continue dédié_, alors les webhooks peuvent répondre parfaitement
+à votre besoin.
 
 ## Les quoi ?
 
@@ -42,8 +43,8 @@ se lancerait quand même.
 ## La mise en place
 
 Seul le propriétaire d'un dépôt dispose des droits nécessaires pour configurer
-un webhook. Il suffit pour cela de se rendre dans `Settings` puis `Webhooks &
-Services` :
+un webhook. Il suffit pour cela de se rendre dans `Settings` puis
+`Webhooks & Services` :
 
 ![Settings Webhooks GitHub](setting_webhook.jpg)
 
@@ -54,16 +55,16 @@ très simple :
 
 Cette interface se compose de trois parties :
 
-1. l'URL vers laquelle votre requête sera lancée
-2. une secret key pour sécuriser votre requête
-3. l'événement qui va déclencher votre requête
+1.  l'URL vers laquelle votre requête sera lancée
+2.  une secret key pour sécuriser votre requête
+3.  l'événement qui va déclencher votre requête
 
 La partie événement est relativement complète et là encore vous disposez de
 trois possibilités :
 
-1. se déclenche au push
-2. se déclenche à chaque événement
-3. à vous de choisir les événements (un ou plusieurs) qui vous conviennent
+1.  se déclenche au push
+2.  se déclenche à chaque événement
+3.  à vous de choisir les événements (un ou plusieurs) qui vous conviennent
 
 Une fois le _Webhook_ activé un premier test ou plus exactement un `ping` va se
 lancer. Il permettra de détecter que votre serveur répond bien à la requête :
@@ -99,7 +100,7 @@ var server = app.listen(port, host, function() {
   console.log(
     "App listening at http://%s:%s",
     server.address().address,
-    server.address().port
+    server.address().port,
   );
 });
 
@@ -135,8 +136,8 @@ app.post("/webhook", function(req, res) {
 
 Pour vous donner une idée de ce que peut envoyer GitHub, voici deux gists :
 
-* [Headers](header.txt)
-* [Payload](payload.json)
+- [Headers](header.txt)
+- [Payload](payload.json)
 
 ## This is just the beginning
 

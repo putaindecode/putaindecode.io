@@ -9,9 +9,9 @@ authors:
   - revolunet
 ---
 
-Il existe de nombreuses approches et [solutions
-différentes](https://github.com/MicheleBertoli/css-in-js) pour gérer le CSS en
-React, je vais parler ici de
+Il existe de nombreuses approches et
+[solutions différentes](https://github.com/MicheleBertoli/css-in-js) pour gérer
+le CSS en React, je vais parler ici de
 [styled-components](https://github.com/styled-components/styled-components) qui
 permet de gagner en productivité et en qualité quand on veut créer et distribuer
 des composants UI.
@@ -25,8 +25,8 @@ utilisées et partagées entre les UIs de toutes vos applications, sites webs...
 
 Si vous voulez jouer avec, je vous conseille d'utiliser
 [create-react-app](https://github.com/facebookincubator/create-react-app) pour
-générer un projet vierge puis d'ajouter styled-components au projet : `npm i
---save styled-components`.
+générer un projet vierge puis d'ajouter styled-components au projet :
+`npm i --save styled-components`.
 
 Avec styled, on peut abstraire le CSS et le DOM de la vue, ce qui va grandement
 simplifier le code de la partie "métier" de l'application, et améliorer la
@@ -90,34 +90,32 @@ const Description = styled.div`
 
 ### Avantages :
 
-* [community
-  powered](https://github.com/styled-components/styled-components/graphs/contributors)
-  * moving fast, [v2 en
-    cours](https://github.com/styled-components/styled-components/tree/v2)
-* support des
+- [community powered](https://github.com/styled-components/styled-components/graphs/contributors)
+  - moving fast,
+    [v2 en cours](https://github.com/styled-components/styled-components/tree/v2)
+- support des
   [thèmes](https://github.com/styled-components/styled-components/blob/master/docs/theming.md)
-* [syntaxe CSS
-  "classique"](https://github.com/styled-components/styled-components/blob/master/docs/css-we-support.md)
+- [syntaxe CSS "classique"](https://github.com/styled-components/styled-components/blob/master/docs/css-we-support.md)
   mais scopé automatiquement
-* Gestion des media queries, pseudo-selectors, nesting
-* Un [autoprefixer-like
-  intégré](https://github.com/rofrischmann/inline-style-prefixer/)
-* Code "métier" plus lisible
-* Compatible react-native
-* Compatible avec les [snapshots Jest](https://facebook.github.io/jest/) out of
+- Gestion des media queries, pseudo-selectors, nesting
+- Un
+  [autoprefixer-like intégré](https://github.com/rofrischmann/inline-style-prefixer/)
+- Code "métier" plus lisible
+- Compatible react-native
+- Compatible avec les [snapshots Jest](https://facebook.github.io/jest/) out of
   the box
-* Ne nécessite pas de loader Webpack spécifique ❤️
+- Ne nécessite pas de loader Webpack spécifique ❤️
 
 ### Inconvénients :
 
-* pas encore idéal pour [des styles très
-  dynamiques](https://github.com/styled-components/styled-components/issues/134)
-* pas encore idéal pour [le
-  server-side](https://github.com/styled-components/styled-components/issues/124)
-* syntaxe pas forcement bien [surlignée ou
-  lintée](https://github.com/styled-components/styled-components#linting) mais
-  [des plugins
-  existent](https://github.com/styled-components/styled-components#syntax-highlighting).
+- pas encore idéal pour
+  [des styles très dynamiques](https://github.com/styled-components/styled-components/issues/134)
+- pas encore idéal pour
+  [le server-side](https://github.com/styled-components/styled-components/issues/124)
+- syntaxe pas forcement bien
+  [surlignée ou lintée](https://github.com/styled-components/styled-components#linting)
+  mais
+  [des plugins existent](https://github.com/styled-components/styled-components#syntax-highlighting).
 
 ### Fonctionnement
 
@@ -125,16 +123,16 @@ Techniquement,
 [styled-components](https://github.com/styled-components/styled-components) va
 pour chaque composant "styled" présent dans le DOM :
 
-* injecter les classes CSS nécessaires pour ce composant dans le `<head>` de la
+- injecter les classes CSS nécessaires pour ce composant dans le `<head>` de la
   page, au runtime.
-* fournir au composant une props `className` unique (ainsi que ses `ownProps`)
+- fournir au composant une props `className` unique (ainsi que ses `ownProps`)
 
 La syntaxe est certes exotique, le CSS étant défini dans un template-string
 ES2015, mais ceci rend le code très concis.
 
 Pour en savoir plus sur les "Template Strings", ou "Littéraux de gabarits" en
-Français 🇫🇷 vous pouvez lire [l'excellente doc chez
-MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits).
+Français 🇫🇷 vous pouvez lire
+[l'excellente doc chez MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits).
 
 ### Usage :
 
@@ -285,8 +283,8 @@ const WarningNotification = () => <Notification className={warning} />;
 
 ### Réutiliser des styles
 
-Comme styled utilise des [templates
-literals](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits)
+Comme styled utilise des
+[templates literals](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits)
 vous pouvez utiliser n'importe quelle variable dans votre CSS :
 
 ```jsx
@@ -352,8 +350,8 @@ const blueTheme = {
 </ThemeProvider>
 ```
 
-Et pour aller loin, consultez la [documentation
-officielle](https://github.com/styled-components/styled-components/blob/master/docs/theming.md#using-theming)
+Et pour aller loin, consultez la
+[documentation officielle](https://github.com/styled-components/styled-components/blob/master/docs/theming.md#using-theming)
 
 ### Injecter des CSS globaux
 
@@ -373,8 +371,8 @@ injectGlobal`
 `;
 ```
 
-Plus d'infos sur [la doc
-d'injectGlobal](https://github.com/styled-components/styled-components/blob/master/docs/api.md#injectglobal)
+Plus d'infos sur
+[la doc d'injectGlobal](https://github.com/styled-components/styled-components/blob/master/docs/api.md#injectglobal)
 
 ### React Storybook
 
@@ -386,11 +384,7 @@ de conception**.
 
 ### Autres liens :
 
-* [Documentation
-  officielle](https://github.com/styled-components/styled-components/blob/master/docs)
-* [Enforcing Best Practices In Component-Based
-  Systems](https://www.smashingmagazine.com/2017/01/styled-components-enforcing-best-practices-component-based-systems/)
-* [The magic behind 💅
-  styled-components](http://mxstbr.blog/2016/11/styled-components-magic-explained/)
-* [React CSS-in-JS techniques
-  comparison](https://github.com/MicheleBertoli/css-in-js)
+- [Documentation officielle](https://github.com/styled-components/styled-components/blob/master/docs)
+- [Enforcing Best Practices In Component-Based Systems](https://www.smashingmagazine.com/2017/01/styled-components-enforcing-best-practices-component-based-systems/)
+- [The magic behind 💅 styled-components](http://mxstbr.blog/2016/11/styled-components-magic-explained/)
+- [React CSS-in-JS techniques comparison](https://github.com/MicheleBertoli/css-in-js)

@@ -27,7 +27,7 @@ const AuthorsList = ({ authors }, context) => {
           >
             {author.login}
           </Link>,
-          <span key={`${author}-glue`}>{glue}</span>
+          <span key={`${author}-glue`}>{glue}</span>,
         ];
       })}
     </span>
@@ -36,11 +36,11 @@ const AuthorsList = ({ authors }, context) => {
 
 AuthorsList.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 AuthorsList.propTypes = {
-  authors: PropTypes.arrayOf(PropTypes.string).isRequired
+  authors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default AuthorsList;

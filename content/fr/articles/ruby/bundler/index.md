@@ -38,9 +38,9 @@ gem 'sinatra'
 
 L'instruction `source` permet de préciser l'url des dépôts de gems. La version
 de ruby n'est pas obligatoire mais j'aime la préciser pour ne pas me mélanger
-dans mes projets avec différentes versions de Ruby (voir le [précédent article
-pour les versions du Ruby](/fr/articles/ruby/premiers-pas/) et
-[rbenv](https://github.com/sstephenson/rbenv)). Et enfin, la déclaration de
+dans mes projets avec différentes versions de Ruby (voir le
+[précédent article pour les versions du Ruby](/fr/articles/ruby/premiers-pas/)
+et [rbenv](https://github.com/sstephenson/rbenv)). Et enfin, la déclaration de
 notre première bibliothèque de dépendance : [Sinatra](http://www.sinatrarb.com).
 
 Il est possible d'être bien plus précis dans le Gemfile, comme...
@@ -83,10 +83,10 @@ dépendances vraiment fine et précise.
 Une fois le Gemfile prêt, bundler a plusieurs commandes de disponibles pour
 pouvoir les télécharger et utiliser.
 
-* `$ bundle install` installera les gems requis
-* `$ bundle update` mettra à jour vers les versions les plus récentes si
+- `$ bundle install` installera les gems requis
+- `$ bundle update` mettra à jour vers les versions les plus récentes si
   possible les gems requis
-* `$ bundle exec` permettra de précéder une commande ruby afin de l'exécuter
+- `$ bundle exec` permettra de précéder une commande ruby afin de l'exécuter
   dans le contexte du Gemfile, très utile lorsque l'on a différentes versions de
   Ruby qui se baladent dans le terminal
 
@@ -189,8 +189,8 @@ $ ruby app.rb
 
 ## Sources
 
-* [RubyGems](https://rubygems.org)
-* [Bundler](http://bundler.io)
-* [rbenv](https://github.com/sstephenson/rbenv)
-* [Sinatra](http://www.sinatrarb.com) et surtout son
+- [RubyGems](https://rubygems.org)
+- [Bundler](http://bundler.io)
+- [rbenv](https://github.com/sstephenson/rbenv)
+- [Sinatra](http://www.sinatrarb.com) et surtout son
   [README](http://www.sinatrarb.com/intro.html)

@@ -13,7 +13,7 @@ const Posts = ({ head, posts }, context) => {
     enhanceCollection(context.collection, {
       filter: { layout: "Post" },
       sort: "date",
-      reverse: true
+      reverse: true,
     })
       // TODO use a real filter
       .filter(post => post.__filename.startsWith(`${lang}/`));
@@ -24,7 +24,7 @@ const Posts = ({ head, posts }, context) => {
         title={head.title}
         meta={[
           { property: "og:title", content: head.title },
-          { name: "twitter:title", content: head.title }
+          { name: "twitter:title", content: head.title },
         ]}
       />
       <div className="r-Grid putainde-Section">
@@ -33,7 +33,7 @@ const Posts = ({ head, posts }, context) => {
             "r-Grid-cell",
             "r-minM--8of12",
             "putainde-Section-contents",
-            "js-Posts"
+            "js-Posts",
           )}
         >
           <div className="putainde-Title putainde-Title--home">
@@ -49,13 +49,13 @@ const Posts = ({ head, posts }, context) => {
 Posts.propTypes = {
   head: PropTypes.object.isRequired,
   body: PropTypes.string,
-  posts: PropTypes.array
+  posts: PropTypes.array,
 };
 
 Posts.contextTypes = {
   collection: PropTypes.array.isRequired,
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Posts;

@@ -18,7 +18,7 @@ tableau en reposant sur leur structure.
 // Partons d'un objet `myObject`
 var myObject = {
   foo: 1,
-  bar: 2
+  bar: 2,
 };
 
 // Avec ES5, vous deviez par exemple faire
@@ -38,7 +38,7 @@ bar; // 2
 const getMyObject = function() {
   return {
     foo: 1,
-    bar: 2
+    bar: 2,
   };
 };
 const { foo, bar } = getMyObject();
@@ -69,7 +69,7 @@ scope, vous pouvez choisir de nommer différemment votre variable.
 ```js
 var myObject = {
   foo: 1,
-  bar: 2
+  bar: 2,
 };
 const { foo: renamedFoo } = myObject;
 renamedFoo; // 1
@@ -96,10 +96,12 @@ On peut aussi imbriquer les assignements.
 ```js
 var myObject = {
   foo: {
-    bar: 1
-  }
+    bar: 1,
+  },
 };
-const { foo: { bar } } = myObject;
+const {
+  foo: { bar },
+} = myObject;
 bar; // 1
 ```
 

@@ -26,18 +26,19 @@ les puede requirir bastante tiempo poner en práctica dichos módulos y aún má
 W3C atribuirles el estado final de
 [Recomendación](http://www.w3.org/2005/10/Process-20051014/tr#RecsW3C).
 
-Con **cssnext** se puede usar la sintaxis de los [módulos CSS Nivel
-4](http://www.xanthir.com/b4Ko0), tales como _propiedades personalizadas (custom
-properties)_ o *media queries personalizados*. **cssnext** va a transformar esta
-nueva y curiosa sintaxis en algo que el navegador será capaz de entender.
+Con **cssnext** se puede usar la sintaxis de los
+[módulos CSS Nivel 4](http://www.xanthir.com/b4Ko0), tales como _propiedades
+personalizadas (custom properties)_ o _media queries personalizados_.
+**cssnext** va a transformar esta nueva y curiosa sintaxis en algo que el
+navegador será capaz de entender.
 
 En resumen, se **adelanta al futuro**.
 
 No sé vosotros, pero yo me considero alguien a quien le gusta experimentar con
 las últimas technologías y me parece que ¡esto mola bastante!
 
-No dejéis de echar un vistazo a la [lista de
-funciones](http://cssnext.io/features/).
+No dejéis de echar un vistazo a la
+[lista de funciones](http://cssnext.io/features/).
 
 ### ¿Y qué pasa con el preprocesador CSS que estoy utilizando ahora?
 
@@ -48,16 +49,16 @@ herramientas.
 ¿Adivinad qué? No necesitáis nada de esto.
 
 Deberiáis probar **cssnext** y volver al Vanilla CSS de toda la vida. Además,
-con una buena pizca de [metodología
-BEM](https://github.com/sturobson/BEM-resources), os sentiréis [vivos otra
-vez](http://philipwalton.com/articles/side-effects-in-css/).
+con una buena pizca de
+[metodología BEM](https://github.com/sturobson/BEM-resources), os sentiréis
+[vivos otra vez](http://philipwalton.com/articles/side-effects-in-css/).
 
 ## Ejemplos
 
 Echemos un vistazo a las funciones que **cssnext** nos ofrece por el momento.
 
-Ante todo, es conveniente consultar el [playground en la página
-oficial](http://cssnext.io/playground/).
+Ante todo, es conveniente consultar el
+[playground en la página oficial](http://cssnext.io/playground/).
 
 ### Prefijos de navegadores (vendor prefixes) automáticos
 
@@ -82,8 +83,8 @@ Esto será transformado por **cssnext** gracias a Autoprefixer en:
 
 ### Propiedades personalizadas y var() limitadas a `:root`
 
-También conocidas como las tan esperadas [variables
-CSS](http://www.w3.org/TR/css-variables/).
+También conocidas como las tan esperadas
+[variables CSS](http://www.w3.org/TR/css-variables/).
 
 ```css
 :root {
@@ -109,8 +110,8 @@ body {
 
 ### Media Queries personalizadas
 
-Para crear alias semánticos, claros y sencillos ([aquí tenéis la
-documentación](http://dev.w3.org/csswg/mediaqueries/#custom-mq)).
+Para crear alias semánticos, claros y sencillos
+([aquí tenéis la documentación](http://dev.w3.org/csswg/mediaqueries/#custom-mq)).
 
 ```css
 @custom-media --viewport-medium (width <= 40rem);
@@ -182,9 +183,10 @@ h6 { margin-top; 0; }
 
 ### `color()`
 
-Una sencilla [función
-color](http://dev.w3.org/csswg/css-color/#modifying-colors) para aplicar unos
-_ajustes de color_ (tono, luminosidad, saturación, entre otros) a un color base.
+Una sencilla
+[función color](http://dev.w3.org/csswg/css-color/#modifying-colors) para
+aplicar unos _ajustes de color_ (tono, luminosidad, saturación, entre otros) a
+un color base.
 
 Ejemplos:
 
@@ -219,7 +221,7 @@ colores:
 
 Según las
 [especificaciones](http://dev.w3.org/csswg/css-color/#the-hwb-notation), HWB
-(Tono-Blancura-Negrura - *Hue-Whiteness-Blackness*) es similar a HSL, pero
+(Tono-Blancura-Negrura - _Hue-Whiteness-Blackness_) es similar a HSL, pero
 resulta más fácil de uso para los humanos.
 
 ```css
@@ -259,9 +261,9 @@ Esto dará como resultado:
 
 #### #rrggbbaa
 
-**cssnext** transforma la [notación
-hexadecimal](http://dev.w3.org/csswg/css-color/#hex-notation) #RRGGBBAA y #RGBA
-en rgba().
+**cssnext** transforma la
+[notación hexadecimal](http://dev.w3.org/csswg/css-color/#hex-notation)
+#RRGGBBAA y #RGBA en rgba().
 
 ```css
 body {
@@ -287,8 +289,9 @@ en `rgb(102, 51, 153)`.
 
 ### Propiedades de filtros
 
-¡Un _nuevo_ mundo de [modificaciones de
-imágenes](http://www.w3.org/TR/filter-effects/) se abre ante vosotros!
+¡Un _nuevo_ mundo de
+[modificaciones de imágenes](http://www.w3.org/TR/filter-effects/) se abre ante
+vosotros!
 
 ```css
 .awesome-Image {
@@ -346,9 +349,9 @@ CSS. Sin embargo, merecen ser mencionadas en esta introducción.
 
 ¿Y si pudiérais importar archivos locales y módulos (`node_modules` o
 `web_modules`) para generar un solo y único archivo CSS que los contendría
-todos? Sí, [es a vosotros a quién estoy mirando, utilizadores de
-Sass](https://github.com/sass/sass/issues/193), ejem. Bueno pues, con
-**cssnext** es possible.
+todos? Sí,
+[es a vosotros a quién estoy mirando, utilizadores de Sass](https://github.com/sass/sass/issues/193),
+ejem. Bueno pues, con **cssnext** es possible.
 
 ### `compress`
 
@@ -359,8 +362,8 @@ vuestro archivo de salida. Y esto es gracias a
 ### Uso
 
 Debajo os dejo un ejemplo básico de estas dos funciones. He usado
-[gulp-cssnext](https://github.com/cssnext/gulp-cssnext), uno de los [numerosos
-plugins](http://cssnext.io/setup/) que os puede ayudar a empezar con
+[gulp-cssnext](https://github.com/cssnext/gulp-cssnext), uno de los
+[numerosos plugins](http://cssnext.io/setup/) que os puede ayudar a empezar con
 **cssnext**.
 
 ```js
@@ -372,8 +375,8 @@ gulp.task("styles", function() {
     .src("css/index.css")
     .pipe(
       cssnext({
-        compress: true // false por defecto
-      })
+        compress: true, // false por defecto
+      }),
     )
     .pipe(gulp.dest("./dist/"));
 });
@@ -407,13 +410,14 @@ Bueno, para concluir, digamos que el propósito principal de **cssnext** es el d
 poder codificar según las especificaciones del W3C, siempre teniendo en cuenta
 que, teóricamente, será posible quitarlo (cuando ya no sea necesario).
 
-Mientras tanto, sigue habiendo mucho trabajo. Aquí os dejo una [lista de futuras
-funciones](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
+Mientras tanto, sigue habiendo mucho trabajo. Aquí os dejo una
+[lista de futuras funciones](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
 
-Ahora os toca jugar a vosotros. No os olvidáis de pasaros por el [repository
-GitHub](https://github.com/cssnext/cssnext), seguir a
+Ahora os toca jugar a vosotros. No os olvidáis de pasaros por el
+[repository GitHub](https://github.com/cssnext/cssnext), seguir a
 [@cssnext](https://twitter.com/cssnext) en Twitter para obtener las últimas
-noticias al respecto y uniros a la [room cssnext en
-Gitter](https://gitter.im/cssnext/cssnext) si tenéis cualquier pregunta.
+noticias al respecto y uniros a la
+[room cssnext en Gitter](https://gitter.im/cssnext/cssnext) si tenéis cualquier
+pregunta.
 
-* [Página oficial](http://cssnext.io/)
+- [Página oficial](http://cssnext.io/)

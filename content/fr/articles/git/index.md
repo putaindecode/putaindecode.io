@@ -7,7 +7,7 @@ authors:
   - madx
 ---
 
-Chez *Putain de code !*, on aime se servir de [Git][git:website] (et de GitHub,
+Chez _Putain de code !_, on aime se servir de [Git][git:website] (et de GitHub,
 mais c'est une autre histoire), même si certains d'entre nous (comme Lionel) ne
 s'en servent pas forcément bien.
 
@@ -110,9 +110,9 @@ puts "Hello, putain de codeur !"
 ^D
 ```
 
-On va tout se suite introduire l'un des concepts déroutants de Git, *l'Index*.
+On va tout se suite introduire l'un des concepts déroutants de Git, _l'Index_.
 Git utilise trois zones distinctes pour les fichiers : le dossier de travail
-(*Working Dir*) qui contient les fichiers dans leur version actuelle, _l'Index_
+(_Working Dir_) qui contient les fichiers dans leur version actuelle, _l'Index_
 qui permet de stocker les modifications et `HEAD` qui pointe vers le dernier
 commit.
 
@@ -126,8 +126,8 @@ mammouth qui change tout le programme d'un coup et qui est un enfer pour le
 futur développeur qui revient sur le code et qui cherche à comprendre la logique
 de sa construction. Ce développeur, c'est vous dans 1 ou 2 semaines.
 
-Pour info, vous verrez parfois _l'Index_ appellé *Staging Area*, ou encore
-*Cache*.
+Pour info, vous verrez parfois _l'Index_ appellé _Staging Area_, ou encore
+_Cache_.
 
 Git fournit des commandes pour passer les fichiers d'un état à l'autre. Elles
 sont certes parfois un peu obscures, mais dans l'ensemble c'est pas si
@@ -238,8 +238,8 @@ les détails, vous êtes sans doute assez malins pour comprendre ce que Git
 raconte sur la sortie de ces deux commandes.
 
 Remarquez que `git show` affiche en bonus les différences introduites par un
-fichier. Ces différences on peut aussi les voir avant de commiter avec `git
-diff`, ce qui est bien pratique.
+fichier. Ces différences on peut aussi les voir avant de commiter avec
+`git diff`, ce qui est bien pratique.
 
 Entraînez-vous maintenant à faire des commits, à inspecter et à farfouiller les
 pages de `man`, c'est la meilleure façon d'apprendre. Après, on va attaquer le
@@ -255,19 +255,19 @@ Créer une branche, ça permet de travailler sur une fonctionnalité ou un bug
 précis, sans encombrer la ligne de conduite principale, qui peut évoluer sous
 d'autres contraintes.
 
-Dans Git, les branches sont une partie essentielle de quasiment tout *workflow*,
+Dans Git, les branches sont une partie essentielle de quasiment tout _workflow_,
 et leur manipulation est très rapide et très légère.
 
 Pour en revenir à mon histoire de maillon, créer une branche revient à créer un
 point à partir duquel deux chaînes vont être possibles.
 
 C'est aussi simple qu'un `git branch le-nom-de-ma-branche`. Cette commande se
-contente de créer la branche, pour se positionner dessus on utilise `git
-checkout` qui permet de naviguer de branche en branche tel Tarzan sur ses
+contente de créer la branche, pour se positionner dessus on utilise
+`git checkout` qui permet de naviguer de branche en branche tel Tarzan sur ses
 lianes.
 
-Comme c'est super chiant à écrire, il existe un raccourci bien pratique : `git
-checkout -b`, auquel on passe un nom de branche comme pour `git branch`.
+Comme c'est super chiant à écrire, il existe un raccourci bien pratique :
+`git checkout -b`, auquel on passe un nom de branche comme pour `git branch`.
 
 Une fois qu'on est bien sur la branche, tous les commits suivants seront liés à
 cette branche.
@@ -324,7 +324,7 @@ Fast-forward
  1 file changed, 1 insertion(+)
 ```
 
-Vous remarquez que Git signale *Fast-forward*. Comme le commit pointé par
+Vous remarquez que Git signale _Fast-forward_. Comme le commit pointé par
 `add-shebang` est un fils direct de celui de `master`, Git se contente de faire
 pointer `master` sur celui-ci, ce qui est beaucoup plus rapide.
 
@@ -348,12 +348,13 @@ Guide][git-guide] de Roger Dudler est une bonne manière d'apprendre.
 
 ## Hey ! Tu veux appliquer ça pour contribuer ?
 
-Pas de problème, on a écrit un post exprès : [Comment
-contribuer](/fr/contribuer/) !
+Pas de problème, on a écrit un post exprès :
+[Comment contribuer](/fr/contribuer/) !
 
 [git:website]: http://git-scm.com/
 [git:doc]: http://git-scm.com/documentation
 [git-guide]: http://rogerdudler.github.io/git-guide/
-[cpold]: http://roland.entierement.nu/blog/2008/01/22/cpold-la-poudre-verte-du-suivi-de-versions.html
+[cpold]:
+  http://roland.entierement.nu/blog/2008/01/22/cpold-la-poudre-verte-du-suivi-de-versions.html
 [gitx]: http://gitx.frim.nl/
 [gitg]: https://wiki.gnome.org/Apps/Gitg

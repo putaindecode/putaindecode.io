@@ -19,12 +19,12 @@ feature.
 
 The new static method `Object.assign` take a bunch of objects as arguments :
 
-* The first is a target for copies;
-* Next are sources;
-* All _own properties_ (enumerable keys and non inherited, even those which are
+- The first is a target for copies;
+- Next are sources;
+- All _own properties_ (enumerable keys and non inherited, even those which are
   `undefined`) will be copied in the target (so last ones take precedences);
-* **The target object is modified** (it must be mutable);
-* The modified target object is returned.
+- **The target object is modified** (it must be mutable);
+- The modified target object is returned.
 
 ```js
 const o = { y: 0 };
@@ -61,8 +61,8 @@ strict mode (unlike the _wtf_ mode) and throw an error before stoping the copy.
 const o = Object.create(
   {},
   {
-    val: { value: 42, enumerable: true, writable: false }
-  }
+    val: { value: 42, enumerable: true, writable: false },
+  },
 );
 
 // "standard" (wtf) mode:
@@ -109,9 +109,9 @@ We can forget `_.clone`, `_.extend` and friends with this method!
 About compatiblity, `Object.assign` is pretty well supported by all modern
 browsers (IE is not considered as modern until 12) :
 
-* Edge (IE ≥ 12) ;
-* Chrome stable (46) ;
-* Firefox stable (42) ;
-* Node ≥ 4 ;
-* If you need to support old browsers, you will need [Babel](http://babeljs.io)
+- Edge (IE ≥ 12) ;
+- Chrome stable (46) ;
+- Firefox stable (42) ;
+- Node ≥ 4 ;
+- If you need to support old browsers, you will need [Babel](http://babeljs.io)
   or one of many users implementations.

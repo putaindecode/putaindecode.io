@@ -16,16 +16,16 @@ const PostsByAuthor = (props, context) => {
         item.layout === "Post" &&
           (item.authors && item.authors.indexOf(author) > -1) &&
           // only posts of the current language
-          item.__filename.startsWith(`${lang}/`)
+          item.__filename.startsWith(`${lang}/`),
       ),
     sort: "date",
-    reverse: true
+    reverse: true,
   });
 
   return (
     <Posts
       head={{
-        title: i18n.postsWrittenBy + " " + author
+        title: i18n.postsWrittenBy + " " + author,
       }}
       posts={posts}
     />
@@ -33,13 +33,13 @@ const PostsByAuthor = (props, context) => {
 };
 
 PostsByAuthor.propTypes = {
-  params: PropTypes.object
+  params: PropTypes.object,
 };
 
 PostsByAuthor.contextTypes = {
   collection: PropTypes.array.isRequired,
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default PostsByAuthor;

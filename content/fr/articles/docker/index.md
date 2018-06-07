@@ -49,14 +49,14 @@ machine que nous utiliserons, le code s'exécutera de la même manière.
 
 La plateforme Docker est composée de deux éléments :
 
-* Le démon Docker qui s'exécute en arrière-plan et qui s'occupe de gérer vos
+- Le démon Docker qui s'exécute en arrière-plan et qui s'occupe de gérer vos
   conteneurs
-* Le client Docker qui vous permet d'interagir avec le démon par l'intermédiaire
+- Le client Docker qui vous permet d'interagir avec le démon par l'intermédiaire
   d'un outil en ligne de commande
 
 Si vous voulez plus d'informations sur le fonctionnement interne de Docker je
-vous redirige vers l'article du site officiel : [Understanding
-Docker](https://docs.docker.com/engine/understanding-docker/)
+vous redirige vers l'article du site officiel :
+[Understanding Docker](https://docs.docker.com/engine/understanding-docker/)
 
 ### Comment l'installer ?
 
@@ -72,8 +72,8 @@ vous devrez lancer le démon dans une machine virtuelle, mais rassurez-vous,
 c'est très simple !
 
 Pour le guide d'installation de Docker en fonction de votre système je vous
-redirige de nouveau vers le site officiel : [Guide
-d'installation](https://docs.docker.com/installation/#installation)
+redirige de nouveau vers le site officiel :
+[Guide d'installation](https://docs.docker.com/installation/#installation)
 
 ### Un premier exemple
 
@@ -95,8 +95,8 @@ Status: Downloaded newer image for ubuntu:trusty
 ```
 
 Cette commande va télécharger depuis le Docker Hub l'image de la version 14.04
-(trusty) d'Ubuntu. Il existe bien d'autres images que vous pourrez trouver [sur
-le registry Docker](https://registry.hub.docker.com).
+(trusty) d'Ubuntu. Il existe bien d'autres images que vous pourrez trouver
+[sur le registry Docker](https://registry.hub.docker.com).
 
 Pour voir les images que vous avez téléchargées, utilisez cette commande :
 
@@ -212,27 +212,27 @@ ou Mac), vous verrez : 'Coucou depuis Docker'
 
 C'est beau, mais comment ça marche ? Examinons les options une par une :
 
-* `-d` : cette option permet de lancer le conteneur en mode démon et donc de
+- `-d` : cette option permet de lancer le conteneur en mode démon et donc de
   tourner en tâche de fond à la différence de `-it` qui lançait le conteneur au
   premier plan et nous donnait un accès direct au conteneur.
-* `--name node-app` : cette option permet simplement de nommer notre conteneur,
+- `--name node-app` : cette option permet simplement de nommer notre conteneur,
   ce qui peut servir pour l'arrêter et le relancer plus simplement (et à
   d'autres choses plus complexes dont je parlerai dans un prochain article).
-* `-p 3000:3000` : cette option permet de partager le port de votre machine avec
+- `-p 3000:3000` : cette option permet de partager le port de votre machine avec
   le port du conteneur. Le premier nombre est le port de votre machine et le
   deuxième le port dans le conteneur.
-* `-v $(pwd):/app` : cette option permet de partager un dossier avec votre
+- `-v $(pwd):/app` : cette option permet de partager un dossier avec votre
   conteneur, ici, nous partageons le dossier courant (où se trouve notre fichier
   `server.js`) avec le dossier `/app` dans le conteneur (attention si vous êtes
   sur Mac ou Windows uniquement votre 'home' est partagé).
-* `node:0.12.4` : l'image Docker que vous voulez utiliser.
-* `node /app/server.js` : la commande à exécuter dans le conteneur.
+- `node:0.12.4` : l'image Docker que vous voulez utiliser.
+- `node /app/server.js` : la commande à exécuter dans le conteneur.
 
 Et maintenant ? Vous pouvez afficher le conteneur en faisant : `docker ps`,
-l'arrêter avec : `docker stop node-app` et le supprimer avec `docker rm
-node-app`.
+l'arrêter avec : `docker stop node-app` et le supprimer avec
+`docker rm node-app`.
 
-- - -
+---
 
 Dans cet article, nous avons vu comment récupérer des images Docker depuis le
 Docker Hub et comment les instancier afin de créer des conteneurs. Mais pour

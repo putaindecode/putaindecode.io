@@ -12,8 +12,8 @@ export default {
         ? contributors.map[contributor]
         : {
             login: contributor,
-            name: contributor
+            name: contributor,
           };
-    }
-  }
+    },
+  },
 };

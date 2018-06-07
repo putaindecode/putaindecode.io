@@ -23,16 +23,16 @@ permissif et pas trop frustrant pour débuter.
 
 Le problème c'est que c'est facile d'en faire, mais c'est très dur d'en faire
 **bien** (moins que CSS, mais quand même). On s'est tous déjà retrouvé avec
-`undefined is not a function`, `null is not an object` ou un bon gros `[object
-Object]` qui traîne dans la console.
+`undefined is not a function`, `null is not an object` ou un bon gros
+`[object Object]` qui traîne dans la console.
 
 ## Pourquoi est-ce que c'est comme ça ?
 
 JavaScript est un langage dynamiquement et faiblement typé, ce qui veut dire :
 
-* qu'une fonction ne sait pas ce qu'elle prend ou retourne comme type
+- qu'une fonction ne sait pas ce qu'elle prend ou retourne comme type
   d'arguments, c'est à vous de gérer
-* que le programme n'en a aucune idée non plus tant qu'il n'execute pas la
+- que le programme n'en a aucune idée non plus tant qu'il n'execute pas la
   portion de code
 
 Tout ça fait qu'il est très difficile de faire confiance à du code JavaScript.
@@ -42,11 +42,11 @@ Tout ça fait qu'il est très difficile de faire confiance à du code JavaScript
 <figcaption>Source: MIT</figcaption>
 </figure>
 
-Il existe Flow et TypeScript (dont on a parlé dans un [précédent
-article](/fr/articles/js/flow/) et un [podcast](fr/articles/podcast/3/)), deux
-projets qui permettent d'apporter du typage statique pour sécuriser son code.
-Ils contraignent votre usage de JavaScript, mais devront toujours se battre
-contre sa permissivité.
+Il existe Flow et TypeScript (dont on a parlé dans un
+[précédent article](/fr/articles/js/flow/) et un
+[podcast](fr/articles/podcast/3/)), deux projets qui permettent d'apporter du
+typage statique pour sécuriser son code. Ils contraignent votre usage de
+JavaScript, mais devront toujours se battre contre sa permissivité.
 
 Ça revient au final à coller des rustines sur vos pneus avant d'aller rouler sur
 des clous, ça va vous protéger un peu, mais ça reste de base pas bien malin
@@ -61,8 +61,8 @@ dans les années 90. Il est à peu près aussi âgé que JavaScript mais est bea
 plus sage. Il est certes fortement et statiquement typé, mais il infère la
 plupart des types du programme (ce qui veut dire que vous n'avez pas à
 renseigner les types partout, il va l'extrapoler dès qu'il le peut). En bonus,
-il possède de [bonnes
-data-structures](https://ocaml.org/learn/tutorials/comparison_of_standard_containers.html).
+il possède de
+[bonnes data-structures](https://ocaml.org/learn/tutorials/comparison_of_standard_containers.html).
 
 Seulement voilà, OCaml, comme beaucoup de langages fonctionnels n'a pas vraiment
 mis l'accent sur l'accessibilité pour les débutants, et a une syntaxe qu'on peut
@@ -85,18 +85,18 @@ let rec qsort = fun value ->
 <figcaption>fig. 1: dev JS devant du code OCaml</figcaption>
 </figure>
 
-C'est là qu'intervient Reason, un projet initié par [le créateur de
-React](https://twitter.com/jordwalke). Les premières itérations de React étaient
-d'ailleurs codées dans un langage cousin de OCaml, le SML.
+C'est là qu'intervient Reason, un projet initié par
+[le créateur de React](https://twitter.com/jordwalke). Les premières itérations
+de React étaient d'ailleurs codées dans un langage cousin de OCaml, le SML.
 
 C'est en gros:
 
-* OCaml
-* avec une syntaxe _beginner-friendly_
-* avec un tooling le rendant plus simple à utiliser
-* qui peut compiler vers JavaScript et de multiples plateformes
+- OCaml
+- avec une syntaxe _beginner-friendly_
+- avec un tooling le rendant plus simple à utiliser
+- qui peut compiler vers JavaScript et de multiples plateformes
 
-Avec son type system, OCaml propose un langage *safe-by-design*, chose que même
+Avec son type system, OCaml propose un langage _safe-by-design_, chose que même
 avec une palanquée d'outils, on ne peut pas atteindre avec JavaScript.
 
 Le langage propose par défaut une approche fonctionnelle et immutable, mais
@@ -305,6 +305,6 @@ On verra dans les prochains articles comment fonctionne
 [ReasonReact](https://reasonml.github.io/reason-react) (les bindings Reason vers
 React, avec quelques petites features sympathiques en plus), et comment
 l'adopter incrémentalement dans sa codebase pour avoir du code plus sûr, et
-*(spoilers)*, plus rapide que si vous l'écriviez à la main.
+_(spoilers)_, plus rapide que si vous l'écriviez à la main.
 
 Bisous bisous.

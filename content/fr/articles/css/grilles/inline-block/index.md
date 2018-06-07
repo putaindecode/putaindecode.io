@@ -13,17 +13,17 @@ Les grilles sont devenues incontournables pour le layout d'un site.
 [Plusieurs](http://justifygrid.com/#methodology)
 [méthodes](https://github.com/suitcss/components-grid)
 [existent](http://www.palantir.net/blog/responsive-design-s-dirty-little-secret)
-en attendant de pouvoir utiliser le Graal, [CSS3 grid
-layout](http://dev.w3.org/csswg/css-grid/).
+en attendant de pouvoir utiliser le Graal,
+[CSS3 grid layout](http://dev.w3.org/csswg/css-grid/).
 
 Mais en attendant, on bricole. Et une des solutions que j'aime bien consiste à
 utiliser des inline-block, car elle offre plusieurs avantages pratiques :
 
-* On peut simplement renverser la grille grâce à la propriété `direction:rtl;`
+- On peut simplement renverser la grille grâce à la propriété `direction:rtl;`
   ce qui est particulièrement pratique sur des sites qui doivent supporter des
   langues dont le sens de lecture va de droite à gauche.
-* les éléments en inline-block peuvent utiliser la propriété `vertical-align`.
-* les éléments de la grilles reste dans le flux, ce qui évite l'utilisation de
+- les éléments en inline-block peuvent utiliser la propriété `vertical-align`.
+- les éléments de la grilles reste dans le flux, ce qui évite l'utilisation de
   clearfix.
 
 Ce dernier point est aussi une source de problèmes puisque notre `.Grid`
@@ -57,8 +57,8 @@ peut aussi faire comme ça, même si le formatage en prend un coup.
 ```
 
 Notez que la première technique peut être facilement mise en place de manière
-automatique, via une traitement de [minification du code
-html](https://github.com/kangax/html-minifier).
+automatique, via une traitement de
+[minification du code html](https://github.com/kangax/html-minifier).
 
 ##Insérer des commentaires html entre les tags `.Grid-cell`
 
@@ -93,7 +93,7 @@ enfants en réglant la taille de la police à zéro. Il suffit ensuite de
 ré-initialiser la taille sur les noeuds enfants `.Grid-cell`. Cette méthode est
 utilisée dans [SUIT Grid](https://github.com/suitcss/components-grid).
 
-*Attention*, si votre scope navigateur va en dessous d'IE9, cette méthode fait
+_Attention_, si votre scope navigateur va en dessous d'IE9, cette méthode fait
 perdre le bénéfice d'une intégration à base d'em puisque la taille de la typo
 sur les blocs enfants est désormais fixe.
 
@@ -115,8 +115,8 @@ bien tester puisque les font disponibles ne seront pas les mêmes selon des
 
 Ici, la méthode consiste à utiliser une font particulière contenant le caractère
 espace et dont la particularité est d'avoir une largeur nulle. Cette technique
-est décrite dans l'article de [Scott
-Kellum](http://scottkellum.com/2013/10/25/the-new-kellum-method.html)
+est décrite dans l'article de
+[Scott Kellum](http://scottkellum.com/2013/10/25/the-new-kellum-method.html)
 
 Comme la technique précédente, il suffit d'appliquer la font au conteneur
 `.Grid` puis de remettre la font-family par defaut pour les enfants
@@ -149,13 +149,13 @@ dépend des navigateurs à supporter, est ce que l'utilisateur pourra
 personnaliser le layout, qui sera chargé des mise à jour, etc... autant de
 points qui aideront à choisir la meilleure solution.
 
-- - -
+---
 
 Quelques ressources :
 
-* L'article [Fighting the space between inline block
-  elements](http://css-tricks.com/fighting-the-space-between-inline-block-elements/)
+- L'article
+  [Fighting the space between inline block elements](http://css-tricks.com/fighting-the-space-between-inline-block-elements/)
   sur css-tricks
-* L'article [About
-  inline-block](http://webdesigner-webdeveloper.com/weblog/about-inline-blocks/)
+- L'article
+  [About inline-block](http://webdesigner-webdeveloper.com/weblog/about-inline-blocks/)
   sur lequel je suis tombé en rédigeant cet article.

@@ -10,7 +10,7 @@ const Contributor = ({ author, commits, size }) => (
       "putainde-Contributor",
       "r-Tooltip",
       "r-Tooltip--bottom",
-      "r-Tooltip--allowNewLines"
+      "r-Tooltip--allowNewLines",
     )}
     data-r-tooltip={
       commits
@@ -28,7 +28,7 @@ const Contributor = ({ author, commits, size }) => (
 Contributor.propTypes = {
   author: PropTypes.string.isRequired,
   commits: PropTypes.number,
-  size: PropTypes.string
+  size: PropTypes.string,
 };
 
 export default Contributor;

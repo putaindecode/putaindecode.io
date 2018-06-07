@@ -15,9 +15,9 @@ Un de nos lecteurs nous a récemment envoyé un email avec tout un tas de
 questions; nous avons apprécié le geste et plutôt qu'uniquement lui répondre,
 nous souhaitions en faire profiter tout le monde.
 
-- - -
+---
 
-> Salut *Putain de code !*,
+> Salut _Putain de code !_,
 
 Salut :)
 
@@ -80,7 +80,7 @@ d'écriture d’un fichier css (article à prevoir).
 
 Orf, ca dépend de chacun mais en général, voici ce qu’on te préconise :
 
-* Editeur : [Sublime text](http://www.sublimetext.com/) (avec
+- Editeur : [Sublime text](http://www.sublimetext.com/) (avec
   BracketHighlighter, Color Highlighter, DocBlockr, EditorConfig, Emmet, Emmet
   CSS, HTML5, INI, JavaScript Console, JsFormat, Markdown Preview,
   MarkdownEditing, Modific, Placeholders, Theme - Flatland, Unicode Character
@@ -90,31 +90,31 @@ Orf, ca dépend de chacun mais en général, voici ce qu’on te préconise :
   jour sur ces éditeurs, n’hésite pas à Suivre
   [@SublimePackages](https://twitter.com/SublimePackages) et
   [@Atom_Packages](https://twitter.com/Atom_Packages) sur Twitter.
-* Terminal : [iterm2](http://www.iterm2.com/) sur mac, ou terminal de base
-* Shell : zsh (`brew install zsh`), [prezto (plugin
-  zsh)](https://github.com/sorin-ionescu/prezto)
-* [Firefox Nightly](http://nightly.mozilla.org/) ou [Chrome
-  Canary](http://www.google.com/intl/fr/chrome/browser/canary.html)
+- Terminal : [iterm2](http://www.iterm2.com/) sur mac, ou terminal de base
+- Shell : zsh (`brew install zsh`),
+  [prezto (plugin zsh)](https://github.com/sorin-ionescu/prezto)
+- [Firefox Nightly](http://nightly.mozilla.org/) ou
+  [Chrome Canary](http://www.google.com/intl/fr/chrome/browser/canary.html)
 
 > Je vois souvent passer du NPM / Grunt / Bower / Yo & Co mais jamais vraiment
 > eu le temps de m’y plonger dedans. Il est possible d’avoir un petit résumé
 > et/ou un moyen d’apprendre le plus vite possible ?
 
-Tout d’abord lis ceci : [Automatisez votre workflow
-front-end](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/).
+Tout d’abord lis ceci :
+[Automatisez votre workflow front-end](http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/).
 
 Pour le reste :
 
-* [NPM](https://www.npmjs.org/) : permet de gérer les versions de ce que tu
+- [NPM](https://www.npmjs.org/) : permet de gérer les versions de ce que tu
   utilises à la fois comme bibliothèque front ou outils de dev. Il sert aussi
-  d’interface de ligne de commande permettant de [lancer des commandes définies
-  dans le package.json](/fr/articles/npm/frontend/).
+  d’interface de ligne de commande permettant de
+  [lancer des commandes définies dans le package.json](/fr/articles/npm/frontend/).
 
-* [Bower](http://bower.io/) ne sert pas à grand chose, c’est une abstraction par
+- [Bower](http://bower.io/) ne sert pas à grand chose, c’est une abstraction par
   dessus NPM. Nous pensons qu’il tend à mourir.
   [[1](/fr/articles/npm/frontend/)] [[2](/fr/articles/npm/napa/)]
 
-* [Grunt](http://gruntjs.com/) est un *task-runner*, il te permet d’automatiser
+- [Grunt](http://gruntjs.com/) est un _task-runner_, il te permet d’automatiser
   les actions que tu répètes souvent : concaténer des scripts, preprocessing
   HTML & CSS, copie des assets… Nous te conseillons d’utiliser gulp, beaucoup
   plus rapide et simple à prendre en main. [[1](/fr/articles/js/gulp/)]

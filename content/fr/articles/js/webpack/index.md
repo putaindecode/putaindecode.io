@@ -15,21 +15,21 @@ header:
 # Pourquoi Webpack ?
 
 Webpack a pour objectif de vous faciliter la vie, notamment en vous aidant à
-organiser [votre application JS en
-modules](/fr/articles/frontend/2015-etat-lieux-javascript-modulaire/). Le projet
-est déjà très populaire, particulièrement dans la communauté React, ce qui
-parait logique vu qu'il s'agit de développer des composants.
+organiser
+[votre application JS en modules](/fr/articles/frontend/2015-etat-lieux-javascript-modulaire/).
+Le projet est déjà très populaire, particulièrement dans la communauté React, ce
+qui parait logique vu qu'il s'agit de développer des composants.
 
 Webpack apporte à ce niveau des fonctionnalités intéressantes :
 
-* disposer de toutes les ressources statiques (CSS, images, fontes) en tant que
+- disposer de toutes les ressources statiques (CSS, images, fontes) en tant que
   module,
-* intégrer et consommer des bibliothèques tierces très simplement en tant que
+- intégrer et consommer des bibliothèques tierces très simplement en tant que
   module,
-* séparer votre `build` en plusieurs morceaux, chargés à la demande,
-* garder un chargement initial très rapide si besoin,
-* personnaliser la plupart des étapes du processus,
-* adapté pour les gros projets.
+- séparer votre `build` en plusieurs morceaux, chargés à la demande,
+- garder un chargement initial très rapide si besoin,
+- personnaliser la plupart des étapes du processus,
+- adapté pour les gros projets.
 
 Avant Webpack, nous avions beau avoir des super task-runners comme
 [Grunt](/fr/articles/js/grunt/) ou [Gulp](/fr/articles/js/gulp/), il faut avouer
@@ -41,10 +41,10 @@ encore ajuster des URL générées. Il y avait avec ces solutions une grande par
 de rafistolage, où l’on se devait de faire très attention à la moindre
 réorganisation de code, sous peine de casser une partie du rendu.
 
-Prenons par exemple une image de fond déclarée en CSS via un `background:
-url(...)`. Qui vous préviendra lorsque celle-ci aura été supprimée ou déplacée,
-et que la référence n'est donc plus bonne ? Peut-être vos logs de serveur web ?
-En recherchant les erreurs HTTP 404...
+Prenons par exemple une image de fond déclarée en CSS via un
+`background: url(...)`. Qui vous préviendra lorsque celle-ci aura été supprimée
+ou déplacée, et que la référence n'est donc plus bonne ? Peut-être vos logs de
+serveur web ? En recherchant les erreurs HTTP 404...
 
 Vous avez la responsabilité de gérer vos tâches et leurs résultats tout en vous
 assurant du bon fonctionnement car vous êtes la glu entre tous ces morceaux.
@@ -89,11 +89,11 @@ C'est cette partie qui est aujourd'hui la plus intéressante et la plus flexible
 </figure>
 
 Webpack va donc pouvoir s'occuper aussi bien de vos modules JavaScript
-(CommonJS, AMD, UMD...), mais aussi de [vos modules
-CSS](https://github.com/css-modules/css-modules), de vos fichiers SVG, gif, png,
-etc. ainsi que potentiellement n'importe quel type de fichier pour peu que vous
-preniez le temps d'écrire un _loader_ (rassurez-vous, il existe déjà un loader
-pour tous les fichiers que vous manipulez couramment).
+(CommonJS, AMD, UMD...), mais aussi de
+[vos modules CSS](https://github.com/css-modules/css-modules), de vos fichiers
+SVG, gif, png, etc. ainsi que potentiellement n'importe quel type de fichier
+pour peu que vous preniez le temps d'écrire un _loader_ (rassurez-vous, il
+existe déjà un loader pour tous les fichiers que vous manipulez couramment).
 
 En plus de cela, il a été pensé afin de permettre la séparation de votre pack
 (votre gros fichier JavaScript compilé) en plusieurs morceaux, selon vos besoins
@@ -104,10 +104,11 @@ facilement à ce que propose Webpack, pour ne pas dire impossible.
 
 Il est possible d'avoir l'équivalent avec
 [browserify](/fr/articles/js/browserify/) comme l'a indiqué son auteur dans un
-article [browserify for Webpack
-users](https://gist.github.com/substack/68f8d502be42d5cd4942) (qui est une
-réponse à la ressource [Webpack for browserify
-users](https://github.com/webpack/docs/wiki/webpack-for-browserify-users) ).
+article
+[browserify for Webpack users](https://gist.github.com/substack/68f8d502be42d5cd4942)
+(qui est une réponse à la ressource
+[Webpack for browserify users](https://github.com/webpack/docs/wiki/webpack-for-browserify-users)
+).
 
 Il est clair que cela n'est pas aussi simple qu'avec Webpack qui est beaucoup
 plus flexible de par sa conception et ses objectifs initiaux.
@@ -117,8 +118,8 @@ uniquement au code local et donc pas dans `node_modules/*`. Cela peut être
 problématique et nous conduit forcément à finir par du bricolage si on veut
 consommer des assets de modules de manière transparente.
 
-Ne parlons pas du [hot
-loading](http://webpack.github.io/docs/hot-module-replacement-with-webpack.html)
+Ne parlons pas du
+[hot loading](http://webpack.github.io/docs/hot-module-replacement-with-webpack.html)
 (remplacement de code à la volée) qui n'est pas du tout facile à mettre en place
 (pour le moment) avec autre chose que Webpack.
 
@@ -132,26 +133,26 @@ Dans un second temps, vous pourrez très certainement remplacer une partie de vo
 autres tâches pour ajuster/copier/déplacer vos assets (CSS, images...) et ainsi
 réduire le code dédié à votre workflow. Il se pourrait alors que votre
 utilisation d'un task-runner soit maintenant si réduite que vous pourriez vous
-en passez en utilisant simplement [des scripts
-npm](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
+en passez en utilisant simplement
+[des scripts npm](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
 
-Si jamais vous êtes limité, [vous pourrez bien entendu créer votre propre
-commande](/fr/articles/npm/utilitaire-cli/), qui sera réutilisable dans
-n'importe quel contexte.
+Si jamais vous êtes limité,
+[vous pourrez bien entendu créer votre propre commande](/fr/articles/npm/utilitaire-cli/),
+qui sera réutilisable dans n'importe quel contexte.
 
 # Webpack en pratique
 
 Quelques ressources pour vous y mettre :
 
-* Un premier [exemple détaillé de configuration et
-  d'utilisation](/fr/articles/js/webpack/premier-exemple) basé sur notre retour
-  d'expérience.
+- Un premier
+  [exemple détaillé de configuration et d'utilisation](/fr/articles/js/webpack/premier-exemple)
+  basé sur notre retour d'expérience.
 
 En anglais :
 
-* [Tutoriel officiel](http://webpack.github.io/docs/tutorials/getting-started/)
-* [Slides d'introduction](http://okonet.ru/viennajs-webpack-introduction/)
-* ["How to" webpack](https://github.com/petehunt/webpack-howto)
+- [Tutoriel officiel](http://webpack.github.io/docs/tutorials/getting-started/)
+- [Slides d'introduction](http://okonet.ru/viennajs-webpack-introduction/)
+- ["How to" webpack](https://github.com/petehunt/webpack-howto)
 
 [Webpack possède une documentation](http://webpack.github.io/docs) assez
 fournie, mais pas vraiment facile à aborder lorsqu'on découvre le projet. Aussi,

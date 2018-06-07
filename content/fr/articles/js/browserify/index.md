@@ -19,30 +19,30 @@ Pour le JavaScript, j'ai commencé il y a bien longtemps par des
 extensions/plugins [Prototype](http://prototypejs.org/), puis peu de temps
 après, du plugins [jQuery](http://plugins.jquery.com/) à la pelle. Souvent à
 tord puisque j'utilisais peut être 1% de la librairie en dépendance - exemple
-avec mon [indicateur de chargement avec
-sémaphore](https://github.com/MoOx/jQuery.Loading-Indicator/) ou encore mon
-[plugin qui ouvre les liens externes avec du target blank
-automatique](https://github.com/MoOx/jQuery.External-Links/).
+avec mon
+[indicateur de chargement avec sémaphore](https://github.com/MoOx/jQuery.Loading-Indicator/)
+ou encore mon
+[plugin qui ouvre les liens externes avec du target blank automatique](https://github.com/MoOx/jQuery.External-Links/).
 
 <b>Je ne ferais plus jamais ça pour la simple raison du ratio "poids / %
 d'utilisation" de la dépendance.</b>
 
-Alors oui, utiliser jQuery a peut-être du bon. Mais s'en passer aussi. [C'est
-faisable pour pleins de petites choses](/fr/articles/js/de-jquery-a-vanillajs/).
-[Et c'est pas forcément
-difficile](/fr/articles/js/comment-se-passer-de-libraries-frameworks-javascript/).
+Alors oui, utiliser jQuery a peut-être du bon. Mais s'en passer aussi.
+[C'est faisable pour pleins de petites choses](/fr/articles/js/de-jquery-a-vanillajs/).
+[Et c'est pas forcément difficile](/fr/articles/js/comment-se-passer-de-libraries-frameworks-javascript/).
 
 Car si je veux utiliser mon petit script qui ajoute des targets blank
 automatiquement, devoir inclure jQuery pour si peu, ça fait mal à mes kilobites.
 
-En attendant [la gestion de modules via
-ES6](http://wiki.ecmascript.org/doku.php?id=harmony:modules), il nous faut gérer
-aujourd'hui nos composants et dépendances à la main. Encore qu'on pourrait faire
-un transpiler pour utiliser cette syntaxe (ça existe déjà, il n'y a qu'à voir
-sur GitHub), mais là on ne ferait que créer une nouvelle définition de module.
+En attendant
+[la gestion de modules via ES6](http://wiki.ecmascript.org/doku.php?id=harmony:modules),
+il nous faut gérer aujourd'hui nos composants et dépendances à la main. Encore
+qu'on pourrait faire un transpiler pour utiliser cette syntaxe (ça existe déjà,
+il n'y a qu'à voir sur GitHub), mais là on ne ferait que créer une nouvelle
+définition de module.
 
-Côté back-end, on a déjà ce qu'il faut en JavaScript avec la gestion [des
-modules en Node](http://nodejs.org/api/modules.html). Un simple
+Côté back-end, on a déjà ce qu'il faut en JavaScript avec la gestion
+[des modules en Node](http://nodejs.org/api/modules.html). Un simple
 `require('module')` va tenter de récupérer un module avec ce nom. Un module
 n'est rien d'autre qu'un fichier JavaScript. Node va essayer de loader un `.js`,
 puis `.json` et enfin `.node` si besoin), qui lui même peut éventuellement
@@ -117,50 +117,47 @@ main, dans le fichier configuration. De plus la déclaration des dépendances se
 faisant dans l'entête du module, ça peut devenir lourd :
 
 ```js
-define(
-  [
-    "require",
-    "jquery",
-    "blade/object",
-    "blade/fn",
-    "rdapi",
-    "oauth",
-    "blade/jig",
-    "blade/url",
-    "dispatch",
-    "accounts",
-    "storage",
-    "services",
-    "widgets/AccountPanel",
-    "widgets/TabButton",
-    "widgets/AddAccount",
-    "less",
-    "osTheme",
-    "jquery-ui-1.8.7.min",
-    "jquery.textOverflow"
-  ],
-  function(
-    require,
-    $,
-    object,
-    fn,
-    rdapi,
-    oauth,
-    jig,
-    url,
-    dispatch,
-    accounts,
-    storage,
-    services,
-    AccountPanel,
-    TabButton,
-    AddAccount,
-    less,
-    osTheme
-  ) {
-    // ici le corps de la fonction
-  }
-);
+define([
+  "require",
+  "jquery",
+  "blade/object",
+  "blade/fn",
+  "rdapi",
+  "oauth",
+  "blade/jig",
+  "blade/url",
+  "dispatch",
+  "accounts",
+  "storage",
+  "services",
+  "widgets/AccountPanel",
+  "widgets/TabButton",
+  "widgets/AddAccount",
+  "less",
+  "osTheme",
+  "jquery-ui-1.8.7.min",
+  "jquery.textOverflow",
+], function(
+  require,
+  $,
+  object,
+  fn,
+  rdapi,
+  oauth,
+  jig,
+  url,
+  dispatch,
+  accounts,
+  storage,
+  services,
+  AccountPanel,
+  TabButton,
+  AddAccount,
+  less,
+  osTheme,
+) {
+  // ici le corps de la fonction
+});
 ```
 
 Bon vous me direz que si un module a autant de dépendances, il y a peut être un
@@ -175,11 +172,11 @@ RequireJS propose un "optimizer", qui au final ne fait que supprimer son point
 fort: le côté asynchrone du téléchargement des modules. Du coup on se retrouve
 avec tout RequireJS dans la source ET toutes les dépendances avec le mapping. Il
 y a bien une façon de vraiment optimiser par bundle quand on cherche un peu dans
-la doc, mais [ça n'est pas vraiment mis en
-avant](http://requirejs.org/docs/optimization.html#wholemultipage). Il existe
-aussi [Almond.js](https://github.com/jrburke/almond) qui se veut être plus
-léger, mais du coup, utiliser RequireJS pour optimiser avec Almond, je ne trouve
-pas ça cohérent.
+la doc, mais
+[ça n'est pas vraiment mis en avant](http://requirejs.org/docs/optimization.html#wholemultipage).
+Il existe aussi [Almond.js](https://github.com/jrburke/almond) qui se veut être
+plus léger, mais du coup, utiliser RequireJS pour optimiser avec Almond, je ne
+trouve pas ça cohérent.
 
 Si jusque là, Browserify vous intéresse (plus car les autres solutions ne vous
 intéressent pas), attaquons le corps du sujet.
@@ -240,7 +237,7 @@ J'obtiens le fichier suivant.
         e,
         t,
         n,
-        r
+        r,
       );
     }
     return n[o].exports;
@@ -254,17 +251,17 @@ J'obtiens le fichier suivant.
       function(require, module, exports) {
         alert("Hello world !");
       },
-      {}
-    ]
+      {},
+    ],
   },
   {},
-  [1]
+  [1],
 );
 ```
 
 On reconnaît notre ligne en plein milieu. Avec un ajout conséquent. Ça peut
-paraître beaucoup, mais c'est rien comparé à la [source de
-RequireJS](http://requirejs.org/docs/release/2.1.10/minified/require.js)
+paraître beaucoup, mais c'est rien comparé à la
+[source de RequireJS](http://requirejs.org/docs/release/2.1.10/minified/require.js)
 
 Bon du coup partons avec un exemple peut être plus représentatif qu'on peut voir
 sur la homepage de Browserify.
@@ -329,18 +326,18 @@ Cela dit, si mon paquet est prévu pour Bower par exemple, il existe une
 paquets pour les consommer depuis Bower: `debowerify`. Dans le même esprit, on
 va retrouver de nombreuses transformations telles que :
 
-* `decomponentify`: pour consommer des
+- `decomponentify`: pour consommer des
   [component](https://github.com/component/component)s,
-* `deamdify`: pour consommer des modules AMD,
-* `deglobalify`: pour consommer des modules qui utilisent des variables
+- `deamdify`: pour consommer des modules AMD,
+- `deglobalify`: pour consommer des modules qui utilisent des variables
   globales,
-* `jadeify`: pour consommer des fichiers de templates jade,
-* `hbsify`: pour consommer des fichiers de templates handlebars,
-* `es6ify`: pour écrire du JavaScript ES6 (compilé en ES5),
-* `uglifyify`: appliquer uglify.
+- `jadeify`: pour consommer des fichiers de templates jade,
+- `hbsify`: pour consommer des fichiers de templates handlebars,
+- `es6ify`: pour écrire du JavaScript ES6 (compilé en ES5),
+- `uglifyify`: appliquer uglify.
 
-Il existe plein [d'autres
-transformations](https://www.npmjs.org/browse/keyword/browserify) qui
+Il existe plein
+[d'autres transformations](https://www.npmjs.org/browse/keyword/browserify) qui
 s'adapteront sûrement à vos besoins.
 
 Du coup la ligne ultime pour consommer a peu près n'importe quel module :
@@ -388,9 +385,9 @@ compatible avec CommonJS, AMD et pour les projets old school !
 });
 ```
 
-Il existe bien sur [plusieurs façons de
-faire](https://github.com/umdjs/umd#variations) selon vos critères. À vous de
-choisir.
+Il existe bien sur
+[plusieurs façons de faire](https://github.com/umdjs/umd#variations) selon vos
+critères. À vous de choisir.
 
 Maintenant vous allez pouvoir consommer et écrire des modules facilement, et
 sans vous prendre la tête.

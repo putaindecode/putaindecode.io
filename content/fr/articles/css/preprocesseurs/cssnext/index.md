@@ -27,19 +27,20 @@ ces modules par les navigateurs peut prendre un certain temps et encore plus
 pour que le W3C les approuve comme
 [Recommandation](http://www.w3.org/2005/10/Process-20051014/tr#RecsW3C).
 
-Avec **cssnext**, vous pouvez utiliser la syntaxe des [nouveaux modules
-CSS](http://www.xanthir.com/b4Ko0) tels que les _propriétés personnalisées
-(custom properties level 1)_ ou les *media queries personnalisées (custom media
-queries level 1)*. **cssnext** va transformer ces nouvelles et étranges syntaxes
-en du CSS compréhensible par les navigateurs que vous voulez supporter.
+Avec **cssnext**, vous pouvez utiliser la syntaxe des
+[nouveaux modules CSS](http://www.xanthir.com/b4Ko0) tels que les _propriétés
+personnalisées (custom properties level 1)_ ou les _media queries personnalisées
+(custom media queries level 1)_. **cssnext** va transformer ces nouvelles et
+étranges syntaxes en du CSS compréhensible par les navigateurs que vous voulez
+supporter.
 
 En clair, il vous donne un **avant-goût du futur**.
 
 Je ne sais pas vous mais étant quelqu'un qui aime expérimenter avec les
 dernières technologies de pointe, je trouve ça plutôt cool !
 
-Je vous conseille de jeter un oeil à la [liste des
-fonctionnalités](http://cssnext.io/features/).
+Je vous conseille de jeter un oeil à la
+[liste des fonctionnalités](http://cssnext.io/features/).
 
 ### Quid de mon préprocesseur actuel ?
 
@@ -57,8 +58,8 @@ zeste de [méthodologie BEM](/fr/articles/css/bem/), vous vous sentirez revivre.
 Voyons voir quelles sont les fonctionnalités offertes par **cssnext** pour le
 moment.
 
-Avant toute chose, vous devriez aller faire un tour sur le [playground du site
-officiel](http://cssnext.io/playground/).
+Avant toute chose, vous devriez aller faire un tour sur le
+[playground du site officiel](http://cssnext.io/playground/).
 
 ### Préfixes propriétaires automatiques
 
@@ -83,8 +84,8 @@ Cela va être transformé par **cssnext** via Autoprefixer en :
 
 ### Propriétés personnalisées et var() limité à `:root`
 
-Aussi connues sous le nom des très attendues [variables
-CSS](http://www.w3.org/TR/css-variables/).
+Aussi connues sous le nom des très attendues
+[variables CSS](http://www.w3.org/TR/css-variables/).
 
 ```css
 :root {
@@ -110,8 +111,8 @@ body {
 
 ### Media Queries personnalisées
 
-Pour créer des alias sémantiques, clairs et simples ([lisez la
-doc'](http://dev.w3.org/csswg/mediaqueries/#custom-mq)).
+Pour créer des alias sémantiques, clairs et simples
+([lisez la doc'](http://dev.w3.org/csswg/mediaqueries/#custom-mq)).
 
 ```css
 @custom-media --viewport-medium (width <= 40rem);
@@ -256,9 +257,9 @@ Ce qui donnera :
 
 #### #rrggbbaa
 
-**cssnext** transforme les [notations
-hexadécimales](http://dev.w3.org/csswg/css-color/#hex-notation) #RRGGBBAA et
-#RGBA en rgba().
+**cssnext** transforme les
+[notations hexadécimales](http://dev.w3.org/csswg/css-color/#hex-notation)
+#RRGGBBAA et #RGBA en rgba().
 
 ```css
 body {
@@ -326,9 +327,9 @@ cette brève présentation de l'outil.
 
 Et si vous pouviez importer des fichiers locaux et des modules (`node_modules`
 ou `web_modules`) pour produire un seul et même fichier CSS les contenant tous ?
-Oui, [c'est à vous que je m'adresse, les utilisateurs de
-Sass](https://github.com/sass/sass/issues/193), hum. Eh bien, avec **cssnext**,
-c'est possible.
+Oui,
+[c'est à vous que je m'adresse, les utilisateurs de Sass](https://github.com/sass/sass/issues/193),
+hum. Eh bien, avec **cssnext**, c'est possible.
 
 ### `compress`
 
@@ -339,8 +340,9 @@ pas_ votre fichier de sortie, et ceci grâce à
 ### Usage
 
 Voici un exemple simple de ces deux fonctionnalités. J'ai ici utilisé
-[gulp-cssnext](https://github.com/cssnext/gulp-cssnext), un des [nombreux
-plugins](http://cssnext.io/setup/) qui vous aident à démarrer avec **cssnext**.
+[gulp-cssnext](https://github.com/cssnext/gulp-cssnext), un des
+[nombreux plugins](http://cssnext.io/setup/) qui vous aident à démarrer avec
+**cssnext**.
 
 ```js
 var gulp = require("gulp"),
@@ -351,8 +353,8 @@ gulp.task("styles", function() {
     .src("css/index.css")
     .pipe(
       cssnext({
-        compress: true // default is false
-      })
+        compress: true, // default is false
+      }),
     )
     .pipe(gulp.dest("./dist/"));
 });
@@ -393,16 +395,17 @@ plus utile).
 En effet, dans un futur proche, les fonctionnalités qu'offre cet outil ne seront
 plus gérées par **cssnext** lui-même mais directement par les navigateurs.
 Laissons-les s'adapter, chacun à leur vitesse et préparons-nous. Voilà tout
-l'intérêt du code *future-proof*, comme le permet [babeljs](http://babeljs.io/)
+l'intérêt du code _future-proof_, comme le permet [babeljs](http://babeljs.io/)
 pour le JavaScript.
 
-En attendant, il y a encore du boulot : voici une [liste des fonctionnalités à
-venir](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+feature+request%22).
+En attendant, il y a encore du boulot : voici une
+[liste des fonctionnalités à venir](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+feature+request%22).
 
-Maintenant, à vous de jouer. N'oubliez pas d'aller faire un tour sur le [repo
-GitHub](https://github.com/cssnext/cssnext), n'hésitez pas à suivre
+Maintenant, à vous de jouer. N'oubliez pas d'aller faire un tour sur le
+[repo GitHub](https://github.com/cssnext/cssnext), n'hésitez pas à suivre
 [@cssnext](https://twitter.com/cssnext) sur Twitter pour être au courant des
-dernières news et rejoignez la [room cssnext sur
-Gitter](https://gitter.im/cssnext/cssnext) si vous avez des questions.
+dernières news et rejoignez la
+[room cssnext sur Gitter](https://gitter.im/cssnext/cssnext) si vous avez des
+questions.
 
-* [Site officiel](http://cssnext.io/)
+- [Site officiel](http://cssnext.io/)

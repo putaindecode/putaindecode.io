@@ -13,12 +13,12 @@ authors:
 Tu te sens l’âme d’un rebelle ? Tu veux tester de la techno atypique ? Ça tombe
 bien, aujourd’hui on est là pour ça. On va toucher à un sujet pas forcément
 majoritaire : le langage Go. Si tu ne connais pas les bases, je t’invite à aller
-sur la [homepage du projet](http://golang.org/) et à parcourir le [go-tour
-anglais](http://tour.golang.org/) ou [celui en
-français](http://go-tour-fr.appspot.com/), c'est un showcase complet du langage
-(et très bien fichu). Mais si t'es juste curieux et que comprendre chaque pixel
-de l'article n'est pas une obsession pour toi, tu devrais pouvoir voir de quoi
-on parle. Même Nyalab y est arrivé.
+sur la [homepage du projet](http://golang.org/) et à parcourir le
+[go-tour anglais](http://tour.golang.org/) ou
+[celui en français](http://go-tour-fr.appspot.com/), c'est un showcase complet
+du langage (et très bien fichu). Mais si t'es juste curieux et que comprendre
+chaque pixel de l'article n'est pas une obsession pour toi, tu devrais pouvoir
+voir de quoi on parle. Même Nyalab y est arrivé.
 
 Dans cet article on va voir **comment brancher un projet go+revel à une base de
 données mongodb** et obtenir ainsi une base de travail sympa pour explorer le
@@ -72,11 +72,11 @@ permettent à la techno d'échapper aux interminables guerres de conventions :
 > De toutes façons le no-newline avant "{" c'est vraiment pour les pourritures
 > responsables de 99% des maux de la Terre.
 >
-> * Un évangeliste du PSR
+> - Un évangeliste du PSR
 
 Troisième argument de choix en Go : la **simplicité de parallélisation**.
-Personne ne viendra te dire _"ça c'est synchrone, sry bro."_ ou *"ça c'est
-asynchrone, callback it bitch."*. Tout repose sur le mot clef qui a donné son
+Personne ne viendra te dire _"ça c'est synchrone, sry bro."_ ou _"ça c'est
+asynchrone, callback it bitch."_. Tout repose sur le mot clef qui a donné son
 nom au langage (ou l'inverse) `go`. Tu peux te faire un `go myFunc()` et paf !
 Tout ce qui est appelé dans myFunc() saute sur un thread séparé. Et pour gérer
 la synchronicité entre plusieurs thread il y a un mécanisme de canaux. Ce sont
@@ -99,13 +99,13 @@ $ revel new github.com/OwlyCode/PutainDeProjet
 Là théoriquement, tu te retrouves avec la structure par défaut du boilerplate
 revel, quelque chose comme ça:
 
-* app
-  * controllers
-  * views
-* conf
-* messages
-* public
-* tests
+- app
+  - controllers
+  - views
+- conf
+- messages
+- public
+- tests
 
 C’est là qu’on se met au boulot. On a de quoi faire un site complet avec ça mais
 aucune trace de gestion de base de données là dedans. On commence donc par créer
@@ -253,19 +253,19 @@ spécifiques à un module, comme par exemple une facture.
 Une bonne pratique est d’approcher le rangement des modèles selon cette
 structure:
 
-* app
-  * controllers
-  * **models**
-  * modules
-    * invoicing
-      * engine
-      * **models**
-    * mongo
-  * views
-* conf
-* messages
-* public
-* tests
+- app
+  - controllers
+  - **models**
+  - modules
+    - invoicing
+      - engine
+      - **models**
+    - mongo
+  - views
+- conf
+- messages
+- public
+- tests
 
 Le but du jeu évidemment c'est d'avoir le moins de modèles globaux possibles.
 Idéalement, si le dossier `app/models` n'existe pas ce n'est pas plus mal. Mais
@@ -292,10 +292,10 @@ modèles dans des modules est une première étape vers une architecture propre 
 évolutive. Tu peux même pousser ça plus loin en utilisant des interfaces comme
 je l'ai brièvement mentionné un peu plus tôt, c'est même d'ailleurs ce que je te
 conseille. Si tu veux creuser ce sujet là tu trouveras pas mal de monde qui s'y
-intéresse en fouinant sur le [groupe de discussion des utilisateurs
-golang](https://groups.google.com/forum/#!forum/Golang-Nuts). Tu as par exemple
-ce gars là qui a [remplacé sa dépendance à la librairie mgo par des
-interfaces](https://groups.google.com/forum/#!searchin/Golang-Nuts/interface/golang-nuts/Q0WhF7vhw5Q/T1tSJHT4aCoJ)
+intéresse en fouinant sur le
+[groupe de discussion des utilisateurs golang](https://groups.google.com/forum/#!forum/Golang-Nuts).
+Tu as par exemple ce gars là qui a
+[remplacé sa dépendance à la librairie mgo par des interfaces](https://groups.google.com/forum/#!searchin/Golang-Nuts/interface/golang-nuts/Q0WhF7vhw5Q/T1tSJHT4aCoJ)
 pour éviter d'inclure le package a chaque fois et faciliter ses tests. Tu peux
 envisager de faire la même chose pour découpler tes modèles et la logique métier
 .

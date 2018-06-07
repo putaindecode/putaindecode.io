@@ -15,7 +15,7 @@ const Page = ({ isLoading, head, body, __url, children }, { metadata }) => (
         { name: "twitter:title", content: head.title },
         { property: "og:description", content: head.description },
         { name: "twitter:description", content: head.description },
-        { property: "og:url", content: metadata.pkg.homepage + __url }
+        { property: "og:url", content: metadata.pkg.homepage + __url },
         // { property: "og:image", content: header.image },
         // { name: "twitter:image", content: header.image },
       ]}
@@ -36,7 +36,7 @@ const Page = ({ isLoading, head, body, __url, children }, { metadata }) => (
                 fontSize: "3rem",
                 color: "#ccc",
                 margin: "20vh auto",
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
               {"TODO :)"}
@@ -58,11 +58,11 @@ Page.propTypes = {
   isLoading: PropTypes.bool,
   head: PropTypes.object.isRequired,
   body: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Page.contextTypes = {
-  metadata: PropTypes.object.isRequired
+  metadata: PropTypes.object.isRequired,
 };
 
 export default Page;

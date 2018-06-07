@@ -12,7 +12,7 @@ translators:
 ---
 
 ES2015 add a new way to write better strings that will simplify our code: the
-*template strings*.
+_template strings_.
 
 ## Principle
 
@@ -68,7 +68,8 @@ Another cool thing is that _template strings_ handle multi-lines.
 
 ```js
 // ES5
-var multiline = "foo \
+var multiline =
+  "foo \
                  bar \
                  baz";
 
@@ -96,7 +97,7 @@ str1 === str2; // => false
 
 ## Tagged _template strings_
 
-Let's dive into another interesting feature of *template strings*. Tags are
+Let's dive into another interesting feature of _template strings_. Tags are
 functions that will use just before the _template string_ and they allow us to
 enhance the string result.
 
@@ -131,8 +132,8 @@ const v = "o";
 capitalizeVowels`foo ${n} bar ${c}${v}${v} ?`; // => fOO 42 bAr fOO ?
 ```
 
-Here is an interesting example of tagged _template strings_ to handle [i18n for
-strings](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
+Here is an interesting example of tagged _template strings_ to handle
+[i18n for strings](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
 
 ## String.raw
 
@@ -145,10 +146,10 @@ String.raw`FOO\nbar`; // => FOO\\nbar
 
 ## Conclusion
 
-When you will start to use *template strings*, you are likely going to like
+When you will start to use _template strings_, you are likely going to like
 them. They are clearly really useful in a daily basis.
 
-Almost all [modern browser handle template
-strings](https://kangax.github.io/compat-table/es6/#test-template_strings)
+Almost all
+[modern browser handle template strings](https://kangax.github.io/compat-table/es6/#test-template_strings)
 today, as well as [Babel](http://babeljs.io/) and Traceur, so you do not
-hesitate to use *template strings*.
+hesitate to use _template strings_.

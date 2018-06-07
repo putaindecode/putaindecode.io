@@ -18,7 +18,7 @@ an array based on their structure.
 // Let's consider this object `myObject`
 var myObject = {
   foo: 1,
-  bar: 2
+  bar: 2,
 };
 
 // With ES5, you need to do
@@ -38,7 +38,7 @@ bar; // 2
 const getMyObject = function() {
   return {
     foo: 1,
-    bar: 2
+    bar: 2,
   };
 };
 const { foo, bar } = getMyObject();
@@ -70,7 +70,7 @@ choose another one.
 ```js
 var myObject = {
   foo: 1,
-  bar: 2
+  bar: 2,
 };
 const { foo: renamedFoo } = myObject;
 renamedFoo; // 1
@@ -96,10 +96,12 @@ We can also nest the assignments.
 ```js
 var myObject = {
   foo: {
-    bar: 1
-  }
+    bar: 1,
+  },
 };
-const { foo: { bar } } = myObject;
+const {
+  foo: { bar },
+} = myObject;
 bar; // 1
 ```
 

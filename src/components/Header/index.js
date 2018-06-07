@@ -33,7 +33,7 @@ const Header = (props, context) => {
 
 Header.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Header;

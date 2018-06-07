@@ -28,9 +28,9 @@ pas déconner non plus, on n'a jamais vu un designer dégainer une console :)
 
 Globalement le workflow Vagrant se résume à 2-3 commandes :
 
-1. `vagrant init` au début du projet, puis ;
-2. `vagrant up` pour lancer la VM, et ;
-3. `vagrant halt`pour l’arrêter.
+1.  `vagrant init` au début du projet, puis ;
+2.  `vagrant up` pour lancer la VM, et ;
+3.  `vagrant halt`pour l’arrêter.
 
 # Étape 1 - `vagrant init`
 
@@ -53,17 +53,17 @@ shell, avec un script Puppet...).
 
 Ensuite, voilà les quelques points à paramétrer :
 
-* `config.vm.box = "base"` pour spécifier le nom d’une box préalablement
+- `config.vm.box = "base"` pour spécifier le nom d’une box préalablement
   téléchargée.
-* `config.vm.box_url = "http://domain.com/path/to/above.box"`. Tu remplaces par
+- `config.vm.box_url = "http://domain.com/path/to/above.box"`. Tu remplaces par
   l’URL de la box de tes rêves. Tu peux trouver une liste assez complète de box
   plus ou moins configurées sur le site http://www.vagrantbox.es/ (ProTip™:
   choisis bien le _provider_ correspondant à ton gestionnaire de VM)
-* `config.vm.network :forwarded_port, guest: 80, host: 8080`. Pratique pour
+- `config.vm.network :forwarded_port, guest: 80, host: 8080`. Pratique pour
   accéder au serveur qui tourne sur la VM. Après, tu retrouves un peu les mêmes
   options de config réseau qu’avec VirtualBox (réseaux privés, connexion par
   pont, etc.)
-* `# config.vm.synced_folder "../data", "/vagrant_data"`. Avec ça, tu vas
+- `# config.vm.synced_folder "../data", "/vagrant_data"`. Avec ça, tu vas
   pouvoir ajouter un répertoire qui sera partagé avec ta machine virtuelle. Par
   défaut, Vagrant te permet d’accéder au répertoire courant depuis
   `/home/vagrant` dans la VM.
@@ -113,14 +113,14 @@ ne pourront plus dire que pourtant ça marche bien chez eux, et qu’ils
 comprennent pas, c’est vraiment étrange... enfin sauf s'ils sont de mauvaise foi
 :)
 
-* L’intégrateur n’aura plus à se taper 14 installations de trucs en ligne de
+- L’intégrateur n’aura plus à se taper 14 installations de trucs en ligne de
   commande qu’il ne retient jamais, pour rajouter un bout de CSS ou de JS.
   (ProTip™: là, ça rentre sur un post-it !)
-* Le dev backend n’aura plus à pleurer quand on lui demande de remettre le nez
+- Le dev backend n’aura plus à pleurer quand on lui demande de remettre le nez
   dans un projet vieux de 2 ans avec que des versions de PHP / Ruby ou MySQL
   dépassées qui vont casser la superbe config qu’il a mis 1 semaine à fignoler
   avec les dernières techno à la mode.
-* L’admin sys pourra packager les box de chaque projet, provisionnées et
+- L’admin sys pourra packager les box de chaque projet, provisionnées et
   configurées pour éviter d’avoir à configurer les postes des autres dev à
   chaque changement de projet.
 
@@ -131,7 +131,5 @@ comprennent pas, c’est vraiment étrange... enfin sauf s'ils sont de mauvaise 
 
 # Quelques liens
 
-* [La documentation officielle de ~~viagra~~
-  Vagrant](http://docs.vagrantup.com/v2/)
-* [Cuisinez vos serveurs comme un Chef – Première
-  partie](http://jolicode.com/blog/cuisinez-vos-serveurs-comme-un-chef-premiere-partie)
+- [La documentation officielle de ~~viagra~~ Vagrant](http://docs.vagrantup.com/v2/)
+- [Cuisinez vos serveurs comme un Chef – Première partie](http://jolicode.com/blog/cuisinez-vos-serveurs-comme-un-chef-premiere-partie)

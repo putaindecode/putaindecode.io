@@ -7,7 +7,7 @@ const Html = ({ children }) => (
 );
 
 Html.propTypes = {
-  children: PropTypes.array.isRequired
+  children: PropTypes.array.isRequired,
 };
 
 export default Html;

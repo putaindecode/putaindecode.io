@@ -10,16 +10,14 @@ authors:
   - jeans11
 ---
 
-La mise en oeuvre d’applications web, mobile, etc implique bien
-souvent la même action: **manipuler des données**.
-Cette tâche se trouve aussi bien au niveau du back-end que du front-end.
-Par exemple, le back transforme, collecte, met à disposition les données
-alors que le front s’attache à récupérer ces dernières et les mettre en forme.
-Les données peuvent être de différentes formes: chaînes de caractères,
-nombres, listes, maps, etc.
-Le monde réel est bien souvent confronté à des données beaucoup plus complexes.
-La manipulation des données est un des exercices dans lesquels
-Clojure(Script) excelle.
+La mise en oeuvre d’applications web, mobile, etc implique bien souvent la même
+action: **manipuler des données**. Cette tâche se trouve aussi bien au niveau du
+back-end que du front-end. Par exemple, le back transforme, collecte, met à
+disposition les données alors que le front s’attache à récupérer ces dernières
+et les mettre en forme. Les données peuvent être de différentes formes: chaînes
+de caractères, nombres, listes, maps, etc. Le monde réel est bien souvent
+confronté à des données beaucoup plus complexes. La manipulation des données est
+un des exercices dans lesquels Clojure(Script) excelle.
 
 ### Clojure(Script) ???
 
@@ -29,19 +27,19 @@ En fait, il faut lire **Clojure** et **ClojureScript**.
 
 [**Clojure**](https://clojure.org/) est un langage compilé, dynamiquement typé,
 s’exécutant sur la JVM (compile vers du bytecode). Il a été crée par Rich Hickey
-(même si vous avez des croyances différentes, vous pouvez regarder une conf
-de ce monsieur,
+(même si vous avez des croyances différentes, vous pouvez regarder une conf de
+ce monsieur,
 [c’est très très intéressant](https://www.youtube.com/watch?v=2V1FtfBDsLU) !).
-C’est un langage purement fonctionnel et immutable,
-taillé pour la programmation concurrente (mais pas que).
+C’est un langage purement fonctionnel et immutable, taillé pour la programmation
+concurrente (mais pas que).
 
-[**ClojureScript**](https://clojurescript.org/) c’est Clojure compilant vers
-du JavaScript via Google Closure.
+[**ClojureScript**](https://clojurescript.org/) c’est Clojure compilant vers du
+JavaScript via Google Closure.
 
 > Clojure peut donc être utilisé en back et en front.
 
-**Tous les exemples de code qui vont suivre fonctionnent de la même manière
-pour Clojure et ClojureScript.**
+**Tous les exemples de code qui vont suivre fonctionnent de la même manière pour
+Clojure et ClojureScript.**
 
 ### Un peu de code
 
@@ -67,22 +65,21 @@ Comme tous les langages, Clojure comporte des primitives:
 #{1 2 3}
 ;map
 {:label "Hello"}
-
 ```
 
 #### Une histoire de parenthèses
 
 Clojure reprend la syntaxe de LISP, c’est-à-dire que le langage s’écrit en
-utilisant ses propres structures de données (homoiconicité). Une opération
-est donc faite de liste:
+utilisant ses propres structures de données (homoiconicité). Une opération est
+donc faite de liste:
 
 ```clojure
 (+ 1 1)
 => 2
 ```
 
-En Clojure, les opérations emploient la notation _prefixe_ qui diffère
-de la notation _infixe_ que l'on trouve en JavaScript par exemple:
+En Clojure, les opérations emploient la notation _prefixe_ qui diffère de la
+notation _infixe_ que l'on trouve en JavaScript par exemple:
 
 ```javascript
 1 + 1
@@ -90,8 +87,8 @@ de la notation _infixe_ que l'on trouve en JavaScript par exemple:
 ```
 
 Contrairement à la notation _infixe_ où l'opérateur est placé entre les
-arguments, la notation _prefixe_ place l'opérateur avant les arguments.
-En Clojure, les appels de fonctions se feront toujours de cette façon:
+arguments, la notation _prefixe_ place l'opérateur avant les arguments. En
+Clojure, les appels de fonctions se feront toujours de cette façon:
 
 ```clojure
 (operator arg1 arg2 ...)
@@ -131,10 +128,10 @@ un appel de fonction et la définition d'une liste
 (1 2 3)
 => ;Error
 ```
-Le dernier exemple provoque une erreur car Clojure tente d'exécuter la
-fonction `1` avec les paramètres `2` et `3`.
-L'utilisation de `'` ou `quote` permet de ne pas évaluer l'opération
-mais simplement de la retourner sous forme de liste.
+
+Le dernier exemple provoque une erreur car Clojure tente d'exécuter la fonction
+`1` avec les paramètres `2` et `3`. L'utilisation de `'` ou `quote` permet de ne
+pas évaluer l'opération mais simplement de la retourner sous forme de liste.
 
 #### Les variables
 
@@ -148,7 +145,6 @@ level
 (def pikachu (str "Oh! Pikachu is level " level))
 pikachu
 => "Oh! Pikachu is level 20"
-
 ```
 
 Les variables sont immuables:
@@ -174,7 +170,7 @@ prendra la valeur `pikachu`. Le code ci-dessous provoque une erreur:
 
 ```clojure
 (let [raichu "Raichu"]
-  raichu) 
+  raichu)
 => "Raichu"
 
 ;Le binding `raichu` n'existe pas dans le scope global
@@ -209,12 +205,12 @@ conditionnelles:
 
 #### Les collections
 
-Clojure dispose de plusieurs types
-de [collection](https://clojure.org/reference/data_structures#Collections).
+Clojure dispose de plusieurs types de
+[collection](https://clojure.org/reference/data_structures#Collections).
 
-- Les listes simples sont des collections dont l’accès et l'insertion
-du _head_ est efficient. En contrepartie, l’accès à un élement de la liste est
-moins performant que pour un vecteur.
+- Les listes simples sont des collections dont l’accès et l'insertion du _head_
+  est efficient. En contrepartie, l’accès à un élement de la liste est moins
+  performant que pour un vecteur.
 
 ```clojure
 (def my-list '("Pikachu" "Roucoul" "Chenipan"))
@@ -234,7 +230,7 @@ moins performant que pour un vecteur.
 ```
 
 - Les vecteurs sont des collections optimisées pour l'accès à un élement
-arbitraire (via les indexes):
+  arbitraire (via les indexes):
 
 ```clojure
 (def my-vec ["Pikachu" "Roucoul" "Chenipan"])
@@ -248,11 +244,10 @@ arbitraire (via les indexes):
 
 (map upper-case my-vec)
 => ("PIKACHU" "ROUCOUL" "CHENIPAN")
-
 ```
 
 - Les sets sont des collections stockant chaque élément de manière unique
-(rendant la duplication impossible):
+  (rendant la duplication impossible):
 
 ```clojure
 (def my-set #{"Pickachu" "Roucoul" "Roucoul" "Chenipan"})
@@ -270,14 +265,14 @@ arbitraire (via les indexes):
 ```
 
 > En Clojure, les fonctions s'appliquant sur des collections peuvent également
-être utilisées sur des maps. Ces dernières sont alors converties en
-liste de vecteur `([key value] [key value])`.
+> être utilisées sur des maps. Ces dernières sont alors converties en liste de
+> vecteur `([key value] [key value])`.
 
 #### Les fonctions
 
-Clojure étant un langage fonctionnel, les fonctions sont évidemment
-_first-class citizen_, ce qui veut dire qu'elles peuvent être passées en
-argument et être retournées par d'autres fonctions.
+Clojure étant un langage fonctionnel, les fonctions sont évidemment _first-class
+citizen_, ce qui veut dire qu'elles peuvent être passées en argument et être
+retournées par d'autres fonctions.
 
 ```clojure
 ;Définition d'une fonction
@@ -310,10 +305,9 @@ argument et être retournées par d'autres fonctions.
 => "Oh! a savage Roucoul level 6 appear"
 ```
 
-Le mot-clé `(defn name ...)`(sucre syntaxique pour `def name (fn ...)`)
-est utilisé pour créer une fonction.
-Les arguments d’une fonction sont définis dans un vecteur.
-Une fonction peut contenir une chaîne de caractères la documentant
+Le mot-clé `(defn name ...)`(sucre syntaxique pour `def name (fn ...)`) est
+utilisé pour créer une fonction. Les arguments d’une fonction sont définis dans
+un vecteur. Une fonction peut contenir une chaîne de caractères la documentant
 (à la manière de python).
 
 ```clojure
@@ -323,8 +317,8 @@ Une fonction peut contenir une chaîne de caractères la documentant
      Display a savage pokemon
 ```
 
-Par défaut en Clojure, les fonctions ne sont pas _autocurried_.
-Toutefois, une fonction peut être "décomposée":
+Par défaut en Clojure, les fonctions ne sont pas _autocurried_. Toutefois, une
+fonction peut être "décomposée":
 
 ```clojure
 (def default-random-pokemon-appear
@@ -337,9 +331,9 @@ Toutefois, une fonction peut être "décomposée":
 `partial` retourne une fonction _partielle_ de la fonction passée en paramètre.
 La signature initiale de la fonction `random-pokemon-appear` est `([f coll])`
 (une fonction et une collection). En utilisant `partial`,
-`default-random-pokemon-appear` devient une fonction
-avec la signature `([coll])`. Le premier paramètre `f` ayant
-déjà été affecté, il n’est plus nécessaire de le passer à la fonction.
+`default-random-pokemon-appear` devient une fonction avec la signature
+`([coll])`. Le premier paramètre `f` ayant déjà été affecté, il n’est plus
+nécessaire de le passer à la fonction.
 
 #### Les maps
 
@@ -362,10 +356,10 @@ En Clojure, les maps sont créées de la façon suivante:
 => #{:dragon :flying}
 ```
 
-Les keywords peuvent faire office de fonction pour les maps. Ils sont
-très utilisés pour les keys. Toutefois, les chaînes de caractères
-sont utilisables mais ne peuvent pas être employées en opérateur comme c'est
-le cas pour les keywords.
+Les keywords peuvent faire office de fonction pour les maps. Ils sont très
+utilisés pour les keys. Toutefois, les chaînes de caractères sont utilisables
+mais ne peuvent pas être employées en opérateur comme c'est le cas pour les
+keywords.
 
 ```clojure
 (def dracolosse
@@ -381,11 +375,11 @@ le cas pour les keywords.
 => ;Error
 ```
 
-Puisque les structures de données Clojure sont immutables, une update
-retourne un nouvel objet, et l'objet original reste intact:
+Puisque les structures de données Clojure sont immutables, une update retourne
+un nouvel objet, et l'objet original reste intact:
 
 ```clojure
-;Ajouter `2` au `level` de `dracolosse` 
+;Ajouter `2` au `level` de `dracolosse`
 (update dracolosse :level + 2)
 => {:id 149
     :name "Dracolosse"
@@ -402,11 +396,11 @@ dracolosse
 
 La première ligne peut paraître un peu bizarre au premier abord. La signature de
 la fonction `update` est la suivante: `([map key f x y z & mores]) -> new map`.
-La fonction prend donc en paramètre une `map` (un objet), sur laquelle
-appliquer la transformation, suivie de la `key` (string ou keyword) à modifier
-par la fonction `f`. Les autres paramètres (`x`, `y`, `z`) sont en fait
-les arguments optionnels que peut recevoir la fonction de transformation (`f`).
-Ainsi, les différentes opérations retournent strictement la même valeur:
+La fonction prend donc en paramètre une `map` (un objet), sur laquelle appliquer
+la transformation, suivie de la `key` (string ou keyword) à modifier par la
+fonction `f`. Les autres paramètres (`x`, `y`, `z`) sont en fait les arguments
+optionnels que peut recevoir la fonction de transformation (`f`). Ainsi, les
+différentes opérations retournent strictement la même valeur:
 
 ```clojure
 (update dracolosse :level (fn [level] (+ level 2)))
@@ -416,11 +410,11 @@ Ainsi, les différentes opérations retournent strictement la même valeur:
 (update dracolosse :level + 2)
 ```
 
-> `#(+ % 2)` est simplement du sucre syntaxique pour une fonction anonyme.
-Le `%` correspond au paramètre de la fonction.
+> `#(+ % 2)` est simplement du sucre syntaxique pour une fonction anonyme. Le
+> `%` correspond au paramètre de la fonction.
 
-Un programme est souvent ammené à opérer une série de modifications
-sur un même objet. Chaîner des opérations est possible grâce aux
+Un programme est souvent ammené à opérer une série de modifications sur un même
+objet. Chaîner des opérations est possible grâce aux
 [threading macros](https://clojure.org/guides/threading_macros):
 
 ```clojure
@@ -434,8 +428,8 @@ sur un même objet. Chaîner des opérations est possible grâce aux
 ```
 
 > Le "chaînage" d'opérations existe dans d'autres langages comme par exemple
-OCaml avec l'opérateur `|>` (qui arrive prochainement dans la nouvelle
-version d'ECMAScript).
+> OCaml avec l'opérateur `|>` (qui arrive prochainement dans la nouvelle version
+> d'ECMAScript).
 
 La macro `->` place le résultat de l’instruction précédente dans le premier
 argument de la fonction courante. Après compilation, le code précédent donne:
@@ -449,12 +443,12 @@ argument de la fonction courante. Après compilation, le code précédent donne:
    :height 268)
 ```
 
-> Une macro est une sorte de fonction qui permet de générer du code lors de
-la phase de compilation (détaillé dans un futur article).
+> Une macro est une sorte de fonction qui permet de générer du code lors de la
+> phase de compilation (détaillé dans un futur article).
 
 #### Les namespaces
 
-Clojure permet de créer des 
+Clojure permet de créer des
 [**namespaces**](https://clojure.org/reference/namespaces) pouvant contenir un
 ensemble d’instructions:
 
@@ -500,12 +494,11 @@ ensemble d’instructions:
     (fn [[type pokemons]] (vector type (count pokemons))
     pokemons-by-types)
 => {:dragon 2 :flying 2 :poison 1 :psy 1 :steel 1 :rock 1 :darkness 1}
-
 ```
 
-Dans l’exemple, ci-dessus, `ns` permet de créer
-le namespace `my-namespace.utils`. Pour utiliser le namespace dans un autre,
-Clojure offre plusieurs possiblités:
+Dans l’exemple, ci-dessus, `ns` permet de créer le namespace
+`my-namespace.utils`. Pour utiliser le namespace dans un autre, Clojure offre
+plusieurs possiblités:
 
 ```clojure
 (ns my-namespace.core
@@ -515,13 +508,12 @@ Clojure offre plusieurs possiblités:
   (:require [my-namespace.utils :as utils])
   ;Charger uniquement la ou les fonction(s)
   (:require [my-namespace.utils :refer [group-by-type]]))
-
 ```
 
 #### Le destructuring
 
-Clojure dispose d’un puissant mécanisme
-de [**destructuring**](https://clojure.org/guides/destructuring):
+Clojure dispose d’un puissant mécanisme de
+[**destructuring**](https://clojure.org/guides/destructuring):
 
 ```clojure
 (ns my-namespace.utils
@@ -542,8 +534,8 @@ de [**destructuring**](https://clojure.org/guides/destructuring):
 ```
 
 Dans l’exemple, ci-dessus, la destructuration s’opère sur une map. Il est
-possible de destructurer d’autres structures de données comme les vecteurs
-par exemple:
+possible de destructurer d’autres structures de données comme les vecteurs par
+exemple:
 
 ```clojure
 (def pokemons-by-type (group-by-type pokemons))
@@ -560,15 +552,14 @@ pokemon-by-type
 => {:dragon ("Dracolosse" "Drattack") :psy ("Metalosse") ...}
 ```
 
-> `(into {} (...))` convertit une collection dans le type indiqué en
-premier paramètre.
+> `(into {} (...))` convertit une collection dans le type indiqué en premier
+> paramètre.
 
 C’est tout pour cette première partie sur Clojure. Pour en découvrir un peu plus
 sur le langage, vous pouvez jeter un oeil à la
-[documention](https://clojuredocs.org/). Dans les prochains articles,
-nous verrons d'autres aspects du langage, notamment l'interopérabilité avec 
-Java pour Clojure et avec JavaScript pour ClojureScript,
-le REPL-driven-development, le testing, les macros ainsi que l'utilisation
-de React.
+[documention](https://clojuredocs.org/). Dans les prochains articles, nous
+verrons d'autres aspects du langage, notamment l'interopérabilité avec Java pour
+Clojure et avec JavaScript pour ClojureScript, le REPL-driven-development, le
+testing, les macros ainsi que l'utilisation de React.
 
 En attendant, attrapez-les tous ! ;)

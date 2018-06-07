@@ -30,18 +30,18 @@ Cet épisode 1 est intitulé …
 
 Y participent :
 
-* Maxime alias [MoOx](https://twitter.com/MoOx)
-* Mathieu alias [Zoontek](https://twitter.com/Zoontek)
-* Georges alias [skinnyfoetusboy](https://twitter.com/skinnyfoetusboy)
-* Matthias alias [bloodyowl](https://twitter.com/bloodyowl)
+- Maxime alias [MoOx](https://twitter.com/MoOx)
+- Mathieu alias [Zoontek](https://twitter.com/Zoontek)
+- Georges alias [skinnyfoetusboy](https://twitter.com/skinnyfoetusboy)
+- Matthias alias [bloodyowl](https://twitter.com/bloodyowl)
 
 et on vous y parle de :
 
-* Yarn, le client NPM
-* Webpack 2
-* dotCSS, un retour sur chaque conférence
-* Sketch 41
-* Origami Studio
+- Yarn, le client NPM
+- Webpack 2
+- dotCSS, un retour sur chaque conférence
+- Sketch 41
+- Origami Studio
 
 Évidemment on digresse SANS ARRÊT, ça manque de structure et le son a quelques
 soucis, on vous demande d'être indulgents là-dessus : faut bien commencer
@@ -58,7 +58,7 @@ Bisous.
 
 ### Edit:
 
-* Le
+- Le
   [RSS](http://feeds.soundcloud.com/users/soundcloud:users:273901232/sounds.rss)
-* Sur iTunes : [Putain de
-  Code](https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825?l=en&mt=2)
+- Sur iTunes :
+  [Putain de Code](https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825?l=en&mt=2)

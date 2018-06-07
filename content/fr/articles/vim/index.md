@@ -30,8 +30,8 @@ authors:
 > $ vim
 > ```
 
-> Alors qu'on pourrait imaginer un drame, comme il arrive souvent quand [une
-> personne tombe dans ce piège](https://duckduckgo.com/?q=I+am+stuck+in+VIM),
+> Alors qu'on pourrait imaginer un drame, comme il arrive souvent quand
+> [une personne tombe dans ce piège](https://duckduckgo.com/?q=I+am+stuck+in+VIM),
 > Maxime ne s'est pas laissé abattre et a persisté dans sa démarche...
 
 Bon, assez plaisanté.
@@ -78,16 +78,16 @@ Pour un peu plus sur l'histoire de Vim, direction
 Du coup, quand je suis dans Vim, comment ça se passe ?
 
 Je passerai plus tard assez rapidement sur les différents points, vu que
-d'autres ressources, dont notamment le livre [Vim pour les
-humains](https://vimebook.com/), le font très bien en douceur.
+d'autres ressources, dont notamment le livre
+[Vim pour les humains](https://vimebook.com/), le font très bien en douceur.
 
 C'est d'ailleur grâce à ce livre que je me suis lancé. Je tiens donc à remercier
-[Vincent Jousse](https://vincent.jousse.org/) pour avoir pris le temps d'écrire cet
-ouvrage.
+[Vincent Jousse](https://vincent.jousse.org/) pour avoir pris le temps d'écrire
+cet ouvrage.
 
-Profitez de cet ouvrage, en plus [le prix est
-libre](http://ploum.net/le-prix-libre-une-impossible-utopie/). Et puis quand on
-pense au prix des licences de certains IDE...
+Profitez de cet ouvrage, en plus
+[le prix est libre](http://ploum.net/le-prix-libre-une-impossible-utopie/). Et
+puis quand on pense au prix des licences de certains IDE...
 
 Ce livre est fait pour n'importe qui, débutant ou pas. Vraiment, mangez-en si
 vous souhaitez essayer Vim (oui je sais, manger un e-book comme ça, ça paraît
@@ -109,10 +109,10 @@ Pourquoi pas vous ?
 
 Vous pouvez donc :
 
-* lire l'e-book [Vim pour les humains](http://vimebook.com)
-* lancer la commande `vimtutor`
-* jouer à [Vim Adventures](http://vim-adventures.com/)
-* vous entraîner sur des exemples concrets avec [VimGolf](http://vimgolf.com/)
+- lire l'e-book [Vim pour les humains](http://vimebook.com)
+- lancer la commande `vimtutor`
+- jouer à [Vim Adventures](http://vim-adventures.com/)
+- vous entraîner sur des exemples concrets avec [VimGolf](http://vimgolf.com/)
 
 Voici aussi un cheatsheet indispensable qui permet de bien mémoriser le pourquoi
 des touches (b = begin, w = word, e = end, r = replace, i = insert, a = append,

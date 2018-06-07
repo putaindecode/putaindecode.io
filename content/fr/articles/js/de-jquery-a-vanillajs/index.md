@@ -26,14 +26,14 @@ C'est parti !
 
 ## Table des matières
 
-1. [Évènements](#-v-nements)
-2. [Sélecteurs](#s-lecteurs)
-3. [Attributs](#attributs)
-4. [Classes](#classes)
-5. [Manipulation](#manipulation)
-6. [Navigation](#navigation)
-7. [AJAX](#ajax)
-8. [JSONP](#jsonp)
+1.  [Évènements](#-v-nements)
+2.  [Sélecteurs](#s-lecteurs)
+3.  [Attributs](#attributs)
+4.  [Classes](#classes)
+5.  [Manipulation](#manipulation)
+6.  [Navigation](#navigation)
+7.  [AJAX](#ajax)
+8.  [JSONP](#jsonp)
 
 ## Évènements
 
@@ -198,7 +198,7 @@ httpRequest.onreadystatechange = function(data) {
 };
 httpRequest.setRequestHeader(
   "Content-Type",
-  "application/x-www-form-urlencoded"
+  "application/x-www-form-urlencoded",
 );
 httpRequest.open("POST", url);
 httpRequest.send("username=" + encodeURIComponent(username));

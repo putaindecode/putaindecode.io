@@ -13,7 +13,7 @@ authors:
 
 Beaucoup de bibliotèques React ont besoin de faire passer des data au travers de
 tout l'arbre de composants de votre app. Par exemple Redux a besoin de passer
-son _store_ et React Router doit passer l'objet *location*. Tout ça pourrait
+son _store_ et React Router doit passer l'objet _location_. Tout ça pourrait
 possiblement passer par du _shared mutable state_ (état global mutable, ce qui
 est rarement une bonne idée). Le _shared mutable state_ rend impossible une
 application à plus d'un contexte. En d'autres mots, ça ne marcherait que sur le
@@ -28,9 +28,9 @@ sa nature, c'est comme l'objet global de votre arbre de composants.
 
 Le `context` fonctionne de la façon suivante:
 
-* On définit haut dans notre app un `context` que l'on donne aux composants
+- On définit haut dans notre app un `context` que l'on donne aux composants
   descendants de l'app
-* On récupère ce contexte dans les composants descendants.
+- On récupère ce contexte dans les composants descendants.
 
 Du coup, pour _donner_ ce `context`, on doit avoir un `Provider`. Son rôle est
 simplement de fournir un `context` pour que les composants enfants y aient
@@ -47,7 +47,7 @@ class ThemeProvider extends Component {
   // dans notre cas, on le récupère des `props`
   getChildContext() {
     return {
-      theme: this.props.theme
+      theme: this.props.theme,
     };
   }
   // on render l'enfant
@@ -57,13 +57,13 @@ class ThemeProvider extends Component {
 }
 
 ThemeProvider.propTypes = {
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 // pour que React prenne en compte le context fourni,
 // on doit définir les types des propriétés que l'on passe
 ThemeProvider.childContextTypes = {
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default ThemeProvider;
@@ -80,14 +80,14 @@ import App from "App";
 
 const theme = {
   color: "#cc3300",
-  fontFamily: "Georgia"
+  fontFamily: "Georgia",
 };
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <App />
   </ThemeProvider>,
-  document.querySelector("#App")
+  document.querySelector("#App"),
 );
 ```
 
@@ -102,27 +102,28 @@ Afin de consommer le `context`, un component doit définir une propriété stati
 pourrait le définir sur chaque composant, mais cela serait une mauvaise idée
 pour deux raisons :
 
-* **La maintenabilité** : si à un moment, on a besoin de refacto, avoir tous ces
+- **La maintenabilité** : si à un moment, on a besoin de refacto, avoir tous ces
   `contextTypes` éparpillés dans notre repository peut faire bien mal.
-* **La complexité**: L'API des `context` étant encore obscure pour beaucoup, il
+- **La complexité**: L'API des `context` étant encore obscure pour beaucoup, il
   est préférable de faire une abstraction pour la masquer.
 
 Une autre solution serait d'utiliser l'héritage d'une sous-classe de
 `ReactComponent`. Ça ne marche pas pour deux raisons:
 
-* Plus d'un niveau d'héritage est en général une idée de merde. Cela mène
+- Plus d'un niveau d'héritage est en général une idée de merde. Cela mène
   souvent à des conflits entre méthodes, et force à vérifier toute la chaîne
   d'héritage à chaque fois que l'on souhaite modifier quelque chose. L'API des
   `mixins` de `React.createClass` réglait ce souci en définissant des
   comportements de merge selon les méthodes, mais cela rend encore plus obscure
   la compréhension du fonctionnement de nos composants.
-* Si l'on veut des APIs **interopérables**, on ne peut pas partir de l'héritage.
-  React offre trois moyens de définir un composant: `class extends
-  React.Component {}`, `React.createClass({})` et `(props) => ReactElement`. Les
-  deux derniers ne peuvent pas bénéficier de l'héritage.
+- Si l'on veut des APIs **interopérables**, on ne peut pas partir de l'héritage.
+  React offre trois moyens de définir un composant:
+  `class extends React.Component {}`, `React.createClass({})` et
+  `(props) => ReactElement`. Les deux derniers ne peuvent pas bénéficier de
+  l'héritage.
 
 La meilleure façon de créer une fonctionnalité réutilisable est d'utiliser le
-pattern du **Higher Order Component** (ou *HOC*). Ce que ça veut dire, c'est
+pattern du **Higher Order Component** (ou _HOC_). Ce que ça veut dire, c'est
 qu'on va simplement wrapper un composant dans un autre, lequel a pour unique
 rôle d'injecter la fonctionnalité et de la passer via les `props`. Il s'agit
 tout bêtement du principe de composition : au lieu d'exporter `A`, vous exportez
@@ -133,11 +134,11 @@ Pour le voir simplement, il s'agit d'un point intermédiaire dans l'arbre de vos
 composants, qui injecte quelques `props`. Il existe beaucoup d'avantages
 apportés par ce pattern :
 
-* **Isolation** : Il n'y a pas de risque de collision de propriétés au sein du
+- **Isolation** : Il n'y a pas de risque de collision de propriétés au sein du
   composant.
-* **Interopérabilité** : Ce principe s'adapte à tout composant React, peu
+- **Interopérabilité** : Ce principe s'adapte à tout composant React, peu
   importe la façon dont il a été défini.
-* **Maintenabilité** : Le wrapper n'aura qu'une seule fonctionnalité, ce qui le
+- **Maintenabilité** : Le wrapper n'aura qu'une seule fonctionnalité, ce qui le
   rend plus simple à comprendre. De plus, si l'on utilise le `context`, on ne
   trouvera le mapping `contextTypes` qu'à un seul endroit dans l'app.
 
@@ -204,7 +205,7 @@ et l'utiliser de cette façon :
 ```javascript
 const mergeProps = (ownProps, themeProps) => ({
   ...themeProps,
-  color: themeProps.theme.color
+  color: themeProps.theme.color,
 });
 export default theme(mergeProps)(MyComponent);
 ```
@@ -214,7 +215,10 @@ composer, puisque `compose(A, B, C)(props)` vaudra `A(B(C(props)))`, par exemple
 :
 
 ```javascript
-const composed = compose(connect(mapStateToProps), theme());
+const composed = compose(
+  connect(mapStateToProps),
+  theme(),
+);
 
 export default composed(MyComponent);
 ```

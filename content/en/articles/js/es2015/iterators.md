@@ -21,14 +21,14 @@ how we can iterate on some data.
 
 First good news, this protocol is pretty simple to understand and use 2
 "interfaces" (quotes are just to warn you that we cannot really call that
-*Interface*, since we don't have this "thing" in JavaScript).
+_Interface_, since we don't have this "thing" in JavaScript).
 
 The first interface, **Iterator**, allow to an object to produce sequences of
 values. An object is an iterator when it implements a `next()` function which
 return an object that contains two properties :
 
-* `value`: current value of the current execution
-* `done` : a boolean that indicates whether the iteration is finished or not
+- `value`: current value of the current execution
+- `done` : a boolean that indicates whether the iteration is finished or not
 
 Successif calls of the `next()` method of an iterator will allow to get all the
 value of an object. Let's see how we can iterate on a simple array `["a", "b"]`
@@ -85,7 +85,7 @@ to loop an all values.
 Second good new is that a lots of concept of JavaScript benefits of this
 protocol :
 
-* Some syntaxes expect to get iterables
+- Some syntaxes expect to get iterables
 
 ```js
 const arr = ["a", "b"];
@@ -108,7 +108,7 @@ gen().next(); // { value:"a", done:false }
 const [x, y] = arr; // x = 'a',  y = "b"
 ```
 
-* Some APIs acccepts iterables
+- Some APIs acccepts iterables
 
 ```js
 const arr = ["a", "b", "b"];
@@ -198,9 +198,9 @@ for (m of matches) {
 Another detail: Array, TypedArray, Map, Set are iterables but also define
 methods which also return iterables (...Are you still with us ?) :
 
-* entries() returns a set of key/values
-* keys() returns keys
-* values() returns values
+- entries() returns a set of key/values
+- keys() returns keys
+- values() returns values
 
 ```js
 for (cleVals of arr.entries()) {
@@ -212,8 +212,8 @@ for (cleVals of arr.entries()) {
 ```
 
 Important note: `Object` is not an iterable (but we might get in ES2016
-entries(), keys() and values() on `Object` ([spec
-proposal](https://github.com/tc39/proposal-object-values-entries)).
+entries(), keys() and values() on `Object`
+([spec proposal](https://github.com/tc39/proposal-object-values-entries)).
 
 # Conclusion
 
@@ -223,20 +223,17 @@ important to rely on commons patterns so we can reach an agreement.
 
 Libraries can do that by :
 
-* offering data that implements this protocol
-* use this protocol directly (eg: for a sorting algorithm)
+- offering data that implements this protocol
+- use this protocol directly (eg: for a sorting algorithm)
 
 # One last thing...
 
 The following post will allow you to deep dive into this subject :
 
-* [Iterables and iterators in ECMAScript
-  6](http://www.2ality.com/2015/02/es6-iteration.html)
-* [Iteration
-  Protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
-* [ES6 in depth : iterators and the for of
-  loop](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
-* [ES6 iterators in depth](https://ponyfoo.com/articles/es6-iterators-in-depth)
+- [Iterables and iterators in ECMAScript 6](http://www.2ality.com/2015/02/es6-iteration.html)
+- [Iteration Protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
+- [ES6 in depth : iterators and the for of loop](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
+- [ES6 iterators in depth](https://ponyfoo.com/articles/es6-iterators-in-depth)
 
-The practice remains the best way to train yourself, so take a look to [ES6
-Katas](http://es6katas.org/) which has been made for that.
+The practice remains the best way to train yourself, so take a look to
+[ES6 Katas](http://es6katas.org/) which has been made for that.

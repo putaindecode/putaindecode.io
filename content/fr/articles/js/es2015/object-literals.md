@@ -23,7 +23,7 @@ var lastname = "Laiponje";
 
 return {
   firstname: firstname,
-  lastname: lastname
+  lastname: lastname,
 };
 ```
 
@@ -35,13 +35,13 @@ const lastname = "Laiponje";
 
 return {
   firstname,
-  lastname
+  lastname,
 };
 // { firstname: "Robert", lastname: "Laiponje" }
 ```
 
 De la même manière, on pourra déclarer des méthodes en se passant du mot clé
-`function`. Idem pour les _getter_ / *setter*.
+`function`. Idem pour les _getter_ / _setter_.
 
 ```js
 const obj = {
@@ -53,7 +53,7 @@ const obj = {
   },
   validateEmail(email) {
     return true;
-  }
+  },
 };
 ```
 
@@ -76,7 +76,7 @@ En ES2015, cela donnerait :
 ```js
 function action(type, data) {
   return {
-    [type]: data
+    [type]: data,
   };
 }
 ```

@@ -88,13 +88,14 @@ rempli. Mais attendez, en 2013 on peut pas faire mieux ? Oh si !
 <title> </title>
 ```
 
-Il faut savoir qu'un simple document *valide*, peut se résumer à ça. Oui oui mes
+Il faut savoir qu'un simple document _valide_, peut se résumer à ça. Oui oui mes
 cocos, ce document est parfaitement valide. Voilà, j'voulais vous le dire.
 Arrêtez d'utiliser des doctypes dans tous les sens, ça ne sert à rien. Sachant
 la qualité du code qu'on trouve sur les internets, les navigateurs s'arrêtent au
-parsing lorsqu'ils voient ça `<!doctype html` (c'est [Paul
-Rouget](http://paulrouget.com/) qui me l'a dit, je le crois donc sur parole). Et
-après ma petite parenthèse ci-dessous, je vais vous expliquer pourquoi.
+parsing lorsqu'ils voient ça `<!doctype html` (c'est
+[Paul Rouget](http://paulrouget.com/) qui me l'a dit, je le crois donc sur
+parole). Et après ma petite parenthèse ci-dessous, je vais vous expliquer
+pourquoi.
 
 Car je sais ce que certains vont me rétorquer.
 
@@ -166,8 +167,8 @@ Typiquement, il faut savoir comprendre un message d'erreur et savoir lire entre
 les lignes. Pas faire "mais monsieur, j'comprends pas là" (d'ailleurs mes élèves
 valident tous leur code, pour apprendre sur le tas, c'est une bonne façon).
 
-Celui-là nous dit en gros : *je ne vois pas d'élement **p** à fermer dans le
-coin*. Ça veut dire que… Ça veut dire que mon **p** ouvert n'est pas reconnu ?
+Celui-là nous dit en gros : _je ne vois pas d'élement **p** à fermer dans le
+coin_. Ça veut dire que… Ça veut dire que mon **p** ouvert n'est pas reconnu ?
 Mais attends, qu'est-ce que c'est que cette histoire ?!
 
 Si vous prenez 10 secondes pour inspecter ce code, vous allez vite vous
@@ -211,12 +212,12 @@ ce que je souhaite. [La preuve](http://codepen.io/MoOx/pen/esFjx).
 Voyons un autre exemple : mettons-nous à la place d'un navigateur si, alors que
 je suis en XHTML 1.1 Strict, je lui glisse une balise `<center>`.
 
-* **Cas 1.** Je n'ai pas fait attention au doctype et je veux vraiment une
-  balise `<center>` : bah là, rien à dire à part "*Merci*". Le navigateur essaye
+- **Cas 1.** Je n'ai pas fait attention au doctype et je veux vraiment une
+  balise `<center>` : bah là, rien à dire à part "_Merci_". Le navigateur essaye
   clairement de faire au mieux, et dans un cas comme celui-là, on ne peut que le
   remercier.
 
-* **Cas 2.** Je sais exactement dans quel doctype je suis, j'ai conscience de ce
+- **Cas 2.** Je sais exactement dans quel doctype je suis, j'ai conscience de ce
   que je fais : je joue au con, tant pis pour ma gueule !
 
 Dans tous les cas, le navigateur va laisser passer cette balise au cas où que.
@@ -234,15 +235,15 @@ S'il vous plaît mesdames, messieurs, lorsque vous faites du CSS inline, ou que
 vous incorporez un JavaScript, arrêtez-vous à des choses simples, qui
 fonctionnent :
 
-* `<style>` suffit. Pas besoin de mettre un type, un langage etc. Et ça vous
+- `<style>` suffit. Pas besoin de mettre un type, un langage etc. Et ça vous
   évitera des [prises de têtes à la con](http://codepen.io/MoOx/pen/sEzuJ).
   Puis, vous avez déjà utilisé autre chose que du CSS vous ?!
 
-* `<script>`, idem, même sur IE 6. Pareil que précédemment, pas besoin de mettre
+- `<script>`, idem, même sur IE 6. Pareil que précédemment, pas besoin de mettre
   un hideux `<script type="text/javascript" language="JavaScript 1.1">`. La
   moindre faute de frappe ne pardonne pas. Aucun intêret à se fatiguer, sauf si
-  votre [script n'est pas du
-  JavaScript](https://code.google.com/p/ruby-in-browser/).
+  votre
+  [script n'est pas du JavaScript](https://code.google.com/p/ruby-in-browser/).
 
 ## Le mot de la fin
 
@@ -254,12 +255,11 @@ ou votre morceau de JavaScript buggé.
 
 ## [Aller plus loiiin, allez plus haaauuut… !](https://www.youtube.com/watch?v=BCYLQUdsN5g&t=39s)
 
-* <a href="https://github.com/necolas/idiomatic-html" lang="en">idiomatic-html</a>
-  ([ceci n'est pas une contraction d'*idiot* et
-  d'*automatique*](http://fr.wikipedia.org/wiki/Idiomatique)).
-* <a href="https://github.com/necolas/idiomatic-css" lang="en">idiomatic-css</a>
+- <a href="https://github.com/necolas/idiomatic-html" lang="en">idiomatic-html</a>
+  ([ceci n'est pas une contraction d'_idiot_ et d'_automatique_](http://fr.wikipedia.org/wiki/Idiomatique)).
+- <a href="https://github.com/necolas/idiomatic-css" lang="en">idiomatic-css</a>
   (traduction incluse)
-* Validation automatique dans un workflow Grunt:
-  * [praveenvijayan/grunt-html-validation](https://github.com/praveenvijayan/grunt-html-validation)
-  * [jzaefferer/grunt-html](https://github.com/jzaefferer/grunt-html) (basé sur
+- Validation automatique dans un workflow Grunt:
+  - [praveenvijayan/grunt-html-validation](https://github.com/praveenvijayan/grunt-html-validation)
+  - [jzaefferer/grunt-html](https://github.com/jzaefferer/grunt-html) (basé sur
     validator.nu)

@@ -97,8 +97,8 @@ pas le nier (dans notre cas, on gère tout ça de manière transparente avec
 
 Ça ressemble drôlement à de l'HTML et c'est ça qui est appréciable pour nous.
 Vous noterez que l'attribut pour définir une classe HTML est `className` puisque
-React est en JavaScript et que le mot `class` est réservé (cf. [la définition en
-ES6 de la classe](#es6-class)).
+React est en JavaScript et que le mot `class` est réservé (cf.
+[la définition en ES6 de la classe](#es6-class)).
 
 En même temps ce qui est cool, c'est qu'on reste dans du JavaScript.
 
@@ -215,7 +215,7 @@ précis, c'est pour générer un site statique, et c'est donc sur une machine
 quelconque que la génération se fait).
 
 Voilà de quoi effectuer le rendu de nos composants vers du bon vieux HTML (car
-c'est la finalité d'un *moteur de template*).
+c'est la finalité d'un _moteur de template_).
 
 ```js
 import react from "react";
@@ -232,8 +232,8 @@ const component = new (react.createFactory(reactClass))({
   collections: {
     posts: [
       //...
-    ]
-  }
+    ],
+  },
 });
 
 let html;
@@ -255,17 +255,18 @@ va nous générer un HTML qui va bien.
 
 Pour aller plus loin on pourrait décider d'utiliser `renderToString()` plutôt
 que `renderToStaticMarkup()` afin de pouvoir faire prendre le relais à React
-côté client mais là [le niveau de complexité est
-différent](/fr/articles/js/react/cote-serveur/).
+côté client mais là
+[le niveau de complexité est différent](/fr/articles/js/react/cote-serveur/).
 
 Pour la petite anecdote, notre site utilise actuellement
 [metalsmith](http://www.metalsmith.io/), une petite bibliothèque simple mais qui
 permet par son API de faire des choses sympas.
 
-J'ai donc codé [quelques plugins
-metalsmith](https://github.com/search?q=user%3AMoOx+metalsmith) dont un
-[metalsmith-react](https://github.com/MoOx/metalsmith-react) à l'occasion.
+J'ai donc codé
+[quelques plugins metalsmith](https://github.com/search?q=user%3AMoOx+metalsmith)
+dont un [metalsmith-react](https://github.com/MoOx/metalsmith-react) à
+l'occasion.
 
-N'hésitez pas à consulter [le code source de notre
-site](https://github.com/putaindecode/putaindecode.io) pour faire des
-découvertes sympas.
+N'hésitez pas à consulter
+[le code source de notre site](https://github.com/putaindecode/putaindecode.io)
+pour faire des découvertes sympas.

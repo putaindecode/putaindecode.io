@@ -88,18 +88,18 @@ instantiateViewControllerWithIdentifier:@"settingsController"];
 Rien de plus simple ! Mais c'est bien connu, les développeurs iOS sont des
 fainéants, alors il y a encore plus simple, sans taper une seule ligne de code :
 
-* créez un nouveau storyboard pour votre _secteur_ (File→New→File→[OS]→User
+- créez un nouveau storyboard pour votre _secteur_ (File→New→File→[OS]→User
   Interface),
-* ajoutez une `scène` (`UIViewController`), mettre l'une en `vue initiale`
+- ajoutez une `scène` (`UIViewController`), mettre l'une en `vue initiale`
   (sinon le compilateur n'aime pas),
-* nommez les `storyboardID` de chacune de ces `scènes` dans le menu
+- nommez les `storyboardID` de chacune de ces `scènes` dans le menu
   `Utilies>Identity Inspector`,
-* dans votre storyboard original, dans le menu `Utilies>Object Library` cherchez
+- dans votre storyboard original, dans le menu `Utilies>Object Library` cherchez
   `storyboard` et ajoutez une **`Storyboard References`**,
-* sur la référence dans `Utilises>Attributes Inspector` rentrez le nom dans
-  votre storyboard (dans *storyboard*) et remplissez _Reference ID_ avec le
+- sur la référence dans `Utilises>Attributes Inspector` rentrez le nom dans
+  votre storyboard (dans _storyboard_) et remplissez _Reference ID_ avec le
   _storyboardID_ de la `scène`,
-* pour finir, ajoutez une `segue`, à partir d'un bouton (par exemple) vers les
+- pour finir, ajoutez une `segue`, à partir d'un bouton (par exemple) vers les
   _Storyboard Reference_ voulus.
 
 Plus long à lire qu'à faire !

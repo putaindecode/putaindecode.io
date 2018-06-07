@@ -20,13 +20,13 @@ vous pouvez utiliser le menu composé d'ancres ci-dessous.
 
 ## Sommaire
 
-* [tl;dr - mes techniques préférées](#tl-dr-mes-techniques-preferees)
-* [Techniques tradtionnelles](#techniques-traditionnelles)
-  * [Un bloc dans un bloc](#un-bloc-dans-un-bloc)
-  * [Des blocs dans un bloc](#des-blocs-dans-un-bloc)
-  * [Des éléments inlines dans un bloc](#des-elements-inlines-dans-un-bloc)
-* [Techniques avancées : flexbox (ie11+)](#techniques-avancees-flexbox-ie11-)
-* [Conclusion](#conclusion)
+- [tl;dr - mes techniques préférées](#tl-dr-mes-techniques-preferees)
+- [Techniques tradtionnelles](#techniques-traditionnelles)
+  - [Un bloc dans un bloc](#un-bloc-dans-un-bloc)
+  - [Des blocs dans un bloc](#des-blocs-dans-un-bloc)
+  - [Des éléments inlines dans un bloc](#des-elements-inlines-dans-un-bloc)
+- [Techniques avancées : flexbox (ie11+)](#techniques-avancees-flexbox-ie11-)
+- [Conclusion](#conclusion)
 
 ## tl;dr - mes techniques préférées
 
@@ -175,10 +175,10 @@ donc besoin de connaitre à l'avance la hauteur de votre bloc.
 }
 ```
 
-Ici on réutilise le principe expliqué dans la technique `transform: translate;
-négatif`, mais appliqué à la hauteur. Notez que le nom de la [valeur de la
-propriété](http://apps.workflower.fi/vocabs/css/fr) css passe de `translateX` à
-`translateY`.
+Ici on réutilise le principe expliqué dans la technique
+`transform: translate; négatif`, mais appliqué à la hauteur. Notez que le nom de
+la [valeur de la propriété](http://apps.workflower.fi/vocabs/css/fr) css passe
+de `translateX` à `translateY`.
 
 ```css
 .parent {
@@ -291,12 +291,13 @@ enfants par rapport à leur conteneur parent.
 }
 ```
 
-Une autre technique consiste à utiliser les propriétés css de `mise en
-tableaux`. On est obligé de créer un
+Une autre technique consiste à utiliser les propriétés css de
+`mise en tableaux`. On est obligé de créer un
 [pseudo-élément](https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-%C3%A9l%C3%A9ments)
 pour gérer la mise en page par tableau. On créée tout simplement un tableau,
-puis une cellule de tableau, qu'on positionne grâce à un `vertical-align:
-middle;`. Les éléments `.child` s'alignent automatiquement dans leur conteneur.
+puis une cellule de tableau, qu'on positionne grâce à un
+`vertical-align: middle;`. Les éléments `.child` s'alignent automatiquement dans
+leur conteneur.
 
 ```css
 .parent:before {
@@ -356,9 +357,10 @@ fonctionner avec des `display: inline-block;`. Pour détailler, on crée un
 pseudo-élément, qui aura un `content: '';` pour faire qu'il existe et soit
 affiché, puis on annule son affichage via un `margin-right négatif` qui a pour
 valeur magique `-0.25em` ce qui correspond à la largeur d'un espace. On lui
-applique ensuite un `display: inline-block + height: 100% + vertical-align:
-middle` pour créer le conteneur à la taille souhaitée et on termine en calant
-l'élément enfant `.child` avec un centrage vertical.
+applique ensuite un
+`display: inline-block + height: 100% + vertical-align: middle` pour créer le
+conteneur à la taille souhaitée et on termine en calant l'élément enfant
+`.child` avec un centrage vertical.
 
 ```css
 .parent {
@@ -483,15 +485,15 @@ Essayez de toujours utiliser la solution la plus avancée techniquement par
 rapport à votre scope navigateur : si vous devez ne supporter que les IE
 récents, utilisez flexbox ; si vous devez ne supporter que IE9+, utilisez les
 transform: translate() ; sinon utilisez des techniques de plus en plus
-*anciennes*.
+_anciennes_.
 
 Ce guide n'a volontairement pas parlé des préfixes navigateurs, car ce genre de
 chose doit être pris en charge automatiquement dans votre workflow par un
 autoprefixer
 ([gulp-autoprefixer](https://www.npmjs.org/package/gulp-autoprefixer),
-[grunt-autoprefixer](https://www.npmjs.org/package/grunt-autoprefixer), [inclus
-dans myth](http://www.myth.io/), ...). Pour apprendre à l'installer ou à en
-apprendre plus sur le sujet, je vous renvoie [à l'article de
-MoOx](/fr/articles/css/autoprefixer/mise-en-place/). Si vous souhaitez quand
-même vous passez d'autoprefixer, vous pourrez vérifier la compatibilité des
-propriétés sur [caniuse](http://caniuse.com/).
+[grunt-autoprefixer](https://www.npmjs.org/package/grunt-autoprefixer),
+[inclus dans myth](http://www.myth.io/), ...). Pour apprendre à l'installer ou à
+en apprendre plus sur le sujet, je vous renvoie
+[à l'article de MoOx](/fr/articles/css/autoprefixer/mise-en-place/). Si vous
+souhaitez quand même vous passez d'autoprefixer, vous pourrez vérifier la
+compatibilité des propriétés sur [caniuse](http://caniuse.com/).

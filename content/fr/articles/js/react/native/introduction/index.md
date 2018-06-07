@@ -45,18 +45,18 @@ quasi similaires aux performances natives.
 
 Fatigués par JavaScript et son tooling un peu trop fourni ? Rassurez-vous : vous
 n'avez strictement rien à configurer pour commencer à utiliser React Native.
-Vous disposez out-of-the-box d'un packager Babel et d'un [preset
-custom](https://github.com/facebook/react-native/tree/master/babel-preset) qui
-intègre les fonctionnalités de ES2015, mais également le support de React / JSX
-(encore heureux), de [Flow](https://flowtype.org/) et d'autres helpers bienvenus
-tels que `async / await`.
+Vous disposez out-of-the-box d'un packager Babel et d'un
+[preset custom](https://github.com/facebook/react-native/tree/master/babel-preset)
+qui intègre les fonctionnalités de ES2015, mais également le support de React /
+JSX (encore heureux), de [Flow](https://flowtype.org/) et d'autres helpers
+bienvenus tels que `async / await`.
 
 En bons passionnés de bière, nous allons réaliser ensemble une app qui requête
 la [PunkAPI](https://punkapi.com/) (faites la demande d'une clé API via le
 formulaire prévu à cet effet).
 
-Je vous renvoie à la [documentation
-officielle](https://facebook.github.io/react-native/docs/getting-started.html)
+Je vous renvoie à la
+[documentation officielle](https://facebook.github.io/react-native/docs/getting-started.html)
 pour ce qui est de l'installation des dépendances (celles-ci variant selon votre
 OS et l'OS cible). Xcode / Android Studio, node et watchman étant installés,
 ouvrez un terminal et initiez le projet :
@@ -99,13 +99,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: "#F5FCFF",
   },
   welcome: {
     fontSize: 20,
     textAlign: "center",
-    margin: 10
-  }
+    margin: 10,
+  },
 });
 
 AppRegistry.registerComponent("PutainDeBiere", () => App);
@@ -146,7 +146,7 @@ const authBase64 = base64.encode(`${punkApiKey}:${password}`);
 const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
-  Authorization: `Basic ${authBase64}` // HTTP basic auth
+  Authorization: `Basic ${authBase64}`, // HTTP basic auth
 };
 
 // retourne une recette de bière au hasard
@@ -154,9 +154,10 @@ export const getRandomBrewdog = () =>
   fetch(`${rootEndpoint}/beers/random`, { headers }).then(
     ({ status, json }) => {
       if (status !== 200)
-        throw new Error(`API answered with status code ${status}`); // gestion du status code HTTP
+        throw new Error(`API answered with status code ${status}`);
+      // gestion du status code HTTP
       else return json(); // on parse la réponse en JSON
-    }
+    },
   );
 ```
 
@@ -342,20 +343,20 @@ const styles = StyleSheet.create({
 
 Si vous connaissez déjà React, vous pouvez:
 
-* améliorer le code de l'app avec l'ajout de redux (par exemple) afin de
+- améliorer le code de l'app avec l'ajout de redux (par exemple) afin de
   supprimer le state de notre composant
-* créer un composant stateless "\<Button\>"
-* styliser davantage l'app à l'aide
+- créer un composant stateless "\<Button\>"
+- styliser davantage l'app à l'aide
   d'[images](https://facebook.github.io/react-native/docs/image.html) ou
   d'[animations](https://facebook.github.io/react-native/docs/animations.html)
-* désactiver et modifier le style du bouton lors d'une requête API
-* gérer les erreurs de requêtage de façon un poil plus élégante que de balancer
+- désactiver et modifier le style du bouton lors d'une requête API
+- gérer les erreurs de requêtage de façon un poil plus élégante que de balancer
   une erreur à la tête de l'utilisateur
 
 Si ce n'est pas le cas, n'hésitez pas à lire ces deux articles pour vous
 familiariser avec ces librairies avant de continuer sur votre lancée:
 
-* [Introduction à React](/fr/articles/js/react/)
-* [Redux, comment ça marche ?](/fr/articles/js/redux/)
+- [Introduction à React](/fr/articles/js/react/)
+- [Redux, comment ça marche ?](/fr/articles/js/redux/)
 
 Bonne découverte !

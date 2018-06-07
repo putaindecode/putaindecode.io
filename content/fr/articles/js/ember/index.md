@@ -9,10 +9,10 @@ authors:
   - bmeurant
 ---
 
-Démarrer une [Single Page
-Application](http://en.wikipedia.org/wiki/Single-page_application) aujourd'hui
-ça commence souvent par : "mais quel putain de framework il faut que je prenne
-?" Et, vu que c'est pas ça qui manque, ça se complique !
+Démarrer une
+[Single Page Application](http://en.wikipedia.org/wiki/Single-page_application)
+aujourd'hui ça commence souvent par : "mais quel putain de framework il faut que
+je prenne ?" Et, vu que c'est pas ça qui manque, ça se complique !
 
 Parmi les multiples [technos disponibles](/fr/articles/js/react/) il y a
 [Ember](http://emberjs.com). Pour que le choix ne se résume pas à prendre celui
@@ -34,12 +34,12 @@ suffit pas à vous convaincre alors je vais détailler un peu. Bon alors, bien q
 ce soit le mot "ambitious" qui soit mis en gras, deux autres trucs me paraissent
 encore plus importants :
 
-* **web** : l'une des caractéristiques majeures d'[Ember](http://emberjs.com)
+- **web** : l'une des caractéristiques majeures d'[Ember](http://emberjs.com)
   est son attachement au web et aux URL en particulier. **Les URL et donc le
   routeur sont au cœur d'Ember** là ou bien d'autres frameworks les considèrent
   au mieux comme un addon important.
 
-* **framework** : [Ember](http://emberjs.com) est réellement un framework. Pas
+- **framework** : [Ember](http://emberjs.com) est réellement un framework. Pas
   une lib, pas une colonne vertébrale, pas une boîte à outils : un framework !
   [Ember](http://emberjs.com) propose un véritable modèle de développement que
   vous allez tout de suite adopter ... ou rejeter (au moins ça aura le mérite
@@ -48,8 +48,8 @@ encore plus importants :
 ### Conventions de nommage
 
 Ce modèle de développement commence par les conventions de nommage.
-[Ember](http://emberjs.com) applique en effet le principe de "*conventions over
-configuration*" et repose sur un nommage cohérent des différents composants de
+[Ember](http://emberjs.com) applique en effet le principe de "_conventions over
+configuration_" et repose sur un nommage cohérent des différents composants de
 votre application. Et finalement, quand on y réflechit bien, la cohérence, ça
 n'a pas que des mauvais côtés.
 
@@ -57,8 +57,8 @@ Typiquement pour une URL `test`, [Ember](http://emberjs.com) s'attend à trouver
 une `TestRoute`, un `TestController`, un gabarit `test`. Jusqu'ici, tout va
 bien.
 
-Curieux ? -> [doc
-officielle](http://emberjs.com/guides/concepts/naming-conventions/).
+Curieux ? ->
+[doc officielle](http://emberjs.com/guides/concepts/naming-conventions/).
 
 ### Modèles
 
@@ -73,12 +73,12 @@ var Book = DS.Model.extend({
   publicationDate: DS.attr("date"),
   author: DS.attr("string"),
   publisher: DS.attr("string"),
-  summary: DS.attr("string")
+  summary: DS.attr("string"),
 });
 ```
 
-Assoifé de connaissances ? -> [doc
-officielle](http://emberjs.com/guides/models/).
+Assoifé de connaissances ? ->
+[doc officielle](http://emberjs.com/guides/models/).
 
 ### Routeur
 
@@ -87,10 +87,10 @@ imbriqués permettant le rendu des modèles associés à chacun de ces gabarits.
 
 L'exemple suivant permet le rendu des URLs :
 
-* `/books`
-* `/books/:book_id`
-* `/books/:book_id/edit`
-* `/books/create`
+- `/books`
+- `/books/:book_id`
+- `/books/:book_id/edit`
+- `/books/create`
 
 ```js
 App.Router.map(function() {
@@ -114,7 +114,7 @@ modèle lors de ces transitions.
 App.BooksRoute = Ember.Route.extend({
   model: function() {
     return this.store.find("book");
-  }
+  },
 });
 ```
 
@@ -152,8 +152,8 @@ Il est très rare d'avoir à définir des vues en [Ember](http://emberjs.com) pa
 que les gabarits [Handlebars](http://handlebarsjs.com/) sont surpuissants et que
 les contrôleurs se chargent de la gestion de l'état de l'application.
 
-Vous en voulez quand même ? -> [doc
-officielle](http://emberjs.com/guides/views/).
+Vous en voulez quand même ? ->
+[doc officielle](http://emberjs.com/guides/views/).
 
 ### Gabarits
 
@@ -172,8 +172,8 @@ propriétés `firstname` et `lastname`.
 ```
 
 [Handlebars](http://handlebarsjs.com/) vient avec de nombreux outils (helpers)
-permettant de dynamiser nos gabarits : `{{#if isActive}} ... {{/if}}`, `{{#each
-users}} ... {{/each}}`, etc.
+permettant de dynamiser nos gabarits : `{{#if isActive}} ... {{/if}}`,
+`{{#each users}} ... {{/each}}`, etc.
 
 Dans [Ember](http://emberjs.com), les gabarits peuvent contenir un élément très
 important : `{{outlet}}`. Cet outlet définit un emplacement pour un autre
@@ -193,8 +193,8 @@ jour** (binding) par [Ember](http://emberjs.com) lorsque le modèle associé au
 gabarit sera modifié. Évidemment, seul cet élément sera rafraîchit et non le
 gabarit entier sinon c'est tricher.
 
-Envie de tester ? -> [doc
-officielle](http://emberjs.com/guides/templates/the-application-template/).
+Envie de tester ? ->
+[doc officielle](http://emberjs.com/guides/templates/the-application-template/).
 
 ### Composants
 
@@ -202,8 +202,8 @@ Un composant [Ember](http://emberjs.com) permet de définir une balise HTML
 personnalisée, permettant ainsi de partager de puissants éléments réutilisables
 au sein de votre application.
 
-Vous en avez toujours rêvé ? -> [doc
-officielle](http://emberjs.com/guides/components/).
+Vous en avez toujours rêvé ? ->
+[doc officielle](http://emberjs.com/guides/components/).
 
 ### Géneration d'objets
 
@@ -217,10 +217,11 @@ seul comme un grand.
 
 Il n'est cependant **pas nécessaire de créer systématiquement tous ces objets**
 si aucune logique spécifique n'a besoin d'y être définie. En effet,
-[Ember](http://emberjs.com) s'appuie sur les [conventions de
-nommage](#conventions-de-nommage) pour retrouver successivement, à partir d'une
-URL, la route, le contrôleur, la vue et le gabarit associés. Si l'un de ces
-objet n'est pas trouvé, [Ember](http://emberjs.com) va en générer un par défaut.
+[Ember](http://emberjs.com) s'appuie sur les
+[conventions de nommage](#conventions-de-nommage) pour retrouver successivement,
+à partir d'une URL, la route, le contrôleur, la vue et le gabarit associés. Si
+l'un de ces objet n'est pas trouvé, [Ember](http://emberjs.com) va en générer un
+par défaut.
 
 Donc si l'on crée dans le routeur la route suivante sans créer aucun autre objet
 :
@@ -233,16 +234,16 @@ App.Router.map(function() {
 
 [Ember](http://emberjs.com) va générer les objets suivants :
 
-* **route** : `AboutRoute`
-* **contrôleur** : `AboutController`
-* **gabarit** : `about`
+- **route** : `AboutRoute`
+- **contrôleur** : `AboutController`
+- **gabarit** : `about`
 
 Dans une application [Ember](http://emberjs.com), **il est donc nécessaire de ne
 définir que ce dont on a besoin !**. Et c'est bien connu, moins il y a de
 boilerplate, plus il y a de plaisir !
 
-Envie d'en savoir plus ? -> [doc
-officielle](http://emberjs.com/guides/routing/generated-objects/).
+Envie d'en savoir plus ? ->
+[doc officielle](http://emberjs.com/guides/routing/generated-objects/).
 
 Un bon moyen de se rendre compte de ça consiste à installer le debugger Ember
 sur votre navigateur préféré (donc pas IE). Vous aurez, entre autres, la liste
@@ -262,15 +263,16 @@ choix structurants.** Il est résolument tourné vers le web et les URL. Ses
 créateurs sont également ceux de son moteur de gabarit
 [Handlebars](http://handlebarsjs.com/) et sont très impliqués dans diverses
 initiatives autour de la standardisation et de l'évolution du web. Pour n'en
-citer que deux : [JSON API](http://jsonapi.org/) et [Web
-Components](https://gist.github.com/wycats/9144666b0c606d1838be), notamment au
-travers du moteur de gabarits [HTMLBars](https://github.com/tildeio/htmlbars).
-Ils embrassent très rapidement les nouveaux standards tels que [ES6
-Harmony](https://people.mozilla.org/~jorendorff/es6-draft.html) à l'image des
-travaux effectués autour d'[ember-cli](http://www.ember-cli.com/) qui sera
+citer que deux : [JSON API](http://jsonapi.org/) et
+[Web Components](https://gist.github.com/wycats/9144666b0c606d1838be), notamment
+au travers du moteur de gabarits
+[HTMLBars](https://github.com/tildeio/htmlbars). Ils embrassent très rapidement
+les nouveaux standards tels que
+[ES6 Harmony](https://people.mozilla.org/~jorendorff/es6-draft.html) à l'image
+des travaux effectués autour d'[ember-cli](http://www.ember-cli.com/) qui sera
 abordé dans un prochain article.
 
-Enfin, contrairement aux *a priori*, la courbe d'apprentissage
+Enfin, contrairement aux _a priori_, la courbe d'apprentissage
 d'[Ember](http://emberjs.com) est progressive et il est très simple à prendre en
 main une fois les concepts de base appréhendés - c'est justement le but de cet
 article. Au prochain épisode, nous verrons justement - par la pratique cette

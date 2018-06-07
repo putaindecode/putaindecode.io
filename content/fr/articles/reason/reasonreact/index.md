@@ -12,11 +12,25 @@ header:
   linearGradient: #DD4B39, #DD4B39
 ---
 
-Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intéressés au typage pour vos applications front (c'est ça de commencer avec JS…), vous avez certainement utilisé les `propTypes` au début en vous disant "putain c'est cool de vérifier les types, ça m'évite bien des problèmes". Puis c’était sympa mais bon, faut quand même exécuter le bout de code qui pète et il est peut-être super chiant d'y accéder dans l'app. Du coup, vous vous êtes sûrement tournés vers Flow ou TypeScript.
+Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intéressés
+au typage pour vos applications front (c'est ça de commencer avec JS…), vous
+avez certainement utilisé les `propTypes` au début en vous disant "putain c'est
+cool de vérifier les types, ça m'évite bien des problèmes". Puis c’était sympa
+mais bon, faut quand même exécuter le bout de code qui pète et il est peut-être
+super chiant d'y accéder dans l'app. Du coup, vous vous êtes sûrement tournés
+vers Flow ou TypeScript.
 
-Dans cet article, on va découvrir la *next-step* dans ce cheminement : écrire nos composants React dans un langage statiquement et fortement typé: Reason 🚀. Reason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple quand on vient du JS. Si vous n’avez pas lu [l’introduction à ce langage](/fr/articles/reason/introduction-reason/), c’est le moment.
+Dans cet article, on va découvrir la _next-step_ dans ce cheminement : écrire
+nos composants React dans un langage statiquement et fortement typé: Reason 🚀.
+Reason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple
+quand on vient du JS. Si vous n’avez pas lu
+[l’introduction à ce langage](/fr/articles/reason/introduction-reason/), c’est
+le moment.
 
-Là, je vais vous présenter **ReasonReact**, des bindings API par dessus React supportés officiellement par l'équipe de Reason. Facebook *dogfood* la solution puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses composants.
+Là, je vais vous présenter **ReasonReact**, des bindings API par dessus React
+supportés officiellement par l'équipe de Reason. Facebook _dogfood_ la solution
+puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses
+composants.
 
 ## Stateless
 
@@ -52,41 +66,58 @@ Et pour monter le composant :
 ReactDOMRe.renderToElementWithId(<HelloWorld message="Helloworld" />, "root");
 ```
 
-Un des gros avantages à utiliser Reason, c’est que le langage est capable d’inférer la grande majorité des types et sera en mesure de détecter dans toute l’app si quelque chose n’est pas passé correctement : pour le langage, il s‘agit simplement de fonctions qui appellent d’autres fonctions, et les langages fonctionnels statiquement et fortement typés sont plutôt pas dégueulasses pour ça.
+Un des gros avantages à utiliser Reason, c’est que le langage est capable
+d’inférer la grande majorité des types et sera en mesure de détecter dans toute
+l’app si quelque chose n’est pas passé correctement : pour le langage, il s‘agit
+simplement de fonctions qui appellent d’autres fonctions, et les langages
+fonctionnels statiquement et fortement typés sont plutôt pas dégueulasses pour
+ça.
 
 ## Stateful
 
-La petite particularité de ReasonReact vis à vis des composants stateful, c’est que les mises à jour d'états doivent passer par un reducer, comme si chaque composant embarquait sa petite implémentation de redux.
+La petite particularité de ReasonReact vis à vis des composants stateful, c’est
+que les mises à jour d'états doivent passer par un reducer, comme si chaque
+composant embarquait sa petite implémentation de redux.
 
 Maintenant, comment qu'on fait pour créer un composant stateful ?
 
-On commence par définir le type du state : contrairement à JS, il ne s'agit pas forcément d'un objet, ça peut être une chaîne de caractère, un entier, un variant, un boolean, un arbuste, une map, un jus de fruits frais, un tableau, whatever.
+On commence par définir le type du state : contrairement à JS, il ne s'agit pas
+forcément d'un objet, ça peut être une chaîne de caractère, un entier, un
+variant, un boolean, un arbuste, une map, un jus de fruits frais, un tableau,
+whatever.
 
 ```js
 type state = {
-  counter: int
+  counter: int,
 };
 ```
 
-On va définir notre type action, sous la forme de variants: chaque variant représente un des type d’action possible. Pour bien se représenter ce qu'est une action, c’est un token, contenant possiblement des paramètres, qu’on va envoyer à notre fameux reducer qui, lui, retournera une réaction à cette action.
+On va définir notre type action, sous la forme de variants: chaque variant
+représente un des type d’action possible. Pour bien se représenter ce qu'est une
+action, c’est un token, contenant possiblement des paramètres, qu’on va envoyer
+à notre fameux reducer qui, lui, retournera une réaction à cette action.
 
 ```js
-type action =
-  | Increment
-  | Decrement;
+type action = Increment | Decrement;
 ```
 
-Dans le composant retourné par `make`, on ajoute une fonction `initialState` qui retourne… l'état initial (c'est bien, vous suivez), et une fonction `reducer`, qui effectue un pattern-matching sur l’action et retourne une update.
-Cette fonction prend deux paramètres: l'`action` à traiter et le `state` à jour (comme lorsque l'on passe un callback à `setState` dans l'équivalent JavaScript `setState(state => newState)`).
+Dans le composant retourné par `make`, on ajoute une fonction `initialState` qui
+retourne… l'état initial (c'est bien, vous suivez), et une fonction `reducer`,
+qui effectue un pattern-matching sur l’action et retourne une update. Cette
+fonction prend deux paramètres: l'`action` à traiter et le `state` à jour (comme
+lorsque l'on passe un callback à `setState` dans l'équivalent JavaScript
+`setState(state => newState)`).
 
-L’update retournée indique au component comment il doit se mettre à jour (ici sont listés les cas courants) :
+L’update retournée indique au component comment il doit se mettre à jour (ici
+sont listés les cas courants) :
 
 - `NoUpdate`, pour ne rien faire
 - `Update`, pour mettre à jour l’état et re-rendre le composant
 - `SideEffect` pour lancer un effet de bord (e.g. une requête réseau)
-- `UpdateWithSideEffect`, pour changer le state et lancer un effet de bord (e.g. afficher un loader et lancer une requête)
+- `UpdateWithSideEffect`, pour changer le state et lancer un effet de bord (e.g.
+  afficher un loader et lancer une requête)
 
-*Wrapping up* :
+_Wrapping up_ :
 
 ```js
 type state = {counter: int};
@@ -130,15 +161,18 @@ ReactDOM.renderToElementWithId(<Count initialCount=0 />, "App");
 
 ## With side-effects
 
-Bien que ça puisse paraître un peu lourd de devoir faire un `reducer` pour gérer ses updates, ça apporte quand même:
+Bien que ça puisse paraître un peu lourd de devoir faire un `reducer` pour gérer
+ses updates, ça apporte quand même:
 
 - Un seul endroit par composant où toutes les updates passent
-- La possibilité pour le compiler de détecter si l'on oublie de gérer des actions
+- La possibilité pour le compiler de détecter si l'on oublie de gérer des
+  actions
 - De gérer lisiblement et uniformément les effets de bord
 
 <img src="./terminal.png" alt="" />
 
-Exemple ici avec un composant où on va faire comme si on récupérait l'utilisateur connecté sur une API.
+Exemple ici avec un composant où on va faire comme si on récupérait
+l'utilisateur connecté sur une API.
 
 ```js
 let resolveAfter = (ms) =>
@@ -267,6 +301,8 @@ let make = (~message: string, _children) =>
   );
 ```
 
-Voilà pour les *basics* de ReasonReact. Pour en savoir plus, y a [la petite doc qui va bien](https://reasonml.github.io/reason-react/), et on vous préparera un petit article sur les aspects un peu plus avancés de l'usage.
+Voilà pour les _basics_ de ReasonReact. Pour en savoir plus, y a
+[la petite doc qui va bien](https://reasonml.github.io/reason-react/), et on
+vous préparera un petit article sur les aspects un peu plus avancés de l'usage.
 
 Bisous bisous.

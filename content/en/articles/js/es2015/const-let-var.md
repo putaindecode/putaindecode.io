@@ -62,8 +62,8 @@ each iteration, so `const` fits better here.
 
 `let` allows you to do the same as `const` without the single assignment
 constraint. So you can understand here that the use-cases are the same as for
-its ancestor, `var`. By the way, you might have been told that *`let` is the new
-`var`*. It is partly true because it can do the same, but even better if we
+its ancestor, `var`. By the way, you might have been told that _`let` is the new
+`var`_. It is partly true because it can do the same, but even better if we
 consider the ability of the variable to be scoped to the block level.
 
 ```js
@@ -116,8 +116,8 @@ only made once when the loop starts. `const` is not relevant in this case.
 
 ## var
 
-With `const` and `let`, there is no more space for `var` anymore. [Maybe in a
-`try`/`catch` context](https://twitter.com/getify/status/658662478528643072).
+With `const` and `let`, there is no more space for `var` anymore.
+[Maybe in a `try`/`catch` context](https://twitter.com/getify/status/658662478528643072).
 
 # Hoisting and TDZ (Temporal Dead Zone) issues
 
@@ -150,7 +150,7 @@ function fn() {
 
 So, let's recap:
 
-* Use `const` (might be relevant 99% of the time)
-* If during you development you happen to have to change the value of this
+- Use `const` (might be relevant 99% of the time)
+- If during you development you happen to have to change the value of this
   variable, switch to `let` (that might happen 1% of the time)
-* If you are in the worst use-case of the world, use `var` (you can do the math)
+- If you are in the worst use-case of the world, use `var` (you can do the math)

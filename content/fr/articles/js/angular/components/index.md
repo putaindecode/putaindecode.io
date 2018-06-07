@@ -9,8 +9,8 @@ authors:
   - Freezystem
 ---
 
-Ce post a été écrit à la lumière du [changelog d'Angular 1.5.0
-rc1](https://github.com/angular/angular.js/blob/master/CHANGELOG.md#150-rc1-quantum-fermentation-2016-01-15).\
+Ce post a été écrit à la lumière du
+[changelog d'Angular 1.5.0 rc1](https://github.com/angular/angular.js/blob/master/CHANGELOG.md#150-rc1-quantum-fermentation-2016-01-15).\
 Toutes information est succeptible d'évoluer au cours des publications de nouvelles
 versions du framework.
 
@@ -22,15 +22,16 @@ l'écart entre les deux et rendre les changements moins pénibles.
 
 On voit donc progressivement apparaitre de nouvelles fonctionnalités comme :
 
-* ~~un [nouveau router](https://angular.github.io/router/) ?~~
-* la possibilité d'[annuler une
-  resource](https://docs.angularjs.org/api/ngResource/service/$resource#cancelling-requests)
-* les transclusions multiples
-* la compilation paresseuse des transclusions
+- ~~un [nouveau router](https://angular.github.io/router/) ?~~
+- la possibilité
+  d'[annuler une resource](https://docs.angularjs.org/api/ngResource/service/$resource#cancelling-requests)
+- les transclusions multiples
+- la compilation paresseuse des transclusions
 
 Mais le point qui nous intéresse particulièrement ici n'est autre que le nouveau
-_helper_ permettant la déclaration de similis [composants
-web](https://fr.wikipedia.org/wiki/Composants_web), aka web-components.
+_helper_ permettant la déclaration de similis
+[composants web](https://fr.wikipedia.org/wiki/Composants_web), aka
+web-components.
 
 Les habitués connaissaient déjà
 [`angular.directive()`](https://docs.angularjs.org/api/ng/service/$compile), un
@@ -59,7 +60,7 @@ var directiveObj = {
   scope: false,
   bindToController: false,
   controller: function() {},
-  controllerAs: "stringIdentifier"
+  controllerAs: "stringIdentifier",
 };
 ```
 
@@ -69,13 +70,13 @@ Ceux qui utilisent les directives Angular de manière régulière ne sont pas sa
 savoir qu'il est possible de les instancier de 4 manières différentes dans son
 HTML en modifiant l'attribut `restrict` :
 
-* comme un élément avec `restrict : 'E'`
-* comme un attribut avec `restrict : 'A'`
-* comme une classe avec `restrict : 'C'` (déconseillé)
-* comme un commentaire avec `restrict : 'M'` (fortement déconseillé)
+- comme un élément avec `restrict : 'E'`
+- comme un attribut avec `restrict : 'A'`
+- comme une classe avec `restrict : 'C'` (déconseillé)
+- comme un commentaire avec `restrict : 'M'` (fortement déconseillé)
 
-On peut aussi autoriser l'utilisation mixe en combinant les lettres : `restrict
-: 'EAC'`
+On peut aussi autoriser l'utilisation mixe en combinant les lettres :
+`restrict : 'EAC'`
 
 `restrict` n'est donc plus configurable et est restreint _(sans mauvais jeu de
 mot)_ à la forme `'E'` en faisant un composant de façon claire.
@@ -100,8 +101,8 @@ binding).
 
 ### Utilisation _forcée_ de `controllerAs`
 
-Déjà présenté comme une *[best
-practice](https://toddmotto.com/digging-into-angulars-controller-as-syntax/)*,
+Déjà présenté comme une
+_[best practice](https://toddmotto.com/digging-into-angulars-controller-as-syntax/)_,
 `controllerAs` fait son chemin de manière évidente jusqu'au nouveau _helper_
 `.component()` son utilisation va de pair avec celle de `bindings`.
 
@@ -126,7 +127,7 @@ angular.directive("helloWorld", function helloWorld() {
     restrict: "E",
     scope: {},
     bindToController: {
-      name: "@"
+      name: "@",
     },
     controller: function helloWorldCtrl() {
       this.logName = function() {
@@ -135,7 +136,7 @@ angular.directive("helloWorld", function helloWorld() {
     },
     controllerAs: "hw",
     template:
-      '<div><span ng-click="hw.logName()">Hello {{hw.name}}!</span></div>'
+      '<div><span ng-click="hw.logName()">Hello {{hw.name}}!</span></div>',
   };
 });
 ```
@@ -145,7 +146,7 @@ La syntaxe _component_ :
 ```js
 angular.component("helloWorld", {
   bindings: {
-    name: "@"
+    name: "@",
   },
   controller: function helloWorldCtrl() {
     this.logName = function() {
@@ -153,7 +154,7 @@ angular.component("helloWorld", {
     };
   },
   template:
-    '<div><span ng-click="$ctrl.logName()">Hi {{$ctrl.name}}!</span></div>'
+    '<div><span ng-click="$ctrl.logName()">Hi {{$ctrl.name}}!</span></div>',
 });
 ```
 

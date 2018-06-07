@@ -12,10 +12,10 @@ authors:
 [Grunt][p!grunt] ou autres [Rake][gem:rake], certains irréductibles (dont je
 fais partie) ont fait le choix d'employer un des outils les plus standards et
 emblématiques dont tout développeur a entendu parler au moins une fois dans sa
-vie : *Make*.
+vie : _Make_.
 
 Si de prime abord on a l'impression d'un système assez archaïque (ce qui n'est
-pas toujours forcément faux), on se rend rapidement compte que *Make*, couplé à
+pas toujours forcément faux), on se rend rapidement compte que _Make_, couplé à
 une petite dose de scripting shell permet rapidement de mettre en place un moyen
 de compiler ses fichiers et de lancer des tâches.
 
@@ -26,7 +26,7 @@ terminal.
 
 # Hello World
 
-Je vous propose de commencer en douceur par un classique *Hello World*. On va
+Je vous propose de commencer en douceur par un classique _Hello World_. On va
 simplement définir une tâche `hello-world` dont l'action va être d'afficher
 _"Hello, world"_ à l'écran (boooring).
 
@@ -132,8 +132,8 @@ j'ai besoin du fichier `article.md` et que j'utilise la commande
 [`marked`][npm:marked] pour construire le fichier. Essayez, vous verrez, c'est
 magique.
 
-Là où ça devient intéressant, c'est que si je lance de nouveau `make
-article.html`, rien ne se passe. Eh oui, _Make_ vérifie les dates de
+Là où ça devient intéressant, c'est que si je lance de nouveau
+`make article.html`, rien ne se passe. Eh oui, _Make_ vérifie les dates de
 modification des pré-requis et les compare avec la date de modification de la
 cible pour savoir s'il doit où non reconstruire la cible.
 
@@ -143,13 +143,13 @@ fichiers, qui à leur tour dépendent de fichiers, …
 <a name="ref-phony-target"></a>
 
 On peut aussi avoir une cible factice qui ne représente pas un fichier et qui
-elle-même dépend de plusieurs fichiers (`website: index.html apropos.html
-contact.html`).
+elle-même dépend de plusieurs fichiers
+(`website: index.html apropos.html contact.html`).
 
 # Variables et substitutions
 
 La syntaxe des variables dans un _Makefile_ ressemblent beaucoup aux variables
-de votre Shell, *mais pas tout à fait*.
+de votre Shell, _mais pas tout à fait_.
 
 ```make
 SOURCE = index.md
@@ -200,10 +200,10 @@ les noms de fichiers là ? »
 Superbe transition étant donné qu'on va parler ici de quelques variables
 spéciales bien pratiques !
 
-* `$@` contient le nom de la cible de la règle en cours d'exécution ;
-* `$^` contient la liste des dépendances de la règle (la flèche pointe vers la
+- `$@` contient le nom de la cible de la règle en cours d'exécution ;
+- `$^` contient la liste des dépendances de la règle (la flèche pointe vers la
   liste de dépendances) ;
-* `$<` contient la première dépendance de la règle (la flèche pointe à gauche,
+- `$<` contient la première dépendance de la règle (la flèche pointe à gauche,
   là où est la dépendance).
 
 À l'aide de celles-ci on peut du coup compléter notre exemple précédent :
@@ -253,7 +253,7 @@ Dans ces cas-là, on va vouloir exécuter la règle quoi qu'il arrive, comme si 
 cible était tout le temps périmée.
 
 Une cible particulière existe pour ça : `.PHONY`. Toutes les dépendances de
-cette cible seront marquées comme (traduction pourrie) imposteurs (*phony*
+cette cible seront marquées comme (traduction pourrie) imposteurs (_phony_
 donc).
 
 Pour reprendre l'exemple précédent, on déclarera donc :
@@ -271,7 +271,7 @@ et exécutera les commandes de la recette de la règle.
 # Un exemple complet
 
 L'exemple suivant permet de compiler un site Web depuis un ensemble de fichiers
-*Markdown*.
+_Markdown_.
 
 ```make
 SOURCES = $(wildcard src/*.md)
@@ -297,18 +297,18 @@ potentiellement le créer quand on compile un fichier dedans.
 
 # Pour aller plus loin
 
-Il existe bien d'autres fonctionnalités dans _Make_ (du moins dans *GNU Make*),
+Il existe bien d'autres fonctionnalités dans _Make_ (du moins dans _GNU Make_),
 avec notamment :
 
-* Les [_canned recipes_][man:make:canned] (recettes en boîte), permettant de
+- Les [_canned recipes_][man:make:canned] (recettes en boîte), permettant de
   définir un bout de règle réutilisable à plusieurs endroits.
-* Des [expressions conditionnelles][man:make:conditions] pour avoir des tests
+- Des [expressions conditionnelles][man:make:conditions] pour avoir des tests
   dans votre _Makefile_ et effectuer des traitements différents selon
   l'environnement.
-* Les [règles en _order only_][man:make:types] qui permettent d'indiquer une
+- Les [règles en _order only_][man:make:types] qui permettent d'indiquer une
   dépendance dont la date de modification ne doit pas être prise en compte (on
   peut s'en servir pour éviter le `mkdir` dans l'exemple complet).
-* Et [plein d'autres fonctions][man:make:functions] bien pratiques !
+- Et [plein d'autres fonctions][man:make:functions] bien pratiques !
 
 Je vous invite aussi à jeter un coup d'œil au [_Makefile_ de Veil][gh:veil], un
 outil que j'utilise pour générer des sites statiques à partir de fichiers
@@ -316,7 +316,7 @@ _Markdown_ (ah bah tiens, comme dans mes exemples, c'est rigolo). Il y a plein
 de fonctionnalités de _Make_ utilisées dans ce projet et je pense que ça peut
 être source d'idées.
 
-Voilà pour cette premier introduction à *Make*, j'espère que ça vous a plu et
+Voilà pour cette premier introduction à _Make_, j'espère que ça vous a plu et
 que vous êtes fin prêts à affronter tous ces bouseux avec leur système de build
 à base de streams, de brocolis et autres râteaux.
 
@@ -325,8 +325,12 @@ que vous êtes fin prêts à affronter tous ces bouseux avec leur système de bu
 [gem:rake]: https://rubygems.org/gems/rake
 [npm:marked]: https://www.npmjs.org/package/marked
 [man:make]: https://www.gnu.org/software/make/manual/make.html
-[man:make:canned]: https://www.gnu.org/software/make/manual/make.html#Canned-Recipes
-[man:make:conditions]: https://www.gnu.org/software/make/manual/make.html#Functions
-[man:make:types]: https://www.gnu.org/software/make/manual/make.html##Prerequisite-Types
-[man:make:functions]: https://www.gnu.org/software/make/manual/make.html#Functions
+[man:make:canned]:
+  https://www.gnu.org/software/make/manual/make.html#Canned-Recipes
+[man:make:conditions]:
+  https://www.gnu.org/software/make/manual/make.html#Functions
+[man:make:types]:
+  https://www.gnu.org/software/make/manual/make.html##Prerequisite-Types
+[man:make:functions]:
+  https://www.gnu.org/software/make/manual/make.html#Functions
 [gh:veil]: https://github.com/madx/veil/

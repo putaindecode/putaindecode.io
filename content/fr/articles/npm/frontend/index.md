@@ -12,9 +12,10 @@ authors:
 
 NPM, le package manager de Node.js, a grandement participé au succès de ce
 dernier. Il facilite la création, le partage et l'installation de modules. Il
-permet aux développeurs de suivre la [philosophie
-Unix](http://www.faqs.org/docs/artu/ch01s06.html) où chaque module fait une
-seule tâche (évite la complexité, facilite la réutilisation et les tests).
+permet aux développeurs de suivre la
+[philosophie Unix](http://www.faqs.org/docs/artu/ch01s06.html) où chaque module
+fait une seule tâche (évite la complexité, facilite la réutilisation et les
+tests).
 
 Cependant NPM ne se limite pas aux modules JavaScript. Il est en effet possible
 de publier tout type de fichier et c'est là que ça devient intéressant pour nos
@@ -37,8 +38,8 @@ votre module.
 ```
 
 Dans un article précédent, il vous a été présenté le développement d'une
-application autour de [modules JavaScript avec
-Browserify](/fr/articles/js/browserify/).
+application autour de
+[modules JavaScript avec Browserify](/fr/articles/js/browserify/).
 
 ## Module pour tout type de fichier
 
@@ -67,14 +68,14 @@ HTML. (Ou l'`@import`er dans votre fichier Sass/Less principal.)
 
 ## Pourquoi NPM plutôt qu'un autre package manager ?
 
-* Il a déjà fait ses preuves comme package manager pour Node.js.
-* Pas besoin d'installer un nouvel outil, NPM étant installé avec Node.js, ce
+- Il a déjà fait ses preuves comme package manager pour Node.js.
+- Pas besoin d'installer un nouvel outil, NPM étant installé avec Node.js, ce
   qui évite un lot de bugs et de fichiers de configuration supplémentaires (un
   simple `package.json` suffit).
-* Et surtout, toutes les dépendances de votre projet peuvent être gérées via
+- Et surtout, toutes les dépendances de votre projet peuvent être gérées via
   NPM: votre tasks runner et ses plugins ([Gulp](/fr/articles/js/gulp/),
-  [Grunt](/fr/articles/js/grunt/) & co), vos [modules
-  JavaScript](/fr/articles/js/browserify/), vos
+  [Grunt](/fr/articles/js/grunt/) & co), vos
+  [modules JavaScript](/fr/articles/js/browserify/), vos
   [tests](/fr/articles/js/tests/frontend/) et comme on vient de le voir, vos
   fichiers de style.
 
@@ -88,10 +89,10 @@ sa version suivant la convention [semver](http://semver.org/). Sinon vous serez
 susceptible d'inclure des bugs dans les projets qui l'utilisent. Ce qui implique
 :
 
-* Mettre à jour le champ "version" de votre `package.json` (vous pouvez vous
-  aider des commandes `npm version patch`, `npm version minor` et `npm version
-  major`).
-* Ajouter un tag git (`git tag -a 0.1.0 -m "Initial release"`).
+- Mettre à jour le champ "version" de votre `package.json` (vous pouvez vous
+  aider des commandes `npm version patch`, `npm version minor` et
+  `npm version major`).
+- Ajouter un tag git (`git tag -a 0.1.0 -m "Initial release"`).
 
 NPM est une excellente solution pour gérer les dépendences de votre projet,
 aussi bien pour vos outils de build, que pour vos assets front-end. Je pense

@@ -58,11 +58,11 @@ const counter = (state = initialState, action) => {
 };
 ```
 
-Le petit `state = initialState` c'est un [paramètre avec une valeur par
-défaut](/fr/articles/js/es2015/defaults/), si vous avez bien vu le bout de code
-avec le `reduce` un peu plus haut, on passe la valeur `undefined` comme
-accumulateur initial, ça permet d'avoir un state valant `initialState` au
-passage de la première action.
+Le petit `state = initialState` c'est un
+[paramètre avec une valeur par défaut](/fr/articles/js/es2015/defaults/), si
+vous avez bien vu le bout de code avec le `reduce` un peu plus haut, on passe la
+valeur `undefined` comme accumulateur initial, ça permet d'avoir un state valant
+`initialState` au passage de la première action.
 
 Le `switch` permet de retourner un nouvel état selon les actions passées, avec
 un `default` qui retourne l'état actuel, dans le cas où on se fout de l'action
@@ -81,7 +81,7 @@ const createStore = reducer => {
       state = reducer(state, action);
     },
     // une méthode pour récupérer le state
-    getState: () => state
+    getState: () => state,
   };
 };
 ```
@@ -112,7 +112,7 @@ const createStore = reducer => {
         subscribers.delete(func);
       };
     },
-    getState: () => state
+    getState: () => state,
   };
 };
 ```
@@ -148,7 +148,7 @@ import { tweets } from "./reducers/tweets";
 
 const reducer = combineReducers({
   users,
-  tweets
+  tweets,
 });
 
 const store = createStore(reducer);
@@ -157,10 +157,10 @@ const store = createStore(reducer);
 ## 4. Permettre l'ajout de middlewares
 
 Les middlewares apportent toute la liberté de personalisation de Redux. L'un des
-plus populaires est le [_thunk
-middleware_](https://github.com/gaearon/redux-thunk), qui permet de passer une
-fonction à la place d'une action, et de dispatcher depuis cette fonction, ce qui
-peut s'avérer très utile pour gérer des réponses asynchrones.
+plus populaires est le
+[_thunk middleware_](https://github.com/gaearon/redux-thunk), qui permet de
+passer une fonction à la place d'une action, et de dispatcher depuis cette
+fonction, ce qui peut s'avérer très utile pour gérer des réponses asynchrones.
 
 On va donc créer une fonction `applyMiddleware`, qui va enrichir un store en
 ajoutant une sorte de hook sur sa méthode dispatch.
@@ -180,13 +180,13 @@ const applyMiddleware = (...middlewares) => {
     // l'état en cours et dispatcher des actions
     const middlewareAPI = {
       getState: store.getState,
-      dispatch: action => dispatch(action)
+      dispatch: action => dispatch(action),
     };
     const chain = middlewares.map(middleware => middleware(middlewareAPI));
     let dispatch = compose(...chain)(store.dispatch);
     return {
       ...store,
-      dispatch
+      dispatch,
     };
   };
 };

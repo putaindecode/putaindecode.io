@@ -28,11 +28,11 @@ C'est souvent l'exemple qui illustre le plus les documentations. `Array#reduce`
 va permettre de parcourir le tableau, et pour chaque élément, appeler une
 fonction avec les paramètres suivants :
 
-* le résultat de la précédente exécution de cette fonction (aussi appelé
+- le résultat de la précédente exécution de cette fonction (aussi appelé
   l'accumulateur).
-* l'élément courant.
-* l'index de l’élément courant.
-* le tableau sur lequel on est entrain d'itérer
+- l'élément courant.
+- l'index de l’élément courant.
+- le tableau sur lequel on est entrain d'itérer
 
 ```javascript
 var sum = [1, 2, 3, 4, 5].reduce(function(memo, val) {
@@ -56,7 +56,7 @@ simplement, genre en 3 lignes.
 var input = "I'm %USER% and I live in %COUNTRY%";
 var data = [
   { token: "%USER%", value: "lionel" },
-  { token: "%COUNTRY%", value: "France" }
+  { token: "%COUNTRY%", value: "France" },
 ];
 
 var output = data.reduce(function(memo, item) {
@@ -81,7 +81,7 @@ var stats = [
   { site: "mozilla.fr", browser: "FireFox", value: "60%" },
   { site: "mozilla.fr", browser: "Internet Explorer", value: "20%" },
   { site: "microsoft.fr", browser: "Chrome", value: "10%" },
-  { site: "microsoft.fr", browser: "FireFox", value: "20%" }
+  { site: "microsoft.fr", browser: "FireFox", value: "20%" },
 ];
 
 function compareSite(site, item) {
@@ -153,18 +153,18 @@ var data = {
   "google.fr": [
     { name: "Chrome", value: "50%" },
     { name: "FireFox", value: "30%" },
-    { name: "Internet Explorer", value: "20%" }
+    { name: "Internet Explorer", value: "20%" },
   ],
   "mozilla.fr": [
     { name: "Chrome", value: "20%" },
     { name: "FireFox", value: "60%" },
-    { name: "Internet Explorer", value: "20%" }
+    { name: "Internet Explorer", value: "20%" },
   ],
   "microsoft.fr": [
     { name: "Chrome", value: "10%" },
     { name: "FireFox", value: "20%" },
-    { name: "Internet Explorer", value: "70%" }
-  ]
+    { name: "Internet Explorer", value: "70%" },
+  ],
 };
 
 function groupByBrowser(site, memo, browser) {

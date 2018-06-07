@@ -11,17 +11,17 @@ authors:
 
 > ⚠️ Cet article est marqué comme obsolète
 
-Après vous avoir fait un petit [état de l'art des préprocesseurs CSS
-historiques](/fr/articles/css/preprocesseurs/) et vous avoir parlé [des
-postprocesseurs](/fr/articles/css/preprocesseurs/), je me dois de vous montrer
-le chemin qui me semble le plus pertinent aujourd'hui, en 2014, maintenant que
-[les spécifications CSS sont découpées en
-modules](http://www.w3.org/standards/techs/css#cr) qui peuvent du coup avancer
-(plus rapidement) chacune de leur côté.
+Après vous avoir fait un petit
+[état de l'art des préprocesseurs CSS historiques](/fr/articles/css/preprocesseurs/)
+et vous avoir parlé [des postprocesseurs](/fr/articles/css/preprocesseurs/), je
+me dois de vous montrer le chemin qui me semble le plus pertinent aujourd'hui,
+en 2014, maintenant que
+[les spécifications CSS sont découpées en modules](http://www.w3.org/standards/techs/css#cr)
+qui peuvent du coup avancer (plus rapidement) chacune de leur côté.
 
 Bon après faut avouer que chez {p!} on fait genre on est des hipsters hackers,
-du coup quand on voit que [Sass est le game changer of the
-year](http://blog.kaelig.fr/post/85546040569/net-awards-sass-game-changer-of-the-year)
+du coup quand on voit que
+[Sass est le game changer of the year](http://blog.kaelig.fr/post/85546040569/net-awards-sass-game-changer-of-the-year)
 et que tout le monde l'adopte, on se doit de rester hipster. Du coup on est
 obligés de passer à autre chose.
 
@@ -37,10 +37,10 @@ une étape avant le _processing_ de nos feuilles de styles par les navigateurs.
 
 Cela dit il faut bien distinguer les étapes :
 
-1. Preprocessing d'un langage spécifique (Sass, Stylus\*) ou superset du langage
-   CSS (Scss, Less);
-2. Preprocessing d'un fichier respectant la syntaxe CSS;
-3. Processing par le navigateur
+1.  Preprocessing d'un langage spécifique (Sass, Stylus\*) ou superset du
+    langage CSS (Scss, Less);
+2.  Preprocessing d'un fichier respectant la syntaxe CSS;
+3.  Processing par le navigateur
 
 Revenons rapidement sur ces 3 points :
 
@@ -163,31 +163,32 @@ aura pas besoin d'écrire de plugin, juste en utiliser fera l'affaire.
 Rework embarque en natif quelques plugins. Il faudra tout de même les activer
 (on voit comment juste après).
 
-* [extend](https://github.com/reworkcss/rework#extend): Permet d'hériter d'un
+- [extend](https://github.com/reworkcss/rework#extend): Permet d'hériter d'un
   sélecteur (`@extend` quoi).
-* [ease](https://github.com/reworkcss/rework#ease): Ajout un paquet de fonctions
+- [ease](https://github.com/reworkcss/rework#ease): Ajout un paquet de fonctions
   d'easing pour les animations et transitions.
-* [at2x](https://github.com/reworkcss/rework#at2x): Gestion automatique des
+- [at2x](https://github.com/reworkcss/rework#at2x): Gestion automatique des
   images `@2x`.
-* [prefixSelectors](https://github.com/reworkcss/rework#prefixselectorsstring):
+- [prefixSelectors](https://github.com/reworkcss/rework#prefixselectorsstring):
   Permet de préfixer vos sélecteurs.
-* [colors](https://github.com/reworkcss/rework#colors): Explication par
+- [colors](https://github.com/reworkcss/rework#colors): Explication par
   l'exemple : `rgba(#fc0, .5)`.
-* [mixin](https://github.com/reworkcss/rework#mixinobject): Faire ses propres
+- [mixin](https://github.com/reworkcss/rework#mixinobject): Faire ses propres
   mixins via des fonctions JavaScript.
-* [function](https://github.com/reworkcss/rework#functionobject): Ajouter ses
+- [function](https://github.com/reworkcss/rework#functionobject): Ajouter ses
   propres fonctions CSS.
-* [references](https://github.com/reworkcss/rework#references): Permet de faire
+- [references](https://github.com/reworkcss/rework#references): Permet de faire
   référence à des valeurs de propriétés (ex: `height: @width`)
-* [url](https://github.com/reworkcss/rework#urlfn): Réécrire les `url()`s via
+- [url](https://github.com/reworkcss/rework#urlfn): Réécrire les `url()`s via
   une fonction JavaScript.
-* [inline](https://github.com/reworkcss/rework#inlinedir): Inliner des
+- [inline](https://github.com/reworkcss/rework#inlinedir): Inliner des
   ressources via des datauri.
 
 ### Plugins Rework NPM
 
-On a déjà plus d'une soixantaine de [plugins Rework disponible sur
-NPM](https://www.npmjs.org/search?q=rework) en plus des plugins natifs.
+On a déjà plus d'une soixantaine de
+[plugins Rework disponible sur NPM](https://www.npmjs.org/search?q=rework) en
+plus des plugins natifs.
 
 #### Ajouter des fallbacks
 
@@ -214,8 +215,8 @@ variables.
 [rework-npm](https://github.com/conradz/rework-npm) nous parse `@import` comme
 on l'aime. Peut taper dans votre dossier de sources ou en plus dans
 `node_modules` (pratique pour utiliser
-[normalize.css](https://www.npmjs.org/package/normalize.css) [via
-npm](/fr/articles/npm/frontend/) par exemple). Il existe aussi
+[normalize.css](https://www.npmjs.org/package/normalize.css)
+[via npm](/fr/articles/npm/frontend/) par exemple). Il existe aussi
 [rework-importer](https://github.com/simme/rework-importer) qui amène quelques
 différences de syntaxe.
 
@@ -228,9 +229,9 @@ vous devez supporter IE 8.
 ##### rework-color-function
 
 [rework-color-function](https://github.com/ianstormtaylor/rework-color-function)
-permet de manipuler les couleurs via [les nouvelles fonctions en cours de
-spécifications](http://dev.w3.org/csswg/css-color/#modifying-colors) (hue,
-saturation, lightness, whiteness, blackness, tint, shade, blend, blenda,
+permet de manipuler les couleurs via
+[les nouvelles fonctions en cours de spécifications](http://dev.w3.org/csswg/css-color/#modifying-colors)
+(hue, saturation, lightness, whiteness, blackness, tint, shade, blend, blenda,
 contrast).
 
 ##### rework-mixin-opacity
@@ -264,8 +265,8 @@ spécifier des couleurs avec alpha sous la forme #rrggbbaa.
 ##### rework-clearfix
 
 [rework-clearfix](https://github.com/fgnass/rework-clearfix) permet d'utiliser
-`clear: fix` via l'insertion automatique du [micro clearfix de
-@necolas](http://nicolasgallagher.com/micro-clearfix-hack/).
+`clear: fix` via l'insertion automatique du
+[micro clearfix de @necolas](http://nicolasgallagher.com/micro-clearfix-hack/).
 
 ##### rework-assets
 
@@ -315,20 +316,19 @@ bien.
 En utilisant le parser Rework, on peut faire plus que des ajustements ou du
 remplacement: on peut balancer des erreurs.
 
-* [rework-ie-limits](https://github.com/reworkcss/rework-ie-limits): prévient si
+- [rework-ie-limits](https://github.com/reworkcss/rework-ie-limits): prévient si
   vos CSS dépassent la limite de 4095 selectors (limite pour IE < 10).
-* [rework-suit-conformance](https://github.com/suitcss/rework-suit-conformance):
-  permet de vérifier que votre code suit bien les [conventions
-  SUIT](https://github.com/suitcss/suit/tree/master/doc) (pour peu que vous les
-  suiviez).
+- [rework-suit-conformance](https://github.com/suitcss/rework-suit-conformance):
+  permet de vérifier que votre code suit bien les
+  [conventions SUIT](https://github.com/suitcss/suit/tree/master/doc) (pour peu
+  que vous les suiviez).
 
 En partant dans d'autres directions on pourrait réaliser des statistiques sur
-nos CSS (nombre de sélecteurs, de couleurs utilisées etc) comme le fait [CSS
-Stats](http://www.cssstats.com/).
+nos CSS (nombre de sélecteurs, de couleurs utilisées etc) comme le fait
+[CSS Stats](http://www.cssstats.com/).
 
-Retrouvrez en plus de la recherche via npm (qui sera la plus à jour), [une liste
-des plugins et utilitaires sur le wiki de
-Rework](https://github.com/reworkcss/rework/wiki/Plugins-and-Utilities).
+Retrouvrez en plus de la recherche via npm (qui sera la plus à jour),
+[une liste des plugins et utilitaires sur le wiki de Rework](https://github.com/reworkcss/rework/wiki/Plugins-and-Utilities).
 
 ## Mise en place de Rework pour faire votre préprocesseur en moins de 5 min
 
@@ -374,7 +374,7 @@ var reworkPlugins = {
   calc: require("rework-calc"),
   colorFn: require("rework-color-function"),
   remFallback: require("rework-rem-fallback"),
-  ieLimits: require("rework-ie-limits")
+  ieLimits: require("rework-ie-limits"),
 };
 var autoprefixer = require("gulp-autoprefixer");
 
@@ -396,8 +396,8 @@ gulp.task("styles", function() {
         reworkPlugins.calc,
         reworkPlugins.colorFn,
         reworkPlugins.remFallback(),
-        reworkPlugins.ieLimits
-      )
+        reworkPlugins.ieLimits,
+      ),
     )
     .pipe(autoprefixer())
     .pipe(gulp.dest("./dist/styles"));

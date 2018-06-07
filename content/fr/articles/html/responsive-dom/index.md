@@ -46,11 +46,12 @@ qu'on en bénéficie tous. C'est bon, on y va ? Je t'attends, moi !
 Imagine une page de blog, où apparaissent consécutivement le titre de l'article,
 la photo l'illustrant, et enfin le texte. Comme une photo, selon la qualité de
 ta connexion, ça peut être un peu galère à charger sur mobile (et que la
-question des images en responsive design [est encore un sacré
-bordel](http://css-tricks.com/responsive-images-hard/)), tu prends la décision
-de passer la photo en dessous du contenu textuel pour que tes visiteurs puissent
-lire leur article peinards même si la photo n'a pas fini de charger - et tu vas
-même en profiter pour la remplacer par une version plus light.
+question des images en responsive design
+[est encore un sacré bordel](http://css-tricks.com/responsive-images-hard/)), tu
+prends la décision de passer la photo en dessous du contenu textuel pour que tes
+visiteurs puissent lire leur article peinards même si la photo n'a pas fini de
+charger - et tu vas même en profiter pour la remplacer par une version plus
+light.
 
 Dans un tel cas, la meilleure solution peut encore être de dupliquer ta balise
 `img`, et de masquer l'une ou l'autre avec CSS en fonction de la taille d'écran,
@@ -147,7 +148,7 @@ var handleImages = function() {
       if (window.getComputedStyle(el).display != "none") {
         el.src = el.getAttribute("data-src");
       }
-    }
+    },
   );
 };
 
@@ -180,7 +181,7 @@ enquire.register("screen and (min-width: 768px)", {
   unmatch: function() {
     // ...et ici, 767px de large ou moins.
     // La librairie repose sur matchMedia et matchMedia.addListener
-  }
+  },
 });
 ```
 
@@ -207,7 +208,7 @@ var content = document.querySelector("p"),
     var attr = isMobile ? "data-mobile-src" : "data-src";
 
     [].forEach.call(document.querySelectorAll("img[" + attr + "]"), function(
-      el
+      el,
     ) {
       // On affecte l'une ou l'autre source à notre image,
       // entraînant son chargement si nécessaire.
@@ -216,7 +217,7 @@ var content = document.querySelector("p"),
       // On en profite pour la bouger avant ou après le contenu
       content.parentNode.insertBefore(
         el,
-        isMobile ? content.nextSibling : content
+        isMobile ? content.nextSibling : content,
       );
     });
   };
@@ -249,8 +250,8 @@ peut-être même avant, j'ai pas vérifié) un peu de sucre syntaxique HTML
 permettant de switcher (via JS, œuf corse) simplement entre différents contenus
 pour l'élément sur lequel on l'utilise.
 
-C'est pas mal. Ça donne ça (tiré de [la
-doc](http://foundation.zurb.com/docs/components/interchange.html)) :
+C'est pas mal. Ça donne ça (tiré de
+[la doc](http://foundation.zurb.com/docs/components/interchange.html)) :
 
 > We use the data-interchange attribute on a markup container (probably a div)
 > to do this. Here's an example which loads up a small, static map on mobile, a
@@ -269,8 +270,8 @@ doc](http://foundation.zurb.com/docs/components/interchange.html)) :
 ```
 
 `small`, `medium` et `large` étant des raccourcis pour des media queries données
-(c'est dans [la
-doc](http://foundation.zurb.com/docs/components/interchange.html), toujours.
+(c'est dans
+[la doc](http://foundation.zurb.com/docs/components/interchange.html), toujours.
 J'insiste.)
 
 ### Flexbox (pas toi, David)
@@ -327,8 +328,7 @@ flexibilité et la propreté du code que cette technique nous permet d'écrire
 résolvent notre problème en deux secondes douze. Ce n'est évidemment ici que la
 partie émergée du flexberg ; il y a des tas de bonnes ressources qui vous
 expliqueront ça en long, en large et en travers bien mieux que moi, notamment
-[cet
-article](http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html)
+[cet article](http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html)
 sur lequel j'ai honteusement pompé les snippets de cette partie.
 
 ## Conclusion

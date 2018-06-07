@@ -21,7 +21,7 @@ l'extérieur.
 
 Un nouveau mot-clé fait son apparition : `function*`, une fonction marquée par
 l'astérisque n'est jamais exécutée directement, à la place, elle retourne un
-*itérateur*. Un générateur est donc capable de s'interrompre (d'ailleurs, il
+_itérateur_. Un générateur est donc capable de s'interrompre (d'ailleurs, il
 l'est par défaut). Il est également capable de reprendre là où il s'était arrêté
 : l'itérateur retourné est un objet exposant une méthode `next` qui lorsqu'elle
 est appelée demande au générateur de reprendre là où il en était.
@@ -38,7 +38,7 @@ iterator.next(); // L'éxécution reprend et on affiche "World"
 ```
 
 Notez qu'il ne s'agit pas de code **bloquant** : la fonction est mise en pause,
-son traitement sera repris plus tard, pendant ce temps l'*event-loop* continue
+son traitement sera repris plus tard, pendant ce temps l'_event-loop_ continue
 sa petite vie.
 
 ## Reprise du traitement et émission de valeur avec `yield`
@@ -46,8 +46,8 @@ sa petite vie.
 La méthode `next()` de l'itérateur retourne un objet possédant les propriétés
 suivantes :
 
-* `done` vaut `true` quand le générateur a terminé son exécution
-* `value` est la valeur émise par le générateur dans cette portion de code
+- `done` vaut `true` quand le générateur a terminé son exécution
+- `value` est la valeur émise par le générateur dans cette portion de code
 
 Comment émettre une valeur ? Le mot-clé `yield` a le double rôle de fournir une
 valeur et de remettre en pause l'exécution de la fonction. Le principe étant
@@ -258,9 +258,9 @@ function* zeroToFour() {
 }
 ```
 
-Cela fonction bien sûr avec tous [les
-_itérables_](/fr/articles/js/es2015/iterators/) : `yield * [1, 2, 3]` est valide
-par exemple.
+Cela fonction bien sûr avec tous
+[les _itérables_](/fr/articles/js/es2015/iterators/) : `yield * [1, 2, 3]` est
+valide par exemple.
 
 ### Retour anticipé
 
@@ -283,12 +283,12 @@ iterator.next(); // { value: undefined, done: true }
 
 ## Conclusion
 
-Un habituel petit coup d'œil sur [la
-compatibilité](https://kangax.github.io/compat-table/es6/#test-generators) :
+Un habituel petit coup d'œil sur
+[la compatibilité](https://kangax.github.io/compat-table/es6/#test-generators) :
 
-* Les navigateurs modernes (donc pas IE)
-* IE Edge ≥ 13
-* Niveau polyfill, c'est vers Babel ou Traceur qu'il faudra se tourner
+- Les navigateurs modernes (donc pas IE)
+- IE Edge ≥ 13
+- Niveau polyfill, c'est vers Babel ou Traceur qu'il faudra se tourner
 
 Les générateurs amènent tout un nouveau panel de fonctionnalités qui permettent
 d'inverser la responsabilité : c'est le code appelant qui prend le pouvoir sur

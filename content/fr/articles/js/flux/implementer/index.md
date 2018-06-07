@@ -13,10 +13,9 @@ Si vous n'avez pas encore lu [l'introduction à flux](/fr/articles/js/flux/),
 n'hésitez pas à jeter un œil avant de lire ce post.
 
 Une des choses importantes avec Flux, et pourtant pas évidentes après lecture
-[des exemples
-officiels](https://github.com/facebook/flux/tree/master/examples/), c'est que
-les stores doivent être des instances, et non des singletons que les composants
-récupèrent en dépendance directe.
+[des exemples officiels](https://github.com/facebook/flux/tree/master/examples/),
+c'est que les stores doivent être des instances, et non des singletons que les
+composants récupèrent en dépendance directe.
 
 La raison de cette nécessité, c'est la possibilité de servir une page pre-rendue
 sur le serveur. En soi, vous devez impérativement amorcer votre dispatcher et
@@ -47,13 +46,13 @@ class App extends Component {
   // on définit les types de ce que l'on souhaite passer dans
   // le contexte
   static childContextTypes = {
-    foo: PropTypes.string
+    foo: PropTypes.string,
   };
 
   // on crée une méthode qui retourne ce contexte
   getChildContext() {
     return {
-      foo: this.props.foo
+      foo: this.props.foo,
     };
   }
 
@@ -70,12 +69,12 @@ class Container extends Component {
   // les contextes sont *merged*, ce qui nous permet de le construire
   // sans se soucier du niveau auquel sera notre composant.
   static childContextTypes = {
-    bar: PropTypes.string
+    bar: PropTypes.string,
   };
 
   getChildContext() {
     return {
-      bar: "oh hai"
+      bar: "oh hai",
     };
   }
 
@@ -101,7 +100,7 @@ class Content extends Component {
   // on stipule ce dont on a besoin
   static contextTypes = {
     foo: PropTypes.string,
-    bar: PropTypes.string
+    bar: PropTypes.string,
   };
 
   render() {
@@ -143,14 +142,14 @@ React.render(<App dispatcher={dispatcher} />, document.getElementById("App"));
 Désormais, pour avoir une API décente pour récuperer les données des stores, on
 a deux principales solutions:
 
-* utiliser un mixin
-* utiliser un higher-order component
+- utiliser un mixin
+- utiliser un higher-order component
 
 Puisque la direction que prend l'API de React, à terme, est de ne plus fournir
 de mixins, et de laisser au TC39 le temps de prendre la bonne décision sur la
 façon dont JavaScript traitera la composition ; il semble plus adéquat
 d'utiliser un higher-order component. Cela aura en plus l'avantage de rendre le
-composant récupérant les données *stateless*.
+composant récupérant les données _stateless_.
 
 Ce genre d'API ressemble à ça :
 
@@ -158,7 +157,7 @@ Ce genre d'API ressemble à ça :
 class ComponentWithData extends Component {
   static stores = {
     // nom du store: nom de la prop souhaitée
-    MyStore: "my_store"
+    MyStore: "my_store",
   };
 
   render() {
@@ -187,21 +186,21 @@ const PostActions = {
   getPost(slug) {
     return {
       type: ActionTypes.POST_GET,
-      slug: slug
+      slug: slug,
     };
   },
   receivePost(res) {
     return {
       type: ActionTypes.POST_RECEIVE,
-      res
+      res,
     };
   },
   error(res) {
     return {
       type: ActionTypes.POST_ERROR,
-      res
+      res,
     };
-  }
+  },
 };
 ```
 
@@ -213,12 +212,12 @@ import PostActions from "actions/PostActions";
 
 class MyComponent extends Component {
   static contextTypes = {
-    dispatcher: PropTypes.object
+    dispatcher: PropTypes.object,
   };
 
   static propTypes = {
     slug: PropTypes.string,
-    title: PropTypes.title
+    title: PropTypes.title,
   };
 
   handleClick() {
@@ -235,10 +234,10 @@ class MyComponent extends Component {
 
 Pour résumer, les avantages de cette approche sont :
 
-* un meilleur découplage
-* une isolation solide des composants
-* la possibilité de pre-render sur le serveur
-* une testabilité accrue, puisqu'il est simple d'utiliser un mock ou des
+- un meilleur découplage
+- une isolation solide des composants
+- la possibilité de pre-render sur le serveur
+- une testabilité accrue, puisqu'il est simple d'utiliser un mock ou des
   instances crées pour le test dans le contexte de nos composants.
 
 Bisous bisous.

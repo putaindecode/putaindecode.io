@@ -18,13 +18,13 @@ const numberOfLatestPosts = 12;
 export default class Homepage extends Component {
   static propTypes = {
     head: PropTypes.object.isRequired,
-    body: PropTypes.string.isRequired
+    body: PropTypes.string.isRequired,
   };
 
   static contextTypes = {
     collection: PropTypes.array.isRequired,
     metadata: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired
+    location: PropTypes.object.isRequired,
   };
 
   render() {
@@ -36,7 +36,7 @@ export default class Homepage extends Component {
     const latestPosts = enhanceCollection(this.context.collection, {
       filter: { layout: "Post" },
       sort: "date",
-      reverse: true
+      reverse: true,
     })
       .filter(post => post.__filename.startsWith(`${locale}/`))
       .slice(0, numberOfLatestPosts);
@@ -47,7 +47,7 @@ export default class Homepage extends Component {
           title={head.title}
           meta={[
             { property: "og:title", content: head.title },
-            { name: "twitter:title", content: head.title }
+            { name: "twitter:title", content: head.title },
           ]}
         />
 
@@ -65,7 +65,7 @@ export default class Homepage extends Component {
           className={"r-Grid"}
           style={{
             maxWidth: "none",
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           <LatestPosts posts={latestPosts} />
@@ -77,7 +77,7 @@ export default class Homepage extends Component {
             display: "block",
             textAlign: "center",
             color: "#999",
-            textDecoration: "none"
+            textDecoration: "none",
           }}
         >
           {i18n.helpToTranslate}
@@ -90,7 +90,7 @@ export default class Homepage extends Component {
                 "r-Grid-cell",
                 "r-minM--8of12",
                 "putainde-Section-contents",
-                "putainde-Post-contents"
+                "putainde-Post-contents",
               )}
             >
               <div className="putainde-Title putainde-Title--home">

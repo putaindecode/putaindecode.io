@@ -26,8 +26,8 @@ La première interface, appelée **Iterator** permet à un objet de produire des
 valeurs en séquence. Un objet est un Iterator lorsqu’il implémente une function
 `next()` qui retourne un objet avec 2 propriétés :
 
-* `value`: la valeur courante lors de l'itération
-* `done` : un booléen qui indique si on a atteint la fin de l’itération ou non
+- `value`: la valeur courante lors de l'itération
+- `done` : un booléen qui indique si on a atteint la fin de l’itération ou non
 
 Les appels successifs à la méthode `next()` d’un Iterator permettent donc de
 traverser et récupérer les valeurs d’un objet. Prenons l’exemple de l’Iterator
@@ -89,7 +89,7 @@ l’Iterator retourné est utilisé pour boucler sur ses valeurs.
 La deuxième bonne nouvelle, c’est que plusieurs concepts du langage tirent
 avantage de ce protocole :
 
-* Certaines syntaxes s’attendent à recevoir des Iterables
+- Certaines syntaxes s’attendent à recevoir des Iterables
 
 ```js
 const arr = ["a", "b"];
@@ -114,7 +114,7 @@ gen().next(); // { value:"a", done:false }
 const [x, y] = arr; // x = 'a',  y = "b"
 ```
 
-* Des API acceptent également des Iterables
+- Des API acceptent également des Iterables
 
 ```js
 const arr = ["a", "b", "b"];
@@ -208,9 +208,9 @@ Autre point : Array, TypedArray, Map, Set sont des Iterable mais définissent
 aussi des méthodes qui retournent également des Iterable (ça va, vous suivez
 toujours ?) :
 
-* entries() retourne un ensemble des clés/valeurs
-* keys() retourne les clés
-* values() retourne les valeurs
+- entries() retourne un ensemble des clés/valeurs
+- keys() retourne les clés
+- values() retourne les valeurs
 
 ```js
 for (cleVals of arr.entries()) {
@@ -223,8 +223,8 @@ for (cleVals of arr.entries()) {
 
 Détail important, `Object` n'est pas Iterable mais il n'est pas impossible de
 voir apparaitre dans l'ES7 les méthodes entries(), keys() et values() sur Object
-(cf. [la proposition
-spec](https://github.com/tc39/proposal-object-values-entries)).
+(cf.
+[la proposition spec](https://github.com/tc39/proposal-object-values-entries)).
 
 # Conclusion
 
@@ -236,9 +236,9 @@ s’appuyer.
 
 Elles peuvent le faire de 2 manières :
 
-* en proposant des sources de données qui implémentent le protocole (ex: liste
+- en proposant des sources de données qui implémentent le protocole (ex: liste
   chaînée)
-* en tant que consommateur du protocole (ex: un algorithme de tri)
+- en tant que consommateur du protocole (ex: un algorithme de tri)
 
 # Un dernier verre pour la route
 
@@ -248,13 +248,10 @@ méthodes, qu’un générateur est à la fois un Iterable et un Iterator, qu’
 Iterable peut être infini ou encore des exemples d’implémentations divers et
 variés :
 
-* [Iterables and iterators in ECMAScript
-  6](http://www.2ality.com/2015/02/es6-iteration.html)
-* [Iteration
-  Protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
-* [ES6 in depth : iterators and the for of
-  loop](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
-* [ES6 iterators in depth](https://ponyfoo.com/articles/es6-iterators-in-depth)
+- [Iterables and iterators in ECMAScript 6](http://www.2ality.com/2015/02/es6-iteration.html)
+- [Iteration Protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
+- [ES6 in depth : iterators and the for of loop](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
+- [ES6 iterators in depth](https://ponyfoo.com/articles/es6-iterators-in-depth)
 
-La pratique restant le meilleur moyen de se former, le site [ES6
-Katas](http://es6katas.org/) est très bien fait pour s'exercer.
+La pratique restant le meilleur moyen de se former, le site
+[ES6 Katas](http://es6katas.org/) est très bien fait pour s'exercer.

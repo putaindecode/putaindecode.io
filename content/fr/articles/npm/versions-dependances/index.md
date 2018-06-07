@@ -10,7 +10,7 @@ authors:
 ---
 
 Pas plus tard qu'hier, alors que je travaillais tranquillement, apparu
-soudainement un bug dans mon _workflow_ de *build*. Il ne m'était plus possible
+soudainement un bug dans mon _workflow_ de _build_. Il ne m'était plus possible
 avec [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean) de
 supprimer des fichiers. Hmmm, ballot, car sans la suppression, mon _workflow_
 devenait tout bancal. Bien. Il me fallut remonter la rivière - comme souvent, en
@@ -34,10 +34,9 @@ Bon, vous voyez le topo ?
 [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean) qui
 contient en _dependencies_ [rimraf](https://github.com/isaacs/rimraf) avec une
 version bugguée. Oh la belle affaire. Oui car `~2.2.1` veut dire
-"[Raisonnablement proche de
-2.2.1](https://github.com/isaacs/node-semver#ranges)", ce qui se traduit par
-télécharger la dernière version en `2.2.x`, soit la `2.2.7` (celle bugguée)
-lorsque je mis à jour le package
+"[Raisonnablement proche de 2.2.1](https://github.com/isaacs/node-semver#ranges)",
+ce qui se traduit par télécharger la dernière version en `2.2.x`, soit la
+`2.2.7` (celle bugguée) lorsque je mis à jour le package
 [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean).
 
 ## Le hic
@@ -101,8 +100,8 @@ supprimé et gardé uniquement la partie
 cette partie est à figer. Quand je dis supprimer, je parle réellement dans le
 fichier final, pas juste ici dans l'article.
 
-Vous aurez toute l'explication de npm-shrinkwrap sur la [documentation
-officielle [en]](https://www.npmjs.org/doc/cli/npm-shrinkwrap.html).
+Vous aurez toute l'explication de npm-shrinkwrap sur la
+[documentation officielle [en]](https://www.npmjs.org/doc/cli/npm-shrinkwrap.html).
 
 ## Choisir la bonne stratégie de version
 
@@ -113,18 +112,17 @@ installer dans notre projet, il faut définir avec précisions ces versions dans
 Vous pouvez avoir `1.2.1` ou encore `~1.4.6` ou bien encore `^2.3.1`. Mais que
 veulent dire `^` ou `~` ?
 
-* `1.2.1` : cette version exacte
-* `~1.4.6` : raisonnablement proche de `1.4.6`
-* `^2.3.1` : compatible avec `2.3.1`
+- `1.2.1` : cette version exacte
+- `~1.4.6` : raisonnablement proche de `1.4.6`
+- `^2.3.1` : compatible avec `2.3.1`
 
 Il est clair que lu comme ça, le plus intéressant est le `^` et c'est justement
-[celui qui est choisi maintenant
-[en]](http://fredkschott.com/post/2014/02/npm-no-longer-defaults-to-tildes/)
+[celui qui est choisi maintenant [en]](http://fredkschott.com/post/2014/02/npm-no-longer-defaults-to-tildes/)
 lorsque l'on fait un `npm install --save`. Cool non ?!
 
-Pour plus d'information sur la définition des versions, [c'est par
-là](https://github.com/isaacs/node-semver#ranges) (Oh mon dieu, il a fait un
-lien avec un "cliquez ici").
+Pour plus d'information sur la définition des versions,
+[c'est par là](https://github.com/isaacs/node-semver#ranges) (Oh mon dieu, il a
+fait un lien avec un "cliquez ici").
 
 Bon. C'est bon ? Vous avez tout compris ? Okay, vous pouvez passer à
 [**napa**](/fr/articles/npm/napa/) maintenant qui vous aidera grandement sur le
@@ -140,6 +138,6 @@ Envie d'accélérer vos installations npm ? Je vous conseille
 
 Il hashera votre `package.json` pour savoir s'il a été modifié ou non, et en
 fonction de ça, il lancera `npm install` ou non. Sacré gain de temps (surtout si
-vous faites des `npm install` à chaque *deploy*).
+vous faites des `npm install` à chaque _deploy_).
 
 You are now a npm master. 👨

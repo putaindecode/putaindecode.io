@@ -11,7 +11,7 @@ const months = {
     "sept.",
     "oct.",
     "nov.",
-    "déc."
+    "déc.",
   ],
   en: [
     "Jan",
@@ -25,8 +25,8 @@ const months = {
     "Sep",
     "Oct",
     "Nov",
-    "Dec"
-  ]
+    "Dec",
+  ],
 };
 
 export default function formatDate(date, lang) {

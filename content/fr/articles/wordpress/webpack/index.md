@@ -15,9 +15,10 @@ header:
 
 # Pourquoi Webpack pour gérer son thème WordPress ?
 
-La réponse est la même qu'à la simple question ["pourquoi Webpack
-?"](/fr/articles/js/webpack/). L'intérêt principal est d'obtenir des rapports
-d'erreurs liés à la gestion des assets (images, fonts, etc).
+La réponse est la même qu'à la simple question
+["pourquoi Webpack ?"](/fr/articles/js/webpack/). L'intérêt principal est
+d'obtenir des rapports d'erreurs liés à la gestion des assets (images, fonts,
+etc).
 
 Qu'y a-t-il de si particulier à savoir pour utiliser Webpack pour gérer un thème
 WordPress ? Pas grand chose, mais voici de quoi vous faire gagner (peut-être) un
@@ -29,10 +30,10 @@ code dans le répertoire du thème pour plus de modularité.
 
 Pour commencer, deux choses importantes à savoir :
 
-* Ne mettez pas de CSS dans le fameux `style.css` à la racine de votre thème,
+- Ne mettez pas de CSS dans le fameux `style.css` à la racine de votre thème,
   laissez juste le cartouche en commentaire (sans lequel WordPress ne détectera
   pas votre thème...) ;
-* créez un dossier `src` dans votre thème, où nous mettrons nos "sources", la
+- créez un dossier `src` dans votre thème, où nous mettrons nos "sources", la
   partie du thème "compilé" sera dans un dossier `dist` et n'aura donc pas
   besoin d'être versionnée.
 
@@ -75,9 +76,10 @@ En plus de cela, nous pouvons ajouter une sorte de raccourci via un
 ```
 
 Ce petit raccourci nous évitera de devoir nous taper en CLI tout le chemin du
-thème et nous pourrions même, pourquoi pas, rajouter un `"prestart": "open
-http://yourlocalhost.tld"` afin d'ouvrir automatiquement le projet dans le
-navigateur lorsque nous démarrerons notre développement via `$ npm start`.
+thème et nous pourrions même, pourquoi pas, rajouter un
+`"prestart": "open http://yourlocalhost.tld"` afin d'ouvrir automatiquement le
+projet dans le navigateur lorsque nous démarrerons notre développement via
+`$ npm start`.
 
 Voyons rapidement donc le `package.json` du thème ainsi que la config Webpack.
 
@@ -115,14 +117,14 @@ Voyons rapidement donc le `package.json` du thème ainsi que la config Webpack.
 
 Quelques petites notes sur ce contenu :
 
-* `private` sert à éviter la publication de votre "paquet" sur npm, ainsi qu'à
+- `private` sert à éviter la publication de votre "paquet" sur npm, ainsi qu'à
   devoir remplir certains champs tels que `name` et compagnie ;
-* nous mettrons dans `devDependencies` les dépendances pour le développement et
+- nous mettrons dans `devDependencies` les dépendances pour le développement et
   dans `dependencies` les dépendances qui seront dans le build final. Ici, j'ai
   simplement mis `normalize.css` pour exemple, mais vous pourriez très bien
   avoir aussi jQuery (:trollface:) ou React ;
-* les scripts utilisent `webpack.config.babel.js` afin de pouvoir définir la
-  configuration en es6/7 via *babel*.
+- les scripts utilisent `webpack.config.babel.js` afin de pouvoir définir la
+  configuration en es6/7 via _babel_.
 
 Voyons maintenant la config `webpack.config.babel.js` :
 
@@ -145,41 +147,41 @@ const src = path.join(__dirname, `src`);
 
 export default {
   entry: {
-    index: [`${src}/index.js`]
+    index: [`${src}/index.js`],
   },
 
   output: {
     path: path.join(__dirname, `dist`),
     filename: `[name].js`,
-    publicPath: `wp-content/themes/${theme}/dist/`
+    publicPath: `wp-content/themes/${theme}/dist/`,
   },
   resolve: {
-    extensions: [``, `.js`, `.json`]
+    extensions: [``, `.js`, `.json`],
   },
 
   module: {
     loaders: [
       {
         test: /\.json$/,
-        loader: `json-loader`
+        loader: `json-loader`,
       },
       {
         test: /\.js$/,
         loaders: [`babel-loader`, `eslint-loader`],
-        include: src
+        include: src,
       },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           `style-loader`,
-          [`css-loader`, `postcss-loader`].join(`!`)
-        )
+          [`css-loader`, `postcss-loader`].join(`!`),
+        ),
       },
       {
         test: /\.(ico|jpe?g|png|gif)$/,
-        loader: `file-loader?name=[path][name].[ext]&context=${src}/`
-      }
-    ]
+        loader: `file-loader?name=[path][name].[ext]&context=${src}/`,
+      },
+    ],
   },
 
   plugins: [new ExtractTextPlugin(`[name].css`, { disable: !production })],
@@ -190,21 +192,21 @@ export default {
 
     return [
       postcssImport({
-        onImport: files => files.forEach(webpack.addDependency)
+        onImport: files => files.forEach(webpack.addDependency),
       }),
       postcssUrl(),
       postcssCssnext({
-        browsers: `last 2 versions`
-      })
+        browsers: `last 2 versions`,
+      }),
     ];
-  }
+  },
 };
 ```
 
 _Bien entendu, libre à vous d'adapter les loaders Webpack à utiliser, ainsi que
 la configuration PostCSS par exemple._ Faites un tour sur notre article de
-[premier exemple de configuration
-Webpack](/fr/articles/js/webpack/premier-exemple/) afin d'y voir plus clair.
+[premier exemple de configuration Webpack](/fr/articles/js/webpack/premier-exemple/)
+afin d'y voir plus clair.
 
 Il nous reste maintenant à ajouter dans notre thème WordPress les références à
 nos points d'entrées CSS et JavaScript que sont `index.css` et `index.js`.
@@ -223,8 +225,8 @@ define('ENV', getenv('ENV'));
 // en local, on pourrait définir ENV à "development"
 ```
 
-*Nous pourrions dans ce fichier utiliser l'API de Wordpress pour enregister nos
-`index.css` et `index.js` via les méthodes `wp*(de)register*`, mais nous
+_Nous pourrions dans ce fichier utiliser l'API de Wordpress pour enregister nos
+`index.css` et `index.js` via les méthodes `wp_(de)register*`, mais nous
 resterons simples pour l'exemple.*
 
 Vu qu'on utilise le `style-loader` de Webpack en développement, on ne va ajouter
@@ -250,7 +252,7 @@ _Attention si votre thème hérite d'un autre,
 `get_bloginfo('template_directory')` ne pointera pas vers votre thème mais le
 thème parent. Il vous faudra donc ajuster le code 😑._
 
-- - -
+---
 
 Pour le test vous pouvez mettre dans les CSS et JS :
 

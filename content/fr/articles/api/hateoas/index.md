@@ -19,12 +19,13 @@ facilement et intelligemment ? On va essayer d'y répondre !
 Rappelons juste, pour mettre tout le monde d'accord, ce qui se passe pendant une
 simple navigation web.
 
-1. Tu tapes l'adresse de ton site préféré
-2. Le navigateur envoie la requête
-3. Le navigateur reçoit du code HTML et l'interprète, pour voir s'il faut
-   charger d'autres choses
-4. Le navigateur relance les requêtes pour charger les images, scripts et CSS
-5. Le navigateur reçoit toutes les ressources et te les affiche dans sa fenêtre.
+1.  Tu tapes l'adresse de ton site préféré
+2.  Le navigateur envoie la requête
+3.  Le navigateur reçoit du code HTML et l'interprète, pour voir s'il faut
+    charger d'autres choses
+4.  Le navigateur relance les requêtes pour charger les images, scripts et CSS
+5.  Le navigateur reçoit toutes les ressources et te les affiche dans sa
+    fenêtre.
 
 On parle donc de contenu qu'il faut afficher pour les êtres humains, avec des
 images, des styles et des comportements qui facilitent l'ergonomie et te
@@ -39,8 +40,8 @@ s'encombrer avec les CSS, les JS, et autres gifs animés (oui, les gifs animés,
 ### La première école : SOAP
 
 Imaginons deux programmes qui veulent discuter en passant par le web. Dans les
-années 90, des gens super brillants se sont dit : *"On va se baser sur le XML
-pour faire communiquer nos programmes sur le web"*. L'approche est assez logique
+années 90, des gens super brillants se sont dit : _"On va se baser sur le XML
+pour faire communiquer nos programmes sur le web"_. L'approche est assez logique
 et ingénieuse. Tout d'abord, les deux parties (le client et le serveur) se
 partagent une notice d'utilisation : la WSDL (Web Service Description Language),
 qui est un document XML décrivant toutes les méthodes qui peuvent être appelées
@@ -58,7 +59,7 @@ complexes et très fiables.
 ### La maison d'en face : REST
 
 Plusieurs années ont passées et les esprits ont évolué. On a commencé à entendre
-des grandes déclarations comme : *"Le SOAP c'est vraiment lourdingue !"*, _"Le
+des grandes déclarations comme : _"Le SOAP c'est vraiment lourdingue !"_, _"Le
 protocole HTTP est sous-exploité !"_ ou encore _"Les enveloppes XML et les WSDL
 ? Merci bien !"_ et c'est à ce moment-là qu'on a donné un acronyme bidon pour
 décrire le protocole HTTP sans vraiment le nommer : REST (REpresentational State
@@ -74,7 +75,7 @@ protocole HTTP un peu plus tard.
 ### Un partout : balle au centre
 
 Je tiens à remettre les choses au clair. On entend beaucoup trop souvent :
-*"Fais du REST, SOAP c'est nul"*. Il y a en effet clairement un effet de mode !
+_"Fais du REST, SOAP c'est nul"_. Il y a en effet clairement un effet de mode !
 Les API REST pullulent et sont vraiment très pratiques. Toutefois, dans les gros
 systèmes nécessitant du RPC ou encore de la signature numérique, pour les
 échanges de données médicales par exemple, le contrat WSDL et la rigueur du XML
@@ -82,19 +83,19 @@ sont clairement des alliés !
 
 ## Alors comme ça, HTTP ça fait tout ?
 
-Il y a un type qui s'appelle Leonard Richardson et qui a mis en place un [modèle
-de maturité](http://martinfowler.com/articles/richardsonMaturityModel.html) pour
-qualifier les API webservice.
+Il y a un type qui s'appelle Leonard Richardson et qui a mis en place un
+[modèle de maturité](http://martinfowler.com/articles/richardsonMaturityModel.html)
+pour qualifier les API webservice.
 
 ### Niveau 0
 
 C'est le minimum acceptable dans la communication HTTP :
 
-* Toutes les requêtes sont envoyées à la même URL, quelle que soit la demande.
-* Toutes les requêtes sont envoyées avec le verbe POST.
-* Quel que soit le type de retour (donnée ou erreur), le code HTTP retourné par
+- Toutes les requêtes sont envoyées à la même URL, quelle que soit la demande.
+- Toutes les requêtes sont envoyées avec le verbe POST.
+- Quel que soit le type de retour (donnée ou erreur), le code HTTP retourné par
   le serveur sera toujours 200 (OK, tout s'est bien passé).
-* Le contenu échangé est majoritairement du XML (pour les enveloppes notamment).
+- Le contenu échangé est majoritairement du XML (pour les enveloppes notamment).
 
 Quand on fait du webservice avec SOAP, c'est ce niveau qui est utilisé lors de
 la communication HTTP.
@@ -102,16 +103,16 @@ la communication HTTP.
 ### Niveau 1
 
 Avec ce premier niveau, on essaye d'enrichir un peu plus l'utilisation. On
-ajoute la notion de *ressource*, en fonction de la donnée métier manipulée,
+ajoute la notion de _ressource_, en fonction de la donnée métier manipulée,
 l'URL de la requête sera différente. La preuve par l'exemple :
 
-* **_POST /agenda_** : permet de travailler avec les données de l'agenda de
+- **_POST /agenda_** : permet de travailler avec les données de l'agenda de
   l'application
-* **_POST /customers_** : permet de travailler avec le registre des clients
+- **_POST /customers_** : permet de travailler avec le registre des clients
 
 On profite aussi de la vue hiérarchique que nous proposent les URL :
 
-* **_POST /customers/42_** : permet de travailler avec le client qui possède
+- **_POST /customers/42_** : permet de travailler avec le client qui possède
   l'identifiant 42
 
 Rien qu'en traçant les URL appelées sur le serveur, on peut comprendre ce que le
@@ -126,26 +127,26 @@ du niveau 1.
 Les principaux verbes HTTP que l'on utilise sont GET, POST, PUT et DELETE. Leur
 nom est déjà très évocateur.
 
-* **_GET /customers/42_** pour récupérer les informations du client 42
-* **_PUT /customers_** _(+ corps de la requête)_ pour enregistrer un nouveau
+- **_GET /customers/42_** pour récupérer les informations du client 42
+- **_PUT /customers_** _(+ corps de la requête)_ pour enregistrer un nouveau
   client
-* **_POST /customers/42_** _(+ corps de la requête)_ pour mettre à jour les
+- **_POST /customers/42_** _(+ corps de la requête)_ pour mettre à jour les
   informations du client 42
-* **_DELETE /customers/42_** pour supprimer le client 42
+- **_DELETE /customers/42_** pour supprimer le client 42
 
 Facile, non ? La réponse du serveur devient tout aussi logique grâce aux codes
 HTTP. Ces codes sont juste des nombres de 3 chiffres respectant cette logique :
 
-* **_1xx_** : _"Je suis en train de bosser, attends encore un peu."_
-* **_2xx_** : _"Voilà le résultat, ça s'est bien passé."_
-* **_3xx_** : _"Le contenu est déplacé, va voir ailleurs (cf. en-tête
+- **_1xx_** : _"Je suis en train de bosser, attends encore un peu."_
+- **_2xx_** : _"Voilà le résultat, ça s'est bien passé."_
+- **_3xx_** : _"Le contenu est déplacé, va voir ailleurs (cf. en-tête
   location)."_
-* **_4xx_** : _"Tu me demandes n'importe quoi, tu as merdé."_
-* **_5xx_** : _"J'ai merdé..."_
+- **_4xx_** : _"Tu me demandes n'importe quoi, tu as merdé."_
+- **_5xx_** : _"J'ai merdé..."_
 
-Parmi les plus connus, on a donc 404 (*"tu me demandes quelque chose qui
-n'existe pas"*), 403 (*"accès interdit"*), 304 (*"pas la peine de m'emmerder, la
-donnée est dans ton cache"*) et bien sûr 200 (*"OK, tout va bien"*).
+Parmi les plus connus, on a donc 404 (_"tu me demandes quelque chose qui
+n'existe pas"_), 403 (_"accès interdit"_), 304 (_"pas la peine de m'emmerder, la
+donnée est dans ton cache"_) et bien sûr 200 (_"OK, tout va bien"_).
 
 Et si les codes HTTP sont ta nouvelle passion, je te suggère de te documenter
 sur le code
@@ -181,14 +182,14 @@ jamais trouvé génial qu'avec de simples liens dans les pages web, tu pouvais
 naviguer des heures et des heures ?
 
 Pourquoi ne pas ajouter des liens dans les ressources retournées via REST ? Nous
-venons de mettre le doigt sur HATEOAS (*Hypermedia As The Engine Of Application
-State*). On peut désormais imaginer un tas de choses comme :
+venons de mettre le doigt sur HATEOAS (_Hypermedia As The Engine Of Application
+State_). On peut désormais imaginer un tas de choses comme :
 
-* Quand on renvoie un tableau json par exemple, dans chaque item,
-  * on peut ajouter les liens qui permettent de le mettre à jour ;
-  * on peut ajouter les liens qui permettent de récupérer des données liées
+- Quand on renvoie un tableau json par exemple, dans chaque item,
+  - on peut ajouter les liens qui permettent de le mettre à jour ;
+  - on peut ajouter les liens qui permettent de récupérer des données liées
     comme l'auteur d'un livre, les mentions d'un tweet, etc. ;
-  * on peut ajouter l'URL de putaindecode.io.
+  - on peut ajouter l'URL de putaindecode.io.
 
 Voici un exemple de trame JSON avec les informations HATEOAS. Pour information,
 il s'agit d'un webservice qui permet de lister des conférences.
@@ -315,11 +316,11 @@ Tu remontes tes manches et tu te démerdes !
 Il y a quelques frameworks qui vont te donner un coup de main. Dans le monde
 Java par exemple, il existe
 [Resteasy-links](http://docs.jboss.org/resteasy/docs/2.0.0.GA/userguide/html/LinkHeader.html)
-(avec un exemple d'utilisation [sur mon repo
-GitHub](https://github.com/awillemant/hateoas-example)), ou encore [Spring
-HATEOAS](http://projects.spring.io/spring-hateoas/)
+(avec un exemple d'utilisation
+[sur mon repo GitHub](https://github.com/awillemant/hateoas-example)), ou encore
+[Spring HATEOAS](http://projects.spring.io/spring-hateoas/)
 
-Pour les *Nodistes*, une simple recherche sur
+Pour les _Nodistes_, une simple recherche sur
 [npmjs](https://www.npmjs.com/search?q=hateoas) renverra un tas d'outils !
 
 ## Références
@@ -327,12 +328,10 @@ Pour les *Nodistes*, une simple recherche sur
 Oui, parce qu'il y a des gens bien plus brillants que moi pour vous convaincre
 sur l'Hypermedia !
 
-* [Wikipédia](http://en.wikipedia.org/wiki/HATEOAS)
-* [Blog de Martin
-  Fowler](http://martinfowler.com/articles/richardsonMaturityModel.html)
-* Les travaux de Steve Klabnik, Rubyiste reconnu (ex : [Designing Hypermedia
-  APIs](https://www.youtube.com/watch?v=g4sqydY3hHU))
-* Ori Pekelman : [son talk à la Take Off Conf
-  2014](https://www.youtube.com/watch?v=ZZxOaCP8vyg)
-* [Un excellent article de Xebia sur la bonne utilisation de POST et
-  PUT](http://blog.xebia.fr/2014/03/17/post-vs-put-la-confusion/)
+- [Wikipédia](http://en.wikipedia.org/wiki/HATEOAS)
+- [Blog de Martin Fowler](http://martinfowler.com/articles/richardsonMaturityModel.html)
+- Les travaux de Steve Klabnik, Rubyiste reconnu (ex :
+  [Designing Hypermedia APIs](https://www.youtube.com/watch?v=g4sqydY3hHU))
+- Ori Pekelman :
+  [son talk à la Take Off Conf 2014](https://www.youtube.com/watch?v=ZZxOaCP8vyg)
+- [Un excellent article de Xebia sur la bonne utilisation de POST et PUT](http://blog.xebia.fr/2014/03/17/post-vs-put-la-confusion/)

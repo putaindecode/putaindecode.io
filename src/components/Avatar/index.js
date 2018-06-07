@@ -27,12 +27,12 @@ const Avatar = ({ author, className }, context) => {
 };
 
 Avatar.contextTypes = {
-  metadata: PropTypes.object.isRequired
+  metadata: PropTypes.object.isRequired,
 };
 
 Avatar.propTypes = {
   className: PropTypes.string,
-  author: PropTypes.string.isRequired
+  author: PropTypes.string.isRequired,
 };
 
 export default Avatar;

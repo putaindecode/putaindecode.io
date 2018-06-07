@@ -38,8 +38,8 @@ source, on le prendra pour notre exemple.
 ## Configuration de Travis-CI
 
 Travis-CI fonctionne avec un fichier de configuration assez simple. Il n'y a
-qu'à voir [le
-nôtre](https://github.com/putaindecode/putaindecode.io/blob/master/.travis.yml).
+qu'à voir
+[le nôtre](https://github.com/putaindecode/putaindecode.io/blob/master/.travis.yml).
 
 Voici ci-dessous une version minimale pour faire tourner un projet node par
 exemple :
@@ -49,9 +49,9 @@ language: node_js
 ```
 
 Oui, c'est tout. Selon le language et/ou les fichiers présents, Travis-CI va
-choisir la commande de test par défaut. Avec node par exemple, ce sera `npm
-test` si un package.json est présent. Si un [Makefile](/fr/articles/make/) est
-de la partie, Travis-CI va exécuter `make test`.
+choisir la commande de test par défaut. Avec node par exemple, ce sera
+`npm test` si un package.json est présent. Si un [Makefile](/fr/articles/make/)
+est de la partie, Travis-CI va exécuter `make test`.
 
 Voici un fichier plus complet avec quelques exemples et trucs bons à savoir.
 
@@ -118,15 +118,15 @@ utilitaire spécifique afin de ne pas publier cela à la vue de tous.
 
 ### Générer un token GitHub encrypté sur Travis-CI
 
-Le plus simple est d’utiliser l'interface GitHub pour [ajouter un
-token](https://github.com/settings/tokens/new).
+Le plus simple est d’utiliser l'interface GitHub pour
+[ajouter un token](https://github.com/settings/tokens/new).
 
 #### Encryption du token et utilisation
 
 Maintenant, nous allons encrypter ce token. Vous avez 2 possibilités :
 
-* soit installer le paquet node `travis-encrypt`
-* soit installer la gem ruby `travis` (qui embarque la commande `encrypt`)
+- soit installer le paquet node `travis-encrypt`
+- soit installer la gem ruby `travis` (qui embarque la commande `encrypt`)
 
 ##### Via la gem Ruby `travis`
 

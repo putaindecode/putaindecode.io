@@ -26,7 +26,7 @@ Attention, je ne dis pas que les conférences ne servent à rien mais à mon sen
 elles sont trop magistrales et parfois trop marketing (coucou WebRTC Paris).
 
 Les premières tables rondes n'étaient pas sous le nom de **p!**, elles étaient
-plutôt de mon initiative (@_kud) dans le but de rassembler des gens que
+plutôt de mon initiative (@\_kud) dans le but de rassembler des gens que
 j'appréciais et dont je connaissais le niveau afin de progresser tous ensemble.
 
 Je tiens à vous mettre en garde ici que les propos tenus ne sont pas forcément
@@ -50,14 +50,14 @@ On les remercie bien fort, tout était nickel.
 
 Voici le fil conducteur de la soirée.
 
-* les resets / normalize, lesquels, pourquoi, quand ?
-* stratégie de dossiers / fichiers (architecture)
-* OOCSS, BEM, SMACSS, Atomique etc.
-* sémantique
-* accessibilité
-* les pièges de l'intégration (e.g. display: inline-block)
-* unités px, rem, em, pt
-* CSS Frameworks ? lesquels ? pourquoi ? quand ?
+- les resets / normalize, lesquels, pourquoi, quand ?
+- stratégie de dossiers / fichiers (architecture)
+- OOCSS, BEM, SMACSS, Atomique etc.
+- sémantique
+- accessibilité
+- les pièges de l'intégration (e.g. display: inline-block)
+- unités px, rem, em, pt
+- CSS Frameworks ? lesquels ? pourquoi ? quand ?
 
 ## Qui ?
 
@@ -66,10 +66,10 @@ ce qui est dit dans cet article, c'est à eux que vous devriez vous adresser. �
 
 | Membres                                                | Statut |
 | ------------------------------------------------------ | :----: |
-| [_kud](https://twitter.com/_kud)                       |   👮   |
+| [\_kud](https://twitter.com/_kud)                      |   👮   |
 | [bloodyowl](https://twitter.com/bloodyowl)             |   🏠   |
 | [yannickc](https://twitter.com/yannickc)               |        |
-| [dhoko_](https://twitter.com/dhoko_)                   |        |
+| [dhoko\_](https://twitter.com/dhoko_)                  |        |
 | [philippebarbosa](https://twitter.com/philippebarbosa) |        |
 | [tchak13](https://twitter.com/tchak13)                 |        |
 | [remitbri](https://twitter.com/remitbri)               |        |
@@ -84,9 +84,9 @@ Bon, alors, commençons. Ce sont évidemment les resets / normalizes qui débute
 
 Pour rappel, la différence entre un normalize et un reset est simple.
 
-* Le **normalize** fait en sorte que les styles de base se ressemblent sur tous
+- Le **normalize** fait en sorte que les styles de base se ressemblent sur tous
   les navigateurs.
-* Le **reset** va plus loin que ça puisqu'il s'occupe d'écraser totalement les
+- Le **reset** va plus loin que ça puisqu'il s'occupe d'écraser totalement les
   styles par défaut pour finalement n'avoir aucun style sur votre page lorque
   vous débutez votre intégration.
 
@@ -98,8 +98,8 @@ défaut d'un navigateur que de le supprimer. D'où l'intérêt du normalize.
 
 Je vous indique tout de même les plus connus :
 
-* [Le reset d'Eric Meyer](http://meyerweb.com/eric/tools/css/reset/)
-* [Le normalize de Necolas](http://necolas.github.io/normalize.css/)
+- [Le reset d'Eric Meyer](http://meyerweb.com/eric/tools/css/reset/)
+- [Le normalize de Necolas](http://necolas.github.io/normalize.css/)
 
 ### Stratégie de fichiers
 
@@ -179,10 +179,8 @@ lire [mon article à ce sujet](/fr/articles/css/bem/).
 Je vous laisse tout de même deux articles à ce sujet qui présentent plutôt bien
 le principe (ils sont en anglais).
 
-* [A New Front-End Methodology:
-  BEM](http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/)
-* [An Introduction to the BEM
-  Methodology](http://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403)
+- [A New Front-End Methodology: BEM](http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/)
+- [An Introduction to the BEM Methodology](http://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403)
 
 ### Sémantique
 
@@ -263,17 +261,17 @@ rabattre sur les `em`. Le pourcentage est forcément préconisé.
 [Bootstrap](http://getbootstrap.com/), [pure](http://purecss.io/) sont les plus
 connus (et peut-être les pires). Il ne vous serviront uniquement que dans le cas
 d'une [PoC](http://fr.wikipedia.org/wiki/Preuve_de_concept) ou une
-administration de site (*back-office*).
+administration de site (_back-office_).
 
 Par contre, [topcoat](http://topcoat.io/) peut se révéler assez intéressant de
-par sa haute personnalisation et de son *BEM-way*. Éventuellement
+par sa haute personnalisation et de son _BEM-way_. Éventuellement
 [inuit.css](http://inuitcss.com/) sinon.
 
 ### Bonus
 
 Lors de cas de contenus affichés via de l'ajax, pensez de plus en plus à faire
 du "prerender", c'est à dire que pendant que le contenu se charge, au lieu de
-mettre des *spinners*, *loaders*, *toussa*, essayez de mettre des visuels qui
+mettre des _spinners_, _loaders_, _toussa_, essayez de mettre des visuels qui
 ressembleront à l'élément final. C'est ce que fait par exemple facebook, et
 c'est pas mal du tout. Tenez :
 

@@ -11,7 +11,7 @@ Le shell (ou ligne de commande) est l'outil de prédilection pour bon nombre
 d'entre nous qui utilisons un OS de la famille UNIX. Nous sommes persuadés que
 bien utilisé, il remplace avantageusement un IDE complexe et gourmand.
 
-Chez *Putain de code !*, on a une certaine tendance à utiliser [Zsh][wp:zsh],
+Chez _Putain de code !_, on a une certaine tendance à utiliser [Zsh][wp:zsh],
 mais pour ma part, j'utilise encore et toujours le vénérable [Bash][wp:bash],
 non pas pour faire mon barbu mais simplement car il me suffit amplement.
 
@@ -33,9 +33,9 @@ Pour pouvoir collaborer avec ses congénères, chaque processus peut accéder pa
 défaut à trois fichiers bien particuliers : l'entrée, la sortie, et la sortie
 d'erreur standards.
 
-* L'entrée standard (`stdin`)
-* La sortie standard (`stdout`)
-* La sortie d'erreur (`stderr`)
+- L'entrée standard (`stdin`)
+- La sortie standard (`stdout`)
+- La sortie d'erreur (`stderr`)
 
 Habituellement, l'entrée standard est liée au clavier de l'utilisateur _via_ son
 émulateur de terminal, et les deux sorties sont liées à l'affichage dans ce même
@@ -51,9 +51,9 @@ sont employées systématiquement.
 
 Pour nous exercer, nous allons utiliser principalement deux commandes :
 
-* `echo` : permet d'écrire un message spécifié en tant qu'argument sur sa sortie
+- `echo` : permet d'écrire un message spécifié en tant qu'argument sur sa sortie
   standard.
-* `cat` : permet d'afficher le contenu d'un fichier passé en argument sur sa
+- `cat` : permet d'afficher le contenu d'un fichier passé en argument sur sa
   sortie standard ou de répéter son entrée standard sur sa sortie standard.
 
 Rappelez vous que par défaut, la sortie standard est affichée dans le terminal
@@ -85,13 +85,13 @@ $ cat < message
 Hello
 ```
 
-Notez qu'on utilise bien `cat` *sans argument*, il utilise donc l'entrée
+Notez qu'on utilise bien `cat` _sans argument_, il utilise donc l'entrée
 standard.
 
 ### Connecter deux processus : `|`
 
 Dernier des connecteurs de base, l'opérateur `|`, aussi appelé _pipe_ (et qui se
-prononce *paillepe*, avé l'accent).
+prononce _paillepe_, avé l'accent).
 
 Il permet tout simplement d'utiliser la sortie d'un programme comme entrée d'un
 autre.
