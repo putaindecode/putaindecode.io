@@ -1,0 +1,21 @@
+{
+  "twitter": "@3wDesireLabs",
+  "fr": {
+    "bio": {
+      "short": "Développeur frontend @ Magelan.",
+      "long": [
+        "Développeur web frontend.",
+        "Aime bien React et la tartiflette."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Frontend developer @ Magelan.",
+      "long": [
+        "Frontend web developer.",
+        "Likes React and cheese tartiflette."
+      ]
+    }
+  }
+}
