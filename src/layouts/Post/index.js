@@ -35,7 +35,7 @@ const Post = (props, context) => {
           // { property: "og:image", content: header.image },
           // { name: "twitter:image", content: header.image },
 
-          { name: "twitter:creator", content: `@${twitterAuthor}` }
+          { name: "twitter:creator", content: `@${twitterAuthor}` },
         ]}
       />
       <div className="r-Grid">
@@ -84,15 +84,15 @@ const Post = (props, context) => {
 Post.propTypes = {
   __url: PropTypes.string.isRequired,
   __filename: PropTypes.string.isRequired,
-  isLoading: PropTypes.boolean,
+  isLoading: PropTypes.bool,
   head: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
-  rawBody: PropTypes.string.isRequired
+  rawBody: PropTypes.string.isRequired,
 };
 
 Post.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Post;
