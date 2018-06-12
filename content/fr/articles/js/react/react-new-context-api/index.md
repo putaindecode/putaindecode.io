@@ -12,7 +12,8 @@ Depuis fin mars 2018, la version 16.3 de React est sortie, et elle vient avec so
 Ça permet tout simplement de rendre disponibles des propriétés au sein des ses composants React sans avoir à les passer directement à ces derniers. Autant dire que lorsqu'on a une application peu complexe (entendre beaucoup de composants et d'héritages de propriétés), il devient très vite compliqué de maintenir tout ce petit monde ensemble. De plus cela pose un souci de performance non négligeable à la longue puisque les données sont traitées par des composants qui n'ont rien à faire avec, sans compter les `Render` potentiellement inutiles.
 Du coup très souvent on a recours à des solutions qui peuvent se monter potentiellement *overkill* (aka Redux, Mobx et consorts) afin de ségréger tout ou partie de nos données pour des composants spécifiques, et les rendre disponibles "facilement" à l’ensemble de l'app.
 
-Avec la nouvelle l'API Context, on peut facilement  se créer un ou plusieurs store pour nos données, ce qui permet entre autres de mieux les structurer, mais aussi de passer à ses composants  la juste quantité de données, sans avoir à faire face au calamiteux *prop-drilling*. Mais attention tout de même à ne pas en faire un marteau doré.
+Avec la nouvelle l'API Context, on peut facilement  se créer un ou plusieurs store pour nos données, ce qui permet entre autres de mieux les structurer, mais aussi de passer à ses composants  la juste quantité de données, sans avoir à faire face au calamiteux *[prop-drilling](https://blog.kentcdodds.com/prop-drilling-bb62e02cb691)*. Mais attention tout de même à ne pas en faire un marteau doré.
+
 ## À quoi ça ressemble dans la pratique ?
 Assez de blabla, passons à un exemple concret avec des vrais morceaux de `Context` dedans :
 
@@ -36,7 +37,7 @@ export const UserContext = createContext({
 
 /**
  * la classe UserProvider fera office de... Provider (!)
- * en wrappant son enfant direct
+ * en englobant son enfant direct
  * dans le composant éponyme. De cette façon, ses values
  * seront accessibles de manière globale via le `Consumer`
  */
@@ -85,9 +86,9 @@ const App = () => (
 
 render(
   /**
-   * On pourrait tout à fait ne wrapper que les composants qui
-   * nous intéressent, mais pour l'exemple, nous wrappons le bootstrap
-   * de notre app avec notre `UserProvider`
+   * On pourrait tout à fait n'englober que les composants qui
+   * nous intéressent, mais pour l'exemple, nous englobons le bootstrap
+   * de notre app dans notre `UserProvider`
    */
   <UserProvider>
     <App />
