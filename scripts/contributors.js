@@ -43,9 +43,9 @@ const log = logger("contributors");
 
 const logError = msg => {
   // fail only on travis, since this one is deploying the website
-  if (process.env.TRAVIS) {
-    throw new Error(msg);
-  }
+  // if (process.env.TRAVIS) {
+  //  throw new Error(msg);
+  // }
   log(color.red(msg));
 };
 
