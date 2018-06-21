@@ -213,7 +213,6 @@ export default withUser(({ name, setName }) => (
 
 ```
 Et tadam ✨✨ ! On a créé un micro store pour notre application !
-Vous pouvez même du coup utiliser le pattern @decorator `@withUser` sur vos classes :)
 
 ## En conclusion
 Avec l'API Context, les possibilités sont nombreuses : On peut créer des "micro stores" pour certaines parties de notre application, voire les faire hériter d'un store plus global. On peut aussi imaginer combiner les stores et les faire "hériter" les uns des autres. 
