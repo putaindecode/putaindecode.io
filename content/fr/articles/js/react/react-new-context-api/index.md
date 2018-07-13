@@ -7,17 +7,17 @@ tags:
 authors:
   - neovea
 ---
-Depuis fin mars 2018, la version 16.3 de React est sortie, et elle vient avec son lot de nouveautés, dont celle dont j'aimerais vous parler dans cet article : l'API Context. Alors ok, cette API existait déjà par le passé mais il était déconseillé de l'utiliser car sujette à évolutions (c'est la doc de React qui le dit). Et évolution il y a eu. La nouvelle API Context est devenue beaucoup plus facile à utiliser, sa syntaxe s'est assouplie et s'est simplifiée. Ce qui fait d'elle un outil de premier ordre désormais.
+Depuis fin mars 2018, la version 16.3 de React est sortie, et elle vient avec son lot de nouveautés, dont celle dont j'aimerais vous parler dans cet article : l'API Context. Alors OK, cette API existait déjà par le passé mais il était déconseillé de l'utiliser car sujette à évolution (c'est la doc de React qui le dit). Et évolution il y a eu. La nouvelle API Context est devenue beaucoup plus facile à utiliser, sa syntaxe s'est assouplie et s'est simplifiée. Ce qui fait d'elle un outil de premier ordre désormais.
 ## À quoi ça sert exactement ?
-Ça permet tout simplement de rendre disponibles des propriétés au sein des ses composants React sans avoir à les passer directement à ces derniers. Autant dire que lorsqu'on a une application peu complexe (entendre beaucoup de composants et d'héritages de propriétés), il devient très vite compliqué de maintenir tout ce petit monde ensemble. De plus cela pose un souci de performance non négligeable à la longue puisque les données sont traitées par des composants qui n'ont rien à faire avec, sans compter les `Render` potentiellement inutiles.
-Du coup très souvent on a recours à des solutions qui peuvent se monter potentiellement *overkill* (aka Redux, Mobx et consorts) afin de ségréger tout ou partie de nos données pour des composants spécifiques, et les rendre disponibles "facilement" à l’ensemble de l'app.
+Ça permet tout simplement de rendre disponibles des propriétés au sein des ses composants React sans avoir à les passer directement à ces derniers. Autant dire que lorsqu'on a une application un peu complexe (entendre beaucoup de composants et d'héritages de propriétés), il devient très vite compliqué de maintenir tout ce petit monde ensemble. De plus cela pose un souci de performance non négligeable à la longue puisque les données sont traitées par des composants qui n'ont rien à faire avec, sans compter les `render` potentiellement inutiles.
+Du coup très souvent on a recours à des solutions qui peuvent se montrer potentiellement *overkill* (aka Redux, Mobx et consorts) afin de ségréguer tout ou partie de nos données pour des composants spécifiques, et les rendre disponibles "facilement" à l'ensemble de l'app.
 
-Avec la nouvelle l'API Context, on peut facilement  se créer un ou plusieurs store pour nos données, ce qui permet entre autres de mieux les structurer, mais aussi de passer à ses composants  la juste quantité de données, sans avoir à faire face au calamiteux *[prop-drilling](https://blog.kentcdodds.com/prop-drilling-bb62e02cb691)*. Mais attention tout de même à ne pas en faire un marteau doré.
+Avec la nouvelle API Context, on peut facilement se créer un ou plusieurs stores pour nos données, ce qui permet entre autres de mieux les structurer, mais aussi de passer à ses composants la juste quantité de données, sans avoir à faire face au calamiteux *[prop drilling](https://blog.kentcdodds.com/prop-drilling-bb62e02cb691)*. Mais attention tout de même à ne pas en faire un marteau doré.
 
 ## À quoi ça ressemble dans la pratique ?
-Assez de blabla, passons à un exemple concret avec des vrais morceaux de `Context` dedans :
+Assez de blabla, passons à un exemple concret avec des vrais morceaux de `Context` dedans !
 
-imaginons que je souhaite créer un contexte qui contiendrait les informations de l'utilisateur connecté pour les rendre facilement accessibles à plusieurs endroits de mon app, nous créons un contexte et l'implémentons de la manière suivante :
+Imaginons que je souhaite créer un contexte qui contiendrait les informations de l'utilisateur connecté pour les rendre facilement accessibles à plusieurs endroits de mon app, nous créons un contexte et l'implémentons de la manière suivante :
 ### Création du contexte
 ```jsx
 // store/UserProvider.js
@@ -27,7 +27,7 @@ import React, { createContext, Component } from "react"; // on importe createCon
  * `createContext` contient 2 propriétés :
  * `Provider` et `Consumer`. Nous les rendons accessibles
  * via la constante `UserContext`, et on initialise une
- * propriété par défaut : "name" qui sera une chaine vide.
+ * propriété par défaut : "name" qui sera une chaîne vide.
  * On exporte ce contexte afin qu'il soit exploitable par
  * d'autres composants par la suite via le `Consumer`
  */
@@ -49,7 +49,7 @@ class UserProvider extends Component {
   render() {
     return (
       /**
-       * la propriété value est très importante ici, elle rend ici
+       * la propriété value est très importante ici, elle rend
        * le contenu du state disponible aux `Consumers` de l'application
        */
       <UserContext.Provider value={this.state}>
@@ -62,7 +62,7 @@ class UserProvider extends Component {
 export default UserProvider;
 
 ```
-### Initialisation du contexte 
+### Initialisation du contexte
 ```jsx
 // app.js
 import React from "react";
@@ -97,7 +97,7 @@ render(
 );
 
 ```
-### Création du composant Hello qui consommera les datas de notre contexte
+### Création du composant `Hello` qui consommera les data de notre contexte
 
 ```jsx
 // Hello.js
@@ -109,7 +109,7 @@ import React from "react";
 import { UserContext } from "./store/UserProvider";
 
 /**
- * Le Consumer expose le contenu de la propriété `value` 
+ * Le Consumer expose le contenu de la propriété `value`
  * du Provider
  */
 export default () => (
@@ -123,9 +123,9 @@ export default () => (
 ```html
 <h1>Hello Putain de Code!</h1>
 ```
-En gros, ce qu'il faut retenir ici, c'est que pour utiliser l'API, on a deux propriétés : Le Provider, qui se charge de diffuser nos propriétés d'une part, et un ou plusieurs Consumer qui permettent d'accéder aux données fournies par le Provider d'autre part.
+En gros, ce qu'il faut retenir ici, c'est que pour utiliser l'API, on a deux propriétés : Le `Provider`, qui se charge de diffuser nos propriétés d'une part, et un ou plusieurs `Consumer` qui permettent d'accéder aux données fournies par le `Provider` d'autre part.
 
-Avec cet exemple minimaliste, on constate qu'il n'est plus nécessaire de passer les `props` à nos composants enfants. Ceci rend du coup le code plus light et plus facile à lire et à comprendre. Et ça c'est déjà énorme en soi. Petite note en passant : Vos composants qui se nourrissent de votre contexte seront re-rendus à chaque fois que ce dernier sera mis à jour. Donc faites gaffe quand même à ne pas en abuser. Mais avec une bonne gestion on peut aller assez loin :)
+Avec cet exemple minimaliste, on constate qu'il n'est plus nécessaire de passer les `props` à nos composants enfants. Ceci rend du coup le code plus light et plus facile à lire et à comprendre. Et ça c'est déjà énorme en soi. Petite note en passant : vos composants qui se nourrissent de votre contexte seront re-rendus à chaque fois que ce dernier sera mis à jour. Donc faites gaffe quand même à ne pas en abuser. Mais avec une bonne gestion on peut aller assez loin :)
 
 Bon c'est bien tout ça mais si on veut permettre à nos composants de modifier les valeurs de notre contexte ??
 
@@ -146,7 +146,7 @@ export const UserContext = createContext({
   setName: () => {}
 });
 
-... 
+...
 
 /**
  * et on implémente une méthode dans notre `state`
@@ -174,14 +174,14 @@ export default UserProvider;
 
 ```
 
-Comme implémenter le `Consumer` dans chaque composant c'est rébarbatif, ce qu'on va faire c'est qu'on va créer un `Higher Order Component` qui se chargera d'implémenter ce dernier à notre place :
+Comme implémenter le `Consumer` dans chaque composant c'est rébarbatif, ce qu'on va faire c'est qu'on va créer un Higher Order Component qui se chargera d'implémenter ce dernier à notre place :
 ```jsx
 // store/UserProvider.js
 
 ...
 
 /**
- * A la suite de notre classe `UserProvider`, on créé notre HOC
+ * À la suite de notre classe `UserProvider`, on créé notre HOC
  * qui se chargera d'injecter les propriétés de notre contexte
  * à n'importe quel composant qui l'appellera
  */
@@ -215,11 +215,11 @@ export default withUser(({ name, setName }) => (
 Et tadam ✨✨ ! On a créé un micro store pour notre application !
 
 ## En conclusion
-Avec l'API Context, les possibilités sont nombreuses : On peut créer des "micro stores" pour certaines parties de notre application, voire les faire hériter d'un store plus global. On peut aussi imaginer combiner les stores et les faire "hériter" les uns des autres. 
+Avec l'API Context, les possibilités sont nombreuses : On peut créer des "micro stores" pour certaines parties de notre application, voire les faire hériter d'un store plus global. On peut aussi imaginer combiner les stores et les faire "hériter" les uns des autres.
 
 On résout au passage pas mal de problèmes liés à l'imbrication et à la hiérarchisation des composants. Aussi on peut très facilement faire face à une application qui grossit sans avoir à sortir l'artillerie parfois lourde de Redux.
 
-Maintenant vous avez le pouvoir ! Mais usez en avec sagesse :)
+Maintenant vous avez le pouvoir ! Mais usez-en avec sagesse :)
 
 Le code source est disponible ici :
 
