@@ -25,20 +25,20 @@ ce petit monde ensemble. De plus, cela pose un souci de performance non
 négligeable à la longue puisque les données sont traitées par des composants qui
 n'ont rien à faire avec, sans compter les `Render`s potentiellement inutiles. Du
 coup, très souvent, on a recours à des solutions qui peuvent se montrer
-potentiellement _overkill_ (aka Redux, Mobx et consorts) afin de ségréger tout
+potentiellement _overkill_ (aka Redux, Mobx et consorts) afin de ségréguer tout
 ou partie de nos données pour des composants spécifiques, et les rendre
-disponibles "facilement" à l’ensemble de l'app.
+disponibles "facilement" à l'ensemble de l'app.
 
 Avec la nouvelle API Context, on peut facilement créer un ou plusieurs `store`s
 pour nos données. Cela permet de mieux structurer nos données, mais aussi d'en
 passer la juste quantité nos composants, sans avoir à faire face au calamiteux
-_[prop-drilling](https://blog.kentcdodds.com/prop-drilling-bb62e02cb691)_. Mais
+_[prop drilling](https://blog.kentcdodds.com/prop-drilling-bb62e02cb691)_. Mais
 attention tout de même à ne pas en faire un marteau doré.
 
 ## À quoi ça ressemble dans la pratique ?
 
 Assez de blabla, passons à un exemple concret avec des vrais morceaux de
-`Context` dedans :
+`Context` dedans !
 
 Imaginons que nous souhaitions créer un contexte qui contient les informations
 de l'utilisateur connecté pour les rendre facilement accessibles à plusieurs
@@ -55,7 +55,7 @@ import React, { createContext, Component } from "react"; // on importe createCon
  * `createContext` contient 2 propriétés :
  * `Provider` et `Consumer`. Nous les rendons accessibles
  * via la constante `UserContext` et on initialise une
- * propriété par défaut "name" qui sera une chaine vide.
+ * propriété par défaut "name" qui sera une chaîne vide.
  * On exporte ce contexte afin qu'il soit exploitable par
  * d'autres composants par la suite via le `Consumer`
  */
@@ -126,7 +126,7 @@ render(
 );
 ```
 
-### Création du composant Hello qui consommera les datas de notre contexte
+### Création du composant `Hello` qui consommera les data de notre contexte
 
 ```jsx
 // Hello.js
@@ -220,8 +220,8 @@ export default UserProvider;
 ```
 
 Comme implémenter le `Consumer` dans chaque composant est rébarbatif, on va
-créer un `Higher Order Component` qui se chargera d'implémenter ce dernier à
-notre place :
+créer un Higher Order Component qui se chargera d'implémenter ce dernier à notre
+place :
 
 ```jsx
 // store/UserProvider.js
@@ -277,7 +277,7 @@ hiérarchisation des composants. Ainsi, on peut très facilement faire face à u
 application qui grossit sans avoir à sortir l'artillerie parfois lourde de
 Redux.
 
-Maintenant vous avez le pouvoir ! Mais usez en avec sagesse :)
+Maintenant vous avez le pouvoir ! Mais usez-en avec sagesse :)
 
 Le code source est disponible ici :
 
