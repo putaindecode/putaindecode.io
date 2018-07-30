@@ -161,7 +161,7 @@ let sayHi = (~name, ~punct="!", ()) => "Hello " ++ name ++ punct;
 sayHi(~name="you", ());
 /* "Hello you!" */
 /* L'ordre des arguments nommés n'a pas d'importance*/
-sayHi(~punct,"?", ~name="you", ());
+sayHi(~punct="?", ~name="you", ());
 /* "Hello you?" */
 ```
 
