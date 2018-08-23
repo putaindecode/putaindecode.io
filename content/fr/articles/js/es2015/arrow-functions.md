@@ -147,7 +147,10 @@ le résultat attendu avec ce code :
 const aFn = obj => {
   key: obj.value;
 };
-console.log(aFn()); // undefined
+const anObj = {
+  value: 'my value'
+};
+console.log(aFn(anObj)); // undefined
 ```
 
 En effet, l'exemple ci-dessus pourrait être traduit en ES5 de la manière
