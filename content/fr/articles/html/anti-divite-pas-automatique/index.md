@@ -42,8 +42,9 @@ Après avoir lu ces deux citations, vous êtes peut-être en train de vous dire
 "Ciel ! C'est horrible, mon application est criblée de `<div>` est-ce que 
 c'est grave ? Dois-je à tout prix arrêter d'utiliser des `<div>` ?"
 
-Aucun souci, vous pouvez continuer à le faire parce que c'est exactement ce
-qu'on veut, que l'élément n'ait pas d'importance sémantique.
+Si vous utilisez des `<div />` pour du styling, vous pouvez continuer à le
+faire parce que c'est exactement ce qu'on veut: qu'un élément qui est juste
+là pour appliquer des styles n'ait pas d'importance sémantique.
 
 Un certain courant de l'intégration préconise d'utiliser CSS avec toutes sortes
 d'astuces pour éviter à tout prix d'avoir des `<div>` (ou plus généralement des
