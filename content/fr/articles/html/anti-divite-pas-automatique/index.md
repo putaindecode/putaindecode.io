@@ -118,7 +118,7 @@ Puisque ces cas existent et sont légitimes: comment fabrique-t-on un composant
 `<Button />` accessible et qui marche dans tous les cas ?
 
 ```javascript
-let Button = ({ onPress, ...props }) => (
+let Button = ({ onPress, onKeyUp, onClick, ...props }) => (
   <div
     role="button" // les synthèses vocales comprennent qu'il s'agit d'un bouton
     tabIndex={0} // l'élément est navigable au clavier
@@ -127,14 +127,14 @@ let Button = ({ onPress, ...props }) => (
       if (event.keyCode === 32 || event.keyCode === 13) {
         onPress();
       }
-      if (props.onKeyUp) {
-        props.onKeyUp(event);
+      if (onKeyUp) {
+        onKeyUp(event);
       }
     }}
     onClick={_ => {
       onPress();
-      if (props.onClick) {
-        props.onClick(event);
+      if (onClick) {
+        onClick(event);
       }
     }}
     {...props}
