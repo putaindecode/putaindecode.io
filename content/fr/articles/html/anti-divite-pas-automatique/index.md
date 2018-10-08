@@ -9,7 +9,7 @@ authors:
   - bloodyowl
 ---
 
-Dans la specification HTML, l'élément `<div />` est décrit comme
+Dans la spécification HTML, l'élément `<div />` est décrit comme
 [n'ayant aucun sens particulier](https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element).
 C'est un élément extrêmement générique, à tel point qu'on pourrait le nommer
 `<view />`:
@@ -18,14 +18,14 @@ C'est un élément extrêmement générique, à tel point qu'on pourrait le nomm
   facile à reset
 - il accepte à peu près tout élément comme enfant
 
-Présenté comme ça, `<div />` semble être la brique de base parfait pour créer un
+Présenté comme ça, `<div />` semble être la brique de base parfaite pour créer un
 système de composants. Si on utilise principalement cet élément, on pourra
 imbriquer tous nos composants comme on le souhaite sans être contraint par le
 contexte.
 
 Pourtant, voilà une bonne dizaine d'années qu'on entend parler de
 [divite](https://fr.wiktionary.org/wiki/divite), ou "fait d'utiliser trop de
-div". Parmi les deux citations sur wiktionnaire:
+div". Parmi les deux citations sur le wiktionnaire :
 
 > En premier lieu, il faut donc surtout éviter le syndrome de la « divite »,
 > c’est-à-dire de considérer `<div>` comme un élément bon à tout faire, et ne
@@ -37,6 +37,10 @@ div". Parmi les deux citations sur wiktionnaire:
 > Collison, Cameron Moll, Andy Budd , Maitrise des CSS)
 
 ## Une `<div />` pour le styling
+
+Après avoir lu ces deux citations, vous êtes peut-être en train de vous dire 
+"Ciel ! C'est horrible, mon application est criblée de `<div>` est-ce que 
+c'est grave ? Dois-je à tout prix arrêter d'utiliser des `<div>` ?"
 
 Aucun souci, vous pouvez continuer à le faire parce que c'est exactement ce
 qu'on veut, que l'élément n'ait pas d'importance sémantique.
@@ -66,8 +70,8 @@ s'offrent à moi.
 
 1.  J'ajoute un `<Spacer />` entre les deux éléments, qui sera une `<div />`
     avec la hauteur souhaitée pour décaler du contenu visuellement, `<Header />`
-    et `<Article />` continuent leur vie: l'impact de ma modification est
-    localisée, il n'y aura donc pas de regression.
+    et `<Article />` continuent leurs vies: l'impact de ma modification est
+    localisé, il n'y aura donc pas de régression.
 2.  J'ajoute une `marginBottom` à `<Header />` (ou un `marginTop` à
     `<Article />`)
     - Soit j'ajoute l'altération systématiquement, ce qui entrainera
@@ -78,14 +82,14 @@ s'offrent à moi.
     - Soit je permets de passer un `style` et je devrai vérifier qu'il n'y a pas
       de conflit à chaque fois que je mettrai le composant à jour
     - Soit je permets de passer un `className`, j'aurai la même vérification à
-      faire, en gardant en tête la spécificité des sélecteur
+      faire, en gardant en tête la spécificité des sélecteurs
 
 Les vieux de la vieille de l'intégration vous diront que c'est ridicule
-maintenant qu'il y'a CSS, que c'est une
+maintenant qu'il y a CSS, que c'est une
 [`technique d'antan`](https://en.wikipedia.org/wiki/Spacer_GIF) pour les layouts
 en tableaux. Il y a cependant une différence primordiale: **le contexte**. À
 l'époque, le `spacer.gif` était un hack malin pour contourner une contrainte
-technique, aujourd'hui, utiliser un `<Spacer />` est un moyen de limiter la
+technique; aujourd'hui, utiliser un `<Spacer />` est un moyen de limiter la
 responsabilité d'autres composants, de manière à les rendre plus facilement
 réutilisables.
 [Certains points de vue](https://twitter.com/sophiebits/status/759898608913174528)
@@ -107,7 +111,9 @@ Prenons quelques cas où nous pourrions être amenés à avoir besoin de déroge
   avoir tendance à utiliser un `<a />` ou un `<span />`
 - je veux arranger les éléments enfants du bouton avec un layout flex horizontal
   non aligné au centre (je vous laisse profiter de
-  [l'exemple](https://jsfiddle.net/bloodyowl/Lfcut68p/10/))
+  [l'exemple](https://jsfiddle.net/bloodyowl/Lfcut68p/10/), même avec les deux 
+  très bien nommées propriétés `all:unset` et `appearance:none`, MÊME AVEC ÇA,
+  vous pouvez voir qu'all n'est pas unset et que les appearances sont trompeuses)
 - j'ai une approche par composants, et je n'ai pas le temps de vérifier à chaque
   fois que j'utilise un bouton que tous ses enfants sont du contenu phrasé: j'ai
   un composant existant représenté par une `<div />`, je ne vais pas m'amuser à
@@ -159,7 +165,7 @@ l'abstraction qu'une seule fois !
 ## Les `<div />` de décoration
 
 On peut souvent trouver des `<div />` chargées de simple décoration (des ombres
-portées déportée de l'élément où elle est accrochée visuellement pour atteindre
+portées déportées de l'élément où elles sont accrochées visuellement pour atteindre
 60FPS, des zigouigouis, des pétouilles …), et on se verra souvent conseiller de
 plutôt utiliser des pseudo-elements comme `:before` et `:after`.
 
@@ -175,9 +181,9 @@ let Card = ({ children }) => (
 );
 ```
 
-que d'avoir à aller dans la feuille de style pour aller voir mon zigouigouis qui
+que d'avoir à aller dans la feuille de style pour aller voir mon zigouigoui qui
 porte le nom `:before` ou `:after`, ce qui ne m'aide pas des masses à visualiser
-son intérêt. Avec un element, je peux en plus très facilement le transformer en
+son intérêt. Avec un élément, je peux en plus très facilement le transformer en
 un composant si j'ai besoin qu'il ait un cycle de vie ou un état local !
 
 Qui plus est, je n'ai pas forcément la possibilité technique d'utiliser CSS, je
@@ -187,9 +193,9 @@ disponibles.
 ## Une `<div />` pour les champs texte ?!
 
 Si je veux un champ texte qui grandit avec son contenu (qui apporte de nombreux
-avantages pour l'utilisateur) avec des éléments sémantiques je dois utiliser un
-`<textarea />` et mesurer sa nouvelle taille supposée (soit sur l'élément lui
-même, en définissant sa hauteur à `0` à chaque keystroke pour mesurer sa taille,
+avantages pour l'utilisateur) avec des éléments sémantiques, je dois utiliser un
+`<textarea />` et mesurer sa nouvelle taille supposée (soit sur l'élément lui-même,
+en définissant sa hauteur à `0` à chaque keystroke pour mesurer sa taille,
 soit en utilisant la même technique sur un élément masqué dans le DOM possédant
 les mêmes propriétés de layout). Ces techniques de mesures sont contraignantes:
 on doit garder en tête le layout, le `box-sizing` de l'élément, et notre
@@ -230,7 +236,7 @@ C'est une façon différente de penser son application web: construire du
 spécifique avec des briques génériques plutôt que de rendre générique des
 briques spécifiques.
 
-N'ayons plus une peur déraisonné d'utiliser des `<div />`, apprenons juste à les
+N'ayons plus une peur déraisonnée d'utiliser des `<div />`, apprenons juste à les
 rendre sémantiques.
 
 Bisous bisous.
