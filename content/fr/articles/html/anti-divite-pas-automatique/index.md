@@ -62,7 +62,7 @@ Prenons un exemple simple. J'ai la structure suivante:
 L'équipe de design souhaite les séparer visuellement de `10px`. Deux approches
 s'offrent à moi.
 
-![marginRight ou Spacer](./component-style.svg)
+![marginRight ou Spacer](./component-style.png)
 
 1.  J'ajoute un `<Spacer />` entre les deux éléments, qui sera une `<div />`
     avec la hauteur souhaitée pour décaler du contenu visuellement, `<Header />`
