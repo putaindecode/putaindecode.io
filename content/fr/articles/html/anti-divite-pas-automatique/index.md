@@ -99,7 +99,8 @@ intéressants lorsqu'ils sont mis dans cette perspective.
 
 ## Une `<div />` pour les boutons
 
-> Just use a `<button />` > <br /> — Most people
+> Just use a `<button />`  
+> — Most people
 
 Utiliser un élément `<div />` ou `<a />` pour représenter un `button`
 (sémantiquement : une action sur la page) est très souvent mal perçu.
@@ -138,7 +139,7 @@ let Button = ({ onPress, onKeyUp, onClick, ...props }) => (
         onKeyUp(event);
       }
     }}
-    onClick={_ => {
+    onClick={event => {
       onPress();
       if (onClick) {
         onClick(event);
@@ -225,7 +226,7 @@ Apprenons à aimer à nouveau la `<div />`, si toutefois on prend bien soin de s
 accessibilité. Utiliser des `<div />` comme briques principales, c'est rendre
 composable toute son application.
 
-Les éléments dits sémantiques sont souvent des boites noires, contenant leur
+Les éléments dits sémantiques sont souvent des boîtes noires, contenant leur
 nature sémantique, leur style et leur comportement, et si l'on veut les changer,
 on doit annuler des comportement non déterminés à l'avance (c'est l'équivalent
 conceptuel de `preventDefault`: "annule quelque chose, mais je ne sais pas
