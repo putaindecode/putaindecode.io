@@ -64,7 +64,7 @@ services que vous avez configurés (email, IRC, webhook, etc).
 Nous pouvons imaginer que votre serveur vienne vous insulter sur votre logiciel
 de chat interne, en vous montrant du doigt. On pourrait aussi imaginer une
 synthèse vocale crier votre nom et préciser à toute l'équipe que
-[vous avez merté](https://www.youtube.com/watch?v=mbDcnUH6rOc) : _“MoOx, you
+[vous avez merdé](https://www.youtube.com/watch?v=mbDcnUH6rOc) : _“MoOx, you
 just fucked up the build by breaking 42 tests! Fix that please”_. Pour finir
 dans les exemples farfelus, nous pourrions avoir une petite tourelle type _Nerf_
 qui vous met un petit headshot qui va bien. Des équipes font vraiment ça, et
