@@ -245,7 +245,7 @@ est nécessaire d'appeler `render()`.
 
 Bisous bisous.
 
-![angulol](http://media.giphy.com/media/lxd2cZ2BkM4IE/giphy.gif)
+![angulol](https://media.giphy.com/media/lxd2cZ2BkM4IE/giphy.gif)
 
 Pour aller un peu plus loin :
 

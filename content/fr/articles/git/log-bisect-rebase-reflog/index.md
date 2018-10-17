@@ -335,7 +335,7 @@ _joker_, elle assure votre survie, notamment si vous avez été assez zinzins po
 suivre les exemples donnés dans cet article, parce que honnêtement…
 
 <figure>
-    <img src="http://i1.kym-cdn.com/photos/images/newsfeed/000/305/224/3e1.jpg" alt="I have no idea what I'm doing" />
+    <img src="https://i1.kym-cdn.com/photos/images/newsfeed/000/305/224/3e1.jpg" alt="I have no idea what I'm doing" />
 </figure>
 
 Vous ne le savez peut être pas, mais Git, dans sa grande bonté, garde une

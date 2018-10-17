@@ -54,7 +54,7 @@ sass -> autoprefixer -> csso, passe
 [3 fois par des lectures/écritures sur le système de fichiers](/fr/articles/css/autoprefixer/mise-en-place/#autoprefixer-avec-grunt).
 
 <figure>
-  <img src="http://jaysoo.ca/images/grunt-flow-2.png" alt="" />
+  <img src="https://jaysoo.ca/images/grunt-flow-2.png" alt="" />
   <figcaption>Sans stream</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ arrive à avoir
 (une vingtaine de ligne seulement).
 
 <figure>
-  <img src="http://jaysoo.ca/images/gulp-flow.png" alt="" />
+  <img src="https://jaysoo.ca/images/gulp-flow.png" alt="" />
   <figcaption>Avec stream</figcaption>
 </figure>
 
@@ -251,7 +251,7 @@ Je trouve que c'est gage de qualité.
 Pour finir quelques liens pour ceux qui en veulent toujours plus :
 
 - [Gulp : Retour d'expérience](http://insertafter.com/fr/blog/retour_experience_gulp.html)
-- [Grunt vs. Gulp, au-delà des chiffres](http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/)
+- [Grunt vs. Gulp, au-delà des chiffres](https://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/)
   (anglais)
 
 ```console
