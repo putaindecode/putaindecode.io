@@ -5,7 +5,7 @@ tags:
   - github
   - gitlab
   - bitbucket
-date: 2018-08-23
+date: 2018-10-23
 authors:
   - MoOx
 original: https://moox.io/blog/keep-in-sync-git-repos-on-github-gitlab-bitbucket/
