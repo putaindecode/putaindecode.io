@@ -20,16 +20,16 @@ miroirs en lecture seule. Mais avoir un système transparent pour être à même
 pousser son code sur différentes plateformes, c'est un peu moins facile. Mais bon
 c'est pas difficile pour autant.
 
-Souvent on utilise GitHub, qui est la solution la plus utilisée à ce jour, mais
+Souvent on utilise GitHub, qui est la solution la plus répandue à ce jour, mais
 en cas de grosse coupure (coucou les DDOS) ou juste car vous n'avez pas envie
 d'être trop lié à GitHub (le rachat de GitHub par Microsoft vous rappelle le syndrome Skype ?)
 vous aimeriez bien avoir des
-miroirs accessibles en écriture (pas juste de la lecture seule quoi).
+miroirs accessibles en écriture.
 
 **Voici donc une petite astuce pour garder vos dépôts synchro entre plusieurs
 plateformes** comme GitLab et BitBucket, où vous pourrez pousser et récupérer du
 code sans effort particulier, après un petit coup d'init. Donc pas de miroir en
-lecture seule hein. Des vrais dépôts. Et ça **juste en utilisant les
+lecture seule hein. De vrais dépôts. Et ça **juste en utilisant les
 fonctionnalités de git (push et pull)**.
 
 _Rappel : pour rester sécurisé, mettez en place SSH et l'authentification à deux
@@ -255,12 +255,6 @@ faire `git pull --all` pour récupérer de toutes les remotes.
 Si vous n'avez qu'une remote sur un projet, ça ne changera rien, mais
 ça fonctionnera si vous en avez plus d'une.
 
-Dans votre `.bashrc`/`.zshrc` :
-
-```sh
-alias g="git"
-```
-
 Dans votre `.gitconfig` :
 
 ```ini
@@ -268,7 +262,7 @@ g = pull --all
 p = push
 ```
 
-Et maintenant vous pouvez utiliser `g g` pour pull et `g p` pour push.
+Et maintenant vous pouvez utiliser `git g` pour pull et `git p` pour push.
 
 ### Pull depuis plusieurs remotes avec des commits différents
 
@@ -323,7 +317,7 @@ Vous pourrez éventuellement être intéressés par ces posts
 
 Je n'ai pas de silver-bullet pour ça. Pour l'instant j'utilise un dépôt, souvent
 GitHub, en principal et les autres ne sont que des copies sans issues... Mais
-bon en cas de licorne rose, j'ai l'air moins con! C'est toute l'idée de cette
+bon en cas de licorne rose (GitHub down), j'ai l'air moins con! C'est toute l'idée de cette
 approche, même si elle est perfectible : ne pas être bloqué par un service.
 
 ### Faire un commit depuis l'UI web
