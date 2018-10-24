@@ -21,19 +21,19 @@ pousser son code sur différentes plateformes, c'est un peu moins facile. Mais b
 c'est pas difficile pour autant.
 
 Souvent on utilise GitHub, qui est la solution la plus répandue à ce jour, mais
-en cas de grosse coupure (coucou les DDOS) ou juste car vous n'avez pas envie
+en cas de grosse coupure (coucou les DDoS) ou juste car vous n'avez pas envie
 d'être trop lié à GitHub (le rachat de GitHub par Microsoft vous rappelle le syndrome Skype ?)
 vous aimeriez bien avoir des
 miroirs accessibles en écriture.
 
 **Voici donc une petite astuce pour garder vos dépôts synchro entre plusieurs
-plateformes** comme GitLab et BitBucket, où vous pourrez pousser et récupérer du
+plateformes** comme GitLab et Bitbucket, où vous pourrez pousser et récupérer du
 code sans effort particulier, après un petit coup d'init. Donc pas de miroir en
 lecture seule hein. De vrais dépôts. Et ça **juste en utilisant les
 fonctionnalités de git (push et pull)**.
 
 _Rappel : pour rester sécurisé, mettez en place SSH et l'authentification à deux
-facteurs (2FA) sur les plateformes que vous utilisez (sauf BitBucket, car ça
+facteurs (2FA) sur les plateformes que vous utilisez (sauf Bitbucket, car ça ne 
 marche pas avec leur outil CLI)._
 
 ## Git Tooling
@@ -51,13 +51,13 @@ brew install hub
 ```
 
 Voir
-[les instructions d'installation Hub](https://github.com/github/hub#installation)
+[les instructions d'installation hub](https://github.com/github/hub#installation)
 pour les autres OS.
 
 Il vous faudra un [token GitHub](https://github.com/settings/tokens/new).
 
-Mettez le dans votre dossier home (~) dans un fichier `.github_token`, et
-chargez le dans votre `.bash/zshrc` comme ça :
+Mettez-le dans votre dossier home (~) dans un fichier `.github_token`, et
+chargez-le dans votre `.bash/zshrc` comme ça :
 
 ```sh
 if [[ -f $HOME/.github_token ]]
@@ -95,9 +95,9 @@ fi
 export GITLAB_API_ENDPOINT="https://gitlab.com/api/v3"
 ```
 
-### BitBucket
+### Bitbucket
 
-Le [CLI BitBucket](https://bitbucket.org/zhemao/bitbucket-cli) est disponible
+Le [CLI Bitbucket](https://bitbucket.org/zhemao/bitbucket-cli) est disponible
 via [pip](https://pip.pypa.io/en/stable/) :
 
 ```sh
@@ -111,7 +111,7 @@ BitBucket ne fonctionne pas bien avec un token et la 2FA n'est pas pratique (et
 accessoirement
 [est impossible à utiliser en ssh](https://bitbucket.org/zhemao/bitbucket-cli/issues/25/create-issue-ssh-not-taken-in)).
 Il faudra faire avec login/mot de passe à chaque fois, à moins que
-[vous metiez en clair votre mot de passe dans un fichier](https://bitbucket.org/zhemao/bitbucket-cli#markdown-header-configuration).
+[vous mettiez en clair votre mot de passe dans un fichier](https://bitbucket.org/zhemao/bitbucket-cli#markdown-header-configuration).
 
 ---
 
@@ -165,7 +165,7 @@ gitlab create_project $GIT_REPO_NAME "{visibility_level: 20}"
 
 Nous ajouterons la remote plus tard, cela fait partie de l'astuce. ;)
 
-### Créer un dépôt sur BitBucket en ligne de commande
+### Créer un dépôt sur Bitbucket en ligne de commande
 
 ```console
 bb create --protocol=ssh --scm=git --public $GIT_REPO_NAME
@@ -205,7 +205,7 @@ Et maintenant vous pouvez faire `git push` et ça poussera sur tous les dépôts
 
 ---
 
-⚠️ **Note : pour forcer ssh à la place de https, petite astuce :**
+⚠️ **Note : pour forcer SSH à la place de HTTPS, petite astuce :**
 
 ```console
 git config --global url.ssh://git@github.com/.insteadOf https://github.com/
@@ -234,7 +234,7 @@ Vérifiez que les commandes sont bonnes en faisant :
 git remote -v
 ```
 
-Ça devrait vous donner un truc du genre :
+Cela devrait vous donner un truc du genre :
 
 ```
 origin	ssh://git@github.com/YOU/YOUR-REPO.git (fetch)
@@ -250,7 +250,7 @@ origin-bitbucket	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
 Maintenant vous pourrez `git push` pour pousser sur toutes les remotes, puis
 faire `git pull --all` pour récupérer de toutes les remotes.
 
-**L'astuce à 2 cents : faites un alias pour `pull --all`.**
+**L'astuce à 2 centimes : faites un alias pour `pull --all`.**
 
 Si vous n'avez qu'une remote sur un projet, ça ne changera rien, mais
 ça fonctionnera si vous en avez plus d'une.
@@ -270,7 +270,7 @@ Un petit edge case peut se révéler problématique : une PR mergée sur GitHub 
 sur GitLab, à peu près en même temps. Vous allez pouvoir récupérer tout ça
 facilement (pour peu que vous utilisiez
 [`pull --rebase` par défaut](https://github.com/MoOx/setup/blob/60ec182707168e4cf9ffcb2d0351dc0ce2eac7ed/dotfiles/.gitconfig#L30-L31))
-mais quand vous allez vouloir pousser, sans force push ça va avoir du mal.
+mais quand vous allez vouloir pousser, sans force push, ça va avoir du mal.
 
 C'est le seul petit cas problématique. Si vous faites attention quand vous
 acceptez des PR/MR, vous ne devriez pas le rencontrer souvent.
@@ -316,11 +316,11 @@ Vous pourrez éventuellement être intéressés par ces posts
 ### Gérer les issues et PR/MR
 
 Je n'ai pas de silver-bullet pour ça. Pour l'instant j'utilise un dépôt, souvent
-GitHub, en principal et les autres ne sont que des copies sans issues... Mais
-bon en cas de licorne rose (GitHub down), j'ai l'air moins con! C'est toute l'idée de cette
+GitHub en principal, et les autres ne sont que des copies sans issues… Mais
+bon, en cas de licorne rose (GitHub down), j'ai l'air moins con ! C'est toute l'idée de cette
 approche, même si elle est perfectible : ne pas être bloqué par un service.
 
-### Faire un commit depuis l'UI web
+### Faire un commit depuis l'UI Web
 
 Pas un soucis, faut juste y penser. Et la prochaine fois que vous avez votre CLI
 en main, pull + push et tout sera en ordre.
@@ -337,15 +337,15 @@ gem install gitlab
 pip install bitbucket-cli
 ```
 
-Note : soyez sûrs d'avoir les bons tokens en tant que variable d'environnement,
+Note : soyez sûrs d'avoir les bons tokens en tant que variable d'environnement ;
 voir au début de ce post pour les détails.
 
-(Pensez aussi à configurer un alias git pour `pull --all` si vous voulez puller
+(Pensez aussi à configurer un alias git pour `pull --all` si vous voulez pull
 toutes les remotes par défaut.)
 
 ### Pour chaque dépôt :
 
-1.  exportez votre nom d'utilisateur (j'assume que vous avez le même sur chaque
+1.  exportez votre nom d'utilisateur (j'assume que vous ayez le même sur chaque
     plateforme)
 
 ```console
@@ -370,7 +370,7 @@ gitlab create_project $GIT_REPO_NAME "{visibility_level: 20}"
 bb create --protocol=ssh --scm=git --public $GIT_REPO_NAME
 ```
 
-Ensuite on ajoute les remotes
+Ensuite, on ajoute les remotes
 
 ```
 git remote set-url origin --add https://gitlab.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git
@@ -398,7 +398,7 @@ origin-gitlab   ssh://git@gitlab.com/YOU/YOUR-REPO.git (fetch)
 origin-gitlab   ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
 ```
 
-😇 Maintenant vous n'avez plus qu'à `git push` et `git pull --all`!
+😇 Maintenant vous n'avez plus qu'à `git push` et `git pull --all` !
 
 ## Bonus : badges
 
@@ -408,20 +408,20 @@ documentation de votre projet.
 ```markdown
 [![Repo on GitHub](https://img.shields.io/badge/repo-GitHub-3D76C2.svg)](https://github.com/YOU/YOUR-REPO)
 [![Repo on GitLab](https://img.shields.io/badge/repo-GitLab-6C488A.svg)](https://gitlab.com/YOU/YOUR-REPO)
-[![Repo on BitBucket](https://img.shields.io/badge/repo-BitBucket-1F5081.svg)](https://bitbucket.org/YOU/YOUR-REPO)
+[![Repo on Bitbucket](https://img.shields.io/badge/repo-BitBucket-1F5081.svg)](https://bitbucket.org/YOU/YOUR-REPO)
 ```
 
 **Ajustez `YOU/YOUR-REPO` à votre besoin**.
 
-Ca ressemblera à ça
+Ça ressemblera à ça
 
 [![Repo on GitHub](https://img.shields.io/badge/repo-GitHub-3D76C2.svg)](https://github.com/YOU/YOUR-REPO)
 [![Repo on GitLab](https://img.shields.io/badge/repo-GitLab-6C488A.svg)](https://gitlab.com/YOU/YOUR-REPO)
-[![Repo on BitBucket](https://img.shields.io/badge/repo-BitBucket-1F5081.svg)](https://bitbucket.org/YOU/YOUR-REPO)
+[![Repo on Bitbucket](https://img.shields.io/badge/repo-BitBucket-1F5081.svg)](https://bitbucket.org/YOU/YOUR-REPO)
 
 J'ai mis en ligne
-[ces instructions résumées sur un dépôt](https://github.com/MoOx/git-init), peut
-être en ferais-je un script, qui sait... 😄. Enfin trois dépôts !
+[ces instructions résumées sur un dépôt](https://github.com/MoOx/git-init), peut-être
+en ferais-je un script, qui sait… 😄. Enfin trois dépôts !
 
 - https://github.com/MoOx/git-init
 - https://gitlab.com/MoOx/git-init
