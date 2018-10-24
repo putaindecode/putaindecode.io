@@ -388,14 +388,14 @@ git remote -v
 Vous devriez avoir un truc du genre
 
 ```
-origin	ssh://git@github.com/YOU/YOUR-REPO.git (fetch)
-origin	ssh://git@github.com/YOU/YOUR-REPO.git (push)
-origin	ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
-origin	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
-origin-bitbucket	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
-origin-bitbucket	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (fetch)
-origin-gitlab	ssh://git@gitlab.com/YOU/YOUR-REPO.git (fetch)
-origin-gitlab	ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
+origin  ssh://git@github.com/YOU/YOUR-REPO.git (fetch)
+origin  ssh://git@github.com/YOU/YOUR-REPO.git (push)
+origin  ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
+origin  ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
+origin-bitbucket        ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
+origin-bitbucket        ssh://git@bitbucket.org/YOU/YOUR-REPO.git (fetch)
+origin-gitlab   ssh://git@gitlab.com/YOU/YOUR-REPO.git (fetch)
+origin-gitlab   ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
 ```
 
 😇 Maintenant vous n'avez plus qu'à `git push` et `git pull --all` !
