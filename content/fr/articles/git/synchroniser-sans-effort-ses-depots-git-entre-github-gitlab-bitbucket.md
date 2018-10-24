@@ -84,7 +84,7 @@ GitLab nécessite un token ainsi qu'un endpoint (car GitLab peut être déployé
 n'importe où).
 
 Pour le token, [récupérez le votre](https://gitlab.com/profile/account) et
-faites comme pour GitHub. Voici un example avec l'instance GitLab que vous
+faites comme pour GitHub. Voici un example avec l'instance GitLab.com que vous
 pouvez placer dans votre `.bash/zshrc`:
 
 ```sh
@@ -194,10 +194,10 @@ git remote -v
 Ça devrait vous donner un truc du genre :
 
 ```
-origin  https://github.com/YOU/YOUR-REPO.git (fetch)
-origin  https://github.com/YOU/YOUR-REPO.git (push)
-origin  https://gitlab.com/YOU/YOUR-REPO.git (push)
-origin  https://bitbucket.org/YOU/YOUR-REPO.git (push)
+origin	https://github.com/YOU/YOUR-REPO.git (fetch)
+origin	https://github.com/YOU/YOUR-REPO.git (push)
+origin	https://gitlab.com/YOU/YOUR-REPO.git (push)
+origin	https://bitbucket.org/YOU/YOUR-REPO.git (push)
 ```
 
 Et maintenant vous pouvez faire `git push` et ça poussera sur tous les dépôts
@@ -237,14 +237,14 @@ git remote -v
 Cela devrait vous donner un truc du genre :
 
 ```
-origin  ssh://git@github.com/YOU/YOUR-REPO.git (fetch)
-origin  ssh://git@github.com/YOU/YOUR-REPO.git (push)
-origin  ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
-origin  ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
-origin-gitlab   ssh://git@gitlab.com/YOU/YOUR-REPO.git (fetch)
-origin-gitlab   ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
-origin-bitbucket    ssh://git@bitbucket.org/YOU/YOUR-REPO.git (fetch)
-origin-bitbucket    ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
+origin	ssh://git@github.com/YOU/YOUR-REPO.git (fetch)
+origin	ssh://git@github.com/YOU/YOUR-REPO.git (push)
+origin	ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
+origin	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
+origin-gitlab	ssh://git@gitlab.com/YOU/YOUR-REPO.git (fetch)
+origin-gitlab	ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
+origin-bitbucket	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (fetch)
+origin-bitbucket	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
 ```
 
 Maintenant vous pourrez `git push` pour pousser sur toutes les remotes, puis
@@ -337,7 +337,7 @@ gem install gitlab
 pip install bitbucket-cli
 ```
 
-Note : soyez sûrs d'avoir les bons tokens en tant que variable d'environnement&nbsp;;
+Note : soyez sûrs d'avoir les bons tokens en tant que variable d'environnement ;
 voir au début de ce post pour les détails.
 
 (Pensez aussi à configurer un alias git pour `pull --all` si vous voulez pull
@@ -388,14 +388,14 @@ git remote -v
 Vous devriez avoir un truc du genre
 
 ```
-origin  ssh://git@github.com/YOU/YOUR-REPO.git (fetch)
-origin  ssh://git@github.com/YOU/YOUR-REPO.git (push)
-origin  ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
-origin  ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
-origin-bitbucket        ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
-origin-bitbucket        ssh://git@bitbucket.org/YOU/YOUR-REPO.git (fetch)
-origin-gitlab   ssh://git@gitlab.com/YOU/YOUR-REPO.git (fetch)
-origin-gitlab   ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
+origin	ssh://git@github.com/YOU/YOUR-REPO.git (fetch)
+origin	ssh://git@github.com/YOU/YOUR-REPO.git (push)
+origin	ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
+origin	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
+origin-bitbucket	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (push)
+origin-bitbucket	ssh://git@bitbucket.org/YOU/YOUR-REPO.git (fetch)
+origin-gitlab	ssh://git@gitlab.com/YOU/YOUR-REPO.git (fetch)
+origin-gitlab	ssh://git@gitlab.com/YOU/YOUR-REPO.git (push)
 ```
 
 😇 Maintenant vous n'avez plus qu'à `git push` et `git pull --all` !
