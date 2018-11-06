@@ -54,14 +54,14 @@ L'avantage des classes est la possibilité d'utiliser les fonctionnalités de
 React comme par exemple le
 [lifecycle](https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class)
 ou encore le
-[state](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class)
+[state](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).
 
 C'est très précisement à ce niveau qu'interviennent les hooks. Il est dorénavant
-possible (enfin ça le sera bientôt) d'avoir accès à ces deux concepts (mais pas
-que, en gros toutes les fonctionnalités de React comme les ref par exemple) dans
+possible (enfin, ça le sera bientôt) d'avoir accès à ces deux concepts (mais pas
+que, en gros toutes les fonctionnalités de React comme les `ref` par exemple) dans
 les fonctions.
 
-Petit bémol, comme le précise l'équipe de React, ne vous jetez pas tout de suite
+Petit bémol : comme le précise l'équipe de React, ne vous jetez pas tout de suite
 dans le refactorisation de vos classes. L'utilisation des hooks dans les
 fonctions ne signe pas pour autant la fin des classes.
 
@@ -75,7 +75,7 @@ fonctions.
 
 #### `state` et `useState`
 
-Partons de notre exemple précédent en y rajoutant l'utilisation d'un state.
+Partons de notre exemple précédent en y rajoutant l'utilisation d'un state :
 
 ```js
 import React from "react";
@@ -113,7 +113,7 @@ class Form extends React.Component {
 ```
 
 Nous venons d'écrire un composant très simple qui met à jour un élément
-`<input />`. On a du pour cela définir dans le constructor une valeur par défaut
+`<input />`. On a dû, pour cela, définir dans le constructor une valeur par défaut
 dans notre objet `state`, définir une fonction pour gérer l'événement `onChange`
 sur notre `<input />` sans oublier de bind notre fonction pour le scope de
 `this`.
@@ -148,7 +148,7 @@ function Form(props) {
 }
 ```
 
-Attardons nous un peu plus sur ce `useState`.
+Attardons-nous un peu plus sur ce `useState`.
 
 C'est le premier hook introduit par React qui nous permet d'utiliser le state
 dans les fonctions React.
@@ -291,14 +291,14 @@ logique que `componentDidMount`, `componentDidUpdate` et `componentWillUnmount`.
 
 Il va donc s'exécuter :
 
-- après le chargement de notre composant.
-- après chaque mise à jour de notre composant.
+- après le chargement de notre composant ;
+- après chaque mise à jour de notre composant ;
 - à la destruction de notre composant.
 
-Petit précision sur le `return` de notre hook. Il faut considérer cela comme un
+Petit précision sur le `return` de notre hook : il faut considérer cela comme un
 mécanisme (optionnelle) de cleanup.
 
-Concrètement dans notre cas c'est ici qu'on va pouvoir de se désabonner de notre
+Concrètement, dans notre cas, c'est ici qu'on va pouvoir de se désabonner de notre
 événement.
 
 Grace à ces deux hooks, nous nous avons donc accès aux concepts de `state` et du
@@ -310,10 +310,10 @@ permet de souscrire à
 [React context](https://putaindecode.io/fr/articles/js/react/react-new-context-api/)
 en évitant l'imbrication des `Consumer` et `Provider`.
 
-Tous ces hooks sont bien entendu disponibles dans la version `16.7.0` alpha de
+Tous ces hooks sont, bien entendu, disponibles dans la version `16.7.0` alpha de
 React.
 
-Ils en existent d'autre qui sont listés ici
+Ils en existent d'autre qui sont listés ici : 
 https://reactjs.org/docs/hooks-reference.html#additional-hooks
 
 ### Les deux petites règles
@@ -331,7 +331,7 @@ qui permet d'être sûr que ces régles soient bien respectées.
 ### Custom Hooks
 
 Naturellement il est tout à fait possible de créer soi-même son propre hook, une
-[orga](https://github.com/rehooks) sur Github existe ayant pour objectif de
+[orga](https://github.com/rehooks) sur GitHub existe ayant pour objectif de
 recenser tous ces custom hooks.
 
 Revenons à notre exemple pour voir si on ne pourrait pas le modifier un peu pour
