@@ -204,11 +204,11 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListner("resize", this.handleResize);
+    window.addEventListener("resize", this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListner("resize", this.handleResize);
+    window.removeEventListener("resize", this.handleResize);
   }
 
   handleResize() {
@@ -259,9 +259,9 @@ function Form(props) {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListner("resize", handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListner("resize", handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   });
 
@@ -304,7 +304,7 @@ Concrètement, dans notre cas, c'est ici qu'on va pouvoir de se désabonner de n
 Grace à ces deux hooks, nous nous avons donc accès aux concepts de `state` et du
 `lifecycle` dans une fonction.
 
-React a également mis à dispotion un autre hook
+React a également mis à disposition un autre hook
 [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) qui
 permet de souscrire à
 [React context](https://putaindecode.io/fr/articles/js/react/react-new-context-api/)
@@ -318,14 +318,14 @@ https://reactjs.org/docs/hooks-reference.html#additional-hooks
 
 ### Les deux petites règles
 
-Vous l'avez sans doute remarqué mais tous ces hooks commencent pas `use`. Ce
+Vous l'avez sans doute remarqué mais tous ces hooks commencent par `use`. Ce
 préfixe est primordial pour considérer votre hook comme un hook.
 
 De plus un hook ne doit ni se trouver dans une condition ni dans une boucle et
 ne doit s'appeler que dans une fonction React.
 
 Il existe un plugin `ESLint`
-[eslint-plugin-react-hooks ](https://reactjs.org/docs/hooks-rules.html#eslint-plugin)
+[eslint-plugin-react-hooks](https://reactjs.org/docs/hooks-rules.html#eslint-plugin)
 qui permet d'être sûr que ces régles soient bien respectées.
 
 ### Custom Hooks
@@ -341,7 +341,6 @@ tenter de créer un hook.
 import React, { useState, useEffect } from "react"
 
 function Form(props) {
-
   const [name, setName] = useState("putaindecode")
   const width = useWidth()
 
@@ -369,10 +368,10 @@ function Form(props) {
 function useWidth() {
   const [width, setWidth] = useState(window.innerWidth)
   useEffect(() => {
-    const handleResize () => setWidth(window.innerWidth)
-    window.addEventListner("resize", handleResize)
+    const handleResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleResize)
     return () => {
-      window.removeEventListner("resize", handleResize)
+      window.removeEventListener("resize", handleResize)
     }
   })
 
