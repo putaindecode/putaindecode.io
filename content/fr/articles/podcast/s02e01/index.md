@@ -15,14 +15,14 @@ authors:
 ---
 
 Une nouvelle saison qui débute avec plein de nouveautés React, une nouvelle
-version de now (Zeit) et Framer X.
+version de Now (Zeit) et Framer X.
 
 - Matthias, https://twitter.com/bloodyowl
 - Mathieu, https://twitter.com/Zoontek
 - Georges, https://twitter.com/skinnyfoetusboy
 - Maxime, https://twitter.com/MoOx
 
-Liens:
+Liens :
 
 - React Suspense https://github.com/facebook/react/issues/13206
 - Concurrent React https://www.youtube.com/watch?v=ByBPyMBTzM0
