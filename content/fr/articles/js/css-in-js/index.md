@@ -58,7 +58,7 @@ styleEl.setAttribute("data-pdc", "");
 styleEl.appendChild(document.createTextNode(""));
 document.head.appendChild(styleEl);
 
-const sheet = el.sheet as CSSStyleSheet;
+const sheet = styleEl.sheet as CSSStyleSheet;
 ```
 
 À la suite, nous allons créer une fonction simple qui insère une règle CSS, et
@@ -467,7 +467,7 @@ sortie, on constate qu'elle fait exactement ce que l'on souhaite.
   <img src="6.png" alt="valeur retournée par la fonction flattenStyle" />
 </figure>
 
-Il ne nous reste qu'à hasher la représentation de cette objet et insérer les
+Il ne nous reste qu'à hasher la représentation de cet objet et insérer les
 règles une par une.
 
 ```js
@@ -685,7 +685,7 @@ import memoize from "./memoize";
 // …
 
 // on peut mémoïser la fonction hyphenateName de façon à
-// cd que chaque règle ne soit convertie qu'une seule fois
+// ce que chaque règle ne soit convertie qu'une seule fois
 const hyphenateName = memoize(name => {
   return name
     .replace(/([A-Z])/g, (_, letter) => `-${letter.toLowerCase()}`)
