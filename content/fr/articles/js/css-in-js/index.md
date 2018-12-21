@@ -626,6 +626,7 @@ function flattenStyle(style: Style, suffix: string = "") {
 
   const declarations = Object.keys(style).map(name => {
     const value = (style as any)[name] as Value; // on force le type ici
+    // …
 ```
 
 <figure>
@@ -1083,7 +1084,3 @@ C'est tout pour moi! N'hésitez pas à poster des commentaires si vous avez des
 questions supplémentaires.
 
 La bise 😘
-
-```
-
-```
