@@ -600,7 +600,7 @@ Et c'est tout! 😀
 
 Le CSS-in-JS, ça peut vous rebuter quand on voit le tooling actuellement
 disponible pour le CSS. L'autocomplétion dans les éditeurs de texte est quali,
-ça serait bien d'avoir quelque chose de similaire ça tombe bien, nous utilisons
+ça serait bien d'avoir quelque chose de similaire…ça tombe bien, nous utilisons
 un langage typé.
 
 ```sh
@@ -838,7 +838,7 @@ Mais vous pouvez également faire ceci:
 
 import { createElement } from "./react";
 
-function H1(props: React.HTMLProps<"input">) {
+function H1(props: React.HTMLProps<"h1">) {
   return createElement("h1", props);
 }
 
