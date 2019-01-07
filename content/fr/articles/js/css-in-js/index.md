@@ -164,28 +164,9 @@ insertStyle({
 </figure>
 
 Afin de créer un nom de classe unique, il nous faut "hasher" notre règle CSS.
-Comme la librairie souhaitée n'est pas disponible sur `npm`, nous sommes obligés
-de copier l'implémentation de `murmurhash2` par **@garycourt**.
-[Récupérez le fichier ici](https://github.com/garycourt/murmurhash-js/blob/master/murmurhash2_gc.js),
-sauvegardez le sous le nom `src/hash.ts`.
 
-De base, la fonction prend en paramètre un `seed` (que nous souhaitons être
-toujours le même) et retourne un `integer`. Nous allons donc l'adapter un peu.
-
-```js
-// src/hash.hs
-/* eslint-disable */
-
-// on change la signature de la fonction
-export default function hash(str: string) {
-  var l = str.length,
-    h = 1 ^ l, // on hardcode la valeur de seed
-
-  // …
-
-  // on retourne un string encodé depuis la base 36
-  return (h >>> 0).toString(36);
-}
+```sh
+npm i -S murmurhash @types/murmurhash
 ```
 
 Nous pouvons dès à présent générer un nom de classe en fonction du contenu de
@@ -194,9 +175,14 @@ notre règle CSS.
 ```js
 // src/css.ts
 
-import hash from "./hash";
+import murmurhash from "murmurhash";
 
 // …
+
+function hash(str: string) {
+  // on retourne un string encodé en base 36
+  return murmurhash.v2(str, 1).toString(36);
+}
 
 export function insertStyle(style: Style) {
   const content = Object.keys(style)
