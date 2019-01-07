@@ -164,6 +164,8 @@ insertStyle({
 </figure>
 
 Afin de créer un nom de classe unique, il nous faut "hasher" notre règle CSS.
+Une fonction de hashage qui nous conviendrait est le `murmurhash2` disponible
+sur `npm`.
 
 ```sh
 npm i -S murmurhash @types/murmurhash
@@ -628,48 +630,24 @@ Comme vous vous en doutez, pour le moment notre lib n'est pas un foudre de
 guerre: aucun système de cache n'est présent. Comme on désire tout de même
 briller dans les benchmarks, tâchons d'optimiser ça.
 
-Pour cela on va utiliser la mémoïsation, et commencer par créer un nouveau
-fichier `memoize.ts`.
+Pour cela on va utiliser la mémoïsation (on utilise lodash par commodité, mais
+on peut faire plus léger).
 
-```js
-// src/memoize.ts
-
-export default function memoize<T extends (...args: any[]) => any>(
-  fn: T,
-  resolver: (...args: any[]) => any = value => value,
-): T {
-  const cache: {
-    [key: string]: any;
-  } = {};
-
-  const internalFn = (...args: any[]) => {
-    const key = resolver(...args);
-
-    if (!cache[key]) {
-      cache[key] = fn(...args);
-    }
-    return cache[key];
-  };
-
-  return internalFn as T;
-}
+```sh
+npm i -S lodash.memoize @types/lodash.memoize
 ```
 
-Pour ceux qui ne sont pas familier avec le concept, la mémoïsation nous permet
+Pour ceux qui ne sont pas familiers avec le concept, la mémoïsation nous permet
 de wrapper une fonction. Lors du premier appel, la fonction est appelée
 normalement, son résultat est stocké dans un objet. Lors des appels suivants,
-les calculs seront bypassés, le résultat en cache directement retourné.
-
-Par défaut, le `resolver` (la fonction qui permet de créer une clé pour l'objet
-cache) est une fonction `identity`: elle retourne le premier argument de la
-fonction. Il faut donc que celui-ci soit de type `string`.
+les calculs ne seront plus effectués, le résultat en cache directement retourné.
 
 Trève de bavardages, on importe ça dans notre fichier `css.ts` et on optimise 😄
 
 ```js
 // src/css.ts
 
-import memoize from "./memoize";
+import memoize from "lodash.memoize";
 
 // …
 
@@ -689,6 +667,7 @@ function css(...styles: Style[]) {
 }
 
 // on exporte par défaut la fonction mémoïsée
+// le deuxième argument sert à générer une clé pour l'élément en cache
 export default memoize(css, (...styles) => JSON.stringify(styles));
 ```
 
