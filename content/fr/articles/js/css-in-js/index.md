@@ -618,6 +618,9 @@ import { PropertiesFallback, SimplePseudos } from "csstype";
 export type Style = PropertiesFallback &
   { [pseudo in SimplePseudos]?: PropertiesFallback };
 
+// on en profite pour ajouter un type StyleSheet
+export type StyleSheet = { [key: string]: Style };
+
 // …
 function flattenStyle(style: Style, suffix: string = "") {
   let result: { [suffix: string]: string | undefined } = {
@@ -721,10 +724,10 @@ Enough®
 
 Parce qu'on adore React chez P!, je ne peux m'empêcher de conclure sans vous
 montrer comment utiliser au mieux cette lib avec React. Créez un fichier
-`react.ts`, c'est parti!
+`react.tsx`, c'est parti!
 
 ```js
-// src/react.ts
+// src/react.tsx
 
 import * as React from "react";
 import cssFn, { MaybeStyle } from "./css";
@@ -746,11 +749,15 @@ export function createElement<
     css?: MaybeStyle | MaybeStyle[];
     className?: string;
   }
->(Component: string, props: P, ...children: React.ReactElement<any>[]) {
+>(
+  Component: React.ComponentType<P> | string,
+  props: P,
+  ...children: React.ReactElement<any>[]
+) {
   // si le composant n'est pas un tag HTML ou qu'il
   // ne possède pas de prop CSS, on ne fait rien
   if (typeof Component !== "string" || !props.css) {
-    return React.createElement(Component as any, props, ...children);
+    return React.createElement(Component, props, ...children);
   }
 
   const { css, className, ...rest } = props;
@@ -775,6 +782,7 @@ Comment on se sert de tout ça? Facile: on retourne dans le fichier `index.tsx`.
 // src/index.tsx
 // …
 
+import { StyleSheet } from "./css";
 import { createElement } from "./react";
 /* @jsx createElement */
 
@@ -783,7 +791,7 @@ import { createElement } from "./react";
 // voir https://github.com/babel/babel/issues/8958
 createElement;
 
-const styles = {
+const styles: StyleSheet = {
   base: {
     color: "hotpink",
     textDecoration: "underline",
@@ -830,50 +838,27 @@ class App extends React.Component<{}, State> {
   <img src="11.gif" alt="résultat de l'exemple" />
 </figure>
 
-Mais vous pouvez également faire ceci:
-
-```js
-// src/index.tsx
-// …
-
-import { createElement } from "./react";
-
-function H1(props: React.HTMLProps<"h1">) {
-  return createElement("h1", props);
-}
-
-// …
-
-class App extends React.Component<{}, State> {
-  state = {
-    isFancy: false,
-  };
-
-  render() {
-    return (
-      <>
-        <H1 css={[styles.base, this.state.isFancy && styles.fancy]}>
-          Hello world
-        </H1>
-        {/* … */}
-```
-
 Si vous êtes fan de `styled-components` (personnellement je déteste ça, mais
 chacun son truc), il est extrêmement simple de recréer une API similaire:
 
 ```js
-// src/react.ts
+// src/react.tsx
 // …
 
 export function styled<T extends string, P extends object>(
   Component: T,
-  css: Style | ((props: P) => Style),
+  style: Style | ((props: P) => Style),
 ) {
-  return (props: P & React.HTMLProps<T>) =>
-    createElement(Component, {
-      ...props,
-      css: typeof css === "function" ? css(props) : css,
-    });
+  return (props: P & React.HTMLProps<T>) => {
+    const { children, ...rest } = props;
+    const css = typeof style === "function" ? style(props) : style;
+
+    return createElement(
+      Component,
+      { ...rest, css },
+      ...(children as React.ReactElement<any>[]),
+    );
+  };
 }
 ```
 
@@ -927,10 +912,10 @@ mais heureusement un polyfill existe.
 npm i -S resize-observer-polyfill
 ```
 
-On retourne dans le fichier `react.ts`:
+On retourne dans le fichier `react.tsx`:
 
 ```js
-// src/react.ts
+// src/react.tsx
 
 import ResizeObserver from "resize-observer-polyfill";
 
@@ -969,13 +954,43 @@ const observer = new ResizeObserver(entries => {
   }
 });
 
+class Resizable extends React.Component<{
+  render: (ref: React.RefObject<Element>) => React.ReactElement<any>;
+  onResize: OnResizeCallBack;
+}> {
+   // il est aussi possible d'utiliser forwardRef
+  ref: React.RefObject<Element> = React.createRef();
+
+  componentDidMount() {
+    if (this.ref.current) {
+      callbacks.set(this.ref.current, this.props.onResize);
+      observer.observe(this.ref.current);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.ref.current && callbacks.has(this.ref.current)) {
+      callbacks.delete(this.ref.current);
+      observer.unobserve(this.ref.current);
+    }
+  }
+
+  render() {
+    return this.props.render(this.ref);
+  }
+}
+
 export function createElement<
   P extends {
     css?: MaybeStyle | MaybeStyle[];
     className?: string;
     onResize?: OnResizeCallBack;
   }
->(Component: string, props: P, ...children: React.ReactElement<any>[]) {
+>(
+  Component: React.ComponentType<P> | string,
+  props: P,
+  ...children: React.ReactElement<any>[]
+) {
   if (typeof Component !== "string" || !props.css) {
     return React.createElement(Component as any, props, ...children);
   }
@@ -987,36 +1002,18 @@ export function createElement<
     (Array.isArray(css) ? cssFn(...css) : cssFn(css));
 
   if (onResize) {
-    class ResizableComponent extends React.Component<{
-      onResize: OnResizeCallBack;
-    }> {
-      ref = React.createRef(); // il est possible d'utiliser forwardRef
-
-      componentDidMount() {
-        // si onResize est présent, on observe l'élément HTML
-        if (!callbacks.has(this.ref.current as Element)) {
-          callbacks.set(this.ref.current as Element, this.props.onResize);
-          observer.observe(this.ref.current as Element);
+    return (
+      <Resizable
+        onResize={onResize}
+        render={ref =>
+          React.createElement(
+            Component,
+            { ...rest, ref, className: newClassName },
+            ...children,
+          )
         }
-      }
-
-      componentWillUnmount() {
-        if (callbacks.has(this.ref.current as Element)) {
-          callbacks.delete(this.ref.current as Element);
-          observer.unobserve(this.ref.current as Element);
-        }
-      }
-
-      render() {
-        return React.createElement(
-          Component,
-          { ...rest, ref: this.ref, className: newClassName },
-          ...children,
-        );
-      }
-    }
-
-    return React.createElement(ResizableComponent, { onResize });
+      />
+    );
   }
 
   return React.createElement(
@@ -1033,11 +1030,12 @@ Et pour ce qui est de l'usage:
 // src/index.tsx
 // …
 
+import { StyleSheet } from "./css";
 import { createElement } from "./react";
 /* @jsx createElement */
 createElement; // fix pour TS
 
-const styles = {
+const styles: StyleSheet = {
   base: {
     backgroundColor: "hotpink",
     height: "300px",
