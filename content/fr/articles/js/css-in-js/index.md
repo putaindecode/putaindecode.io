@@ -54,7 +54,6 @@ de récupérer l'objet de type `CSSStyleSheet` qui lui est attaché.
 // src/css.ts
 
 const styleEl = document.createElement("style");
-styleEl.setAttribute("data-pdc", "");
 styleEl.appendChild(document.createTextNode(""));
 document.head.appendChild(styleEl);
 
@@ -63,7 +62,8 @@ const sheet = styleEl.sheet as CSSStyleSheet;
 
 À la suite, nous allons créer une fonction simple qui insère une règle CSS, et
 nous prévient des règles malformées en développement (pour rappel, une règle est
-constituée de la façon suivante: `selector { name: value; name: value; … }`).
+constituée de la façon suivante:
+`selector { property: value; property: value; … }`).
 
 ```js
 // src/css.ts
@@ -111,9 +111,9 @@ const App = () => <h1>Hello world</h1>;
 
 ## Insertion de style sous la forme d'objets
 
-Écrire toutes nos règles sous forme de string, ça va 5 minutes. En plus il nous
-est toujours possible de faire ce que l'on veut (et donc souvent n'importe quoi)
-de nos sélecteurs. Nous allons donc créer une fonction supplémentaire pour
+Écrire toutes nos règles sous forme de string, ça va 5 minutes. Il nous est
+toujours possible de faire ce que l'on veut (et donc souvent n'importe quoi) de
+nos sélecteurs. Nous allons donc créer une fonction supplémentaire pour
 transformer un objet en règle insérable et dont le sélecteur sera un nom de
 classe généré et unique.
 
@@ -135,7 +135,7 @@ export type Style = {
 
 export function insertStyle(style: Style) {
   const content = Object.keys(style)
-    .map(name => `${name.trim()}: ${style[name]}`)
+    .map(name => `${name}: ${style[name]}`)
     .join("; ");
 
   insertRule(`h1 { ${content} }`);
@@ -143,7 +143,7 @@ export function insertStyle(style: Style) {
 ```
 
 À ce point, vous pouvez importer `insertStyle` et vous en servir, vous
-constaterez que cela a l'effet escompté…sur notre `h1` pour le moment.
+constaterez que cela a l'effet escompté… sur notre `h1` pour le moment.
 
 ```js
 // src/index.tsx
@@ -200,7 +200,7 @@ import hash from "./hash";
 
 export function insertStyle(style: Style) {
   const content = Object.keys(style)
-    .map(name => `${name.trim()}: ${style[name]}`)
+    .map(name => `${name}: ${style[name]}`)
     .join("; ");
 
   const className = "css-" + hash(content);
