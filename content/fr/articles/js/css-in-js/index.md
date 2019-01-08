@@ -10,7 +10,7 @@ authors:
 
 Il se peut que vous entendiez beaucoup parler de CSS-in-JS dernièrement (oui,
 encore). C'est un sujet de polémique bien connu dans le milieu du front-end
-actuel: les argumentaires tournent en boucle, souvent biaisés par les habitudes
+actuel : les argumentaires tournent en boucle, souvent biaisés par les habitudes
 de chaque partie.
 
 Histoire de comprendre un peu ce qu'est le CSS-in-JS **avant** de continuer à
@@ -60,9 +60,9 @@ document.head.appendChild(styleEl);
 const sheet = styleEl.sheet as CSSStyleSheet;
 ```
 
-À la suite, nous allons créer une fonction simple qui insère une règle CSS, et
-nous prévient des règles malformées en développement (pour rappel, une règle est
-constituée de la façon suivante:
+À la suite, nous allons créer une fonction simple qui insère une règle CSS et
+nous prévient des règles malformées en développement. Pour rappel, une règle est
+constituée de la façon suivante :
 `selector { property: value; property: value; … }`).
 
 ```js
@@ -347,7 +347,7 @@ const className = insertStyle({
 ```
 
 On constate que le navigateur ne nous indique pas que 3 valeurs ont été insérées
-(en barrant celle qui ne sont pas appliquées).
+(en barrant celles qui ne sont pas appliquées).
 
 <figure>
   <img src="5.png" alt="inspection des styles préfixés" />
@@ -357,7 +357,7 @@ En effet, lorsque vous utilisez `insertRule`, seule la dernière valeur comprise
 par le navigateur est réellement insérée. Ainsi, si on change la valeur de
 `display` pour `["flex", "-webkit-flex", "-moz-flex"]`, vous verrez que seul
 `-webkit-flex` sera appliqué (si bien sûr vous utilisez un navigateur qui
-comprends les préfixes webkit mais pas les préfixes mozilla).
+comprend les préfixes WebKit mais pas les préfixes Mozilla).
 
 ## Gestion des pseudo-classes / éléments
 
@@ -588,7 +588,7 @@ Et c'est tout! 😀
 
 Le CSS-in-JS, ça peut vous rebuter quand on voit le tooling actuellement
 disponible pour le CSS. L'autocomplétion dans les éditeurs de texte est quali,
-ça serait bien d'avoir quelque chose de similaire…ça tombe bien, nous utilisons
+ça serait bien d'avoir quelque chose de similaire… Ça tombe bien, nous utilisons
 un langage typé.
 
 ```sh
@@ -627,20 +627,20 @@ function flattenStyle(style: Style, suffix: string = "") {
 ## Performances
 
 Comme vous vous en doutez, pour le moment notre lib n'est pas un foudre de
-guerre: aucun système de cache n'est présent. Comme on désire tout de même
+guerre : aucun système de cache n'est présent. Comme on désire tout de même
 briller dans les benchmarks, tâchons d'optimiser ça.
 
 Pour cela on va utiliser la mémoïsation (on utilise lodash par commodité, mais
 on peut faire plus léger).
 
+Pour ceux qui ne sont pas familiers avec le concept, cela nous permet de wrapper
+une fonction. Lors du premier appel, la fonction est appelée normalement, son
+résultat est stocké dans un objet. Lors des appels suivants, les calculs ne
+seront plus effectués, le résultat en cache directement retourné.
+
 ```sh
 npm i -S lodash.memoize @types/lodash.memoize
 ```
-
-Pour ceux qui ne sont pas familiers avec le concept, la mémoïsation nous permet
-de wrapper une fonction. Lors du premier appel, la fonction est appelée
-normalement, son résultat est stocké dans un objet. Lors des appels suivants,
-les calculs ne seront plus effectués, le résultat en cache directement retourné.
 
 Trève de bavardages, on importe ça dans notre fichier `css.ts` et on optimise 😄
 
@@ -689,7 +689,7 @@ Enough®
 
 Parce qu'on adore React chez P!, je ne peux m'empêcher de conclure sans vous
 montrer comment utiliser au mieux cette lib avec React. Créez un fichier
-`react.tsx`, c'est parti!
+`react.tsx`, c'est parti !
 
 ```js
 // src/react.tsx
@@ -741,7 +741,8 @@ export function createElement<
 }
 ```
 
-Comment on se sert de tout ça? Facile: on retourne dans le fichier `index.tsx`.
+Comment on se sert de tout ça ? Facile : on retourne dans le fichier
+`index.tsx`.
 
 ```js
 // src/index.tsx
@@ -804,7 +805,7 @@ class App extends React.Component<{}, State> {
 </figure>
 
 Si vous êtes fan de `styled-components` (personnellement je déteste ça, mais
-chacun son truc), il est extrêmement simple de recréer une API similaire:
+chacun son truc), il est extrêmement simple de recréer une API similaire :
 
 ```js
 // src/react.tsx
