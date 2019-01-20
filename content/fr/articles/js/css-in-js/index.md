@@ -117,11 +117,17 @@ const App = () => <h1>Hello world</h1>;
 
 ## Insertion de style sous la forme d'objets
 
-Écrire toutes nos règles sous forme de string, ça va 5 minutes. Il nous est
-toujours possible de faire ce que l'on veut (et donc souvent n'importe quoi) de
-nos sélecteurs. Nous allons donc créer une fonction supplémentaire pour
-transformer un objet en règle insérable et dont le sélecteur sera un nom de
-classe généré et unique.
+Écrire nos règles sous la forme de string est plutôt risqué : la chaîne de
+caractère sera complexe à parser et à analyser. Nous nous exposons donc à
+certains risques si nous ne pensons pas à prévoir certains cas.
+
+De plus, si une équipe de développeurs peut insérer absolument tout ce qu'elle
+souhaite dans la feuille de style, elle pourra donc utiliser l'intégralité des
+sélecteurs CSS. Il faudrait donc faire appel à beaucoup de rigueur ou se reposer
+sur plusieurs outils supplémentaires (extensions IDE, linter, etc.).
+
+Nous allons donc créer une fonction supplémentaire pour transformer un objet en
+règle insérable et dont le sélecteur sera un nom de classe généré et unique.
 
 Nous allons également créer quelques types assez basiques en haut de notre
 fichier.
@@ -169,7 +175,12 @@ insertStyle({
   <img src="3.png" alt="résultat avec un style objet" />
 </figure>
 
-Afin de créer un nom de classe unique, il nous faut "hasher" notre règle CSS.
+Afin de créer un nom de classe unique, il nous faut hacher notre règle CSS. Cela
+consiste à transformer la donnée entrée en "empreinte" permettant d'identifier
+celle-ci. Ainsi, deux objets au contenu identique et ordonnés de la même façon
+auront tous deux la même empreinte. L'objectif étant que si plusieurs objets de
+style possèdent un contenu identique, celui-ci ne sera inséré d'une seule fois.
+
 Une fonction de hashage qui nous conviendrait est le `murmurhash2` disponible
 sur `npm`.
 
