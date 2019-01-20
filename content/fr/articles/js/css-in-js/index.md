@@ -881,10 +881,11 @@ class App extends React.Component<{}, State> {
         {/* … */}
 ```
 
-## Bonus: gérer le responsive
+## Gérer le responsive
 
-Les media queries c'est bien mignon, mais dans une approche composant appliquer
-des styles par rapport à la taille de la totalité du viewport, c'est dommage.
+Les media-queries c'est pas mal, mais au sein d'une approche composant appliquer
+des styles par rapport aux dimensions de la totalité du viewport, c'est fort
+dommage.
 
 Nous allons donc utiliser
 [`ResizeObserver`](https://developers.google.com/web/updates/2016/10/resizeobserver).
@@ -1061,7 +1062,15 @@ class App extends React.Component<{}, State> {
   <img src="12.gif" alt="résultat responsive" />
 </figure>
 
-C'est tout pour moi! N'hésitez pas à poster des commentaires si vous avez des
-questions supplémentaires.
+Il est temps de conclure ! Comme vous avez pu le constater, notre errance dans
+le CSSOM nous a permis de créer une abstraction qui :
+
+- est déterministe (le nom de la classe est généré en fonction du style)
+- nous évite de nous soucier de la spécificité des sélecteurs CSS
+- isole le style par composant et empêche un tas de comportements inattendus
+- nous permet de gérer le responsive sans se soucier du contexte
+
+Si vous ne comprenez pas certains points ou avez des questions supplémentaires,
+n'hésitez pas à poster un commentaire, je me ferais une joie d'y répondre.
 
 La bise 😘
