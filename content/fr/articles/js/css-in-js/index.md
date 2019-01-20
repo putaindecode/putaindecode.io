@@ -698,9 +698,8 @@ export default memoize(css, (...styles) => JSON.stringify(styles));
   <figcaption>Après mémoïsation</figcaption>
 </figure>
 
-À savoir qu'il existe d'autres techniques de caching, notamment celles à base de
-`WeakMap`. Je ne vais pas entrer dans les détails, notre librairie étant Fast
-Enough®
+À savoir qu'il existe d'autres techniques de caching, notamment à base de
+`WeakMap`.
 
 # Intégration avec React
 
