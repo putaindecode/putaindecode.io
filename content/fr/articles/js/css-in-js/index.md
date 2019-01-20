@@ -8,15 +8,21 @@ authors:
   - zoontek
 ---
 
-Il se peut que vous entendiez beaucoup parler de CSS-in-JS dernièrement (oui,
-encore). C'est un sujet de polémique bien connu dans le milieu du front-end
-actuel : les argumentaires tournent en boucle, souvent biaisés par les habitudes
-de chaque partie.
+Il se peut que vous entendiez beaucoup parler de CSS-in-JS dernièrement. C'est
+un sujet de polémique bien connu dans le milieu du front-end actuel : les
+argumentaires tournent en boucle, souvent biaisés par les habitudes et / ou les
+conditions de travail de chaque partie.
 
-Histoire de comprendre un peu ce qu'est le CSS-in-JS **avant** de continuer à
-taper notre voisin en lui expliquant pourquoi c'est bien / pas bien, nous allons
-réaliser une petite lib qui fait les basiques (insertion de style, gestion des
-pseudo-classes / pseudo-elements, un moyen de gérer le responsive).
+Afin de mieux comprendre ce qu'est le CSS-in-JS, nous allons créer une librairie
+similaire à [Emotion](https://emotion.sh/) ou
+[Glamor](https://github.com/threepointone/glamor). Au fur et à mesure de la
+réalisation, nous pourrons nous apercevoir qu'il es parfois possible d'améliorer
+l'expérience de développement en prévenant certaines erreurs humaines et en
+automatisant certaines choses.
+
+Notre librairie nous permettra d'insérer des styles de façon sûre, de gérer les
+pseudo-classes et les pseudo-éléments et fournir un moyen de gérer le
+responsive.
 
 ## Initialisation du projet
 
