@@ -16,12 +16,12 @@ conditions de travail de chaque partie.
 Afin de mieux comprendre ce qu'est le CSS-in-JS, nous allons créer une librairie
 similaire à [Emotion](https://emotion.sh/) ou
 [Glamor](https://github.com/threepointone/glamor). Au fur et à mesure de la
-réalisation, nous pourrons nous apercevoir qu'il es parfois possible d'améliorer
+réalisation, nous pourrons nous apercevoir qu'il est parfois possible d'améliorer
 l'expérience de développement en prévenant certaines erreurs humaines et en
 automatisant certaines choses.
 
 Notre librairie nous permettra d'insérer des styles de façon sûre, de gérer les
-pseudo-classes et les pseudo-éléments et fournir un moyen de gérer le
+pseudo-classes et les pseudo-éléments et de fournir un moyen de gérer le
 responsive.
 
 ## Initialisation du projet
@@ -53,7 +53,7 @@ nouveau fichier `src/css.ts`.
 ## Insertion de style sous la forme de string
 
 La première chose à faire pour pouvoir insérer des styles au sein du CSSOM,
-c'est de créer un élément DOM `<style>` dans le `<head>` de notre document, et
+c'est de créer un élément DOM `<style>` dans le `<head>` de notre document, puis
 de récupérer l'objet de type `CSSStyleSheet` qui lui est attaché.
 
 ```js
@@ -244,7 +244,7 @@ toutes les majuscules de notre paramètre de type `string` par un hyphen + sa
 minuscule.
 
 Elle gère également le cas un peu spécial des préfixes Microsoft (qui ne
-commencent pas par une majuscule, contrairement à ceux de Mozilla / Webkit).
+commencent pas par une majuscule, contrairement à ceux de Mozilla / WebKit).
 
 ```js
 // src/css.ts
@@ -348,7 +348,7 @@ export function insertStyle(style: Style) {
 }
 ```
 
-Si l'on modifie le style appliqué sur notre `<h1>` de cette façon:
+Si on modifie le style appliqué sur notre `<h1>` de cette façon :
 
 ```js
 // src/index.tsx
@@ -381,7 +381,7 @@ comprend les préfixes WebKit mais pas les préfixes Mozilla).
 L'idée c'est de les déclarer directement au sein de notre déclaration de style,
 si possible de façon infiniment nestés.
 
-On modifie donc l'exemple pour visualiser le but à atteindre:
+On modifie donc l'exemple pour visualiser le but à atteindre :
 
 ```js
 // src/index.tsx
@@ -404,7 +404,7 @@ const className = insertStyle({
 ```
 
 Idéalement, il nous faudrait une fonction qui aplatisse ce style par suffixe
-appliqué à notre classe, de cette façon:
+appliqué à notre classe, de cette façon :
 
 ```js
 {
@@ -506,7 +506,7 @@ css(styles.base, this.props.disabled && styles.disabled);
 ```
 
 Supprimez tous les exports de fonction du fichier `css.ts`, nous n'allons en
-garder qu'un seul, celui par défaut: cette fameuse fonction `css`!
+garder qu'un seul, celui par défaut : cette fameuse fonction `css` !
 
 ```js
 // src/css.ts
@@ -653,7 +653,7 @@ on peut faire plus léger).
 Pour ceux qui ne sont pas familiers avec le concept, cela nous permet de wrapper
 une fonction. Lors du premier appel, la fonction est appelée normalement, son
 résultat est stocké dans un objet. Lors des appels suivants, les calculs ne
-seront plus effectués, le résultat en cache directement retourné.
+seront plus effectués, le résultat en cache sera directement retourné.
 
 ```sh
 npm i -S lodash.memoize @types/lodash.memoize
@@ -1069,7 +1069,7 @@ le CSSOM nous a permis de créer une abstraction qui :
 - isole le style par composant et empêche un tas de comportements inattendus,
 - nous permet de gérer le responsive sans se soucier du contexte.
 
-Si vous ne comprenez pas certains points ou avez des questions supplémentaires,
+Si vous ne comprenez pas certains points ou si vous avez des questions supplémentaires,
 n'hésitez pas à poster un commentaire, je me ferai une joie d'y répondre.
 
 La bise 😘
