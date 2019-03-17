@@ -171,7 +171,9 @@ let make =
                              className=Styles.avatar
                              key=name
                              src={
-                               "https://avatars.githubusercontent.com/" ++ name
+                               "https://avatars.githubusercontent.com/"
+                               ++ name
+                               ++ "?size=64"
                              }
                              alt=name
                            />
