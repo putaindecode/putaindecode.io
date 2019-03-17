@@ -29,7 +29,7 @@ let rec render = (~url=React.Router.dangerouslyGetInitialUrl(), ()) => {
   switch (markup, firstPath^) {
   | (Some(_), true) =>
     ReactDOMRe.hydrateToElementWithId(<App url ?initialData />, "root")
-  | _ => ReactDOMRe.renderToElementWithId(<App url />, "root")
+  | _ => ReactDOMRe.renderToElementWithId(<App url ?initialData />, "root")
   };
   let watcherId = ref(None);
   watcherId :=
