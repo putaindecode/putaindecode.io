@@ -151,7 +151,7 @@ module Styles = {
       padding(20->px),
     ]);
   let backLink =
-    style([fontSize(20->px), textDecoration(none), color("4A90E2"->hex)]);
+    style([fontSize(20->px), textDecoration(none), color("1E49B5"->hex)]);
 };
 
 let make =

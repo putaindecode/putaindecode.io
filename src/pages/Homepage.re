@@ -149,7 +149,7 @@ module TopArticles = {
       style([
         fontSize(20->px),
         textDecoration(none),
-        color("4A90E2"->hex),
+        color("1E49B5"->hex),
       ]);
     let authorSmall =
       style([position(absolute), top(10->px), left(10->px)]);
@@ -346,7 +346,7 @@ module LatestPodcasts = {
       style([
         fontSize(20->px),
         textDecoration(none),
-        color("4A90E2"->hex),
+        color("1E49B5"->hex),
       ]);
   };
 
