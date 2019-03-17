@@ -38,6 +38,7 @@ let loadDisqus = url => {
         Js.Date.now()->Js.String.make,
         script,
       );
+      Dom.Element.setAttribute("defer", "defer", script);
       Dom.Document.querySelector("script", Dom.document)
       ->Option.map(firstScript =>
           firstScript
@@ -68,7 +69,7 @@ module Styles = {
 let make = (~url=?, _) => {
   ...component,
   didMount: _ => {
-    loadDisqus(url);
+    Js.Global.setTimeout(() => loadDisqus(url), 1_000)->ignore;
   },
   render: _ => {
     <div id="disqus_thread" className=Styles.disqus />;
