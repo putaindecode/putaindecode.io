@@ -6,6 +6,13 @@ module Styles = {
   open Css;
   let appearAnimation =
     keyframes([(0, [opacity(0.), transform(translateY(20->px))])]);
+  let root =
+    style([
+      backgroundColor("F9F6F6"->hex),
+      display(flexBox),
+      flexDirection(column),
+      flexGrow(1.0),
+    ]);
   let container =
     style([
       padding2(~v=20->px, ~h=10->px),
@@ -81,6 +88,36 @@ module Styles = {
       ),
       selector("p", [textAlign(`justify)]),
     ]);
+  let share =
+    style([
+      maxWidth(640->px),
+      width(100.->pct),
+      display(flexBox),
+      flexDirection(row),
+      alignItems(center),
+      justifyContent(spaceBetween),
+      margin2(~h=auto, ~v=20->px),
+      padding(20->px),
+      backgroundColor("fff"->hex),
+      borderRadius(10->px),
+      boxShadow(
+        ~y=15->px,
+        ~blur=15->px,
+        ~spread=(-5)->px,
+        rgba(0, 0, 0, 0.2),
+      ),
+    ]);
+  let shareTitle = style([fontWeight(extraBold)]);
+  let shareButton =
+    style([
+      backgroundColor("00aced"->hex),
+      color("fff"->hex),
+      padding2(~h=20->px, ~v=10->px),
+      textDecoration(none),
+      borderRadius(5->px),
+      fontWeight(extraBold),
+      active([opacity(0.5)]),
+    ]);
   let back =
     style([
       display(flexBox),
@@ -107,59 +144,91 @@ let make =
     };
   },
   render: _ => {
-    switch (episode) {
-    | NotAsked
-    | Loading => <PageLoadingIndicator />
-    | Done(Ok(episode)) =>
-      let trackId = episode.soundcloudTrackId;
-      <WithTitle title={episode.title}>
-        <WidthContainer>
-          <div className=Styles.container>
-            <div className=Styles.playerContainer>
-              <div className=Styles.playerBackground>
-                <iframe
-                  className=Styles.player
-                  name="Player"
-                  src={j|https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$trackId&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true|j}
-                />
-              </div>
-            </div>
-            <Spacer width=40 height=20 />
-            <div className=Styles.contents>
-              <div role="heading" ariaLevel=1 className=Styles.title>
-                episode.title->React.string
-              </div>
-              <div className=Styles.author>
-                {episode.participants
-                 ->Array.map(name =>
-                     <Link href={"https://github.com/" ++ name} key=name>
-                       <img
-                         className=Styles.avatar
-                         src={
-                           "https://avatars.githubusercontent.com/"
-                           ++ name
-                           ++ "?size=64"
-                         }
-                         alt=name
-                       />
-                     </Link>
-                   )
-                 ->React.array}
-              </div>
-              <div
-                className=Styles.body
-                dangerouslySetInnerHTML={"__html": episode.body}
-              />
-            </div>
-          </div>
-          <div className=Styles.back>
-            <Link href="/podcasts" className=Styles.backLink>
-              {j|← Épisodes|j}->React.string
-            </Link>
-          </div>
-        </WidthContainer>
-      </WithTitle>;
-    | Done(Error(_)) => <ErrorPage />
-    };
+    <div className=Styles.root>
+      {switch (episode) {
+       | NotAsked
+       | Loading => <PageLoadingIndicator />
+       | Done(Ok(episode)) =>
+         let trackId = episode.soundcloudTrackId;
+         <WithTitle title={episode.title}>
+           <WidthContainer>
+             <div className=Styles.container>
+               <div className=Styles.playerContainer>
+                 <div className=Styles.playerBackground>
+                   <iframe
+                     className=Styles.player
+                     name="Player"
+                     src={j|https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$trackId&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true|j}
+                   />
+                 </div>
+               </div>
+               <Spacer width=40 height=20 />
+               <div className=Styles.contents>
+                 <div role="heading" ariaLevel=1 className=Styles.title>
+                   episode.title->React.string
+                 </div>
+                 <div className=Styles.author>
+                   {episode.participants
+                    ->Array.map(name =>
+                        <Link href={"https://github.com/" ++ name} key=name>
+                          <img
+                            className=Styles.avatar
+                            src={
+                              "https://avatars.githubusercontent.com/"
+                              ++ name
+                              ++ "?size=64"
+                            }
+                            alt=name
+                          />
+                        </Link>
+                      )
+                    ->React.array}
+                 </div>
+                 <div
+                   className=Styles.body
+                   dangerouslySetInnerHTML={"__html": episode.body}
+                 />
+                 <div className=Styles.share>
+                   <div className=Styles.shareTitle>
+                     {j|Vous avez aimé cet épisode?|j}->React.string
+                   </div>
+                   <a
+                     className=Styles.shareButton
+                     onClick={event => {
+                       event->ReactEvent.Mouse.preventDefault;
+                       Webapi.Dom.(
+                         window
+                         ->Window.open_(
+                             ~url=event->ReactEvent.Mouse.target##href,
+                             ~name="",
+                             ~features="width=500,height=400",
+                           )
+                         ->ignore
+                       );
+                     }}
+                     target="_blank"
+                     href={
+                       "https://www.twitter.com/intent/tweet?text="
+                       ++ Js.Global.encodeURIComponent(
+                            episode.title
+                            ++ " sur @PutainDeCode https://putaindecode.io/podcasts/"
+                            ++ episode.slug,
+                          )
+                     }>
+                     "Le partager sur Twitter"->React.string
+                   </a>
+                 </div>
+               </div>
+             </div>
+             <div className=Styles.back>
+               <Link href="/podcasts" className=Styles.backLink>
+                 {j|← Épisodes|j}->React.string
+               </Link>
+             </div>
+           </WidthContainer>
+         </WithTitle>;
+       | Done(Error(_)) => <ErrorPage />
+       }}
+    </div>;
   },
 };

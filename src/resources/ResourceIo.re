@@ -3,6 +3,7 @@ type post = {
   "title": string,
   "date": string,
   "body": string,
+  "slug": string,
   "oldSlug": option(string),
   "author": string,
 }
@@ -18,6 +19,7 @@ and podcast = {
   "title": string,
   "date": string,
   "body": string,
+  "slug": string,
   "oldSlug": option(string),
   "participants": array(string),
   "soundcloudTrackId": string,

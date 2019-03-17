@@ -53,6 +53,7 @@ module Posts = {
       body: Remarkable.render(remarkable, front##body),
       title: front##attributes##title,
       date: front##attributes##date,
+      slug: front##attributes##slug,
       oldSlug: front##attributes##oldSlug,
       author: front##attributes##author,
     };
@@ -121,6 +122,7 @@ module Podcasts = {
       body: Remarkable.render(remarkable, front##body),
       title: front##attributes##title,
       date: front##attributes##date,
+      slug: front##attributes##slug,
       oldSlug: front##attributes##oldSlug,
       participants: front##attributes##participants,
       soundcloudTrackId: front##attributes##soundcloudTrackId,
