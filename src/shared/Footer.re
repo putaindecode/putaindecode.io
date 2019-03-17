@@ -9,7 +9,20 @@ module Styles = {
     style([
       position(absolute),
       left(zero),
-      top(zero),
+      top(50.->pct),
+      color("fff"->hex),
+      transform(translateY((-50.)->pct)),
+      textDecoration(none),
+      display(flexBox),
+      flexDirection(row),
+      alignItems(center),
+    ]);
+  let github =
+    style([
+      position(absolute),
+      right(zero),
+      top(50.->pct),
+      transform(translateY((-50.)->pct)),
       color("fff"->hex),
       textDecoration(none),
       display(flexBox),
@@ -45,6 +58,11 @@ let make = _ => {
           <div className=Styles.copyright>
             {j|© 2019 Putain de code !|j}->React.string
           </div>
+          <a
+            href="https://github.com/putaindecode/putaindecode.io"
+            className=Styles.github>
+            "GitHub"->React.string
+          </a>
         </div>
       </WidthContainer>
     </footer>,
