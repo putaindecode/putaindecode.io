@@ -2,6 +2,7 @@ type t = {
   title: string,
   date: string,
   body: string,
+  slug: string,
   oldSlug: option(string),
   author: string,
 };

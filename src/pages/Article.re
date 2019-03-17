@@ -107,6 +107,36 @@ module Styles = {
         ],
       ),
     ]);
+  let share =
+    style([
+      maxWidth(640->px),
+      width(100.->pct),
+      display(flexBox),
+      flexDirection(row),
+      alignItems(center),
+      justifyContent(spaceBetween),
+      margin2(~h=auto, ~v=20->px),
+      padding(20->px),
+      backgroundColor("fff"->hex),
+      borderRadius(10->px),
+      boxShadow(
+        ~y=15->px,
+        ~blur=15->px,
+        ~spread=(-5)->px,
+        rgba(0, 0, 0, 0.2),
+      ),
+    ]);
+  let shareTitle = style([fontWeight(extraBold)]);
+  let shareButton =
+    style([
+      backgroundColor("00aced"->hex),
+      color("fff"->hex),
+      padding2(~h=20->px, ~v=10->px),
+      textDecoration(none),
+      borderRadius(5->px),
+      fontWeight(extraBold),
+      active([opacity(0.5)]),
+    ]);
   let back =
     style([
       display(flexBox),
@@ -164,6 +194,36 @@ let make =
                  dangerouslySetInnerHTML={"__html": post.body}
                  className=Styles.body
                />
+               <div className=Styles.share>
+                 <div className=Styles.shareTitle>
+                   {j|Vous avez aimé cet article?|j}->React.string
+                 </div>
+                 <a
+                   className=Styles.shareButton
+                   onClick={event => {
+                     event->ReactEvent.Mouse.preventDefault;
+                     Webapi.Dom.(
+                       window
+                       ->Window.open_(
+                           ~url=event->ReactEvent.Mouse.target##href,
+                           ~name="",
+                           ~features="width=500,height=400",
+                         )
+                       ->ignore
+                     );
+                   }}
+                   target="_blank"
+                   href={
+                     "https://www.twitter.com/intent/tweet?text="
+                     ++ Js.Global.encodeURIComponent(
+                          post.title
+                          ++ " sur @PutainDeCode https://putaindecode.io/articles/"
+                          ++ post.slug,
+                        )
+                   }>
+                   "Le partager sur Twitter"->React.string
+                 </a>
+               </div>
                <div className=Styles.back>
                  <Link href="/articles" className=Styles.backLink>
                    {j|← Articles|j}->React.string
