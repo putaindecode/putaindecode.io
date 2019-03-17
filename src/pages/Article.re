@@ -125,6 +125,7 @@ module Styles = {
         ~spread=(-5)->px,
         rgba(0, 0, 0, 0.2),
       ),
+      media("(max-width: 540px)", [flexDirection(column)]),
     ]);
   let shareTitle = style([fontWeight(extraBold)]);
   let shareButton =
@@ -198,6 +199,7 @@ let make =
                  <div className=Styles.shareTitle>
                    {j|Vous avez aimé cet article?|j}->React.string
                  </div>
+                 <Spacer height=10 width=0 />
                  <a
                    className=Styles.shareButton
                    onClick={event => {
