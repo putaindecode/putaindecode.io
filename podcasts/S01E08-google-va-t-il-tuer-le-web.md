@@ -6,7 +6,7 @@ participants:
   - jojmaht
   - MoOx
 oldSlug: podcast/8
-slug: S01E08-google-va-t-il-tuer-le-web
+slug: s01e08-google-va-t-il-tuer-le-web
 soundcloudTrackId: "359077001"
 ---
 

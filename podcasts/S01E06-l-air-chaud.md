@@ -5,7 +5,7 @@ participants:
   - bloodyowl
   - zoontek
 oldSlug: podcast/6
-slug: S01E06-l-air-chaud
+slug: s01e06-l-air-chaud
 soundcloudTrackId: "329979777"
 ---
 

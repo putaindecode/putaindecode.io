@@ -6,7 +6,7 @@ participants:
   - MoOx
   - zoontek
 oldSlug: podcast/2
-slug: S01E02-le-lendemain-des-trois-jours
+slug: s01e02-le-lendemain-des-trois-jours
 soundcloudTrackId: "301667566"
 ---
 

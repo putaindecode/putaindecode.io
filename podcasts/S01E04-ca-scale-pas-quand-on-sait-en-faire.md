@@ -8,7 +8,7 @@ participants:
   - jojmaht
   - DaPo
 oldSlug: podcast/4
-slug: S01E04-ca-scale-pas-quand-on-sait-en-faire
+slug: s01e04-ca-scale-pas-quand-on-sait-en-faire
 soundcloudTrackId: "313086300"
 ---
 
