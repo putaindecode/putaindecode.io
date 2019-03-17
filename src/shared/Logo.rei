@@ -1,0 +1,1 @@
+let logo: React.reactElement;

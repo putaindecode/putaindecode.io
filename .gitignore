@@ -1,9 +1,9 @@
-# npm
-node_modules
+.DS_Store
+.merlin
+.bsb.lock
 npm-debug.log
-
-# build
-cache
-dist
-
+/lib/bs/
+/node_modules/
+*.bs.js
+/build/
 .vscode

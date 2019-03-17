@@ -1,7 +1,0 @@
-.putainde-Note {
-  margin: 0 0 calc(2 * var(--r-lineHeight));
-  padding: var(--r-lineHeight);
-  background: #fffbdc;
-  border-left: 4px solid #c00;
-  border-radius: 3px;
-}

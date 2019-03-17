@@ -1,0 +1,1 @@
+let fromString: string => string;
