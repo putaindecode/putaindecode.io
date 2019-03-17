@@ -7,7 +7,7 @@ participants:
   - zoontek
   - jojmaht
 oldSlug: podcast/5
-slug: S01E05-on-va-tous-crever
+slug: s01e05-on-va-tous-crever
 soundcloudTrackId: "320551397"
 ---
 

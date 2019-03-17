@@ -6,7 +6,7 @@ participants:
   - zoontek
   - jojmaht
 oldSlug: podcast/7
-slug: S01E07-react16-graphql-idls-rpc-et-mauvaise-foi-sur-l-iphone-x
+slug: s01e07-react16-graphql-idls-rpc-et-mauvaise-foi-sur-l-iphone-x
 soundcloudTrackId: "348401054"
 ---
 

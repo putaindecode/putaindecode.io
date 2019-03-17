@@ -8,7 +8,7 @@ participants:
   - MoOx
   - DaPo
 oldSlug: podcast/s02e02
-slug: S02E02-css-css-css
+slug: s02e02-css-css-css
 soundcloudTrackId: "583228821"
 ---
 

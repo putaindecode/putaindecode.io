@@ -8,7 +8,7 @@ participants:
   - kdeldycke
   - Freddy03h
 oldSlug: podcast/9
-slug: S01E09-dotjs-react-native-bien-etre-au-travail
+slug: s01e09-dotjs-react-native-bien-etre-au-travail
 soundcloudTrackId: "392848578"
 ---
 

@@ -7,7 +7,7 @@ participants:
   - zoontek
   - MoOx
 oldSlug: podcast/s02e01
-slug: S02E01-nouveautes-react-now-framer-x
+slug: s02e01-nouveautes-react-now-framer-x
 soundcloudTrackId: "543558951"
 ---
 

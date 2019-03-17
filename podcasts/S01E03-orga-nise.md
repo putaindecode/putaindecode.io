@@ -6,7 +6,7 @@ participants:
   - MoOx
   - zoontek
 oldSlug: podcast/3
-slug: S01E03-orga-nise
+slug: s01e03-orga-nise
 soundcloudTrackId: "307914736"
 ---
 

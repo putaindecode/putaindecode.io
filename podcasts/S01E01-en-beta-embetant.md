@@ -7,7 +7,7 @@ participants:
   - zoontek
   - jojmaht
 oldSlug: podcast/1
-slug: S01E01-en-beta-embetant
+slug: s01e01-en-beta-embetant
 soundcloudTrackId: "297382854"
 ---
 

@@ -7,7 +7,7 @@ participants:
   - zoontek
   - MoOx
 oldSlug: podcast/10
-slug: S01E10-les-technologies-de-la-startup-nation
+slug: s01e10-les-technologies-de-la-startup-nation
 soundcloudTrackId: "427095801"
 ---
 
