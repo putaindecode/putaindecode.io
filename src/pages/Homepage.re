@@ -24,6 +24,7 @@ module TopArticles = {
         active([
           after([
             `declaration(("content", "")),
+            pointerEvents(none),
             position(absolute),
             top(zero),
             left(zero),
@@ -118,6 +119,7 @@ module TopArticles = {
           after([
             `declaration(("content", "")),
             position(absolute),
+            pointerEvents(none),
             top(zero),
             left(zero),
             right(zero),
@@ -310,6 +312,7 @@ module LatestPodcasts = {
           after([
             `declaration(("content", "")),
             position(absolute),
+            pointerEvents(none),
             top(zero),
             left(zero),
             right(zero),
