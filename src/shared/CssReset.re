@@ -45,6 +45,7 @@ Css.(
     [
       color(Theme.gradientRedBottom->hex),
       textDecoration(underline),
+      wordBreak(breakWord),
       hover([textDecoration(none)]),
     ],
   )
