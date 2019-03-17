@@ -7,6 +7,7 @@ let ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 let isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
+  stats: "minimal",
   entry: "./src/Main.bs.js",
   mode: isProd ? "production" : "development",
   output: {
