@@ -7,7 +7,7 @@
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world && rimraf build",
     "blog": "node src/UpdateBlog.bs.js",
-    "test": "yarn prerender",
+    "test": "bsb -make-world && yarn blog && webpack",
     "webpack": "webpack -w",
     "webpack:production": "NODE_ENV=production webpack",
     "server": "webpack-dev-server",
