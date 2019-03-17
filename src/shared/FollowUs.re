@@ -66,6 +66,24 @@ let make = _ => {
               alt="Facebook"
             />
           </Link>
+          <Spacer />
+          <Link href="https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825">
+            <img
+              src="/public/images/website/apple-podcast.svg"
+              width="48"
+              height="48"
+              alt="Apple Podcast"
+            />
+          </Link>
+          <Spacer />
+          <Link href="https://soundcloud.com/putaindecode">
+            <img
+              src="/public/images/website/soundcloud.svg"
+              width="48"
+              height="48"
+              alt="Soundcloud"
+            />
+          </Link>
         </div>
         <div className=Styles.subTitle role="heading" ariaLevel=3>
           {j|Sur le chat|j}->React.string
