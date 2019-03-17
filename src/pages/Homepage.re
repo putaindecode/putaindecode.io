@@ -361,6 +361,7 @@ module LatestPodcasts = {
                 width="150"
                 height="150"
                 src="/public/images/website/podcast.svg"
+                alt=""
               />
             </div>
             <div className=Styles.mainCol>
