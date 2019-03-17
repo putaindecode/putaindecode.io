@@ -29,6 +29,11 @@ module.exports = {
       defaultAttribute: "defer"
     })
   ],
+  resolve: {
+    alias: {
+      emotion: path.join(__dirname, "src/vendor/emotion.js")
+    }
+  },
   devServer: {
     contentBase: outputDir,
     compress: true,
