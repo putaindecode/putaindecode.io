@@ -1,8 +1,16 @@
 open Belt;
 
 module Emotion = {
-  [@bs.module "emotion-server"]
-  external renderStylesToString: string => string = "renderStylesToString";
+  type server;
+  type emotion;
+  [@bs.module]
+  external createEmotionServer: emotion => server = "create-emotion-server";
+  [@bs.module] external emotion: emotion = "./vendor/emotion.js";
+  let server = createEmotionServer(emotion);
+  [@bs.send]
+  external renderStylesToString: (server, string) => string =
+    "renderStylesToString";
+  let renderStylesToString = renderStylesToString(server);
 };
 
 let index = Node.Fs.readFileSync("./build/prerender/__source.html", `utf8);
