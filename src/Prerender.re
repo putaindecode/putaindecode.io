@@ -1,3 +1,6 @@
+let siteTitle = "Putain de code";
+let baseUrl = "https://putaindecode.io";
+
 open Belt;
 
 module Emotion = {
@@ -25,7 +28,7 @@ module Sitemap = {
           let path = String.concat("/", path);
           let path = Js.String.endsWith(path, "/") ? path : path ++ "/";
           {j|<url>
-    <loc>https://putaindecode.io/$path</loc>
+    <loc>$baseUrl/$path</loc>
 </url>
 |j};
         })
@@ -58,10 +61,10 @@ module Feed = {
       ->Array.reverse;
     let rss =
       Rss.make({
-        "title": "Putain de code",
+        "title": siteTitle,
         "description": "Blog participatif de la communauté dev",
-        "feed_url": "https://putaindecode.io/feed.xml",
-        "site_url": "https://putaindecode.io",
+        "feed_url": baseUrl ++ "/feed.xml",
+        "site_url": baseUrl,
       });
     all->Array.forEach(item =>
       rss->Rss.item(
@@ -70,13 +73,13 @@ module Feed = {
             "title": title,
             "description": body,
             "guid": slug,
-            "url": "https://putaindecode.io/podasts/" ++ slug,
+            "url": baseUrl ++ "/podasts/" ++ slug,
           }
         | Post(({title, body}, {slug})) => {
             "title": title,
             "description": body,
             "guid": slug,
-            "url": "https://putaindecode.io/articles/" ++ slug,
+            "url": baseUrl ++ "/articles/" ++ slug,
           }
         },
       )
@@ -109,16 +112,12 @@ let values =
 values
 ->Future.map(((posts, podcasts, home)) =>
     [
+      ([], {...App.default, home: RequestStatus.Done(Ok(home))}, siteTitle),
+      (["404.html"], App.default, siteTitle),
       (
         [],
         {...App.default, home: RequestStatus.Done(Ok(home))},
-        "Putain de code",
-      ),
-      (["404.html"], App.default, "Putain de code"),
-      (
-        [],
-        {...App.default, home: RequestStatus.Done(Ok(home))},
-        "Putain de code",
+        siteTitle,
       ),
       (
         ["articles"],
@@ -127,7 +126,7 @@ values
           articleList:
             Done(Ok(posts->Array.map(((_, shallow)) => shallow))),
         },
-        "Articles - Putain de code",
+        {j|Articles - $siteTitle|j},
       ),
       (
         ["podcasts"],
@@ -136,7 +135,7 @@ values
           podcastList:
             Done(Ok(podcasts->Array.map(((_, shallow)) => shallow))),
         },
-        "Podcasts - Putain de code",
+        {j|Podcasts - $siteTitle|j},
       ),
     ]
     ->List.concat(
@@ -206,8 +205,8 @@ values
             _,
           )
         ->Js.String.replace(
-            {|<title>Putain de code</title>|},
-            {j|<title>$title | Putain de code</title><meta property="og:title" content="$title | @bloodyowl" />|j},
+            {j|<title>$siteTitle</title>|j},
+            {j|<title>$title | $siteTitle</title><meta property="og:title" content="$title" />|j},
             _,
           ),
       );
