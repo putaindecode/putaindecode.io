@@ -144,23 +144,24 @@ let make = _ => {
          ->React.array}
         <div>
           userPrefix->React.string
-          <input
-            type_="text"
-            className=Styles.input
-            autoFocus=true
-            value={state.input}
-            onChange={event =>
-              send(SetValue(event->ReactEvent.Form.target##value))
-            }
-            onKeyDown={event => {
-              if (event->ReactEvent.Keyboard.key == "Enter") {
-                send(RunCommand);
-              };
-              if (event->ReactEvent.Keyboard.key == "Tab") {
-                event->ReactEvent.Keyboard.preventDefault;
-              };
-            }}
-          />
+          {<input
+             type_="text"
+             className=Styles.input
+             autoFocus=true
+             value={state.input}
+             onChange={event =>
+               send(SetValue(event->ReactEvent.Form.target##value))
+             }
+             onKeyDown={event => {
+               if (event->ReactEvent.Keyboard.key == "Enter") {
+                 send(RunCommand);
+               };
+               if (event->ReactEvent.Keyboard.key == "Tab") {
+                 event->ReactEvent.Keyboard.preventDefault;
+               };
+             }}
+           />
+           ->React.cloneElement(~props={"autoCapitalize": "off"}, [||])}
         </div>
       </div>
     </WidthContainer>;
