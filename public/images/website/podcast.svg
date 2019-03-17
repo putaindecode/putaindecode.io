@@ -13,7 +13,7 @@
         <circle id="Oval-2" fill="url(#linearGradient-1)" cx="55" cy="61" r="54"></circle>
         <polygon id="&gt;" fill="#FFFFFF" points="48.6909871 62.2919708 48.6909871 62.729927 35 69.189781 35 76 55 65.1605839 55 59.8613139 35 49 35 55.8321168"></polygon>
         <rect id="Rectangle-3" fill="#FFFFFF" x="67" y="40" width="6" height="42"></rect>
-        <text id="🎙" font-family="AppleColorEmoji, Apple Color Emoji" font-size="63" font-weight="normal" fill="#FFFFFF">
+        <text id="🎙" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' font-size="63" font-weight="normal" fill="#FFFFFF">
             <tspan x="70" y="115">🎙</tspan>
         </text>
     </g>
