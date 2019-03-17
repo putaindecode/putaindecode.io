@@ -87,6 +87,7 @@ module Styles = {
         ],
       ),
       selector("p", [textAlign(`justify)]),
+      selector("a", [wordBreak(breakAll)]),
     ]);
   let share =
     style([

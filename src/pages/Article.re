@@ -103,6 +103,7 @@ module Styles = {
       selector("table", [width(100.->pct), textAlign(center)]),
       selector("figure", [padding2(~v=20->px, ~h=zero)]),
       selector("figcaption", [textAlign(center)]),
+      selector("a", [wordBreak(breakAll)]),
       selector(
         "table thead th",
         [
