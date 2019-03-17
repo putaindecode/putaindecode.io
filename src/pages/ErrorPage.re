@@ -77,15 +77,15 @@ let make = _ => {
                   System(
                     {|- hack-website.sh
 - go-to-home.sh
-- nuclearcodes.txt|},
+- nuclear-codes.txt|},
                   )
                 | "cat" => System("cat: missing argument")
                 | "cat hack-website.sh"
                 | "cat ./hack-website.sh"
                 | "hack-website.sh"
                 | "./hack-website.sh" => System("lol")
-                | "cat nuclearcodes.txt"
-                | "cat ./nuclearcodes.txt" => System("000000")
+                | "cat nuclear-codes.txt"
+                | "cat ./nuclear-codes.txt" => System("000000")
                 | "go-to-home.sh"
                 | "./go-to-home.sh" =>
                   Js.Global.setTimeout(() => React.Router.push("/"), 1_000)
