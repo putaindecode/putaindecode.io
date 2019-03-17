@@ -1,107 +1,47 @@
-# Putain de code !
+# Putain de code
 
-[![Travis Build Status](https://img.shields.io/travis/putaindecode/putaindecode.io.svg?label=unix%20build)](https://travis-ci.org/putaindecode/putaindecode.io)
-[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/putaindecode-io.svg?label=windows%20build)](https://ci.appveyor.com/project/MoOx/putaindecode-io)
+## Commencer
 
-<img align="right" alt="" src="https://github.com/putaindecode/putaindecode.io/blob//master/src/images/putaindecode-logo--no-bubble-512--trim.png" width="128">
+Installez [yarn](https://yarnpkg.com/en/docs/install) (et [un plugin éditeur pour ReasonML](https://reasonml.github.io/docs/en/editor-plugins) si vous voulez la meilleure experience de développement possible).
 
-Code source du site [_Putain de code !_](http://putaindecode.io/). Contient tout
-le nécessaire pour faire fonctionner le site. Pas de base de données à
-installer, pas de serveurs à configurer.
-
-## tl;dr;
+Ensuite, clonez ce _repo_:
 
 ```console
-$ git clone https://github.com/putaindecode/putaindecode.io.git
-$ cd putaindecode.io
-$ npm install
-$ npm start
+$ git clone git@github.com:putaindecode/putaindecode.io.git
 ```
 
-**Note : Si vous rencontrez une erreur concernant le token GitHub, vous
-trouverez réponse dans la section de démarrage plus bas.**
+Installez les dépendances:
 
-## Contributions
-
-Les articles peuvent être postés ici sous forme de PR une fois qu'on est OK dans
-[une issue du repo](https://github.com/putaindecode/putaindecode.io/issues). Si
-vous souhaitez voir un post écrit, ou même en écrire un, faites un tour là-bas
-;)
-
-Pour contribuer au site, n'hésitez pas, en plus de lire la partie technique
-ci-dessous, à lire le fichier spécifique [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
+```console
+$ yarn
+```
 
 ## Développement
 
-**Notice: Faites attention à la configuration de vos éditeurs de texte et IDE.\
-Nous utilisons [`.editorconfig`](.editorconfig) pour garder une cohérence. Respectez
-cela (il vous suffit d'aller sur le site [editorconfig.org/](http://editorconfig.org/)
-pour télécharger le plugin adéquat pour votre éditeur.**
-
-## Récupérer les sources du site
+Pour commencer à développer, utilisez **deux onglets dans votre terminal**, dans le premier, démarrez [BuckleScript](https://bucklescript.github.io):
 
 ```console
-$ git clone https://github.com/putaindecode/putaindecode.io.git
-$ cd putaindecode.io
-$ npm install
+$ yarn start
 ```
 
-## Mettre à jour les sources
-
-Lorsque vous n'avez pas travaillé sur le site depuis un petit moment, on vous
-conseille d'exécuter les commandes suivantes :
+Dans le second, exportez les articles et démarrez le serveur de développement.
 
 ```console
-$ git pull
-$ npm install
+$ yarn blog
+$ yarn server
 ```
 
-Si vous rencontrez des erreurs lors du `git pull` (par ex. pour une histoire de
-fichiers modifiés non commités), vous pouvez juste avant faire un petit
+## Prérendre le projet
+
+Lancez la commande suivante et le projet sera généré dans `./build`:
 
 ```console
-$ git reset --hard
+$ yarn prerender
 ```
 
-**Note: cela supprimera toutes vos modifications locales sans avertissement, à
-faire avec précaution. Préférez `git stash` si vous souhaitez conserver vos
-modifications**.
+## Liens utiles
 
-## Lancer le site web localement
-
-```console
-$ npm start
-```
-
-Oui oui, c'est tout, vous devriez avoir le site web qui s'ouvre tout seul dans
-votre navigateur.
-
-**Note : vous aurez besoin d'un token GitHub disponible en variable
-d'environnement (dans `GITHUB_TOKEN` ou `GH_TOKEN`) afin de pouvoir construire
-l'index des contributions pour avoir accès à toutes les fonctionnalités du site.
-Autrement, le site fonctionnera en mode dégradé.**
-
-## Mise en production
-
-Rien à faire, ça se débrouille tout seul.
-
-**Tous les commits dans la branche `master` provoqueront une mise en production
-automatique.**
-
----
-
-## Crédits
-
-### Auteurs et contributeurs
-
-- [Membres de l'organisation](https://github.com/putaindecode?tab=members)
-- [Liste des contributeurs](https://github.com/putaindecode/putaindecode.io/graphs/contributors)
-
-### Logo & Avatar
-
-Remerciements à toutes les personnes impliquées dans cette discussion
-[putaindecode/organisation/issues/4](https://github.com/putaindecode/organisation/issues/4).
-Remerciement spécial à [@bloodyowl](https://github.com/bloodyowl) pour le
-[logo initial](https://github.com/putaindecode/putaindecode.io/blob/3324cbe7637dacd1f42a412c1085431a2d551928/src/assets/_images/p!-logos.png).
+- [ReasonML](https://reasonml.github.io/docs/en/quickstart-javascript): la langeage
+- [ReasonReact](https://reasonml.github.io/reason-react/docs/en/installation): La bibliothèque UI
+- [BuckleScript](https://bucklescript.github.io/docs/en/installation): le _compiler_
+- [Belt](https://bucklescript.github.io/bucklescript/api/Belt.html): la _standard library_
