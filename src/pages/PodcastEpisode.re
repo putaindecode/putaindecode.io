@@ -132,10 +132,9 @@ let make =
               <div className=Styles.author>
                 {episode.participants
                  ->Array.map(name =>
-                     <Link href={"https://github.com/" ++ name}>
+                     <Link href={"https://github.com/" ++ name} key=name>
                        <img
                          className=Styles.avatar
-                         key=name
                          src={"https://avatars.githubusercontent.com/" ++ name}
                          alt=name
                        />
