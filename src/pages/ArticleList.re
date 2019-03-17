@@ -61,6 +61,7 @@ module Styles = {
       active([
         after([
           `declaration(("content", "")),
+          pointerEvents(none),
           position(absolute),
           top(zero),
           left(zero),
