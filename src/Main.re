@@ -15,6 +15,16 @@ let initialData = DomRe.(window->getInitialData);
 
 let firstPath = ref(true);
 
+module GoogleAnalytics = {
+  [@bs.send]
+  external set:
+    (DomRe.Window.t_window, [@bs.as "set"] _, string, string) => unit =
+    "ga";
+  [@bs.send]
+  external send: (DomRe.Window.t_window, [@bs.as "send"] _, string) => unit =
+    "ga";
+};
+
 let rec render = (~url=React.Router.dangerouslyGetInitialUrl(), ()) => {
   switch (markup, firstPath^) {
   | (Some(_), true) =>
@@ -31,6 +41,11 @@ let rec render = (~url=React.Router.dangerouslyGetInitialUrl(), ()) => {
         if (url.path != newUrl.path) {
           Webapi.Dom.(Window.scrollTo(0.0, 0.0, window));
         };
+        Webapi.Dom.window->GoogleAnalytics.set(
+          "page",
+          "/" ++ newUrl.path->List.toArray->Js.Array.joinWith("/", _),
+        );
+        Webapi.Dom.window->GoogleAnalytics.send("pageview");
         render(~url=newUrl, ());
       }),
     );
