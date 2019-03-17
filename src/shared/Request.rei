@@ -13,4 +13,4 @@ let make:
     ~responseType: string=?,
     unit
   ) =>
-  PutainDeCode.Future.t(Belt.Result.t('b, PutainDeCode.Errors.t));
+  Future.t(Belt.Result.t('b, Errors.t));
