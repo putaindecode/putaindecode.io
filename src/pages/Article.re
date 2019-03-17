@@ -59,10 +59,11 @@ module Styles = {
       selector(
         "code",
         [
-          fontSize(14->px),
+          fontSize(0.9->em),
           fontFamily(Theme.codeFontFamily),
           lineHeight(`abs(1.)),
           backgroundColor("FAF3E1"->hex),
+          margin2(~h=0.2->em, ~v=zero),
         ],
       ),
       selector(
@@ -74,7 +75,10 @@ module Styles = {
           borderRadius(10->px),
           border(2->px, `solid, rgba(0, 0, 0, 0.1)),
           `declaration(("WebkitOverflowScrolling", "touch")),
-          selector("code", [backgroundColor(transparent)]),
+          selector(
+            "code",
+            [fontSize(14->px), backgroundColor(transparent), margin(zero)],
+          ),
         ],
       ),
       selector(
