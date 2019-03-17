@@ -146,7 +146,9 @@ let make =
                  <img
                    className=Styles.avatar
                    src={
-                     "https://avatars.githubusercontent.com/" ++ post.author
+                     "https://avatars.githubusercontent.com/"
+                     ++ post.author
+                     ++ "?size=64"
                    }
                    alt={post.author}
                  />

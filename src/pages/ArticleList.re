@@ -166,6 +166,7 @@ let make =
                         src={
                           "https://avatars.githubusercontent.com/"
                           ++ article.author
+                          ++ "?size=64"
                         }
                         alt={article.author}
                       />

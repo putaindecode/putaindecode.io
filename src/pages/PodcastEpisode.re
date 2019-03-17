@@ -135,7 +135,11 @@ let make =
                      <Link href={"https://github.com/" ++ name} key=name>
                        <img
                          className=Styles.avatar
-                         src={"https://avatars.githubusercontent.com/" ++ name}
+                         src={
+                           "https://avatars.githubusercontent.com/"
+                           ++ name
+                           ++ "?size=64"
+                         }
                          alt=name
                        />
                      </Link>
