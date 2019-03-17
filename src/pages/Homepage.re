@@ -83,15 +83,19 @@ module TopArticles = {
         justifyContent(spaceBetween),
         position(relative),
         zIndex(1),
-        paddingBottom(10->px),
         overflowX(auto),
         `declaration(("WebkitOverflowScrolling", "touch")),
         `declaration(("scrollSnapType", "x mandatory")),
+        width(100.->pct),
+        maxWidth(1024->px),
+        margin2(~h=auto, ~v=zero),
+        padding2(~h=10->px, ~v=zero),
+        paddingBottom(10->px),
         media("(max-width: 920px)", [flexWrap(nowrap)]),
       ]);
     let articleContainer =
       style([
-        `declaration(("scrollSnapAlign", "start")),
+        `declaration(("scrollSnapAlign", "center")),
         flexBasis(33.333->pct),
         minWidth(300->px),
         padding(10->px),
@@ -153,41 +157,43 @@ module TopArticles = {
     render: _ => {
       <WithTitle title="Putain de code">
         <div>
-          {articles[0]
-           ->Option.map(article =>
-               <Link
-                 href={"/articles/" ++ article.slug}
-                 className=Styles.topArticle
-                 style={ReactDOMRe.Style.make(
-                   ~backgroundImage=Gradient.fromString(article.slug),
-                   (),
-                 )}>
-                 <div className=Styles.contents>
-                   <div className=Styles.author>
-                     <img
-                       className=Styles.avatar
-                       src={
-                         "https://avatars.githubusercontent.com/"
-                         ++ article.author
-                         ++ "?size=64"
-                       }
-                       alt={article.author}
-                     />
-                     <div>
-                       article.author->React.string
-                       " "->React.string
-                       {j|•|j}->React.string
-                       " "->React.string
-                       <Date date={article.date} />
+          <WidthContainer>
+            {articles[0]
+             ->Option.map(article =>
+                 <Link
+                   href={"/articles/" ++ article.slug}
+                   className=Styles.topArticle
+                   style={ReactDOMRe.Style.make(
+                     ~backgroundImage=Gradient.fromString(article.slug),
+                     (),
+                   )}>
+                   <div className=Styles.contents>
+                     <div className=Styles.author>
+                       <img
+                         className=Styles.avatar
+                         src={
+                           "https://avatars.githubusercontent.com/"
+                           ++ article.author
+                           ++ "?size=64"
+                         }
+                         alt={article.author}
+                       />
+                       <div>
+                         article.author->React.string
+                         " "->React.string
+                         {j|•|j}->React.string
+                         " "->React.string
+                         <Date date={article.date} />
+                       </div>
+                     </div>
+                     <div className=Styles.bigTitle>
+                       article.title->React.string
                      </div>
                    </div>
-                   <div className=Styles.bigTitle>
-                     article.title->React.string
-                   </div>
-                 </div>
-               </Link>
-             )
-           ->Option.getWithDefault(React.null)}
+                 </Link>
+               )
+             ->Option.getWithDefault(React.null)}
+          </WidthContainer>
           <div className=Styles.sub>
             {articles
              ->Array.slice(~offset=1, ~len=6)
@@ -428,11 +434,9 @@ let make =
            }),
          ) =>
          <>
-           <WidthContainer>
-             <div className=Styles.topArticles>
-               <TopArticles articles=latestPosts totalCount=postTotalCount />
-             </div>
-           </WidthContainer>
+           <div className=Styles.topArticles>
+             <TopArticles articles=latestPosts totalCount=postTotalCount />
+           </div>
            <LatestPodcasts
              podcasts=latestPodcasts
              totalCount=podcastTotalCount
