@@ -32,7 +32,7 @@ let logo =
       <animate
         attributeName="opacity"
         begin_="100ms"
-        dur="1s"
+        dur="2s"
         values="1;0"
         calcMode="discrete"
         repeatCount="indefinite"
