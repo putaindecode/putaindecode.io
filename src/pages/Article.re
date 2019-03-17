@@ -4,12 +4,18 @@ let component = React.statelessComponent("Article");
 
 module Styles = {
   open Css;
+  let appearAnimation =
+    keyframes([(0, [opacity(0.), transform(translateY(20->px))])]);
   let root =
     style([
       backgroundColor("F9F6F6"->hex),
       display(flexBox),
       flexDirection(column),
       flexGrow(1.0),
+    ]);
+  let container =
+    style([
+      animation(~duration=500, ~timingFunction=`easeOut, appearAnimation),
     ]);
   let title =
     style([
@@ -164,72 +170,74 @@ let make =
        | Loading => <PageLoadingIndicator />
        | Done(Ok(post)) =>
          <WithTitle title={post.title}>
-           <WidthContainer>
-             <div role="heading" ariaLevel=1 className=Styles.title>
-               post.title->React.string
-             </div>
-             <Link
-               href={"https://github.com/" ++ post.author}
-               className=Styles.author>
-               <img
-                 className=Styles.avatar
-                 src={
-                   "https://avatars.githubusercontent.com/"
-                   ++ post.author
-                   ++ "?size=64"
-                 }
-                 alt={post.author}
-               />
-               <div>
-                 post.author->React.string
-                 " "->React.string
-                 {j|•|j}->React.string
-                 " "->React.string
-                 <Date date={post.date} />
+           <div className=Styles.container>
+             <WidthContainer>
+               <div role="heading" ariaLevel=1 className=Styles.title>
+                 post.title->React.string
                </div>
-             </Link>
-             <div
-               dangerouslySetInnerHTML={"__html": post.body}
-               className=Styles.body
-             />
-             <div className=Styles.share>
-               <div className=Styles.shareTitle>
-                 {j|Vous avez aimé cet article?|j}->React.string
-               </div>
-               <Spacer height=10 width=0 />
-               <a
-                 className=Styles.shareButton
-                 onClick={event => {
-                   event->ReactEvent.Mouse.preventDefault;
-                   Webapi.Dom.(
-                     window
-                     ->Window.open_(
-                         ~url=event->ReactEvent.Mouse.target##href,
-                         ~name="",
-                         ~features="width=500,height=400",
-                       )
-                     ->ignore
-                   );
-                 }}
-                 target="_blank"
-                 href={
-                   "https://www.twitter.com/intent/tweet?text="
-                   ++ Js.Global.encodeURIComponent(
-                        post.title
-                        ++ " sur @PutainDeCode https://putaindecode.io/articles/"
-                        ++ post.slug,
-                      )
-                 }>
-                 "Le partager sur Twitter"->React.string
-               </a>
-             </div>
-             <div className=Styles.back>
-               <Link href="/articles" className=Styles.backLink>
-                 {j|← Articles|j}->React.string
+               <Link
+                 href={"https://github.com/" ++ post.author}
+                 className=Styles.author>
+                 <img
+                   className=Styles.avatar
+                   src={
+                     "https://avatars.githubusercontent.com/"
+                     ++ post.author
+                     ++ "?size=64"
+                   }
+                   alt={post.author}
+                 />
+                 <div>
+                   post.author->React.string
+                   " "->React.string
+                   {j|•|j}->React.string
+                   " "->React.string
+                   <Date date={post.date} />
+                 </div>
                </Link>
-             </div>
-             <Disqus url=?{post.oldSlug} />
-           </WidthContainer>
+               <div
+                 dangerouslySetInnerHTML={"__html": post.body}
+                 className=Styles.body
+               />
+               <div className=Styles.share>
+                 <div className=Styles.shareTitle>
+                   {j|Vous avez aimé cet article?|j}->React.string
+                 </div>
+                 <Spacer height=10 width=0 />
+                 <a
+                   className=Styles.shareButton
+                   onClick={event => {
+                     event->ReactEvent.Mouse.preventDefault;
+                     Webapi.Dom.(
+                       window
+                       ->Window.open_(
+                           ~url=event->ReactEvent.Mouse.target##href,
+                           ~name="",
+                           ~features="width=500,height=400",
+                         )
+                       ->ignore
+                     );
+                   }}
+                   target="_blank"
+                   href={
+                     "https://www.twitter.com/intent/tweet?text="
+                     ++ Js.Global.encodeURIComponent(
+                          post.title
+                          ++ " sur @PutainDeCode https://putaindecode.io/articles/"
+                          ++ post.slug,
+                        )
+                   }>
+                   "Le partager sur Twitter"->React.string
+                 </a>
+               </div>
+               <div className=Styles.back>
+                 <Link href="/articles" className=Styles.backLink>
+                   {j|← Articles|j}->React.string
+                 </Link>
+               </div>
+               <Disqus url=?{post.oldSlug} />
+             </WidthContainer>
+           </div>
          </WithTitle>
        | Done(Error(_)) => <ErrorPage />
        }}

@@ -4,6 +4,8 @@ let component = React.statelessComponent("PodcastEpisode");
 
 module Styles = {
   open Css;
+  let appearAnimation =
+    keyframes([(0, [opacity(0.), transform(translateY(20->px))])]);
   let root =
     style([
       backgroundColor("F9F6F6"->hex),
@@ -18,6 +20,7 @@ module Styles = {
       flexDirection(row),
       alignItems(stretch),
       flexGrow(1.),
+      animation(~duration=500, ~timingFunction=`easeOut, appearAnimation),
       media("(max-width: 880px)", [flexDirection(column)]),
     ]);
   let playerContainer =
