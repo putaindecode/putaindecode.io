@@ -149,6 +149,7 @@ let make =
                       ->QueryString.explode
                       ->Map.String.get("search")
                       ->Option.map(Js.String.trim)
+                      ->Option.map(Js.String.toLowerCase)
                       ->Option.map(search =>
                           episode.title
                           ->Js.String.toLowerCase
