@@ -40,7 +40,7 @@ maintenant (dans un dépôt Git bien entendu banane). Pour l'exemple, je l'ai
 réalisé dans le dépôt de Putain De Code:
 
 <figure>
-  <img src="/public/images/articles/2014-02-27-git-boutez-les-bugs-domptez-votre-historique/omagad-history.png" alt="capture historique" />
+  <img src="/images/articles/2014-02-27-git-boutez-les-bugs-domptez-votre-historique/omagad-history.png" alt="capture historique" />
   <figcaption>Le pouvoir de l'arc en ciel</figcaption>
 </figure>
 

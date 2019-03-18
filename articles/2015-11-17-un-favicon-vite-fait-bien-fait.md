@@ -95,19 +95,19 @@ vers votre site sur l'écran de son smartphone. Pas vraiment le moment de le
 décevoir. Sur Android, beaucoup d'icônes ne sont pas carrées mais exploitent la
 transparence, notamment les applications natives de Google.
 
-![](/public/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/google_apps.png)
+![](/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/google_apps.png)
 
 Bonne idée, donc, de suivre ce principe pour notre propre icône. C'est cette
 voie qu'a choisie mon cerveau auxilière, je veux parler de StackOverflow, et sa
 Touch icône transparente.
 
-![](/public/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/so_android.png)
+![](/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/so_android.png)
 
 Sur iOS et son univers tout de parallélépipèdes aux coins arrondis, point de
 transparence en revanche. L'icône de StackOverflow se voit affublée d'un fond
 noir. Le résultat n'est pas si mauvais, mais était-ce vraiment voulu ?
 
-![](/public/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/so_ios.png)
+![](/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/so_ios.png)
 
 Passer son image à la moulinette pour en tirer une vingtaine d'icônes est une
 fausse bonne idée. Elle donne la dangereuse illusion d'un travail bien fait
@@ -129,7 +129,7 @@ postez votre image, éditez vos icônes plate-forme par plate-forme et vous voil
 avec ce qu'il faut d'images, de fichiers annexes et de code HTML pour configurer
 votre favicon.
 
-![](/public/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/favicon_editor.png)
+![](/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/favicon_editor.png)
 
 Voilà, c'est terminé.
 
@@ -174,7 +174,7 @@ Gulpfile ainsi que les instructions pour intégrer votre favicon à votre
 processus de build, au même titre que la minification des CSS ou le processing
 des Coffee scripts.
 
-![](/public/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/gulp_instructions.png)
+![](/images/articles/2015-11-17-un-favicon-vite-fait-bien-fait/gulp_instructions.png)
 
 Les règles :
 

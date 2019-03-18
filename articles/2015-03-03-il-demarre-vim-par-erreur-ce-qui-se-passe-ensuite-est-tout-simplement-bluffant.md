@@ -116,7 +116,7 @@ Voici aussi un cheatsheet indispensable qui permet de bien mémoriser le pourquo
 des touches (b = begin, w = word, e = end, r = replace, i = insert, a = append,
 o = open, ctrl f = forward, ctrl b = backward, etc).
 
-![cheatsheet VIM](/public/images/articles/2015-03-03-il-demarre-vim-par-erreur-ce-qui-se-passe-ensuite-est-tout-simplement-bluffant/vim-cheatsheet.gif)
+![cheatsheet VIM](/images/articles/2015-03-03-il-demarre-vim-par-erreur-ce-qui-se-passe-ensuite-est-tout-simplement-bluffant/vim-cheatsheet.gif)
 
 Vous remarquerez que souvent les commandes en majuscules font la même chose mais
 dans le sens inverse (f/F, o/O), ou de manière plus catégorique (d/D, y/Y).

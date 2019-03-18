@@ -58,7 +58,7 @@ système complet de `Grid`.
 De façon à pouvoir présenter une partie de la spécification, nous allons partir
 sur cette mise en page :
 
-![Maquette Grid Layout](/public/images/articles/2016-01-05-introduction-a-grid-layout/maquette.png)
+![Maquette Grid Layout](/images/articles/2016-01-05-introduction-a-grid-layout/maquette.png)
 
 Avant de commencer à présenter les différentes propriétés, réfléchissons au
 concept de `Grid`.
@@ -67,7 +67,7 @@ concept de `Grid`.
 
 Si on applique cette notion à notre maquette, voici ce qu'on obtient :
 
-![Caniuse Grid Layout](/public/images/articles/2016-01-05-introduction-a-grid-layout/grid-line.png)
+![Caniuse Grid Layout](/images/articles/2016-01-05-introduction-a-grid-layout/grid-line.png)
 
 Concrètement, cela consiste à découper notre interface de façon à pouvoir en
 extraire une grille et ainsi virtualiser la position et l'espace pris pour

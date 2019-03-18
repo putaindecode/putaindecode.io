@@ -1,6 +1,6 @@
 ---
 date: 2017-10-31
-title: "Se lancer dans le TDD"  
+title: "Se lancer dans le TDD"
 author: Freezystem
 oldSlug: tdd
 slug: se-lancer-dans-le-tdd
@@ -10,9 +10,9 @@ slug: se-lancer-dans-le-tdd
 
 Tout commence en octobre 1999 lorsque
 [Kent Beck](https://fr.wikipedia.org/wiki/Kent_Beck) présente une nouvelle
-méthode de programmation agile : l'eXtreme Programmming abrégé _XP_.  
+méthode de programmation agile : l'eXtreme Programmming abrégé _XP_.
 l'_XP_ définit des pratiques de développement optimisées qui améliorent la production
-et la robustesse du code.  
+et la robustesse du code.
 Parmi les principes les plus connus de sa méthode on pourra citer
 **l'intégration continue** aussi appelée _CI_ pour _Continuous Integration_ et
 **la programmation en binôme** ou _pair programming_ en anglais.
@@ -25,7 +25,7 @@ par les développeurs elle peine à émerger.
 
 Avec la multiplication des environnements d'execution, la complexité des
 applications web et l'essor des projets Open-source, les développeurs se
-heurtent à des problèmes de compatibilités croisées et d'inconsistances.  
+heurtent à des problèmes de compatibilités croisées et d'inconsistances.
 Aujourd’hui les standards sont de plus en plus permissifs et favorisent ainsi les
 comportements à risque. La plupart du temps, les systèmes sont capables de corriger
 vos erreurs, des fois sans même vous en avertir.
@@ -63,7 +63,7 @@ fonctionnalité dans un projet collaboratif.
 
 Le TDD tend à se démocratiser et requiert l’effort de chacun pour devenir un
 standard. Tout développeur soucieux de son environnement et de son héritage doit
-se poser sérieusement la question.  
+se poser sérieusement la question.
 Les frameworks de tests, les guides et les documentations sur le sujet fleurissent,
 vous pouvez donc vous lancer sans crainte.
 
@@ -84,7 +84,7 @@ idées :
 
 Bill Wake définit ainsi la méthode
 [3A](http://xp123.com/articles/3a-arrange-act-assert/), pour Arrange, Act,
-Assert _(Arranger, Agir, Affirmer)_.  
+Assert _(Arranger, Agir, Affirmer)_.
 Il insiste sur le fait que la méthode ne définit pas un ordre immuable, l’_affirmation_
 peut ainsi venir avant l’_action_, etc...
 
@@ -123,7 +123,7 @@ console.assert(countWords("") === 0, "test 0: le texte ne contient aucun mot");
 
 > `Assertion failed: test 0: le texte ne contient aucun mot`
 
-`countWords()` est définie et le test échoue mais l'erreur a changé.  
+`countWords()` est définie et le test échoue mais l'erreur a changé.
 Il faut à présent définir la logique du cœur de notre fonction.
 
 ```js
@@ -276,7 +276,7 @@ console.assert(
 
 Le test final est passé sans que les précédents n'échouent.
 
-On notera que l'écriture de tests est un processus itératif.  
+On notera que l'écriture de tests est un processus itératif.
 La phase d'optimisation implique l'écriture d'un nouveau test qui échoue et relance
 donc une nouvelle itération.
 
@@ -357,7 +357,7 @@ describe("countWords()", () => {
 
 Voici le résultat du run :
 
-![résultat du run de tests](/public/images/articles/2017-10-31-se-lancer-dans-le-tdd/testrunner.png)
+![résultat du run de tests](/images/articles/2017-10-31-se-lancer-dans-le-tdd/testrunner.png)
 
 La relecture est simplifiée pour tous les participants non techniques.
 

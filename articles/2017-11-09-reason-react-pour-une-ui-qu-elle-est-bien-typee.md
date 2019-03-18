@@ -163,7 +163,7 @@ ses updates, ça apporte quand même:
   actions
 - De gérer lisiblement et uniformément les effets de bord
 
-<img src="/public/images/articles/2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee/terminal.png" alt="" />
+<img src="/images/articles/2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee/terminal.png" alt="" />
 
 Exemple ici avec un composant où on va faire comme si on récupérait
 l'utilisateur connecté sur une API.
@@ -260,7 +260,7 @@ let make = (~credentials, _) => {
 
 ## Oui mais est-ce que je peux l'utiliser aujourd'hui alors que j'ai déjà une grosse codebase React ?
 
-<img src="/public/images/articles/2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee/tenor.gif" alt="" />
+<img src="/images/articles/2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee/tenor.gif" alt="" />
 
 Pour utiliser des composants ReasonReact avec React
 
