@@ -16,7 +16,7 @@ d'entrées/sorties. Quoi ? c'est pas précis ? OK, je recommence.
 Une carte Arduino, ça ressemble (de manière non exhaustive, parce qu'il y a
 enormément de modèles et de clones) à ceci :
 
-![Arduino Uno](/public/images/articles/2018-05-07-programmation-arduino-presentation-pour-les-debutants/Arduino_Uno.jpg)
+![Arduino Uno](/images/articles/2018-05-07-programmation-arduino-presentation-pour-les-debutants/Arduino_Uno.jpg)
 
 C'est une carte électronique open source, constituée essentiellement de :
 
@@ -62,7 +62,7 @@ La grosse vague des imprimantes 3D a eu lieu grâce à ces petits bidules. La
 mienne tourne avec une ATMEGA 2560 comme celle-ci (on remarquera qu'il y a
 beaucoup plus de pins sur celle-ci) :
 
-![ATMEGA2560](/public/images/articles/2018-05-07-programmation-arduino-presentation-pour-les-debutants/Arduino_Mega2560.jpg)
+![ATMEGA2560](/images/articles/2018-05-07-programmation-arduino-presentation-pour-les-debutants/Arduino_Mega2560.jpg)
 
 Ma fraiseuse CNC dans le garage tourne avec une simple Arduino Uno, qui reçoit
 les commandes depuis un PC et pilote 3 axes avec des moteurs pas à pas assez

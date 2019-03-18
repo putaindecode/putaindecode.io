@@ -70,7 +70,7 @@ source, et `Wifi` en sortie. (Je vous conseille d'ailleurs de protéger votre
 Wifi avec une clé WPA2).
 
 <figure>
-  <img src="/public/images/articles/2014-02-20-la-puissance-de-dnsmasq/macosx-network-sharing.png" alt="" />
+  <img src="/images/articles/2014-02-20-la-puissance-de-dnsmasq/macosx-network-sharing.png" alt="" />
 </figure>
 
 _Ici, c'est USB Ethernet en source car je suis sur un Mac Book Air donc aucun
@@ -171,7 +171,7 @@ _(Sous Android)_
 `Wifi > Press on the current connnection > Modify network > Show advanced options`
 
 <figure>
-  <img src="/public/images/articles/2014-02-20-la-puissance-de-dnsmasq/android-network-advanced.jpg" alt="" />
+  <img src="/images/articles/2014-02-20-la-puissance-de-dnsmasq/android-network-advanced.jpg" alt="" />
 </figure>
 
 Mais quel intérêt car vous devrez faire cela sur tous vos appareils connectés

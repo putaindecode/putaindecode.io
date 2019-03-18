@@ -47,7 +47,7 @@ Jusque-là, rien de bien fou. C'est dans leur manière d'interagir que la
 particularité se dessine :
 
 <figure>
-  <img src="/public/images/articles/2014-10-27-flux-qu-est-ce-que-c-est/flux.jpg" alt="" />
+  <img src="/images/articles/2014-10-27-flux-qu-est-ce-que-c-est/flux.jpg" alt="" />
   <figcaption>Oh bah dis donc, ça va toujours dans le même sens</figcaption>
 </figure>
 
