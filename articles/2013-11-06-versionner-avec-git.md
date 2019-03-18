@@ -245,7 +245,7 @@ pages de `man`, c'est la meilleure façon d'apprendre. Après, on va attaquer le
 gros morceau, celui qui fait la force de Git.
 
 <figure>
-  <img src="/public/images/articles/2013-11-06-versionner-avec-git/mind_blown.gif" alt="Mind blown" />
+  <img src="/images/articles/2013-11-06-versionner-avec-git/mind_blown.gif" alt="Mind blown" />
 </figure>
 
 ## Branchement et fusions

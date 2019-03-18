@@ -44,7 +44,7 @@ démerder parce que les profs savaient pas comment la vôtre marchait).
 Bref, une fonction d'easing est assez simple. Par exemple, la `linear` ça
 revient à :
 
-![](/public/images/articles/2016-12-20-petit-tour-horizon-de-l-animation-sur-le-web-et-ailleurs/Linear.png)
+![](/images/articles/2016-12-20-petit-tour-horizon-de-l-animation-sur-le-web-et-ailleurs/Linear.png)
 
 ```js
 const linear = x => x; // such complicated
@@ -96,7 +96,7 @@ Une courbe de Bézier cubique se définit avec 4 points : `P0`, `P1`, `P2` et
 avec ce mécanisme que fonctionne la plume de la plupart des logiciels d'édition
 d'image.
 
-![](/public/images/articles/2016-12-20-petit-tour-horizon-de-l-animation-sur-le-web-et-ailleurs/Bezier.png)
+![](/images/articles/2016-12-20-petit-tour-horizon-de-l-animation-sur-le-web-et-ailleurs/Bezier.png)
 
 Vu que votre animation commence et finit à des valeurs définies à l'avance, deux
 points sont fixés à l'avance : `P0` sera toujours `(0, 0)` et `P3` `(1, 1)`.

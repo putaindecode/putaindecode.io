@@ -137,7 +137,7 @@ aussi à dispo des plugins pour
 pas forcément avoir à utiliser les app ou process cités juste avant.
 
 <figure>
-  <img src="/public/images/articles/2014-02-25-comment-en-finir-avec-les-prefixes-css/autoprefixer.gif" alt="sublime text autoprefixer preview" />
+  <img src="/images/articles/2014-02-25-comment-en-finir-avec-les-prefixes-css/autoprefixer.gif" alt="sublime text autoprefixer preview" />
   <figcaption>Intégration dans Sublime Text</figcaption>
 </figure>
 

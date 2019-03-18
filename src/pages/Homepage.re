@@ -360,7 +360,7 @@ module LatestPodcasts = {
               <img
                 width="150"
                 height="150"
-                src="/public/images/website/podcast.svg"
+                src="/images/website/podcast.svg"
                 alt=""
               />
             </div>

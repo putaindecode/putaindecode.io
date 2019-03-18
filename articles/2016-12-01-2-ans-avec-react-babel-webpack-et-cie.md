@@ -34,7 +34,7 @@ Son écosystème, riche et évolutif, l'est moins.
 
 ## Babel/ES2015
 
-![](/public/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/babel.png)
+![](/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/babel.png)
 
 ### Use next generation JavaScript, today.
 
@@ -71,7 +71,7 @@ sur la doc React.
 
 ## npm
 
-![](/public/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/npm.png)
+![](/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/npm.png)
 
 Quel que soit votre besoin, il y a sûrement déjà un module npm pour ça :)
 
@@ -95,7 +95,7 @@ npm : [yarn](http://yarnpkg.org) plus rapide, fiable et sécurisé.
 
 ## Webpack
 
-![](/public/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/webpack.png)
+![](/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/webpack.png)
 
 ### Le saviez-vous ?
 
@@ -131,7 +131,7 @@ Plus de détails sur Webpack sur
 
 ## CSS
 
-![](/public/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/css-modules.png)
+![](/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/css-modules.png)
 
 ### Le saviez-vous ?
 
@@ -171,7 +171,7 @@ Et voici un article recensant des
 
 ## React : Learn once, run everywhere
 
-![](/public/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/react.png)
+![](/images/articles/2016-12-01-2-ans-avec-react-babel-webpack-et-cie/react.png)
 
 Plus qu'une bibliothèque ou un framework, React est un paradigme de
 programmation d'interfaces utilisateurs, qui permet d'adresser de nombreuses
