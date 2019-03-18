@@ -120,6 +120,7 @@ let make = (~url, ~initialData=?, _) => {
          />
        | ["podcasts", slug] =>
          <PodcastEpisode
+           key=slug
            episode={
              state.podcasts
              ->Map.String.get(slug)
@@ -135,6 +136,7 @@ let make = (~url, ~initialData=?, _) => {
          />
        | ["articles", slug] =>
          <Article
+           key=slug
            post={
              state.articles
              ->Map.String.get(slug)

@@ -160,6 +160,8 @@ module Styles = {
     style([fontSize(20->px), textDecoration(none), color("1E49B5"->hex)]);
 };
 
+let externalLinkRe = [%re "/^https?:\\/\\//"];
+
 let make =
     (~post: RequestStatus.t(Result.t(Post.t, Errors.t)), ~onLoadRequest, _) => {
   ...component,
@@ -203,6 +205,23 @@ let make =
                </Link>
                <div
                  dangerouslySetInnerHTML={"__html": post.body}
+                 onClick={event =>
+                   if (event->ReactEvent.Mouse.target##nodeName == "A") {
+                     switch (
+                       ReactEvent.Mouse.metaKey(event),
+                       ReactEvent.Mouse.ctrlKey(event),
+                     ) {
+                     | (false, false) =>
+                       let href =
+                         event->ReactEvent.Mouse.target##getAttribute("href");
+                       if (!externalLinkRe->Js.Re.test(href, _)) {
+                         ReactEvent.Mouse.preventDefault(event);
+                         React.Router.push(href);
+                       };
+                     | _ => ()
+                     };
+                   }
+                 }
                  className=Styles.body
                />
                <div className=Styles.share>

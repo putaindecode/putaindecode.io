@@ -41,7 +41,7 @@ Partir d'un `package.json` vierge était essentiel. On avait **beaucoup** trop d
 
 ## Les technos
 
-On a choisir de partir sur [ReasonML](/articles/introduction-a-reasonml), parce que c'est une technologie dans laquelle on croit, que dans l'équipe on est tous familiers avec [React](articles/reason-react-pour-une-ui-qu-elle-est-bien-typee) et parce qu'avec son _type system_, elle nous apporte des avantages non négligeables sur un projet pouvant être édité par un grand nombre de personnes: c'est une sorte de garde-fou.
+On a choisir de partir sur [ReasonML](/articles/introduction-a-reasonml), parce que c'est une technologie dans laquelle on croit, que dans l'équipe on est tous familiers avec [React](/articles/reason-react-pour-une-ui-qu-elle-est-bien-typee) et parce qu'avec son _type system_, elle nous apporte des avantages non négligeables sur un projet pouvant être édité par un grand nombre de personnes: c'est une sorte de garde-fou.
 
 Pour le styling, si vous me suivez depuis longtemps, vous savez que [j'adore CSS](/articles/pourquoi-j-ai-arrete-d-utiliser-css), je suis donc parti sur [`bs-css`](https://github.com/SentiaAnalytics/bs-css/), un DSL statiquement typé qui utilise [emotion](https://emotion.sh), ce qui nous permet d'envoyer au client **uniquement les styles requis**.
 
