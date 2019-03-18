@@ -23,6 +23,7 @@ module Styles = {
       fontWeight(extraBold),
       textAlign(center),
       paddingTop(40->px),
+      lineHeight(`abs(1.2)),
     ]);
   let author =
     style([
@@ -53,7 +54,11 @@ module Styles = {
       lineHeight(`abs(1.7)),
       selector(
         "h2, h3, h4, h5, h6",
-        [fontFamily(Theme.defaultTextFontFamily), fontWeight(extraBold)],
+        [
+          fontFamily(Theme.defaultTextFontFamily),
+          fontWeight(extraBold),
+          lineHeight(`abs(1.2)),
+        ],
       ),
       selector("img", [maxWidth(100.->pct)]),
       selector(

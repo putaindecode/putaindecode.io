@@ -56,6 +56,7 @@ module Styles = {
       fontSize(42->px),
       fontWeight(extraBold),
       paddingBottom(10->px),
+      lineHeight(`abs(1.2)),
     ]);
   let author =
     style([
