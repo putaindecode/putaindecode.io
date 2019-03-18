@@ -111,7 +111,14 @@ let make =
        | NotAsked
        | Loading => <PageLoadingIndicator />
        | Done(Ok(episodeList)) =>
-         <WithTitle title="Podcasts">
+         <WithTitle
+           title={
+             search
+             ->QueryString.explode
+             ->Map.String.get("search")
+             ->Option.map(search => "Podcasts avec " ++ search)
+             ->Option.getWithDefault("Podcasts")
+           }>
            <WidthContainer>
              <div className=Styles.heading>
                <div role="heading" ariaLevel=1 className=Styles.title>

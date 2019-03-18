@@ -110,7 +110,14 @@ let make =
        | NotAsked
        | Loading => <PageLoadingIndicator />
        | Done(Ok(postList)) =>
-         <WithTitle title="Articles">
+         <WithTitle
+           title={
+             search
+             ->QueryString.explode
+             ->Map.String.get("search")
+             ->Option.map(search => "Articles avec " ++ search)
+             ->Option.getWithDefault("Articles")
+           }>
            <WidthContainer>
              <div className=Styles.heading>
                <div role="heading" ariaLevel=1 className=Styles.title>
