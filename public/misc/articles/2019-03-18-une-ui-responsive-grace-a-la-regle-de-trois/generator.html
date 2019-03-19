@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Fluid range generator</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: rgb(70, 81, 91);
+        margin: 10px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        word-break: break-word;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      code,
+      pre {
+        margin: 0;
+        font-family: PragmataPro, SFMono-Regular, Consolas, Liberation Mono,
+          Menlo, Courier, monospace;
+      }
+
+      pre {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        overflow-x: auto;
+        font-size: 14px;
+        border-radius: 10px;
+        min-height: 160px;
+      }
+
+      label {
+        margin-bottom: 8px;
+      }
+
+      input {
+        display: flex;
+        flex: 1;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 8px;
+        font-size: inherit;
+        margin-bottom: 16px;
+      }
+
+      .col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      button {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #11cc00;
+        justify-content: center;
+        border-radius: 4px;
+        border: 0;
+        padding: 12px;
+        color: #fff;
+        display: flex;
+        flex: 1;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      button:hover {
+        background-color: #54da48;
+      }
+      button:active {
+        background-color: #0fb800;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="col" id="generator-form">
+      <div class="col">
+        <label for="baseFontSize"
+          >Taille de police par défaut <code>(baseFontSize)</code></label
+        >
+        <input
+          type="number"
+          required
+          min="0"
+          step="1"
+          placeholder="16"
+          id="baseFontSize"
+          name="baseFontSize"
+        />
+      </div>
+
+      <div class="col">
+        <label for="scaleRatio"
+          >Coefficient d'agrandissement <code>(scaleRatio)</code></label
+        >
+        <input
+          type="number"
+          required
+          min="0"
+          step="0.01"
+          placeholder="1.25"
+          id="scaleRatio"
+          name="scaleRatio"
+        />
+      </div>
+
+      <div class="col">
+        <label for="fluidRangeStart"
+          >Intervalle fluide <code>(fluidRange)</code></label
+        >
+
+        <div class="row">
+          <input
+            type="number"
+            required
+            min="0"
+            step="1"
+            placeholder="480"
+            id="fluidRangeStart"
+            name="fluidRangeStart"
+          />
+          <input
+            type="number"
+            required
+            min="0"
+            placeholder="1600"
+            id="fluidRangeEnd"
+            name="fluidRangeEnd"
+          />
+        </div>
+      </div>
+
+      <button type="submit">SHOW ME THE CSS</button>
+    </form>
+
+    <pre
+      id="generator-result"
+    ><code style="opacity:0.5">e.g. Remplissez les champs pour générer le CSS</code></pre>
+
+    <script>
+      let form = document.querySelector("#generator-form");
+      let result = document.querySelector("#generator-result");
+      let toRem = value => value / 16;
+
+      let getCSSFluidConfig = (baseFontSize, scaleRatio, fluidRange) => {
+        let maxFontSize = baseFontSize * scaleRatio;
+        let baseRemFontSize = toRem(baseFontSize);
+        let maxRemFontSize = toRem(maxFontSize);
+
+        let [rangeStart, rangeEnd] = fluidRange;
+        let emRangeStart = toRem(rangeStart);
+        let emRangeEnd = toRem(rangeEnd);
+
+        let multiplier =
+          (baseRemFontSize - maxRemFontSize) / (emRangeStart - emRangeEnd);
+        let fixed = maxRemFontSize - multiplier * emRangeEnd;
+
+        return `html { font-size: ${baseRemFontSize}rem }
+
+@media (min-width: ${emRangeStart}em) {
+  html { font-size: calc(${fixed}rem + ${100 * multiplier}vw) }
+}
+
+@media (min-width: ${emRangeEnd}em) {
+  html { font-size: ${maxRemFontSize}rem }
+}`;
+      };
+
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+        let { target } = event;
+
+        let scaleRatio = parseFloat(target.querySelector("#scaleRatio").value);
+        let baseFontSize = parseInt(
+          target.querySelector("#baseFontSize").value,
+        );
+        let fluidRangeStart = parseInt(
+          target.querySelector("#fluidRangeStart").value,
+        );
+        let fluidRangeEnd = parseInt(
+          target.querySelector("#fluidRangeEnd").value,
+        );
+
+        result.innerHTML = `<code>${getCSSFluidConfig(
+          baseFontSize,
+          scaleRatio,
+          [fluidRangeStart, fluidRangeEnd],
+        )}</code>`;
+      });
+    </script>
+  </body>
+</html>

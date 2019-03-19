@@ -1,11 +1,11 @@
 ---
 date: 2019-03-18
-title: "L'astuce pour une UI entièrement fluide"
+title: "Une UI responsive grâce à la règle de trois"
 author: zoontek
-slug: l-astuce-pour-une-ui-entierement-fluide
+slug: une-ui-responsive-grace-a-la-regle-de-trois
 ---
 
-Vous venez de coder un composant `TwitterButton` (avec React, Vue, en suivant une méthodo BEM, OOCSS, ou autre: c'est comme vous voulez) et franchement c'est du beau boulot: le rendu est vraiment très joli, kudo au designer.
+Vous venez de coder un composant `TwitterButton` (avec React, Vue, en suivant une méthodo BEM, OOCSS, ou autre: c'est comme vous voulez) et franchement c'est du beau boulot: le rendu est vraiment très joli, kudos au designer.
 
 Seulement très vite, ce dernier jette un coup d'oeil à la recette et vous fait un petit retour parce qu'il :
 
@@ -24,7 +24,7 @@ Plutôt que de demander à votre supérieur Jean-Michel de prendre parti pour r�
 
 Des termes foutrement complexes pour définir quelque chose de très simple: il s'agit de faire transiter une valeur **_γ_** de **_α_** à **_β_** de façon linéaire et dans notre cas borné dans un intervalle donnée.
 
-![Explication schématisée de l'interpolation linéaire bornée](/images/articles/2019-03-18-l-astuce-pour-une-ui-entierement-fluide/linear-interpolation.png)
+![Explication schématisée de l'interpolation linéaire bornée](/images/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/linear-interpolation.png)
 
 En partant de ça, nous allons définir une UI fluide à l'aide de 3 variables :
 
@@ -34,7 +34,7 @@ En partant de ça, nous allons définir une UI fluide à l'aide de 3 variables 
 
 Prenons l'exemple d'un site web où, en mobile-first, la taille de police par défaut (`baseFontSize`) est de `16px`. On souhaiterait que celle-ci soit de `20px` lorsque le viewport fait plus de `1600px` de large (donc que le coefficient d'agrandissement - `scaleRatio` - soit de `20 / 16 = 1.25`) et que la transition pour passer de 16 à 20 ne se déclenche pas avant que le viewport fasse **au moins** `480px` de large.
 
-![Exemple d'interpolation linéaire bornée avec valeurs](/images/articles/2019-03-18-l-astuce-pour-une-ui-entierement-fluide/linear-interpolation-with-values.png)
+![Exemple d'interpolation linéaire bornée avec valeurs](/images/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/linear-interpolation-with-values.png)
 
 La fonction suivante va nous permettre d'obtenir cette fameuse interpolation linéaire sous le forme d'une formule CSS avec `calc()` :
 
@@ -57,7 +57,7 @@ let getLinearInterpolation = (
 
 Si vous copiez-collez ça comme un sagouin dans la console devtools de votre navigateur web et tentez un essai avec les valeurs de notre exemple, vous obtiendrez normalement :
 
-![Le résultat de notre appel de fonction](/images/articles/2019-03-18-l-astuce-pour-une-ui-entierement-fluide/devtools-result.png)
+![Le résultat de notre appel de fonction](/images/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/devtools-result.png)
 
 Voyons maintenant comment nous servir de ça.
 
@@ -120,13 +120,15 @@ html {
 ```
 
 <figure>
-  <a href="/images/articles/2019-03-18-l-astuce-pour-une-ui-entierement-fluide/basic-example-result.gif">
-    <img src="/images/articles/2019-03-18-l-astuce-pour-une-ui-entierement-fluide/basic-example-result.gif" alt="résultat quand on joue sur la largeur du viewport" />
+  <a href="/images/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/basic-example-result.gif">
+    <img src="/images/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/basic-example-result.gif" alt="résultat quand on joue sur la largeur du viewport" />
   </a>
   <figcaption>(Cliquez sur le gif pour le voir en taille réelle)</figcaption>
 </figure>
 
 ## Forcer une font-size par défaut, c'est MAL
+
+_(On va se mentir et tenter d'ignorer le fait que tout le monde utilise le zoom.)_
 
 En effet, l'utilisateur peut toujours choisir d'avoir une taille de police par défaut plus petite ou plus grande que celle par défaut (`16px`), et c'est franchement pas très accessible de forcer.
 
@@ -168,13 +170,13 @@ let getCSSFluidConfig = (
 };
 ```
 
-<!-- ![Le résultat de notre appel de fonction](/images/articles/2019-03-18-l-astuce-pour-une-ui-entierement-fluide/devtools-responsive-result.png) -->
+<!-- ![Le résultat de notre appel de fonction](/images/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/devtools-responsive-result.png) -->
 
 Et voilà ! Ça continue de faire ce que l'on veut, mais en prenons en compte la taille de police par défaut définie par l'utilisateur.
 
 ## Un exemple un peu plus complexe
 
-Vous vous êtes empressé d'embêter le designer à nouveau afin de déterminer ces 3 variables ensemble: ça sera donc une `font-size` comprise entre `16px` et `18px` (donc une UI qui scale jusqu'à `18 / 16` = `1.125` …il est encore frileux à l'idée) entre `480px` et `1440px` !
+Vous vous êtes empressé d'embêter le designer à nouveau afin de déterminer ces 3 variables ensemble: ça sera donc une `font-size` comprise entre `16px` et `18px` (donc une UI qui scale jusqu'à `18 / 16` = `1.125` …vous êtes encore frileux à l'idée) entre `480px` et `1440px` !
 
 Il est maintenant temps de modifier ce fameux bouton.
 
@@ -255,12 +257,21 @@ Ainsi,
 - etc… vous avez l'idée, tout reste proportionnel.
 
 <figure>
-  <a href="/images/articles/2019-03-18-l-astuce-pour-une-ui-entierement-fluide/twitter-button-result.gif">
-    <img src="/images/articles/2019-03-18-l-astuce-pour-une-ui-entierement-fluide/twitter-button-result.gif" alt="résultat quand on joue sur la largeur du viewport" />
+  <a href="/images/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/twitter-button-result.gif">
+    <img src="/images/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/twitter-button-result.gif" alt="résultat quand on joue sur la largeur du viewport" />
   </a>
   <figcaption>(Cliquez sur le gif pour le voir en taille réelle)</figcaption>
 </figure>
 
 La différence est **très subtile** (mais vous étiez frileux). L'avantage, c'est que si vous changez d'avis dans 3 semaines pour finalement passer sur un agrandissement de **x1.5** à `2560px` de large, il vous suffira générer un nouveau ce petit bout de code, de copier/coller les quelques lignes obtenues au début de votre fichier CSS …et c'est tout !
+
+Pour que ce soit plus simple, je vous ai concocté un petit générateur en ligne :
+
+<iframe
+  width="100%"
+  height="520"
+  style="border: 2px solid rgba(0,0,0,0.1); border-radius: 10px"
+  src="/misc/articles/2019-03-18-une-ui-responsive-grace-a-la-regle-de-trois/generator.html">
+</iframe>
 
 Inutile de revenir dans les composants, de refaire un quelconque calcul : vous avez gagné plusieurs heures, profitez en pour inviter votre (maintenant pote) graphiste à boire une bière ! 🍻
