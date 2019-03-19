@@ -206,7 +206,7 @@ values
           )
         ->Js.String.replace(
             {j|<title>$siteTitle</title>|j},
-            {j|<title>$title | $siteTitle</title><meta property="og:title" content="$title" />|j},
+            {j|<title>$title | $siteTitle</title><meta property="og:title" content="$title | $siteTitle" />|j},
             _,
           ),
       );
