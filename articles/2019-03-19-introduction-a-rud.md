@@ -1,5 +1,5 @@
 ---
-date: 2010-03-19
+date: 2019-03-19
 title: Introduction à la méthodologie RUD
 author: jojmaht
 slug: introduction-a-rud
