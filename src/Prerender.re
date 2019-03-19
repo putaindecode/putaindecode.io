@@ -126,7 +126,7 @@ values
           articleList:
             Done(Ok(posts->Array.map(((_, shallow)) => shallow))),
         },
-        {j|Articles - $siteTitle|j},
+        {j|Articles | $siteTitle|j},
       ),
       (
         ["podcasts"],
@@ -150,7 +150,7 @@ values
                   App.default.articles
                   ->Map.String.set(postShallow.slug, Done(Ok(post))),
               },
-              post.title,
+              post.title ++ " | " ++ siteTitle,
             )
           ),
       )
@@ -166,7 +166,7 @@ values
                   App.default.podcasts
                   ->Map.String.set(podcastShallow.slug, Done(Ok(podcast))),
               },
-              podcast.title,
+              podcast.title ++ " | " ++ siteTitle,
             )
           ),
       )
@@ -206,7 +206,17 @@ values
           )
         ->Js.String.replace(
             {j|<title>$siteTitle</title>|j},
-            {j|<title>$title | $siteTitle</title><meta property="og:title" content="$title | $siteTitle" />|j},
+            {j|<title>$title</title>|j},
+            _,
+          )
+        ->Js.String.replace(
+            {j|<meta property="og:title" content="$siteTitle" />|j},
+            {j|<meta property="og:title" content="$title" />|j},
+            _,
+          )
+        ->Js.String.replace(
+            {j|<meta name="twitter:title" content="Putain de code" />|j},
+            {j|<meta name="twitter:title" content="$title" />|j},
             _,
           ),
       );
