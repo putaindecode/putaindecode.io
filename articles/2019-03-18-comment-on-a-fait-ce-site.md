@@ -75,7 +75,7 @@ type state = {
 
 Cet état peut stocker **l'intégralité des données du blog**, comme il peut stocker le **minimum possible**. Si vous voulez en savoir plus, n'hésitez pas à naviguer dans les sources du site.
 
-Une approche alternative est de stocker la donnée requise par chaque URL, mais cet approche s'avère moins efficace au niveau du cache: si on a déjà toutes les données depuis une autre URL, on va quand même devoir les charger à nouveau.
+Une approche alternative est de stocker la donnée requise par chaque URL, mais cette approche s'avère moins efficace au niveau du cache: si on a déjà toutes les données depuis une autre URL, on va quand même devoir les charger à nouveau.
 
 ## Coder le blog
 
@@ -96,7 +96,7 @@ Pour preserver les anciennes URLs, on a indiqué l'ancienne URL des articles dan
 <meta http-equiv="refresh" content="0;URL=NOUVELLE_URL" />
 ```
 
-On se sert également de cette ancienne URL comme identifiant de page pour notre système de commentaires qui tourne avec disqus parce que j'ai pas trouver la page pour migrer les URLs sur leur admin.
+On se sert également de cette ancienne URL comme identifiant de page pour notre système de commentaires qui tourne avec disqus parce que j'ai pas trouvé la page pour migrer les URLs sur leur admin.
 
 Si vous voulez en savoir un peu plus, n'hésitez pas à parcourir [la source du projet](https://github.com/putaindecode/putaindecode.io). Et n'hésitez pas à [contribuer au blog](https://github.com/putaindecode/putaindecode.io/blob/master/CONTRIBUTING.md) si l'envie vous vient.
 
