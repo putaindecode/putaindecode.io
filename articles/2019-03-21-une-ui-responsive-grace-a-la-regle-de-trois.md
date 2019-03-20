@@ -157,7 +157,7 @@ let getCSSFluidConfig = (
     (baseRemFontSize - maxRemFontSize) / (emRangeStart - emRangeEnd);
   let fixed = maxRemFontSize - multiplier * emRangeEnd;
 
-  // on en profite également pour retourner l'intégralité du CSS généré
+  // on en profite également pour retourner l'intégralité du CSS voulu
   return `html { font-size: ${baseRemFontSize}rem }
 
 @media (min-width: ${emRangeStart}em) {
