@@ -265,11 +265,11 @@ Ainsi,
 
 La différence est **très subtile** (mais vous étiez frileux). L'avantage, c'est que si vous changez d'avis dans 3 semaines pour finalement passer sur un agrandissement de **x1.5** à `2560px` de large, il vous suffira générer un nouveau ce petit bout de code, de copier/coller les quelques lignes obtenues au début de votre fichier CSS …et c'est tout ! Inutile de revenir dans les composants ou de refaire un quelconque calcul.
 
-Pour que ce soit plus simple, je vous ai concocté un petit générateur en ligne :
+Pour que ce soit encore plus simple, je vous ai concocté un petit générateur :
 
 <iframe
   width="100%"
-  height="520"
+  height="500"
   style="border: 2px solid rgba(0,0,0,0.1); border-radius: 10px"
   src="/misc/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/generator.html">
 </iframe>
