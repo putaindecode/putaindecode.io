@@ -14,7 +14,7 @@ Seulement très vite, ce dernier jette un coup d'oeil à la recette et vous fait
 
 Vous ajoutez donc quelques media queries pour adapter le style de ce bouton en fonction de la largeur du viewport. Ses dimensions changent maintenant lorsque la page fait plus de `768px` de large, puis lorsqu'elle fait plus de `968px` et enfin plus de `1200px`. Un chouia fastidieux.
 
-Vous pestez un peu sur votre collègue qui aurait dû vous fournir toutes les maquettes (alors qu'il n'a pas forcément eu le temps) et lui peste car vous l'avez dérangé toutes les 2 minutes pour obtenir ces mesures intermédiaires.
+Vous pestez un peu sur votre collègue qui aurait dû vous fournir toutes les maquettes (alors qu'il n'a pas forcément eu le temps de les créer) et lui peste car vous l'avez dérangé toutes les 2 minutes pour obtenir ces mesures intermédiaires.
 
 Il vous reste 72 composants à coder. Super ambiance dans les bureaux 👏🏼
 
@@ -39,7 +39,7 @@ Prenons l'exemple d'un site web où, en mobile-first, la taille de police par d�
 La fonction suivante va nous permettre d'obtenir cette fameuse interpolation linéaire sous le forme d'une formule CSS avec `calc()` :
 
 ```js
-// on utilise JS, puisqu'on ne peut pas déclarer de fonction en CSS
+// on utilise JS par praticité
 
 let getLinearInterpolation = (
   baseFontSize, // number
@@ -77,7 +77,7 @@ Petit exemple, simple, basique :
 ```
 
 ```scss
-// on utilise SCSS, puisqu'on ne peut pas déclarer de fonction en CSS
+// exemple avec SCSS
 
 html {
   font-size: 16px; // baseFontSize
@@ -96,24 +96,22 @@ html {
   }
 }
 
-// fonction utilitaire pour nous éviter de diviser chaque valeur par 16
-// car par défaut dans les navigateurs, 1rem = 16px
-// si vous utilisez du CSS-in-JS, c'est facilement faisable également
+// par défaut dans les navigateurs 1rem = 16px, cette fonction nous simplifie les divisions
+// si vous faites du CSS-in-JS, let fluid = v => `${v / 16}rem` fait le job
 @function fluid($value) {
   @return $value / 16 + rem;
 }
 
 .title {
-  // si la page fait moins de 480px de large, la font-size sera de 24px
-  // si la page fait plus de 1600px de large, la font-size sera de 24 * 1.25 = 30px
-  // si la page fait entre 480px et 1600px de large, la font-size sera fluide entre 24px et 30px
+  // si largeur du viewport < 480px -> font-size = 24px
+  // si largeur du viewport > 1600px -> font-size = 24 * 1.25 = 30px
+  // si 480px < largeur du viewport < 1600px -> 24px < font-size < 30px
   font-size: fluid(24);
 }
 
 .red-block {
   background-color: red;
-  // pareil avec la hauteur et la largeur de notre div
-  // avec au minimum 100px et au maximum 100 * 1.25 = 125px
+  // les dimensions seront contenues entre 100px et 100 * 1.25 = 125px
   height: fluid(100);
   width: fluid(100);
 }
@@ -130,7 +128,7 @@ html {
 
 _(On va se mentir et tenter d'ignorer le fait que tout le monde utilise le zoom)_
 
-En effet, l'utilisateur peut toujours choisir d'avoir une taille de police plus petite ou plus grande que celle par défaut (`16px`), et c'est franchement pas très accessible de forcer.
+En effet, l'utilisateur peut toujours choisir d'avoir une taille de police plus petite ou plus grande que celle par défaut (`16px`) et c'est franchement pas très accessible de forcer.
 
 On va donc modifier notre fonction JS et tenir compte de ça.
 
@@ -195,7 +193,7 @@ getCSSFluidConfig(16, 1.125, [480, 1440]);
 ```
 
 ```scss
-// notre code généré
+// le code généré
 
 html {
   font-size: 1rem;
@@ -219,7 +217,7 @@ html {
   @return $value / 16 + rem;
 }
 
-// le reste de notre CSS
+// le reste du CSS
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
