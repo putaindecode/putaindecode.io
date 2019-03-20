@@ -128,9 +128,9 @@ html {
 
 ## Forcer une font-size par défaut, c'est MAL
 
-_(On va se mentir et tenter d'ignorer le fait que tout le monde utilise le zoom.)_
+_(On va se mentir et tenter d'ignorer le fait que tout le monde utilise le zoom)_
 
-En effet, l'utilisateur peut toujours choisir d'avoir une taille de police par défaut plus petite ou plus grande que celle par défaut (`16px`), et c'est franchement pas très accessible de forcer.
+En effet, l'utilisateur peut toujours choisir d'avoir une taille de police plus petite ou plus grande que celle par défaut (`16px`), et c'est franchement pas très accessible de forcer.
 
 On va donc modifier notre fonction JS et tenir compte de ça.
 
