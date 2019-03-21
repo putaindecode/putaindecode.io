@@ -266,9 +266,9 @@ La différence est **très subtile** (mais vous étiez frileux). L'avantage, c'e
 Pour que ce soit encore plus simple, je vous ai concocté un petit générateur :
 
 <iframe
-  width="100%"
-  height="500"
-  style="border: 2px solid rgba(0,0,0,0.1); border-radius: 10px"
+  width="1px"
+  height="420"
+  style="border: 2px solid rgba(0,0,0,0.1); border-radius: 10px; width: 1px; min-width: 100%;"
   src="/misc/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/generator.html">
 </iframe>
 
