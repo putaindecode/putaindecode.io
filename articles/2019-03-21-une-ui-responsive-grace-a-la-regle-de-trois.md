@@ -170,7 +170,7 @@ let getCSSFluidConfig = (
 
 <!-- ![Le résultat de notre appel de fonction](/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/devtools-responsive-result.png) -->
 
-Et voilà ! Ça continue de faire ce que l'on veut, mais en prenons en compte la taille de police par défaut définie par l'utilisateur.
+Et voilà ! Ça continue de faire ce que l'on veut, mais en prenant en compte la taille de police par défaut définie par l'utilisateur.
 
 ## Un exemple un peu plus complexe
 
