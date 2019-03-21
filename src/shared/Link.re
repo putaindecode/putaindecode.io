@@ -21,10 +21,10 @@ let make =
       url
       ->Option.map(url => "/" ++ String.concat("/", url.React.Router.path))
       ->Option.map(path =>
-          matchSubroutes ?
-            Js.String.startsWith(href, path ++ "/")
-            || Js.String.startsWith(href, path) :
-            path === href || path ++ "/" === href
+          matchSubroutes
+            ? Js.String.startsWith(href, path ++ "/")
+              || Js.String.startsWith(href, path)
+            : path === href || path ++ "/" === href
         )
       ->Option.getWithDefault(false);
     let className =
@@ -44,7 +44,7 @@ let make =
           ReactEvent.Mouse.ctrlKey(event),
         ) {
         | (false, false) =>
-          if (!externalLinkRe->Js.Re.test(href, _)) {
+          if (!externalLinkRe->Js.Re.test_(href)) {
             ReactEvent.Mouse.preventDefault(event);
             React.Router.push(href);
           };

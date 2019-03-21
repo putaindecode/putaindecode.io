@@ -214,7 +214,7 @@ let make =
                      | (false, false) =>
                        let href =
                          event->ReactEvent.Mouse.target##getAttribute("href");
-                       if (!externalLinkRe->Js.Re.test(href, _)) {
+                       if (!externalLinkRe->Js.Re.test_(href)) {
                          ReactEvent.Mouse.preventDefault(event);
                          React.Router.push(href);
                        };

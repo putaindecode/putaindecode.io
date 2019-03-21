@@ -138,9 +138,9 @@ let make =
                    React.Router.push(
                      "?"
                      ++ (
-                          search == "" ?
-                            queryString->Map.String.remove("search") :
-                            queryString->Map.String.set("search", search)
+                          search == ""
+                            ? queryString->Map.String.remove("search")
+                            : queryString->Map.String.set("search", search)
                         )
                         ->QueryString.implode,
                    );
@@ -164,8 +164,8 @@ let make =
                              ->Js.String.toLowerCase
                              ->Js.String.includes(search, _)
                         )
-                      ->Option.getWithDefault(true) ?
-                        Styles.link : Styles.hiddenLink
+                      ->Option.getWithDefault(true)
+                        ? Styles.link : Styles.hiddenLink
                     }
                     href={"/articles/" ++ article.slug}
                     key={article.slug}>

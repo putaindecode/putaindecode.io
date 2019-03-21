@@ -81,7 +81,8 @@ let make = _ => {
                   )
                 | "cat" => System("cat: missing argument")
                 | "cat hack-website.sh"
-                | "cat ./hack-website.sh" => System("# seriously?\necho \"lol\"")
+                | "cat ./hack-website.sh" =>
+                  System("# seriously?\necho \"lol\"")
                 | "hack-website.sh"
                 | "./hack-website.sh" => System("lol")
                 | "cat nuclear-codes.txt"

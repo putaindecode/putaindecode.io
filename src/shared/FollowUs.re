@@ -67,7 +67,8 @@ let make = _ => {
             />
           </Link>
           <Spacer />
-          <Link href="https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825">
+          <Link
+            href="https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825">
             <img
               src="/images/website/apple-podcast.svg"
               width="48"

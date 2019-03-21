@@ -6,6 +6,7 @@
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world && rimraf build",
+    "format": "find ./src -iname '*.re' | xargs -n 1 bsrefmt --in-place && find ./src -iname '*.rei' | xargs -n 1 bsrefmt -i true --in-place",
     "blog": "node src/UpdateBlog.bs.js",
     "test": "bsb -make-world && yarn blog && webpack",
     "webpack": "webpack -w",
@@ -29,7 +30,7 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "bs-platform": "^4.0.7",
+    "bs-platform": "^5.0.0",
     "copy-webpack-plugin": "^5.0.0",
     "create-emotion": "9.2.12",
     "create-emotion-server": "9.2.12",

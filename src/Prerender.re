@@ -195,8 +195,8 @@ values
         "./build/"
         ++ String.concat("/", path)
         ++ (
-          String.concat("/", path)->Js.String.endsWith(".html", _) ?
-            "" : "/index.html"
+          String.concat("/", path)->Js.String.endsWith(".html", _)
+            ? "" : "/index.html"
         ),
         index
         ->Js.String.replace(

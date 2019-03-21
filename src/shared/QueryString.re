@@ -2,8 +2,8 @@ open Belt;
 
 let explode = (queryString: string) =>
   (
-    queryString->Js.String.slice(~from=0, ~to_=1, _) == "?" ?
-      queryString->Js.String.sliceToEnd(~from=1, _) : queryString
+    queryString->Js.String.slice(~from=0, ~to_=1, _) == "?"
+      ? queryString->Js.String.sliceToEnd(~from=1, _) : queryString
   )
   ->Js.String.split("&", _)
   ->Array.reduce(

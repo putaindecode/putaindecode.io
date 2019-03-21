@@ -133,38 +133,38 @@ let all = futures =>
 let mapAllOk = (future, f) =>
   future->map(values => {
     let value =
-      values->List.every(Result.isOk) ?
-        values
-        ->List.reduce([], (acc, item) =>
-            switch (item) {
-            | Result.Ok(value) => [value, ...acc]
-            | Result.Error(_) => acc
-            }
-          )
-        ->List.reverse
-        ->Result.Ok :
-        values
-        ->List.getBy(Result.isError)
-        /* We can "safely" use getExn here as we know we have at least one error */
-        ->Option.getExn
-        ->Result.Error;
+      values->List.every(Result.isOk)
+        ? values
+          ->List.reduce([], (acc, item) =>
+              switch (item) {
+              | Result.Ok(value) => [value, ...acc]
+              | Result.Error(_) => acc
+              }
+            )
+          ->List.reverse
+          ->Result.Ok
+        : values
+          ->List.getBy(Result.isError)
+          /* We can "safely" use getExn here as we know we have at least one error */
+          ->Option.getExn
+          ->Result.Error;
     value->Result.map(f);
   });
 
 let flatMapAllOk = (future, error, f) =>
   future->flatMap(values =>
-    values->List.every(Result.isOk) ?
-      f(
-        values
-        ->List.reduce([], (acc, item) =>
-            switch (item) {
-            | Result.Ok(value) => [value, ...acc]
-            | Result.Error(_) => acc
-            }
-          )
-        ->List.reverse,
-      ) :
-      error->value
+    values->List.every(Result.isOk)
+      ? f(
+          values
+          ->List.reduce([], (acc, item) =>
+              switch (item) {
+              | Result.Ok(value) => [value, ...acc]
+              | Result.Error(_) => acc
+              }
+            )
+          ->List.reverse,
+        )
+      : error->value
   );
 
 let toPromise = future =>
