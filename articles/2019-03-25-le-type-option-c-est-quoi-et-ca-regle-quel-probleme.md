@@ -15,7 +15,17 @@ Comment gèrent-ils ça ? Avec un **type option** (aussi appelé **type maybe** 
 
 ## Le type
 
-Le type option est un **variant**, qui peut de loin s'apparenter à un type d'union.
+Le type option est un **variant**, qui peut de loin s'apparenter à un type d'union. Par exemple:
+
+```reason
+type status =
+  | Inactive
+  | Active;
+```
+
+Une valeur de type `status` pourra être soit `Inactive`, soit `Active` et elle ne pourra être qu'une seule de ces valeurs à la fois.
+
+Maintenant, voyons la définition du type `option` :
 
 ```reason
 type option('value) =
