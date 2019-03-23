@@ -59,32 +59,42 @@ module Feed = {
       ->SortArray.stableSortBy((a, b) => b->getDate > a->getDate ? (-1) : 1)
       ->Array.sliceToEnd(-10)
       ->Array.reverse;
-    let rss =
-      Rss.make({
-        "title": siteTitle,
-        "description": {j|Blog participatif de la communauté dev|j},
-        "feed_url": baseUrl ++ "/feed.xml",
-        "site_url": baseUrl,
-      });
-    all->Array.forEach(item =>
-      rss->Rss.item(
+    let items =
+      all->Array.map(item =>
         switch (item) {
-        | Podcast(({title, body}, {slug})) => {
-            "title": title,
-            "description": body,
-            "guid": slug,
-            "url": baseUrl ++ "/podasts/" ++ slug,
-          }
-        | Post(({title, body}, {slug})) => {
-            "title": title,
-            "description": body,
-            "guid": slug,
-            "url": baseUrl ++ "/articles/" ++ slug,
-          }
-        },
-      )
+        | Podcast(({title, body}, {slug})) => {j|
+          <item>
+            <title><![CDATA[$title]]></title>
+            <description><![CDATA[$body]]></description>
+            <link>$baseUrl/podcasts/$slug</link>
+            <guid isPermalink="false">$slug</guid>
+          </item>
+        |j}
+        | Post(({title, body}, {slug})) => {j|
+          <item>
+            <title><![CDATA[$title]]></title>
+            <description><![CDATA[$body]]></description>
+            <link>$baseUrl/articles/$slug</link>
+            <guid isPermalink="false">$slug</guid>
+          </item>
+        |j}
+        }
+      );
+    let date = Js.Date.make()->Js.Date.toUTCString;
+    let header = {j|<?xml version="1.0" encoding="UTF-8"?>
+  <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title><![CDATA[$siteTitle]]></title>
+    <description><![CDATA[Blog participatif de la communauté dev]]></description>
+    <language>fr</language>
+    <link>$baseUrl</link>
+    <lastBuildDate>$date</lastBuildDate>
+    <atom:link href="https://putaindecode.io/feed.xml" rel="self" type="application/rss+xml"/>|j};
+    let footer = {j|</channel></rss>|j};
+    Node.Fs.writeFileAsUtf8Sync(
+      "./build/feed.xml",
+      header ++ items->Js.Array.joinWith("\n", _) ++ footer,
     );
-    Node.Fs.writeFileAsUtf8Sync("./build/feed.xml", rss->Rss.toXml);
   };
 };
 
