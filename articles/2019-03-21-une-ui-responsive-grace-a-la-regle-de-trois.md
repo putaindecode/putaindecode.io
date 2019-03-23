@@ -44,7 +44,7 @@ La fonction suivante va nous permettre d'obtenir cette fameuse interpolation lin
 let getLinearInterpolation = (
   baseFontSize, // number
   scaleRatio, // number
-  fluidRange, // [number, number]
+  fluidRange // [number, number]
 ) => {
   let maxFontSize = baseFontSize * scaleRatio;
   let [rangeStart, rangeEnd] = fluidRange;
@@ -136,7 +136,7 @@ On va donc modifier notre fonction JS et tenir compte de ça.
 let getCSSFluidConfig = (
   baseFontSize, // number
   scaleRatio, // number
-  fluidRange, // [number, number]
+  fluidRange // [number, number]
 ) => {
   let toRem = value => value / 16;
 
