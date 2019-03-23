@@ -2,6 +2,7 @@ type config = {
   .
   "highlight": option((string, string) => string),
   "html": bool,
+  "xhtmlOut": bool,
   "linkify": bool,
 };
 

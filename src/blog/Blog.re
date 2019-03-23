@@ -13,6 +13,7 @@ let remarkable =
     {
       "html": true,
       "linkify": true,
+      "xhtmlOut": true,
       "highlight":
         Some(
           (code, lang) =>
