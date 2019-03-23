@@ -249,7 +249,7 @@ body {
 
 Ainsi,
 
-- la `font-size` par défaut fera entre `1rem` et `1.125rem`<br/>(`16px` et `18px`si réglage navigateur par défaut)
+- la `font-size` par défaut fera entre `1rem` et `1.125rem`<br/>(`16px` et `18px` si réglage navigateur par défaut)
 - le `padding` de `.twitter-btn` fera entre `0.25rem` et `0.28125rem`<br/>(`4px` et `4.5px`)
 - la `height` et la `width` du svg feront entre `1.5rem` et `1.6875rem`<br/>(`24px` et `27px`)
 - etc… vous avez l'idée, tout reste proportionnel.
