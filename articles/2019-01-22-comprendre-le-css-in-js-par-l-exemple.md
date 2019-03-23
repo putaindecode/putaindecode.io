@@ -104,12 +104,12 @@ const App = () => <h1>Hello world</h1>;
 ```
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/1.png" alt="résultat avec un style objet" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/1.png" alt="résultat avec un style objet" />
   <figcaption>Quand tout va bien</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/2.png" alt="résultat avec un style objet" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/2.png" alt="résultat avec un style objet" />
   <figcaption>Quand tu tapes n'importe quoi</figcaption>
 </figure>
 
@@ -170,7 +170,7 @@ insertStyle({
 ```
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/3.png" alt="résultat avec un style objet" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/3.png" alt="résultat avec un style objet" />
 </figure>
 
 Afin de créer un nom de classe unique, il nous faut hacher notre règle CSS. Cela
@@ -232,7 +232,7 @@ const App = () => <h1 className={className}>Hello world</h1>;
 ```
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/4.png" alt="résultat avec nom de classe généré" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/4.png" alt="résultat avec nom de classe généré" />
 </figure>
 
 ## Propriétés en lowerCamelCase
@@ -365,7 +365,7 @@ On constate que le navigateur ne nous indique pas que 3 valeurs ont été insér
 (en barrant celles qui ne sont pas appliquées).
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/5.png" alt="inspection des styles préfixés" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/5.png" alt="inspection des styles préfixés" />
 </figure>
 
 En effet, lorsque vous utilisez `insertRule`, seule la dernière valeur comprise
@@ -467,7 +467,7 @@ Si on passe notre style dans cette fonction `flattenStyle` afin d'en analyser la
 sortie, on constate qu'elle fait exactement ce que l'on souhaite.
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/6.png" alt="valeur retournée par la fonction flattenStyle" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/6.png" alt="valeur retournée par la fonction flattenStyle" />
 </figure>
 
 Il ne nous reste qu'à hasher la représentation de cet objet et insérer les
@@ -490,7 +490,7 @@ export function insertStyle(style: Style) {
 ```
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/7.png" alt="résultat avec gestion du hover" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/7.png" alt="résultat avec gestion du hover" />
 </figure>
 
 ## Concaténation de styles
@@ -636,7 +636,7 @@ function flattenStyle(style: Style, suffix: string = "") {
 ```
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/8.png" alt="démo de l'autocomplétion" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/8.png" alt="démo de l'autocomplétion" />
 </figure>
 
 ## Performances
@@ -687,12 +687,12 @@ export default memoize(css, (...styles) => JSON.stringify(styles));
 ```
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/9.png" alt="benchmark avant optimisation" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/9.png" alt="benchmark avant optimisation" />
   <figcaption>Avant mémoïsation</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/10.png" alt="benchmark après optimisation" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/10.png" alt="benchmark après optimisation" />
   <figcaption>Après mémoïsation</figcaption>
 </figure>
 
@@ -815,7 +815,7 @@ class App extends React.Component<{}, State> {
 ```
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/11.gif" alt="résultat de l'exemple" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/11.gif" alt="résultat de l'exemple" />
 </figure>
 
 Si vous êtes fan de `styled-components` (personnellement je déteste ça, mais
@@ -1056,7 +1056,7 @@ class App extends React.Component<{}, State> {
 ```
 
 <figure>
-  <img src="/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/12.gif" alt="résultat responsive" />
+  <img src="/public/images/articles/2019-01-22-comprendre-le-css-in-js-par-l-exemple/12.gif" alt="résultat responsive" />
 </figure>
 
 Il est temps de conclure ! Comme vous avez pu le constater, notre errance dans

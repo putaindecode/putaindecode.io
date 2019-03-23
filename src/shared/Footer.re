@@ -47,7 +47,7 @@ let make = _ => {
         <div className=Styles.container>
           <a href="/feed.xml" className=Styles.rss>
             <img
-              src="/images/website/rss-feed.svg"
+              src="/public/images/website/rss-feed.svg"
               alt="Flux RSS"
               width="16"
               height="16"

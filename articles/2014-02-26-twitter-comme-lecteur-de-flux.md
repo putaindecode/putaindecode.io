@@ -64,12 +64,12 @@ Vous vous sentez chaud(e) pour commencer ? Très bien, c'est parti !
 Pour créer une liste, aucun problème, vous allez dans "Me" dans le _header_ puis
 "List" dans la colonne de gauche pour vous retrouver ici :
 
-![](/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/twitter-list.jpg)
+![](/public/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/twitter-list.jpg)
 
 Puis vous cliquez sur `Create list` et vous rentrez les informations que vous
 souhaitez :
 
-![](/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/create-list.png)
+![](/public/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/create-list.png)
 
 Nous voilà avec notre belle liste. Il n'y a plus qu'à la remplir de jolis
 _following_.
@@ -77,16 +77,16 @@ _following_.
 Prenons par exemple `@nodenpm`, un beau _bot_ tweetant les nouveaux packages
 node.js ou/et les updates de ces packages.
 
-![](/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/nodenpm.jpg)
+![](/public/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/nodenpm.jpg)
 
 Ajoutons-le à notre liste.
 
-![](/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/add-in-list.png)
+![](/public/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/add-in-list.png)
 
 Nous voilà maintenant avec notre liste comprenant un _following_. Ce qui en
 ayant ajouté quelques comptes donnera quelque chose comme ceci :
 
-![](/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/twitter-list-read.jpg)
+![](/public/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/twitter-list-read.jpg)
 
 Vous pouvez maintenant apprécier votre lecteur de flux.
 
@@ -114,7 +114,7 @@ souhaite.
 
 ### IFTTT
 
-![](/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/ifttt.png)
+![](/public/images/articles/2014-02-26-twitter-comme-lecteur-de-flux/ifttt.png)
 
 Maintenant, IFTTT.
 

@@ -49,7 +49,7 @@ un projet de développement d'une API pour écrire des programmes en JavaScript
 ailleurs que dans le navigateur, la façon de faire est assez proche.
 
 <figure>
-  <img src="/images/articles/2014-01-12-browserify-all-the-things/browserify.png" alt="" />
+  <img src="/public/images/articles/2014-01-12-browserify-all-the-things/browserify.png" alt="" />
 </figure>
 
 L'idée de [Browserify](http://browserify.org/) est d'amener cette façon de faire
@@ -354,7 +354,7 @@ npm install debowerify decomponentify deamdify deglobalify es6ify --save
 Consommer c'est bien, mais faire c'est <del>mieux</del> bien aussi.
 
 <figure>
-  <img src="/images/articles/2014-01-12-browserify-all-the-things/browserify-potter.png" alt="" />
+  <img src="/public/images/articles/2014-01-12-browserify-all-the-things/browserify-potter.png" alt="" />
 </figure>
 
 Tout droit sorti de [UMD](https://github.com/umdjs/umd) (Universal Module

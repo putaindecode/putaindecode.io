@@ -23,7 +23,9 @@ module.exports = {
       filename: "prerender/__source.html",
       template: "src/index.html"
     }),
-    new CopyWebpackPlugin([{ from: "**/*", to: "./", context: "./public" }]),
+    new CopyWebpackPlugin([
+      { from: "**/*", to: "./public", context: "./public" }
+    ]),
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: "defer"
     })

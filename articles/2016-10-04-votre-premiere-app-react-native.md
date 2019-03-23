@@ -109,7 +109,7 @@ AppRegistry.registerComponent("PutainDeBiere", () => App);
 ```
 
 <figure>
-  <img src="/images/articles/2016-10-04-votre-premiere-app-react-native/welcome.png" alt="welcome PutainDeBiere preview" />
+  <img src="/public/images/articles/2016-10-04-votre-premiere-app-react-native/welcome.png" alt="welcome PutainDeBiere preview" />
   <figcaption>Une bien jolie première étape</figcaption>
 </figure>
 
@@ -186,7 +186,7 @@ Il devient donc possible d'ouvrir les Chrome Devtools (dont la console) afin de
 débuguer notre app.
 
 <figure>
-  <img src="/images/articles/2016-10-04-votre-premiere-app-react-native/devmenu.png" alt="devmenu + chrome devtools" />
+  <img src="/public/images/articles/2016-10-04-votre-premiere-app-react-native/devmenu.png" alt="devmenu + chrome devtools" />
   <figcaption>Jusqu'ici tout va bien</figcaption>
 </figure>
 
@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
 ```
 
 <figure>
-  <img src="/images/articles/2016-10-04-votre-premiere-app-react-native/final_result.png" alt="devmenu + chrome devtools" />
+  <img src="/public/images/articles/2016-10-04-votre-premiere-app-react-native/final_result.png" alt="devmenu + chrome devtools" />
   <figcaption>Le rendu "final"</figcaption>
 </figure>
 

@@ -64,7 +64,7 @@ Prenons un exemple simple. J'ai la structure suivante:
 L'équipe de design souhaite les séparer visuellement de `10px`. Deux approches
 s'offrent à moi.
 
-![marginRight ou Spacer](/images/articles/2018-10-09-l-anti-divite-c-est-pas-automatique/component-style.png)
+![marginRight ou Spacer](/public/images/articles/2018-10-09-l-anti-divite-c-est-pas-automatique/component-style.png)
 
 1.  J'ajoute un `<Spacer />` entre les deux éléments, qui sera une `<div />`
     avec la hauteur souhaitée pour décaler du contenu visuellement, `<Header />`
@@ -96,7 +96,7 @@ intéressants lorsqu'ils sont mis dans cette perspective.
 
 ## Une `<div />` pour les boutons
 
-> Just use a `<button />`
+> Just use a `<button />`  
 > — Most people
 
 Utiliser un élément `<div />` ou `<a />` pour représenter un `button`
@@ -153,9 +153,9 @@ let Button = ({ onPress, onKeyUp, onClick, ...props }) => (
 Comme vous pouvez le voir : `<button />` et `<div />` sont radicalement
 différents lorsqu'ils sont lus par VoiceOver.
 
-![button hello](/images/articles/2018-10-09-l-anti-divite-c-est-pas-automatique/button.png)
+![button hello](/public/images/articles/2018-10-09-l-anti-divite-c-est-pas-automatique/button.png)
 
-![button hello](/images/articles/2018-10-09-l-anti-divite-c-est-pas-automatique/div.png)
+![button hello](/public/images/articles/2018-10-09-l-anti-divite-c-est-pas-automatique/div.png)
 
 Ce composant sera interprété de la même façon qu'un `<button />` et vous libère
 des contraintes de ce dernier. Énorme avantage en plus: vous n'avez à faire

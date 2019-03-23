@@ -67,7 +67,7 @@ pour créer un champ de saisie de numéro de téléphone, qui :
   seront pris en compte : « (514) 555-0199 ».)
 
 <figure>
-  <img src="/images/articles/2018-03-26-ecrire-des-high-order-components-reutilisables-avec-recompose/phoneNumberInput.gif" alt="Champ de saisie de numéro de téléphone" />
+  <img src="/public/images/articles/2018-03-26-ecrire-des-high-order-components-reutilisables-avec-recompose/phoneNumberInput.gif" alt="Champ de saisie de numéro de téléphone" />
   <figcaption>Notre champ de saisie de numéro de téléphone</figcaption>
 </figure>
 

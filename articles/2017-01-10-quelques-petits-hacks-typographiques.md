@@ -27,7 +27,7 @@ Pas loin d'être l'un des plus connus, il est également l'un des plus simples.
 Il consiste simplement à remplacer un glyphe de votre texte par le glyphe
 correspondant à ce caractère depuis une autre typo. Je m'explique.
 
-![cliquez pas, sérieux](/images/articles/2017-01-10-quelques-petits-hacks-typographiques/csslickbait.png)
+![cliquez pas, sérieux](/public/images/articles/2017-01-10-quelques-petits-hacks-typographiques/csslickbait.png)
 
 ```html
 <span>
@@ -105,12 +105,12 @@ gratuit et disponible sur macOS, Windows, pas mal de versions de Linux et même
 OpenBSD. On entre ici dans la partie très procédurière de cet article mais mieux
 vaut ça que de vous laisser seuls dans l'interface spartiate de BirdFont.
 
-![](/images/articles/2017-01-10-quelques-petits-hacks-typographiques/birdfont.png)
+![](/public/images/articles/2017-01-10-quelques-petits-hacks-typographiques/birdfont.png)
 
 Spartiate. Bref, le bouton tout en haut à gauche, c'est le bouton "Nouvelle
 police", vous pouvez cliquer dessus pour arriver à l'écran suivant.
 
-![](/images/articles/2017-01-10-quelques-petits-hacks-typographiques/birdfont1.png)
+![](/public/images/articles/2017-01-10-quelques-petits-hacks-typographiques/birdfont1.png)
 
 À partir de là vous allez devoir choisir un caractère à remplacer. Ça peut être
 la lettre E comme ça peut être l'emoji Pizza, personnellement j'ai décidé de
@@ -119,7 +119,7 @@ remplacer le symbole dit "paragraphe" ou "Simflouz" si vous avez joué aux Sims
 un peu dur à trouver dans la liste, l'option de recherche est faite pour ça.
 Double-cliquer sur un caractère vous emmènera à l'interface d'édition.
 
-![](/images/articles/2017-01-10-quelques-petits-hacks-typographiques/birdfont3.png)
+![](/public/images/articles/2017-01-10-quelques-petits-hacks-typographiques/birdfont3.png)
 
 Nous voici dans l'interface d'édition de glyphe proprement dite. Elle ne vous
 dépaysera pas trop si vous avez déjà utilisé un outil de création de SVG.

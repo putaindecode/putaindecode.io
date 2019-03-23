@@ -42,12 +42,12 @@ Seul le propriétaire d'un dépôt dispose des droits nécessaires pour configur
 un webhook. Il suffit pour cela de se rendre dans `Settings` puis
 `Webhooks & Services` :
 
-![Settings Webhooks GitHub](/images/articles/2015-06-09-les-webhooks-github/setting_webhook.jpg)
+![Settings Webhooks GitHub](/public/images/articles/2015-06-09-les-webhooks-github/setting_webhook.jpg)
 
 Un petit clic sur `Add webhook` et vous obtenez une interface encore une fois
 très simple :
 
-![Configuration Webhooks GitHub](/images/articles/2015-06-09-les-webhooks-github/configuration_webhook.jpg)
+![Configuration Webhooks GitHub](/public/images/articles/2015-06-09-les-webhooks-github/configuration_webhook.jpg)
 
 Cette interface se compose de trois parties :
 
@@ -65,7 +65,7 @@ trois possibilités :
 Une fois le _Webhook_ activé un premier test ou plus exactement un `ping` va se
 lancer. Il permettra de détecter que votre serveur répond bien à la requête :
 
-![Test Webhooks request GitHub](/images/articles/2015-06-09-les-webhooks-github/test_webhook.jpg)
+![Test Webhooks request GitHub](/public/images/articles/2015-06-09-les-webhooks-github/test_webhook.jpg)
 
 La requête envoyée est très basique et embarque un JSON sur les informations de
 votre dépôt (description, URL) et une liste des API mises à disposition. Le

@@ -161,7 +161,7 @@ et injectera dans le CSS de la page le style associé :
 }
 ```
 
-<img src="/images/articles/2017-02-01-introduction-a-styled-components/styled-1.png" width="200"/>
+<img src="/public/images/articles/2017-02-01-introduction-a-styled-components/styled-1.png" width="200"/>
 
 ## Exemples
 
@@ -189,7 +189,7 @@ const Title = styled.div`
 </Box>
 ```
 
-<img src="/images/articles/2017-02-01-introduction-a-styled-components/styled-2.png" width="300"/>
+<img src="/public/images/articles/2017-02-01-introduction-a-styled-components/styled-2.png" width="300"/>
 
 ### Etendre des composants en CSS
 
@@ -207,7 +207,7 @@ const BlueTitle = styled(Title)`
 <BlueTitle>titre en bleu</BlueTitle>
 ```
 
-<img src="/images/articles/2017-02-01-introduction-a-styled-components/styled-3.png" width="200"/>
+<img src="/public/images/articles/2017-02-01-introduction-a-styled-components/styled-3.png" width="200"/>
 
 ### Pseudo classes
 
@@ -223,7 +223,7 @@ const Button = styled.button`
 `;
 ```
 
-<img src="/images/articles/2017-02-01-introduction-a-styled-components/styled-hover.gif" width="100"/>
+<img src="/public/images/articles/2017-02-01-introduction-a-styled-components/styled-hover.gif" width="100"/>
 
 ### Media queries
 
@@ -261,7 +261,7 @@ const Title = styled.div`
 <Title blue>titre en bleu</Title>
 ```
 
-<img src="/images/articles/2017-02-01-introduction-a-styled-components/styled-3.png" width="200"/>
+<img src="/public/images/articles/2017-02-01-introduction-a-styled-components/styled-3.png" width="200"/>
 
 ### Dans un composant React "classique"
 
@@ -301,7 +301,7 @@ const TextBlue = styled.div`
 <TextBlue>texte en bleu</TextBlue>
 ```
 
-<img src="/images/articles/2017-02-01-introduction-a-styled-components/styled-4.png" width="200"/>
+<img src="/public/images/articles/2017-02-01-introduction-a-styled-components/styled-4.png" width="200"/>
 
 ### Attributs HTML
 
@@ -319,7 +319,7 @@ const SuperInput = styled.input`
 <SuperInput placeholder="Your name"/>
 ```
 
-<img src="/images/articles/2017-02-01-introduction-a-styled-components/styled-5.png" width="200"/>
+<img src="/public/images/articles/2017-02-01-introduction-a-styled-components/styled-5.png" width="200"/>
 
 ### Utiliser le theming
 

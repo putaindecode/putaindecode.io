@@ -36,12 +36,12 @@ petit plugin est votre parfait compagnon qui vous permettra d'avoir la bonne
 coloration syntaxique de votre Markdown. Il vous permettra de mettre en évidence
 les liens, le code, et tout le reste. Du bonheur donc.
 
-![](/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-markdownediting.png)
+![](/public/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-markdownediting.png)
 
 Oui alors, j'ai fait quelques configurations car à la base, ca ressemble plutôt
 à ça :
 
-![](/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-markdownediting-light.png)
+![](/public/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-markdownediting-light.png)
 
 Si vous souhaitez modifier Sublime Text mais uniquement pour le format Markdown,
 faites : `Preferences > Browse Packages...` puis aller dans `User` et créez un
@@ -102,7 +102,7 @@ permettra de cacher des parties de votre texte en le repliant. Par exemple, vous
 vous mettez devant un titre du style `##` et vous appuyez sur `tab`, cela
 repliera votre texte. Plutôt pratique pour se focaliser.
 
-![](/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-smartmarkdown.png)
+![](/public/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-smartmarkdown.png)
 
 ## SublimeTableEditor
 
@@ -131,11 +131,11 @@ code dans votre éditeur.
 
 #### Avant
 
-![](/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-markdownextended-before.png)
+![](/public/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-markdownextended-before.png)
 
 #### Après
 
-![](/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-markdownextended-after.png)
+![](/public/images/articles/2014-02-20-sublime-text-en-tant-qu-editeur-markdown/preview-markdownextended-after.png)
 
 Oh et j'oubliais, voici quelques documentations sur Markdown histoire de bien
 l'utiliser :

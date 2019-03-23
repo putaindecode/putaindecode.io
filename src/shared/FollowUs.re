@@ -42,7 +42,7 @@ let make = _ => {
         <div className=Styles.list>
           <Link href="https://twitter.com/PutainDeCode">
             <img
-              src="/images/website/twitter.svg"
+              src="/public/images/website/twitter.svg"
               width="48"
               height="48"
               alt="Twitter"
@@ -51,7 +51,7 @@ let make = _ => {
           <Spacer />
           <Link href="https://facebook.com/putaindecode">
             <img
-              src="/images/website/facebook.svg"
+              src="/public/images/website/facebook.svg"
               width="48"
               height="48"
               alt="Facebook"
@@ -60,7 +60,7 @@ let make = _ => {
           <Spacer />
           <Link href="https://github.com/putaindecode">
             <img
-              src="/images/website/github.svg"
+              src="/public/images/website/github.svg"
               width="48"
               height="48"
               alt="Facebook"
@@ -70,7 +70,7 @@ let make = _ => {
           <Link
             href="https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825">
             <img
-              src="/images/website/apple-podcast.svg"
+              src="/public/images/website/apple-podcast.svg"
               width="48"
               height="48"
               alt="Apple Podcast"
@@ -79,7 +79,7 @@ let make = _ => {
           <Spacer />
           <Link href="https://soundcloud.com/putaindecode">
             <img
-              src="/images/website/soundcloud.svg"
+              src="/public/images/website/soundcloud.svg"
               width="48"
               height="48"
               alt="Soundcloud"
@@ -92,7 +92,7 @@ let make = _ => {
         <div className=Styles.list>
           <Link href="https://discord.gg/jtbGNNc">
             <img
-              src="/images/website/discord.svg"
+              src="/public/images/website/discord.svg"
               width="48"
               height="48"
               alt="Discord"

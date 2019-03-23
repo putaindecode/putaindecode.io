@@ -32,7 +32,7 @@ JavaScript est un langage dynamiquement et faiblement typé, ce qui veut dire :
 Tout ça fait qu'il est très difficile de faire confiance à du code JavaScript.
 
 <figure>
-<img src="/images/articles/2017-10-02-introduction-a-reasonml/js.png" alt="js" />
+<img src="/public/images/articles/2017-10-02-introduction-a-reasonml/js.png" alt="js" />
 <figcaption>Source: MIT</figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ let rec qsort = fun value ->
 ```
 
 <figure>
-<img src="/images/articles/2017-10-02-introduction-a-reasonml/giphy.gif" alt="" />
+<img src="/public/images/articles/2017-10-02-introduction-a-reasonml/giphy.gif" alt="" />
 <figcaption>fig. 1: dev JS devant du code OCaml</figcaption>
 </figure>
 

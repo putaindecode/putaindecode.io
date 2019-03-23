@@ -127,7 +127,7 @@ web avec un webkit-debugger-like, qui lui est connecté via un websocket sur le
 site que vous êtes en train de déboguer, vous permettant à la fois d'avoir une
 console mais aussi une inspection du DOM. Et ça, c'est vraiment chouette.
 
-![](/images/articles/2015-05-19-comment-deboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones/weinre-console.png)
+![](/public/images/articles/2015-05-19-comment-deboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones/weinre-console.png)
 
 Passons à son installation.
 
@@ -155,7 +155,7 @@ Ajoutez le script dans votre page qui communiquera avec votre serveur (exemple)
 Puis ouvrez la page `http://localhost:8080`, vous devriez avoir quelque chose
 comme ceci :
 
-![](/images/articles/2015-05-19-comment-deboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones/weinre-interface.png)
+![](/public/images/articles/2015-05-19-comment-deboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones/weinre-interface.png)
 
 Plus qu'à cliquer sur `http://localhost:8080/client/#anonymous` et vous
 arriverez sur l'interface du debugger.
@@ -218,7 +218,7 @@ configuration réseau de votre appareil. Pour cela :
 Tout passera maintenant par lui et vous aurez dans votre shell une belle
 interface montrant toutes les trames passant.
 
-![](/images/articles/2015-05-19-comment-deboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones/mitmproxy.png)
+![](/public/images/articles/2015-05-19-comment-deboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones/mitmproxy.png)
 
 ## Note
 

@@ -22,7 +22,7 @@ Manager Service (ou OMS) d'Android, sur comment ça fonctionne et comment vous
 allez pouvoir l'utiliser pour faire des trucs moches.
 
 <figure>
-  <img src="/images/articles/2017-11-02-introduction-overlay-manager-service/OMS-moche.png" alt="hahaha comment c'est trop moche" />
+  <img src="/public/images/articles/2017-11-02-introduction-overlay-manager-service/OMS-moche.png" alt="hahaha comment c'est trop moche" />
   <figcaption>J'ai séché les cours de théorie des couleurs</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ Commençons. Comme son nom l'indique si vous parlez la langue de Jay-Z, l'Overla
 Manager Service est un service de gestion de surcouches.
 
 <figure>
-  <img src="/images/articles/2017-11-02-introduction-overlay-manager-service/jayz.png" alt="" />
+  <img src="/public/images/articles/2017-11-02-introduction-overlay-manager-service/jayz.png" alt="" />
   <figcaption>Si votre Google Translate n'a pas l'option de traduction de Jay-Z vers Molière c'est que vous n'avez pas souscrit à un abonnement Translate Gold</figcaption>
 </figure>
 
@@ -88,7 +88,7 @@ qui en tire une utilité assez basique mais prometteuse : changer littéralement
 une seule couleur dans l'interface, spécifiquement pour les téléphones Pixel.
 
 <figure>
-  <img src="/images/articles/2017-11-02-introduction-overlay-manager-service/epoustouflan.png" alt="époustouflan" />
+  <img src="/public/images/articles/2017-11-02-introduction-overlay-manager-service/epoustouflan.png" alt="époustouflan" />
   <figcaption>époustouflan</figcaption>
 </figure>
 
@@ -139,7 +139,7 @@ code, dans la matrice, dans la mer numérique, bref, dans un sacré paquet de
 fichiers XML.
 
 <figure>
-  <img src="/images/articles/2017-11-02-introduction-overlay-manager-service/chosenOne.png" alt="Mes collègues détestent que je dise I'm in à chaque fois que je fais un git pull" />
+  <img src="/public/images/articles/2017-11-02-introduction-overlay-manager-service/chosenOne.png" alt="Mes collègues détestent que je dise I'm in à chaque fois que je fais un git pull" />
   <figcaption>*hacker voice* I'm in</figcaption>
 </figure>
 
@@ -154,7 +154,7 @@ sont pas des robots tueurs venus du turfu, faire une capture d'écran de
 l'application et ouvrir celle-ci dans Photoshop fonctionne très bien aussi.
 
 <figure>
-  <img src="/images/articles/2017-11-02-introduction-overlay-manager-service/colors.png" alt="Featuring l'outil pipette de Photoshop, on applaudit l'outil pipette de Photoshop" />
+  <img src="/public/images/articles/2017-11-02-introduction-overlay-manager-service/colors.png" alt="Featuring l'outil pipette de Photoshop, on applaudit l'outil pipette de Photoshop" />
   <figcaption>Devinez à quel moment j'en ai eu marre de faire de belles flèches bien droites</figcaption>
 </figure>
 
@@ -194,7 +194,7 @@ je ferai ce sera me moquer de vous).
 Admirons ce merdier, maintenant.
 
 <figure>
-  <img src="/images/articles/2017-11-02-introduction-overlay-manager-service/fuckthatspink.png" alt="Sans rire, depuis l'écriture de cet article j'ai pas désactivé cet overlay, j'aime vraiment le look que ça donne à l'app calculatrice" />
+  <img src="/public/images/articles/2017-11-02-introduction-overlay-manager-service/fuckthatspink.png" alt="Sans rire, depuis l'écriture de cet article j'ai pas désactivé cet overlay, j'aime vraiment le look que ça donne à l'app calculatrice" />
   <figcaption>Absolument splendide.</figcaption>
 </figure>
 

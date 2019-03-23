@@ -35,7 +35,7 @@ créer un **`playground`**, vous ouvrez Xcode et `File→New→Playground`(ou
 `playground` et choisissez une plate-forme pour utiliser des frameworks
 spécifiques pour chaque environnement (iOS ou OS X).
 
-![Playground](/images/articles/2016-03-01-hello-swift/playground.jpg)
+![Playground](/public/images/articles/2016-03-01-hello-swift/playground.jpg)
 
 Enfin, Swift peut être utilisé comme langage de script, en créant un fichier
 `.swift`, à exécuter dans le terminal avec `swift [file].swift`. Cette méthode

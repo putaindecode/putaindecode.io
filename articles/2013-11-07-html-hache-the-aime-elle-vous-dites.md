@@ -150,7 +150,7 @@ Regarde plutôt le rendu :
 <iframe
   class="putainde-Post-iframe"
   height="350"
-  src="/misc/articles/2013-11-07-html-hache-the-aime-elle-vous-dites/notvalid.html">
+  src="/public/misc/articles/2013-11-07-html-hache-the-aime-elle-vous-dites/notvalid.html">
 </iframe>
 
 > WAT ? ET MON MARGIN BOTTOM KESSIFÉLÀ EN DEUBEULE ?
@@ -224,7 +224,7 @@ Puis bon, faut avouer que c'est super pratique cette balise hein ? Comme
 `<blink>` et `<marquee>` quoi. ❤
 
 <figure>
-  <img src="/images/articles/2013-11-07-html-hache-the-aime-elle-vous-dites/canthandlemyswag.gif" alt="Can't handle my swag" />
+  <img src="/public/images/articles/2013-11-07-html-hache-the-aime-elle-vous-dites/canthandlemyswag.gif" alt="Can't handle my swag" />
   <figcaption><marquee>Marquee for the win.</marquee></figcaption>
 </figure>
 
