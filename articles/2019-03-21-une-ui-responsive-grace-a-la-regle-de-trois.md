@@ -24,7 +24,7 @@ Plutôt que de demander à votre supérieur Jean-Michel de prendre parti pour r�
 
 Des termes foutrement complexes pour définir quelque chose de très simple: il s'agit de faire transiter une valeur **_γ_** de **_α_** à **_β_** de façon linéaire et dans notre cas borné dans un intervalle donnée.
 
-![Explication schématisée de l'interpolation linéaire bornée](/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/linear-interpolation.png)
+![Explication schématisée de l'interpolation linéaire bornée](/public/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/linear-interpolation.png)
 
 En partant de ça, nous allons définir une UI fluide à l'aide de 3 variables :
 
@@ -34,7 +34,7 @@ En partant de ça, nous allons définir une UI fluide à l'aide de 3 variables 
 
 Prenons l'exemple d'un site web où, en mobile-first, la taille de police par défaut (`baseFontSize`) est de `16px`. On souhaiterait que celle-ci soit de `20px` lorsque le viewport fait plus de `1600px` de large (donc que le coefficient d'agrandissement - `scaleRatio` - soit de `20 / 16 = 1.25`) et que la transition pour passer de 16 à 20 ne se déclenche pas avant que le viewport fasse **au moins** `480px` de large.
 
-![Exemple d'interpolation linéaire bornée avec valeurs](/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/linear-interpolation-with-values.png)
+![Exemple d'interpolation linéaire bornée avec valeurs](/public/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/linear-interpolation-with-values.png)
 
 La fonction suivante va nous permettre d'obtenir cette fameuse interpolation linéaire sous le forme d'une formule CSS avec `calc()` :
 
@@ -57,7 +57,7 @@ let getLinearInterpolation = (
 
 Si vous copiez-collez ça comme un sagouin dans la console devtools de votre navigateur web et tentez un essai avec les valeurs de notre exemple, vous obtiendrez normalement :
 
-![Le résultat de notre appel de fonction](/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/devtools-result.png)
+![Le résultat de notre appel de fonction](/public/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/devtools-result.png)
 
 Voyons maintenant comment nous servir de ça.
 
@@ -118,8 +118,8 @@ html {
 ```
 
 <figure>
-  <a href="/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/basic-example-result.gif">
-    <img src="/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/basic-example-result.gif" alt="résultat quand on joue sur la largeur du viewport" />
+  <a href="/public/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/basic-example-result.gif">
+    <img src="/public/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/basic-example-result.gif" alt="résultat quand on joue sur la largeur du viewport" />
   </a>
   <figcaption>(Cliquez sur le gif pour le voir en taille réelle)</figcaption>
 </figure>
@@ -168,7 +168,7 @@ let getCSSFluidConfig = (
 };
 ```
 
-<!-- ![Le résultat de notre appel de fonction](/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/devtools-responsive-result.png) -->
+<!-- ![Le résultat de notre appel de fonction](/public/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/devtools-responsive-result.png) -->
 
 Et voilà ! Ça continue de faire ce que l'on veut, mais en prenant en compte la taille de police par défaut définie par l'utilisateur.
 
@@ -255,8 +255,8 @@ Ainsi,
 - etc… vous avez l'idée, tout reste proportionnel.
 
 <figure>
-  <a href="/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/twitter-button-result.gif">
-    <img src="/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/twitter-button-result.gif" alt="résultat quand on joue sur la largeur du viewport" />
+  <a href="/public/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/twitter-button-result.gif">
+    <img src="/public/images/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/twitter-button-result.gif" alt="résultat quand on joue sur la largeur du viewport" />
   </a>
   <figcaption>(Cliquez sur le gif pour le voir en taille réelle)</figcaption>
 </figure>
@@ -270,7 +270,7 @@ Pour que ce soit encore plus simple, je vous ai concocté un petit générateur�
   height="510"
   scrolling="no"
   style="border: 2px solid rgba(0,0,0,0.1); border-radius: 10px; width: 1px; min-width: 100%;"
-  src="/misc/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/generator.html">
+  src="/public/misc/articles/2019-03-21-une-ui-responsive-grace-a-la-regle-de-trois/generator.html">
 </iframe>
 
 Il ne vous qu'à profiter de toute ces heures gagnées en invitant votre (maintenant pote) graphiste à boire une bière ! 🍻

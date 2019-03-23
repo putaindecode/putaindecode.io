@@ -9,7 +9,7 @@ Puisqu'on vient de sortir une refonte du site, c'est l'occasion de faire un tour
 
 ## tl;dr;
 
-![On prend des markdown et des fichiers Reason et on génère des HTML, des JS, des JSON mais pas de CSS](/images/articles/2019-03-18-comment-on-a-fait-ce-site/serious-graph.svg)
+![On prend des markdown et des fichiers Reason et on génère des HTML, des JS, des JSON mais pas de CSS](/public/images/articles/2019-03-18-comment-on-a-fait-ce-site/serious-graph.svg)
 
 ## Un nouveau site
 

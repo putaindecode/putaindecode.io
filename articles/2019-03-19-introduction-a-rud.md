@@ -23,7 +23,7 @@ Rajoutez Une Div.
 Le postulat de base est simple, il arrive régulièrement que nous cherchions la pureté dans notre code, cet instant où la grâce divine guide nos doigts pour écrire le code à notre place et où la frénésie remplace avantageusement le café dégueulasse à 35¢ de la machine d'à côté afin d'enfin venir à bout du centrage de cette div qui vous gonfle depuis bien trop longtemps, *et puis merde quoi, c'est pas à ça que ça devait servir, Flex ?*<br /> Vous tapotez ardemment sur votre clavier, Glenn Gould dans les oreilles comme sur les doigts pour trouver la solution à ce problème, putain, pourquoi quand ça *marche sur IE* ça **foire sur Chrome** et pourquoi quand ça **marche sur Chrome** ça *foire sur IE* ?
 
 <figure>
-  <img src="/images/articles/2019-03-19-introduction-a-rud/rud.jpg" />
+  <img src="/public/images/articles/2019-03-19-introduction-a-rud/rud.jpg" />
   <figcaption>Moi, avant d'avoir rajouté une div vs. Moi, après avoir rajouté une div. Effets garantis.</figcaption>
 </figure>
 
