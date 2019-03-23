@@ -88,7 +88,7 @@ get("profile")
 Prenons pour exemple la fonction `Array.prototype.find` de JavaScript :
 
 ```js
-let item = array.find(item => item === undefined || item.active);
+let result = array.find(item => item === undefined || item.active);
 ```
 
 Cet code va retourner:
@@ -109,7 +109,7 @@ if (index == -1) {
   // not found
 } else {
   // found
-  let item = array[index];
+  let result = array[index];
 }
 ```
 
@@ -151,7 +151,7 @@ let getBy:
 `result` aura donc le type suivant :
 
 ```reason
-let item: option(option(value));
+let result: option(option(value));
 ```
 
 C'est une `option` d'`option` de `value`. Et ça signifie qu' **on peut extraire l'information qui nous intéresse** de la valeur de retour:
