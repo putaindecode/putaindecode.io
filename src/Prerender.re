@@ -62,7 +62,7 @@ module Feed = {
     let rss =
       Rss.make({
         "title": siteTitle,
-        "description": "Blog participatif de la communauté dev",
+        "description": {j|Blog participatif de la communauté dev|j},
         "feed_url": baseUrl ++ "/feed.xml",
         "site_url": baseUrl,
       });
