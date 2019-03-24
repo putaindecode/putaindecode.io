@@ -174,4 +174,8 @@ Le type `option` a éliminé par _design_ certains problèmes inhérents à `nul
 
 La nature des `option` dans les langages statiquement typés permet d'éviter de nombreuses erreurs de conception. Les fonctions ne sont plus juste autorisées à retourner `null` et à vous laisser la responsabilité implicite de le gérer à grand coup de `if(value == null) { a } else { b }`, elles retournent un type `option` qui vous **force à prendre en compte l'optionalité de la valeur**.
 
-Bisous.
+Avant de pratiquer un langage fonctionnel typé, je n'arrivais pas à piger comment ces langages pouvaient de débrouiller sans valeur `null`. J'espère que si vous êtes dans le même cas, ce petit post vous aidera à mettre ces deux approches en perspective.
+
+Sir Tony Hoare, l'inventeur de la référence `null` l'appelle aujourd'hui sa _billion dollar mistake_ (il l'a inventé en 1965, on va pas lui en vouloir, mais plus de 50 ans après il serait peut-être temps de reconsidérer le bien fondé du truc).
+
+Bisous bisous.
