@@ -35,7 +35,7 @@ type option('value) =
   | Some('value); /* une valeur du type `'value`*/
 ```
 
-`'value` est ici ce qu'on appelle un **paramètre de type**, ça permet au type d'être «generique»: il se fout du type de la valeur contenue, et vous laisse le spécifier à l'usage ou laisse l'inférence de type le deviner.
+`'value` est ici ce qu'on appelle un **paramètre de type**, ça permet au type d'être «génerique»: il se fout du type de la valeur contenue, et vous laisse le spécifier à l'usage ou laisse l'inférence de type le deviner.
 
 ```reason
 let isMyself = fun
@@ -88,9 +88,11 @@ let flatMap = (opt, f) =>
   };
 /* let flatMap: (option('a), 'a => option('b)) => option('b); */
 /* `get` retourne une option */
-get("profile")
-->flatMap(a => a->get("address"))
-->flatMap(b => b->get("zipCode"))
+let zipCode =
+  get("profile")
+  ->flatMap(profile => profile->get("address"))
+  ->flatMap(address => address->get("zipCode"));
+/* zipCode est un `option(string)` */
 ```
 
 ## Le problème résolu par le type option
@@ -101,13 +103,13 @@ Prenons pour exemple la fonction `Array.prototype.find` de JavaScript :
 let result = array.find(item => item === undefined || item.active);
 ```
 
-Cet code va retourner:
+`result` sera:
 
 - un objet s'il a un champ `active` ayant une valeur évaluée comme vraie
 - `undefined` si un item de `array` est `undefined`
 - `undefined` si rien n'est trouvé
 
-Avec cette implémentation naïve, nous sommes incapables de savoir dans quel cas nous nous trouvons : soit on a trouvé un item `undefined`, soit on a rien trouvé.
+Avec cette implémentation naïve, on est incapable de savoir dans quel cas on se trouve : soit on a trouvé un item `undefined`, soit on a rien trouvé.
 
 _Notez que le problème se pose ici avec `undefined` mais qu'il en serait de même un tableau contenant des `null` et une fonction `find` d'une bibliothèque retournant `null` dans le cas où elle ne trouve rien_
 
@@ -128,8 +130,9 @@ Le code est plus lourd, moins lisible, et manque d'expressivité. `find` ne nous
 Le problème ne vient pas de la fonction `find` elle même mais de la façon dont `null` et `undefined` sont traités. `null` **est** la valeur, il la **remplace**. `option` **l'enrobe**: c'est un conteneur.
 
 ```reason
+open Belt; /* la stdlib */
 /* `getBy` est l'equivalent de `find` */
-let result = array->Belt.Array.getBy(
+let result = array->Array.getBy(
   fun
     | None => true
     | Some({active}) => active
@@ -176,6 +179,6 @@ La nature des `option` dans les langages statiquement typés permet d'éviter de
 
 Avant de pratiquer un langage fonctionnel typé, je n'arrivais pas à piger comment ces langages pouvaient de débrouiller sans valeur `null`. J'espère que si vous êtes dans le même cas, ce petit post vous aidera à mettre ces deux approches en perspective.
 
-Sir Tony Hoare, l'inventeur de la référence `null` l'appelle aujourd'hui sa _billion dollar mistake_ (il l'a inventé en 1965, on va pas lui en vouloir, mais plus de 50 ans après il serait peut-être temps de reconsidérer le bien fondé du truc).
+Sir Tony Hoare, l'inventeur de la référence `null` l'appelle aujourd'hui sa _billion dollar mistake_. Le gars l'a inventé en 1965, on va pas lui en vouloir, mais plus de 50 ans après il serait peut-être temps de reconsidérer le bien fondé du truc et se pencher sur les alternatives qui **éliminent le problème** plutôt que de continuer à mettre des `if` partout et de continuer à détricoter des stacktraces ne contenant même pas la source du bug.
 
-Bisous bisous.
+Bisous.
