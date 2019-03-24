@@ -11,7 +11,7 @@ Un des problèmes souvent rencontré dans ces langages est que `null` est implic
 
 `null` est une valeur importante pour la conception de programme : on n'a pas toujours de valeur, et il faut être en mesure de l'exprimer dans notre code. Pourtant, la plupart des langage fonctionnels statiquement typés n'ont pas de concept de `null`.
 
-Comment gèrent-ils ça ? Avec un **type option** (aussi appelé **type maybe** dans certains langages), qui est un **petit conteneur** qui wrap la valeur (ou la non-valeur).
+Comment gèrent-ils ça ? Avec un **type option** (aussi appelé **type maybe** dans certains langages), qui est un **petit conteneur** qui wrap la valeur (ou la non-valeur). Puisqu'il nous faut un langage statiquement typé pour nos exemples, nous allons utiliser [ReasonML](https://reasonml.github.io) dont je vous ai [déjà parlé](/articles/introduction-a-reasonml) et avec lequel on a [construit ce site](/articles/comment-on-a-fait-ce-site).
 
 ## Le type
 
