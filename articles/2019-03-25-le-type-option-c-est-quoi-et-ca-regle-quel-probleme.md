@@ -125,7 +125,7 @@ if (index == -1) {
 }
 ```
 
-Le code est plus lourd, moins lisible, et manque d'expressivité. `find` ne nous donne pas assez d'information au travers de la valeur retournée: `undefined` est "applati", et requiert une logique supplémentaire (ici `index`, si un item est trouvé, il sera supérieur à `-1`, sinon il sera égal à `-1`)
+Le code est plus lourd, moins lisible, et manque d'expressivité. `find` ne nous donne pas assez d'information au travers de la valeur retournée: `undefined` est "aplati", et requiert une logique supplémentaire (ici `index`, si un item est trouvé, il sera supérieur à `-1`, sinon il sera égal à `-1`)
 
 Le problème ne vient pas de la fonction `find` elle même mais de la façon dont `null` et `undefined` sont traités. `null` **est** la valeur, il la **remplace**. `option` **l'enrobe**: c'est un conteneur.
 
