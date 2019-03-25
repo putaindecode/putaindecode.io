@@ -11,7 +11,7 @@ Un des problèmes souvent rencontré dans ces langages est que `null` est implic
 
 `null` est une valeur importante pour la conception de programme : on n'a pas toujours de valeur, et il faut être en mesure de l'exprimer dans notre code. Pourtant, la plupart des langage fonctionnels statiquement typés n'ont pas de concept de `null`.
 
-Comment gèrent-ils ça ? Avec un **type option** (aussi appelé **type maybe** dans certains langages), qui est un **petit conteneur** qui wrap la valeur (ou la non-valeur). Puisqu'il nous faut un langage statiquement typé pour nos exemples, nous allons utiliser [ReasonML](https://reasonml.github.io) dont je vous ai [déjà parlé](/articles/introduction-a-reasonml) et avec lequel on a [construit ce site](/articles/comment-on-a-fait-ce-site).
+Comment gèrent-ils ça ? Avec un **type option** (aussi appelé **type maybe** dans certains langages), qui est un **petit conteneur** qui englobe la valeur (ou la non-valeur). Puisqu'il nous faut un langage statiquement typé pour nos exemples, nous allons utiliser [ReasonML](https://reasonml.github.io) dont je vous ai [déjà parlé](/articles/introduction-a-reasonml) et avec lequel on a [construit ce site](/articles/comment-on-a-fait-ce-site).
 
 ## Le type
 
@@ -127,7 +127,7 @@ if (index == -1) {
 
 Le code est plus lourd, moins lisible, et manque d'expressivité. `find` ne nous donne pas assez d'information au travers de la valeur retournée: `undefined` est "aplati", et requiert une logique supplémentaire (ici `index`, si un item est trouvé, il sera supérieur à `-1`, sinon il sera égal à `-1`)
 
-Le problème ne vient pas de la fonction `find` elle même mais de la façon dont `null` et `undefined` sont traités. `null` **est** la valeur, il la **remplace**. `option` **l'enrobe**: c'est un conteneur.
+Le problème ne vient pas de la fonction `find` elle même mais de la façon dont `null` et `undefined` sont traités. `null` **est** la valeur, il la **remplace**. `option` **l'englobe**: c'est un conteneur.
 
 ```reason
 open Belt; /* la stdlib */
