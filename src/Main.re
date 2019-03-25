@@ -26,8 +26,8 @@ module GoogleAnalytics = {
 };
 
 let rec render = (~url=React.Router.dangerouslyGetInitialUrl(), ()) => {
-  switch (markup, firstPath^) {
-  | (Some(_), true) =>
+  switch (markup, firstPath^, url.search->Js.String.length > 0) {
+  | (Some(_), true, false) =>
     ReactDOMRe.hydrateToElementWithId(<App url ?initialData />, "root")
   | _ => ReactDOMRe.renderToElementWithId(<App url ?initialData />, "root")
   };
