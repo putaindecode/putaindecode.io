@@ -7,6 +7,7 @@ module Styles = {
       marginTop(20->px),
       marginBottom(20->px),
       backgroundColor(Theme.lightBody->hex),
+      media("(prefers-color-scheme: dark)", [backgroundColor("111"->hex)]),
       borderRadius(10->px),
       padding(20->px),
     ]);

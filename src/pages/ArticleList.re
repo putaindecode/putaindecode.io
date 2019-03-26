@@ -7,6 +7,7 @@ module Styles = {
   let container =
     style([
       backgroundColor(Theme.lightBody->hex),
+      media("(prefers-color-scheme: dark)", [backgroundColor("111"->hex)]),
       display(flexBox),
       flexDirection(column),
       flexGrow(1.0),
@@ -48,6 +49,10 @@ module Styles = {
       textDecoration(none),
       padding(20->px),
       backgroundColor("fff"->hex),
+      media(
+        "(prefers-color-scheme: dark)",
+        [backgroundColor("222"->hex), color("ddd"->hex)],
+      ),
       borderRadius(10->px),
       marginBottom(10->px),
       position(relative),

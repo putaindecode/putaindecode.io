@@ -9,6 +9,7 @@ module Styles = {
   let root =
     style([
       backgroundColor("F9F6F6"->hex),
+      media("(prefers-color-scheme: dark)", [backgroundColor("111"->hex)]),
       display(flexBox),
       flexDirection(column),
       flexGrow(1.0),
@@ -35,6 +36,7 @@ module Styles = {
       paddingTop(10->px),
       paddingBottom(40->px),
       color(Theme.darkBody->hex),
+      media("(prefers-color-scheme: dark)", [color("ccc"->hex)]),
       textDecoration(none),
     ]);
   let avatar =
@@ -68,6 +70,10 @@ module Styles = {
           fontFamily(Theme.codeFontFamily),
           lineHeight(`abs(1.)),
           backgroundColor("FAF3E1"->hex),
+          media(
+            "(prefers-color-scheme: dark)",
+            [backgroundColor("4F3804"->hex)],
+          ),
           margin2(~h=0.2->em, ~v=zero),
         ],
       ),
@@ -79,6 +85,10 @@ module Styles = {
           fontSize(14->px),
           borderRadius(10->px),
           border(2->px, `solid, rgba(0, 0, 0, 0.1)),
+          media(
+            "(prefers-color-scheme: dark)",
+            [border(2->px, `solid, rgba(255, 255, 255, 0.1))],
+          ),
           `declaration(("WebkitOverflowScrolling", "touch")),
           selector(
             "code",
@@ -128,6 +138,7 @@ module Styles = {
       margin2(~h=auto, ~v=20->px),
       padding(20->px),
       backgroundColor("fff"->hex),
+      media("(prefers-color-scheme: dark)", [backgroundColor("222"->hex)]),
       borderRadius(10->px),
       boxShadow(
         ~y=15->px,

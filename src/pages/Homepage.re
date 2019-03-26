@@ -254,7 +254,14 @@ module LatestPodcasts = {
 
   module Styles = {
     open Css;
-    let container = style([backgroundColor(Theme.lightBody->hex)]);
+    let container =
+      style([
+        backgroundColor(Theme.lightBody->hex),
+        media(
+          "(prefers-color-scheme: dark)",
+          [backgroundColor("111"->hex)],
+        ),
+      ]);
     let contents =
       style([
         display(flexBox),
@@ -299,6 +306,10 @@ module LatestPodcasts = {
         display(block),
         textDecoration(none),
         color(Theme.darkBody->hex),
+        media(
+          "(prefers-color-scheme: dark)",
+          [backgroundColor("222"->hex), color("ddd"->hex)],
+        ),
         width(100.->pct),
         position(relative),
         overflow(hidden),

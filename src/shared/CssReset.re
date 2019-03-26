@@ -5,6 +5,7 @@ Css.(
       padding(zero),
       margin(zero),
       backgroundColor("fff"->hex),
+      media("(prefers-color-scheme: dark)", [backgroundColor("222"->hex)]),
       Theme.defaultTextFontFamily->fontFamily,
       display(flexBox),
       flexDirection(column),
@@ -31,6 +32,7 @@ Css.(
     "html",
     [
       color(Theme.darkBody->hex),
+      media("(prefers-color-scheme: dark)", [color("ddd"->hex)]),
       fontSize(1.->em),
       lineHeight(`abs(1.4)),
       `declaration(("WebkitFontSmoothing", "antialiased")),

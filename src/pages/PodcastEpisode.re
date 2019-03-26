@@ -9,6 +9,7 @@ module Styles = {
   let root =
     style([
       backgroundColor("F9F6F6"->hex),
+      media("(prefers-color-scheme: dark)", [backgroundColor("111"->hex)]),
       display(flexBox),
       flexDirection(column),
       flexGrow(1.0),
@@ -101,6 +102,7 @@ module Styles = {
       margin2(~h=auto, ~v=20->px),
       padding(20->px),
       backgroundColor("fff"->hex),
+      media("(prefers-color-scheme: dark)", [backgroundColor("222"->hex)]),
       borderRadius(10->px),
       boxShadow(
         ~y=15->px,
