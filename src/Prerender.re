@@ -62,22 +62,28 @@ module Feed = {
     let items =
       all->Array.map(item =>
         switch (item) {
-        | Podcast(({title, body}, {slug})) => {j|
+        | Podcast(({title, body}, {slug, date})) =>
+          let pubDate = date->Js.Date.fromString->Js.Date.toUTCString;
+          {j|
           <item>
             <title><![CDATA[$title]]></title>
             <description><![CDATA[$body]]></description>
             <link>$baseUrl/podcasts/$slug</link>
             <guid isPermalink="false">$slug</guid>
+            <pubDate>$pubDate</pubDate>
           </item>
-        |j}
-        | Post(({title, body}, {slug})) => {j|
+        |j};
+        | Post(({title, body}, {slug, date})) =>
+          let pubDate = date->Js.Date.fromString->Js.Date.toUTCString;
+          {j|
           <item>
             <title><![CDATA[$title]]></title>
             <description><![CDATA[$body]]></description>
             <link>$baseUrl/articles/$slug</link>
             <guid isPermalink="false">$slug</guid>
+            <pubDate>$pubDate</pubDate>
           </item>
-        |j}
+        |j};
         }
       );
     let date = Js.Date.make()->Js.Date.toUTCString;
