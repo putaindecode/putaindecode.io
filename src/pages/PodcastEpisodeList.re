@@ -34,6 +34,7 @@ module Styles = {
       padding2(~v=10->px, ~h=30->px),
       focus([outlineStyle(none), backgroundColor(rgba(0, 0, 0, 0.05))]),
       media("(max-width: 720px)", [fontSize(20->px)]),
+      media("(prefers-color-scheme: dark)", [color("ddd"->hex)]),
     ]);
   let title =
     style([
