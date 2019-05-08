@@ -57,7 +57,7 @@ Notez que la première technique peut être facilement mise en place de manière
 automatique, via une traitement de
 [minification du code html](https://github.com/kangax/html-minifier).
 
-##Insérer des commentaires html entre les tags `.Grid-cell`
+## Insérer des commentaires html entre les tags `.Grid-cell`
 
 La solution est robuste, au prix de quelques caractères supplémentaires. Un
 surpoids que gzip se fera un plaisir de vous faire oublier ! C'est la méthode
@@ -139,7 +139,7 @@ d'icônes, rien ne vous empêche de combiner les deux, en ajoutant votre icône 
 largeur nulle avec vos icônes. Voici un aperçu sur
 [codepen](http://codepen.io/lionelB/pen/fvyjH)
 
-#Le mot de la fin
+# Le mot de la fin
 
 Non, il n'y a pas vraiment une technique qui sort du lot. Comme toujours, cela
 dépend des navigateurs à supporter, est ce que l'utilisateur pourra
