@@ -54,7 +54,7 @@ Puis arrivent les solutions automatisant cette isolation, délégant la tâche �
 
 CSS-in-JS **ramène le style au sein du composant**, dans son scope. Notre composant contient désormais son markup, son style et son comportement.
 
-Il a été dit que cette approche rompt la _separation of concerns_, mais cette vision part du postulat que l'on doit impérativement coder des documents et oublier l'approche composant. Un postulat qu'on a oublié de réévaluer avec la perspective du développement tel qu'il est fait. **Dans un contexte applicatif,** séparer markup, style et comportement revient à s'imposer une séparation technologique non nécessaire, et pouvant au nom d'une "bonne pratique" impacter négativement l'expérience des devs et des users.
+Il a été dit que cette approche rompt la _separation of concerns_, mais cette vision part du postulat que l'on doit impérativement coder des documents et oublier l'approche composant. C'est un postulat qu'on a oublié de réévaluer avec le recul qu'on peut avoir aujourd'hui. **Dans un contexte applicatif,** séparer markup, style et comportement revient à s'imposer une séparation technologique non nécessaire, et pouvant au nom d'une "bonne pratique" impacter négativement l'expérience des devs et des users.
 
 Il n'existe plus de raison autre que la "nostalgie du bon vieux temps" de le faire, il s'agit de reflexes acquis à l'époque mais jamais remis en perspective. Demandez à quelqu'un pourquoi c'est mal, il vous répondra "SEPARATION OF CONCERNS !". Demandez-lui pourquoi, il y a peu de chances qu'il vous sorte quoique ce soit de tangible.
 
