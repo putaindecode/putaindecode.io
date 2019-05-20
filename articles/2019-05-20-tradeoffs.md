@@ -62,11 +62,26 @@ L'approche CSS-in-JS ne pose pas de problème lorsque l'application est entière
 
 Chaque solution possède ses tradeoffs. Prenons pour exemples les temps de chargement des différentes approches, et notons les avec des lettres de A à F (A étant le plus rapide, F le moins):
 
-- **approche traditionnelle** - **premier chargement**: C (on doit charger le fichier CSS pour la première fois avant rendu) - **navigation directe**: B (on ne peut pas contrôler la performance perçue de la transition, mais le fichier de style est en cache) - **chargement ultérieur**: B (le fichier CSS est en cache)
-- **approche React sans SSR**: - **premier chargement**: D (le HTML est "vide" mais on doit charger le JS, on doit charger le fichier CSS) - **navigation directe**: A (la transition est contrôlée et nécessite peu d'effort) - **chargement ultérieur**: C (les fichiers CSS et JS sont en cache)
-- **approche React avec SSR**: - **premier chargement**: C (on doit charger le fichier CSS pour la première fois avant rendu) - **navigation directe**: A (la transition est contrôlée et nécessite peu d'effort) - **chargement ultérieur**: C (les fichiers CSS et JS sont en cache)
-- **approche React avec SSR et CSS-in-JS**: - **premier chargement**: B (la page est 100% disponible et visible dès la fin d'une seule requête pour le HTML) - **navigation directe**: A (la transition est contrôlée et nécessite peu d'effort) - **chargement ultérieur**: B (la page est 100% disponible, les fichiers CSS et JS sont en cache)
-- **approche React avec SSR et CSS-in-JS et service worker**: - **premier chargement**: B (la page est 100% disponible et visible dès la fin d'une seule requête pour le HTML) - **navigation directe**: A (la transition est contrôlée et nécessite peu d'effort) - **chargement ultérieur**: A (la page peut proposer un contenu immédiatement sans network, et peut proposer une expérience de chargement le cas échéant)
+- **approche traditionnelle**
+  - **premier chargement**: C (on doit charger le fichier CSS pour la première fois avant rendu) 
+  - **navigation directe**: B (on ne peut pas contrôler la performance perçue de la transition, mais le fichier de style est en cache)
+  - **chargement ultérieur**: B (le fichier CSS est en cache)
+- **approche React sans SSR**:
+  - **premier chargement**: D (le HTML est "vide" mais on doit charger le JS, on doit charger le fichier CSS)
+  - **navigation directe**: A (la transition est contrôlée et nécessite peu d'effort)
+  - **chargement ultérieur**: C (les fichiers CSS et JS sont en cache)
+- **approche React avec SSR**:
+  - **premier chargement**: C (on doit charger le fichier CSS pour la première fois avant rendu)
+  - **navigation directe**: A (la transition est contrôlée et nécessite peu d'effort)
+  - **chargement ultérieur**: C (les fichiers CSS et JS sont en cache)
+- **approche React avec SSR et CSS-in-JS**:
+  - **premier chargement**: B (la page est 100% disponible et visible dès la fin d'une seule requête pour le HTML)
+  - **navigation directe**: A (la transition est contrôlée et nécessite peu d'effort)
+  - **chargement ultérieur**: B (la page est 100% disponible, les fichiers CSS et JS sont en cache)
+- **approche React avec SSR et CSS-in-JS et service worker**:
+  - **premier chargement**: B (la page est 100% disponible et visible dès la fin d'une seule requête pour le HTML)
+  - **navigation directe**: A (la transition est contrôlée et nécessite peu d'effort)
+  - **chargement ultérieur**: A (la page peut proposer un contenu immédiatement sans network, et peut proposer une expérience de chargement le cas échéant)
 
 Chacune de ses solution peut correspondre à vos besoins. Un document privilégiera le chargement initial et une application les navigations en son sein. Rien n'est parfait, il s'agit (et s'agira encore probablement pour longtemps) de décider du tradeoff que vous êtes prêt à faire.
 
