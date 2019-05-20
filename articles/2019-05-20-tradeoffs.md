@@ -11,7 +11,7 @@ Il existe cependant dans notre industrie un système de dogme. On ne cherche alo
 
 Suite à un énième débat sur les technologies modernes utilisées en front-end, réfutées par les défenseurs de certains de ces axiomes, je vais tenter de rationaliser notre approche et d'expliquer ses tradeoffs.
 
-L'idée est ici de faire **comprendre** pourquoi on utilise ces approches et technologies, **dans quel contexte**, et non de les imposer à qui que ce soit. Avec un peu de chance, cet article fera passer certains discours de "nimportawak (sic)" à "ce n'est pas pour ma typologie de projet".
+L'idée est ici de faire **comprendre** pourquoi on utilise ces approches et technologies, **dans quel contexte**, et non de les imposer à qui que ce soit. Avec un peu de chance, cet article fera passer certains discours de "nimportnawak (sic)" à "ce n'est pas pour ma typologie de projet".
 
 Au départ, le Web est conçu comme **un ensemble de documents** : chaque page en est un. À chaque navigation, on déclenche **un nouveau cycle de vie** de page : on termine la page courante, on initialise la suivante.
 
@@ -42,7 +42,7 @@ Un composant, c'est une boite noire qui prend des paramètres (`props`), peut av
 
 React arrive également avec JSX, une extension de JS, qui permet de décrire son interface sous une forme ressemblant à HTML (du XML), mais s'affranchissant de ses limitations (comme la nécessité de serialiser les attributs). Tout en conservant la familiarité d'HTML (et la pertinence d'une telle syntaxe pour représenter un arbre d'éléments), JSX répond à une frustration grandissante face aux templates "logic-less" qui forçaient la création de helpers et la transformation de donnée en amont.
 
-En nous abstrayant complètement du DOM et en nous offrant un modèle conceptuel simple (`(props, state) => UI`), React permet de créer des interfaces plus riches, plus simplement et surtout d'une manière maintenable : le comportement d'un composant étant couplé à son markup, on n'a plus à naviguer entre une fichier HTML et un JS pour les synchroniser. L'isolation des composants permet d'éviter les effets de bords indésirables.
+En nous abstrayant complètement du DOM et en nous offrant un modèle conceptuel simple (`(props, state) => UI`), React permet de créer des interfaces plus riches, plus simplement et surtout d'une manière maintenable : le comportement d'un composant étant couplé à son markup, on n'a plus à naviguer entre un fichier HTML et un JS pour les synchroniser. L'isolation des composants permet d'éviter les effets de bords indésirables.
 
 HTML et JS sont donc colocalisés, leur édition est mise en commun. Surprise : on s'est rendu compte que c'était une façon de faire plus productive et qu'on avait moins tendance à laisser pourrir du vieux code dans son coin.
 
