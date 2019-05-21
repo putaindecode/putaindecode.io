@@ -11,7 +11,7 @@ Il existe cependant dans notre industrie un système de dogme. On ne cherche alo
 
 Suite à un énième débat sur les technologies modernes utilisées en front-end, réfutées par les défenseurs de certains de ces axiomes, je vais tenter de rationaliser notre approche et d'expliquer ses tradeoffs.
 
-L'idée est ici de faire **comprendre** pourquoi on utilise ces approches et technologies, **dans quel contexte**, et non de les imposer à qui que ce soit. Avec un peu de chance, cet article fera passer certains discours de "nimportnawak (sic)" à "ce n'est pas pour ma typologie de projet".
+L'idée est ici de faire **comprendre** pourquoi on utilise ces approches et technologies, **dans quel contexte**, et non de les imposer à qui que ce soit. Avec un peu de chance, cet article fera passer certains discours de "nimportawak (sic)" à "ce n'est pas pour ma typologie de projet".
 
 Au départ, le Web est conçu comme **un ensemble de documents** : chaque page en est un. À chaque navigation, on déclenche **un nouveau cycle de vie** de page : on termine la page courante, on initialise la suivante.
 
