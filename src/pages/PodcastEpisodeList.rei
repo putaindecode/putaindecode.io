@@ -1,3 +1,4 @@
+[@react.component]
 let make:
   (
     ~episodeList: RequestStatus.t(
@@ -5,6 +6,6 @@ let make:
                   ),
     ~onLoadRequest: unit => unit,
     ~search: string,
-    array(React.reactElement)
+    unit
   ) =>
-  React.component(React.stateless, React.noRetainedProps, React.actionless);
+  React.element;

@@ -1,6 +1,6 @@
 open Belt;
 
-let component = React.statelessComponent("Article");
+let component = ReasonReact.statelessComponent("Article");
 
 module Styles = {
   open Css;
@@ -173,109 +173,113 @@ module Styles = {
 
 let externalLinkRe = [%re "/^https?:\\/\\//"];
 
+[@react.component]
 let make =
-    (~post: RequestStatus.t(Result.t(Post.t, Errors.t)), ~onLoadRequest, _) => {
-  ...component,
-  didMount: _ => {
-    switch (post) {
-    | NotAsked => onLoadRequest()
-    | _ => ()
-    };
-  },
-  render: _ =>
-    <div className=Styles.root>
-      {switch (post) {
-       | NotAsked
-       | Loading => <PageLoadingIndicator />
-       | Done(Ok(post)) =>
-         <WithTitle title={post.title}>
-           <div className=Styles.container>
-             <WidthContainer>
-               <div role="heading" ariaLevel=1 className=Styles.title>
-                 post.title->React.string
-               </div>
-               <Link
-                 href={"https://github.com/" ++ post.author}
-                 className=Styles.author>
-                 <img
-                   className=Styles.avatar
-                   src={
-                     "https://avatars.githubusercontent.com/"
-                     ++ post.author
-                     ++ "?size=64"
-                   }
-                   alt={post.author}
-                 />
-                 <div>
-                   post.author->React.string
-                   " "->React.string
-                   {j|•|j}->React.string
-                   " "->React.string
-                   <Date date={post.date} />
+    (~post: RequestStatus.t(Result.t(Post.t, Errors.t)), ~onLoadRequest, ()) =>
+  ReactCompat.useRecordApi({
+    ...component,
+    didMount: _ => {
+      switch (post) {
+      | NotAsked => onLoadRequest()
+      | _ => ()
+      };
+    },
+    render: _ =>
+      <div className=Styles.root>
+        {switch (post) {
+         | NotAsked
+         | Loading => <PageLoadingIndicator />
+         | Done(Ok(post)) =>
+           <WithTitle title={post.title}>
+             <div className=Styles.container>
+               <WidthContainer>
+                 <div role="heading" ariaLevel=1 className=Styles.title>
+                   post.title->ReasonReact.string
                  </div>
-               </Link>
-               <div
-                 dangerouslySetInnerHTML={"__html": post.body}
-                 onClick={event =>
-                   if (event->ReactEvent.Mouse.target##nodeName == "A") {
-                     switch (
-                       ReactEvent.Mouse.metaKey(event),
-                       ReactEvent.Mouse.ctrlKey(event),
-                     ) {
-                     | (false, false) =>
-                       let href =
-                         event->ReactEvent.Mouse.target##getAttribute("href");
-                       if (!externalLinkRe->Js.Re.test_(href)) {
-                         ReactEvent.Mouse.preventDefault(event);
-                         React.Router.push(href);
-                       };
-                     | _ => ()
-                     };
-                   }
-                 }
-                 className=Styles.body
-               />
-               <div className=Styles.share>
-                 <div className=Styles.shareTitle>
-                   {j|Vous avez aimé cet article?|j}->React.string
-                 </div>
-                 <Spacer height=10 width=0 />
-                 <a
-                   className=Styles.shareButton
-                   onClick={event => {
-                     event->ReactEvent.Mouse.preventDefault;
-                     Webapi.Dom.(
-                       window
-                       ->Window.open_(
-                           ~url=event->ReactEvent.Mouse.target##href,
-                           ~name="",
-                           ~features="width=500,height=400",
-                         )
-                       ->ignore
-                     );
-                   }}
-                   target="_blank"
-                   href={
-                     "https://www.twitter.com/intent/tweet?text="
-                     ++ Js.Global.encodeURIComponent(
-                          post.title
-                          ++ " sur @PutainDeCode https://putaindecode.io/articles/"
-                          ++ post.slug,
-                        )
-                   }>
-                   "Le partager sur Twitter"->React.string
-                 </a>
-               </div>
-               <div className=Styles.back>
-                 <Link href="/articles" className=Styles.backLink>
-                   {j|← Articles|j}->React.string
+                 <Link
+                   href={"https://github.com/" ++ post.author}
+                   className=Styles.author>
+                   <img
+                     className=Styles.avatar
+                     src={
+                       "https://avatars.githubusercontent.com/"
+                       ++ post.author
+                       ++ "?size=64"
+                     }
+                     alt={post.author}
+                   />
+                   <div>
+                     post.author->ReasonReact.string
+                     " "->ReasonReact.string
+                     {j|•|j}->ReasonReact.string
+                     " "->ReasonReact.string
+                     <Date date={post.date} />
+                   </div>
                  </Link>
-               </div>
-               <Disqus url=?{post.oldSlug} />
-             </WidthContainer>
-           </div>
-         </WithTitle>
-       | Done(Error(_)) => <ErrorPage />
-       }}
-    </div>,
-};
+                 <div
+                   dangerouslySetInnerHTML={"__html": post.body}
+                   onClick={event =>
+                     if (event->ReactEvent.Mouse.target##nodeName == "A") {
+                       switch (
+                         ReactEvent.Mouse.metaKey(event),
+                         ReactEvent.Mouse.ctrlKey(event),
+                       ) {
+                       | (false, false) =>
+                         let href =
+                           event->ReactEvent.Mouse.target##getAttribute(
+                             "href",
+                           );
+                         if (!externalLinkRe->Js.Re.test_(href)) {
+                           ReactEvent.Mouse.preventDefault(event);
+                           ReasonReact.Router.push(href);
+                         };
+                       | _ => ()
+                       };
+                     }
+                   }
+                   className=Styles.body
+                 />
+                 <div className=Styles.share>
+                   <div className=Styles.shareTitle>
+                     {j|Vous avez aimé cet article?|j}->ReasonReact.string
+                   </div>
+                   <Spacer height=10 width=0 />
+                   <a
+                     className=Styles.shareButton
+                     onClick={event => {
+                       event->ReactEvent.Mouse.preventDefault;
+                       Webapi.Dom.(
+                         window
+                         ->Window.open_(
+                             ~url=event->ReactEvent.Mouse.target##href,
+                             ~name="",
+                             ~features="width=500,height=400",
+                           )
+                         ->ignore
+                       );
+                     }}
+                     target="_blank"
+                     href={
+                       "https://www.twitter.com/intent/tweet?text="
+                       ++ Js.Global.encodeURIComponent(
+                            post.title
+                            ++ " sur @PutainDeCode https://putaindecode.io/articles/"
+                            ++ post.slug,
+                          )
+                     }>
+                     "Le partager sur Twitter"->ReasonReact.string
+                   </a>
+                 </div>
+                 <div className=Styles.back>
+                   <Link href="/articles" className=Styles.backLink>
+                     {j|← Articles|j}->ReasonReact.string
+                   </Link>
+                 </div>
+                 <Disqus url=?{post.oldSlug} />
+               </WidthContainer>
+             </div>
+           </WithTitle>
+         | Done(Error(_)) => <ErrorPage />
+         }}
+      </div>,
+  });

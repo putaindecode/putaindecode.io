@@ -25,7 +25,7 @@ module GoogleAnalytics = {
     "ga";
 };
 
-let rec render = (~url=React.Router.dangerouslyGetInitialUrl(), ()) => {
+let rec render = (~url=ReasonReact.Router.dangerouslyGetInitialUrl(), ()) => {
   switch (markup, firstPath^, url.search->Js.String.length > 0) {
   | (Some(_), true, false) =>
     ReactDOMRe.hydrateToElementWithId(<App url ?initialData />, "root")
@@ -34,9 +34,9 @@ let rec render = (~url=React.Router.dangerouslyGetInitialUrl(), ()) => {
   let watcherId = ref(None);
   watcherId :=
     Some(
-      React.Router.watchUrl(newUrl => {
+      ReasonReact.Router.watchUrl(newUrl => {
         (watcherId^)
-        ->Option.map(watcherId => React.Router.unwatchUrl(watcherId))
+        ->Option.map(watcherId => ReasonReact.Router.unwatchUrl(watcherId))
         ->ignore;
         if (url.path != newUrl.path) {
           Webapi.Dom.(Window.scrollTo(0.0, 0.0, window));

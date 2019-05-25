@@ -1,6 +1,6 @@
 open Belt;
 
-let component = React.statelessComponent("ArticleList");
+let component = ReasonReact.statelessComponent("ArticleList");
 
 module Styles = {
   open Css;
@@ -96,113 +96,115 @@ module Styles = {
     ]);
 };
 
+[@react.component]
 let make =
     (
       ~postList: RequestStatus.t(Result.t(array(PostShallow.t), Errors.t)),
       ~onLoadRequest,
       ~search,
-      _,
-    ) => {
-  ...component,
-  didMount: _ =>
-    switch (postList) {
-    | NotAsked => onLoadRequest()
-    | _ => ()
-    },
-  render: _ => {
-    let queryString = search->QueryString.explode;
-    <div className=Styles.container>
-      {switch (postList) {
-       | NotAsked
-       | Loading => <PageLoadingIndicator />
-       | Done(Ok(postList)) =>
-         <WithTitle
-           title={
-             search
-             ->QueryString.explode
-             ->Map.String.get("search")
-             ->Option.map(search => "Articles avec " ++ search)
-             ->Option.getWithDefault("Articles")
-           }>
-           <WidthContainer>
-             <div className=Styles.heading>
-               <div role="heading" ariaLevel=1 className=Styles.title>
-                 "Articles"->React.string
+      (),
+    ) =>
+  ReactCompat.useRecordApi({
+    ...component,
+    didMount: _ =>
+      switch (postList) {
+      | NotAsked => onLoadRequest()
+      | _ => ()
+      },
+    render: _ => {
+      let queryString = search->QueryString.explode;
+      <div className=Styles.container>
+        {switch (postList) {
+         | NotAsked
+         | Loading => <PageLoadingIndicator />
+         | Done(Ok(postList)) =>
+           <WithTitle
+             title={
+               search
+               ->QueryString.explode
+               ->Map.String.get("search")
+               ->Option.map(search => "Articles avec " ++ search)
+               ->Option.getWithDefault("Articles")
+             }>
+             <WidthContainer>
+               <div className=Styles.heading>
+                 <div role="heading" ariaLevel=1 className=Styles.title>
+                   "Articles"->ReasonReact.string
+                 </div>
+                 <input
+                   className=Styles.search
+                   placeholder={js|Rechercher …|js}
+                   type_="text"
+                   value={
+                     search
+                     ->QueryString.explode
+                     ->Map.String.get("search")
+                     ->Option.getWithDefault("")
+                   }
+                   onChange={event => {
+                     let search = event->ReactEvent.Form.target##value;
+                     ReasonReact.Router.push(
+                       "?"
+                       ++ (
+                            search == ""
+                              ? queryString->Map.String.remove("search")
+                              : queryString->Map.String.set("search", search)
+                          )
+                          ->QueryString.implode,
+                     );
+                   }}
+                 />
                </div>
-               <input
-                 className=Styles.search
-                 placeholder={js|Rechercher …|js}
-                 type_="text"
-                 value={
-                   search
-                   ->QueryString.explode
-                   ->Map.String.get("search")
-                   ->Option.getWithDefault("")
-                 }
-                 onChange={event => {
-                   let search = event->ReactEvent.Form.target##value;
-                   React.Router.push(
-                     "?"
-                     ++ (
-                          search == ""
-                            ? queryString->Map.String.remove("search")
-                            : queryString->Map.String.set("search", search)
-                        )
-                        ->QueryString.implode,
-                   );
-                 }}
-               />
-             </div>
-             {postList
-              ->Array.map(article =>
-                  <Link
-                    className={
-                      search
-                      ->QueryString.explode
-                      ->Map.String.get("search")
-                      ->Option.map(Js.String.trim)
-                      ->Option.map(Js.String.toLowerCase)
-                      ->Option.map(search =>
-                          article.title
-                          ->Js.String.toLowerCase
-                          ->Js.String.includes(search, _)
-                          || article.author
-                             ->Js.String.toLowerCase
-                             ->Js.String.includes(search, _)
-                        )
-                      ->Option.getWithDefault(true)
-                        ? Styles.link : Styles.hiddenLink
-                    }
-                    href={"/articles/" ++ article.slug}
-                    key={article.slug}>
-                    <div className=Styles.author>
-                      <img
-                        className=Styles.avatar
-                        src={
-                          "https://avatars.githubusercontent.com/"
-                          ++ article.author
-                          ++ "?size=64"
-                        }
-                        alt={article.author}
-                      />
-                      <div>
-                        article.author->React.string
-                        " "->React.string
-                        {j|•|j}->React.string
-                        " "->React.string
-                        <Date date={article.date} />
+               {postList
+                ->Array.map(article =>
+                    <Link
+                      className={
+                        search
+                        ->QueryString.explode
+                        ->Map.String.get("search")
+                        ->Option.map(Js.String.trim)
+                        ->Option.map(Js.String.toLowerCase)
+                        ->Option.map(search =>
+                            article.title
+                            ->Js.String.toLowerCase
+                            ->Js.String.includes(search, _)
+                            || article.author
+                               ->Js.String.toLowerCase
+                               ->Js.String.includes(search, _)
+                          )
+                        ->Option.getWithDefault(true)
+                          ? Styles.link : Styles.hiddenLink
+                      }
+                      href={"/articles/" ++ article.slug}
+                      key={article.slug}>
+                      <div className=Styles.author>
+                        <img
+                          className=Styles.avatar
+                          src={
+                            "https://avatars.githubusercontent.com/"
+                            ++ article.author
+                            ++ "?size=64"
+                          }
+                          alt={article.author}
+                        />
+                        <div>
+                          article.author->ReasonReact.string
+                          " "->ReasonReact.string
+                          {j|•|j}->ReasonReact.string
+                          " "->ReasonReact.string
+                          <Date date={article.date} />
+                        </div>
                       </div>
-                    </div>
-                    <div className=Styles.postTitle>
-                      article.title->React.string
-                    </div>
-                  </Link>
-                )
-              ->React.array}
-           </WidthContainer>
-         </WithTitle>
-       | Done(Error(_)) => <ErrorPage />
-       }}
-    </div>;
-  },
-};
+                      <div className=Styles.postTitle>
+                        article.title->ReasonReact.string
+                      </div>
+                    </Link>
+                  )
+                ->ReasonReact.array}
+             </WidthContainer>
+           </WithTitle>
+         | Done(Error(_)) => <ErrorPage />
+         }}
+      </div>;
+    },
+  });

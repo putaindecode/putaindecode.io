@@ -1,3 +1,2 @@
-let make:
-  (~url: string=?, array(React.reactElement)) =>
-  React.component(React.stateless, React.noRetainedProps, React.actionless);
+[@react.component]
+let make: (~url: string=?, unit) => React.element;

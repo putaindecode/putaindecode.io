@@ -1,7 +1,7 @@
 {
   "name": "putain-de-code",
   "reason": {
-    "react-jsx": 2
+    "react-jsx": 3
   },
   "sources": {
     "dir": "src",
@@ -15,6 +15,6 @@
   ],
   "suffix": ".bs.js",
   "namespace": true,
-  "bs-dependencies": ["reason-react", "bs-css", "bs-webapi"],
+  "bs-dependencies": ["reason-react", "bs-css", "bs-webapi", "reason-react-compat"],
   "refmt": 3
 }

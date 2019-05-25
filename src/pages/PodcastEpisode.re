@@ -1,6 +1,6 @@
 open Belt;
 
-let component = React.statelessComponent("PodcastEpisode");
+let component = ReasonReact.statelessComponent("PodcastEpisode");
 
 module Styles = {
   open Css;
@@ -135,106 +135,108 @@ module Styles = {
     style([fontSize(20->px), textDecoration(none), color("1E49B5"->hex)]);
 };
 
+[@react.component]
 let make =
     (
       ~episode: RequestStatus.t(Result.t(Podcast.t, Errors.t)),
       ~onLoadRequest,
-      _,
-    ) => {
-  ...component,
-  didMount: _ => {
-    switch (episode) {
-    | NotAsked => onLoadRequest()
-    | _ => ()
-    };
-  },
-  render: _ => {
-    <div className=Styles.root>
-      {switch (episode) {
-       | NotAsked
-       | Loading => <PageLoadingIndicator />
-       | Done(Ok(episode)) =>
-         let trackId = episode.soundcloudTrackId;
-         <WithTitle title={episode.title}>
-           <WidthContainer>
-             <div className=Styles.container>
-               <div className=Styles.playerContainer>
-                 <div className=Styles.playerBackground>
-                   <iframe
-                     className=Styles.player
-                     name="Player"
-                     src={j|https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$trackId&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true|j}
-                   />
-                 </div>
-               </div>
-               <Spacer width=40 height=20 />
-               <div className=Styles.contents>
-                 <div role="heading" ariaLevel=1 className=Styles.title>
-                   episode.title->React.string
-                 </div>
-                 <div className=Styles.author>
-                   {episode.participants
-                    ->Array.map(name =>
-                        <Link href={"https://github.com/" ++ name} key=name>
-                          <img
-                            className=Styles.avatar
-                            src={
-                              "https://avatars.githubusercontent.com/"
-                              ++ name
-                              ++ "?size=64"
-                            }
-                            alt=name
-                          />
-                        </Link>
-                      )
-                    ->React.array}
-                 </div>
-                 <div
-                   className=Styles.body
-                   dangerouslySetInnerHTML={"__html": episode.body}
-                 />
-                 <div className=Styles.share>
-                   <div className=Styles.shareTitle>
-                     {j|Vous avez aimé cet épisode?|j}->React.string
+      (),
+    ) =>
+  ReactCompat.useRecordApi({
+    ...component,
+    didMount: _ => {
+      switch (episode) {
+      | NotAsked => onLoadRequest()
+      | _ => ()
+      };
+    },
+    render: _ => {
+      <div className=Styles.root>
+        {switch (episode) {
+         | NotAsked
+         | Loading => <PageLoadingIndicator />
+         | Done(Ok(episode)) =>
+           let trackId = episode.soundcloudTrackId;
+           <WithTitle title={episode.title}>
+             <WidthContainer>
+               <div className=Styles.container>
+                 <div className=Styles.playerContainer>
+                   <div className=Styles.playerBackground>
+                     <iframe
+                       className=Styles.player
+                       name="Player"
+                       src={j|https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$trackId&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true|j}
+                     />
                    </div>
-                   <Spacer height=10 width=0 />
-                   <a
-                     className=Styles.shareButton
-                     onClick={event => {
-                       event->ReactEvent.Mouse.preventDefault;
-                       Webapi.Dom.(
-                         window
-                         ->Window.open_(
-                             ~url=event->ReactEvent.Mouse.target##href,
-                             ~name="",
-                             ~features="width=500,height=400",
-                           )
-                         ->ignore
-                       );
-                     }}
-                     target="_blank"
-                     href={
-                       "https://www.twitter.com/intent/tweet?text="
-                       ++ Js.Global.encodeURIComponent(
-                            episode.title
-                            ++ " sur @PutainDeCode https://putaindecode.io/podcasts/"
-                            ++ episode.slug,
-                          )
-                     }>
-                     "Le partager sur Twitter"->React.string
-                   </a>
+                 </div>
+                 <Spacer width=40 height=20 />
+                 <div className=Styles.contents>
+                   <div role="heading" ariaLevel=1 className=Styles.title>
+                     episode.title->ReasonReact.string
+                   </div>
+                   <div className=Styles.author>
+                     {episode.participants
+                      ->Array.map(name =>
+                          <Link href={"https://github.com/" ++ name} key=name>
+                            <img
+                              className=Styles.avatar
+                              src={
+                                "https://avatars.githubusercontent.com/"
+                                ++ name
+                                ++ "?size=64"
+                              }
+                              alt=name
+                            />
+                          </Link>
+                        )
+                      ->ReasonReact.array}
+                   </div>
+                   <div
+                     className=Styles.body
+                     dangerouslySetInnerHTML={"__html": episode.body}
+                   />
+                   <div className=Styles.share>
+                     <div className=Styles.shareTitle>
+                       {j|Vous avez aimé cet épisode?|j}->ReasonReact.string
+                     </div>
+                     <Spacer height=10 width=0 />
+                     <a
+                       className=Styles.shareButton
+                       onClick={event => {
+                         event->ReactEvent.Mouse.preventDefault;
+                         Webapi.Dom.(
+                           window
+                           ->Window.open_(
+                               ~url=event->ReactEvent.Mouse.target##href,
+                               ~name="",
+                               ~features="width=500,height=400",
+                             )
+                           ->ignore
+                         );
+                       }}
+                       target="_blank"
+                       href={
+                         "https://www.twitter.com/intent/tweet?text="
+                         ++ Js.Global.encodeURIComponent(
+                              episode.title
+                              ++ " sur @PutainDeCode https://putaindecode.io/podcasts/"
+                              ++ episode.slug,
+                            )
+                       }>
+                       "Le partager sur Twitter"->ReasonReact.string
+                     </a>
+                   </div>
                  </div>
                </div>
-             </div>
-             <div className=Styles.back>
-               <Link href="/podcasts" className=Styles.backLink>
-                 {j|← Épisodes|j}->React.string
-               </Link>
-             </div>
-           </WidthContainer>
-         </WithTitle>;
-       | Done(Error(_)) => <ErrorPage />
-       }}
-    </div>;
-  },
-};
+               <div className=Styles.back>
+                 <Link href="/podcasts" className=Styles.backLink>
+                   {j|← Épisodes|j}->ReasonReact.string
+                 </Link>
+               </div>
+             </WidthContainer>
+           </WithTitle>;
+         | Done(Error(_)) => <ErrorPage />
+         }}
+      </div>;
+    },
+  });
