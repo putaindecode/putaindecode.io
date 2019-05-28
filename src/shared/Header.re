@@ -1,4 +1,4 @@
-let component = React.statelessComponent("Header");
+let component = ReasonReact.statelessComponent("Header");
 
 module Styles = {
   open Css;
@@ -48,35 +48,38 @@ module Styles = {
     ]);
 };
 
-let make = (~url: React.Router.url, ~gradient=?, _) => {
-  ...component,
-  render: _ =>
-    <header
-      className=Styles.container
-      style={ReactDOMRe.Style.make(~backgroundImage=?gradient, ())}>
-      <WidthContainer>
-        <div className=Styles.contents>
-          <Link href="/" className=Styles.logo>
-            <div className=Styles.name>
-              Logo.logo
-              <Spacer />
-              <div
-                className=Styles.title
-                role="heading"
-                ariaLevel={
-                  switch (url.path) {
-                  | [] => 1
-                  | _ => 2
-                  }
-                }>
-                "Putain de code !"->React.string
+[@react.component]
+let make = (~url: ReasonReact.Router.url, ~gradient=?, ()) =>
+  ReactCompat.useRecordApi({
+    ...component,
+    render: _ =>
+      <header
+        className=Styles.container
+        style={ReactDOMRe.Style.make(~backgroundImage=?gradient, ())}>
+        <WidthContainer>
+          <div className=Styles.contents>
+            <Link href="/" className=Styles.logo>
+              <div className=Styles.name>
+                Logo.logo
+                <Spacer />
+                <div
+                  className=Styles.title
+                  role="heading"
+                  ariaLevel={
+                    switch (url.path) {
+                    | [] => 1
+                    | _ => 2
+                    }
+                  }>
+                  "Putain de code !"->ReasonReact.string
+                </div>
               </div>
-            </div>
-            <div className=Styles.subTitle>
-              {js|Blog participatif de la communauté dev|js}->React.string
-            </div>
-          </Link>
-        </div>
-      </WidthContainer>
-    </header>,
-};
+              <div className=Styles.subTitle>
+                {js|Blog participatif de la communauté dev|js}
+                ->ReasonReact.string
+              </div>
+            </Link>
+          </div>
+        </WidthContainer>
+      </header>,
+  });

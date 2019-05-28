@@ -1,7 +1,7 @@
 open Belt;
 
 module TopArticles = {
-  let component = React.statelessComponent("TopArticles");
+  let component = ReasonReact.statelessComponent("TopArticles");
   module Styles = {
     open Css;
 
@@ -154,103 +154,106 @@ module TopArticles = {
     let authorSmall =
       style([position(absolute), top(10->px), left(10->px)]);
   };
-  let make = (~articles: array(PostShallow.t), ~totalCount, _) => {
-    ...component,
-    render: _ => {
-      <WithTitle title="Putain de code">
-        <div>
-          <WidthContainer>
-            {articles[0]
-             ->Option.map(article =>
-                 <Link
-                   href={"/articles/" ++ article.slug}
-                   className=Styles.topArticle
-                   style={ReactDOMRe.Style.make(
-                     ~backgroundImage=Gradient.fromString(article.slug),
-                     (),
-                   )}>
-                   <div className=Styles.contents>
-                     <div className=Styles.author>
-                       <img
-                         className=Styles.avatar
-                         src={
-                           "https://avatars.githubusercontent.com/"
-                           ++ article.author
-                           ++ "?size=64"
-                         }
-                         alt={article.author}
-                       />
-                       <div>
-                         article.author->React.string
-                         " "->React.string
-                         {j|•|j}->React.string
-                         " "->React.string
-                         <Date date={article.date} />
-                       </div>
-                     </div>
-                     <div className=Styles.bigTitle>
-                       article.title->React.string
-                     </div>
-                   </div>
-                 </Link>
-               )
-             ->Option.getWithDefault(React.null)}
-          </WidthContainer>
-          <div className=Styles.sub>
-            {articles
-             ->Array.slice(~offset=1, ~len=6)
-             ->Array.map(article =>
-                 <div key={article.slug} className=Styles.articleContainer>
+  [@react.component]
+  let make = (~articles: array(PostShallow.t), ~totalCount, ()) =>
+    ReactCompat.useRecordApi({
+      ...component,
+      render: _ => {
+        <WithTitle title="Putain de code">
+          <div>
+            <WidthContainer>
+              {articles[0]
+               ->Option.map(article =>
                    <Link
                      href={"/articles/" ++ article.slug}
-                     className=Styles.article
+                     className=Styles.topArticle
                      style={ReactDOMRe.Style.make(
                        ~backgroundImage=Gradient.fromString(article.slug),
                        (),
                      )}>
                      <div className=Styles.contents>
-                       <div className=Styles.authorSmall>
-                         <div className=Styles.author>
-                           <img
-                             className=Styles.avatar
-                             src={
-                               "https://avatars.githubusercontent.com/"
-                               ++ article.author
-                               ++ "?size=64"
-                             }
-                             alt={article.author}
-                           />
-                           <div>
-                             article.author->React.string
-                             " "->React.string
-                             {j|•|j}->React.string
-                             " "->React.string
-                             <Date date={article.date} />
-                           </div>
+                       <div className=Styles.author>
+                         <img
+                           className=Styles.avatar
+                           src={
+                             "https://avatars.githubusercontent.com/"
+                             ++ article.author
+                             ++ "?size=64"
+                           }
+                           alt={article.author}
+                         />
+                         <div>
+                           article.author->ReasonReact.string
+                           " "->ReasonReact.string
+                           {j|•|j}->ReasonReact.string
+                           " "->ReasonReact.string
+                           <Date date={article.date} />
                          </div>
                        </div>
-                       <div className=Styles.title>
-                         article.title->React.string
+                       <div className=Styles.bigTitle>
+                         article.title->ReasonReact.string
                        </div>
                      </div>
                    </Link>
-                 </div>
-               )
-             ->React.array}
+                 )
+               ->Option.getWithDefault(ReasonReact.null)}
+            </WidthContainer>
+            <div className=Styles.sub>
+              {articles
+               ->Array.slice(~offset=1, ~len=6)
+               ->Array.map(article =>
+                   <div key={article.slug} className=Styles.articleContainer>
+                     <Link
+                       href={"/articles/" ++ article.slug}
+                       className=Styles.article
+                       style={ReactDOMRe.Style.make(
+                         ~backgroundImage=Gradient.fromString(article.slug),
+                         (),
+                       )}>
+                       <div className=Styles.contents>
+                         <div className=Styles.authorSmall>
+                           <div className=Styles.author>
+                             <img
+                               className=Styles.avatar
+                               src={
+                                 "https://avatars.githubusercontent.com/"
+                                 ++ article.author
+                                 ++ "?size=64"
+                               }
+                               alt={article.author}
+                             />
+                             <div>
+                               article.author->ReasonReact.string
+                               " "->ReasonReact.string
+                               {j|•|j}->ReasonReact.string
+                               " "->ReasonReact.string
+                               <Date date={article.date} />
+                             </div>
+                           </div>
+                         </div>
+                         <div className=Styles.title>
+                           article.title->ReasonReact.string
+                         </div>
+                       </div>
+                     </Link>
+                   </div>
+                 )
+               ->ReasonReact.array}
+            </div>
+            <div className=Styles.discover>
+              <Link href="/articles" className=Styles.discoverLink>
+                {j|Découvrir les $totalCount articles →|j}
+                ->ReasonReact.string
+              </Link>
+            </div>
           </div>
-          <div className=Styles.discover>
-            <Link href="/articles" className=Styles.discoverLink>
-              {j|Découvrir les $totalCount articles →|j}->React.string
-            </Link>
-          </div>
-        </div>
-      </WithTitle>;
-    },
-  };
+        </WithTitle>;
+      },
+    });
 };
 
 module LatestPodcasts = {
-  let component = React.statelessComponent("LatestPodcasts");
+  let component = ReasonReact.statelessComponent("LatestPodcasts");
 
   module Styles = {
     open Css;
@@ -361,103 +364,108 @@ module LatestPodcasts = {
       ]);
   };
 
-  let make = (~podcasts: array(PodcastShallow.t), ~totalCount, _) => {
-    ...component,
-    render: _ => {
-      <div className=Styles.container>
-        <WidthContainer>
-          <div className=Styles.contents>
-            <div className=Styles.leftCol>
-              <img
-                width="150"
-                height="150"
-                src="/public/images/website/podcast.svg"
-                alt=""
-              />
-            </div>
-            <div className=Styles.mainCol>
-              <div role="heading" ariaLevel=2 className=Styles.title>
-                "Podcast"->React.string
+  [@react.component]
+  let make = (~podcasts: array(PodcastShallow.t), ~totalCount, ()) =>
+    ReactCompat.useRecordApi({
+      ...component,
+      render: _ => {
+        <div className=Styles.container>
+          <WidthContainer>
+            <div className=Styles.contents>
+              <div className=Styles.leftCol>
+                <img
+                  width="150"
+                  height="150"
+                  src="/public/images/website/podcast.svg"
+                  alt=""
+                />
               </div>
-              {podcasts
-               ->Array.slice(~offset=0, ~len=3)
-               ->Array.map(podcast =>
-                   <Link
-                     key={podcast.slug}
-                     href={"/podcasts/" ++ podcast.slug}
-                     className=Styles.podcast>
-                     <div className=Styles.podcastTitle>
-                       podcast.title->React.string
-                     </div>
-                     {podcast.participants
-                      ->Array.map(name =>
-                          <img
-                            className=Styles.avatar
-                            key=name
-                            src={
-                              "https://avatars.githubusercontent.com/"
-                              ++ name
-                              ++ "?size=64"
-                            }
-                            alt=name
-                          />
-                        )
-                      ->React.array}
-                   </Link>
-                 )
-               ->React.array}
-              <div className=Styles.discover>
-                <Link href="/podcasts" className=Styles.discoverLink>
-                  {j|Découvrir les $totalCount épisodes →|j}->React.string
-                </Link>
+              <div className=Styles.mainCol>
+                <div role="heading" ariaLevel=2 className=Styles.title>
+                  "Podcast"->ReasonReact.string
+                </div>
+                {podcasts
+                 ->Array.slice(~offset=0, ~len=3)
+                 ->Array.map(podcast =>
+                     <Link
+                       key={podcast.slug}
+                       href={"/podcasts/" ++ podcast.slug}
+                       className=Styles.podcast>
+                       <div className=Styles.podcastTitle>
+                         podcast.title->ReasonReact.string
+                       </div>
+                       {podcast.participants
+                        ->Array.map(name =>
+                            <img
+                              className=Styles.avatar
+                              key=name
+                              src={
+                                "https://avatars.githubusercontent.com/"
+                                ++ name
+                                ++ "?size=64"
+                              }
+                              alt=name
+                            />
+                          )
+                        ->ReasonReact.array}
+                     </Link>
+                   )
+                 ->ReasonReact.array}
+                <div className=Styles.discover>
+                  <Link href="/podcasts" className=Styles.discoverLink>
+                    {j|Découvrir les $totalCount épisodes →|j}
+                    ->ReasonReact.string
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        </WidthContainer>
-      </div>;
-    },
-  };
+          </WidthContainer>
+        </div>;
+      },
+    });
 };
 
-let component = React.statelessComponent("Homepage");
+let component = ReasonReact.statelessComponent("Homepage");
 
 module Styles = {
   open Css;
   let topArticles = style([position(relative), top((-30)->px)]);
 };
 
+[@react.component]
 let make =
-    (~home: RequestStatus.t(Result.t(Home.t, Errors.t)), ~onLoadRequest, _) => {
-  ...component,
-  didMount: _ => {
-    switch (home) {
-    | NotAsked => onLoadRequest()
-    | _ => ()
-    };
-  },
-  render: _ =>
-    <>
-      {switch (home) {
-       | NotAsked
-       | Loading => <PageLoadingIndicator />
-       | Done(
-           Ok({
-             latestPosts,
-             postTotalCount,
-             latestPodcasts,
-             podcastTotalCount,
-           }),
-         ) =>
-         <>
-           <div className=Styles.topArticles>
-             <TopArticles articles=latestPosts totalCount=postTotalCount />
-           </div>
-           <LatestPodcasts
-             podcasts=latestPodcasts
-             totalCount=podcastTotalCount
-           />
-         </>
-       | Done(Error(_)) => <ErrorPage />
-       }}
-    </>,
-};
+    (~home: RequestStatus.t(Result.t(Home.t, Errors.t)), ~onLoadRequest, ()) =>
+  ReactCompat.useRecordApi({
+    ...component,
+    didMount: _ => {
+      switch (home) {
+      | NotAsked => onLoadRequest()
+      | _ => ()
+      };
+    },
+    render: _ =>
+      <>
+        {switch (home) {
+         | NotAsked
+         | Loading => <PageLoadingIndicator />
+         | Done(
+             Ok({
+               latestPosts,
+               postTotalCount,
+               latestPodcasts,
+               podcastTotalCount,
+             }),
+           ) =>
+           <>
+             <div className=Styles.topArticles>
+               <TopArticles articles=latestPosts totalCount=postTotalCount />
+             </div>
+             <LatestPodcasts
+               podcasts=latestPodcasts
+               totalCount=podcastTotalCount
+             />
+           </>
+         | Done(Error(_)) => <ErrorPage />
+         }}
+      </>,
+  });

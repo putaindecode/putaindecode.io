@@ -1,4 +1,4 @@
-let component = React.statelessComponent("PageLoadingIndicator");
+let component = ReasonReact.statelessComponent("PageLoadingIndicator");
 
 module Styles = {
   open Css;
@@ -11,7 +11,9 @@ module Styles = {
     ]);
 };
 
-let make = _ => {
-  ...component,
-  render: _ => <div className=Styles.container> <ActivityIndicator /> </div>,
-};
+[@react.component]
+let make = () =>
+  ReactCompat.useRecordApi({
+    ...component,
+    render: _ => <div className=Styles.container> <ActivityIndicator /> </div>,
+  });

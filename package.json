@@ -24,12 +24,13 @@
   "dependencies": {
     "bs-css": "^8.0.2",
     "bs-webapi": "^0.13.4",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "reason-react": ">=0.4.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "reason-react": "git://github.com/reasonml/reason-react.git#b29b7673b2a048c9612eaffbf7695972bb0c11c4",
+    "reason-react-compat": "^0.4.0"
   },
   "devDependencies": {
-    "bs-platform": "^5.0.0",
+    "bs-platform": "^5.0.4",
     "copy-webpack-plugin": "^5.0.0",
     "create-emotion": "9.2.12",
     "create-emotion-server": "9.2.12",

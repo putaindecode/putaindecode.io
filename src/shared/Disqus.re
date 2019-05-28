@@ -53,7 +53,7 @@ let loadDisqus = url => {
   );
 };
 
-let component = React.statelessComponent("Disqus");
+let component = ReasonReact.statelessComponent("Disqus");
 
 module Styles = {
   open Css;
@@ -66,12 +66,14 @@ module Styles = {
     ]);
 };
 
-let make = (~url=?, _) => {
-  ...component,
-  didMount: _ => {
-    Js.Global.setTimeout(() => loadDisqus(url), 1_000)->ignore;
-  },
-  render: _ => {
-    <div id="disqus_thread" className=Styles.disqus />;
-  },
-};
+[@react.component]
+let make = (~url=?, ()) =>
+  ReactCompat.useRecordApi({
+    ...component,
+    didMount: _ => {
+      Js.Global.setTimeout(() => loadDisqus(url), 1_000)->ignore;
+    },
+    render: _ => {
+      <div id="disqus_thread" className=Styles.disqus />;
+    },
+  });
