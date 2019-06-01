@@ -1,11 +1,11 @@
 ---
 date: 2019-05-26
-title: ReasonML type option et passage optionnel
+title: Les paramètres optionnels avec ReasonML
 author: freddy03h
-slug: reasonml-type-option-et-passage-optionnel
+slug: les-parametres-optionnels-avec-reasonml
 ---
 
-Le type option est vraiment super à utiliser en Reason, je vous conseil la lecture de [l'introduction à reasonml](/articles/introduction-a-reasonml) (et tous les autres articles sur Reason). Mais j’ai un peu buté sur un petit point, c'est celle de la **combinaison du type option** et de l’utilisation du **point d'interrogation** pour les **paramètres optionnels** d’une fonction ou d’un composant React [malgré la doc à ce sujet](https://reasonml.github.io/docs/en/function#optional-labeled-arguments), alors je résume cela dans cet article.
+Le type option est vraiment super à utiliser en Reason, je vous conseille la lecture de [l'introduction à ReasonML](/articles/introduction-a-reasonml) et [l'article sur le type option](/articles/le-type-option-c-est-quoi-et-ca-regle-quel-probleme). Mais j’ai un peu buté sur un petit point, c'est le lien entre les types option et les paramètres optionnels d’une fonction ou d’un composant React [malgré la doc à ce sujet](https://reasonml.github.io/docs/en/function#optional-labeled-arguments), alors je résume cela dans cet article.
 
 On va prendre comme exemple un composant `User` qui prend en paramètre un `name` et une `imageSrc` qui peut être facultative.
 
@@ -34,7 +34,7 @@ let make = (~name: string, ~imageSrc: option(string)) => {
 <User name="Manon" imageSrc={None} />
 ```
 
-Il est impossible d’omettre le paramètre `imageSrc`. Il faudra obligatoirement lui renseigner un option. Pour rendre le renseignement du paramètre vraiment optionnel, on peut utiliser le point d'interrogation comme valeur par défaut dans la déclaration du composant.
+Il est impossible d’omettre le paramètre `imageSrc`. Il faudra obligatoirement lui renseigner un option. Pour rendre le renseignement du paramètre vraiment optionnel, on peut déclarer le paramètre comme étant optionnel avec la syntaxe du point d'interrogation.
 
 ```reason
 /* User.re */
@@ -81,24 +81,24 @@ Heureusement il existe une notation qui va nous permettre de renseigner un optio
 
 Le point d'interrogation va permettre de renseigner le paramètre avec un type option, de transmettre la valeur contenue dans le `Some()` de `avatarUrl` ou d’omettre complètement le paramètre `imageSrc` si `avatarUrl` est `None`.
 
-## Deux usages du point d'interrogation
+## Deux syntaxes utilisant le point d'interrogation
 
-Si on résume, le premier point d'interrogation, celui utilisé pour donner une valeur option à un paramètre optionnel permet de **renseigner directement la valeur ou d’omettre le paramètre**.
+Si on résume, la première syntaxe qui s'utilise dans la déclaration d'une fonction permet de déclarer un paramètre comme optionnel, **la fonction acceptera de recevoir une valeur, comme il acceptera qu'on n'en passe aucune**.
 
-Et ensuite, le deuxième point d'interrogation, celui utilisé dans la déclaration d’optionalité du paramètre du composant, permet lui de **ré-encapsuler la valeur (ou l’absence de valeur) dans un type option**.
+Ensuite, la seconde syntaxe qui s'utilise à l'appel d'une fonction permet de **transformer une valeur de type option en paramètre optionnel**.
 
 Dis comme ça, cela peut sembler inutilement complexe, sauf que **la complexité est gérée par le langage**, et qu’à l’utilisation on y gagne en souplesse :
 
 - J’ai un composant avec un paramètre optionnel que je peux gérer, en interne, grâce aux avantages du type option
 - Je peux renseigner ce paramètre avec une valeur string, option ou l’omettre.
 
-## Notation raccourcis et typage
+## Notations raccourcis et typage
 
 Pour les besoins de l’exemple j’ai volontairement utilisé du code très explicite, mais il faut savoir qu’on a quelques raccourcis dans la notation.
 
 ### Punning
 
-L’avantage du JSX de ReasonReact par rapport à React.js c’est le punning. Le raccouris quand un label et la valeur sont le même. On a déjà l’habitude en JS avec les objets, au lieu de `return {name: name}`, on peut faire `return {name}`.
+L’avantage du JSX de ReasonReact par rapport à React.js, c’est le punning. Le raccourci lorsqu'on a une prop ayant le même nom que la variable qu'on y passe. On a déjà l’habitude en JS avec les objets, au lieu de `return {name: name}`, on peut faire `return {name}`.
 
 On peut aussi l’utiliser avec le point d'interrogation, par exemple :
 
@@ -122,7 +122,7 @@ let make = (~name: string, ~avatarUrl as imageSrc:option(string)=?) =>
 
 (d’ailleurs, si vous écrivez le code sans punning, le Reformat vous réécrit automatiquement votre code avec).
 
-C’est aussi l’occasion d’aborder le fait de pouvoir renommer un argument avec `as`. Il ne faut vraiment pas s’en priver. En fait il faut savoir que `(~name)` est lui même un raccourcis pour `(~name as name)`.
+C’est aussi l’occasion d’aborder le fait de pouvoir renommer un argument avec `as`. Il ne faut vraiment pas s’en priver. En fait il faut savoir que `(~name)` est lui même un raccourci pour `(~name as name)`.
 
 ### Inférence de type
 
@@ -146,3 +146,8 @@ let make = (~name, ~imageSrc=?) =>
 let make = (~name, ~avatarUrl as imageSrc=?) =>
   <div> <User name ?imageSrc /> </div>;
 ```
+
+Le type option se révèle très pratique lors de l'écriture d'un fonction ou d'un component. Les paramètres optionnels, avec les deux syntaxes utilisant le point d'interrogation, permettent de ne pas compléxifier l'usage de la fonction ou du component.
+
+Dans l'exemple final, l'implémentation de `User` n'a pas changé depuis le début car nous voulons gérer l'aspect facultatif du paramètre. En revanche `Follower` n'avait absoluement pas besoin de le gérer dans son implémentation, le code s'en serait trouvé inutilement alourdis.
+Nous gardons ainsi une écriture fluide tout en permettant de gérer l'optionnalité d'une valeur lorsque cela est nécessaire.
