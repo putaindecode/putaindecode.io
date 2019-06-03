@@ -5,7 +5,7 @@ author: l-vo
 slug: generer-des-certificats-avec-letsencrypt-et-certbot
 ---
 
-J'ai précédemment écrit sur mon blog perso un article sur [la mise en place d'un serveur mail sur Debian](https://keepitsimple.lvo.dev/2019/03/08/Installer-un-serveur-mail-sur-Debian-9-Stretch/). Le cas de la génération des certificats SSL avec [Let's Encrypt](https://letsencrypt.org/) n'avait pas pu y être détaillée ce qui m'avait décidé à programmer l'écriture d'un post sur le sujet. Dont acte.
+Dans cet article, après une brève introduction sur ce qu'est un certificat, nous allons jouer avec le client **Certbot** qui permet de manipuler les certificats éléctroniques [Let's Encrypt](https://letsencrypt.org/). Nous verrons aussi comment renouveller automatiquement ces certificats sans interruption de service.
 
 # Contexte
 Lorsqu'il est question de chiffrer des échanges avec un serveur (mail, web ou autre), on a non seulement besoin d'une clé de chiffrage mais aussi d'être sûr que l'entité qui fourni cette clé est bien qui elle prétend être. Les **certificats électroniques** répondent à cette problématique.
