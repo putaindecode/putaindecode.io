@@ -147,7 +147,7 @@ let make = (~name, ~avatarUrl as imageSrc=?) =>
   <div> <User name ?imageSrc /> </div>;
 ```
 
-Le type option se révèle très pratique lors de l'écriture d'un fonction ou d'un component. Les paramètres optionnels, avec les deux syntaxes utilisant le point d'interrogation, permettent de ne pas compléxifier l'usage de la fonction ou du component.
+Le type option se révèle très pratique lors de l'écriture d'un fonction ou d'un component. Les paramètres optionnels, avec les deux syntaxes utilisant le point d'interrogation, permettent de ne pas complexifier l'usage de la fonction ou du component.
 
 Dans l'exemple final, l'implémentation de `User` n'a pas changé depuis le début car nous voulons gérer l'aspect facultatif du paramètre. En revanche `Follower` n'avait absoluement pas besoin de le gérer dans son implémentation, le code s'en serait trouvé inutilement alourdis.
 Nous gardons ainsi une écriture fluide tout en permettant de gérer l'optionnalité d'une valeur lorsque cela est nécessaire.
