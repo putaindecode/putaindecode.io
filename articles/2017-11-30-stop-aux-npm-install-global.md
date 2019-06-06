@@ -66,7 +66,7 @@ Bon du coup pour éviter ce problème on a une solution extrêmement simple :
 installer localement à chaque projet TOUTES les dépendances.
 
 Il y a deux choses que peu de gens savent : la première est que npm et yarn vont
-automatiquement ajouter tous les bin disponibles vu tous les node_modules locaux
+automatiquement ajouter tous les bin disponibles de tous les node_modules locaux
 dans le PATH utilisé via les scripts définis dans votre package.json.
 
 Du coup dans la pratique il vous suffit de vous faire un petit alias pour chaque
@@ -91,7 +91,7 @@ fonctionne correctement si vous passez des arguments.
 npm run cmd -- arg
 ```
 
-Avec Yarn, cela n’est pas nécessaire. C’est bien plus bref (et pratique)
+Avec Yarn, cela n’est pas nécessaire. C’est bien plus bref (et pratique).
 
 ```console
 yarn cmd arg
@@ -100,10 +100,10 @@ yarn cmd arg
 Il faut savoir que pour les développeurs de ce type d’outil c’est aussi un petit
 cauchemar à gérer.
 
-Lorsqu’un outil à une package offrant une interface CLI, comment savoir si la
+Lorsqu’un outil a une package offrant une interface CLI, comment savoir si la
 version de la bibliothèque fonctionnera avec ?
 
-De cette problématique est née une solution récurrente : les package qui ont une
+De cette problématique est née une solution récurrente : les packages qui ont une
 CLI et une bibliothèque en parallèle vont très souvent avoir une CLI très light
 qui va en général consister à aller chercher dans le dossier de la bibliothèque
 où vous vous trouvez le vrai code à exécuter.
@@ -139,7 +139,7 @@ Si vous n'êtes pas fan de modifier votre `PATH`,
 [`npx`](https://www.npmjs.com/package/npx) est un outil qui va justement
 permettre d'appeler les `node_modules/.bin` locaux sans le modifier.
 
-Au mais comment on l'installe? Avec `-g` pardi ! Je plaisante. Il est inclus
+Ah mais comment on l'installe? Avec `-g` pardi ! Je plaisante. Il est inclus
 avec `npm`. Faites un petit `which npx` pour vérifier!
 
 Dans tous les cas, `npx` fait partie des rares outils qui méritent d'être
@@ -179,11 +179,11 @@ jusqu'à s'occuper des mises à jour tout seul (en plus d'exécuter la commande,
 puisque c'est son but initial). Malheureusement, pour les raisons expliquées
 plus haut, je ne pense vraiment pas que ça soit une bonne idée. Que se
 passe-t-il si vous avez pris l'habitude d'utiliser `npx` et qu'un beau jour il
-vous télécharge (puisque il ne vous demande rien - c'est magique) une version
+vous télécharge (puisqu'il ne vous demande rien - c'est magique) une version
 contenant un bug? Vous aurez l'air malin. Et cela n'empêche en rien le fameux
 problème du "ça marche sur ma machine" puisque vous aurez potentiellement des
 collègues qui ne l'utiliseront pas. Oui ceux qui ne lisent jamais les README et
-n'écoute pas les recommandations...
+n'écoutent pas les recommandations...
 
 (Je vois encore trop souvent des gens utiliser `npm` sur des projets nécessitant
 `yarn` et qui viennent se plaindre de temps en temps que
