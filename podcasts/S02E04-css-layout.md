@@ -1,12 +1,12 @@
 ---
 date: 2019-04-08
-title: S02E03 CSS layout
+title: S02E04 CSS layout
 participants:
   - bloodyowl
   - DaPo
   - zoontek
   - MoOx
-slug: s02e03-css-layout
+slug: s02e04-css-layout
 soundcloudTrackId: "629607747"
 ---
 
