@@ -126,7 +126,7 @@ C’est aussi l’occasion d’aborder le fait de pouvoir renommer un argument a
 
 ### Inférence de type
 
-L’inférence de type est vraiment très bonne en Reason, si j’ai explicité le type option et leur contenu string, je peux très bien m’en passer. Ce qui nous donne un exemple finale moins verbeux :
+L’inférence de type est vraiment très bonne en Reason, si j’ai explicité le type option et leur contenu string, je peux très bien m’en passer. Ce qui nous donne un exemple final moins verbeux :
 
 ```reason
 /* User.re */
@@ -149,5 +149,5 @@ let make = (~name, ~avatarUrl as imageSrc=?) =>
 
 Le type option se révèle très pratique lors de l'écriture d'un fonction ou d'un component. Les paramètres optionnels, avec les deux syntaxes utilisant le point d'interrogation, permettent de ne pas complexifier l'usage de la fonction ou du component.
 
-Dans l'exemple final, l'implémentation de `User` n'a pas changé depuis le début car nous voulons gérer l'aspect facultatif du paramètre. En revanche `Follower` n'avait absoluement pas besoin de le gérer dans son implémentation, le code s'en serait trouvé inutilement alourdis.
+Dans l'exemple final, l'implémentation de `User` n'a pas changé depuis le début car nous voulons gérer l'aspect facultatif du paramètre. En revanche `Follower` n'avait absoluement pas besoin de le gérer dans son implémentation, le code s'en serait trouvé inutilement alourdi.
 Nous gardons ainsi une écriture fluide tout en permettant de gérer l'optionnalité d'une valeur lorsque cela est nécessaire.
