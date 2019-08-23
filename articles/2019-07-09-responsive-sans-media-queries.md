@@ -1,56 +1,54 @@
 ---
-date: 2019-07-09
+date: 2019-08-27
 title: Du responsive sans media queries
 author: MoOx
 slug: responsive-sans-media-queries
 ---
 
-Disclaimer: Avant de commencer à rentrer dans la technique je vais tout d’abord
-répondre à la question que beaucoup de monde doit déjà se poser: pourquoi ?
+Aujourd'hui, il est assez difficile d'imaginer faire des designs web responsives
+sans avoir recours aux media queries. Cette idée vieille de 1994, devenu
+recommendation du W3C en 2012 (une fois supporté par tous les navigateurs) à
+pris son temps et à sû s'imposer comme l'outil de référence pour faire du design
+adaptatif.
+
+À tel point qu'il parait impossible de faire du responsive sans media queries
+dans l'imaginaire collectif.
 
 ## Pourquoi voudrais-tu faire du responsive sans media queries ?
 
-Il suffit que je me retrouve avec une abstraction où elles ne sont pas
-facilement ou nativement accessible. Ce qui peut être le cas si vous utiliser un
-framework ou une lib qui ne propose qu’un sous-ensemble de CSS.
+Il faut pas se le cacher: travailler avec les media queries n'est pas toujours
+évident. Cela implique pour chaque "morceau" de votre site ou appli qui va
+devoir s'adapter de prévoir un ou plusieurs breakpoints lié à la taille
+disponible de votre viewport. Ecrire du code lié au viewport pour un "composant"
+bas niveau peut paraître clairement étrange.
 
-Pour rentrer dans le concret on peut imaginer un scénario du type : je suis en
-train de faire une application avec React Native, et je n’ai pas accès à toutes
-les spécifications que propose CSS. Je dois me contenter d’un sous-ensemble
-disponible (dans ce context: en gros flex-box et position absolute).
+Ce côté contre intuitif des MQs m'a toujours dérangé: on se retrouve à cibler
+une taille d’écran, et non pas de cibler la taille disponible pour un élément
+donné.
 
-On peut aussi se retrouver à utiliser le même moteur que React Native sur
-plusieurs plateformes directement avec [Yoga](http://yogalayout.com) ou
-[Stretch](https://vislyhq.github.io/stretch/).
+Lorsque l'on creuse un peu, on tombe souvent sur le concept de "element
+queries". Le rêve de tout intégrateur web. La solution a tous les problèmes
+posés par les media queries.
 
-On pourrait aussi avoir la même envie si on se retrouve dans un contexte Web où
-CSS serait utilisable, mais où l’on se retrouve avec une abstraction qui ne
-permet pas de les intégrer simplement. Vous allez peut-être répondre : « mais il
-est fou ? Il se fait du mal »
+Franchement écrire du code qui permet à un même composant de se retrouver sur
+une même page a 2 endroits mais avec des dimensions différentes ça serait pas
+cool? Pas qu'un peu.
 
-Peut-être un peu. À moins qu’une des contraintes choisi soit de partager du code
-entre différentes plates-formes (cocou
-[react-native-web](https://github.com/necolas/react-native-web),
-[react-native-windows](https://github.com/microsoft/react-native-windows),
-[react-native-macos](https://github.com/ptmt/react-native-macos)...) afin
-d'éviter de faire une grosse app qui te bouffe bien la RAM car basé sur Electron
-(coucou Slack).
+Alors il y a bien quelques techniques à ce jour notamment
+["les fab four"](https://emails.hteumeuleu.fr/2016/02/fab-four-emails-responsive-sans-media-queries/)
+ou encore des tricks à base de floats ou d'autres trucs plus exotiques, mais
+malheureusement c'est n'est pas toujours maintenable ou intuitif.
 
-Encore une fois [tout est question de compromis](/articles/tradeoffs).
+Dans notre monde "moderne" (j'en vois déjà certain cracher sur leur écran),
+pourquoi ne pas utiliser JavaScript? (Voilà vous pouvez essuyer votre écran).
+Sérieusement, on pourrait se dire que dans notre contexte, il pourrait être
+pertinent d’utiliser quelque chose comme `window.matchMedia`.
 
-## De toute façon les media queries c'est pas ouf
+Certain dirons que encore une fois
+[tout est question de compromis](/articles/tradeoffs).
 
-Il reste quelque chose de contre intuitif avec les MQs: elles permettent de
-cibler une taille d’écran, et non pas de cibler la taille disponible pour un
-élément donné.
-
-On pourrait se dire que dans ce contexte, il serait plus pertinent d’utiliser
-quelque chose comme `window.matchMedia`.
-
-Mais si on veut en plus de tout ça faire du SSR... 🤯
-
-Bref, il y a plusieurs raisons pour vouloir faire du responsive sans utiliser
-les MQs.
+Mais si on veut faire du rendu côté serveur... Le JavaScript ne sera pas une
+bonne solution (oui ça m'arrive de dire penser à ce concept).
 
 ## Comment faire du responsive sans media queries
 
@@ -58,14 +56,18 @@ Rentrons dans le vif du sujet pour ceux qui qui serait intéressé par cette
 opportunité. Voici donc quelques astuces et pratiques que je vais vous livrer.
 
 Première chose à bien visualiser nous allons partir du principe que nous voulons
-nous contenter de Flex box. On peut faire donc des lignes et des colonnes.
+nous contenter de Flexbox. Aujourd'hui supporté par tous les navigateurs,
+flexbox est le candidat idéale à ce jour pour faire du code propre et
+maintenable.
 
-Pour les colonnes, c’est très souvent moins problématique. Tout simplement par
-ce que l’on scroll le plus souvent verticalement. Je ne vais donc pas
-spécialement aborder cette axe là et me concentrer sur l’axe horizontal, mais en
-changeant d’axe les pratiques seront toutes aussi pertinente selon votre besoin.
+Avec flexbox on peut "juste" faire donc des lignes et des colonnes.
 
-Alors que faire ? Par quoi on commence ?
+Pour les colonnes, c’est très souvent peu problématique. Tout simplement par ce
+que l’on scroll le plus souvent verticalement. Je ne vais donc pas spécialement
+aborder cette axe là et me concentrer sur l’axe horizontal, mais en changeant
+d’axe les pratiques seront toutes aussi pertinente selon votre besoin.
+
+Alors que faire ? On commence par quoi ?
 
 On va prendre un exemple très simple où je me retrouve avec une ligne et trois
 blocs intérieur. Dès que c’est possible je veux que ces trois blocs soient sur
@@ -82,7 +84,7 @@ sacrément gros. Ou un smartphone en paysage.
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="300" style="width: 100%;"
+    height="300" style="width: 100%; min-width: 600px;"
     title="Responsive without MQs, step 1"
     src="//codepen.io/MoOx/embed/gNjRQr/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
@@ -146,7 +148,7 @@ souligne que c'est pour le cas d'école.
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="300" style="width: 100%;"
+    height="300" style="width: 100%; min-width: 600px;"
     title="Responsive without MQs, step 2"
     src="//codepen.io/MoOx/embed/pXZrrx/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
@@ -162,7 +164,7 @@ comme il peut.
 </iframe>
 
 Imaginons que ce rendu n’est pas forcément souhaitable dans notre contexte.
-Formulé autrement: **c’est marges sont sacrément dégueulasse**.
+Formulé autrement: **ces marges sont sacrément dégueulasses**.
 
 Pour être précis, elles ne sont pas adaptés à nos contraintes et au rendu que
 l’on souhaite avoir: on se retrouve avec un bout de marge perdu à un endroit où
@@ -213,7 +215,7 @@ un peu avec histoire de vous faire la main.
 
 En fait je n’ai que cette astuce.
 
-Je ne plaisante à peine. Car si on ajoute à cela le côté malin de
+Je plaisante à peine. Car si on ajoute à cela le côté malin de
 `overflow: hidden` pour cacher de l'information optionel, on peut faire des
 trucs assez puissant.
 
@@ -226,7 +228,7 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="300" style="width: 100%;"
+    height="300" style="width: 1000px; margin: auto;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
@@ -252,8 +254,41 @@ d’utiliser des MQs afin d’éviter de vous défoncer le cerveau. Ou alors de 
 du rendu conditionnel avec `window.matchMedia` si votre platforme vous le
 permet.
 
+Cette technique est aussi intéressante dans un contexte où les media queries ne
+sont pas accessible. Ce peut être le cas si vous utiliser un framework ou une
+lib qui ne propose qu’un sous-ensemble de CSS.
+
+Pour rentrer dans le concret on peut imaginer un scénario du type : je suis en
+train de faire une application avec React Native, et je n’ai pas accès à toutes
+les spécifications que propose CSS. Je dois me contenter d’un sous-ensemble
+disponible (dans ce context précis on a en gros flex-box et position absolute).
+
+On peut aussi se retrouver à utiliser le même moteur que React Native sur
+plusieurs plateformes directement avec [Yoga](http://yogalayout.com) ou
+[Stretch](https://vislyhq.github.io/stretch/).
+
+On pourrait aussi avoir la même envie si on se retrouve dans un contexte Web où
+CSS serait utilisable, mais où l’on se retrouve avec une abstraction qui ne
+permet pas de les intégrer simplement. Vous allez peut-être répondre : « mais il
+est fou ? Il se fait du mal »
+
+Peut-être un peu. À moins qu’une des contraintes choisi soit de partager du code
+entre différentes plates-formes (coucou
+[react-native-web](https://github.com/necolas/react-native-web),
+[react-native-windows](https://github.com/microsoft/react-native-windows),
+[react-native-macos](https://github.com/ptmt/react-native-macos)...) afin
+d'éviter de faire une grosse app qui te bouffe bien la RAM car basé sur Electron
+(coucou Slack).
+
+Dans tous les cas, media queries disponible ou pas, cette astuce est pour moi
+bien plus que ça puisque c'est devenu ma principale méthode pour faire du
+responsive, faisant beaucoup d'appli React Native et/ou React Native Web.
+
+Rien que pouvoir avoir le même composant produisant différent rendus sur un même
+écran (en fonction de la taille disponible par son parent), ça devrait vous
+donner envie!
+
 ```reason
-["Bisous", "À la prochaine"]
-  ->Js.Array.joinWith(" et ")
-  ->Js.log;
+([|"Bisous", "À la prochaine"|] |> Js.Array.joinWith(" et "))
+->Js.log;
 ```
