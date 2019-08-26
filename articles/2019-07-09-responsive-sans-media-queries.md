@@ -27,8 +27,8 @@ une taille d’écran, et non pas de cibler la taille disponible pour un éléme
 donné.
 
 Lorsque l'on creuse un peu, on tombe souvent sur le concept de "element
-queries". Le rêve de tout intégrateur web : ce serait la solution a tous les problèmes
-posés par les media queries.
+queries". Le rêve de tout intégrateur web : ce serait la solution a tous les
+problèmes posés par les media queries.
 
 Franchement, écrire du code qui permet à un même composant de se retrouver sur
 une même page a 2 endroits mais avec des dimensions différentes ça serait pas
@@ -42,7 +42,8 @@ malheureusement ce n'est pas toujours maintenable ou intuitif.
 Dans notre monde "moderne" (j'en vois déjà certain cracher sur leur écran),
 pourquoi ne pas utiliser JavaScript? (Voilà vous pouvez essuyer votre écran).
 Sérieusement, on pourrait se dire que dans notre contexte, il pourrait être
-pertinent d’utiliser quelque chose comme `window.matchMedia`.
+pertinent de simuler des elements queries à coup de `getBoundingClientRect`
+accompagné d'un observeur.
 
 Certain dirons que encore une fois
 [tout est question de compromis](/articles/tradeoffs).
@@ -52,13 +53,14 @@ bonne solution (oui ça m'arrive de penser à ce concept).
 
 ## Comment faire du responsive sans media queries
 
-Rentrons dans le vif du sujet pour celles et ceux qui seraient intéressé·e·s par cette
-opportunité. Voici donc quelques astuces et pratiques que je vais vous livrer.
+Rentrons dans le vif du sujet pour celles et ceux qui seraient intéressé·e·s par
+cette opportunité. Voici donc quelques astuces et pratiques que je vais vous
+livrer.
 
-Première chose à bien visualiser : nous allons partir du principe que nous voulons
-nous contenter de flexbox. Aujourd'hui supporté par tous les navigateurs,
-flexbox est le candidat idéal à ce jour pour faire du code propre et
-maintenable.
+Première chose à bien visualiser : nous allons partir du principe que nous
+voulons nous contenter de flexbox. Aujourd'hui supporté par tous les
+navigateurs, flexbox est le candidat idéal à ce jour pour faire du code propre
+et maintenable.
 
 Avec flexbox on peut "juste" faire donc des lignes et des colonnes.
 
@@ -208,8 +210,8 @@ permettre en petit format d’obtenir le rendu suivant :
 </iframe>
 
 En fonction du contenu intérieur des blocs que vous allez avoir, vous allez
-pouvoir utiliser plutôt `min-width` ou `flex-basis`. Je vous laisse jouer
-un peu avec histoire de vous faire la main.
+pouvoir utiliser plutôt `min-width` ou `flex-basis`. Je vous laisse jouer un peu
+avec histoire de vous faire la main.
 
 > [Codepen un peu plus lisible](https://codepen.io/MoOx/pen/bPjyVm?editors=1100)
 
@@ -251,17 +253,13 @@ révéler extrêmement puissants. On peut très bien se contenter ça. Après co
 souvent lorsqu’on avoir des besoins plus complexes, il sera à vous de juger si
 continuer à utiliser cette technique est pertinent, ou s’il est plus judicieux
 d’utiliser des MQs afin d’éviter de vous défoncer le cerveau. Ou alors de faire
-du rendu conditionnel avec `window.matchMedia` si votre platforme vous le
-permet.
+du rendu conditionnel avec JavaScript si votre platforme vous le permet.
 
 Cette technique est aussi intéressante dans un contexte où les media queries ne
 sont pas accessibles. Ce peut être le cas si vous utiliser un framework ou une
-lib qui ne propose qu’un sous-ensemble de CSS.
-
-Pour rentrer dans le concret on peut imaginer un scénario du type : je suis en
-train de faire une application avec React Native, et je n’ai pas accès à toutes
-les spécifications que propose CSS. Je dois me contenter d’un sous-ensemble
-disponible (dans ce context précis on a en gros flex-box et position absolute).
+lib qui ne propose qu’un sous-ensemble de CSS, comme React Native, qui par ne
+vous proposera limitera dans l'ensemble à flex-box et position absolute pour
+gérer votre layout.
 
 On peut aussi se retrouver à utiliser le même moteur que React Native sur
 plusieurs plateformes directement avec [Yoga](http://yogalayout.com) ou
@@ -272,8 +270,8 @@ CSS serait utilisable, mais où l’on se retrouve avec une abstraction qui ne
 permet pas de les intégrer simplement. Vous allez peut-être répondre : « mais il
 est fou ? Il se fait du mal »
 
-Peut-être un peu. À moins qu’une des contraintes choisies soit de partager du code
-entre différentes plates-formes (coucou
+Peut-être un peu. À moins qu’une des contraintes choisies soit de partager du
+code entre différentes plates-formes (coucou
 [react-native-web](https://github.com/necolas/react-native-web),
 [react-native-windows](https://github.com/microsoft/react-native-windows),
 [react-native-macos](https://github.com/ptmt/react-native-macos)...) afin
@@ -284,8 +282,8 @@ Dans tous les cas, media queries disponibles ou pas, cette astuce est pour moi
 bien plus que ça puisque c'est devenu ma principale méthode pour faire du
 responsive, faisant beaucoup d'appli React Native et/ou React Native Web.
 
-Rien que pouvoir avoir le même composant produisant différents rendus sur un même
-écran (en fonction de la taille disponible par son parent), ça devrait vous
+Rien que pouvoir avoir le même composant produisant différents rendus sur un
+même écran (en fonction de la taille disponible par son parent), ça devrait vous
 donner envie!
 
 ```reason
