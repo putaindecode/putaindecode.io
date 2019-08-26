@@ -289,6 +289,5 @@ donner envie!
 ```reason
 [|"Bisous", "À la prochaine"|]
 |> Js.Array.joinWith(" et ")
-|> Js.log
-->Js.log;
+|> Js.log;
 ```
