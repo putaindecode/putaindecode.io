@@ -5,10 +5,10 @@ author: MoOx
 slug: responsive-sans-media-queries
 ---
 
-Aujourd'hui, il est assez difficile d'imaginer faire des designs web responsives
-sans avoir recours aux media queries. Cette idée vieille de 1994, devenu
-recommendation du W3C en 2012 (une fois supporté par tous les navigateurs) à
-pris son temps et à sû s'imposer comme l'outil de référence pour faire du design
+Aujourd'hui, il est assez difficile d'imaginer faire des designs web responsive
+sans avoir recours aux media queries. Cette idée vieille de 1994, devenue
+recommendation du W3C en 2012 (une fois supportée par tous les navigateurs) a
+pris son temps et a su s'imposer comme l'outil de référence pour faire du design
 adaptatif.
 
 À tel point qu'il parait impossible de faire du responsive sans media queries
@@ -27,17 +27,17 @@ une taille d’écran, et non pas de cibler la taille disponible pour un éléme
 donné.
 
 Lorsque l'on creuse un peu, on tombe souvent sur le concept de "element
-queries". Le rêve de tout intégrateur web. La solution a tous les problèmes
+queries". Le rêve de tout intégrateur web : ce serait la solution a tous les problèmes
 posés par les media queries.
 
-Franchement écrire du code qui permet à un même composant de se retrouver sur
+Franchement, écrire du code qui permet à un même composant de se retrouver sur
 une même page a 2 endroits mais avec des dimensions différentes ça serait pas
 cool? Pas qu'un peu.
 
 Alors il y a bien quelques techniques à ce jour notamment
 ["les fab four"](https://emails.hteumeuleu.fr/2016/02/fab-four-emails-responsive-sans-media-queries/)
 ou encore des tricks à base de floats ou d'autres trucs plus exotiques, mais
-malheureusement c'est n'est pas toujours maintenable ou intuitif.
+malheureusement ce n'est pas toujours maintenable ou intuitif.
 
 Dans notre monde "moderne" (j'en vois déjà certain cracher sur leur écran),
 pourquoi ne pas utiliser JavaScript? (Voilà vous pouvez essuyer votre écran).
@@ -48,16 +48,16 @@ Certain dirons que encore une fois
 [tout est question de compromis](/articles/tradeoffs).
 
 Mais si on veut faire du rendu côté serveur... Le JavaScript ne sera pas une
-bonne solution (oui ça m'arrive de dire penser à ce concept).
+bonne solution (oui ça m'arrive de penser à ce concept).
 
 ## Comment faire du responsive sans media queries
 
-Rentrons dans le vif du sujet pour ceux qui qui serait intéressé par cette
+Rentrons dans le vif du sujet pour celles et ceux qui seraient intéressé·e·s par cette
 opportunité. Voici donc quelques astuces et pratiques que je vais vous livrer.
 
-Première chose à bien visualiser nous allons partir du principe que nous voulons
-nous contenter de Flexbox. Aujourd'hui supporté par tous les navigateurs,
-flexbox est le candidat idéale à ce jour pour faire du code propre et
+Première chose à bien visualiser : nous allons partir du principe que nous voulons
+nous contenter de flexbox. Aujourd'hui supporté par tous les navigateurs,
+flexbox est le candidat idéal à ce jour pour faire du code propre et
 maintenable.
 
 Avec flexbox on peut "juste" faire donc des lignes et des colonnes.
@@ -65,12 +65,12 @@ Avec flexbox on peut "juste" faire donc des lignes et des colonnes.
 Pour les colonnes, c’est très souvent peu problématique. Tout simplement par ce
 que l’on scroll le plus souvent verticalement. Je ne vais donc pas spécialement
 aborder cette axe là et me concentrer sur l’axe horizontal, mais en changeant
-d’axe les pratiques seront toutes aussi pertinente selon votre besoin.
+d’axe ces pratiques seront toutes aussi pertinentes selon votre besoin.
 
 Alors que faire ? On commence par quoi ?
 
 On va prendre un exemple très simple où je me retrouve avec une ligne et trois
-blocs intérieur. Dès que c’est possible je veux que ces trois blocs soient sur
+blocs intérieurs. Dès que c’est possible je veux que ces trois blocs soient sur
 une ligne. Par exemple sur un ordinateur de bureau. Ou un iPad. Ou un smartphone
 sacrément gros. Ou un smartphone en paysage.
 
@@ -163,16 +163,16 @@ comme il peut.
     src="//codepen.io/MoOx/embed/pXZrrx/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
 
-Imaginons que ce rendu n’est pas forcément souhaitable dans notre contexte.
+Imaginons que ce rendu ne soit pas forcément souhaitable dans notre contexte.
 Formulé autrement: **ces marges sont sacrément dégueulasses**.
 
-Pour être précis, elles ne sont pas adaptés à nos contraintes et au rendu que
+Pour être précis, elles ne sont pas adaptées à nos contraintes et au rendu que
 l’on souhaite avoir: on se retrouve avec un bout de marge perdu à un endroit où
 l’on a pas vraiment envie qu’il se trouve.
 
 Du coup comment qu’on fait ?
 
-Petite technique facile à mettre en place et efficace : on va tout placer des
+Petite technique facile à mettre en place et efficace : on va placer des
 demi-marges sur le bloc plutôt qu’utiliser le concept de gouttière. Comme ceci :
 
 ```html
@@ -208,7 +208,7 @@ permettre en petit format d’obtenir le rendu suivant :
 </iframe>
 
 En fonction du contenu intérieur des blocs que vous allez avoir, vous allez
-pouvoir vous utilisez plutôt `min-width` ou `flex-basis`. Je vous laisse jouer
+pouvoir utiliser plutôt `min-width` ou `flex-basis`. Je vous laisse jouer
 un peu avec histoire de vous faire la main.
 
 > [Codepen un peu plus lisible](https://codepen.io/MoOx/pen/bPjyVm?editors=1100)
@@ -216,7 +216,7 @@ un peu avec histoire de vous faire la main.
 En fait je n’ai que cette astuce.
 
 Je plaisante à peine. Car si on ajoute à cela le côté malin de
-`overflow: hidden` pour cacher de l'information optionel, on peut faire des
+`overflow: hidden` pour cacher de l'information optionnelle, on peut faire des
 trucs assez puissant.
 
 Regardons ça avec un exemple plus complexe: on va imaginer le header d'un site.
@@ -247,15 +247,15 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
 > [Code de cette example sur Codepen](https://codepen.io/MoOx/pen/WqKBGm)
 
 Des exemples de ce type là, surtout en exploitant bien flex-basis, peuvent se
-révéler extrêmement puissant. On peut très bien se contenter ça. Après comme
-souvent lorsqu’on avoir des besoins plus complexe, il sera à vous de juger si
+révéler extrêmement puissants. On peut très bien se contenter ça. Après comme
+souvent lorsqu’on avoir des besoins plus complexes, il sera à vous de juger si
 continuer à utiliser cette technique est pertinent, ou s’il est plus judicieux
 d’utiliser des MQs afin d’éviter de vous défoncer le cerveau. Ou alors de faire
 du rendu conditionnel avec `window.matchMedia` si votre platforme vous le
 permet.
 
 Cette technique est aussi intéressante dans un contexte où les media queries ne
-sont pas accessible. Ce peut être le cas si vous utiliser un framework ou une
+sont pas accessibles. Ce peut être le cas si vous utiliser un framework ou une
 lib qui ne propose qu’un sous-ensemble de CSS.
 
 Pour rentrer dans le concret on peut imaginer un scénario du type : je suis en
@@ -272,7 +272,7 @@ CSS serait utilisable, mais où l’on se retrouve avec une abstraction qui ne
 permet pas de les intégrer simplement. Vous allez peut-être répondre : « mais il
 est fou ? Il se fait du mal »
 
-Peut-être un peu. À moins qu’une des contraintes choisi soit de partager du code
+Peut-être un peu. À moins qu’une des contraintes choisies soit de partager du code
 entre différentes plates-formes (coucou
 [react-native-web](https://github.com/necolas/react-native-web),
 [react-native-windows](https://github.com/microsoft/react-native-windows),
@@ -280,15 +280,17 @@ entre différentes plates-formes (coucou
 d'éviter de faire une grosse app qui te bouffe bien la RAM car basé sur Electron
 (coucou Slack).
 
-Dans tous les cas, media queries disponible ou pas, cette astuce est pour moi
+Dans tous les cas, media queries disponibles ou pas, cette astuce est pour moi
 bien plus que ça puisque c'est devenu ma principale méthode pour faire du
 responsive, faisant beaucoup d'appli React Native et/ou React Native Web.
 
-Rien que pouvoir avoir le même composant produisant différent rendus sur un même
+Rien que pouvoir avoir le même composant produisant différents rendus sur un même
 écran (en fonction de la taille disponible par son parent), ça devrait vous
 donner envie!
 
 ```reason
-([|"Bisous", "À la prochaine"|] |> Js.Array.joinWith(" et "))
+[|"Bisous", "À la prochaine"|]
+|> Js.Array.joinWith(" et ")
+|> Js.log
 ->Js.log;
 ```
