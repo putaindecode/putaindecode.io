@@ -1,5 +1,5 @@
 ---
-date: 2019-08-27
+date: 2019-09-03
 title: Du responsive sans media queries
 author: MoOx
 slug: responsive-sans-media-queries
