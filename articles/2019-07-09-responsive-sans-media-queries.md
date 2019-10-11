@@ -256,9 +256,8 @@ d’utiliser des MQs afin d’éviter de vous défoncer le cerveau. Ou alors de 
 du rendu conditionnel avec JavaScript si votre platforme vous le permet.
 
 Cette technique est aussi intéressante dans un contexte où les media queries ne
-sont pas accessibles. Ce peut être le cas si vous utiliser un framework ou une
-lib qui ne propose qu’un sous-ensemble de CSS, comme React Native, qui par ne
-vous proposera limitera dans l'ensemble à flex-box et position absolute pour
+sont pas accessibles. Ce peut être le cas si vous utilisez un framework ou une
+lib qui ne propose qu’un sous-ensemble de CSS, comme React Native, qui vous limitera dans l'ensemble à flex-box et position absolute pour
 gérer votre layout.
 
 On peut aussi se retrouver à utiliser le même moteur que React Native sur
