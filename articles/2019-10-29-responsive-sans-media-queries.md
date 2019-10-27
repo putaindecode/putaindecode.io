@@ -230,14 +230,14 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="300" style="width: 1000px; margin: auto;"
+    height="300" style="width: 1200px; margin: auto;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="300" style="width: 100%; max-width: 300px;"
+    height="36z0" style="width: 100%; max-width: 360px;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
@@ -377,6 +377,9 @@ Header, Header * {
 ```
 
 > [Code de cette example sur Codepen](https://codepen.io/MoOx/pen/WqKBGm)
+
+Vous allez me dire "mais ton exemple il est pas fou là", et vous avez pas tord.
+Je pense que cela dit, vous avez l'idée en étudiant le code.
 
 Des exemples de ce type là, surtout en exploitant bien flex-basis, peuvent se
 révéler extrêmement puissants. On peut très bien se contenter ça. Après comme
