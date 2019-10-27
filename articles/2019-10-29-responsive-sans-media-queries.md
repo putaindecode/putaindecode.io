@@ -1,5 +1,5 @@
 ---
-date: 2019-10-15
+date: 2019-10-29
 title: Du responsive sans media queries
 author: MoOx
 slug: responsive-sans-media-queries
@@ -243,7 +243,145 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
 </iframe>
 
 ```html
-<todo />
+<style>
+Header, Header * {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.SpacedView {
+  flex: 1;
+  padding: 10px;
+}
+.SpacedView-h {
+  flex: 1;
+  padding: 0 10px;
+}
+.SpacedView-v {
+  flex: 1;
+  padding: 10px 0;
+}
+
+.Header {
+  flex-direction: row;
+  align-items: center;
+  background: #333;
+}
+
+.Logo {
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  flex-grow: 0;
+  flex-shrink: 10;
+  min-width: 64px;
+  height: 80px;
+  background: rgba(255,255,255,0.1);
+}
+
+.LogoIcon {
+  flex-grow: 1;
+  flex-shrink: 0;
+  font-size: 64px
+}
+
+.LogoText {
+  flex-grow: 0;
+  flex-shrink: 1;
+  margin: 0;
+  padding: 20px;
+  font: 900 32px sans-serif;
+  color: #fff;
+}
+
+.Center {
+  flex: 4;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 300px;
+  background: rgba(255,255,255,0.1);
+}
+
+.Links {
+  flex: 4;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 0;
+  background: rgba(255,255,255,0.1);
+}
+
+.Link {
+  margin: 0;
+  width: 140px;
+  padding: 0 20px;
+  font: 600 20px sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+
+.Search {
+  flex: 1;
+  width: 80px;
+  max-width: 200px;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin: 10px 20px;
+}
+
+.Networks {
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1.5;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.Network {
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 6px; 
+}
+</style>
+<header class="Header">
+  <div class="Logo">
+    <div class="LogoIcon">♥️</div>
+    <div class="LogoText">Logo</div>
+  </div>
+  </div>
+
+  <div class="Center">
+    <div class="Links">
+      <a href="#" class="Link">
+        Lien
+      </a>
+      <a href="#" class="Link">
+        Lideux
+      </a>
+      <a href="#" class="Link">
+        Limoche
+      </a>
+      <a href="#" class="Link">
+        Libeau
+      </a>
+      <input placeholder="Search" class="Search" />
+    </div>
+
+    <div class="SpacedView Networks">
+      <a class="Network">👴</a>
+      <a class="Network">🐦</a>
+      <a class="Network">📸</a>
+      <a class="Network">📌</a>
+    </div>
+  </div>
+
+</header>
 ```
 
 > [Code de cette example sur Codepen](https://codepen.io/MoOx/pen/WqKBGm)
