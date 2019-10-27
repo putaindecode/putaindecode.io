@@ -350,26 +350,18 @@ Header, Header * {
 }
 </style>
 <header class="Header">
+  
   <div class="Logo">
     <div class="LogoIcon">♥️</div>
     <div class="LogoText">Logo</div>
   </div>
-  </div>
 
   <div class="Center">
     <div class="Links">
-      <a href="#" class="Link">
-        Lien
-      </a>
-      <a href="#" class="Link">
-        Lideux
-      </a>
-      <a href="#" class="Link">
-        Limoche
-      </a>
-      <a href="#" class="Link">
-        Libeau
-      </a>
+      <a href="#" class="Link">Lien</a>
+      <a href="#" class="Link">Lideux</a>
+      <a href="#" class="Link">Limoche</a>
+      <a href="#" class="Link">Libeau</a>
       <input placeholder="Search" class="Search" />
     </div>
 
