@@ -235,7 +235,7 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
 
-<small>Mettez l'exemple ci-dessus avec un dezoom à 50% pour mieux visualiser</small>
+<small>Mettez l'exemple ci-dessus avec un zoom à 0.5× pour mieux visualiser</small>
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
