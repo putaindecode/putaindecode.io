@@ -230,7 +230,7 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="300" style="width: 100%; margin: auto;"
+    height="220" style="width: 100%;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
@@ -239,7 +239,7 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="360" style="width: 100%; max-width: 360px;"
+    height="220" style="width: 100%; max-width: 360px;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
@@ -264,7 +264,7 @@ Header, Header * {
   .Logo {
     flex-grow: 0;
     flex-shrink: 1;
-    min-width: 64px;
+    min-width: 80px;
     height: 80px;
     flex-direction: row;
     flex-wrap: wrap;
