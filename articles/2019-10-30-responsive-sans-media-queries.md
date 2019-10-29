@@ -1,5 +1,5 @@
 ---
-date: 2019-10-29
+date: 2019-10-30
 title: Du responsive sans media queries
 author: MoOx
 slug: responsive-sans-media-queries
@@ -230,14 +230,16 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
 
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="300" style="width: 1200px; margin: auto;"
+    height="300" style="width: 100%; margin: auto;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
 
+<small>Mettez l'exemple ci-dessus avec un dezoom à 50% pour mieux visualiser</small>
+
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
-    height="36z0" style="width: 100%; max-width: 360px;"
+    height="360" style="width: 100%; max-width: 360px;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
@@ -245,109 +247,119 @@ retrouver avec un code très simple, sans MQs qui donnerait les rendus suivant:
 ```html
 <style>
 Header, Header * {
+  box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-}
-
-.SpacedView {
-  flex: 1;
-  padding: 10px;
-}
-.SpacedView-h {
-  flex: 1;
-  padding: 0 10px;
-}
-.SpacedView-v {
-  flex: 1;
-  padding: 10px 0;
 }
 
 .Header {
+  flex-grow: 0;
+  flex-shrink: 0;
   flex-direction: row;
-  align-items: center;
   background: #333;
-}
-
-.Logo {
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow: hidden;
-  flex-grow: 0;
-  flex-shrink: 10;
-  min-width: 64px;
-  height: 80px;
-  background: rgba(255,255,255,0.1);
-}
-
-.LogoIcon {
-  flex-grow: 1;
-  flex-shrink: 0;
-  font-size: 64px
-}
-
-.LogoText {
-  flex-grow: 0;
-  flex-shrink: 1;
-  margin: 0;
-  padding: 20px;
-  font: 900 32px sans-serif;
-  color: #fff;
-}
-
-.Center {
-  flex: 4;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 300px;
-  background: rgba(255,255,255,0.1);
-}
-
-.Links {
-  flex: 4;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 20px 0;
-  background: rgba(255,255,255,0.1);
-}
-
-.Link {
-  margin: 0;
-  width: 140px;
-  padding: 0 20px;
-  font: 600 20px sans-serif;
-  color: #fff;
-  text-decoration: none;
-}
-
-.Search {
-  flex: 1;
-  width: 80px;
-  max-width: 200px;
-  border: 0;
-  border-radius: 6px;
-  padding: 10px 20px;
-  margin: 10px 20px;
-}
-
-.Networks {
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-grow: 1.5;
-  flex-shrink: 0;
-  justify-content: center;
   align-items: center;
 }
 
-.Network {
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 6px; 
-}
+  .Logo {
+    flex-grow: 0;
+    flex-shrink: 1;
+    min-width: 64px;
+    height: 80px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+    .LogoIcon {
+      flex-grow: 1;
+      flex-shrink: 0;
+      font-size: 64px;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .LogoText {
+      flex-grow: 0;
+      flex-shrink: 1;
+      margin: 0;
+      padding: 20px;
+      font: 900 32px sans-serif;
+      color: #fff;
+    }
+
+  .Center {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 800px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+    .Links {
+      flex-direction: row;
+      flew-wrap: wrap;
+      align-items: center;
+      flex-grow: 4;
+      flex-shrink: 1;
+      min-width: 50%; 
+      overflow-x: auto;
+    }
+  
+      .Link {
+        margin: 0;
+        padding: 20px;
+        font: 600 20px sans-serif;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .Search {
+        flex: 1;
+        max-width: 200px;
+        min-width: 100px;
+        border: 0;
+        border-radius: 6px;
+        padding: 10px 20px;
+        margin: 10px 20px;
+        font-size: 20px;
+        background: #444;
+      }
+  
+      .LinkGradient {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+      }
+      .LinkGradient-left {
+        left: 0;
+        background: linear-gradient(to left, rgba(51, 51, 51, 0), rgba(51, 51, 51, 1));
+      }
+      .LinkGradient-right {
+        right: 0;
+        background: linear-gradient(to right, rgba(51, 51, 51, 0), rgba(51, 51, 51, 1));
+      }
+
+    .Networks {
+      flex-grow: 1.5;
+      flex-shrink: 0;
+      min-width: calc(64px * 2 + 40px);
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-height: 64px;
+    }
+
+      .Network {
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 6px; 
+      }
 </style>
 <header class="Header">
   
@@ -365,12 +377,15 @@ Header, Header * {
       <input placeholder="Search" class="Search" />
     </div>
 
-    <div class="SpacedView Networks">
+    <div class="Networks">
       <a class="Network">👴</a>
       <a class="Network">🐦</a>
       <a class="Network">📸</a>
       <a class="Network">📌</a>
     </div>
+    
+    <div class="LinkGradient LinkGradient-left"></div>
+    <div class="LinkGradient LinkGradient-right"></div>
   </div>
 
 </header>
