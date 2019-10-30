@@ -57,6 +57,12 @@ Rentrons dans le vif du sujet pour celles et ceux qui seraient intéressé·e·s
 cette opportunité. Voici donc quelques astuces et pratiques que je vais vous
 livrer.
 
+**Note: afin de mieux profiter du rendu des exemples prévu pour écran large,
+pensez à consulter les exemples en paysage si vous êtes sur mobile
+(ou directement sur codepen qui offre une option de dézoom).
+Bah oui on fait un article sur le responsive, donc regarder sur mobile des
+exemples prévu pour grand écran ça va pas le faire.**
+
 Première chose à bien visualiser : nous allons partir du principe que nous
 voulons nous contenter de flexbox. Aujourd'hui supporté par tous les
 navigateurs, flexbox est le candidat idéal à ce jour pour faire du code propre
