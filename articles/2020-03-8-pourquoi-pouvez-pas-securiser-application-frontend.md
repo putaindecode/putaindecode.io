@@ -41,7 +41,7 @@ Cela revient plus ou moins à implémenter une version custom de SSL dans son ap
 ![trying to reinvent the wheel](/public/images/articles/2020-03-8-pourquoi-pouvez-pas-securiser-application-frontend/reinvent-the-wheel.png)
 *When you try to reinvent the wheel..*  
 
-Il est bien plus facile d’utiliser d’autres techniques de sécurisation tel que le [SSL Pining](https://security.stackexchange.com/a/29990) pour se prévenir des attaque MITM.
+Il est bien plus facile d’utiliser d’autres techniques de sécurisation tel que le [SSL Pinning](https://security.stackexchange.com/a/29990) pour se prévenir des attaque MITM.
 
 ## Stocker des données sensibles
 
