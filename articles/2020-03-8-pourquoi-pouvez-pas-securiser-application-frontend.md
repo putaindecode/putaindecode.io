@@ -27,7 +27,8 @@ L’envoi des informations d’authentification se fait de manière sécurisé a
 
 Ajouter une couche de chiffrement basique pour le mot de passe avec un simple XOR et une clé réutilisé pour chaque authentification de chaque client est inutile pour plusieurs raisons:
   - la **réutilisation de la clé** pour chaque client et chaque requête **rend le chiffrement vulnérable** car il est possible de [deviner le message](https://stackoverflow.com/questions/1135186/whats-wrong-with-xor-encryption/1135197#1135197) avec une [analyse de fréquence](https://www.wikiwand.com/en/Frequency_analysis).
-  - étant donné que **la clé est stocké dans le device**, il suffit de télécharger l’application pour la connaître
+  - étant donné que **la clé est stockée dans le device**, il suffit de télécharger l’application pour la connaître
+  - si **la clé était stockée dans le localstorage du navigateur**, n'importe quel code Javascript executé sur la page pourrait l'accéder
 
 Rajouter une couche de chiffrement peut s’avérer être une bonne idée pour éviter la compromission des données dans le cas d’une [attaque Man In The Middle avec un faux certificat SSL](https://www.eff.org/deeplinks/2010/03/researchers-reveal-likelihood-governments-fake-ssl). 
 
@@ -42,6 +43,8 @@ Cela revient plus ou moins à implémenter une version custom de SSL dans son ap
 *When you try to reinvent the wheel..*  
 
 Il est bien plus facile d’utiliser d’autres techniques de sécurisation tel que le [SSL Pining](https://security.stackexchange.com/a/29990) pour se prévenir des attaque MITM.
+
+Dernier point, pour un maximum de sécurité, il est conseillé de générer des tokens ayant une durée de validitée courte pour limiter les dégats causés par une éventuelle compromission.
 
 ## Stocker des données sensibles
 
