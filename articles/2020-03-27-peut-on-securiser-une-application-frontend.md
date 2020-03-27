@@ -1,8 +1,8 @@
 ---
 date: 2020-03-8
-title: Pourquoi vous ne pouvez pas sécuriser une application frontend
+title: Est-il possible de sécuriser une application front-end ?
 author: Aschen
-slug: pourquoi-peut-pas-securiser-app-frontend
+slug: peut-on-securiser-app-frontend
 ---
 
 Je suis toujours très surpris d'entendre parler de la sécurité des applications frontend parce que précisément une application frontend s'exécute sur le périphérique de l'utilisateur et ne peut donc pas être sécurisée. Elle doit même être considérée comme un **client potentiellement malveillant**.
