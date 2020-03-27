@@ -126,7 +126,7 @@ Une **simple comparaison de deux chaînes de caractères** peut se donner lieu �
 
 Mais encore l’utilisation d’une **librairie d’expression régulières vulnérable** à une [attaque ReDoS](https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS).
 
-C’est pourquoi la sécurisation d’un backend n’est pas une tâche à prendre à la légère et doit être confié à des experts en sécurité pour former les développeurs mais aussi auditer le code afin de s’assurer d’avoir un minimum de failles possibles car la [sécurité parfaite n’existe pas](https://www.quora.com/Is-perfect-security-possible).
+C’est pourquoi la sécurisation d’un backend n’est pas une tâche à prendre à la légère et doit être confiée à des experts en sécurité pour former les développeurs mais aussi auditer le code afin de s’assurer d’avoir le minimum de failles possibles car la [sécurité parfaite n’existe pas](https://www.quora.com/Is-perfect-security-possible).
 
 ## Le mot de la fin
 
