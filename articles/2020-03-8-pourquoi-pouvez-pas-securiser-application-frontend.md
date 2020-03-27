@@ -107,7 +107,7 @@ Afin d’éviter un bruteforce de l’authentification d’un utilisateur, il es
 
 Cette limite peut prendre la forme d’un blocage après X tentatives rajouté à la route d’authentification.
 
-### Stocker les passeport de façon sécurisée
+### Stocker les mots de passe de façon sécurisée
 
 En 2019, il y avait encore des entreprises qui [stockent les mots de passes de leurs utilisateurs en clair](https://krebsonsecurity.com/2019/03/facebook-stored-hundreds-of-millions-of-user-passwords-in-plain-text-for-years/).
 
