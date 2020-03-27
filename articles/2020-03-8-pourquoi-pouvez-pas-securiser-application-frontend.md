@@ -42,7 +42,7 @@ Cela revient plus ou moins à implémenter une version custom de SSL dans son ap
 ![trying to reinvent the wheel](/public/images/articles/2020-03-8-pourquoi-pouvez-pas-securiser-application-frontend/reinvent-the-wheel.png)
 *When you try to reinvent the wheel..*  
 
-Il est bien plus facile d’utiliser d’autres techniques de sécurisation tel que le [SSL Pining](https://security.stackexchange.com/a/29990) pour se prévenir des attaque MITM.
+Il est bien plus facile d’utiliser d’autres techniques de sécurisation tel que le [SSL Pinning](https://security.stackexchange.com/a/29990) pour se prévenir des attaque MITM.
 
 Dernier point, pour un maximum de sécurité, il est conseillé de générer des tokens ayant une durée de validitée courte pour limiter les dégats causés par une éventuelle compromission.
 
@@ -110,7 +110,7 @@ Afin d’éviter un bruteforce de l’authentification d’un utilisateur, il es
 
 Cette limite peut prendre la forme d’un blocage après X tentatives rajouté à la route d’authentification.
 
-### Stocker les passeport de façon sécurisée
+### Stocker les mots de passe de façon sécurisée
 
 En 2019, il y avait encore des entreprises qui [stockent les mots de passes de leurs utilisateurs en clair](https://krebsonsecurity.com/2019/03/facebook-stored-hundreds-of-millions-of-user-passwords-in-plain-text-for-years/).
 
@@ -123,13 +123,13 @@ Le choix de la fonction de hachage doit être basé sur un **algorithme robuste*
 
 ### Et tellement d'autres!
 
-Il y a énormément d’attaques possibles sur un backend, et la plupart sont peu ou pas connues.
+Il y a énormément d’attaques possibles sur un backend, et la plupart sont peu ou pas connues. Certaines sont particulièrement difficiles à détecter et à prévenir :
 
 Une **simple comparaison de deux chaînes de caractères** peut se donner lieu à une [attaque temporelle](https://www.wikiwand.com/fr/Attaque_temporelle) et permettre à un attaquant de deviner un mot de passe ou un token.
 
 Mais encore l’utilisation d’une **librairie d’expression régulières vulnérable** à une [attaque ReDoS](https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS).
 
-C’est pourquoi la sécurisation d’un backend n’est pas une tâche à prendre à la légère et doit être confié à des experts en sécurité pour former les développeurs mais aussi auditer le code afin de s’assurer d’avoir un minimum de failles possibles car la [sécurité parfaite n’existe pas](https://www.quora.com/Is-perfect-security-possible).
+C’est pourquoi la sécurisation d’un backend n’est pas une tâche à prendre à la légère et doit être confiée à des experts en sécurité pour former les développeurs mais aussi auditer le code afin de s’assurer d’avoir le minimum de failles possibles car la [sécurité parfaite n’existe pas](https://www.quora.com/Is-perfect-security-possible).
 
 ## Le mot de la fin
 
