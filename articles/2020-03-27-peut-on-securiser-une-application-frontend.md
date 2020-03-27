@@ -39,7 +39,7 @@ Pour un chiffrement solide, il sera nécessaire à minima:
 
 Cela revient plus ou moins à implémenter une version custom de SSL dans son application et [implémenter son propre système cryptographique n'est jamais une bonne idée](https://security.stackexchange.com/a/18198).
 
-![trying to reinvent the wheel](/public/images/articles/2020-03-8-pourquoi-pouvez-pas-securiser-application-frontend/reinvent-the-wheel.png)
+![trying to reinvent the wheel](/public/images/articles/2020-03-27-peut-on-securiser-une-application-frontend/reinvent-the-wheel.png)
 *When you try to reinvent the wheel..*  
 
 Il est bien plus facile d’utiliser d’autres techniques de sécurisation tel que le [SSL Pinning](https://security.stackexchange.com/a/29990) pour se prévenir des attaque MITM.
@@ -67,7 +67,7 @@ Surtout si un [obfuscateur open-source](https://github.com/rapid7/jsobfu) est ut
 
 De plus, l'obfuscation va rendre le code très difficile à interpréter et optimiser par les différents moteurs Javascript et il en résultera une **baisse significative des performances de l’application**.
 
-![obfuscation benchmark](/public/images/articles/2020-03-8-pourquoi-pouvez-pas-securiser-application-frontend/obfuscation-benchmark.png)
+![obfuscation benchmark](/public/images/articles/2020-03-27-peut-on-securiser-une-application-frontend/obfuscation-benchmark.png)
 *[Benchmark](http://jsben.ch/yiK3U) réalisé avec l'[obfuscateur](https://obfuscator.io/) de [react-native-obfuscating-transformer](https://github.com/javascript-obfuscator/react-native-obfuscating-transformer)*
 
 ## Sécurisez votre backend
