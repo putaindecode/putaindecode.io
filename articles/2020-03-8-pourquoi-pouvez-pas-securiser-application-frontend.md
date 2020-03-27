@@ -120,7 +120,7 @@ Le choix de la fonction de hachage doit être basé sur un **algorithme robuste*
 
 ### Et tellement d'autres!
 
-Il y a énormément d’attaques possibles sur un backend, et la plupart sont peu ou pas connues.
+Il y a énormément d’attaques possibles sur un backend, et la plupart sont peu ou pas connues. Certaines sont particulièrement difficiles à détecter et à prévenir :
 
 Une **simple comparaison de deux chaînes de caractères** peut se donner lieu à une [attaque temporelle](https://www.wikiwand.com/fr/Attaque_temporelle) et permettre à un attaquant de deviner un mot de passe ou un token.
 
