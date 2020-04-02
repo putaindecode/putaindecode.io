@@ -1,5 +1,5 @@
 ---
-date: 2020-03-8
+date: 2020-04-02
 title: Est-il possible de sécuriser une application front-end ?
 author: Aschen
 slug: peut-on-securiser-app-frontend
