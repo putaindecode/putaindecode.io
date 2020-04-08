@@ -23,12 +23,12 @@ Ce n'est pas la première fois que j'entends parler de recettes sur "l'écriture
 
 ## Authentification
 
-L’envoi des informations d’authentification se fait de manière sécurisé au travers d’une connexion SSL, la confidentialité des communications est donc assurée dans la plupart des cas.
+L’envoi des informations d’authentification se fait de manière sécurisée au travers d’une connexion SSL, la confidentialité des communications est donc assurée dans la plupart des cas.
 
-Ajouter une couche de chiffrement basique pour le mot de passe avec un simple XOR et une clé réutilisé pour chaque authentification de chaque client est inutile pour plusieurs raisons:
+Ajouter une couche de chiffrement basique pour le mot de passe avec un simple XOR et une clé réutilisée pour chaque authentification de chaque client est inutile pour plusieurs raisons:
   - la **réutilisation de la clé** pour chaque client et chaque requête **rend le chiffrement vulnérable** car il est possible de [deviner le message](https://stackoverflow.com/questions/1135186/whats-wrong-with-xor-encryption/1135197#1135197) avec une [analyse de fréquence](https://www.wikiwand.com/en/Frequency_analysis).
   - étant donné que **la clé est stockée dans le device**, il suffit de télécharger l’application pour la connaître
-  - si **la clé était stockée dans le localstorage du navigateur**, n'importe quel code Javascript executé sur la page pourrait l'accéder
+  - si **la clé était stockée dans le localstorage du navigateur**, n'importe quel code Javascript executé sur la page pourrait y accéder
 
 Rajouter une couche de chiffrement peut s’avérer être une bonne idée pour éviter la compromission des données dans le cas d’une [attaque Man In The Middle avec un faux certificat SSL](https://www.eff.org/deeplinks/2010/03/researchers-reveal-likelihood-governments-fake-ssl). 
 
@@ -48,9 +48,9 @@ Dernier point, pour un maximum de sécurité, il est conseillé de générer des
 
 ## Stocker des données sensibles
 
-Lorsqu’il est nécessaire de stocker des données sensible dans une application frontend, il est préférable d’utiliser les mécanismes mis à disposition par les créateurs de l’environnement de développement. 
+Lorsqu’il est nécessaire de stocker des données sensibles dans une application frontend, il est préférable d’utiliser les mécanismes mis à disposition par les créateurs de l’environnement de développement.
 
-Par exemple, dans une application mobile avec React Native, nous pouvons utiliser la [Keychain d’Apple](https://developer.apple.com/documentation/security/certificate_key_and_trust_services/keys/storing_keys_in_the_keychain) ou le [Keystore d’Android](https://developer.android.com/training/articles/keystore). Ces **mécanismes rendent plus difficile l’extraction de données** sensible depuis un device mais ils ne doivent **pas non plus être considéré comme inviolables**. (Eg: [Apple Keychain exploit](https://googleprojectzero.blogspot.com/2019/08/a-very-deep-dive-into-ios-exploit.html))
+Par exemple, dans une application mobile avec React Native, nous pouvons utiliser la [Keychain d’Apple](https://developer.apple.com/documentation/security/certificate_key_and_trust_services/keys/storing_keys_in_the_keychain) ou le [Keystore d’Android](https://developer.android.com/training/articles/keystore). Ces **mécanismes rendent plus difficile l’extraction de données** sensibles depuis un device mais ils ne doivent **pas non plus être considérés comme inviolables**. (Eg: [Apple Keychain exploit](https://googleprojectzero.blogspot.com/2019/08/a-very-deep-dive-into-ios-exploit.html))
 
 Dans tous les cas, il est inutile de rajouter une couche de chiffrement supplémentaire réalisée avec une clé prédictible car un **attaquant peut faire du reverse engineering sur l’application** pour retrouver la clé.
 Ou encore plus facilement, simplement **accéder à la clé stockée en mémoire**.
@@ -59,11 +59,11 @@ Cela est contre-productif va **consommer inutilement des ressources CPU** pour l
 
 ## Obfusquer le code source
 
-Bien que je puisse comprendre que les développeurs puisse vouloir compliquer la tâche de reverse engineering d'une application, **l’obfuscation de doit jamais être considéré comme une pratique de sécurisation**.
+Bien que je puisse comprendre que les développeurs puisse vouloir compliquer la tâche de reverse engineering d'une application, **l’obfuscation de doit jamais être considérée comme une pratique de sécurisation**.
 
 Elle peut au maximum décourager certains attaquants mais quelqu’un de motivé pourra toujours analyser et comprendre le fonctionnement de l'application.
 
-Surtout si un [obfuscateur open-source](https://github.com/rapid7/jsobfu) est utilisé car celui-ci est donc connu et des [dé-obfuscateur](http://m1el.github.io/esdeobfuscate/) doivent certainement déjà exister.
+Surtout si un [obfuscateur open-source](https://github.com/rapid7/jsobfu) est utilisé car celui-ci est donc connu et des [dé-obfuscateurs](http://m1el.github.io/esdeobfuscate/) doivent certainement déjà exister.
 
 De plus, l'obfuscation va rendre le code très difficile à interpréter et optimiser par les différents moteurs Javascript et il en résultera une **baisse significative des performances de l’application**.
 
@@ -72,14 +72,14 @@ De plus, l'obfuscation va rendre le code très difficile à interpréter et opti
 
 ## Sécurisez votre backend
 
-Comme nous l’avons vu, **une application frontend ne peut pas être sécurisé**. Comme il est impossible d’avoir le contrôle sur le terminal du client, il est impossible de s’assurer que celui-ci n’est pas compromis.
+Comme nous l’avons vu, **une application frontend ne peut pas être sécurisée**. Comme il est impossible d’avoir le contrôle sur le terminal du client, il est impossible de s’assurer que celui-ci n’est pas compromis.
 
 C’est sur le backend que la majeure partie des éléments de sécurité doivent être mis en place. 
 Il n’y a pas de recette magique pour sécuriser un backend, c’est **un ensemble de bonnes pratiques** de programmation qui permettra d’arriver à un résultat optimal.
 
 ### Ne jamais faire confiance à la saisie des utilisateurs
 
-Depuis le **corps d’une requête HTTP**, en passant par les **headers** ou encore les **cookies**, toutes ces informations qui peuvent être manipulées par l’utilisateur doivent être considérées comme potentiellement malicieuse.
+Depuis le **corps d’une requête HTTP**, en passant par les **headers** ou encore les **cookies**, toutes ces informations qui peuvent être manipulées par l’utilisateur doivent être considérées comme potentiellement malicieuses.
 
 L’utilisation naïve des saisies des utilisateurs peut amener à toutes sortes d’attaques:
   - [SQL Injection](https://www.w3schools.com/sql/sql_injection.asp) et [NoSQL Injection](https://nullsweep.com/a-nosql-injection-primer-with-mongo/)
