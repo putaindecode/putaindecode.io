@@ -5,6 +5,8 @@ author: Aschen
 slug: peut-on-securiser-app-frontend
 ---
 
+_[English version available on Kuzzle blog](https://blog.kuzzle.io/why-you-cant-secure-a-frontend-application)_
+
 Je suis toujours très surpris d'entendre parler de la sécurité des applications frontend parce que précisément une application frontend s'exécute sur le périphérique de l'utilisateur et ne peut donc pas être sécurisée. Elle doit même être considérée comme un **client potentiellement malveillant**.
 
 En effet, le code source de l'application étant à la disposition de l'utilisateur, **il est possible de l'étudier et de le modifier à volonté** afin d'en comprendre les mécanismes internes ou de récupérer toutes les données stockées sur le périphérique. 
@@ -141,4 +143,4 @@ J'aimerais remercier toute l'équipe de [Kuzzle](https://github.com/kuzzleio) qu
 
 ---
 
-[English version available on Kuzzle blog](https://blog.kuzzle.io/why-you-cant-secure-a-frontend-application)
+_Si vous avez des questions ou que vous voulez juste discuter, venez nous parler sur le [Discord de Kuzzle](http://join.discord.kuzzle.io)_
