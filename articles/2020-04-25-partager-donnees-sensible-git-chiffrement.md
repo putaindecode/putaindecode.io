@@ -66,7 +66,7 @@ Nous allons donc commencer par renseigner tous nos secrets dans un fichier JSON.
 }
 ```
 
-Ensuite nous allons donc chiffrer ce fichier. Cependant nous allons **chiffrer uniquement les clés** afin de pouvoir toujours lire son contenu.
+Ensuite nous allons donc chiffrer ce fichier. Cependant nous allons **chiffrer uniquement les valeurs** afin de pouvoir toujours lire son contenu.
 
 C’est ce fichier chiffré que nous allons sauvegarder et partager dans le dépôt du projet.
 
@@ -152,7 +152,7 @@ Vous pouvez aussi **développer vos propres outils en utilisant les mêmes primi
 
 ## Le mot de la fin
 
-Le chiffrement c’est compliqué, et c’est encore plus compliqué à mettre en place de façon sécurisé dans un environnement de développement en équipe avec de l’intégration continue.
+Le chiffrement c’est compliqué, et c’est encore plus compliqué à mettre en place de façon sécurisée dans un environnement de développement en équipe avec de l’intégration continue.
 
 Cependant si celui ci est géré correctement et facilement, c’est un **avantage indéniable** pour faciliter l’ensemble des processus de développement et de déploiement.
 
