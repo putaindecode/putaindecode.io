@@ -102,7 +102,10 @@ Le fichier généré est semblable au fichier JSON original sauf que **toutes le
 
 ## Déchiffrer dans son application avec Kuzzle Vault
 
+_Cet exemple utilise l'implémentation Node.js de Kuzzle Vault, une implémentation PHP est disponible sur la branch [php](https://github.com/kuzzleio/kuzzle-vault/blob/php/README.md)_
+
 Une fois que l’on a son fichier contenant les secrets chiffrés, nous allons pouvoir **l’utiliser dans notre application** en utilisant [Kuzzle Vault](https://github.com/kuzzleio/kuzzle-vault).
+
 
 Kuzzle Vault est un simple paquet NPM sans aucune dépendance permettant **de déchiffrer et d’utiliser des secrets dans une application**.
 
@@ -149,6 +152,15 @@ $ kourou file:encrypt id_rsa -o id_rsa.enc
 ```
 
 Vous pouvez aussi **développer vos propres outils en utilisant les mêmes primitives cryptographiques**. Si cela vous intéresse, vous pouvez jeter un oeil à la classe [Cryptonomicon](https://github.com/kuzzleio/kuzzle-vault/blob/master/src/Cryptonomicon.ts) du paquet kuzzle-vault.
+
+## Et les autres outils alors?
+
+Il existe de nombreux outils de gestion de secrets, on peut notamment citer:
+  - [Mozilla SOPS](https://github.com/mozilla/sops): fonctionne sur le même principe que Kuzzle Vault en plus complet avec notamment des connecteurs pour GCP, AWS ou Azure
+  - [Hashicorp Vault](https://www.vaultproject.io/): gestion d'identité très complète avec téléchargement sécurisé des secrets, révocation, rotation, etc.
+
+Ces deux outils sont beaucoup plus complets que Kuzzle Vault et ce projet n'a pas l'ambition de les remplacer.  
+Le coût et la complexité d'intégration est beaucoup plus elevé en utilisant un de ces outils et Kuzzle Vault se veut être une alternative ultra-simple pour mettre la sécurité à la portée de tous :-)
 
 ## Le mot de la fin
 
