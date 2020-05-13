@@ -26,14 +26,14 @@ Mais 🧐
 ## le modèle de "scaling maturity"
 
 
-![modèle de scaling maturity](https://cyppan.me/scaling-maturity-fr.png)
+![modèle de scaling maturity](/public/images/articles/2020-04-02-scaling-stories-comment-les-startups-se-sont-plantees/scaling-maturity-fr.png)
 
 En premier lieu j'aimerais introduire le concept de *scaling maturity*. "To scale" c'est l'art d'adapter (automatiquement ou non) sa stack technique afin de répondre à la demande en entrée. Et reconnaissons déjà que Zoom et Slack sont beaucoup plus matures que (par exemple) de jeunes startups de l'EdTech.    
 Analysons les à l'aide du modèle de *scaling maturity*.
 
-1 - **Volume d'usage nominal**: Slack ou Zoom avaient déjà un trafic (très) important, le pic d'activité représente un pourcentage plus petit que pour une startup pour qui c'est peut-être un boost de 100 ou 1000 fois l'activité habituelle.    
-2 - **Maturité du produit**: Ils ont eu le temps de connaître les spécificités de leur usage, les caractéristiques d'accès aux données, les points de fragilité de leur système, …
-3 - **Compétences techniques**: Ils ont probablement une équipe tech plus grande et plus expérimentée.
+1 - **Volume d'usage nominal** : Slack ou Zoom avaient déjà un trafic (très) important, le pic d'activité représente un pourcentage plus petit que pour une startup pour qui c'est peut-être un boost de 100 ou 1000 fois l'activité habituelle.    
+2 - **Maturité du produit** : Ils ont eu le temps de connaître les spécificités de leur usage, les caractéristiques d'accès aux données, les points de fragilité de leur système, …
+3 - **Compétences techniques** : Ils ont probablement une équipe tech plus grande et plus expérimentée.
 
 Pour synthétiser, ils en savent beaucoup sur la façon dont leur produit est utilisé et quelle est leur roadmap, et donc savent bien quel type d'effort concentrer pour s'adapter à la demande supplémentaire. En plus, leur infrastructure actuelle peut déjà encaisser un volume conséquent.
 
@@ -41,13 +41,13 @@ Pour synthétiser, ils en savent beaucoup sur la façon dont leur produit est ut
 De l'autre côté, les jeunes services web se sont retrouvés submergés, cherchant de l'aide désespérement et des solutions pour [sharder](https://en.wikipedia.org/wiki/Shard_%28database_architecture%29) et répliquer leur base de donnée relationnelle existante (plus à ce sujet un peu plus loin).    
 Je prends à présent l'exemple hypothétique d'une startup EdTech offrant un service de classe en ligne innovant.
 
-1 - **Volume d'usage nominal**: Quelques clients aiment leur produit, "c'est le futur", ils croient au potentiel de croissance et l'ajout de fonctionnalités avec le temps. Il y a donc un faible volume d'utilisation pour le moment et une croissance mesurée attendue, ils ont opté pour quelques serveurs OVH économiquement intéressants.    
-2 - **Maturité du produit**: Leur produit est très jeune, ils misent sur l'innovation et des boucles de feedback rapides pour l'étoffer.    
-3 - **Compétences techniques**: Des stagiaires, peut-être de jeunes employés, parfois des fondateurs qui font eux-mêmes les premiers prototypes. A ce niveau les salaires pèsent beaucoup dans la balance.
+1 - **Volume d'usage nominal** : Quelques clients aiment leur produit, "c'est le futur", ils croient au potentiel de croissance et l'ajout de fonctionnalités avec le temps. Il y a donc un faible volume d'utilisation pour le moment et une croissance mesurée attendue, ils ont opté pour quelques serveurs OVH économiquement intéressants.    
+2 - **Maturité du produit** : Leur produit est très jeune, ils misent sur l'innovation et des boucles de feedback rapides pour l'étoffer.    
+3 - **Compétences techniques** : Des stagiaires, peut-être de jeunes employés, parfois des fondateurs qui font eux-mêmes les premiers prototypes. A ce niveau les salaires pèsent beaucoup dans la balance.
 
-Je m'autorise ici une conclusion préliminaire à la première question: les entreprises n'auraient pas pu anticiper, et même j'irai plus loin pour les plus petites d'entre elles, elles ne devaient pas le faire… En effet, si on souhaite créer un produit avec du scaling "infini" dès le début, ça implique d'investir beaucoup **en temps et en argent**. Deux ressources précieuses que l'on préfère rationnellement investir sur d'autres sujets quand on est un business en phase de démarrage (comme trouver sa place sur le marché, ajouter des fonctionnalités, croître, …).
+Je m'autorise ici une conclusion préliminaire à la première question : les entreprises n'auraient pas pu anticiper, et même j'irai plus loin pour les plus petites d'entre elles, elles ne devaient pas le faire… En effet, si on souhaite créer un produit avec du scaling "infini" dès le début, ça implique d'investir beaucoup **en temps et en argent**. Deux ressources précieuses que l'on préfère rationnellement investir sur d'autres sujets quand on est un business en phase de démarrage (comme trouver sa place sur le marché, ajouter des fonctionnalités, croître, …).
 
-> ![cygne noir](https://cyppan.me/black-swan.jpg)
+> ![cygne noir](/public/images/articles/2020-04-02-scaling-stories-comment-les-startups-se-sont-plantees/black-swan.jpg)
 > Covid-19 est un très bon exemple de ce qu'on appelle un évènement ["cygne noir"](https://fr.wikipedia.org/wiki/Th%C3%A9orie_du_cygne_noir)
 > Un évènement qui est très rare, a des répercussions massives, que les entreprises n'avaient donc pas prévu.    
 > En effet ce point est assez évident, néanmoins je trouve cet "interlude du cygne" bienvenu 😉
@@ -62,12 +62,12 @@ A la lumière du modèle de *scaling maturity*, il est assez clair qu'on ne peut
 
 ## Comment on scale efficacement quand on est une startup?
 
-Déconstruisons déjà ce qui doit être "scaled":
+Déconstruisons déjà ce qui doit être "scaled" :
 
-* **la capacité serveur**: La maîtrise des coûts implique un dimensionnement adapté en terme de taille CPU/RAM/storage. Par serveur, j'entends noeuds physiques, virtuels ou containers.
-* **les patterns d'accès aux données**: C'est à dire connaître son usage, éviter de gérer des états partagés, des requêtes globales, préférer l'immutabilité, …
-* **l'intervention humaine et la maintenance**: Plus on automatise, plus vite on peut itérer, des outils comme Github, CircleCI ou terraform sont précieux.
-* **le refactoring de code**: "scale" veut souvent dire pré-calculer des états, utiliser du cache, plus de synchronisation, tout ça doit être codé et maintenu également…
+* **la capacité serveur** : La maîtrise des coûts implique un dimensionnement adapté en terme de taille CPU/RAM/storage. Par serveur, j'entends noeuds physiques, virtuels ou containers.
+* **les patterns d'accès aux données** : C'est à dire connaître son usage, éviter de gérer des états partagés, des requêtes globales, préférer l'immutabilité, …
+* **l'intervention humaine et la maintenance** : Plus on automatise, plus vite on peut itérer, des outils comme Github, CircleCI ou terraform sont précieux.
+* **le refactoring de code** : "scale" veut souvent dire pré-calculer des états, utiliser du cache, plus de synchronisation, tout ça doit être codé et maintenu également…
 
 Note : si votre produit n'a pas encore de traction réelle, se préoccuper de ce sujet est probablement prématuré et inutile, un rapide prototype MVC avec la techno que vous connaissez déjà fera tout à fait l'affaire.
 
@@ -79,20 +79,20 @@ Explorons différentes stratégies.
 ### La stratégie de scaling infini
 
 Dissipons immédiatement les nuages de fumée, il est théoriquement possible d'**approcher** une telle architecture mais ce sera très coûteux (en temps et en argent – encore une fois deux choses précieuses pour une startup), et potentiellement assez rigide.    
-La clé ici serait d'utiliser au maximum des services gérés de haut niveau qui tournent sur de grosses infrastructures clouds. Les services choisis devraient être 100% dynamiques, c'est à dire scale de manière transparente: on ne devrait pas avoir à gérer de ressources physiques ou même virtuelles. Idéalement ces services intègreraient de base de la réplication (pour scale en lecture) et du sharding (pour scale en écriture) et pourraient être répartis dans différentes régions sur la planète.
+La clé ici serait d'utiliser au maximum des services gérés de haut niveau qui tournent sur de grosses infrastructures clouds. Les services choisis devraient être 100% dynamiques, c'est à dire scale de manière autogérée : on ne devrait pas avoir à gérer de ressources physiques ou même virtuelles. Idéalement ces services intègreraient de base de la réplication (pour scale en lecture) et du sharding (pour scale en écriture) et pourraient être répartis dans différentes régions sur la planète.
 
 Voici quelques exemples de services gérés de cet ordre :
 
-* Base de donnée relationnelle: Google Cloud Spanner
-* NoSQL synchronisation temps réel: Google Firestore
-* Cluster de cache cross-region: AWS Elasticache
-* Stockage de fichier distributé: AWS S3
-* Data streaming: Google Pub/Sub
-* Data warehouse: Google BigQuery
+* Base de donnée relationnelle : Google Cloud Spanner
+* NoSQL synchronisation temps réel : Google Firestore
+* Cluster de cache cross-region : AWS Elasticache
+* Stockage de fichier distributé : AWS S3
+* Data streaming : Google Pub/Sub
+* Data warehouse : Google BigQuery
 
 Hé oui, ça fait beaucoup de services Google, tout simplement parce qu'ils ont un train d'avance !
 
-![courbe de scaling dynamique](https://cyppan.me/dynamic-scaling-curve-fr.png)
+![courbe de scaling dynamique](/public/images/articles/2020-04-02-scaling-stories-comment-les-startups-se-sont-plantees/dynamic-scaling-curve-fr.png)
 
 *Ici je me dois de nuancer cette courbe*
 
@@ -102,7 +102,7 @@ Hé oui, ça fait beaucoup de services Google, tout simplement parce qu'ils ont 
 
 ### La stratégie de scaling step-by-step
 
-![courbe de scaling step by step](https://cyppan.me/static-scaling-curve-fr.png)
+![courbe de scaling step by step](/public/images/articles/2020-04-02-scaling-stories-comment-les-startups-se-sont-plantees/static-scaling-curve-fr.png)
 
 C'est la stratégie classique et probablement la plus efficace, on fait avec ce qu'on a à disposition au début (compétences, personnes) mais on essaie d'avoir toujours un coup d'avance. On reste conscient des points de fragilité du système, et on sait comment y remédier. On s'attache à planifier les prochaines migrations.    
 Ca nécessite en particulier :
@@ -110,7 +110,7 @@ Ca nécessite en particulier :
 * De développer une pipeline solide de monitoring et d'alerting. Il y a beaucoup d'outils pour faire ça aujourd'hui.
 * De tester chaque migration. Car plus le système est distribué, le moins prévisibles seront les problèmes. Il est plus simple de tester avant de migrer.
 
-Par exemple, les prochaines étapes de scale planifiées pourraient être:
+Par exemple, les prochaines étapes de scale planifiées pourraient être :
 
 * Sharder la base de donnée ou le stream de données.
 * Conserver les données en silos isolés logiquement, afin de pouvoir scaler plus simplement le reste.
