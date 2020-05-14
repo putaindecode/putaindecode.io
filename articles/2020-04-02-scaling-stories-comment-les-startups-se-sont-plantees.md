@@ -6,10 +6,10 @@ slug: scaling-stories-comment-les-startups-se-sont-plantees
 ---
 
 > - "Ca ne fonctionne pas, mes enfants n'arrivent pas à se connecter à votre service !"
-> - "Nous sommes désolé notre équipe technique est mobilisée à 100% sur ce problème c'est une situation exceptionnelle... Nous vous tenons au courant."
+> - "Nous sommes désolé notre équipe technique est mobilisée à 100% sur ce problème c'est une situation exceptionnelle… Nous vous tenons au courant."
 
 
-C'est le genre de tweet ou de message LinkedIn qu'on a pu voir se multiplier avec le confinement récent dû au Covid-19. En effet les services web, et en particulier les outils de communication ou les programmes du secteur de l'EdTech (education technology), ont dû faire face à un usage particulièrement intense et soutenu ces derniers temps. Il n'y en a que peu à ma connaissance qui ont été capables de maintenir une qualité de service acceptable (Slack et Zoom ont particulièrement brillé sur ce sujet), et la plupart a dû mettre en place des solutions minutes comme des queues de connexion, 
+C'est le genre de tweet ou de message LinkedIn qu'on a pu voir se multiplier avec le confinement récent dû au Covid-19. En effet les services web, et en particulier les outils de communication ou les programmes du secteur de l'EdTech (education technology), ont dû faire face à un usage particulièrement intense et soutenu ces derniers temps. Il n'y en a que peu à ma connaissance qui ont été capables de maintenir une qualité de service acceptable (Slack et Zoom ont particulièrement brillé sur ce sujet). Si la plupart ont mis en place des solutions minutes comme des queues de connexion, 
 d'autres encore ont été forcés de désactiver leur service pour une "maintenance" à durée indéterminée…
 
 
