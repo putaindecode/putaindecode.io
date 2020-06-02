@@ -9,9 +9,9 @@ _[English version available on Kuzzle blog](https://blog.kuzzle.io/share-sensiti
 
 Tous les projets ont besoin d’un certain nombre de données qui doivent **rester secrètes et privées**.
 
-On parle ici des **clé d’API externes**, des **identifiants à des services tiers**, de **certificats** ou encore de **clés privés SSH**.
+On parle ici des **clés d’API externes**, des **identifiants à des services tiers**, de **certificats** ou encore de **clés privées SSH**.
 
-Le vrai problème c'est que plus un projet évolue et plus le nombre de secrets à partager pour le bon fonctionnement de l'application augmente
+Le vrai problème c'est que plus un projet évolue et plus le nombre de secrets à partager pour le bon fonctionnement de l'application augmente.
 
 **TLDR;**
  - N’utilisez **pas de variables d’environnement** pour partager vos clés d’API et autres secrets, à la place utilisez un **fichier JSON chiffré**.
@@ -133,6 +133,8 @@ config
     └── secrets.enc.json
 ```
 
+**Une implémentation en PHP est également disponible: [Kuzzle Vault PHP](https://github.com/kuzzleio/kuzzle-vault/blob/php/README.md)**
+
 ## Pour aller plus loin
 Kourou possède de nombreuses méthodes pour gérer des fichiers de secrets chiffrés.
 
@@ -158,6 +160,7 @@ Vous pouvez aussi **développer vos propres outils en utilisant les mêmes primi
 Il existe de nombreux outils de gestion de secrets, on peut notamment citer:
   - [Mozilla SOPS](https://github.com/mozilla/sops): fonctionne sur le même principe que Kuzzle Vault en plus complet avec notamment des connecteurs pour GCP, AWS ou Azure
   - [Hashicorp Vault](https://www.vaultproject.io/): gestion d'identité très complète avec téléchargement sécurisé des secrets, révocation, rotation, etc.
+  - [Shopify eJson](https://github.com/Shopify/ejson) : utilitaire de chiffrement de secrets avec chiffrement asymétrique + chargement dans l'environnement
 
 Ces deux outils sont beaucoup plus complets que Kuzzle Vault et ce projet n'a pas l'ambition de les remplacer.  
 Le coût et la complexité d'intégration est beaucoup plus elevé en utilisant un de ces outils et Kuzzle Vault se veut être une alternative ultra-simple pour mettre la sécurité à la portée de tous :-)
