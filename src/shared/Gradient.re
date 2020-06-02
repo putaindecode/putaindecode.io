@@ -10,7 +10,7 @@ let fromString = string => {
   let value = int_of_float(value->float_of_int /. 183.0);
   "linear-gradient(to bottom, hsl("
   ++ value->Js.String.make
-  ++ ", 100%, 35%), hsl("
+  ++ ", 100%, 0%), hsl("
   ++ value->Js.String.make
-  ++ ", 100%, 30%))";
+  ++ ", 100%, 0%))";
 };
