@@ -1,5 +1,5 @@
 ---
-date: 2020-04-02
+date: 2020-06-02
 title: Scaling stories - comment les startups se sont plantées
 author: cyppan
 slug: scaling-stories-comment-les-startups-se-sont-plantees
