@@ -62,7 +62,10 @@ module Styles = {
           lineHeight(`abs(1.2)),
         ],
       ),
-      selector("img", [maxWidth(100.->pct)]),
+      selector(
+        "img",
+        [maxWidth(100.->pct), backgroundColor(rgba(255, 255, 255, 0.75))],
+      ),
       selector(
         "code",
         [
@@ -106,7 +109,6 @@ module Styles = {
           fontStyle(italic),
         ],
       ),
-      selector("p", [textAlign(`justify)]),
       selector(".hljs-keyword", [color("DA6BB5"->hex)]),
       selector(".hljs-constructor", [color("DD792B"->hex)]),
       selector(".hljs-identifier", [color("1E9EA7"->hex)]),
