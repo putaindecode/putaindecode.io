@@ -41,7 +41,7 @@ $ yarn prerender
 
 ## Liens utiles
 
-- [ReasonML](https://reasonml.github.io/docs/en/installation): la langage
+- [ReasonML](https://reasonml.github.io/docs/en/installation): le langage
 - [ReasonReact](https://reasonml.github.io/reason-react/docs/en/installation): La bibliothèque UI
 - [BuckleScript](https://bucklescript.github.io/docs/en/installation): le _compiler_
 - [Belt](https://bucklescript.github.io/bucklescript/api/Belt.html): la _standard library_
