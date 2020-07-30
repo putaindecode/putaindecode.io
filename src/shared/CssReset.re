@@ -46,6 +46,7 @@ Css.(
     "a",
     [
       color(Theme.gradientRedBottom->hex),
+      media("(prefers-color-scheme: dark)", [color("ddd"->hex)]),
       textDecoration(underline),
       hover([textDecoration(none)]),
     ],
