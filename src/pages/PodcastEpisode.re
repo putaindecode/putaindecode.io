@@ -88,7 +88,6 @@ module Styles = {
           `declaration(("WebkitOverflowScrolling", "touch")),
         ],
       ),
-      selector("p", [textAlign(`justify)]),
       selector("a", [wordWrap(breakWord)]),
     ]);
   let share =
