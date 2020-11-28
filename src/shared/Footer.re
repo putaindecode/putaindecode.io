@@ -53,7 +53,7 @@ let make = () =>
           <div className=Styles.text> "Flux RSS"->ReasonReact.string </div>
         </a>
         <div className=Styles.copyright>
-          {j|© 2019 Putain de code !|j}->ReasonReact.string
+          {j|© 2020 Putain de code !|j}->ReasonReact.string
         </div>
         <a
           href="https://github.com/putaindecode/putaindecode.io"
