@@ -127,7 +127,7 @@ let default =
     {
       siteTitle: "Putain de Code!",
       mode: SPA,
-      siteDescription: "Blog participatif de la communauté dev",
+      siteDescription: {js|Blog participatif de la communauté dev|js},
       distDirectory: "build",
       baseUrl: "https://putaindecode.io",
       staticsDirectory: Some("statics"),
