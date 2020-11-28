@@ -5,7 +5,7 @@ module Styles = {
       backgroundColor(Theme.gradientRedBottom->hex),
       backgroundImage(
         linearGradient(
-          180.0->deg,
+          135.0->deg,
           [
             (0.0->pct, Theme.gradientRedTop->hex),
             (100.0->pct, Theme.gradientRedBottom->hex),
