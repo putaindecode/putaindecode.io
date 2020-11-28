@@ -173,8 +173,7 @@ let make = (~slug) => {
                   ->Option.map(participantsAsArray)
                   ->Option.getWithDefault([||])
                   ->Array.map(name =>
-                      <Pages.Link
-                        href={"https://github.com/" ++ name} key=name>
+                      <a href={"https://github.com/" ++ name} key=name>
                         <img
                           className=Styles.avatar
                           src={
@@ -184,7 +183,7 @@ let make = (~slug) => {
                           }
                           alt=name
                         />
-                      </Pages.Link>
+                      </a>
                     )
                   ->ReasonReact.array}
                </div>
