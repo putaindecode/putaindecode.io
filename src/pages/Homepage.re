@@ -169,6 +169,7 @@ module TopArticles = {
              let author =
                article.meta
                ->Js.Dict.get("author")
+               ->Option.flatMap(Js.Json.decodeString)
                ->Option.getWithDefault("putaindecode");
              <Pages.Link
                href={"/articles/" ++ article.slug}
@@ -217,6 +218,7 @@ module TopArticles = {
              let author =
                article.meta
                ->Js.Dict.get("author")
+               ->Option.flatMap(Js.Json.decodeString)
                ->Option.getWithDefault("putaindecode");
              <div key={article.slug} className=Styles.articleContainer>
                <Pages.Link
@@ -382,8 +384,6 @@ module LatestPodcasts = {
       ]);
   };
 
-  external participantsAsArray: string => array(string) = "%identity";
-
   [@react.component]
   let make = (~podcasts: array(Pages.listItem), ~totalCount, ()) =>
     <div className=Styles.container>
@@ -413,7 +413,10 @@ module LatestPodcasts = {
                    </div>
                    {podcast.meta
                     ->Js.Dict.get("participants")
-                    ->Option.map(participantsAsArray)
+                    ->Option.flatMap(Js.Json.decodeArray)
+                    ->Option.map(array =>
+                        array->Array.keepMap(Js.Json.decodeString)
+                      )
                     ->Option.getWithDefault([||])
                     ->Array.map(name =>
                         <img

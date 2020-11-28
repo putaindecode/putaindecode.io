@@ -99,8 +99,6 @@ module Styles = {
     ]);
 };
 
-external participantsAsArray: string => array(string) = "%identity";
-
 [@react.component]
 let make = (~search, ()) => {
   let episodeList = Pages.useCollection("podcasts");
@@ -167,7 +165,10 @@ let make = (~search, ()) => {
                       ->Js.String.includes(search, _)
                       || episode.meta
                          ->Js.Dict.get("participants")
-                         ->Option.map(participantsAsArray)
+                         ->Option.flatMap(Js.Json.decodeArray)
+                         ->Option.map(array =>
+                             array->Array.keepMap(Js.Json.decodeString)
+                           )
                          ->Option.getWithDefault([||])
                          ->Array.some(participant =>
                              participant
@@ -183,7 +184,10 @@ let make = (~search, ()) => {
                 <div className=Styles.author>
                   {episode.meta
                    ->Js.Dict.get("participants")
-                   ->Option.map(participantsAsArray)
+                   ->Option.flatMap(Js.Json.decodeArray)
+                   ->Option.map(array =>
+                       array->Array.keepMap(Js.Json.decodeString)
+                     )
                    ->Option.getWithDefault([||])
                    ->Array.map(name =>
                        <img

@@ -155,6 +155,7 @@ let make = (~search) => {
               let author =
                 article.meta
                 ->Js.Dict.get("author")
+                ->Option.flatMap(Js.Json.decodeString)
                 ->Option.getWithDefault("putaindecode");
               <Pages.Link
                 className={

@@ -188,6 +188,7 @@ let make = (~slug, ~canonical) => {
        let author =
          post.meta
          ->Js.Dict.get("author")
+         ->Option.flatMap(Js.Json.decodeString)
          ->Option.getWithDefault("putaindecode");
        <div className=Styles.container>
          <Pages.Head>
@@ -282,6 +283,7 @@ let make = (~slug, ~canonical) => {
              url={
                post.meta
                ->Js.Dict.get("oldSlug")
+               ->Option.flatMap(Js.Json.decodeString)
                ->Option.map(old =>
                    "http://putaindecode.io/fr/articles/" ++ old ++ "/"
                  )

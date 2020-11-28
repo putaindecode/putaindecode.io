@@ -134,8 +134,6 @@ module Styles = {
     style([fontSize(20->px), textDecoration(none), color("1E49B5"->hex)]);
 };
 
-external participantsAsArray: string => array(string) = "%identity";
-
 [@react.component]
 let make = (~slug) => {
   let episode = Pages.useItem("podcasts", ~id=slug);
@@ -144,7 +142,8 @@ let make = (~slug) => {
      | NotAsked
      | Loading => <PageLoadingIndicator />
      | Done(Ok(episode)) =>
-       let trackId = episode.meta->Js.Dict.get("soundcloudTrackId");
+       let trackId = episode.meta->Js.Dict.get("soundcloudTrackId")         ->Option.flatMap(Js.Json.decodeString)
+;
        <>
          <Pages.Head>
            <title>
@@ -170,7 +169,10 @@ let make = (~slug) => {
                <div className=Styles.author>
                  {episode.meta
                   ->Js.Dict.get("participants")
-                  ->Option.map(participantsAsArray)
+                  ->Option.flatMap(Js.Json.decodeArray)
+                  ->Option.map(array =>
+                      array->Array.keepMap(Js.Json.decodeString)
+                    )
                   ->Option.getWithDefault([||])
                   ->Array.map(name =>
                       <a href={"https://github.com/" ++ name} key=name>
