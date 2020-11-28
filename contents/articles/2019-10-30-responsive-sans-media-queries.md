@@ -90,21 +90,25 @@ sacrément gros. Ou un smartphone en paysage.
 </section>
 ```
 
+<div style="overflow-x: auto">
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
     height="300" style="width: 100%; min-width: 600px;"
     title="Responsive without MQs, step 1"
     src="//codepen.io/MoOx/embed/gNjRQr/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
+</div>
 
 Si on réduit notre exemple on va donc se retrouver avec ceci. Pas ouf.
 
+<div style="overflow-x: auto">
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
     height="300" style="width: 100%; max-width: 300px"
     title="Responsive without MQs, step 1"
     src="//codepen.io/MoOx/embed/gNjRQr/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
+</div>
 
 Partant de ceci ça va être assez simple de faire la première étape. On va
 rajouter flex-wrap.
@@ -117,12 +121,14 @@ rajouter flex-wrap.
 </section>
 ```
 
+<div style="overflow-x: auto">
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
     height="300" style="width: 100%; max-width: 300px"
     title="Responsive without MQs, step 1.1"
     src="//codepen.io/MoOx/embed/GbBvdv/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
+</div>
 
 C’est plutôt moche et pas très réaliste. Ajoutons donc un petit peu de contenu,
 et un peu d’espace.
@@ -154,22 +160,26 @@ souligne que c'est pour le cas d'école.
 </section>
 ```
 
+<div style="overflow-x: auto">
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
     height="300" style="width: 100%; min-width: 600px;"
     title="Responsive without MQs, step 2"
     src="//codepen.io/MoOx/embed/pXZrrx/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
+</div>
 
 Si on rétrécit l’espace disponible, on aura un rendu qui va tenter de s’adapter
 comme il peut.
 
+<div style="overflow-x: auto">
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
     height="300" style="width: 100%; max-width: 300px;"
     title="Responsive without MQs, step 2"
     src="//codepen.io/MoOx/embed/pXZrrx/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
+</div>
 
 Imaginons que ce rendu ne soit pas forcément souhaitable dans notre contexte.
 Formulé autrement: **ces marges sont sacrément dégueulasses**.
@@ -208,12 +218,14 @@ demi-marges sur le bloc plutôt qu’utiliser le concept de gouttière. Comme ce
 Ce changement n’a aucun impact sur le rendu grand format, mais cela va nous
 permettre en petit format d’obtenir le rendu suivant :
 
+<div style="overflow-x: auto">
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
     height="300" style="width: 100%; max-width: 300px;"
     title="Responsive without MQs, step 3"
     src="//codepen.io/MoOx/embed/NZBvLB/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
+</div>
 
 En fonction du contenu intérieur des blocs que vous allez avoir, vous allez
 pouvoir utiliser plutôt `min-width` ou `flex-basis`. Je vous laisse jouer un peu
@@ -234,21 +246,25 @@ travail astronomique, et reste quelque chose de propre et tout à fait
 maintenable, surtout avec une approche composant et non document) on peut se
 retrouver avec un code très simple, sans media query qui donnerait les rendus suivants :
 
+<div style="overflow-x: auto">
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
     height="220" style="width: 100%;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
+</div>
 
 <small>Mettez l'exemple ci-dessus avec un zoom à 0.5× pour mieux visualiser</small>
 
+<div style="overflow-x: auto">
 <iframe
     allowtransparency="true" allowfullscreen="true" scrolling="no" frameborder="no"
     height="220" style="width: 100%; max-width: 360px;"
     title="Responsive without MQs, real world example"
     src="//codepen.io/MoOx/embed/WqKBGm/?height=300&theme-id=light&default-tab=result"  >
 </iframe>
+</div>
 
 ```html
 <style>
