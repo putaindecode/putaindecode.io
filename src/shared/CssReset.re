@@ -6,7 +6,7 @@ Css.(
       margin(zero),
       backgroundColor("fff"->hex),
       media("(prefers-color-scheme: dark)", [backgroundColor("222"->hex)]),
-      Theme.defaultTextFontFamily->fontFamily,
+      fontFamily(`custom(Theme.defaultTextFontFamily)),
       display(flexBox),
       flexDirection(column),
       minHeight(100.->vh),
@@ -35,8 +35,8 @@ Css.(
       media("(prefers-color-scheme: dark)", [color("ddd"->hex)]),
       fontSize(1.->em),
       lineHeight(`abs(1.4)),
-      `declaration(("WebkitFontSmoothing", "antialiased")),
-      `declaration(("WebkitTextSizeAdjust", "100%")),
+      unsafe("WebkitFontSmoothing", "antialiased"),
+      unsafe("WebkitTextSizeAdjust", "100%"),
     ],
   )
 );

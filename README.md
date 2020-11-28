@@ -27,8 +27,7 @@ $ yarn start
 Dans le second, exportez les articles et démarrez le serveur de développement.
 
 ```console
-$ yarn blog
-$ yarn server
+$ yarn pages-server
 ```
 
 ## Prérendre le projet

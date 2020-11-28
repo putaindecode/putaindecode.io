@@ -2,155 +2,143 @@ open Belt;
 
 include CssReset;
 
-type action =
-  | LoadHome
-  | ReceiveHome(Result.t(Home.t, Errors.t))
-  | LoadArticle(string)
-  | ReceiveArticle(string, Result.t(Post.t, Errors.t))
-  | LoadArticleList
-  | ReceiveArticleList(Result.t(array(PostShallow.t), Errors.t))
-  | LoadPodcast(string)
-  | ReceivePodcast(string, Result.t(Podcast.t, Errors.t))
-  | LoadPodcastList
-  | ReceivePodcastList(Result.t(array(PodcastShallow.t), Errors.t));
-
-type state = {
-  articles: Map.String.t(RequestStatus.t(Result.t(Post.t, Errors.t))),
-  articleList: RequestStatus.t(Result.t(array(PostShallow.t), Errors.t)),
-  podcasts: Map.String.t(RequestStatus.t(Result.t(Podcast.t, Errors.t))),
-  podcastList: RequestStatus.t(Result.t(array(PodcastShallow.t), Errors.t)),
-  home: RequestStatus.t(Result.t(Home.t, Errors.t)),
+module GoogleAnalytics = {
+  [@bs.send]
+  external set:
+    (DomRe.Window.t_window, [@bs.as "set"] _, string, string) => unit =
+    "ga";
+  [@bs.send]
+  external send: (DomRe.Window.t_window, [@bs.as "send"] _, string) => unit =
+    "ga";
 };
-
-let default = {
-  articles: Map.String.empty,
-  articleList: NotAsked,
-  podcasts: Map.String.empty,
-  podcastList: NotAsked,
-  home: NotAsked,
-};
-
-let component = ReasonReact.reducerComponent("App");
 
 [@react.component]
-let make = (~url, ~initialData=?, ()) =>
-  ReactCompat.useRecordApi({
-    ...component,
-    initialState: () => initialData->Option.getWithDefault(default),
-    reducer: (action, state) =>
-      switch (action) {
-      | LoadArticle(slug) =>
-        UpdateWithSideEffects(
-          {
-            ...state,
-            articles:
-              state.articles->Map.String.set(slug, RequestStatus.Loading),
-          },
-          ({send}) =>
-            Post.query(slug)
-            ->Future.get(value => send(ReceiveArticle(slug, value))),
-        )
-      | ReceiveArticle(slug, payload) =>
-        Update({
-          ...state,
-          articles:
-            state.articles
-            ->Map.String.set(slug, RequestStatus.Done(payload)),
-        })
-      | LoadArticleList =>
-        UpdateWithSideEffects(
-          {...state, articleList: RequestStatus.Loading},
-          ({send}) =>
-            PostShallow.query()
-            ->Future.get(value => send(ReceiveArticleList(value))),
-        )
-      | ReceiveArticleList(payload) =>
-        Update({...state, articleList: RequestStatus.Done(payload)})
-      | LoadPodcast(slug) =>
-        UpdateWithSideEffects(
-          {
-            ...state,
-            podcasts:
-              state.podcasts->Map.String.set(slug, RequestStatus.Loading),
-          },
-          ({send}) =>
-            Podcast.query(slug)
-            ->Future.get(value => send(ReceivePodcast(slug, value))),
-        )
-      | ReceivePodcast(slug, payload) =>
-        Update({
-          ...state,
-          podcasts:
-            state.podcasts
-            ->Map.String.set(slug, RequestStatus.Done(payload)),
-        })
-      | LoadPodcastList =>
-        UpdateWithSideEffects(
-          {...state, podcastList: RequestStatus.Loading},
-          ({send}) =>
-            PodcastShallow.query()
-            ->Future.get(value => send(ReceivePodcastList(value))),
-        )
-      | ReceivePodcastList(payload) =>
-        Update({...state, podcastList: RequestStatus.Done(payload)})
-      | LoadHome =>
-        UpdateWithSideEffects(
-          {...state, home: RequestStatus.Loading},
-          ({send}) =>
-            Home.query()->Future.get(value => send(ReceiveHome(value))),
-        )
-      | ReceiveHome(payload) =>
-        Update({...state, home: RequestStatus.Done(payload)})
-      },
-    render: ({state, send}) =>
-      <>
-        <Header
-          url
-          gradient=?{
-            switch (url.path) {
-            | ["articles", slug] => Some(Gradient.fromString(slug))
-            | _ => None
-            }
-          }
-        />
-        {switch (url.path) {
-         | [] =>
-           <Homepage home={state.home} onLoadRequest={() => send(LoadHome)} />
-         | ["podcasts"] =>
-           <PodcastEpisodeList
-             episodeList={state.podcastList}
-             onLoadRequest={() => send(LoadPodcastList)}
-             search={url.search}
-           />
-         | ["podcasts", slug] =>
-           <PodcastEpisode
-             key=slug
-             episode={
-               state.podcasts
-               ->Map.String.get(slug)
-               ->Option.getWithDefault(RequestStatus.NotAsked)
-             }
-             onLoadRequest={() => send(LoadPodcast(slug))}
-           />
-         | ["articles"] =>
-           <ArticleList
-             postList={state.articleList}
-             onLoadRequest={() => send(LoadArticleList)}
-             search={url.search}
-           />
-         | ["articles", slug] =>
-           <Article
-             key=slug
-             post={
-               state.articles
-               ->Map.String.get(slug)
-               ->Option.getWithDefault(RequestStatus.NotAsked)
-             }
-             onLoadRequest={() => send(LoadArticle(slug))}
-           />
-         | _ => <ErrorPage />
-         }}
-        <FollowUs />
-        <Footer />
-      </>,
-  });
+let make = (~url: ReasonReactRouter.url, ~config as _, ()) => {
+  React.useEffect1(
+    () => {
+      Webapi.Dom.window->GoogleAnalytics.set(
+        "page",
+        "/" ++ url.path->List.toArray->Js.Array.joinWith("/", _),
+      );
+      Webapi.Dom.window->GoogleAnalytics.send("pageview");
+      None;
+    },
+    [|url|],
+  );
+  React.useEffect1(
+    () => {
+      Webapi.Dom.(Window.scrollTo(0.0, 0.0, window));
+      None;
+    },
+    [|url.path->List.toArray->Js.Array.joinWith("/", _)|],
+  );
+
+  <>
+    <Pages.Head>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="og:site_name" content="Putain de code !" />
+      <meta name="twitter:site" content="@putaindecode" />
+      <meta property="og:title" content="Putain de code" />
+      <meta name="twitter:title" content="Putain de code" />
+      <meta
+        property="og:image"
+        content="https://putaindecode.io/public/images/website/share.jpg"
+      />
+      <meta
+        name="twitter:image"
+        content="https://putaindecode.io/public/images/website/share.jpg"
+      />
+      <meta property="og:image:width" content="1500" />
+      <meta property="og:image:height" content="777" />
+      <link
+        rel="alternate"
+        type_="application/rss+xml"
+        href="/api/articles/feeds/desc/feed.xml"
+        title="RSS Feed"
+      />
+      <script>
+        {js|window.ga =
+        window.ga ||
+        function() {
+          (ga.q = ga.q || []).push(arguments);
+        };
+      ga.l = +new Date();
+      ga("create", "UA-43f771806-1", "auto");
+      ga("send", "pageview");|js}
+        ->React.string
+      </script>
+      <script async=true src="https://www.google-analytics.com/analytics.js" />
+      <link
+        rel="shortcut icon"
+        href={Pages.makeBaseUrl("/public/favicon.ico")}
+      />
+      <link
+        rel="canonical"
+        href={
+          "https://putaindecode.io/"
+          ++ url.path->List.toArray->Js.Array.joinWith("/", _)
+        }
+      />
+    </Pages.Head>
+    <Header
+      url
+      gradient=?{
+        switch (url.path) {
+        | ["articles", slug] => Some(Gradient.fromString(slug))
+        | _ => None
+        }
+      }
+    />
+    {switch (url.path) {
+     | [] => <Homepage />
+     | ["podcasts"] => <PodcastEpisodeList search={url.search} />
+     | ["podcasts", slug] => <PodcastEpisode slug />
+     | ["articles"] => <ArticleList search={url.search} />
+     | ["articles", slug] =>
+       <Article
+         slug
+         canonical={
+           "https://putaindecode.io/"
+           ++ url.path->List.toArray->Js.Array.joinWith("/", _)
+         }
+       />
+     | _ => <ErrorPage />
+     }}
+    <FollowUs />
+    <Footer />
+  </>;
+};
+
+let getUrlsToPrerender = ({Pages.getAll}) =>
+  Array.concatMany([|
+    [|"/", "/articles", "/podcasts"|],
+    getAll("articles")->Array.map(item => "/articles/" ++ item),
+    getAll("podcasts")->Array.map(item => "/podcasts/" ++ item),
+    [|"404.html"|],
+  |]);
+
+let default =
+  Pages.make(
+    make,
+    {
+      siteTitle: "Putain de Code!",
+      mode: SPA,
+      siteDescription: "Blog participatif de la communauté dev",
+      distDirectory: "build",
+      baseUrl: "https://putaindecode.io",
+      staticsDirectory: Some("statics"),
+      paginateBy: 7,
+      variants: [|
+        {
+          subdirectory: None,
+          localeFile: None,
+          contentDirectory: "contents",
+          getUrlsToPrerender,
+        },
+      |],
+    },
+  );

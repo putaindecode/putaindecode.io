@@ -1,7 +1,5 @@
 open Belt;
 
-let component = ReasonReact.statelessComponent("Article");
-
 module Styles = {
   open Css;
   let appearAnimation =
@@ -48,7 +46,6 @@ module Styles = {
     ]);
   let body =
     style([
-      fontFamily("Georgia, serif"),
       maxWidth(640->px),
       width(100.->pct),
       fontSize(18->px),
@@ -57,20 +54,23 @@ module Styles = {
       selector(
         "h2, h3, h4, h5, h6",
         [
-          fontFamily(Theme.defaultTextFontFamily),
+          fontFamily(`custom(Theme.defaultTextFontFamily)),
           fontWeight(extraBold),
           lineHeight(`abs(1.2)),
         ],
       ),
       selector(
         "img",
-        [maxWidth(100.->pct), backgroundColor(rgba(255, 255, 255, 0.75))],
+        [
+          maxWidth(100.->pct),
+          backgroundColor(rgba(255, 255, 255, `num(0.75))),
+        ],
       ),
       selector(
         "code",
         [
           fontSize(0.9->em),
-          fontFamily(Theme.codeFontFamily),
+          fontFamily(`custom(Theme.codeFontFamily)),
           lineHeight(`abs(1.)),
           backgroundColor("FAF3E1"->hex),
           media(
@@ -87,12 +87,12 @@ module Styles = {
           overflowX(auto),
           fontSize(14->px),
           borderRadius(10->px),
-          border(2->px, `solid, rgba(0, 0, 0, 0.1)),
+          border(2->px, `solid, rgba(0, 0, 0, `num(0.1))),
           media(
             "(prefers-color-scheme: dark)",
-            [border(2->px, `solid, rgba(255, 255, 255, 0.1))],
+            [border(2->px, `solid, rgba(255, 255, 255, `num(0.1)))],
           ),
-          `declaration(("WebkitOverflowScrolling", "touch")),
+          unsafe("WebkitOverflowScrolling", "touch"),
           selector(
             "code",
             [fontSize(14->px), backgroundColor(transparent), margin(zero)],
@@ -105,7 +105,7 @@ module Styles = {
           paddingLeft(20->px),
           margin(zero),
           fontSize(16->px),
-          borderLeft(3->px, solid, rgba(0, 0, 0, 0.4)),
+          borderLeft(3->px, solid, rgba(0, 0, 0, `num(0.4))),
           fontStyle(italic),
         ],
       ),
@@ -143,10 +143,12 @@ module Styles = {
       media("(prefers-color-scheme: dark)", [backgroundColor("222"->hex)]),
       borderRadius(10->px),
       boxShadow(
-        ~y=15->px,
-        ~blur=15->px,
-        ~spread=(-5)->px,
-        rgba(0, 0, 0, 0.2),
+        Shadow.box(
+          ~y=15->px,
+          ~blur=15->px,
+          ~spread=(-5)->px,
+          rgba(0, 0, 0, `num(0.2)),
+        ),
       ),
       media("(max-width: 540px)", [flexDirection(column)]),
     ]);
@@ -176,112 +178,119 @@ module Styles = {
 let externalLinkRe = [%re "/^https?:\\/\\//"];
 
 [@react.component]
-let make =
-    (~post: RequestStatus.t(Result.t(Post.t, Errors.t)), ~onLoadRequest, ()) =>
-  ReactCompat.useRecordApi({
-    ...component,
-    didMount: _ => {
-      switch (post) {
-      | NotAsked => onLoadRequest()
-      | _ => ()
-      };
-    },
-    render: _ =>
-      <div className=Styles.root>
-        {switch (post) {
-         | NotAsked
-         | Loading => <PageLoadingIndicator />
-         | Done(Ok(post)) =>
-           <WithTitle title={post.title}>
-             <div className=Styles.container>
-               <WidthContainer>
-                 <div role="heading" ariaLevel=1 className=Styles.title>
-                   post.title->ReasonReact.string
-                 </div>
-                 <Link
-                   href={"https://github.com/" ++ post.author}
-                   className=Styles.author>
-                   <img
-                     className=Styles.avatar
-                     src={
-                       "https://avatars.githubusercontent.com/"
-                       ++ post.author
-                       ++ "?size=64"
-                     }
-                     alt={post.author}
-                   />
-                   <div>
-                     post.author->ReasonReact.string
-                     " "->ReasonReact.string
-                     {j|•|j}->ReasonReact.string
-                     " "->ReasonReact.string
-                     <Date date={post.date} />
-                   </div>
-                 </Link>
-                 <div
-                   dangerouslySetInnerHTML={"__html": post.body}
-                   onClick={event =>
-                     if (event->ReactEvent.Mouse.target##nodeName == "A") {
-                       switch (
-                         ReactEvent.Mouse.metaKey(event),
-                         ReactEvent.Mouse.ctrlKey(event),
-                       ) {
-                       | (false, false) =>
-                         let href =
-                           event->ReactEvent.Mouse.target##getAttribute(
-                             "href",
-                           );
-                         if (!externalLinkRe->Js.Re.test_(href)) {
-                           ReactEvent.Mouse.preventDefault(event);
-                           ReasonReact.Router.push(href);
-                         };
-                       | _ => ()
-                       };
-                     }
-                   }
-                   className=Styles.body
-                 />
-                 <div className=Styles.share>
-                   <div className=Styles.shareTitle>
-                     {j|Vous avez aimé cet article?|j}->ReasonReact.string
-                   </div>
-                   <Spacer height=10 width=0 />
-                   <a
-                     className=Styles.shareButton
-                     onClick={event => {
-                       event->ReactEvent.Mouse.preventDefault;
-                       Webapi.Dom.(
-                         window
-                         ->Window.open_(
-                             ~url=event->ReactEvent.Mouse.target##href,
-                             ~name="",
-                             ~features="width=500,height=400",
-                           )
-                         ->ignore
-                       );
-                     }}
-                     target="_blank"
-                     href={
-                       "https://www.twitter.com/intent/tweet?text="
-                       ++ Js.Global.encodeURIComponent(
-                            post.title
-                            ++ " sur @PutainDeCode https://putaindecode.io/articles/"
-                            ++ post.slug,
-                          )
-                     }>
-                     "Le partager sur Twitter"->ReasonReact.string
-                   </a>
-                 </div>
-                 <div className=Styles.back>
-                   <Link href="/articles" className=Styles.backLink>
-                     {j|← Articles|j}->ReasonReact.string
-                   </Link>
-                 </div>
-                 <Disqus url=?{post.oldSlug} />
-               </WidthContainer>
+let make = (~slug, ~canonical) => {
+  let post = Pages.useItem("articles", ~id=slug);
+  <div className=Styles.root>
+    {switch (post) {
+     | NotAsked
+     | Loading => <PageLoadingIndicator />
+     | Done(Ok(post)) =>
+       let author =
+         post.meta
+         ->Js.Dict.get("author")
+         ->Option.getWithDefault("putaindecode");
+       <div className=Styles.container>
+         <Pages.Head>
+           <title> {(post.title ++ " | Putain de code")->React.string} </title>
+         </Pages.Head>
+         <WidthContainer>
+           <div role="heading" ariaLevel=1 className=Styles.title>
+             post.title->ReasonReact.string
+           </div>
+           <a href={"https://github.com/" ++ author} className=Styles.author>
+             <img
+               className=Styles.avatar
+               src={
+                 "https://avatars.githubusercontent.com/"
+                 ++ author
+                 ++ "?size=64"
+               }
+               alt=author
+             />
+             <div>
+               author->ReasonReact.string
+               " "->ReasonReact.string
+               {post.date
+                ->Option.map(date =>
+                    <>
+                      {j|•|j}->ReasonReact.string
+                      " "->ReasonReact.string
+                      <Date date />
+                    </>
+                  )
+                ->Option.getWithDefault(React.null)}
              </div>
-           </WithTitle>
-         | Done(Error(_)) => <ErrorPage />
-         }}
-      </div>,
-  });
+           </a>
+           <div
+             dangerouslySetInnerHTML={"__html": post.body}
+             onClick={event =>
+               if (event->ReactEvent.Mouse.target##nodeName == "A") {
+                 switch (
+                   ReactEvent.Mouse.metaKey(event),
+                   ReactEvent.Mouse.ctrlKey(event),
+                 ) {
+                 | (false, false) =>
+                   let href =
+                     event->ReactEvent.Mouse.target##getAttribute("href");
+                   if (!externalLinkRe->Js.Re.test_(href)) {
+                     ReactEvent.Mouse.preventDefault(event);
+                     ReasonReact.Router.push(href);
+                   };
+                 | _ => ()
+                 };
+               }
+             }
+             className=Styles.body
+           />
+           <div className=Styles.share>
+             <div className=Styles.shareTitle>
+               {j|Vous avez aimé cet article?|j}->ReasonReact.string
+             </div>
+             <Spacer height=10 width=0 />
+             <a
+               className=Styles.shareButton
+               onClick={event => {
+                 event->ReactEvent.Mouse.preventDefault;
+                 Webapi.Dom.(
+                   window
+                   ->Window.open_(
+                       ~url=event->ReactEvent.Mouse.target##href,
+                       ~name="",
+                       ~features="width=500,height=400",
+                     )
+                   ->ignore
+                 );
+               }}
+               target="_blank"
+               href={
+                 "https://www.twitter.com/intent/tweet?text="
+                 ++ Js.Global.encodeURIComponent(
+                      post.title
+                      ++ " sur @PutainDeCode https://putaindecode.io/articles/"
+                      ++ post.slug,
+                    )
+               }>
+               "Le partager sur Twitter"->ReasonReact.string
+             </a>
+           </div>
+           <div className=Styles.back>
+             <Pages.Link href="/articles" className=Styles.backLink>
+               {j|← Articles|j}->ReasonReact.string
+             </Pages.Link>
+           </div>
+           <Disqus
+             url={
+               post.meta
+               ->Js.Dict.get("oldSlug")
+               ->Option.map(old =>
+                   "http://putaindecode.io/fr/articles/" ++ old ++ "/"
+                 )
+               ->Option.getWithDefault(canonical)
+             }
+           />
+         </WidthContainer>
+       </div>;
+     | Done(Error(_)) => <ErrorPage />
+     }}
+  </div>;
+};

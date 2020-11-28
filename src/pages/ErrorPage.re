@@ -13,8 +13,6 @@ type state = {
   input: string,
 };
 
-let component = ReasonReact.reducerComponent("ErrorPage");
-
 module Styles = {
   open Css;
   let terminal =
@@ -26,14 +24,14 @@ module Styles = {
       color("fff"->hex),
       height(300->px),
       overflowY(auto),
-      fontFamily(Theme.codeFontFamily),
-      `declaration(("WebkitOverflowScrolling", "touch")),
+      fontFamily(`custom(Theme.codeFontFamily)),
+      unsafe("WebkitOverflowScrolling", "touch"),
     ]);
   let line = style([whiteSpace(`preWrap)]);
   let input =
     style([
       backgroundColor("222"->hex),
-      fontFamily(Theme.codeFontFamily),
+      fontFamily(`custom(Theme.codeFontFamily)),
       color("fff"->hex),
       fontSize(16->px),
       borderWidth(zero),
@@ -54,14 +52,12 @@ module Styles = {
 [@react.component]
 let make = () => {
   let containerRef = React.useRef(Js.Nullable.null);
-  ReactCompat.useRecordApi({
-    ...component,
-    initialState: () => {history: [||], input: ""},
-    reducer: (action, state) =>
-      switch (action) {
-      | RunCommand =>
-        ReasonReact.UpdateWithSideEffects(
-          {
+
+  let (state, send) =
+    React.useReducer(
+      (state, action) => {
+        switch (action) {
+        | RunCommand => {
             input: "",
             history:
               Array.concat(
@@ -109,70 +105,73 @@ let make = () => {
                   },
                 |],
               ),
-          },
-          (_) =>
-            switch (containerRef->React.Ref.current->Js.Nullable.toOption) {
-            | Some(containerRef) =>
-              Webapi.Dom.(
-                containerRef->Element.setScrollTop(
-                  containerRef->Element.scrollHeight->float_of_int,
-                )
-              )
-            | None => ()
-            },
-        )
-      | SetValue(input) => ReasonReact.Update({...state, input})
-      },
-    render: ({send, state}) => {
-      let userPrefix = "~ ";
-      <WidthContainer>
-        <div role="heading" ariaLevel=1 className=Styles.title>
-          "Erreur"->ReasonReact.string
-        </div>
-        <div
-          className=Styles.terminal
-          onClick={event =>
-            event->ReactEvent.Mouse.target##querySelector("input")##focus()
           }
-          ref={containerRef->ReactDOMRe.Ref.domRef}>
-          {state.history
-           ->Array.mapWithIndex((index, item) =>
-               <div key={j|$index|j} className=Styles.line>
-                 {ReasonReact.string(
-                    switch (item) {
-                    | User(value) => userPrefix ++ value
-                    | System(value) => value
-                    },
-                  )}
-               </div>
-             )
-           ->ReasonReact.array}
-          <div>
-            userPrefix->ReasonReact.string
-            {<input
-               type_="text"
-               className=Styles.input
-               autoFocus=true
-               value={state.input}
-               onChange={event =>
-                 send(SetValue(event->ReactEvent.Form.target##value))
-               }
-               onKeyDown={event => {
-                 if (event->ReactEvent.Keyboard.key == "Enter") {
-                   send(RunCommand);
-                 };
-                 if (event->ReactEvent.Keyboard.key == "Tab") {
-                   event->ReactEvent.Keyboard.preventDefault;
-                 };
-               }}
-             />
-             ->ReasonReact.cloneElement(
-                 ~props={"autoCapitalize": "off"},
-                 [||],
-               )}
-          </div>
-        </div>
-      </WidthContainer>;
+        | SetValue(input) => {...state, input}
+        }
+      },
+      {history: [||], input: ""},
+    );
+
+  React.useEffect1(
+    () => {
+      switch (containerRef.current->Js.Nullable.toOption) {
+      | Some(containerRef) =>
+        Webapi.Dom.(
+          containerRef->Element.setScrollTop(
+            containerRef->Element.scrollHeight->float_of_int,
+          )
+        )
+      | None => ()
+      };
+      None;
     },
-  });
+    [|state.history|],
+  );
+
+  let userPrefix = "~ ";
+  <WidthContainer>
+    <div role="heading" ariaLevel=1 className=Styles.title>
+      "Erreur"->ReasonReact.string
+    </div>
+    <div
+      className=Styles.terminal
+      onClick={event =>
+        event->ReactEvent.Mouse.target##querySelector("input")##focus()
+      }
+      ref={containerRef->ReactDOMRe.Ref.domRef}>
+      {state.history
+       ->Array.mapWithIndex((index, item) =>
+           <div key={j|$index|j} className=Styles.line>
+             {ReasonReact.string(
+                switch (item) {
+                | User(value) => userPrefix ++ value
+                | System(value) => value
+                },
+              )}
+           </div>
+         )
+       ->ReasonReact.array}
+      <div>
+        userPrefix->ReasonReact.string
+        {<input
+           type_="text"
+           className=Styles.input
+           autoFocus=true
+           value={state.input}
+           onChange={event =>
+             send(SetValue(event->ReactEvent.Form.target##value))
+           }
+           onKeyDown={event => {
+             if (event->ReactEvent.Keyboard.key == "Enter") {
+               send(RunCommand);
+             };
+             if (event->ReactEvent.Keyboard.key == "Tab") {
+               event->ReactEvent.Keyboard.preventDefault;
+             };
+           }}
+         />
+         ->ReasonReact.cloneElement(~props={"autoCapitalize": "off"}, [||])}
+      </div>
+    </div>
+  </WidthContainer>;
 };

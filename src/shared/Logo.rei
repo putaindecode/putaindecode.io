@@ -1,1 +1,0 @@
-let logo: ReasonReact.reactElement;

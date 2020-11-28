@@ -1,7 +1,5 @@
 open Belt;
 
-let component = ReasonReact.statelessComponent("PodcastEpisode");
-
 module Styles = {
   open Css;
   let appearAnimation =
@@ -27,7 +25,7 @@ module Styles = {
   let playerContainer =
     style([
       flexBasis(33.333->pct),
-      flexShrink(0),
+      flexShrink(0.0),
       position(relative),
       media("(max-width: 880px)", [width(100.->pct)]),
     ]);
@@ -41,10 +39,10 @@ module Styles = {
       height(300->px),
       backgroundImage(
         linearGradient(
-          180->deg,
+          180.0->deg,
           [
-            (0, Theme.gradientRedTop->hex),
-            (100, Theme.gradientRedBottom->hex),
+            (0.0->pct, Theme.gradientRedTop->hex),
+            (100.0->pct, Theme.gradientRedBottom->hex),
           ],
         ),
       ),
@@ -84,8 +82,8 @@ module Styles = {
           padding(10->px),
           overflowX(auto),
           borderRadius(10->px),
-          border(2->px, `solid, rgba(0, 0, 0, 0.1)),
-          `declaration(("WebkitOverflowScrolling", "touch")),
+          border(2->px, `solid, rgba(0, 0, 0, `num(0.1))),
+          unsafe("WebkitOverflowScrolling", "touch"),
         ],
       ),
       selector("a", [wordWrap(breakWord)]),
@@ -104,10 +102,12 @@ module Styles = {
       media("(prefers-color-scheme: dark)", [backgroundColor("222"->hex)]),
       borderRadius(10->px),
       boxShadow(
-        ~y=15->px,
-        ~blur=15->px,
-        ~spread=(-5)->px,
-        rgba(0, 0, 0, 0.2),
+        Shadow.box(
+          ~y=15->px,
+          ~blur=15->px,
+          ~spread=(-5)->px,
+          rgba(0, 0, 0, `num(0.2)),
+        ),
       ),
       media("(max-width: 540px)", [flexDirection(column)]),
     ]);
@@ -134,108 +134,105 @@ module Styles = {
     style([fontSize(20->px), textDecoration(none), color("1E49B5"->hex)]);
 };
 
+external participantsAsArray: string => array(string) = "%identity";
+
 [@react.component]
-let make =
-    (
-      ~episode: RequestStatus.t(Result.t(Podcast.t, Errors.t)),
-      ~onLoadRequest,
-      (),
-    ) =>
-  ReactCompat.useRecordApi({
-    ...component,
-    didMount: _ => {
-      switch (episode) {
-      | NotAsked => onLoadRequest()
-      | _ => ()
-      };
-    },
-    render: _ => {
-      <div className=Styles.root>
-        {switch (episode) {
-         | NotAsked
-         | Loading => <PageLoadingIndicator />
-         | Done(Ok(episode)) =>
-           let trackId = episode.soundcloudTrackId;
-           <WithTitle title={episode.title}>
-             <WidthContainer>
-               <div className=Styles.container>
-                 <div className=Styles.playerContainer>
-                   <div className=Styles.playerBackground>
-                     <iframe
-                       className=Styles.player
-                       name="Player"
-                       src={j|https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$trackId&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true|j}
-                     />
-                   </div>
+let make = (~slug) => {
+  let episode = Pages.useItem("podcasts", ~id=slug);
+  <div className=Styles.root>
+    {switch (episode) {
+     | NotAsked
+     | Loading => <PageLoadingIndicator />
+     | Done(Ok(episode)) =>
+       let trackId = episode.meta->Js.Dict.get("soundcloudTrackId");
+       <>
+         <Pages.Head>
+           <title>
+             {(episode.title ++ " | Putain de code")->React.string}
+           </title>
+         </Pages.Head>
+         <WidthContainer>
+           <div className=Styles.container>
+             <div className=Styles.playerContainer>
+               <div className=Styles.playerBackground>
+                 <iframe
+                   className=Styles.player
+                   name="Player"
+                   src={j|https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$trackId&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true|j}
+                 />
+               </div>
+             </div>
+             <Spacer width=40 height=20 />
+             <div className=Styles.contents>
+               <div role="heading" ariaLevel=1 className=Styles.title>
+                 episode.title->ReasonReact.string
+               </div>
+               <div className=Styles.author>
+                 {episode.meta
+                  ->Js.Dict.get("participants")
+                  ->Option.map(participantsAsArray)
+                  ->Option.getWithDefault([||])
+                  ->Array.map(name =>
+                      <Pages.Link
+                        href={"https://github.com/" ++ name} key=name>
+                        <img
+                          className=Styles.avatar
+                          src={
+                            "https://avatars.githubusercontent.com/"
+                            ++ name
+                            ++ "?size=64"
+                          }
+                          alt=name
+                        />
+                      </Pages.Link>
+                    )
+                  ->ReasonReact.array}
+               </div>
+               <div
+                 className=Styles.body
+                 dangerouslySetInnerHTML={"__html": episode.body}
+               />
+               <div className=Styles.share>
+                 <div className=Styles.shareTitle>
+                   {j|Vous avez aimé cet épisode?|j}->ReasonReact.string
                  </div>
-                 <Spacer width=40 height=20 />
-                 <div className=Styles.contents>
-                   <div role="heading" ariaLevel=1 className=Styles.title>
-                     episode.title->ReasonReact.string
-                   </div>
-                   <div className=Styles.author>
-                     {episode.participants
-                      ->Array.map(name =>
-                          <Link href={"https://github.com/" ++ name} key=name>
-                            <img
-                              className=Styles.avatar
-                              src={
-                                "https://avatars.githubusercontent.com/"
-                                ++ name
-                                ++ "?size=64"
-                              }
-                              alt=name
-                            />
-                          </Link>
+                 <Spacer height=10 width=0 />
+                 <a
+                   className=Styles.shareButton
+                   onClick={event => {
+                     event->ReactEvent.Mouse.preventDefault;
+                     Webapi.Dom.(
+                       window
+                       ->Window.open_(
+                           ~url=event->ReactEvent.Mouse.target##href,
+                           ~name="",
+                           ~features="width=500,height=400",
+                         )
+                       ->ignore
+                     );
+                   }}
+                   target="_blank"
+                   href={
+                     "https://www.twitter.com/intent/tweet?text="
+                     ++ Js.Global.encodeURIComponent(
+                          episode.title
+                          ++ " sur @PutainDeCode https://putaindecode.io/podcasts/"
+                          ++ episode.slug,
                         )
-                      ->ReasonReact.array}
-                   </div>
-                   <div
-                     className=Styles.body
-                     dangerouslySetInnerHTML={"__html": episode.body}
-                   />
-                   <div className=Styles.share>
-                     <div className=Styles.shareTitle>
-                       {j|Vous avez aimé cet épisode?|j}->ReasonReact.string
-                     </div>
-                     <Spacer height=10 width=0 />
-                     <a
-                       className=Styles.shareButton
-                       onClick={event => {
-                         event->ReactEvent.Mouse.preventDefault;
-                         Webapi.Dom.(
-                           window
-                           ->Window.open_(
-                               ~url=event->ReactEvent.Mouse.target##href,
-                               ~name="",
-                               ~features="width=500,height=400",
-                             )
-                           ->ignore
-                         );
-                       }}
-                       target="_blank"
-                       href={
-                         "https://www.twitter.com/intent/tweet?text="
-                         ++ Js.Global.encodeURIComponent(
-                              episode.title
-                              ++ " sur @PutainDeCode https://putaindecode.io/podcasts/"
-                              ++ episode.slug,
-                            )
-                       }>
-                       "Le partager sur Twitter"->ReasonReact.string
-                     </a>
-                   </div>
-                 </div>
+                   }>
+                   "Le partager sur Twitter"->ReasonReact.string
+                 </a>
                </div>
-               <div className=Styles.back>
-                 <Link href="/podcasts" className=Styles.backLink>
-                   {j|← Épisodes|j}->ReasonReact.string
-                 </Link>
-               </div>
-             </WidthContainer>
-           </WithTitle>;
-         | Done(Error(_)) => <ErrorPage />
-         }}
-      </div>;
-    },
-  });
+             </div>
+           </div>
+           <div className=Styles.back>
+             <Pages.Link href="/podcasts" className=Styles.backLink>
+               {j|← Épisodes|j}->ReasonReact.string
+             </Pages.Link>
+           </div>
+         </WidthContainer>
+       </>;
+     | Done(Error(_)) => <ErrorPage />
+     }}
+  </div>;
+};

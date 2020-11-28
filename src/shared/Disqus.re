@@ -1,23 +1,24 @@
 open Belt;
 
-let reset: option(string) => unit = [%bs.raw
-  url => {|
+let reset: string => unit = [%bs.raw
+  {|
+  function(url) {
 DISQUS.reset({
   reload: true,
   config: function config() {
-    this.page.identifier = url ? "http://putaindecode.io/fr/articles/" + url + "/" : window.location.toString();
-    this.page.url = (url ? "http://putaindecode.io/fr/articles/" + url + "/" : window.location.toString()) + '#!newthread';
+    this.page.identifier = url
+    this.page.url = url + '#!newthread';
   }
-})
+})}
 |}
 ];
 
-let init: option(string) => unit = [%bs.raw
-  url => {|
+let init: string => unit = [%bs.raw
+  {|function (url) {
 window.disqus_config = function() {
-  this.page.identifier = (url ? "http://putaindecode.io/fr/articles/" + url + "/" : window.location.toString());
-  this.page.url = (url ? "http://putaindecode.io/fr/articles/" + url + "/" : window.location.toString());
-};
+  this.page.identifier = url;
+  this.page.url = url;
+}}
 |}
 ];
 
@@ -53,8 +54,6 @@ let loadDisqus = url => {
   );
 };
 
-let component = ReasonReact.statelessComponent("Disqus");
-
 module Styles = {
   open Css;
   let disqus =
@@ -67,13 +66,11 @@ module Styles = {
 };
 
 [@react.component]
-let make = (~url=?, ()) =>
-  ReactCompat.useRecordApi({
-    ...component,
-    didMount: _ => {
-      Js.Global.setTimeout(() => loadDisqus(url), 1_000)->ignore;
-    },
-    render: _ => {
-      <div id="disqus_thread" className=Styles.disqus />;
-    },
+let make = (~url, ()) => {
+  React.useEffect0(() => {
+    let timeoutId = Js.Global.setTimeout(() => loadDisqus(url), 1_000);
+    Some(() => Js.Global.clearTimeout(timeoutId));
   });
+
+  <div id="disqus_thread" className=Styles.disqus />;
+};

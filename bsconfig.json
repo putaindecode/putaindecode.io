@@ -18,8 +18,10 @@
   "bs-dependencies": [
     "reason-react",
     "bs-css",
-    "bs-webapi",
-    "reason-react-compat"
+    "bs-css-emotion",
+    "rescript-asyncdata",
+    "rescript-pages",
+    "bs-webapi"
   ],
   "refmt": 3
 }

@@ -9,12 +9,9 @@
     "format": "yarn format:most && yarn format:re",
     "format:most": "prettier --write \"**/*.{js,json,css,md}\"",
     "format:re": "find ./src -iname '*.re' | xargs -n 1 bsrefmt --in-place && find ./src -iname '*.rei' | xargs -n 1 bsrefmt -i true --in-place",
-    "blog": "node src/UpdateBlog.bs.js",
-    "test": "bsb -make-world && yarn blog && webpack",
-    "webpack": "webpack -w",
-    "webpack:production": "NODE_ENV=production webpack",
-    "server": "webpack-dev-server",
-    "prerender": "rimraf build && yarn build && yarn webpack:production && node src/Prerender.entry.js"
+    "pages-server": "pages start src/App.bs.js 3000",
+    "test": "bsb -make-world",
+    "prerender": "pages build src/App.bs.js"
   },
   "authors": [
     "bloodyowl <bloodyowl@icloud.com>",
@@ -24,34 +21,17 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "bs-css": "^8.0.2",
+    "bs-css-emotion": "^2.2.0",
     "bs-webapi": "^0.13.4",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "reason-react": "git://github.com/reasonml/reason-react.git#b29b7673b2a048c9612eaffbf7695972bb0c11c4",
-    "reason-react-compat": "^0.4.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "reason-react": "^0.9.1",
+    "rescript-asyncdata": "^2.0.0",
+    "rescript-pages": "0.2.11"
   },
   "devDependencies": {
-    "bs-platform": "^5.0.4",
-    "copy-webpack-plugin": "^5.0.0",
-    "create-emotion": "9.2.12",
-    "create-emotion-server": "9.2.12",
-    "front-matter": "^3.0.1",
-    "glob": "^7.1.3",
-    "highlight.js": "^9.15.6",
-    "html-webpack-plugin": "^3.2.0",
-    "module-alias": "^2.2.0",
-    "prettier": "^1.18.2",
-    "reason-highlightjs": "^0.2.0",
-    "remarkable": "^1.7.1",
-    "rimraf": "^2.6.3",
-    "script-ext-html-webpack-plugin": "^2.1.3",
-    "webpack": "^4.0.1",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.8"
-  },
-  "_moduleAliases": {
-    "emotion": "src/vendor/emotion.js"
+    "bs-platform": "^8.2.0",
+    "prettier": "^1.18.2"
   },
   "prettier": {
     "trailingComma": "all",

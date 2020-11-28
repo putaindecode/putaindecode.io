@@ -1,5 +1,3 @@
-let component = ReasonReact.statelessComponent("Header");
-
 module Styles = {
   open Css;
   let container =
@@ -7,10 +5,10 @@ module Styles = {
       backgroundColor(Theme.gradientRedBottom->hex),
       backgroundImage(
         linearGradient(
-          180->deg,
+          180.0->deg,
           [
-            (0, Theme.gradientRedTop->hex),
-            (100, Theme.gradientRedBottom->hex),
+            (0.0->pct, Theme.gradientRedTop->hex),
+            (100.0->pct, Theme.gradientRedBottom->hex),
           ],
         ),
       ),
@@ -43,7 +41,7 @@ module Styles = {
   let subTitle =
     style([
       fontSize(14->px),
-      color(rgba(255, 255, 255, 0.8)),
+      color(rgba(255, 255, 255, `num(0.8))),
       textAlign(center),
     ]);
   let banner =
@@ -59,62 +57,56 @@ module Styles = {
 
 [@react.component]
 let make = (~url: ReasonReact.Router.url, ~gradient=?, ()) =>
-  ReactCompat.useRecordApi({
-    ...component,
-    render: _ =>
-      <>
-        <div className=Styles.banner>
-          <div role="heading" className=Styles.bannerTitle>
-            "Black Lives Matter"->React.string
-          </div>
-          <div>
-            <a
-              className=Styles.bannerLink
-              href="https://blacklivesmatters.carrd.co/#">
-              "Comment aider"->React.string
-            </a>
-            {j| • |j}->React.string
-            <a
-              className=Styles.bannerLink
-              href="https://minnesotafreedomfund.org">
-              "Minnesota Freedom Fund"->React.string
-            </a>
-            {j| • |j}->React.string
-            <a
-              className=Styles.bannerLink
-              href="https://www.okpal.com/adama-traore/#/">
-              "Justice Pour Adama"->React.string
-            </a>
-          </div>
-        </div>
-        <header
-          className=Styles.container
-          style={ReactDOMRe.Style.make(~backgroundImage=?gradient, ())}>
-          <WidthContainer>
-            <div className=Styles.contents>
-              <Link href="/" className=Styles.logo>
-                <div className=Styles.name>
-                  Logo.logo
-                  <Spacer />
-                  <div
-                    className=Styles.title
-                    role="heading"
-                    ariaLevel={
-                      switch (url.path) {
-                      | [] => 1
-                      | _ => 2
-                      }
-                    }>
-                    "Putain de code !"->ReasonReact.string
-                  </div>
-                </div>
-                <div className=Styles.subTitle>
-                  {js|Blog participatif de la communauté dev|js}
-                  ->ReasonReact.string
-                </div>
-              </Link>
+  <>
+    <div className=Styles.banner>
+      <div role="heading" className=Styles.bannerTitle>
+        "Black Lives Matter"->React.string
+      </div>
+      <div>
+        <a
+          className=Styles.bannerLink
+          href="https://blacklivesmatters.carrd.co/#">
+          "Comment aider"->React.string
+        </a>
+        {j| • |j}->React.string
+        <a className=Styles.bannerLink href="https://minnesotafreedomfund.org">
+          "Minnesota Freedom Fund"->React.string
+        </a>
+        {j| • |j}->React.string
+        <a
+          className=Styles.bannerLink
+          href="https://www.okpal.com/adama-traore/#/">
+          "Justice Pour Adama"->React.string
+        </a>
+      </div>
+    </div>
+    <header
+      className=Styles.container
+      style={ReactDOMRe.Style.make(~backgroundImage=?gradient, ())}>
+      <WidthContainer>
+        <div className=Styles.contents>
+          <Pages.Link href="/" className=Styles.logo>
+            <div className=Styles.name>
+              Logo.logo
+              <Spacer />
+              <div
+                className=Styles.title
+                role="heading"
+                ariaLevel={
+                  switch (url.path) {
+                  | [] => 1
+                  | _ => 2
+                  }
+                }>
+                "Putain de code !"->ReasonReact.string
+              </div>
             </div>
-          </WidthContainer>
-        </header>
-      </>,
-  });
+            <div className=Styles.subTitle>
+              {js|Blog participatif de la communauté dev|js}
+              ->ReasonReact.string
+            </div>
+          </Pages.Link>
+        </div>
+      </WidthContainer>
+    </header>
+  </>;

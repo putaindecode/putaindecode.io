@@ -1,5 +1,3 @@
-let component = ReasonReact.statelessComponent("WidthContainer");
-
 module Styles = {
   open Css;
   let container =
@@ -17,9 +15,5 @@ module Styles = {
 
 [@react.component]
 let make = (~children, ()) => {
-  let children = React.Children.toArray(children);
-  ReactCompat.useRecordApi({
-    ...component,
-    render: _ => <div className=Styles.container> children->React.array </div>,
-  });
+  <div className=Styles.container> children </div>;
 };
