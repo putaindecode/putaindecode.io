@@ -135,6 +135,21 @@ let default =
           localeFile: None,
           contentDirectory: "contents",
           getUrlsToPrerender,
+          getRedirectMap:
+            Some(
+              ({getAllItems}) => {
+                getAllItems("articles")
+                ->Array.keepMap(item =>
+                    item.meta
+                    ->Js.Dict.get("oldSlug")
+                    ->Option.flatMap(Js.Json.decodeString)
+                    ->Option.map(oldSlug =>
+                        ("/articles/" ++ oldSlug, "/articles/" ++ item.slug)
+                      )
+                  )
+                ->Js.Dict.fromArray
+              },
+            ),
         },
       |],
     },
