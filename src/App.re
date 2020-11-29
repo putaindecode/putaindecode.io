@@ -72,10 +72,7 @@ let make = (~url: ReasonReactRouter.url, ~config as _, ()) => {
         ->React.string
       </script>
       <script async=true src="https://www.google-analytics.com/analytics.js" />
-      <link
-        rel="shortcut icon"
-        href={Pages.makeBaseUrl("/public/favicon.ico")}
-      />
+      <link rel="shortcut icon" href={Pages.makeBaseUrl("/favicon.ico")} />
       <link
         rel="canonical"
         href={

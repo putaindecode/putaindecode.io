@@ -1,1 +1,0 @@
-let apiUrl = "/api";
