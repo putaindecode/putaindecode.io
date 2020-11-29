@@ -144,9 +144,19 @@ let default =
                     ->Js.Dict.get("oldSlug")
                     ->Option.flatMap(Js.Json.decodeString)
                     ->Option.map(oldSlug =>
-                        ("/articles/" ++ oldSlug, "/articles/" ++ item.slug)
+                        [|
+                          (
+                            "/articles/" ++ oldSlug ++ ".html",
+                            "/articles/" ++ item.slug,
+                          ),
+                          (
+                            "/articles/" ++ oldSlug,
+                            "/articles/" ++ item.slug,
+                          ),
+                        |]
                       )
                   )
+                ->Array.concatMany
                 ->Js.Dict.fromArray
               },
             ),
