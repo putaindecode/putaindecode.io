@@ -1576,6 +1576,11 @@ eslint-scope@^4.0.3:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
+esm@^3.2.25:
+  version "3.2.25"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
+  integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
+
 esprima@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
@@ -3854,10 +3859,10 @@ rescript-future@^1.0.4:
   resolved "https://registry.yarnpkg.com/rescript-future/-/rescript-future-1.0.4.tgz#8d80d4e5da3cca31887f361a277b816fbcc5ca1f"
   integrity sha512-1p9ieIdSKP4lktDf1H6Un54SXIuIxVRP7YPbueAi2rO8Jcb3NSmxADiJi+6fvfojGHKznmCm3DlCso+w/zO0YQ==
 
-rescript-pages@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-0.4.0.tgz#a48a31b9ea6951147e902e7cf4f0e9cde27f65e0"
-  integrity sha512-bkAODyXN0nh/bDZjVQqN32ZRgLVD/26+y+CpFflHaEKQnFaE3tZi+z24QeTyM7kc/gBDEFroY+hJSQBY7JJcpQ==
+rescript-pages@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-0.5.0.tgz#6adfdc6914176ef033e25b408b371435bfda9df5"
+  integrity sha512-Djzb2uX22ELEWowbp6RYchHcLyv4DponXwfRaWTmvEzsCYiGqiJZBT3NcFDGcCmJkYbPHqbEIpf6kxQAJfgIzA==
   dependencies:
     bs-css-emotion "^2.1.0"
     bs-fetch "^0.6.2"
@@ -3866,6 +3871,7 @@ rescript-pages@0.4.0:
     copy-webpack-plugin "^6.3.0"
     create-emotion "^10.0.27"
     create-emotion-server "^10.0.27"
+    esm "^3.2.25"
     express "^4.17.1"
     front-matter "^4.0.2"
     get-port "^5.1.1"
