@@ -31,9 +31,9 @@ Mais 🧐
 En premier lieu j'aimerais introduire le concept de *scaling maturity*. "To scale" c'est l'art d'adapter (automatiquement ou non) sa stack technique afin de répondre à la demande en entrée. Et reconnaissons déjà que Zoom et Slack sont beaucoup plus matures que (par exemple) de jeunes startups de l'EdTech.    
 Analysons les à l'aide du modèle de *scaling maturity*.
 
-1 - **Volume d'usage nominal** : Slack ou Zoom avaient déjà un trafic (très) important, le pic d'activité représente un pourcentage plus petit que pour une startup pour qui c'est peut-être un boost de 100 ou 1000 fois l'activité habituelle.    
-2 - **Maturité du produit** : Ils ont eu le temps de connaître les spécificités de leur usage, les caractéristiques d'accès aux données, les points de fragilité de leur système, …
-3 - **Compétences techniques** : Ils ont probablement une équipe tech plus grande et plus expérimentée.
+1. **Volume d'usage nominal** : Slack ou Zoom avaient déjà un trafic (très) important, le pic d'activité représente un pourcentage plus petit que pour une startup pour qui c'est peut-être un boost de 100 ou 1000 fois l'activité habituelle.
+2. **Maturité du produit** : Ils ont eu le temps de connaître les spécificités de leur usage, les caractéristiques d'accès aux données, les points de fragilité de leur système, …
+3. **Compétences techniques** : Ils ont probablement une équipe tech plus grande et plus expérimentée.
 
 Pour synthétiser, ils en savent beaucoup sur la façon dont leur produit est utilisé et quelle est leur roadmap, et donc savent bien quel type d'effort concentrer pour s'adapter à la demande supplémentaire. En plus, leur infrastructure actuelle peut déjà encaisser un volume conséquent.
 
@@ -41,9 +41,9 @@ Pour synthétiser, ils en savent beaucoup sur la façon dont leur produit est ut
 De l'autre côté, les jeunes services web se sont retrouvés submergés, cherchant de l'aide désespérement et des solutions pour [sharder](https://en.wikipedia.org/wiki/Shard_%28database_architecture%29) et répliquer leur base de donnée relationnelle existante (plus à ce sujet un peu plus loin).    
 Je prends à présent l'exemple hypothétique d'une startup EdTech offrant un service de classe en ligne innovant.
 
-1 - **Volume d'usage nominal** : Quelques clients aiment leur produit, "c'est le futur", ils croient au potentiel de croissance et l'ajout de fonctionnalités avec le temps. Il y a donc un faible volume d'utilisation pour le moment et une croissance mesurée attendue, ils ont opté pour quelques serveurs OVH économiquement intéressants.    
-2 - **Maturité du produit** : Leur produit est très jeune, ils misent sur l'innovation et des boucles de feedback rapides pour l'étoffer.    
-3 - **Compétences techniques** : Des stagiaires, peut-être de jeunes employés, parfois des fondateurs qui font eux-mêmes les premiers prototypes. A ce niveau les salaires pèsent beaucoup dans la balance.
+1. **Volume d'usage nominal** : Quelques clients aiment leur produit, "c'est le futur", ils croient au potentiel de croissance et l'ajout de fonctionnalités avec le temps. Il y a donc un faible volume d'utilisation pour le moment et une croissance mesurée attendue, ils ont opté pour quelques serveurs OVH économiquement intéressants.
+2. **Maturité du produit** : Leur produit est très jeune, ils misent sur l'innovation et des boucles de feedback rapides pour l'étoffer.
+3. **Compétences techniques** : Des stagiaires, peut-être de jeunes employés, parfois des fondateurs qui font eux-mêmes les premiers prototypes. A ce niveau les salaires pèsent beaucoup dans la balance.
 
 Je m'autorise ici une conclusion préliminaire à la première question : les entreprises n'auraient pas pu anticiper, et même j'irai plus loin pour les plus petites d'entre elles, elles ne devaient pas le faire… En effet, si on souhaite créer un produit avec du scaling "infini" dès le début, ça implique d'investir beaucoup **en temps et en argent**. Deux ressources précieuses que l'on préfère rationnellement investir sur d'autres sujets quand on est un business en phase de démarrage (comme trouver sa place sur le marché, ajouter des fonctionnalités, croître, …).
 
