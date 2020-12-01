@@ -17,11 +17,11 @@ Découvrez le monde merveilleux des "AST": ils ne sont pas si difficiles que ce 
 
 # Pourquoi écrire vos propres règles ESLint ?
 
-* C'est intéressant, et une bonne manière d'approfondir vos connaissances syntaxiques à propos de JS/TS 
+- C'est intéressant, et une bonne manière d'approfondir vos connaissances syntaxiques à propos de JS/TS;
 
-* Cela vous permet de définir des règles quant aux standards du code au sein de votre entreprise
+- Cela vous permet de définir des règles quant aux standards du code au sein de votre entreprise;
 
-* Ce sont potentiellement des semaines de travail "manuel" en moins 😃
+- Ce sont potentiellement des semaines de travail "manuel" en moins 😃.
 
 Il existe déjà plein de règles, dictant [le style de vos accolades](https://eslint.org/docs/rules/brace-style), le fait [que vos fonctions async de ne doivent pas retourner d'expression await](https://eslint.org/docs/rules/no-return-await) ou encore [le fait que vous ne devez pas initialiser vos variables avec la valeur `undefined`](https://eslint.org/docs/rules/no-undef-init).
 
@@ -29,7 +29,7 @@ Le nombre de règles est virtuellement infini. De nouvelles apparaissent quasi c
 
 # Le problème que nous allons résoudre avec une règle ESLint
 
-Les tutoriels utilisent souvent des examples comme `foo`, `bar` ou `baz`. Ça fait l'affaire, mais pourquoi ne pas résoudre une réelle problématique? 
+Les tutoriels utilisent souvent des examples comme `foo`, `bar` ou `baz`. Ça fait l'affaire, mais pourquoi ne pas résoudre une réelle problématique?
 
 Si vous avez déjà utilisé `enzyme` pour tester une codebase TypeScript et React, alors vous savez sûrement que les appels vers `shallow` acceptent un générique, qui est votre composant. ex. `shallow<User>(<User {...props})`.
 
@@ -38,17 +38,17 @@ Si vous avez déjà utilisé `enzyme` pour tester une codebase TypeScript et Rea
 	<figcaption>La definition de la fonction `shallow` sur DefinitelyTyped</figcaption>
 </figure>
 
-OK, mais si on ne passe pas le générique? Même si au premier abord ça n'a pas l'air de poser problème, vous allez rapidement remarquer des erreurs en voulant utiliser les méthodes, props, ou state de votre composant. C'est normal: `TypeScript` considère votre composant comme un "composant générique", sans signature, sans méthodes, rien! 
+OK, mais si on ne passe pas le générique? Même si au premier abord ça n'a pas l'air de poser problème, vous allez rapidement remarquer des erreurs en voulant utiliser les méthodes, les propriétés, ou l'état de votre composant. C'est normal: TypeScript considère votre composant comme un "composant générique", sans signature, sans méthodes, rien!
 
 ![](/public/images/articles/2020-11-29-creer-plugin-eslint-typescript-magie-ast/tsc-tests-error.png)
 
-La solution est d'ajouter `VotreComposant` (ici, `User`) en tant que génerique: `shallow<User>(<User {...props />)`. Pas de souci s'il s'agit de l'écrire une fois et que vous êtes à l'aise avec TypeScript, par contre ça devient problématique si: 
+La solution est d'ajouter `VotreComposant` (ici, `User`) en tant que génerique: `shallow<User>(<User {...props />)`. Pas de souci s'il s'agit de l'écrire une fois et que vous êtes à l'aise avec TypeScript, par contre ça devient problématique si:
 
-* vous venez de finir une migration JS -> TS, avec une codebase pas ou peu typée pour le moment
+- vous venez de finir une migration JS -> TS, avec une codebase pas ou peu typée pour le moment,
 
-* vous venez de finir une migration flow -> TS, avec des typages différents / manquants maintenant que vous aves du TS 
+- vous venez de finir une migration flow -> TS, avec des typages différents / manquants maintenant que vous aves du TS
 
-* vous êtes un nouveau contributeur sur une codebase TS et/ou n'avez jamais touché à un générique.
+- vous êtes un nouveau contributeur sur une codebase TS et/ou n'avez jamais touché à un générique.
 
 L'option 2, c'est celle que nous avons eu au sein de notre équipe, et une règle ESLint avec un autofix a permis de gagner plusieurs journées qui auraient été passées à ajouter les typings manuellement.
 
@@ -56,11 +56,11 @@ L'option 2, c'est celle que nous avons eu au sein de notre équipe, et une règl
 
 Avant de commencer, il est impératif de comprendre le concept d'AST.
 
-Les **ASTs** - Abstract Syntax Trees, ou Arbres Syntaxiques Abstraits (ASA) en français- sont une représentation de votre code sous forme d'arbre, qui peut être: 
+Les **AST** - Abstract Syntax Trees, ou Arbres Syntaxiques Abstraits (ASA) en français- sont une représentation de votre code sous forme d'arbre, qui peut être:
 - lu
-- manipulé pour générer un nouvel AST
-- transformé en code machine qui sera ensuite exécuté 
-- retransformé en code
+- manipulé pour générer un nouvel AST;
+- transformé en code machine qui sera ensuite exécuté;
+- retransformé en code.
 
 Voire même un mélange de tout ça!
 
@@ -87,23 +87,23 @@ Ce code peut être représenté de cette manière sous forme d'AST:
 	<figcaption>Représentation sous forme d'AST de notre code grâce à astexplorer.net</figcaption>
 </figure>
 
-Cette capture vient de l'excellent outil [https://astexplorer.net](https://astexplorer.net/). Il permet de visualiser en détail les ASTs pour de nombreux langages. 
-Essayez de poster différents bouts de code, JS, TS, ou même un autre langage supporté, vous allez voir c'est passionnant! 
-> Attention: Sélectionnez le bon langage pour qu'il puisse être parsé! 
+Cette capture vient de l'excellent outil [https://astexplorer.net](https://astexplorer.net/). Il permet de visualiser en détail les AST pour de nombreux langages.
+Essayez de poster différents bouts de code, JS, TS, ou même un autre langage supporté, vous allez voir c'est passionnant!
+> Attention: Sélectionnez le bon langage pour qu'il puisse être parsé!
 
 # Création d'un projet à linter
 > **Si vous avez déjà un projet React + TS + enzyme, vous pouvez passez à l'étape suivante!**
 
 Le but est ici de créer un projet tout simple React + TypeScript + Jest + Enzyme project, qui aura les erreurs TS que nous avons expliqué en intro.
 
-Dans l'idée, parser du TS, c'est comme parser du JS, il nous faut juste le bon parseur. Pas de souci, le plugin `typescript-eslint` a son [propre parseur TS](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser). Alors, c'est parti! 
+Dans l'idée, parser du TS, c'est comme parser du JS, il nous faut juste le bon parseur. Pas de souci, le plugin `typescript-eslint` a son [propre parseur TS](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser). Alors, c'est parti!
 
 Créez un nouveau dossier `ast-learning` qui contiendra notre projet. Ajoutez-y un fichier `package.json` avec react, jest, enzyme, ESLint, etc:
 ```json
 {
   "name": "ast-learning",
   "version": "1.0.0",
-  "description": "Learn ASTs by writing your first ESLint plugin",
+  "description": "Projet d'apprentissage des AST",
   "main": "src/index.js",
   "dependencies": {
     "react": "17.0.0",
@@ -151,7 +151,7 @@ Créez aussi un fichier `tsconfig.json` avec le strict minimum pour satisfaire l
 }
 ```
 
-Enfin, créez un fichier `.eslintrc.js`, sans règle(s) pour le moment:
+Enfin, créez un fichier `.eslintrc.js`, sans règle pour le moment:
 ```js
 	export default {
 	  parser: "@typescript-eslint/parser",
@@ -164,7 +164,7 @@ Enfin, créez un fichier `.eslintrc.js`, sans règle(s) pour le moment:
 	};
 ```
 
-Maintenant que notre projet est prêt, il est temps de créer notre premier composant `User`: 
+Maintenant que notre projet est prêt, il est temps de créer notre premier composant `User`:
 
 ```ts
 import * as React from "react";
@@ -194,7 +194,9 @@ class User extends React.Component<Props, State> {
 
 export { User };
 ```
+
 Et le test qui va bien, `index.test.tsx`:
+
 ```ts
 import * as React from "react";
 import * as Adapter from "enzyme-adapter-react-16";
@@ -244,7 +246,7 @@ Passons aux choses sérieuses: c'est l'heure d'écrire le code qui va écrire du
 
 Prenez un instant pour penser au code que que vous écrivez au quotidien. Est-ce que certains processus peuvent être modelés de façon à ce qu'un programme pourrait techniquement générer ce code pour vous? Si oui, vous pouvez:
 
-* Écrire une **règle ESLint**, soit: 
+* Écrire une **règle ESLint**, soit:
   - sans résolution automatique (autofix), pour simplement informer des erreurs en laissant le développeur la résoudre
   - avec autofix, pour qu'il puisse résoudre le problème automatiquement au sein de sa codebase
 
@@ -263,13 +265,13 @@ Votre Dossier Parent/
 ├── eslint-plugin-ast-learning/
 ```
 > ⚠️ Les plugins eslint sont nommés selon la convention `eslint-plugin-nom-de-votre-plugin-en-anglais` !
-> Ici, on est dans le cas d'un tuto mais dans la vraie vie, on aurait pu l'appeller `eslint-plugin-enzyme-typescript` par exemple 
+> Ici, on est dans le cas d'un tuto mais dans la vraie vie, on aurait pu l'appeller `eslint-plugin-enzyme-typescript` par exemple
 
 Initialisez le projet avec un fichier `package.json` basique:
 ```json
 {
   "name": "eslint-plugin-ast-learning",
-  "description": "Our first ESLint plugin",
+  "description": "Notre premier plugin eslint",
   "version": "1.0.0",
   "main": "index.js"
 }
@@ -319,7 +321,7 @@ Chaque règle contient 2 propriétés: `meta` et `create`. La doc est dispo [ici
 
 `create` a en valeur de retour un object où les clés peuvent être n'importe quel "token" qui existe pour l'AST qui a été parsé. Vous pourrez pour chacun de ces tokens écrire une logique différente.
 
-Regardons quelques exemples de tokens ensemble: 
+Regardons quelques exemples de tokens ensemble:
 
 * **CallExpression**: une expression qui représente l'appel d'une fonction, ex.: `shallow()`
 * **VariableDeclaration**: la déclaration d'une variable, mais sans le `const`/ `var`/ `let` qui la précède:
@@ -329,7 +331,7 @@ Regardons quelques exemples de tokens ensemble:
 
 * **StringLiteral**: Une chaine de caractère, littérale: `'test'`
 
-C'est assez abstrait, et le meilleur moyen de se faire une idée de ce que sont chacun des tokens dans votre code, les groupes qu'ils forment, c'est d'utiliser ASTExplorer avec différents bouts de code. En moins de temps qu'il vous en faut pour dire "TypeScript", vous penserez comme un parseur! 
+C'est assez abstrait, et le meilleur moyen de se faire une idée de ce que sont chacun des tokens dans votre code, les groupes qu'ils forment, c'est d'utiliser ASTExplorer avec différents bouts de code. En moins de temps qu'il vous en faut pour dire "TypeScript", vous penserez comme un parseur!
 
 ## Définir quand une règle s'appliquera
 
@@ -350,7 +352,7 @@ L'expression trouvée, nous ajoutons donc la propriété `CallExpression` à l'o
 }
 ```
 Toute méthode que vous déclarerez en tant que propriété de l'objet retourné par `create` sera appelée par eslint, une fois un nœud correspondant à cette méthode, ici à chaque `CallExpression` donc.
-Un rapide coup d'oeil sur [les docs de Babel](https://babeljs.io/docs/en/babel-types#callexpression), et on peut voir que `CallExpression` contient une propriété `callee`. Cette propriété, c'est le nom de la fonction que vous appelez, ici, `shallow`. 
+Un rapide coup d'oeil sur [les docs de Babel](https://babeljs.io/docs/en/babel-types#callexpression), et on peut voir que `CallExpression` contient une propriété `callee`. Cette propriété, c'est le nom de la fonction que vous appelez, ici, `shallow`.
 On peut donc ajouter une condition qui évaluera `true` si nous appelons une fonction `shadow`.
 
 ```js
@@ -359,9 +361,9 @@ CallExpression (node) {
 }
 ```
 On veut aussi être sûr que notre règle s'applique uniquement s'il n'y a pas **de générique déjà présent**. Sur ASTExplorer on peut voir que les génériques sont appelés `typeArguments`.
-Babel a 2 propriétés identiques, `typeArguments` et `typeParameters`(par souci de compatibilité) mais celui qui nous intéresse est `typeParameters`. 
-C'est un tableau qui contient nos génériques, un tableau d'un seul élément dans notre cas donc. 
-Une petite vérification pour être sûr qu'il n'y a soit pas de chevrons du tout (`typeParameters === undefined`) ou bien que les chevrons sont présents mais vides (`!node.typeParameters.length`). On peut utiliser la syntaxe courte pour les deux cas de figure: 
+Babel a 2 propriétés identiques, `typeArguments` et `typeParameters`(par souci de compatibilité) mais celui qui nous intéresse est `typeParameters`.
+C'est un tableau qui contient nos génériques, un tableau d'un seul élément dans notre cas donc.
+Une petite vérification pour être sûr qu'il n'y a soit pas de chevrons du tout (`typeParameters === undefined`) ou bien que les chevrons sont présents mais vides (`!node.typeParameters.length`). On peut utiliser la syntaxe courte pour les deux cas de figure:
 ```js
 if (
 	node.callee.name === 'shallow' &&
@@ -369,7 +371,7 @@ if (
 )
 ```
 
-Voilà! Nous avons la logique de notre erreur, il faut maintenant l'émettre 
+Voilà! Nous avons la logique de notre erreur, il faut maintenant l'émettre
 
 # Émettre une erreur
 
@@ -399,9 +401,9 @@ CallExpression(node) {
 	}
 }
 ```
-Voilà, l'erreur est émise 📡! 
+Voilà, l'erreur est émise 📡!
 
-## Écrire la méthode `fix` 
+## Écrire la méthode `fix`
 
 La première chose que notre règle fera, c'est insérer `<any>` si eslint ne détecte pas d'élément JSX comme argument avec lequel `shallow()` est appelé .
 
@@ -416,7 +418,7 @@ if (!hasJsxArgument) {
 }
 ```
 
-Cette vérification passée, on sait que l'on a un `JSXElement` comme premier argument de `shallow()`. 
+Cette vérification passée, on sait que l'on a un `JSXElement` comme premier argument de `shallow()`.
 On peut donc récupérer le nom de cet élément et le passer comme générique à shallow.
 
 ```js
@@ -484,8 +486,8 @@ Imaginez la même règle avec autofix sur 10, 100, 1000, 10000 fichiers... des j
 
 # Pour continuer avec ESLint et les AST
 
-Bien que long, ce tutorial reste une introduction sur les AST et le fonctionnement d'ESLint et ses règles. Si vous souhaitez en savoir plus et créer vos propres règles, leurs docs sont très bien faites, elles seront votre référence. 
+Bien que long, ce tutorial reste une introduction sur les AST et le fonctionnement d'ESLint et ses règles. Si vous souhaitez en savoir plus et créer vos propres règles, leurs docs sont très bien faites, elles seront votre référence.
 
-Il faudra aussi ajouter des tests *complets* pour chaque règle: d'éxperience, les corrections automatiques sont sournoises et ont leur lot de cas particuliers qui peuvent potentiellement casser votre codebase. 
+Il faudra aussi ajouter des tests *complets* pour chaque règle: d'éxperience, les corrections automatiques sont sournoises et ont leur lot de cas particuliers qui peuvent potentiellement casser votre codebase.
 Les tests ne sont pas juste une condition sine qua non quant à la qualité des règles que vous écrirez: ils sont la règle pour publier une règle officielle 😉 et il est vivement conseillé de suivre les mêmes standards de qualité. Et ça, que vous souhaitez la contribuer en tant que règle officiel, ou la garder pour votre team!
 
