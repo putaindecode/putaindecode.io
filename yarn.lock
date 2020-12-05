@@ -2144,10 +2144,10 @@ he@^1.2.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-highlight.js@^10.3.2:
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.4.0.tgz#ef3ce475e5dfa7a48484260b49ea242ddab823a0"
-  integrity sha512-EfrUGcQ63oLJbj0J0RI9ebX6TAITbsDBLbsjr881L/X5fMO9+oadKzEF21C7R3ULKG6Gv3uoab2HiqVJa/4+oA==
+highlight.js@^10.4.1:
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.4.1.tgz#d48fbcf4a9971c4361b3f95f302747afe19dbad0"
+  integrity sha512-yR5lWvNz7c85OhVAEAeFhVCc/GV4C30Fjzc/rCP0aCWzc1UUOPUk55dK/qdwTZHBvMZo+eZ2jpk62ndX/xMFlg==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -3859,10 +3859,10 @@ rescript-future@^1.0.4:
   resolved "https://registry.yarnpkg.com/rescript-future/-/rescript-future-1.0.4.tgz#8d80d4e5da3cca31887f361a277b816fbcc5ca1f"
   integrity sha512-1p9ieIdSKP4lktDf1H6Un54SXIuIxVRP7YPbueAi2rO8Jcb3NSmxADiJi+6fvfojGHKznmCm3DlCso+w/zO0YQ==
 
-rescript-pages@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-0.5.0.tgz#6adfdc6914176ef033e25b408b371435bfda9df5"
-  integrity sha512-Djzb2uX22ELEWowbp6RYchHcLyv4DponXwfRaWTmvEzsCYiGqiJZBT3NcFDGcCmJkYbPHqbEIpf6kxQAJfgIzA==
+rescript-pages@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-0.5.2.tgz#6a79d6a064e4cdd8b7444b3d8ddaa1806445ada1"
+  integrity sha512-AMovtfemArneNXhNO3TsLZx/Mmd3jEBwvr2n82BEeigyJc9tjrsXyzDu4L6Pib9m/13qh8tyP1//SZ26vKZ3jg==
   dependencies:
     bs-css-emotion "^2.1.0"
     bs-fetch "^0.6.2"
@@ -3876,7 +3876,7 @@ rescript-pages@0.5.0:
     front-matter "^4.0.2"
     get-port "^5.1.1"
     gh-pages "^3.1.0"
-    highlight.js "^10.3.2"
+    highlight.js "^10.4.1"
     html-webpack-plugin "^4.5.0"
     inline-translations-webpack-plugin "^1.0.1"
     memfs "^3.2.0"
