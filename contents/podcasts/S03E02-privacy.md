@@ -1,6 +1,6 @@
 ---
 date: 2020-12-30
-title: S03E01 Privacy
+title: S03E02 Privacy
 participants:
   - bloodyowl
   - jojmaht
