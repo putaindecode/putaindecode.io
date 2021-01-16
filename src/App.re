@@ -153,6 +153,14 @@ let default =
                             "/articles/" ++ oldSlug,
                             "/articles/" ++ item.slug,
                           ),
+                          (
+                            "/fr/articles/" ++ oldSlug ++ ".html",
+                            "/articles/" ++ item.slug,
+                          ),
+                          (
+                            "/fr/articles/" ++ oldSlug,
+                            "/articles/" ++ item.slug,
+                          ),
                         |]
                       )
                   )
