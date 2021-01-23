@@ -1,28 +1,17 @@
 module Styles = {
-  open Css;
-  let logo = style([display(block)]);
-};
+  open Css
+  let logo = style(list{display(block)})
+}
 
 let logo =
   <svg className=Styles.logo width="36px" height="36px" viewBox="0 0 36 36">
     <defs>
-      <linearGradient
-        x1="50%"
-        y1="0%"
-        x2="50%"
-        y2="127.223881%"
-        id="PutainDeCodeLogoGradient">
-        <stop stopColor="#E41D57" offset="0%" />
-        <stop stopColor="#C60000" offset="100%" />
+      <linearGradient x1="50%" y1="0%" x2="50%" y2="127.223881%" id="PutainDeCodeLogoGradient">
+        <stop stopColor="#E41D57" offset="0%" /> <stop stopColor="#C60000" offset="100%" />
       </linearGradient>
     </defs>
     <circle
-      stroke="#FFFFFF"
-      strokeWidth="2"
-      fill="url(#PutainDeCodeLogoGradient)"
-      cx="18"
-      cy="18"
-      r="17"
+      stroke="#FFFFFF" strokeWidth="2" fill="url(#PutainDeCodeLogoGradient)" cx="18" cy="18" r="17"
     />
     <polygon
       fill="#FFFFFF"
@@ -38,4 +27,4 @@ let logo =
         repeatCount="indefinite"
       />
     </rect>
-  </svg>;
+  </svg>
