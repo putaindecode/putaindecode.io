@@ -55,7 +55,7 @@ face à la solution deux ?
 
 ### Quoi
 
-Une fois qu'on a plannifié le **comment**, le **quoi** est la partie la moins
+Une fois qu'on a planifié le **comment**, le **quoi** est la partie la moins
 intéressante. C'est un boulot de traduction. On écrit dans un langage ce qu'on a
 exprimé dans un autre.
 
