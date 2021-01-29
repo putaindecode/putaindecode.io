@@ -29,8 +29,7 @@ J'aime beaucoup la conférence TED
 (vous l'avez très certainement déjà vue), et bien que ça parle de boites, je
 pense que l'idée générale peut s'appliquer à beaucoup de domaines.
 
-Pour paraphraser un peu: **partez de la vision, ensuite trouvez comment le
-faire, ensuite faites-le**.
+Pour paraphraser un peu: **partez de la vision, puis trouvez un moyen de la concrétiser, puis faites-le**.
 
 ![Why, how and what](/public/images/articles/2021-01-29-ecrivez-du-code-stupide/GoldenCircle.png)
 
