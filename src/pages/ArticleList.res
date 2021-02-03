@@ -80,9 +80,14 @@ module Styles = {
 }
 
 @react.component
-let make = (~search) => {
+let make = (~search as propsSearch) => {
   let postList = Pages.useCollection("articles")
-  let queryString = search->QueryString.explode
+  let (search, setSearch) = React.useState(() => None)
+  React.useEffect1(() => {
+    setSearch(_ => Some(propsSearch))
+    None
+  }, [propsSearch])
+  let queryString = search->Option.map(QueryString.explode)->Option.getWithDefault(Map.String.empty)
   <div className=Styles.container>
     {switch postList {
     | NotAsked
@@ -92,8 +97,7 @@ let make = (~search) => {
       <WidthContainer>
         <Pages.Head>
           <title>
-            {(search
-            ->QueryString.explode
+            {(queryString
             ->Map.String.get("search")
             ->Option.map(search => "Articles avec " ++ search)
             ->Option.getWithDefault("Articles") ++ " | Putain de code")->React.string}
@@ -107,7 +111,7 @@ let make = (~search) => {
             className=Styles.search
             placeholder=`Rechercher …`
             type_="text"
-            value={search->QueryString.explode->Map.String.get("search")->Option.getWithDefault("")}
+            value={queryString->Map.String.get("search")->Option.getWithDefault("")}
             onChange={event => {
               let search = (event->ReactEvent.Form.target)["value"]
               ReasonReact.Router.push(
@@ -128,8 +132,7 @@ let make = (~search) => {
             ->Option.flatMap(Js.Json.decodeString)
             ->Option.getWithDefault("putaindecode")
           <Pages.Link
-            className={search
-            ->QueryString.explode
+            className={queryString
             ->Map.String.get("search")
             ->Option.map(Js.String.trim)
             ->Option.map(Js.String.toLowerCase)
