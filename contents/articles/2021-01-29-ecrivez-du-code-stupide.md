@@ -130,7 +130,7 @@ l'être ?
 
 ![Effort on value](/public/images/articles/2021-01-29-ecrivez-du-code-stupide/EffortValue.png)
 
-**Le code stupide réduit mécaniquement l'effort\*\*** immédiat et futur, rendant
+**Le code stupide réduit mécaniquement l'effort** immédiat et futur, rendant
 la valeur que vous apportez plus accessible.
 
 Si on était des machines à écrire du code, on apporterait pas une immense
