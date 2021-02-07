@@ -143,6 +143,8 @@ module Styles = {
 
 let externalLinkRe = %re("/^https?:\\/\\//")
 
+let stopDisqusStartDate = Js.Date.utcWithYM(~year=2020.0, ~month=0.0, ())
+
 @react.component
 let make = (~slug, ~hash, ~canonical) => {
   let post = Pages.useItem("articles", ~id=slug)
@@ -241,13 +243,21 @@ let make = (~slug, ~hash, ~canonical) => {
               {j`← Articles`->ReasonReact.string}
             </Pages.Link>
           </div>
-          <Disqus
-            url={post.meta
-            ->Js.Dict.get("oldSlug")
-            ->Option.flatMap(Js.Json.decodeString)
-            ->Option.map(old => "http://putaindecode.io/fr/articles/" ++ (old ++ "/"))
-            ->Option.getWithDefault(canonical)}
-          />
+          {post.date
+          ->Option.flatMap(date =>
+            Js.Date.fromString(date)->Js.Date.getTime >= stopDisqusStartDate
+              ? None
+              : Some(
+                  <Disqus
+                    url={post.meta
+                    ->Js.Dict.get("oldSlug")
+                    ->Option.flatMap(Js.Json.decodeString)
+                    ->Option.map(old => "http://putaindecode.io/fr/articles/" ++ (old ++ "/"))
+                    ->Option.getWithDefault(canonical)}
+                  />,
+                )
+          )
+          ->Option.getWithDefault(React.null)}
         </WidthContainer>
       </div>
     | Done(Error(_)) => <ErrorPage />
