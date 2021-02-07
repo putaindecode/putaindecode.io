@@ -32,7 +32,7 @@ La communauté réclame depuis des années un standard donnant la possibilité d
 
 À mon sens, **les CSS modules sont la première occurence de CSS-in-JS**. Probablement une question de syntaxe, mais cette technique est relativement bien acceptée. Suite à la popularisation de ce système, les idées fusent et les solutions CSS-in-JS se multiplient, chacune avec son approche sur le sujet.
 
-Qu'est-ce qu'on peut tirer de ça ? Que oui, comme le disent ses défenseurs, CSS est puissant, son système d'application des styles l'est très certainement. Ce n'est pas pour autant qu'il est **pratique** et **adapté** à de gros projets qu'on doit maintenir dans le temps. La complexité qui en découle **impose aux devs une forme de rigueur**, faute de quoi les regressions sont inévitables. **Ça a un coût, en temps passé et en énergie mentale déployée**.  Si cette rigueur peut-être déléguée à une machine, quelle raison aurait-on de s'en priver ?
+Qu'est-ce qu'on peut tirer de ça ? Que oui, comme le disent ses défenseurs, CSS est puissant, son système d'application des styles l'est très certainement. Ce n'est pas pour autant qu'il est **pratique** et **adapté** à de gros projets qu'on doit maintenir dans le temps. La complexité qui en découle **impose aux devs une forme de rigueur**, faute de quoi les regressions sont inévitables. **Ça a un coût, en temps passé et en énergie mentale déployée**.  Si cette rigueur peut être déléguée à une machine, quelle raison aurait-on de s'en priver ?
 
 CSS a beau n'être qu'un **langage informatique**, on a parfois l'impression qu'il est considéré comme une **doctrine religieuse**, et on m'a souvent reproché de promouvoir des approches qui délèguent la charge mentale induite à une machine, avec l'argument que je ne savais pas faire de CSS. Parce que CSS, par sa volonté propre, voulait qu'il en soit autrement. 
 
@@ -50,7 +50,7 @@ Pour expliquer un peu mon usage: je travaille sur une **web app dont je maîtris
 
 J'utilise deux "genres" de CSS-in-JS. Mon application se divise en deux parties: un widget dans une iframe-sourceless et un dashboard. Le widget utilise pour des raisons pratiques des styles inline (l'attribut style, oui oui 😱) et le dashboard la bibliothèque [emotion](https://emotion.sh/docs/introduction).
 
-Eh bien je suis très content des deux. **Je n'ai pas eu la moindre regression liée à de l'application de style depuis que j'utilise CSS-in-JS**. 
+Eh bien je suis très content des deux. **Je n'ai pas eu la moindre régression liée à de l'application de style depuis que j'utilise CSS-in-JS**. 
 
 Ma manière de définir et d'appliquer un style à un élément ressemble à ça (attention, c'est du [ReScript](https://rescript-lang.org)):
 
@@ -76,17 +76,17 @@ module Styles = {
 </TouchableOpacity>
 ```
 
-Que vous trouviez ça **joli ou moche, là n'est pas le point**. La machine fait ce qu'on lui dit. Elle génère un nom de `class` en faisant un hash des styles, cette `class` **ne pourra déclencher aucun effet de bord** ailleurs dans l'application. 
+Que vous trouviez ça **joli ou moche, là n'est pas le sujet**. La machine fait ce qu'on lui dit. Elle génère un nom de `class` en faisant un hash des styles, cette `class` **ne pourra déclencher aucun effet de bord** ailleurs dans l'application. 
 
 Ça m'a rendu la gestion des styles tellement **bête et simple** qu'il n'y a pas grand chose à dire dessus. **J'assigne à une variable une spécification de style**, et **je donne cette variable à l'élément** sur lequel je la veux appliquée, et ce sera le seul style appliqué à mon élément. _That's it_. Ça élimine une catégorie entière de problèmes, me laissant l'occasion de me concentrer sur d'autres choses. Vu que j'utilise une bibliothèque typée qui s'assure qu'une propriété reçoit une valeur d'un type attendu : **j'écris du CSS avec des petites roues**, ça m'évite même de laisser passer des fautes de frappe.
 
-Et ce qui étaient autrefois des casses-têtes immenses sont gérés automatiquement : **ça élimine les styles morts** facilement, ce qui est virtuellement infaisable à grande échelle (ici, c'est simplement une variable, et on sait très facilement détecter les variables inutilisées). C'est même capable d'**extraire les styles critiques au rendu de la page**, automatiquement !
+Et ce qui étaient autrefois des casse-têtes immenses sont gérés automatiquement : **ça élimine les styles morts** facilement, ce qui est virtuellement infaisable à grande échelle (ici, c'est simplement une variable, et on sait très facilement détecter les variables inutilisées). C'est même capable d'**extraire les styles critiques au rendu de la page**, automatiquement !
 
 Quand je reviens à l'occasion sur des trucs nécessitant des sélecteurs CSS (pour des choses où je ne maîtrise pas le markup, et c'est un cas d'usage très légitime), je réalise à quel point j'avais accepté une complexité incroyable parce que c'était la seule façon. Quand j'y réfléchis bien, pour styliser des éléments, j'étais obligé de me **créer une cartographie mouvante dépendant d'un algorithme de résolution dont je n'avais pas forcément les paramètres à tout instant donné**. 
 
 Les sélecteurs représentent une charge mentale énorme qui est **évitable**. C'est ça, la killer feature de CSS-in-JS.
 
-La puissance des sélecteurs complexes CSS ne **valent pas le coup pour moi** tant que leur balance bénéfice/risque est plus faible que l'arternative. **Si exprimer la même chose que le sélecteur CSS avec du JS est plus lisible et maintenable, je ne vais pas hésiter**.
+La puissance des sélecteurs complexes CSS ne **valent pas le coup pour moi** tant que leur balance bénéfice/risque est plus faible que l'alternative. **Si exprimer la même chose que le sélecteur CSS avec du JS est plus lisible et maintenable, je ne vais pas hésiter**.
 
 C'est bien d'avoir un système ultra-puissant qui impose de déployer une énergie folle. Je préfère être capable de retourner dans mon code au quotidien sans avoir à me faire des nœuds au cerveau. 
 
@@ -98,7 +98,7 @@ Le blog que vous êtes en train de lire est **une application web qui utilise CS
 
 **Ce que le navigateur reçoit, il est parfaitement capable de l'interpréter**. 
 
-Ç**a ne change rien au résultat final**, et ça facilite la vie des gens qui travaillent dessus au quotidien. Pourquoi on s'en priverait ? À l'heure où l'immense majorité du code qu'on écrit à destination d'un navigateur passe par une étape de compilation (que ce soit un préprocesseur, un minifier…), pourquoi ne pas aller au bout et considérer la plateforme web comme une "compilation target" ? Pourquoi ne pas s'autoriser une abstraction qui nous permet de travailler plus confortablement pour **un résultat équivalent, sinon meilleur** ?
+**Ça ne change rien au résultat final**, et ça facilite la vie des gens qui travaillent dessus au quotidien. Pourquoi on s'en priverait ? À l'heure où l'immense majorité du code qu'on écrit à destination d'un navigateur passe par une étape de compilation (que ce soit un préprocesseur, un minifier…), pourquoi ne pas aller au bout et considérer la plateforme web comme une "compilation target" ? Pourquoi ne pas s'autoriser une abstraction qui nous permet de travailler plus confortablement pour **un résultat équivalent, sinon meilleur** ?
 
 ## Pourquoi des réactions si épidermiques face à CSS-in-JS ?
 
