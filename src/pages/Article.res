@@ -143,8 +143,23 @@ module Styles = {
 let externalLinkRe = %re("/^https?:\\/\\//")
 
 @react.component
-let make = (~slug, ~canonical) => {
+let make = (~slug, ~hash, ~canonical) => {
   let post = Pages.useItem("articles", ~id=slug)
+
+  React.useEffect0(() => {
+    switch hash {
+    | "" => ()
+    | hash =>
+      open Webapi.Dom
+      Document.querySelector("#" ++ hash, document)->Option.map(element => {
+        Js.Global.setTimeout(() => {
+          Element.scrollIntoView(element)
+        }, 100)
+      })->ignore
+    }
+    None
+  })
+
   <div className=Styles.root>
     {switch post {
     | NotAsked

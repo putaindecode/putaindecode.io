@@ -24,6 +24,7 @@ let make = (~url: ReasonReactRouter.url, ~config as _, ()) => {
       open Webapi.Dom
       Window.scrollTo(0.0, 0.0, window)
     }
+
     None
   }, [url.path->List.toArray->Js.Array.joinWith("/", _)])
 
@@ -79,6 +80,7 @@ let make = (~url: ReasonReactRouter.url, ~config as _, ()) => {
     | list{"articles", slug} =>
       <Article
         slug
+        hash={url.hash}
         canonical={"https://putaindecode.io/" ++ url.path->List.toArray->Js.Array.joinWith("/", _)}
       />
     | _ => <ErrorPage />
