@@ -86,7 +86,7 @@ Quand je reviens à l'occasion sur des trucs nécessitant des sélecteurs CSS (p
 
 Les sélecteurs représentent une charge mentale énorme qui est **évitable**. C'est ça, la killer feature de CSS-in-JS.
 
-La puissance des sélecteurs complexes CSS ne **valent pas le coup pour moi** tant que leur balance bénéfice/risque est plus faible que l'arternative. Si exprimer la même chose que le sélecteur CSS avec du JS est plus lisible et maintenable, je ne vais pas hésiter. 
+La puissance des sélecteurs complexes CSS ne **valent pas le coup pour moi** tant que leur balance bénéfice/risque est plus faible que l'arternative. **Si exprimer la même chose que le sélecteur CSS avec du JS est plus lisible et maintenable, je ne vais pas hésiter**.
 
 C'est bien d'avoir un système ultra-puissant qui impose de déployer une énergie folle. Je préfère être capable de retourner dans mon code au quotidien sans avoir à me faire des nœuds au cerveau. 
 
