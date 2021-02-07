@@ -147,7 +147,7 @@ let externalLinkRe = %re("/^https?:\\/\\//")
 let make = (~slug, ~hash, ~canonical) => {
   let post = Pages.useItem("articles", ~id=slug)
 
-  React.useEffect0(() => {
+  React.useEffect1(() => {
     switch hash {
     | "" => ()
     | hash =>
@@ -159,7 +159,7 @@ let make = (~slug, ~hash, ~canonical) => {
       })->ignore
     }
     None
-  })
+  }, [slug])
 
   <div className=Styles.root>
     {switch post {
