@@ -42,7 +42,7 @@
     "a",
     list{
       color(Theme.gradientRedBottom->hex),
-      media("(prefers-color-scheme: dark)", list{color("ddd"->hex)}),
+      media("(prefers-color-scheme: dark)", list{color("F87098"->hex)}),
       textDecoration(underline),
       hover(list{textDecoration(none)}),
     },

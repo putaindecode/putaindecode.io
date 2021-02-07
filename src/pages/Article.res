@@ -17,6 +17,7 @@ module Styles = {
     textAlign(center),
     paddingTop(40->px),
     lineHeight(#abs(1.2)),
+    margin(zero),
   })
   let author = style(list{
     fontSize(16->px),
@@ -142,9 +143,26 @@ module Styles = {
 
 let externalLinkRe = %re("/^https?:\\/\\//")
 
+let stopDisqusStartDate = Js.Date.utcWithYM(~year=2020.0, ~month=0.0, ())
+
 @react.component
-let make = (~slug, ~canonical) => {
+let make = (~slug, ~hash, ~canonical) => {
   let post = Pages.useItem("articles", ~id=slug)
+
+  React.useEffect1(() => {
+    switch hash {
+    | "" => ()
+    | hash =>
+      open Webapi.Dom
+      Document.querySelector("#" ++ hash, document)->Option.map(element => {
+        Js.Global.setTimeout(() => {
+          Element.scrollIntoView(element)
+        }, 100)
+      })->ignore
+    }
+    None
+  }, [slug])
+
   <div className=Styles.root>
     {switch post {
     | NotAsked
@@ -161,9 +179,7 @@ let make = (~slug, ~canonical) => {
           <title> {(post.title ++ " | Putain de code")->React.string} </title>
         </Pages.Head>
         <WidthContainer>
-          <div role="heading" ariaLevel=1 className=Styles.title>
-            {post.title->ReasonReact.string}
-          </div>
+          <h1 className=Styles.title> {post.title->ReasonReact.string} </h1>
           <a href={"https://github.com/" ++ author} className=Styles.author>
             <img
               className=Styles.avatar
@@ -227,13 +243,21 @@ let make = (~slug, ~canonical) => {
               {j`← Articles`->ReasonReact.string}
             </Pages.Link>
           </div>
-          <Disqus
-            url={post.meta
-            ->Js.Dict.get("oldSlug")
-            ->Option.flatMap(Js.Json.decodeString)
-            ->Option.map(old => "http://putaindecode.io/fr/articles/" ++ (old ++ "/"))
-            ->Option.getWithDefault(canonical)}
-          />
+          {post.date
+          ->Option.flatMap(date =>
+            Js.Date.fromString(date)->Js.Date.getTime >= stopDisqusStartDate
+              ? None
+              : Some(
+                  <Disqus
+                    url={post.meta
+                    ->Js.Dict.get("oldSlug")
+                    ->Option.flatMap(Js.Json.decodeString)
+                    ->Option.map(old => "http://putaindecode.io/fr/articles/" ++ (old ++ "/"))
+                    ->Option.getWithDefault(canonical)}
+                  />,
+                )
+          )
+          ->Option.getWithDefault(React.null)}
         </WidthContainer>
       </div>
     | Done(Error(_)) => <ErrorPage />
