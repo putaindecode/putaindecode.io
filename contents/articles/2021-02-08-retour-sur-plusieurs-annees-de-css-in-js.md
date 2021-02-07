@@ -38,7 +38,7 @@ CSS a beau n'être qu'un **langage informatique**, on a parfois l'impression qu'
 
 Non, CSS n'a pas été originalement prévu pour être utilisé comme ça. Et c'est pas grave, c'était il y a 25 ans (environ un millénaire en années tech). Les usages, les besoins, tout ça a évolué. **Il y a 25 ans il était inimaginable que le web puisse devenir ce qu'il est aujourd'hui**, avec des interfaces incroyablement riches, permettant de faire à peu près ce qu'on veut depuis un navigateur. Pourquoi cette vision originale devrait nous freiner dans nos idées ? Pourquoi devrait-elle nous imposer une difficulté ? On ne parle pas d'un problème éthique complexe : qu'on délègue ou pas, qu'on automatise ou pas, ça ne change rien à personne. Il s'agit juste d'un attachement profond à une doctrine.
 
-Je pense qu'il est temps d'**arrêter de sacraliser tous les aspects de CSS**. Je suis admiratif de son modèle de boite, de styling, et je pense honnêtement que c'est un des outils permettant l'expression du style de la manière la plus simple possible. En revanche, je trouve sa façon de résoudre les styles complètement obsolète et error-prone dans les contextes où je l'utilise. 
+Je pense qu'il est temps d'**arrêter de sacraliser tous les aspects de CSS**. Je suis admiratif de son modèle de boite, de styling, et je pense honnêtement que c'est un des outils permettant l'expression du style de la manière la plus simple possible. En revanche, je trouve sa façon de résoudre les styles complètement obsolète et risquée dans les contextes où je l'utilise.
 
 J'utilise les parties de CSS qui me permettent de faire ce que je veux (pour simplifier, tout ce qu'on trouve entre des accolades), et je délègue la gestion des autres parties à une machine.
 
@@ -86,19 +86,19 @@ Quand je reviens à l'occasion sur des trucs nécessitant des sélecteurs CSS (p
 
 Les sélecteurs représentent une charge mentale énorme qui est **évitable**. C'est ça, la killer feature de CSS-in-JS.
 
-La puissance des sélecteurs complexes CSS ne **valent pas le coup pour moi** tant que leur balance bénéfice/risque est plus faible que l'alternative. **Si exprimer la même chose que le sélecteur CSS avec du JS est plus lisible et maintenable, je ne vais pas hésiter**.
+La puissance des sélecteurs complexes CSS ne **valent pas le coup pour moi** tant que leur [balance bénéfice/risque](/articles/tradeoffs) est plus faible que l'alternative. **Si exprimer la même chose que le sélecteur CSS avec du JS est plus lisible et maintenable, je ne vais pas hésiter**.
 
-C'est bien d'avoir un système ultra-puissant qui impose de déployer une énergie folle. Je préfère être capable de retourner dans mon code au quotidien sans avoir à me faire des nœuds au cerveau. 
+C'est bien d'avoir un système ultra-puissant qui impose de déployer une énergie folle. Je préfère être capable de retourner dans mon code au quotidien [sans avoir à me faire des nœuds au cerveau](/articles/introduction-a-rud).
 
 ## Mais ça casse le web !
 
 C'est un des nombreux arguments d'autorité qu'on a entendu au fil des années. Les technologies telles que CSS-in-JS, **ça casserait le web**.
 
-Le blog que vous êtes en train de lire est **une application web qui utilise CSS-in-JS**. Est-ce qu'il casse le web ? Est-ce ça vous empêche de lire son contenu avec les styles désactivés ? Est-ce que ça vous empêche de parcourir le site sans JavaScript ? Essayez !
+Le blog que vous êtes en train de lire est [**une application web qui utilise CSS-in-JS**](/articles/comment-on-a-fait-ce-site). Est-ce qu'il casse le web ? Est-ce ça vous empêche de lire son contenu avec les styles désactivés ? Est-ce que ça vous empêche de parcourir le site sans JavaScript ? Essayez !
 
 **Ce que le navigateur reçoit, il est parfaitement capable de l'interpréter**. 
 
-**Ça ne change rien au résultat final**, et ça facilite la vie des gens qui travaillent dessus au quotidien. Pourquoi on s'en priverait ? À l'heure où l'immense majorité du code qu'on écrit à destination d'un navigateur passe par une étape de compilation (que ce soit un préprocesseur, un minifier…), pourquoi ne pas aller au bout et considérer la plateforme web comme une "compilation target" ? Pourquoi ne pas s'autoriser une abstraction qui nous permet de travailler plus confortablement pour **un résultat équivalent, sinon meilleur** ?
+**Ça ne change rien au résultat final**, et ça facilite la vie des gens qui travaillent dessus au quotidien. [Pourquoi on s'en priverait ?](/articles/2021-01-29-ecrivez-du-code-stupide) À l'heure où l'immense majorité du code qu'on écrit à destination d'un navigateur passe par une étape de compilation (que ce soit un préprocesseur, un minifier…), pourquoi ne pas aller au bout et considérer la plateforme web comme une "compilation target" ? Pourquoi ne pas s'autoriser une abstraction qui nous permet de travailler plus confortablement pour **un résultat équivalent, sinon meilleur** ?
 
 ## Pourquoi des réactions si épidermiques face à CSS-in-JS ?
 
@@ -118,7 +118,7 @@ Qu'on arrête de se concentrer sur des nouveaux sélecteurs, des nouveaux systè
 
 J'aimerais qu'on déploie notre énergie à **rendre la plateforme meilleure**, **plus accessible** et **plus maintenable**. Aujourd'hui on est encore forcés de gérer nous-mêmes des "pièges à focus" pour nos modales, on n'a toujours pas de solution viable pour faire varier les propriétés CSS d'un conteneur selon l'espace à sa disposition (on est censé prévoir tous les contextes où un composant réutilisable va s'afficher, puis qu'on ne peut le faire varier que selon une taille de fenêtre), on n'a pas de brique native pour créer des animations utilisant des propriétés physique performantes (les applications natives mobiles parviennent avec elles à créer des animations logiques, aidant à la compréhension des interfaces). Ces problèmes ne sont pas nouveaux, certains sont identifiés depuis plus de 15 ans, et **de l'extérieur il ne semble pas qu'il s'agisse d'une priorité** (même si certains sont en cours de développement, ça aura quand même mis le temps). 
 
-Quitte à laisser la communauté développer ses alternatives, autant lui offrir de **meilleures briques de base** (au hasard, un système de liste virtualisée natif), une **meilleure accessibilité par défaut**, **des arguments pour ramener sur le web des produits s'étant tournés vers les stores** mobiles pour y délivrer de meilleures expériences : tout le monde y gagne. 
+Quitte à laisser la communauté développer ses alternatives, autant lui offrir de **meilleures briques de base** (au hasard, un système natif de liste virtualisée), une **meilleure accessibilité par défaut**, **des arguments pour ramener sur le web des produits s'étant tournés vers les stores** mobiles pour y délivrer de meilleures expériences : tout le monde y gagne.
 
 Plus on fera comme si les usages tels que ceux qui poussent les gens à utiliser CSS-in-JS n'existent pas, ou pire, qu'ils ne sont pas légitimes, plus la scission dans la communauté sera grande et **moins le web y gagnera**. 
 
