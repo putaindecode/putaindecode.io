@@ -17,6 +17,7 @@ module Styles = {
     textAlign(center),
     paddingTop(40->px),
     lineHeight(#abs(1.2)),
+    margin(zero),
   })
   let author = style(list{
     fontSize(16->px),
@@ -176,9 +177,7 @@ let make = (~slug, ~hash, ~canonical) => {
           <title> {(post.title ++ " | Putain de code")->React.string} </title>
         </Pages.Head>
         <WidthContainer>
-          <div role="heading" ariaLevel=1 className=Styles.title>
-            {post.title->ReasonReact.string}
-          </div>
+          <h1 className=Styles.title> {post.title->ReasonReact.string} </h1>
           <a href={"https://github.com/" ++ author} className=Styles.author>
             <img
               className=Styles.avatar
