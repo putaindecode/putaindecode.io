@@ -2,7 +2,7 @@
 title: Retour sur plusieurs années de CSS-in-JS
 date: 2021-02-08
 author: bloodyowl
-slug: retour-sur-plusieurs-anness-de-css-in-js
+slug: retour-sur-plusieurs-annees-de-css-in-js
 ---
 
 Voilà maintenant plus de 4 ans, je vous partageais [les raisons me poussant à me détourner de mon amour initial pour CSS](/articles/pourquoi-j-ai-arrete-d-utiliser-css/), alors que je m'en allais vers des alternatives qui proposaient des solutions aux problèmes que je rencontrais quotidiennement. 
