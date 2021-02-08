@@ -7,7 +7,7 @@ slug: retour-sur-plusieurs-annees-de-css-in-js
 
 Voilà maintenant plus de 4 ans, je vous partageais [les raisons me poussant à me détourner de mon amour initial pour CSS](/articles/pourquoi-j-ai-arrete-d-utiliser-css/), alors que je m'en allais vers des alternatives qui proposaient des solutions aux problèmes que je rencontrais quotidiennement. 
 
-L'article original, écrit dans la fougue de la jeunesse, utilisait un ton dit de "petit merdeux". J'ai bien conscience que ça n'avait à l'époque pas aidé à faire passer le message souhaité, comme peuvent [en témoigner](http://www.glazman.org/weblog/dotclear/index.php?post/2016/06/18/Pourquoi-il-n-aurait-pas-du-arrêter-d-utiliser-CSS) [les différents retours](/articles/pourquoi-j-ai-arrete-d-utiliser-css/#disqus_thread). Je donc vais profiter de cette rétrospective pour résumer son propos un peu plus finement. 
+L'article original, écrit dans la fougue de la jeunesse, utilisait un ton dit de "petit merdeux". J'ai bien conscience que ça n'avait à l'époque pas aidé à faire passer le message souhaité, comme peuvent [en témoigner](http://www.glazman.org/weblog/dotclear/index.php?post/2016/06/18/Pourquoi-il-n-aurait-pas-du-arrêter-d-utiliser-CSS) [les différents retours](/articles/pourquoi-j-ai-arrete-d-utiliser-css/#disqus_thread). Je vais donc profiter de cette rétrospective pour résumer son propos un peu plus finement.
 
 ## Arrêter de sacraliser CSS
 
