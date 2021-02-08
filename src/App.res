@@ -2,23 +2,8 @@ open Belt
 
 include CssReset
 
-module GoogleAnalytics = {
-  @bs.send
-  external set: (DomRe.Window.t_window, @bs.as("set") _, string, string) => unit = "ga"
-  @bs.send
-  external send: (DomRe.Window.t_window, @bs.as("send") _, string) => unit = "ga"
-}
-
 @react.component
 let make = (~url: ReasonReactRouter.url, ~config as _, ()) => {
-  React.useEffect1(() => {
-    Webapi.Dom.window->GoogleAnalytics.set(
-      "page",
-      "/" ++ url.path->List.toArray->Js.Array.joinWith("/", _),
-    )
-    Webapi.Dom.window->GoogleAnalytics.send("pageview")
-    None
-  }, [url])
   React.useEffect1(() => {
     {
       open Webapi.Dom
@@ -48,17 +33,6 @@ let make = (~url: ReasonReactRouter.url, ~config as _, ()) => {
         href="/api/articles/feeds/desc/feed.xml"
         title="RSS Feed"
       />
-      <script>
-        {`window.ga =
-        window.ga ||
-        function() {
-          (ga.q = ga.q || []).push(arguments);
-        };
-      ga.l = +new Date();
-      ga("create", "UA-43f771806-1", "auto");
-      ga("send", "pageview");`->React.string}
-      </script>
-      <script async=true src="https://www.google-analytics.com/analytics.js" />
       <link rel="shortcut icon" href={Pages.makeBaseUrl("/favicon.ico")} />
       <link
         rel="canonical"
