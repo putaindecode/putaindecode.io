@@ -128,7 +128,9 @@ module TopArticles = {
   let make = (~articles: array<Pages.listItem>, ~totalCount, ()) =>
     <div>
       <Pages.Head> <title> {"Putain de code"->React.string} </title> </Pages.Head>
-      <WidthContainer> {articles[0]->Option.map(article => {
+      <WidthContainer>
+        {articles[0]
+        ->Option.map(article => {
           let author =
             article.meta
             ->Js.Dict.get("author")
@@ -137,7 +139,7 @@ module TopArticles = {
           <Pages.Link
             href={"/articles/" ++ article.slug}
             className=Styles.topArticle
-            style={ReactDOMRe.Style.make(~backgroundImage=Gradient.fromString(article.slug), ())}>
+            style={ReactDOM.Style.make(~backgroundImage=Gradient.fromString(article.slug), ())}>
             <div className=Styles.contents>
               <div className=Styles.author>
                 <img
@@ -146,20 +148,25 @@ module TopArticles = {
                   alt=author
                 />
                 <div>
-                  {author->ReasonReact.string}
-                  {" "->ReasonReact.string}
+                  {author->React.string}
+                  {" "->React.string}
                   {article.date
                   ->Option.map(date => <>
-                    {j`•`->ReasonReact.string} {" "->ReasonReact.string} <Date date />
+                    {j`•`->React.string} {" "->React.string} <Date date />
                   </>)
                   ->Option.getWithDefault(React.null)}
                 </div>
               </div>
-              <div className=Styles.bigTitle> {article.title->ReasonReact.string} </div>
+              <div className=Styles.bigTitle> {article.title->React.string} </div>
             </div>
           </Pages.Link>
-        })->Option.getWithDefault(ReasonReact.null)} </WidthContainer>
-      <div className=Styles.sub> {articles->Array.slice(~offset=1, ~len=6)->Array.map(article => {
+        })
+        ->Option.getWithDefault(React.null)}
+      </WidthContainer>
+      <div className=Styles.sub>
+        {articles
+        ->Array.slice(~offset=1, ~len=6)
+        ->Array.map(article => {
           let author =
             article.meta
             ->Js.Dict.get("author")
@@ -169,7 +176,7 @@ module TopArticles = {
             <Pages.Link
               href={"/articles/" ++ article.slug}
               className=Styles.article
-              style={ReactDOMRe.Style.make(~backgroundImage=Gradient.fromString(article.slug), ())}>
+              style={ReactDOM.Style.make(~backgroundImage=Gradient.fromString(article.slug), ())}>
               <div className=Styles.contents>
                 <div className=Styles.authorSmall>
                   <div className=Styles.author>
@@ -179,24 +186,26 @@ module TopArticles = {
                       alt=author
                     />
                     <div>
-                      {author->ReasonReact.string}
-                      {" "->ReasonReact.string}
+                      {author->React.string}
+                      {" "->React.string}
                       {article.date
                       ->Option.map(date => <>
-                        {j`•`->ReasonReact.string} {" "->ReasonReact.string} <Date date />
+                        {j`•`->React.string} {" "->React.string} <Date date />
                       </>)
                       ->Option.getWithDefault(React.null)}
                     </div>
                   </div>
                 </div>
-                <div className=Styles.title> {article.title->ReasonReact.string} </div>
+                <div className=Styles.title> {article.title->React.string} </div>
               </div>
             </Pages.Link>
           </div>
-        })->ReasonReact.array} </div>
+        })
+        ->React.array}
+      </div>
       <div className=Styles.discover>
         <Pages.Link href="/articles" className=Styles.discoverLink>
-          {j`Découvrir les $totalCount articles →`->ReasonReact.string}
+          {j`Découvrir les $totalCount articles →`->React.string}
         </Pages.Link>
       </div>
     </div>
@@ -286,15 +295,13 @@ module LatestPodcasts = {
             <img width="150" height="150" src="/public/images/website/podcast.svg" alt="" />
           </div>
           <div className=Styles.mainCol>
-            <div role="heading" ariaLevel=2 className=Styles.title>
-              {"Podcast"->ReasonReact.string}
-            </div>
+            <div role="heading" ariaLevel=2 className=Styles.title> {"Podcast"->React.string} </div>
             {podcasts
             ->Array.slice(~offset=0, ~len=3)
             ->Array.map(podcast =>
               <Pages.Link
                 key=podcast.slug href={"/podcasts/" ++ podcast.slug} className=Styles.podcast>
-                <div className=Styles.podcastTitle> {podcast.title->ReasonReact.string} </div>
+                <div className=Styles.podcastTitle> {podcast.title->React.string} </div>
                 {podcast.meta
                 ->Js.Dict.get("participants")
                 ->Option.flatMap(Js.Json.decodeArray)
@@ -308,13 +315,13 @@ module LatestPodcasts = {
                     alt=name
                   />
                 )
-                ->ReasonReact.array}
+                ->React.array}
               </Pages.Link>
             )
-            ->ReasonReact.array}
+            ->React.array}
             <div className=Styles.discover>
               <Pages.Link href="/podcasts" className=Styles.discoverLink>
-                {j`Découvrir les $totalCount épisodes →`->ReasonReact.string}
+                {j`Découvrir les $totalCount épisodes →`->React.string}
               </Pages.Link>
             </div>
           </div>

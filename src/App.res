@@ -3,7 +3,7 @@ open Belt
 include CssReset
 
 @react.component
-let make = (~url: ReasonReactRouter.url, ~config as _, ()) => {
+let make = (~url: RescriptReactRouter.url, ~config as _, ()) => {
   React.useEffect1(() => {
     {
       open Webapi.Dom

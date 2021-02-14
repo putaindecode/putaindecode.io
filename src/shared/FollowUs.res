@@ -27,11 +27,9 @@ module Styles = {
 let make = () =>
   <WidthContainer>
     <div className=Styles.container>
-      <div className=Styles.title role="heading" ariaLevel=2>
-        {"Ne rien rater"->ReasonReact.string}
-      </div>
+      <div className=Styles.title role="heading" ariaLevel=2> {"Ne rien rater"->React.string} </div>
       <div className=Styles.subTitle role="heading" ariaLevel=3>
-        {j`Sur les réseaux`->ReasonReact.string}
+        {j`Sur les réseaux`->React.string}
       </div>
       <div className=Styles.list>
         <a href="https://twitter.com/PutainDeCode">
@@ -62,7 +60,7 @@ let make = () =>
         </a>
       </div>
       <div className=Styles.subTitle role="heading" ariaLevel=3>
-        {j`Sur le chat`->ReasonReact.string}
+        {j`Sur le chat`->React.string}
       </div>
       <div className=Styles.list>
         <a href="https://discord.gg/jtbGNNc">

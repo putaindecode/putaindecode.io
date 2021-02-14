@@ -11,5 +11,5 @@ let make = (~date, ()) => {
       ((date->getUTCMonth +. 1.0)->Js.String.make->pad2 ++
         ("/" ++
         date->getUTCDate->Js.String.make->pad2)))
-  <time dateTime=utc> {dateString->ReasonReact.string} </time>
+  <time dateTime=utc> {dateString->React.string} </time>
 }

@@ -46,7 +46,7 @@ module Styles = {
 }
 
 @react.component
-let make = (~url: ReasonReact.Router.url, ~gradient=?, ()) => <>
+let make = (~url: RescriptReactRouter.url, ~gradient=?, ()) => <>
   <div className=Styles.banner>
     <div role="heading" className=Styles.bannerTitle> {"Black Lives Matter"->React.string} </div>
     <div>
@@ -63,7 +63,7 @@ let make = (~url: ReasonReact.Router.url, ~gradient=?, ()) => <>
       </a>
     </div>
   </div>
-  <header className=Styles.container style={ReactDOMRe.Style.make(~backgroundImage=?gradient, ())}>
+  <header className=Styles.container style={ReactDOM.Style.make(~backgroundImage=?gradient, ())}>
     <WidthContainer>
       <div className=Styles.contents>
         <Pages.Link href="/" className=Styles.logo>
@@ -77,11 +77,11 @@ let make = (~url: ReasonReact.Router.url, ~gradient=?, ()) => <>
               | list{} => 1
               | _ => 2
               }}>
-              {"Putain de code !"->ReasonReact.string}
+              {"Putain de code !"->React.string}
             </div>
           </div>
           <div className=Styles.subTitle>
-            {`Blog participatif de la communauté dev`->ReasonReact.string}
+            {`Blog participatif de la communauté dev`->React.string}
           </div>
         </Pages.Link>
       </div>

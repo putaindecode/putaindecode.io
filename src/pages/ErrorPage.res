@@ -60,11 +60,13 @@ let make = () => {
             User(state.input),
             switch state.input->Js.String.trim {
             | "" => System("")
-            | "help" => System(`available commands:
+            | "help" =>
+              System(`available commands:
 - help
 - ls
 - cat `)
-            | "ls" => System(`- hack-website.sh
+            | "ls" =>
+              System(`- hack-website.sh
 - go-to-home.sh
 - nuclear-codes.txt`)
             | "cat" => System("cat: missing argument")
@@ -79,11 +81,11 @@ let make = () => {
               System("000000")
             | "go-to-home.sh"
             | "./go-to-home.sh" =>
-              Js.Global.setTimeout(() => ReasonReact.Router.push("/"), 1_000)->ignore
+              Js.Global.setTimeout(() => RescriptReactRouter.push("/"), 1_000)->ignore
               System("Redirecting ...")
             | "cat go-to-home.sh"
             | "cat ./go-to-home.sh" =>
-              System("ReasonReact.Router.push(\"/\")")
+              System(`RescriptReactRouter.push("/")`)
             | _ => System("command not found: " ++ (state.input ++ "\ntry command 'help'"))
             },
           ],
@@ -105,23 +107,25 @@ let make = () => {
 
   let userPrefix = "~ "
   <WidthContainer>
-    <div role="heading" ariaLevel=1 className=Styles.title> {"Erreur"->ReasonReact.string} </div>
+    <div role="heading" ariaLevel=1 className=Styles.title> {"Erreur"->React.string} </div>
     <div
       className=Styles.terminal
       onClick={event => (event->ReactEvent.Mouse.target)["querySelector"]("input")["focus"]()}
-      ref={containerRef->ReactDOMRe.Ref.domRef}>
-      {state.history->Array.mapWithIndex((index, item) =>
+      ref={containerRef->ReactDOM.Ref.domRef}>
+      {state.history
+      ->Array.mapWithIndex((index, item) =>
         <div key=j`$index` className=Styles.line>
-          {ReasonReact.string(
+          {React.string(
             switch item {
             | User(value) => userPrefix ++ value
             | System(value) => value
             },
           )}
         </div>
-      )->ReasonReact.array}
+      )
+      ->React.array}
       <div>
-        {userPrefix->ReasonReact.string}
+        {userPrefix->React.string}
         {<input
           type_="text"
           className=Styles.input
@@ -136,7 +140,7 @@ let make = () => {
               event->ReactEvent.Keyboard.preventDefault
             }
           }}
-        />->ReasonReact.cloneElement(~props={"autoCapitalize": "off"}, [])}
+        />->React.cloneElement({"autoCapitalize": "off"})}
       </div>
     </div>
   </WidthContainer>

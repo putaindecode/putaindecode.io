@@ -21,16 +21,16 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@rescript/react": "^0.10.1",
     "bs-css-emotion": "^2.2.0",
     "bs-webapi": "^0.13.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "reason-react": "^0.9.1",
     "rescript-asyncdata": "^2.0.0",
-    "rescript-pages": "0.5.3"
+    "rescript-pages": "^1.0.2"
   },
   "devDependencies": {
-    "bs-platform": "^8.2.0",
+    "bs-platform": "^8.3.0",
     "prettier": "^1.18.2"
   },
   "prettier": {

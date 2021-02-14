@@ -104,9 +104,7 @@ let make = (~search as propsSearch) => {
           </title>
         </Pages.Head>
         <div className=Styles.heading>
-          <div role="heading" ariaLevel=1 className=Styles.title>
-            {"Articles"->ReasonReact.string}
-          </div>
+          <div role="heading" ariaLevel=1 className=Styles.title> {"Articles"->React.string} </div>
           <input
             className=Styles.search
             placeholder=`Rechercher …`
@@ -114,7 +112,7 @@ let make = (~search as propsSearch) => {
             value={queryString->Map.String.get("search")->Option.getWithDefault("")}
             onChange={event => {
               let search = (event->ReactEvent.Form.target)["value"]
-              ReasonReact.Router.push(
+              RescriptReactRouter.push(
                 "?" ++
                 (
                   search == ""
@@ -125,7 +123,8 @@ let make = (~search as propsSearch) => {
             }}
           />
         </div>
-        {postList->Array.map(article => {
+        {postList
+        ->Array.map(article => {
           let author =
             article.meta
             ->Js.Dict.get("author")
@@ -152,18 +151,19 @@ let make = (~search as propsSearch) => {
                 alt=author
               />
               <div>
-                {author->ReasonReact.string}
-                {" "->ReasonReact.string}
+                {author->React.string}
+                {" "->React.string}
                 {article.date
                 ->Option.map(date => <>
-                  {j`•`->ReasonReact.string} {" "->ReasonReact.string} <Date date />
+                  {j`•`->React.string} {" "->React.string} <Date date />
                 </>)
                 ->Option.getWithDefault(React.null)}
               </div>
             </div>
-            <div className=Styles.postTitle> {article.title->ReasonReact.string} </div>
+            <div className=Styles.postTitle> {article.title->React.string} </div>
           </Pages.Link>
-        })->ReasonReact.array}
+        })
+        ->React.array}
       </WidthContainer>
     | Done(Error(_)) => <ErrorPage />
     }}

@@ -102,6 +102,11 @@
   dependencies:
     mkdirp "^1.0.4"
 
+"@rescript/react@^0.10.1":
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.1.tgz#ddce66ba664a104354d559c350ca4ebf17ab5a26"
+  integrity sha512-5eIfGnV1yhjv03ktK6fQ6iEfsZKXKXXrq5hx4+ngEY4R/RU8o/oH9ne375m9RJMugV/jsE8hMoEeSSg2YQy3Ag==
+
 "@types/anymatch@*":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
@@ -756,10 +761,10 @@ bs-fetch@^0.6.2:
   resolved "https://registry.yarnpkg.com/bs-fetch/-/bs-fetch-0.6.2.tgz#37d982e9f79b9bc44c23e87ae78ccbee1f869adf"
   integrity sha512-VXEjp8kY3vHPckaoy3d96Bx0KYjJAPLNISBwfpwMN26K6DtuZYwI2HKhx7zeHBajz1bRArfx7O8OOLcdtujMvg==
 
-bs-platform@^8.2.0:
-  version "8.3.3"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-8.3.3.tgz#68e3796ad0607c55da0f45fe14c0ce0aaf69682c"
-  integrity sha512-ayS5wdvrOX6PxU2wX7O2rLllzsQDzmGq582NNDFwfM6b9HQu7ki242Pc46o2/CnGHHumKVarpX0IZzjC2Llgcg==
+bs-platform@^8.3.0:
+  version "8.4.2"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-8.4.2.tgz#778dabd1dfb3bc95e0086c58dabae74e4ebdee8a"
+  integrity sha512-9q7S4/LLV/a68CweN382NJdCCr/lOSsJR3oQYnmPK98ChfO/AdiA3lYQkQTp6T+U0I5Z5RypUAUprNstwDtMDQ==
 
 bs-webapi@^0.13.4:
   version "0.13.4"
@@ -3859,10 +3864,10 @@ rescript-future@^1.0.4:
   resolved "https://registry.yarnpkg.com/rescript-future/-/rescript-future-1.0.4.tgz#8d80d4e5da3cca31887f361a277b816fbcc5ca1f"
   integrity sha512-1p9ieIdSKP4lktDf1H6Un54SXIuIxVRP7YPbueAi2rO8Jcb3NSmxADiJi+6fvfojGHKznmCm3DlCso+w/zO0YQ==
 
-rescript-pages@0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-0.5.3.tgz#3d9d8fbfd56b315fb6bf3b23a9ef2769285ec332"
-  integrity sha512-Mc0LVfqgPWBSX8yUazOT2mwZsBzeHKSqo7Xtx7iNOHxvyHpAR0tBQCwN7Hbh8cBZ1wpLb6kjOoJc3b56dkmPbg==
+rescript-pages@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-1.0.2.tgz#2f1fc9ea1ebae1f25a47ac900ed60dde21bb7c53"
+  integrity sha512-EFOBOxBbn7Jqr2xck3uui0PHn2uZ3my88dmyC6EsSorw9P654D9ax4DFm865QsUTq+GM0bNCZLSciXr9J/jkkg==
   dependencies:
     bs-css-emotion "^2.1.0"
     bs-fetch "^0.6.2"
@@ -3885,7 +3890,6 @@ rescript-pages@0.5.3:
     react-dom "^17.0.1"
     react-helmet "^6.1.0"
     reason-highlightjs "^0.2.1"
-    reason-react "^0.9.1"
     remarkable "^2.0.1"
     rescript-asyncdata "^2.0.0"
     rescript-future "^1.0.4"

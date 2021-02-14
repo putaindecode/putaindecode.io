@@ -140,7 +140,7 @@ let make = (~slug) => {
             <Spacer width=40 height=20 />
             <div className=Styles.contents>
               <div role="heading" ariaLevel=1 className=Styles.title>
-                {episode.title->ReasonReact.string}
+                {episode.title->React.string}
               </div>
               <div className=Styles.author>
                 {episode.meta
@@ -157,12 +157,12 @@ let make = (~slug) => {
                     />
                   </a>
                 )
-                ->ReasonReact.array}
+                ->React.array}
               </div>
               <div className=Styles.body dangerouslySetInnerHTML={"__html": episode.body} />
               <div className=Styles.share>
                 <div className=Styles.shareTitle>
-                  {j`Vous avez aimé cet épisode?`->ReasonReact.string}
+                  {j`Vous avez aimé cet épisode?`->React.string}
                 </div>
                 <Spacer height=10 width=0 />
                 <a
@@ -185,14 +185,14 @@ let make = (~slug) => {
                     (" sur @PutainDeCode https://putaindecode.io/podcasts/" ++
                     episode.slug),
                   )}>
-                  {"Le partager sur Twitter"->ReasonReact.string}
+                  {"Le partager sur Twitter"->React.string}
                 </a>
               </div>
             </div>
           </div>
           <div className=Styles.back>
             <Pages.Link href="/podcasts" className=Styles.backLink>
-              {j`← Épisodes`->ReasonReact.string}
+              {j`← Épisodes`->React.string}
             </Pages.Link>
           </div>
         </WidthContainer>

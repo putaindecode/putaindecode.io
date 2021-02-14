@@ -154,11 +154,13 @@ let make = (~slug, ~hash, ~canonical) => {
     | "" => ()
     | hash =>
       open Webapi.Dom
-      Document.querySelector("#" ++ hash, document)->Option.map(element => {
+      Document.querySelector("#" ++ hash, document)
+      ->Option.map(element => {
         Js.Global.setTimeout(() => {
           Element.scrollIntoView(element)
         }, 100)
-      })->ignore
+      })
+      ->ignore
     }
     None
   }, [slug])
@@ -179,7 +181,7 @@ let make = (~slug, ~hash, ~canonical) => {
           <title> {(post.title ++ " | Putain de code")->React.string} </title>
         </Pages.Head>
         <WidthContainer>
-          <h1 className=Styles.title> {post.title->ReasonReact.string} </h1>
+          <h1 className=Styles.title> {post.title->React.string} </h1>
           <a href={"https://github.com/" ++ author} className=Styles.author>
             <img
               className=Styles.avatar
@@ -187,12 +189,10 @@ let make = (~slug, ~hash, ~canonical) => {
               alt=author
             />
             <div>
-              {author->ReasonReact.string}
-              {" "->ReasonReact.string}
+              {author->React.string}
+              {" "->React.string}
               {post.date
-              ->Option.map(date => <>
-                {j`•`->ReasonReact.string} {" "->ReasonReact.string} <Date date />
-              </>)
+              ->Option.map(date => <> {j`•`->React.string} {" "->React.string} <Date date /> </>)
               ->Option.getWithDefault(React.null)}
             </div>
           </a>
@@ -205,7 +205,7 @@ let make = (~slug, ~hash, ~canonical) => {
                   let href = (event->ReactEvent.Mouse.target)["getAttribute"]("href")
                   if !(externalLinkRe->Js.Re.test_(href)) {
                     ReactEvent.Mouse.preventDefault(event)
-                    ReasonReact.Router.push(href)
+                    RescriptReactRouter.push(href)
                   }
                 | _ => ()
                 }
@@ -213,9 +213,7 @@ let make = (~slug, ~hash, ~canonical) => {
             className=Styles.body
           />
           <div className=Styles.share>
-            <div className=Styles.shareTitle>
-              {j`Vous avez aimé cet article?`->ReasonReact.string}
-            </div>
+            <div className=Styles.shareTitle> {j`Vous avez aimé cet article?`->React.string} </div>
             <Spacer height=10 width=0 />
             <a
               className=Styles.shareButton
@@ -235,12 +233,12 @@ let make = (~slug, ~hash, ~canonical) => {
               Js.Global.encodeURIComponent(
                 post.title ++ (" sur @PutainDeCode https://putaindecode.io/articles/" ++ post.slug),
               )}>
-              {"Le partager sur Twitter"->ReasonReact.string}
+              {"Le partager sur Twitter"->React.string}
             </a>
           </div>
           <div className=Styles.back>
             <Pages.Link href="/articles" className=Styles.backLink>
-              {j`← Articles`->ReasonReact.string}
+              {j`← Articles`->React.string}
             </Pages.Link>
           </div>
           {post.date

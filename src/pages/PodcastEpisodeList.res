@@ -101,7 +101,7 @@ let make = (~search, ()) => {
         </Pages.Head>
         <div className=Styles.heading>
           <div role="heading" ariaLevel=1 className=Styles.title>
-            {j`Épisodes`->ReasonReact.string}
+            {j`Épisodes`->React.string}
           </div>
           <input
             className=Styles.search
@@ -110,7 +110,7 @@ let make = (~search, ()) => {
             value={search->QueryString.explode->Map.String.get("search")->Option.getWithDefault("")}
             onChange={event => {
               let search = (event->ReactEvent.Form.target)["value"]
-              ReasonReact.Router.push(
+              RescriptReactRouter.push(
                 "?" ++
                 (
                   search == ""
@@ -159,12 +159,12 @@ let make = (~search, ()) => {
                   alt=name
                 />
               )
-              ->ReasonReact.array}
+              ->React.array}
             </div>
-            <div className=Styles.postTitle> {episode.title->ReasonReact.string} </div>
+            <div className=Styles.postTitle> {episode.title->React.string} </div>
           </Pages.Link>
         )
-        ->ReasonReact.array}
+        ->React.array}
       </WidthContainer>
     | Done(Error(_)) => <ErrorPage />
     }}
