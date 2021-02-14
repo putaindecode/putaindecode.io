@@ -109,11 +109,11 @@ un `color-picker-legacy` ou un `color-picker-v2`.
 de l'état et du DOM, il me semble peu souhaitable de les gérer soi-même. On va
 donc avoir tendance à utiliser des bibliothèques et frameworks **dans ses
 _custom-elements_**. Sans ces outils, on se retrouve dans les écueils de
-maintenabilité qui limitaient ce qu'on est capable de produire sereinement.
+maintenabilité qui limitent ce qu'on est capable de produire sereinement.
 
 Pour apporter une valeur qui dépasse le simple styling et une gestion d'états
-très basique, les web-components dépendent eux aussi de solutions tierces. À
-"praticité" égale, ils n'unifient pas les frameworks, ils en contiennent.
+très basique, les web-components dépendent eux aussi de solutions tierces. **À
+"praticité" égale, ils n'unifient pas les frameworks, ils en contiennent**.
 
 L'intérêt de pouvoir orchestrer ses Web Components via différents frameworks au
 sein d'une même entreprise perd alors un peu de sa superbe, puisqu'on duplique
@@ -146,9 +146,9 @@ exiger des propriétés ou callbacks. Pour prendre un exemple simple, dans ma
 codebase j'ai un composant `TouchableOpacity` (un bouton qui devient
 semi-transparent lorsque la souris est appuyée dessus). Ce composant **impose**
 via le compiler qu'on lui passe un callback `onPress`, faute de quoi ça signifie
-que je n'utilise pas le composant adapté, ou que j'ai oublié de lui en
-passer un. Cette mécanique me permet de créer sereinement des composants avec
-des contraintes d'utilisation, et m'évite d'avoir à **supporter des cas non
+que je n'utilise pas le composant adapté, ou que j'ai oublié de lui en passer
+un. Cette mécanique me permet de créer sereinement des composants avec des
+contraintes d'utilisation, et m'évite d'avoir à **supporter des cas non
 souhaités**. Les custom-elements, si je les utilisais bas-niveau, m'imposeraient
 à leur échelle de prévoir ce genre de cas.
 
@@ -159,8 +159,9 @@ fortement compromis.
 
 ### L'interopérabilité avec les outils génériques
 
-Si je crois _crawler_ une page pour interpréter le sens, recevoir une miriade
-d'éléments personnalisés a de grandes chances de m'empêcher d'en tirer un sens.
+Si je crois _crawler_ une page et que je dois interpréter son contenu, recevoir
+des _custom-elements_ rique de me rendre la tâche difficile : chaque site peut donner **un sens différent au même tag HTML**.
+
 Prenons un exemple repris de la documentation de [Google AMP](https://amp.dev),
 qui utilise les Web Components:
 
