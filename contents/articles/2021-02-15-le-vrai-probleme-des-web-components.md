@@ -34,7 +34,7 @@ Certains de ses aspects font rêver, comme **les styles scopés**, mais la
 solution a du mal à prendre en dehors de Google. L'immense majorité de la
 communauté est complètement paumée devant ce concept de shadow DOM et ne
 comprend pas bien comment sont censés s'articuler les différents concepts de la
-specification.
+spécification.
 
 Passent quelques années et le W3C finit par faire évoluer le brouillon de
 spécification en quelque chose de plus viable, mais ça met du temps. Le W3C
@@ -87,7 +87,7 @@ import "./MyTag.js";
 ```
 
 Le problème ici: entre la déclaration et l'utilisation, on trouve un **lien
-faible**, et un oubli est vite arrivé. Il peut difficile pour des outils de
+faible**, et un oubli est vite arrivé. Il peut être difficile pour des outils de
 détecter qu'un tag n'est pas déclaré ou au contraire déclaré sans être utilisé,
 puisque l'appel à `window.customElements.define` n'est pas **pur** au sens du
 programme: déclarer un nouvel élément **peut avoir des effets de bord**.
@@ -116,7 +116,7 @@ très basique, les web-components dépendent eux aussi de solutions tierces. À
 "praticité" égale, ils n'unifient pas les frameworks, ils en contiennent.
 
 L'intérêt de pouvoir orchestrer ses Web Components via différents frameworks au
-sens d'une même entreprise perd alors un peu de sa superbe, puisqu'on duplique
+sein d'une même entreprise perd alors un peu de sa superbe, puisqu'on duplique
 de la fonctionnalité entre la logique macro (orchestration) et micro
 (comportement des éléments eux-même).
 
@@ -146,7 +146,7 @@ exiger des propriétés ou callbacks. Pour prendre un exemple simple, dans ma
 codebase j'ai un composant `TouchableOpacity` (un bouton qui devient
 semi-transparent lorsque la souris est appuyée dessus). Ce composant **impose**
 via le compiler qu'on lui passe un callback `onPress`, faute de quoi ça signifie
-que je n'utilise pas le bon composant adapté, ou que j'ai oublié de lui en
+que je n'utilise pas le composant adapté, ou que j'ai oublié de lui en
 passer un. Cette mécanique me permet de créer sereinement des composants avec
 des contraintes d'utilisation, et m'évite d'avoir à **supporter des cas non
 souhaités**. Les custom-elements, si je les utilisais bas-niveau, m'imposeraient
@@ -179,7 +179,7 @@ qui utilise les Web Components:
 </amp-list>
 ```
 
-AMP ajoutant les roles `aria` qui vont bien au _runtime_, le serveur me renvoit
+AMP ajoutant les roles `aria` qui vont bien au _runtime_, le serveur me renvoie
 le code vu plus haut. Qu'est-ce que je suis censé en faire ?
 
 Est-ce que je dois:
@@ -203,9 +203,9 @@ raison du succès des frameworks front-end : **ils les ont réglé avec de
 l'outillage**.
 
 Les **Web Components**, qui cherchent à résoudre une partie des problèmes
-auxquels s'adressent les framework, ont quant à eux la tâche beaucoup plus
+auxquels s'adressent les frameworks, ont quant à eux la tâche beaucoup plus
 ingrate, faire la même chose avec les impératifs de **standardisation** et de
-**retro-compatibilité**, sans pour autant empêcher les **évolutions futures**.
+**rétro-compatibilité**, sans pour autant empêcher les **évolutions futures**.
 
 Ajouter la nécessité de pouvoir sérialiser en HTML ses composants dont le
 comportement est déclaré dans du code JavaScript, en imposant un lien faible
@@ -220,10 +220,10 @@ normal** : Google a essayé de faire rentrer un rond dans un carré, empilant le
 concepts jusqu'à perdre la substance même du besoin original : faire un standard
 de composants réutilisables sur le web.
 
-En se foutant royalement du concessus (qui aurait eu de fortes de chances de
+En se foutant royalement du consensus (qui aurait eu de fortes de chances de
 déboucher sur «venez on le fait pas»), Google a foncé tête baissée pour créer
 une fonctionnalité pas finie, déjà limitée dans ses évolutions futures par son
-l'adoption que l'entreprise s'est efforcée de lancer à grands coups de
+adoption que l'entreprise s'est efforcée de lancer à grands coups de
 communication et d'_advocacy_.
 
 C'est dommage.
