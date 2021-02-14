@@ -224,6 +224,6 @@ En se foutant royalement du concessus (qui aurait eu de fortes de chances de
 déboucher sur «venez on le fait pas»), Google a foncé tête baissée pour créer
 une fonctionnalité pas finie, déjà limitée dans ses évolutions futures par son
 l'adoption que l'entreprise s'est efforcée de lancer à grands coups de
-communication et _advocacy_.
+communication et d'_advocacy_.
 
 C'est dommage.
