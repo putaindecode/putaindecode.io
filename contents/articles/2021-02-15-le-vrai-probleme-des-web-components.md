@@ -54,8 +54,9 @@ l'état et du DOM à l'intérieur du _custom-element_.
 ## Le problème fondamental des Web Components
 
 Je pense que les Web Components ont un problème fondamental : en tentant de
-réconcilier la généricité d'un standard avec sa promesse de personnalisation
-localisée, **ils finissent par ne répondre à aucun besoin critique**.
+réconcilier la généricité d'un web partagé par tous avec le fait de se créer son
+propre "standard local", **ils finissent par ne répondre à aucun besoin
+critique**.
 
 ### Le partage des custom elements
 
@@ -210,13 +211,14 @@ Ajouter la nécessité de pouvoir sérialiser en HTML ses composants dont le
 comportement est déclaré dans du code JavaScript, en imposant un lien faible
 entre les deux (mon navigateur n'affiche aucune erreur si j'utilise un tag non
 enregistré), c'est se tirer une balle dans le pied. La **separation of
-concerns** n'a de sens que si nos **concerns** sont indépendants, et ce n'est définitivement pas le cas des Web Components.
+concerns** n'a de sens que si nos **concerns** sont indépendants, et ce n'est
+définitivement pas le cas des Web Components.
 
 Ils ne **parviennent pas à réconcilier** les contraintes inhérentes aux
 standards avec la fonctionnalité qu'ils doivent apporter, et **c'est tout à fait
 normal** : Google a essayé de faire rentrer un rond dans un carré, empilant les
 concepts jusqu'à perdre la substance même du besoin original : faire un standard
-des composants réutilisables sur le web.
+de composants réutilisables sur le web.
 
 En se foutant royalement du concessus (qui aurait eu de fortes de chances de
 déboucher sur «venez on le fait pas»), Google a foncé tête baissée pour créer
