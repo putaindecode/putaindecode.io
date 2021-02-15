@@ -22,7 +22,7 @@ spécification sur le bureau, crie "ET C'EST DÉJÀ DANS CHROME" et s'en va comm
 il est venu. Dans le jargon on appelle ça une **belette sauvage**.
 
 Mais que contient cette spécification ? Elle s'articule autour de quatre
-concepts:
+concepts :
 
 - des **templates**: du HTML inerte et clonable
 - des **decorators**: un moyen d'appliquer du HTML depuis CSS (?)
@@ -36,9 +36,9 @@ communauté est complètement paumée devant ce concept de shadow DOM et ne
 comprend pas bien comment sont censés s'articuler les différents concepts de la
 spécification.
 
-Passent quelques années et le W3C finit par faire évoluer le brouillon de
-spécification en quelque chose de plus viable, mais ça met du temps. Le W3C
-hérite de questions balayées par le document et doit les résoudre, avec le soin
+Passent quelques années. Le W3C finit par faire évoluer le brouillon de
+spécification en quelque chose de plus viable, mais ça met du temps. Il hérite
+de questions balayées par le document et doit les résoudre, avec le soin
 de ne rien casser. La tâche est d'autant plus ardue que Chrome fait déjà tourner
 la version brouillon.
 
@@ -54,7 +54,7 @@ l'état et du DOM à l'intérieur du _custom-element_.
 ## Le problème fondamental des Web Components
 
 Je pense que les Web Components ont un problème fondamental : en tentant de
-réconcilier la généricité d'un web partagé par tous avec le fait de se créer son
+réconcilier la généricité d'un Web partagé par tous avec le fait de se créer son
 propre "standard local", **ils finissent par ne répondre à aucun besoin
 critique**.
 
@@ -86,11 +86,11 @@ page :
 import "./MyTag.js";
 ```
 
-Le problème ici: entre la déclaration et l'utilisation, on trouve un **lien
+Le problème ici : entre la déclaration et l'utilisation, on trouve un **lien
 faible**, et un oubli est vite arrivé. Il peut être difficile pour des outils de
 détecter qu'un tag n'est pas déclaré ou au contraire déclaré sans être utilisé,
 puisque l'appel à `window.customElements.define` n'est pas **pur** au sens du
-programme: déclarer un nouvel élément **peut avoir des effets de bord**.
+programme : déclarer un nouvel élément **peut avoir des effets de bord**.
 
 L'API nous laisse en plus **responsables du _namespacing_** : il faudra toujours
 préfixer vos noms de tags par une chaîne de caractères propre à votre
@@ -112,7 +112,7 @@ _custom-elements_**. Sans ces outils, on se retrouve dans les écueils de
 maintenabilité qui limitent ce qu'on est capable de produire sereinement.
 
 Pour apporter une valeur qui dépasse le simple styling et une gestion d'états
-très basique, les web-components dépendent eux aussi de solutions tierces. **À
+très basique, les Web Components dépendent eux aussi de solutions tierces. **À
 "praticité" égale, ils n'unifient pas les frameworks, ils en contiennent**.
 
 L'intérêt de pouvoir orchestrer ses Web Components via différents frameworks au
@@ -123,7 +123,7 @@ de la fonctionnalité entre la logique macro (orchestration) et micro
 ### Nos besoin pratiques ne sont pas ceux de HTML
 
 Les _custom-elements_ étant des éléments HTML, ils héritent de leur manière
-d'échanger de l'information: les **attributs**, les **propriétés** et les
+d'échanger de l'information : les **attributs**, les **propriétés** et les
 **évènements**. Pour être utilisables depuis du code HTML, les attributs doivent
 être **sérialisables**, et le reste devra passer par des propriétés et des
 évènements.
@@ -164,7 +164,7 @@ _custom-elements_ rique de me rendre la tâche difficile : chaque site peut
 donner **un sens différent au même tag HTML**.
 
 Prenons un exemple repris de la documentation de [Google AMP](https://amp.dev),
-qui utilise les Web Components:
+qui utilise les Web Components :
 
 ```html
 <amp-list
@@ -200,13 +200,13 @@ travaille le plus.
 ## Un rêve irréconciliable avec la réalité
 
 La plupart des problèmes que j'ai listé ici me paraissent cruciaux lorsqu'on
-développe une application web avec des attentes modernes. C'est à mon avis la
+développe une application Web avec des attentes modernes. C'est à mon avis la
 raison du succès des frameworks front-end : **ils les ont réglé avec de
 l'outillage**.
 
 Les **Web Components**, qui cherchent à résoudre une partie des problèmes
 auxquels s'adressent les frameworks, ont quant à eux la tâche beaucoup plus
-ingrate, faire la même chose avec les impératifs de **standardisation** et de
+ingrate : faire la même chose avec les impératifs de **standardisation** et de
 **rétro-compatibilité**, sans pour autant empêcher les **évolutions futures**.
 
 Ajouter la nécessité de pouvoir sérialiser en HTML ses composants dont le
@@ -220,10 +220,10 @@ Ils ne **parviennent pas à réconcilier** les contraintes inhérentes aux
 standards avec la fonctionnalité qu'ils doivent apporter, et **c'est tout à fait
 normal** : Google a essayé de faire rentrer un rond dans un carré, empilant les
 concepts jusqu'à perdre la substance même du besoin original : faire un standard
-de composants réutilisables sur le web.
+de composants réutilisables sur le Web.
 
 En se foutant royalement du consensus (qui aurait eu de fortes chances de
-déboucher sur «venez on le fait pas»), Google a foncé tête baissée pour créer
+déboucher sur « venez on le fait pas »), Google a foncé tête baissée pour créer
 une fonctionnalité pas finie, déjà limitée dans ses évolutions futures par son
 adoption que l'entreprise s'est efforcée de lancer à grands coups de
 communication et d'_advocacy_.
