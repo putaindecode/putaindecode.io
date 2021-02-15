@@ -222,7 +222,7 @@ normal** : Google a essayé de faire rentrer un rond dans un carré, empilant le
 concepts jusqu'à perdre la substance même du besoin original : faire un standard
 de composants réutilisables sur le web.
 
-En se foutant royalement du consensus (qui aurait eu de fortes de chances de
+En se foutant royalement du consensus (qui aurait eu de fortes chances de
 déboucher sur «venez on le fait pas»), Google a foncé tête baissée pour créer
 une fonctionnalité pas finie, déjà limitée dans ses évolutions futures par son
 adoption que l'entreprise s'est efforcée de lancer à grands coups de
