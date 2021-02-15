@@ -179,6 +179,8 @@ let make = (~slug, ~hash, ~canonical) => {
       <div className=Styles.container>
         <Pages.Head>
           <title> {(post.title ++ " | Putain de code")->React.string} </title>
+          <meta property="og:title" content={post.title ++ " | Putain de code"} />
+          <meta name="twitter:title" content={post.title ++ " | Putain de code"} />
         </Pages.Head>
         <WidthContainer>
           <h1 className=Styles.title> {post.title->React.string} </h1>
