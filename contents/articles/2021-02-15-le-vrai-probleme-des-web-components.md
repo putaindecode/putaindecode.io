@@ -159,8 +159,9 @@ fortement compromis.
 
 ### L'interopérabilité avec les outils génériques
 
-Si je crois _crawler_ une page et que je dois interpréter son contenu, recevoir
-des _custom-elements_ rique de me rendre la tâche difficile : chaque site peut donner **un sens différent au même tag HTML**.
+Si je dois _crawler_ une page et interpréter son contenu, recevoir des
+_custom-elements_ rique de me rendre la tâche difficile : chaque site peut
+donner **un sens différent au même tag HTML**.
 
 Prenons un exemple repris de la documentation de [Google AMP](https://amp.dev),
 qui utilise les Web Components:
