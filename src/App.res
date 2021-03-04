@@ -15,7 +15,10 @@ let make = (~url: RescriptReactRouter.url, ~config as _, ()) => {
 
   <>
     <Pages.Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+      />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="og:site_name" content="Putain de code !" />
       <meta name="twitter:site" content="@putaindecode" />

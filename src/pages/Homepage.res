@@ -75,7 +75,8 @@ module TopArticles = {
       width(100.->pct),
       maxWidth(1024->px),
       margin2(~h=auto, ~v=zero),
-      padding2(~h=10->px, ~v=zero),
+      unsafe("paddingLeft", "calc(10px + env(safe-area-inset-left))"),
+      unsafe("paddingRight", "calc(10px + env(safe-area-inset-right))"),
       paddingBottom(10->px),
       media("(max-width: 920px)", list{flexWrap(nowrap)}),
     })
