@@ -13,7 +13,7 @@
       "in-source": true
     }
   ],
-  "suffix": ".bs.js",
+  "suffix": ".mjs",
   "namespace": true,
   "bs-dependencies": [
     "@rescript/react",

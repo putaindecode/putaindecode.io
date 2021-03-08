@@ -9,9 +9,9 @@
     "format": "yarn format:most && yarn format:re",
     "format:most": "prettier --write \"**/*.{js,json,css,md}\"",
     "format:re": "find ./src -iname '*.re' | xargs -n 1 bsrefmt --in-place && find ./src -iname '*.rei' | xargs -n 1 bsrefmt -i true --in-place",
-    "pages-server": "pages start src/App.bs.js 3000",
+    "pages-server": "pages start src/App.mjs 3000",
     "test": "bsb -make-world",
-    "prerender": "pages build src/App.bs.js"
+    "prerender": "pages build src/App.mjs"
   },
   "authors": [
     "bloodyowl <bloodyowl@icloud.com>",
@@ -27,10 +27,10 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rescript-asyncdata": "^2.0.0",
-    "rescript-pages": "^1.0.2"
+    "rescript-pages": "^2.0.1"
   },
   "devDependencies": {
-    "bs-platform": "^8.3.0",
+    "bs-platform": "^9.0.0",
     "prettier": "^1.18.2"
   },
   "prettier": {
