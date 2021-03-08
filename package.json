@@ -24,6 +24,7 @@
     "@rescript/react": "^0.10.1",
     "bs-css-emotion": "^2.2.0",
     "bs-webapi": "^0.13.4",
+    "md5": "^2.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rescript-asyncdata": "^2.0.0",
