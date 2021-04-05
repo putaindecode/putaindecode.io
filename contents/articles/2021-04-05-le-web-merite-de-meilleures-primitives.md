@@ -16,7 +16,7 @@ question de partage de code avec une application mobile.
 
 Ce qui veut dire que je suis régulièrement tenu d'écrire du code de la sorte:
 
-```tsx
+```jsx
 import { Pressable } from "react-native";
 
 <Pressable
