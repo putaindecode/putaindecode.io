@@ -138,6 +138,17 @@ pseudo-classe
 > que le focus devrait être mis en évidence sur l'élément (la plupart des
 > navigateurs affichent un contour en surbrillance par défaut).
 
+```css
+button {
+  appearance: none;
+  background-color: red;
+}
+
+button:focus-visible {
+  background-color: green;
+}
+```
+
 Et tout comme le media query `hover`, cette solution reste imparfaite: si l'on
 met de côté son support navigateur restreint à l'heure où je rédige cet article,
 on peut également pointer du doigt le fait que le focus reste "cassé" en
