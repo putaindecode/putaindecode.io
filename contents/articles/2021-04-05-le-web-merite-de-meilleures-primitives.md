@@ -246,7 +246,7 @@ Ensuite, posons nous réellement la question des ajouts continuels de solutions
 de haut niveau dans la plateforme web, qui débarquent sans que jamais rien ne
 semble êtré déprécié. En effet, les solutions données à chaque problème soulevé
 précédemment viendront **en plus** de tout ce qui peut déjà exister. Une donnée
-qui me semble par exemple, totalement absurde est le nombre de propriétés CSS
+qui me semble totalement absurde est, par exemple, le nombre de propriétés CSS
 actuel:
 [520 (+132 en attente)](https://css-tricks.com/how-many-css-properties-are-there/).
 Outre le fait que cela rend extrêmement complexe l'apparition de nouveaux
