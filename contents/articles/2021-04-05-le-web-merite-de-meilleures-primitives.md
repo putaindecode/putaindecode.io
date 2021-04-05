@@ -237,14 +237,15 @@ Qu'en est-il de tout ces besoins devenus quasiment primaires:
 
 Avant tout, arrêtons de blâmer les développeurs qui découvrent aujourd'hui cette
 complexité monstre et cessons de leur déconseiller d'utiliser des abstractions,
-de leur dire de "juste apprendre HTML, CSS et JS" car ce comportement est
-toxique et ne tiens pas compte d'une chose: si vous avez vu vécu l'évolution du
-web et vu apparaitre des courants tels que le responsive design, de nouveaux
+de leur dire de "juste apprendre le HTML, CSS et JS" car ce comportement est
+dangeureux et ne tient pas compte d'une chose: si vous avez vu vécu l'évolution
+du web et vu apparaitre des courants tels que le responsive design, de nouveaux
 types d'appareils tels que les smartphones et eu le temps de vous adapter à ces
 changements, ce n'est pas le cas de développeurs plus juniors qui se retrouvent
-face à une quantité astronomique de problèmatiques.
+aujourd'hui face à une quantité astronomique de problèmatiques, sans courbe
+d'apprentissage naturelle guidée par l'évolution des usages.
 
-L'accessibilité vous tiens à cœur? Parfait. Conseillez leur d'utiliser une
+L'accessibilité vous tiens à cœur? Parfait. Conseillez-leur d'utiliser une
 abstraction simple qui leur garantira un bon résultat, plutôt que de leur
 conseiller de devenir un expert absolu sur le domaine afin de ne pas se tirer
 une balle dans le pied. S'il sont intéressés par le sujet, ils se pencheront sur
@@ -253,12 +254,14 @@ utilisateurs de leurs sites bénéficieront d'une meilleure accessibilité. Et j
 pense que c'est ce qui importe le plus: l'**objectif** est plus important que le
 **moyen**.
 
-Ensuite, posons nous réellement la question des ajouts continuels de solutions
-de haut niveau dans la plateforme web, qui débarquent sans que jamais rien ne
-semble êtré déprécié. En effet, les solutions données à chaque problème soulevé
-précédemment viendront **en plus** de tout ce qui peut déjà exister. Une donnée
-qui me semble totalement absurde est, par exemple, le nombre de propriétés CSS
-actuel:
+Ensuite, posons nous réellement la question de la nécessité de ces ajouts
+continuels de solutions de haut niveau dans la plateforme web, qui débarquent
+sans que jamais rien ne semble vraiment êtré déprécié. En effet, toutes les
+solutions énoncées précédemment viennent ou viendront **en plus** de tout ce qui
+peut déjà exister.
+
+La plateforme déborde. J'en prends pour exemple une donnée qui me semble
+totalement absurde, le nombre de propriétés CSS actuel:
 [520 (+132 en attente)](https://css-tricks.com/how-many-css-properties-are-there/).
 Outre le fait que cela rend extrêmement complexe l'apparition de nouveaux
 navigateurs web, cela rend la charge mentale du développeur **incommensurable**.
@@ -266,10 +269,10 @@ Il en va de même avec l'évolution de la syntaxe JavaScript, l'augmentation du
 nombre de sélecteurs CSS, l'apparition de
 [nouvelles APIs](https://developer.mozilla.org/fr/docs/Web/API), etc.
 
-Pour finir, imaginez que demain un nouveau paradigme d'utilisation apparaissait
-(une interaction autre que le touch, par exemple) ou qu'un nouveau type de
-pattern UI prenait de l'essort (comme a pu le faire le switch). Devrait-on
-continuer à empiler…? Ou devrait-on accepter le fait que le web a plus que
-jamais besoin d'abstractions au dessus de concepts bas niveau, que celles soient
-des librairies éxécutées au runtime ou carrément des langages de plus haut
-niveau qui compileront vers du HTML, CSS et JS en guise de bytecode?
+Imaginez si demain un nouveau paradigme d'utilisation venait à apparaitre (une
+interaction autre que le touch, par exemple) ou si un nouveau type de pattern UI
+gagnait en popularité (comme a pu le faire le switch). Devrait-on continuer à
+empiler…? Ou devrait-on accepter le fait que le web a plus que jamais besoin
+d'abstractions au dessus de concepts bas niveau, que celles soient des
+librairies éxécutées au runtime ou carrément des langages de plus haut niveau
+qui compileront vers du HTML, CSS et JS en guise de bytecode?
