@@ -6,7 +6,7 @@ slug: le-web-merite-de-meilleures-primitives
 ---
 
 Il est souvent reproché aux développeurs front-end d'utiliser des abstractions
-inutilement complexes sous couvert d'une volonté à "s'amuser" avec celles-ci
+inutilement complexes sous couvert d'une volonté de "s'amuser" avec celles-ci
 plutôt que de concevoir des sites simples, accessibles et performants.
 
 Personnellement, j'apprécie énormément
@@ -165,16 +165,16 @@ ou autre.
 ### Le cas du `<button>`
 
 Reste un dernier point: l'usage d'une `<div>` à la place d'un `<button>`.
-L'argument souvent avancé contre cela est le suivant:
+L'argument souvent avancé contre cela est le suivant :
 
 > Utiliser une `<div>` pour réimplémenter un bouton en lieu et place d'un
 > `<button>` peut ruiner l'accessibilité de celui-ci.
 
 Je suis absolument d'accord avec ce point. Réimplémenter le comportement d'un
-bouton en partant de zéro est complexe, vous ménera certainement à commettre un
+bouton en partant de zéro est complexe, vous mènera certainement à commettre un
 tas d'erreurs et je vous le déconseille fortement.
 
-Seulement ici ce n'est pas le cas: j'utilise une abstraction qui a correctement
+Seulement ici ce n'est pas le cas : j'utilise une abstraction qui a correctement
 été pensée et ne souffre d'aucun réel défaut d'accessibilité si on la compare à
 un `<button>`. Sachant qu'en plus il y a encore très peu, les `<button>`
 souffraient de
@@ -183,8 +183,8 @@ et que donc, il m'est nécessaire soit d'en tenir compte, soit de ne pas
 supporter certaines versions de navigateurs pourtant récentes.
 
 Si j'ai ce composant `<Pressable>` à ma disposition, qui a le bon goût de ne pas
-souffrir des problèmes présentés plus tôt et réagit telle que la logique le
-voudrait lors du survol, du focus ou encore de l'appui…Pourquoi devrais-js donc
+souffrir des problèmes présentés plus haut et réagit tel que la logique le
+voudrait lors du survol, du focus ou encore de l'appui… Pourquoi devrais-je donc
 m'en passer?
 
 ## Autres manques, en vrac
@@ -205,14 +205,14 @@ niveau, est l'élément natif
 [`<dialog>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/dialog),
 l'autre, plus bas niveau (et plus intéressante selon moi) est l'attribut
 [`inert`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert).
-Ces solution ne sont malheureusement pour le moment pas très bien, voir pas du
+Ces solutions ne sont malheureusement pour le moment pas très bien, voire pas du
 tout, supportées par les navigateurs.
 
 ### Les popups
 
 Tout comme les modales, elles sont présentes dans une majeure partie des
 interfaces web actuelles et pourtant il n'existe actuellement aucune méthode
-simple et sans abstraction qui nous permettent d'en créer une.
+simple et sans abstraction qui nous permette d'en créer une.
 
 Dans un futur proche, peut-être (je l'espère) que
 [la proposition de Microsoft](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Popup/explainer.md)
@@ -229,38 +229,38 @@ Qu'en est-il de tout ces besoins devenus quasiment primaires:
 - Les listes virtualisées (avec recherche fonctionnelle au sein de la page)?
 - Le RTL (right-to-left) simplifié?
 - Les containers queries en CSS?
-- Le champ text `type=number`
+- Le champ texte `type=number`
   ([actuellement cassé](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/))?
-- …la liste est potentiellement **infinie**
+- … la liste est potentiellement **infinie**
 
 ## Du coup, qu'est ce qu'on fait?
 
 Avant tout, arrêtons de blâmer les développeurs qui découvrent aujourd'hui cette
 complexité monstre et cessons de leur déconseiller d'utiliser des abstractions,
 de leur dire de "juste apprendre le HTML, CSS et JS" car ce comportement est
-dangeureux et ne tient pas compte d'une chose: si vous avez vu vécu l'évolution
+dangereux et ne tient pas compte d'une chose : si vous avez vu vécu l'évolution
 du web et vu apparaitre des courants tels que le responsive design, de nouveaux
 types d'appareils tels que les smartphones et eu le temps de vous adapter à ces
 changements, ce n'est pas le cas de développeurs plus juniors qui se retrouvent
-aujourd'hui face à une quantité astronomique de problèmatiques, sans courbe
+aujourd'hui face à une quantité astronomique de problématiques, sans courbe
 d'apprentissage naturelle guidée par l'évolution des usages.
 
-L'accessibilité vous tiens à cœur? Parfait. Conseillez-leur d'utiliser une
+L'accessibilité vous tient à cœur? Parfait. Conseillez-leur d'utiliser une
 abstraction simple qui leur garantira un bon résultat, plutôt que de leur
 conseiller de devenir un expert absolu sur le domaine afin de ne pas se tirer
 une balle dans le pied. S'il sont intéressés par le sujet, ils se pencheront sur
 la façon dont est conçue celle-ci, s'ils ne le sont pas, et bien, au moins les
 utilisateurs de leurs sites bénéficieront d'une meilleure accessibilité. Et je
-pense que c'est ce qui importe le plus: l'**objectif** est plus important que le
-**moyen**.
+pense que c'est ce qui importe le plus: **l'objectif est plus important que le
+moyen**.
 
-Ensuite, posons nous réellement la question de la nécessité de ces ajouts
+Ensuite, posons-nous réellement la question de la nécessité de ces ajouts
 continuels de solutions de haut niveau dans la plateforme web, qui débarquent
-sans que jamais rien ne semble vraiment êtré déprécié. En effet, toutes les
+sans que jamais rien ne semble vraiment être déprécié. En effet, toutes les
 solutions énoncées précédemment viennent ou viendront **en plus** de tout ce qui
 peut déjà exister.
 
-La plateforme déborde. J'en prends pour exemple une donnée qui me semble
+**La plateforme déborde**. J'en prends pour exemple une donnée qui me semble
 totalement absurde, le nombre de propriétés CSS actuel:
 [520 (+132 en attente)](https://css-tricks.com/how-many-css-properties-are-there/).
 Outre le fait que cela rend extrêmement complexe l'apparition de nouveaux
@@ -273,6 +273,6 @@ Imaginez si demain un nouveau paradigme d'utilisation venait à apparaitre (une
 interaction autre que le touch, par exemple) ou si un nouveau type de pattern UI
 gagnait en popularité (comme a pu le faire le switch). Devrait-on continuer à
 empiler…? Ou devrait-on accepter le fait que le web a plus que jamais besoin
-d'abstractions au dessus de concepts bas niveau, que celles soient des
-librairies éxécutées au runtime ou carrément des langages de plus haut niveau
+d'abstractions au dessus de concepts bas niveau, que celles-ci soient des
+bibliothèques exécutées au runtime ou carrément des langages de plus haut niveau
 qui compileront vers du HTML, CSS et JS en guise de bytecode?
