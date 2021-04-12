@@ -276,3 +276,5 @@ empiler…? Ou devrait-on accepter le fait que le web a plus que jamais besoin
 d'abstractions au dessus de concepts bas niveau, que celles-ci soient des
 bibliothèques exécutées au runtime ou carrément des langages de plus haut niveau
 qui compileront vers du HTML, CSS et JS en guise de bytecode?
+
+L'avenir est incertain, imitez-le.
