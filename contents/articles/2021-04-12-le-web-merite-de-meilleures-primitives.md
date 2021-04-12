@@ -1,6 +1,6 @@
 ---
 title: Le web mérite de meilleures primitives
-date: 2021-04-05
+date: 2021-04-12
 author: zoontek
 slug: le-web-merite-de-meilleures-primitives
 ---
@@ -66,7 +66,7 @@ button:hover {
 Cela ne suffira pas. En effet, mon bouton deviendra bleu lors d'un appui sur
 smartphone ou autre appareil tactile.
 
-![Bouton bleu](/public/images/articles/2021-04-05-le-web-merite-de-meilleures-primitives/BlueButton.png)
+![Bouton bleu](/public/images/articles/2021-04-12-le-web-merite-de-meilleures-primitives/BlueButton.png)
 
 Heureusement, il existe une bride de solution: le media query
 [`hover`](https://developer.mozilla.org/fr/docs/Web/CSS/@media/hover).
@@ -122,7 +122,7 @@ button:focus {
 Tout comme pour le cas du survol, cette solution est loin d'être parfaite
 puisque le style appliqué normalement au focus sera visible au clic.
 
-<img alt="Bouton vert" src="/public/images/articles/2021-04-05-le-web-merite-de-meilleures-primitives/GreenButton.png" style="max-width: 180px">
+<img alt="Bouton vert" src="/public/images/articles/2021-04-12-le-web-merite-de-meilleures-primitives/GreenButton.png" style="max-width: 180px">
 
 Pire encore, l'apparition du **focus-ring**, pourtant indispensable à une bonne
 navigation au clavier, poussera grand nombre de développeurs non sensibilisés au
@@ -196,7 +196,7 @@ borner le focus lors de l'apparition d'une modale, par exemple (ce qu'on appelle
 communément le `focus-trapping`).
 
 <figure>
-  <img src="/public/images/articles/2021-04-05-le-web-merite-de-meilleures-primitives/FocusTrappingFail.png" />
+  <img src="/public/images/articles/2021-04-12-le-web-merite-de-meilleures-primitives/FocusTrappingFail.png" />
   <figcaption>Exemple d'échec de focus trapping: il est possible de sélectionner le champ de recherche à l'aide de son clavier</figcaption>
 </figure>
 
