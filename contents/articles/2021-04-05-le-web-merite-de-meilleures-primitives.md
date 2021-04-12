@@ -256,9 +256,9 @@ moyen**.
 
 Ensuite, posons-nous réellement la question de la nécessité de ces ajouts
 continuels de solutions de haut niveau dans la plateforme web, qui débarquent
-sans que jamais rien ne semble vraiment être déprécié. En effet, toutes les
-solutions énoncées précédemment viennent ou viendront **en plus** de tout ce qui
-peut déjà exister.
+sans que jamais rien ne semble vraiment être officiellement déclaré caduque. En
+effet, toutes les solutions énoncées précédemment viennent ou viendront **en
+plus** de tout ce qui peut déjà exister.
 
 **La plateforme déborde**. J'en prends pour exemple une donnée qui me semble
 totalement absurde, le nombre de propriétés CSS actuel:
