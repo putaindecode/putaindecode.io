@@ -31,45 +31,79 @@ module Styles = {
     media("(max-width: 720px)", list{fontSize(20->px)}),
     media("(prefers-color-scheme: dark)", list{color("ddd"->hex)}),
   })
-  let title = style(list{
+  let mainTitle = style(list{
     fontSize(48->px),
     fontWeight(extraBold),
     marginTop(20->px),
     marginBottom(20->px),
     media("(max-width: 720px)", list{textAlign(center)}),
   })
-  let link = style(list{
-    color(Theme.darkBody->hex),
-    textDecoration(none),
-    padding(20->px),
-    backgroundColor("fff"->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("222"->hex), color("ddd"->hex)}),
-    borderRadius(10->px),
-    marginBottom(10->px),
+  let links = style(list{display(flexBox), flexDirection(row), alignItems(stretch), flexWrap(wrap)})
+  let linkContainer = style(list{
+    width(33.3333->pct),
+    minWidth(260->px),
+    flexGrow(1.0),
+    display(flexBox),
+    flexDirection(column),
+    padding(10->px),
+  })
+  let hiddenLinkContainer = merge(list{linkContainer, style(list{display(none)})})
+
+  let article = style(list{
     position(relative),
+    display(block),
     overflow(hidden),
+    backgroundColor("F1F6FC"->hex),
+    borderRadius(14->px),
+    paddingBottom((9. /. 16. *. 100.)->pct),
     boxShadow(Shadow.box(~y=15->px, ~blur=15->px, ~spread=-5->px, rgba(0, 0, 0, #num(0.2)))),
     active(list{
       after(list{
         unsafe("content", ""),
-        pointerEvents(none),
         position(absolute),
+        pointerEvents(none),
         top(zero),
         left(zero),
         right(zero),
         bottom(zero),
-        backgroundColor(rgba(255, 255, 255, #num(0.5))),
+        backgroundColor(rgba(0, 0, 0, #num(0.1))),
       }),
     }),
   })
-  let hiddenLink = merge(list{link, style(list{display(none)})})
-  let postTitle = style(list{fontSize(24->px), fontWeight(extraBold)})
+  let title = style(list{
+    color("fff"->hex),
+    fontSize(18->px),
+    fontWeight(extraBold),
+    textAlign(center),
+    padding(20->px),
+    paddingTop(30->px),
+  })
+  let discover = style(list{
+    display(flexBox),
+    alignItems(center),
+    justifyContent(center),
+    textAlign(center),
+    padding(20->px),
+  })
+  let discoverLink = style(list{fontSize(20->px), textDecoration(none), color("1E49B5"->hex)})
+  let authorSmall = style(list{position(absolute), top(10->px), left(10->px)})
+  let contents = style(list{
+    position(absolute),
+    top(zero),
+    left(zero),
+    right(zero),
+    bottom(zero),
+    display(flexBox),
+    flexDirection(column),
+    alignItems(center),
+    justifyContent(center),
+  })
   let author = style(list{
     fontSize(16->px),
+    color("fff"->hex),
     display(flexBox),
     flexDirection(row),
     alignItems(center),
-    marginBottom(10->px),
   })
   let avatar = style(list{
     width(32->px),
@@ -104,7 +138,9 @@ let make = (~search as propsSearch) => {
           </title>
         </Pages.Head>
         <div className=Styles.heading>
-          <div role="heading" ariaLevel=1 className=Styles.title> {"Articles"->React.string} </div>
+          <div role="heading" ariaLevel=1 className=Styles.mainTitle>
+            {"Articles"->React.string}
+          </div>
           <input
             className=Styles.search
             placeholder=`Rechercher …`
@@ -123,47 +159,57 @@ let make = (~search as propsSearch) => {
             }}
           />
         </div>
-        {postList
-        ->Array.map(article => {
-          let author =
-            article.meta
-            ->Js.Dict.get("author")
-            ->Option.flatMap(Js.Json.decodeString)
-            ->Option.getWithDefault("putaindecode")
-          <Pages.Link
-            className={queryString
-            ->Map.String.get("search")
-            ->Option.map(Js.String.trim)
-            ->Option.map(Js.String.toLowerCase)
-            ->Option.map(search =>
-              article.title->Js.String.toLowerCase->Js.String.includes(search, _) ||
-                author->Js.String.toLowerCase->Js.String.includes(search, _)
-            )
-            ->Option.getWithDefault(true)
-              ? Styles.link
-              : Styles.hiddenLink}
-            href={"/articles/" ++ article.slug}
-            key=article.slug>
-            <div className=Styles.author>
-              <img
-                className=Styles.avatar
-                src={"https://avatars.githubusercontent.com/" ++ (author ++ "?size=64")}
-                alt=author
-              />
-              <div>
-                {author->React.string}
-                {" "->React.string}
-                {article.date
-                ->Option.map(date => <>
-                  {j`•`->React.string} {" "->React.string} <Date date />
-                </>)
-                ->Option.getWithDefault(React.null)}
-              </div>
+        <div className=Styles.links>
+          {postList
+          ->Array.map(article => {
+            let author =
+              article.meta
+              ->Js.Dict.get("author")
+              ->Option.flatMap(Js.Json.decodeString)
+              ->Option.getWithDefault("putaindecode")
+            <div
+              key=article.slug
+              className={queryString
+              ->Map.String.get("search")
+              ->Option.map(Js.String.trim)
+              ->Option.map(Js.String.toLowerCase)
+              ->Option.map(search =>
+                article.title->Js.String.toLowerCase->Js.String.includes(search, _) ||
+                  author->Js.String.toLowerCase->Js.String.includes(search, _)
+              )
+              ->Option.getWithDefault(true)
+                ? Styles.linkContainer
+                : Styles.hiddenLinkContainer}>
+              <Pages.Link
+                href={"/articles/" ++ article.slug}
+                className=Styles.article
+                style={ReactDOM.Style.make(~backgroundImage=Gradient.fromString(article.slug), ())}>
+                <div className=Styles.contents>
+                  <div className=Styles.authorSmall>
+                    <div className=Styles.author>
+                      <img
+                        className=Styles.avatar
+                        src={"https://avatars.githubusercontent.com/" ++ (author ++ "?size=64")}
+                        alt=author
+                      />
+                      <div>
+                        {author->React.string}
+                        {" "->React.string}
+                        {article.date
+                        ->Option.map(date => <>
+                          {j`•`->React.string} {" "->React.string} <Date date />
+                        </>)
+                        ->Option.getWithDefault(React.null)}
+                      </div>
+                    </div>
+                  </div>
+                  <div className=Styles.title> {article.title->React.string} </div>
+                </div>
+              </Pages.Link>
             </div>
-            <div className=Styles.postTitle> {article.title->React.string} </div>
-          </Pages.Link>
-        })
-        ->React.array}
+          })
+          ->React.array}
+        </div>
       </WidthContainer>
     | Done(Error(_)) => <ErrorPage />
     }}
