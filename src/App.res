@@ -1,17 +1,11 @@
-open Belt
-
 include CssReset
 
 @react.component
 let make = (~url: RescriptReactRouter.url, ~config as _, ()) => {
   React.useEffect1(() => {
-    {
-      open Webapi.Dom
-      Window.scrollTo(0.0, 0.0, window)
-    }
-
+    let () = window["scrollTo"](. 0, 0)
     None
-  }, [url.path->List.toArray->Js.Array.joinWith("/", _)])
+  }, [url.path->List.toArray->Array.joinWith("/")])
 
   <>
     <Pages.Head>
@@ -39,7 +33,7 @@ let make = (~url: RescriptReactRouter.url, ~config as _, ()) => {
       <link rel="shortcut icon" href={Pages.makeBaseUrl("/favicon.ico")} />
       <link
         rel="canonical"
-        href={"https://putaindecode.io/" ++ url.path->List.toArray->Js.Array.joinWith("/", _)}
+        href={"https://putaindecode.io/" ++ url.path->List.toArray->Array.joinWith("/")}
       />
     </Pages.Head>
     <Header
@@ -58,7 +52,7 @@ let make = (~url: RescriptReactRouter.url, ~config as _, ()) => {
       <Article
         slug
         hash={url.hash}
-        canonical={"https://putaindecode.io/" ++ url.path->List.toArray->Js.Array.joinWith("/", _)}
+        canonical={"https://putaindecode.io/" ++ url.path->List.toArray->Array.joinWith("/")}
       />
     | _ => <ErrorPage />
     }}
@@ -68,7 +62,7 @@ let make = (~url: RescriptReactRouter.url, ~config as _, ()) => {
 }
 
 let getUrlsToPrerender = ({Pages.getAll: getAll}) =>
-  Array.concatMany([
+  Belt.Array.concatMany([
     ["/", "/articles", "/podcasts"],
     getAll("articles")->Array.map(item => "/articles/" ++ item),
     getAll("podcasts")->Array.map(item => "/podcasts/" ++ item),
@@ -94,10 +88,15 @@ let default = Pages.make(
         getRedirectMap: Some(
           ({getAllItems}) =>
             getAllItems("articles")
-            ->Array.keepMap(item =>
+            ->Belt.Array.keepMap(item =>
               item.meta
-              ->Js.Dict.get("oldSlug")
-              ->Option.flatMap(Js.Json.decodeString)
+              ->Dict.get("oldSlug")
+              ->Option.flatMap(oldSlug =>
+                switch oldSlug->JSON.Decode.classify {
+                | String(oldSlug) => Some(oldSlug)
+                | _ => None
+                }
+              )
               ->Option.map(oldSlug => [
                 ("/articles/" ++ (oldSlug ++ ".html"), "/articles/" ++ item.slug),
                 ("/articles/" ++ oldSlug, "/articles/" ++ item.slug),
@@ -105,8 +104,8 @@ let default = Pages.make(
                 ("/fr/articles/" ++ oldSlug, "/articles/" ++ item.slug),
               ])
             )
-            ->Array.concatMany
-            ->Js.Dict.fromArray,
+            ->Belt.Array.concatMany
+            ->Dict.fromArray,
         ),
       },
     ],

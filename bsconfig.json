@@ -17,11 +17,14 @@
   "namespace": true,
   "bs-dependencies": [
     "@rescript/react",
-    "bs-css",
-    "bs-css-emotion",
     "rescript-asyncdata",
     "rescript-pages",
-    "bs-webapi"
+    "@ryyppy/rescript-promise",
+    "rescript-js"
   ],
-  "refmt": 3
+  "bsc-flags": [
+    "-nopervasives",
+    "-open Belt",
+    "-open ReScriptJs__JsWithPervasives"
+  ]
 }

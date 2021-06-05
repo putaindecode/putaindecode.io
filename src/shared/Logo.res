@@ -1,6 +1,6 @@
 module Styles = {
-  open Css
-  let logo = style(list{display(block)})
+  open Emotion
+  let logo = css({"display": "block"})
 }
 
 let logo =

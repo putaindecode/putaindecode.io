@@ -1,149 +1,131 @@
-open Belt
-
 module Styles = {
-  open Css
-  let appearAnimation = keyframes(list{(0, list{opacity(0.), transform(translateY(20->px))})})
-  let root = style(list{
-    backgroundColor("F9F6F6"->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("111"->hex)}),
-    display(flexBox),
-    flexDirection(column),
-    flexGrow(1.0),
+  open Emotion
+  let appearAnimation = keyframes({
+    "from": {"opacity": 0.0, "transform": "translateY(20px)"},
   })
-  let container = style(list{animation(~duration=500, ~timingFunction=#easeOut, appearAnimation)})
-  let title = style(list{
-    fontSize(42->px),
-    fontWeight(extraBold),
-    textAlign(center),
-    paddingTop(40->px),
-    lineHeight(#abs(1.2)),
-    margin(zero),
+  let root = css({
+    "backgroundColor": Theme.pageSlightlyAccentedBackgroundColor,
+    "display": "flex",
+    "flexDirection": "column",
+    "flexGrow": 1.0,
   })
-  let author = style(list{
-    fontSize(16->px),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
-    justifyContent(center),
-    paddingTop(10->px),
-    paddingBottom(40->px),
-    color(Theme.darkBody->hex),
-    media("(prefers-color-scheme: dark)", list{color("ccc"->hex)}),
-    textDecoration(none),
+  let container = css({"animation": `500ms ease-out ${appearAnimation}`})
+  let title = css({
+    "fontSize": 42,
+    "fontWeight": "800",
+    "textAlign": "center",
+    "paddingTop": 40,
+    "lineHeight": 1.2,
+    "margin": 0,
   })
-  let avatar = style(list{
-    width(32->px),
-    height(32->px),
-    borderRadius(100.->pct),
-    marginRight(10->px),
+  let author = css({
+    "fontSize": 16,
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "justifyContent": "center",
+    "paddingTop": 10,
+    "paddingBottom": 40,
+    "color": Theme.pageTextColor,
+    "textDecoration": "none",
   })
-  let body = style(list{
-    maxWidth(640->px),
-    width(100.->pct),
-    fontSize(18->px),
-    margin2(~h=auto, ~v=zero),
-    lineHeight(#abs(1.7)),
-    selector(
-      "h2, h3, h4, h5, h6",
-      list{
-        fontFamily(#custom(Theme.defaultTextFontFamily)),
-        fontWeight(extraBold),
-        lineHeight(#abs(1.2)),
-      },
-    ),
-    selector("img", list{maxWidth(100.->pct), backgroundColor(rgba(255, 255, 255, #num(0.75)))}),
-    selector(
-      "code",
-      list{
-        fontSize(0.9->em),
-        fontFamily(#custom(Theme.codeFontFamily)),
-        lineHeight(#abs(1.)),
-        backgroundColor("FAF3E1"->hex),
-        media("(prefers-color-scheme: dark)", list{backgroundColor("4F3804"->hex)}),
-        margin2(~h=0.2->em, ~v=zero),
-      },
-    ),
-    selector(
-      "pre",
-      list{
-        padding(10->px),
-        overflowX(auto),
-        fontSize(14->px),
-        borderRadius(10->px),
-        border(2->px, #solid, rgba(0, 0, 0, #num(0.1))),
-        media(
-          "(prefers-color-scheme: dark)",
-          list{border(2->px, #solid, rgba(255, 255, 255, #num(0.1)))},
-        ),
-        unsafe("WebkitOverflowScrolling", "touch"),
-        selector("code", list{fontSize(14->px), backgroundColor(transparent), margin(zero)}),
-      },
-    ),
-    selector(
-      "blockquote",
-      list{
-        paddingLeft(20->px),
-        margin(zero),
-        fontSize(16->px),
-        borderLeft(3->px, solid, rgba(0, 0, 0, #num(0.4))),
-        fontStyle(italic),
-      },
-    ),
-    selector(".hljs-keyword", list{color("DA6BB5"->hex)}),
-    selector(".hljs-constructor", list{color("DD792B"->hex)}),
-    selector(".hljs-identifier", list{color("1E9EA7"->hex)}),
-    selector(".hljs-module-identifier", list{color("C84682"->hex)}),
-    selector(".hljs-string", list{color("3BA1C8"->hex)}),
-    selector(".hljs-comment", list{color("aaa"->hex)}),
-    selector(".hljs-operator", list{color("DA6BB5"->hex)}),
-    selector(".hljs-attribute", list{color("4CB877"->hex)}),
-    selector("table", list{width(100.->pct), textAlign(center)}),
-    selector("figure", list{padding2(~v=20->px, ~h=zero)}),
-    selector("figcaption", list{textAlign(center)}),
-    selector("a", list{wordWrap(breakWord)}),
-    selector(
-      "table thead th",
-      list{backgroundColor(Theme.lightBody->hex), padding2(~v=10->px, ~h=zero)},
-    ),
+  let avatar = css({
+    "width": 32,
+    "height": 32,
+    "borderRadius": "100%",
+    "marginRight": 10,
   })
-  let share = style(list{
-    maxWidth(640->px),
-    width(100.->pct),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
-    justifyContent(spaceBetween),
-    margin2(~h=auto, ~v=20->px),
-    padding(20->px),
-    backgroundColor("fff"->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("222"->hex)}),
-    borderRadius(10->px),
-    boxShadow(Shadow.box(~y=15->px, ~blur=15->px, ~spread=-5->px, rgba(0, 0, 0, #num(0.2)))),
-    media("(max-width: 540px)", list{flexDirection(column)}),
+  let body = css({
+    "maxWidth": 640,
+    "width": "100%",
+    "fontSize": 18,
+    "margin": "0 auto",
+    "lineHeight": 1.7,
+    "h2, h3, h4, h5, h6": {
+      "fontFamily": Theme.defaultTextFontFamily,
+      "fontWeight": "800",
+      "lineHeight": 1.2,
+    },
+    "img": {"maxWidth": "100%", "backgroundColor": "rgba(255, 255, 255, 0.75)"},
+    "code": {
+      "fontSize": "0.9em",
+      "fontFamily": Theme.codeFontFamily,
+      "lineHeight": 1.0,
+      "backgroundColor": Theme.codeBackgroundColor,
+      "margin": "0 0.2em",
+    },
+    "pre": {
+      "padding": 10,
+      "overflowX": "auto",
+      "fontSize": 14,
+      "borderRadius": 10,
+      "border": `2px solid ${Theme.onePercentContrastColor}`,
+      "WebkitOverflowScrolling": "touch",
+      "code": {"fontSize": 14, "backgroundColor": "transparent", "margin": 0},
+    },
+    "blockquote": {
+      "paddingLeft": 20,
+      "margin": 0,
+      "fontSize": 16,
+      "borderLeft": "3px solid rgba(0, 0, 0, 0.4)",
+      "fontStyle": "italic",
+    },
+    ".hljs-keyword": {"color": "#DA6BB5"},
+    ".hljs-constructor": {"color": "#DD792B"},
+    ".hljs-identifier": {"color": "#1E9EA7"},
+    ".hljs-module-identifier": {"color": "#C84682"},
+    ".hljs-string": {"color": "#3BA1C8"},
+    ".hljs-comment": {"color": "#aaa"},
+    ".hljs-operator": {"color": "#DA6BB5"},
+    ".hljs-attribute": {"color": "#4CB877"},
+    "table": {"width": "100%", "textAlign": "center"},
+    "figure": {"padding": "20px 0"},
+    "figcaption": {"textAlign": "center"},
+    "a": {"wordWrap": "break-word"},
+    "table thead th": {
+      "backgroundColor": Theme.pageAccentedBackgroundColor,
+      "padding": "10px 0",
+    },
   })
-  let shareTitle = style(list{fontWeight(extraBold)})
-  let shareButton = style(list{
-    backgroundColor("00aced"->hex),
-    color("fff"->hex),
-    padding2(~h=20->px, ~v=10->px),
-    textDecoration(none),
-    borderRadius(5->px),
-    fontWeight(extraBold),
-    active(list{opacity(0.5)}),
+  let share = css({
+    "maxWidth": 640,
+    "width": "100%",
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "justifyContent": "space-between",
+    "margin": "20px auto",
+    "padding": 20,
+    "backgroundColor": Theme.pageBackgroundColor,
+    "borderRadius": 10,
+    "boxShadow": "0 15px 15px -5px rgba(0, 0, 0, 0.2)",
+    "@media (max-width: 540px)": {"flexDirection": "column"},
   })
-  let back = style(list{
-    display(flexBox),
-    alignItems(center),
-    justifyContent(center),
-    textAlign(center),
-    padding(20->px),
+  let shareTitle = css({"fontWeight": "800"})
+  let shareButton = css({
+    "backgroundColor": "#00aced",
+    "color": "#fff",
+    "padding": "10px 20px",
+    "textDecoration": "none",
+    "borderRadius": 5,
+    "fontWeight": "800",
+    ":active": {"opacity": 0.5},
   })
-  let backLink = style(list{fontSize(20->px), textDecoration(none), color("1E49B5"->hex)})
+  let back = css({
+    "display": "flex",
+    "alignItems": "center",
+    "justifyContent": "center",
+    "textAlign": "center",
+    "padding": 20,
+  })
+  let backLink = css({"fontSize": 20, "textDecoration": "none", "color": "#1E49B5"})
 }
 
 let externalLinkRe = %re("/^https?:\\/\\//")
 
-let stopDisqusStartDate = Js.Date.utcWithYM(~year=2020.0, ~month=0.0, ())
+let stopDisqusStartDate = Date.UTC.makeWithYM(~year=2020, ~month=0)
+
+@val external document: {..} = "document"
 
 @react.component
 let make = (~slug, ~hash, ~canonical) => {
@@ -153,14 +135,13 @@ let make = (~slug, ~hash, ~canonical) => {
     switch hash {
     | "" => ()
     | hash =>
-      open Webapi.Dom
-      Document.querySelector("#" ++ hash, document)
-      ->Option.map(element => {
-        Js.Global.setTimeout(() => {
-          Element.scrollIntoView(element)
+      switch document["querySelector"](. `#${hash}`)->Nullable.toOption {
+      | Some(element) =>
+        let _ = setTimeout(() => {
+          element["scrollIntoView"](.)
         }, 100)
-      })
-      ->ignore
+      | None => ()
+      }
     }
     None
   }, [slug])
@@ -173,8 +154,13 @@ let make = (~slug, ~hash, ~canonical) => {
     | Done(Ok(post)) =>
       let author =
         post.meta
-        ->Js.Dict.get("author")
-        ->Option.flatMap(Js.Json.decodeString)
+        ->Dict.get("author")
+        ->Option.flatMap(x =>
+          switch x->JSON.Decode.classify {
+          | String(x) => Some(x)
+          | _ => None
+          }
+        )
         ->Option.getWithDefault("putaindecode")
       <div className=Styles.container>
         <Pages.Head>
@@ -194,7 +180,9 @@ let make = (~slug, ~hash, ~canonical) => {
               {author->React.string}
               {" "->React.string}
               {post.date
-              ->Option.map(date => <> {j`•`->React.string} {" "->React.string} <Date date /> </>)
+              ->Option.map(date => <>
+                {j`•`->React.string} {" "->React.string} <DateView date />
+              </>)
               ->Option.getWithDefault(React.null)}
             </div>
           </a>
@@ -205,7 +193,7 @@ let make = (~slug, ~hash, ~canonical) => {
                 switch (ReactEvent.Mouse.metaKey(event), ReactEvent.Mouse.ctrlKey(event)) {
                 | (false, false) =>
                   let href = (event->ReactEvent.Mouse.target)["getAttribute"]("href")
-                  if !(externalLinkRe->Js.Re.test_(href)) {
+                  if !(externalLinkRe->RegExp.test(href)) {
                     ReactEvent.Mouse.preventDefault(event)
                     RescriptReactRouter.push(href)
                   }
@@ -221,18 +209,15 @@ let make = (~slug, ~hash, ~canonical) => {
               className=Styles.shareButton
               onClick={event => {
                 event->ReactEvent.Mouse.preventDefault
-                open Webapi.Dom
-                window
-                ->Window.open_(
-                  ~url=(event->ReactEvent.Mouse.target)["href"],
-                  ~name="",
-                  ~features="width=500,height=400",
-                )
-                ->ignore
+                window["open"](.
+                  (event->ReactEvent.Mouse.target)["href"],
+                  "",
+                  "width=500,height=400",
+                )->ignore
               }}
               target="_blank"
               href={"https://www.twitter.com/intent/tweet?text=" ++
-              Js.Global.encodeURIComponent(
+              encodeURIComponent(
                 post.title ++ (" sur @PutainDeCode https://putaindecode.io/articles/" ++ post.slug),
               )}>
               {"Le partager sur Twitter"->React.string}
@@ -245,13 +230,18 @@ let make = (~slug, ~hash, ~canonical) => {
           </div>
           {post.date
           ->Option.flatMap(date =>
-            Js.Date.fromString(date)->Js.Date.getTime >= stopDisqusStartDate
+            Date.fromString(date)->Date.getTime >= stopDisqusStartDate
               ? None
               : Some(
                   <Disqus
                     url={post.meta
-                    ->Js.Dict.get("oldSlug")
-                    ->Option.flatMap(Js.Json.decodeString)
+                    ->Dict.get("oldSlug")
+                    ->Option.flatMap(x =>
+                      switch x->JSON.Decode.classify {
+                      | String(x) => Some(x)
+                      | _ => None
+                      }
+                    )
                     ->Option.map(old => "http://putaindecode.io/fr/articles/" ++ (old ++ "/"))
                     ->Option.getWithDefault(canonical)}
                   />,

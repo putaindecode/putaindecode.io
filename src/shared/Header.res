@@ -1,48 +1,43 @@
 module Styles = {
-  open Css
-  let container = style(list{
-    backgroundColor(Theme.gradientRedBottom->hex),
-    backgroundImage(
-      linearGradient(
-        135.0->deg,
-        list{(0.0->pct, Theme.gradientRedTop->hex), (100.0->pct, Theme.gradientRedBottom->hex)},
-      ),
-    ),
+  open Emotion
+  let container = css({
+    "backgroundColor": Theme.gradientRedBottom,
+    "backgroundImage": `linear-gradient(to bottom right, ${Theme.gradientRedTop}, ${Theme.gradientRedBottom})`,
   })
-  let contents = style(list{
-    display(flexBox),
-    flexDirection(column),
-    alignItems(center),
-    justifyContent(center),
-    padding3(~top=20->px, ~h=zero, ~bottom=50->px),
+  let contents = css({
+    "display": "flex",
+    "flexDirection": "column",
+    "alignItems": "center",
+    "justifyContent": "center",
+    "padding": "20px 0 50px",
   })
-  let logo = style(list{
-    display(flexBox),
-    flexDirection(column),
-    alignItems(center),
-    textDecoration(none),
+  let logo = css({
+    "display": "flex",
+    "flexDirection": "column",
+    "alignItems": "center",
+    "textDecoration": "none",
   })
-  let name = style(list{
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
-    textDecoration(none),
-    paddingBottom(10->px),
+  let name = css({
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "textDecoration": "none",
+    "paddingBottom": 10,
   })
-  let title = style(list{fontSize(22->px), color("fff"->hex), fontWeight(extraBold)})
-  let subTitle = style(list{
-    fontSize(14->px),
-    color(rgba(255, 255, 255, #num(0.8))),
-    textAlign(center),
+  let title = css({"fontSize": 22, "color": "#fff", "fontWeight": "800"})
+  let subTitle = css({
+    "fontSize": 14,
+    "color": "rgba(255, 255, 255, 0.8)",
+    "textAlign": "center",
   })
-  let banner = style(list{
-    backgroundColor("000"->hex),
-    padding(10->px),
-    color("fff"->hex),
-    textAlign(#center),
+  let banner = css({
+    "backgroundColor": "#000",
+    "padding": 10,
+    "color": "#fff",
+    "textAlign": "center",
   })
-  let bannerTitle = style(list{fontSize(24->px), fontWeight(bold)})
-  let bannerLink = style(list{fontSize(20->px), color("8CBEF9"->hex)})
+  let bannerTitle = css({"fontSize": 24, "fontWeight": "700"})
+  let bannerLink = css({"fontSize": 20, "color": "#8CBEF9"})
 }
 
 @react.component

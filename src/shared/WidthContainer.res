@@ -1,18 +1,18 @@
 module Styles = {
-  open Css
-  let safeArea = style(list{
-    unsafe("paddingLeft", "env(safe-area-inset-left)"),
-    unsafe("paddingRight", "env(safe-area-inset-right)"),
+  open Emotion
+  let safeArea = css({
+    "paddingLeft": "env(safe-area-inset-left)",
+    "paddingRight": "env(safe-area-inset-right)",
   })
-  let container = style(list{
-    width(100.->pct),
-    maxWidth(1024->px),
-    margin2(~h=auto, ~v=zero),
-    padding2(~h=10->px, ~v=zero),
-    flexGrow(1.),
-    display(flexBox),
-    flexDirection(column),
-    alignItems(stretch),
+  let container = css({
+    "width": "100%",
+    "maxWidth": 1024,
+    "margin": "0 auto",
+    "padding": "0 10px",
+    "flexGrow": 1.0,
+    "display": "flex",
+    "flexDirection": "column",
+    "alignItems": "stretch",
   })
 }
 

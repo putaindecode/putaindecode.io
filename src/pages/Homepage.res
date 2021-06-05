@@ -1,129 +1,138 @@
-open Belt
-
 module TopArticles = {
   module Styles = {
-    open Css
+    open Emotion
 
-    let topArticle = style(list{
-      display(block),
-      position(relative),
-      margin(10->px),
-      backgroundColor("F1F6FC"->hex),
-      borderRadius(14->px),
-      paddingBottom((5. /. 16. *. 100.)->pct),
-      boxShadow(Shadow.box(~y=15->px, ~blur=15->px, ~spread=-5->px, rgba(0, 0, 0, #num(0.2)))),
-      textDecoration(none),
-      overflow(hidden),
-      active(list{
-        after(list{
-          unsafe("content", ""),
-          pointerEvents(none),
-          position(absolute),
-          top(zero),
-          left(zero),
-          right(zero),
-          bottom(zero),
-          backgroundColor(rgba(0, 0, 0, #num(0.1))),
-        }),
-      }),
-      media("(max-width: 720px)", list{paddingBottom((9. /. 16. *. 100.)->pct)}),
+    let topArticle = css({
+      "display": "block",
+      "position": "relative",
+      "margin": 10,
+      "backgroundColor": "#F1F6FC",
+      "borderRadius": 14,
+      "paddingBottom": {
+        let ratio = 5. /. 16. *. 100.
+        `${ratio->Float.toString}%`
+      },
+      "boxShadow": "0 15px 15px -5px rgba(0, 0, 0, 0.2)",
+      "textDecoration": "none",
+      "overflow": "hidden",
+      ":active": {
+        "::after": {
+          "content": `""`,
+          "position": "absolute",
+          "pointerEvents": "none",
+          "top": 0,
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        },
+      },
+      "@media (max-width: 720px)": {
+        "paddingBottom": {
+          let ratio = 9. /. 16. *. 100.
+          `${ratio->Float.toString}%`
+        },
+      },
     })
-    let contents = style(list{
-      position(absolute),
-      top(zero),
-      left(zero),
-      right(zero),
-      bottom(zero),
-      display(flexBox),
-      flexDirection(column),
-      alignItems(center),
-      justifyContent(center),
+    let contents = css({
+      "position": "absolute",
+      "top": 0,
+      "left": 0,
+      "right": 0,
+      "bottom": 0,
+      "display": "flex",
+      "flexDirection": "column",
+      "alignItems": "center",
+      "justifyContent": "center",
     })
-    let bigTitle = style(list{
-      color("fff"->hex),
-      fontSize(32->px),
-      fontWeight(extraBold),
-      textAlign(center),
-      padding(20->px),
-      paddingTop(zero),
-      media("(max-width: 720px)", list{fontSize(18->px)}),
+    let bigTitle = css({
+      "color": "#fff",
+      "fontSize": 32,
+      "fontWeight": "800",
+      "textAlign": "center",
+      "padding": 20,
+      "paddingTop": 0,
+      "@media (max-width: 720px)": {"fontSize": 18},
     })
-    let author = style(list{
-      fontSize(16->px),
-      color("fff"->hex),
-      display(flexBox),
-      flexDirection(row),
-      alignItems(center),
+    let author = css({
+      "fontSize": 16,
+      "color": "#fff",
+      "display": "flex",
+      "flexDirection": "row",
+      "alignItems": "center",
     })
-    let avatar = style(list{
-      width(32->px),
-      height(32->px),
-      borderRadius(100.->pct),
-      marginRight(10->px),
+    let avatar = css({
+      "width": 32,
+      "height": 32,
+      "borderRadius": "100%",
+      "marginRight": 10,
     })
-    let sub = style(list{
-      display(flexBox),
-      flexDirection(row),
-      alignItems(stretch),
-      flexWrap(wrap),
-      justifyContent(spaceBetween),
-      position(relative),
-      zIndex(1),
-      overflowX(auto),
-      unsafe("WebkitOverflowScrolling", "touch"),
-      unsafe("scrollSnapType", "x mandatory"),
-      width(100.->pct),
-      maxWidth(1024->px),
-      margin2(~h=auto, ~v=zero),
-      unsafe("paddingLeft", "calc(10px + env(safe-area-inset-left))"),
-      unsafe("paddingRight", "calc(10px + env(safe-area-inset-right))"),
-      paddingBottom(10->px),
-      media("(max-width: 920px)", list{flexWrap(nowrap)}),
+    let sub = css({
+      "display": "flex",
+      "flexDirection": "row",
+      "alignItems": "stretch",
+      "flexWrap": "wrap",
+      "justifyContent": "space-between",
+      "position": "relative",
+      "zIndex": 1,
+      "overflowX": "auto",
+      "WebkitOverflowScrolling": "touch",
+      "scrollSnapType": "x mandatory",
+      "width": "100%",
+      "maxWidth": 1024,
+      "margin": "0 auto",
+      "paddingLeft": "calc(10px + env(safe-area-inset-left))",
+      "paddingRight": "calc(10px + env(safe-area-inset-right))",
+      "paddingBottom": 10,
+      "@media (max-width: 920px)": {"flexWrap": "nowrap"},
     })
-    let articleContainer = style(list{
-      unsafe("scrollSnapAlign", "center"),
-      flexBasis(33.333->pct),
-      minWidth(300->px),
-      padding(10->px),
+    let articleContainer = css({
+      "scrollSnapAlign": "center",
+      "flexBasis": "33.333%",
+      "minWidth": 300,
+      "padding": 10,
     })
-    let article = style(list{
-      position(relative),
-      display(block),
-      overflow(hidden),
-      backgroundColor("F1F6FC"->hex),
-      borderRadius(14->px),
-      paddingBottom((9. /. 16. *. 100.)->pct),
-      boxShadow(Shadow.box(~y=15->px, ~blur=15->px, ~spread=-5->px, rgba(0, 0, 0, #num(0.2)))),
-      active(list{
-        after(list{
-          unsafe("content", ""),
-          position(absolute),
-          pointerEvents(none),
-          top(zero),
-          left(zero),
-          right(zero),
-          bottom(zero),
-          backgroundColor(rgba(0, 0, 0, #num(0.1))),
-        }),
-      }),
+    let article = css({
+      "position": "relative",
+      "display": "block",
+      "overflow": "hidden",
+      "backgroundColor": "#F1F6FC",
+      "borderRadius": 14,
+      "paddingBottom": {
+        let ratio = 9. /. 16. *. 100.
+        `${ratio->Float.toString}%`
+      },
+      "boxShadow": "0 15px 15px -5px rgba(0, 0, 0, 0.2)",
+      ":active": {
+        "::after": {
+          "content": `""`,
+          "position": "absolute",
+          "pointerEvents": "none",
+          "top": 0,
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        },
+      },
     })
-    let title = style(list{
-      color("fff"->hex),
-      fontSize(18->px),
-      fontWeight(extraBold),
-      textAlign(center),
-      padding(20->px),
-      paddingTop(30->px),
+    let title = css({
+      "color": "#fff",
+      "fontSize": 18,
+      "fontWeight": "800",
+      "textAlign": "center",
+      "padding": 20,
+      "paddingTop": 30,
     })
-    let discover = style(list{
-      display(flexBox),
-      alignItems(center),
-      justifyContent(center),
-      textAlign(center),
-      padding(20->px),
+    let discover = css({
+      "display": "flex",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "textAlign": "center",
+      "padding": 20,
     })
-    let discoverLink = style(list{fontSize(20->px), textDecoration(none), color("1E49B5"->hex)})
-    let authorSmall = style(list{position(absolute), top(10->px), left(10->px)})
+    let discoverLink = css({"fontSize": 20, "textDecoration": "none", "color": "#1E49B5"})
+    let authorSmall = css({"position": "absolute", "top": 10, "left": 10})
   }
   @react.component
   let make = (~articles: array<Pages.listItem>, ~totalCount, ()) =>
@@ -134,8 +143,13 @@ module TopArticles = {
         ->Option.map(article => {
           let author =
             article.meta
-            ->Js.Dict.get("author")
-            ->Option.flatMap(Js.Json.decodeString)
+            ->Dict.get("author")
+            ->Option.flatMap(x =>
+              switch x->JSON.Decode.classify {
+              | String(x) => Some(x)
+              | _ => None
+              }
+            )
             ->Option.getWithDefault("putaindecode")
           <Pages.Link
             href={"/articles/" ++ article.slug}
@@ -153,7 +167,7 @@ module TopArticles = {
                   {" "->React.string}
                   {article.date
                   ->Option.map(date => <>
-                    {j`•`->React.string} {" "->React.string} <Date date />
+                    {j`•`->React.string} {" "->React.string} <DateView date />
                   </>)
                   ->Option.getWithDefault(React.null)}
                 </div>
@@ -166,12 +180,17 @@ module TopArticles = {
       </WidthContainer>
       <div className=Styles.sub>
         {articles
-        ->Array.slice(~offset=1, ~len=6)
+        ->Array.slice(~from=1, ~end=7)
         ->Array.map(article => {
           let author =
             article.meta
-            ->Js.Dict.get("author")
-            ->Option.flatMap(Js.Json.decodeString)
+            ->Dict.get("author")
+            ->Option.flatMap(x =>
+              switch x->JSON.Decode.classify {
+              | String(x) => Some(x)
+              | _ => None
+              }
+            )
             ->Option.getWithDefault("putaindecode")
           <div key=article.slug className=Styles.articleContainer>
             <Pages.Link
@@ -191,7 +210,7 @@ module TopArticles = {
                       {" "->React.string}
                       {article.date
                       ->Option.map(date => <>
-                        {j`•`->React.string} {" "->React.string} <Date date />
+                        {j`•`->React.string} {" "->React.string} <DateView date />
                       </>)
                       ->Option.getWithDefault(React.null)}
                     </div>
@@ -214,77 +233,75 @@ module TopArticles = {
 
 module LatestPodcasts = {
   module Styles = {
-    open Css
-    let container = style(list{
-      backgroundColor(Theme.lightBody->hex),
-      media("(prefers-color-scheme: dark)", list{backgroundColor("111"->hex)}),
+    open Emotion
+    let container = css({
+      "backgroundColor": Theme.pageAccentedBackgroundColor,
     })
-    let contents = style(list{
-      display(flexBox),
-      flexDirection(row),
-      alignItems(flexStart),
-      paddingTop(20->px),
-      paddingBottom(20->px),
-      media("(max-width: 720px)", list{flexDirection(column), alignItems(stretch)}),
+    let contents = css({
+      "display": "flex",
+      "flexDirection": "row",
+      "alignItems": "flex-start",
+      "paddingTop": 20,
+      "paddingBottom": 20,
+      "@media (max-width: 720px)": {"flexDirection": "column", "alignItems": "stretch"},
     })
-    let leftCol = style(list{
-      flexBasis(150->px),
-      flexShrink(0.0),
-      padding(10->px),
-      media("(max-width: 720px)", list{paddingBottom(zero), alignSelf(center)}),
+    let leftCol = css({
+      "flexBasis": 150,
+      "flexShrink": 0,
+      "padding": 10,
+      "@media (max-width: 720px)": {"paddingBottom": 0, "alignSelf": "center"},
     })
-    let mainCol = style(list{
-      flexGrow(1.0),
-      padding(10->px),
-      media("(max-width: 720px)", list{paddingTop(zero)}),
+    let mainCol = css({
+      "flexGrow": 1.0,
+      "padding": 10,
+      "@media (max-width: 720px)": {"paddingTop": 0},
     })
-    let title = style(list{
-      fontSize(48->px),
-      fontWeight(extraBold),
-      marginBottom(20->px),
-      media("(max-width: 720px)", list{textAlign(center)}),
+    let title = css({
+      "fontSize": 48,
+      "fontWeight": "800",
+      "marginBottom": 20,
+      "@media (max-width: 720px)": {"textAlign": "center"},
     })
-    let podcast = style(list{
-      marginBottom(10->px),
-      backgroundColor("fff"->hex),
-      borderRadius(10->px),
-      padding(20->px),
-      display(block),
-      textDecoration(none),
-      color(Theme.darkBody->hex),
-      media("(prefers-color-scheme: dark)", list{backgroundColor("222"->hex), color("ddd"->hex)}),
-      width(100.->pct),
-      position(relative),
-      overflow(hidden),
-      boxShadow(Shadow.box(~y=15->px, ~blur=15->px, ~spread=-5->px, rgba(0, 0, 0, #num(0.2)))),
-      active(list{
-        after(list{
-          unsafe("content", ""),
-          position(absolute),
-          pointerEvents(none),
-          top(zero),
-          left(zero),
-          right(zero),
-          bottom(zero),
-          backgroundColor(rgba(255, 255, 255, #num(0.5))),
-        }),
-      }),
+    let podcast = css({
+      "marginBottom": 10,
+      "backgroundColor": Theme.pageBackgroundColor,
+      "borderRadius": 10,
+      "padding": 20,
+      "display": "block",
+      "textDecoration": "none",
+      "color": Theme.pageTextColor,
+      "width": "100%",
+      "position": "relative",
+      "overflow": "hidden",
+      "boxShadow": "0 15px 15px -5px rgba(0, 0, 0, 0.2)",
+      ":active": {
+        "::after": {
+          "content": `""`,
+          "position": "absolute",
+          "pointerEvents": "none",
+          "top": 0,
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        },
+      },
     })
-    let podcastTitle = style(list{fontSize(18->px), fontWeight(extraBold), marginBottom(10->px)})
-    let avatar = style(list{
-      width(32->px),
-      height(32->px),
-      borderRadius(100.->pct),
-      marginRight(10->px),
+    let podcastTitle = css({"fontSize": 18, "fontWeight": "800", "marginBottom": 10})
+    let avatar = css({
+      "width": 32,
+      "height": 32,
+      "borderRadius": "100%",
+      "marginRight": 10,
     })
-    let discover = style(list{
-      display(flexBox),
-      alignItems(center),
-      justifyContent(center),
-      textAlign(center),
-      padding(20->px),
+    let discover = css({
+      "display": "flex",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "textAlign": "center",
+      "padding": 20,
     })
-    let discoverLink = style(list{fontSize(20->px), textDecoration(none), color("1E49B5"->hex)})
+    let discoverLink = css({"fontSize": 20, "textDecoration": "none", "color": "#1E49B5"})
   }
 
   @react.component
@@ -298,15 +315,27 @@ module LatestPodcasts = {
           <div className=Styles.mainCol>
             <div role="heading" ariaLevel=2 className=Styles.title> {"Podcast"->React.string} </div>
             {podcasts
-            ->Array.slice(~offset=0, ~len=3)
+            ->Array.slice(~from=0, ~end=3)
             ->Array.map(podcast =>
               <Pages.Link
                 key=podcast.slug href={"/podcasts/" ++ podcast.slug} className=Styles.podcast>
                 <div className=Styles.podcastTitle> {podcast.title->React.string} </div>
                 {podcast.meta
-                ->Js.Dict.get("participants")
-                ->Option.flatMap(Js.Json.decodeArray)
-                ->Option.map(array => array->Array.keepMap(Js.Json.decodeString))
+                ->Dict.get("participants")
+                ->Option.flatMap(x =>
+                  switch x->JSON.Decode.classify {
+                  | Array(array) => Some(array)
+                  | _ => None
+                  }
+                )
+                ->Option.map(array =>
+                  array->Belt.Array.keepMap(x =>
+                    switch x->JSON.Decode.classify {
+                    | String(x) => Some(x)
+                    | _ => None
+                    }
+                  )
+                )
                 ->Option.getWithDefault([])
                 ->Array.map(name =>
                   <img
@@ -332,8 +361,8 @@ module LatestPodcasts = {
 }
 
 module Styles = {
-  open Css
-  let topArticles = style(list{position(relative), top(-30->px)})
+  open Emotion
+  let topArticles = css({"position": "relative", "top": -30})
 }
 
 @react.component
@@ -358,7 +387,7 @@ let make = () => {
           <TopArticles articles=latestPosts totalCount=postTotalCount />
         </div>
         <LatestPodcasts
-          podcasts={latestPodcasts->Array.slice(~offset=0, ~len=3)} totalCount=podcastTotalCount
+          podcasts={latestPodcasts->Array.slice(~from=0, ~end=3)} totalCount=podcastTotalCount
         />
       </>
     }}

@@ -1,30 +1,24 @@
-open Belt
+type t = Dict.t<string>
 
-let explode = (queryString: string) =>
-  (
-    queryString->Js.String.slice(~from=0, ~to_=1, _) == "?"
-      ? queryString->Js.String.sliceToEnd(~from=1, _)
-      : queryString
-  )
-  ->Js.String.split("&", _)
-  ->Array.reduce(list{}, (acc, item) => {
-    let array = Js.String.split("=", item)
-    switch (array[0], array[1]) {
-    | (Some(key), Some(value)) => list{
-        (Js.Global.decodeURIComponent(key), Js.Global.decodeURIComponent(value)),
-        ...acc,
-      }
-    | _ => acc
-    }
-  })
-  ->List.toArray
-  ->Map.String.fromArray
+module URLSearchParams = {
+  type t
+  @new external parse: string => t = "URLSearchParams"
+  @new external make: unit => t = "URLSearchParams"
+  @send external set: (t, string, string) => unit = "set"
+  @send external toString: t => string = "toString"
+}
 
-let implode = map =>
-  map
-  ->Map.String.toList
-  ->List.reduce(list{}, (acc, (key, value)) => list{
-    Js.Global.encodeURIComponent(key) ++ ("=" ++ Js.Global.encodeURIComponent(value)),
-    ...acc,
+let decode = queryString => {
+  let urlSearchParams = URLSearchParams.parse(queryString)
+  urlSearchParams->Array.from->Dict.fromArray
+}
+
+let encode = dict => {
+  let urlSearchParams = URLSearchParams.make()
+  dict
+  ->Dict.toArray
+  ->Array.forEach(((key, value)) => {
+    urlSearchParams->URLSearchParams.set(key, value)
   })
-  ->String.concat("&", _)
+  urlSearchParams->URLSearchParams.toString
+}

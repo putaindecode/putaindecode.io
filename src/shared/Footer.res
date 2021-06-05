@@ -1,35 +1,35 @@
 module Styles = {
-  open Css
-  let footer = style(list{backgroundColor("222"->hex), padding2(~v=20->px, ~h=zero)})
-  let container = style(list{position(relative)})
-  let rss = style(list{
-    position(absolute),
-    left(zero),
-    top(50.->pct),
-    color("fff"->hex),
-    transform(translateY(-50.->pct)),
-    textDecoration(none),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
+  open Emotion
+  let footer = css({"backgroundColor": "#222", "padding": "20px 0"})
+  let container = css({"position": "relative"})
+  let rss = css({
+    "position": "absolute",
+    "left": 0,
+    "top": "50%",
+    "color": "#fff",
+    "transform": "translateY(-50%)",
+    "textDecoration": "none",
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
   })
-  let github = style(list{
-    position(absolute),
-    right(zero),
-    top(50.->pct),
-    transform(translateY(-50.->pct)),
-    color("fff"->hex),
-    textDecoration(none),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
+  let github = css({
+    "position": "absolute",
+    "right": 0,
+    "top": "50%",
+    "color": "#fff",
+    "transform": "translateY(-50%)",
+    "textDecoration": "none",
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
   })
-  let text = style(list{media("(max-width: 400px)", list{display(none)})})
-  let icon = style(list{marginRight(10->px)})
-  let copyright = style(list{
-    color(rgba(255, 255, 255, #num(0.5))),
-    textAlign(center),
-    fontSize(14->px),
+  let text = css({"@media (max-width: 400px)": {"display": "none"}})
+  let icon = css({"marginRight": 10})
+  let copyright = css({
+    "color": "rgba(255, 255, 255, 0.5)",
+    "textAlign": "center",
+    "fontSize": 14,
   })
 }
 

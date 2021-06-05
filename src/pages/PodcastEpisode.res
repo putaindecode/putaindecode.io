@@ -1,113 +1,102 @@
-open Belt
-
 module Styles = {
-  open Css
-  let appearAnimation = keyframes(list{(0, list{opacity(0.), transform(translateY(20->px))})})
-  let root = style(list{
-    backgroundColor("F9F6F6"->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("111"->hex)}),
-    display(flexBox),
-    flexDirection(column),
-    flexGrow(1.0),
+  open Emotion
+  let appearAnimation = keyframes({
+    "from": {"opacity": 0.0, "transform": "translateY(20px)"},
   })
-  let container = style(list{
-    padding2(~v=20->px, ~h=10->px),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(stretch),
-    flexGrow(1.),
-    animation(~duration=500, ~timingFunction=#easeOut, appearAnimation),
-    media("(max-width: 880px)", list{flexDirection(column)}),
+  let root = css({
+    "backgroundColor": Theme.pageSlightlyAccentedBackgroundColor,
+    "display": "flex",
+    "flexDirection": "column",
+    "flexGrow": 1.0,
   })
-  let playerContainer = style(list{
-    flexBasis(33.333->pct),
-    flexShrink(0.0),
-    position(relative),
-    media("(max-width: 880px)", list{width(100.->pct)}),
+  let container = css({
+    "padding": "20px 10px",
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "stretch",
+    "flexGrow": 1.0,
+    "animation": `500ms ease-out ${appearAnimation}`,
+    "@media (max-width: 880px)": {"flexDirection": "column"},
   })
-  let playerBackground = style(list{
-    position(relative),
-    position(sticky),
-    top(10->px),
-    borderRadius(10->px),
-    overflow(hidden),
-    height(300->px),
-    backgroundImage(
-      linearGradient(
-        135.0->deg,
-        list{(0.0->pct, Theme.gradientRedTop->hex), (100.0->pct, Theme.gradientRedBottom->hex)},
-      ),
-    ),
+  let playerContainer = css({
+    "flexBasis": "33.333%",
+    "flexShrink": 0,
+    "position": "relative",
+    "@media (max-width: 880px)": {"width": "100%"},
   })
-  let player = style(list{borderWidth(zero), width(100.->pct), height(300->px)})
-  let contents = style(list{flexGrow(1.0)})
-  let title = style(list{
-    fontSize(42->px),
-    fontWeight(extraBold),
-    paddingBottom(10->px),
-    lineHeight(#abs(1.2)),
+  let playerBackground = css({
+    "position": "relative",
+    "position": "sticky",
+    "top": 10,
+    "borderRadius": 10,
+    "overflow": "hidden",
+    "height": 300,
+    "backgroundImage": `linear-gradient(to bottom right, ${Theme.gradientRedTop}, ${Theme.gradientRedBottom}`,
   })
-  let author = style(list{
-    fontSize(16->px),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
-    marginBottom(10->px),
+  let player = css({"borderWidth": 0, "width": "100%", "height": 300})
+  let contents = css({"flexGrow": 1})
+  let title = css({
+    "fontSize": 42,
+    "fontWeight": "800",
+    "paddingBottom": 10,
+    "lineHeight": 1.2,
   })
-  let avatar = style(list{
-    width(32->px),
-    height(32->px),
-    borderRadius(100.->pct),
-    marginRight(10->px),
+  let author = css({
+    "fontSize": 16,
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "marginBottom": 10,
   })
-  let body = style(list{
-    fontSize(18->px),
-    lineHeight(#abs(1.7)),
-    selector(
-      "pre",
-      list{
-        padding(10->px),
-        overflowX(auto),
-        borderRadius(10->px),
-        border(2->px, #solid, rgba(0, 0, 0, #num(0.1))),
-        unsafe("WebkitOverflowScrolling", "touch"),
-      },
-    ),
-    selector("a", list{wordWrap(breakWord)}),
+  let avatar = css({
+    "width": 32,
+    "height": 32,
+    "borderRadius": "100%",
+    "marginRight": 10,
   })
-  let share = style(list{
-    maxWidth(640->px),
-    width(100.->pct),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
-    justifyContent(spaceBetween),
-    margin2(~h=auto, ~v=20->px),
-    padding(20->px),
-    backgroundColor("fff"->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("222"->hex)}),
-    borderRadius(10->px),
-    boxShadow(Shadow.box(~y=15->px, ~blur=15->px, ~spread=-5->px, rgba(0, 0, 0, #num(0.2)))),
-    media("(max-width: 540px)", list{flexDirection(column)}),
+  let body = css({
+    "fontSize": 18,
+    "lineHeight": 1.7,
+    "pre": {
+      "padding": 10,
+      "overflowX": "auto",
+      "borderRadius": 10,
+      "border": "2px solid rgba(0, 0, 0, 0.1)",
+    },
+    "a": {"wordWrap": "break-word"},
   })
-  let shareTitle = style(list{fontWeight(extraBold)})
-  let shareButton = style(list{
-    backgroundColor("00aced"->hex),
-    color("fff"->hex),
-    padding2(~h=20->px, ~v=10->px),
-    textDecoration(none),
-    borderRadius(5->px),
-    fontWeight(extraBold),
-    active(list{opacity(0.5)}),
+  let share = css({
+    "maxWidth": 640,
+    "width": "100%",
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "justifyContent": "space-between",
+    "margin": "20px auto",
+    "padding": 20,
+    "backgroundColor": Theme.pageBackgroundColor,
+    "borderRadius": 10,
+    "boxShadow": "0 15px 15px -5px rgba(0, 0, 0, 0.2)",
+    "@media (max-width: 540px)": {"flexDirection": "column"},
   })
-  let back = style(list{
-    display(flexBox),
-    alignItems(center),
-    justifyContent(center),
-    textAlign(center),
-    padding(20->px),
+  let shareTitle = css({"fontWeight": "800"})
+  let shareButton = css({
+    "backgroundColor": "#00aced",
+    "color": "#fff",
+    "padding": "10px 20px",
+    "textDecoration": "none",
+    "borderRadius": 5,
+    "fontWeight": "800",
+    ":active": {"opacity": 0.5},
   })
-  let backLink = style(list{fontSize(20->px), textDecoration(none), color("1E49B5"->hex)})
+  let back = css({
+    "display": "flex",
+    "alignItems": "center",
+    "justifyContent": "center",
+    "textAlign": "center",
+    "padding": 20,
+  })
+  let backLink = css({"fontSize": 20, "textDecoration": "none", "color": "#1E49B5"})
 }
 
 @react.component
@@ -120,7 +109,14 @@ let make = (~slug) => {
       <PageLoadingIndicator />
     | Done(Ok(episode)) =>
       let trackId =
-        episode.meta->Js.Dict.get("soundcloudTrackId")->Option.flatMap(Js.Json.decodeString)
+        episode.meta
+        ->Dict.get("soundcloudTrackId")
+        ->Option.flatMap(x =>
+          switch x->JSON.Decode.classify {
+          | String(x) => Some(x)
+          | _ => None
+          }
+        )
 
       <>
         <Pages.Head>
@@ -144,9 +140,21 @@ let make = (~slug) => {
               </div>
               <div className=Styles.author>
                 {episode.meta
-                ->Js.Dict.get("participants")
-                ->Option.flatMap(Js.Json.decodeArray)
-                ->Option.map(array => array->Array.keepMap(Js.Json.decodeString))
+                ->Dict.get("participants")
+                ->Option.flatMap(x =>
+                  switch x->JSON.Decode.classify {
+                  | Array(array) => Some(array)
+                  | _ => None
+                  }
+                )
+                ->Option.map(array =>
+                  array->Belt.Array.keepMap(x =>
+                    switch x->JSON.Decode.classify {
+                    | String(x) => Some(x)
+                    | _ => None
+                    }
+                  )
+                )
                 ->Option.getWithDefault([])
                 ->Array.map(name =>
                   <a href={"https://github.com/" ++ name} key=name>
@@ -169,18 +177,15 @@ let make = (~slug) => {
                   className=Styles.shareButton
                   onClick={event => {
                     event->ReactEvent.Mouse.preventDefault
-                    open Webapi.Dom
-                    window
-                    ->Window.open_(
-                      ~url=(event->ReactEvent.Mouse.target)["href"],
-                      ~name="",
-                      ~features="width=500,height=400",
-                    )
-                    ->ignore
+                    window["open"](.
+                      (event->ReactEvent.Mouse.target)["href"],
+                      "",
+                      "width=500,height=400",
+                    )->ignore
                   }}
                   target="_blank"
                   href={"https://www.twitter.com/intent/tweet?text=" ++
-                  Js.Global.encodeURIComponent(
+                  encodeURIComponent(
                     episode.title ++
                     (" sur @PutainDeCode https://putaindecode.io/podcasts/" ++
                     episode.slug),

@@ -1,115 +1,119 @@
-open Belt
-
 module Styles = {
-  open Css
-  let container = style(list{
-    backgroundColor(Theme.lightBody->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("111"->hex)}),
-    display(flexBox),
-    flexDirection(column),
-    flexGrow(1.0),
+  open Emotion
+  let container = css({
+    "backgroundColor": Theme.pageAccentedBackgroundColor,
+    "display": "flex",
+    "flexDirection": "column",
+    "flexGrow": 1.0,
   })
-  let heading = style(list{
-    display(flexBox),
-    flexDirection(row),
-    justifyContent(spaceBetween),
-    alignItems(center),
+  let heading = css({
+    "display": "flex",
+    "flexDirection": "row",
+    "justifyContent": "space-between",
+    "alignItems": "center",
   })
-  let search = style(list{
-    fontSize(36->px),
-    flexGrow(1.0),
-    width(1->px),
-    maxWidth(300->px),
-    backgroundColor(transparent),
-    padding(zero),
-    margin(zero),
-    borderWidth(zero),
-    textAlign(#right),
-    borderRadius(30->px),
-    padding2(~v=10->px, ~h=30->px),
-    focus(list{outlineStyle(none), backgroundColor(rgba(0, 0, 0, #num(0.05)))}),
-    media("(max-width: 720px)", list{fontSize(20->px)}),
-    media("(prefers-color-scheme: dark)", list{color("ddd"->hex)}),
+  let search = css({
+    "fontSize": 36,
+    "flexGrow": 1.0,
+    "width": 1,
+    "maxWidth": 300,
+    "backgroundColor": "transparent",
+    "margin": 0,
+    "borderWidth": 0,
+    "textAlign": "right",
+    "borderRadius": 30,
+    "padding": "10px 30px",
+    "color": "inherit",
+    ":focus": {"outline": "none", "backgroundColor": Theme.halfPercentContrastColor},
+    "@media (max-width: 720px)": {"fontSize": 20},
   })
-  let mainTitle = style(list{
-    fontSize(48->px),
-    fontWeight(extraBold),
-    marginTop(20->px),
-    marginBottom(20->px),
-    media("(max-width: 720px)", list{textAlign(center)}),
+  let mainTitle = css({
+    "fontSize": 48,
+    "fontWeight": "800",
+    "marginTop": 20,
+    "marginBottom": 20,
+    "@media (max-width: 720px)": {"textAlign": "center"},
   })
-  let links = style(list{display(flexBox), flexDirection(row), alignItems(stretch), flexWrap(wrap)})
-  let linkContainer = style(list{
-    width(33.3333->pct),
-    minWidth(260->px),
-    flexGrow(1.0),
-    display(flexBox),
-    flexDirection(column),
-    padding(10->px),
+  let links = css({
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "stretch",
+    "flexWrap": "wrap",
   })
-  let hiddenLinkContainer = merge(list{linkContainer, style(list{display(none)})})
+  let linkContainer = css({
+    "width": "33.3333%",
+    "minWidth": 260,
+    "flexGrow": 1.0,
+    "display": "flex",
+    "flexDirection": "column",
+    "padding": 10,
+  })
+  let hiddenLinkContainer = cx([linkContainer, css({"display": "none"})])
 
-  let article = style(list{
-    position(relative),
-    display(block),
-    overflow(hidden),
-    backgroundColor("F1F6FC"->hex),
-    borderRadius(14->px),
-    paddingBottom((9. /. 16. *. 100.)->pct),
-    boxShadow(Shadow.box(~y=15->px, ~blur=15->px, ~spread=-5->px, rgba(0, 0, 0, #num(0.2)))),
-    active(list{
-      after(list{
-        unsafe("content", ""),
-        position(absolute),
-        pointerEvents(none),
-        top(zero),
-        left(zero),
-        right(zero),
-        bottom(zero),
-        backgroundColor(rgba(0, 0, 0, #num(0.1))),
-      }),
-    }),
+  let article = css({
+    "position": "relative",
+    "display": "block",
+    "overflow": "hidden",
+    "backgroundColor": "#F1F6FC",
+    "borderRadius": 14,
+    "paddingBottom": {
+      let ratio = 9. /. 16. *. 100.
+      `${ratio->Float.toString}%`
+    },
+    "boxShadow": "0 15px 15px -5px rgba(0, 0, 0, 0.2)",
+    ":active": {
+      "::after": {
+        "content": `""`,
+        "position": "absolute",
+        "pointerEvents": "none",
+        "top": 0,
+        "left": 0,
+        "right": 0,
+        "bottom": 0,
+        "backgroundColor": "rgba(255, 255, 255, 0.5)",
+      },
+    },
   })
-  let title = style(list{
-    color("fff"->hex),
-    fontSize(18->px),
-    fontWeight(extraBold),
-    textAlign(center),
-    padding(20->px),
-    paddingTop(30->px),
+  let title = css({
+    "color": "#fff",
+    "fontSize": 18,
+    "fontWeight": "800",
+    "textAlign": "center",
+    "padding": 20,
+    "paddingTop": 30,
   })
-  let discover = style(list{
-    display(flexBox),
-    alignItems(center),
-    justifyContent(center),
-    textAlign(center),
-    padding(20->px),
+  let discover = css({
+    "display": "flex",
+    "alignItems": "center",
+    "justifyContent": "center",
+    "textAlign": "center",
+    "padding": 20,
   })
-  let discoverLink = style(list{fontSize(20->px), textDecoration(none), color("1E49B5"->hex)})
-  let authorSmall = style(list{position(absolute), top(10->px), left(10->px)})
-  let contents = style(list{
-    position(absolute),
-    top(zero),
-    left(zero),
-    right(zero),
-    bottom(zero),
-    display(flexBox),
-    flexDirection(column),
-    alignItems(center),
-    justifyContent(center),
+  let discoverLink = css({"fontSize": 20, "textDecoration": "none", "color": "#1E49B5"})
+  let authorSmall = css({"position": "absolute", "top": 10, "left": 10})
+  let contents = css({
+    "position": "absolute",
+    "top": 0,
+    "left": 0,
+    "right": 0,
+    "bottom": 0,
+    "display": "flex",
+    "flexDirection": "column",
+    "alignItems": "center",
+    "justifyContent": "center",
   })
-  let author = style(list{
-    fontSize(16->px),
-    color("fff"->hex),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
+  let author = css({
+    "fontSize": 16,
+    "color": "#fff",
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
   })
-  let avatar = style(list{
-    width(32->px),
-    height(32->px),
-    borderRadius(100.->pct),
-    marginRight(10->px),
+  let avatar = css({
+    "width": 32,
+    "height": 32,
+    "borderRadius": "100%",
+    "marginRight": 10,
   })
 }
 
@@ -121,7 +125,7 @@ let make = (~search as propsSearch) => {
     setSearch(_ => Some(propsSearch))
     None
   }, [propsSearch])
-  let queryString = search->Option.map(QueryString.explode)->Option.getWithDefault(Map.String.empty)
+  let queryString = search->Option.map(QueryString.decode)->Option.getWithDefault(Dict.empty())
   <div className=Styles.container>
     {switch postList {
     | NotAsked
@@ -132,7 +136,7 @@ let make = (~search as propsSearch) => {
         <Pages.Head>
           <title>
             {(queryString
-            ->Map.String.get("search")
+            ->Dict.get("search")
             ->Option.map(search => "Articles avec " ++ search)
             ->Option.getWithDefault("Articles") ++ " | Putain de code")->React.string}
           </title>
@@ -145,17 +149,16 @@ let make = (~search as propsSearch) => {
             className=Styles.search
             placeholder=`Rechercher …`
             type_="text"
-            value={queryString->Map.String.get("search")->Option.getWithDefault("")}
+            value={queryString->Dict.get("search")->Option.getWithDefault("")}
             onChange={event => {
               let search = (event->ReactEvent.Form.target)["value"]
-              RescriptReactRouter.push(
-                "?" ++
-                (
-                  search == ""
-                    ? queryString->Map.String.remove("search")
-                    : queryString->Map.String.set("search", search)
-                )->QueryString.implode,
-              )
+              let nextQueryString = queryString->Dict.copy
+              if search === "" {
+                nextQueryString->Dict.delete("search")
+              } else {
+                nextQueryString->Dict.set("search", search)
+              }
+              RescriptReactRouter.push("?" ++ nextQueryString->QueryString.encode)
             }}
           />
         </div>
@@ -164,18 +167,23 @@ let make = (~search as propsSearch) => {
           ->Array.map(article => {
             let author =
               article.meta
-              ->Js.Dict.get("author")
-              ->Option.flatMap(Js.Json.decodeString)
+              ->Dict.get("author")
+              ->Option.flatMap(x =>
+                switch x->JSON.Decode.classify {
+                | String(x) => Some(x)
+                | _ => None
+                }
+              )
               ->Option.getWithDefault("putaindecode")
             <div
               key=article.slug
               className={queryString
-              ->Map.String.get("search")
-              ->Option.map(Js.String.trim)
-              ->Option.map(Js.String.toLowerCase)
+              ->Dict.get("search")
+              ->Option.map(String.trim)
+              ->Option.map(String.toLowerCase)
               ->Option.map(search =>
-                article.title->Js.String.toLowerCase->Js.String.includes(search, _) ||
-                  author->Js.String.toLowerCase->Js.String.includes(search, _)
+                article.title->String.toLowerCase->String.includes(search) ||
+                  author->String.toLowerCase->String.includes(search)
               )
               ->Option.getWithDefault(true)
                 ? Styles.linkContainer
@@ -197,7 +205,7 @@ let make = (~search as propsSearch) => {
                         {" "->React.string}
                         {article.date
                         ->Option.map(date => <>
-                          {j`•`->React.string} {" "->React.string} <Date date />
+                          {j`•`->React.string} {" "->React.string} <DateView date />
                         </>)
                         ->Option.getWithDefault(React.null)}
                       </div>

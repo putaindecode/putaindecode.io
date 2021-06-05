@@ -1,8 +1,8 @@
 @react.component
-let make = (~width as widthPx=10, ~height as heightPx=10, ()) =>
+let make = (~width=10, ~height=10, ()) =>
   <div
     className={
-      open Css
-      style(list{width(widthPx->px), height(heightPx->px), flexShrink(0.0)})
+      open Emotion
+      css({"width": width, "height": height, "flexShrink": 0.0})
     }
   />

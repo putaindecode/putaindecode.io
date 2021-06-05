@@ -1,25 +1,23 @@
 module Styles = {
-  open Css
-  let container = style(list{
-    marginTop(20->px),
-    marginBottom(20->px),
-    backgroundColor(Theme.lightBody->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("111"->hex)}),
-    borderRadius(10->px),
-    padding(20->px),
+  open Emotion
+  let container = css({
+    "margin": "20px 0",
+    "backgroundColor": Theme.pageAccentedBackgroundColor,
+    "borderRadius": 10,
+    "padding": 20,
   })
-  let title = style(list{
-    fontSize(32->px),
-    fontWeight(extraBold),
-    marginBottom(20->px),
-    textAlign(center),
+  let title = css({
+    "fontSize": 32,
+    "fontWeight": "800",
+    "marginBottom": 20,
+    "textAlign": "center",
   })
-  let subTitle = style(list{fontSize(18->px), marginBottom(10->px), textAlign(center)})
-  let list = style(list{
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
-    justifyContent(center),
+  let subTitle = css({"fontSize": 18, "marginBottom": 10, "textAlign": "center"})
+  let list = css({
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "justifyContent": "center",
   })
 }
 

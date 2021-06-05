@@ -1,5 +1,3 @@
-open Belt
-
 type action =
   | RunCommand
   | SetValue(string)
@@ -14,41 +12,43 @@ type state = {
 }
 
 module Styles = {
-  open Css
-  let terminal = style(list{
-    margin(10->px),
-    backgroundColor("222"->hex),
-    borderRadius(10->px),
-    padding(10->px),
-    color("fff"->hex),
-    height(300->px),
-    overflowY(auto),
-    fontFamily(#custom(Theme.codeFontFamily)),
-    unsafe("WebkitOverflowScrolling", "touch"),
+  open Emotion
+  let terminal = css({
+    "margin": 10,
+    "backgroundColor": "#222",
+    "borderRadius": 10,
+    "padding": 10,
+    "color": "#fff",
+    "height": 300,
+    "overflowY": "auto",
+    "fontFamily": Theme.codeFontFamily,
+    "WebkitOverflowScrolling": "touch",
   })
-  let line = style(list{whiteSpace(#preWrap)})
-  let input = style(list{
-    backgroundColor("222"->hex),
-    fontFamily(#custom(Theme.codeFontFamily)),
-    color("fff"->hex),
-    fontSize(16->px),
-    borderWidth(zero),
-    margin(zero),
-    padding(zero),
-    outlineStyle(none),
+  let line = css({"whiteSpace": "pre-wrap"})
+  let input = css({
+    "backgroundColor": "#222",
+    "fontFamily": Theme.codeFontFamily,
+    "color": "#fff",
+    "fontSize": 16,
+    "borderWidth": 0,
+    "margin": 0,
+    "padding": 0,
+    "outline": "none",
   })
-  let title = style(list{
-    fontSize(48->px),
-    fontWeight(extraBold),
-    marginTop(20->px),
-    marginBottom(20->px),
-    textAlign(center),
+  let title = css({
+    "fontSize": 48,
+    "fontWeight": "800",
+    "marginTop": 20,
+    "marginBottom": 20,
+    "textAlign": "center",
   })
 }
 
+external elementAsObject: Dom.element => {..} = "%identity"
+
 @react.component
 let make = () => {
-  let containerRef = React.useRef(Js.Nullable.null)
+  let containerRef = React.useRef(Nullable.null)
 
   let (state, send) = React.useReducer((state, action) =>
     switch action {
@@ -58,7 +58,7 @@ let make = () => {
           state.history,
           [
             User(state.input),
-            switch state.input->Js.String.trim {
+            switch state.input->String.trim {
             | "" => System("")
             | "help" =>
               System(`available commands:
@@ -81,7 +81,7 @@ let make = () => {
               System("000000")
             | "go-to-home.sh"
             | "./go-to-home.sh" =>
-              Js.Global.setTimeout(() => RescriptReactRouter.push("/"), 1_000)->ignore
+              setTimeout(() => RescriptReactRouter.push("/"), 1_000)->ignore
               System("Redirecting ...")
             | "cat go-to-home.sh"
             | "cat ./go-to-home.sh" =>
@@ -96,10 +96,10 @@ let make = () => {
   , {history: [], input: ""})
 
   React.useEffect1(() => {
-    switch containerRef.current->Js.Nullable.toOption {
-    | Some(containerRef) =>
-      open Webapi.Dom
-      containerRef->Element.setScrollTop(containerRef->Element.scrollHeight->float_of_int)
+    switch containerRef.current->Nullable.toOption {
+    | Some(element) =>
+      let element = element->elementAsObject
+      element["scrollTop"](. element["scrollHeight"])
     | None => ()
     }
     None
@@ -113,7 +113,7 @@ let make = () => {
       onClick={event => (event->ReactEvent.Mouse.target)["querySelector"]("input")["focus"]()}
       ref={containerRef->ReactDOM.Ref.domRef}>
       {state.history
-      ->Array.mapWithIndex((index, item) =>
+      ->Array.mapWithIndex((item, index) =>
         <div key=j`$index` className=Styles.line>
           {React.string(
             switch item {

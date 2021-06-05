@@ -1,88 +1,86 @@
-open Belt
-
 module Styles = {
-  open Css
-  let container = style(list{
-    backgroundColor(Theme.lightBody->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("111"->hex)}),
-    display(flexBox),
-    flexDirection(column),
-    flexGrow(1.0),
+  open Emotion
+  let container = css({
+    "backgroundColor": Theme.pageAccentedBackgroundColor,
+    "display": "flex",
+    "flexDirection": "column",
+    "flexGrow": 1.0,
   })
-  let heading = style(list{
-    display(flexBox),
-    flexDirection(row),
-    justifyContent(spaceBetween),
-    alignItems(center),
+  let heading = css({
+    "display": "flex",
+    "flexDirection": "row",
+    "justifyContent": "space-between",
+    "alignItems": "center",
   })
-  let search = style(list{
-    fontSize(36->px),
-    flexGrow(1.0),
-    width(1->px),
-    maxWidth(300->px),
-    backgroundColor(transparent),
-    padding(zero),
-    margin(zero),
-    borderWidth(zero),
-    textAlign(#right),
-    borderRadius(30->px),
-    padding2(~v=10->px, ~h=30->px),
-    focus(list{outlineStyle(none), backgroundColor(rgba(0, 0, 0, #num(0.05)))}),
-    media("(max-width: 720px)", list{fontSize(20->px)}),
-    media("(prefers-color-scheme: dark)", list{color("ddd"->hex)}),
+  let search = css({
+    "fontSize": 36,
+    "flexGrow": 1.0,
+    "width": 1,
+    "maxWidth": 300,
+    "backgroundColor": "transparent",
+    "margin": 0,
+    "borderWidth": 0,
+    "textAlign": "right",
+    "borderRadius": 30,
+    "padding": "10px 30px",
+    "color": "inherit",
+    ":focus": {
+      "outline": "none",
+      "backgroundColor": Theme.halfPercentContrastColor,
+    },
+    "@media (max-width: 720px)": {"fontSize": 20},
   })
-  let title = style(list{
-    fontSize(48->px),
-    fontWeight(extraBold),
-    marginTop(20->px),
-    marginBottom(20->px),
-    media("(max-width: 720px)", list{textAlign(center)}),
+  let title = css({
+    "fontSize": 48,
+    "fontWeight": "800",
+    "marginTop": 20,
+    "marginBottom": 20,
+    "@media (max-width: 720px)": {"textAlign": "center"},
   })
-  let link = style(list{
-    color(Theme.darkBody->hex),
-    textDecoration(none),
-    padding(20->px),
-    backgroundColor("fff"->hex),
-    media("(prefers-color-scheme: dark)", list{backgroundColor("222"->hex), color("ddd"->hex)}),
-    borderRadius(10->px),
-    marginBottom(10->px),
-    position(relative),
-    overflow(hidden),
-    boxShadow(Shadow.box(~y=15->px, ~blur=15->px, ~spread=-5->px, rgba(0, 0, 0, #num(0.2)))),
-    active(list{
-      after(list{
-        unsafe("content", ""),
-        position(absolute),
-        pointerEvents(none),
-        top(zero),
-        left(zero),
-        right(zero),
-        bottom(zero),
-        backgroundColor(rgba(255, 255, 255, #num(0.5))),
-      }),
-    }),
+  let link = css({
+    "color": Theme.pageTextColor,
+    "textDecoration": "none",
+    "padding": 20,
+    "backgroundColor": Theme.pageBackgroundColor,
+    "borderRadius": 10,
+    "marginBottom": 10,
+    "position": "relative",
+    "overflow": "hidden",
+    "boxShadow": "0 15px 15px -5px rgba(0, 0, 0, 0.2)",
+    ":active": {
+      "::after": {
+        "content": `""`,
+        "position": "absolute",
+        "pointerEvents": "none",
+        "top": 0,
+        "left": 0,
+        "right": 0,
+        "bottom": 0,
+        "backgroundColor": "rgba(255, 255, 255, 0.5)",
+      },
+    },
   })
-  let hiddenLink = merge(list{link, style(list{display(none)})})
-  let postTitle = style(list{fontSize(24->px), fontWeight(extraBold)})
-  let author = style(list{
-    fontSize(16->px),
-    display(flexBox),
-    flexDirection(row),
-    alignItems(center),
-    marginBottom(10->px),
+  let hiddenLink = cx([link, css({"display": "none"})])
+  let postTitle = css({"fontSize": 24, "fontWeight": "800"})
+  let author = css({
+    "fontSize": 16,
+    "display": "flex",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "marginBottom": 10,
   })
-  let avatar = style(list{
-    width(32->px),
-    height(32->px),
-    borderRadius(100.->pct),
-    marginRight(10->px),
+  let avatar = css({
+    "width": 32,
+    "height": 32,
+    "borderRadius": "100%",
+    "marginRight": 10,
   })
 }
 
 @react.component
 let make = (~search, ()) => {
   let episodeList = Pages.useCollection("podcasts")
-  let queryString = search->QueryString.explode
+  let queryString = search->QueryString.decode
   <div className=Styles.container>
     {switch episodeList {
     | NotAsked
@@ -93,8 +91,8 @@ let make = (~search, ()) => {
         <Pages.Head>
           <title>
             {(search
-            ->QueryString.explode
-            ->Map.String.get("search")
+            ->QueryString.decode
+            ->Dict.get("search")
             ->Option.map(search => "Podcasts avec " ++ search)
             ->Option.getWithDefault("Podcasts") ++ " | Putain de code")->React.string}
           </title>
@@ -107,17 +105,16 @@ let make = (~search, ()) => {
             className=Styles.search
             placeholder=`Rechercher …`
             type_="text"
-            value={search->QueryString.explode->Map.String.get("search")->Option.getWithDefault("")}
+            value={search->QueryString.decode->Dict.get("search")->Option.getWithDefault("")}
             onChange={event => {
               let search = (event->ReactEvent.Form.target)["value"]
-              RescriptReactRouter.push(
-                "?" ++
-                (
-                  search == ""
-                    ? queryString->Map.String.remove("search")
-                    : queryString->Map.String.set("search", search)
-                )->QueryString.implode,
-              )
+              let nextQueryString = queryString->Dict.copy
+              if search === "" {
+                nextQueryString->Dict.delete("search")
+              } else {
+                nextQueryString->Dict.set("search", search)
+              }
+              RescriptReactRouter.push("?" ++ nextQueryString->QueryString.encode)
             }}
           />
         </div>
@@ -125,19 +122,31 @@ let make = (~search, ()) => {
         ->Array.map(episode =>
           <Pages.Link
             className={search
-            ->QueryString.explode
-            ->Map.String.get("search")
-            ->Option.map(Js.String.trim)
-            ->Option.map(Js.String.toLowerCase)
+            ->QueryString.decode
+            ->Dict.get("search")
+            ->Option.map(String.trim)
+            ->Option.map(String.toLowerCase)
             ->Option.map(search =>
-              episode.title->Js.String.toLowerCase->Js.String.includes(search, _) ||
+              episode.title->String.toLowerCase->String.includes(search) ||
                 episode.meta
-                ->Js.Dict.get("participants")
-                ->Option.flatMap(Js.Json.decodeArray)
-                ->Option.map(array => array->Array.keepMap(Js.Json.decodeString))
+                ->Dict.get("participants")
+                ->Option.flatMap(x =>
+                  switch x->JSON.Decode.classify {
+                  | Array(array) => Some(array)
+                  | _ => None
+                  }
+                )
+                ->Option.map(array =>
+                  array->Belt.Array.keepMap(x =>
+                    switch x->JSON.Decode.classify {
+                    | String(x) => Some(x)
+                    | _ => None
+                    }
+                  )
+                )
                 ->Option.getWithDefault([])
                 ->Array.some(participant =>
-                  participant->Js.String.toLowerCase->Js.String.includes(search, _)
+                  participant->String.toLowerCase->String.includes(search)
                 )
             )
             ->Option.getWithDefault(true)
@@ -147,9 +156,21 @@ let make = (~search, ()) => {
             key=episode.slug>
             <div className=Styles.author>
               {episode.meta
-              ->Js.Dict.get("participants")
-              ->Option.flatMap(Js.Json.decodeArray)
-              ->Option.map(array => array->Array.keepMap(Js.Json.decodeString))
+              ->Dict.get("participants")
+              ->Option.flatMap(x =>
+                switch x->JSON.Decode.classify {
+                | Array(array) => Some(array)
+                | _ => None
+                }
+              )
+              ->Option.map(array =>
+                array->Belt.Array.keepMap(x =>
+                  switch x->JSON.Decode.classify {
+                  | String(x) => Some(x)
+                  | _ => None
+                  }
+                )
+              )
               ->Option.getWithDefault([])
               ->Array.map(name =>
                 <img

@@ -3,14 +3,14 @@
   "private": true,
   "version": "2.0.0",
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world && rimraf build",
+    "build": "rescript build -with-deps",
+    "start": "rescript build -with-deps -w -ws 9999",
+    "clean": "rescript clean && rimraf build",
     "format": "yarn format:most && yarn format:re",
     "format:most": "prettier --write \"**/*.{js,json,css,md}\"",
     "format:re": "find ./src -iname '*.re' | xargs -n 1 bsrefmt --in-place && find ./src -iname '*.rei' | xargs -n 1 bsrefmt -i true --in-place",
     "pages-server": "pages start src/App.mjs 3000",
-    "test": "bsb -make-world",
+    "test": "rescript build -with-deps",
     "prerender": "pages build src/App.mjs"
   },
   "authors": [
@@ -21,17 +21,17 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@emotion/css": "^11.1.3",
     "@rescript/react": "^0.10.1",
-    "bs-css-emotion": "^2.2.0",
-    "bs-webapi": "^0.13.4",
     "md5": "^2.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "rescript": "^9.1.3",
     "rescript-asyncdata": "^2.0.0",
-    "rescript-pages": "^2.0.1"
+    "rescript-js": "^0.5.14",
+    "rescript-pages": "^3.0.0"
   },
   "devDependencies": {
-    "bs-platform": "^9.0.0",
     "prettier": "^1.18.2"
   },
   "prettier": {
