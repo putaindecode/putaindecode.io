@@ -62,7 +62,7 @@ module Styles = {
     },
     "boxShadow": "0 15px 15px -5px rgba(0, 0, 0, 0.2)",
     ":active": {
-      "::after": {
+      "::before": {
         "content": `""`,
         "position": "absolute",
         "pointerEvents": "none",
@@ -70,7 +70,7 @@ module Styles = {
         "left": 0,
         "right": 0,
         "bottom": 0,
-        "backgroundColor": "rgba(255, 255, 255, 0.5)",
+        "backgroundColor": "rgba(0, 0, 0, 0.3)",
       },
     },
   })
