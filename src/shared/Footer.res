@@ -48,7 +48,7 @@ let make = () =>
           />
           <div className=Styles.text> {"Flux RSS"->React.string} </div>
         </a>
-        <div className=Styles.copyright> {j`© 2020 Putain de code !`->React.string} </div>
+        <div className=Styles.copyright> {`© 2021 Putain de code !`->React.string} </div>
         <a href="https://github.com/putaindecode/putaindecode.io" className=Styles.github>
           {"GitHub"->React.string}
         </a>

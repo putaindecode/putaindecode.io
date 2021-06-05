@@ -117,7 +117,6 @@ let make = (~slug) => {
           | _ => None
           }
         )
-
       <>
         <Pages.Head>
           <title> {(episode.title ++ " | Putain de code")->React.string} </title>
@@ -126,11 +125,15 @@ let make = (~slug) => {
           <div className=Styles.container>
             <div className=Styles.playerContainer>
               <div className=Styles.playerBackground>
-                <iframe
-                  className=Styles.player
-                  name="Player"
-                  src=j`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$trackId&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true`
-                />
+                {switch trackId {
+                | Some(trackId) =>
+                  <iframe
+                    className=Styles.player
+                    name="Player"
+                    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true`}
+                  />
+                | None => React.null
+                }}
               </div>
             </div>
             <Spacer width=40 height=20 />
@@ -170,7 +173,7 @@ let make = (~slug) => {
               <div className=Styles.body dangerouslySetInnerHTML={"__html": episode.body} />
               <div className=Styles.share>
                 <div className=Styles.shareTitle>
-                  {j`Vous avez aimé cet épisode?`->React.string}
+                  {`Vous avez aimé cet épisode?`->React.string}
                 </div>
                 <Spacer height=10 width=0 />
                 <a
@@ -197,7 +200,7 @@ let make = (~slug) => {
           </div>
           <div className=Styles.back>
             <Pages.Link href="/podcasts" className=Styles.backLink>
-              {j`← Épisodes`->React.string}
+              {`← Épisodes`->React.string}
             </Pages.Link>
           </div>
         </WidthContainer>

@@ -48,11 +48,11 @@ let make = (~url: RescriptReactRouter.url, ~gradient=?, ()) => <>
       <a className=Styles.bannerLink href="https://blacklivesmatters.carrd.co/#">
         {"Comment aider"->React.string}
       </a>
-      {j` • `->React.string}
+      {` • `->React.string}
       <a className=Styles.bannerLink href="https://minnesotafreedomfund.org">
         {"Minnesota Freedom Fund"->React.string}
       </a>
-      {j` • `->React.string}
+      {` • `->React.string}
       <a className=Styles.bannerLink href="https://www.okpal.com/adama-traore/#/">
         {"Justice Pour Adama"->React.string}
       </a>

@@ -173,7 +173,7 @@ let make = (~slug, ~hash, ~canonical) => {
               {" "->React.string}
               {post.date
               ->Option.map(date => <>
-                {j`•`->React.string} {" "->React.string} <DateView date />
+                {`•`->React.string} {" "->React.string} <DateView date />
               </>)
               ->Option.getWithDefault(React.null)}
             </div>
@@ -195,7 +195,7 @@ let make = (~slug, ~hash, ~canonical) => {
             className=Styles.body
           />
           <div className=Styles.share>
-            <div className=Styles.shareTitle> {j`Vous avez aimé cet article?`->React.string} </div>
+            <div className=Styles.shareTitle> {`Vous avez aimé cet article?`->React.string} </div>
             <Spacer height=10 width=0 />
             <a
               className=Styles.shareButton
@@ -217,7 +217,7 @@ let make = (~slug, ~hash, ~canonical) => {
           </div>
           <div className=Styles.back>
             <Pages.Link href="/articles" className=Styles.backLink>
-              {j`← Articles`->React.string}
+              {`← Articles`->React.string}
             </Pages.Link>
           </div>
           {post.date

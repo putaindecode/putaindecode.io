@@ -205,7 +205,7 @@ let make = (~search as propsSearch) => {
                         {" "->React.string}
                         {article.date
                         ->Option.map(date => <>
-                          {j`•`->React.string} {" "->React.string} <DateView date />
+                          {`•`->React.string} {" "->React.string} <DateView date />
                         </>)
                         ->Option.getWithDefault(React.null)}
                       </div>

@@ -98,9 +98,7 @@ let make = (~search, ()) => {
           </title>
         </Pages.Head>
         <div className=Styles.heading>
-          <div role="heading" ariaLevel=1 className=Styles.title>
-            {j`Épisodes`->React.string}
-          </div>
+          <div role="heading" ariaLevel=1 className=Styles.title> {`Épisodes`->React.string} </div>
           <input
             className=Styles.search
             placeholder=`Rechercher …`

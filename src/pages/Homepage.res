@@ -167,7 +167,7 @@ module TopArticles = {
                   {" "->React.string}
                   {article.date
                   ->Option.map(date => <>
-                    {j`•`->React.string} {" "->React.string} <DateView date />
+                    {`•`->React.string} {" "->React.string} <DateView date />
                   </>)
                   ->Option.getWithDefault(React.null)}
                 </div>
@@ -210,7 +210,7 @@ module TopArticles = {
                       {" "->React.string}
                       {article.date
                       ->Option.map(date => <>
-                        {j`•`->React.string} {" "->React.string} <DateView date />
+                        {`•`->React.string} {" "->React.string} <DateView date />
                       </>)
                       ->Option.getWithDefault(React.null)}
                     </div>
@@ -225,7 +225,7 @@ module TopArticles = {
       </div>
       <div className=Styles.discover>
         <Pages.Link href="/articles" className=Styles.discoverLink>
-          {j`Découvrir les $totalCount articles →`->React.string}
+          {`Découvrir les ${totalCount->Int.toString} articles →`->React.string}
         </Pages.Link>
       </div>
     </div>
@@ -351,7 +351,7 @@ module LatestPodcasts = {
             ->React.array}
             <div className=Styles.discover>
               <Pages.Link href="/podcasts" className=Styles.discoverLink>
-                {j`Découvrir les $totalCount épisodes →`->React.string}
+                {`Découvrir les ${totalCount->Int.toString} épisodes →`->React.string}
               </Pages.Link>
             </div>
           </div>
