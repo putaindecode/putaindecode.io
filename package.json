@@ -9,7 +9,7 @@
     "format": "yarn format:most && yarn format:re",
     "format:most": "prettier --write \"**/*.{js,json,css,md}\"",
     "format:re": "find ./src -iname '*.re' | xargs -n 1 bsrefmt --in-place && find ./src -iname '*.rei' | xargs -n 1 bsrefmt -i true --in-place",
-    "pages-server": "pages start src/App.mjs 3000",
+    "server": "pages start src/App.mjs 3000",
     "test": "rescript build -with-deps",
     "prerender": "pages build src/App.mjs"
   },
