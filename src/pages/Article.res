@@ -67,7 +67,7 @@ module Styles = {
       "paddingLeft": 20,
       "margin": 0,
       "fontSize": 16,
-      "borderLeft": "3px solid rgba(0, 0, 0, 0.4)",
+      "borderLeft": `3px solid ${Theme.onePercentContrastColor}`,
       "fontStyle": "italic",
     },
     "table": {"width": "100%", "textAlign": "center"},
