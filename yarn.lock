@@ -628,6 +628,14 @@ caniuse-lite@^1.0.30001219:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001230.tgz#8135c57459854b2240b57a4a6786044bdc5a9f71"
   integrity sha512-5yBd5nWCBS+jWKTcHOzXwo5xzcj4ePE/yjtkZyUV1BTUmrBaA9MRGC+e7mxnqXSA90CmCA8L3eKLaSUkt099IQ==
 
+chalk@4.1.1, chalk@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.1.tgz#c80b3fab28bf6371e6863325eee67e618b77e6ad"
+  integrity sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
+
 chalk@^2.0.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -636,14 +644,6 @@ chalk@^2.0.0:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
-
-chalk@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.1.tgz#c80b3fab28bf6371e6863325eee67e618b77e6ad"
-  integrity sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
 
 charenc@0.0.2:
   version "0.0.2"
@@ -2378,15 +2378,15 @@ rescript-js@^0.5.14:
   dependencies:
     "@ryyppy/rescript-promise" "^2.0.0"
 
-rescript-pages@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-3.0.1.tgz#0eb525b554ad51f0084b0481b1f2f446ccc07b9f"
-  integrity sha512-/XtTedOcihird9Dyk3bWninDS1w7tD+dhg5K7IxlAoHB7d9LKHJBavnN5KGS6XxENh2oF14tQ1Yxzra0wTu6fw==
+rescript-pages@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-3.0.2.tgz#651eeb00b95f28517b7cb2e283e90dbbc86f1a66"
+  integrity sha512-AGBOcR8S12k6UFC2UvQafJcrq8ONiy+4zPqtYFp6qvdMZ3mEO3VMcpfe/es+r29m5E119IL/Nd/GjGvexLdrEg==
   dependencies:
     "@emotion/css" "^11.1.3"
     "@emotion/server" "^11.0.0"
     bs-fetch "^0.6.2"
-    chalk "^4.1.1"
+    chalk "4.1.1"
     chokidar "^3.4.3"
     copy-webpack-plugin "^6.3.0"
     express "^4.17.1"
