@@ -99,7 +99,7 @@ let make = () => {
     switch containerRef.current->Nullable.toOption {
     | Some(element) =>
       let element = element->elementAsObject
-      element["scrollTop"](. element["scrollHeight"])
+      element["scrollTop"] = element["scrollHeight"]
     | None => ()
     }
     None
