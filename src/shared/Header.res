@@ -43,7 +43,9 @@ module Styles = {
 @react.component
 let make = (~url: RescriptReactRouter.url, ~gradient=?, ()) => <>
   <div className=Styles.banner>
-    <div role="heading" className=Styles.bannerTitle> {"Black Lives Matter"->React.string} </div>
+    <div role="heading" ariaLevel=2 className=Styles.bannerTitle>
+      {"Black Lives Matter"->React.string}
+    </div>
     <div>
       <a className=Styles.bannerLink href="https://blacklivesmatters.carrd.co/#">
         {"Comment aider"->React.string}

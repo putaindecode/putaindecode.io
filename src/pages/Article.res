@@ -159,6 +159,7 @@ let make = (~slug, ~hash, ~canonical) => {
           <title> {(post.title ++ " | Putain de code")->React.string} </title>
           <meta property="og:title" content={post.title ++ " | Putain de code"} />
           <meta name="twitter:title" content={post.title ++ " | Putain de code"} />
+          <meta name="description" content={`Un article proposé par ${author}`} />
         </Pages.Head>
         <WidthContainer>
           <h1 className=Styles.title> {post.title->React.string} </h1>
