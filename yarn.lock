@@ -1533,10 +1533,10 @@ inherits@2.0.3:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-inline-translations-webpack-plugin@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/inline-translations-webpack-plugin/-/inline-translations-webpack-plugin-1.0.1.tgz#381593eb48d65755ac0c597758c77568f81f8bf6"
-  integrity sha512-r/6SKH9AUDi5SGdqW0jCpio6gcixQYurRKBWXRJAJzLS2kw9SLW+fy87xEP+4upUuWy9Tf1kwMQiPAoo6HJh7w==
+inline-translations-webpack-plugin@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/inline-translations-webpack-plugin/-/inline-translations-webpack-plugin-1.0.2.tgz#53293639259f7e722ce42e11615ccdc3992ec4ff"
+  integrity sha512-IwvLpHE6R+5z+G+zuzqi72Nwji57fy9ivCjXvTn/qDYIeKD35EesXId8dRss4vQdUM7gJzL7kZUIGIY8VpZzqQ==
 
 interpret@^2.2.0:
   version "2.2.0"
@@ -2378,10 +2378,10 @@ rescript-js@^0.5.14:
   dependencies:
     "@ryyppy/rescript-promise" "^2.0.0"
 
-rescript-pages@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-3.0.2.tgz#651eeb00b95f28517b7cb2e283e90dbbc86f1a66"
-  integrity sha512-AGBOcR8S12k6UFC2UvQafJcrq8ONiy+4zPqtYFp6qvdMZ3mEO3VMcpfe/es+r29m5E119IL/Nd/GjGvexLdrEg==
+rescript-pages@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/rescript-pages/-/rescript-pages-3.0.4.tgz#45bdc6dd88abea024113a667f45a93ea740ace35"
+  integrity sha512-OnqZs4qWQKig8H01dI+04uAxuRjsJRXl7X44lggD5LW7LrEGPTNQKA9O6Y5mCWJRHUnWyYjNbX82fyV1xY+aCw==
   dependencies:
     "@emotion/css" "^11.1.3"
     "@emotion/server" "^11.0.0"
@@ -2395,7 +2395,7 @@ rescript-pages@^3.0.2:
     gh-pages "^3.1.0"
     highlight.js "^10.4.1"
     html-webpack-plugin "^5.2.0"
-    inline-translations-webpack-plugin "^1.0.1"
+    inline-translations-webpack-plugin "^1.0.2"
     memfs "^3.2.0"
     mime "^2.4.6"
     react "^17.0.1"
