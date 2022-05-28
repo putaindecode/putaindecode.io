@@ -42,24 +42,6 @@ module Styles = {
 
 @react.component
 let make = (~url: RescriptReactRouter.url, ~gradient=?, ()) => <>
-  <div className=Styles.banner>
-    <div role="heading" ariaLevel=2 className=Styles.bannerTitle>
-      {"Black Lives Matter"->React.string}
-    </div>
-    <div>
-      <a className=Styles.bannerLink href="https://blacklivesmatters.carrd.co/#">
-        {"Comment aider"->React.string}
-      </a>
-      {` • `->React.string}
-      <a className=Styles.bannerLink href="https://minnesotafreedomfund.org">
-        {"Minnesota Freedom Fund"->React.string}
-      </a>
-      {` • `->React.string}
-      <a className=Styles.bannerLink href="https://www.okpal.com/adama-traore/#/">
-        {"Justice Pour Adama"->React.string}
-      </a>
-    </div>
-  </div>
   <header className=Styles.container style={ReactDOM.Style.make(~backgroundImage=?gradient, ())}>
     <WidthContainer>
       <div className=Styles.contents>
