@@ -1,41 +1,81 @@
 ---
-title: Pourquoi vous devriez utiliser React Native pour vos applications web
-date: 2023-12-07
+title: Soulé par les primitives HTML pour vos webapps ? Utilisez React Native
+date: 2023-12-12
 author: MoOx
-slug: pourquoi-vous-devriez-utiliser-react-native-pour-vos-applications-web
+slug: soule-par-les-primitives-html-pour-vos-webapps-utilisez-react-native
 ---
 
-[_React Native for Web_](https://necolas.github.io/react-native-web/), un clone web du framework largement adopté [React Native](https://reactnative.dev), est quelque chose que vous devriez sérieusement considérer lors de vos développements front-end, non seulement pour ses performances dans les applications multiplateformes, mais aussi comme une solution autonome pour le développement web.
+Nous en avons déjà parlé, [les primitives du web sont chiantes](/articles/le-web-merite-de-meilleures-primitives).
+HTML et CSS sont nécessaires, mais comme [l'assembleur](https://fr.wikipedia.org/wiki/Assembleur).
+Et qui code en assembleur aujourd'hui ? Pas grand monde, et c'est très bien comme ça.
+HTML et CSS existent mais ça ne veut pas dire pour autant qu'on doit les utiliser sans abstraction.
 
-Lors de sa création, _React Native for Web_ n'était pas censé être un clone de _React Native_. Il devait simplement apporter un SDK web, inspiré de _React Native_ certes, mais pas un clone. À l'époque, il était même appelé [React Web SDK](https://github.com/necolas/react-native-web/commit/e34820c11c82417f673103c2d67ecd19e26f0193).
-La motivation réside probablement dans le fait que _React_ lui-même était un framework axé sur le web mais dépendant fortement du DOM. D'où le nom _React DOM_ que nous connaissons aujourd'hui. _React_ est une bibliothèque de bas niveau, et _React DOM_ est le lien entre _React_ et le DOM, tout comme _React Native_ est le lien entre _React_ et les plateformes natives. _React DOM_ n'est qu'une implémentation du réconciliateur _React_ pour le DOM. Il existe d'autres implémentations comme [React Native for Windows and macOS](https://microsoft.github.io/react-native-windows/) ou même [@react-three/xr](https://github.com/pmndrs/react-xr) pour le contenu VR.
+L'évolution du web au sens large (je ne parle pas ici que de HTTP, HTML & co) est rapide. Le commun des mortels passe aujourd'hui plus de temps sur leur smartphone dans des applis natives que sur des pages web. Plus de temps à avoir des expériences intuitives, accessibles et fluides.
 
-À l'époque, le créateur de _React Native for Web_, [@necolas](https://github.com/necolas), visait probablement simplement à offrir un ensemble simple de primitives pour construire des applications web, non explicitement liées au DOM, à l'instar de ce que propose _React Native_ pour iOS et Android. Des éléments simples tels que `<View />`, `<Text />`, `<Image />`, `<ScrollView />`, `<Touchable />` et ainsi de suite. Cependant, à mesure que le projet évoluait, c'est devenu de plus en plus une réplique de _React Native_, avec les mêmes APIs, les mêmes composants, le même comportement... Finalement la même chose. Et c'est une bonne chose, car cela signifie que vous pouvez utiliser _React Native for Web_ comme une solution autonome pour le développement web, et pas seulement comme un compagnon pour les applications multiplateformes.
+Doit-on donc en tant que développeur se faire chier à tout coder avec des primitives bas niveau ?
+Pourquoi croyez vous que des multinationales comme Meta, Microsoft ou Google ont créé et investissent dans des frameworks comme React Native ou Flutter ?
+Pour gagner du temps. Mettons de côté l'aspect capitaliste de cette approche (coder moins pour gagner plus) bien que ça soit déjà un argument en soi.
+Notre temps d'être-humain est précieux. Alors pourquoi le gaspiller à coder des choses avec des langages bas niveau ?
 
-Lors de la création de ce projet, Necolas travaillait chez [~~Twitter~~ X](https://twitter.com/) et se penchait sur une nouvelle implémentation web. Le résultat de son travail était [extraordinaire](https://twitter.com/necolas/status/1058949372837122048). L'amélioration du CSS à elle seule aurait pu justifier l'existence de _React Native for Web_.
+Je vais pas tourner autour du pot, parlons de [_React Native for Web_](https://necolas.github.io/react-native-web/), un clone web du framework largement adopté [React Native](https://reactnative.dev).
+C'est vraiment quelque chose que vous devriez sérieusement considérer lors de vos développements front-end, non seulement pour ses performances dans les applications multiplateformes, mais aussi comme une solution autonome pour le développement web.
 
-Les développeurs front-end savent tous que la cohérence en matière de style est un défi perpétuel dans le développement web. _React Native for Web_ offre une solution de style fiable. En s'appuyant sur le sous-ensemble de CSS offert par _React Native_ (principalement Flexbox), les développeurs peuvent maintenir des styles cohérents sur tous les navigateurs et toutes les plateformes. Cette cohérence simplifie non seulement le processus de développement, mais garantit également que l'identité visuelle de l'application reste cohérente, même si une application mobile n'est pas immédiatement prévue.
+Déjà, sachez que, _React Native for Web_ n'était pas censé être un clone de _React Native_. Il devait simplement apporter un SDK web (pour apporter des meilleurs primitives), inspiré de _React Native_ certes, mais pas un clone. Son petit nom de naissance était d'ailleurs [React Web SDK](https://github.com/necolas/react-native-web/commit/e34820c11c82417f673103c2d67ecd19e26f0193).
 
-Mais _React Native for Web_ n'était pas seulement axé sur le CSS, car il existait déjà de nombreuses solutions CSS-in-JS disponibles. Il s'agissait d'avoir un impacte sur la plateforme web dans son ensemble. Et le résultat est un framework qui peut être utilisé pour construire des applications web accessibles.
+_React_ est un framework axé sur le web mais dépendant fortement du DOM, ce sacré petit DOM qu'on doit délaisser petit à petit.
+_React DOM_ est notre ami, mais il est temps de le laisser partir. Il est temps de passer à autre chose. De le réléger au rang d'utilitaire comme une Citroën C15.
+_React DOM_ n'est qu'une implémentation du réconciliateur _React_ pour le DOM. Il en existe d'autres comme [React Native for Windows and macOS](https://microsoft.github.io/react-native-windows/) ou même [@react-three/xr](https://github.com/pmndrs/react-xr) quand on a envie de faire du spatial computing du pauvre.
 
-## L'accessibilité qu'offre _React Native for Web_
+Le créateur de _React Native for Web_, [@necolas](https://github.com/necolas) en avait surement plein le cul du couple HTML/DOM et s'est donc inspiré de _React Native_.
+C'est quand même bien plus cool d'avoir des composants explicites comme `<View />`, `<Text />`, `<Image />`, `<ScrollView />`, `<Pressable />` avec des props qui facilitent la vie...
+Et finalement, ce SDK web est devenu un clone de _React Native_ pour en faire une solution autonome pour le développement web, et pas seulement comme un compagnon pour les applications multiplateformes (oui je radote).
 
-Un aspect remarquable de _React Native for Web_ est son engagement envers [l'accessibilité](https://necolas.github.io/react-native-web/docs/accessibility/). Si HTML lui-même offre de nombreuses fonctionnalités d'accessibilité, il n'est pas toujours facile de les utiliser. _React Native for Web_, en revanche, facilite la construction d'applications web accessibles. En exposant ces fonctionnalités d'accessibilité avec des props _React_ simples, comme le fait _React Native_ (même s'il existe des différences qui pourraient finir par être intégrées dans _React Native_ un jour), les développeurs peuvent garantir que les applications web construites avec _React Native for Web_ sont inclusives et respectent les normes d'accessibilité web. Cela est particulièrement crucial pour les projets qui accordent la priorité à l'accessibilité ou doivent se conformer à des réglementations tel que le [RGAA en France](https://accessibilite.numerique.gouv.fr). Mais quand on parle de la plateforme web, on ne parle pas seulement des ordinateurs de bureau. Le mobile est maintenant une partie importante du web.
+Avant que le gros pépère Elon Musk pète un plomb, Necolas était heureux et travaillait chez [~~Twitter~~ X](https://twitter.com/) où il bossait sur une nouvelle implémentation web. A l'époque, le résultat de son travail était quand bien [plus que bienvenue](https://twitter.com/necolas/status/1058949372837122048). Rien que pour la perf CSS, on peut saluer _React Native for Web_.
 
-_React Native for Web_ apporte la marque de fabrique de _React Native_ - des interactions utilisateur de haute qualité et semblables à celles des applications natives - sur le web. La capacité du framework à gérer facilement les gestes, les animations et les transitions, perfectionnée dans le domaine mobile, se traduit parfaitement dans les applications web. Cela se traduit par une expérience web qui reflète des interactions presque aussi fluides et réactives auxquelles les utilisateurs sont habitués avec les applications mobiles natives. En utilisant _React Native for Web_, de nouvelles possibilités s'ouvrent. Vous pouvez maintenant utiliser des bibliothèques comme [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/) et [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/), qui ouvre la porte à un tout nouveau monde de possibilités. Vous pouvez désormais construire des applications web avec le même niveau d'interactions que les applications natives en utilisant simplement des choses comme [React Native Bottom Sheet](https://github.com/gorhom/react-native-bottom-sheet). C'est juste un exemple, mais vous pouvez facilement faire beaucoup plus avec ces types de bibliothèques.
+On le sait tous que [CSS à de gros défaut](/articles/pourquoi-j-ai-arrete-d-utiliser-css). On a pas arrêter d'en parler [ici](/articles/comprendre-le-css-in-js-par-l-exemple) et [là](/articles/retour-sur-plusieurs-annees-de-css-in-js).
 
-## React Native for Web ne vous bride pas
+En s'appuyant sur un sous-ensemble de CSS (principalement Flexbox), grâce à _React Native for Web_, on peut maintenir des styles cohérents sur tous les navigateurs et toutes les plateformes. Cette cohérence simplifie non seulement le processus de développement, mais garantit également que l'identité visuelle de l'application reste cohérente, même si une application mobile n'est pas immédiatement prévue.
 
-L'une des principales forces de _React Native for Web_ est sa compatibilité avec _React DOM_, permettant une adoption progressive. Les développeurs peuvent introduire progressivement des composants _React Native for Web_ dans une application _React_ existante, remplaçant petit à petit certaines parties de l'interface utilisateur. Cette approche progressive facilite une transition en douceur, permettant aux équipes d'intégrer _React Native for Web_ dans leurs projets sans avoir besoin d'une refonte à grande échelle. D'autre part, si vous commencez directement un projet avec _React Native for Web_, vous n'êtes pas obligé d'utiliser l'API _React Native_. À tout moment, vous pouvez décider dans certains composants d'utiliser l'API _React DOM_ et d'utiliser toute la plateforme web sans aucune limitation. Vous pouvez utiliser `<div>`, `<canvas>` ou tout ce que vous voulez. Aucune restriction ! Et c'est très facile à faire. Vous pouvez vous appuyer sur [l'API Platform](https://reactnative.dev/docs/platform) ou créer directement un fichier web spécifique, en utilisant une extension `.web.js`.
+Mais y'a pas que le CSS dans la vie, et on a déjà une tétra-chié de solutions CSS-in-JS disponibles.
 
-Attendez, quoi ? J'ai dit quoi ? Une implémentation web pour un composant donné ?
+Là je vous parle d'avoir un impacte sur la plateforme web dans son ensemble.
 
-## _React Native for Web_ garde la porte ouverte aux plateformes mobile et desktop
+## Avant que vous me chier dessus, parlons d'accessibilité
 
-Même si votre plan immédiat ne comprend pas le développement d'une application iOS ou Android, **l'utilisation de _React Native for Web_ peut vous ouvrir la porte à ces plateformes, alors que l'inverse n'est pas vrai**. Si vous commencez une application web en utilisant directement _React DOM_, vous ne pourrez pas facilement partager votre code avec d'autres plateformes car vous serez limité au DOM. La codebase et les composants partagés entre _React Native for Web_ et _React Native_ pour mobile facilitent l'ouverture de l'application aux plateformes mobiles à l'avenir. Ce choix stratégique permet une flexibilité dans les plans de développement futurs sans avoir besoin d'une refonte complète de l'application web existante, ou pire et encore plus couteux: plusieurs implémentations. Vous pourriez même utiliser votre codebase pour des applications Windows ou macOS en utilisant [React Native for Windows and macOS](https://microsoft.github.io/react-native-windows/), un projet maintenu par Microsoft, [utilisé sur des produits importants comme Office ou l'application Xbox Windows](https://microsoft.github.io/react-native-windows/resources-showcase). Oui, Microsoft Office et l'app Xbox utilisent l'API _React Native_ ! C'est pas rien non ?
+Un aspect remarquable de _React Native for Web_ est son engagement envers [l'accessibilité](https://necolas.github.io/react-native-web/docs/accessibility/). Oui oui, HTML lui-même offre de nombreuses fonctionnalités d'accessibilité, mais clairement, c'est pas la grosse marrade quand il faut apprendre tout ça. Et c'est assez plaisant que _React Native for Web_ facilite la construction d'applications web accessibles.
+Vous avez déjà utiliser Twitter avec un clavier ? Testez.
+C'est fait avec _React Native for Web_ et c'est accessible. Et c'est pas le seul exemple mais il est assez gros pour vous rendre compte qu'on est bien loti avec cette solution.
 
-Mais gardez à l'esprit que _React Native for Web_ n'est pas seulement là en tant que compagnon capable pour le développement multiplateforme, mais surtout en tant que solution autonome puissante pour les applications web. Avec son engagement envers l'accessibilité, les interactions semblables à celles des applications natives, la cohérence en matière de style et la possibilité d'adoption progressive, _React Native for Web_ offre une solution polyvalente et robuste. Et en maintenant la porte ouverte aux futures plateformes mobiles, les développeurs peuvent faire des choix stratégiques qui permettent la flexibilité et la scalabilité, faisant de _React Native for Web_ un framework a considérer dans le monde du développement web.
+C'est très bien qu'en France on est [RGAA](https://accessibilite.numerique.gouv.fr). Mais si on doit se faire chier à la main pour rendre accessible une application web, c'est pas la joie. Et c'est pas avec des primitives HTML qu'on va y arriver. C'est pas avec des `<div>` et des `<span>` qu'on va rendre accessible une application web.
+Puis quand on veut faire des trucs un peu chiadé avec des animations stylés et la gestion des inputs utilisateurs (leurs gros doigts là), c'est quand même cool avec des libs bien foutus comme [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/) et [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/).
+Un petit [React Native Bottom Sheet](https://github.com/gorhom/react-native-bottom-sheet) accessible sans effort, c'est pas cool ?
 
-Et cela pourrait devenir quelque chose de encore plus sérieux à l'avenir. Necolas travaille chez [Meta](https://www.meta.com) depuis un certain temps et a apporté de nombreuses contributions à _React_ lui-même pour assurer un avenir prometteur pour les codebases multiplateformes. Si vous êtes curieux, vous pouvez jeter un œil à sa [RFC: React DOM for Native](https://github.com/react-native-community/discussions-and-proposals/pull/496) ou même au projet [StyleX](https://stylexjs.com/blog/introducing-stylex) qui [finira par être intégré à _React Native_ et _React Native for Web_](https://www.threads.net/@nicolas.img/post/C0fxzFuL4gp).
+## Avant que vous me chier dessus avec "mais si je veux faire bidouiller mon DOM un peu"
 
-Tout ça pour dire que la prochaine fois que vous devez démarrez une application web, envisagez d'utiliser _React Native for Web_ au lieu de _React DOM_ directement. Vous ne le regretterez pas. Je ne l'ai jamais regretté au cours des dernières années où je l'ai utilisé.
+Mais bien sur que vous serez pas bridé avec RNW. Tranquille, détendez-vous.
+Si tu fais du RNW, tu peux y aller progressivement, ou inversement (démarrer un projet full RNW).
+À tout moment, tu peux tranquillement faire ton petit bout de code cra-cra où tu vas patauger dans le DOM tel un Indiana Jones en fin de vie.
+T'inquiètes pas, tu peux utiliser n'importe quand l'API _React DOM_ ou utiliser toute la plateforme web sans aucune limitation. Ta petite `<div>`, ton petit `<canvas>` ou autre. Aucune restriction mon bichon ! Hop hop tu utilises [l'API Platform](https://reactnative.dev/docs/platform) ou tu sors ta meilleur plume pour directement écrire dans un fichier web spécifique, en utilisant une extension `.web.js`.
+
+Wait, what ? Une implémentation web pour un composant donné ?
+
+## Parce que le web c'est pas que des applis web
+
+Même si vous n'avez pas envie immédiat de faire une application iOS ou Android, **l'utilisation de _React Native for Web_ peut vous ouvrir la porte à ces plateformes, alors que l'inverse n'est pas vrai**. Si vous commencez une application web en utilisant directement _React DOM_, vous ne pourrez pas facilement partager votre code avec d'autres plateformes car vous serez limité au DOM.
+Vous serez bien emmerdé quand votre boss vous annoncera un changement de buisness modèle à cause de cette putain d'inflation et qu'il faudra faire une application mobile pour les clients.
+
+La codebase et les composants partagés entre _React Native for Web_ et _React Native_ pour mobile facilitent l'ouverture de l'application aux plateformes mobiles.
+
+Faites le bon choix stratégique pour avoir une flexibilité dans les plans de développement futurs sans avoir besoin d'une refonte complète de l'application web existante, ou pire et encore plus couteux dans ce monde capitaliste: plusieurs implémentations.
+
+Vous pourriez même utiliser votre codebase pour des applications Windows ou macOS en utilisant [React Native for Windows and macOS](https://microsoft.github.io/react-native-windows/), un projet maintenu par le frérot Microsoft, [utilisé sur des produits importants comme Office ou l'application Xbox Windows](https://microsoft.github.io/react-native-windows/resources-showcase). Oui, Microsoft Office et l'app Xbox utilisent l'API _React Native_ ! C'est pas rien non ?
+
+
+Même si le grand méchant Meta vous effrait (moi le premier), rappelez vous que c'est open source. Des linuxiens (avec ou sans barbe) pourront toujours faire un fork.
+Dans tous les cas, je vous invite à trouver votre compagnon de route pour le développement web.
+Je vous ai dit que _React Native for Web_ est un très bon candidat ?
+
+Et pour ceux qui on peur que Necolas pète un plomb et parte élever des vaches dans le Larzac, sachez qu'il travaille chez [Meta](https://www.meta.com) depuis belle lurette a apporté de nombreuses contributions à _React_ lui-même pour assurer un avenir prometteur pour les codebases multiplateformes. Si vous êtes curieux, vous pouvez jeter un œil à sa [RFC: React DOM for Native](https://github.com/react-native-community/discussions-and-proposals/pull/496) ou même au projet [StyleX](https://stylexjs.com/blog/introducing-stylex) qui [finira par être intégré à _React Native_ et _React Native for Web_](https://www.threads.net/@nicolas.img/post/C0fxzFuL4gp).
+
+Tout ça pour dire que la prochaine fois que vous devez démarrez une application web, réfléchissez bien à la bonne abstraction.
+Je vous ai parlé de  _React Native for Web_ ?
