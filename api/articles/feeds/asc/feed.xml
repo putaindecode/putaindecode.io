@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title><![CDATA[Putain de Code!]]></title>
+    <description><![CDATA[Blog participatif de la communauté dev]]></description>
+    <link>https://putaindecode.io</link>
+    <lastBuildDate>Sat, 22 Mar 2025 00:36:40 GMT</lastBuildDate>
+    <atom:link href="https://putaindecode.io/api/articles/feeds/asc/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title><![CDATA[Versionner avec Git]]></title>
+      <link>https://putaindecode.io/articles/versionner-avec-git</link>
+      <guid isPermaLink="false">versionner-avec-git</guid>
+      <pubDate>Wed, 06 Nov 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[HTML ? Hache-Thé-Aime-Elle vous dites ?]]></title>
+      <link>https://putaindecode.io/articles/html-hache-the-aime-elle-vous-dites</link>
+      <guid isPermaLink="false">html-hache-the-aime-elle-vous-dites</guid>
+      <pubDate>Thu, 07 Nov 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Vagrant, enlarge your VM]]></title>
+      <link>https://putaindecode.io/articles/vagrant-enlarge-your-vm</link>
+      <guid isPermaLink="false">vagrant-enlarge-your-vm</guid>
+      <pubDate>Fri, 08 Nov 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Structurer son projet avec Revel et Mgo]]></title>
+      <link>https://putaindecode.io/articles/structurer-son-projet-avec-revel-et-mgo</link>
+      <guid isPermaLink="false">structurer-son-projet-avec-revel-et-mgo</guid>
+      <pubDate>Mon, 11 Nov 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Premiers pas avec Grunt]]></title>
+      <link>https://putaindecode.io/articles/premiers-pas-avec-grunt</link>
+      <guid isPermaLink="false">premiers-pas-avec-grunt</guid>
+      <pubDate>Sat, 16 Nov 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[De jQuery à Vanilla JS]]></title>
+      <link>https://putaindecode.io/articles/de-jquery-a-vanillajs</link>
+      <guid isPermaLink="false">de-jquery-a-vanillajs</guid>
+      <pubDate>Thu, 05 Dec 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ExternalInterface.call() de Flash (et Backbone), toute une histoire]]></title>
+      <link>https://putaindecode.io/articles/external-interface-call-flash-backbone</link>
+      <guid isPermaLink="false">external-interface-call-flash-backbone</guid>
+      <pubDate>Thu, 05 Dec 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Comment se passer de libraries/frameworks JavaScript]]></title>
+      <link>https://putaindecode.io/articles/comment-se-passer-de-libraries-frameworks-javascript</link>
+      <guid isPermaLink="false">comment-se-passer-de-libraries-frameworks-javascript</guid>
+      <pubDate>Fri, 06 Dec 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Responsive webdesign et structure du DOM]]></title>
+      <link>https://putaindecode.io/articles/responsive-webdesign-et-structure-du-dom</link>
+      <guid isPermaLink="false">responsive-webdesign-et-structure-du-dom</guid>
+      <pubDate>Thu, 26 Dec 2013 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[BROWSERIFY ALL THE THINGS]]></title>
+      <link>https://putaindecode.io/articles/browserify-all-the-things</link>
+      <guid isPermaLink="false">browserify-all-the-things</guid>
+      <pubDate>Wed, 15 Jan 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[La puissance de dnsmasq]]></title>
+      <link>https://putaindecode.io/articles/la-puissance-de-dnsmasq</link>
+      <guid isPermaLink="false">la-puissance-de-dnsmasq</guid>
+      <pubDate>Thu, 20 Feb 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Sublime Text en tant qu'éditeur Markdown]]></title>
+      <link>https://putaindecode.io/articles/sublime-text-en-tant-qu-editeur-markdown</link>
+      <guid isPermaLink="false">sublime-text-en-tant-qu-editeur-markdown</guid>
+      <pubDate>Thu, 20 Feb 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Comment en finir avec les préfixes CSS]]></title>
+      <link>https://putaindecode.io/articles/comment-en-finir-avec-prefixes-css</link>
+      <guid isPermaLink="false">comment-en-finir-avec-prefixes-css</guid>
+      <pubDate>Tue, 25 Feb 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Twitter comme lecteur de flux]]></title>
+      <link>https://putaindecode.io/articles/twitter-comme-lecteur-de-flux</link>
+      <guid isPermaLink="false">twitter-comme-lecteur-de-flux</guid>
+      <pubDate>Wed, 26 Feb 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Git, boutez les bugs, domptez votre historique!]]></title>
+      <link>https://putaindecode.io/articles/git-boutez-les-bugs-domptez-votre-historique</link>
+      <guid isPermaLink="false">git-boutez-les-bugs-domptez-votre-historique</guid>
+      <pubDate>Thu, 27 Feb 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Mise en place d’autoprefixer]]></title>
+      <link>https://putaindecode.io/articles/mise-en-place-autoprefixer</link>
+      <guid isPermaLink="false">mise-en-place-autoprefixer</guid>
+      <pubDate>Tue, 04 Mar 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Le point sur les pré-processeurs CSS]]></title>
+      <link>https://putaindecode.io/articles/le-point-sur-les-preprocesseurs-css</link>
+      <guid isPermaLink="false">le-point-sur-les-preprocesseurs-css</guid>
+      <pubDate>Tue, 11 Mar 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Les post-processeurs CSS]]></title>
+      <link>https://putaindecode.io/articles/les-post-processeurs-css</link>
+      <guid isPermaLink="false">les-post-processeurs-css</guid>
+      <pubDate>Tue, 08 Apr 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à Gulp]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-gulp</link>
+      <guid isPermaLink="false">introduction-a-gulp</guid>
+      <pubDate>Tue, 29 Apr 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction au testing JS front]]></title>
+      <link>https://putaindecode.io/articles/introduction-au-testing-js-front</link>
+      <guid isPermaLink="false">introduction-au-testing-js-front</guid>
+      <pubDate>Thu, 01 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Petite définition de BEM]]></title>
+      <link>https://putaindecode.io/articles/petite-definition-de-bem</link>
+      <guid isPermaLink="false">petite-definition-de-bem</guid>
+      <pubDate>Mon, 05 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[NPM comme package manager pour le front-end]]></title>
+      <link>https://putaindecode.io/articles/npm-comme-package-manager-pour-le-front-end</link>
+      <guid isPermaLink="false">npm-comme-package-manager-pour-le-front-end</guid>
+      <pubDate>Tue, 06 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Premiers pas avec Ruby]]></title>
+      <link>https://putaindecode.io/articles/premiers-pas-avec-ruby</link>
+      <guid isPermaLink="false">premiers-pas-avec-ruby</guid>
+      <pubDate>Wed, 07 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[napa ou comment télécharger un package qui napa de package.json]]></title>
+      <link>https://putaindecode.io/articles/napa-ou-comment-telecharger-un-package-qui-nape-de-package-json</link>
+      <guid isPermaLink="false">napa-ou-comment-telecharger-un-package-qui-nape-de-package-json</guid>
+      <pubDate>Mon, 12 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[npm: choisir la bonne version de ses dépendances]]></title>
+      <link>https://putaindecode.io/articles/npm-choisir-la-bonne-version-de-ses-dependances</link>
+      <guid isPermaLink="false">npm-choisir-la-bonne-version-de-ses-dependances</guid>
+      <pubDate>Mon, 12 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Array.reduce par l'exemple]]></title>
+      <link>https://putaindecode.io/articles/array-reduce-par-l-exemple</link>
+      <guid isPermaLink="false">array-reduce-par-l-exemple</guid>
+      <pubDate>Tue, 13 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Créez vos iconfonts avec gulp-iconfont]]></title>
+      <link>https://putaindecode.io/articles/creez-vos-iconfonts-avec-gulp-iconfont</link>
+      <guid isPermaLink="false">creez-vos-iconfonts-avec-gulp-iconfont</guid>
+      <pubDate>Wed, 14 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Se mettre au frontend en 2014, par où commencer ?]]></title>
+      <link>https://putaindecode.io/articles/se-mettre-au-frontend-en-2014-par-ou-commencer</link>
+      <guid isPermaLink="false">se-mettre-au-frontend-en-2014-par-ou-commencer</guid>
+      <pubDate>Thu, 15 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Faire son préprocesseur CSS à la carte]]></title>
+      <link>https://putaindecode.io/articles/faire-son-preprocesseur-css-a-la-carte</link>
+      <guid isPermaLink="false">faire-son-preprocesseur-css-a-la-carte</guid>
+      <pubDate>Tue, 20 May 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à React]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-react</link>
+      <guid isPermaLink="false">introduction-a-react</guid>
+      <pubDate>Wed, 04 Jun 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Un point sur les grilles CSS en inline-block]]></title>
+      <link>https://putaindecode.io/articles/un-point-sur-les-grilles-css-en-inline-block</link>
+      <guid isPermaLink="false">un-point-sur-les-grilles-css-en-inline-block</guid>
+      <pubDate>Fri, 13 Jun 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Maîtriser les redirections shell]]></title>
+      <link>https://putaindecode.io/articles/maitriser-les-redirections-shell</link>
+      <guid isPermaLink="false">maitriser-les-redirections-shell</guid>
+      <pubDate>Wed, 16 Jul 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Le guide complet pour centrer en css]]></title>
+      <link>https://putaindecode.io/articles/le-guide-complet-pour-centrer-en-css</link>
+      <guid isPermaLink="false">le-guide-complet-pour-centrer-en-css</guid>
+      <pubDate>Tue, 23 Sep 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Dépendances et premier projet en Ruby]]></title>
+      <link>https://putaindecode.io/articles/dependances-et-premier-projet-en-ruby</link>
+      <guid isPermaLink="false">dependances-et-premier-projet-en-ruby</guid>
+      <pubDate>Tue, 14 Oct 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Comment essayer de coder comme un chef sous Windows]]></title>
+      <link>https://putaindecode.io/articles/comment-essayer-de-coder-comme-un-chef-sous-windows</link>
+      <guid isPermaLink="false">comment-essayer-de-coder-comme-un-chef-sous-windows</guid>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Débuter avec Ember]]></title>
+      <link>https://putaindecode.io/articles/debuter-avec-ember</link>
+      <guid isPermaLink="false">debuter-avec-ember</guid>
+      <pubDate>Mon, 20 Oct 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[À la conquête des bugs]]></title>
+      <link>https://putaindecode.io/articles/a-la-conquete-des-bugs</link>
+      <guid isPermaLink="false">a-la-conquete-des-bugs</guid>
+      <pubDate>Tue, 21 Oct 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Flux, qu'est-ce que c'est ?]]></title>
+      <link>https://putaindecode.io/articles/flux-qu-est-ce-que-c-est</link>
+      <guid isPermaLink="false">flux-qu-est-ce-que-c-est</guid>
+      <pubDate>Mon, 27 Oct 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Première application Ember (part 1)]]></title>
+      <link>https://putaindecode.io/articles/premiere-application-ember-part-1</link>
+      <guid isPermaLink="false">premiere-application-ember-part-1</guid>
+      <pubDate>Mon, 27 Oct 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[L'auto-entrepreneuriat : retour d'expériences]]></title>
+      <link>https://putaindecode.io/articles/auto-entreprenariat-retour-d-experiences</link>
+      <guid isPermaLink="false">auto-entreprenariat-retour-d-experiences</guid>
+      <pubDate>Thu, 30 Oct 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Laissez-vous pousser la barbe, apprenez à écrire des Makefiles]]></title>
+      <link>https://putaindecode.io/articles/laissez-vous-pousser-la-barbe-apprenez-a-ecrire-des-makefiles</link>
+      <guid isPermaLink="false">laissez-vous-pousser-la-barbe-apprenez-a-ecrire-des-makefiles</guid>
+      <pubDate>Mon, 03 Nov 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[L'injection de dépendances en PHP]]></title>
+      <link>https://putaindecode.io/articles/injection-de-dependances-en-php</link>
+      <guid isPermaLink="false">injection-de-dependances-en-php</guid>
+      <pubDate>Wed, 05 Nov 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Première application Ember (part 2)]]></title>
+      <link>https://putaindecode.io/articles/premiere-application-ember-part-2</link>
+      <guid isPermaLink="false">premiere-application-ember-part-2</guid>
+      <pubDate>Tue, 09 Dec 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[JavaScript modulaire pour le front-end : les bases]]></title>
+      <link>https://putaindecode.io/articles/javascript-modulaire-pour-le-front-end-les-bases</link>
+      <guid isPermaLink="false">javascript-modulaire-pour-le-front-end-les-bases</guid>
+      <pubDate>Mon, 15 Dec 2014 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Quelques retours sur React et le rendu serveur]]></title>
+      <link>https://putaindecode.io/articles/quelques-retours-sur-react-et-le-rendu-serveur</link>
+      <guid isPermaLink="false">quelques-retours-sur-react-et-le-rendu-serveur</guid>
+      <pubDate>Mon, 23 Feb 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Il démarre Vim par erreur, ce qui se passe ensuite est tout simplement bluffant]]></title>
+      <link>https://putaindecode.io/articles/il-demarre-vim-par-erreur-ce-qui-se-passe-ensuite-est-tout-simplement-bluffant</link>
+      <guid isPermaLink="false">il-demarre-vim-par-erreur-ce-qui-se-passe-ensuite-est-tout-simplement-bluffant</guid>
+      <pubDate>Tue, 03 Mar 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Du CSS évolutif]]></title>
+      <link>https://putaindecode.io/articles/du-css-evolutif</link>
+      <guid isPermaLink="false">du-css-evolutif</guid>
+      <pubDate>Tue, 10 Mar 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[HATEOAS, le Graal des développeurs d'API]]></title>
+      <link>https://putaindecode.io/articles/hateoas-le-graal-des-developpeurs-d-api</link>
+      <guid isPermaLink="false">hateoas-le-graal-des-developpeurs-d-api</guid>
+      <pubDate>Thu, 12 Mar 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Implémenter Flux]]></title>
+      <link>https://putaindecode.io/articles/implementer-flux</link>
+      <guid isPermaLink="false">implementer-flux</guid>
+      <pubDate>Fri, 01 May 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Utiliser React en moteur de templates]]></title>
+      <link>https://putaindecode.io/articles/utiliser-react-en-moteur-de-templates</link>
+      <guid isPermaLink="false">utiliser-react-en-moteur-de-templates</guid>
+      <pubDate>Thu, 07 May 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Les utilitaires en ligne de commande]]></title>
+      <link>https://putaindecode.io/articles/les-utilitaires-en-ligne-de-commande</link>
+      <guid isPermaLink="false">les-utilitaires-en-ligne-de-commande</guid>
+      <pubDate>Tue, 12 May 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Comment déboguer facilement du web y compris sur tablettes et téléphones]]></title>
+      <link>https://putaindecode.io/articles/comment-deboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones</link>
+      <guid isPermaLink="false">comment-deboguer-facilement-du-web-y-compris-sur-tablettes-et-telephones</guid>
+      <pubDate>Tue, 19 May 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Qu'est-ce que l'intégration continue ?]]></title>
+      <link>https://putaindecode.io/articles/qu-est-ce-que-l-integration-continue</link>
+      <guid isPermaLink="false">qu-est-ce-que-l-integration-continue</guid>
+      <pubDate>Thu, 21 May 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction au déploiement continu]]></title>
+      <link>https://putaindecode.io/articles/introduction-au-deploiement-continu</link>
+      <guid isPermaLink="false">introduction-au-deploiement-continu</guid>
+      <pubDate>Mon, 25 May 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à cssnext]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-cssnext</link>
+      <guid isPermaLink="false">introduction-a-cssnext</guid>
+      <pubDate>Tue, 02 Jun 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Les webhooks GitHub]]></title>
+      <link>https://putaindecode.io/articles/les-webhooks-github</link>
+      <guid isPermaLink="false">les-webhooks-github</guid>
+      <pubDate>Tue, 09 Jun 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à Docker]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-docker</link>
+      <guid isPermaLink="false">introduction-a-docker</guid>
+      <pubDate>Thu, 11 Jun 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[SemVer, c'est quoi ?]]></title>
+      <link>https://putaindecode.io/articles/semver-c-est-quoi</link>
+      <guid isPermaLink="false">semver-c-est-quoi</guid>
+      <pubDate>Tue, 16 Jun 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Les Dockerfiles]]></title>
+      <link>https://putaindecode.io/articles/les-dockerfiles</link>
+      <guid isPermaLink="false">les-dockerfiles</guid>
+      <pubDate>Thu, 02 Jul 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Webpack]]></title>
+      <link>https://putaindecode.io/articles/webpack</link>
+      <guid isPermaLink="false">webpack</guid>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Premier exemple d'utilisation de Webpack]]></title>
+      <link>https://putaindecode.io/articles/premier-exemple-d-utilisation-de-webpack</link>
+      <guid isPermaLink="false">premier-exemple-d-utilisation-de-webpack</guid>
+      <pubDate>Tue, 21 Jul 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Créer un site web gratuitement avec GitHub Pages]]></title>
+      <link>https://putaindecode.io/articles/creer-un-site-web-gratuitement-avec-github-pages</link>
+      <guid isPermaLink="false">creer-un-site-web-gratuitement-avec-github-pages</guid>
+      <pubDate>Fri, 31 Jul 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Gérer son thème WordPress avec Webpack]]></title>
+      <link>https://putaindecode.io/articles/gerer-son-theme-wordpress-avec-webpack</link>
+      <guid isPermaLink="false">gerer-son-theme-wordpress-avec-webpack</guid>
+      <pubDate>Tue, 20 Oct 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Un favicon vite fait bien fait]]></title>
+      <link>https://putaindecode.io/articles/un-favicon-vite-fait-bien-fait</link>
+      <guid isPermaLink="false">un-favicon-vite-fait-bien-fait</guid>
+      <pubDate>Tue, 17 Nov 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Tester unitairement des composants React]]></title>
+      <link>https://putaindecode.io/articles/tester-unitairement-des-composants-react</link>
+      <guid isPermaLink="false">tester-unitairement-des-composants-react</guid>
+      <pubDate>Tue, 24 Nov 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Avantages à diviser ses storyboards sur iOS/OS X]]></title>
+      <link>https://putaindecode.io/articles/avantages-a-diviser-ses-storyboards-sur-ios-osx</link>
+      <guid isPermaLink="false">avantages-a-diviser-ses-storyboards-sur-ios-osx</guid>
+      <pubDate>Tue, 01 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : la déclaration de variables avec const, let et var]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-la-declaration-de-variables-avec-const-let-et-var</link>
+      <guid isPermaLink="false">es6-es2015-la-declaration-de-variables-avec-const-let-et-var</guid>
+      <pubDate>Tue, 01 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : le destructuring]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-le-destructuring</link>
+      <guid isPermaLink="false">es6-es2015-le-destructuring</guid>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les valeurs par défaut des arguments]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-valeurs-par-defaut-des-arguments</link>
+      <guid isPermaLink="false">es6-es2015-les-valeurs-par-defaut-des-arguments</guid>
+      <pubDate>Thu, 03 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : Object.assign]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-object-assign</link>
+      <guid isPermaLink="false">es6-es2015-object-assign</guid>
+      <pubDate>Fri, 04 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les classes]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-classes</link>
+      <guid isPermaLink="false">es6-es2015-les-classes</guid>
+      <pubDate>Sat, 05 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les promesses]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-promesses</link>
+      <guid isPermaLink="false">es6-es2015-les-promesses</guid>
+      <pubDate>Sun, 06 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les template strings]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-template-strings</link>
+      <guid isPermaLink="false">es6-es2015-les-template-strings</guid>
+      <pubDate>Mon, 07 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : Les object literals]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-object-literals</link>
+      <guid isPermaLink="false">es6-es2015-les-object-literals</guid>
+      <pubDate>Tue, 08 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : le protocole d'itération]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-le-protocole-d-iteration</link>
+      <guid isPermaLink="false">es6-es2015-le-protocole-d-iteration</guid>
+      <pubDate>Wed, 09 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : itérateurs et générateurs]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-iterateurs-et-generateurs</link>
+      <guid isPermaLink="false">es6-es2015-iterateurs-et-generateurs</guid>
+      <pubDate>Thu, 10 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les Maps & WeakMaps]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-maps-weakmaps</link>
+      <guid isPermaLink="false">es6-es2015-les-maps-weakmaps</guid>
+      <pubDate>Fri, 11 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : paramètres rest et opérateur spread]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-parametres-rest-et-operateur-spread</link>
+      <guid isPermaLink="false">es6-es2015-parametres-rest-et-operateur-spread</guid>
+      <pubDate>Sat, 12 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les nouvelles méthodes d'Array]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-nouvelles-methodes-d-array</link>
+      <guid isPermaLink="false">es6-es2015-les-nouvelles-methodes-d-array</guid>
+      <pubDate>Sun, 13 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES2016 (?): fonctions asynchrones (async/await)]]></title>
+      <link>https://putaindecode.io/articles/es2016-fonctions-asynchrones-async-await</link>
+      <guid isPermaLink="false">es2016-fonctions-asynchrones-async-await</guid>
+      <pubDate>Mon, 14 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les fonctions fléchées]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-fonctions-flechees</link>
+      <guid isPermaLink="false">es6-es2015-les-fonctions-flechees</guid>
+      <pubDate>Tue, 15 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : la boucle for..of]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-la-boucle-for-of</link>
+      <guid isPermaLink="false">es6-es2015-la-boucle-for-of</guid>
+      <pubDate>Wed, 16 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les symboles]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-symboles</link>
+      <guid isPermaLink="false">es6-es2015-les-symboles</guid>
+      <pubDate>Thu, 17 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ES6, ES2015 : les Proxy]]></title>
+      <link>https://putaindecode.io/articles/es6-es2015-les-proxy</link>
+      <guid isPermaLink="false">es6-es2015-les-proxy</guid>
+      <pubDate>Fri, 18 Dec 2015 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à Grid Layout]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-grid-layout</link>
+      <guid isPermaLink="false">introduction-a-grid-layout</guid>
+      <pubDate>Tue, 05 Jan 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Vers les CSS modules]]></title>
+      <link>https://putaindecode.io/articles/vers-les-css-modules</link>
+      <guid isPermaLink="false">vers-les-css-modules</guid>
+      <pubDate>Tue, 23 Feb 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Hello Swift]]></title>
+      <link>https://putaindecode.io/articles/hello-swift</link>
+      <guid isPermaLink="false">hello-swift</guid>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Angular 1.5 : un pas de plus vers les web-components]]></title>
+      <link>https://putaindecode.io/articles/angular-1-5-un-pas-de-plus-vers-les-web-components</link>
+      <guid isPermaLink="false">angular-1-5-un-pas-de-plus-vers-les-web-components</guid>
+      <pubDate>Tue, 12 Apr 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Déploiement continu avec Travis-CI (et GitHub Pages)]]></title>
+      <link>https://putaindecode.io/articles/deploiement-continu-avec-travis-ci-et-gh-pages</link>
+      <guid isPermaLink="false">deploiement-continu-avec-travis-ci-et-gh-pages</guid>
+      <pubDate>Tue, 19 Apr 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à Flow, pour du code qui tourne du premier coup]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-flow-pour-du-code-qui-tourne-du-premier-coup</link>
+      <guid isPermaLink="false">introduction-a-flow-pour-du-code-qui-tourne-du-premier-coup</guid>
+      <pubDate>Tue, 07 Jun 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Redux, comment ça marche ?]]></title>
+      <link>https://putaindecode.io/articles/redux-comment-ca-marche</link>
+      <guid isPermaLink="false">redux-comment-ca-marche</guid>
+      <pubDate>Thu, 09 Jun 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Les patterns Provider & Higher-Order Component avec React]]></title>
+      <link>https://putaindecode.io/articles/les-patterns-provider-et-higher-order-component-avec-react</link>
+      <guid isPermaLink="false">les-patterns-provider-et-higher-order-component-avec-react</guid>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Pourquoi j'ai arrêté d'utiliser CSS]]></title>
+      <link>https://putaindecode.io/articles/pourquoi-j-ai-arrete-d-utiliser-css</link>
+      <guid isPermaLink="false">pourquoi-j-ai-arrete-d-utiliser-css</guid>
+      <pubDate>Thu, 16 Jun 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Votre première app React Native]]></title>
+      <link>https://putaindecode.io/articles/votre-premiere-app-react-native</link>
+      <guid isPermaLink="false">votre-premiere-app-react-native</guid>
+      <pubDate>Tue, 04 Oct 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[2 ans avec React, Babel, Webpack et cie]]></title>
+      <link>https://putaindecode.io/articles/2-ans-avec-react-babel-webpack-et-cie</link>
+      <guid isPermaLink="false">2-ans-avec-react-babel-webpack-et-cie</guid>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Petit tour d'horizon de l'animation sur le web (et ailleurs)]]></title>
+      <link>https://putaindecode.io/articles/petit-tour-horizon-de-l-animation-sur-le-web-et-ailleurs</link>
+      <guid isPermaLink="false">petit-tour-horizon-de-l-animation-sur-le-web-et-ailleurs</guid>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Quelques petits h͔̞̞̭͙͠a̘ç̫̯͓k̵͖̘̬̳̱̯̤s̴͎̻̯ typographiques]]></title>
+      <link>https://putaindecode.io/articles/quelques-petits-hacks-typographiques</link>
+      <guid isPermaLink="false">quelques-petits-hacks-typographiques</guid>
+      <pubDate>Tue, 10 Jan 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à styled-components]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-styled-components</link>
+      <guid isPermaLink="false">introduction-a-styled-components</guid>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Formatez votre JavaScript avec prettier]]></title>
+      <link>https://putaindecode.io/articles/formatez-votre-javascript-avec-prettier</link>
+      <guid isPermaLink="false">formatez-votre-javascript-avec-prettier</guid>
+      <pubDate>Wed, 08 Mar 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à ReasonML (ou pourquoi j'ai arrêté d'utiliser JavaScript)]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-reasonml</link>
+      <guid isPermaLink="false">introduction-a-reasonml</guid>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Utiliser ReasonML avec JavaScript]]></title>
+      <link>https://putaindecode.io/articles/utiliser-reasonml-avec-javascript</link>
+      <guid isPermaLink="false">utiliser-reasonml-avec-javascript</guid>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction aux patterns des observables]]></title>
+      <link>https://putaindecode.io/articles/introduction-aux-patterns-des-observables</link>
+      <guid isPermaLink="false">introduction-aux-patterns-des-observables</guid>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Swift - la fonction: une closure particulière]]></title>
+      <link>https://putaindecode.io/articles/swift-la-fonction-une-closure-particuliere</link>
+      <guid isPermaLink="false">swift-la-fonction-une-closure-particuliere</guid>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Se lancer dans le TDD]]></title>
+      <link>https://putaindecode.io/articles/se-lancer-dans-le-tdd</link>
+      <guid isPermaLink="false">se-lancer-dans-le-tdd</guid>
+      <pubDate>Tue, 31 Oct 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à l'Overlay Manager Service, expliqué par quelqu'un qui n'y connaît rien]]></title>
+      <link>https://putaindecode.io/articles/introduction-overlay-manager-service</link>
+      <guid isPermaLink="false">introduction-overlay-manager-service</guid>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Développer avec Create React App et une API Node.js]]></title>
+      <link>https://putaindecode.io/articles/developper-avec-create-react-app-et-une-api-nodejs</link>
+      <guid isPermaLink="false">developper-avec-create-react-app-et-une-api-nodejs</guid>
+      <pubDate>Tue, 07 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[ReasonReact, pour une UI qu'elle est bien typée]]></title>
+      <link>https://putaindecode.io/articles/reason-react-pour-une-ui-qu-elle-est-bien-typee</link>
+      <guid isPermaLink="false">reason-react-pour-une-ui-qu-elle-est-bien-typee</guid>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Top 10 des snippets pour démolir le runtime JavaScript]]></title>
+      <link>https://putaindecode.io/articles/top-10-des-snippets-pour-demolir-le-runtime-javascript</link>
+      <guid isPermaLink="false">top-10-des-snippets-pour-demolir-le-runtime-javascript</guid>
+      <pubDate>Mon, 13 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[La programmation reactive avec RxJS]]></title>
+      <link>https://putaindecode.io/articles/la-programmation-reactive-avec-rxjs</link>
+      <guid isPermaLink="false">la-programmation-reactive-avec-rxjs</guid>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Respecter SemVer (presque) sans avoir à y penser avec semantic-release]]></title>
+      <link>https://putaindecode.io/articles/respecter-semver-sans-avoir-a-y-penser-avec-semantic-release</link>
+      <guid isPermaLink="false">respecter-semver-sans-avoir-a-y-penser-avec-semantic-release</guid>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Flow avancé - Première partie]]></title>
+      <link>https://putaindecode.io/articles/flow-avance-part-1</link>
+      <guid isPermaLink="false">flow-avance-part-1</guid>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Stop aux `npm install -g` sauvages (ou pourquoi vous ne devriez pas installer en global de packages et outils CLI)]]></title>
+      <link>https://putaindecode.io/articles/stop-aux-npm-install-global</link>
+      <guid isPermaLink="false">stop-aux-npm-install-global</guid>
+      <pubDate>Thu, 30 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Découverte de Preact]]></title>
+      <link>https://putaindecode.io/articles/decouverte-de-preact</link>
+      <guid isPermaLink="false">decouverte-de-preact</guid>
+      <pubDate>Thu, 21 Dec 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Flow avancé - Seconde partie: les types opaques]]></title>
+      <link>https://putaindecode.io/articles/flow-avance-seconde-partie-les-types-opaques</link>
+      <guid isPermaLink="false">flow-avance-seconde-partie-les-types-opaques</guid>
+      <pubDate>Tue, 02 Jan 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Écrire des high-order components réutilisables avec Recompose]]></title>
+      <link>https://putaindecode.io/articles/ecrire-des-high-order-components-reutilisables-avec-recompose</link>
+      <guid isPermaLink="false">ecrire-des-high-order-components-reutilisables-avec-recompose</guid>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Programmation Arduino: présentation pour les débutants]]></title>
+      <link>https://putaindecode.io/articles/programmation-arduino-presentation-pour-les-debutants</link>
+      <guid isPermaLink="false">programmation-arduino-presentation-pour-les-debutants</guid>
+      <pubDate>Mon, 07 May 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à Clojure(Script)]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-clojure-script</link>
+      <guid isPermaLink="false">introduction-a-clojure-script</guid>
+      <pubDate>Tue, 22 May 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[React 16.3 et la nouvelle API Context]]></title>
+      <link>https://putaindecode.io/articles/react-16-3-et-la-nouvelle-api-context</link>
+      <guid isPermaLink="false">react-16-3-et-la-nouvelle-api-context</guid>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[L'anti-divite, c'est pas automatique]]></title>
+      <link>https://putaindecode.io/articles/l-anti-divite-c-est-pas-automatique</link>
+      <guid isPermaLink="false">l-anti-divite-c-est-pas-automatique</guid>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Garder ses dépôts Git synchronisés sur GitHub, GitLab & Bitbucket]]></title>
+      <link>https://putaindecode.io/articles/garder-ses-depots-git-synchronises-sur-github-gitlab-bitbucket</link>
+      <guid isPermaLink="false">garder-ses-depots-git-synchronises-sur-github-gitlab-bitbucket</guid>
+      <pubDate>Tue, 23 Oct 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[React Hooks (proposal)]]></title>
+      <link>https://putaindecode.io/articles/react-hooks-proposal</link>
+      <guid isPermaLink="false">react-hooks-proposal</guid>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Comprendre le CSS in JS par l'exemple]]></title>
+      <link>https://putaindecode.io/articles/comprendre-le-css-in-js-par-l-exemple</link>
+      <guid isPermaLink="false">comprendre-le-css-in-js-par-l-exemple</guid>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Comment on a fait ce site]]></title>
+      <link>https://putaindecode.io/articles/comment-on-a-fait-ce-site</link>
+      <guid isPermaLink="false">comment-on-a-fait-ce-site</guid>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Introduction à la méthodologie RUD]]></title>
+      <link>https://putaindecode.io/articles/introduction-a-rud</link>
+      <guid isPermaLink="false">introduction-a-rud</guid>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Une UI responsive grâce à la règle de trois]]></title>
+      <link>https://putaindecode.io/articles/une-ui-responsive-grace-a-la-regle-de-trois</link>
+      <guid isPermaLink="false">une-ui-responsive-grace-a-la-regle-de-trois</guid>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Le type option, c'est quoi et ça règle quel problème ?]]></title>
+      <link>https://putaindecode.io/articles/le-type-option-c-est-quoi-et-ca-regle-quel-probleme</link>
+      <guid isPermaLink="false">le-type-option-c-est-quoi-et-ca-regle-quel-probleme</guid>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Tradeoffs]]></title>
+      <link>https://putaindecode.io/articles/tradeoffs</link>
+      <guid isPermaLink="false">tradeoffs</guid>
+      <pubDate>Mon, 20 May 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Les paramètres optionnels avec ReasonML]]></title>
+      <link>https://putaindecode.io/articles/les-parametres-optionnels-avec-reasonml</link>
+      <guid isPermaLink="false">les-parametres-optionnels-avec-reasonml</guid>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Du responsive sans media queries]]></title>
+      <link>https://putaindecode.io/articles/responsive-sans-media-queries</link>
+      <guid isPermaLink="false">responsive-sans-media-queries</guid>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Est-il possible de sécuriser une application front-end ?]]></title>
+      <link>https://putaindecode.io/articles/peut-on-securiser-app-frontend</link>
+      <guid isPermaLink="false">peut-on-securiser-app-frontend</guid>
+      <pubDate>Thu, 02 Apr 2020 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Scaling stories - comment les startups se sont plantées]]></title>
+      <link>https://putaindecode.io/articles/scaling-stories-comment-les-startups-se-sont-plantees</link>
+      <guid isPermaLink="false">scaling-stories-comment-les-startups-se-sont-plantees</guid>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Écrivez du code stupide]]></title>
+      <link>https://putaindecode.io/articles/2021-01-29-ecrivez-du-code-stupide</link>
+      <guid isPermaLink="false">2021-01-29-ecrivez-du-code-stupide</guid>
+      <pubDate>Fri, 29 Jan 2021 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Retour sur plusieurs années de CSS-in-JS]]></title>
+      <link>https://putaindecode.io/articles/retour-sur-plusieurs-annees-de-css-in-js</link>
+      <guid isPermaLink="false">retour-sur-plusieurs-annees-de-css-in-js</guid>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Le vrai problème des Web Components]]></title>
+      <link>https://putaindecode.io/articles/le-vrai-probleme-des-web-components</link>
+      <guid isPermaLink="false">le-vrai-probleme-des-web-components</guid>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Le web mérite de meilleures primitives]]></title>
+      <link>https://putaindecode.io/articles/le-web-merite-de-meilleures-primitives</link>
+      <guid isPermaLink="false">le-web-merite-de-meilleures-primitives</guid>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 GMT</pubDate>
+   </item>
+  </channel>
+</rss>

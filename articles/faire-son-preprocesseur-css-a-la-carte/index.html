@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="fr"><head><title data-react-helmet="true">Faire son préprocesseur CSS à la carte | Putain de code</title><meta data-react-helmet="true" charset="UTF-8"/><meta data-react-helmet="true" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport"/><meta data-react-helmet="true" content="summary_large_image" name="twitter:card"/><meta data-react-helmet="true" content="Putain de code !" property="og:site_name"/><meta data-react-helmet="true" content="@putaindecode" name="twitter:site"/><meta data-react-helmet="true" content="https://putaindecode.io/public/images/website/share.jpg" property="og:image"/><meta data-react-helmet="true" content="https://putaindecode.io/public/images/website/share.jpg" name="twitter:image"/><meta data-react-helmet="true" content="1500" property="og:image:width"/><meta data-react-helmet="true" content="777" property="og:image:height"/><meta data-react-helmet="true" content="Faire son préprocesseur CSS à la carte | Putain de code" property="og:title"/><meta data-react-helmet="true" content="Faire son préprocesseur CSS à la carte | Putain de code" name="twitter:title"/><meta data-react-helmet="true" content="Un article proposé par MoOx" name="description"/><link data-react-helmet="true" title="RSS Feed" href="/api/articles/feeds/desc/feed.xml" rel="alternate" type="application/rss+xml"/><link data-react-helmet="true" href="/favicon.ico" rel="shortcut icon"/><link data-react-helmet="true" href="https://putaindecode.io/articles/faire-son-preprocesseur-css-a-la-carte" rel="canonical"/><script>window.PAGES_BOOT_MODE="hydrate";</script></head><div id="root"><style data-emotion="rpcss zx73cm 1lc6tyj 28v1b4">@-webkit-keyframes animation-zx73cm{from{opacity:0;-webkit-transform:translateY(20px);-moz-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);}}@keyframes animation-zx73cm{from{opacity:0;-webkit-transform:translateY(20px);-moz-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);}}:root{--page-background-color:#fff;--page-slightly-accented-background-color:#F9F6F6;--page-accented-background-color:#E4EBEE;--page-text-color:#46515B;--link-text-color:#E51D58;--gradient-red-top:#E51D58;--gradient-red-bottom:#CC0613;--code-background-color:#FAF3E1;--one-percent-contrast-color:rgba(0, 0, 0, 0.1);--half-percent-contrast-color:rgba(0, 0, 0, 0.05);}@media (prefers-color-scheme: dark){:root{--page-background-color:#222;--page-slightly-accented-background-color:#171717;--page-accented-background-color:#111;--page-text-color:#ddd;--link-text-color:#F87098;--gradient-red-top:#E51D58;--gradient-red-bottom:#CC0613;--code-background-color:#4F3804;--one-percent-contrast-color:rgba(255, 255, 255, 0.1);--half-percent-contrast-color:rgba(255, 255, 255, 0.05);}}body{padding:0;margin:0;background-color:var(--page-background-color);color:var(--page-text-color);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;overflow-x:hidden;}html{font-size:1em;line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;}a{color:var(--link-text-color);-webkit-text-decoration:underline;text-decoration:underline;}a:hover{-webkit-text-decoration:none;text-decoration:none;}#root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}*,*:before,*:after{box-sizing:border-box;}pre,.hljs{color:#adbac7;background:#22272e;}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#f47067;}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#dcbdfb;}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-variable,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id{color:#6cb6ff;}.hljs-regexp,.hljs-string,.hljs-meta .hljs-string{color:#96d0ff;}.hljs-built_in,.hljs-symbol{color:#f69d50;}.hljs-comment,.hljs-code,.hljs-formula{color:#768390;}.hljs-name,.hljs-quote,.hljs-selector-tag,.hljs-selector-pseudo{color:#8ddb8c;}.hljs-subst{color:#adbac7;}.hljs-section{color:#316dca;font-weight:bold;}.hljs-bullet{color:#eac55f;}.hljs-emphasis{color:#adbac7;font-style:italic;}.hljs-strong{color:#adbac7;font-weight:bold;}.hljs-addition{color:#b4f1b4;background-color:#1b4721;}.hljs-deletion{color:#ffd8d3;background-color:#78191b;}</style><style data-emotion="rpcss 9vhaby">.rpcss-9vhaby{background-color:var(--gradient-red-bottom);background-image:linear-gradient(to bottom right, var(--gradient-red-top), var(--gradient-red-bottom));}</style><header class="rpcss-9vhaby" style="background-image:linear-gradient(to bottom right, hsl(222, 100%, 35%), hsl(184, 100%, 30%))"><style data-emotion="rpcss 1qqk0tr">.rpcss-1qqk0tr{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);}</style><div class="rpcss-1qqk0tr"><style data-emotion="rpcss qx7dny">.rpcss-qx7dny{width:100%;max-width:1024px;margin:0 auto;padding:0 10px;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;}</style><div class="rpcss-qx7dny"><style data-emotion="rpcss 7s9om2">.rpcss-7s9om2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;padding:20px 0 50px;}</style><div class="rpcss-7s9om2"><style data-emotion="rpcss gdpa5c">.rpcss-gdpa5c{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;}</style><a class="rpcss-gdpa5c" href="/"><style data-emotion="rpcss 1lm4738">.rpcss-1lm4738{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;padding-bottom:10px;}</style><div class="rpcss-1lm4738"><style data-emotion="rpcss 13o7eu2">.rpcss-13o7eu2{display:block;}</style><svg class="rpcss-13o7eu2" height="36px" width="36px" viewBox="0 0 36 36"><defs><linearGradient id="PutainDeCodeLogoGradient" x1="50%" x2="50%" y1="0%" y2="127.223881%"><stop offset="0%" stop-color="#E41D57"></stop><stop offset="100%" stop-color="#C60000"></stop></linearGradient></defs><circle cx="18" cy="18" fill="url(#PutainDeCodeLogoGradient)" r="17" stroke="#FFFFFF" stroke-width="2"></circle><polygon fill="#FFFFFF" points="15.9033203 18.2246094 15.9033203 18.3710938 11.2304688 20.5317383 11.2304688 22.8095703 18.0566406 19.184082 18.0566406 17.4116211 11.2304688 13.7788086 11.2304688 16.0639648"></polygon><rect height="14" width="2" fill="#FFFFFF" x="22" y="11"><animate attributeName="opacity" begin="100ms" calcMode="discrete" dur="2s" repeatCount="indefinite" values="1;0"></animate></rect></svg><style data-emotion="rpcss 4cf197">.rpcss-4cf197{width:10px;height:10px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><div class="rpcss-4cf197"></div><style data-emotion="rpcss u5k24">.rpcss-u5k24{font-size:22px;color:#fff;font-weight:800;}</style><div aria-level="2" class="rpcss-u5k24" role="heading">Putain de code !</div></div><style data-emotion="rpcss 1nyebg4">.rpcss-1nyebg4{font-size:14px;color:rgba(255, 255, 255, 0.8);text-align:center;}</style><div class="rpcss-1nyebg4">Blog participatif de la communauté dev</div></a></div></div></div></header><style data-emotion="rpcss a4ric9">.rpcss-a4ric9{background-color:var(--page-slightly-accented-background-color);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}</style><div class="rpcss-a4ric9"><style data-emotion="rpcss oeugsb">.rpcss-oeugsb{-webkit-animation:500ms ease-out animation-zx73cm;animation:500ms ease-out animation-zx73cm;}</style><div class="rpcss-oeugsb"><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 1qc2bam">.rpcss-1qc2bam{font-size:42px;font-weight:800;text-align:center;padding-top:40px;line-height:1.2;margin:0;}</style><h1 class="rpcss-1qc2bam">Faire son préprocesseur CSS à la carte</h1><style data-emotion="rpcss obg2kr">.rpcss-obg2kr{font-size:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;padding-top:10px;padding-bottom:40px;color:var(--page-text-color);-webkit-text-decoration:none;text-decoration:none;}</style><a class="rpcss-obg2kr" href="https://github.com/MoOx"><style data-emotion="rpcss uco8i7">.rpcss-uco8i7{width:32px;height:32px;border-radius:100%;margin-right:10px;}</style><img class="rpcss-uco8i7" alt="MoOx" src="https://avatars.githubusercontent.com/MoOx?size=64"/><div>MoOx<!-- --> <!-- -->•<!-- --> <!-- -->2014/05/20</div></a><style data-emotion="rpcss 15kxmi0">.rpcss-15kxmi0{max-width:640px;width:100%;font-size:18px;margin:0 auto;line-height:1.7;}.rpcss-15kxmi0 h2,.rpcss-15kxmi0 h3,.rpcss-15kxmi0 h4,.rpcss-15kxmi0 h5,.rpcss-15kxmi0 h6{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;font-weight:800;line-height:1.2;}.rpcss-15kxmi0 img{max-width:100%;background-color:rgba(255, 255, 255, 0.75);}.rpcss-15kxmi0 code{font-size:0.9em;font-family:PragmataPro,SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;line-height:1;background-color:var(--code-background-color);margin:0 0.2em;}.rpcss-15kxmi0 pre{padding:10px;overflow-x:auto;font-size:14px;border-radius:10px;border:2px solid var(--one-percent-contrast-color);-webkit-overflow-scrolling:touch;}.rpcss-15kxmi0 pre code{font-size:14px;background-color:transparent;margin:0;}.rpcss-15kxmi0 blockquote{padding-left:20px;margin:0;font-size:16px;border-left:3px solid var(--one-percent-contrast-color);font-style:italic;}.rpcss-15kxmi0 table{width:100%;text-align:center;}.rpcss-15kxmi0 figure{padding:20px 0;}.rpcss-15kxmi0 figcaption{text-align:center;}.rpcss-15kxmi0 a{word-wrap:break-word;}.rpcss-15kxmi0 table thead th{background-color:var(--page-accented-background-color);padding:10px 0;}</style><div class="rpcss-15kxmi0"><blockquote>
+<p>⚠️ Cet article est marqué comme obsolète</p>
+</blockquote>
+<p>Après vous avoir fait un petit
+<a href="/fr/articles/css/preprocesseurs/">état de l'art des préprocesseurs CSS historiques</a>
+et vous avoir parlé <a href="/fr/articles/css/preprocesseurs/">des postprocesseurs</a>, je
+me dois de vous montrer le chemin qui me semble le plus pertinent aujourd'hui,
+en 2014, maintenant que
+<a href="http://www.w3.org/standards/techs/css#cr">les spécifications CSS sont découpées en modules</a>
+qui peuvent du coup avancer (plus rapidement) chacune de leur côté.</p>
+<p>Bon après faut avouer que chez {p!} on fait genre on est des hipsters hackers,
+du coup quand on voit que
+<a href="http://blog.kaelig.fr/post/85546040569/net-awards-sass-game-changer-of-the-year">Sass est le game changer of the year</a>
+et que tout le monde l'adopte, on se doit de rester hipster. Du coup on est
+obligés de passer à autre chose.</p>
+<p><strong>Mise à jour du 11 décembre 2014:</strong> <em>depuis le temps où j'ai rédigé cette
+article, j'ai travaillé sur un transpileur CSS future-proof, basé sur PostCSS.
+Je vous invite à jeter au project <strong><a href="https://cssnext.github.io/">cssnext</a></strong>.</em></p>
+<h2>Pré ou postprocesseurs ?</h2>
+<p>Je vais ici utiliser le mot préprocesseur, alors que certains trouveront
+postprocesseurs plus pertinent, car pour moi le préprocessing reste simplement
+une étape avant le <em>processing</em> de nos feuilles de styles par les navigateurs.</p>
+<p>Cela dit il faut bien distinguer les étapes :</p>
+<ol>
+<li>Preprocessing d'un langage spécifique (Sass, Stylus*) ou superset du
+langage CSS (Scss, Less);</li>
+<li>Preprocessing d'un fichier respectant la syntaxe CSS;</li>
+<li>Processing par le navigateur</li>
+</ol>
+<p>Revenons rapidement sur ces 3 points :</p>
+<h3>Preprocessing via langage dédié</h3>
+<p>Ici je parle d'un langage, car superset ou pas, on a des éléments nouveaux,
+incompréhensibles par le navigateur (ex: <code>@if</code>, <code>@foreach</code>...).</p>
+<p>Note: Je case Stylus dans le langage spécifique car il n'est pas vraiment
+compatible, ne tolérant pas l'indentation :</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.Block</span> {
+  <span class="hljs-attribute">prop</span>: value;
+}
+
+<span class="hljs-selector-class">.Block-element</span> {
+  <span class="hljs-attribute">prop</span>: value;
+}
+
+<span class="hljs-comment">/* 💥 BOOM ! CA PAS MARCHER EN STYLUS */</span>
+</code></pre>
+<h3>Préprocessing futureproof/fallback</h3>
+<p>Ici on conserve la syntaxe CSS, le parsing est donc simple est connu. Mais
+attention on peut avoir un résultat non compréhensible par certains navigateurs
+(ex: unité REM sur IE 8, variables CSS...).</p>
+<p>À la différence de la solution du dessus, on reste ici avec un langage à la
+syntaxe simple et connue, avec des spécifications (en brouillon ou pas).</p>
+<p>Dès que c'est possible on va rendre le CSS encore plus compatible en ajoutant
+des fallbacks (roues de secours) à tout va. Ainsi par exemple pour assurer une
+utilisation de l'unité REM, on peut (en roue de secours) doubler nos valeurs en
+<code>px</code>. Autre exemple avec les variables CSS natives : on peut (pour une
+utilisation simpliste) faire un prérendu et mettre des roues de secours là où
+c'est possible.</p>
+<h3>Processing par le navigateur</h3>
+<p>Ici on a blindé notre feuille de fallback, on est (en théorie) sensé avoir un
+support &quot;au mieux&quot;.</p>
+<h2>Créer un préprocesseur CSS</h2>
+<p>Allons à l'essentiel : pour créer votre préprocesseur on va utiliser une
+bibliothèque. À ce jour nous avons le choix entre
+<a href="https://github.com/reworkcss/rework">Rework</a> ou
+<a href="https://github.com/ai/postcss">PostCSS</a> qui permettent d'inspecter et de
+manipuler nos CSS. Tout deux sont des bibliothèques écrites en JavaScript
+(NodeJs).</p>
+<p>Pour la petite histoire, Autoprefixer est à l'origine de PostCSS. En effet les
+premières versions utilisaient Rework, mais à cause de limitation dues à l'API
+de Rework, l'auteur d'Autoprefixer a décidé de créer son propre moteur, qui a
+une API presque plus sympa il faut le dire (il faudra voir comment évolue
+Rework).</p>
+<p>D'un autre côté Rework étant plus ancien, il possède un écosystème plus fourni
+et répondra donc mieux à nos besoins.</p>
+<p>Cela étant dit, avec l'approche futureproof nous pourrons switcher de Rework à
+PostCSS sans problème et surtout sans toucher à nos feuilles de styles. Il
+suffira de trouver un plugin équivalent (ex: rework-vars et postcss-vars font la
+même chose).</p>
+<p>Pour des raisons d'écosystème, je partirai sur Rework histoire de ne pas
+réinventer la roue.</p>
+<h2>Créer un préprocesseur CSS avec Rework</h2>
+<p>Rework prend une chaîne CSS en entrée, produit un AST (arbre de syntaxe abtrait)
+de notre CSS et nous fournis une API pour le manipuler.</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">var</span> rework = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework&quot;</span>);
+<span class="hljs-keyword">var</span> unPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework-BIDULE&quot;</span>);
+<span class="hljs-comment">// usage simple</span>
+<span class="hljs-keyword">var</span> css = rework(<span class="hljs-string">&quot;html { font-size: 2rem}&quot;</span>)
+  .use(unPlugin)
+  .toString();
+</code></pre>
+<h3>Plugin Rework</h3>
+<p>Un plugin Rework n'est rien d'autre qu'une fonction JavaScript. L'exemple
+suivant remplacera toutes les couleurs de texte par du noir.</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">var</span> monPlugin = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">plugin</span>(<span class="hljs-params">ast, reworkInstance</span>) </span>{
+  ast.rules.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rule</span>) </span>{
+    <span class="hljs-comment">// dans notre cas on ne veut que travailler sur des règles</span>
+    <span class="hljs-keyword">if</span> (rule.type !== <span class="hljs-string">&quot;rule&quot;</span>) <span class="hljs-keyword">return</span>;
+
+    rule.declarations.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">declaration, index</span>) </span>{
+      <span class="hljs-keyword">if</span> (declaration.property === <span class="hljs-string">&quot;color&quot;</span>) {
+        declaration.value = <span class="hljs-string">&quot;#000&quot;</span>;
+      }
+    });
+  });
+};
+</code></pre>
+<p>Il est certain que l'exemple ci-dessus ne doit pas vous exciter beaucoup. Moi
+non plus. Je n'ai d'ailleurs pas du tout accroché lorsque Rework est apparu par
+manque de compréhension. <strong>Ou plutôt par manque d'imagination</strong>.</p>
+<p>Pour un exemple plus costaud je vous invite à regarder le code
+<a href="https://github.com/reworkcss/rework-vars/blob/master/index.js">rework-vars</a>.</p>
+<h2>L'Ecosystème Rework</h2>
+<p>Heureusement pour nous, nous avons un écosystème. Donc pour un usage classique
+(écrire du CSS futureproof ou ajouter quelques petites améliorations) il n'y
+aura pas besoin d'écrire de plugin, juste en utiliser fera l'affaire.</p>
+<h3>Plugins Rework natif</h3>
+<p>Rework embarque en natif quelques plugins. Il faudra tout de même les activer
+(on voit comment juste après).</p>
+<ul>
+<li><a href="https://github.com/reworkcss/rework#extend">extend</a>: Permet d'hériter d'un
+sélecteur (<code>@extend</code> quoi).</li>
+<li><a href="https://github.com/reworkcss/rework#ease">ease</a>: Ajout un paquet de fonctions
+d'easing pour les animations et transitions.</li>
+<li><a href="https://github.com/reworkcss/rework#at2x">at2x</a>: Gestion automatique des
+images <code>@2x</code>.</li>
+<li><a href="https://github.com/reworkcss/rework#prefixselectorsstring">prefixSelectors</a>:
+Permet de préfixer vos sélecteurs.</li>
+<li><a href="https://github.com/reworkcss/rework#colors">colors</a>: Explication par
+l'exemple : <code>rgba(#fc0, .5)</code>.</li>
+<li><a href="https://github.com/reworkcss/rework#mixinobject">mixin</a>: Faire ses propres
+mixins via des fonctions JavaScript.</li>
+<li><a href="https://github.com/reworkcss/rework#functionobject">function</a>: Ajouter ses
+propres fonctions CSS.</li>
+<li><a href="https://github.com/reworkcss/rework#references">references</a>: Permet de faire
+référence à des valeurs de propriétés (ex: <code>height: @width</code>)</li>
+<li><a href="https://github.com/reworkcss/rework#urlfn">url</a>: Réécrire les <code>url()</code>s via
+une fonction JavaScript.</li>
+<li><a href="https://github.com/reworkcss/rework#inlinedir">inline</a>: Inliner des
+ressources via des datauri.</li>
+</ul>
+<h3>Plugins Rework NPM</h3>
+<p>On a déjà plus d'une soixantaine de
+<a href="https://www.npmjs.org/search?q=rework">plugins Rework disponible sur NPM</a> en
+plus des plugins natifs.</p>
+<h4>Ajouter des fallbacks</h4>
+<p>Si vous souhaitez écrire des CSS sans pour autant vous limiter à certaines
+implémentations, ces plugins devraient vous plaire.</p>
+<h5>rework-vars</h5>
+<p><a href="https://github.com/reworkcss/rework-vars">rework-vars</a> permet un usage des
+<a href="http://www.w3.org/TR/css-variables/">variables CSS</a>. Ce plugin est (pour
+l'instant) restreint aux déclarations à la racine (<code>:root</code>). Cela permet
+toutefois un usage classique de variables globales. Et de se séparer de Sass ou
+Less si on utilise pas beaucoup plus que des variables.</p>
+<h5>rework-calc</h5>
+<p><a href="https://github.com/reworkcss/rework-calc">rework-calc</a> ajoute les résultats des
+opérations <code>calc()</code> quand c'est possible (même unité). Très pratique
+spécialement couplé avec rework-vars pour ajouter un peu de math via vos
+variables.</p>
+<h5>rework-npm</h5>
+<p><a href="https://github.com/conradz/rework-npm">rework-npm</a> nous parse <code>@import</code> comme
+on l'aime. Peut taper dans votre dossier de sources ou en plus dans
+<code>node_modules</code> (pratique pour utiliser
+<a href="https://www.npmjs.org/package/normalize.css">normalize.css</a>
+<a href="/fr/articles/npm/frontend/">via npm</a> par exemple). Il existe aussi
+<a href="https://github.com/simme/rework-importer">rework-importer</a> qui amène quelques
+différences de syntaxe.</p>
+<h5><a href="https://github.com/ctalkington/rework-rem-fallback">rework-rem-fallback</a></h5>
+<p><a href="https://github.com/ctalkington/rework-rem-fallback">rework-rem-fallback</a> ajoute
+un fallback sur les unités REM. Pratique si vous voulez utiliser REM mais que
+vous devez supporter IE 8.</p>
+<h5>rework-color-function</h5>
+<p><a href="https://github.com/ianstormtaylor/rework-color-function">rework-color-function</a>
+permet de manipuler les couleurs via
+<a href="http://dev.w3.org/csswg/css-color/#modifying-colors">les nouvelles fonctions en cours de spécifications</a>
+(hue, saturation, lightness, whiteness, blackness, tint, shade, blend, blenda,
+contrast).</p>
+<h5>rework-mixin-opacity</h5>
+<p><a href="https://github.com/reworkcss/rework-mixin-opacity">rework-mixin-opacity</a> ajoute
+l'<code>opacity</code> pour IE 8.</p>
+<h4>Améliorer un peu vos feuilles de styles</h4>
+<p>Sans pour autant partir en vrille vers des <code>@if</code> ou <code>@each</code>, voici quelques
+plugins qui peuvent ajouter un peu de beurre dans les épinards :</p>
+<h5>rework-parent</h5>
+<p><a href="https://github.com/fgnass/rework-parent">rework-parent</a> permet de référencer le
+sélecteur précédent via <code>&amp;</code>. Pratique dans pour les media-queries ou pour les
+états (:hover etc).</p>
+<h5>rework-breakpoints</h5>
+<p><a href="https://github.com/reworkcss/rework-breakpoints">rework-breakpoints</a> permet de
+spécifier des media-queries via des breakpoints prédéfinis. Pratique en
+attendant un plugin gérant les
+<a href="http://dev.w3.org/csswg/mediaqueries4/#custom-mq"><code>@custom-media</code></a>.</p>
+<h5>rework-hex-alpha</h5>
+<p><a href="https://github.com/ianstormtaylor/rework-hex-alpha">rework-hex-alpha</a> permet de
+spécifier des couleurs avec alpha sous la forme #rrggbbaa.</p>
+<h5>rework-clearfix</h5>
+<p><a href="https://github.com/fgnass/rework-clearfix">rework-clearfix</a> permet d'utiliser
+<code>clear: fix</code> via l'insertion automatique du
+<a href="http://nicolasgallagher.com/micro-clearfix-hack/">micro clearfix de @necolas</a>.</p>
+<h5>rework-assets</h5>
+<p><a href="https://github.com/conradz/rework-assets">rework-assets</a> permet de copier les
+assets référencés. Pratique avec rework-npm et des modules externes.</p>
+<h5>rework-namespace-css</h5>
+<p><a href="https://github.com/geordiemhall/rework-namespace-css">rework-namespace-css</a>
+permet de namespacer vos CSS par une classe sur <code>&lt;html&gt;</code>.</p>
+<h5>rework-namespace</h5>
+<p><a href="https://github.com/kristoferjoseph/rework-namespace">rework-namespace</a> permet
+de namespacer vos CSS par un préfixe. Pratique avec <a href="/fr/articles/css/bem/">BEM</a>
+lorsque vous préfixez par votre <code>.org-</code>.</p>
+<h5>rework-classmap</h5>
+<p><a href="https://github.com/andreypopp/rework-classmap">rework-classmap</a> permet de
+renommer des classes via du mapping. Avec ça on pourrait presque avoir un code
+Bootstrap propre.</p>
+<h5>rework-palette</h5>
+<p><a href="https://github.com/fgnass/rework-palette">rework-palette</a> permet d'ajouter une
+palette de couleur personnalisée (via des noms de couleurs).</p>
+<h5>rework-deduplicate</h5>
+<p><a href="https://github.com/kristoferjoseph/rework-deduplicate">rework-deduplicate</a>
+permet de supprimer les règles dupliquées.</p>
+<h5>rework-split-media</h5>
+<p><a href="https://github.com/reworkcss/split-media">rework-split-media</a> permet de couper
+les contenus des media queries dans d'autres fichiers.</p>
+<h5>rework-move-media</h5>
+<p><a href="https://github.com/reworkcss/rework-move-media">rework-move-media</a> permet de
+regrouper les contenus des media queries. Pas très utile car gzip fera aussi
+bien.</p>
+<h4>Au delà du préprocessing</h4>
+<p>En utilisant le parser Rework, on peut faire plus que des ajustements ou du
+remplacement: on peut balancer des erreurs.</p>
+<ul>
+<li><a href="https://github.com/reworkcss/rework-ie-limits">rework-ie-limits</a>: prévient si
+vos CSS dépassent la limite de 4095 selectors (limite pour IE &lt; 10).</li>
+<li><a href="https://github.com/suitcss/rework-suit-conformance">rework-suit-conformance</a>:
+permet de vérifier que votre code suit bien les
+<a href="https://github.com/suitcss/suit/tree/master/doc">conventions SUIT</a> (pour peu
+que vous les suiviez).</li>
+</ul>
+<p>En partant dans d'autres directions on pourrait réaliser des statistiques sur
+nos CSS (nombre de sélecteurs, de couleurs utilisées etc) comme le fait
+<a href="http://www.cssstats.com/">CSS Stats</a>.</p>
+<p>Retrouvrez en plus de la recherche via npm (qui sera la plus à jour),
+<a href="https://github.com/reworkcss/rework/wiki/Plugins-and-Utilities">une liste des plugins et utilitaires sur le wiki de Rework</a>.</p>
+<h2>Mise en place de Rework pour faire votre préprocesseur en moins de 5 min</h2>
+<p>Maintenant que nous avons vu comment utiliser Rework et quels sont les plugins
+les plus sympas, on se faire un petit fichier pour automatiser tout ce process.</p>
+<p>Plutôt que de réinventer la roue comme l'a fait <a href="http://pleeease.io/">Pleeease</a>
+(en gérant un watcher et tout le tralala), on va plutôt partir comme
+<a href="http://myth.io/">Myth.io</a> ou <a href="https://github.com/visionmedia/styl">Styl</a>
+(successeur spirituel de Stylus) qui se concentrent sur le rendu et non le
+workflow pour générer ce rendu.</p>
+<p>Nous allons donc faire simple et efficace avec une task
+<a href="/fr/articles/js/gulp/">gulp</a>. Ceci pourrait bien entendu être aussi bien fait
+avec grunt ou même make et <a href="https://github.com/facebook/watchman">watchman</a>.</p>
+<pre><code class="hljs language-console"><span class="hljs-meta">$</span><span class="bash"> mkdir monrework &amp;&amp; <span class="hljs-built_in">cd</span> monrework</span>
+<span class="hljs-meta">
+#</span><span class="bash"> on crée un package.json pour sauvegarder les références des paquets qu<span class="hljs-string">&#x27;on va utiliser</span></span>
+<span class="hljs-meta">$</span><span class="bash"><span class="hljs-string"> npm init</span></span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-string"> on install gulp, autoprefixer et rework &amp; co en les sauvegardants dans la partie &quot;devDependencies&quot;</span></span>
+<span class="hljs-meta">$</span><span class="bash"><span class="hljs-string"> npm i -D minimist gulp gulp-util gulp-plumber gulp-autoprefixer gulp-rework rework-npm rework-vars rework-calc rework-color-function rework-rem-fallback rework-parent rework-ie-limits</span></span>
+<span class="hljs-meta">
+#</span><span class="bash"><span class="hljs-string"> on créé notre fichier vide</span></span>
+<span class="hljs-meta">$</span><span class="bash"><span class="hljs-string"> mkdir src &amp;&amp; mkdir src/styles &amp;&amp; touch src/styles/index.css</span></span>
+</code></pre>
+<p>Ensuite il nous reste à faire notre petit <code>Gulpfile.js</code></p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">var</span> options = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;minimist&quot;</span>)(process.argv.slice(<span class="hljs-number">2</span>));
+<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp&quot;</span>);
+<span class="hljs-keyword">var</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-util&quot;</span>);
+<span class="hljs-keyword">var</span> plumber = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-plumber&quot;</span>);
+<span class="hljs-keyword">var</span> rework = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-rework&quot;</span>);
+
+<span class="hljs-keyword">var</span> reworkPlugins = {
+  <span class="hljs-attr">atimport</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework-npm&quot;</span>),
+  <span class="hljs-attr">parent</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework-parent&quot;</span>),
+  <span class="hljs-attr">vars</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework-vars&quot;</span>),
+  <span class="hljs-attr">calc</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework-calc&quot;</span>),
+  <span class="hljs-attr">colorFn</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework-color-function&quot;</span>),
+  <span class="hljs-attr">remFallback</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework-rem-fallback&quot;</span>),
+  <span class="hljs-attr">ieLimits</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;rework-ie-limits&quot;</span>),
+};
+<span class="hljs-keyword">var</span> autoprefixer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;gulp-autoprefixer&quot;</span>);
+
+gulp.task(<span class="hljs-string">&quot;styles&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// ici on prend toutes les CSS à la racine</span>
+  <span class="hljs-comment">// on considère que celles dans des sous dossiers sont à importer</span>
+  <span class="hljs-keyword">return</span> gulp
+    .src(<span class="hljs-string">&quot;./src/styles/*.css&quot;</span>)
+    .pipe(opts.production ? plumber() : util.noop())
+    .pipe(
+      rework(
+        reworkPlugins.atimport({ <span class="hljs-attr">dir</span>: <span class="hljs-string">&quot;./src/styles/&quot;</span> }),
+        rework.colors(),
+        rework.references(),
+        rework.ease(),
+        rework.inline,
+        reworkPlugins.parent,
+        reworkPlugins.vars(), <span class="hljs-comment">// notez que certains plugins nécessitent d&#x27;être éxecutés (retournant une fonction dynamique)</span>
+        reworkPlugins.calc,
+        reworkPlugins.colorFn,
+        reworkPlugins.remFallback(),
+        reworkPlugins.ieLimits,
+      ),
+    )
+    .pipe(autoprefixer())
+    .pipe(gulp.dest(<span class="hljs-string">&quot;./dist/styles&quot;</span>));
+});
+
+gulp.task(<span class="hljs-string">&quot;default&quot;</span>, [<span class="hljs-string">&quot;styles&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  gulp.watch(<span class="hljs-string">&quot;./src/css/**/*&quot;</span>, [<span class="hljs-string">&quot;styles&quot;</span>]);
+});
+</code></pre>
+<p>Ensuite il ne reste plus qu'à lancer Gulp au besoin qui s'occupera d'éxecuter le
+preprocessing au démarrage et lors des changements de fichiers. Il ne reste plus
+grand chose à faire si ce n'est ajouter livereload en plus pour avoir le petit
+process aux petits oignons.</p>
+<pre><code class="hljs language-console"><span class="hljs-meta">$</span><span class="bash"> gulp</span>
+[gulp] Using gulpfile ~/Development/monrework/Gulpfile.js
+[gulp] Starting &#x27;styles&#x27;...
+[gulp] Finished &#x27;styles&#x27; after 49 ms
+[gulp] Starting &#x27;default&#x27;...
+[gulp] Finished &#x27;default&#x27; after 4.16 ms
+</code></pre>
+<p>Le watch est lancé, on peut remplir notre fichier CSS</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attribute">--fontSize</span>: <span class="hljs-number">1rem</span>;
+  <span class="hljs-attribute">--lineHeight</span>: <span class="hljs-number">1.5rem</span>;
+  <span class="hljs-attribute">--color-highlight</span>: <span class="hljs-built_in">rgba</span>(#f00, <span class="hljs-number">0.8</span>);
+}
+
+<span class="hljs-selector-tag">html</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: @width;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-built_in">var</span>(--fontSize);
+}
+
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-built_in">calc</span>(var(--lineHeight) / <span class="hljs-number">2</span>) <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--color-highlight);
+  <span class="hljs-attribute">transition</span>: all <span class="hljs-number">500ms</span> ease-out-back;
+}
+
+&amp;<span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">color</span>(var(--color-highlight) <span class="hljs-built_in">lightness</span>(-<span class="hljs-number">10%</span>));
+  <span class="hljs-attribute">trasnform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">1deg</span>);
+}
+</code></pre>
+<p>Et on obtiendra</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;
+}
+
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">12px</span> <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.75rem</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.8</span>);
+  <span class="hljs-attribute">-webkit-transition</span>: all <span class="hljs-number">500ms</span> <span class="hljs-built_in">cubic-bezier</span>(<span class="hljs-number">0.175</span>, <span class="hljs-number">0.885</span>, <span class="hljs-number">0.32</span>, <span class="hljs-number">1.275</span>);
+  <span class="hljs-attribute">transition</span>: all <span class="hljs-number">500ms</span> <span class="hljs-built_in">cubic-bezier</span>(<span class="hljs-number">0.175</span>, <span class="hljs-number">0.885</span>, <span class="hljs-number">0.32</span>, <span class="hljs-number">1.275</span>);
+}
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">204</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.8</span>);
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">1deg</span>);
+}
+</code></pre>
+<p>Gardez bien en tête qu'avec le code CSS d'origine, vous avez (en majeur partie)
+un code futureproof. D'ici quelques temps on pourra supprimer une grande partie
+des plugins et les navigateurs prendront le relais 😉.</p>
+<p><strong>Bon alors, on Less tomber Sass ?</strong></p>
+</div><style data-emotion="rpcss unyj6i">.rpcss-unyj6i{max-width:640px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;margin:20px auto;padding:20px;background-color:var(--page-background-color);border-radius:10px;box-shadow:0 15px 15px -5px rgba(0, 0, 0, 0.2);}@media (max-width: 540px){.rpcss-unyj6i{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}</style><div class="rpcss-unyj6i"><style data-emotion="rpcss ty7r4z">.rpcss-ty7r4z{font-weight:800;}</style><div class="rpcss-ty7r4z">Vous avez aimé cet article?</div><style data-emotion="rpcss klacsp">.rpcss-klacsp{width:0;height:10px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><div class="rpcss-klacsp"></div><style data-emotion="rpcss 1pkr03v">.rpcss-1pkr03v{background-color:#00aced;color:#fff;padding:10px 20px;-webkit-text-decoration:none;text-decoration:none;border-radius:5px;font-weight:800;}.rpcss-1pkr03v:active{opacity:0.5;}</style><a class="rpcss-1pkr03v" href="https://www.twitter.com/intent/tweet?text=Faire%20son%20pr%C3%A9processeur%20CSS%20%C3%A0%20la%20carte%20sur%20%40PutainDeCode%20https%3A%2F%2Fputaindecode.io%2Farticles%2Ffaire-son-preprocesseur-css-a-la-carte" target="_blank">Le partager sur Twitter</a></div><style data-emotion="rpcss x4iqxe">.rpcss-x4iqxe{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;text-align:center;padding:20px;}</style><div class="rpcss-x4iqxe"><style data-emotion="rpcss gein6x">.rpcss-gein6x{font-size:20px;-webkit-text-decoration:none;text-decoration:none;color:#1E49B5;}</style><a class="rpcss-gein6x" href="/articles">← Articles</a></div><style data-emotion="rpcss 8bodgl">.rpcss-8bodgl{max-width:640px;width:100%;margin:0 auto;padding:20px 0;}</style><div class="rpcss-8bodgl" id="disqus_thread"></div></div></div></div></div><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 1vau6rl">.rpcss-1vau6rl{margin:20px 0;background-color:var(--page-accented-background-color);border-radius:10px;padding:20px;}</style><div class="rpcss-1vau6rl"><style data-emotion="rpcss 1gz1i1h">.rpcss-1gz1i1h{font-size:32px;font-weight:800;margin-bottom:20px;text-align:center;}</style><div aria-level="2" class="rpcss-1gz1i1h" role="heading">Ne rien rater</div><style data-emotion="rpcss 1wbispj">.rpcss-1wbispj{font-size:18px;margin-bottom:10px;text-align:center;}</style><div aria-level="3" class="rpcss-1wbispj" role="heading">Sur les réseaux</div><style data-emotion="rpcss 1hyoz7m">.rpcss-1hyoz7m{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}</style><div class="rpcss-1hyoz7m"><a href="https://twitter.com/PutainDeCode"><img alt="Twitter" height="48" src="/public/images/website/twitter.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://facebook.com/putaindecode"><img alt="Facebook" height="48" src="/public/images/website/facebook.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://github.com/putaindecode"><img alt="Facebook" height="48" src="/public/images/website/github.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825"><img alt="Apple Podcast" height="48" src="/public/images/website/apple-podcast.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://soundcloud.com/putaindecode"><img alt="Soundcloud" height="48" src="/public/images/website/soundcloud.svg" width="48"/></a></div><div aria-level="3" class="rpcss-1wbispj" role="heading">Sur le chat</div><div class="rpcss-1hyoz7m"><a href="https://discord.gg/jtbGNNc"><img alt="Discord" height="48" src="/public/images/website/discord.svg" width="48"/></a></div></div></div></div><style data-emotion="rpcss zs8kw7">.rpcss-zs8kw7{background-color:#222;padding:20px 0;}</style><footer class="rpcss-zs8kw7"><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 79elbk">.rpcss-79elbk{position:relative;}</style><div class="rpcss-79elbk"><style data-emotion="rpcss 1hle0ni">.rpcss-1hle0ni{position:absolute;left:0;top:50%;color:#fff;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-text-decoration:none;text-decoration:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="rpcss-1hle0ni" href="/api/articles/feeds/desc/feed.xml"><style data-emotion="rpcss lvyu5j">.rpcss-lvyu5j{margin-right:10px;}</style><img class="rpcss-lvyu5j" alt="Flux RSS" height="16" src="/public/images/website/rss-feed.svg" width="16"/><style data-emotion="rpcss um3i31">@media (max-width: 400px){.rpcss-um3i31{display:none;}}</style><div class="rpcss-um3i31">Flux RSS</div></a><style data-emotion="rpcss 12cp4l7">.rpcss-12cp4l7{color:rgba(255, 255, 255, 0.5);text-align:center;font-size:14px;}</style><div class="rpcss-12cp4l7">© 2021 Putain de code !</div><style data-emotion="rpcss 1w98uy3">.rpcss-1w98uy3{position:absolute;right:0;top:50%;color:#fff;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-text-decoration:none;text-decoration:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="rpcss-1w98uy3" href="https://github.com/putaindecode/putaindecode.io">GitHub</a></div></div></div></footer></div><script id="initialData" type="text/data">{"lists":{"RE_PRIVATE_NONE":true},"items":{"k":"articles","v":{"k":"faire-son-preprocesseur-css-a-la-carte","v":{"_0":{"TAG":0,"_0":{"slug":"faire-son-preprocesseur-css-a-la-carte","filename":"2014-05-20-faire-son-preprocesseur-css-a-la-carte","title":"Faire son préprocesseur CSS à la carte","date":"Tue, 20 May 2014 00:00:00 GMT","draft":false,"meta":{"date":"2014-05-20T00:00:00.000Z","title":"Faire son préprocesseur CSS à la carte","author":"MoOx","oldSlug":"css/preprocesseurs/a-la-carte","slug":"faire-son-preprocesseur-css-a-la-carte"},"body":"<blockquote>\n<p>⚠️ Cet article est marqué comme obsolète</p>\n</blockquote>\n<p>Après vous avoir fait un petit\n<a href=\"/fr/articles/css/preprocesseurs/\">état de l'art des préprocesseurs CSS historiques</a>\net vous avoir parlé <a href=\"/fr/articles/css/preprocesseurs/\">des postprocesseurs</a>, je\nme dois de vous montrer le chemin qui me semble le plus pertinent aujourd'hui,\nen 2014, maintenant que\n<a href=\"http://www.w3.org/standards/techs/css#cr\">les spécifications CSS sont découpées en modules</a>\nqui peuvent du coup avancer (plus rapidement) chacune de leur côté.</p>\n<p>Bon après faut avouer que chez {p!} on fait genre on est des hipsters hackers,\ndu coup quand on voit que\n<a href=\"http://blog.kaelig.fr/post/85546040569/net-awards-sass-game-changer-of-the-year\">Sass est le game changer of the year</a>\net que tout le monde l'adopte, on se doit de rester hipster. Du coup on est\nobligés de passer à autre chose.</p>\n<p><strong>Mise à jour du 11 décembre 2014:</strong> <em>depuis le temps où j'ai rédigé cette\narticle, j'ai travaillé sur un transpileur CSS future-proof, basé sur PostCSS.\nJe vous invite à jeter au project <strong><a href=\"https://cssnext.github.io/\">cssnext</a></strong>.</em></p>\n<h2>Pré ou postprocesseurs ?</h2>\n<p>Je vais ici utiliser le mot préprocesseur, alors que certains trouveront\npostprocesseurs plus pertinent, car pour moi le préprocessing reste simplement\nune étape avant le <em>processing</em> de nos feuilles de styles par les navigateurs.</p>\n<p>Cela dit il faut bien distinguer les étapes :</p>\n<ol>\n<li>Preprocessing d'un langage spécifique (Sass, Stylus*) ou superset du\nlangage CSS (Scss, Less);</li>\n<li>Preprocessing d'un fichier respectant la syntaxe CSS;</li>\n<li>Processing par le navigateur</li>\n</ol>\n<p>Revenons rapidement sur ces 3 points :</p>\n<h3>Preprocessing via langage dédié</h3>\n<p>Ici je parle d'un langage, car superset ou pas, on a des éléments nouveaux,\nincompréhensibles par le navigateur (ex: <code>@if</code>, <code>@foreach</code>...).</p>\n<p>Note: Je case Stylus dans le langage spécifique car il n'est pas vraiment\ncompatible, ne tolérant pas l'indentation :</p>\n<pre><code class=\"hljs language-css\"><span class=\"hljs-selector-class\">.Block</span> {\n  <span class=\"hljs-attribute\">prop</span>: value;\n}\n\n<span class=\"hljs-selector-class\">.Block-element</span> {\n  <span class=\"hljs-attribute\">prop</span>: value;\n}\n\n<span class=\"hljs-comment\">/* 💥 BOOM ! CA PAS MARCHER EN STYLUS */</span>\n</code></pre>\n<h3>Préprocessing futureproof/fallback</h3>\n<p>Ici on conserve la syntaxe CSS, le parsing est donc simple est connu. Mais\nattention on peut avoir un résultat non compréhensible par certains navigateurs\n(ex: unité REM sur IE 8, variables CSS...).</p>\n<p>À la différence de la solution du dessus, on reste ici avec un langage à la\nsyntaxe simple et connue, avec des spécifications (en brouillon ou pas).</p>\n<p>Dès que c'est possible on va rendre le CSS encore plus compatible en ajoutant\ndes fallbacks (roues de secours) à tout va. Ainsi par exemple pour assurer une\nutilisation de l'unité REM, on peut (en roue de secours) doubler nos valeurs en\n<code>px</code>. Autre exemple avec les variables CSS natives : on peut (pour une\nutilisation simpliste) faire un prérendu et mettre des roues de secours là où\nc'est possible.</p>\n<h3>Processing par le navigateur</h3>\n<p>Ici on a blindé notre feuille de fallback, on est (en théorie) sensé avoir un\nsupport &quot;au mieux&quot;.</p>\n<h2>Créer un préprocesseur CSS</h2>\n<p>Allons à l'essentiel : pour créer votre préprocesseur on va utiliser une\nbibliothèque. À ce jour nous avons le choix entre\n<a href=\"https://github.com/reworkcss/rework\">Rework</a> ou\n<a href=\"https://github.com/ai/postcss\">PostCSS</a> qui permettent d'inspecter et de\nmanipuler nos CSS. Tout deux sont des bibliothèques écrites en JavaScript\n(NodeJs).</p>\n<p>Pour la petite histoire, Autoprefixer est à l'origine de PostCSS. En effet les\npremières versions utilisaient Rework, mais à cause de limitation dues à l'API\nde Rework, l'auteur d'Autoprefixer a décidé de créer son propre moteur, qui a\nune API presque plus sympa il faut le dire (il faudra voir comment évolue\nRework).</p>\n<p>D'un autre côté Rework étant plus ancien, il possède un écosystème plus fourni\net répondra donc mieux à nos besoins.</p>\n<p>Cela étant dit, avec l'approche futureproof nous pourrons switcher de Rework à\nPostCSS sans problème et surtout sans toucher à nos feuilles de styles. Il\nsuffira de trouver un plugin équivalent (ex: rework-vars et postcss-vars font la\nmême chose).</p>\n<p>Pour des raisons d'écosystème, je partirai sur Rework histoire de ne pas\nréinventer la roue.</p>\n<h2>Créer un préprocesseur CSS avec Rework</h2>\n<p>Rework prend une chaîne CSS en entrée, produit un AST (arbre de syntaxe abtrait)\nde notre CSS et nous fournis une API pour le manipuler.</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-keyword\">var</span> rework = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework&quot;</span>);\n<span class=\"hljs-keyword\">var</span> unPlugin = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework-BIDULE&quot;</span>);\n<span class=\"hljs-comment\">// usage simple</span>\n<span class=\"hljs-keyword\">var</span> css = rework(<span class=\"hljs-string\">&quot;html { font-size: 2rem}&quot;</span>)\n  .use(unPlugin)\n  .toString();\n</code></pre>\n<h3>Plugin Rework</h3>\n<p>Un plugin Rework n'est rien d'autre qu'une fonction JavaScript. L'exemple\nsuivant remplacera toutes les couleurs de texte par du noir.</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-keyword\">var</span> monPlugin = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">plugin</span>(<span class=\"hljs-params\">ast, reworkInstance</span>) </span>{\n  ast.rules.forEach(<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">rule</span>) </span>{\n    <span class=\"hljs-comment\">// dans notre cas on ne veut que travailler sur des règles</span>\n    <span class=\"hljs-keyword\">if</span> (rule.type !== <span class=\"hljs-string\">&quot;rule&quot;</span>) <span class=\"hljs-keyword\">return</span>;\n\n    rule.declarations.forEach(<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">declaration, index</span>) </span>{\n      <span class=\"hljs-keyword\">if</span> (declaration.property === <span class=\"hljs-string\">&quot;color&quot;</span>) {\n        declaration.value = <span class=\"hljs-string\">&quot;#000&quot;</span>;\n      }\n    });\n  });\n};\n</code></pre>\n<p>Il est certain que l'exemple ci-dessus ne doit pas vous exciter beaucoup. Moi\nnon plus. Je n'ai d'ailleurs pas du tout accroché lorsque Rework est apparu par\nmanque de compréhension. <strong>Ou plutôt par manque d'imagination</strong>.</p>\n<p>Pour un exemple plus costaud je vous invite à regarder le code\n<a href=\"https://github.com/reworkcss/rework-vars/blob/master/index.js\">rework-vars</a>.</p>\n<h2>L'Ecosystème Rework</h2>\n<p>Heureusement pour nous, nous avons un écosystème. Donc pour un usage classique\n(écrire du CSS futureproof ou ajouter quelques petites améliorations) il n'y\naura pas besoin d'écrire de plugin, juste en utiliser fera l'affaire.</p>\n<h3>Plugins Rework natif</h3>\n<p>Rework embarque en natif quelques plugins. Il faudra tout de même les activer\n(on voit comment juste après).</p>\n<ul>\n<li><a href=\"https://github.com/reworkcss/rework#extend\">extend</a>: Permet d'hériter d'un\nsélecteur (<code>@extend</code> quoi).</li>\n<li><a href=\"https://github.com/reworkcss/rework#ease\">ease</a>: Ajout un paquet de fonctions\nd'easing pour les animations et transitions.</li>\n<li><a href=\"https://github.com/reworkcss/rework#at2x\">at2x</a>: Gestion automatique des\nimages <code>@2x</code>.</li>\n<li><a href=\"https://github.com/reworkcss/rework#prefixselectorsstring\">prefixSelectors</a>:\nPermet de préfixer vos sélecteurs.</li>\n<li><a href=\"https://github.com/reworkcss/rework#colors\">colors</a>: Explication par\nl'exemple : <code>rgba(#fc0, .5)</code>.</li>\n<li><a href=\"https://github.com/reworkcss/rework#mixinobject\">mixin</a>: Faire ses propres\nmixins via des fonctions JavaScript.</li>\n<li><a href=\"https://github.com/reworkcss/rework#functionobject\">function</a>: Ajouter ses\npropres fonctions CSS.</li>\n<li><a href=\"https://github.com/reworkcss/rework#references\">references</a>: Permet de faire\nréférence à des valeurs de propriétés (ex: <code>height: @width</code>)</li>\n<li><a href=\"https://github.com/reworkcss/rework#urlfn\">url</a>: Réécrire les <code>url()</code>s via\nune fonction JavaScript.</li>\n<li><a href=\"https://github.com/reworkcss/rework#inlinedir\">inline</a>: Inliner des\nressources via des datauri.</li>\n</ul>\n<h3>Plugins Rework NPM</h3>\n<p>On a déjà plus d'une soixantaine de\n<a href=\"https://www.npmjs.org/search?q=rework\">plugins Rework disponible sur NPM</a> en\nplus des plugins natifs.</p>\n<h4>Ajouter des fallbacks</h4>\n<p>Si vous souhaitez écrire des CSS sans pour autant vous limiter à certaines\nimplémentations, ces plugins devraient vous plaire.</p>\n<h5>rework-vars</h5>\n<p><a href=\"https://github.com/reworkcss/rework-vars\">rework-vars</a> permet un usage des\n<a href=\"http://www.w3.org/TR/css-variables/\">variables CSS</a>. Ce plugin est (pour\nl'instant) restreint aux déclarations à la racine (<code>:root</code>). Cela permet\ntoutefois un usage classique de variables globales. Et de se séparer de Sass ou\nLess si on utilise pas beaucoup plus que des variables.</p>\n<h5>rework-calc</h5>\n<p><a href=\"https://github.com/reworkcss/rework-calc\">rework-calc</a> ajoute les résultats des\nopérations <code>calc()</code> quand c'est possible (même unité). Très pratique\nspécialement couplé avec rework-vars pour ajouter un peu de math via vos\nvariables.</p>\n<h5>rework-npm</h5>\n<p><a href=\"https://github.com/conradz/rework-npm\">rework-npm</a> nous parse <code>@import</code> comme\non l'aime. Peut taper dans votre dossier de sources ou en plus dans\n<code>node_modules</code> (pratique pour utiliser\n<a href=\"https://www.npmjs.org/package/normalize.css\">normalize.css</a>\n<a href=\"/fr/articles/npm/frontend/\">via npm</a> par exemple). Il existe aussi\n<a href=\"https://github.com/simme/rework-importer\">rework-importer</a> qui amène quelques\ndifférences de syntaxe.</p>\n<h5><a href=\"https://github.com/ctalkington/rework-rem-fallback\">rework-rem-fallback</a></h5>\n<p><a href=\"https://github.com/ctalkington/rework-rem-fallback\">rework-rem-fallback</a> ajoute\nun fallback sur les unités REM. Pratique si vous voulez utiliser REM mais que\nvous devez supporter IE 8.</p>\n<h5>rework-color-function</h5>\n<p><a href=\"https://github.com/ianstormtaylor/rework-color-function\">rework-color-function</a>\npermet de manipuler les couleurs via\n<a href=\"http://dev.w3.org/csswg/css-color/#modifying-colors\">les nouvelles fonctions en cours de spécifications</a>\n(hue, saturation, lightness, whiteness, blackness, tint, shade, blend, blenda,\ncontrast).</p>\n<h5>rework-mixin-opacity</h5>\n<p><a href=\"https://github.com/reworkcss/rework-mixin-opacity\">rework-mixin-opacity</a> ajoute\nl'<code>opacity</code> pour IE 8.</p>\n<h4>Améliorer un peu vos feuilles de styles</h4>\n<p>Sans pour autant partir en vrille vers des <code>@if</code> ou <code>@each</code>, voici quelques\nplugins qui peuvent ajouter un peu de beurre dans les épinards :</p>\n<h5>rework-parent</h5>\n<p><a href=\"https://github.com/fgnass/rework-parent\">rework-parent</a> permet de référencer le\nsélecteur précédent via <code>&amp;</code>. Pratique dans pour les media-queries ou pour les\nétats (:hover etc).</p>\n<h5>rework-breakpoints</h5>\n<p><a href=\"https://github.com/reworkcss/rework-breakpoints\">rework-breakpoints</a> permet de\nspécifier des media-queries via des breakpoints prédéfinis. Pratique en\nattendant un plugin gérant les\n<a href=\"http://dev.w3.org/csswg/mediaqueries4/#custom-mq\"><code>@custom-media</code></a>.</p>\n<h5>rework-hex-alpha</h5>\n<p><a href=\"https://github.com/ianstormtaylor/rework-hex-alpha\">rework-hex-alpha</a> permet de\nspécifier des couleurs avec alpha sous la forme #rrggbbaa.</p>\n<h5>rework-clearfix</h5>\n<p><a href=\"https://github.com/fgnass/rework-clearfix\">rework-clearfix</a> permet d'utiliser\n<code>clear: fix</code> via l'insertion automatique du\n<a href=\"http://nicolasgallagher.com/micro-clearfix-hack/\">micro clearfix de @necolas</a>.</p>\n<h5>rework-assets</h5>\n<p><a href=\"https://github.com/conradz/rework-assets\">rework-assets</a> permet de copier les\nassets référencés. Pratique avec rework-npm et des modules externes.</p>\n<h5>rework-namespace-css</h5>\n<p><a href=\"https://github.com/geordiemhall/rework-namespace-css\">rework-namespace-css</a>\npermet de namespacer vos CSS par une classe sur <code>&lt;html&gt;</code>.</p>\n<h5>rework-namespace</h5>\n<p><a href=\"https://github.com/kristoferjoseph/rework-namespace\">rework-namespace</a> permet\nde namespacer vos CSS par un préfixe. Pratique avec <a href=\"/fr/articles/css/bem/\">BEM</a>\nlorsque vous préfixez par votre <code>.org-</code>.</p>\n<h5>rework-classmap</h5>\n<p><a href=\"https://github.com/andreypopp/rework-classmap\">rework-classmap</a> permet de\nrenommer des classes via du mapping. Avec ça on pourrait presque avoir un code\nBootstrap propre.</p>\n<h5>rework-palette</h5>\n<p><a href=\"https://github.com/fgnass/rework-palette\">rework-palette</a> permet d'ajouter une\npalette de couleur personnalisée (via des noms de couleurs).</p>\n<h5>rework-deduplicate</h5>\n<p><a href=\"https://github.com/kristoferjoseph/rework-deduplicate\">rework-deduplicate</a>\npermet de supprimer les règles dupliquées.</p>\n<h5>rework-split-media</h5>\n<p><a href=\"https://github.com/reworkcss/split-media\">rework-split-media</a> permet de couper\nles contenus des media queries dans d'autres fichiers.</p>\n<h5>rework-move-media</h5>\n<p><a href=\"https://github.com/reworkcss/rework-move-media\">rework-move-media</a> permet de\nregrouper les contenus des media queries. Pas très utile car gzip fera aussi\nbien.</p>\n<h4>Au delà du préprocessing</h4>\n<p>En utilisant le parser Rework, on peut faire plus que des ajustements ou du\nremplacement: on peut balancer des erreurs.</p>\n<ul>\n<li><a href=\"https://github.com/reworkcss/rework-ie-limits\">rework-ie-limits</a>: prévient si\nvos CSS dépassent la limite de 4095 selectors (limite pour IE &lt; 10).</li>\n<li><a href=\"https://github.com/suitcss/rework-suit-conformance\">rework-suit-conformance</a>:\npermet de vérifier que votre code suit bien les\n<a href=\"https://github.com/suitcss/suit/tree/master/doc\">conventions SUIT</a> (pour peu\nque vous les suiviez).</li>\n</ul>\n<p>En partant dans d'autres directions on pourrait réaliser des statistiques sur\nnos CSS (nombre de sélecteurs, de couleurs utilisées etc) comme le fait\n<a href=\"http://www.cssstats.com/\">CSS Stats</a>.</p>\n<p>Retrouvrez en plus de la recherche via npm (qui sera la plus à jour),\n<a href=\"https://github.com/reworkcss/rework/wiki/Plugins-and-Utilities\">une liste des plugins et utilitaires sur le wiki de Rework</a>.</p>\n<h2>Mise en place de Rework pour faire votre préprocesseur en moins de 5 min</h2>\n<p>Maintenant que nous avons vu comment utiliser Rework et quels sont les plugins\nles plus sympas, on se faire un petit fichier pour automatiser tout ce process.</p>\n<p>Plutôt que de réinventer la roue comme l'a fait <a href=\"http://pleeease.io/\">Pleeease</a>\n(en gérant un watcher et tout le tralala), on va plutôt partir comme\n<a href=\"http://myth.io/\">Myth.io</a> ou <a href=\"https://github.com/visionmedia/styl\">Styl</a>\n(successeur spirituel de Stylus) qui se concentrent sur le rendu et non le\nworkflow pour générer ce rendu.</p>\n<p>Nous allons donc faire simple et efficace avec une task\n<a href=\"/fr/articles/js/gulp/\">gulp</a>. Ceci pourrait bien entendu être aussi bien fait\navec grunt ou même make et <a href=\"https://github.com/facebook/watchman\">watchman</a>.</p>\n<pre><code class=\"hljs language-console\"><span class=\"hljs-meta\">$</span><span class=\"bash\"> mkdir monrework &amp;&amp; <span class=\"hljs-built_in\">cd</span> monrework</span>\n<span class=\"hljs-meta\">\n#</span><span class=\"bash\"> on crée un package.json pour sauvegarder les références des paquets qu<span class=\"hljs-string\">&#x27;on va utiliser</span></span>\n<span class=\"hljs-meta\">$</span><span class=\"bash\"><span class=\"hljs-string\"> npm init</span></span>\n<span class=\"hljs-meta\">\n#</span><span class=\"bash\"><span class=\"hljs-string\"> on install gulp, autoprefixer et rework &amp; co en les sauvegardants dans la partie &quot;devDependencies&quot;</span></span>\n<span class=\"hljs-meta\">$</span><span class=\"bash\"><span class=\"hljs-string\"> npm i -D minimist gulp gulp-util gulp-plumber gulp-autoprefixer gulp-rework rework-npm rework-vars rework-calc rework-color-function rework-rem-fallback rework-parent rework-ie-limits</span></span>\n<span class=\"hljs-meta\">\n#</span><span class=\"bash\"><span class=\"hljs-string\"> on créé notre fichier vide</span></span>\n<span class=\"hljs-meta\">$</span><span class=\"bash\"><span class=\"hljs-string\"> mkdir src &amp;&amp; mkdir src/styles &amp;&amp; touch src/styles/index.css</span></span>\n</code></pre>\n<p>Ensuite il nous reste à faire notre petit <code>Gulpfile.js</code></p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-keyword\">var</span> options = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;minimist&quot;</span>)(process.argv.slice(<span class=\"hljs-number\">2</span>));\n<span class=\"hljs-keyword\">var</span> gulp = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;gulp&quot;</span>);\n<span class=\"hljs-keyword\">var</span> util = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;gulp-util&quot;</span>);\n<span class=\"hljs-keyword\">var</span> plumber = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;gulp-plumber&quot;</span>);\n<span class=\"hljs-keyword\">var</span> rework = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;gulp-rework&quot;</span>);\n\n<span class=\"hljs-keyword\">var</span> reworkPlugins = {\n  <span class=\"hljs-attr\">atimport</span>: <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework-npm&quot;</span>),\n  <span class=\"hljs-attr\">parent</span>: <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework-parent&quot;</span>),\n  <span class=\"hljs-attr\">vars</span>: <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework-vars&quot;</span>),\n  <span class=\"hljs-attr\">calc</span>: <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework-calc&quot;</span>),\n  <span class=\"hljs-attr\">colorFn</span>: <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework-color-function&quot;</span>),\n  <span class=\"hljs-attr\">remFallback</span>: <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework-rem-fallback&quot;</span>),\n  <span class=\"hljs-attr\">ieLimits</span>: <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;rework-ie-limits&quot;</span>),\n};\n<span class=\"hljs-keyword\">var</span> autoprefixer = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;gulp-autoprefixer&quot;</span>);\n\ngulp.task(<span class=\"hljs-string\">&quot;styles&quot;</span>, <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n  <span class=\"hljs-comment\">// ici on prend toutes les CSS à la racine</span>\n  <span class=\"hljs-comment\">// on considère que celles dans des sous dossiers sont à importer</span>\n  <span class=\"hljs-keyword\">return</span> gulp\n    .src(<span class=\"hljs-string\">&quot;./src/styles/*.css&quot;</span>)\n    .pipe(opts.production ? plumber() : util.noop())\n    .pipe(\n      rework(\n        reworkPlugins.atimport({ <span class=\"hljs-attr\">dir</span>: <span class=\"hljs-string\">&quot;./src/styles/&quot;</span> }),\n        rework.colors(),\n        rework.references(),\n        rework.ease(),\n        rework.inline,\n        reworkPlugins.parent,\n        reworkPlugins.vars(), <span class=\"hljs-comment\">// notez que certains plugins nécessitent d&#x27;être éxecutés (retournant une fonction dynamique)</span>\n        reworkPlugins.calc,\n        reworkPlugins.colorFn,\n        reworkPlugins.remFallback(),\n        reworkPlugins.ieLimits,\n      ),\n    )\n    .pipe(autoprefixer())\n    .pipe(gulp.dest(<span class=\"hljs-string\">&quot;./dist/styles&quot;</span>));\n});\n\ngulp.task(<span class=\"hljs-string\">&quot;default&quot;</span>, [<span class=\"hljs-string\">&quot;styles&quot;</span>], <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n  gulp.watch(<span class=\"hljs-string\">&quot;./src/css/**/*&quot;</span>, [<span class=\"hljs-string\">&quot;styles&quot;</span>]);\n});\n</code></pre>\n<p>Ensuite il ne reste plus qu'à lancer Gulp au besoin qui s'occupera d'éxecuter le\npreprocessing au démarrage et lors des changements de fichiers. Il ne reste plus\ngrand chose à faire si ce n'est ajouter livereload en plus pour avoir le petit\nprocess aux petits oignons.</p>\n<pre><code class=\"hljs language-console\"><span class=\"hljs-meta\">$</span><span class=\"bash\"> gulp</span>\n[gulp] Using gulpfile ~/Development/monrework/Gulpfile.js\n[gulp] Starting &#x27;styles&#x27;...\n[gulp] Finished &#x27;styles&#x27; after 49 ms\n[gulp] Starting &#x27;default&#x27;...\n[gulp] Finished &#x27;default&#x27; after 4.16 ms\n</code></pre>\n<p>Le watch est lancé, on peut remplir notre fichier CSS</p>\n<pre><code class=\"hljs language-css\"><span class=\"hljs-selector-pseudo\">:root</span> {\n  <span class=\"hljs-attribute\">--fontSize</span>: <span class=\"hljs-number\">1rem</span>;\n  <span class=\"hljs-attribute\">--lineHeight</span>: <span class=\"hljs-number\">1.5rem</span>;\n  <span class=\"hljs-attribute\">--color-highlight</span>: <span class=\"hljs-built_in\">rgba</span>(#f00, <span class=\"hljs-number\">0.8</span>);\n}\n\n<span class=\"hljs-selector-tag\">html</span> {\n  <span class=\"hljs-attribute\">width</span>: <span class=\"hljs-number\">100%</span>;\n  <span class=\"hljs-attribute\">height</span>: @width;\n  <span class=\"hljs-attribute\">font-size</span>: <span class=\"hljs-built_in\">var</span>(--fontSize);\n}\n\n<span class=\"hljs-selector-tag\">p</span> {\n  <span class=\"hljs-attribute\">margin</span>: <span class=\"hljs-built_in\">calc</span>(var(--lineHeight) / <span class=\"hljs-number\">2</span>) <span class=\"hljs-number\">0</span>;\n}\n\n<span class=\"hljs-selector-tag\">a</span> {\n  <span class=\"hljs-attribute\">color</span>: <span class=\"hljs-built_in\">var</span>(--color-highlight);\n  <span class=\"hljs-attribute\">transition</span>: all <span class=\"hljs-number\">500ms</span> ease-out-back;\n}\n\n&amp;<span class=\"hljs-selector-pseudo\">:hover</span> {\n  <span class=\"hljs-attribute\">color</span>: <span class=\"hljs-built_in\">color</span>(var(--color-highlight) <span class=\"hljs-built_in\">lightness</span>(-<span class=\"hljs-number\">10%</span>));\n  <span class=\"hljs-attribute\">trasnform</span>: <span class=\"hljs-built_in\">rotate</span>(<span class=\"hljs-number\">1deg</span>);\n}\n</code></pre>\n<p>Et on obtiendra</p>\n<pre><code class=\"hljs language-css\"><span class=\"hljs-selector-tag\">html</span> {\n  <span class=\"hljs-attribute\">width</span>: <span class=\"hljs-number\">100%</span>;\n  <span class=\"hljs-attribute\">height</span>: <span class=\"hljs-number\">100%</span>;\n  <span class=\"hljs-attribute\">font-size</span>: <span class=\"hljs-number\">16px</span>;\n  <span class=\"hljs-attribute\">font-size</span>: <span class=\"hljs-number\">1rem</span>;\n}\n\n<span class=\"hljs-selector-tag\">p</span> {\n  <span class=\"hljs-attribute\">margin</span>: <span class=\"hljs-number\">12px</span> <span class=\"hljs-number\">0</span>;\n  <span class=\"hljs-attribute\">margin</span>: <span class=\"hljs-number\">0.75rem</span> <span class=\"hljs-number\">0</span>;\n}\n\n<span class=\"hljs-selector-tag\">a</span> {\n  <span class=\"hljs-attribute\">color</span>: <span class=\"hljs-built_in\">rgba</span>(<span class=\"hljs-number\">255</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0.8</span>);\n  <span class=\"hljs-attribute\">-webkit-transition</span>: all <span class=\"hljs-number\">500ms</span> <span class=\"hljs-built_in\">cubic-bezier</span>(<span class=\"hljs-number\">0.175</span>, <span class=\"hljs-number\">0.885</span>, <span class=\"hljs-number\">0.32</span>, <span class=\"hljs-number\">1.275</span>);\n  <span class=\"hljs-attribute\">transition</span>: all <span class=\"hljs-number\">500ms</span> <span class=\"hljs-built_in\">cubic-bezier</span>(<span class=\"hljs-number\">0.175</span>, <span class=\"hljs-number\">0.885</span>, <span class=\"hljs-number\">0.32</span>, <span class=\"hljs-number\">1.275</span>);\n}\n\n<span class=\"hljs-selector-tag\">a</span><span class=\"hljs-selector-pseudo\">:hover</span> {\n  <span class=\"hljs-attribute\">color</span>: <span class=\"hljs-built_in\">rgba</span>(<span class=\"hljs-number\">204</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0.8</span>);\n  <span class=\"hljs-attribute\">transform</span>: <span class=\"hljs-built_in\">rotate</span>(<span class=\"hljs-number\">1deg</span>);\n}\n</code></pre>\n<p>Gardez bien en tête qu'avec le code CSS d'origine, vous avez (en majeur partie)\nun code futureproof. D'ici quelques temps on pourra supprimer une grande partie\ndes plugins et les navigateurs prendront le relais 😉.</p>\n<p><strong>Bon alors, on Less tomber Sass ?</strong></p>\n"}}},"h":1,"l":{"RE_PRIVATE_NONE":true},"r":{"RE_PRIVATE_NONE":true}},"h":1,"l":{"RE_PRIVATE_NONE":true},"r":{"RE_PRIVATE_NONE":true}},"listsRequests":{"data":{"RE_PRIVATE_NONE":true}},"itemsRequests":{"data":{"RE_PRIVATE_NONE":true}}}</script><head><script defer="defer" src="/public/main.56c69761a03eb0112696.js"></script></head></html>

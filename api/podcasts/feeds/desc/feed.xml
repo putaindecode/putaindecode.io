@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title><![CDATA[Putain de Code!]]></title>
+    <description><![CDATA[Blog participatif de la communauté dev]]></description>
+    <link>https://putaindecode.io</link>
+    <lastBuildDate>Sat, 22 Mar 2025 00:36:40 GMT</lastBuildDate>
+    <atom:link href="https://putaindecode.io/api/podcasts/feeds/desc/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title><![CDATA[S03E03 Remote et Confinement]]></title>
+      <link>https://putaindecode.io/podcasts/s03e03-remote-confinement</link>
+      <guid isPermaLink="false">s03e03-remote-confinement</guid>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S03E02 Privacy]]></title>
+      <link>https://putaindecode.io/podcasts/s03e02-privacy</link>
+      <guid isPermaLink="false">s03e02-privacy</guid>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S03E01 Open-Source et organisation]]></title>
+      <link>https://putaindecode.io/podcasts/s03e01-open-source-organisation</link>
+      <guid isPermaLink="false">s03e01-open-source-organisation</guid>
+      <pubDate>Mon, 11 May 2020 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S02E04 CSS layout]]></title>
+      <link>https://putaindecode.io/podcasts/s02e04-css-layout</link>
+      <guid isPermaLink="false">s02e04-css-layout</guid>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S02E03 Server-Side-Rendering]]></title>
+      <link>https://putaindecode.io/podcasts/s02e03-server-side-rendering</link>
+      <guid isPermaLink="false">s02e03-server-side-rendering</guid>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S02E02 CSS-CSS-CSS]]></title>
+      <link>https://putaindecode.io/podcasts/s02e02-css-css-css</link>
+      <guid isPermaLink="false">s02e02-css-css-css</guid>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S02E01 Nouveautés React, Now et Framer X]]></title>
+      <link>https://putaindecode.io/podcasts/s02e01-nouveautes-react-now-framer-x</link>
+      <guid isPermaLink="false">s02e01-nouveautes-react-now-framer-x</guid>
+      <pubDate>Wed, 12 Dec 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E10 Les technologies de la startup nation]]></title>
+      <link>https://putaindecode.io/podcasts/s01e10-les-technologies-de-la-startup-nation</link>
+      <guid isPermaLink="false">s01e10-les-technologies-de-la-startup-nation</guid>
+      <pubDate>Tue, 10 Apr 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E09 dotJS, React Native, bien-être au travail]]></title>
+      <link>https://putaindecode.io/podcasts/s01e09-dotjs-react-native-bien-etre-au-travail</link>
+      <guid isPermaLink="false">s01e09-dotjs-react-native-bien-etre-au-travail</guid>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E08 Google va t-il tuer le web ?]]></title>
+      <link>https://putaindecode.io/podcasts/s01e08-google-va-t-il-tuer-le-web</link>
+      <guid isPermaLink="false">s01e08-google-va-t-il-tuer-le-web</guid>
+      <pubDate>Fri, 24 Nov 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[Podcast 7: React 16, GraphQL, IDLs, RPCs et mauvaise foi sur l'iPhone X]]></title>
+      <link>https://putaindecode.io/podcasts/s01e07-react16-graphql-idls-rpc-et-mauvaise-foi-sur-l-iphone-x</link>
+      <guid isPermaLink="false">s01e07-react16-graphql-idls-rpc-et-mauvaise-foi-sur-l-iphone-x</guid>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E06 L'air chaud]]></title>
+      <link>https://putaindecode.io/podcasts/s01e06-l-air-chaud</link>
+      <guid isPermaLink="false">s01e06-l-air-chaud</guid>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E05 On va tous crever !]]></title>
+      <link>https://putaindecode.io/podcasts/s01e05-on-va-tous-crever</link>
+      <guid isPermaLink="false">s01e05-on-va-tous-crever</guid>
+      <pubDate>Wed, 03 May 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E04 Ça scale pas quand on sait en faire]]></title>
+      <link>https://putaindecode.io/podcasts/s01e04-ca-scale-pas-quand-on-sait-en-faire</link>
+      <guid isPermaLink="false">s01e04-ca-scale-pas-quand-on-sait-en-faire</guid>
+      <pubDate>Tue, 21 Mar 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E03 Orga-nisé]]></title>
+      <link>https://putaindecode.io/podcasts/s01e03-orga-nise</link>
+      <guid isPermaLink="false">s01e03-orga-nise</guid>
+      <pubDate>Thu, 16 Feb 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E02 Le lendemain des trois jours]]></title>
+      <link>https://putaindecode.io/podcasts/s01e02-le-lendemain-des-trois-jours</link>
+      <guid isPermaLink="false">s01e02-le-lendemain-des-trois-jours</guid>
+      <pubDate>Thu, 12 Jan 2017 00:00:00 GMT</pubDate>
+   </item>
+    <item>
+      <title><![CDATA[S01E01 En beta, embêtant]]></title>
+      <link>https://putaindecode.io/podcasts/s01e01-en-beta-embetant</link>
+      <guid isPermaLink="false">s01e01-en-beta-embetant</guid>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 GMT</pubDate>
+   </item>
+  </channel>
+</rss>
