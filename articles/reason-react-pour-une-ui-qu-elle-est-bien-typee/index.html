@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="fr"><head><title data-react-helmet="true">ReasonReact, pour une UI qu&#x27;elle est bien typée | Putain de code</title><meta data-react-helmet="true" charset="UTF-8"/><meta data-react-helmet="true" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport"/><meta data-react-helmet="true" content="summary_large_image" name="twitter:card"/><meta data-react-helmet="true" content="Putain de code !" property="og:site_name"/><meta data-react-helmet="true" content="@putaindecode" name="twitter:site"/><meta data-react-helmet="true" content="https://putaindecode.io/public/images/website/share.jpg" property="og:image"/><meta data-react-helmet="true" content="https://putaindecode.io/public/images/website/share.jpg" name="twitter:image"/><meta data-react-helmet="true" content="1500" property="og:image:width"/><meta data-react-helmet="true" content="777" property="og:image:height"/><meta data-react-helmet="true" content="ReasonReact, pour une UI qu&#x27;elle est bien typée | Putain de code" property="og:title"/><meta data-react-helmet="true" content="ReasonReact, pour une UI qu&#x27;elle est bien typée | Putain de code" name="twitter:title"/><meta data-react-helmet="true" content="Un article proposé par bloodyowl" name="description"/><link data-react-helmet="true" title="RSS Feed" href="/api/articles/feeds/desc/feed.xml" rel="alternate" type="application/rss+xml"/><link data-react-helmet="true" href="/favicon.ico" rel="shortcut icon"/><link data-react-helmet="true" href="https://putaindecode.io/articles/reason-react-pour-une-ui-qu-elle-est-bien-typee" rel="canonical"/><script>window.PAGES_BOOT_MODE="hydrate";</script></head><div id="root"><style data-emotion="rpcss zx73cm 1lc6tyj 28v1b4">@-webkit-keyframes animation-zx73cm{from{opacity:0;-webkit-transform:translateY(20px);-moz-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);}}@keyframes animation-zx73cm{from{opacity:0;-webkit-transform:translateY(20px);-moz-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);}}:root{--page-background-color:#fff;--page-slightly-accented-background-color:#F9F6F6;--page-accented-background-color:#E4EBEE;--page-text-color:#46515B;--link-text-color:#E51D58;--gradient-red-top:#E51D58;--gradient-red-bottom:#CC0613;--code-background-color:#FAF3E1;--one-percent-contrast-color:rgba(0, 0, 0, 0.1);--half-percent-contrast-color:rgba(0, 0, 0, 0.05);}@media (prefers-color-scheme: dark){:root{--page-background-color:#222;--page-slightly-accented-background-color:#171717;--page-accented-background-color:#111;--page-text-color:#ddd;--link-text-color:#F87098;--gradient-red-top:#E51D58;--gradient-red-bottom:#CC0613;--code-background-color:#4F3804;--one-percent-contrast-color:rgba(255, 255, 255, 0.1);--half-percent-contrast-color:rgba(255, 255, 255, 0.05);}}body{padding:0;margin:0;background-color:var(--page-background-color);color:var(--page-text-color);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;overflow-x:hidden;}html{font-size:1em;line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;}a{color:var(--link-text-color);-webkit-text-decoration:underline;text-decoration:underline;}a:hover{-webkit-text-decoration:none;text-decoration:none;}#root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}*,*:before,*:after{box-sizing:border-box;}pre,.hljs{color:#adbac7;background:#22272e;}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#f47067;}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#dcbdfb;}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-variable,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id{color:#6cb6ff;}.hljs-regexp,.hljs-string,.hljs-meta .hljs-string{color:#96d0ff;}.hljs-built_in,.hljs-symbol{color:#f69d50;}.hljs-comment,.hljs-code,.hljs-formula{color:#768390;}.hljs-name,.hljs-quote,.hljs-selector-tag,.hljs-selector-pseudo{color:#8ddb8c;}.hljs-subst{color:#adbac7;}.hljs-section{color:#316dca;font-weight:bold;}.hljs-bullet{color:#eac55f;}.hljs-emphasis{color:#adbac7;font-style:italic;}.hljs-strong{color:#adbac7;font-weight:bold;}.hljs-addition{color:#b4f1b4;background-color:#1b4721;}.hljs-deletion{color:#ffd8d3;background-color:#78191b;}</style><style data-emotion="rpcss 9vhaby">.rpcss-9vhaby{background-color:var(--gradient-red-bottom);background-image:linear-gradient(to bottom right, var(--gradient-red-top), var(--gradient-red-bottom));}</style><header class="rpcss-9vhaby" style="background-image:linear-gradient(to bottom right, hsl(187, 100%, 35%), hsl(156, 100%, 30%))"><style data-emotion="rpcss 1qqk0tr">.rpcss-1qqk0tr{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);}</style><div class="rpcss-1qqk0tr"><style data-emotion="rpcss qx7dny">.rpcss-qx7dny{width:100%;max-width:1024px;margin:0 auto;padding:0 10px;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;}</style><div class="rpcss-qx7dny"><style data-emotion="rpcss 7s9om2">.rpcss-7s9om2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;padding:20px 0 50px;}</style><div class="rpcss-7s9om2"><style data-emotion="rpcss gdpa5c">.rpcss-gdpa5c{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;}</style><a class="rpcss-gdpa5c" href="/"><style data-emotion="rpcss 1lm4738">.rpcss-1lm4738{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;padding-bottom:10px;}</style><div class="rpcss-1lm4738"><style data-emotion="rpcss 13o7eu2">.rpcss-13o7eu2{display:block;}</style><svg class="rpcss-13o7eu2" height="36px" width="36px" viewBox="0 0 36 36"><defs><linearGradient id="PutainDeCodeLogoGradient" x1="50%" x2="50%" y1="0%" y2="127.223881%"><stop offset="0%" stop-color="#E41D57"></stop><stop offset="100%" stop-color="#C60000"></stop></linearGradient></defs><circle cx="18" cy="18" fill="url(#PutainDeCodeLogoGradient)" r="17" stroke="#FFFFFF" stroke-width="2"></circle><polygon fill="#FFFFFF" points="15.9033203 18.2246094 15.9033203 18.3710938 11.2304688 20.5317383 11.2304688 22.8095703 18.0566406 19.184082 18.0566406 17.4116211 11.2304688 13.7788086 11.2304688 16.0639648"></polygon><rect height="14" width="2" fill="#FFFFFF" x="22" y="11"><animate attributeName="opacity" begin="100ms" calcMode="discrete" dur="2s" repeatCount="indefinite" values="1;0"></animate></rect></svg><style data-emotion="rpcss 4cf197">.rpcss-4cf197{width:10px;height:10px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><div class="rpcss-4cf197"></div><style data-emotion="rpcss u5k24">.rpcss-u5k24{font-size:22px;color:#fff;font-weight:800;}</style><div aria-level="2" class="rpcss-u5k24" role="heading">Putain de code !</div></div><style data-emotion="rpcss 1nyebg4">.rpcss-1nyebg4{font-size:14px;color:rgba(255, 255, 255, 0.8);text-align:center;}</style><div class="rpcss-1nyebg4">Blog participatif de la communauté dev</div></a></div></div></div></header><style data-emotion="rpcss a4ric9">.rpcss-a4ric9{background-color:var(--page-slightly-accented-background-color);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}</style><div class="rpcss-a4ric9"><style data-emotion="rpcss oeugsb">.rpcss-oeugsb{-webkit-animation:500ms ease-out animation-zx73cm;animation:500ms ease-out animation-zx73cm;}</style><div class="rpcss-oeugsb"><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 1qc2bam">.rpcss-1qc2bam{font-size:42px;font-weight:800;text-align:center;padding-top:40px;line-height:1.2;margin:0;}</style><h1 class="rpcss-1qc2bam">ReasonReact, pour une UI qu&#x27;elle est bien typée</h1><style data-emotion="rpcss obg2kr">.rpcss-obg2kr{font-size:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;padding-top:10px;padding-bottom:40px;color:var(--page-text-color);-webkit-text-decoration:none;text-decoration:none;}</style><a class="rpcss-obg2kr" href="https://github.com/bloodyowl"><style data-emotion="rpcss uco8i7">.rpcss-uco8i7{width:32px;height:32px;border-radius:100%;margin-right:10px;}</style><img class="rpcss-uco8i7" alt="bloodyowl" src="https://avatars.githubusercontent.com/bloodyowl?size=64"/><div>bloodyowl<!-- --> <!-- -->•<!-- --> <!-- -->2017/11/09</div></a><style data-emotion="rpcss 15kxmi0">.rpcss-15kxmi0{max-width:640px;width:100%;font-size:18px;margin:0 auto;line-height:1.7;}.rpcss-15kxmi0 h2,.rpcss-15kxmi0 h3,.rpcss-15kxmi0 h4,.rpcss-15kxmi0 h5,.rpcss-15kxmi0 h6{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;font-weight:800;line-height:1.2;}.rpcss-15kxmi0 img{max-width:100%;background-color:rgba(255, 255, 255, 0.75);}.rpcss-15kxmi0 code{font-size:0.9em;font-family:PragmataPro,SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;line-height:1;background-color:var(--code-background-color);margin:0 0.2em;}.rpcss-15kxmi0 pre{padding:10px;overflow-x:auto;font-size:14px;border-radius:10px;border:2px solid var(--one-percent-contrast-color);-webkit-overflow-scrolling:touch;}.rpcss-15kxmi0 pre code{font-size:14px;background-color:transparent;margin:0;}.rpcss-15kxmi0 blockquote{padding-left:20px;margin:0;font-size:16px;border-left:3px solid var(--one-percent-contrast-color);font-style:italic;}.rpcss-15kxmi0 table{width:100%;text-align:center;}.rpcss-15kxmi0 figure{padding:20px 0;}.rpcss-15kxmi0 figcaption{text-align:center;}.rpcss-15kxmi0 a{word-wrap:break-word;}.rpcss-15kxmi0 table thead th{background-color:var(--page-accented-background-color);padding:10px 0;}</style><div class="rpcss-15kxmi0"><p>Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intéressés
+au typage pour vos applications front (c'est ça de commencer avec JS…), vous
+avez certainement utilisé les <code>propTypes</code> au début en vous disant &quot;putain c'est
+cool de vérifier les types, ça m'évite bien des problèmes&quot;. Puis c’était sympa
+mais bon, faut quand même exécuter le bout de code qui pète et il est peut-être
+super chiant d'y accéder dans l'app. Du coup, vous vous êtes sûrement tournés
+vers Flow ou TypeScript.</p>
+<p>Dans cet article, on va découvrir la <em>next-step</em> dans ce cheminement : écrire
+nos composants React dans un langage statiquement et fortement typé: Reason 🚀.
+Reason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple
+quand on vient du JS. Si vous n’avez pas lu
+<a href="/fr/articles/reason/introduction-reason/">l’introduction à ce langage</a>, c’est
+le moment.</p>
+<p>Là, je vais vous présenter <strong>ReasonReact</strong>, des bindings API par dessus React
+supportés officiellement par l'équipe de Reason. Facebook <em>dogfood</em> la solution
+puisqu'elle est utilisée sur messenger.com pour la majeure partie de ses
+composants.</p>
+<h2>Stateless</h2>
+<p>Commençons par le traditionnel HelloWorld™ :</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">/* Un composant ReasonReact se crée en deux temps: d&#x27;abord on crée le `component`
+   à partir d’un appel à `statelessComponent` ou `reducerComponent` (il existe d&#x27;autres
+   cas plus avancés, mais on s&#x27;y attardera pas dans cet article d&#x27;introduction). */</span>
+<span class="hljs-keyword">let</span> component = ReasonReact.statelessComponent(<span class="hljs-string">&quot;HelloWorld&quot;</span>);
+
+<span class="hljs-comment">/* Ensuite, on déclare une fonction `make` qui prend des arguments nommés
+   (qui équivalent aux `props` de React) et un dernier argument non-nommé,
+   contenant les `children`. Cette fonction doit retourner un record, dans
+   lequel on spread notre `component` et dans lequel on définit une propriété
+   `render` qui prend comme paramètre `self` (équivalent du `this`) et qui retourne
+   un élément React. Là-dessus ça devrait pas trop vous chambouler de ce que
+   vous connaissez de React.
+   On peut remarquer que les props sont les arguments de la fonction `make`,
+   comme avec les composants fonctionnels de React.*/</span>
+<span class="hljs-keyword">let</span> make = <span class="hljs-function">(<span class="hljs-params">~message, _children</span>) =&gt;</span> {
+  ...component,
+  <span class="hljs-attr">render</span>: <span class="hljs-function">(<span class="hljs-params">_self</span>) =&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      (ReasonReact.stringToElement message)
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+};
+</code></pre>
+<p>Et pour monter le composant :</p>
+<pre><code class="hljs language-js">ReactDOMRe.renderToElementWithId(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">HelloWorld</span> <span class="hljs-attr">message</span>=<span class="hljs-string">&quot;Helloworld&quot;</span> /&gt;</span></span>, <span class="hljs-string">&quot;root&quot;</span>);
+</code></pre>
+<p>Un des gros avantages à utiliser Reason, c’est que le langage est capable
+d’inférer la grande majorité des types et sera en mesure de détecter dans toute
+l’app si quelque chose n’est pas passé correctement : pour le langage, il s‘agit
+simplement de fonctions qui appellent d’autres fonctions, et les langages
+fonctionnels statiquement et fortement typés sont plutôt pas dégueulasses pour
+ça.</p>
+<h2>Stateful</h2>
+<p>La petite particularité de ReasonReact vis à vis des composants stateful, c’est
+que les mises à jour d'états doivent passer par un reducer, comme si chaque
+composant embarquait sa petite implémentation de redux.</p>
+<p>Maintenant, comment qu'on fait pour créer un composant stateful ?</p>
+<p>On commence par définir le type du state : contrairement à JS, il ne s'agit pas
+forcément d'un objet, ça peut être une chaîne de caractère, un entier, un
+variant, un boolean, un arbuste, une map, un jus de fruits frais, un tableau,
+whatever.</p>
+<pre><code class="hljs language-js">type state = {
+  <span class="hljs-attr">counter</span>: int,
+};
+</code></pre>
+<p>On va définir notre type action, sous la forme de variants: chaque variant
+représente un des type d’action possible. Pour bien se représenter ce qu'est une
+action, c’est un token, contenant possiblement des paramètres, qu’on va envoyer
+à notre fameux reducer qui, lui, retournera une réaction à cette action.</p>
+<pre><code class="hljs language-js">type action = Increment | Decrement;
+</code></pre>
+<p>Dans le composant retourné par <code>make</code>, on ajoute une fonction <code>initialState</code> qui
+retourne… l'état initial (c'est bien, vous suivez), et une fonction <code>reducer</code>,
+qui effectue un pattern-matching sur l’action et retourne une update. Cette
+fonction prend deux paramètres: l'<code>action</code> à traiter et le <code>state</code> à jour (comme
+lorsque l'on passe un callback à <code>setState</code> dans l'équivalent JavaScript
+<code>setState(state =&gt; newState)</code>).</p>
+<p>L’update retournée indique au component comment il doit se mettre à jour (ici
+sont listés les cas courants) :</p>
+<ul>
+<li><code>NoUpdate</code>, pour ne rien faire</li>
+<li><code>Update</code>, pour mettre à jour l’état et re-rendre le composant</li>
+<li><code>SideEffect</code> pour lancer un effet de bord (e.g. une requête réseau)</li>
+<li><code>UpdateWithSideEffect</code>, pour changer le state et lancer un effet de bord (e.g.
+afficher un loader et lancer une requête)</li>
+</ul>
+<p><em>Wrapping up</em> :</p>
+<pre><code class="hljs language-js">type state = {<span class="hljs-attr">counter</span>: int};
+
+type action =
+  | Increment
+  | Decrement;
+
+<span class="hljs-comment">/* Il faut bien définir le `component` **après** les types `state` et `action`, pour qu&#x27;il puisse les lire */</span>
+<span class="hljs-keyword">let</span> component = ReasonReact.reducerComponent(<span class="hljs-string">&quot;Count&quot;</span>);
+
+<span class="hljs-keyword">let</span> make = <span class="hljs-function">(<span class="hljs-params">~initialCounter=<span class="hljs-number">0</span>, _</span>) =&gt;</span> {
+  ...component,
+  <span class="hljs-attr">initialState</span>: <span class="hljs-function">() =&gt;</span> {<span class="hljs-attr">counter</span>: initialCounter},
+  <span class="hljs-attr">reducer</span>: <span class="hljs-function">(<span class="hljs-params">action, state</span>) =&gt;</span>
+    <span class="hljs-comment">/* Toutes mes updates passent par là, bien pratique pour qu&#x27;une
+      personne puisse aborder rapidement le composant */</span>
+    <span class="hljs-keyword">switch</span> action {
+    | <span class="hljs-function"><span class="hljs-params">Increment</span> =&gt;</span> ReasonReact.Update({<span class="hljs-attr">counter</span>: state.counter + <span class="hljs-number">1</span>})
+    | <span class="hljs-function"><span class="hljs-params">Decrement</span> =&gt;</span> ReasonReact.Update({<span class="hljs-attr">counter</span>: max(<span class="hljs-number">0</span>, state.counter - <span class="hljs-number">1</span>)})
+    },
+  <span class="hljs-attr">render</span>: <span class="hljs-function">(<span class="hljs-params">{state, reduce}</span>) =&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      (ReasonReact.stringToElement(state.counter |&gt; string_of_int))
+      /* La fonction reduce prend une fonction qui retourne l&#x27;action.
+           Il s&#x27;agit d&#x27;une fonction pour lire les propriétés des
+           events (qui sont pooled dans React) de manière synchrone, alors
+           que le reducer est appelé de manière asynchrone.
+         */
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">(reduce((_event)</span> =&gt;</span> Decrement))&gt; (ReasonReact.stringToElement(&quot;-&quot;)) <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">(reduce((_event)</span> =&gt;</span> Increment))&gt; (ReasonReact.stringToElement(&quot;+&quot;)) <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+};
+</code></pre>
+<p>et hop:</p>
+<pre><code class="hljs language-js">ReactDOM.renderToElementWithId(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Count</span> <span class="hljs-attr">initialCount</span>=<span class="hljs-string">0</span> /&gt;</span></span>, <span class="hljs-string">&quot;App&quot;</span>);
+</code></pre>
+<h2>With side-effects</h2>
+<p>Bien que ça puisse paraître un peu lourd de devoir faire un <code>reducer</code> pour gérer
+ses updates, ça apporte quand même:</p>
+<ul>
+<li>Un seul endroit par composant où toutes les updates passent</li>
+<li>La possibilité pour le compiler de détecter si l'on oublie de gérer des
+actions</li>
+<li>De gérer lisiblement et uniformément les effets de bord</li>
+</ul>
+<p><img src="/public/images/articles/2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee/terminal.png" alt="" /></p>
+<p>Exemple ici avec un composant où on va faire comme si on récupérait
+l'utilisateur connecté sur une API.</p>
+<pre><code class="hljs language-js">let resolveAfter = (ms) =&gt;
+  Js.Promise.make(
+    (~resolve, ~reject as _) =&gt; ignore(Js.Global.setTimeout(() =&gt; [@bs] resolve(ms), ms))
+  );
+
+module User = {
+  type t = {username: string};
+  /* faisons comme si on avait un appel serveur
+     (je le fais comme ça pour que vous puissiez copier/coller le code
+     pour essayer chez vous) */
+  let getUser = (_) =&gt;
+    resolveAfter(1000)
+    |&gt; Js.Promise.then_(
+         (_) =&gt;
+           Js.Promise.resolve({
+             username: &quot;MyUsername&quot; ++ string_of_int(Js.Math.random_int(0, 9999))
+           })
+       );
+};
+
+/* Le &quot;user&quot; distant peut avoir 4 états possibles ici */
+type resource(&#x27;a) =
+  | Inactive
+  | Loading
+  | Idle(&#x27;a)
+  | Errored;
+
+type action =
+  | Load
+  | Receive(resource(User.t));
+
+type state = {user: resource(User.t)};
+
+let component = ReasonReact.reducerComponent(&quot;User&quot;);
+
+let getUser = (credentials, {ReasonReact.reduce}) =&gt;
+  ignore(
+    User.getUser(credentials)
+    /* Si tout s&#x27;est bien passé */
+    |&gt; Js.Promise.then_(
+         /* On peut utiliser les actions en dehors du `make`: c&#x27;est juste des variants */
+         (payload) =&gt; Js.Promise.resolve(reduce((payload) =&gt; Receive(Idle(payload)), payload))
+       )
+    /* Si ça a merdé */
+    |&gt; Js.Promise.catch((_) =&gt; Js.Promise.resolve(reduce(() =&gt; Receive(Errored), ())))
+  );
+
+let make = (~credentials, _) =&gt; {
+  ...component,
+  initialState: () =&gt; {user: Inactive},
+  reducer: (action, _state) =&gt;
+    switch action {
+    /* UpdateWithSideEffects met à jour l&#x27;état, puis lance l&#x27;effet de bord,
+       très pratique pour ce genre de cas */
+    | Load =&gt; ReasonReact.UpdateWithSideEffects({user: Loading}, getUser(credentials))
+    | Receive(user) =&gt; ReasonReact.Update({user: user})
+    },
+  didMount: ({reduce}) =&gt; {
+    reduce(() =&gt; Load, ());
+    ReasonReact.NoUpdate
+  },
+  render: ({state, reduce}) =&gt;
+    &lt;div&gt;
+      (
+        ReasonReact.stringToElement(
+          switch state.user {
+          | Inactive
+          | Loading =&gt; &quot;Loading ...&quot;
+          | Idle(user) =&gt; &quot;Hello &quot; ++ user.username
+          | Errored =&gt; &quot;An error occured&quot;
+          }
+        )
+      )
+      &lt;div&gt;
+        &lt;button
+          disabled=(
+            switch state.user {
+            | Idle(_) =&gt; Js.false_
+            | _ =&gt; Js.true_
+            }
+          )
+          onClick=(reduce((_) =&gt; Load))&gt;
+          (ReasonReact.stringToElement(&quot;Reload&quot;))
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+};
+</code></pre>
+<h2>Oui mais est-ce que je peux l'utiliser aujourd'hui alors que j'ai déjà une grosse codebase React ?</h2>
+<p><img src="/public/images/articles/2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee/tenor.gif" alt="" /></p>
+<p>Pour utiliser des composants ReasonReact avec React</p>
+<pre><code class="hljs language-js">let jsComponent =
+  ReasonReact.wrapReasonForJs(
+    ~component,
+    (jsProps) =&gt;
+      make(
+        ~credentials=jsProps##credentials,
+        [||]
+      )
+  );
+</code></pre>
+<p>et</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> MyComponent = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path/to/reason/output&quot;</span>).jsComponent;
+</code></pre>
+<p>À l'inverse, pour utiliser des composants React avec ReasonReact</p>
+<pre><code class="hljs language-js">[@bs.module <span class="hljs-string">&quot;path/to/good/old/reactjs/component&quot;</span>] external myJsComponent : ReasonReact.reactClass = <span class="hljs-string">&quot;default&quot;</span>;
+
+<span class="hljs-keyword">let</span> make = <span class="hljs-function">(<span class="hljs-params">~message: string, _children</span>) =&gt;</span>
+  ReasonReact.wrapJsForReason(
+    ~reactClass=myJsComponent,
+    ~props={<span class="hljs-string">&quot;message&quot;</span>: message},
+    [||]
+  );
+</code></pre>
+<p>Voilà pour les <em>basics</em> de ReasonReact. Pour en savoir plus, y a
+<a href="https://reasonml.github.io/reason-react/">la petite doc qui va bien</a>, et on
+vous préparera un petit article sur les aspects un peu plus avancés de l'usage.</p>
+<p>Bisous bisous.</p>
+</div><style data-emotion="rpcss unyj6i">.rpcss-unyj6i{max-width:640px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;margin:20px auto;padding:20px;background-color:var(--page-background-color);border-radius:10px;box-shadow:0 15px 15px -5px rgba(0, 0, 0, 0.2);}@media (max-width: 540px){.rpcss-unyj6i{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}</style><div class="rpcss-unyj6i"><style data-emotion="rpcss ty7r4z">.rpcss-ty7r4z{font-weight:800;}</style><div class="rpcss-ty7r4z">Vous avez aimé cet article?</div><style data-emotion="rpcss klacsp">.rpcss-klacsp{width:0;height:10px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><div class="rpcss-klacsp"></div><style data-emotion="rpcss 1pkr03v">.rpcss-1pkr03v{background-color:#00aced;color:#fff;padding:10px 20px;-webkit-text-decoration:none;text-decoration:none;border-radius:5px;font-weight:800;}.rpcss-1pkr03v:active{opacity:0.5;}</style><a class="rpcss-1pkr03v" href="https://www.twitter.com/intent/tweet?text=ReasonReact%2C%20pour%20une%20UI%20qu&#x27;elle%20est%20bien%20typ%C3%A9e%20sur%20%40PutainDeCode%20https%3A%2F%2Fputaindecode.io%2Farticles%2Freason-react-pour-une-ui-qu-elle-est-bien-typee" target="_blank">Le partager sur Twitter</a></div><style data-emotion="rpcss x4iqxe">.rpcss-x4iqxe{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;text-align:center;padding:20px;}</style><div class="rpcss-x4iqxe"><style data-emotion="rpcss gein6x">.rpcss-gein6x{font-size:20px;-webkit-text-decoration:none;text-decoration:none;color:#1E49B5;}</style><a class="rpcss-gein6x" href="/articles">← Articles</a></div><style data-emotion="rpcss 8bodgl">.rpcss-8bodgl{max-width:640px;width:100%;margin:0 auto;padding:20px 0;}</style><div class="rpcss-8bodgl" id="disqus_thread"></div></div></div></div></div><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 1vau6rl">.rpcss-1vau6rl{margin:20px 0;background-color:var(--page-accented-background-color);border-radius:10px;padding:20px;}</style><div class="rpcss-1vau6rl"><style data-emotion="rpcss 1gz1i1h">.rpcss-1gz1i1h{font-size:32px;font-weight:800;margin-bottom:20px;text-align:center;}</style><div aria-level="2" class="rpcss-1gz1i1h" role="heading">Ne rien rater</div><style data-emotion="rpcss 1wbispj">.rpcss-1wbispj{font-size:18px;margin-bottom:10px;text-align:center;}</style><div aria-level="3" class="rpcss-1wbispj" role="heading">Sur les réseaux</div><style data-emotion="rpcss 1hyoz7m">.rpcss-1hyoz7m{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}</style><div class="rpcss-1hyoz7m"><a href="https://twitter.com/PutainDeCode"><img alt="Twitter" height="48" src="/public/images/website/twitter.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://facebook.com/putaindecode"><img alt="Facebook" height="48" src="/public/images/website/facebook.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://github.com/putaindecode"><img alt="Facebook" height="48" src="/public/images/website/github.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825"><img alt="Apple Podcast" height="48" src="/public/images/website/apple-podcast.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://soundcloud.com/putaindecode"><img alt="Soundcloud" height="48" src="/public/images/website/soundcloud.svg" width="48"/></a></div><div aria-level="3" class="rpcss-1wbispj" role="heading">Sur le chat</div><div class="rpcss-1hyoz7m"><a href="https://discord.gg/jtbGNNc"><img alt="Discord" height="48" src="/public/images/website/discord.svg" width="48"/></a></div></div></div></div><style data-emotion="rpcss zs8kw7">.rpcss-zs8kw7{background-color:#222;padding:20px 0;}</style><footer class="rpcss-zs8kw7"><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 79elbk">.rpcss-79elbk{position:relative;}</style><div class="rpcss-79elbk"><style data-emotion="rpcss 1hle0ni">.rpcss-1hle0ni{position:absolute;left:0;top:50%;color:#fff;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-text-decoration:none;text-decoration:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="rpcss-1hle0ni" href="/api/articles/feeds/desc/feed.xml"><style data-emotion="rpcss lvyu5j">.rpcss-lvyu5j{margin-right:10px;}</style><img class="rpcss-lvyu5j" alt="Flux RSS" height="16" src="/public/images/website/rss-feed.svg" width="16"/><style data-emotion="rpcss um3i31">@media (max-width: 400px){.rpcss-um3i31{display:none;}}</style><div class="rpcss-um3i31">Flux RSS</div></a><style data-emotion="rpcss 12cp4l7">.rpcss-12cp4l7{color:rgba(255, 255, 255, 0.5);text-align:center;font-size:14px;}</style><div class="rpcss-12cp4l7">© 2021 Putain de code !</div><style data-emotion="rpcss 1w98uy3">.rpcss-1w98uy3{position:absolute;right:0;top:50%;color:#fff;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-text-decoration:none;text-decoration:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="rpcss-1w98uy3" href="https://github.com/putaindecode/putaindecode.io">GitHub</a></div></div></div></footer></div><script id="initialData" type="text/data">{"lists":{"RE_PRIVATE_NONE":true},"items":{"k":"articles","v":{"k":"reason-react-pour-une-ui-qu-elle-est-bien-typee","v":{"_0":{"TAG":0,"_0":{"slug":"reason-react-pour-une-ui-qu-elle-est-bien-typee","filename":"2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee","title":"ReasonReact, pour une UI qu'elle est bien typée","date":"Thu, 09 Nov 2017 00:00:00 GMT","draft":false,"meta":{"date":"2017-11-09T00:00:00.000Z","title":"ReasonReact, pour une UI qu'elle est bien typée","author":"bloodyowl","oldSlug":"reason/reasonreact","slug":"reason-react-pour-une-ui-qu-elle-est-bien-typee"},"body":"<p>Si comme moi, depuis l’apparition de React, vous vous êtes de plus en intéressés\nau typage pour vos applications front (c'est ça de commencer avec JS…), vous\navez certainement utilisé les <code>propTypes</code> au début en vous disant &quot;putain c'est\ncool de vérifier les types, ça m'évite bien des problèmes&quot;. Puis c’était sympa\nmais bon, faut quand même exécuter le bout de code qui pète et il est peut-être\nsuper chiant d'y accéder dans l'app. Du coup, vous vous êtes sûrement tournés\nvers Flow ou TypeScript.</p>\n<p>Dans cet article, on va découvrir la <em>next-step</em> dans ce cheminement : écrire\nnos composants React dans un langage statiquement et fortement typé: Reason 🚀.\nReason, c'est OCaml, avec son type-system puissant et une syntaxe plus simple\nquand on vient du JS. Si vous n’avez pas lu\n<a href=\"/fr/articles/reason/introduction-reason/\">l’introduction à ce langage</a>, c’est\nle moment.</p>\n<p>Là, je vais vous présenter <strong>ReasonReact</strong>, des bindings API par dessus React\nsupportés officiellement par l'équipe de Reason. Facebook <em>dogfood</em> la solution\npuisqu'elle est utilisée sur messenger.com pour la majeure partie de ses\ncomposants.</p>\n<h2>Stateless</h2>\n<p>Commençons par le traditionnel HelloWorld™ :</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-comment\">/* Un composant ReasonReact se crée en deux temps: d&#x27;abord on crée le `component`\n   à partir d’un appel à `statelessComponent` ou `reducerComponent` (il existe d&#x27;autres\n   cas plus avancés, mais on s&#x27;y attardera pas dans cet article d&#x27;introduction). */</span>\n<span class=\"hljs-keyword\">let</span> component = ReasonReact.statelessComponent(<span class=\"hljs-string\">&quot;HelloWorld&quot;</span>);\n\n<span class=\"hljs-comment\">/* Ensuite, on déclare une fonction `make` qui prend des arguments nommés\n   (qui équivalent aux `props` de React) et un dernier argument non-nommé,\n   contenant les `children`. Cette fonction doit retourner un record, dans\n   lequel on spread notre `component` et dans lequel on définit une propriété\n   `render` qui prend comme paramètre `self` (équivalent du `this`) et qui retourne\n   un élément React. Là-dessus ça devrait pas trop vous chambouler de ce que\n   vous connaissez de React.\n   On peut remarquer que les props sont les arguments de la fonction `make`,\n   comme avec les composants fonctionnels de React.*/</span>\n<span class=\"hljs-keyword\">let</span> make = <span class=\"hljs-function\">(<span class=\"hljs-params\">~message, _children</span>) =&gt;</span> {\n  ...component,\n  <span class=\"hljs-attr\">render</span>: <span class=\"hljs-function\">(<span class=\"hljs-params\">_self</span>) =&gt;</span>\n    <span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">div</span>&gt;</span>\n      (ReasonReact.stringToElement message)\n    <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">div</span>&gt;</span></span>\n};\n</code></pre>\n<p>Et pour monter le composant :</p>\n<pre><code class=\"hljs language-js\">ReactDOMRe.renderToElementWithId(<span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">HelloWorld</span> <span class=\"hljs-attr\">message</span>=<span class=\"hljs-string\">&quot;Helloworld&quot;</span> /&gt;</span></span>, <span class=\"hljs-string\">&quot;root&quot;</span>);\n</code></pre>\n<p>Un des gros avantages à utiliser Reason, c’est que le langage est capable\nd’inférer la grande majorité des types et sera en mesure de détecter dans toute\nl’app si quelque chose n’est pas passé correctement : pour le langage, il s‘agit\nsimplement de fonctions qui appellent d’autres fonctions, et les langages\nfonctionnels statiquement et fortement typés sont plutôt pas dégueulasses pour\nça.</p>\n<h2>Stateful</h2>\n<p>La petite particularité de ReasonReact vis à vis des composants stateful, c’est\nque les mises à jour d'états doivent passer par un reducer, comme si chaque\ncomposant embarquait sa petite implémentation de redux.</p>\n<p>Maintenant, comment qu'on fait pour créer un composant stateful ?</p>\n<p>On commence par définir le type du state : contrairement à JS, il ne s'agit pas\nforcément d'un objet, ça peut être une chaîne de caractère, un entier, un\nvariant, un boolean, un arbuste, une map, un jus de fruits frais, un tableau,\nwhatever.</p>\n<pre><code class=\"hljs language-js\">type state = {\n  <span class=\"hljs-attr\">counter</span>: int,\n};\n</code></pre>\n<p>On va définir notre type action, sous la forme de variants: chaque variant\nreprésente un des type d’action possible. Pour bien se représenter ce qu'est une\naction, c’est un token, contenant possiblement des paramètres, qu’on va envoyer\nà notre fameux reducer qui, lui, retournera une réaction à cette action.</p>\n<pre><code class=\"hljs language-js\">type action = Increment | Decrement;\n</code></pre>\n<p>Dans le composant retourné par <code>make</code>, on ajoute une fonction <code>initialState</code> qui\nretourne… l'état initial (c'est bien, vous suivez), et une fonction <code>reducer</code>,\nqui effectue un pattern-matching sur l’action et retourne une update. Cette\nfonction prend deux paramètres: l'<code>action</code> à traiter et le <code>state</code> à jour (comme\nlorsque l'on passe un callback à <code>setState</code> dans l'équivalent JavaScript\n<code>setState(state =&gt; newState)</code>).</p>\n<p>L’update retournée indique au component comment il doit se mettre à jour (ici\nsont listés les cas courants) :</p>\n<ul>\n<li><code>NoUpdate</code>, pour ne rien faire</li>\n<li><code>Update</code>, pour mettre à jour l’état et re-rendre le composant</li>\n<li><code>SideEffect</code> pour lancer un effet de bord (e.g. une requête réseau)</li>\n<li><code>UpdateWithSideEffect</code>, pour changer le state et lancer un effet de bord (e.g.\nafficher un loader et lancer une requête)</li>\n</ul>\n<p><em>Wrapping up</em> :</p>\n<pre><code class=\"hljs language-js\">type state = {<span class=\"hljs-attr\">counter</span>: int};\n\ntype action =\n  | Increment\n  | Decrement;\n\n<span class=\"hljs-comment\">/* Il faut bien définir le `component` **après** les types `state` et `action`, pour qu&#x27;il puisse les lire */</span>\n<span class=\"hljs-keyword\">let</span> component = ReasonReact.reducerComponent(<span class=\"hljs-string\">&quot;Count&quot;</span>);\n\n<span class=\"hljs-keyword\">let</span> make = <span class=\"hljs-function\">(<span class=\"hljs-params\">~initialCounter=<span class=\"hljs-number\">0</span>, _</span>) =&gt;</span> {\n  ...component,\n  <span class=\"hljs-attr\">initialState</span>: <span class=\"hljs-function\">() =&gt;</span> {<span class=\"hljs-attr\">counter</span>: initialCounter},\n  <span class=\"hljs-attr\">reducer</span>: <span class=\"hljs-function\">(<span class=\"hljs-params\">action, state</span>) =&gt;</span>\n    <span class=\"hljs-comment\">/* Toutes mes updates passent par là, bien pratique pour qu&#x27;une\n      personne puisse aborder rapidement le composant */</span>\n    <span class=\"hljs-keyword\">switch</span> action {\n    | <span class=\"hljs-function\"><span class=\"hljs-params\">Increment</span> =&gt;</span> ReasonReact.Update({<span class=\"hljs-attr\">counter</span>: state.counter + <span class=\"hljs-number\">1</span>})\n    | <span class=\"hljs-function\"><span class=\"hljs-params\">Decrement</span> =&gt;</span> ReasonReact.Update({<span class=\"hljs-attr\">counter</span>: max(<span class=\"hljs-number\">0</span>, state.counter - <span class=\"hljs-number\">1</span>)})\n    },\n  <span class=\"hljs-attr\">render</span>: <span class=\"hljs-function\">(<span class=\"hljs-params\">{state, reduce}</span>) =&gt;</span>\n    <span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">div</span>&gt;</span>\n      (ReasonReact.stringToElement(state.counter |&gt; string_of_int))\n      /* La fonction reduce prend une fonction qui retourne l&#x27;action.\n           Il s&#x27;agit d&#x27;une fonction pour lire les propriétés des\n           events (qui sont pooled dans React) de manière synchrone, alors\n           que le reducer est appelé de manière asynchrone.\n         */\n      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">button</span> <span class=\"hljs-attr\">onClick</span>=<span class=\"hljs-string\">(reduce((_event)</span> =&gt;</span> Decrement))&gt; (ReasonReact.stringToElement(&quot;-&quot;)) <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">button</span>&gt;</span>\n      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">button</span> <span class=\"hljs-attr\">onClick</span>=<span class=\"hljs-string\">(reduce((_event)</span> =&gt;</span> Increment))&gt; (ReasonReact.stringToElement(&quot;+&quot;)) <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">button</span>&gt;</span>\n    <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">div</span>&gt;</span></span>\n};\n</code></pre>\n<p>et hop:</p>\n<pre><code class=\"hljs language-js\">ReactDOM.renderToElementWithId(<span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">Count</span> <span class=\"hljs-attr\">initialCount</span>=<span class=\"hljs-string\">0</span> /&gt;</span></span>, <span class=\"hljs-string\">&quot;App&quot;</span>);\n</code></pre>\n<h2>With side-effects</h2>\n<p>Bien que ça puisse paraître un peu lourd de devoir faire un <code>reducer</code> pour gérer\nses updates, ça apporte quand même:</p>\n<ul>\n<li>Un seul endroit par composant où toutes les updates passent</li>\n<li>La possibilité pour le compiler de détecter si l'on oublie de gérer des\nactions</li>\n<li>De gérer lisiblement et uniformément les effets de bord</li>\n</ul>\n<p><img src=\"/public/images/articles/2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee/terminal.png\" alt=\"\" /></p>\n<p>Exemple ici avec un composant où on va faire comme si on récupérait\nl'utilisateur connecté sur une API.</p>\n<pre><code class=\"hljs language-js\">let resolveAfter = (ms) =&gt;\n  Js.Promise.make(\n    (~resolve, ~reject as _) =&gt; ignore(Js.Global.setTimeout(() =&gt; [@bs] resolve(ms), ms))\n  );\n\nmodule User = {\n  type t = {username: string};\n  /* faisons comme si on avait un appel serveur\n     (je le fais comme ça pour que vous puissiez copier/coller le code\n     pour essayer chez vous) */\n  let getUser = (_) =&gt;\n    resolveAfter(1000)\n    |&gt; Js.Promise.then_(\n         (_) =&gt;\n           Js.Promise.resolve({\n             username: &quot;MyUsername&quot; ++ string_of_int(Js.Math.random_int(0, 9999))\n           })\n       );\n};\n\n/* Le &quot;user&quot; distant peut avoir 4 états possibles ici */\ntype resource(&#x27;a) =\n  | Inactive\n  | Loading\n  | Idle(&#x27;a)\n  | Errored;\n\ntype action =\n  | Load\n  | Receive(resource(User.t));\n\ntype state = {user: resource(User.t)};\n\nlet component = ReasonReact.reducerComponent(&quot;User&quot;);\n\nlet getUser = (credentials, {ReasonReact.reduce}) =&gt;\n  ignore(\n    User.getUser(credentials)\n    /* Si tout s&#x27;est bien passé */\n    |&gt; Js.Promise.then_(\n         /* On peut utiliser les actions en dehors du `make`: c&#x27;est juste des variants */\n         (payload) =&gt; Js.Promise.resolve(reduce((payload) =&gt; Receive(Idle(payload)), payload))\n       )\n    /* Si ça a merdé */\n    |&gt; Js.Promise.catch((_) =&gt; Js.Promise.resolve(reduce(() =&gt; Receive(Errored), ())))\n  );\n\nlet make = (~credentials, _) =&gt; {\n  ...component,\n  initialState: () =&gt; {user: Inactive},\n  reducer: (action, _state) =&gt;\n    switch action {\n    /* UpdateWithSideEffects met à jour l&#x27;état, puis lance l&#x27;effet de bord,\n       très pratique pour ce genre de cas */\n    | Load =&gt; ReasonReact.UpdateWithSideEffects({user: Loading}, getUser(credentials))\n    | Receive(user) =&gt; ReasonReact.Update({user: user})\n    },\n  didMount: ({reduce}) =&gt; {\n    reduce(() =&gt; Load, ());\n    ReasonReact.NoUpdate\n  },\n  render: ({state, reduce}) =&gt;\n    &lt;div&gt;\n      (\n        ReasonReact.stringToElement(\n          switch state.user {\n          | Inactive\n          | Loading =&gt; &quot;Loading ...&quot;\n          | Idle(user) =&gt; &quot;Hello &quot; ++ user.username\n          | Errored =&gt; &quot;An error occured&quot;\n          }\n        )\n      )\n      &lt;div&gt;\n        &lt;button\n          disabled=(\n            switch state.user {\n            | Idle(_) =&gt; Js.false_\n            | _ =&gt; Js.true_\n            }\n          )\n          onClick=(reduce((_) =&gt; Load))&gt;\n          (ReasonReact.stringToElement(&quot;Reload&quot;))\n        &lt;/button&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n};\n</code></pre>\n<h2>Oui mais est-ce que je peux l'utiliser aujourd'hui alors que j'ai déjà une grosse codebase React ?</h2>\n<p><img src=\"/public/images/articles/2017-11-09-reason-react-pour-une-ui-qu-elle-est-bien-typee/tenor.gif\" alt=\"\" /></p>\n<p>Pour utiliser des composants ReasonReact avec React</p>\n<pre><code class=\"hljs language-js\">let jsComponent =\n  ReasonReact.wrapReasonForJs(\n    ~component,\n    (jsProps) =&gt;\n      make(\n        ~credentials=jsProps##credentials,\n        [||]\n      )\n  );\n</code></pre>\n<p>et</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-keyword\">const</span> MyComponent = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;path/to/reason/output&quot;</span>).jsComponent;\n</code></pre>\n<p>À l'inverse, pour utiliser des composants React avec ReasonReact</p>\n<pre><code class=\"hljs language-js\">[@bs.module <span class=\"hljs-string\">&quot;path/to/good/old/reactjs/component&quot;</span>] external myJsComponent : ReasonReact.reactClass = <span class=\"hljs-string\">&quot;default&quot;</span>;\n\n<span class=\"hljs-keyword\">let</span> make = <span class=\"hljs-function\">(<span class=\"hljs-params\">~message: string, _children</span>) =&gt;</span>\n  ReasonReact.wrapJsForReason(\n    ~reactClass=myJsComponent,\n    ~props={<span class=\"hljs-string\">&quot;message&quot;</span>: message},\n    [||]\n  );\n</code></pre>\n<p>Voilà pour les <em>basics</em> de ReasonReact. Pour en savoir plus, y a\n<a href=\"https://reasonml.github.io/reason-react/\">la petite doc qui va bien</a>, et on\nvous préparera un petit article sur les aspects un peu plus avancés de l'usage.</p>\n<p>Bisous bisous.</p>\n"}}},"h":1,"l":{"RE_PRIVATE_NONE":true},"r":{"RE_PRIVATE_NONE":true}},"h":1,"l":{"RE_PRIVATE_NONE":true},"r":{"RE_PRIVATE_NONE":true}},"listsRequests":{"data":{"RE_PRIVATE_NONE":true}},"itemsRequests":{"data":{"RE_PRIVATE_NONE":true}}}</script><head><script defer="defer" src="/public/main.56c69761a03eb0112696.js"></script></head></html>
