@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="fr"><head><title data-react-helmet="true">ES6, ES2015 : les Proxy | Putain de code</title><meta data-react-helmet="true" charset="UTF-8"/><meta data-react-helmet="true" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport"/><meta data-react-helmet="true" content="summary_large_image" name="twitter:card"/><meta data-react-helmet="true" content="Putain de code !" property="og:site_name"/><meta data-react-helmet="true" content="@putaindecode" name="twitter:site"/><meta data-react-helmet="true" content="https://putaindecode.io/public/images/website/share.jpg" property="og:image"/><meta data-react-helmet="true" content="https://putaindecode.io/public/images/website/share.jpg" name="twitter:image"/><meta data-react-helmet="true" content="1500" property="og:image:width"/><meta data-react-helmet="true" content="777" property="og:image:height"/><meta data-react-helmet="true" content="ES6, ES2015 : les Proxy | Putain de code" property="og:title"/><meta data-react-helmet="true" content="ES6, ES2015 : les Proxy | Putain de code" name="twitter:title"/><meta data-react-helmet="true" content="Un article proposé par DavidBruant" name="description"/><link data-react-helmet="true" title="RSS Feed" href="/api/articles/feeds/desc/feed.xml" rel="alternate" type="application/rss+xml"/><link data-react-helmet="true" href="/favicon.ico" rel="shortcut icon"/><link data-react-helmet="true" href="https://putaindecode.io/articles/es6-es2015-les-proxy" rel="canonical"/><script>window.PAGES_BOOT_MODE="hydrate";</script></head><div id="root"><style data-emotion="rpcss zx73cm 1lc6tyj 28v1b4">@-webkit-keyframes animation-zx73cm{from{opacity:0;-webkit-transform:translateY(20px);-moz-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);}}@keyframes animation-zx73cm{from{opacity:0;-webkit-transform:translateY(20px);-moz-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);}}:root{--page-background-color:#fff;--page-slightly-accented-background-color:#F9F6F6;--page-accented-background-color:#E4EBEE;--page-text-color:#46515B;--link-text-color:#E51D58;--gradient-red-top:#E51D58;--gradient-red-bottom:#CC0613;--code-background-color:#FAF3E1;--one-percent-contrast-color:rgba(0, 0, 0, 0.1);--half-percent-contrast-color:rgba(0, 0, 0, 0.05);}@media (prefers-color-scheme: dark){:root{--page-background-color:#222;--page-slightly-accented-background-color:#171717;--page-accented-background-color:#111;--page-text-color:#ddd;--link-text-color:#F87098;--gradient-red-top:#E51D58;--gradient-red-bottom:#CC0613;--code-background-color:#4F3804;--one-percent-contrast-color:rgba(255, 255, 255, 0.1);--half-percent-contrast-color:rgba(255, 255, 255, 0.05);}}body{padding:0;margin:0;background-color:var(--page-background-color);color:var(--page-text-color);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;overflow-x:hidden;}html{font-size:1em;line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;}a{color:var(--link-text-color);-webkit-text-decoration:underline;text-decoration:underline;}a:hover{-webkit-text-decoration:none;text-decoration:none;}#root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}*,*:before,*:after{box-sizing:border-box;}pre,.hljs{color:#adbac7;background:#22272e;}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#f47067;}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#dcbdfb;}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-variable,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id{color:#6cb6ff;}.hljs-regexp,.hljs-string,.hljs-meta .hljs-string{color:#96d0ff;}.hljs-built_in,.hljs-symbol{color:#f69d50;}.hljs-comment,.hljs-code,.hljs-formula{color:#768390;}.hljs-name,.hljs-quote,.hljs-selector-tag,.hljs-selector-pseudo{color:#8ddb8c;}.hljs-subst{color:#adbac7;}.hljs-section{color:#316dca;font-weight:bold;}.hljs-bullet{color:#eac55f;}.hljs-emphasis{color:#adbac7;font-style:italic;}.hljs-strong{color:#adbac7;font-weight:bold;}.hljs-addition{color:#b4f1b4;background-color:#1b4721;}.hljs-deletion{color:#ffd8d3;background-color:#78191b;}</style><style data-emotion="rpcss 9vhaby">.rpcss-9vhaby{background-color:var(--gradient-red-bottom);background-image:linear-gradient(to bottom right, var(--gradient-red-top), var(--gradient-red-bottom));}</style><header class="rpcss-9vhaby" style="background-image:linear-gradient(to bottom right, hsl(103, 100%, 35%), hsl(85, 100%, 30%))"><style data-emotion="rpcss 1qqk0tr">.rpcss-1qqk0tr{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);}</style><div class="rpcss-1qqk0tr"><style data-emotion="rpcss qx7dny">.rpcss-qx7dny{width:100%;max-width:1024px;margin:0 auto;padding:0 10px;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;}</style><div class="rpcss-qx7dny"><style data-emotion="rpcss 7s9om2">.rpcss-7s9om2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;padding:20px 0 50px;}</style><div class="rpcss-7s9om2"><style data-emotion="rpcss gdpa5c">.rpcss-gdpa5c{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;}</style><a class="rpcss-gdpa5c" href="/"><style data-emotion="rpcss 1lm4738">.rpcss-1lm4738{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;padding-bottom:10px;}</style><div class="rpcss-1lm4738"><style data-emotion="rpcss 13o7eu2">.rpcss-13o7eu2{display:block;}</style><svg class="rpcss-13o7eu2" height="36px" width="36px" viewBox="0 0 36 36"><defs><linearGradient id="PutainDeCodeLogoGradient" x1="50%" x2="50%" y1="0%" y2="127.223881%"><stop offset="0%" stop-color="#E41D57"></stop><stop offset="100%" stop-color="#C60000"></stop></linearGradient></defs><circle cx="18" cy="18" fill="url(#PutainDeCodeLogoGradient)" r="17" stroke="#FFFFFF" stroke-width="2"></circle><polygon fill="#FFFFFF" points="15.9033203 18.2246094 15.9033203 18.3710938 11.2304688 20.5317383 11.2304688 22.8095703 18.0566406 19.184082 18.0566406 17.4116211 11.2304688 13.7788086 11.2304688 16.0639648"></polygon><rect height="14" width="2" fill="#FFFFFF" x="22" y="11"><animate attributeName="opacity" begin="100ms" calcMode="discrete" dur="2s" repeatCount="indefinite" values="1;0"></animate></rect></svg><style data-emotion="rpcss 4cf197">.rpcss-4cf197{width:10px;height:10px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><div class="rpcss-4cf197"></div><style data-emotion="rpcss u5k24">.rpcss-u5k24{font-size:22px;color:#fff;font-weight:800;}</style><div aria-level="2" class="rpcss-u5k24" role="heading">Putain de code !</div></div><style data-emotion="rpcss 1nyebg4">.rpcss-1nyebg4{font-size:14px;color:rgba(255, 255, 255, 0.8);text-align:center;}</style><div class="rpcss-1nyebg4">Blog participatif de la communauté dev</div></a></div></div></div></header><style data-emotion="rpcss a4ric9">.rpcss-a4ric9{background-color:var(--page-slightly-accented-background-color);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}</style><div class="rpcss-a4ric9"><style data-emotion="rpcss oeugsb">.rpcss-oeugsb{-webkit-animation:500ms ease-out animation-zx73cm;animation:500ms ease-out animation-zx73cm;}</style><div class="rpcss-oeugsb"><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 1qc2bam">.rpcss-1qc2bam{font-size:42px;font-weight:800;text-align:center;padding-top:40px;line-height:1.2;margin:0;}</style><h1 class="rpcss-1qc2bam">ES6, ES2015 : les Proxy</h1><style data-emotion="rpcss obg2kr">.rpcss-obg2kr{font-size:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;padding-top:10px;padding-bottom:40px;color:var(--page-text-color);-webkit-text-decoration:none;text-decoration:none;}</style><a class="rpcss-obg2kr" href="https://github.com/DavidBruant"><style data-emotion="rpcss uco8i7">.rpcss-uco8i7{width:32px;height:32px;border-radius:100%;margin-right:10px;}</style><img class="rpcss-uco8i7" alt="DavidBruant" src="https://avatars.githubusercontent.com/DavidBruant?size=64"/><div>DavidBruant<!-- --> <!-- -->•<!-- --> <!-- -->2015/12/18</div></a><style data-emotion="rpcss 15kxmi0">.rpcss-15kxmi0{max-width:640px;width:100%;font-size:18px;margin:0 auto;line-height:1.7;}.rpcss-15kxmi0 h2,.rpcss-15kxmi0 h3,.rpcss-15kxmi0 h4,.rpcss-15kxmi0 h5,.rpcss-15kxmi0 h6{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;font-weight:800;line-height:1.2;}.rpcss-15kxmi0 img{max-width:100%;background-color:rgba(255, 255, 255, 0.75);}.rpcss-15kxmi0 code{font-size:0.9em;font-family:PragmataPro,SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;line-height:1;background-color:var(--code-background-color);margin:0 0.2em;}.rpcss-15kxmi0 pre{padding:10px;overflow-x:auto;font-size:14px;border-radius:10px;border:2px solid var(--one-percent-contrast-color);-webkit-overflow-scrolling:touch;}.rpcss-15kxmi0 pre code{font-size:14px;background-color:transparent;margin:0;}.rpcss-15kxmi0 blockquote{padding-left:20px;margin:0;font-size:16px;border-left:3px solid var(--one-percent-contrast-color);font-style:italic;}.rpcss-15kxmi0 table{width:100%;text-align:center;}.rpcss-15kxmi0 figure{padding:20px 0;}.rpcss-15kxmi0 figcaption{text-align:center;}.rpcss-15kxmi0 a{word-wrap:break-word;}.rpcss-15kxmi0 table thead th{background-color:var(--page-accented-background-color);padding:10px 0;}</style><div class="rpcss-15kxmi0"><h2>Proxies Origin</h2>
+<h3>What the DOM?</h3>
+<p>ES5 avait laissé un petit trou nommé
+<em><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-4.3.8">&quot;host objects&quot;</a></em>
+afin de donner un &quot;cadre légal&quot; aux trucs bizarres qui peuvent arriver dans le
+DOM. Par exemple, certaines collections sont dites
+<a href="https://dom.spec.whatwg.org/#concept-collection-live">&quot;live&quot;</a> et même si on ne
+touche pas l'objet directement, on se rend compte que la collection a été
+modifiée.</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">var</span> childNodes = <span class="hljs-built_in">document</span>.body.childNodes;
+<span class="hljs-built_in">console</span>.log(childNodes.length); <span class="hljs-comment">// 0</span>
+<span class="hljs-built_in">document</span>.body.appendChild(<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;div&quot;</span>));
+<span class="hljs-comment">// Personne n&#x27;a touché explicitement l&#x27;objet dans la variable divs, pourtant :</span>
+<span class="hljs-built_in">console</span>.log(childNodes.length); <span class="hljs-comment">// 1, wat!</span>
+</code></pre>
+<p>Ce genre de comportement n'est pas explicable par la sémantique d'ES5 (à moins
+d'accepter des gros problèmes de performances qui consisteraient à ce que le DOM
+garde une référence vers toutes les collections live et les mette à jour
+régulièrement, ou des getter partout, etc.). La
+<a href="https://heycam.github.io/webidl/">spec WebIDL</a> qui fait le lien entre les
+objets décrits dans les spec W3C et la sémantique ECMAScript se contentait d'un
+&quot;c'est un <em>host object</em>, allé, salut les gars les filles !&quot; (en fait, c'était
+pire que ça :
+<a href="http://www.w3.org/TR/DOM-Level-2-Core/ecma-script-binding.html">la spec de l'époque</a>
+était absurde tant elle manquait de détails, mais je vous fais la version de
+Noël).</p>
+<p>Mais ce genre d'explication n'est pas vraiment acceptable. Et si un navigateur a
+un bug, comment je polyfille le comportement correct, hein ?</p>
+<p>Les proxies peuvent aider.</p>
+<h3>Qu'est-il arrivé à mon objet ?</h3>
+<p>Avant que la planète JS ne s'amourache des
+<a href="https://facebook.github.io/immutable-js/">structures des données immutables</a>,
+on créait des objets et des fois, on les passait à du code qui les modifiait et
+on se demandait bien quand/comment l'objet en question en était arrivé dans cet
+état. Depuis ES5, on peut logger dans des <em>getters</em> et <em>setters</em>, mais on ne
+peut pas savoir quand on s'est pris un <code>delete</code> ou un
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">Object.freeze</a> ;
+on peut constater le résultat, mais c'est dur de remonter à la source.</p>
+<p>Les proxies peuvent aider.</p>
+<h3>Laisse mon objet tranquille !</h3>
+<p>La sémantique des objets tel qu'on les utilise permet à différents scripts
+d'agir sur les mêmes objets, mais d'une manière qui ne permet pas forcément
+toujours un contrôle fin. Par exemple, si je donne accès à la référence d'un
+objet à quelqu'un, il possède cette référence pour toujours et dans la foulée
+tous les droits associés (donc modifier l'objet arbitrairement souvent) ; il
+n'est pas possible de <strong>révoquer</strong> l'accès dans le temps. Ce script a aussi
+accès à toutes les propriétés de l'objet, même si on voudrait n'en partager que
+certaines ; il n'est pas facile <strong>d'atténuer</strong> les droits à un objet (sans créer
+de nouveaux objets et de se lancer dans des synchronisations coûteuses).</p>
+<h2>Les proxies, comment ça marche</h2>
+<p>Un <strong>proxy</strong> est un nouvel objet (on ne peut pas transformer un objet en un
+proxy) qui &quot;emballe&quot; (<em>wrap</em>) un objet existant, la <strong>target</strong> et décrit le
+comportement du proxy via un objet appelé le <strong>handler</strong> qui définit les <em>traps</em>
+du proxy.</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> target = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> };
+
+<span class="hljs-keyword">const</span> handler = {
+  <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params">target, prop</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;It&#x27;s a (get) trap!&quot;</span>, prop, target[prop]);
+    <span class="hljs-keyword">return</span> target[prop] + <span class="hljs-number">1</span>;
+  },
+};
+
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(target, handler);
+<span class="hljs-built_in">console</span>.log(proxy.a);
+</code></pre>
+<p>console output:</p>
+<pre><code>It's a (get) trap! a 1 // inside the trap
+2 // new value modified by the trap
+</code></pre>
+<h3>Liste des traps</h3>
+<p>L'exemple ci-dessus montre la trap <code>get</code>. Voici la liste des traps
+disponible :</p>
+<ul>
+<li>getPrototypeOf
+<ul>
+<li>pour <code>Object.getPrototypeOf</code></li>
+</ul></li>
+<li>setPrototypeOf
+<ul>
+<li>pour <code>Object.setPrototypeOf</code></li>
+</ul></li>
+<li>isExtensible
+<ul>
+<li>pour <code>Object.isExtensible</code></li>
+</ul></li>
+<li>preventExtensions
+<ul>
+<li>pour <code>Object.preventExtensions</code></li>
+</ul></li>
+<li>getOwnPropertyDescriptor
+<ul>
+<li>pour <code>Object.getOwnPropertyDescriptor</code></li>
+</ul></li>
+<li>defineProperty
+<ul>
+<li>pour <code>Object.defineProperty</code></li>
+</ul></li>
+<li>has
+<ul>
+<li>pour l'opérateur <code>in</code></li>
+</ul></li>
+<li>get
+<ul>
+<li>pour <em>getter</em> une propriété</li>
+</ul></li>
+<li>set
+<ul>
+<li>pour <em>setter</em> une propriété</li>
+</ul></li>
+<li>deleteProperty
+<ul>
+<li>pour l'opérateur <code>delete</code></li>
+</ul></li>
+<li>enumerate
+<ul>
+<li>pour les <code>for...in</code> et <code>Object.keys</code></li>
+</ul></li>
+<li>ownKeys
+<ul>
+<li>pour <code>Object.getOwnPropertyNames</code></li>
+</ul></li>
+<li>apply
+<ul>
+<li>pour quand on appelle le proxy comme une fonction.</li>
+</ul></li>
+<li>construct
+<ul>
+<li>pour quand on appelle le proxy comme un constructeur (avec <code>new</code>).</li>
+</ul></li>
+</ul>
+<p>Le lecteur attentif aura remarqué que cette liste (et les signatures des
+fonctions) correspondent à l'API</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect#Methods">Reflect</a></p>
+<h2>Solutions aux problèmes précédents</h2>
+<h3>Logger les opérations</h3>
+<p>Vous voulez savoir quand on objet se prend un <code>delete</code> ? Rien de plus
+facile !</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(
+  { <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> },
+  {
+    <span class="hljs-function"><span class="hljs-title">deleteProperty</span>(<span class="hljs-params">target, prop</span>)</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Wow, someone just deleted&quot;</span>, prop);
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.deleteProperty(target, prop);
+    },
+    <span class="hljs-function"><span class="hljs-title">freeze</span>(<span class="hljs-params">target</span>)</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Wow, someone just froze the object&quot;</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.freeze(target);
+    },
+  },
+);
+
+<span class="hljs-keyword">delete</span> p.b;
+<span class="hljs-built_in">Object</span>.freeze(p);
+</code></pre>
+<h3>Implémenter des NodeList live</h3>
+<p>Ici, on prétend réimplémenter une collection DOM <em>live</em>.</p>
+<pre><code class="hljs language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getChildNodesLiveCollection</span>(<span class="hljs-params">parent</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(
+    {},
+    {
+      <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, prop</span>) </span>{
+        <span class="hljs-keyword">if</span> (prop === <span class="hljs-string">&quot;length&quot;</span>) {
+          <span class="hljs-comment">// l&#x27;astuce qui n&#x27;est pas de la triche , c&#x27;est qu&#x27;on va</span>
+          <span class="hljs-comment">// chercher la valeur au moment de l&#x27;appel</span>
+          <span class="hljs-keyword">return</span> parent.childNodes.length;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> target[prop];
+      },
+    },
+  );
+}
+
+<span class="hljs-keyword">var</span> liveChildNodes = getChildNodesLiveCollection(<span class="hljs-built_in">document</span>.body);
+<span class="hljs-built_in">console</span>.log(liveChildNodes.length); <span class="hljs-comment">// 0</span>
+<span class="hljs-built_in">document</span>.body.appendChild(<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;div&quot;</span>));
+<span class="hljs-built_in">console</span>.log(liveChildNodes.length); <span class="hljs-comment">// 1, magie magie !</span>
+</code></pre>
+<h3>Atténuation</h3>
+<p>J'ai un objet avec plein de propriété et je veux en partager une version
+atténuée à une bibliothèque en laquelle je n'ai qu'une confiance partielle.</p>
+<pre><code class="hljs language-js">// On va se faire MitM avec ce HTTP sans &#x27;S&#x27; !
+import dubiousLib from &#x27;http://dubious-lib.com/main.js&#x27;;
+
+const myImportantObject = {
+    jfkKillerName: &#x27;...&#x27;,
+    elvisGeoloc: {
+        long: &#x27;...&#x27;,
+        lat: &#x27;...&#x27;
+    },
+    name: &quot;David Bruant&quot;,
+    xmasPresentList: [
+        &quot;Raspberry Pi B&quot;,
+        &quot;Nouveau téléphone (mais pas FirefoxOS, parce qu&#x27;ils arrêtent les
+téls)&quot;,
+        &quot;Une boîte de Tic Tac&quot;
+    ]
+}
+
+function makeWhitelistProxy(t, whitelist){
+    return new Proxy(t, {
+        get(target, prop){
+            if(!whitelist.has(prop))
+                throw new Error(&#x27;Attempt to access forbidden property&#x27;)
+
+            return Reflect.get(target, prop);
+        },
+        set(target, prop, value){
+            if(!whitelist.has(prop))
+                throw new Error(&#x27;Attempt to access forbidden property&#x27;)
+
+            return Reflect.set(target, prop, value);
+        },
+        getOwnPropertyDescriptor(target, prop){
+            if(!whitelist.has(prop))
+                throw new Error(&#x27;Attempt to access forbidden property&#x27;)
+
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        },
+        deleteProperty(target, prop){
+            if(!whitelist.has(prop))
+                throw new Error(&#x27;Attempt to access forbidden property&#x27;)
+
+            return Reflect.deleteProperty(target, prop);
+        },
+        defineProperty(target, prop, desc){
+            if(!whitelist.has(prop))
+                throw new Error(&#x27;Attempt to access forbidden property&#x27;)
+
+            return Reflect.defineProperty(target, prop, desc);
+        },
+        has(target, prop){
+            if(!whitelist.has(prop))
+                throw new Error(&#x27;Attempt to access forbidden property&#x27;)
+
+            return Reflect.has(target, prop);
+        }
+    })
+}
+
+const attenatedObject = makeWhitelistProxy(
+    myImportantObject,
+    new Set([&quot;name&quot;, &quot;xmasPresentList&quot;])
+);
+
+console.log(myImportantObject.name === attenatedObject.name);
+console.log(myImportantObject.jfkKillerName); // &quot;...&quot;
+console.log(attenatedObject.jfkKillerName);
+// error thrown! &#x27;Error: Attempt to access forbidden property&#x27;
+
+dubiousLib(attenatedObject);
+</code></pre>
+<p>On peut imaginer d'autres formes d'atténuation, comme ne donner accès qu'en
+lecture à l'objet alors que l'on garde soi-même un accès en écriture (ce qui est
+impossible avec <code>Object.freeze</code>).</p>
+<h3>Révocation</h3>
+<p>On peut révoquer l'accès à un objet en implémentant le <em>pattern</em> &quot;caretaker&quot;</p>
+<pre><code class="hljs language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeCaretaker</span>(<span class="hljs-params">t</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-function"><span class="hljs-title">revoke</span>(<span class="hljs-params"></span>)</span> {
+      t = <span class="hljs-literal">undefined</span>;
+    },
+    <span class="hljs-attr">proxy</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(t, {
+      <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params">target, prop</span>)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.get(target, prop);
+      },
+      <span class="hljs-function"><span class="hljs-title">set</span>(<span class="hljs-params">target, prop, value</span>)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.get(target, prop, value);
+      },
+      <span class="hljs-comment">// flemme d&#x27;écrire et vous faire lire les autres traps,</span>
+      <span class="hljs-comment">// mais faut toutes les faire ;-)</span>
+    }),
+  };
+}
+
+<span class="hljs-keyword">const</span> o = {};
+<span class="hljs-keyword">const</span> { revoke, proxy } = makeCaretaker(o);
+
+proxy.a = <span class="hljs-number">12</span>;
+
+<span class="hljs-built_in">console</span>.log(o.a, proxy.a); <span class="hljs-comment">// 12 12</span>
+
+proxy.b = <span class="hljs-number">37</span>;
+<span class="hljs-keyword">delete</span> proxy.a;
+
+revoke();
+
+proxy.b; <span class="hljs-comment">// BOOM! TypeError: target is not a non-null object</span>
+</code></pre>
+<h4>...via un meta-proxy</h4>
+<p>La petite astuce rigolote avec les proxy, vu que l'API est dite <em>stratifiée</em>,
+c'est que vu que le handler est un objet, on pourrait en faire un proxy pour
+implémenter la révocation plus simplement.</p>
+<pre><code class="hljs language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeCaretaker</span>(<span class="hljs-params">target</span>) </span>{
+  <span class="hljs-keyword">const</span> metaHandler = {
+    <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params">handler, trapName</span>)</span> {
+      <span class="hljs-keyword">if</span> (!target) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Revoked object!&quot;</span>);
+      <span class="hljs-comment">// Le miroir entre les traps et l&#x27;API Reflect vient de là ;-)</span>
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>[trapName];
+    },
+  };
+
+  <span class="hljs-keyword">const</span> handler = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>({}, metaHandler);
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-function"><span class="hljs-title">revoke</span>(<span class="hljs-params"></span>)</span> {
+      target = <span class="hljs-literal">undefined</span>;
+    },
+    <span class="hljs-attr">proxy</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(target, handler),
+  };
+}
+
+<span class="hljs-keyword">const</span> o = {};
+<span class="hljs-keyword">const</span> { revoke, proxy } = makeCaretaker(o);
+
+proxy.a = <span class="hljs-number">12</span>;
+
+<span class="hljs-built_in">console</span>.log(o.a, proxy.a); <span class="hljs-comment">// 12 12</span>
+
+proxy.b = <span class="hljs-number">37</span>;
+<span class="hljs-keyword">delete</span> proxy.a;
+
+revoke();
+
+proxy.b; <span class="hljs-comment">// BOOM! TypeError: target is not a non-null object</span>
+</code></pre>
+<p>Il fait mal au crâne au début celui-là, mais après relecture, on se sent bien.</p>
+<p>Pour des raisons par très intéressantes, les proxy révocables sont fournis
+directement via</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/revocable">Proxy.revocable</a>,
+donc, pas besoin de se fatiguer à le coder avec toutes les traps ou avec un meta
+handler.</p>
+<h2>Conclusion</h2>
+<p>Les proxies sont un outil bas niveau et puissant. Avec de grands pouvoirs
+viennent de grandes responsabilités, alors comprenez bien cet outil avant de
+vouloir l'utiliser partout.</p>
+</div><style data-emotion="rpcss unyj6i">.rpcss-unyj6i{max-width:640px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;margin:20px auto;padding:20px;background-color:var(--page-background-color);border-radius:10px;box-shadow:0 15px 15px -5px rgba(0, 0, 0, 0.2);}@media (max-width: 540px){.rpcss-unyj6i{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}</style><div class="rpcss-unyj6i"><style data-emotion="rpcss ty7r4z">.rpcss-ty7r4z{font-weight:800;}</style><div class="rpcss-ty7r4z">Vous avez aimé cet article?</div><style data-emotion="rpcss klacsp">.rpcss-klacsp{width:0;height:10px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><div class="rpcss-klacsp"></div><style data-emotion="rpcss 1pkr03v">.rpcss-1pkr03v{background-color:#00aced;color:#fff;padding:10px 20px;-webkit-text-decoration:none;text-decoration:none;border-radius:5px;font-weight:800;}.rpcss-1pkr03v:active{opacity:0.5;}</style><a class="rpcss-1pkr03v" href="https://www.twitter.com/intent/tweet?text=ES6%2C%20ES2015%20%3A%20les%20Proxy%20sur%20%40PutainDeCode%20https%3A%2F%2Fputaindecode.io%2Farticles%2Fes6-es2015-les-proxy" target="_blank">Le partager sur Twitter</a></div><style data-emotion="rpcss x4iqxe">.rpcss-x4iqxe{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;text-align:center;padding:20px;}</style><div class="rpcss-x4iqxe"><style data-emotion="rpcss gein6x">.rpcss-gein6x{font-size:20px;-webkit-text-decoration:none;text-decoration:none;color:#1E49B5;}</style><a class="rpcss-gein6x" href="/articles">← Articles</a></div><style data-emotion="rpcss 8bodgl">.rpcss-8bodgl{max-width:640px;width:100%;margin:0 auto;padding:20px 0;}</style><div class="rpcss-8bodgl" id="disqus_thread"></div></div></div></div></div><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 1vau6rl">.rpcss-1vau6rl{margin:20px 0;background-color:var(--page-accented-background-color);border-radius:10px;padding:20px;}</style><div class="rpcss-1vau6rl"><style data-emotion="rpcss 1gz1i1h">.rpcss-1gz1i1h{font-size:32px;font-weight:800;margin-bottom:20px;text-align:center;}</style><div aria-level="2" class="rpcss-1gz1i1h" role="heading">Ne rien rater</div><style data-emotion="rpcss 1wbispj">.rpcss-1wbispj{font-size:18px;margin-bottom:10px;text-align:center;}</style><div aria-level="3" class="rpcss-1wbispj" role="heading">Sur les réseaux</div><style data-emotion="rpcss 1hyoz7m">.rpcss-1hyoz7m{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}</style><div class="rpcss-1hyoz7m"><a href="https://twitter.com/PutainDeCode"><img alt="Twitter" height="48" src="/public/images/website/twitter.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://facebook.com/putaindecode"><img alt="Facebook" height="48" src="/public/images/website/facebook.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://github.com/putaindecode"><img alt="Facebook" height="48" src="/public/images/website/github.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825"><img alt="Apple Podcast" height="48" src="/public/images/website/apple-podcast.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://soundcloud.com/putaindecode"><img alt="Soundcloud" height="48" src="/public/images/website/soundcloud.svg" width="48"/></a></div><div aria-level="3" class="rpcss-1wbispj" role="heading">Sur le chat</div><div class="rpcss-1hyoz7m"><a href="https://discord.gg/jtbGNNc"><img alt="Discord" height="48" src="/public/images/website/discord.svg" width="48"/></a></div></div></div></div><style data-emotion="rpcss zs8kw7">.rpcss-zs8kw7{background-color:#222;padding:20px 0;}</style><footer class="rpcss-zs8kw7"><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 79elbk">.rpcss-79elbk{position:relative;}</style><div class="rpcss-79elbk"><style data-emotion="rpcss 1hle0ni">.rpcss-1hle0ni{position:absolute;left:0;top:50%;color:#fff;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-text-decoration:none;text-decoration:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="rpcss-1hle0ni" href="/api/articles/feeds/desc/feed.xml"><style data-emotion="rpcss lvyu5j">.rpcss-lvyu5j{margin-right:10px;}</style><img class="rpcss-lvyu5j" alt="Flux RSS" height="16" src="/public/images/website/rss-feed.svg" width="16"/><style data-emotion="rpcss um3i31">@media (max-width: 400px){.rpcss-um3i31{display:none;}}</style><div class="rpcss-um3i31">Flux RSS</div></a><style data-emotion="rpcss 12cp4l7">.rpcss-12cp4l7{color:rgba(255, 255, 255, 0.5);text-align:center;font-size:14px;}</style><div class="rpcss-12cp4l7">© 2021 Putain de code !</div><style data-emotion="rpcss 1w98uy3">.rpcss-1w98uy3{position:absolute;right:0;top:50%;color:#fff;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-text-decoration:none;text-decoration:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="rpcss-1w98uy3" href="https://github.com/putaindecode/putaindecode.io">GitHub</a></div></div></div></footer></div><script id="initialData" type="text/data">{"lists":{"RE_PRIVATE_NONE":true},"items":{"k":"articles","v":{"k":"es6-es2015-les-proxy","v":{"_0":{"TAG":0,"_0":{"slug":"es6-es2015-les-proxy","filename":"2015-12-18-es6-es2015-les-proxy","title":"ES6, ES2015 : les Proxy","date":"Fri, 18 Dec 2015 00:00:00 GMT","draft":false,"meta":{"date":"2015-12-18T00:00:00.000Z","title":"ES6, ES2015 : les Proxy","author":"DavidBruant","oldSlug":"js/es2015/proxy","slug":"es6-es2015-les-proxy"},"body":"<h2>Proxies Origin</h2>\n<h3>What the DOM?</h3>\n<p>ES5 avait laissé un petit trou nommé\n<em><a href=\"http://www.ecma-international.org/ecma-262/5.1/#sec-4.3.8\">&quot;host objects&quot;</a></em>\nafin de donner un &quot;cadre légal&quot; aux trucs bizarres qui peuvent arriver dans le\nDOM. Par exemple, certaines collections sont dites\n<a href=\"https://dom.spec.whatwg.org/#concept-collection-live\">&quot;live&quot;</a> et même si on ne\ntouche pas l'objet directement, on se rend compte que la collection a été\nmodifiée.</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-keyword\">var</span> childNodes = <span class=\"hljs-built_in\">document</span>.body.childNodes;\n<span class=\"hljs-built_in\">console</span>.log(childNodes.length); <span class=\"hljs-comment\">// 0</span>\n<span class=\"hljs-built_in\">document</span>.body.appendChild(<span class=\"hljs-built_in\">document</span>.createElement(<span class=\"hljs-string\">&quot;div&quot;</span>));\n<span class=\"hljs-comment\">// Personne n&#x27;a touché explicitement l&#x27;objet dans la variable divs, pourtant :</span>\n<span class=\"hljs-built_in\">console</span>.log(childNodes.length); <span class=\"hljs-comment\">// 1, wat!</span>\n</code></pre>\n<p>Ce genre de comportement n'est pas explicable par la sémantique d'ES5 (à moins\nd'accepter des gros problèmes de performances qui consisteraient à ce que le DOM\ngarde une référence vers toutes les collections live et les mette à jour\nrégulièrement, ou des getter partout, etc.). La\n<a href=\"https://heycam.github.io/webidl/\">spec WebIDL</a> qui fait le lien entre les\nobjets décrits dans les spec W3C et la sémantique ECMAScript se contentait d'un\n&quot;c'est un <em>host object</em>, allé, salut les gars les filles !&quot; (en fait, c'était\npire que ça :\n<a href=\"http://www.w3.org/TR/DOM-Level-2-Core/ecma-script-binding.html\">la spec de l'époque</a>\nétait absurde tant elle manquait de détails, mais je vous fais la version de\nNoël).</p>\n<p>Mais ce genre d'explication n'est pas vraiment acceptable. Et si un navigateur a\nun bug, comment je polyfille le comportement correct, hein ?</p>\n<p>Les proxies peuvent aider.</p>\n<h3>Qu'est-il arrivé à mon objet ?</h3>\n<p>Avant que la planète JS ne s'amourache des\n<a href=\"https://facebook.github.io/immutable-js/\">structures des données immutables</a>,\non créait des objets et des fois, on les passait à du code qui les modifiait et\non se demandait bien quand/comment l'objet en question en était arrivé dans cet\nétat. Depuis ES5, on peut logger dans des <em>getters</em> et <em>setters</em>, mais on ne\npeut pas savoir quand on s'est pris un <code>delete</code> ou un\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze\">Object.freeze</a> ;\non peut constater le résultat, mais c'est dur de remonter à la source.</p>\n<p>Les proxies peuvent aider.</p>\n<h3>Laisse mon objet tranquille !</h3>\n<p>La sémantique des objets tel qu'on les utilise permet à différents scripts\nd'agir sur les mêmes objets, mais d'une manière qui ne permet pas forcément\ntoujours un contrôle fin. Par exemple, si je donne accès à la référence d'un\nobjet à quelqu'un, il possède cette référence pour toujours et dans la foulée\ntous les droits associés (donc modifier l'objet arbitrairement souvent) ; il\nn'est pas possible de <strong>révoquer</strong> l'accès dans le temps. Ce script a aussi\naccès à toutes les propriétés de l'objet, même si on voudrait n'en partager que\ncertaines ; il n'est pas facile <strong>d'atténuer</strong> les droits à un objet (sans créer\nde nouveaux objets et de se lancer dans des synchronisations coûteuses).</p>\n<h2>Les proxies, comment ça marche</h2>\n<p>Un <strong>proxy</strong> est un nouvel objet (on ne peut pas transformer un objet en un\nproxy) qui &quot;emballe&quot; (<em>wrap</em>) un objet existant, la <strong>target</strong> et décrit le\ncomportement du proxy via un objet appelé le <strong>handler</strong> qui définit les <em>traps</em>\ndu proxy.</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-keyword\">const</span> target = { <span class=\"hljs-attr\">a</span>: <span class=\"hljs-number\">1</span> };\n\n<span class=\"hljs-keyword\">const</span> handler = {\n  <span class=\"hljs-function\"><span class=\"hljs-title\">get</span>(<span class=\"hljs-params\">target, prop</span>)</span> {\n    <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">&quot;It&#x27;s a (get) trap!&quot;</span>, prop, target[prop]);\n    <span class=\"hljs-keyword\">return</span> target[prop] + <span class=\"hljs-number\">1</span>;\n  },\n};\n\n<span class=\"hljs-keyword\">const</span> proxy = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Proxy</span>(target, handler);\n<span class=\"hljs-built_in\">console</span>.log(proxy.a);\n</code></pre>\n<p>console output:</p>\n<pre><code>It's a (get) trap! a 1 // inside the trap\n2 // new value modified by the trap\n</code></pre>\n<h3>Liste des traps</h3>\n<p>L'exemple ci-dessus montre la trap <code>get</code>. Voici la liste des traps\ndisponible :</p>\n<ul>\n<li>getPrototypeOf\n<ul>\n<li>pour <code>Object.getPrototypeOf</code></li>\n</ul></li>\n<li>setPrototypeOf\n<ul>\n<li>pour <code>Object.setPrototypeOf</code></li>\n</ul></li>\n<li>isExtensible\n<ul>\n<li>pour <code>Object.isExtensible</code></li>\n</ul></li>\n<li>preventExtensions\n<ul>\n<li>pour <code>Object.preventExtensions</code></li>\n</ul></li>\n<li>getOwnPropertyDescriptor\n<ul>\n<li>pour <code>Object.getOwnPropertyDescriptor</code></li>\n</ul></li>\n<li>defineProperty\n<ul>\n<li>pour <code>Object.defineProperty</code></li>\n</ul></li>\n<li>has\n<ul>\n<li>pour l'opérateur <code>in</code></li>\n</ul></li>\n<li>get\n<ul>\n<li>pour <em>getter</em> une propriété</li>\n</ul></li>\n<li>set\n<ul>\n<li>pour <em>setter</em> une propriété</li>\n</ul></li>\n<li>deleteProperty\n<ul>\n<li>pour l'opérateur <code>delete</code></li>\n</ul></li>\n<li>enumerate\n<ul>\n<li>pour les <code>for...in</code> et <code>Object.keys</code></li>\n</ul></li>\n<li>ownKeys\n<ul>\n<li>pour <code>Object.getOwnPropertyNames</code></li>\n</ul></li>\n<li>apply\n<ul>\n<li>pour quand on appelle le proxy comme une fonction.</li>\n</ul></li>\n<li>construct\n<ul>\n<li>pour quand on appelle le proxy comme un constructeur (avec <code>new</code>).</li>\n</ul></li>\n</ul>\n<p>Le lecteur attentif aura remarqué que cette liste (et les signatures des\nfonctions) correspondent à l'API</p>\n<p><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect#Methods\">Reflect</a></p>\n<h2>Solutions aux problèmes précédents</h2>\n<h3>Logger les opérations</h3>\n<p>Vous voulez savoir quand on objet se prend un <code>delete</code> ? Rien de plus\nfacile !</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-keyword\">const</span> p = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Proxy</span>(\n  { <span class=\"hljs-attr\">b</span>: <span class=\"hljs-number\">2</span> },\n  {\n    <span class=\"hljs-function\"><span class=\"hljs-title\">deleteProperty</span>(<span class=\"hljs-params\">target, prop</span>)</span> {\n      <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">&quot;Wow, someone just deleted&quot;</span>, prop);\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">Reflect</span>.deleteProperty(target, prop);\n    },\n    <span class=\"hljs-function\"><span class=\"hljs-title\">freeze</span>(<span class=\"hljs-params\">target</span>)</span> {\n      <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">&quot;Wow, someone just froze the object&quot;</span>);\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">Reflect</span>.freeze(target);\n    },\n  },\n);\n\n<span class=\"hljs-keyword\">delete</span> p.b;\n<span class=\"hljs-built_in\">Object</span>.freeze(p);\n</code></pre>\n<h3>Implémenter des NodeList live</h3>\n<p>Ici, on prétend réimplémenter une collection DOM <em>live</em>.</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">getChildNodesLiveCollection</span>(<span class=\"hljs-params\">parent</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Proxy</span>(\n    {},\n    {\n      <span class=\"hljs-attr\">get</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">target, prop</span>) </span>{\n        <span class=\"hljs-keyword\">if</span> (prop === <span class=\"hljs-string\">&quot;length&quot;</span>) {\n          <span class=\"hljs-comment\">// l&#x27;astuce qui n&#x27;est pas de la triche , c&#x27;est qu&#x27;on va</span>\n          <span class=\"hljs-comment\">// chercher la valeur au moment de l&#x27;appel</span>\n          <span class=\"hljs-keyword\">return</span> parent.childNodes.length;\n        } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">return</span> target[prop];\n      },\n    },\n  );\n}\n\n<span class=\"hljs-keyword\">var</span> liveChildNodes = getChildNodesLiveCollection(<span class=\"hljs-built_in\">document</span>.body);\n<span class=\"hljs-built_in\">console</span>.log(liveChildNodes.length); <span class=\"hljs-comment\">// 0</span>\n<span class=\"hljs-built_in\">document</span>.body.appendChild(<span class=\"hljs-built_in\">document</span>.createElement(<span class=\"hljs-string\">&quot;div&quot;</span>));\n<span class=\"hljs-built_in\">console</span>.log(liveChildNodes.length); <span class=\"hljs-comment\">// 1, magie magie !</span>\n</code></pre>\n<h3>Atténuation</h3>\n<p>J'ai un objet avec plein de propriété et je veux en partager une version\natténuée à une bibliothèque en laquelle je n'ai qu'une confiance partielle.</p>\n<pre><code class=\"hljs language-js\">// On va se faire MitM avec ce HTTP sans &#x27;S&#x27; !\nimport dubiousLib from &#x27;http://dubious-lib.com/main.js&#x27;;\n\nconst myImportantObject = {\n    jfkKillerName: &#x27;...&#x27;,\n    elvisGeoloc: {\n        long: &#x27;...&#x27;,\n        lat: &#x27;...&#x27;\n    },\n    name: &quot;David Bruant&quot;,\n    xmasPresentList: [\n        &quot;Raspberry Pi B&quot;,\n        &quot;Nouveau téléphone (mais pas FirefoxOS, parce qu&#x27;ils arrêtent les\ntéls)&quot;,\n        &quot;Une boîte de Tic Tac&quot;\n    ]\n}\n\nfunction makeWhitelistProxy(t, whitelist){\n    return new Proxy(t, {\n        get(target, prop){\n            if(!whitelist.has(prop))\n                throw new Error(&#x27;Attempt to access forbidden property&#x27;)\n\n            return Reflect.get(target, prop);\n        },\n        set(target, prop, value){\n            if(!whitelist.has(prop))\n                throw new Error(&#x27;Attempt to access forbidden property&#x27;)\n\n            return Reflect.set(target, prop, value);\n        },\n        getOwnPropertyDescriptor(target, prop){\n            if(!whitelist.has(prop))\n                throw new Error(&#x27;Attempt to access forbidden property&#x27;)\n\n            return Reflect.getOwnPropertyDescriptor(target, prop);\n        },\n        deleteProperty(target, prop){\n            if(!whitelist.has(prop))\n                throw new Error(&#x27;Attempt to access forbidden property&#x27;)\n\n            return Reflect.deleteProperty(target, prop);\n        },\n        defineProperty(target, prop, desc){\n            if(!whitelist.has(prop))\n                throw new Error(&#x27;Attempt to access forbidden property&#x27;)\n\n            return Reflect.defineProperty(target, prop, desc);\n        },\n        has(target, prop){\n            if(!whitelist.has(prop))\n                throw new Error(&#x27;Attempt to access forbidden property&#x27;)\n\n            return Reflect.has(target, prop);\n        }\n    })\n}\n\nconst attenatedObject = makeWhitelistProxy(\n    myImportantObject,\n    new Set([&quot;name&quot;, &quot;xmasPresentList&quot;])\n);\n\nconsole.log(myImportantObject.name === attenatedObject.name);\nconsole.log(myImportantObject.jfkKillerName); // &quot;...&quot;\nconsole.log(attenatedObject.jfkKillerName);\n// error thrown! &#x27;Error: Attempt to access forbidden property&#x27;\n\ndubiousLib(attenatedObject);\n</code></pre>\n<p>On peut imaginer d'autres formes d'atténuation, comme ne donner accès qu'en\nlecture à l'objet alors que l'on garde soi-même un accès en écriture (ce qui est\nimpossible avec <code>Object.freeze</code>).</p>\n<h3>Révocation</h3>\n<p>On peut révoquer l'accès à un objet en implémentant le <em>pattern</em> &quot;caretaker&quot;</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">makeCaretaker</span>(<span class=\"hljs-params\">t</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> {\n    <span class=\"hljs-function\"><span class=\"hljs-title\">revoke</span>(<span class=\"hljs-params\"></span>)</span> {\n      t = <span class=\"hljs-literal\">undefined</span>;\n    },\n    <span class=\"hljs-attr\">proxy</span>: <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Proxy</span>(t, {\n      <span class=\"hljs-function\"><span class=\"hljs-title\">get</span>(<span class=\"hljs-params\">target, prop</span>)</span> {\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">Reflect</span>.get(target, prop);\n      },\n      <span class=\"hljs-function\"><span class=\"hljs-title\">set</span>(<span class=\"hljs-params\">target, prop, value</span>)</span> {\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">Reflect</span>.get(target, prop, value);\n      },\n      <span class=\"hljs-comment\">// flemme d&#x27;écrire et vous faire lire les autres traps,</span>\n      <span class=\"hljs-comment\">// mais faut toutes les faire ;-)</span>\n    }),\n  };\n}\n\n<span class=\"hljs-keyword\">const</span> o = {};\n<span class=\"hljs-keyword\">const</span> { revoke, proxy } = makeCaretaker(o);\n\nproxy.a = <span class=\"hljs-number\">12</span>;\n\n<span class=\"hljs-built_in\">console</span>.log(o.a, proxy.a); <span class=\"hljs-comment\">// 12 12</span>\n\nproxy.b = <span class=\"hljs-number\">37</span>;\n<span class=\"hljs-keyword\">delete</span> proxy.a;\n\nrevoke();\n\nproxy.b; <span class=\"hljs-comment\">// BOOM! TypeError: target is not a non-null object</span>\n</code></pre>\n<h4>...via un meta-proxy</h4>\n<p>La petite astuce rigolote avec les proxy, vu que l'API est dite <em>stratifiée</em>,\nc'est que vu que le handler est un objet, on pourrait en faire un proxy pour\nimplémenter la révocation plus simplement.</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">makeCaretaker</span>(<span class=\"hljs-params\">target</span>) </span>{\n  <span class=\"hljs-keyword\">const</span> metaHandler = {\n    <span class=\"hljs-function\"><span class=\"hljs-title\">get</span>(<span class=\"hljs-params\">handler, trapName</span>)</span> {\n      <span class=\"hljs-keyword\">if</span> (!target) <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Error</span>(<span class=\"hljs-string\">&quot;Revoked object!&quot;</span>);\n      <span class=\"hljs-comment\">// Le miroir entre les traps et l&#x27;API Reflect vient de là ;-)</span>\n      <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">Reflect</span>[trapName];\n    },\n  };\n\n  <span class=\"hljs-keyword\">const</span> handler = <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Proxy</span>({}, metaHandler);\n\n  <span class=\"hljs-keyword\">return</span> {\n    <span class=\"hljs-function\"><span class=\"hljs-title\">revoke</span>(<span class=\"hljs-params\"></span>)</span> {\n      target = <span class=\"hljs-literal\">undefined</span>;\n    },\n    <span class=\"hljs-attr\">proxy</span>: <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Proxy</span>(target, handler),\n  };\n}\n\n<span class=\"hljs-keyword\">const</span> o = {};\n<span class=\"hljs-keyword\">const</span> { revoke, proxy } = makeCaretaker(o);\n\nproxy.a = <span class=\"hljs-number\">12</span>;\n\n<span class=\"hljs-built_in\">console</span>.log(o.a, proxy.a); <span class=\"hljs-comment\">// 12 12</span>\n\nproxy.b = <span class=\"hljs-number\">37</span>;\n<span class=\"hljs-keyword\">delete</span> proxy.a;\n\nrevoke();\n\nproxy.b; <span class=\"hljs-comment\">// BOOM! TypeError: target is not a non-null object</span>\n</code></pre>\n<p>Il fait mal au crâne au début celui-là, mais après relecture, on se sent bien.</p>\n<p>Pour des raisons par très intéressantes, les proxy révocables sont fournis\ndirectement via</p>\n<p><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/revocable\">Proxy.revocable</a>,\ndonc, pas besoin de se fatiguer à le coder avec toutes les traps ou avec un meta\nhandler.</p>\n<h2>Conclusion</h2>\n<p>Les proxies sont un outil bas niveau et puissant. Avec de grands pouvoirs\nviennent de grandes responsabilités, alors comprenez bien cet outil avant de\nvouloir l'utiliser partout.</p>\n"}}},"h":1,"l":{"RE_PRIVATE_NONE":true},"r":{"RE_PRIVATE_NONE":true}},"h":1,"l":{"RE_PRIVATE_NONE":true},"r":{"RE_PRIVATE_NONE":true}},"listsRequests":{"data":{"RE_PRIVATE_NONE":true}},"itemsRequests":{"data":{"RE_PRIVATE_NONE":true}}}</script><head><script defer="defer" src="/public/main.56c69761a03eb0112696.js"></script></head></html>
