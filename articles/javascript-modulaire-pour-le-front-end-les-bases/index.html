@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="fr"><head><title data-react-helmet="true">JavaScript modulaire pour le front-end : les bases | Putain de code</title><meta data-react-helmet="true" charset="UTF-8"/><meta data-react-helmet="true" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport"/><meta data-react-helmet="true" content="summary_large_image" name="twitter:card"/><meta data-react-helmet="true" content="Putain de code !" property="og:site_name"/><meta data-react-helmet="true" content="@putaindecode" name="twitter:site"/><meta data-react-helmet="true" content="https://putaindecode.io/public/images/website/share.jpg" property="og:image"/><meta data-react-helmet="true" content="https://putaindecode.io/public/images/website/share.jpg" name="twitter:image"/><meta data-react-helmet="true" content="1500" property="og:image:width"/><meta data-react-helmet="true" content="777" property="og:image:height"/><meta data-react-helmet="true" content="JavaScript modulaire pour le front-end : les bases | Putain de code" property="og:title"/><meta data-react-helmet="true" content="JavaScript modulaire pour le front-end : les bases | Putain de code" name="twitter:title"/><meta data-react-helmet="true" content="Un article proposé par syvuilliot" name="description"/><link data-react-helmet="true" title="RSS Feed" href="/api/articles/feeds/desc/feed.xml" rel="alternate" type="application/rss+xml"/><link data-react-helmet="true" href="/favicon.ico" rel="shortcut icon"/><link data-react-helmet="true" href="https://putaindecode.io/articles/javascript-modulaire-pour-le-front-end-les-bases" rel="canonical"/><script>window.PAGES_BOOT_MODE="hydrate";</script></head><div id="root"><style data-emotion="rpcss zx73cm 1lc6tyj 28v1b4">@-webkit-keyframes animation-zx73cm{from{opacity:0;-webkit-transform:translateY(20px);-moz-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);}}@keyframes animation-zx73cm{from{opacity:0;-webkit-transform:translateY(20px);-moz-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);}}:root{--page-background-color:#fff;--page-slightly-accented-background-color:#F9F6F6;--page-accented-background-color:#E4EBEE;--page-text-color:#46515B;--link-text-color:#E51D58;--gradient-red-top:#E51D58;--gradient-red-bottom:#CC0613;--code-background-color:#FAF3E1;--one-percent-contrast-color:rgba(0, 0, 0, 0.1);--half-percent-contrast-color:rgba(0, 0, 0, 0.05);}@media (prefers-color-scheme: dark){:root{--page-background-color:#222;--page-slightly-accented-background-color:#171717;--page-accented-background-color:#111;--page-text-color:#ddd;--link-text-color:#F87098;--gradient-red-top:#E51D58;--gradient-red-bottom:#CC0613;--code-background-color:#4F3804;--one-percent-contrast-color:rgba(255, 255, 255, 0.1);--half-percent-contrast-color:rgba(255, 255, 255, 0.05);}}body{padding:0;margin:0;background-color:var(--page-background-color);color:var(--page-text-color);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;overflow-x:hidden;}html{font-size:1em;line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;}a{color:var(--link-text-color);-webkit-text-decoration:underline;text-decoration:underline;}a:hover{-webkit-text-decoration:none;text-decoration:none;}#root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}*,*:before,*:after{box-sizing:border-box;}pre,.hljs{color:#adbac7;background:#22272e;}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#f47067;}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#dcbdfb;}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-variable,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id{color:#6cb6ff;}.hljs-regexp,.hljs-string,.hljs-meta .hljs-string{color:#96d0ff;}.hljs-built_in,.hljs-symbol{color:#f69d50;}.hljs-comment,.hljs-code,.hljs-formula{color:#768390;}.hljs-name,.hljs-quote,.hljs-selector-tag,.hljs-selector-pseudo{color:#8ddb8c;}.hljs-subst{color:#adbac7;}.hljs-section{color:#316dca;font-weight:bold;}.hljs-bullet{color:#eac55f;}.hljs-emphasis{color:#adbac7;font-style:italic;}.hljs-strong{color:#adbac7;font-weight:bold;}.hljs-addition{color:#b4f1b4;background-color:#1b4721;}.hljs-deletion{color:#ffd8d3;background-color:#78191b;}</style><style data-emotion="rpcss 9vhaby">.rpcss-9vhaby{background-color:var(--gradient-red-bottom);background-image:linear-gradient(to bottom right, var(--gradient-red-top), var(--gradient-red-bottom));}</style><header class="rpcss-9vhaby" style="background-image:linear-gradient(to bottom right, hsl(80, 100%, 35%), hsl(66, 100%, 30%))"><style data-emotion="rpcss 1qqk0tr">.rpcss-1qqk0tr{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);}</style><div class="rpcss-1qqk0tr"><style data-emotion="rpcss qx7dny">.rpcss-qx7dny{width:100%;max-width:1024px;margin:0 auto;padding:0 10px;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;}</style><div class="rpcss-qx7dny"><style data-emotion="rpcss 7s9om2">.rpcss-7s9om2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;padding:20px 0 50px;}</style><div class="rpcss-7s9om2"><style data-emotion="rpcss gdpa5c">.rpcss-gdpa5c{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;}</style><a class="rpcss-gdpa5c" href="/"><style data-emotion="rpcss 1lm4738">.rpcss-1lm4738{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;padding-bottom:10px;}</style><div class="rpcss-1lm4738"><style data-emotion="rpcss 13o7eu2">.rpcss-13o7eu2{display:block;}</style><svg class="rpcss-13o7eu2" height="36px" width="36px" viewBox="0 0 36 36"><defs><linearGradient id="PutainDeCodeLogoGradient" x1="50%" x2="50%" y1="0%" y2="127.223881%"><stop offset="0%" stop-color="#E41D57"></stop><stop offset="100%" stop-color="#C60000"></stop></linearGradient></defs><circle cx="18" cy="18" fill="url(#PutainDeCodeLogoGradient)" r="17" stroke="#FFFFFF" stroke-width="2"></circle><polygon fill="#FFFFFF" points="15.9033203 18.2246094 15.9033203 18.3710938 11.2304688 20.5317383 11.2304688 22.8095703 18.0566406 19.184082 18.0566406 17.4116211 11.2304688 13.7788086 11.2304688 16.0639648"></polygon><rect height="14" width="2" fill="#FFFFFF" x="22" y="11"><animate attributeName="opacity" begin="100ms" calcMode="discrete" dur="2s" repeatCount="indefinite" values="1;0"></animate></rect></svg><style data-emotion="rpcss 4cf197">.rpcss-4cf197{width:10px;height:10px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><div class="rpcss-4cf197"></div><style data-emotion="rpcss u5k24">.rpcss-u5k24{font-size:22px;color:#fff;font-weight:800;}</style><div aria-level="2" class="rpcss-u5k24" role="heading">Putain de code !</div></div><style data-emotion="rpcss 1nyebg4">.rpcss-1nyebg4{font-size:14px;color:rgba(255, 255, 255, 0.8);text-align:center;}</style><div class="rpcss-1nyebg4">Blog participatif de la communauté dev</div></a></div></div></div></header><style data-emotion="rpcss a4ric9">.rpcss-a4ric9{background-color:var(--page-slightly-accented-background-color);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}</style><div class="rpcss-a4ric9"><style data-emotion="rpcss oeugsb">.rpcss-oeugsb{-webkit-animation:500ms ease-out animation-zx73cm;animation:500ms ease-out animation-zx73cm;}</style><div class="rpcss-oeugsb"><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 1qc2bam">.rpcss-1qc2bam{font-size:42px;font-weight:800;text-align:center;padding-top:40px;line-height:1.2;margin:0;}</style><h1 class="rpcss-1qc2bam">JavaScript modulaire pour le front-end : les bases</h1><style data-emotion="rpcss obg2kr">.rpcss-obg2kr{font-size:16px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;padding-top:10px;padding-bottom:40px;color:var(--page-text-color);-webkit-text-decoration:none;text-decoration:none;}</style><a class="rpcss-obg2kr" href="https://github.com/syvuilliot"><style data-emotion="rpcss uco8i7">.rpcss-uco8i7{width:32px;height:32px;border-radius:100%;margin-right:10px;}</style><img class="rpcss-uco8i7" alt="syvuilliot" src="https://avatars.githubusercontent.com/syvuilliot?size=64"/><div>syvuilliot<!-- --> <!-- -->•<!-- --> <!-- -->2014/12/15</div></a><style data-emotion="rpcss 15kxmi0">.rpcss-15kxmi0{max-width:640px;width:100%;font-size:18px;margin:0 auto;line-height:1.7;}.rpcss-15kxmi0 h2,.rpcss-15kxmi0 h3,.rpcss-15kxmi0 h4,.rpcss-15kxmi0 h5,.rpcss-15kxmi0 h6{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;font-weight:800;line-height:1.2;}.rpcss-15kxmi0 img{max-width:100%;background-color:rgba(255, 255, 255, 0.75);}.rpcss-15kxmi0 code{font-size:0.9em;font-family:PragmataPro,SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;line-height:1;background-color:var(--code-background-color);margin:0 0.2em;}.rpcss-15kxmi0 pre{padding:10px;overflow-x:auto;font-size:14px;border-radius:10px;border:2px solid var(--one-percent-contrast-color);-webkit-overflow-scrolling:touch;}.rpcss-15kxmi0 pre code{font-size:14px;background-color:transparent;margin:0;}.rpcss-15kxmi0 blockquote{padding-left:20px;margin:0;font-size:16px;border-left:3px solid var(--one-percent-contrast-color);font-style:italic;}.rpcss-15kxmi0 table{width:100%;text-align:center;}.rpcss-15kxmi0 figure{padding:20px 0;}.rpcss-15kxmi0 figcaption{text-align:center;}.rpcss-15kxmi0 a{word-wrap:break-word;}.rpcss-15kxmi0 table thead th{background-color:var(--page-accented-background-color);padding:10px 0;}</style><div class="rpcss-15kxmi0"><p>Quand on réalise des applications en JS pour les navigateurs web, on ne peut
+plus se contenter de mettre des tags <code>script</code> dans le bon ordre pour charger les
+bibliothèques tierces que l'on utilise comme pour un site web. C'est pourquoi il
+existe des outils pour permettre d'écrire du JavaScript modulaire et réutiliser
+plus facilement les innombrables bibliothèques publiées par la communauté JS.</p>
+<p>Cependant, ce principe d'écriture modulaire et de publication de code n'étant
+pas intégré dans le langage lui-même, de très nombreuses solutions existent plus
+ou moins compatibles les unes avec les autres et aboutissant à une forte
+fragmentation de la communauté. Donc quand on décide de se mettre au JavaScript
+modulaire, on trouve tout un tas d'articles (en anglais) parfois trop vieux
+(&quot;une étape de build n'est pas adaptée au navigateur&quot;), parfois trop subjectifs
+(&quot;J'aime pas la syntaxe AMD&quot;), parfois confus (&quot;utiliser les modules pour de
+l'injection de dépendances&quot;), parfois simplistes (&quot;AMD vs CommonJS&quot;).</p>
+<p>C'est pourquoi j'ai voulu partager mon expérience, en essayant d'abord de
+reposer les bases du problème, puis en vous faisant part de ce que j'estime être
+la solution la plus satisfaisante actuellement.</p>
+<p>D'abord, il faut faire la distinction entre 3 aspects du problème :</p>
+<ul>
+<li>le format d'écriture des modules (&quot;module authoring format&quot;)</li>
+<li>le système de gestion des packages (&quot;package management&quot;)</li>
+<li>la convention de résolution des dépendances de module</li>
+</ul>
+<h1>Format d'écriture des modules</h1>
+<p>Le module est la brique de base pour décomposer un gros fichier JS en plusieurs
+fichiers plus petits et focalisés sur une fonctionnalité précise. La plupart du
+temps un module est un fichier JS qui fournit une fonction, un constructeur ou
+un objet de valeur. Et comme, pour fournir cette fonctionnalité, un module peut
+avoir besoin d'autres modules, il existe un mécanisme pour déclarer ses
+dépendances.</p>
+<p>Actuellement, 2 standards principaux existent pour écrire ces modules : <strong>AMD</strong>
+et <strong>CommonJS</strong>. Il est également possible d'utiliser la
+<a href="http://www.2ality.com/2014/09/es6-modules-final.html">syntaxe retenue par ES6</a>
+(qui j'espère va enfin devenir le standard unique) mais pour l'instant, ça
+demande encore une étape de &quot;transpilation&quot; en AMD ou CJS.</p>
+<p>Le format AMD (dans sa forme la plus courante) est :</p>
+<pre><code class="hljs language-js">define([<span class="hljs-string">&quot;moduleA&quot;</span>, <span class="hljs-string">&quot;moduleB&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-comment">// j&#x27;utilise a et b</span>
+  <span class="hljs-keyword">return</span> maFonctionTresUtile;
+});
+</code></pre>
+<p>Le format CommonJS (dans sa forme la plus courante) est :</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">var</span> a = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;moduleA&quot;</span>);
+<span class="hljs-keyword">var</span> b = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;moduleB&quot;</span>);
+<span class="hljs-comment">// j&#x27;utilise a et b</span>
+<span class="hljs-built_in">module</span>.exports = maFonctionTresUtile;
+</code></pre>
+<p>Ca n'est pas très différent dans l'esprit : tous les 2 permettent de décrire des
+dépendances et d'exporter une valeur. La différence principale réside dans le
+fait que :</p>
+<ul>
+<li>CommonJS prévoit une évaluation en une passe dans laquelle il faut résoudre
+les dépendances au fur et à mesure</li>
+<li>alors que AMD prévoit une évaluation en 2 passes :
+<ul>
+<li>une première pour récupérer uniquement la liste des dépendances</li>
+<li>et une seconde où on exécute le callback (le corps du module) avec les
+dépendances résolues. C'est pourquoi on parle de format &quot;synchrone&quot; dans le
+premier cas et &quot;asynchrone&quot; dans le second car on peut résoudre les
+dépendances de façon asynchrone en AMD.</li>
+</ul></li>
+</ul>
+<p>Dans les 2 cas, par contre, il y a besoin d'une <em>résolution des dépendances</em>,
+c'est à dire qu'un module ne peut pas être exécuté tel quel dans un navigateur
+en le chargeant via un tag <code>script</code>. Non, il faut un <em>loader</em>, c'est à dire un
+outil qui va charger le module qu'on lui demande et va résoudre les dépendances
+en cascade. Mais contrairement à ce que l'on pourrait croire, les règles de
+résolution des dépendances n'ont rien à voir avec le format du module (on verra
+ça plus tard).</p>
+<h1>Package management</h1>
+<p>Parlons maintenant des packages. En effet, pouvoir découper du code en modules,
+c'est bien ; mais ce qui est encore mieux c'est de pouvoir le partager avec
+d'autres pour qu'il soit facilement réutilisable et arrêter le syndrôme de :</p>
+<blockquote>
+<p>&quot;je recode un event emitter dans ma bibliothèque comme ça je n'ai pas de
+dépendance et c'est plus facile à consommer par mes utilisateurs&quot;</p>
+</blockquote>
+<p>C'est le problème n°1 des bibliothèques front qui présentent souvent comme un
+argument de ne pas avoir de dépendances. Sauf que, si on y réfléchit, ça veut
+dire que : soit c'est une bibliothèque très bas niveau, soit le mec a recodé des
+trucs qui existent déjà au lieu de s'occuper de son sujet principal.</p>
+<p>C'est là qu'entre en jeu la notion de <em>package</em> (que je ne traduirai pas en
+français, car ça ne servirait qu'à apporter de la confusion). Un package est un
+ensemble de fichiers (pas forcément des fichiers JS d'ailleurs) avec des
+métadonnées associées pour décrire principalement :</p>
+<ul>
+<li>où est stocké le package,</li>
+<li>qui est l'auteur,</li>
+<li>quelle est la licence,</li>
+<li>quelle est la version,</li>
+<li>et ... quelles sont les dépendances et leurs versions !</li>
+</ul>
+<p>Ici les dépendances sont des dépendances entre packages,
+<a href="http://fr.slideshare.net/domenicdenicola/client-side-packages">ce qui n'a rien à voir avec les dépendances entre modules</a>.</p>
+<p>Pour faciliter l'utilisation des packages, on utilise un <em>package manager</em>, dont
+le rôle principal est, à partir d'un id de module (et éventuellement d'un numéro
+de version), de trouver l'adresse où se trouve les fichiers, les télécharger et
+les installer localement... et ceci de façon récursive pour les dépendances, ce
+qui est le gros avantage par rapport à le faire à la mano. Mais sinon, ça n'est
+pas plus compliqué que ça dans le principe, et ça reste valable pour des
+fichiers JS ou non, front-end ou non.</p>
+<p>Les principaux package managers pour le front-end sont
+<a href="https://www.npmjs.com/">npm</a> et <a href="http://bower.io">bower</a>. La grande différence
+entre les deux est que <strong>npm installe les dépendances de façon relative</strong> : pour
+chaque package, les dépendances sont installées dans un sous-dossier
+(node_modules).</p>
+<ul>
+<li>mon-projet-avec-nmp
+<ul>
+<li>app.js</li>
+<li>node_modules
+<ul>
+<li>une-dependance
+<ul>
+<li>main.js</li>
+<li>nodes_modules
+<ul>
+<li>une-dependance-indirecte
+<ul>
+<li>main.js</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>une-autre-dependance
+<ul>
+<li>main.js</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Alors que <strong>bower prend le parti d'installer les dépendances à plat</strong> : le
+package et ses dépendances et les dépendances des dépendances sont toutes
+installées au même niveau dans le même dossier.</p>
+<ul>
+<li>mon-projet-avec-bower
+<ul>
+<li>app.js</li>
+<li>bower_components
+<ul>
+<li>une-dependance
+<ul>
+<li>main.js</li>
+</ul></li>
+<li>une-autre-dependance
+<ul>
+<li>main.js</li>
+</ul></li>
+<li>une-dependance-indirecte
+<ul>
+<li>main.js</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>L'approche bower semble être une bonne idée car si 2 packages ont la même
+dépendance (ou des dépendances compatibles semver), une seule est installée.
+Alors qu'avec npm chaque package installe sa propre dépendance.</p>
+<p>Cependant, s'il y a une incompatibilité de versions :</p>
+<blockquote>
+<p>le package A déclare une dépendance sur X en version 1 le package B déclare
+une dépendance sur X mais en version 2</p>
+</blockquote>
+<p>Avec bower, on est coincé : on ne peut installer qu'une seule version. Lors du
+<code>bower install</code>, il faudra choisir quelle version on garde : soit A devra
+utiliser X2, soit B devra utiliser X1.</p>
+<ul>
+<li>mon-app-avec-bower
+<ul>
+<li>bower_components
+<ul>
+<li>package-A</li>
+<li>package-B</li>
+<li>package-X
+<ul>
+<li>main.js // v1 ou v2 mais pas les 2</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Bower appelle cela de la <em>résolution de conflits</em>. Mais concrêtement, cela veut
+dire qu'on force une dépendance qui n'est pas supportée officiellement par le
+package en question. Donc on se retrouve responsable de vérifier que le package
+B fonctionne correctement avec X1. Pas cool :-(</p>
+<p>Alors qu'avec npm les versions des dépendances sont respectées, il n'y a pas de
+question à se poser.</p>
+<ul>
+<li>mon-app-avec-npm
+<ul>
+<li>node_modules
+<ul>
+<li>package-A
+<ul>
+<li>node_modules
+<ul>
+<li>package-X
+<ul>
+<li>main.js // v1</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>package-B
+<ul>
+<li>node_modules
+<ul>
+<li>package-X
+<ul>
+<li>main.js // v2</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h1>Résolution des dépendances de module</h1>
+<p>La question est alors :</p>
+<blockquote>
+<p>&quot;Pourquoi existe-t-il des package managers spécifiquement pour le web
+front-end ?&quot;</p>
+</blockquote>
+<p>Réponse :</p>
+<blockquote>
+<p>&quot;Pour faciliter l'utilisation de modules publiés dans des packages dans le
+contexte du front-end&quot;</p>
+</blockquote>
+<p>Super ! Mais concrêtement ?</p>
+<p>Et bien, venons en au coeur du problème : <em>la résolution des module-id en
+fichier</em>. Comme on l'a vu, pour charger un module dans le navigateur, il faut
+utiliser un loader. Et une de ses tâches est de <em>résoudre</em> les <code>module_id</code> en
+adresse de fichier.</p>
+<p>Au pire il faudrait explicitement dire au loader pour chaque <code>module_id</code> où est
+le fichier correspondant. Heureusement, ce n'est pas le cas, ni avec requireJS,
+ni avec les loaders compatibles npm.</p>
+<h2>AMD</h2>
+<p>RequireJS et les autres loaders AMD vont assez loin en matière de
+<a href="http://requirejs.org/docs/api.html#config">configuration</a> mais souvent , ça
+revient à décrire des règles du style <em>tous les modules id qui commencent par
+<code>mon-package</code> sont à chercher dans le dossier <code>./mon-package</code></em>.</p>
+<p>En fait, ça n'est pas tout à fait vrai qu'il faille systématiquement configurer
+les règles de résolution avec RequireJS : il y a une règle par défaut qui
+stipule que les module_id sont résolus par rapport à une &quot;baseURL&quot; (qui par
+défaut est celle du fichier html). Donc si on installe tous les packages au même
+niveau, ça marche par défaut. C'est pour cela que bower est souvent utilisé pour
+les packages front-end en AMD car il installe les fichiers à plat et de cette
+façon on limite le besoin de configuration.</p>
+<h2>NPM</h2>
+<p>A l'opposé de cette approche très flexible, il y a nodeJS avec une
+<a href="https://github.com/substack/browserify-handbook#how-node_modules-works">convention simple et statique</a>,
+qui dit en gros :</p>
+<ul>
+<li>si c'est une référence relative, il suffit de suivre le chemin</li>
+<li>si c'est une référence absolue, il faut chercher dans le dossier
+<code>node_modules</code> et ceci de façon récursive jusqu'à arriver à la racine</li>
+</ul>
+<p>Et donc zéro config, puisque ça n'est pas configurable. Ca peut paraître être
+une limitation mais c'est une force.</p>
+<h1>Conclusion</h1>
+<p>Si tous les packages en AMD utilisaient la règle de résolution par défaut et que
+l'on utilisait bower pour les installer, on n'aurait rien à configurer. Mais
+dans la pratique, ça n'est pas le cas et on se retrouve à devoir configurer les
+règles de résolution non seulement pour ses propres dépendances (<em>pourquoi pas</em>)
+mais également pour les dépendances de ses dépendances (<em>et là ça ne va plus</em>).
+Et il reste toujours le problème des conflits de version liés à l'approche de
+mettre les dépendances à plat.</p>
+<p>D'un autre côté, il y a la convention nodeJS qui impose des règles simples, non
+modifiables et qui n'a pas de problème de conflit de versions. C'est à dire
+qu'il suffit de faire <code>npm install mon-package</code> et ça marche. Une convention qui
+fait l'unanimité pour le backend JS.</p>
+<p>Côté front, on lui reproche de charger les dépendances sans les dédoublonner et
+de le faire en synchrone, ce qui n'est pas adapté quand le chargement des
+fichiers se fait via un réseau en http et pas directement depuis un disque local
+comme sur un serveur.</p>
+<p>C'est pourquoi a été inventé <a href="http://http://browserify.org/">browserify</a> qui
+apporte actuellement <a href="/fr/articles/js/browserify/">le meilleur des 2 mondes</a> :
+toujours zéro config selon la convention nodeJS et un système de bundle/build
+(via une analyse syntaxique du code JS pour détecter les dépendances) afin
+d'assembler tous les modules en un seul fichier adapté au navigateur. On peut
+lui reprocher la nécessité d'une étape de build et le fait que le code source en
+débug est en un seul fichier mais :</p>
+<ol>
+<li>de toute façon pour la prod, il y aura une étape de build et en dév, avec un
+outillage adapté (par exemple <code>watchify</code> qui rebuild en incrémental) ça
+n'est pas la mer à boire</li>
+<li>avec le support des sources-map dans les navigateurs, on peut maintenant
+retrouver en debug les mêmes noms de fichiers et les mêmes numéro de ligne
+que dans les fichiers d'origine et les points d'arrêt fonctionnent.</li>
+</ol>
+<p>Au final, ça en devient même un avantage, car le code que l'on exécute en dev
+dans le navigateur est très proche de ce que l'on aura en prod, en tout cas plus
+proche qu'avec requireJS pour lequel on développe sans build et pour lequel il
+faut écrire à nouveau une config de build pour la mise en prod.</p>
+<h1>Conclusion de la conclusion</h1>
+<p>Ma conclusion est que le point crucial pour faciliter la réutilisation de
+modules, c'est de <strong>minimiser les contraintes sur les utilisateurs</strong> et donc de
+se rapprocher d'un usage <em>plug and play</em>. Pour cela il faut une convention forte
+entre le package manager et le loader/builder de modules, afin d'éviter à
+l'utilisateur de devoir écrire des configs ... la plupart du temps. Bien sûr, la
+recherche du &quot;zéro config&quot; n'est pas une fin et c'est particulièrement vrai côté
+front où les contraintes de chargement de fichiers sont fortes. Et si vous
+voulez diviser votre bundle en plusieurs fichiers ou si vous voulez des règles
+d'optimisation complexes pour votre build, il est normal de devoir mettre les
+mains dans le cambouis. Mais si au moins le cas d'usage le plus fréquent
+(compiler son appli en un seul fichier qui sera chargé via un tag <code>script</code>) est
+simplifié au maximum, alors on pourra sûrement voir côté front, le même état
+d'esprit que côté back. Et je suis plutôt optimiste,
+<a href="https://medium.com/@trek/last-week-i-had-a-small-meltdown-on-twitter-about-npms-future-plans-around-front-end-packaging-b424dd8d367a">contrairement à certains</a>.</p>
+<p>Utilisateur de la première heure d'<code>AMD</code> et de <code>Dojo loader</code>, puis de <code>bower</code>,
+je me suis rendu compte de leurs limites et surtout j'ai été régulièrement gêné
+par la complexité de la configuration... surtout lorsqu'il fallait passer au
+build. Cela freine la réutilisation de modules tiers et c'est dommage. Ce n'est
+pas un problème intrinsèque au format de module et toutes les discussions sur
+&quot;moi j'aime / j'aime pas la syntaxe AMD&quot; sont secondaires (d'ailleurs
+<a href="https://www.npmjs.com/package/deamdify">browserify peut fonctionner avec des bibliothèques en AMD</a>).
+Mais dans la pratique, nous migrons vers la solution <code>npm + browserify</code> et c'est
+vraiment moins compliqué.</p>
+<p>J'espère que cet article vous permettra d'y voir plus clair, de dépasser les
+querelles sur les préférences personnelles de chacun, et de vous aider à faire
+votre choix. Je n'estime pas être un expert du sujet, il y a sûrement beaucoup
+de choses à compléter ou préciser, donc n'hésitez pas à réagir.</p>
+<p>Pour aller plus loin et regarder vers le futur que nous amène ES6, il y a cet
+<a href="https://medium.com/@brianleroux/es6-modules-amd-and-commonjs-c1acefbe6fc0">excellent article</a>.</p>
+</div><style data-emotion="rpcss unyj6i">.rpcss-unyj6i{max-width:640px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;margin:20px auto;padding:20px;background-color:var(--page-background-color);border-radius:10px;box-shadow:0 15px 15px -5px rgba(0, 0, 0, 0.2);}@media (max-width: 540px){.rpcss-unyj6i{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}</style><div class="rpcss-unyj6i"><style data-emotion="rpcss ty7r4z">.rpcss-ty7r4z{font-weight:800;}</style><div class="rpcss-ty7r4z">Vous avez aimé cet article?</div><style data-emotion="rpcss klacsp">.rpcss-klacsp{width:0;height:10px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><div class="rpcss-klacsp"></div><style data-emotion="rpcss 1pkr03v">.rpcss-1pkr03v{background-color:#00aced;color:#fff;padding:10px 20px;-webkit-text-decoration:none;text-decoration:none;border-radius:5px;font-weight:800;}.rpcss-1pkr03v:active{opacity:0.5;}</style><a class="rpcss-1pkr03v" href="https://www.twitter.com/intent/tweet?text=JavaScript%20modulaire%20pour%20le%20front-end%20%3A%20les%20bases%20sur%20%40PutainDeCode%20https%3A%2F%2Fputaindecode.io%2Farticles%2Fjavascript-modulaire-pour-le-front-end-les-bases" target="_blank">Le partager sur Twitter</a></div><style data-emotion="rpcss x4iqxe">.rpcss-x4iqxe{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;text-align:center;padding:20px;}</style><div class="rpcss-x4iqxe"><style data-emotion="rpcss gein6x">.rpcss-gein6x{font-size:20px;-webkit-text-decoration:none;text-decoration:none;color:#1E49B5;}</style><a class="rpcss-gein6x" href="/articles">← Articles</a></div><style data-emotion="rpcss 8bodgl">.rpcss-8bodgl{max-width:640px;width:100%;margin:0 auto;padding:20px 0;}</style><div class="rpcss-8bodgl" id="disqus_thread"></div></div></div></div></div><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 1vau6rl">.rpcss-1vau6rl{margin:20px 0;background-color:var(--page-accented-background-color);border-radius:10px;padding:20px;}</style><div class="rpcss-1vau6rl"><style data-emotion="rpcss 1gz1i1h">.rpcss-1gz1i1h{font-size:32px;font-weight:800;margin-bottom:20px;text-align:center;}</style><div aria-level="2" class="rpcss-1gz1i1h" role="heading">Ne rien rater</div><style data-emotion="rpcss 1wbispj">.rpcss-1wbispj{font-size:18px;margin-bottom:10px;text-align:center;}</style><div aria-level="3" class="rpcss-1wbispj" role="heading">Sur les réseaux</div><style data-emotion="rpcss 1hyoz7m">.rpcss-1hyoz7m{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}</style><div class="rpcss-1hyoz7m"><a href="https://twitter.com/PutainDeCode"><img alt="Twitter" height="48" src="/public/images/website/twitter.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://facebook.com/putaindecode"><img alt="Facebook" height="48" src="/public/images/website/facebook.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://github.com/putaindecode"><img alt="Facebook" height="48" src="/public/images/website/github.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://itunes.apple.com/fr/podcast/putain-de-code-!/id1185311825"><img alt="Apple Podcast" height="48" src="/public/images/website/apple-podcast.svg" width="48"/></a><div class="rpcss-4cf197"></div><a href="https://soundcloud.com/putaindecode"><img alt="Soundcloud" height="48" src="/public/images/website/soundcloud.svg" width="48"/></a></div><div aria-level="3" class="rpcss-1wbispj" role="heading">Sur le chat</div><div class="rpcss-1hyoz7m"><a href="https://discord.gg/jtbGNNc"><img alt="Discord" height="48" src="/public/images/website/discord.svg" width="48"/></a></div></div></div></div><style data-emotion="rpcss zs8kw7">.rpcss-zs8kw7{background-color:#222;padding:20px 0;}</style><footer class="rpcss-zs8kw7"><div class="rpcss-1qqk0tr"><div class="rpcss-qx7dny"><style data-emotion="rpcss 79elbk">.rpcss-79elbk{position:relative;}</style><div class="rpcss-79elbk"><style data-emotion="rpcss 1hle0ni">.rpcss-1hle0ni{position:absolute;left:0;top:50%;color:#fff;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-text-decoration:none;text-decoration:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="rpcss-1hle0ni" href="/api/articles/feeds/desc/feed.xml"><style data-emotion="rpcss lvyu5j">.rpcss-lvyu5j{margin-right:10px;}</style><img class="rpcss-lvyu5j" alt="Flux RSS" height="16" src="/public/images/website/rss-feed.svg" width="16"/><style data-emotion="rpcss um3i31">@media (max-width: 400px){.rpcss-um3i31{display:none;}}</style><div class="rpcss-um3i31">Flux RSS</div></a><style data-emotion="rpcss 12cp4l7">.rpcss-12cp4l7{color:rgba(255, 255, 255, 0.5);text-align:center;font-size:14px;}</style><div class="rpcss-12cp4l7">© 2021 Putain de code !</div><style data-emotion="rpcss 1w98uy3">.rpcss-1w98uy3{position:absolute;right:0;top:50%;color:#fff;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-text-decoration:none;text-decoration:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="rpcss-1w98uy3" href="https://github.com/putaindecode/putaindecode.io">GitHub</a></div></div></div></footer></div><script id="initialData" type="text/data">{"lists":{"RE_PRIVATE_NONE":true},"items":{"k":"articles","v":{"k":"javascript-modulaire-pour-le-front-end-les-bases","v":{"_0":{"TAG":0,"_0":{"slug":"javascript-modulaire-pour-le-front-end-les-bases","filename":"2014-12-15-javascript-modulaire-pour-le-front-end-les-bases","title":"JavaScript modulaire pour le front-end : les bases","date":"Mon, 15 Dec 2014 00:00:00 GMT","draft":false,"meta":{"date":"2014-12-15T00:00:00.000Z","title":"JavaScript modulaire pour le front-end : les bases","author":"syvuilliot","oldSlug":"frontend/2015-etat-lieux-javascript-modulaire","slug":"javascript-modulaire-pour-le-front-end-les-bases"},"body":"<p>Quand on réalise des applications en JS pour les navigateurs web, on ne peut\nplus se contenter de mettre des tags <code>script</code> dans le bon ordre pour charger les\nbibliothèques tierces que l'on utilise comme pour un site web. C'est pourquoi il\nexiste des outils pour permettre d'écrire du JavaScript modulaire et réutiliser\nplus facilement les innombrables bibliothèques publiées par la communauté JS.</p>\n<p>Cependant, ce principe d'écriture modulaire et de publication de code n'étant\npas intégré dans le langage lui-même, de très nombreuses solutions existent plus\nou moins compatibles les unes avec les autres et aboutissant à une forte\nfragmentation de la communauté. Donc quand on décide de se mettre au JavaScript\nmodulaire, on trouve tout un tas d'articles (en anglais) parfois trop vieux\n(&quot;une étape de build n'est pas adaptée au navigateur&quot;), parfois trop subjectifs\n(&quot;J'aime pas la syntaxe AMD&quot;), parfois confus (&quot;utiliser les modules pour de\nl'injection de dépendances&quot;), parfois simplistes (&quot;AMD vs CommonJS&quot;).</p>\n<p>C'est pourquoi j'ai voulu partager mon expérience, en essayant d'abord de\nreposer les bases du problème, puis en vous faisant part de ce que j'estime être\nla solution la plus satisfaisante actuellement.</p>\n<p>D'abord, il faut faire la distinction entre 3 aspects du problème :</p>\n<ul>\n<li>le format d'écriture des modules (&quot;module authoring format&quot;)</li>\n<li>le système de gestion des packages (&quot;package management&quot;)</li>\n<li>la convention de résolution des dépendances de module</li>\n</ul>\n<h1>Format d'écriture des modules</h1>\n<p>Le module est la brique de base pour décomposer un gros fichier JS en plusieurs\nfichiers plus petits et focalisés sur une fonctionnalité précise. La plupart du\ntemps un module est un fichier JS qui fournit une fonction, un constructeur ou\nun objet de valeur. Et comme, pour fournir cette fonctionnalité, un module peut\navoir besoin d'autres modules, il existe un mécanisme pour déclarer ses\ndépendances.</p>\n<p>Actuellement, 2 standards principaux existent pour écrire ces modules : <strong>AMD</strong>\net <strong>CommonJS</strong>. Il est également possible d'utiliser la\n<a href=\"http://www.2ality.com/2014/09/es6-modules-final.html\">syntaxe retenue par ES6</a>\n(qui j'espère va enfin devenir le standard unique) mais pour l'instant, ça\ndemande encore une étape de &quot;transpilation&quot; en AMD ou CJS.</p>\n<p>Le format AMD (dans sa forme la plus courante) est :</p>\n<pre><code class=\"hljs language-js\">define([<span class=\"hljs-string\">&quot;moduleA&quot;</span>, <span class=\"hljs-string\">&quot;moduleB&quot;</span>], <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">a, b</span>) </span>{\n  <span class=\"hljs-comment\">// j&#x27;utilise a et b</span>\n  <span class=\"hljs-keyword\">return</span> maFonctionTresUtile;\n});\n</code></pre>\n<p>Le format CommonJS (dans sa forme la plus courante) est :</p>\n<pre><code class=\"hljs language-js\"><span class=\"hljs-keyword\">var</span> a = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;moduleA&quot;</span>);\n<span class=\"hljs-keyword\">var</span> b = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&quot;moduleB&quot;</span>);\n<span class=\"hljs-comment\">// j&#x27;utilise a et b</span>\n<span class=\"hljs-built_in\">module</span>.exports = maFonctionTresUtile;\n</code></pre>\n<p>Ca n'est pas très différent dans l'esprit : tous les 2 permettent de décrire des\ndépendances et d'exporter une valeur. La différence principale réside dans le\nfait que :</p>\n<ul>\n<li>CommonJS prévoit une évaluation en une passe dans laquelle il faut résoudre\nles dépendances au fur et à mesure</li>\n<li>alors que AMD prévoit une évaluation en 2 passes :\n<ul>\n<li>une première pour récupérer uniquement la liste des dépendances</li>\n<li>et une seconde où on exécute le callback (le corps du module) avec les\ndépendances résolues. C'est pourquoi on parle de format &quot;synchrone&quot; dans le\npremier cas et &quot;asynchrone&quot; dans le second car on peut résoudre les\ndépendances de façon asynchrone en AMD.</li>\n</ul></li>\n</ul>\n<p>Dans les 2 cas, par contre, il y a besoin d'une <em>résolution des dépendances</em>,\nc'est à dire qu'un module ne peut pas être exécuté tel quel dans un navigateur\nen le chargeant via un tag <code>script</code>. Non, il faut un <em>loader</em>, c'est à dire un\noutil qui va charger le module qu'on lui demande et va résoudre les dépendances\nen cascade. Mais contrairement à ce que l'on pourrait croire, les règles de\nrésolution des dépendances n'ont rien à voir avec le format du module (on verra\nça plus tard).</p>\n<h1>Package management</h1>\n<p>Parlons maintenant des packages. En effet, pouvoir découper du code en modules,\nc'est bien ; mais ce qui est encore mieux c'est de pouvoir le partager avec\nd'autres pour qu'il soit facilement réutilisable et arrêter le syndrôme de :</p>\n<blockquote>\n<p>&quot;je recode un event emitter dans ma bibliothèque comme ça je n'ai pas de\ndépendance et c'est plus facile à consommer par mes utilisateurs&quot;</p>\n</blockquote>\n<p>C'est le problème n°1 des bibliothèques front qui présentent souvent comme un\nargument de ne pas avoir de dépendances. Sauf que, si on y réfléchit, ça veut\ndire que : soit c'est une bibliothèque très bas niveau, soit le mec a recodé des\ntrucs qui existent déjà au lieu de s'occuper de son sujet principal.</p>\n<p>C'est là qu'entre en jeu la notion de <em>package</em> (que je ne traduirai pas en\nfrançais, car ça ne servirait qu'à apporter de la confusion). Un package est un\nensemble de fichiers (pas forcément des fichiers JS d'ailleurs) avec des\nmétadonnées associées pour décrire principalement :</p>\n<ul>\n<li>où est stocké le package,</li>\n<li>qui est l'auteur,</li>\n<li>quelle est la licence,</li>\n<li>quelle est la version,</li>\n<li>et ... quelles sont les dépendances et leurs versions !</li>\n</ul>\n<p>Ici les dépendances sont des dépendances entre packages,\n<a href=\"http://fr.slideshare.net/domenicdenicola/client-side-packages\">ce qui n'a rien à voir avec les dépendances entre modules</a>.</p>\n<p>Pour faciliter l'utilisation des packages, on utilise un <em>package manager</em>, dont\nle rôle principal est, à partir d'un id de module (et éventuellement d'un numéro\nde version), de trouver l'adresse où se trouve les fichiers, les télécharger et\nles installer localement... et ceci de façon récursive pour les dépendances, ce\nqui est le gros avantage par rapport à le faire à la mano. Mais sinon, ça n'est\npas plus compliqué que ça dans le principe, et ça reste valable pour des\nfichiers JS ou non, front-end ou non.</p>\n<p>Les principaux package managers pour le front-end sont\n<a href=\"https://www.npmjs.com/\">npm</a> et <a href=\"http://bower.io\">bower</a>. La grande différence\nentre les deux est que <strong>npm installe les dépendances de façon relative</strong> : pour\nchaque package, les dépendances sont installées dans un sous-dossier\n(node_modules).</p>\n<ul>\n<li>mon-projet-avec-nmp\n<ul>\n<li>app.js</li>\n<li>node_modules\n<ul>\n<li>une-dependance\n<ul>\n<li>main.js</li>\n<li>nodes_modules\n<ul>\n<li>une-dependance-indirecte\n<ul>\n<li>main.js</li>\n</ul></li>\n</ul></li>\n</ul></li>\n<li>une-autre-dependance\n<ul>\n<li>main.js</li>\n</ul></li>\n</ul></li>\n</ul></li>\n</ul>\n<p>Alors que <strong>bower prend le parti d'installer les dépendances à plat</strong> : le\npackage et ses dépendances et les dépendances des dépendances sont toutes\ninstallées au même niveau dans le même dossier.</p>\n<ul>\n<li>mon-projet-avec-bower\n<ul>\n<li>app.js</li>\n<li>bower_components\n<ul>\n<li>une-dependance\n<ul>\n<li>main.js</li>\n</ul></li>\n<li>une-autre-dependance\n<ul>\n<li>main.js</li>\n</ul></li>\n<li>une-dependance-indirecte\n<ul>\n<li>main.js</li>\n</ul></li>\n</ul></li>\n</ul></li>\n</ul>\n<p>L'approche bower semble être une bonne idée car si 2 packages ont la même\ndépendance (ou des dépendances compatibles semver), une seule est installée.\nAlors qu'avec npm chaque package installe sa propre dépendance.</p>\n<p>Cependant, s'il y a une incompatibilité de versions :</p>\n<blockquote>\n<p>le package A déclare une dépendance sur X en version 1 le package B déclare\nune dépendance sur X mais en version 2</p>\n</blockquote>\n<p>Avec bower, on est coincé : on ne peut installer qu'une seule version. Lors du\n<code>bower install</code>, il faudra choisir quelle version on garde : soit A devra\nutiliser X2, soit B devra utiliser X1.</p>\n<ul>\n<li>mon-app-avec-bower\n<ul>\n<li>bower_components\n<ul>\n<li>package-A</li>\n<li>package-B</li>\n<li>package-X\n<ul>\n<li>main.js // v1 ou v2 mais pas les 2</li>\n</ul></li>\n</ul></li>\n</ul></li>\n</ul>\n<p>Bower appelle cela de la <em>résolution de conflits</em>. Mais concrêtement, cela veut\ndire qu'on force une dépendance qui n'est pas supportée officiellement par le\npackage en question. Donc on se retrouve responsable de vérifier que le package\nB fonctionne correctement avec X1. Pas cool :-(</p>\n<p>Alors qu'avec npm les versions des dépendances sont respectées, il n'y a pas de\nquestion à se poser.</p>\n<ul>\n<li>mon-app-avec-npm\n<ul>\n<li>node_modules\n<ul>\n<li>package-A\n<ul>\n<li>node_modules\n<ul>\n<li>package-X\n<ul>\n<li>main.js // v1</li>\n</ul></li>\n</ul></li>\n</ul></li>\n<li>package-B\n<ul>\n<li>node_modules\n<ul>\n<li>package-X\n<ul>\n<li>main.js // v2</li>\n</ul></li>\n</ul></li>\n</ul></li>\n</ul></li>\n</ul></li>\n</ul>\n<h1>Résolution des dépendances de module</h1>\n<p>La question est alors :</p>\n<blockquote>\n<p>&quot;Pourquoi existe-t-il des package managers spécifiquement pour le web\nfront-end ?&quot;</p>\n</blockquote>\n<p>Réponse :</p>\n<blockquote>\n<p>&quot;Pour faciliter l'utilisation de modules publiés dans des packages dans le\ncontexte du front-end&quot;</p>\n</blockquote>\n<p>Super ! Mais concrêtement ?</p>\n<p>Et bien, venons en au coeur du problème : <em>la résolution des module-id en\nfichier</em>. Comme on l'a vu, pour charger un module dans le navigateur, il faut\nutiliser un loader. Et une de ses tâches est de <em>résoudre</em> les <code>module_id</code> en\nadresse de fichier.</p>\n<p>Au pire il faudrait explicitement dire au loader pour chaque <code>module_id</code> où est\nle fichier correspondant. Heureusement, ce n'est pas le cas, ni avec requireJS,\nni avec les loaders compatibles npm.</p>\n<h2>AMD</h2>\n<p>RequireJS et les autres loaders AMD vont assez loin en matière de\n<a href=\"http://requirejs.org/docs/api.html#config\">configuration</a> mais souvent , ça\nrevient à décrire des règles du style <em>tous les modules id qui commencent par\n<code>mon-package</code> sont à chercher dans le dossier <code>./mon-package</code></em>.</p>\n<p>En fait, ça n'est pas tout à fait vrai qu'il faille systématiquement configurer\nles règles de résolution avec RequireJS : il y a une règle par défaut qui\nstipule que les module_id sont résolus par rapport à une &quot;baseURL&quot; (qui par\ndéfaut est celle du fichier html). Donc si on installe tous les packages au même\nniveau, ça marche par défaut. C'est pour cela que bower est souvent utilisé pour\nles packages front-end en AMD car il installe les fichiers à plat et de cette\nfaçon on limite le besoin de configuration.</p>\n<h2>NPM</h2>\n<p>A l'opposé de cette approche très flexible, il y a nodeJS avec une\n<a href=\"https://github.com/substack/browserify-handbook#how-node_modules-works\">convention simple et statique</a>,\nqui dit en gros :</p>\n<ul>\n<li>si c'est une référence relative, il suffit de suivre le chemin</li>\n<li>si c'est une référence absolue, il faut chercher dans le dossier\n<code>node_modules</code> et ceci de façon récursive jusqu'à arriver à la racine</li>\n</ul>\n<p>Et donc zéro config, puisque ça n'est pas configurable. Ca peut paraître être\nune limitation mais c'est une force.</p>\n<h1>Conclusion</h1>\n<p>Si tous les packages en AMD utilisaient la règle de résolution par défaut et que\nl'on utilisait bower pour les installer, on n'aurait rien à configurer. Mais\ndans la pratique, ça n'est pas le cas et on se retrouve à devoir configurer les\nrègles de résolution non seulement pour ses propres dépendances (<em>pourquoi pas</em>)\nmais également pour les dépendances de ses dépendances (<em>et là ça ne va plus</em>).\nEt il reste toujours le problème des conflits de version liés à l'approche de\nmettre les dépendances à plat.</p>\n<p>D'un autre côté, il y a la convention nodeJS qui impose des règles simples, non\nmodifiables et qui n'a pas de problème de conflit de versions. C'est à dire\nqu'il suffit de faire <code>npm install mon-package</code> et ça marche. Une convention qui\nfait l'unanimité pour le backend JS.</p>\n<p>Côté front, on lui reproche de charger les dépendances sans les dédoublonner et\nde le faire en synchrone, ce qui n'est pas adapté quand le chargement des\nfichiers se fait via un réseau en http et pas directement depuis un disque local\ncomme sur un serveur.</p>\n<p>C'est pourquoi a été inventé <a href=\"http://http://browserify.org/\">browserify</a> qui\napporte actuellement <a href=\"/fr/articles/js/browserify/\">le meilleur des 2 mondes</a> :\ntoujours zéro config selon la convention nodeJS et un système de bundle/build\n(via une analyse syntaxique du code JS pour détecter les dépendances) afin\nd'assembler tous les modules en un seul fichier adapté au navigateur. On peut\nlui reprocher la nécessité d'une étape de build et le fait que le code source en\ndébug est en un seul fichier mais :</p>\n<ol>\n<li>de toute façon pour la prod, il y aura une étape de build et en dév, avec un\noutillage adapté (par exemple <code>watchify</code> qui rebuild en incrémental) ça\nn'est pas la mer à boire</li>\n<li>avec le support des sources-map dans les navigateurs, on peut maintenant\nretrouver en debug les mêmes noms de fichiers et les mêmes numéro de ligne\nque dans les fichiers d'origine et les points d'arrêt fonctionnent.</li>\n</ol>\n<p>Au final, ça en devient même un avantage, car le code que l'on exécute en dev\ndans le navigateur est très proche de ce que l'on aura en prod, en tout cas plus\nproche qu'avec requireJS pour lequel on développe sans build et pour lequel il\nfaut écrire à nouveau une config de build pour la mise en prod.</p>\n<h1>Conclusion de la conclusion</h1>\n<p>Ma conclusion est que le point crucial pour faciliter la réutilisation de\nmodules, c'est de <strong>minimiser les contraintes sur les utilisateurs</strong> et donc de\nse rapprocher d'un usage <em>plug and play</em>. Pour cela il faut une convention forte\nentre le package manager et le loader/builder de modules, afin d'éviter à\nl'utilisateur de devoir écrire des configs ... la plupart du temps. Bien sûr, la\nrecherche du &quot;zéro config&quot; n'est pas une fin et c'est particulièrement vrai côté\nfront où les contraintes de chargement de fichiers sont fortes. Et si vous\nvoulez diviser votre bundle en plusieurs fichiers ou si vous voulez des règles\nd'optimisation complexes pour votre build, il est normal de devoir mettre les\nmains dans le cambouis. Mais si au moins le cas d'usage le plus fréquent\n(compiler son appli en un seul fichier qui sera chargé via un tag <code>script</code>) est\nsimplifié au maximum, alors on pourra sûrement voir côté front, le même état\nd'esprit que côté back. Et je suis plutôt optimiste,\n<a href=\"https://medium.com/@trek/last-week-i-had-a-small-meltdown-on-twitter-about-npms-future-plans-around-front-end-packaging-b424dd8d367a\">contrairement à certains</a>.</p>\n<p>Utilisateur de la première heure d'<code>AMD</code> et de <code>Dojo loader</code>, puis de <code>bower</code>,\nje me suis rendu compte de leurs limites et surtout j'ai été régulièrement gêné\npar la complexité de la configuration... surtout lorsqu'il fallait passer au\nbuild. Cela freine la réutilisation de modules tiers et c'est dommage. Ce n'est\npas un problème intrinsèque au format de module et toutes les discussions sur\n&quot;moi j'aime / j'aime pas la syntaxe AMD&quot; sont secondaires (d'ailleurs\n<a href=\"https://www.npmjs.com/package/deamdify\">browserify peut fonctionner avec des bibliothèques en AMD</a>).\nMais dans la pratique, nous migrons vers la solution <code>npm + browserify</code> et c'est\nvraiment moins compliqué.</p>\n<p>J'espère que cet article vous permettra d'y voir plus clair, de dépasser les\nquerelles sur les préférences personnelles de chacun, et de vous aider à faire\nvotre choix. Je n'estime pas être un expert du sujet, il y a sûrement beaucoup\nde choses à compléter ou préciser, donc n'hésitez pas à réagir.</p>\n<p>Pour aller plus loin et regarder vers le futur que nous amène ES6, il y a cet\n<a href=\"https://medium.com/@brianleroux/es6-modules-amd-and-commonjs-c1acefbe6fc0\">excellent article</a>.</p>\n"}}},"h":1,"l":{"RE_PRIVATE_NONE":true},"r":{"RE_PRIVATE_NONE":true}},"h":1,"l":{"RE_PRIVATE_NONE":true},"r":{"RE_PRIVATE_NONE":true}},"listsRequests":{"data":{"RE_PRIVATE_NONE":true}},"itemsRequests":{"data":{"RE_PRIVATE_NONE":true}}}</script><head><script defer="defer" src="/public/main.56c69761a03eb0112696.js"></script></head></html>
